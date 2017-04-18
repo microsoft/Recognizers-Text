@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
-            Assert.AreEqual(value, resultJson[0].Resolutions["value"]);
+            Assert.AreEqual(value, resultJson[0].Resolution["value"]);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
-            Assert.AreEqual(value, resultJson[0].Resolutions["value"]);
+            Assert.AreEqual(value, resultJson[0].Resolution["value"]);
         }
 
 
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
-            Assert.AreEqual(resultJson[0].Resolutions["value"], first);
+            Assert.AreEqual(resultJson[0].Resolution["value"], first);
         }
 
         [TestMethod]
@@ -987,6 +987,29 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 1,
                 "9");
 
+            BasicTest(model,
+                "1.1^+23", "8.95430243255239");
+
+            BasicTest(model,
+                "2.5^-1", "0.4");
+
+            BasicTest(model,
+                "-1.1^+23", "-8.95430243255239");
+
+            BasicTest(model,
+                "-2.5^-1", "-0.4");
+
+            BasicTest(model,
+                "-1.1^--23", "-8.95430243255239");
+
+            BasicTest(model,
+                "-127.32e13", "-1.2732E+15");
+
+            BasicTest(model,
+                "12.32e+14", "1.232E+15");
+
+            BasicTest(model,
+                "-12e-1", "-1.2");
             #endregion
         }
 
@@ -1005,7 +1028,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "４ ６／３",
-                (4 + (double)6 / 3).ToString());
+                (4 + (double) 6 / 3).ToString());
 
             BasicTest(model,
                 "-3/2",
@@ -1017,7 +1040,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "一百万又五十万分之二十五",
-                (1000000 + (double)25 / 500000).ToString());
+                (1000000 + (double) 25 / 500000).ToString());
 
             BasicTest(model,
                 "一百分之二",
@@ -1025,7 +1048,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "四千二分之三",
-                ((double)3 / 4200).ToString());
+                ((double) 3 / 4200).ToString());
 
             BasicTest(model,
                 "一百分之2",
@@ -1033,11 +1056,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "五百分之2333",
-                ((double)2333 / 500).ToString());
+                ((double) 2333 / 500).ToString());
 
             BasicTest(model,
                 "3又一千分之23",
-                (3 + (double)23 / 1000).ToString());
+                (3 + (double) 23 / 1000).ToString());
 
             BasicTest(model,
                 "３／５",
@@ -1053,11 +1076,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "１６分之5",
-                ((double)5 / 16).ToString());
+                ((double) 5 / 16).ToString());
 
             BasicTest(model,
                 "１６分之2225",
-                ((double)2225 / 16).ToString());
+                ((double) 2225 / 16).ToString());
 
             BasicTest(model,
                 "负一又二分之一",
@@ -1069,19 +1092,19 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "三百 五又三分之一",
-                (350 + (double)1 / 3).ToString());
+                (350 + (double) 1 / 3).ToString());
 
             BasicTest(model,
                 "三百五十又3分之1",
-                (350 + (double)1 / 3).ToString());
+                (350 + (double) 1 / 3).ToString());
 
             BasicTest(model,
                 "３分之一百五十七",
-                ((double)157 / 3).ToString());
+                ((double) 157 / 3).ToString());
 
             BasicTest(model,
                 "负３分之负一百五十七",
-                ((double)157 / 3).ToString());
+                ((double) 157 / 3).ToString());
 
             MultiTest(model,
                 @"一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",
@@ -1975,12 +1998,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 "第三",
                 "3");
         }
-
         [TestMethod]
         public void TestCompareModel()
         {
             var model = GetNumberModel();
-            var wmodel = GetNumberModelExtractAll();
+            var wmodel = GetWithoutWhiteListNumberModel();
 
             MultiTest(model,
                 "一看",
@@ -2028,34 +2050,38 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             MultiTest(wmodel,
                 "十",
                 1);
+
         }
-
         private static IModel GetNumberModel()
         {
-            return new NumberModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()), 
-                new NumberExtractor());
+            return
+                new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                        new ChineseNumberParserConfiguration()), new NumberExtractor());
         }
 
-        private static IModel GetNumberModelExtractAll()
+        private static IModel GetWithoutWhiteListNumberModel()
         {
-            return new NumberModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()), 
-                new NumberExtractor(ChineseNumberMode.ExtractAll));
+            return
+                new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                        new ChineseNumberParserConfiguration()), new NumberExtractor(ChineseNumberMode.ExtractAll));
         }
 
         private static IModel GetOrdinalModel()
         {
-            return new OrdinalModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()), 
-                new OrdinalExtractor());
+            return
+                new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
+                        new ChineseNumberParserConfiguration()), new OrdinalExtractor());
         }
 
         private static IModel GetPercentageModel()
         {
-            return new PercentModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()), 
-                new PercentageExtractor());
+            return
+                new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
+                        new ChineseNumberParserConfiguration()), new PercentageExtractor());
         }
     }
 }

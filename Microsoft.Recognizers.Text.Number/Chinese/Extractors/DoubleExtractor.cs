@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     new Regex(
                         $@"(?<!{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+[\.．])({IntegerExtractor
                             .SignSymbolRegexNum}\s*)?{IntegerExtractor
-                                .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?e(([-－]?[1-9１２３４５６７８９]{IntegerExtractor
+                                .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?e(([-－+＋]*[1-9１２３４５６７８９]{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}*)|[0０](?!{IntegerExtractor
                                         .ZeroToNineChsFullHalfRegexChs}+))",
                         RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     new Regex(
                         $@"(?<!{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+[\.．])({IntegerExtractor
                             .SignSymbolRegexNum}\s*)?({IntegerExtractor
-                                .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?)\^([-－]?[1-9１２３４５６７８９]{IntegerExtractor
+                                .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}*)",
                         RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
