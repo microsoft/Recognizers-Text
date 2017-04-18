@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
             var _regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex($@"(((?<=\W|^)-\s*)|(?<=\b))(?<!(\d+\.))\d+\.\d+(?!(\.\d+))(?={placeholder})",
+                    new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+(?!(\.\d+))(?={placeholder})",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
@@ -30,18 +30,18 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
                     "DoubleNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d{1,3}(,\d{3})+\.\d+" + $@"(?={placeholder})",
+                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d{1,3}(,\d{3})+\.\d+" + $@"(?={placeholder})",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)",
+                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)",
                         RegexOptions.Compiled|RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex(
-                        $@"(((?<=[^\w]|^)-\s*)|(?<=\b))\d+\.\d+\s+{IntegerExtractor.RoundNumberIntegerRegex}(?=\b)",
+                        $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{IntegerExtractor.RoundNumberIntegerRegex}(?=\b)",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
@@ -50,12 +50,12 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
                     "DoubleEng"
                 },
                 {
-                    new Regex(@"(?<=\b)(?<!\d+\.)(\d+(\.\d+)?)e(-?[1-9]\d*)(?=\b)",
+                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 },
                 {
-                    new Regex(@"(?<=\b)(?<!\d+\.)(\d+(\.\d+)?)\^(-?[1-9]\d*)(?=\b)",
+                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }

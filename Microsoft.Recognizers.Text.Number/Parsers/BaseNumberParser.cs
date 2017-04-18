@@ -142,7 +142,11 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                 }
                 else if (ch == '-')
                 {
-                    isLessZero = true;
+                    isLessZero = !isLessZero;
+                }
+                else if (ch == '+')
+                {
+                    continue;
                 }
                 if (i == handle.Length - 1)
                 {

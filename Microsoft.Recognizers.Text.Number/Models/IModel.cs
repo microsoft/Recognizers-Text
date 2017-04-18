@@ -17,9 +17,6 @@ namespace Microsoft.Recognizers.Text.Number.Models
         public int End { get; set; }
         public string TypeName { get; set; }
         //Resolutions field
-        public SortedDictionary<string, string> Resolutions { get; set; }
-        //the GeneralResolutions are for the entities can have several different resolutions
-        //e.g. ResolveToPast and ResolveToFuture in DateTime
-        public Dictionary<string, Object> GeneralResolutions { get; set; }
+        public SortedDictionary<string, object> Resolution { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.Number.Models
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
-                Resolutions = new SortedDictionary<string, string> {{"value", o.ResolutionStr}},
+                Resolution = new SortedDictionary<string, object> {{"value", o.ResolutionStr}},
                 Text = o.Text,
                 TypeName = ModelTypeName
             }).ToList();

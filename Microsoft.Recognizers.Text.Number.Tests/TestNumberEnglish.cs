@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(source.Trim(), resultJson[0].Text);
-            Assert.AreEqual(value, resultJson[0].Resolutions["value"]);
+            Assert.AreEqual(value, resultJson[0].Resolution["value"]);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(extractSrc, resultJson[0].Text);
-            Assert.AreEqual(value, resultJson[0].Resolutions["value"]);
+            Assert.AreEqual(value, resultJson[0].Resolution["value"]);
         }
 
 
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public void TestNumberModel()
         {
             var model = GetNumberModel();
-
+            
             WrappedTest(model,
                 "192.", "192", "192");
 
@@ -323,6 +323,30 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "a hundredth", "0.01");
+
+            BasicTest(model,
+                "1.1^+23", "8.95430243255239");
+
+            BasicTest(model,
+                "2.5^-1", "0.4");
+
+            BasicTest(model,
+                "-1.1^+23", "-8.95430243255239");
+
+            BasicTest(model,
+                "-2.5^-1", "-0.4");
+
+            BasicTest(model,
+                "-1.1^--23", "-8.95430243255239");
+
+            BasicTest(model,
+                "-127.32e13", "-1.2732E+15");
+
+            BasicTest(model,
+                "12.32e+14", "1.232E+15");
+
+            BasicTest(model,
+                "-12e-1", "-1.2");
         }
 
         [TestMethod]
@@ -485,23 +509,26 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         private static IModel GetNumberModel()
         {
-            return new NumberModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()), 
-                new NumberExtractor(NumberMode.PureNumber));
+            return 
+                new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()), 
+                    new NumberExtractor(NumberMode.PureNumber));
         }
 
         private static IModel GetOrdinalModel()
         {
-            return new OrdinalModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()), 
-                new OrdinalExtractor());
+            return
+                new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()), 
+                    new OrdinalExtractor());
         }
 
         private static IModel GetPercentageModel()
         {
-            return new PercentModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()), 
-                new PercentageExtractor());
+            return 
+                new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
+                    new PercentageExtractor());
         }
     }
 }

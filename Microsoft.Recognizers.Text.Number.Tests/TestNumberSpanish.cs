@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var result = model.Parse(source);
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
-            Assert.AreEqual(value, result[0].Resolutions["value"]);
+            Assert.AreEqual(value, result[0].Resolution["value"]);
         }
 
         private void MultiTest(IModel model, string source, int count)
@@ -298,6 +298,22 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model, "cincuenta y dos mil trescientos cuarenta y siete con doscientos", "52347,2");
 
             BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos", "452347,22");
+
+            BasicTest(model, "1,1^+23", "8,95430243255239");
+            
+            BasicTest(model, "2,5^-1", "0,4");
+            
+            BasicTest(model, "-1,1^+23", "-8,95430243255239");
+            
+            BasicTest(model, "-2,5^-1", "-0,4");
+            
+            BasicTest(model, "-1,1^--23", "-8,95430243255239");
+            
+            BasicTest(model, "-127,32e13", "-1,2732E+15");
+            
+            BasicTest(model, "12,32e+14", "1,232E+15");
+            
+            BasicTest(model, "-12e-1", "-1,2");
 
             #endregion
 
