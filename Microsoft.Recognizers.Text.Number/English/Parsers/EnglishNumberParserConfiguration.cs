@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number.English.Parsers
 {
@@ -31,8 +32,8 @@ namespace Microsoft.Recognizers.Text.Number.English.Parsers
             this.RoundNumberMap = InitRoundNumberMap();
             this.HalfADozenRegex = new Regex(@"half\s+a\s+dozen", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                    @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g)(?=\b))",
-                    RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -71,7 +72,22 @@ namespace Microsoft.Recognizers.Text.Number.English.Parsers
 
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context)
         {
-            return tokens;
+            var fracWords = new List<string>();
+            var tokenList = tokens.ToList();
+            var tokenLen = tokenList.Count;
+            for (var i = 0; i < tokenLen; i++)
+            {
+                if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
+                {
+                    fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    i += 2;
+                }
+                else
+                {
+                    fracWords.Add(tokenList[i]);
+                }
+            }
+            return fracWords;
         }
 
         public long ResolveCompositeNumber(string numberStr)
@@ -248,6 +264,7 @@ namespace Microsoft.Recognizers.Text.Number.English.Parsers
                 {"k", 1000},
                 {"m", 1000000},
                 {"g", 1000000000},
+                {"b", 1000000000},
                 {"t", 1000000000000}
             }.ToImmutableDictionary();
         }

@@ -38,16 +38,16 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
             var _regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex($@"(((?<=\W|^)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})",
+                    new Regex($@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "IntegerNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)", RegexOptions.Compiled|RegexOptions.Singleline)
+                    new Regex(@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)", RegexOptions.Compiled|RegexOptions.Singleline)
                     , "IntegerNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d{1,3}(,\d{3})+" + $@"(?={placeholder})",
+                    new Regex(@"(((?<!\d+\s*)-\s*)|(?<=\b))\d{1,3}(,\d{3})+" + $@"(?={placeholder})",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
                 },
                 {
                     new Regex(
-                        @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)",
+                        @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },

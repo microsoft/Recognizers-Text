@@ -330,6 +330,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "2.5^-1", "0.4");
 
+            BasicTest(model, 
+                "-2500^-1", "-0.0004");
+
             BasicTest(model,
                 "-1.1^+23", "-8.95430243255239");
 
@@ -347,6 +350,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "-12e-1", "-1.2");
+
+            BasicTest(model, 
+                "1.2b", "1200000000");
         }
 
         [TestMethod]
@@ -457,6 +463,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "one over one hundred and twenty five", ((double)1 / 125).ToString());
 
+            BasicTest(model,
+                "ninety - five hundred fifths", ((double)9500 / 5).ToString());
         }
 
         [TestMethod]

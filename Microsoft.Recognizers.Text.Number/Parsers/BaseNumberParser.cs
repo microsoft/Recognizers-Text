@@ -446,7 +446,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                 {
                     var isCardinal = config.CardinalNumberMap.ContainsKey(matchStr);
                     var isOrdinal = config.OrdinalNumberMap.ContainsKey(matchStr);
-                    if (isCardinal | isOrdinal)
+                    if (isCardinal || isOrdinal)
                     {
                         var matchValue = isCardinal
                             ? config.CardinalNumberMap[matchStr]
@@ -488,7 +488,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(config.WrittenIntegerSeparatorTexts.First()) | tempStack.Count() < 2)
+                            else if (oldSym.Equals(config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
@@ -639,7 +639,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                     isFrac = true;
                 }
 
-                if (ch == ' ' | ch == '/')
+                if (ch == ' ' || ch == '/')
                 {
                     calStack.Push(temp);
                     temp = 0;
