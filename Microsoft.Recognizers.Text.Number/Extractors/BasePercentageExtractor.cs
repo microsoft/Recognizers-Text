@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.Extractors
     {
         private readonly BaseNumberExtractor numberExtractor;
 
-        protected static string numExtType = Constants.SYS_NUM; //@sys.num
+        protected static readonly string numExtType = Constants.SYS_NUM; //@sys.num
         protected string ExtractType = Constants.SYS_NUM_PERCENTAGE;
 
         private ImmutableHashSet<Regex> Regexes { get; }

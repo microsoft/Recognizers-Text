@@ -12,10 +12,6 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
 
         public FractionExtractor()
         {
-            string str =
-                $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)({
-                    OrdinalExtractor.AllOrdinalRegex})(?=\b)";
-
             var _regexes = new Dictionary<Regex, string>
             {
                 {

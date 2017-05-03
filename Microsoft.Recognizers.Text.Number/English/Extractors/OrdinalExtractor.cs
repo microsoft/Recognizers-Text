@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
                     , "OrdinalNum"
                 },
                 {
-                    new Regex(@"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*(\.\d+)?\s*th)(?=\b)",
+                    new Regex(@"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)",
                         RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
