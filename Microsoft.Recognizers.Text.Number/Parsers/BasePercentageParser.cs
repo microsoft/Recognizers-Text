@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Number.Parsers
 {

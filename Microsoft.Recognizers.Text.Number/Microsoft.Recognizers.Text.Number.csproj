@@ -89,6 +89,8 @@
     <Compile Include="Spanish\Extractors\OrdinalExtractor.cs" />
     <Compile Include="Spanish\Extractors\PercentageExtractor.cs" />
     <Compile Include="Spanish\Parsers\SpanishNumberParserConfiguration.cs" />
+    <Compile Include="Utilities\Culture.cs" />
+    <Compile Include="Utilities\FormatUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Microsoft.Recognizers.Text.Number.nuspec">

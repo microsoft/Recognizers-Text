@@ -4,12 +4,13 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Text;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish.Parsers
 {
     public class SpanishNumberParserConfiguration : INumberParserConfiguration
     {
-        public SpanishNumberParserConfiguration() : this(new CultureInfo("es-es")) { }
+        public SpanishNumberParserConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
 
         public SpanishNumberParserConfiguration(CultureInfo ci)
         {
@@ -30,10 +31,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish.Parsers
             this.CardinalNumberMap = InitCardinalNumberMap();
             this.OrdinalNumberMap = InitOrdinalNumberMap();
             this.RoundNumberMap = InitRoundNumberMap();
-            this.HalfADozenRegex = new Regex(@"media\s+docena", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(@"media\s+docena", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
                 @"((?<=\b)(mil|millones|mill[oó]n|billones|bill[oó]n|trillones|trill[oó]n|docenas?)(?=\b))|((?<=(\d|\b))(k|t|m|g)(?=\b))",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }

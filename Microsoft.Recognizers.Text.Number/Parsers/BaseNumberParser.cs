@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -26,9 +25,9 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                                 + GetKeyRegex(this.config.CardinalNumberMap.Keys) + "|"
                                 + GetKeyRegex(this.config.OrdinalNumberMap.Keys);
             TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             ArabicNumberRegex = new Regex(@"\d+",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             RoundNumberSet = new HashSet<string>();
             foreach (var roundNumber in this.config.RoundNumberMap.Keys)
             {
@@ -446,7 +445,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                 {
                     var isCardinal = config.CardinalNumberMap.ContainsKey(matchStr);
                     var isOrdinal = config.OrdinalNumberMap.ContainsKey(matchStr);
-                    if (isCardinal | isOrdinal)
+                    if (isCardinal || isOrdinal)
                     {
                         var matchValue = isCardinal
                             ? config.CardinalNumberMap[matchStr]
@@ -488,7 +487,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(config.WrittenIntegerSeparatorTexts.First()) | tempStack.Count() < 2)
+                            else if (oldSym.Equals(config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
@@ -639,7 +638,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                     isFrac = true;
                 }
 
-                if (ch == ' ' | ch == '/')
+                if (ch == ' ' || ch == '/')
                 {
                     calStack.Push(temp);
                     temp = 0;

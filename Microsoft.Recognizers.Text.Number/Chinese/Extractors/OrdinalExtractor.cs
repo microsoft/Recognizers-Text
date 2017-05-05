@@ -20,14 +20,14 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                 {
                     new Regex(
                         OrdinalRegexChs,
-                        RegexOptions.Compiled | RegexOptions.Singleline)
+                        RegexOptions.Singleline)
                     , "OrdinalChs"
                 },
                 //第２５６５,  第1234
                 {
                     new Regex(
                         $@"第{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Compiled | RegexOptions.Singleline)
+                        RegexOptions.Singleline)
                     , "OrdinalChs"
                 }
             };

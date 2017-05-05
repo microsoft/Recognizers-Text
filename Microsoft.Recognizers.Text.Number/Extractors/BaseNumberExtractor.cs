@@ -26,7 +26,8 @@ namespace Microsoft.Recognizers.Text.Number.Extractors
                 matched[i] = false;
             }
 
-            foreach (var collection in Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value))
+            var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
+            foreach (var collection in collections)
             {
                 foreach (Match m in collection.Key)
                 {

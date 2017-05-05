@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                                 .ZeroToNineChsFullHalfRegexChs}+[\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+(?!{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}*[\.．]{IntegerExtractor
                                         .ZeroToNineChsFullHalfRegexChs}+)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                             .SignSymbolRegexNum}\s*)?[\.．]{IntegerExtractor
                                 .ZeroToNineChsFullHalfRegexChs}+(?!{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}*([\.．]{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}+))",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 //(-).2 
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                             .ZeroToNineChsFullHalfRegexChs}" + @"{1,3}([,，]" +
                         $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}" + @"{3})+[\.．]" +
                         $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 // 1.0 K
@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+[\.．]{IntegerExtractor
                                 .ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)",
-                        RegexOptions.Compiled | RegexOptions.Singleline),
+                        RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 //１５.２万
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     new Regex(
                         $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+)?\s*[多几幾余]?[万亿萬億]" + @"{1,2}",
-                        RegexOptions.Compiled | RegexOptions.Singleline),
+                        RegexOptions.Singleline),
                     "DoubleChs"
                 },
                 //四十五点三三
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     new Regex(
                         $@"(?<![百佰]\s*分\s*之\s*(({IntegerExtractor.AllIntRegexChs}[点點]*)|{AllFloatRegexChs})*){AllFloatRegexChs}(?!{IntegerExtractor
                             .ZeroToNineIntegerRegexChs}*\s*[个個]\s*[百佰]\s*分\s*[点點])",
-                        RegexOptions.Compiled | RegexOptions.Singleline),
+                        RegexOptions.Singleline),
                     "DoubleChs"
                 },
                 // 2e6, 21.2e0
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                                 .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?e(([-－+＋]*[1-9１２３４５６７８９]{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}*)|[0０](?!{IntegerExtractor
                                         .ZeroToNineChsFullHalfRegexChs}+))",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 },
                 //2^5
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                             .SignSymbolRegexNum}\s*)?({IntegerExtractor
                                 .ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+)?)\^([-－+＋]*[1-9１２３４５６７８９]{IntegerExtractor
                                     .ZeroToNineChsFullHalfRegexChs}*)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }
             };

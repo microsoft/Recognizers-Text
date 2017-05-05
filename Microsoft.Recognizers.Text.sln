@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.Number", "Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj", "{61205449-BDBA-4BF3-8B24-AE059E0B1B61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.Number.Tests", "Microsoft.Recognizers.Text.Number.Tests\Microsoft.Recognizers.Text.Number.Tests.csproj", "{7333C1ED-A0CC-4F2C-AEF4-B9DBC9ED988D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{D7EA6651-8118-478D-AAA7-437613159978}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.NumberWithUnit.Tests", "Microsoft.Recognizers.Text.NumberWithUnit.Tests\Microsoft.Recognizers.Text.NumberWithUnit.Tests.csproj", "{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +27,20 @@ Global
 		{7333C1ED-A0CC-4F2C-AEF4-B9DBC9ED988D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7333C1ED-A0CC-4F2C-AEF4-B9DBC9ED988D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7333C1ED-A0CC-4F2C-AEF4-B9DBC9ED988D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7EA6651-8118-478D-AAA7-437613159978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7EA6651-8118-478D-AAA7-437613159978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7EA6651-8118-478D-AAA7-437613159978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7EA6651-8118-478D-AAA7-437613159978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7333C1ED-A0CC-4F2C-AEF4-B9DBC9ED988D} = {ED7B6456-AB0A-48CE-8F85-711FE87F09C2}
+		{EDF4ABA5-ED0A-418E-B5D9-0723435EAAC5} = {ED7B6456-AB0A-48CE-8F85-711FE87F09C2}
 	EndGlobalSection
 EndGlobal
