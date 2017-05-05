@@ -93,6 +93,7 @@
     <Compile Include="Utilities\FormatUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CreatePackage.cmd" />
     <None Include="Microsoft.Recognizers.Text.Number.nuspec">
       <SubType>Designer</SubType>
     </None>

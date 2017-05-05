@@ -107,6 +107,7 @@
     <Compile Include="Spanish\Parsers\WeightParserConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CreatePackage.cmd" />
     <None Include="Microsoft.Recognizers.Text.NumberWithUnit.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
