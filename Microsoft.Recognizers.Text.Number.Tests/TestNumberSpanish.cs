@@ -160,6 +160,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             #region Integer numbers
 
+            BasicTest(model, "2 mil millones", "2000000000");
+
             BasicTest(model, " 123456789101231", "123456789101231");
 
             BasicTest(model, "-123456789101231", "-123456789101231");
@@ -300,19 +302,21 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos", "452347,22");
 
             BasicTest(model, "1,1^+23", "8,95430243255239");
-            
+
             BasicTest(model, "2,5^-1", "0,4");
-            
+
+            BasicTest(model, "-2500^-1", "-0,0004");
+
             BasicTest(model, "-1,1^+23", "-8,95430243255239");
-            
+
             BasicTest(model, "-2,5^-1", "-0,4");
-            
+
             BasicTest(model, "-1,1^--23", "-8,95430243255239");
-            
+
             BasicTest(model, "-127,32e13", "-1,2732E+15");
-            
+
             BasicTest(model, "12,32e+14", "1,232E+15");
-            
+
             BasicTest(model, "-12e-1", "-1,2");
 
             #endregion
@@ -323,7 +327,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             // '.' is group separator in spanish - so not understood as IP
             MultiTest(model, "192.168.1.2", 3);
-            //this will be supported for the CompositeEntityModel
+            //this will be supported for the NumberWithUnitModel
             MultiTest(model, "son 180,25ml liquidos", 0);
 
             MultiTest(model, "son 180ml liquidos", 0);
@@ -727,23 +731,26 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         private static IModel GetNumberModel()
         {
-            return new NumberModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()), 
-                new NumberExtractor(NumberMode.PureNumber));
+            return
+                new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
+                    new NumberExtractor(NumberMode.PureNumber));
         }
 
         private static IModel GetOrdinalModel()
         {
-            return new OrdinalModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()), 
-                new OrdinalExtractor());
+            return
+                new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
+                    new OrdinalExtractor());
         }
 
         private static IModel GetPercentageModel()
         {
-            return new PercentModel(
-                AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()), 
-                new PercentageExtractor());
+            return
+                new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
+                    new PercentageExtractor());
         }
     }
 }

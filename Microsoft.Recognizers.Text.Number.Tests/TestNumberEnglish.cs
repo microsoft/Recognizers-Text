@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public void TestNumberModel()
         {
             var model = GetNumberModel();
-            
+
             WrappedTest(model,
                 "192.", "192", "192");
 
@@ -330,7 +330,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "2.5^-1", "0.4");
 
-            BasicTest(model, 
+            BasicTest(model,
                 "-2500^-1", "-0.0004");
 
             BasicTest(model,
@@ -351,7 +351,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "-12e-1", "-1.2");
 
-            BasicTest(model, 
+            BasicTest(model,
                 "1.2b", "1200000000");
         }
 
@@ -517,9 +517,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         private static IModel GetNumberModel()
         {
-            return 
+            return
                 new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()), 
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
                     new NumberExtractor(NumberMode.PureNumber));
         }
 
@@ -527,13 +527,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             return
                 new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()), 
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()),
                     new OrdinalExtractor());
         }
 
         private static IModel GetPercentageModel()
         {
-            return 
+            return
                 new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
                     new PercentageExtractor());

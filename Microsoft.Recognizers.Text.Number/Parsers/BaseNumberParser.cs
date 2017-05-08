@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -26,9 +25,9 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
                                 + GetKeyRegex(this.config.CardinalNumberMap.Keys) + "|"
                                 + GetKeyRegex(this.config.OrdinalNumberMap.Keys);
             TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             ArabicNumberRegex = new Regex(@"\d+",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             RoundNumberSet = new HashSet<string>();
             foreach (var roundNumber in this.config.RoundNumberMap.Keys)
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Number.Parsers
@@ -18,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Parsers
     {
         public static BaseNumberParser GetParser(AgnosticNumberParserType type, INumberParserConfiguration languageConfiguration)
         {
-            var isChinese = languageConfiguration.CultureInfo.Name == "zh-CN";
+            var isChinese = languageConfiguration.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese;
 
             BaseNumberParser parser;
 

@@ -58,13 +58,13 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                 {
                     new Regex(
                         $@"({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "IntegerNum"
                 },
                 //15k,  16 G
                 {
                     new Regex($@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)",
-                        RegexOptions.Compiled | RegexOptions.Singleline)
+                        RegexOptions.Singleline)
                     , "IntegerNum"
                 },
                 //1,234,  ２，３３２，１１１
@@ -72,18 +72,18 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     new Regex(
                         $@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}" + @"{1,3}([,，]" +
                         $@"{ZeroToNineChsFullHalfRegexChs}" + @"{3})+",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },
                 //半百  半打
                 {
-                    new Regex($@"半({RoundNumberIntegerRegexChs}|打)", RegexOptions.Compiled | RegexOptions.Singleline)
+                    new Regex($@"半({RoundNumberIntegerRegexChs}|打)", RegexOptions.Singleline)
                     , "IntegerChs"
                 },
                 //一打  五十打
                 {
                     new Regex($@"{AllIntRegexChs}[双雙对對打](?!{AllIntRegexChs})",
-                        RegexOptions.Compiled | RegexOptions.Singleline)
+                        RegexOptions.Singleline)
                     , "IntegerChs"
                 }
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                         new Regex(
                             $@"(?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{DoubleExtractor.AllFloatRegexChs})*){SignSymbolRegexChs}?({NotSingleRegexChs}|{SingleRegexChs})(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{DoubleExtractor
                                 .AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])",
-                            RegexOptions.Compiled | RegexOptions.Singleline),
+                            RegexOptions.Singleline),
                         "IntegerChs");
                     break;
                 case ChineseNumberMode.ExtractAll:
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                         new Regex(
                             $@"(?<![百佰]\s*分\s*之\s*({AllIntRegexChs}[点點]*|{DoubleExtractor.AllFloatRegexChs})*){SignSymbolRegexChs}?{AllIntRegexChs}(?!({AllIntRegexChs}*([点點]{ZeroToNineIntegerRegexChs}+)*|{DoubleExtractor
                                 .AllFloatRegexChs})*\s*[个個]\s*[百佰]\s*分\s*[点點])",
-                            RegexOptions.Compiled | RegexOptions.Singleline),
+                            RegexOptions.Singleline),
                         "IntegerChs");
                     break;
             }

@@ -1,15 +1,16 @@
 ﻿using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.English.Parsers
 {
     public class EnglishNumberParserConfiguration : INumberParserConfiguration
     {
-        public EnglishNumberParserConfiguration() : this(new CultureInfo("en-US")) { }
+        public EnglishNumberParserConfiguration() : this(new CultureInfo(Culture.English)) { }
 
         public EnglishNumberParserConfiguration(CultureInfo ci)
         {
@@ -30,10 +31,10 @@ namespace Microsoft.Recognizers.Text.Number.English.Parsers
             this.CardinalNumberMap = InitCardinalNumberMap();
             this.OrdinalNumberMap = InitOrdinalNumberMap();
             this.RoundNumberMap = InitRoundNumberMap();
-            this.HalfADozenRegex = new Regex(@"half\s+a\s+dozen", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(@"half\s+a\s+dozen", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    @"((?<=\b)(hundred|thousand|million|billion|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }

@@ -39,21 +39,21 @@ namespace Microsoft.Recognizers.Text.Number.English.Extractors
                 {
                     new Regex(
                         @"(?<=\b)((\d*(1st|2nd|3rd|4th|5th|6th|7th|8th|9th|0th))|(11th|12th))(?=\b)",
-                        RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
                 {
                     new Regex(@"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)",
-                        RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
                 {
-                    new Regex($@"(?<=\b){AllOrdinalRegex}(?=\b)", RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex($@"(?<=\b){AllOrdinalRegex}(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdEng"
                 },
                 {
                     new Regex($@"(?<!(a|an)\s+){RoundNumberOrdinalRegex}",
-                        RegexOptions.Compiled|RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdEng"
                 }
             };

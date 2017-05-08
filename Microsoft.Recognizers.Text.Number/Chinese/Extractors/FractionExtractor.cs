@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+\s+{IntegerExtractor
                                 .ZeroToNineChsFullHalfRegexChs}+[/／]{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 // 8/3 
@@ -37,12 +37,12 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+[/／]{IntegerExtractor
                                 .ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 //四分之六十五
                 {
-                    new Regex($@"{AllFractionNumber}", RegexOptions.Compiled | RegexOptions.Singleline)
+                    new Regex($@"{AllFractionNumber}", RegexOptions.Singleline)
                     , "FracChs"
                 }
             };

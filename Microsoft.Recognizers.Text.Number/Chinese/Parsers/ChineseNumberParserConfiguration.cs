@@ -1,5 +1,6 @@
 ﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Parsers
     public class ChineseNumberParserConfiguration : INumberParserConfiguration
     {
         public ChineseNumberParserConfiguration()
-            : this(new CultureInfo("zh-CN"))
+            : this(new CultureInfo(Culture.Chinese))
         {
         }
 
@@ -44,32 +45,32 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Parsers
             HalfADozenRegex = null;
             DigitalNumberRegex = new Regex(
                 @"((?<=(\d|\b))(k|t|m|g)(?=\b))",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DigitNumRegex = new Regex($@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DozenRegex = new Regex(@".*打$",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PercentageRegex = new Regex(@"(?<=百\s*分\s*之).+|.+(?=个\s*百\s*分\s*点)|.*(?=[％%])",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DoubleAndRoundChsRegex =
                 new Regex(
                     $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+(\.{IntegerExtractor
                         .ZeroToNineChsFullHalfRegexChs}+)?\s*[多几余]?[万亿萬億]"
                     + @"{1,2}",
-                    RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
             FracSplitRegex = new Regex(@"又|分\s*之",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SymbolRegex =
                 new Regex($@"^{IntegerExtractor.SignSymbolRegexChs}.*|^{IntegerExtractor.SignSymbolRegexNum}.*",
-                    RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
             PointRegexChs = new Regex(DoubleExtractor.PointRegexChsStr,
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(
                 $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}|{IntegerExtractor
                     .ZeroToNineIntegerRegexChs}|[十拾半对對]",
-                RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnoreCase);
+                RegexOptions.Singleline | RegexOptions.IgnoreCase);
             PairRegex = new Regex(@".*[双对雙對]$",
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
 

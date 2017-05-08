@@ -111,11 +111,11 @@ namespace Microsoft.Recognizers.Text.Number.Extractors
                 Regex regex;
                 if (ignoreCase)
                 {
-                    regex = new Regex(regexStr, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    regex = new Regex(regexStr, RegexOptions.IgnoreCase | RegexOptions.Singleline);
                 }
                 else
                 {
-                    regex = new Regex(regexStr, RegexOptions.Compiled | RegexOptions.Singleline);
+                    regex = new Regex(regexStr, RegexOptions.Singleline);
                 }
                 _regexes.Add(regex);
             }
