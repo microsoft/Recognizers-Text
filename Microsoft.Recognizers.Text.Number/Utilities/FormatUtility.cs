@@ -4,7 +4,10 @@
     {
         public static string Preprocess(string query, bool toLower = true)
         {
-            if (toLower) query = query.ToLowerInvariant();
+            if (toLower)
+            {
+                query = query.ToLowerInvariant();
+            }
             query = query.Replace("０", "0");
             query = query.Replace("１", "1");
             query = query.Replace("２", "2");
