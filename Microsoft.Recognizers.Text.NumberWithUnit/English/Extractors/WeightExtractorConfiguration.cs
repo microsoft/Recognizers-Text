@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
         public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => null;
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
 
@@ -27,5 +28,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
             {"ounce", "ounce|oz|ounces"},
             {"other", "pennyweight|grain|british long ton|US short hundredweight|stone|dram"}
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "g",
+            "oz",
+            "stone",
+            "dram",
+        }.ToImmutableList();
     }
 }

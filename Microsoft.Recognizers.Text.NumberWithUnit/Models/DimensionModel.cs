@@ -1,8 +1,11 @@
-﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿using System.Collections.Generic;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class DimensionModel : AbstractNumberWithUnitModel
     {
-        public DimensionModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public DimensionModel(Dictionary<IExtractor, IParser> extractorParserDic) 
+            : base(extractorParserDic)
         {
         }
 

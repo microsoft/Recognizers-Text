@@ -1,6 +1,7 @@
 ﻿using Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors;
 using Microsoft.Recognizers.Text.NumberWithUnit.English.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
@@ -16,17 +17,27 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
         }
 
-        private void MultiTest(IModel model, string source, int count)
+        private void BasicTest(IModel model, string source, string[] values)
         {
-            var result = model.Parse(source);
-            Assert.AreEqual(count, result.Count);
+            var results = model.Parse(source);
+            Assert.AreEqual(values.Length, results.Count);
+            var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
+            CollectionAssert.AreEqual(values, resultsValues);
+        }
+
+        private string GetStringValue(ModelResult source)
+        {
+            object value, unit;
+            source.Resolution.TryGetValue(nameof(value), out value);
+            source.Resolution.TryGetValue(nameof(unit), out unit);
+            return $"{value} {unit}".Trim();
         }
 
         [TestMethod]
         public void TestCurrency()
         {
             var model = GetCurrencyModel();
-            
+
             BasicTest(model,
             "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
             "75000000 Dollar");
@@ -192,10 +203,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "63.45 Dollar");
 
             BasicTest(model,
-            "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
-            "20000 Dollar");
-
-            BasicTest(model,
             "trans world airlines inc . , offering of $ 150 million senior notes , via drexel burnham .",
             "150000000 Dollar");
 
@@ -254,10 +261,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             " including 450,000 yen by prime minister toshiki kaifu .",
             "450000 Japanese yen");
-
-            BasicTest(model,
-            "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
-            "143.8 Japanese yen");
 
             BasicTest(model,
             "orkem s . a . , a french state - controlled chemical manufacturer , is making a friendly bid of 470 pence a share for the 59 . 2 % of u . k . specialty chemical group coates brothers plc which it does n ' t already own , the two sides said .",
@@ -426,6 +429,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "lockheed martin and the united states government intensively lobbied for india ' s us $ 10 billion contract for 126 fighter jets .",
             "10000000000 United States dollar");
+
+            BasicTest(model,
+            "the hart - scott filing is then reviewed and any antitrust concerns usually met . typically , hart - scott is used now to give managers of target firms early news of a bid and a chance to use regulatory review as a delaying tactic . the $ 20,000 tax would be a small cost in a multibillion - dollar deal , but a serious drag on thousands of small , friendly deals .",
+            new string[] { "20000 Dollar", "Dollar" });
+
+            BasicTest(model,
+            "dollar : 143.80 yen , up 0 . 95 ; 1 . 8500 marks , up 0 . 0085 .",
+            new string[] { "143.8 Japanese yen", "Dollar" });
         }
 
         [TestMethod]
@@ -531,10 +542,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "6 Foot");
 
             BasicTest(model,
-            "a metric ton is equal to 2,204.62 pounds .",
-            "2204.62 Pound");
-
-            BasicTest(model,
             "so when next year ' s psyllium crop is harvested in march , it may be smaller than the 16,000 metric tons of the past few years - - right at the crest of the psyllium boom .",
             "16000 Metric ton");
 
@@ -609,7 +616,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "florida panthers live in home ranges between 190 km2 .",
             "190 Square kilometer");
-            /*
+
+            BasicTest(model,
+            "a metric ton is equal to 2,204.62 pounds .",
+            new string[] { "2204.62 Pound", "Metric ton" });
+
+            /* Unpassed
             BasicTest(
             "a mile wide asteroid hits us , on average , only once every three hundred thousand years .",
             "1 Mile");
@@ -641,11 +653,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         {
             var model = GetTemperatureModel();
 
-            BasicTest(model, "the temperature outside is 40 deg celsius", "40 Degree");
+            BasicTest(model, "the temperature outside is 40 deg celsius", "40 C");
 
             BasicTest(model, "its 90 fahrenheit in texas", "90 F");
-
-            BasicTest(model, "convert 10 celsius to fahrenheit", "10 C");
 
             BasicTest(model, "-5 degree fahrenheit", "-5 F");
 
@@ -662,22 +672,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model, "20 degrees c", "20 C");
 
             BasicTest(model, "100.2 degrees farenheit is low", "100.2 F");
-
-            BasicTest(model, "34.9 centigrate to farenheit", "34.9 C");
-
-            BasicTest(model, "convert 200 celsius celsius into fahrenheit", "200 C");
-
-            BasicTest(model, "fahrenheit to celsius 101 fahrenheit is how much celsius", "101 F");
-
-            BasicTest(model, "50 degrees celsius celsius to fahrenheit", "50 C");
-
-            BasicTest(model, "could you convert 51 fahrenheit to degrees celsius", "51 F");
-
-            BasicTest(model, "convert 106 degree fahrenheit to degrees celsius", "106 F");
-
-            BasicTest(model, "convert 45 degrees fahrenheit to celsius", "45 F");
-
-            BasicTest(model, "how to convert - 20 degrees fahrenheit to celsius", "-20 F");
 
             BasicTest(model, "10.5 celcius", "10.5 C");
 
@@ -704,6 +698,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model, "let the temperature be at 40 celsius", "40 C");
 
             BasicTest(model, "let the temperature be at 50 deg. ", "50 Degree");
+
+            BasicTest(model, "convert 10 celsius to fahrenheit", new string[] { "10 C", "F" });
+
+            BasicTest(model, "34.9 centigrate to farenheit", new string[] { "34.9 C", "F" });
+
+            BasicTest(model, "convert 200 celsius celsius into fahrenheit", new string[] { "200 C", "C", "F" });
+
+            BasicTest(model, "fahrenheit to celsius 101 fahrenheit is how much celsius", new string[] { "101 F", "F", "C", "C" });
+
+            BasicTest(model, "50 degrees celsius celsius to fahrenheit", new string[] { "50 C", "C", "F" });
+
+            BasicTest(model, "could you convert 51 fahrenheit to degrees celsius", new string[] { "51 F", "C" });
+
+            BasicTest(model, "convert 106 degree fahrenheit to degrees celsius", new string[] { "106 F", "C" });
+
+            BasicTest(model, "convert 45 degrees fahrenheit to celsius", new string[] { "45 F", "C" });
+
+            BasicTest(model, "how to convert - 20 degrees fahrenheit to celsius", new string[] { "-20 F", "C" });
         }
 
         [TestMethod][Ignore]
@@ -712,35 +724,56 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             var model = GetAgeModel();
             
         }
+
         private static IModel GetCurrencyModel()
         {
             return new CurrencyModel(
-                new NumberWithUnitParser(new CurrencyParserConfiguration()),
-                new NumberWithUnitExtractor(new CurrencyExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new CurrencyParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetAgeModel()
         {
             return new AgeModel(
-                new NumberWithUnitParser(new AgeParserConfiguration()),
-                new NumberWithUnitExtractor(new AgeExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new AgeParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetDimensionModel()
         {
             return new DimensionModel(
-                new NumberWithUnitParser(new DimensionParserConfiguration()),
-                new NumberWithUnitExtractor(new DimensionExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new DimensionParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetTemperatureModel()
         {
             return new TemperatureModel(
-                new NumberWithUnitParser(new TemperatureParserConfiguration()),
-                new NumberWithUnitExtractor(new TemperatureExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new TemperatureParserConfiguration())
+                    }
+                }
                 );
         }
     }

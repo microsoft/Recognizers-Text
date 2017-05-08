@@ -1,8 +1,11 @@
-﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿using System.Collections.Generic;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class CurrencyModel : AbstractNumberWithUnitModel
     {
-        public CurrencyModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public CurrencyModel(Dictionary<IExtractor, IParser> extractorParserDic) 
+            : base(extractorParserDic)
         {
         }
 

@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_AREA;
 
         public static readonly ImmutableDictionary<string, string> AreaSuffixList = new Dictionary<string, string>
@@ -31,5 +33,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
             {"Yarda cuadrado", "yarda cuadrada|yardas cuadradas|yd2|yd^2|yd²"},
             {"Acre", "acre|acres"},
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "área",
+            "áreas"
+        }.ToImmutableList();
     }
 }

@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
         public static readonly ImmutableDictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
@@ -117,5 +119,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
             {"tebibyte", "tebibyte|tebibytes|TiB|TiByte"},
             {"pebibyte", "pebibyte|pebibytes|PiB|PiByte"},
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "al",
+            "mi",
+            "área",
+            "áreas",
+            "pie",
+            "pies"
+        }.ToImmutableList();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
 {
@@ -14,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
         public override ImmutableDictionary<string, string> SuffixList => AgeSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => null;
+
+        public override ImmutableList<string> AmbiguousUnitList => null;
 
         public override string ExtractType => Constants.SYS_UNIT_AGE;
 

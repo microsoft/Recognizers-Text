@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_CURRENCY;
 
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
@@ -509,5 +511,54 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
             {"Costa Rican colón", "₡"},
             {"Turkish lira", "₺"}
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "din.",
+            "kiwi",
+            "kina",
+            "kobo",
+            "lari",
+            "lipa",
+            "napa",
+            "para",
+            "sfr.",
+            "taka",
+            "tala",
+            "toea",
+            "vatu",
+            "yuan",
+            "ang",
+            "ban",
+            "bob",
+            "btn",
+            "byr",
+            "cad",
+            "cop",
+            "cup",
+            "dop",
+            "gip",
+            "jod",
+            "kgs",
+            "lak",
+            "lei",
+            "mga",
+            "mop",
+            "nad",
+            "omr",
+            "pul",
+            "sar",
+            "sbd",
+            "scr",
+            "sdg",
+            "sek",
+            "sen",
+            "sol",
+            "sos",
+            "std",
+            "try",
+            "yer",
+            "yen",
+        }.ToImmutableList();
     }
 }
