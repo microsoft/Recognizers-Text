@@ -1,3 +1,4 @@
+@echo off
 pushd Microsoft.Recognizers.Text.Number
 call CreatePackage.cmd
 popd
