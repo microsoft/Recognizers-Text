@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
         public static readonly ImmutableDictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
@@ -90,5 +92,26 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
             {"Terabyte", "-terabyte|-terabytes|terabyte|tb|terabytes|tera byte|tera bytes"},
             {"Petabyte", "-petabyte|-petabytes|petabyte|pb|petabytes|peta byte|peta bytes"}
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "barrel",
+            "barrels",
+            "grain",
+            "pound",
+            "stone",
+            "yards",
+            "yard",
+            "cord",
+            "dram",
+            "feet",
+            "foot",
+            "gill",
+            "knot",
+            "peck",
+            "cup",
+            "fps",
+            "pts",
+        }.ToImmutableList();
     }
 }

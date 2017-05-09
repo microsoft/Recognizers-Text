@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => null;
+
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
 
         public static readonly ImmutableDictionary<string, string> SpeedSuffixList = new Dictionary<string, string>

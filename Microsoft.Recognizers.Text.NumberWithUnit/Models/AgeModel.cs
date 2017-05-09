@@ -1,8 +1,11 @@
-﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿using System.Collections.Generic;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class AgeModel : AbstractNumberWithUnitModel
     {
-        public AgeModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public AgeModel(Dictionary<IExtractor, IParser> extractorParserDic)
+            : base(extractorParserDic)
         {
         }
 

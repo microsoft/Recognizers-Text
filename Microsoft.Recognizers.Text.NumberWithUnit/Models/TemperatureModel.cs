@@ -1,8 +1,11 @@
-﻿namespace Microsoft.Recognizers.Text.NumberWithUnit
+﻿using System.Collections.Generic;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class TemperatureModel : AbstractNumberWithUnitModel
     {
-        public TemperatureModel(IParser parser, IExtractor extractor) : base(parser, extractor)
+        public TemperatureModel(Dictionary<IExtractor, IParser> extractorParserDic)
+            : base(extractorParserDic)
         {
         }
 

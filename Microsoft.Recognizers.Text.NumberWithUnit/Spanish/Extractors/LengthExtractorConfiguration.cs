@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
         public static readonly ImmutableDictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
@@ -35,5 +37,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
             {"Pie", "pie|pies|ft"},
             {"Año luz", "año luz|años luz|al"},
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "mi",
+            "área",
+            "áreas"
+        }.ToImmutableList();
     }
 }

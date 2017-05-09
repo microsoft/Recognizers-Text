@@ -1,6 +1,7 @@
 ﻿using Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors;
 using Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
@@ -16,10 +17,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
         }
 
-        private void MultiTest(IModel model, string source, int count)
+        private void BasicTest(IModel model, string source, string[] values)
         {
-            var result = model.Parse(source);
-            Assert.AreEqual(count, result.Count);
+            var results = model.Parse(source);
+            Assert.AreEqual(values.Length, results.Count);
+            var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
+            CollectionAssert.AreEqual(values, resultsValues);
+        }
+
+        private string GetStringValue(ModelResult source)
+        {
+            object value, unit;
+            source.Resolution.TryGetValue(nameof(value), out value);
+            source.Resolution.TryGetValue(nameof(unit), out unit);
+            return $"{value} {unit}".Trim();
         }
 
         [TestMethod]
@@ -192,10 +203,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "63,45 Dólar");
 
             BasicTest(model,
-            "La presentación de hart-scott se revisa y se resuelve cualquier problema antimonopolio. Por lo general, hart-scott se utiliza ahora para dar a los gerentes de las firmas objetivo noticias tempranas de una oferta y la oportunidad de utilizar la revisión regulatoria como una táctica de retraso. El impuesto de 20.000 dólares sería un pequeño costo en un acuerdo de varios billones de dólares, pero un grave obstáculo para miles de pequeños acuerdos amistosos.",
-            "20000 Dólar");
-
-            BasicTest(model,
             "Trans Mundo Airlines Inc., ofreciendo billetes senior de 150 millones de dólares, a través de Drexel Burnham.",
             "150000000 Dólar");
 
@@ -266,10 +273,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "Agosto, el gasto ajustado de las familias asalariadas disminuyó 0,6% a 309.381 yenes de un año antes.",
             "309381 Yen");
-
-            BasicTest(model,
-            "El fideicomiso de rentas nacionales de bienes raíces dijo que reanudará los pagos de dividendos con un dividendo de 12 centavos de dólar que se pagará el 6 de noviembre a las acciones de récord el 25 de octubre.",
-            "12 Centavo");
 
             BasicTest(model,
             "Sr. Bowder dijo que los C$ 300 millones de ingresos...",
@@ -422,6 +425,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de U$D 10 mil millones de la India para 126 aviones de combate.",
             "10000000000 Dólar estadounidense");
+
+            BasicTest(model,
+            "La presentación de hart-scott se revisa y se resuelve cualquier problema antimonopolio. Por lo general, hart-scott se utiliza ahora para dar a los gerentes de las firmas objetivo noticias tempranas de una oferta y la oportunidad de utilizar la revisión regulatoria como una táctica de retraso. El impuesto de 20.000 dólares sería un pequeño costo en un acuerdo de varios billones de dólares, pero un grave obstáculo para miles de pequeños acuerdos amistosos.",
+            new string[] { "20000 Dólar", "Dólar" });
+
+            BasicTest(model,
+            "El fideicomiso de rentas nacionales de bienes raíces dijo que reanudará los pagos de dividendos con un dividendo de 12 centavos de dólar que se pagará el 6 de noviembre a las acciones de récord el 25 de octubre.",
+            new string[] { "12 Centavo", "Dólar" });
+
         }
 
         [TestMethod]
@@ -448,10 +460,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "El viaje de seis millas de mi hotel al aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
             "6 Milla");
-
-            BasicTest(model,
-            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barriles diarios a [] barriles en los primeros ocho meses de este año.",
-            "500000 Barril");
 
             BasicTest(model,
             "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dos pies de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
@@ -492,10 +500,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 billones de pies cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
             "900000000000 Pie cúbico");
-
-            BasicTest(model,
-            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros cuadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
-            "660 Metro cuadrado");
 
             BasicTest(model,
             "Ejércitos Tigrean ahora están 200 millas al norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
@@ -590,8 +594,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "-300 Milímetro");
 
             BasicTest(model,
-            "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
-            "7,62 Milímetro");
+            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros cuadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
+            "660 Metro cuadrado");
 
             BasicTest(model,
             "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre al año.",
@@ -612,6 +616,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model,
             "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
             "1171 Centímetro cúbico");
+
+            BasicTest(model,
+            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barriles diarios a [] barriles en los primeros ocho meses de este año.",
+            new string[] { "500000 Barril", "Barril" });
+
+            BasicTest(model,
+            "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
+            new string[] { "7,62 Milímetro", "Barril" });
             /*
             BasicTest(model,
             "Los precios al por mayor de la electricidad de California, que habían sido limitados a 250 dólares por megavatio hora en un mercado regulado, han alcanzado su pico bajo la desregulación a 1400 dólares por megavatio hora.",
@@ -646,7 +658,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                 "Convertir 10 celsius a fahrenheit",
-                "10 Grado Celsius");
+                new string[] { "10 Grado Celsius", "Grado Fahrenheit" });
 
             BasicTest(model,
                 "-5 grados Fahrenheit",
@@ -690,43 +702,43 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                 "34,9 centígrado a fahrenheit",
-                "34,9 Grado Celsius");
+                new string[] { "34,9 Grado Celsius", "Grado Fahrenheit" });
 
             BasicTest(model,
                 "convertir 200 celsius celsius en fahrenheit",
-                "200 Grado Celsius");
+                new string[] { "200 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
 
             BasicTest(model,
                 "convertir 200 K en fahrenheit",
-                "200 Kelvin");
+                new string[] { "200 Kelvin", "Grado Fahrenheit" });
 
             BasicTest(model,
                 "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
-                "101 Grado Fahrenheit");
+                new string[] { "101 Grado Fahrenheit", "Grado Fahrenheit", "Grado Celsius", "Grado Celsius" });
 
             BasicTest(model,
                 "50 grados centígrados celsius a fahrenheit",
-                "50 Grado Celsius");
+                new string[] { "50 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
 
             BasicTest(model,
                 "Podría convertir 51 fahrenheit en grados celsius",
-                "51 Grado Fahrenheit");
+                new string[] { "51 Grado Fahrenheit", "Grado Celsius" });
 
             BasicTest(model,
                 "Convertir 106 grados Fahrenheit a grados centígrados",
-                "106 Grado Fahrenheit");
+                new string[] { "106 Grado Fahrenheit", "Grado Celsius" });
 
             BasicTest(model,
                 "Convertir 106 K a grados centígrados",
-                "106 Kelvin");
+                new string[] { "106 Kelvin", "Grado Celsius" });
 
             BasicTest(model,
                 "Convertir 45 grados Fahrenheit a Celsius",
-                "45 Grado Fahrenheit");
+                new string[] { "45 Grado Fahrenheit", "Grado Celsius" });
 
             BasicTest(model,
                 "Cómo convertir - 20 grados Fahrenheit a Celsius",
-                "-20 Grado Fahrenheit");
+                new string[] { "-20 Grado Fahrenheit", "Grado Celsius" });
 
             BasicTest(model,
                 "10,5 celsius",
@@ -863,35 +875,56 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 "1,5 Año");
             */
         }
+
         private static IModel GetCurrencyModel()
         {
             return new CurrencyModel(
-                new NumberWithUnitParser(new CurrencyParserConfiguration()),
-                new NumberWithUnitExtractor(new CurrencyExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new CurrencyParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetAgeModel()
         {
             return new AgeModel(
-                new NumberWithUnitParser(new AgeParserConfiguration()),
-                new NumberWithUnitExtractor(new AgeExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new AgeParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetDimensionModel()
         {
             return new DimensionModel(
-                new NumberWithUnitParser(new DimensionParserConfiguration()),
-                new NumberWithUnitExtractor(new DimensionExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new DimensionParserConfiguration())
+                    }
+                }
                 );
         }
 
         private static IModel GetTemperatureModel()
         {
             return new TemperatureModel(
-                new NumberWithUnitParser(new TemperatureParserConfiguration()),
-                new NumberWithUnitExtractor(new TemperatureExtractorConfiguration())
+                new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new TemperatureParserConfiguration())
+                    }
+                }
                 );
         }
     }

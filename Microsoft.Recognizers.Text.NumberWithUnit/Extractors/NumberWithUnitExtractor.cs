@@ -11,9 +11,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly HashSet<Regex> SuffixRegexes = new HashSet<Regex>();
         private readonly HashSet<Regex> PrefixRegexes = new HashSet<Regex>();
+        private readonly Regex SeparateRegex = null;
 
         private readonly int _maxPrefixMatchLen;
-        
+
         public NumberWithUnitExtractor(INumberWithUnitExtractorConfiguration config)
         {
             this.config = config;
@@ -35,8 +36,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 _maxPrefixMatchLen += 2;
                 PrefixRegexes = BuildRegexFromSet(this.config.PrefixList.Values);
             }
+            SeparateRegex = BuildSeparateRegexFromSet();
         }
-        
+
         protected HashSet<Regex> BuildRegexFromSet(IEnumerable<string> collection, bool ignoreCase = true)
         {
             var regexes = new HashSet<Regex>();
@@ -53,6 +55,68 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 regexes.Add(regex);
             }
             return regexes;
+        }
+
+        protected Regex BuildSeparateRegexFromSet(bool ignoreCase = true)
+        {
+            HashSet<string> SeparateWords = new HashSet<string>();
+            if (config.PrefixList?.Count > 0)
+            {
+                foreach (var addWord in config.PrefixList.Values)
+                {
+                    foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        if (ValidiateUnit(word))
+                        {
+                            SeparateWords.Add(word);
+                        }
+                    }
+                }
+            }
+            if (config.SuffixList?.Count > 0)
+            {
+                foreach (var addWord in config.SuffixList.Values)
+                {
+                    foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+                    {
+                        if (ValidiateUnit(word))
+                        {
+                            SeparateWords.Add(word);
+                        }
+                    }
+                }
+            }
+            if (config.AmbiguousUnitList?.Count > 0)
+            {
+                var abandonWords = config.AmbiguousUnitList;
+                foreach (var abandonWord in abandonWords)
+                {
+                    if (SeparateWords.Contains(abandonWord))
+                    {
+                        SeparateWords.Remove(abandonWord);
+                    }
+                }
+            }
+            //Sort SeparateWords using descending length.
+            var regexTokens = SeparateWords.Select(Regex.Escape).ToList();
+            if (regexTokens.Count == 0)
+            {
+                return null;
+            }
+            regexTokens.Sort(new DinoComparer());
+            var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
+            var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+            var regex = new Regex(pattern, options);
+            return regex;
+        }
+
+        public bool ValidiateUnit(string source)
+        {
+            if (source.StartsWith("-"))
+            {
+                return false;
+            }
+            return true;
         }
 
         public List<ExtractResult> Extract(string source)
@@ -192,9 +256,63 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     result.Add(er);
                 }
             }
+            //extract Separate unit
+            if (SeparateRegex != null)
+            {
+                ExtractSeparateUnits(source, result);
+            }
 
             return result;
         }
+
+
+        public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults)
+        {
+            //Default is false
+            bool[] matchResult = new bool[source.Length];
+            foreach (var numDependResult in numDependResults)
+            {
+                int start = numDependResult.Start.Value;
+                int i = 0;
+                do
+                {
+                    matchResult[start + i++] = true;
+                } while (i < numDependResult.Length.Value);
+            }
+            //Extract all SeparateUnits, then merge it with numDependResults
+            var matchCollection = SeparateRegex.Matches(source);
+            if (matchCollection.Count != 0)
+            {
+                foreach (Match match in matchCollection)
+                {
+                    if (match.Success)
+                    {
+                        int i = 0;
+                        while (i < match.Length && !matchResult[match.Index + i])
+                        {
+                            i++;
+                        }
+                        if (i == match.Length)
+                        {
+                            //Mark as extracted
+                            for (int j = 0; j < i; j++)
+                            {
+                                matchResult[j] = true;
+                            }
+                            numDependResults.Add(new ExtractResult
+                            {
+                                Start = match.Index,
+                                Length = match.Length,
+                                Text = match.Value,
+                                Type = this.config.ExtractType,
+                                Data = null
+                            });
+                        }
+                    }
+                }
+            }
+        }
+
 
         protected virtual bool PreCheckStr(string str)
         {
@@ -203,6 +321,60 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 return false;
             }
             return true;
+        }
+    }
+
+    public class DinoComparer : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            if (x == null)
+            {
+                if (y == null)
+                {
+                    // If x is null and y is null, they're
+                    // equal. 
+                    return 0;
+                }
+                else
+                {
+                    // If x is null and y is not null, y
+                    // is greater. 
+                    return 1;
+                }
+            }
+            else
+            {
+                // If x is not null...
+                //
+                if (y == null)
+                // ...and y is null, x is greater.
+                {
+                    return -1;
+                }
+                else
+                {
+                    // ...and y is not null, compare the 
+                    // lengths of the two strings.
+                    //
+                    int retval = y.Length.CompareTo(x.Length);
+
+                    if (retval != 0)
+                    {
+                        // If the strings are not of equal length,
+                        // the longer string is greater.
+                        //
+                        return retval;
+                    }
+                    else
+                    {
+                        // If the strings are of equal length,
+                        // sort them with ordinary string comparison.
+                        //
+                        return string.Compare(x, y, StringComparison.Ordinal);
+                    }
+                }
+            }
         }
     }
 

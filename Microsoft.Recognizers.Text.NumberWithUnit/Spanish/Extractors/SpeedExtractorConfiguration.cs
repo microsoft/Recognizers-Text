@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
 
         public static readonly ImmutableDictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
@@ -30,5 +32,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
             {"Yarda por minuto", "yardas por minuto|yardas/minuto|yardas/min"},
             {"Yarda por segundo", "yardas por segundo|yardas/segundo|yardas/seg"},
         }.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        {
+            "nudo",
+            "nudos"
+        }.ToImmutableList();
     }
 }

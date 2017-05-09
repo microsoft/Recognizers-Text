@@ -22,11 +22,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 numberResult = unitResult;
             }
-            // So we use Number Extractor to extract number again.
-            else
+            else // if there is no unitResult, means there is just unit
             {
-                var extractResult = this.config.InternalNumberExtractor.Extract(extResult.Text);
-                numberResult = extractResult[0];
+                numberResult = new ExtractResult { Start = -1, Length = 0 };
             }
             // key contains units
             var key = extResult.Text;
@@ -63,20 +61,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             /* Unit type depends on last unit in suffix.*/
             var lastUnit = unitKeys.Last().ToLowerInvariant();
-            if ((!string.IsNullOrEmpty(this.config.ConnectorToken)) &&lastUnit.StartsWith(this.config.ConnectorToken))
+            if ((!string.IsNullOrEmpty(this.config.ConnectorToken)) && lastUnit.StartsWith(this.config.ConnectorToken))
             {
                 lastUnit = lastUnit.Substring(this.config.ConnectorToken.Length).Trim();
             }
             if (!string.IsNullOrWhiteSpace(key) && (this.config.UnitMap != null) && this.config.UnitMap.ContainsKey(lastUnit))
             {
                 var unitValue = this.config.UnitMap[lastUnit];
-                var numValue = this.config.InternalNumberParser.Parse(numberResult);
+                var numValue = (string.IsNullOrEmpty(numberResult.Text)) ? null : this.config.InternalNumberParser.Parse(numberResult);
                 ret.Value = new UnitValue
                 {
-                    Number = numValue.ResolutionStr,
+                    Number = numValue?.ResolutionStr,
                     Unit = unitValue
                 };
-                ret.ResolutionStr = numValue.ResolutionStr + " " + unitValue;
+                ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
             }
             return ret;
         }
