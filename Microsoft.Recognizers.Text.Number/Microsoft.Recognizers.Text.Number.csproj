@@ -70,6 +70,14 @@
     <Compile Include="Extractors\IExtractor.cs" />
     <Compile Include="Extractors\BaseNumberExtractor.cs" />
     <Compile Include="Extractors\BasePercentageExtractor.cs" />
+    <Compile Include="French\Extractors\CardinalExtractor.cs" />
+    <Compile Include="French\Extractors\DoubleExtractor.cs" />
+    <Compile Include="French\Extractors\FractionExtractor.cs" />
+    <Compile Include="French\Extractors\IntegerExtractor.cs" />
+    <Compile Include="French\Extractors\NumberExtractor.cs" />
+    <Compile Include="French\Extractors\OrdinalExtractor.cs" />
+    <Compile Include="French\Extractors\PercentageExtractor.cs" />
+    <Compile Include="French\Parsers\FrenchNumberParserConfiguration.cs" />
     <Compile Include="Models\AbstractNumberModel.cs" />
     <Compile Include="Models\NumberModel.cs" />
     <Compile Include="Models\OrdinalModel.cs" />
@@ -96,6 +104,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="TestNumberChinese.cs" />
     <Compile Include="TestNumberEnglish.cs" />
+    <Compile Include="TestNumberFrench.cs" />
     <Compile Include="TestNumberSpanish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestParserFactory.cs" />
