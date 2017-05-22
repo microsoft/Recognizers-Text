@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -8,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.English.Parsers
 {
     public class EnglishNumberParserConfiguration : INumberParserConfiguration
     {
-        public EnglishNumberParserConfiguration() : this(new CultureInfo("en-US")) { }
+        public EnglishNumberParserConfiguration() : this(new CultureInfo(Culture.English)) { }
 
         public EnglishNumberParserConfiguration(CultureInfo ci)
         {

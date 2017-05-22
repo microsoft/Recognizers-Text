@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -9,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.French.Parsers
 {
     public class FrenchNumberParserConfiguration : INumberParserConfiguration
     {
-        public FrenchNumberParserConfiguration(): this(new CultureInfo("fr-FR")) { }
+        public FrenchNumberParserConfiguration(): this(new CultureInfo(Culture.French)) { }
 
         public FrenchNumberParserConfiguration(CultureInfo ci)
         {

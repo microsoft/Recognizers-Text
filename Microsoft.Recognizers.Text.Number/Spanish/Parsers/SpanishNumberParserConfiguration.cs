@@ -4,12 +4,13 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Text;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number.Utilities;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish.Parsers
 {
     public class SpanishNumberParserConfiguration : INumberParserConfiguration
     {
-        public SpanishNumberParserConfiguration() : this(new CultureInfo("es-es")) { }
+        public SpanishNumberParserConfiguration() : this(new CultureInfo(Culture.Spanish)) { }
 
         public SpanishNumberParserConfiguration(CultureInfo ci)
         {

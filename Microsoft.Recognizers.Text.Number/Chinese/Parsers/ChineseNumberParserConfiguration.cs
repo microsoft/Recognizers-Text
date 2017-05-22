@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using Microsoft.Recognizers.Text.Number.Parsers;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Parsers
     public class ChineseNumberParserConfiguration : INumberParserConfiguration
     {
         public ChineseNumberParserConfiguration()
-            : this(new CultureInfo("zh-CN"))
+            : this(new CultureInfo(Culture.Chinese))
         {
         }
 
