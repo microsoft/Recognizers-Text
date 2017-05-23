@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number.Utilities
 {
@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.Number.Utilities
                 new Culture("Chinese", Chinese),
                 new Culture("Spanish", Spanish),
                 new Culture("French", French)
+
         };
 
         private Culture(string cultureName, string cultureCode)

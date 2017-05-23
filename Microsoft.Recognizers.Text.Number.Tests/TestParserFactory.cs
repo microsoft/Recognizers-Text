@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
 using Microsoft.Recognizers.Text.Number.English.Parsers;

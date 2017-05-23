@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish.Extractors
         public static string ComplexRoundOrdinalRegex => $@"((({SufixRoundOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})";
 
         public static string AllOrdinalRegex => $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
-        
+
 
         public OrdinalExtractor()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Recognizers.Text.Number.Spanish.Extractors
                 {
                     new Regex(
                         @"(?<=\b)(\d*(1r[oa]|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa]))(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
                 {
                     new Regex($@"(?<=\b){AllOrdinalRegex}(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalSpa"
                 }
             };

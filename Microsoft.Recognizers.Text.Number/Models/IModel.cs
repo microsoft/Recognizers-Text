@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Microsoft.Recognizers.Text.Number.Models
+namespace Microsoft.Recognizers.Text
 {
     public interface IModel
     {
@@ -16,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.Models
         public int Start { get; set; }
         public int End { get; set; }
         public string TypeName { get; set; }
-        //Resolutions field
+        //Resolution field
         public SortedDictionary<string, object> Resolution { get; set; }
     }
 }

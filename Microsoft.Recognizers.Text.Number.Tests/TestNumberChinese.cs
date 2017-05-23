@@ -1028,7 +1028,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "４ ６／３",
-                (4 + (double) 6 / 3).ToString());
+                (4 + (double)6 / 3).ToString());
 
             BasicTest(model,
                 "-3/2",
@@ -1040,7 +1040,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "一百万又五十万分之二十五",
-                (1000000 + (double) 25 / 500000).ToString());
+                (1000000 + (double)25 / 500000).ToString());
 
             BasicTest(model,
                 "一百分之二",
@@ -1048,7 +1048,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "四千二分之三",
-                ((double) 3 / 4200).ToString());
+                ((double)3 / 4200).ToString());
 
             BasicTest(model,
                 "一百分之2",
@@ -1056,11 +1056,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "五百分之2333",
-                ((double) 2333 / 500).ToString());
+                ((double)2333 / 500).ToString());
 
             BasicTest(model,
                 "3又一千分之23",
-                (3 + (double) 23 / 1000).ToString());
+                (3 + (double)23 / 1000).ToString());
 
             BasicTest(model,
                 "３／５",
@@ -1076,11 +1076,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "１６分之5",
-                ((double) 5 / 16).ToString());
+                ((double)5 / 16).ToString());
 
             BasicTest(model,
                 "１６分之2225",
-                ((double) 2225 / 16).ToString());
+                ((double)2225 / 16).ToString());
 
             BasicTest(model,
                 "负一又二分之一",
@@ -1092,19 +1092,19 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "三百 五又三分之一",
-                (350 + (double) 1 / 3).ToString());
+                (350 + (double)1 / 3).ToString());
 
             BasicTest(model,
                 "三百五十又3分之1",
-                (350 + (double) 1 / 3).ToString());
+                (350 + (double)1 / 3).ToString());
 
             BasicTest(model,
                 "３分之一百五十七",
-                ((double) 157 / 3).ToString());
+                ((double)157 / 3).ToString());
 
             BasicTest(model,
                 "负３分之负一百五十七",
-                ((double) 157 / 3).ToString());
+                ((double)157 / 3).ToString());
 
             MultiTest(model,
                 @"一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",

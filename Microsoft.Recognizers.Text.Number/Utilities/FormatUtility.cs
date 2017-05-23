@@ -1,10 +1,11 @@
-﻿namespace Microsoft.Recognizers.Text.Number.Utilities
+namespace Microsoft.Recognizers.Text.Utilities
 {
     public static class FormatUtility
     {
         public static string Preprocess(string query, bool toLower = true)
         {
-            if(toLower)
+
+            if (toLower)
             {
                 query = query.ToLowerInvariant();
             }

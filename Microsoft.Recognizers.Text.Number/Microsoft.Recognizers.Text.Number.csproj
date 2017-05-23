@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Recognizers.Text.Number</RootNamespace>
     <AssemblyName>Microsoft.Recognizers.Text.Number</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -97,8 +97,11 @@
     <Compile Include="Spanish\Extractors\OrdinalExtractor.cs" />
     <Compile Include="Spanish\Extractors\PercentageExtractor.cs" />
     <Compile Include="Spanish\Parsers\SpanishNumberParserConfiguration.cs" />
+    <Compile Include="Utilities\Culture.cs" />
+    <Compile Include="Utilities\FormatUtility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CreatePackage.cmd" />
     <None Include="Microsoft.Recognizers.Text.Number.nuspec">
       <SubType>Designer</SubType>
     </None>

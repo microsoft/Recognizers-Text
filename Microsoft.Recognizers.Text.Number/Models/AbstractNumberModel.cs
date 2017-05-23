@@ -1,6 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number.Models
@@ -30,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.Models
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> {{"value", o.ResolutionStr}},
+                Resolution = new SortedDictionary<string, object> { { "value", o.ResolutionStr } },
                 Text = o.Text,
                 TypeName = ModelTypeName
             }).ToList();
