@@ -1,0 +1,48 @@
+﻿using Microsoft.Recognizers.Text.DateTime.English.Extractors;
+using Microsoft.Recognizers.Text.DateTime.Parsers;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
+using DateObject = System.DateTime;
+
+namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+{
+    public class TimeParser : BaseTimeParser
+    {
+        public TimeParser(ITimeParserConfiguration configuration) : 
+            base(configuration)
+        { }
+
+        protected override DTParseResult InternalParse(string text, DateObject referenceTime)
+        {
+            var innerResult = base.InternalParse(text, referenceTime);
+            if (!innerResult.Success)
+            {
+                innerResult = ParseIsh(text, referenceTime);
+            }
+            return innerResult;
+        }
+
+        // parse "noonish", "11-ish"
+        private DTParseResult ParseIsh(string text, DateObject referenceTime)
+        {
+            var ret = new DTParseResult();
+            var trimedText = text.ToLowerInvariant().Trim();
+            var match = EnglishTimeExtractorConfiguration.IshRegex.Match(trimedText);
+            if (match.Success && match.Length == trimedText.Length)
+            {
+                var hourStr = match.Groups["hour"].Value;
+                var hour = 12;
+                if (!string.IsNullOrEmpty(hourStr))
+                {
+                    hour = int.Parse(hourStr);
+                }
+                ret.Timex = "T" + hour.ToString("D2");
+                ret.FutureValue =
+                    ret.PastValue =
+                        new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
+                ret.Success = true;
+                return ret;
+            }
+            return ret;
+        }
+    }
+}
