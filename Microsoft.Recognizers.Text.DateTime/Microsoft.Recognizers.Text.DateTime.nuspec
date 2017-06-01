@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>Microsoft.Recognizers.Text.DateTime</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Microsoft.Recognizers.Text.DateTime provides robust recognition and resolution of Date and Time expressed in English, Spanish and Chinese.</description>
+    <licenseUrl>https://github.com/Microsoft/Recognizers-Text/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
+    <iconUrl>http://docs.botframework.com/images/bot_icon.png</iconUrl>
+    <dependencies>
+      <dependency id="System.Collections.Immutable" version="1.3.1" />
+      <dependency id="Microsoft.Recognizers.Text.Number" version="$number$"/>
+	  <dependency id="Microsoft.Recognizers.Text.NumberWithUnit" version="$numberWithUnit$"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\release\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net452"/>
+    <file src="bin\release\Microsoft.Recognizers.Text.DateTime.pdb" target="lib\net452" />
+    <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
+  </files>
+</package>
