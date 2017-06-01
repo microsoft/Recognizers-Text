@@ -2,7 +2,7 @@
 using Microsoft.Recognizers.Text.DateTime.Extractors;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Tests
+namespace Microsoft.Recognizers.Text.DateTime.Tests.English
 {
     [TestClass]
     public class TestDatePeriodExtractor
@@ -18,9 +18,30 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, results[0].Type);
         }
 
+        private string[] shortMonths = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Sept", "Oct", "Nov", "Dec" };
+        private string[] fullMonths = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+
         [TestMethod]
         public void TestDatePeriodExtract()
         {
+
+            foreach (var month in shortMonths)
+            {
+                BasicTest($"I'll be out in {month}", 15, month.Length);
+                BasicTest($"I'll be out this {month}", 12, 5 + month.Length);
+                BasicTest($"I was missing {month} 2001", 14, 5 + month.Length);
+                BasicTest($"I was missing {month}, 2001", 14, 6 + month.Length);
+            }
+
+            foreach (var month in fullMonths)
+            {
+                BasicTest($"I'll be out in {month}", 15, month.Length);
+                BasicTest($"I'll be out this {month}", 12, 5 + month.Length);
+                BasicTest($"I was missing {month} 2001", 14, 5 + month.Length);
+                BasicTest($"I was missing {month}, 2001", 14, 6 + month.Length);
+            }
+
             // test basic cases
             BasicTest("I'll be out from 4 to 22 this month", 12, 23);
             BasicTest("I'll be out from 4-23 in next month", 12, 23);
