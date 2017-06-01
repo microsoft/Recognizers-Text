@@ -79,13 +79,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Extractors
 
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
-                @"\b(((next|this|last)\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|June|March|Mar|May|November|Nov|October|Oct|September|Sept)|(next|last|this)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b",
+                @"\b(((next|this|last)\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(next|last|this)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthWithYear =
             new Regex(
-                $@"\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|June|March|Mar|May|November|Nov|October|Oct|September|Sept)(\s+of)?\s+({
-                    YearRegex}|(?<order>next|last|this)\s+year))\b",
+                $@"\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({YearRegex}|(?<order>next|last|this)\s+year))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumWithYear =
