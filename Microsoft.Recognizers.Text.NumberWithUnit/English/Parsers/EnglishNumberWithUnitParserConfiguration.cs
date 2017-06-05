@@ -1,10 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.English.Extractors;
-using Microsoft.Recognizers.Text.Number.English.Parsers;
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using System.Globalization;
+﻿using System.Globalization;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class EnglishNumberWithUnitParserConfiguration : BaseNumberWithUnitParserConfiguration
     {

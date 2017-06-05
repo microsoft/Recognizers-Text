@@ -1,10 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Spanish.Parsers;
-using System.Globalization;
+﻿using System.Globalization;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class SpanishNumberWithUnitParserConfiguration : BaseNumberWithUnitParserConfiguration
     {

@@ -1,9 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class AreaExtractorConfiguration : EnglishNumberWithUnitExtractorConfiguration
     {

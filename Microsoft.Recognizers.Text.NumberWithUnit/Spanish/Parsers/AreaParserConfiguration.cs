@@ -1,8 +1,6 @@
-﻿using Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class AreaParserConfiguration : SpanishNumberWithUnitParserConfiguration
     {
