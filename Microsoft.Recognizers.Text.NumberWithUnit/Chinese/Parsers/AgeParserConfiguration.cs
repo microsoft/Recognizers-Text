@@ -1,8 +1,6 @@
-﻿using Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class AgeParserConfiguration : ChineseNumberWithUnitParserConfiguration
     {

@@ -1,9 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.Number.French.Extractors;
-using Microsoft.Recognizers.Text.Number.French.Parsers;
-using Microsoft.Recognizers.Text.Number.Models;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Extractors;
+﻿using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace Microsoft.Recognizers.Text.Number.Tests

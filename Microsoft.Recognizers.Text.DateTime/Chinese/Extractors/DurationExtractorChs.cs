@@ -3,9 +3,9 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Extractors;
+using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DurationExtractorChs : BaseDateTimeExtractor<DurationType>
     {

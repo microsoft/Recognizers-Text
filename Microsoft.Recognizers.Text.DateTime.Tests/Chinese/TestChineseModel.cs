@@ -1,10 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Chinese.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Chinese.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Models;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests

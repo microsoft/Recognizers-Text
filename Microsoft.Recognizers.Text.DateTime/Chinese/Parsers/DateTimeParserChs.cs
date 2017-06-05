@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Chinese.Extractors;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DateTimeParserChs : IDateTimeParser
     {

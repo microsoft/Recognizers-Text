@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.Number.Utilities
+namespace Microsoft.Recognizers.Text
 {
     public sealed class Culture
     {

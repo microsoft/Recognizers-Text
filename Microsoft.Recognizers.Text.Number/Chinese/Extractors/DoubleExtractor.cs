@@ -1,9 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class DoubleExtractor : BaseNumberExtractor
     {

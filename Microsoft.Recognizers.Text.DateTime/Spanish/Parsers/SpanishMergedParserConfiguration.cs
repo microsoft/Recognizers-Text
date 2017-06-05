@@ -1,7 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Parsers;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {

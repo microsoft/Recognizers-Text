@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using System.Text;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Utilities;
+using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class SpanishNumberParserConfiguration : INumberParserConfiguration
     {

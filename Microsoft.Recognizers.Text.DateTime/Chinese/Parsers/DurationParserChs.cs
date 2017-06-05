@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using DateObject = System.DateTime;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using static Microsoft.Recognizers.Text.DateTime.Chinese.Extractors.DurationExtractorChs;
+using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
+using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
+using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DurationParserChs : IDateTimeParser
     {
@@ -17,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
 
         internal class DurationParserConfiguration : ChineseNumberWithUnitParserConfiguration
         {
-            public DurationParserConfiguration() : base(new CultureInfo("zh-CN"))
+            public DurationParserConfiguration() : base(new CultureInfo(Culture.Chinese))
             {
                 this.BindDictionary(DurationExtractorConfiguration.DurationSuffixList);
             }

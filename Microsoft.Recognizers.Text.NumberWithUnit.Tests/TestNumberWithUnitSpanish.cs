@@ -1,8 +1,7 @@
-﻿using Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors;
-using Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Parsers;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.NumberWithUnit.Spanish;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 {

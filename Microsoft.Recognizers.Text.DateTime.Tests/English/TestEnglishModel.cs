@@ -1,12 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.English.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Models;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
 

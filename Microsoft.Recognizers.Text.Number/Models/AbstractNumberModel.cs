@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.Number.Models
+namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class AbstractNumberModel : IModel
     {

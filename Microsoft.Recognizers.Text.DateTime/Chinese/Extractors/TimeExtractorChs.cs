@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
     {

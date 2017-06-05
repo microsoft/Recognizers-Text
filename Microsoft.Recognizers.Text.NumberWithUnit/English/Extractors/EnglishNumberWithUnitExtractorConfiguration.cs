@@ -1,8 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.English.Extractors;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Text.Number.English;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public abstract class EnglishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {

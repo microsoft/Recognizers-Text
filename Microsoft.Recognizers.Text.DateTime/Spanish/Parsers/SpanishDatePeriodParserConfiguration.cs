@@ -1,9 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Parsers;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Extractors;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDatePeriodParserConfiguration : IDatePeriodParserConfiguration
     {

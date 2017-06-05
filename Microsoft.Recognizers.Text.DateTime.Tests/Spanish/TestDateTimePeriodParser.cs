@@ -1,10 +1,6 @@
 ﻿using System;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 {

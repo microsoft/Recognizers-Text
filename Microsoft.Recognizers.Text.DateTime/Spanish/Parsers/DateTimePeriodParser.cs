@@ -1,9 +1,7 @@
 ﻿using System;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
