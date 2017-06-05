@@ -1,4 +1,5 @@
 ﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
+using Microsoft.Recognizers.Text.Number.Utilities;
 using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.Recognizers.Text.Number.Utilities;
 using System.Collections.Generic;
