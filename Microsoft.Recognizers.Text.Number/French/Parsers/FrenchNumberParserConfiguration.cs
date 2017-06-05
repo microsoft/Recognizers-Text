@@ -1,12 +1,9 @@
-﻿using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Text;
 
-namespace Microsoft.Recognizers.Text.Number.French.Parsers
+namespace Microsoft.Recognizers.Text.Number.French
 {
     public class FrenchNumberParserConfiguration : INumberParserConfiguration
     {

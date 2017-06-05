@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.Parsers
+namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {

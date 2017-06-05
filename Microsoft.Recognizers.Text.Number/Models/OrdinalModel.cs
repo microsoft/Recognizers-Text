@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Recognizers.Text.Number.Models
+﻿namespace Microsoft.Recognizers.Text.Number
 {
     public class OrdinalModel : AbstractNumberModel
     {

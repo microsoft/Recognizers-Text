@@ -1,8 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
-using Microsoft.Recognizers.Text.Number.Models;
-using Microsoft.Recognizers.Text.Number.Parsers;
+﻿using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
 {

@@ -1,8 +1,7 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.French.Extractors
+namespace Microsoft.Recognizers.Text.Number.French
 {
     public class CardinalExtractor : BaseNumberExtractor
     {
