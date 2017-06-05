@@ -1,7 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Chinese.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Chinese.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
 {

@@ -1,9 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using DateObject = System.DateTime;
+﻿using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class TimeParser : BaseTimeParser
     {

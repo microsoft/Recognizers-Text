@@ -1,9 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDurationParserConfiguration : IDurationParserConfiguration
     {

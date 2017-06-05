@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Microsoft.Recognizers.Text.DateTime.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
+using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DatePeriodParserChs : IDateTimeParser
     {

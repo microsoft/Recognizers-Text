@@ -1,7 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Microsoft.Recognizers.Text.DateTime.Extractors
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedExtractor : IExtractor
     {

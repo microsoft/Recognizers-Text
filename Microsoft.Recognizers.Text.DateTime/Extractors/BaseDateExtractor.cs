@@ -1,9 +1,8 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.Extractors
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseDateExtractor : IExtractor
     {

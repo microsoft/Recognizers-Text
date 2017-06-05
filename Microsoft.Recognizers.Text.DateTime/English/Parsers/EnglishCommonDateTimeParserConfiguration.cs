@@ -1,13 +1,9 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
-using Microsoft.Recognizers.Text.Number.English.Extractors;
-using Microsoft.Recognizers.Text.Number.English.Parsers;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {

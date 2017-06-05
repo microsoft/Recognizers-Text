@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class DateExtractorChs : IExtractor
     {

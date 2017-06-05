@@ -1,13 +1,9 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Spanish.Parsers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {

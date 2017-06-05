@@ -1,10 +1,9 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Parsers
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class FullDateTimeParser : IDateTimeParser
     {

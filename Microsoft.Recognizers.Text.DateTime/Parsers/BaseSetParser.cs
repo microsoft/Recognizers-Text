@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-namespace Microsoft.Recognizers.Text.DateTime.Parsers
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseSetParser : IDateTimeParser
     {

@@ -1,8 +1,7 @@
-﻿using Microsoft.Recognizers.Text.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.DateTime.Models
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {

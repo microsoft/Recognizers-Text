@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Utilities
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class Token
     {

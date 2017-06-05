@@ -1,8 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishHolidayExtractorConfiguration : IHolidayExtractorConfiguration
     {

@@ -1,11 +1,9 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Spanish.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateExtractorConfiguration : IDateExtractorConfiguration
     {

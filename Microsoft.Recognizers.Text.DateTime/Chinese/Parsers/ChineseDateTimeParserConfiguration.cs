@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Chinese.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateTimeParserConfiguration : IFullDateTimeParserConfiguration
     {

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Parsers
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseTimeParser : IDateTimeParser
     {

@@ -1,8 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using System.Collections.Generic;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseHolidayExtractorConfiguration : IHolidayExtractorConfiguration
     {
