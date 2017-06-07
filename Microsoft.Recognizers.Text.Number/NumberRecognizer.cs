@@ -54,22 +54,23 @@ namespace Microsoft.Recognizers.Text.Number
                             new Spanish.PercentageExtractor())
                     }
                 }
+                // TODO: Add French models once issues in https://github.com/Microsoft/Recognizers-Text/search?q=%5BFrench&state=open&type=Issues&utf8=%E2%9C%93 get solved
             };
         }
 
-        public static IModel GetNumberModel(string culture)
+        public static IModel GetNumberModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<NumberModel>(culture);
+            return GetModel<NumberModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetOrdinalModel(string culture)
+        public static IModel GetOrdinalModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<OrdinalModel>(culture);
+            return GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetPercentageModel(string culture)
+        public static IModel GetPercentageModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<PercentModel>(culture);
+            return GetModel<PercentModel>(culture, fallbackToDefaultCulture);
         }
     }
 }

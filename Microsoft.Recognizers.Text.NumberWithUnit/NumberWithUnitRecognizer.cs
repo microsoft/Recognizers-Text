@@ -152,24 +152,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             };
         }
 
-        public static IModel GetCurrencyModel(string culture)
+        public static IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<CurrencyModel>(culture);
+            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetTemperatureModel(string culture)
+        public static IModel GetTemperatureModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<TemperatureModel>(culture);
+            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetDimensionModel(string culture)
+        public static IModel GetDimensionModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DimensionModel>(culture);
+            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetAgeModel(string culture)
+        public static IModel GetAgeModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<AgeModel>(culture);
+            return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
         }
     }
 }
