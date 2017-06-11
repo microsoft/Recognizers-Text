@@ -1,7 +1,6 @@
-﻿using Microsoft.Recognizers.Text;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 
-namespace Microsoft.Recognizers.Text.DateTime.Parsers
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ICommonDateTimeParserConfiguration
     {

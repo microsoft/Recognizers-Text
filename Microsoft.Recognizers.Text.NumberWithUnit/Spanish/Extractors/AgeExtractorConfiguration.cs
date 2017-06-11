@@ -1,10 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
-using System;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public class AgeExtractorConfiguration : SpanishNumberWithUnitExtractorConfiguration
     {

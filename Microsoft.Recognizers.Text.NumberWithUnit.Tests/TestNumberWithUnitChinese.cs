@@ -132,12 +132,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.Extractors.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.Parsers.CurrencyParserConfiguration())
+                        new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.Extractors.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.Parsers.CurrencyParserConfiguration())
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
                     }
                 }
                 );
@@ -149,12 +149,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.Extractors.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.Parsers.AgeParserConfiguration())
+                        new NumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Chinese.AgeParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.Extractors.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.Parsers.AgeParserConfiguration())
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
                     }
                 }
                 );
@@ -166,12 +166,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.Extractors.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.Parsers.DimensionParserConfiguration())
+                        new NumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Chinese.DimensionParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.Extractors.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.Parsers.DimensionParserConfiguration())
+                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
                     }
                 }
                 );
@@ -183,12 +183,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                 new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Chinese.Extractors.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.Parsers.TemperatureParserConfiguration())
+                        new NumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Chinese.TemperatureParserConfiguration())
                     },
                     {
-                        new NumberWithUnitExtractor(new English.Extractors.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.Parsers.TemperatureParserConfiguration())
+                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
                     }
                 }
                 );

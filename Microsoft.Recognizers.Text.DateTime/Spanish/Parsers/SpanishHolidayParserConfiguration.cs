@@ -1,9 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 
-namespace Microsoft.Recognizers.Text.DateTime.Spanish.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {

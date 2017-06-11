@@ -1,10 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Parsers;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
     {

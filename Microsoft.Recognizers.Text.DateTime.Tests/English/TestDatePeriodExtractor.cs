@@ -1,5 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
+﻿using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DateTime.Tests.English

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishHolidayParserConfiguration : BaseHolidayParserConfiguration
     {

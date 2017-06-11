@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.Number.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
+using Microsoft.Recognizers.Text.Number.English;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
     {

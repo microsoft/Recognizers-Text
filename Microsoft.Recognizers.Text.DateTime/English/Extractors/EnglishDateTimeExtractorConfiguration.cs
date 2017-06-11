@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
 
-namespace Microsoft.Recognizers.Text.DateTime.English.Extractors
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
     {

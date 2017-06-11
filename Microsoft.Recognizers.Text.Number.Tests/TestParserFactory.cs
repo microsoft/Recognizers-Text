@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
-using Microsoft.Recognizers.Text.Number.English.Parsers;
-using Microsoft.Recognizers.Text.Number.Spanish.Parsers;
+﻿using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
 {
@@ -53,6 +53,18 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.IsTrue(parserNumber is ChineseNumberParser);
             Assert.IsTrue(parserCardinal is ChineseNumberParser);
             Assert.IsTrue(parserPercentaje is ChineseNumberParser);
+        }
+
+        [TestMethod]
+        public void TestFrenchParser()
+        {
+            IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration());
+            IParser parseCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new FrenchNumberParserConfiguration());
+            IParser parsePercentage = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration());
+
+            Assert.IsTrue(parseNumber is BaseNumberParser);
+            Assert.IsTrue(parseCardinal is BaseNumberParser);
+            Assert.IsTrue(parsePercentage is BasePercentageParser);
         }
     }
 }

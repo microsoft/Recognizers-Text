@@ -1,12 +1,10 @@
-﻿using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.English.Parsers
+namespace Microsoft.Recognizers.Text.Number.English
 {
     public class EnglishNumberParserConfiguration : INumberParserConfiguration
     {

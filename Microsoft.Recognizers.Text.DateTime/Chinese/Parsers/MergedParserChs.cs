@@ -1,9 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
-namespace Microsoft.Recognizers.Text.DateTime.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedParserChs : BaseMergedParser
     {

@@ -1,9 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.English.Extractors
+namespace Microsoft.Recognizers.Text.Number.English
 {
     public class IntegerExtractor : BaseNumberExtractor
     {

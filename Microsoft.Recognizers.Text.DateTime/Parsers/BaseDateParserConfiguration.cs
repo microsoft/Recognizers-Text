@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 
-namespace Microsoft.Recognizers.Text.DateTime.Parsers
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public abstract class BaseDateParserConfiguration : ICommonDateTimeParserConfiguration
     {

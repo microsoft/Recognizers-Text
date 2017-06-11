@@ -1,8 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Spanish.Extractors;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
     public abstract class SpanishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {

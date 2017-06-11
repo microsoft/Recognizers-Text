@@ -1,8 +1,6 @@
-﻿using Microsoft.Recognizers.Text.NumberWithUnit.English.Extractors;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.English.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
     public class AgeParserConfiguration : EnglishNumberWithUnitParserConfiguration
     {

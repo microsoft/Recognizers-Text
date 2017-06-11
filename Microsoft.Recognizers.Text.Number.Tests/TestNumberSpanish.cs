@@ -1,9 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.Number.Models;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Spanish.Extractors;
-using Microsoft.Recognizers.Text.Number.Spanish.Parsers;
-using Microsoft.Recognizers.Text.Number.Extractors;
+﻿using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
 {

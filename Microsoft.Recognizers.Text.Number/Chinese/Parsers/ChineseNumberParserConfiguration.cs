@@ -1,13 +1,10 @@
-﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using Microsoft.Recognizers.Text.Number.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class ChineseNumberParserConfiguration : INumberParserConfiguration
     {

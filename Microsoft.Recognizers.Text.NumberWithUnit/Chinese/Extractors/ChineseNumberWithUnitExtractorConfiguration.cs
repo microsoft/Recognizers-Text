@@ -1,8 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Text.Number.Chinese;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public abstract class ChineseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {

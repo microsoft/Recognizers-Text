@@ -1,11 +1,6 @@
 ﻿using System;
-using Microsoft.Recognizers.Text.DateTime.English.Extractors;
-using Microsoft.Recognizers.Text.DateTime.English.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {

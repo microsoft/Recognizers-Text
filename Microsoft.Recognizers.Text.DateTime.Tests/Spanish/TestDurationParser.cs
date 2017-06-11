@@ -1,9 +1,4 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Spanish.Extractors;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Recognizers.Text.DateTime.Parsers;
-using Microsoft.Recognizers.Text.DateTime.Extractors;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 {

@@ -1,7 +1,6 @@
-﻿using Microsoft.Recognizers.Text.Number.Parsers;
-using System.Text;
+﻿using System.Text;
 
-namespace Microsoft.Recognizers.Text.Number.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class ChineseNumberParser : BaseNumberParser
     {

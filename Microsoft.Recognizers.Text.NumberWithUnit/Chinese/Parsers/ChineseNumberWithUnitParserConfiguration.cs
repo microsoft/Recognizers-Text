@@ -1,9 +1,8 @@
-﻿using Microsoft.Recognizers.Text.Number.Chinese.Extractors;
-using Microsoft.Recognizers.Text.Number.Chinese.Parsers;
-using Microsoft.Recognizers.Text.Number.Parsers;
-using System.Globalization;
+﻿using System.Globalization;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
     public class ChineseNumberWithUnitParserConfiguration : BaseNumberWithUnitParserConfiguration
     {
