@@ -6,7 +6,7 @@ set username=%1
 set token=%2
 set owner=%3
 set repo=%4
-set status=%5
+set state=%5
 set target_url=%6
 set description=%7
 
