@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
         public Regex SeasonRegex { get; }
+        public Regex WhichWeekRegex { get; }
 
         #endregion
 
@@ -76,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             QuarterRegex = EnglishDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = EnglishDatePeriodExtractorConfiguration.QuarterRegexYearFront;
             SeasonRegex = EnglishDatePeriodExtractorConfiguration.SeasonRegex;
+            WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;

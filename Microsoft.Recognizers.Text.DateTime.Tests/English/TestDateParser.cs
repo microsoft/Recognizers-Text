@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(futureDate, ((DTParseResult) pr.Value).FutureValue);
-            Assert.AreEqual(pastDate, ((DTParseResult) pr.Value).PastValue);
+            Assert.AreEqual(futureDate, ((DTParseResult)pr.Value).FutureValue);
+            Assert.AreEqual(pastDate, ((DTParseResult)pr.Value).PastValue);
         }
 
         public void BasicTest(string text, DateObject date)
@@ -26,8 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(date, ((DTParseResult) pr.Value).FutureValue);
-            Assert.AreEqual(date, ((DTParseResult) pr.Value).PastValue);
+            Assert.AreEqual(date, ((DTParseResult)pr.Value).FutureValue);
+            Assert.AreEqual(date, ((DTParseResult)pr.Value).PastValue);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(luisValueStr, ((DTParseResult) pr.Value).Timex);
+            Assert.AreEqual(luisValueStr, ((DTParseResult)pr.Value).Timex);
         }
 
         public TestDateParser()
@@ -152,6 +152,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next Sunday", "2016-11-20");
             BasicTest("I'll go back the day", "2016-11-07");
             BasicTest("I'll go back 15 June 2016", "2016-06-15");
+            BasicTest("I'll go back two days ago", "2016-11-05");
+            BasicTest("I'll go back two years ago", "2014-11-07");
         }
     }
 }

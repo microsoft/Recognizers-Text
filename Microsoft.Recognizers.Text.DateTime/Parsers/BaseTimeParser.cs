@@ -26,6 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er.Type.Equals(ParserName))
             {
                 var innerResult = InternalParse(er.Text, referenceTime);
+                if (!innerResult.Success)
+                {
+                    innerResult = ParserDurationWithAgoAndLater(er.Text, referenceTime);
+                }
                 if (innerResult.Success)
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
@@ -39,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     value = innerResult;
                 }
             }
-            
+
             var ret = new DateTimeParseResult
             {
                 Text = er.Text,
@@ -48,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -171,7 +175,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasSec = true;
                 }
             }
-            
+
             //adjust by desc string
             var descStr = match.Groups["desc"].Value.ToLower();
             if (!string.IsNullOrEmpty(descStr))
@@ -226,10 +230,95 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.comment = "ampm";
             }
-            
+
             ret.FutureValue = ret.PastValue = new DateObject(year, month, day, hour, min, second);
             ret.Success = true;
             return ret;
         }
+
+        // handle like "two hours ago" 
+        private DTParseResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
+        {
+            var ret = new DTParseResult();
+            var duration_res = config.DurationExtractor.Extract(text);
+            var numStr = string.Empty;
+            var unitStr = string.Empty;
+            if (duration_res.Count > 0)
+            {
+                var match = this.config.UnitRegex.Match(text);
+                if (match.Success)
+                {
+                    var AfterStr =
+                        text.Substring((int)duration_res[0].Start + (int)duration_res[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)duration_res[0].Start, match.Index - (int)duration_res[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var er = config.CardinalExtractor.Extract(numberStr);
+                    if (er.Count != 0)
+                    {
+                        var pr = config.NumberParser.Parse(er[0]);
+
+                        var number = int.Parse(pr.ResolutionStr);
+                        if (config.UnitMap.ContainsKey(srcUnit))
+                        {
+                            unitStr = config.UnitMap[srcUnit];
+                            numStr = number.ToString();
+                            if (AfterStr.StartsWith("ago"))
+                            {
+                                DateObject Time;
+                                switch (unitStr)
+                                {
+                                    case "H":
+                                        Time = referenceTime.AddHours(-double.Parse(numStr));
+                                        break;
+                                    case "M":
+                                        Time = referenceTime.AddMinutes(-double.Parse(numStr));
+                                        break;
+                                    case "S":
+                                        Time = referenceTime.AddSeconds(-double.Parse(numStr));
+                                        break;
+                                    default:
+                                        return ret;
+                                }
+                                ret.Timex = $"{Util.LuisTime(Time)}";
+                                ret.FutureValue = ret.PastValue = Time;
+                                ret.Success = true;
+                                return ret;
+                            }
+                            if (AfterStr.Equals("later"))
+                            {
+                                DateObject Time;
+                                switch (unitStr)
+                                {
+                                    case "H":
+                                        Time = referenceTime.AddHours(double.Parse(numStr));
+                                        break;
+                                    case "M":
+                                        Time = referenceTime.AddMinutes(double.Parse(numStr));
+                                        break;
+                                    case "S":
+                                        Time = referenceTime.AddSeconds(double.Parse(numStr));
+                                        break;
+                                    default:
+                                        return ret;
+                                }
+                                ret.Timex =
+                                    $"{Util.LuisTime(Time)}";
+                                ret.FutureValue =
+                                    ret.PastValue = Time;
+                                ret.Success = true;
+                                return ret;
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
     }
 }

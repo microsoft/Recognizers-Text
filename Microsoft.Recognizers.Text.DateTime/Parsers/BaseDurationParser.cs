@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDurationParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DURATION;
-        
+
         private readonly IDurationParserConfiguration config;
 
         public BaseDurationParser(IDurationParserConfiguration configuration)
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -96,6 +96,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];
+
+                    if ((double.Parse(numStr) > 1000) && (unitStr.Equals("Y") || unitStr.Equals("MON") || unitStr.Equals("W")))
+                    {
+                        return ret;
+                    }
 
                     ret.Timex = "P" + (IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
                     ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];

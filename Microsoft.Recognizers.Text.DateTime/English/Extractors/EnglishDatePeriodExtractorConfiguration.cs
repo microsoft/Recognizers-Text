@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 @"\b(((next|this|last)\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(next|last|this)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        
+
         public static readonly Regex MonthNumWithYear =
             new Regex($@"({YearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearRegex})",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -125,6 +125,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                     YearRegex}|(?<order>next|last|this)\s+year))?)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WhichWeekRegex =
+            new Regex(
+                $@"(week)(\s*)(?<number>\d\d|\d|0\d)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -139,7 +145,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
-            SeasonRegex
+            SeasonRegex,
+            WhichWeekRegex
         };
 
         public EnglishDatePeriodExtractorConfiguration()
@@ -183,12 +190,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 index = text.LastIndexOf("between");
                 return true;
             }
-            return false ;
+            return false;
         }
 
         public bool HasConnectorToken(string text)
         {
             return text.Equals("and");
-        }        
+        }
     }
 }

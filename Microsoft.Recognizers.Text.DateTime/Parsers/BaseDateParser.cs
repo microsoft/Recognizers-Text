@@ -42,6 +42,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseNumberWithMonth(er.Text, referenceDate);
                 }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParserDurationWithAgoAndLater(er.Text, referenceDate);
+                }
 
                 if (innerResult.Success)
                 {
@@ -110,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 int day = 0, month = referenceDate.Month, year = referenceDate.Year;
                 var dayStr = match.Groups["day"].Value.ToLower();
-                day =  this.config.DayOfMonth[dayStr];
+                day = this.config.DayOfMonth[dayStr];
 
                 ret.Timex = Util.LuisDate(-1, -1, day);
 
@@ -283,6 +287,96 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.PastValue = pastDate;
             ret.Success = true;
 
+            return ret;
+        }
+
+        // handle like "two days ago" 
+        private DTParseResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
+        {
+            var ret = new DTParseResult();
+            var duration_res = config.DurationExtractor.Extract(text);
+            var numStr = string.Empty;
+            var unitStr = string.Empty;
+            if (duration_res.Count > 0)
+            {
+                var match = this.config.UnitRegex.Match(text);
+                if (match.Success)
+                {
+                    var AfterStr =
+                        text.Substring((int)duration_res[0].Start + (int)duration_res[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)duration_res[0].Start, match.Index - (int)duration_res[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var er = config.CardinalExtractor.Extract(numberStr);
+                    if (er.Count != 0)
+                    {
+                        var pr = config.NumberParser.Parse(er[0]);
+
+                        var number = int.Parse(pr.ResolutionStr);
+                        if (config.UnitMap.ContainsKey(srcUnit))
+                        {
+                            unitStr = config.UnitMap[srcUnit];
+                            numStr = number.ToString();
+                            if (AfterStr.StartsWith("ago"))
+                            {
+                                DateObject Date;
+                                switch (unitStr)
+                                {
+                                    case "D":
+                                        Date = referenceDate.AddDays(-double.Parse(numStr));
+                                        break;
+                                    case "W":
+                                        Date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                        break;
+                                    case "MON":
+                                        Date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                        break;
+                                    case "Y":
+                                        Date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                        break;
+                                    default:
+                                        return ret;
+                                }
+                                ret.Timex = $"{Util.LuisDate(Date)}";
+                                ret.FutureValue = ret.PastValue = Date;
+                                ret.Success = true;
+                                return ret;
+                            }
+                            if (AfterStr.Equals("later"))
+                            {
+                                DateObject Date;
+                                switch (unitStr)
+                                {
+                                    case "D":
+                                        Date = referenceDate.AddDays(double.Parse(numStr));
+                                        break;
+                                    case "W":
+                                        Date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                        break;
+                                    case "MON":
+                                        Date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                        break;
+                                    case "Y":
+                                        Date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                        break;
+                                    default:
+                                        return ret;
+                                }
+                                ret.Timex =
+                                    $"{Util.LuisDate(Date)}";
+                                ret.FutureValue =
+                                    ret.PastValue = Date;
+                                ret.Success = true;
+                                return ret;
+                            }
+                        }
+                    }
+                }
+            }
             return ret;
         }
 

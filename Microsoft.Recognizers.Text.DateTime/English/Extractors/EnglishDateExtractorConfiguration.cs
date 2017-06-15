@@ -46,6 +46,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex NextRegex = new Regex($@"\b(next(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+next\s*week))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex SpecialDayRegex =
             new Regex(
                 @"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|(the\s)?next day|(the\s+)?last day|the day|yesterday|tomorrow|tmr|today)\b",
@@ -124,11 +127,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(the)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishDateExtractorConfiguration()
         {
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -136,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IExtractor OrdinalExtractor { get; }
 
         public IParser NumberParser { get; }
+        public IExtractor DurationExtractor { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
 
@@ -144,5 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
+
+        Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
     }
 }
