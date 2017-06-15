@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -37,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
         public Regex SeasonRegex { get; }
+        public Regex WhichWeekRegex { get; }
 
         #endregion
 
@@ -76,6 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             QuarterRegex = SpanishDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = SpanishDatePeriodExtractorConfiguration.QuarterRegexYearFront;
             SeasonRegex = SpanishDatePeriodExtractorConfiguration.SeasonRegex;
+            WhichWeekRegex = SpanishDatePeriodExtractorConfiguration.WhichWeekRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
@@ -87,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            
+
             //TODO: Replace with a regex
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))

@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDatePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
-        
+
         private static readonly Calendar _cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly IDatePeriodParserConfiguration config;
@@ -69,6 +69,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseSeason(er.Text, referenceDate);
                 }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseWhichWeek(er.Text, referenceDate);
+                }
+
 
 
                 if (innerResult.Success)
@@ -114,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -294,23 +299,23 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (this.config.IsWeekOnly(trimedText))
                     {
-                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
+                        var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = monday.Year.ToString("D4") + "-W" +
                                     _cal.GetWeekOfYear(monday, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
                                         .ToString("D2");
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
-                                    referenceDate.This(DayOfWeek.Monday).AddDays(7*swift),
-                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift).AddDays(1));
+                                    referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift),
+                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
                     if (this.config.IsWeekend(trimedText))
                     {
                         DateObject beginDate, endDate;
-                        beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7*swift);
-                        endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift);
+                        beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
+                        endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
                                     _cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
@@ -356,7 +361,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private  DTParseResult ParseMonthWithYear(string text, DateObject referenceDate)
+        private DTParseResult ParseMonthWithYear(string text, DateObject referenceDate)
         {
             var ret = new DTParseResult();
             var match = this.config.MonthWithYear.Match(text);
@@ -435,10 +440,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            DateObject futureBegin = (DateObject) ((DTParseResult) pr1.Value).FutureValue,
-                futureEnd = (DateObject) ((DTParseResult) pr2.Value).FutureValue;
-            DateObject pastBegin = (DateObject) ((DTParseResult) pr1.Value).PastValue,
-                pastEnd = (DateObject) ((DTParseResult) pr2.Value).PastValue;
+            DateObject futureBegin = (DateObject)((DTParseResult)pr1.Value).FutureValue,
+                futureEnd = (DateObject)((DTParseResult)pr2.Value).FutureValue;
+            DateObject pastBegin = (DateObject)((DTParseResult)pr1.Value).PastValue,
+                pastEnd = (DateObject)((DTParseResult)pr2.Value).PastValue;
             if (futureBegin > futureEnd)
             {
                 futureBegin = pastBegin;
@@ -482,19 +487,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         switch (unitStr)
                         {
                             case "D":
-                                beginDate = referenceDate.AddDays(-(double) pr.Value);
+                                beginDate = referenceDate.AddDays(-(double)pr.Value);
                                 endDate = referenceDate;
                                 break;
                             case "W":
-                                beginDate = referenceDate.AddDays(-7*(double) pr.Value);
+                                beginDate = referenceDate.AddDays(-7 * (double)pr.Value);
                                 endDate = referenceDate;
                                 break;
                             case "MON":
-                                beginDate = referenceDate.AddMonths(-Convert.ToInt32((double) pr.Value));
+                                beginDate = referenceDate.AddMonths(-Convert.ToInt32((double)pr.Value));
                                 endDate = referenceDate;
                                 break;
                             case "Y":
-                                beginDate = referenceDate.AddYears(-Convert.ToInt32((double) pr.Value));
+                                beginDate = referenceDate.AddYears(-Convert.ToInt32((double)pr.Value));
                                 endDate = referenceDate;
                                 break;
                             default:
@@ -514,19 +519,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             case "D":
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays((double) pr.Value);
+                                endDate = referenceDate.AddDays((double)pr.Value);
                                 break;
                             case "W":
-                                beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(7*(double) pr.Value);
+                                beginDate = beforeStr.ToLower().Equals("in") ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
+                                endDate = referenceDate.AddDays(7 * (double)pr.Value);
                                 break;
                             case "MON":
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddMonths(Convert.ToInt32((double) pr.Value));
+                                endDate = referenceDate.AddMonths(Convert.ToInt32((double)pr.Value));
                                 break;
                             case "Y":
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddYears(Convert.ToInt32((double) pr.Value));
+                                endDate = referenceDate.AddYears(Convert.ToInt32((double)pr.Value));
                                 break;
                             default:
                                 return ret;
@@ -563,7 +568,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endDate = referenceDate;
                                 break;
                             case "W":
-                                beginDate = referenceDate.AddDays(-7*double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
                                 endDate = referenceDate;
                                 break;
                             case "MON":
@@ -594,7 +599,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 break;
                             case "W":
                                 beginDate = referenceDate;
-                                endDate = referenceDate.AddDays(7*double.Parse(numStr));
+                                endDate = referenceDate.AddDays(7 * double.Parse(numStr));
                                 break;
                             case "MON":
                                 beginDate = referenceDate;
@@ -739,8 +744,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = referenceDate.Year + swift;
             }
             var quarterNum = this.config.CardinalMap[cardinalStr];
-            var beginDate = new DateObject(year, quarterNum*3 - 2, 1);
-            var endDate = new DateObject(year, quarterNum*3 + 1, 1);
+            var beginDate = new DateObject(year, quarterNum * 3 - 2, 1);
+            var endDate = new DateObject(year, quarterNum * 3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({Util.LuisDate(beginDate)},{Util.LuisDate(endDate)},P3M)";
             ret.Success = true;
@@ -758,7 +763,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var yearStr = match.Groups["year"].Value;
                 var year = referenceDate.Year;
-                var hasYear = false;
                 var seasonStr = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
                 if (swift >= -1 || !string.IsNullOrEmpty(yearStr))
                 {
@@ -779,6 +783,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret;
         }
+
+        private DTParseResult ParseWhichWeek(string text, DateObject referenceDate)
+        {
+            var ret = new DTParseResult();
+            var match = this.config.WhichWeekRegex.Match(text);
+            if (match.Success)
+            {
+                var num = int.Parse(match.Groups["number"].ToString());
+                int year = referenceDate.Year;
+                ret.Timex = year.ToString("D4");
+                var firstDay = new DateObject(year, 1, 1);
+                var firstWeekday = firstDay.This((DayOfWeek)1);
+                var value = firstWeekday.AddDays(7 * num);
+                var futureDate = value;
+                var pastDate = value;
+                ret.Timex += "-W" + num.ToString("D2");
+                ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
+                ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
+                ret.Success = true;
+            }
+            return ret;
+        }
+
 
         private static DTParseResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate,
             bool noYear)
@@ -829,17 +856,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
         {
             var firstDay = new DateObject(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek) weekday);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
             if (weekday == 0)
             {
                 weekday = 7;
             }
-            var firstDayOfWeek = firstDay.DayOfWeek != 0 ? (int) firstDay.DayOfWeek : 7;
+            var firstDayOfWeek = firstDay.DayOfWeek != 0 ? (int)firstDay.DayOfWeek : 7;
             if (weekday < firstDayOfWeek)
             {
-                firstWeekday = firstDay.Next((DayOfWeek) weekday);
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
-            return firstWeekday.AddDays(7*(cadinal - 1));
+            return firstWeekday.AddDays(7 * (cadinal - 1));
         }
     }
 }

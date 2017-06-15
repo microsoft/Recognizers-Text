@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateExtractorConfiguration : IDateExtractorConfiguration
     {
-        
+
         public static readonly Regex MonthRegex =
             new Regex(
                 @"(?<month>Abril|Abr|Agosto|Ago|Diciembre|Dic|Febrero|Feb|Enero|Ene|Julio|Jul|Junio|Jun|Marzo|Mar|Mayo|May|Noviembre|Nov|Octubre|Oct|Septiembre|Setiembre|Sept|Set)",
@@ -50,6 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SpecialDayRegex =
             new Regex(
                 @"\b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a siguiente|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex UnitRegex =
+            new Regex(
+                @"",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex StrictWeekDay =
@@ -125,11 +130,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(el)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex NonDateUnitRegex = new Regex(@"",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDateExtractorConfiguration()
         {
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -138,6 +147,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IParser NumberParser { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -145,5 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
+
+        Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
     }
 }

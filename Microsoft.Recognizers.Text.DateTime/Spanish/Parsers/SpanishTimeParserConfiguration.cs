@@ -10,16 +10,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AtRegex { get; }
 
+        public Regex UnitRegex { get; }
+
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+        public IExtractor CardinalExtractor { get; }
+
+        public IParser NumberParser { get; }
+
+        public IExtractor DurationExtractor { get; }
+
+        public IParser DurationParser { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
 
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeTokenPrefix = "a las ";
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;
+            UnitRegex = SpanishTimeExtractorConfiguration.UnitRegex;
             TimeRegexes = SpanishTimeExtractorConfiguration.TimeRegexList;
             Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
         }
 
         public void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin)
@@ -104,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                         }
                         hasPm = true;
                     }
-                }                
+                }
             }
 
             hour = (hour + deltaHour) % 24;

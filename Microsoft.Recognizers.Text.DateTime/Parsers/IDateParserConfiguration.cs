@@ -12,7 +12,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
         IExtractor OrdinalExtractor { get; }
+        IExtractor CardinalExtractor { get; }
         IParser NumberParser { get; }
+
+        IExtractor DurationExtractor { get; }
+        IParser DurationParser { get; }
 
         #endregion
 
@@ -24,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NextRegex { get; }
         Regex ThisRegex { get; }
         Regex LastRegex { get; }
+        Regex UnitRegex { get; }
         Regex StrictWeekDay { get; }
         Regex MonthRegex { get; }
         Regex WeekDayOfMonthRegex { get; }
@@ -31,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         #endregion
 
         #region Dictionaries
-
+        IImmutableDictionary<string, string> UnitMap { get; }
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> DayOfWeek { get; }
         IImmutableDictionary<string, int> MonthOfYear { get; }

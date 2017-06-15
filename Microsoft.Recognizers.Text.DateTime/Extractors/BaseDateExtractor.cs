@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(NumberWithMonth(text));
+            tokens.AddRange(DurationWithBeforeAndAfter(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -98,5 +99,35 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret;
         }
+
+        private List<Token> DurationWithBeforeAndAfter(string text)
+        {
+            var ret = new List<Token>();
+            var duration_er = config.DurationExtractor.Extract(text);
+            foreach (var er in duration_er)
+            {
+                var match = config.NonDateUnitRegex.Match(er.Text);
+                if (match.Success)
+                {
+                    continue;
+                }
+                var pos = (int)er.Start + (int)er.Length;
+                if (pos < text.Length)
+                {
+                    var tmp = text.Substring(pos + 1);
+                    if (tmp.StartsWith("ago"))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 4));
+                    }
+                    else if (tmp.StartsWith("later"))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 6));
+
+                    }
+                }
+            }
+            return ret;
+        }
+
     }
 }

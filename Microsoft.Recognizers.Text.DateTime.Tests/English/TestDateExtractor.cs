@@ -78,6 +78,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back the first friday of july", 13, 24);
             BasicTest("I'll go back the first friday in this month", 13, 30);
+
+            BasicTest("I'll go back two months ago", 13, 14);
+            BasicTest("I'll go back two days later", 13, 14);
+
         }
     }
 }
