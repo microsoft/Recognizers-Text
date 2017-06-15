@@ -10,4 +10,4 @@ set state=%5
 set target_url=%6
 set description=%7
 
-curl -u %username%:%token% https://api.github.com/repos/%owner%/%repo%/statuses/%commitId% -d '{ "state": "%state%", "target_url": "%target_url%", "description": "%description%", "context": "continuous-integration/vso" }'
+curl -u %username%:%token% https://api.github.com/repos/%owner%/%repo%/statuses/%commitId% -d '{ "state": "%state%", "target_url": %target_url%, "description": %description%, "context": "continuous-integration/vso" }'
