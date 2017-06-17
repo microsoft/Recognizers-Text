@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 {
@@ -34,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = GetCurrencyModel();
+            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Chinese);
 
             BasicTest(model,
                 "江苏彩民15元中大乐透1600万 奖池36.57亿",
@@ -92,7 +91,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = GetDimensionModel();
+            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Chinese);
 
             BasicTest(model,
                 "去年，潜江虾稻产业综合产值突破180亿元，带动就业超10万人，龙虾养殖户户平增收16000元，带动全省养殖小龙虾387万亩。",
@@ -114,84 +113,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod][Ignore]
         public void TestTemperature()
         {
-            var model = GetTemperatureModel();
-            
+            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Chinese);
         }
 
         [TestMethod][Ignore]
         public void TestAge()
         {
-            var model = GetAgeModel();
-            
-        }
-
-
-        private static IModel GetCurrencyModel()
-        {
-            return new CurrencyModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
-                    },
-                    {
-                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetAgeModel()
-        {
-            return new AgeModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.AgeParserConfiguration())
-                    },
-                    {
-                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetDimensionModel()
-        {
-            return new DimensionModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.DimensionParserConfiguration())
-                    },
-                    {
-                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetTemperatureModel()
-        {
-            return new TemperatureModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Chinese.TemperatureParserConfiguration())
-                    },
-                    {
-                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-                    }
-                }
-                );
+            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Chinese);
         }
     }
 }
