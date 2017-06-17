@@ -19,42 +19,42 @@ namespace Microsoft.Recognizers.Text.Number.French
             {
                 {
                     new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex($@"(?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d{1,3}(\.\d{3})+,\d+" + $@"(?={placeholder})",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.Singleline),
+                        RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{IntegerExtractor.RoundNumberIntegerRegex}(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
                 {
                     new Regex($@"((?<=\b){AllFloatRegex}(?=\b))",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleFr"
                 },
                 {
                     new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 },
                 {
                     new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }
             };

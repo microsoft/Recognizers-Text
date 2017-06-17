@@ -6,43 +6,52 @@ namespace Microsoft.Recognizers.Text.Number.French
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal override sealed ImmutableDictionary<Regex, string> Regexes { get; }
-        protected override sealed string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
+
+        public const string OneHalfOneThirdOneQuarterRegex = @"(demi|tiers|quarts)";
 
         public FractionExtractor()
-        {
-            string specialFractionInteger = $@"((({IntegerExtractor.AllIntRegex})i?({IntegerExtractor.ZeroToNineIntegerRegex})|({IntegerExtractor.AllIntRegex}))a?v[oa]s?)";
 
+        {
             var _regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracNum"
-                },
-                {
                     new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
-                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+((et)\s+)?)?({IntegerExtractor.AllIntRegex})(\s+((et)\s)?)((({OrdinalExtractor.AllOrdinalRegex})s?|({specialFractionInteger})|({OrdinalExtractor.SufixRoundOrdinalRegex})s?)|demis?|quarts?)(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))",
+                       RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    , "FracNum"
+                },
+                {
+                    new Regex(
+                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?({IntegerExtractor.AllIntRegex
+                            })(\s+|\s*-\s*)((({OrdinalExtractor.AllOrdinalRegex})|({
+                            OrdinalExtractor.RoundNumberOrdinalRegex}))s|demis|quarts|tiers)(?=\b)",
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracFr"
                 },
                 {
-                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(y\s+)?)?(un|une)(\s+)(({OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.SufixRoundOrdinalRegex})|(un\s+)?demis?)(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(
+                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?(a|un|une)(\s+|\s*-\s*)(({
+                            OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.RoundNumberOrdinalRegex
+                            })|demi|quart|tier?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracFr"
                 },
                 {
-                    new Regex($@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sur\s+(({IntegerExtractor.AllIntRegex})|((\d+)(?!\.)))(?=\b)",
-                        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(
+                        $@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sur\s+(({
+                            IntegerExtractor.AllIntRegex})|(\d+)(?!\.))(?=\b)",     
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracFr"
-                },
+                }
             };
 
-            this.Regexes = _regexes.ToImmutableDictionary();
+            Regexes = _regexes.ToImmutableDictionary();
         }
     }
 }
