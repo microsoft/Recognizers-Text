@@ -10,10 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        public const string OneHalfOneThirdOneQuarterRegex = @"(demi|tiers|quarts)";
-
         public FractionExtractor()
-
         {
             var _regexes = new Dictionary<Regex, string>
             {
@@ -28,25 +25,27 @@ namespace Microsoft.Recognizers.Text.Number.French
                     , "FracNum"
                 },
                 {
-                    new Regex(
-                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?({IntegerExtractor.AllIntRegex
-                            })(\s+|\s*-\s*)((({OrdinalExtractor.AllOrdinalRegex})|({
-                            OrdinalExtractor.RoundNumberOrdinalRegex}))s|demis|quarts|tiers)(?=\b)",
+
+                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+((et)\s+)?)?({IntegerExtractor.AllIntRegex})(\s+((et)\s)?)((({OrdinalExtractor.AllOrdinalRegex})s?|({OrdinalExtractor.SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\b)",
+     
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
+
                     , "FracFr"
                 },
                 {
-                    new Regex(
-                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?(a|un|une)(\s+|\s*-\s*)(({
-                            OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.RoundNumberOrdinalRegex
-                            })|demi|quart|tier?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline)
+
+                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?(un|une)(\s+)(({OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.SuffixOrdinalRegex})|(et\s+)?demis?)(?=\b)",
+
+                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
+
                     , "FracFr"
                 },
                 {
-                    new Regex(
-                        $@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sur\s+(({
-                            IntegerExtractor.AllIntRegex})|(\d+)(?!\.))(?=\b)",     
+
+                    new Regex($@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sur\s+(({IntegerExtractor.AllIntRegex})|((\d+)(?!\.)))(?=\b)",
+
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
+
                     , "FracFr"
                 }
             };

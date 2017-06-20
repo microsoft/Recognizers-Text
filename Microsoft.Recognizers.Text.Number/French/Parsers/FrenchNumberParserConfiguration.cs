@@ -14,15 +14,15 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.LangMarker = "Fr";
             this.CultureInfo = ci;
 
-            this.DecimalSeparatorChar = '.';
+            this.DecimalSeparatorChar = ',';
             this.FractionMarkerToken = "sur"; 
-            this.NonDecimalSeparatorChar = ',';
+            this.NonDecimalSeparatorChar = '.';
             this.HalfADozenText = "six";
             this.WordSeparatorToken = "et"; // EN - 'and'
 
             this.WrittenDecimalSeparatorTexts = new List<string> { "virgule" };
             this.WrittenGroupSeparatorTexts = new List<string> { "point", "points" };
-            this.WrittenIntegerSeparatorTexts = new List<string> { "et" };
+            this.WrittenIntegerSeparatorTexts = new List<string> { "et","-" };
             this.WrittenFractionSeparatorTexts = new List<string> { "et", "sur" };
 
             this.CardinalNumberMap = InitCardinalNumberMap();
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.RoundNumberMap = InitRoundNumberMap();
             this.HalfADozenRegex = new Regex(@"une|un\s+demi\s+douzaine", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                @"((?<=\b)(cent|mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                @"((?<=\b)(mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
@@ -133,7 +133,6 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"cinquante", 50},
                 {"soixante", 60},
 
-                // TODO: Numbs in FR get funky after 60
                 {"soixante-dix", 70},
                 {"septante", 70 },
                 {"quatre-vingts", 80},

@@ -9,30 +9,28 @@ namespace Microsoft.Recognizers.Text.Number.French
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        public const string FrOrdinalSuffixRegex = @"i[eè]me"; //unsure if needed 
+        public const string SimpleRoundOrdinalRegex = @"(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
 
-        public const string RoundNumberOrdinalRegex = @"(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
+        public const string OneToNineOrdinalRegex = @"(premier|premi[eè]re|deuxi[eè]me|second|seconde|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
 
-        public const string BasicOrdinalRegex =
-                       @"(z[eé]roi[eè]me|premier|premi[eè]re|deuxi[eè]me|second|seconde|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me|dixi[eè]me|onzi[eè]me
-                          |douzi[eè]me|treizi[eè]me|quatorzi[eè]me|quinzi[eè]me|seizi[eè]me|dix-septi[eè]me|dix-huiti[eè]me|dix-neuvi[eè]me|vingti[eè]me)";
+        public const string TensOrdinalRegex =
+                       @"(quatre-vingt-dixi[eè]me|((quatre-vingti[eè]me)?(huitanti[eè]me)?(octanti[eè]me))|((soixante-dixi[eè]me)?(septanti[eè]me))|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
 
-        public static string SuffixBasicOrdinalRegex
-            =>
-                $@"((((({IntegerExtractor.TensNumberIntegerRegex}(\s+(et\s+)?|\s*-\s*){
-                    IntegerExtractor.ZeroToNineIntegerRegex})|{IntegerExtractor
-                        .TensNumberIntegerRegex}|{IntegerExtractor.ZeroToNineIntegerRegex}|{IntegerExtractor.AnIntRegex
-                    })(\s+{IntegerExtractor
-                        .RoundNumberIntegerRegex})+)\s+(et\s+)?)*({IntegerExtractor.TensNumberIntegerRegex
-                    }(\s+|\s*-\s*))?{BasicOrdinalRegex})";
+        public static string HundredOrdinalRegex = $@"({IntegerExtractor.AllIntRegex}(\s+(centi[eè]me\s)))"; // un centieme, deux centieme, trois centieme, etc 
 
-        public static string SuffixRoundNumberOrdinalRegex
-            =>
-                $@"(({IntegerExtractor.AllIntRegex}\s+){RoundNumberOrdinalRegex})";
+        public static string UnderHundredOrdinalRegex => $@"((({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})";
 
-        public static string AllOrdinalRegex
-            =>
-                $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+        public static string UnderThousandOrdinalRegex => $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})";
+
+        public static string OverThousandOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})([eè]me))";
+
+        public static string ComplexOrdinalRegex => $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})";
+
+        public static string SuffixOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})({SimpleRoundOrdinalRegex}))";
+
+        public static string ComplexRoundOrdinalRegex => $@"((({SuffixOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})";
+
+        public static string AllOrdinalRegex => $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
 
         public OrdinalExtractor()
         {
@@ -45,16 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     , "OrdinalNum"
                 },
                 {
-                    new Regex(@"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*e)(?=\b)", // 'e' instead of 'th'
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
-                },
-                {
-                    new Regex($@"(?<=\b){AllOrdinalRegex}(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdFr"
-                },
-                {
-                    new Regex($@"(?<!(a|un|une)\s+){RoundNumberOrdinalRegex}",
+                    new Regex($@"(?<=\b){AllOrdinalRegex}(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdFr"
                 }
