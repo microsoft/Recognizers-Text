@@ -142,6 +142,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 trimedText.Equals("ultimo") || trimedText.Equals("último") ||
                 trimedText.Equals("ultima") || trimedText.Equals("última"));
         }
+
+        public bool ContainsAgoString(string text)
+        {
+            string agoString = "ago";
+            return text.TrimStart().StartsWith(agoString);
+        }
+
+        public bool ContainsLaterString(string text)
+        {
+            string laterString = "later";
+            return text.TrimStart().StartsWith(laterString);
+        }
     }
 
     public static class StringExtension

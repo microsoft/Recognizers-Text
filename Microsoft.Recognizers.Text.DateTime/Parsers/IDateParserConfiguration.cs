@@ -47,5 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         int GetSwiftDay(string text);
         int GetSwiftMonth(string text);
         bool IsCardinalLast(string text);
+
+        bool ContainsAgoString(string text);
+        bool ContainsLaterString(string text);
     }
 }

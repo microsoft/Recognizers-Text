@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
@@ -154,5 +155,29 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
+
+        public bool GetAgoIndex(string text, out int index)
+        {
+            index = -1;
+            string agoString = "ago";
+            if (text.TrimStart().StartsWith(agoString))
+            {
+                index = text.LastIndexOf(agoString)+agoString.Length;
+                return true;
+            }
+            return false;
+        }
+
+        public bool GetLaterIndex(string text, out int index)
+        {
+            index = -1;
+            string laterString = "later";
+            if (text.TrimStart().StartsWith(laterString))
+            {
+                index = text.LastIndexOf("later") + laterString.Length;
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -14,5 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor OrdinalExtractor { get; }
         IParser NumberParser { get; }
         IExtractor DurationExtractor { get; }
+
+        bool GetAgoIndex(string text, out int index);
+        bool GetLaterIndex(string text, out int index);
     }
 }

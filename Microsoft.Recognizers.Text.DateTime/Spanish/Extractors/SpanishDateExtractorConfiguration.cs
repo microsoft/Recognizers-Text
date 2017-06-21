@@ -158,5 +158,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
+
+        public bool GetAgoIndex(string text, out int index)
+        {
+            index = -1;
+            if (text.TrimStart().StartsWith("ago"))
+            {
+                index = text.LastIndexOf("ago");
+                return true;
+            }
+            return false;
+        }
+
+        public bool GetLaterIndex(string text, out int index)
+        {
+            index = -1;
+            if (text.TrimStart().StartsWith("later"))
+            {
+                index = text.LastIndexOf("later");
+                return true;
+            }
+            return false;
+        }
     }
 }

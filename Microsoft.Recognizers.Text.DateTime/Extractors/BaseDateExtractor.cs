@@ -114,15 +114,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pos = (int)er.Start + (int)er.Length;
                 if (pos < text.Length)
                 {
-                    var tmp = text.Substring(pos + 1);
-                    if (tmp.StartsWith("ago"))
+                    var tmp = text.Substring(pos);
+                    int index = -1;
+                    if (config.GetAgoIndex(tmp, out index))
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 4));
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
-                    else if (tmp.StartsWith("later"))
+                    else if (config.GetLaterIndex(tmp, out index))
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 6));
-
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
                 }
             }
