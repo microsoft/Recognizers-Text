@@ -162,10 +162,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetAgoIndex(string text, out int index)
         {
             index = -1;
-            if (text.TrimStart().StartsWith("ago"))
+            List<string> agoStringList = new List<string>
             {
-                index = text.LastIndexOf("ago");
-                return true;
+                "ago",
+            };
+            foreach (var agoString in agoStringList)
+            {
+                if (text.TrimStart().StartsWith(agoString))
+                {
+                    index = text.LastIndexOf(agoString) + agoString.Length;
+                    return true;
+                }
             }
             return false;
         }
@@ -173,10 +180,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetLaterIndex(string text, out int index)
         {
             index = -1;
-            if (text.TrimStart().StartsWith("later"))
+            List<string> laterStringList = new List<string>
             {
-                index = text.LastIndexOf("later");
-                return true;
+                "later",
+                "from now"
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(laterString))
+                {
+                    index = text.LastIndexOf(laterString) + laterString.Length;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool GetInIndex(string text, out int index)
+        {
+            index = -1;
+            //add space to make sure it is a token
+            List<string> laterStringList = new List<string>
+            {
+                " in",
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(laterString))
+                {
+                    index = text.LastIndexOf(laterString) + laterString.Length - 1;
+                    return true;
+                }
             }
             return false;
         }

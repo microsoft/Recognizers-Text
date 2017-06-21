@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(TimeOfTodayBefore(text));
             tokens.AddRange(TimeOfTodayAfter(text));
             tokens.AddRange(SpecialTimeOfDate(text));
+            tokens.AddRange(DurationWithBeforeAndAfter(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -211,6 +212,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (match.Success)
                     {
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                    }
+                }
+            }
+            return ret;
+        }
+
+        // process case like "two minutes ago" "three hours later"
+        private List<Token> DurationWithBeforeAndAfter(string text)
+        {
+            var ret = new List<Token>();
+            var duration_er = config.DurationExtractor.Extract(text);
+            foreach (var er in duration_er)
+            {
+                var match = config.UnitRegex.Match(er.Text);
+                if (!match.Success)
+                {
+                    continue;
+                }
+                var pos = (int)er.Start + (int)er.Length;
+                if (pos <= text.Length)
+                {
+                    var afterString = text.Substring(pos);
+                    var beforeString = text.Substring(0, (int)er.Start);
+                    var index = -1;
+                    if (config.GetAgoIndex(afterString, out index))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    }
+                    else if (config.GetLaterIndex(afterString, out index))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    }
+                    else if (config.GetInIndex(beforeString, out index))
+                    {
+                        if (er.Start != null && er.Length != null && (int)er.Start > index)
+                        {
+                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                        }
                     }
                 }
             }

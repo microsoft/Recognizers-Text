@@ -72,10 +72,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back 340pm", 13, 5);
             BasicTest("I'll be back 1140 a.m.", 13, 9);
-
-            BasicTest("I'll be back two hours ago", 13, 13);
-            BasicTest("I'll be back three minutes later", 13, 19);
-
         }
     }
 }

@@ -145,14 +145,51 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool ContainsAgoString(string text)
         {
-            string agoString = "ago";
-            return text.TrimStart().StartsWith(agoString);
+            List<string> agoStringList = new List<string>
+            {
+                "ago",
+            };
+            foreach (var agoString in agoStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(agoString))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool ContainsLaterString(string text)
         {
-            string laterString = "later";
-            return text.TrimStart().StartsWith(laterString);
+            List<string> laterStringList = new List<string>
+            {
+                "later",
+                "from now"
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(laterString))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool ContainsInString(string text)
+        {
+            List<string> laterStringList = new List<string>
+            {
+                "in"
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().EndsWith(laterString))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 

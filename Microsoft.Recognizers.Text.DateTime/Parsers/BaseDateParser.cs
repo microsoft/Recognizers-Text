@@ -306,6 +306,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         text.Substring((int)duration_res[0].Start + (int)duration_res[0].Length)
                             .Trim()
                             .ToLowerInvariant();
+                    var BeforeStr =
+                        text.Substring(0 , (int)duration_res[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
                     var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
                     var numberStr =
                         text.Substring((int)duration_res[0].Start, match.Index - (int)duration_res[0].Start)
@@ -346,7 +350,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 ret.Success = true;
                                 return ret;
                             }
-                            if (config.ContainsLaterString(AfterStr))
+                            if (config.ContainsLaterString(AfterStr) || config.ContainsInString(BeforeStr))
                             {
                                 DateObject Date;
                                 switch (unitStr)

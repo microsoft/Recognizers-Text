@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back nextweek Sunday", 13, 15);
             BasicTest("I'll go back last week Sunday", 13, 16);
             BasicTest("I'll go back 15 June 2016", 13, 12);
-            BasicTest("abaseball on may the eleventh", 13, 16);
+            BasicTest("a baseball on may the eleventh", 14, 16);
 
             BasicTest("I'll go back the first friday of july", 13, 24);
             BasicTest("I'll go back the first friday in this month", 13, 30);
@@ -82,6 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I went back two months ago", 12, 14);
             BasicTest("I'll go back two days later", 13, 14);
 
+            BasicTest("I'll go back in two weeks", 13, 12);
+            BasicTest("I'll go back two weeks from now", 13, 18);
         }
     }
 }

@@ -12,10 +12,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SimpleTimeOfTodayBeforeRegex { get; }
         Regex NightRegex { get; }
         Regex TheEndOfRegex { get; }
+        Regex UnitRegex { get; }
+        IExtractor DurationExtractor { get; }
 
         IExtractor DatePointExtractor { get; }
         IExtractor TimePointExtractor { get; }
 
         bool IsConnector(string text);
+
+        bool GetAgoIndex(string text, out int index);
+        bool GetLaterIndex(string text, out int index);
+        bool GetInIndex(string text, out int index);
     }
 }

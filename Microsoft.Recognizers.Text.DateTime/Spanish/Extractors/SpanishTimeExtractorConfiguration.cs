@@ -76,9 +76,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(string.Format(@"\b(?<=\b(a las?)\s+)({2}|{0}|{1})\b", HourNumRegex, BaseTimeExtractor.HourRegex, EngTimeRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public static readonly Regex ConnectNumRegex =
             new Regex(
                 $@"{BaseTimeExtractor.HourRegex
@@ -142,37 +139,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
-        Regex ITimeExtractorConfiguration.UnitRegex => UnitRegex;
+ 
 
         public IExtractor DurationExtractor { get; }
 
         public SpanishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-        }
-
-        public bool GetAgoIndex(string text, out int index)
-        {
-            index = -1;
-            string agoString = "ago";
-            if (text.TrimStart().StartsWith(agoString))
-            {
-                index = text.LastIndexOf(agoString) + agoString.Length;
-                return true;
-            }
-            return false;
-        }
-
-        public bool GetLaterIndex(string text, out int index)
-        {
-            index = -1;
-            string laterString = "later";
-            if (text.TrimStart().StartsWith(laterString))
-            {
-                index = text.LastIndexOf("later") + laterString.Length;
-                return true;
-            }
-            return false;
         }
     }
 }

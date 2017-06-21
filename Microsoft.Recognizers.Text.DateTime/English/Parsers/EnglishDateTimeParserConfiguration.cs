@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -17,6 +18,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser TimeParser { get; }
 
+        public IExtractor CardinalExtractor { get; }
+
+        public IParser NumberParser { get; }
+
+        public IExtractor DurationExtractor { get; }
+
+        public IParser DurationParser { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
+
         public Regex NowRegex { get; }
 
         public Regex AMTimeRegex { get; }
@@ -30,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex SpecificNightRegex { get; }
 
         public Regex TheEndOfRegex { get; }
+
+        public Regex UnitRegex { get; }
+
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -50,7 +64,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificNightRegex = EnglishDateTimeExtractorConfiguration.SpecificNightRegex;
             TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
+            UnitRegex = EnglishTimeExtractorConfiguration.UnitRegex;
             Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
         }
 
         public int GetHour(string text, int hour)
@@ -104,6 +124,55 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 swift = -1;
             }
             return swift;
+        }
+
+        public bool ContainsAgoString(string text)
+        {
+            List<string> agoStringList = new List<string>
+            {
+                "ago",
+            };
+            foreach (var agoString in agoStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(agoString))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool ContainsLaterString(string text)
+        {
+            List<string> laterStringList = new List<string>
+            {
+                "later",
+                "from now"
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(laterString))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool ContainsInString(string text)
+        {
+            List<string> laterStringList = new List<string>
+            {
+                "in"
+            };
+            foreach (var laterString in laterStringList)
+            {
+                if (text.TrimStart().ToLower().EndsWith(laterString))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool HaveAmbiguousToken(string text, string matchedText) => false;
