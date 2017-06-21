@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     [TestClass]
     public class TestDatePeriodParser
     {
-        readonly IDateTimeParser parser;
+        readonly BaseDatePeriodParser parser;
         readonly BaseDatePeriodExtractor extractor;
         readonly DateObject referenceDay;
 
@@ -60,7 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         public void TestDatePeriodParse()
         {
             int year = 2016, month = 11;
+            bool inclusiveEnd = parser.GetInclusiveEndPeriodFlag();
 
+            BasicTestFuture("scheduel a meeting in two weeks", 4, 22, month, year);
             // test basic cases
             BasicTestFuture("I'll be out from 4 to 22 this month", 4, 22, month, year);
             BasicTestFuture("I'll be out from 4-23 in next month", 4, 23, 12, year);
@@ -72,13 +74,26 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out from 4 to 22 January, 1995", 4, 22, 1, 1995);
             BasicTestFuture("I'll be out between 4-22 January, 1995", 4, 22, 1, 1995);
 
-            BasicTestFuture("I'll be out on this week", 7, 13, month, year);
-            BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
-            BasicTestFuture("I'll be out this September", year, 9, 1, year, 9, 30);
-            BasicTestFuture("I'll be out last sept", year - 1, 9, 1, year - 1, 9, 30);
-            BasicTestFuture("I'll be out next june", year + 1, 6, 1, year + 1, 6, 30);
-            BasicTestFuture("I'll be out the third week of this month", 21, 27, month, year);
-            BasicTestFuture("I'll be out the last week of july", year + 1, 7, 24, year + 1, 7, 30);
+            if (inclusiveEnd)
+            {
+                BasicTestFuture("I'll be out on this week", 7, 13, month, year);
+                BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
+                BasicTestFuture("I'll be out this September", year, 9, 1, year, 9, 30);
+                BasicTestFuture("I'll be out last sept", year - 1, 9, 1, year - 1, 9, 30);
+                BasicTestFuture("I'll be out next june", year + 1, 6, 1, year + 1, 6, 30);
+                BasicTestFuture("I'll be out the third week of this month", 21, 27, month, year);
+                BasicTestFuture("I'll be out the last week of july", year + 1, 7, 24, year + 1, 7, 30);
+            }
+            else
+            {
+                BasicTestFuture("I'll be out on this week", 7, 14, month, year);
+                BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 3, 1);
+                BasicTestFuture("I'll be out this September", year, 9, 1, year, 10, 1);
+                BasicTestFuture("I'll be out last sept", year - 1, 9, 1, year - 1, 10, 1);
+                BasicTestFuture("I'll be out next june", year + 1, 6, 1, year + 1, 7, 1);
+                BasicTestFuture("I'll be out the third week of this month", 21, 28, month, year);
+                BasicTestFuture("I'll be out the last week of july", year + 1, 7, 24, year + 1, 7, 31);
+            }
 
             // test merging two time points
             BasicTestFuture("I'll be out Oct. 2 to October 22", 2, 22, 10, year + 1);
@@ -93,10 +108,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out November 19 to 20", 19, 20, 11, year);
             BasicTestFuture("I'll be out November between 19 and 20", 19, 20, 11, year);
 
-            BasicTestFuture("I'll be out 2015.3", 2015, 3, 1, 2015, 3, 31);
-            BasicTestFuture("I'll be out 2015-3", 2015, 3, 1, 2015, 3, 31);
-            BasicTestFuture("I'll be out 2015/3", 2015, 3, 1, 2015, 3, 31);
-            BasicTestFuture("I'll be out 3/2015", 2015, 3, 1, 2015, 3, 31);
+            if (inclusiveEnd)
+            {
+                BasicTestFuture("I'll be out 2015.3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("I'll be out 2015-3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("I'll be out 2015/3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("I'll be out 3/2015", 2015, 3, 1, 2015, 3, 31);
+            }
+            else
+            {
+                BasicTestFuture("I'll be out 2015.3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("I'll be out 2015-3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("I'll be out 2015/3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("I'll be out 3/2015", 2015, 3, 1, 2015, 4, 1);
+            }
 
             //BasicTestFuture("I'll leave this summer", 2016, 6, 1, 2016, 9, 1);
             //BasicTestFuture("I'll leave in summer", 2017, 6, 1, 2017, 9, 1);

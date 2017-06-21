@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private readonly IDatePeriodParserConfiguration config;
 
-        private static bool InclusiveEndPeriod = true;
+        private static bool InclusiveEndPeriod = false;
 
         public BaseDatePeriodParser(IDatePeriodParserConfiguration configuration)
         {
@@ -845,7 +845,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = new DateObject(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -858,7 +858,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        public bool GetInclusiveEndPeriodFlag()
+        {
+            return InclusiveEndPeriod;
         }
     }
 }
