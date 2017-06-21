@@ -13,16 +13,18 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public const string OneToNineOrdinalRegex = @"(premier|premi[eè]re|deuxi[eè]me|second|seconde|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
 
+        public const string SpecialUnderHundredOrdinalRegex = @"(onzi[eè]me|douzi[eè]me)";
+
         public const string TensOrdinalRegex =
                        @"(quatre-vingt-dixi[eè]me|((quatre-vingti[eè]me)?(huitanti[eè]me)?(octanti[eè]me))|((soixante-dixi[eè]me)?(septanti[eè]me))|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
 
         public static string HundredOrdinalRegex = $@"({IntegerExtractor.AllIntRegex}(\s+(centi[eè]me\s)))"; // un centieme, deux centieme, trois centieme, etc 
 
-        public static string UnderHundredOrdinalRegex => $@"((({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})";
+        public static string UnderHundredOrdinalRegex => $@"((({IntegerExtractor.AllIntRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})";
 
         public static string UnderThousandOrdinalRegex => $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})";
 
-        public static string OverThousandOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})([eè]me))";
+        public static string OverThousandOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})(i[eè]me))";
 
         public static string ComplexOrdinalRegex => $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})";
 

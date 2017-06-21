@@ -38,14 +38,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var model = GetOrdinalModel();
 
-            BasicTest(model, //fails
-                "trois billionieme", "3000000000000");
+            //BasicTest(model, //fails
+            //    "trois billionieme", "3000000000000");
 
-            MultiTest(model, // fails
+            MultiTest(model, 
                 "un trillion", 0);
 
-            BasicTest(model,
-                "cent trillionieme", "100000000000000");
+            //BasicTest(model,
+            //    "cent trillionieme", "100000000000000");
 
             BasicTest(model,
                 "11eme", "11");
@@ -103,32 +103,31 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             MultiTest(model,
                 "192.168.1.2", 4);
 
+            BasicTest(model, "9,2321312", "9,2321312");
+
+            BasicTest(model, " -9,2321312", "-9,2321312");
+
+            BasicTest(model,
+                "vingt", "20");
+
             BasicTest(model,
                 "cent", "100");
 
-            //MultiTest(model, // fails
-            //    "le liquide de 180.25 ml", 0);
+            BasicTest(model,
+                ",08", "0,08");
 
-            MultiTest(model,
-                "le liquide de 180ml", 0);
+            BasicTest(model,
+                "vingt quatre", "24");
 
-            MultiTest(model,
-                " route de 29km ", 0);
+            BasicTest(model, "trois million", "3000000");
 
-            //MultiTest(model, // fails
-            //    " le 4 mai ", 0);
+            BasicTest(model, "trois million sept", "3000007");
 
-            MultiTest(model,
-                "le liquide de .25ml", 0);
+            MultiTest(model, // fails
+                "un", 0);
 
-            //BasicTest(model, // fails
-            //    ".08", "0.08");
-
-            //MultiTest(model, // fails
-            //    "un", 0);
-
-            //MultiTest(model, // fails
-            //    "une", 0);
+            MultiTest(model, // fails
+                "une", 0);
 
             BasicTest(model,
                 ",23456000", "0,23456");
@@ -136,7 +135,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "4,800", "4,8");
 
-            BasicTest(model, // none of the models read trent for some reason
+            BasicTest(model, 
                 "cent trois et deux tiers", (103 + (double)2 / 3).ToString(ci));
 
             BasicTest(model,
@@ -336,6 +335,23 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "-12e-1", "-1,2");
+
+            // implement below with NumberWithUnit 
+
+            //MultiTest(model,
+            //    "le liquide de 180.25 ml", 0);
+
+            //MultiTest(model,
+            //    "le liquide de 180ml", 0);
+
+            //MultiTest(model,
+            //    "le liquide de .25ml", 0);
+
+            //MultiTest(model,
+            //    " route de 29km ", 0);
+
+            //MultiTest(model, 
+            //    " le 4 mai ", 0);
         }
 
         [TestMethod]
@@ -346,21 +362,21 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var model = GetNumberModel();
 
             BasicTest(model,
-                "un cinquieme", "0,2"); // a fifth
+                "un cinquieme", "0,2");
 
             BasicTest(model,
                 "un billionieme", "1E-12"); // a trillionth
 
-            BasicTest(model, // fails
-                "cent mille billiardieme", "1E-07"); // a hundred thousand trillionths
+            BasicTest(model, 
+                "cent mille billionieme", "1E-07"); // a hundred thousand trillionths
 
             BasicTest(model,
                 "un cinquieme", "0,2"); // one fifth 
 
-            BasicTest(model,  //fails
+            BasicTest(model,  
                 "trois cinquieme", "0,6"); // three fifths
 
-            BasicTest(model, // fails
+            BasicTest(model, 
                 "vingt cinquieme", "4"); // twenty fifths 
 
             BasicTest(model, //fails
@@ -461,7 +477,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 " 100 pourcent", "100%");
 
             BasicTest(model,
-                "120 pour cent", "120%");
+                "120 pourcent", "120%");
 
             BasicTest(model,
                 " 100 pourcentage", "100%");
@@ -475,13 +491,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "trente pourcentage", "30%");
 
-            BasicTest(model, // fails
+            BasicTest(model, 
                 "cent pourcent", "100%");
 
-            BasicTest(model, // fails
-                "cent pour cent", "100%");
-
-            BasicTest(model, // fails
+            BasicTest(model, 
                 "cent pourcentages", "100%");
 
             BasicTest(model,

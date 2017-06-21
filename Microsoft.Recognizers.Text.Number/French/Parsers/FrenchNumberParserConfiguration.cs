@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Text; 
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
@@ -73,32 +74,37 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public long ResolveCompositeNumber(string numberStr)
         {
-            if(numberStr.Contains("-"))
-            {
-                var numbers = numberStr.Split('-');
-                long ret = 0;
-                foreach(var number in numbers)
-                {
-                    if(OrdinalNumberMap.ContainsKey(number))
-                    {
-                        ret += OrdinalNumberMap[number];
-                    }
-                    else if(CardinalNumberMap.ContainsKey(number))
-                    {
-                        ret += CardinalNumberMap[number];
-                    }
-                }
-                return ret;
-            }
-            if(this.OrdinalNumberMap.ContainsKey(numberStr))
+            if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {
                 return this.OrdinalNumberMap[numberStr];
             }
-            if(this.CardinalNumberMap.ContainsKey(numberStr))
+
+            if (this.CardinalNumberMap.ContainsKey(numberStr))
             {
                 return this.CardinalNumberMap[numberStr];
             }
-            return 0;
+
+            long value = 0;
+            long finalValue = 0;
+            var strBuilder = new StringBuilder();
+            int lastGoodChar = 0;
+            for (int i = 0; i < numberStr.Length; i++)
+            {
+                strBuilder.Append(numberStr[i]);
+                if (this.CardinalNumberMap.ContainsKey(strBuilder.ToString()) && this.CardinalNumberMap[strBuilder.ToString()] > value)
+                {
+                    lastGoodChar = i;
+                    value = this.CardinalNumberMap[strBuilder.ToString()];
+                }
+                if ((i + 1) == numberStr.Length)
+                {
+                    finalValue += value;
+                    strBuilder.Clear();
+                    i = lastGoodChar++;
+                    value = 0;
+                }
+            }
+            return finalValue;
         }
 
         private static ImmutableDictionary<string, long> InitCardinalNumberMap()

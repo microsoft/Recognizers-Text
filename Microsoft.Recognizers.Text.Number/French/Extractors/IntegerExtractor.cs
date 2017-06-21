@@ -9,14 +9,14 @@ namespace Microsoft.Recognizers.Text.Number.French
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";   
    
-        public const string RoundNumberIntegerRegex = @"(cent|mille|million|milliard|billion)";
+        public const string RoundNumberIntegerRegex = @"(mille|million|milliard|billion)";
 
         public const string ZeroToNineIntegerRegex = @"(un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
         public const string TenToNineteenIntegerRegex =
             @"(dix-neuf|dix-huit|dix-sept|seize|quinze|quatorze|treize|douze|onze|dix)";
 
-        public const string TensNumberIntegerRegex = @"(vingt|trente|quarante|cinqaunte|soixante|soixante-dix|septante|quatre-vingts|huitante|octante|quatre-vingt-dix|nonante)";
+        public const string TensNumberIntegerRegex = @"(cent|vingt|trente|quarante|cinqaunte|soixante|soixante-dix|septante|quatre-vingts|huitante|octante|quatre-vingt-dix|nonante)";
 
         public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 
