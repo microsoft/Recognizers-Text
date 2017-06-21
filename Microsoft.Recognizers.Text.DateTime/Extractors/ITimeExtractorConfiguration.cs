@@ -11,5 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UnitRegex { get; }
         IExtractor DurationExtractor { get; }
 
+        bool GetAgoIndex(string text, out int index);
+        bool GetLaterIndex(string text, out int index);
+
     }
 }

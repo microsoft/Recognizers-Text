@@ -321,7 +321,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             unitStr = config.UnitMap[srcUnit];
                             numStr = number.ToString();
-                            if (AfterStr.StartsWith("ago"))
+                            if (config.ContainsAgoString(AfterStr))
                             {
                                 DateObject Date;
                                 switch (unitStr)
@@ -346,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 ret.Success = true;
                                 return ret;
                             }
-                            if (AfterStr.Equals("later"))
+                            if (config.ContainsLaterString(AfterStr))
                             {
                                 DateObject Date;
                                 switch (unitStr)

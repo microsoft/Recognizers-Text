@@ -129,5 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimedText = text.Trim().ToLowerInvariant();
             return trimedText.Equals("last");
         }
+
+        public bool ContainsAgoString(string text)
+        {
+            string agoString = "ago";
+            return text.TrimStart().StartsWith(agoString);
+        }
+
+        public bool ContainsLaterString(string text)
+        {
+            string laterString = "later";
+            return text.TrimStart().StartsWith(laterString);
+        }
     }
 }

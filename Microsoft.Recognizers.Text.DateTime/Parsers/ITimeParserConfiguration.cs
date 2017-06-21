@@ -24,5 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin);
         void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm);
+
+        bool ContainsAgoString(string text);
+        bool ContainsLaterString(string text);
     }
 }

@@ -120,5 +120,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             hour = (hour + deltaHour) % 24;
         }
+
+        public bool ContainsAgoString(string text)
+        {
+            string agoString = "ago";
+            return text.TrimStart().StartsWith(agoString);
+        }
+
+        public bool ContainsLaterString(string text)
+        {
+            string laterString = "later";
+            return text.TrimStart().StartsWith(laterString);
+        }
     }
 }

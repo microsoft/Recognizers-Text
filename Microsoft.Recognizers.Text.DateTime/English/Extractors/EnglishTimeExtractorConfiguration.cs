@@ -140,5 +140,29 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }
+
+        public bool GetAgoIndex(string text, out int index)
+        {
+            index = -1;
+            string agoString = "ago";
+            if (text.TrimStart().StartsWith(agoString))
+            {
+                index = text.LastIndexOf(agoString) + agoString.Length;
+                return true;
+            }
+            return false;
+        }
+
+        public bool GetLaterIndex(string text, out int index)
+        {
+            index = -1;
+            string laterString = "later";
+            if (text.TrimStart().StartsWith(laterString))
+            {
+                index = text.LastIndexOf("later") + laterString.Length;
+                return true;
+            }
+            return false;
+        }
     }
 }
