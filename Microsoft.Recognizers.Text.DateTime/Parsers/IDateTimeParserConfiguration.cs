@@ -12,6 +12,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser DateParser { get; }
         IDateTimeParser TimeParser { get; }
 
+        IExtractor CardinalExtractor { get; }
+        IParser NumberParser { get; }
+        IExtractor DurationExtractor { get; }
+        IParser DurationParser { get; }
+
         Regex NowRegex { get; }
         Regex AMTimeRegex { get; }
         Regex PMTimeRegex { get; }
@@ -19,13 +24,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SimpleTimeOfTodayBeforeRegex { get; }
         Regex SpecificNightRegex { get; }
         Regex TheEndOfRegex { get; }
+        Regex UnitRegex { get; }
 
-
+        IImmutableDictionary<string, string> UnitMap { get; }
         IImmutableDictionary<string, int> Numbers { get; }
 
         bool HaveAmbiguousToken(string text, string matchedText);
         bool GetMatchedNowTimex(string text, out string timex);
         int GetSwiftDay(string text);
         int GetHour(string text, int hour);
+
+        bool ContainsAgoString(string text);
+        bool ContainsLaterString(string text);
+        bool ContainsInString(string text);
     }
 }

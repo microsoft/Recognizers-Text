@@ -120,6 +120,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return LuisTime(time.Hour, time.Minute, time.Second);
         }
 
+        public static string LuisDateTime(DateObject time)
+        {
+            return $"{LuisDate(time)}T{LuisTime(time.Hour, time.Minute, time.Second)}";
+        }
+
         public static string FormatDate(DateObject date)
         {
             return string.Join("-", date.Year.ToString("D4"), date.Month.ToString("D2"), date.Day.ToString("D2"));

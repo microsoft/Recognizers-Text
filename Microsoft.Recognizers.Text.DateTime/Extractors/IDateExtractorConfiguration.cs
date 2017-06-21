@@ -17,5 +17,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool GetAgoIndex(string text, out int index);
         bool GetLaterIndex(string text, out int index);
+        bool GetInIndex(string text, out int index);
     }
 }

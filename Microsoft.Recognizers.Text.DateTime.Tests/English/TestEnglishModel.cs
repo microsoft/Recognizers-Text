@@ -186,10 +186,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 Constants.SYS_DATETIME_DATETIMEPERIOD, "next monday afternoon", "2016-11-14TAF");
 
             BasicTest(model, reference,
-                "I'll go back in 5 hrs",
-                Constants.SYS_DATETIME_DATETIMEPERIOD, "in 5 hrs", "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)");
-
-            BasicTest(model, reference,
                 "I'll go back next hour",
                 Constants.SYS_DATETIME_DATETIMEPERIOD, "next hour", "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)");
         }

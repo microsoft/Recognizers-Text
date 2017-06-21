@@ -112,17 +112,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
                 var pos = (int)er.Start + (int)er.Length;
-                if (pos < text.Length)
+                if (pos <= text.Length)
                 {
-                    var tmp = text.Substring(pos);
-                    int index = -1;
-                    if (config.GetAgoIndex(tmp, out index))
+                    var afterString = text.Substring(pos);
+                    var beforeString = text.Substring(0, (int) er.Start);
+                    var index = -1;
+                    if (config.GetAgoIndex(afterString, out index))
                     {
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
-                    else if (config.GetLaterIndex(tmp, out index))
+                    else if (config.GetLaterIndex(afterString, out index))
                     {
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                    }
+                    else if (config.GetInIndex(beforeString, out index))
+                    {
+                        if (er.Start != null && er.Length != null && (int)er.Start>index)
+                        {
+                            ret.Add(new Token((int) er.Start - index, (int) er.Start + (int) er.Length));
+                        }
                     }
                 }
             }

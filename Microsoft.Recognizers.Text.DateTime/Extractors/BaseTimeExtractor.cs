@@ -35,8 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(AtRegexMatch(text));
             tokens.AddRange(SpecialsRegexMatch(text));
-            tokens.AddRange(DurationWithBeforeAndAfter(text));
-
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -89,36 +87,5 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret;
         }
-
-        // process case like "two minutes ago" "three hours later"
-        private List<Token> DurationWithBeforeAndAfter(string text)
-        {
-            var ret = new List<Token>();
-            var duration_er = config.DurationExtractor.Extract(text);
-            foreach (var er in duration_er)
-            {
-                var match = config.UnitRegex.Match(er.Text);
-                if (!match.Success)
-                {
-                    continue;
-                }
-                var pos = (int)er.Start + (int)er.Length;
-                if (pos < text.Length)
-                {
-                    var tmp = text.Substring(pos);
-                    int index = -1;
-                    if (config.GetAgoIndex(tmp, out index))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                    else if (config.GetLaterIndex(tmp, out index))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                }
-            }
-            return ret;
-        }
-
     }
 }

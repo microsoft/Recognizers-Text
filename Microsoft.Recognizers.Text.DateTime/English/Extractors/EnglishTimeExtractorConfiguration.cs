@@ -132,8 +132,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
-        Regex ITimeExtractorConfiguration.UnitRegex => UnitRegex;
-
         public IExtractor DurationExtractor { get; }
 
         public EnglishTimeExtractorConfiguration()
@@ -144,23 +142,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetAgoIndex(string text, out int index)
         {
             index = -1;
-            string agoString = "ago";
-            if (text.TrimStart().StartsWith(agoString))
+            List<string> agoStringList = new List<string>
             {
-                index = text.LastIndexOf(agoString) + agoString.Length;
-                return true;
-            }
-            return false;
-        }
-
-        public bool GetLaterIndex(string text, out int index)
-        {
-            index = -1;
-            string laterString = "later";
-            if (text.TrimStart().StartsWith(laterString))
+                "ago",
+            };
+            foreach (var agoString in agoStringList)
             {
-                index = text.LastIndexOf("later") + laterString.Length;
-                return true;
+                if (text.TrimStart().StartsWith(agoString))
+                {
+                    index = text.LastIndexOf(agoString) + agoString.Length;
+                    return true;
+                }
             }
             return false;
         }

@@ -50,5 +50,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool ContainsAgoString(string text);
         bool ContainsLaterString(string text);
+        bool ContainsInString(string text);
     }
 }
