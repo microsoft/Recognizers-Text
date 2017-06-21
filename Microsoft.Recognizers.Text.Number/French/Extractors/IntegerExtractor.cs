@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public static string SupportThousandsRegex => $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 
-        public static string BelowHundredsRegex => $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+et\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
+        public static string BelowHundredsRegex => $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
 
         public static string BelowThousandsRegex => $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";
 

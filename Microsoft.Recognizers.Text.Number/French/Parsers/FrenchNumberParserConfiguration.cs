@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"deux", 2},
                 {"trois", 3},
                 {"quatre", 4},
-                {"cing", 5},
+                {"cinq", 5},
                 {"six", 6 },
                 {"sept", 7},
                 {"huit", 8},
@@ -155,7 +155,9 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"cent", 100},
                 {"mille", 1000},
                 {"un million", 1000000},
+                {"million", 1000000 },
                 {"un milliard", 1000000000},
+                {"milliard", 1000000000},
                 {"un mille milliards", 1000000000000}
             }.ToImmutableDictionary();
         }
@@ -172,6 +174,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"second", 2},
                 {"seconde", 2},
                 {"troisième", 3},
+                {"tiers", 3},
                 {"troisieme", 3},
                 {"quatrième", 4},
                 {"quatrieme", 4},
