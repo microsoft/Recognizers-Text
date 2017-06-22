@@ -11,22 +11,22 @@ namespace Microsoft.Recognizers.Text.Number.French
    
         public const string RoundNumberIntegerRegex = @"(mille|million|milliard|billion)";
 
-        public const string ZeroToNineIntegerRegex = @"(un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+        public const string ZeroToNineIntegerRegex = @"(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
         public const string TenToNineteenIntegerRegex =
-            @"(dix-neuf|dix-huit|dix-sept|seize|quinze|quatorze|treize|douze|onze|dix)";
+            @"(dix\Wneuf|dix\Whuit|dix\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
 
-        public const string TensNumberIntegerRegex = @"(cent|vingt|trente|quarante|cinqaunte|soixante|soixante-dix|septante|quatre-vingts|huitante|octante|quatre-vingt-dix|nonante)";
+        public const string TensNumberIntegerRegex = @"(octante|vingt|trente|quarante|cinqaunte|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
 
         public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 
-        public static string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|((\s+cent\s)+{TensNumberIntegerRegex}))"; // work on this one
+        public static string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))"; // work on this one
 
         public static string SupportThousandsRegex => $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
 
-        public static string BelowHundredsRegex => $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
+        public static string BelowHundredsRegex => $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})"; //**WE SLAVED OVER THIS
 
-        public static string BelowThousandsRegex => $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";
+        public static string BelowThousandsRegex => $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";
 
         public static string SeparaIntRegex
             =>
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     "IntegerNum"
                 },
                 {
-                    new Regex($@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)",
+                    new Regex($@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },
@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 },
                 {
                     new Regex(
-                        $@"(?<=\b)(((demi\s+)?a\s+douzaine)|({AllIntRegex}\s+douzaine(s)?))(?=\b)",
+                        $@"(?<=\b)(((demi\s+)?a\s+douzaine)|({AllIntRegex}\s+douzaines?))(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerFr"
                 }

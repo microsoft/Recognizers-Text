@@ -158,7 +158,8 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"million", 1000000 },
                 {"un milliard", 1000000000},
                 {"milliard", 1000000000},
-                {"un mille milliards", 1000000000000}
+                {"un mille milliards", 1000000000000},
+                {"un billion", 1000000000000 }
             }.ToImmutableDictionary();
         }
 
@@ -174,7 +175,11 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"second", 2},
                 {"seconde", 2},
                 {"troisième", 3},
+                {"demi", 2},
                 {"tiers", 3},
+                {"tierce", 3 },
+                {"quart", 4 },
+                {"quarts", 4 },
                 {"troisieme", 3},
                 {"quatrième", 4},
                 {"quatrieme", 4},
@@ -239,8 +244,12 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"millionième", 1000000 },
                 {"millionieme", 1000000 },
                 {"milliardième", 1000000000 },
-                {"milliardieme", 1000000000 }
-             
+                {"milliardieme", 1000000000 },
+                {"billionieme", 1000000000000},
+                {"billionième", 1000000000000},
+                {"trillionième", 1000000000000000000},
+                {"trillionieme", 1000000000000000000}
+
             }.ToImmutableDictionary();
         }
 

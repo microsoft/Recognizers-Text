@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             HashSet<string> regexStrs = new HashSet<string>
             {
                 $@"(@{numExtType})(\s*)(%|pourcentages|pourcents|pourcentage|pourcent)",
-                $@"(%|pourcent|pour cent des|pourcentage de)(\s*)(@{numExtType})"
+                $@"(%|pourcent|pourcent des|pourcentage de)(\s*)(@{numExtType})"                
             };
 
             return BuildRegexes(regexStrs);

@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.French
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
 
-        public static string AllPointRegex => $@"((\s+{IntegerExtractor.ZeroToNineIntegerRegex})+|(\s+{IntegerExtractor.SeparaIntRegex}))";
+        public static string AllPointRegex => $@"((\s+{IntegerExtractor.ZeroToNineIntegerRegex})+|(\s+{IntegerExtractor.AllIntRegex}))";
 
         public static string AllFloatRegex => $@"{IntegerExtractor.AllIntRegex}(\s+(virgule)){AllPointRegex}";
 

@@ -11,22 +11,22 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public const string SimpleRoundOrdinalRegex = @"(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
 
-        public const string OneToNineOrdinalRegex = @"(premier|premi[eè]re|deuxi[eè]me|second|seconde|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
+        public const string OneToNineOrdinalRegex = @"(premier|premi[eè]re|deuxi[eè]me|second[e]|troisi[eè]me|tiers|tierce|quatri[eè]me|cinqui[eè]me|sixi[eè]me|septi[eè]me|huiti[eè]me|neuvi[eè]me)";
 
         public const string SpecialUnderHundredOrdinalRegex = @"(onzi[eè]me|douzi[eè]me)";
 
         public const string TensOrdinalRegex =
-                       @"(quatre-vingt-dixi[eè]me|((quatre-vingti[eè]me)?(huitanti[eè]me)?(octanti[eè]me))|((soixante-dixi[eè]me)?(septanti[eè]me))|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
+                       @"(quatre-vingt-dixi[eè]me|quatre-vingti[eè]me|huitanti[eè]me|octanti[eè]me|soixante-dixi[eè]me|septanti[eè]me|soixanti[eè]me|cinquanti[eè]me|quaranti[eè]me|trenti[eè]me|vingti[eè]me)";
 
         public static string HundredOrdinalRegex = $@"({IntegerExtractor.AllIntRegex}(\s+(centi[eè]me\s)))"; // un centieme, deux centieme, trois centieme, etc 
 
-        public static string UnderHundredOrdinalRegex => $@"((({IntegerExtractor.AllIntRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})";
+        public static string UnderHundredOrdinalRegex => $@"((({IntegerExtractor.AllIntRegex}(\W)?)?{OneToNineOrdinalRegex})|({IntegerExtractor.TensNumberIntegerRegex}(\W)?)?{OneToNineOrdinalRegex}|{TensOrdinalRegex}|{SpecialUnderHundredOrdinalRegex})";
 
-        public static string UnderThousandOrdinalRegex => $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})";
+        public static string UnderThousandOrdinalRegex => $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|(({IntegerExtractor.AllIntRegex}(\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})";
 
         public static string OverThousandOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})(i[eè]me))";
 
-        public static string ComplexOrdinalRegex => $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})";
+        public static string ComplexOrdinalRegex => $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})";
 
         public static string SuffixOrdinalRegex => $@"(({IntegerExtractor.AllIntRegex})({SimpleRoundOrdinalRegex}))";
 
