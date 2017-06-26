@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.RoundNumberMap = InitRoundNumberMap();
             this.HalfADozenRegex = new Regex(@"(?<=\b)+demi\s+douzaine", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                @"((?<=\b)(mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                @"((?<=\b)(cent|mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 

@@ -216,6 +216,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model, 
                 "cent seize", "116");
 
+            BasicTest(model,
+                " 322 cent ", "32200");
+
             MultiTest(model,
                 "1, 234, 567", 3);
 
@@ -385,9 +388,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             //BasicTest(model,
             //    "vingt et un billions et trois cents", "21000000000300");
-
-            //BasicTest(model, // fails 
-            //    " 322 cent ", "32200"); // only matches 322, not matching round number and multiplying
 
             //BasicTest(model, // fails, adds 1,234 and 567
             //    "1.234.567", "1234567");
