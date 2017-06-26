@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Recognizers.Text.NumberWithUnit.English;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
@@ -35,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = GetCurrencyModel();
+            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.English);
 
             BasicTest(model,
             "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
@@ -441,7 +439,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = GetDimensionModel();
+            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.English);
 
             BasicTest(model,
             "75ml",
@@ -650,7 +648,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = GetTemperatureModel();
+            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.English);
 
             BasicTest(model, "the temperature outside is 40 deg celsius", "40 C");
 
@@ -720,60 +718,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod][Ignore]
         public void TestAge()
         {
-            var model = GetAgeModel();
-            
-        }
+            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.English);
 
-        private static IModel GetCurrencyModel()
-        {
-            return new CurrencyModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new CurrencyParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetAgeModel()
-        {
-            return new AgeModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new AgeParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetDimensionModel()
-        {
-            return new DimensionModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new DimensionParserConfiguration())
-                    }
-                }
-                );
-        }
-
-        private static IModel GetTemperatureModel()
-        {
-            return new TemperatureModel(
-                new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new TemperatureParserConfiguration())
-                    }
-                }
-                );
         }
     }
 }

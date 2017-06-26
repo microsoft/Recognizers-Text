@@ -36,7 +36,6 @@ namespace Microsoft.Recognizers.Text.Number.French
             =>
                $@"({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)";
 
-
         public IntegerExtractor(string placeholder = @"\D|\b")
         {
             var _regexes = new Dictionary<Regex, string>

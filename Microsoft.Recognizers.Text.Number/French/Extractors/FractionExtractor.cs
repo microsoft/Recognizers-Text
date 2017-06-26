@@ -25,27 +25,18 @@ namespace Microsoft.Recognizers.Text.Number.French
                     , "FracNum"
                 },
                 {
-
-                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+((et)\s+)?)?({IntegerExtractor.AllIntRegex})(\s+((et)\s)?)((({OrdinalExtractor.AllOrdinalRegex})s?|({OrdinalExtractor.SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\b)",
-     
+                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+((et)\s+)?)?({IntegerExtractor.AllIntRegex})(\s+((et)\s)?)((({OrdinalExtractor.AllOrdinalRegex})s?|({OrdinalExtractor.SuffixOrdinalRegex})s?)|demis?|tiers?|quarts?)(?=\b)",    
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-
                     , "FracFr"
                 },
                 {
-
                     new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(et\s+)?)?(un|une)(\s+)(({OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.SuffixOrdinalRegex})|(et\s+)?demis?)(?=\b)",
-
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-
                     , "FracFr"
                 },
                 {
-
                     new Regex($@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sur\s+(({IntegerExtractor.AllIntRegex})|((\d+)(?!\.)))(?=\b)",
-
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-
                     , "FracFr"
                 }
             };

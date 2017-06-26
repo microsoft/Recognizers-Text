@@ -83,6 +83,7 @@
     <Compile Include="Models\CurrencyModel.cs" />
     <Compile Include="Models\DimensionModel.cs" />
     <Compile Include="Models\TemperatureModel.cs" />
+    <Compile Include="NumberWithUnitRecognizer.cs" />
     <Compile Include="Parsers\NumberWithUnitParser.cs" />
     <Compile Include="Parsers\INumberWithUnitParserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +117,10 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
       <Project>{61205449-BDBA-4BF3-8B24-AE059E0B1B61}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
+      <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
+      <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

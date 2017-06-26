@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "vingtieme", "20");
-
+  
             BasicTest(model, 
                 "vingt-cinquieme", "25");
 
@@ -109,13 +109,16 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "trois cent vingt seconde", "322");
+
+           // BasicTest(model,
+            //    "vingt et un trillions et trois cent vingt secondes", "21000000000322");
         }
 
         [TestMethod]
         public void TestNumberModel()
         {
             var ci = new FrenchNumberParserConfiguration().CultureInfo;
-
+          
             var model = GetNumberModel();
 
             WrappedTest(model,
@@ -132,6 +135,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(model,
                 " route de 29km ", 0);
+
 
             //MultiTest(model,
             //    " le 4 mai ", 0);
@@ -397,7 +401,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public void TestFractionModel()
         {
             var ci = new FrenchNumberParserConfiguration().CultureInfo;
-
+          
             var model = GetNumberModel();
 
             BasicTest(model,
@@ -582,6 +586,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 new PercentModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                     new PercentageExtractor());
+
         }
     }
 }

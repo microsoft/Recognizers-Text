@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestNumberModel()
         {
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
 
             #region Integer numbers
 
@@ -1013,7 +1013,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestFractionModel()
         {
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
 
             BasicTest(model,
                 "五 分之 一",
@@ -1251,7 +1251,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestPercentageModel()
         {
-            var model = GetPercentageModel();
+            var model = NumberRecognizer.GetPercentageModel(Culture.Chinese);
 
             MultiTest(model,
                 "打对折", 1);
@@ -1973,7 +1973,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = GetOrdinalModel();
+            var model = NumberRecognizer.GetOrdinalModel(Culture.Chinese);
 
             BasicTest(model,
                 "第二百五十",
@@ -1998,7 +1998,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestCompareModel()
         {
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
             var wmodel = GetWithoutWhiteListNumberModel();
 
             MultiTest(model,
@@ -2049,13 +2049,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 1);
 
         }
-        private static IModel GetNumberModel()
-        {
-            return
-                new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
-                        new ChineseNumberParserConfiguration()), new NumberExtractor());
-        }
 
         private static IModel GetWithoutWhiteListNumberModel()
         {
@@ -2063,22 +2056,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 new NumberModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                         new ChineseNumberParserConfiguration()), new NumberExtractor(ChineseNumberMode.ExtractAll));
-        }
-
-        private static IModel GetOrdinalModel()
-        {
-            return
-                new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
-                        new ChineseNumberParserConfiguration()), new OrdinalExtractor());
-        }
-
-        private static IModel GetPercentageModel()
-        {
-            return
-                new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
-                        new ChineseNumberParserConfiguration()), new PercentageExtractor());
         }
     }
 }

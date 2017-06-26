@@ -15,7 +15,6 @@ namespace Microsoft.Recognizers.Text.Number.French
                 $@"(@{numExtType})(\s*)(%|pourcentages|pourcents|pourcentage|pourcent)",
                 $@"(%|pourcent|pourcent des|pourcentage de)(\s*)(@{numExtType})"                
             };
-
             return BuildRegexes(regexStrs);
         }
     }
