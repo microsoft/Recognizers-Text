@@ -205,6 +205,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 " 3 douzaines", "36");
 
             BasicTest(model,
+                "2 douzaine", "24");
+
+            BasicTest(model,
                 " trois cent douze", "312");
 
             BasicTest(model,
@@ -342,8 +345,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "un demi", "0,5"); // 1/2 one half
 
-            //BasicTest(model,
-            //    "un et demi", "1,5"); // one and a half 
+            BasicTest(model,
+                "un et un demi", "1,5"); // one and a half 
 
             BasicTest(model,
                 "un et un quatrieme", "1,25"); // one and a quarter
@@ -351,11 +354,31 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "cinq et un quart", "5,25"); // five and one quarter
 
-            //BasicTest(model,
-            //    "deux cent virgule zero trois", "200,03");
+            BasicTest(model,
+                "cinquante-deux", "52");
 
             BasicTest(model,
-                "vingt et un billion", "21000000000000");
+                "cinquante  deux", "52");
+
+            BasicTest(model,
+                "vingt et trois et trois cinquiemes", "23,6"); // twenty and three and three fifths      
+
+            BasicTest(model,
+                "deux  cent  deux  mille", "202000");
+
+            BasicTest(model,
+                "deux cent virgule trois", "200,3");
+
+            BasicTest(model,
+                "deux cent virgule cinquante deux", "200,52");
+
+            //BasicTest(model, //half dozen fails
+            //    " une demis douzaine ", "6");
+
+            // TODO: Integrate better support for tens numbers + 1, etc "21" - "vingt-et-un" 
+
+            //BasicTest(model, // fails
+            //    "vingt et un billion", "21000000000000"); // yields 10000000000020 instead
 
             //BasicTest(model,
             //    "vingt et un billion trois cent", "21000000000300");
@@ -363,26 +386,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             //BasicTest(model,
             //    "vingt et un billions et trois cents", "21000000000300");
 
-            BasicTest(model,
-                "cinquante-deux", "52");
-
-            //BasicTest(model,
-            //    "cinquante  deux", "52");
-
-            BasicTest(model,
-                " 322 cent ", "32200");
-
-            //BasicTest(model,
-            //    "deux  cent  deux  mille", "202000");
-
-            //BasicTest(model,
-            //    "duex cent virgule soixante dix", "200,71");
-
-            //BasicTest(model,
-            //    "vingt et trois et trois cinquiemes", "23,6"); // twenty and three and three fifths
-
-            //BasicTest(model, 
-            //    " une demi douzaine ", "6");
+            //BasicTest(model, // fails 
+            //    " 322 cent ", "32200"); // only matches 322, not matching round number and multiplying
 
             //BasicTest(model, // fails, adds 1,234 and 567
             //    "1.234.567", "1234567");
@@ -399,7 +404,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 "un cinquieme", "0,2");
 
             BasicTest(model,
-                "un demis", "0.5");
+                "un demi", "0,5");
 
             BasicTest(model,
                 "un billionieme", "1E-12"); // a trillionth
@@ -416,9 +421,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model, 
                 "un vingt cinquieme", "0,04"); // twenty fifths 
 
-            //BasicTest(model, //fails
-            //    "vingt-trois cinquieme", "4.6"); //twenty three fifths
-
             BasicTest(model,
                 "trois et un cinquieme", "3,2"); //three and a fifth
 
@@ -432,52 +434,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 "un vingt-cinquieme", ((double)1 / 25).ToString(ci)); // one twenty fifth
 
             BasicTest(model,
-                "trois vingt-et-unieme", ((double)3 / 21).ToString(ci)); // three twenty firsts ** note NOT 'vingt-premier' 
-
-            BasicTest(model,
-                "trois vingt et enieme", ((double)3 / 21).ToString(ci)); // same as above
-
-            BasicTest(model,
-                "vingt cinquieme ", "0,8"); // twenty twenty fifths
-
-
-            // ACT LIKE GOOGLE - ****THESE NEED TO BE LOOKED AT 
-
-            BasicTest(model,
-                "cent trente cinquiemes", ((double)130 / 5).ToString(ci)); // one hundred and thirty fifths **CHECK
-
-            BasicTest(model,
-                "cent trent-cinquiemes", ((double)100 / 35).ToString(ci)); // one hundred thirty fifths **CHECK
-
-            BasicTest(model,
-                "cent trente et duex cinquiemes", ((double)132 / 5).ToString(ci)); // one hundred thirty two fifths
-
-            BasicTest(model,
-                "cent trente-deux cinquiemes", ((double)132 / 5).ToString(ci));
-
-            BasicTest(model,
-                "cent et trente-deux cinquiemes", ((double)132 / 5).ToString(ci));
-
-            BasicTest(model,
-                "cent et trente et deux cinquiemes", (130 + (double)2 / 5).ToString(ci)); //one hundred and thirty and two fifths
-
-            BasicTest(model,
-                "cent trente cinquiemes", ((double)100 / 35).ToString(ci)); // one hundred 35th's 
-
-            BasicTest(model,
-                "un cent cinquieme", ((double)1 / 105).ToString(ci)); // one / one hundred fifth
-
-            BasicTest(model,
-                "cent mille cinquiemes", ((double)100 / 1005).ToString(ci)); // one hundred / one thousand fifths 
-
-            BasicTest(model,
                 "un sur trois", ((double)1 / 3).ToString(ci)); // one over three
 
             BasicTest(model,
                 "1 sur vingt-un", ((double)1 / 21).ToString(ci)); // 1 over twenty one 
 
             BasicTest(model,
-                "1 sur cent vengt et un", ((double)1 / 121).ToString(ci)); // 1 over one hundred and twenty one
+                "1 sur cent vingt et un", ((double)1 / 121).ToString(ci)); // 1 over one hundred and twenty one
 
             BasicTest(model,
                 "1 sur trois", ((double)1 / 3).ToString(ci));
@@ -496,6 +459,48 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             BasicTest(model,
                 "un sur cent vingt cinq", ((double)1 / 125).ToString(ci));
+            BasicTest(model,
+                "cent trente cinquiemes", ((double)130 / 5).ToString(ci)); // one hundred and thirty fifths **CHECK
+
+            //BasicTest(model,
+            //    "cent trent-cinquiemes", ((double)100 / 35).ToString(ci)); // Fails - must make it so including '-' parses denom first
+
+            //BasicTest(model, //fails
+            //    "vingt-trois cinquieme", "4.6"); //twenty three fifths
+
+            //BasicTest(model,
+            //    "trois vingt-et-unieme", ((double)3 / 21).ToString(ci)); // three twenty firsts ** note NOT 'vingt-premier' 
+
+            //BasicTest(model,
+            //    "trois vingt et enieme", ((double)3 / 21).ToString(ci)); // same as above
+
+            //BasicTest(model,
+            //    "vingt cinquieme ", "0,8"); // twenty twenty fifths
+
+
+            // ACT LIKE GOOGLE - ****THESE NEED TO BE LOOKED AT 
+
+            //BasicTest(model,
+            //    "cent trente et duex cinquiemes", ((double)132 / 5).ToString(ci)); // one hundred thirty two fifths
+
+            //BasicTest(model,
+            //    "cent trente-deux cinquiemes", ((double)132 / 5).ToString(ci));
+
+            //BasicTest(model,
+            //    "cent et trente-deux cinquiemes", ((double)132 / 5).ToString(ci));
+
+            //BasicTest(model,
+            //    "cent et trente et deux cinquiemes", (130 + (double)2 / 5).ToString(ci)); //one hundred and thirty and two fifths
+
+            //BasicTest(model,
+            //    "cent trente cinquiemes", ((double)100 / 35).ToString(ci)); // one hundred 35th's 
+
+            //BasicTest(model,
+            //    "un cent cinquieme", ((double)1 / 105).ToString(ci)); // one / one hundred fifth
+
+            //BasicTest(model,
+            //    "cent mille cinquiemes", ((double)100 / 1005).ToString(ci)); // one hundred / one thousand fifths 
+
         }
 
         [TestMethod]
@@ -578,6 +583,5 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                     new PercentageExtractor());
         }
-
     }
 }

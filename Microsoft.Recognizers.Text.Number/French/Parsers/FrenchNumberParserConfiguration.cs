@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.CardinalNumberMap = InitCardinalNumberMap();
             this.OrdinalNumberMap = InitOrdinalNumberMap();
             this.RoundNumberMap = InitRoundNumberMap();
-            this.HalfADozenRegex = new Regex(@"une|un\s+demi\s+douzaine", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(@"(?<=\b)+demi\s+douzaine", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
                 @"((?<=\b)(mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"second", 2},
                 {"seconde", 2},
                 {"troisième", 3},
-                {"demi", 2},
+                {"demi", 2}, 
                 {"tiers", 3},
                 {"tierce", 3 },
                 {"quart", 4 },
