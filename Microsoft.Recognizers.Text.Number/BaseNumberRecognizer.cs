@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -25,3 +25,4 @@ namespace Microsoft.Recognizers.Text.Number
         }
     }
 }
+
