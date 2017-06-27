@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Recognizers.Text
+namespace Microsoft.Recognizers.Text
 {
     public abstract class Recognizer<T>
     {

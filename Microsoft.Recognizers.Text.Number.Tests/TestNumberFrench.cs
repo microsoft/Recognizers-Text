@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetOrdinalModel(Culture.French);
 
             BasicTest(model,
                 "trois trillard", "3000000000000");
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new FrenchNumberParserConfiguration().CultureInfo;
 
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.French);
 
             WrappedTest(model,
                 "192,", "192", "192");
@@ -340,7 +340,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new FrenchNumberParserConfiguration().CultureInfo;
 
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.French);
 
             BasicTest(model,
                 "un cinquieme", "0,2"); // a fifth
@@ -446,7 +446,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestPercentageModel()
         {
-            var model = GetPercentageModel();
+            var model = NumberRecognizer.GetPercentageModel(Culture.French);
 
             BasicTest(model,
                 "100%", "100%");
@@ -491,30 +491,5 @@ namespace Microsoft.Recognizers.Text.Number.Tests
                 "cinq cent trente cinq pour cent", "535%");
 
         }
-
-        private static IModel GetNumberModel()
-        {
-            return
-                new NumberModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
-                        new NumberExtractor(NumberMode.PureNumber));
-        }
-
-        private static IModel GetOrdinalModel()
-        {
-            return
-                new OrdinalModel(
-                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
-                        new OrdinalExtractor());
-        }
-
-        private static IModel GetPercentageModel()
-        {
-            return
-                new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
-                    new PercentageExtractor());
-        }
-
     }
 }

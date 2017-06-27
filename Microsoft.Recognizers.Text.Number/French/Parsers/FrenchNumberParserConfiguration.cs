@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.RoundNumberMap = InitRoundNumberMap();
             this.HalfADozenRegex = new Regex(@"une|un\s+demi\s+douzaine", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                @"((?<=\b)(cent|)", // TODO: ADD MORE
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                @"((?<=\b)(cent|mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -105,7 +105,6 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
             return new Dictionary<string, long>
             {
-                {"un", 1 }, //CHANGE TO FR
                 {"zéro", 0},
                 {"zero", 0 },
                 {"un", 1},
@@ -241,7 +240,38 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
             return new Dictionary<string, long>
             {
-                {"cent", 100},
+                {"cent", 100}, // hundred
+                {"mille", 1000}, // thousand
+                {"million", 1000000}, // million
+                {"milliard", 1000000000}, //billion
+                {"billion", 1000000000000}, //trillion
+                {"centieme", 100}, // hundredth
+                {"centième", 100},
+                {"millieme", 1000},
+                {"millième", 1000},
+                {"millionième", 1000000},// millionth
+                {"millionieme", 1000000},
+                {"milliardième", 1000000000}, //billionth
+                {"milliardieme", 1000000000},
+                {"billionième", 1000000000000}, // trillionth
+                {"billionieme", 1000000000000},
+                {"centiemes", 100}, // hundredths
+                {"centièmes", 100},
+                {"millièmes", 1000}, // thousandths
+                {"milliemes", 1000},
+                {"millionièmes", 1000000},
+                {"millioniemes", 1000000},
+                {"milliardièmes", 1000000000},
+                {"milliardiemes", 1000000000},
+                {"billionièmes", 1000000000000},
+                {"billioniemes", 1000000000000},
+                {"douzaine", 12},
+                {"douzaines", 12},
+                {"k", 1000},
+                {"m", 1000000},
+                {"g", 1000000000},
+                {"b", 1000000000},
+                {"t", 1000000000000}
             }.ToImmutableDictionary();
         }
     }
