@@ -136,7 +136,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             MultiTest(model,
                 " route de 29km ", 0);
 
-
             //MultiTest(model,
             //    " le 4 mai ", 0);
 

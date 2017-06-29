@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     [TestClass]
     public class TestDatePeriodParser
     {
-        readonly IDateTimeParser parser;
+        readonly BaseDatePeriodParser parser;
         readonly BaseDatePeriodExtractor extractor;
         readonly DateObject referenceDay;
 
@@ -61,6 +61,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         {
             int year = 2016, month = 11;
 
+            bool inclusiveEnd=parser.GetInclusiveEndPeriodFlag();
+
             // test basic cases
             BasicTestFuture("Estare afuera desde el 4 hasta el 22 de este mes", 4, 22, month, year);
             BasicTestFuture("Estare afuera desde 4-23 del proximo mes", 4, 23, 12, year);
@@ -72,13 +74,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             BasicTestFuture("Estare afuera del 4 al 22 de enero, 1995", 4, 22, 1, 1995);
             BasicTestFuture("Estare afuera entre 4-22 enero,  1995", 4, 22, 1, 1995);
 
-            BasicTestFuture("Estare afuera esta semana", 7, 14, month, year);
-            BasicTestFuture("Estare afuera en Febrero", year + 1, 2, 1, year + 1, 3, 1);
-            BasicTestFuture("Estare afuera este Septiembre", year, 9, 1, year, 10, 1);
-            BasicTestFuture("Estare afuera el ultimo sept", year - 1, 9, 1, year - 1, 10, 1);
-            BasicTestFuture("Estare afuera el proximo junio", year + 1, 6, 1, year + 1, 7, 1);
-            BasicTestFuture("Estare afuera la tercera semana de este mes", 21, 28, month, year);
-            BasicTestFuture("Estare afuera la ultima semana de julio", year + 1, 7, 24, year + 1, 7, 31);
+            if (inclusiveEnd)
+            {
+                BasicTestFuture("Estare afuera esta semana", 7, 13, month, year);
+                BasicTestFuture("Estare afuera en Febrero", year + 1, 2, 1, year + 1, 2, 28);
+                BasicTestFuture("Estare afuera este Septiembre", year, 9, 1, year, 9, 30);
+                BasicTestFuture("Estare afuera el ultimo sept", year - 1, 9, 1, year - 1, 9, 30);
+                BasicTestFuture("Estare afuera el proximo junio", year + 1, 6, 1, year + 1, 6, 30);
+                BasicTestFuture("Estare afuera la tercera semana de este mes", 21, 28, month, year);
+                BasicTestFuture("Estare afuera la ultima semana de julio", year + 1, 7, 24, year + 1, 7, 31);
+            }
+            else
+            {
+                BasicTestFuture("Estare afuera esta semana", 7, 14, month, year);
+                BasicTestFuture("Estare afuera en Febrero", year + 1, 2, 1, year + 1, 3, 1);
+                BasicTestFuture("Estare afuera este Septiembre", year, 9, 1, year, 10, 1);
+                BasicTestFuture("Estare afuera el ultimo sept", year - 1, 9, 1, year - 1, 10, 1);
+                BasicTestFuture("Estare afuera el proximo junio", year + 1, 6, 1, year + 1, 7, 1);
+                BasicTestFuture("Estare afuera la tercera semana de este mes", 21, 28, month, year);
+                BasicTestFuture("Estare afuera la ultima semana de julio", year + 1, 7, 24, year + 1, 7, 31);
+            }
+            
 
             // test merging two time points
             BasicTestFuture("Estare afuera el 2 de Oct hasta 22 de Octubre", 2, 22, 10, year + 1);
@@ -93,10 +109,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             BasicTestFuture("Estare afuera 19 hasta 20 de Noviembre", 19, 20, 11, year);
             BasicTestFuture("Estare afuera entre 19 y 20 de Noviembre", 19, 20, 11, year);
 
-            BasicTestFuture("Estare afuera 2015.3", 2015, 3, 1, 2015, 4, 1);
-            BasicTestFuture("Estare afuera 2015-3", 2015, 3, 1, 2015, 4, 1);
-            BasicTestFuture("Estare afuera 2015/3", 2015, 3, 1, 2015, 4, 1);
-            BasicTestFuture("Estare afuera 3/2015", 2015, 3, 1, 2015, 4, 1);
+            if (inclusiveEnd)
+            {
+                BasicTestFuture("Estare afuera 2015.3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("Estare afuera 2015-3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("Estare afuera 2015/3", 2015, 3, 1, 2015, 3, 31);
+                BasicTestFuture("Estare afuera 3/2015", 2015, 3, 1, 2015, 3, 31);
+            }
+            else
+            {
+                BasicTestFuture("Estare afuera 2015.3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("Estare afuera 2015-3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("Estare afuera 2015/3", 2015, 3, 1, 2015, 4, 1);
+                BasicTestFuture("Estare afuera 3/2015", 2015, 3, 1, 2015, 4, 1);
+            }
+            
 
             //BasicTestFuture("I'll leave this summer", 2016, 6, 1, 2016, 9, 1);
             //BasicTestFuture("I'll leave in summer", 2017, 6, 1, 2017, 9, 1);
