@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public static string AllPointRegex => $@"((\s+{IntegerExtractor.ZeroToNineIntegerRegex})+|(\s+{IntegerExtractor.SeparaIntRegex}))";
 
-        public static string AllFloatRegex => $@"{IntegerExtractor.AllIntRegex}(\s+(virgule)){AllPointRegex}";
+        public static string AllFloatRegex => $@"{IntegerExtractor.AllIntRegex}(\s+(virgule|point)){AllPointRegex}";
 
         public DoubleExtractor(string placeholder = @"\D|\b")
         {

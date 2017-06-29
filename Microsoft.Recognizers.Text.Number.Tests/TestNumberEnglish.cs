@@ -137,6 +137,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model,
                 "two thirds", ((double)2 / 3).ToString());
 
+
             BasicTest(model,
                 "one hundred and sixteen", "116");
 

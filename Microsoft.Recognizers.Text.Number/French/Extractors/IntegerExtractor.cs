@@ -5,43 +5,36 @@ using System.Text.RegularExpressions;
 namespace Microsoft.Recognizers.Text.Number.French
 {
     public class IntegerExtractor : BaseNumberExtractor
-
     {
-
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
-
-
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";   
+   
         public const string RoundNumberIntegerRegex = @"(cent|mille|million|milliard|billion)";
 
-
-        public const string ZeroToNineIntegerRegex = @"(un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
-
-
-        public const string AnIntRegex = @"(un-)(?=\s)";
-
+        public const string ZeroToNineIntegerRegex = @"(et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)";
 
         public const string TenToNineteenIntegerRegex =
-            @"(dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf)";
+            @"(dix\Wneuf|dix\Whuit|dix\Wsept|seize|quinze|quatorze|treize|douze|onze|dix)";
 
+        public const string TensNumberIntegerRegex = @"(octante|vingt|trente|quarante|cinquante|soixante-dix|soixante|septante|huitante|quatre-vingt-dix|nonante)";
 
-        public const string TensNumberIntegerRegex = @"(vingt|trente|quarante|cinqaunte|soixante|soixante-dix|septante|quatre-vingts|huitante|octante|quatre-vingt-dix|nonante)";
+        public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
 
+        public static string HundredsNumberIntegerRegex = $@"(({ZeroToNineIntegerRegex}(\s+cent))|cent|((\s+cent\s)+{TensNumberIntegerRegex}))"; // work on this one
+
+        public static string SupportThousandsRegex => $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
+
+        public static string BelowHundredsRegex => $@"(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\W+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})"; 
+
+        public static string BelowThousandsRegex => $@"(({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex}|{TenToNineteenIntegerRegex})|cent\s+{TenToNineteenIntegerRegex})";
 
         public static string SeparaIntRegex
             =>
-                $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex
-                    })|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex
-                    }(\s+{RoundNumberIntegerRegex})+))";
-
+                 $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
 
         public static string AllIntRegex
             =>
-                $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){
-                    ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{
-                    RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})";
-
+               $@"({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)";
 
         public IntegerExtractor(string placeholder = @"\D|\b")
         {
@@ -62,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     "IntegerNum"
                 },
                 {
-                    new Regex($@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)",
+                    new Regex($@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },
@@ -80,7 +73,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 },
                 {
                     new Regex(
-                        $@"(?<=\b)(((demi\s+)?a\s+douzaine)|({AllIntRegex}\s+douzaine(s)?))(?=\b)",
+                        $@"(?<=\b)(((demi\s+)?\s+douzaine)|({AllIntRegex}\s+douzaines?))(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerFr"
                 }
