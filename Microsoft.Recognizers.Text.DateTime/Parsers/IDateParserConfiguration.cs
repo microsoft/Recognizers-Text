@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -48,8 +49,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         int GetSwiftMonth(string text);
         bool IsCardinalLast(string text);
 
-        bool ContainsAgoString(string text);
-        bool ContainsLaterString(string text);
-        bool ContainsInString(string text);
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }

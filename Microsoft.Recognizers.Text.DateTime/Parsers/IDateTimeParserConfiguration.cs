@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -34,8 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         int GetSwiftDay(string text);
         int GetHour(string text, int hour);
 
-        bool ContainsAgoString(string text);
-        bool ContainsLaterString(string text);
-        bool ContainsInString(string text);
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -44,8 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex UnitRegex { get; }
 
-
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
@@ -71,6 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public int GetHour(string text, int hour)
@@ -124,55 +127,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 swift = -1;
             }
             return swift;
-        }
-
-        public bool ContainsAgoString(string text)
-        {
-            List<string> agoStringList = new List<string>
-            {
-                "ago",
-            };
-            foreach (var agoString in agoStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(agoString))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool ContainsLaterString(string text)
-        {
-            List<string> laterStringList = new List<string>
-            {
-                "later",
-                "from now"
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(laterString))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool ContainsInString(string text)
-        {
-            List<string> laterStringList = new List<string>
-            {
-                "in"
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().EndsWith(laterString))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         public bool HaveAmbiguousToken(string text, string matchedText) => false;

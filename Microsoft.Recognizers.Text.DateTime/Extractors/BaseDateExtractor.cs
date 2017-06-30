@@ -117,15 +117,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var afterString = text.Substring(pos);
                     var beforeString = text.Substring(0, (int) er.Start);
                     var index = -1;
-                    if (config.GetAgoIndex(afterString, out index))
+                    if (MatchingUtil.GetAgoLaterIndex(afterString, config.UtilityConfiguration.AgoStringList, out index))
                     {
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
-                    else if (config.GetLaterIndex(afterString, out index))
+                    else if (MatchingUtil.GetAgoLaterIndex(afterString, config.UtilityConfiguration.LaterStringList, out index))
                     {
                         ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                     }
-                    else if (config.GetInIndex(beforeString, out index))
+                    else if (MatchingUtil.GetInIndex(beforeString, config.UtilityConfiguration.InStringList, out index))
                     {
                         if (er.Start != null && er.Length != null && (int)er.Start>index)
                         {

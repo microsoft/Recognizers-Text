@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
@@ -139,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             OrdinalExtractor = new OrdinalExtractor();
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -149,6 +152,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor DurationExtractor { get; }
 
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         IEnumerable<Regex> IDateExtractorConfiguration.DateRegexList => DateRegexList;
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -158,61 +163,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
-
-        public bool GetAgoIndex(string text, out int index)
-        {
-            index = -1;
-            List<string> agoStringList = new List<string>
-            {
-                "ago",
-            };
-            foreach (var agoString in agoStringList)
-            {
-                if (text.TrimStart().StartsWith(agoString))
-                {
-                    index = text.LastIndexOf(agoString) + agoString.Length;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool GetLaterIndex(string text, out int index)
-        {
-            index = -1;
-            List<string> laterStringList = new List<string>
-            {
-                "later",
-                "from now"
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(laterString))
-                {
-                    index = text.LastIndexOf(laterString) + laterString.Length;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool GetInIndex(string text, out int index)
-        {
-            index = -1;
-            //add space to make sure it is a token
-            List<string> laterStringList = new List<string>
-            {
-                " in",
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(laterString))
-                {
-                    index = text.LastIndexOf(laterString) + laterString.Length - 1;
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }

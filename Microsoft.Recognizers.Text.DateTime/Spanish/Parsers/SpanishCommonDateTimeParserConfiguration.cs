@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
@@ -28,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
             DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
+            UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
 
         private static ImmutableDictionary<string, string> InitUnitMap()

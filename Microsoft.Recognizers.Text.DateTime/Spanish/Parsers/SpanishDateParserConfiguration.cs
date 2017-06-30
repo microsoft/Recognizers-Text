@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -50,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTokenPrefix = "en ";
@@ -74,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public int GetSwiftDay(string text)
@@ -141,55 +145,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             return (
                 trimedText.Equals("ultimo") || trimedText.Equals("último") ||
                 trimedText.Equals("ultima") || trimedText.Equals("última"));
-        }
-
-        public bool ContainsAgoString(string text)
-        {
-            List<string> agoStringList = new List<string>
-            {
-                "ago",
-            };
-            foreach (var agoString in agoStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(agoString))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool ContainsLaterString(string text)
-        {
-            List<string> laterStringList = new List<string>
-            {
-                "later",
-                "from now"
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().StartsWith(laterString))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool ContainsInString(string text)
-        {
-            List<string> laterStringList = new List<string>
-            {
-                "in"
-            };
-            foreach (var laterString in laterStringList)
-            {
-                if (text.TrimStart().ToLower().EndsWith(laterString))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 

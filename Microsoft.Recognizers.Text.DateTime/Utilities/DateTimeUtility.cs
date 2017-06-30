@@ -1,11 +1,216 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
+    public class AgoLaterUtil
+    {
+        public static DTParseResult ParserDurationWithAgoAndLater(string text, 
+            DateObject referenceTime, 
+            IExtractor durationExtractor,
+            IExtractor cardinalExtractor,
+            IParser numberParser,
+            IImmutableDictionary<string, string> unitMap,
+            Regex unitRegex,
+            IDateTimeUtilityConfiguration utilityConfiguration,
+            AgoLaterMode mode
+            )
+        {
+            var ret = new DTParseResult();
+            var durationRes = durationExtractor.Extract(text);
+            if (durationRes.Count > 0)
+            {
+                var match = unitRegex.Match(text);
+                if (match.Success)
+                {
+                    var afterStr =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var beforeStr =
+                        text.Substring(0, (int)durationRes[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    //add space before the token
+                    beforeStr = " " + beforeStr;
+                    var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
+                    var numberStr =
+                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
+                            .Trim()
+                            .ToLowerInvariant();
+                    var er = cardinalExtractor.Extract(numberStr);
+                    if (er.Count != 0)
+                    {
+                        return GetAgoLaterResult(numberParser,
+                            er[0],
+                            unitMap,
+                            srcUnit,
+                            afterStr,
+                            beforeStr,
+                            referenceTime,
+                            utilityConfiguration,
+                            mode);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        private static DTParseResult GetAgoLaterResult(IParser numberParser,
+            ExtractResult er,
+            IImmutableDictionary<string, string> unitMap,
+            string srcUnit,
+            string afterStr,
+            string beforeStr,
+            DateObject referenceTime,
+            IDateTimeUtilityConfiguration utilityConfiguration,
+            AgoLaterMode mode)
+        {
+            var ret = new DTParseResult();
+            var pr = numberParser.Parse(er);
+
+            var number = int.Parse(pr.ResolutionStr);
+            if (unitMap.ContainsKey(srcUnit))
+            {
+                var unitStr = unitMap[srcUnit];
+                var numStr = number.ToString();
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoStringList))
+                {
+                    if (mode.Equals(AgoLaterMode.Date))
+                    {
+                        return GetDateResult(unitStr, numStr, referenceTime, false);
+                    }
+                    if (mode.Equals(AgoLaterMode.DateTime))
+                    {
+                        return GetDateTimeResult(unitStr, numStr, referenceTime, false);
+                    }
+                }
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterStringList)
+                    || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InStringList))
+                {
+                    if (mode.Equals(AgoLaterMode.Date))
+                    {
+                        return GetDateResult(unitStr, numStr, referenceTime, true);
+                    }
+                    if (mode.Equals(AgoLaterMode.DateTime))
+                    {
+                        return GetDateTimeResult(unitStr, numStr, referenceTime, true);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        private static DTParseResult GetDateResult(string unitStr, string numStr, DateObject referenceDate, bool future)
+        {
+            DateObject Date;
+            var ret = new DTParseResult();
+            int futureOrPast = future ? 1 : -1;
+            switch (unitStr)
+            {
+                case "D":
+                    Date = referenceDate.AddDays(double.Parse(numStr) * futureOrPast);
+                    break;
+                case "W":
+                    Date = referenceDate.AddDays(7 * double.Parse(numStr) * futureOrPast);
+                    break;
+                case "MON":
+                    Date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
+                    break;
+                case "Y":
+                    Date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
+                    break;
+                default:
+                    return ret;
+            }
+            ret.Timex = $"{Util.LuisDate(Date)}";
+            ret.FutureValue = ret.PastValue = Date;
+            ret.Success = true;
+            return ret;
+        }
+
+        private static DTParseResult GetDateTimeResult(string unitStr, string numStr, DateObject referenceTime, bool future)
+        {
+            DateObject Time;
+            var ret = new DTParseResult();
+            int futureOrPast = future ? 1 : -1;
+            switch (unitStr)
+            {
+                case "H":
+                    Time = referenceTime.AddHours(double.Parse(numStr)*futureOrPast);
+                    break;
+                case "M":
+                    Time = referenceTime.AddMinutes(double.Parse(numStr) * futureOrPast);
+                    break;
+                case "S":
+                    Time = referenceTime.AddSeconds(double.Parse(numStr) * futureOrPast);
+                    break;
+                default:
+                    return ret;
+            }
+            ret.Timex = $"{Util.LuisDateTime(Time)}";
+            ret.FutureValue = ret.PastValue = Time;
+            ret.Success = true;
+            return ret;
+        }
+
+        public enum AgoLaterMode
+        {
+            Date = 0,
+            DateTime
+        }
+    }
+
+    public class MatchingUtil
+    {
+        public static bool GetAgoLaterIndex(string text, List<string> stringList, out int index)
+        {
+            index = -1;
+
+            foreach (var matchString in stringList)
+            {
+                if (text.TrimStart().ToLower().StartsWith(matchString))
+                {
+                    index = text.ToLower().LastIndexOf(matchString) + matchString.Length;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool GetInIndex(string text, List<string> stringList, out int index)
+        {
+            index = -1;
+
+            foreach (var matchString in stringList)
+            {
+                if (text.TrimEnd().ToLower().EndsWith(matchString))
+                {
+                    index = text.Length - text.ToLower().LastIndexOf(matchString) - 1;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool ContainsAgoLaterIndex(string text, List<string> stringList)
+        {
+            int index = -1;
+            return GetAgoLaterIndex(text, stringList, out index);
+        }
+
+        public static bool ContainsInIndex(string text, List<string> stringList)
+        {
+            int index = -1;
+            return GetInIndex(text, stringList, out index);
+        }
+    }
+
     public class Token
     {
         public Token(int s, int e)

@@ -138,23 +138,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }
-
-        public bool GetAgoIndex(string text, out int index)
-        {
-            index = -1;
-            List<string> agoStringList = new List<string>
-            {
-                "ago",
-            };
-            foreach (var agoString in agoStringList)
-            {
-                if (text.TrimStart().StartsWith(agoString))
-                {
-                    index = text.LastIndexOf(agoString) + agoString.Length;
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 }

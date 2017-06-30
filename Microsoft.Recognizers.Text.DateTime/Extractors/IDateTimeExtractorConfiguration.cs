@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -20,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool IsConnector(string text);
 
-        bool GetAgoIndex(string text, out int index);
-        bool GetLaterIndex(string text, out int index);
-        bool GetInIndex(string text, out int index);
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }
