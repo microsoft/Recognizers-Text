@@ -62,7 +62,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             int year = 2016, month = 11;
             bool inclusiveEnd = parser.GetInclusiveEndPeriodFlag();
 
-            BasicTestFuture("scheduel a meeting in two weeks", 4, 22, month, year);
             // test basic cases
             BasicTestFuture("I'll be out from 4 to 22 this month", 4, 22, month, year);
             BasicTestFuture("I'll be out from 4-23 in next month", 4, 23, 12, year);
@@ -76,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             if (inclusiveEnd)
             {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 13, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 9, 30);
@@ -86,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             }
             else
             {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 14, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 3, 1);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 10, 1);
