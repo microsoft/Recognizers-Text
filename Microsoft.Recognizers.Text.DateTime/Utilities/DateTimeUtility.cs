@@ -10,6 +10,36 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class AgoLaterUtil
     {
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text,
+            ExtractResult er,
+            List<Token> ret,
+            IDateTimeUtilityConfiguration utilityConfiguration)
+        {
+            var pos = (int)er.Start + (int)er.Length;
+            if (pos <= text.Length)
+            {
+                var afterString = text.Substring(pos);
+                var beforeString = text.Substring(0, (int)er.Start);
+                var index = -1;
+                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoStringList, out index))
+                {
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                }
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterStringList, out index))
+                {
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
+                }
+                else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InStringList, out index))
+                {
+                    if (er.Start != null && er.Length != null && (int)er.Start > index)
+                    {
+                        ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                    }
+                }
+            }
+            return ret;
+        }
+
         public static DTParseResult ParserDurationWithAgoAndLater(string text, 
             DateObject referenceTime, 
             IExtractor durationExtractor,

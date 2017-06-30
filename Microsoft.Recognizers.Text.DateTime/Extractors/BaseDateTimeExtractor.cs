@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -230,28 +231,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     continue;
                 }
-                var pos = (int)er.Start + (int)er.Length;
-                if (pos <= text.Length)
-                {
-                    var afterString = text.Substring(pos);
-                    var beforeString = text.Substring(0, (int)er.Start);
-                    var index = -1;
-                    if (MatchingUtil.GetAgoLaterIndex(afterString, config.UtilityConfiguration.AgoStringList, out index))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                    else if (MatchingUtil.GetAgoLaterIndex(afterString, config.UtilityConfiguration.LaterStringList, out index))
-                    {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
-                    }
-                    else if (MatchingUtil.GetInIndex(beforeString, config.UtilityConfiguration.InStringList, out index))
-                    {
-                        if (er.Start != null && er.Length != null && (int)er.Start > index)
-                        {
-                            ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
-                        }
-                    }
-                }
+                ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
+                    er,
+                    ret,
+                    config.UtilityConfiguration);
             }
             return ret;
         }
