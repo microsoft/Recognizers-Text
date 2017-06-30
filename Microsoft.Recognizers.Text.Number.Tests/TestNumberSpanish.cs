@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = GetOrdinalModel();
+            var model = NumberRecognizer.GetOrdinalModel(Culture.Spanish);
 
             BasicTest(model, "tresmillonesimo", "3000000");
 
@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.Spanish);
 
             #region Integer numbers
 
@@ -472,7 +472,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = GetNumberModel();
+            var model = NumberRecognizer.GetNumberModel(Culture.Spanish);
 
             BasicTest(model, "un quinto", "0,2");
 
@@ -577,7 +577,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = GetPercentageModel();
+            var model = NumberRecognizer.GetPercentageModel(Culture.Spanish); ;
 
             #region Integer percentages
 
@@ -723,30 +723,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             BasicTest(model, "2/3%", ((double)2 / 3).ToString(ci) + "%");
 
             #endregion
-        }
-
-        private static IModel GetNumberModel()
-        {
-            return
-                new NumberModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
-                    new NumberExtractor(NumberMode.PureNumber));
-        }
-
-        private static IModel GetOrdinalModel()
-        {
-            return
-                new OrdinalModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
-                    new OrdinalExtractor());
-        }
-
-        private static IModel GetPercentageModel()
-        {
-            return
-                new PercentModel(
-                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
-                    new PercentageExtractor());
         }
     }
 }
