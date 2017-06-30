@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     cardExtract = new CardinalExtractor(@"\b");
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Compiled | RegexOptions.Singleline),
+                    builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Singleline),
                         "IntegerNum");
                     break;
                 case NumberMode.Default:

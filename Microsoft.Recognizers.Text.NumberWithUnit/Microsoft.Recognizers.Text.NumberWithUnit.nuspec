@@ -12,6 +12,7 @@
     <iconUrl>http://docs.botframework.com/images/bot_icon.png</iconUrl>
     <dependencies>
       <dependency id="System.Collections.Immutable" version="1.3.1" />
+      <dependency id="Microsoft.Recognizers.Text" version="$basic$"/>
       <dependency id="Microsoft.Recognizers.Text.Number" version="$number$"/>
     </dependencies>
   </metadata>

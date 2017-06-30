@@ -8,10 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseDatePeriodParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
-
+        
         private static readonly Calendar _cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly IDatePeriodParserConfiguration config;
+
+        private static bool InclusiveEndPeriod = false;
 
         public BaseDatePeriodParser(IDatePeriodParserConfiguration configuration)
         {
@@ -307,7 +309,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
                                     referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift),
-                                    referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
+                                    InclusiveEndPeriod
+                                        ? referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift)
+                                        : referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
@@ -320,8 +324,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
                                     _cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
                                         .ToString("D2") + "-WE";
+                        endDate = InclusiveEndPeriod ? endDate : endDate.AddDays(1);
                         ret.FutureValue =
-                            ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
+                            ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
                     }
@@ -339,7 +344,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(new DateObject(year, 1, 1),
-                                    new DateObject(year, 12, 31).AddDays(1));
+                                    InclusiveEndPeriod
+                                    ? new DateObject(year, 12, 31)
+                                    : new DateObject(year, 12, 31).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
@@ -353,10 +360,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             // only "month" will come to here
             ret.FutureValue = new Tuple<DateObject, DateObject>(
                 new DateObject(futureYear, month, 1),
-                new DateObject(futureYear, month, 1).AddMonths(1));
+                InclusiveEndPeriod
+                ? new DateObject(futureYear, month, 1).AddMonths(1).AddDays(-1)
+                : new DateObject(futureYear, month, 1).AddMonths(1));
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 new DateObject(pastYear, month, 1),
-                new DateObject(pastYear, month, 1).AddMonths(1));
+                InclusiveEndPeriod
+                ? new DateObject(pastYear, month, 1).AddMonths(1).AddDays(-1)
+                : new DateObject(pastYear, month, 1).AddMonths(1));
             ret.Success = true;
             return ret;
         }
@@ -392,7 +403,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     new DateObject(year, month, 1),
-                    new DateObject(year, month, 1).AddMonths(1));
+                    InclusiveEndPeriod
+                        ? new DateObject(year, month, 1).AddMonths(1).AddDays(-1)
+                        : new DateObject(year, month, 1).AddMonths(1));
                 ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
                 ret.Success = true;
             }
@@ -407,7 +420,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var year = int.Parse(match.Value);
                 var beginDay = new DateObject(year, 1, 1);
-                var endDay = new DateObject(year + 1, 1, 1);
+                var endDay = InclusiveEndPeriod
+                        ? new DateObject(year + 1, 1, 1).AddDays(-1)
+                        : new DateObject(year + 1, 1, 1);
                 ret.Timex = year.ToString("D4");
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
@@ -782,7 +797,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
             return ret;
-        }
+            }
 
         private DTParseResult ParseWhichWeek(string text, DateObject referenceDate)
         {
@@ -846,14 +861,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             ret.Timex += "-W" + cardinal.ToString("D2");
-            ret.FutureValue = new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
-            ret.PastValue = new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
+            ret.FutureValue = InclusiveEndPeriod
+                ? new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(6))
+                : new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
+            ret.PastValue = InclusiveEndPeriod
+                ? new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(6))
+                : new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
             ret.Success = true;
 
             return ret;
         }
 
-        private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
+        private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
             var firstDay = new DateObject(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
@@ -866,7 +885,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
-            return firstWeekday.AddDays(7 * (cadinal - 1));
+            return firstWeekday.AddDays(7 * (cardinal - 1));
+            }
+
+        public bool GetInclusiveEndPeriodFlag()
+        {
+            return InclusiveEndPeriod;
         }
     }
 }

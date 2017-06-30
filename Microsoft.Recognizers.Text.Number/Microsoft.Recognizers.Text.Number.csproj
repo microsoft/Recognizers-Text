@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseNumberRecognizer.cs" />
     <Compile Include="Chinese\Extractors\CardinalExtractor.cs" />
     <Compile Include="Chinese\Extractors\DoubleExtractor.cs" />
     <Compile Include="Chinese\Extractors\FractionExtractor.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="Models\NumberModel.cs" />
     <Compile Include="Models\OrdinalModel.cs" />
     <Compile Include="Models\PercentModel.cs" />
-    <Compile Include="Models\IModel.cs" />
+    <Compile Include="NumberRecognizer.cs" />
     <Compile Include="Parsers\IParser.cs" />
     <Compile Include="Parsers\BaseNumberParser.cs" />
     <Compile Include="Parsers\AgnosticNumberParserFactory.cs" />
@@ -97,8 +98,6 @@
     <Compile Include="Spanish\Extractors\OrdinalExtractor.cs" />
     <Compile Include="Spanish\Extractors\PercentageExtractor.cs" />
     <Compile Include="Spanish\Parsers\SpanishNumberParserConfiguration.cs" />
-    <Compile Include="Utilities\Culture.cs" />
-    <Compile Include="Utilities\FormatUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CreatePackage.cmd" />
@@ -107,7 +106,12 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
+      <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
+      <Name>Microsoft.Recognizers.Text</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

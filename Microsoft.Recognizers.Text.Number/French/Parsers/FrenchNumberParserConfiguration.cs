@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Text; 
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
@@ -14,24 +15,24 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.LangMarker = "Fr";
             this.CultureInfo = ci;
 
-            this.DecimalSeparatorChar = '.';
+            this.DecimalSeparatorChar = ',';
             this.FractionMarkerToken = "sur"; 
-            this.NonDecimalSeparatorChar = ',';
+            this.NonDecimalSeparatorChar = '.';
             this.HalfADozenText = "six";
             this.WordSeparatorToken = "et"; // EN - 'and'
 
             this.WrittenDecimalSeparatorTexts = new List<string> { "virgule" };
             this.WrittenGroupSeparatorTexts = new List<string> { "point", "points" };
-            this.WrittenIntegerSeparatorTexts = new List<string> { "et" };
+            this.WrittenIntegerSeparatorTexts = new List<string> { "et","-" };
             this.WrittenFractionSeparatorTexts = new List<string> { "et", "sur" };
 
             this.CardinalNumberMap = InitCardinalNumberMap();
             this.OrdinalNumberMap = InitOrdinalNumberMap();
             this.RoundNumberMap = InitRoundNumberMap();
-            this.HalfADozenRegex = new Regex(@"une|un\s+demi\s+douzaine", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.HalfADozenRegex = new Regex(@"(?<=\b)+demi\s+douzaine", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             this.DigitalNumberRegex = new Regex(
-                @"((?<=\b)(cent|)", // TODO: ADD MORE
-                RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                @"((?<=\b)(cent|mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }
@@ -73,39 +74,43 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public long ResolveCompositeNumber(string numberStr)
         {
-            if(numberStr.Contains("-"))
-            {
-                var numbers = numberStr.Split('-');
-                long ret = 0;
-                foreach(var number in numbers)
-                {
-                    if(OrdinalNumberMap.ContainsKey(number))
-                    {
-                        ret += OrdinalNumberMap[number];
-                    }
-                    else if(CardinalNumberMap.ContainsKey(number))
-                    {
-                        ret += CardinalNumberMap[number];
-                    }
-                }
-                return ret;
-            }
-            if(this.OrdinalNumberMap.ContainsKey(numberStr))
+            if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {
                 return this.OrdinalNumberMap[numberStr];
             }
-            if(this.CardinalNumberMap.ContainsKey(numberStr))
+
+            if (this.CardinalNumberMap.ContainsKey(numberStr))
             {
                 return this.CardinalNumberMap[numberStr];
             }
-            return 0;
+
+            long value = 0;
+            long finalValue = 0;
+            var strBuilder = new StringBuilder();
+            int lastGoodChar = 0;
+            for (int i = 0; i < numberStr.Length; i++)
+            {
+                strBuilder.Append(numberStr[i]);
+                if (this.CardinalNumberMap.ContainsKey(strBuilder.ToString()) && this.CardinalNumberMap[strBuilder.ToString()] > value)
+                {
+                    lastGoodChar = i;
+                    value = this.CardinalNumberMap[strBuilder.ToString()];
+                }
+                if ((i + 1) == numberStr.Length)
+                {
+                    finalValue += value;
+                    strBuilder.Clear();
+                    i = lastGoodChar++;
+                    value = 0;
+                }
+            }
+            return finalValue;
         }
 
         private static ImmutableDictionary<string, long> InitCardinalNumberMap()
         {
             return new Dictionary<string, long>
             {
-                {"un", 1 }, //CHANGE TO FR
                 {"zéro", 0},
                 {"zero", 0 },
                 {"un", 1},
@@ -113,7 +118,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"deux", 2},
                 {"trois", 3},
                 {"quatre", 4},
-                {"cing", 5},
+                {"cinq", 5},
                 {"six", 6 },
                 {"sept", 7},
                 {"huit", 8},
@@ -134,7 +139,6 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"cinquante", 50},
                 {"soixante", 60},
 
-                // TODO: Numbs in FR get funky after 60
                 {"soixante-dix", 70},
                 {"septante", 70 },
                 {"quatre-vingts", 80},
@@ -151,8 +155,11 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"cent", 100},
                 {"mille", 1000},
                 {"un million", 1000000},
+                {"million", 1000000 },
                 {"un milliard", 1000000000},
-                {"un mille milliards", 1000000000000}
+                {"milliard", 1000000000},
+                {"un mille milliards", 1000000000000},
+                {"un billion", 1000000000000 }
             }.ToImmutableDictionary();
         }
 
@@ -168,6 +175,11 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"second", 2},
                 {"seconde", 2},
                 {"troisième", 3},
+                {"demi", 2}, 
+                {"tiers", 3},
+                {"tierce", 3 },
+                {"quart", 4 },
+                {"quarts", 4 },
                 {"troisieme", 3},
                 {"quatrième", 4},
                 {"quatrieme", 4},
@@ -232,8 +244,12 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"millionième", 1000000 },
                 {"millionieme", 1000000 },
                 {"milliardième", 1000000000 },
-                {"milliardieme", 1000000000 }
-             
+                {"milliardieme", 1000000000 },
+                {"billionieme", 1000000000000},
+                {"billionième", 1000000000000},
+                {"trillionième", 1000000000000000000},
+                {"trillionieme", 1000000000000000000}
+
             }.ToImmutableDictionary();
         }
 
@@ -241,7 +257,38 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
             return new Dictionary<string, long>
             {
-                {"cent", 100},
+                {"cent", 100}, // hundred
+                {"mille", 1000}, // thousand
+                {"million", 1000000}, // million
+                {"milliard", 1000000000}, //billion
+                {"billion", 1000000000000}, //trillion
+                {"centieme", 100}, // hundredth
+                {"centième", 100},
+                {"millieme", 1000},
+                {"millième", 1000},
+                {"millionième", 1000000},// millionth
+                {"millionieme", 1000000},
+                {"milliardième", 1000000000}, //billionth
+                {"milliardieme", 1000000000},
+                {"billionième", 1000000000000}, // trillionth
+                {"billionieme", 1000000000000},
+                {"centiemes", 100}, // hundredths
+                {"centièmes", 100},
+                {"millièmes", 1000}, // thousandths
+                {"milliemes", 1000},
+                {"millionièmes", 1000000},
+                {"millioniemes", 1000000},
+                {"milliardièmes", 1000000000},
+                {"milliardiemes", 1000000000},
+                {"billionièmes", 1000000000000},
+                {"billioniemes", 1000000000000},
+                {"douzaine", 12},
+                {"douzaines", 12},
+                {"k", 1000},
+                {"m", 1000000},
+                {"g", 1000000000},
+                {"b", 1000000000},
+                {"t", 1000000000000}
             }.ToImmutableDictionary();
         }
     }

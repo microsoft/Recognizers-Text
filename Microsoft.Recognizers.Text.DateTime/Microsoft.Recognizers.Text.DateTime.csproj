@@ -66,6 +66,7 @@
     <Compile Include="Chinese\Parsers\TimeParserChs.cs" />
     <Compile Include="Chinese\Parsers\TimePeriodParserChs.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DateTimeRecognizer.cs" />
     <Compile Include="English\Extractors\EnglishDateExtractorConfiguration.cs" />
     <Compile Include="English\Extractors\EnglishDatePeriodExtractorConfiguration.cs" />
     <Compile Include="English\Extractors\EnglishDateTimeExtractorConfiguration.cs" />
@@ -168,6 +169,10 @@
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
       <Project>{61205449-bdba-4bf3-8b24-ae059e0b1b61}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
+      <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
+      <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

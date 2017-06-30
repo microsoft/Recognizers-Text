@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Date()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DatePeriod()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DateTime()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DateTimePeriod()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7, 16, 12, 0);
 
             BasicTest(model, reference,
@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Duration()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Set()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Time()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -310,7 +310,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_TimePeriod()
         {
-            var model = GetDateTimeModel();
+            var model = DateTimeRecognizer.GetModel(Culture.English);
             var reference = new DateObject(2016, 11, 7, 16, 12, 0);
 
             BasicTest(model, reference,
@@ -344,15 +344,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "let's meet in the evening",
                 Constants.SYS_DATETIME_TIMEPERIOD, "evening", "TEV");
-        }
-
-        private static DateTimeModel GetDateTimeModel()
-        {
-            return
-                new DateTimeModel(
-                    new BaseMergedParser(new EnglishMergedParserConfiguration()),
-                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration())
-                    );
         }
     }
 }
