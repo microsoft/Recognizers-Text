@@ -47,13 +47,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        protected DTParseResult InnerParser(string text, DateObject reference)
+        protected DateTimeResolutionResult InnerParser(string text, DateObject reference)
         {
             var innerResult = ParseBasicRegexMatch(text, reference);
             if (!innerResult.Success)
@@ -72,11 +72,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
                 innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
                 innerResult.IsLunar = IsLunarCalendar(text);
                 return innerResult;
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // parse basic patterns in DateRegexList
-        protected DTParseResult ParseBasicRegexMatch(string text, DateObject referenceDate)
+        protected DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
             foreach (var regex in DateExtractorChs.DateRegexList)
@@ -112,17 +112,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return ret;
                 }
             }
-            return new DTParseResult();
+            return new DateTimeResolutionResult();
         }
 
 
         // match several other cases
         // including '今天', '后天', '十三日'
-        protected DTParseResult ParseImplicitDate(string text, DateObject referenceDate)
+        protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
 
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             int[] ContainsDay = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             // handle "十二日" "明年这个月三日" "本月十一日"
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                ret.Timex = Util.LuisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
+                ret.Timex = FormatUtil.LuisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
 
                 var futureDate = DateObject.MinValue;
                 var pastDate = DateObject.MinValue;
@@ -242,7 +242,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     value = referenceDate.AddDays(-2);
                 }
 
-                ret.Timex = Util.LuisDate(value);
+                ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -264,57 +264,57 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        protected DTParseResult MatchNextWeekday(string text, DateObject reference)
+        protected DateTimeResolutionResult MatchNextWeekday(string text, DateObject reference)
         {
-            var result = new DTParseResult();
+            var result = new DateTimeResolutionResult();
             var match = this.config.NextRegex.Match(text);
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = Util.LuisDate(value);
+                result.Timex = FormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
             return result;
         }
 
-        protected DTParseResult MatchThisWeekday(string text, DateObject reference)
+        protected DateTimeResolutionResult MatchThisWeekday(string text, DateObject reference)
         {
-            var result = new DTParseResult();
+            var result = new DateTimeResolutionResult();
             var match = this.config.ThisRegex.Match(text);
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.This((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = Util.LuisDate(value);
+                result.Timex = FormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
             return result;
         }
 
-        protected DTParseResult MatchLastWeekday(string text, DateObject reference)
+        protected DateTimeResolutionResult MatchLastWeekday(string text, DateObject reference)
         {
-            var result = new DTParseResult();
+            var result = new DateTimeResolutionResult();
             var match = this.config.LastRegex.Match(text);
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
                 var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
 
-                result.Timex = Util.LuisDate(value);
+                result.Timex = FormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
             return result;
         }
 
-        protected DTParseResult MatchWeekdayAlone(string text, DateObject reference)
+        protected DateTimeResolutionResult MatchWeekdayAlone(string text, DateObject reference)
         {
-            var result = new DTParseResult();
+            var result = new DateTimeResolutionResult();
             var match = this.config.StrictWeekDayRegex.Match(text);
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
@@ -350,9 +350,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return result;
         }
 
-        protected virtual DTParseResult ParseWeekdayOfMonth(string text, DateObject referenceDate)
+        protected virtual DateTimeResolutionResult ParseWeekdayOfMonth(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var trimedText = text.Trim().ToLowerInvariant();
             var match = this.config.WeekDayOfMonthRegex.Match(trimedText);
@@ -450,9 +450,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // handle like "三天前" 
-        private DTParseResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var duration_res = durationExtractor.Extract(text);
             var numStr = string.Empty;
             var unitStr = string.Empty;
@@ -495,7 +495,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 default:
                                     return ret;
                             }
-                            ret.Timex = $"{Util.LuisDate(Date)}";
+                            ret.Timex = $"{FormatUtil.LuisDate(Date)}";
                             ret.FutureValue = ret.PastValue = Date;
                             ret.Success = true;
                             return ret;
@@ -521,7 +521,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                     return ret;
                             }
                             ret.Timex =
-                                $"{Util.LuisDate(Date)}";
+                                $"{FormatUtil.LuisDate(Date)}";
                             ret.FutureValue =
                                 ret.PastValue = Date;
                             ret.Success = true;
@@ -534,9 +534,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
-        protected DTParseResult Match2Date(Match match, DateObject referenceDate)
+        protected DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var monthStr = match.Groups["month"].Value.ToLower();
             var dayStr = match.Groups["day"].Value.ToLower();
@@ -569,12 +569,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (year == 0)
             {
                 year = referenceDate.Year;
-                ret.Timex = Util.LuisDate(-1, month, day);
+                ret.Timex = FormatUtil.LuisDate(-1, month, day);
                 noYear = true;
             }
             else
             {
-                ret.Timex = Util.LuisDate(year, month, day);
+                ret.Timex = FormatUtil.LuisDate(year, month, day);
             }
 
             var futureDate = new DateObject(year, month, day);

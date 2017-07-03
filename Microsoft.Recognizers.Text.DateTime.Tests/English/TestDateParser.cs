@@ -16,8 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(futureDate, ((DTParseResult)pr.Value).FutureValue);
-            Assert.AreEqual(pastDate, ((DTParseResult)pr.Value).PastValue);
+            Assert.AreEqual(futureDate, ((DateTimeResolutionResult)pr.Value).FutureValue);
+            Assert.AreEqual(pastDate, ((DateTimeResolutionResult)pr.Value).PastValue);
         }
 
         public void BasicTest(string text, DateObject date)
@@ -26,8 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(date, ((DTParseResult)pr.Value).FutureValue);
-            Assert.AreEqual(date, ((DTParseResult)pr.Value).PastValue);
+            Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).FutureValue);
+            Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
-            Assert.AreEqual(luisValueStr, ((DTParseResult)pr.Value).Timex);
+            Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
 
         public TestDateParser()

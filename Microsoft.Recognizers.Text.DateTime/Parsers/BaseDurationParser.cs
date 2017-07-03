@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = new DTParseResult();
+                var innerResult = new DateTimeResolutionResult();
 
                 innerResult = ParseNumerWithUnit(er.Text, referenceTime);
                 if (!innerResult.Success)
@@ -56,16 +56,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
         // simple cases made by a number followed an unit
-        private DTParseResult ParseNumerWithUnit(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseNumerWithUnit(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var numStr = string.Empty;
             var unitStr = string.Empty;
 
@@ -129,9 +129,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle cases that don't contain nubmer
-        private DTParseResult ParseImplicitDuration(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseImplicitDuration(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             // handle "all day" "all year"
             var match = this.config.AllDateUnitRegex.Match(text);
             if (match.Success)

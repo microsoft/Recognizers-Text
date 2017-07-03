@@ -50,11 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     parseResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, Util.FormatTime((DateObject) parseResult.FutureValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
                     };
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, Util.FormatTime((DateObject) parseResult.PastValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.PastValue)}
                     };
                 }
                 var ret = new DateTimeParseResult
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return timeResult;
         }
 
-        public static DTParseResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult,
+        public static DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult,
             DateObject referenceTime)
         {
             //Find if there is a description
@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 month = referenceTime.Month,
                 year = referenceTime.Year;
 
-            var dtResult = new DTParseResult();
+            var dtResult = new DateTimeResolutionResult();
 
 
             var build = new StringBuilder("T");
@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (noDesc)
             {
                 //build.Append("ampm");
-                dtResult.comment = "ampm";
+                dtResult.Comment = "ampm";
             }
             dtResult.Timex = build.ToString();
             if (hour == 24)

@@ -80,20 +80,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // pop, restore the MOD string
             if (hasBefore)
             {
-                var val = (DTParseResult)pr.Value;
+                var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.mod = TimeTypeConstants.beforeMod;
+                    val.Mod = TimeTypeConstants.beforeMod;
                 }
                 pr.Value = val;
             }
 
             if (hasAfter)
             {
-                var val = (DTParseResult)pr.Value;
+                var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.mod = TimeTypeConstants.afterMod;
+                    val.Mod = TimeTypeConstants.afterMod;
                 }
                 pr.Value = val;
             }

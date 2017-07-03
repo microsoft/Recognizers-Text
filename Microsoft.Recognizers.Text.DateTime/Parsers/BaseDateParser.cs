@@ -51,11 +51,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
 
                     value = innerResult;
@@ -70,14 +70,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
         // parse basic patterns in DateRegexList
-        private DTParseResult ParseBasicRegexMatch(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
             foreach (var regex in this.config.DateRegexes)
@@ -97,16 +97,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
-            return new DTParseResult();
+            return new DateTimeResolutionResult();
         }
 
         // match several other cases
         // including 'today', 'the day after tomorrow', 'on 13'
-        private DTParseResult ParseImplicitDate(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
 
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             // handle "on 12"
             var match = this.config.OnRegex.Match(this.config.DateTokenPrefix + trimedText);
@@ -116,10 +116,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var dayStr = match.Groups["day"].Value.ToLower();
                 day = this.config.DayOfMonth[dayStr];
 
-                ret.Timex = Util.LuisDate(-1, -1, day);
+                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
                 DateObject futureDate, pastDate, temp;
-                var tryStr = Util.LuisDate(year, month, day);
+                var tryStr = FormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out temp))
                 {
                     futureDate = new DateObject(year, month, day);
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var value = referenceDate.AddDays(swift);
 
-                ret.Timex = Util.LuisDate(value);
+                ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = Util.LuisDate(value);
+                ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -184,7 +184,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.This((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = Util.LuisDate(value);
+                ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();
                 var value = referenceDate.Last((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
 
-                ret.Timex = Util.LuisDate(value);
+                ret.Timex = FormatUtil.LuisDate(value);
                 ret.FutureValue = ret.PastValue = value;
                 ret.Success = true;
 
@@ -245,9 +245,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle cases like "January first", "twenty-two of August"
-        private DTParseResult ParseNumberWithMonth(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseNumberWithMonth(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var trimedText = text.Trim().ToLower();
             int month = 0, day = 0, year = referenceDate.Year;
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
 
             // for LUIS format value string
-            ret.Timex = Util.LuisDate(-1, month, day);
+            ret.Timex = FormatUtil.LuisDate(-1, month, day);
             var futureDate = new DateObject(year, month, day);
             var pastDate = new DateObject(year, month, day);
             if (futureDate < referenceDate)
@@ -291,7 +291,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle like "two days ago" 
-        private DTParseResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             return AgoLaterUtil.ParserDurationWithAgoAndLater(
                 text,
@@ -307,9 +307,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
-        private DTParseResult Match2Date(Match match, DateObject referenceDate)
+        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var monthStr = match.Groups["month"].Value.ToLower();
             var dayStr = match.Groups["day"].Value.ToLower();
@@ -338,12 +338,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (year == 0)
             {
                 year = referenceDate.Year;
-                ret.Timex = Util.LuisDate(-1, month, day);
+                ret.Timex = FormatUtil.LuisDate(-1, month, day);
                 noYear = true;
             }
             else
             {
-                ret.Timex = Util.LuisDate(year, month, day);
+                ret.Timex = FormatUtil.LuisDate(year, month, day);
             }
 
             var futureDate = new DateObject(year, month, day);
@@ -364,9 +364,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseWeekdayOfMonth(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseWeekdayOfMonth(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var trimedText = text.Trim().ToLowerInvariant();
             var match = this.config.WeekDayOfMonthRegex.Match(trimedText);

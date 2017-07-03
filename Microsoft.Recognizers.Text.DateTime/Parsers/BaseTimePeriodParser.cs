@@ -43,22 +43,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                         }
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                         }
                     };
                     value = innerResult;
@@ -73,15 +73,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseSimpleCases(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
             int beginHour = 0, endHour = 0;
             var trimedText = text.Trim().ToLower();
@@ -154,9 +154,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult MergeTwoTimePoints(string text, DateObject referenceTime)
+        private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
             var ers = this.config.TimeExtractor.Extract(text);
             if (ers.Count != 2)
@@ -173,24 +173,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var beginTime = (DateObject) ((DTParseResult) pr1.Value).FutureValue;
-            var endTime = (DateObject) ((DTParseResult) pr2.Value).FutureValue;
+            var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
+            var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
-            var ampmStr1 = ((DTParseResult)pr1.Value).comment;
-            var ampmStr2 = ((DTParseResult)pr2.Value).comment;
+            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
+            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) &&
                 ampmStr2.EndsWith("ampm"))
             {
-                ret.comment = "ampm";
+                ret.Comment = "ampm";
             }
             return ret;
         }
 
         // parse "morning", "afternoon", "night"
-        private DTParseResult ParseNight(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseNight(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
                 month = referenceTime.Month,
@@ -199,9 +199,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             int beginHour, endHour, endMinSeg;
             if (!this.config.GetMatchedTimexRange(text, out timex, out beginHour, out endHour, out endMinSeg))
             {
-                return new DTParseResult();
+                return new DateTimeResolutionResult();
             }
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             ret.Timex = timex;
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                 new DateObject(year, month, day, beginHour, 0, 0),

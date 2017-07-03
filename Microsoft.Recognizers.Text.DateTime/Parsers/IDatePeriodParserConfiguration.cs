@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> MonthOfYear { get; }
         IImmutableDictionary<string, string> SeasonMap { get; }
+        IImmutableList<string> InStringList { get; }
 
         int GetSwiftMonth(string text);
         bool IsFuture(string text);

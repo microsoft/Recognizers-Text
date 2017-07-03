@@ -9,6 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 {
     public class SpanishDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
+        //TODO: add the word list for ago later and in
         public static readonly List<string> AgoStringList = new List<string>
         {
 

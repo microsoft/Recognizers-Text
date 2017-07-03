@@ -9,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
         }
 
-        protected override DTParseResult ParseSpecificNight(string text, DateObject referenceTime)
+        protected override DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             // handle morning, afternoon..
             int beginHour, endHour, endMin = 0;
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
 
-                ret.Timex = Util.FormatDate(date) + timeStr;
+                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
                         new Tuple<DateObject, DateObject>(new DateObject(year, month, day, beginHour, 0, 0),
@@ -51,8 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     return ret;
                 }
                 var pr = this.config.DateParser.Parse(ers[0], referenceTime);
-                var futureDate = (DateObject)((DTParseResult)pr.Value).FutureValue;
-                var pastDate = (DateObject)((DTParseResult)pr.Value).PastValue;
+                var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + timeStr;
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(

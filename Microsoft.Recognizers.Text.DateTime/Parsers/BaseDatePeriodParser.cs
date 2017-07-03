@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -86,22 +87,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                Util.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                Util.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
                         innerResult.PastResolution = new Dictionary<string, string>
                         {
                             {
                                 TimeTypeConstants.START_DATE,
-                                Util.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                             },
                             {
                                 TimeTypeConstants.END_DATE,
-                                Util.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                                FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                             }
                         };
                     }
@@ -121,15 +122,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult)value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseSimpleCases(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             int year = referenceDate.Year, month = referenceDate.Month;
             int beginDay = referenceDate.Day, endDay = referenceDate.Day;
             var noYear = false;
@@ -195,13 +196,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 if (this.config.IsFuture(monthStr))
                 {
-                    beginLuisStr = Util.LuisDate(year, month, beginDay);
-                    endLuisStr = Util.LuisDate(year, month, endDay);
+                    beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
+                    endLuisStr = FormatUtil.LuisDate(year, month, endDay);
                 }
                 else
                 {
-                    beginLuisStr = Util.LuisDate(-1, month, beginDay);
-                    endLuisStr = Util.LuisDate(-1, month, endDay);
+                    beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
+                    endLuisStr = FormatUtil.LuisDate(-1, month, endDay);
                 }
             }
             else
@@ -240,9 +241,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseOneWordPeriod(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseOneWordPeriod(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             int year = referenceDate.Year, month = referenceDate.Month;
             int futureYear = year, pastYear = year;
 
@@ -372,9 +373,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseMonthWithYear(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseMonthWithYear(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var match = this.config.MonthWithYear.Match(text);
             if (!match.Success)
             {
@@ -412,9 +413,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseYear(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var match = this.config.YearRegex.Match(text);
             if (match.Success && match.Length == text.Length)
             {
@@ -433,9 +434,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse entities that made up by two time points
-        private DTParseResult MergeTwoTimePoints(string text, DateObject referenceDate)
+        private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var er = this.config.DateExtractor.Extract(text);
             if (er.Count < 2)
             {
@@ -455,10 +456,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            DateObject futureBegin = (DateObject)((DTParseResult)pr1.Value).FutureValue,
-                futureEnd = (DateObject)((DTParseResult)pr2.Value).FutureValue;
-            DateObject pastBegin = (DateObject)((DTParseResult)pr1.Value).PastValue,
-                pastEnd = (DateObject)((DTParseResult)pr2.Value).PastValue;
+            DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
+                futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
+            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
+                pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
             if (futureBegin > futureEnd)
             {
                 futureBegin = pastBegin;
@@ -477,9 +478,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseNumberWithUnit(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var numStr = string.Empty;
             var unitStr = string.Empty;
@@ -521,7 +522,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 return ret;
                         }
 
-                        ret.Timex = $"({Util.LuisDate(beginDate)},{Util.LuisDate(endDate)},P{numStr}{unitStr[0]})";
+                        ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -537,7 +538,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endDate = referenceDate.AddDays((double)pr.Value);
                                 break;
                             case "W":
-                                beginDate = beforeStr.ToLower().Equals("in") ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
+                                beginDate = config.InStringList.Contains(beforeStr.ToLower()) ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
                                 endDate = referenceDate.AddDays(7 * (double)pr.Value);
                                 break;
                             case "MON":
@@ -553,7 +554,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate.AddDays(1))},{Util.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate.AddDays(1))},{FormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
                         ret.Success = true;
@@ -597,7 +598,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             default:
                                 return ret;
                         }
-                        ret.Timex = $"({Util.LuisDate(beginDate)},{Util.LuisDate(endDate)},P{numStr}{unitStr[0]})";
+                        ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -628,7 +629,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 return ret;
                         }
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate.AddDays(1))},{Util.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate.AddDays(1))},{FormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
                         ret.Success = true;
@@ -640,9 +641,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseWeekOfMonth(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseWeekOfMonth(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             var match = this.config.WeekOfMonthRegex.Match(trimedText);
             if (!(match.Success && match.Length == text.Length))
@@ -684,9 +685,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseWeekOfYear(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseWeekOfYear(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             var match = this.config.WeekOfYearRegex.Match(trimedText);
             if (!(match.Success && match.Length == text.Length))
@@ -727,9 +728,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseQuarter(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseQuarter(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var match = this.config.QuarterRegex.Match(text);
             if (!(match.Success && match.Length == text.Length))
             {
@@ -762,15 +763,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beginDate = new DateObject(year, quarterNum * 3 - 2, 1);
             var endDate = new DateObject(year, quarterNum * 3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-            ret.Timex = $"({Util.LuisDate(beginDate)},{Util.LuisDate(endDate)},P3M)";
+            ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
 
             return ret;
         }
 
-        private DTParseResult ParseSeason(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseSeason(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var match = this.config.SeasonRegex.Match(text);
             if (match.Success && match.Length == text.Length)
             {
@@ -799,9 +800,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
             }
 
-        private DTParseResult ParseWhichWeek(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var match = this.config.WhichWeekRegex.Match(text);
             if (match.Success)
             {
@@ -822,10 +823,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
 
-        private static DTParseResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate,
+        private static DateTimeResolutionResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate,
             bool noYear)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var value = ComputeDate(cardinal, 1, month, year);
             if (value.Month != month)
             {

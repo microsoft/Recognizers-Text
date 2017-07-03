@@ -26,10 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(year, month, beginDay);
             Assert.AreEqual(beginDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item1);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item1);
             var endDate = new DateObject(year, month, endDay);
             Assert.AreEqual(endDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item2);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
@@ -41,10 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(beginYear, beginMonth, beginDay);
             Assert.AreEqual(beginDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item1);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item1);
             var endDate = new DateObject(endYear, endMonth, endDay);
             Assert.AreEqual(endDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item2);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
-            Assert.AreEqual(luisValueStr, ((DTParseResult)pr.Value).Timex);
+            Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
 
         [TestMethod]

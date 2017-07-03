@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             base(configuration)
         { }
 
-        protected override DTParseResult InternalParse(string text, DateObject referenceTime)
+        protected override DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
         {
             var innerResult = base.InternalParse(text, referenceTime);
             if (!innerResult.Success)
@@ -19,9 +19,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         // parse "noonish", "11-ish"
-        private DTParseResult ParseIsh(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseIsh(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.ToLowerInvariant().Trim();
             var match = EnglishTimeExtractorConfiguration.IshRegex.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)

@@ -22,8 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
 
         public static readonly List<string> InStringList = new List<string>
         {
-            //add space to ensure it is a token
-            " in",
+            "in",
         };
 
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;

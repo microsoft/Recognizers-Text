@@ -47,22 +47,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {
                             TimeTypeConstants.START_DATETIME,
-                            Util.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
+                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_DATETIME,
-                            Util.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
+                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                         }
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_DATETIME,
-                            Util.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
+                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_DATETIME,
-                            Util.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
+                            FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                         }
                     };
                     value = innerResult;
@@ -77,15 +77,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseSimpleCases(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseSimpleCases(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             int beginHour = 0, endHour = 0;
             DateObject futureTime, pastTime;
             var trimedText = text.Trim().ToLower();
@@ -129,8 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var pr = this.config.DateParser.Parse(er[0], referenceTime);
                     if (pr.Value != null)
                     {
-                        futureTime = (DateObject) ((DTParseResult) pr.Value).FutureValue;
-                        pastTime = (DateObject) ((DTParseResult) pr.Value).PastValue;
+                        futureTime = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
+                        pastTime = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
 
                         dateStr = pr.TimexStr;
                     }
@@ -177,7 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!hasAm && !hasPm && beginHour <= 12 && endHour <= 12)
                 {
                     //ampmStr = "ampm";
-                    ret.comment = "ampm";
+                    ret.Comment = "ampm";
                 }
                 var beginStr = dateStr + "T" + beginHour.ToString("D2") + ampmStr;
                 var endStr = dateStr + "T" + endHour.ToString("D2") + ampmStr;
@@ -194,9 +194,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult MergeTwoTimePoints(string text, DateObject referenceTime)
+        private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
             bool bothHasDate = false, beginHasDate = false, endHasDate = false;
             var er1 = this.config.TimeExtractor.Extract(text);
@@ -251,10 +251,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
-            DateObject futureBegin = (DateObject) ((DTParseResult) pr1.Value).FutureValue,
-                futureEnd = (DateObject) ((DTParseResult) pr2.Value).FutureValue;
-            DateObject pastBegin = (DateObject) ((DTParseResult) pr1.Value).PastValue,
-                pastEnd = (DateObject) ((DTParseResult) pr2.Value).PastValue;
+            DateObject futureBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue,
+                futureEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+            DateObject pastBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue,
+                pastEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).PastValue;
 
             if (bothHasDate)
             {
@@ -295,12 +295,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     $"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
             }
 
-            var ampmStr1 = ((DTParseResult)pr1.Value).comment;
-            var ampmStr2 = ((DTParseResult)pr2.Value).comment;
+            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
+            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) &&
                 ampmStr2.EndsWith("ampm"))
             {
-                ret.comment = "ampm";
+                ret.Comment = "ampm";
             }
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
@@ -310,9 +310,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
 
         // parse "this night"
-        protected virtual DTParseResult ParseSpecificNight(string text, DateObject referenceTime)
+        protected virtual DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             // handle morning, afternoon..
             int beginHour, endHour, endMin = 0;
@@ -330,7 +330,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var date = referenceTime.AddDays(swift).Date;
                 int day = date.Day, month = date.Month, year = date.Year;
 
-                ret.Timex = Util.FormatDate(date) + timeStr;
+                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
                         new Tuple<DateObject, DateObject>(new DateObject(year, month, day, beginHour, 0, 0),
@@ -351,8 +351,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
                 var pr = this.config.DateParser.Parse(ers[0], referenceTime);
-                var futureDate = (DateObject) ((DTParseResult) pr.Value).FutureValue;
-                var pastDate = (DateObject) ((DTParseResult) pr.Value).PastValue;
+                var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
+                var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + timeStr;
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
@@ -370,9 +370,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse "in 20 minutes"
-        private DTParseResult ParseNumberWithUnit(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var numStr = string.Empty;
             var unitStr = string.Empty;
 
@@ -410,7 +410,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -438,7 +438,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -479,7 +479,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -507,7 +507,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -547,7 +547,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT1{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT1{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -575,7 +575,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
 
                         ret.Timex =
-                            $"({Util.LuisDate(beginDate)}T{Util.LuisTime(beginDate)},{Util.LuisDate(endDate)}T{Util.LuisTime(endDate)},PT1{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT1{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;

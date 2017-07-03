@@ -119,6 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this for Spanish
         public static readonly Regex WhichWeekRegex =
             new Regex(
                 $@"",

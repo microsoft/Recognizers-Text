@@ -48,11 +48,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, Util.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, Util.FormatDateTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
                     value = innerResult;
                 }
@@ -66,15 +66,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseBasicRegex(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLower();
 
             // handle "now"
@@ -93,9 +93,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // merge a Date entity and a Time entity
-        private DTParseResult MergeDateAndTime(string text, DateObject referenceTime)
+        private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var er1 = this.config.DateExtractor.Extract(text);
             if (er1.Count == 0)
@@ -154,9 +154,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var futureDate = (DateObject) ((DTParseResult) pr1.Value).FutureValue;
-            var pastDate = (DateObject) ((DTParseResult) pr1.Value).PastValue;
-            var time = (DateObject) ((DTParseResult) pr2.Value).FutureValue;
+            var futureDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
+            var pastDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue;
+            var time = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -180,12 +180,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
-            var val = (DTParseResult) pr2.Value;
+            var val = (DateTimeResolutionResult) pr2.Value;
             if (hour <= 12 && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
-                !string.IsNullOrEmpty(val.comment))
+                !string.IsNullOrEmpty(val.Comment))
             {
                 //ret.Timex += "ampm";
-                ret.comment = "ampm";
+                ret.Comment = "ampm";
             }
             ret.FutureValue = new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
@@ -194,9 +194,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseTimeOfToday(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.ToLowerInvariant().Trim();
 
             int hour = 0, min = 0, sec = 0;
@@ -241,7 +241,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                var time = (DateObject) ((DTParseResult) pr.Value).FutureValue;
+                var time = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
 
                 hour = time.Hour;
                 min = time.Minute;
@@ -271,7 +271,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
-                ret.Timex = Util.FormatDate(date) + timeStr;
+                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = new DateObject(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;
@@ -280,9 +280,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseSpecailTimeOfDate(string text, DateObject refeDateTime)
+        private DateTimeResolutionResult ParseSpecailTimeOfDate(string text, DateObject refeDateTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = this.config.DateExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -292,8 +292,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.config.TheEndOfRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DateParser.Parse(ers[0], refeDateTime);
-                var futureDate = (DateObject) ((DTParseResult) pr.Value).FutureValue;
-                var pastDate = (DateObject) ((DTParseResult) pr.Value).PastValue;
+                var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
+                var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + "T23:59";
                 ret.FutureValue = futureDate.AddDays(1).AddMinutes(-1);
                 ret.PastValue = pastDate.AddDays(1).AddMinutes(-1);
@@ -304,7 +304,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle like "two hours ago" 
-        private DTParseResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
             return AgoLaterUtil.ParserDurationWithAgoAndLater(
                 text,

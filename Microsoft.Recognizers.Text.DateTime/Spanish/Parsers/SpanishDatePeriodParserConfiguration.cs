@@ -52,8 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
-
         #endregion
+
+        public IImmutableList<string> InStringList { get; }
 
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
@@ -84,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            InStringList = config.UtilityConfiguration.InStringList.ToImmutableList();
         }
 
         public int GetSwiftDay(string text)

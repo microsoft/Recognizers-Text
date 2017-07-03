@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex TheEndOfRegex = new Regex(@"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this for Spanish
         public static readonly Regex UnitRegex = new Regex(@"",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

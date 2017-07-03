@@ -35,11 +35,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
                     value = innerResult;
                 }
@@ -53,13 +53,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
             foreach (var regex in this.config.HolidayRegexList)
@@ -74,12 +74,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
-            return new DTParseResult();
+            return new DateTimeResolutionResult();
         }
 
-        private DTParseResult Match2Date(Match match, DateObject referenceDate)
+        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var holidayStr = this.config.SanitizeHolidayToken(match.Groups["holiday"].Value.ToLowerInvariant());
 
             // get year (if exist)
