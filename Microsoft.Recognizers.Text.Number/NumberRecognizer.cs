@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -51,6 +52,23 @@ namespace Microsoft.Recognizers.Text.Number
                             new Spanish.OrdinalExtractor()),
                         [typeof (PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
+                            new Spanish.PercentageExtractor())
+                    }
+                },
+                {
+                    Culture.French, new Dictionary<Type, IModel>
+                    {
+                        [typeof(NumberModel)] = new NumberModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                new FrenchNumberParserConfiguration()),
+                            new Spanish.NumberExtractor(NumberMode.PureNumber)),
+                        [typeof(OrdinalModel)] = new OrdinalModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
+                                new FrenchNumberParserConfiguration()),
+                            new Spanish.OrdinalExtractor()),
+                        [typeof(PercentModel)] = new PercentModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
+                                new FrenchNumberParserConfiguration()),
                             new Spanish.PercentageExtractor())
                     }
                 }
