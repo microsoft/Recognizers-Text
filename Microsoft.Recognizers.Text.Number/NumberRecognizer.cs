@@ -72,7 +72,6 @@ namespace Microsoft.Recognizers.Text.Number
                             new Spanish.PercentageExtractor())
                     }
                 }
-                // TODO: Add French models once issues in https://github.com/Microsoft/Recognizers-Text/search?q=%5BFrench&state=open&type=Issues&utf8=%E2%9C%93 get solved
             };
         }
 
