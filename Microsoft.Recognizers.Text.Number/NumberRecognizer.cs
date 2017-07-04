@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -53,8 +54,24 @@ namespace Microsoft.Recognizers.Text.Number
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                             new Spanish.PercentageExtractor())
                     }
+                },
+                {
+                    Culture.French, new Dictionary<Type, IModel>
+                    {
+                        [typeof(NumberModel)] = new NumberModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
+                                new FrenchNumberParserConfiguration()),
+                            new Spanish.NumberExtractor(NumberMode.PureNumber)),
+                        [typeof(OrdinalModel)] = new OrdinalModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
+                                new FrenchNumberParserConfiguration()),
+                            new Spanish.OrdinalExtractor()),
+                        [typeof(PercentModel)] = new PercentModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
+                                new FrenchNumberParserConfiguration()),
+                            new Spanish.PercentageExtractor())
+                    }
                 }
-                // TODO: Add French models once issues in https://github.com/Microsoft/Recognizers-Text/search?q=%5BFrench&state=open&type=Issues&utf8=%E2%9C%93 get solved
             };
         }
 
