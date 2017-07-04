@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
 
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context)
+        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var fracWords = new List<string>();
             var tokenList = tokens.ToList();
@@ -91,6 +91,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public long ResolveCompositeNumber(string numberStr)
         {
+
             if (numberStr.Contains("-"))
             {
                 var numbers = numberStr.Split('-');
@@ -108,6 +109,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 }
                 return ret;
             }
+
             if (this.OrdinalNumberMap.ContainsKey(numberStr))
             {
                 return this.OrdinalNumberMap[numberStr];

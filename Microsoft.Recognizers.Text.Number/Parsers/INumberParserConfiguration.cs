@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="tokens">list of tokens to normalize</param>
         /// <param name="context">context of the call</param>
         /// <returns>list of normalized tokens</returns>
-        IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context);
+        IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context);
 
         /// <summary>
         /// Used when requiring to convert a string to a valid number supported by the language

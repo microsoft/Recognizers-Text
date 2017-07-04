@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="ignoreCase"></param>
         protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = true)
         {
-            var _regexes = new HashSet<Regex>();
+            var regexes = new HashSet<Regex>();
 
             foreach (var regexStr in regexStrs)
             {
@@ -117,10 +117,10 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     regex = new Regex(regexStr, RegexOptions.Singleline);
                 }
-                _regexes.Add(regex);
+                regexes.Add(regex);
             }
 
-            return _regexes.ToImmutableHashSet();
+            return regexes.ToImmutableHashSet();
         }
 
         /// <summary>
