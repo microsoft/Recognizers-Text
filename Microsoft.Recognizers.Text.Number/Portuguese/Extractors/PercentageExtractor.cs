@@ -10,12 +10,14 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {
-            HashSet<string> regexStrs = new HashSet<string>
+            var regexStrs = new HashSet<string>
             {
-                $@"(@{numExtType})(\s*)(%|por cento)"
+                $@"(@{numExtType})(\s*)(%|por cento|pontos percentuais)"
             };
 
-            return BuildRegexes(regexStrs);
+            var regexSet = BuildRegexes(regexStrs);
+
+            return regexSet;
         }
     }
 }

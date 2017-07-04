@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                     "IntegerNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(d[úu]zia(s))?(?=\b)",
+                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+(\s+d[úu]zia(s))?(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },

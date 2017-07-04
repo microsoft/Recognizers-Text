@@ -108,15 +108,15 @@ namespace Microsoft.Recognizers.Text.Number
             foreach (var regexStr in regexStrs)
             {
                 var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-                Regex regex;
+
+                var options = RegexOptions.Singleline;
                 if (ignoreCase)
                 {
-                    regex = new Regex(regexStr, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    options = options | RegexOptions.IgnoreCase;
                 }
-                else
-                {
-                    regex = new Regex(regexStr, RegexOptions.Singleline);
-                }
+
+                Regex regex = new Regex(regexStr, options);
+                
                 regexes.Add(regex);
             }
 
