@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex QuarterRegex { get; }
         public Regex QuarterRegexYearFront { get; }
         public Regex SeasonRegex { get; }
+        public Regex WhichWeekRegex { get; }
 
         #endregion
 
@@ -50,8 +51,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
-
         #endregion
+
+        public IImmutableList<string> InStringList { get; }
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
@@ -76,11 +78,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             QuarterRegex = EnglishDatePeriodExtractorConfiguration.QuarterRegex;
             QuarterRegexYearFront = EnglishDatePeriodExtractorConfiguration.QuarterRegexYearFront;
             SeasonRegex = EnglishDatePeriodExtractorConfiguration.SeasonRegex;
+            WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            InStringList = config.UtilityConfiguration.InStringList.ToImmutableList();
         }
 
         public int GetSwiftDay(string text)

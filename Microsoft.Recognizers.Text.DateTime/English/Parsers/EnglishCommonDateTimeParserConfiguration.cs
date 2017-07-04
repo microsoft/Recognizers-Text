@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
 
@@ -28,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
 
         private static ImmutableDictionary<string, string> InitUnitMap()

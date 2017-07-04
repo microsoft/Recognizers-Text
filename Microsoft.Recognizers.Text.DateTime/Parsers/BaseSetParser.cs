@@ -67,15 +67,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseEachDuration(string text)
+        private DateTimeResolutionResult ParseEachDuration(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = this.config.DurationExtractor.Extract(text);
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
@@ -95,9 +95,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseEachUnit(string text)
+        private DateTimeResolutionResult ParseEachUnit(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             // handle "daily", "weekly"
             var match = this.config.PeriodicRegex.Match(text);
             if (match.Success)
@@ -135,9 +135,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParserTimeEveryday(string text)
+        private DateTimeResolutionResult ParserTimeEveryday(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = this.config.TimeExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -158,9 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseEachDate(string text)
+        private DateTimeResolutionResult ParseEachDate(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = this.config.DateExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -180,9 +180,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseEachDateTime(string text)
+        private DateTimeResolutionResult ParseEachDateTime(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = this.config.DateTimeExtractor.Extract(text);
             if (ers.Count != 1)
             {

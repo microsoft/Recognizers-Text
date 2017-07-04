@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -91,5 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             get { return DayOfMonthDictionary.ToImmutableDictionary(); }
         }
+
+        public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
     }
 }

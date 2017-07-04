@@ -89,6 +89,7 @@
     <Compile Include="English\Parsers\EnglishTimeParserConfiguration.cs" />
     <Compile Include="English\Parsers\EnglishTimePeriodParserConfiguration.cs" />
     <Compile Include="English\Parsers\TimeParser.cs" />
+    <Compile Include="English\Utilities\EnlighDatetimeUtilityConfiguration.cs" />
     <Compile Include="Extractors\BaseDateExtractor.cs" />
     <Compile Include="Extractors\BaseDatePeriodExtractor.cs" />
     <Compile Include="Extractors\BaseDateTimeExtractor.cs" />
@@ -159,7 +160,15 @@
     <Compile Include="Spanish\Parsers\SpanishSetParserConfiguration.cs" />
     <Compile Include="Spanish\Parsers\SpanishTimeParserConfiguration.cs" />
     <Compile Include="Spanish\Parsers\SpanishTimePeriodParserConfiguration.cs" />
-    <Compile Include="Utilities\DateTimeUtility.cs" />
+    <Compile Include="Spanish\Utilities\SpanishDatetimeUtilityConfiguration.cs" />
+    <Compile Include="Utilities\AgoLaterUtil.cs" />
+    <Compile Include="Utilities\DateObjectExtension.cs" />
+    <Compile Include="Utilities\DateTimeResolutionResult.cs" />
+    <Compile Include="Utilities\ExtractResultExtension.cs" />
+    <Compile Include="Utilities\FormatUtil.cs" />
+    <Compile Include="Utilities\IDateTimeUtilityConfiguration.cs" />
+    <Compile Include="Utilities\MatchingUtil.cs" />
+    <Compile Include="Utilities\Token.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
@@ -180,6 +189,7 @@
     <None Include="Microsoft.Recognizers.Text.DateTime.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

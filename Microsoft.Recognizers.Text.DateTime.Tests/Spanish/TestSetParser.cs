@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], System.DateTime.Now);
             Assert.AreEqual(Constants.SYS_DATETIME_SET, pr.Type);
-            Assert.AreEqual(value, ((DTParseResult) pr.Value).FutureValue);
+            Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, pr.TimexStr);
         }
 

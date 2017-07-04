@@ -1,4 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -37,16 +40,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TheEndOfRegex = new Regex(@"(the\s+)?end of(\s+the)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateTimeExtractorConfiguration()
         {
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
 
         public IExtractor DatePointExtractor { get; }
 
         public IExtractor TimePointExtractor { get; }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 
@@ -63,6 +72,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateTimeExtractorConfiguration.NightRegex => NightRegex;
 
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
+
+        Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        public IExtractor DurationExtractor { get; }
 
         public bool IsConnector(string text)
         {

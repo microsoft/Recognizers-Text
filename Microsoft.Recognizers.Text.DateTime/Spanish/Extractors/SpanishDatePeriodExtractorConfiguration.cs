@@ -119,6 +119,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this for Spanish
+        public static readonly Regex WhichWeekRegex =
+            new Regex(
+                $@"",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex andRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex beforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);

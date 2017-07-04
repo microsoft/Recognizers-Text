@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var referenceTime = refDate;
             var parseResult = InternalParser.Parse(er);
             var unitResult = parseResult.Value as UnitValue;
-            var dtParseResult = new DTParseResult();
+            var dtParseResult = new DateTimeResolutionResult();
             var unitStr = unitResult.Unit;
             var numStr = unitResult.Number;
             dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];

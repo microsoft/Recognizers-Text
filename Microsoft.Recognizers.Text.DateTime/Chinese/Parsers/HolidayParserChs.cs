@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATE, Util.FormatDate((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
                     value = innerResult;
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return false;
         }
 
-        private static DTParseResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
+        private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
         {
             var trimedText = text.Trim();
             foreach (var regex in ChineseHolidayExtractorConfiguration.HolidayRegexList)
@@ -147,12 +147,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return ret;
                 }
             }
-            return new DTParseResult();
+            return new DateTimeResolutionResult();
         }
 
-        private static DTParseResult Match2Date(Match match, DateObject referenceDate)
+        private static DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var holidayStr = match.Groups["holiday"].Value.ToLower();
 
             var year = referenceDate.Year;

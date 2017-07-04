@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
-
+        
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeTokenPrefix = "a las ";
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                         }
                         hasPm = true;
                     }
-                }                
+                }
             }
 
             hour = (hour + deltaHour) % 24;

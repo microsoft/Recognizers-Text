@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -22,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(TimeOfTodayBefore(text));
             tokens.AddRange(TimeOfTodayAfter(text));
             tokens.AddRange(SpecialTimeOfDate(text));
+            tokens.AddRange(DurationWithBeforeAndAfter(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -213,6 +215,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
                     }
                 }
+            }
+            return ret;
+        }
+
+        // process case like "two minutes ago" "three hours later"
+        private List<Token> DurationWithBeforeAndAfter(string text)
+        {
+            var ret = new List<Token>();
+            var duration_er = config.DurationExtractor.Extract(text);
+            foreach (var er in duration_er)
+            {
+                var match = config.UnitRegex.Match(er.Text);
+                if (!match.Success)
+                {
+                    continue;
+                }
+                ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
+                    er,
+                    ret,
+                    config.UtilityConfiguration);
             }
             return ret;
         }

@@ -37,22 +37,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item1)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
                         }
                     };
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
                         {
                             TimeTypeConstants.START_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item1)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item1)
                         },
                         {
                             TimeTypeConstants.END_TIME,
-                            Util.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item2)
+                            FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.PastValue).Item2)
                         }
                     };
                 }
@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
     public static class TimePeriodFunctions
     {
-        public static DTParseResult Handle(IDateTimeParser timeParser, DateTimeExtra<PeriodType> extra, DateObject refTime)
+        public static DateTimeResolutionResult Handle(IDateTimeParser timeParser, DateTimeExtra<PeriodType> extra, DateObject refTime)
         {
             //Left is a time
             var left = extra.NamedEntity["left"];
@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             };
             rightResult = timeParser.Parse(rightExtract, refTime).Data as TimeResult;
 
-            var ret = new DTParseResult()
+            var ret = new DateTimeResolutionResult()
             {
                 Success = true
             };
