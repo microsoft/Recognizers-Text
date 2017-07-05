@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         matched[m.Index + j] = true;
                     }
+
                     //Keep Source Data for extra information
                     matchSource.Add(m, collection.Value);
                 }

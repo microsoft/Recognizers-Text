@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
 
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context)
+        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             var result = new List<string>();
 

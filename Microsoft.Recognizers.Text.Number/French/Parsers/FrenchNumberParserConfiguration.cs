@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
 
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context)
+        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             return tokens;
         }

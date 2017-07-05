@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="TestNumberWithUnitChinese.cs" />
     <Compile Include="TestNumberWithUnitEnglish.cs" />
+    <Compile Include="TestNumberWithUnitPortuguese.cs" />
     <Compile Include="TestNumberWithUnitSpanish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

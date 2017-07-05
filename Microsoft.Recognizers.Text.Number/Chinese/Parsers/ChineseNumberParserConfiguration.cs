@@ -8,8 +8,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class ChineseNumberParserConfiguration : INumberParserConfiguration
     {
-        public ChineseNumberParserConfiguration()
-            : this(new CultureInfo(Culture.Chinese))
+        public ChineseNumberParserConfiguration() : this(new CultureInfo(Culture.Chinese))
         {
         }
 
@@ -40,36 +39,24 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             RoundDirectListChs = InitRoundDirectListChs();
 
             HalfADozenRegex = null;
-            DigitalNumberRegex = new Regex(
-                @"((?<=(\d|\b))(k|t|m|g)(?=\b))",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            DigitNumRegex = new Regex($@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            DozenRegex = new Regex(@".*打$",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PercentageRegex = new Regex(@"(?<=百\s*分\s*之).+|.+(?=个\s*百\s*分\s*点)|.*(?=[％%])",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            DoubleAndRoundChsRegex =
-                new Regex(
-                    $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+(\.{IntegerExtractor
-                        .ZeroToNineChsFullHalfRegexChs}+)?\s*[多几余]?[万亿萬億]"
-                    + @"{1,2}",
-                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            FracSplitRegex = new Regex(@"又|分\s*之",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            SymbolRegex =
-                new Regex($@"^{IntegerExtractor.SignSymbolRegexChs}.*|^{IntegerExtractor.SignSymbolRegexNum}.*",
-                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PointRegexChs = new Regex(DoubleExtractor.PointRegexChsStr,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DigitalNumberRegex = new Regex(@"((?<=(\d|\b))(k|t|m|g)(?=\b))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DigitNumRegex = new Regex($@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DozenRegex = new Regex(@".*打$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            PercentageRegex = new Regex(@"(?<=百\s*分\s*之).+|.+(?=个\s*百\s*分\s*点)|.*(?=[％%])", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DoubleAndRoundChsRegex = new Regex(
+                                               $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+(\.{IntegerExtractor
+                                               .ZeroToNineChsFullHalfRegexChs}+)?\s*[多几余]?[万亿萬億]" + @"{1,2}", 
+                                               RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            FracSplitRegex = new Regex(@"又|分\s*之", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            SymbolRegex = new Regex($@"^{IntegerExtractor.SignSymbolRegexChs}.*|^{IntegerExtractor.SignSymbolRegexNum}.*", 
+                                    RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            PointRegexChs = new Regex(DoubleExtractor.PointRegexChsStr, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SpeGetNumberRegex = new Regex(
-                $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}|{IntegerExtractor
-                    .ZeroToNineIntegerRegexChs}|[十拾半对對]",
-                RegexOptions.Singleline | RegexOptions.IgnoreCase);
-            PairRegex = new Regex(@".*[双对雙對]$",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                                          $@"{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}|{IntegerExtractor
+                                          .ZeroToNineIntegerRegexChs}|[十拾半对對]",
+                                          RegexOptions.Singleline | RegexOptions.IgnoreCase);
+            PairRegex = new Regex(@".*[双对雙對]$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
-
 
         public CultureInfo CultureInfo { get; private set; }
 
@@ -135,7 +122,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         public IEnumerable<string> WrittenFractionSeparatorTexts { get; private set; }
 
-        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, object context)
+        public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
             return tokens;
         }
