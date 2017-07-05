@@ -56,7 +56,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "ton",
-            "tonelada"
+            "tonelada",
+            "área",
+            "area",
+            "áreas",
+            "areas",
+            "milha",
+            "milhas"
         }.ToImmutableList();
     }
 }
