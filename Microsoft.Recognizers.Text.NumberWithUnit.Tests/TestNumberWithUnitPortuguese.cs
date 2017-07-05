@@ -651,159 +651,178 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Portuguese);
 
             BasicTest(model,
-                "La temperatura exterior es de 40 grados Celsius",
-                "40 Grado Celsius");
+                "A temperatura externa é de 40 graus Celsius",
+                "40 Grau Celsius");
 
             BasicTest(model,
-                "Hace 90 fahrenheit en Texas",
-                "90 Grado Fahrenheit");
+                "Faz 90 fahrenheit no Texas",
+                "90 Grau Fahrenheit");
 
             BasicTest(model,
-                "Convertir 10 celsius a fahrenheit",
-                new string[] { "10 Grado Celsius", "Grado Fahrenheit" });
+                "Converter 10 celsius em fahrenheit",
+                new string[] { "10 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "-5 grados Fahrenheit",
-                "-5 Grado Fahrenheit");
+                "-5 graus Fahrenheit",
+                "-5 Grau Fahrenheit");
 
             BasicTest(model,
-                "6 grados centígrados",
-                "6 Grado Celsius");
+                "6 graus centígrados",
+                "6 Grau Celsius");
 
             BasicTest(model,
-                "98,6 grados f es temperatura normal",
-                "98,6 Grado Fahrenheit");
+                "98,6 graus f é uma temperatura normal",
+                "98,6 Grau Fahrenheit");
 
             BasicTest(model,
-                "Ajuste la temperatura a 30 grados celsius",
-                "30 Grado Celsius");
+                "Ajuste a temperatura para 30 graus celsius",
+                "30 Grau Celsius");
 
             BasicTest(model,
-                "La temperatura normal es 98,6 grados Fahrenheit",
-                "98,6 Grado Fahrenheit");
+                "A temperatura normal é 98,6 graus Fahrenheit",
+                "98,6 Grau Fahrenheit");
 
             BasicTest(model,
-                "100 grados f",
-                "100 Grado Fahrenheit");
+                "100 graus f",
+                "100 Grau Fahrenheit");
 
             BasicTest(model,
-                "20 Grados c",
-                "20 Grado Celsius");
+                "20 Graus c",
+                "20 Grau Celsius");
 
             BasicTest(model,
                 "100 °f",
-                "100 Grado Fahrenheit");
+                "100 Grau Fahrenheit");
 
             BasicTest(model,
                 "20 °c",
-                "20 Grado Celsius");
+                "20 Grau Celsius");
 
             BasicTest(model,
-                "100,2 Grados Fahrenheit es bajo",
-                "100,2 Grado Fahrenheit");
+                "100,2 Graus Fahrenheit é baixo",
+                "100,2 Grau Fahrenheit");
 
             BasicTest(model,
-                "34,9 centígrado a fahrenheit",
-                new string[] { "34,9 Grado Celsius", "Grado Fahrenheit" });
+                "34,9 centígrado pra fahrenheit",
+                new string[] { "34,9 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "convertir 200 celsius celsius en fahrenheit",
-                new string[] { "200 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
+                "converter 200 celsius em fahrenheit",
+                new string[] { "200 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "convertir 200 K en fahrenheit",
-                new string[] { "200 Kelvin", "Grado Fahrenheit" });
+                "convertir 200 K em fahrenheit",
+                new string[] { "200 Kelvin", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
-                new string[] { "101 Grado Fahrenheit", "Grado Fahrenheit", "Grado Celsius", "Grado Celsius" });
+                "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
+                new string[] { "101 Grau Fahrenheit", "Grau Fahrenheit", "Grau Celsius", "Grau Celsius" });
 
             BasicTest(model,
-                "50 grados centígrados celsius a fahrenheit",
-                new string[] { "50 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
+                "50 graus centígrados celsius em fahrenheit",
+                new string[] { "50 Grau Celsius", "Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "Podría convertir 51 fahrenheit en grados celsius",
-                new string[] { "51 Grado Fahrenheit", "Grado Celsius" });
+                "Poderias converter 51 fahrenheit em graus celsius",
+                new string[] { "51 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 106 grados Fahrenheit a grados centígrados",
-                new string[] { "106 Grado Fahrenheit", "Grado Celsius" });
+                "Converter 106 graus Fahrenheit em graus centígrados",
+                new string[] { "106 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 106 K a grados centígrados",
-                new string[] { "106 Kelvin", "Grado Celsius" });
+                "Converter 106 K em graus centígrados",
+                new string[] { "106 Kelvin", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 45 grados Fahrenheit a Celsius",
-                new string[] { "45 Grado Fahrenheit", "Grado Celsius" });
+                "Converter 45 graus Fahrenheit a Celsius",
+                new string[] { "45 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Cómo convertir - 20 grados Fahrenheit a Celsius",
-                new string[] { "-20 Grado Fahrenheit", "Grado Celsius" });
+                "Como convertir - 20 graus Fahrenheit para Celsius",
+                new string[] { "-20 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
                 "10,5 celsius",
-                "10,5 Grado Celsius");
+                "10,5 Grau Celsius");
 
             BasicTest(model,
-                "20 grados celsius",
-                "20 Grado Celsius");
+                "20 graus celsius",
+                "20 Grau Celsius");
 
             BasicTest(model,
                 "20,3 celsius",
-                "20,3 Grado Celsius");
+                "20,3 Grau Celsius");
 
             BasicTest(model,
                 "34,5 celsius",
-                "34,5 Grado Celsius");
+                "34,5 Grau Celsius");
 
             BasicTest(model,
-                "La temperatura exterior es de 98 grados",
-                "98 Grado");
+                "A temperatura exterior é de 98 graus",
+                "98 Grau");
 
             BasicTest(model,
-                "Ajuste el termostato a 85 °",
-                "85 Grado");
+                "Ajuste o termostato em 85 °",
+                "85 Grau");
 
             BasicTest(model,
-                "Ajuste el termostato a 85°",
-                "85 Grado");
+                "Ajuste o termostato em 85°",
+                "85 Grau");
 
             BasicTest(model,
-                "Aumentar la temperatura en 5 grados",
-                "5 Grado");
+                "Aumente a temperatura em 5 graus",
+                "5 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 70 grados f",
-                "70 Grado Fahrenheit");
+                "Ajuste a temperatura para 70 graus f",
+                "70 Grau Fahrenheit");
 
             BasicTest(model,
-                "Aumentar la temperatura en 20 grados",
-                "20 Grado");
+                "Aumentar a temperatura em 20 grau",
+                "20 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 100 grados",
-                "100 Grado");
+                "Ajuste a temperatura a 100 graus",
+                "100 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 100 Kelvin",
+                "Ajuste a temperatura a 100 Kelvin",
                 "100 Kelvin");
 
             BasicTest(model,
-                "Mantener la temperatura a 75 grados f",
-                "75 Grado Fahrenheit");
+                "Mantenha a temperatura de 75 graus f",
+                "75 Grau Fahrenheit");
 
             BasicTest(model,
-                "Deje que la temperatura esté a 40 centígrados",
-                "40 Grado Celsius");
+                "Deixe que a temperatura fique em 40 centígrados",
+                "40 Grau Celsius");
 
             BasicTest(model,
-                "Deje que la temperatura esté a 50 grados.",
-                "50 Grado");
+                "Deixe a temperatura em 50 graus.",
+                "50 Grau");
+
+            /* Not supported yet
+            BasicTest(model,
+                "menos 10 celsius",
+                "-10 Grau Celsius");
+
+            BasicTest(model,
+                "A temperatura exterior é de menos 98 graus",
+                "-98 Grau");
+
+            BasicTest(model,
+                "dez graus celsius negativos",
+                "-10 Grau Celsius");
+
+            BasicTest(model,
+                "A temperatura exterior é de 98 graus negativos",
+                "-98 Grau");
+            */
+
         }
 
         [TestMethod]
