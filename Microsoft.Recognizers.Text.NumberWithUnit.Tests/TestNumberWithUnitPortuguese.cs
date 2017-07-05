@@ -436,7 +436,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Portuguese);
+
+            BasicTest(model, "são 180,25ml liquidos", "180,25 Mililitro");
+
+            BasicTest(model, "sao 180ml líquidos", "180 Mililitro");
+
+            BasicTest(model, " 29km caminhando ", "29 Kilometro");
+
+            BasicTest(model, "são ,25ml liquidos", "0,25 Mililitro");
 
             BasicTest(model,
             "75ml",
@@ -801,75 +809,76 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Portuguese);
 
             BasicTest(model,
-                "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",
-                "5 Año");
+                "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
+                "5 Ano");
 
             BasicTest(model,
-                "Esta saga se remonta a casi diez años atrás.",
-                "10 Año");
+                "Esta saga remonta a quase dez anos atrás.",
+                "10 Ano");
 
             BasicTest(model,
-                "¡Mi pelo ya está gris y sólo tengo 29 años!",
-                "29 Año");
+                "Só tenho 29 anos!",
+                "29 Ano");
 
             BasicTest(model,
-                "Ahora cuenta noventa y cinco años: tiene una perspectiva de las cosas y tiene memoria.",
-                "95 Año");
+                "Agora com noventa e cinco anos tens perspectiva das coisas.",
+                "95 Ano");
 
             BasicTest(model,
-                "La Gran Muralla china tiene más de 500 años y se extiende más de 5,000 millas.",
-                "500 Año");
+                "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
+                "500 Ano");
 
             BasicTest(model,
-                "Ya tiene 60 años, pues en principio nació el 8 de mayo de 1945.",
-                "60 Año");
+                "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
+                "60 Ano");
 
             BasicTest(model,
-                "Y al 25% no se les diagnostica hasta que tienen casi tres años.",
-                "3 Año");
+                "25% dos casos não são diagnosticados até por volta dos tres anos.",
+                "3 Ano");
 
             BasicTest(model,
-                "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
-                "1 Año");
+                "Quando haverá pressão para comprir essa promessa feita há um ano?",
+                "1 Ano");
 
             BasicTest(model,
-                "La sublevación se produjo cuando yo era un bebé y tenía tan solo diez meses.",
+                "Aconteceu quando era um bebê e tinha apenas dez meses.",
                 "10 Mes");
 
             BasicTest(model,
-                "La propuesta de la Comisión tiene ya 8 meses.",
+                "A proposta da comissão já tem 8 meses de idade.",
                 "8 Mes");
 
             BasicTest(model,
-                "A alrededor del 50% de ellos no se les diagnostica hasta los dieciocho meses de edad.",
+                "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
                 "18 Mes");
 
             BasicTest(model,
-                "Es posible, pero en 2006 mataron a 330 000 focas arpa y el 95% de ellas tenían menos de tres meses.",
+                "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
                 "3 Mes");
 
             BasicTest(model,
-                "Si seguimos adelante con la resolución en el período parcial de sesiones de diciembre, tendrá para entonces tres semanas de antigüedad.",
+                "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
                 "3 Semana");
 
             BasicTest(model,
-                "También pueden revocar su consentimiento hasta que el hijo haya cumplido 6 semanas de edad.",
+                "Às 6 semanas de idade já comemora o Natal.",
                 "6 Semana");
 
             BasicTest(model,
-                "Otras materias primas deberán utilizarse en un plazo de cinco días.",
-                "5 Día");
+                "Outras matérias primas devem ser usadas num prazo de cinco dias.",
+                "5 Dia");
 
             BasicTest(model,
-                "Para clubes de los demás países, una cuenta vencida por 90 días se considera morosa.",
-                "90 Día");
+                "Uma conta vencida a 90 dias está bem atrasada.",
+                "90 Dia");
+            
             /* NOT SUPPORTED
             BasicTest(model,
-                "Barcelona tiene un año y medio de vida",
-                "1,5 Año");
+                "Barcelona tem un ano e meio de vida",
+                "1,5 Ano");
             */
         }
     }

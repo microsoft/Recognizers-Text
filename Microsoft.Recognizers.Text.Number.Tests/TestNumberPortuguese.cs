@@ -565,7 +565,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             #endregion
         }
 
-
         [TestMethod]
         public void TestFractionModel()
         {

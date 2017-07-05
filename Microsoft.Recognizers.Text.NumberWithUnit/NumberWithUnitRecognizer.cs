@@ -148,6 +148,47 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                             ),
                     }
+                },
+                {
+                    Culture.Portuguese, new Dictionary<Type, IModel>
+                    {
+                        [typeof (CurrencyModel)] = new CurrencyModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.CurrencyParserConfiguration())
+                                }
+                            }
+                            ),
+                        [typeof (TemperatureModel)] = new TemperatureModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.TemperatureExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.TemperatureParserConfiguration())
+                                }
+                            }
+                            ),
+                        [typeof (DimensionModel)] = new DimensionModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.DimensionExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.DimensionParserConfiguration())
+                                }
+                            }
+                            ),
+                        [typeof (AgeModel)] = new AgeModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.AgeExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
+                                }
+                            }
+                            ),
+                    }
                 }
             };
         }
