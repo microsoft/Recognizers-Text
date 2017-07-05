@@ -10,6 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public EnglishCommonDateTimeParserConfiguration()
         {
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
             UnitMap = InitUnitMap();
             UnitValueMap = InitUnitValueMap();
             SeasonMap = InitSeasonMap();
@@ -35,7 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
 
         private static ImmutableDictionary<string, string> InitUnitMap()

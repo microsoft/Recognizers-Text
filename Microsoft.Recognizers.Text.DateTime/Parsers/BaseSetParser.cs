@@ -38,27 +38,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // datetimeperiod>dateperiod>timeperiod>datetime>date>time
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimePeriodParser, config.DateTimePeriodExtractor, er.Text);
+                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DatePeriodParser, config.DatePeriodExtractor, er.Text);
+                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimePeriodParser, config.TimePeriodExtractor, er.Text);
+                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimeParser, config.DateTimeExtractor, er.Text);
+                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateParser, config.DateExtractor, er.Text);
+                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimeParser, config.TimeExtractor, er.Text);
+                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text);
                 }
 
                 if (innerResult.Success)
@@ -174,32 +174,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEachDate(string text)
+        private DateTimeResolutionResult ParseEach(IExtractor extractor, IDateTimeParser parser, string text)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateExtractor.Extract(text);
-            if (ers.Count != 1)
-            {
-                return ret;
-            }
-
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = this.config.EachPrefixRegex.Match(beforeStr);
-            if (match.Success)
-            {
-                var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
-            }
-            return ret;
-        }
-
-        private DateTimeResolutionResult ParseEachDateTime(string text)
-        {
-            var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateTimeExtractor.Extract(text);
+            var ers = extractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;
