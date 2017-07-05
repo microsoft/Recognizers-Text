@@ -14,34 +14,33 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
         public static readonly ImmutableDictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
         {
-            {"Kilómetro", "km|kilometro|kilómetro|kilometros|kilómetros"},
-            {"Hectómetro", "hm|hectometro|hectómetro|hectometros|hectómetros"},
-            {"Decámetro", "decametro|decámetro|decametros|decámetros|dam"},
+            {"Quilômetro", "km|quilometro|quilômetro|quilómetro|quilometros|quilômetros|quilómetros"},
+            {"Hectômetro", "hm|hectometro|hectômetro|hectómetro|hectometros|hectômetros|hectómetros"},
+            {"Decâmetro", "decametro|decâmetro|decámetro|decametros|decâmetro|decámetros|dam"},
             {"Metro", "m|m.|metro|metros"},
             {"Decímetro", "dm|decimetro|decímetro|decimetros|decímetros"},
             {"Centímetro", "cm|centimetro|centímetro|centimetros|centimetros"},
             {"Milímetro", "mm|milimetro|milímetro|milimetros|milímetros"},
-            {"Micrómetro", "µm|um|micrometro|micrómetro|micrometros|micrómetros|micrón|micrónes"},
-            {"Nanómetro", "nm|nanometro|nanómetro|nanometros|nanómetros"},
-            {"Picómetro", "pm|picometro|picómetro|picometros|picometros"},
-            {"Milla", "mi|milla|millas"},
-            {"Yarda", "yd|yarda|yardas"},
-            {"Pulgada", "pulgada|pulgadas|\""},
-            {"Pie", "pie|pies|ft"},
-            {"Año luz", "año luz|años luz|al"},
+            {"Micrômetro", "µm|um|micrometro|micrômetro|micrómetro|micrometros|micrômetros|micrómetros|micron|mícron|microns|mícrons|micra"},
+            {"Nanômetro", "nm|nanometro|nanômetro|nanómetro|nanometros|nanômetros|nanómetros|milimicron|milimícron|milimicrons|milimícrons"},
+            {"Picômetro", "pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros"},
+            {"Milha", "mi|milha|milhas"},
+            {"Jarda", "yd|jarda|jardas"},
+            {"Polegada", "polegada|polegadas|\""},
+            {"Pé", "pé|pe|pés|pes|ft"},
+            {"Ano luz", "ano luz|anos luz|al"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
-            "mi",
-            "área",
-            "áreas"
+            "mi", "milha", "milhas"
         }.ToImmutableList();
+
     }
 }

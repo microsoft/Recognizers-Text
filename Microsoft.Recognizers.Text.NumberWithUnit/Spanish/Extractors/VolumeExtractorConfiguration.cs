@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Decímetro cúbico", "decímetro cúbico|decímetros cúbico|dm3|dm^3|dm³"},
             {"Centímetro cúbico", "centímetro cúbico|centímetros cúbico|cc|cm3|cm^3|cm³"},
             {"Milímetro cúbico", "milímetro cúbico|milímetros cúbico|mm3|mm^3|mm³"},
-            {"Pulgada cúbica", "pulgada cúbics|pulgadas cúbicas"},
+            {"Pulgada cúbica", "pulgada cúbica|pulgadas cúbicas"},
             {"Pie cúbico", "pie cúbico|pies cúbicos|pie3|pie^3|pie³|ft3|ft^3|ft³"},
             {"Yarda cúbica", "yarda cúbica|yardas cúbicas|yd3|yd^3|yd³"},
             {"Hectolitro", "hectolitro|hectolitros|hl"},
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Mililitro", "mililitro|mililitros|ml"},
             {"Galón", "galón|galones"},
             {"Pinta", "pinta|pintas"},
-            {"Barril", "barril|barriles"},
+            {"Barril", "barril|barriles|bbl"},
             {"Onza líquida", "onza líquida|onzas líquidas"},
         }.ToImmutableDictionary();
     }

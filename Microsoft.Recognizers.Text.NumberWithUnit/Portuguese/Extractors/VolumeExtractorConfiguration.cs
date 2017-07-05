@@ -20,23 +20,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public static readonly ImmutableDictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
-            {"Kilómetro cúbico", "kilómetro cúbico|kilómetros cúbico|km3|km^3|km³"},
-            {"Hectómetro cúbico", "hectómetro cúbico|hectómetros cúbico|hm3|hm^3|hm³"},
-            {"Decámetro cúbico", "decámetro cúbico|decámetros cúbico|dam3|dam^3|dam³"},
-            {"Metro cúbico", "metro cúbico|metros cúbico|m3|m^3|m³"},
-            {"Decímetro cúbico", "decímetro cúbico|decímetros cúbico|dm3|dm^3|dm³"},
-            {"Centímetro cúbico", "centímetro cúbico|centímetros cúbico|cc|cm3|cm^3|cm³"},
-            {"Milímetro cúbico", "milímetro cúbico|milímetros cúbico|mm3|mm^3|mm³"},
-            {"Pulgada cúbica", "pulgada cúbics|pulgadas cúbicas"},
-            {"Pie cúbico", "pie cúbico|pies cúbicos|pie3|pie^3|pie³|ft3|ft^3|ft³"},
-            {"Yarda cúbica", "yarda cúbica|yardas cúbicas|yd3|yd^3|yd³"},
+            {"Quilômetro cúbico", "quilômetro cúbico|quilómetro cúbico|quilometro cubico|quilômetros cúbicos|quilómetros cúbicos|quilometros cubicos|km3|km^3|km³"},
+            {"Hectômetro cúbico", "hectômetro cúbico|hectómetro cúbico|hectometro cubico|hectômetros cúbicos|hectómetros cúbicos|hectometros cubicos|hm3|hm^3|hm³"},
+            {"Decâmetro cúbico", "decâmetro cúbico|decámetro cúbico|decametro cubico|decâmetros cúbicos|decámetros cúbicos|decametros cubicosdam3|dam^3|dam³"},
+            {"Metro cúbico", "metro cúbico|metro cubico|metros cúbicos|metros cubicos|m3|m^3|m³"},
+            {"Decímetro cúbico", "decímetro cúbico|decimetro cubico|decímetros cúbicos|decimetros cubicos|dm3|dm^3|dm³"},
+            {"Centímetro cúbico", "centímetro cúbico|centimetro cubico|centímetros cúbicos|centrimetros cubicos|cc|cm3|cm^3|cm³"},
+            {"Milímetro cúbico", "milímetro cúbico|milimetro cubico|milímetros cúbicos|milimetros cubicos|mm3|mm^3|mm³"},
+            {"Polegada cúbica", "polegada cúbica|polegada cubica|polegadas cúbicas|polegadas cubicas"},
+            {"Pé cúbico", "pé cúbico|pe cubico|pés cúbicos|pes cubicos|pé3|pe3|pé^3|pe^3|pé³|pe³|ft3|ft^3|ft³"},
+            {"Jarda cúbica", "jarda cúbica|jarda cubica|jardas cúbicas|jardas cubicas|yd3|yd^3|yd³"},
             {"Hectolitro", "hectolitro|hectolitros|hl"},
             {"Litro", "litro|litros|lts|l"},
             {"Mililitro", "mililitro|mililitros|ml"},
-            {"Galón", "galón|galones"},
-            {"Pinta", "pinta|pintas"},
-            {"Barril", "barril|barriles"},
-            {"Onza líquida", "onza líquida|onzas líquidas"},
+            {"Galão", "galão|galões"},
+            {"Pint", "pinta|pintas|pinto|pintos|quartilho|quartilhos|pint|pints"},
+            {"Barril", "barril|barris|bbl"},
+            {"Onça líquida", "onça líquida|onca liquida|onças líquidas|oncas liquidas"},
         }.ToImmutableDictionary();
     }
 }

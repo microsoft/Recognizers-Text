@@ -14,25 +14,25 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
 
         public static readonly ImmutableDictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
             {"Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos"},
-            {"Kilómetro por hora", "km/h|kilómetro por hora|kilometro por hora|kilómetros por hora|kilometros por hora|kilómetro/hora|kilometro/hora|kilómetros/hora|kilometros/hora"},
-            {"Kilómetro por minuto", "km/min|kilómetro por minuto|kilometro por minuto|kilómetros por minuto|kilometros por minuto|kilómetro/minuto|kilometro/minuto|kilómetros/minuto|kilometros/minuto"},
-            {"Kilómetro por segundo", "km/seg|kilómetro por segundo|kilometro por segundo|kilómetros por segundo|kilometros por segundo|kilómetro/segundo|kilometro/segundo|kilómetros/segundo|kilometros/segundo"},
-            {"Milla por hora", "mph|milla por hora|mi/h|milla/hora|millas/hora|millas por hora"},
-            {"Nudo", "kt|nudo|nudos|kn"},
-            {"Pie por segundo", "ft/s|pie/s|ft/seg|pie/seg|pie por segundo|pies por segundo"},
-            {"Pie por minuto", "ft/min|pie/min|pie por minuto|pies por minuto"},
-            {"Yarda por minuto", "yardas por minuto|yardas/minuto|yardas/min"},
-            {"Yarda por segundo", "yardas por segundo|yardas/segundo|yardas/seg"},
+            {"Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora"},
+            {"Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto"},
+            {"Quilômetro por segundo", "km/seg|quilômetro por segundo|quilómetro por segundo|quilometro por segundo|quilômetros por segundo|quilómetros por segundo|quilometros por segundo|quilômetro/segundo|quilómetro/segundo|quilometro/segundo|quilômetros/segundo|quilómetros/segundo|quilometros/segundo"},
+            {"Milha por hora", "mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora"},
+            {"Nó", "kt|nó|nós|kn"},
+            {"Pé por segundo", "ft/s|pé/s|pe/s|ft/seg|pé/seg|pe/seg|pé por segundo|pe por segundo|pés por segundo|pes por segundo"},
+            {"Pé por minuto", "ft/min|pé/mind|pe/min|pé por minuto|pe por minuto|pés por minuto|pes por minuto"},
+            {"Jarda por minuto", "jardas por minuto|jardas/minuto|jardas/min"},
+            {"Jarda por segundo", "jardas por segundo|jardas/segundo|jardas/seg"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "nó", "no",
             "nós", "nos"

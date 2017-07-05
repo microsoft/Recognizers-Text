@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
 
@@ -34,6 +34,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             {"Acre", "acre|acres"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>{ }.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>{ }.ToImmutableList();
     }
 }
