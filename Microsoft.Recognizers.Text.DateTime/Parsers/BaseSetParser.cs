@@ -35,14 +35,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // NOTE: Please do not change the order of following function
-                // we must consider datetime before date
+                // datetimeperiod>dateperiod>timeperiod>datetime>date>time
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDateTime(er.Text);
+                    innerResult = ParseEach(config.DateTimePeriodParser, config.DateTimePeriodExtractor, er.Text);
                 }
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDate(er.Text);
+                    innerResult = ParseEach(config.DatePeriodParser, config.DatePeriodExtractor, er.Text);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.TimePeriodParser, config.TimePeriodExtractor, er.Text);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.DateTimeParser, config.DateTimeExtractor, er.Text);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.DateParser, config.DateExtractor, er.Text);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.TimeParser, config.TimeExtractor, er.Text);
                 }
 
                 if (innerResult.Success)
@@ -158,10 +174,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DTParseResult ParseEachDate(string text)
+        private DTParseResult ParseEach(IDateTimeParser parser, IExtractor extractor, string text)
         {
             var ret = new DTParseResult();
-            var ers = this.config.DateExtractor.Extract(text);
+            var ers = extractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;
@@ -171,29 +187,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.EachPrefixRegex.Match(beforeStr);
             if (match.Success)
             {
-                var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
-            }
-            return ret;
-        }
-
-        private DTParseResult ParseEachDateTime(string text)
-        {
-            var ret = new DTParseResult();
-            var ers = this.config.DateTimeExtractor.Extract(text);
-            if (ers.Count != 1)
-            {
-                return ret;
-            }
-
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = this.config.EachPrefixRegex.Match(beforeStr);
-            if (match.Success)
-            {
-                var pr = this.config.DateTimeParser.Parse(ers[0], DateObject.Now);
+                var pr = parser.Parse(ers[0], DateObject.Now);
                 ret.Timex = pr.TimexStr;
                 ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                 ret.Success = true;

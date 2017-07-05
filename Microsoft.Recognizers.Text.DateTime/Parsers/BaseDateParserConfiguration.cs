@@ -65,6 +65,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IExtractor DurationExtractor { get; protected set; }
 
+        public virtual IExtractor DatePeriodExtractor { get; protected set; }
+
+        public virtual IExtractor TimePeriodExtractor { get; protected set; }
+
+        public virtual IExtractor DateTimePeriodExtractor { get; protected set; }
+
         public virtual IDateTimeParser DateParser { get; protected set; }
 
         public virtual IDateTimeParser TimeParser { get; protected set; }
@@ -72,6 +78,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IDateTimeParser DateTimeParser { get; protected set; }
 
         public virtual IDateTimeParser DurationParser { get; protected set; }
+
+        public virtual IDateTimeParser DatePeriodParser { get; protected set; }
+
+        public virtual IDateTimeParser TimePeriodParser { get; protected set; }
+
+        public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 

@@ -35,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave each 4/15", 11, 9);
             BasicTest("I'll leave every monday", 11, 12);
             BasicTest("I'll leave each monday 4pm", 11, 15);
+
+            BasicTest("I'll leave every morning", 11, 13);
         }
     }
 }
