@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberCombinedWithUnit { get; }
         Regex AnUnitRegex { get; }
         Regex AllDateUnitRegex { get; }
-        
+        Regex HalfDateUnitRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }

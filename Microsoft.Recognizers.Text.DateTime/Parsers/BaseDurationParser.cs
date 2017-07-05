@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -112,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.AnUnitRegex.Match(text);
             if (match.Success)
             {
-                numStr = "1";
+                numStr = match.Groups["half"].Success ? "0.5" : "1";
                 var srcUnit = match.Groups["unit"].Value.ToLower();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -132,22 +133,37 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseImplicitDuration(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            var result = new DateTimeResolutionResult();
             // handle "all day" "all year"
-            var match = this.config.AllDateUnitRegex.Match(text);
+            if (TryGetResultFromRegex(config.AllDateUnitRegex, text, "1", out result))
+            {
+                ret = result;
+            }
+            // handle "half day", "half year"
+            if (TryGetResultFromRegex(config.HalfDateUnitRegex, text, "0.5", out result))
+            {
+                ret = result;
+            }
+
+            return ret;
+        }
+
+        private bool TryGetResultFromRegex(Regex regex, string text, string numStr, out DateTimeResolutionResult ret)
+        {
+            ret = new DateTimeResolutionResult();
+            var match = regex.Match(text);
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value;
                 if (this.config.UnitValueMap.ContainsKey(srcUnit))
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
-                    ret.Timex = "P1" + unitStr[0];
-                    ret.FutureValue = ret.PastValue = (double)this.config.UnitValueMap[srcUnit];
+                    ret.Timex = "P" + numStr + unitStr[0];
+                    ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
-                    return ret;
                 }
             }
-
-            return ret;
+            return match.Success;
         }
 
         public static bool IsLessThanDay(string unit)

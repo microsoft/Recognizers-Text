@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex($@"(?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{EngMonthRegex}))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(@"(?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)",
@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(?<woy>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?)\s+semana(\s+del?)?\s+({
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
