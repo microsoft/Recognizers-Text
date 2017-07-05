@@ -34,6 +34,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
         }
 
         public IExtractor DurationExtractor { get; }
@@ -43,6 +46,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IExtractor DateExtractor { get; }
 
         public IExtractor DateTimeExtractor { get; }
+
+        public IExtractor DatePeriodExtractor { get; }
+
+        public IExtractor TimePeriodExtractor { get; }
+
+        public IExtractor DateTimePeriodExtractor { get; }
 
         Regex ISetExtractorConfiguration.LastRegex => SpanishDateExtractorConfiguration.LastRegex;
 

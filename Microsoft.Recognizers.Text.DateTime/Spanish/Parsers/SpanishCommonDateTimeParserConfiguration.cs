@@ -25,11 +25,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
             DateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
             DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
+            DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
+            TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
+            DateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
         }
 
         private static ImmutableDictionary<string, string> InitUnitMap()

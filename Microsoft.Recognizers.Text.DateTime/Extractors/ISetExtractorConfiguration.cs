@@ -15,5 +15,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor TimeExtractor { get; }
         IExtractor DateExtractor { get; }
         IExtractor DateTimeExtractor { get; }
+        IExtractor DatePeriodExtractor { get; }
+        IExtractor TimePeriodExtractor { get; }
+        IExtractor DateTimePeriodExtractor { get; }
+        
     }
 }

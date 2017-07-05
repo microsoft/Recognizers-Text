@@ -21,6 +21,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser DateTimeParser { get; }
 
+        public IExtractor DatePeriodExtractor { get; }
+
+        public IDateTimeParser DatePeriodParser { get; }
+
+        public IExtractor TimePeriodExtractor { get; }
+
+        public IDateTimeParser TimePeriodParser { get; }
+
+        public IExtractor DateTimePeriodExtractor { get; }
+
+        public IDateTimeParser DateTimePeriodParser { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public Regex EachPrefixRegex { get; }
@@ -37,11 +49,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeExtractor = config.TimeExtractor;
             DateExtractor = config.DateExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
+            DateTimePeriodExtractor = config.DateTimePeriodExtractor;
 
             DurationParser = config.DurationParser;
             TimeParser = config.TimeParser;
             DateParser = config.DateParser;
             DateTimeParser = config.DateTimeParser;
+            DatePeriodParser = config.DatePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
             UnitMap = config.UnitMap;
 
             EachPrefixRegex = EnglishSetExtractorConfiguration.EachPrefixRegex;
