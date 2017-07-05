@@ -845,19 +845,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                 "Aconteceu quando era um bebê e tinha apenas dez meses.",
-                "10 Mes");
+                "10 Mês");
 
             BasicTest(model,
                 "A proposta da comissão já tem 8 meses de idade.",
-                "8 Mes");
+                "8 Mês");
 
             BasicTest(model,
                 "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
-                "18 Mes");
+                "18 Mês");
 
             BasicTest(model,
                 "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
-                "3 Mes");
+                "3 Mês");
 
             BasicTest(model,
                 "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
