@@ -28,12 +28,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex QuarterRegex { get; }
         Regex QuarterRegexYearFront { get; }
         Regex SeasonRegex { get; }
+        Regex WhichWeekRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
         IImmutableDictionary<string, int> CardinalMap { get; }
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> MonthOfYear { get; }
         IImmutableDictionary<string, string> SeasonMap { get; }
+        IImmutableList<string> InStringList { get; }
 
         int GetSwiftMonth(string text);
         bool IsFuture(string text);

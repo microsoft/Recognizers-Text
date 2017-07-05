@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -28,5 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> CardinalMap { get; }
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> DayOfWeek { get; }
+
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }

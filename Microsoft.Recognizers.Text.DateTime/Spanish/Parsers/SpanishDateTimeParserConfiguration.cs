@@ -1,5 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -17,6 +19,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser TimeParser { get; }
 
+        public IExtractor CardinalExtractor { get; }
+
+        public IParser NumberParser { get; }
+
+        public IExtractor DurationExtractor { get; }
+
+        public IParser DurationParser { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
+
         public Regex NowRegex { get; }
 
         public Regex AMTimeRegex { get; }
@@ -31,7 +43,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TheEndOfRegex { get; }
 
+        public Regex UnitRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public SpanishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
@@ -50,7 +66,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificNightRegex = SpanishDateTimeExtractorConfiguration.SpecificNightRegex;
             TheEndOfRegex = SpanishDateTimeExtractorConfiguration.TheEndOfRegex;
+            UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
             Numbers = config.Numbers;
+            CardinalExtractor = config.CardinalExtractor;
+            NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public int GetHour(string text, int hour)

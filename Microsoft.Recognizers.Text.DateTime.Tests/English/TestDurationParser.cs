@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], new DateObject(2016, 11, 7));
             Assert.AreEqual(Constants.SYS_DATETIME_DURATION, pr.Type);
-            Assert.AreEqual(value, ((DTParseResult) pr.Value).FutureValue);
-            Assert.AreEqual(luisValue, ((DTParseResult) pr.Value).Timex);
+            Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
+            Assert.AreEqual(luisValue, ((DateTimeResolutionResult) pr.Value).Timex);
         }
 
         [TestMethod]

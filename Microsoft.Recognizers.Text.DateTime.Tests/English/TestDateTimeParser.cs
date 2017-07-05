@@ -23,8 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
-            Assert.AreEqual(date, ((DTParseResult) pr.Value).FutureValue);
-            Assert.AreEqual(date, ((DTParseResult) pr.Value).PastValue);
+            Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
+            Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).PastValue);
         }
 
         public void BasicTest(string text, DateObject futreTime, DateObject pastTime)
@@ -33,8 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
-            Assert.AreEqual(futreTime, ((DTParseResult) pr.Value).FutureValue);
-            Assert.AreEqual(pastTime, ((DTParseResult) pr.Value).PastValue);
+            Assert.AreEqual(futreTime, ((DateTimeResolutionResult) pr.Value).FutureValue);
+            Assert.AreEqual(pastTime, ((DateTimeResolutionResult) pr.Value).PastValue);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
-            Assert.AreEqual(luisValueStr, ((DTParseResult) pr.Value).Timex);
+            Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
         }
 
         [TestMethod]
@@ -108,6 +108,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back end of tomorrow", new DateObject(2016, 11, 8, 23, 59, second));
             BasicTest("I'll go back end of the sunday", new DateObject(2016, 11, 13, 23, 59, second),
                 new DateObject(2016, 11, 6, 23, 59, second));
+
+            BasicTest("I'll go back in 5 hours", new DateObject(2016, 11, 7, hour + 5, min, second),
+                new DateObject(2016, 11, 7, hour + 5, min, second));
         }
 
         [TestMethod]
@@ -154,6 +157,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back tonight at 7", "2016-11-07T19");
 
             BasicTest("I'll go back 2016-12-16T12:23:59", "2016-12-16T12:23:59");
+
+            BasicTest("I'll go back in 5 hours", "2016-11-07T05:00:00");
         }
     }
 }

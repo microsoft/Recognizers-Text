@@ -55,8 +55,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back past 3 minute", 13, 13);
             BasicTest("I'll go back previous 3 minute", 13, 17);
             BasicTest("I'll go back previous 3mins", 13, 14);
-            BasicTest("I'll go back in 3 hours", 13, 10);
-            BasicTest("I'll go back in 5 hrs", 13, 8);
             BasicTest("I'll go back next 5 hrs", 13, 10);
             BasicTest("I'll go back last minute", 13, 11);
             BasicTest("I'll go back next hour", 13, 9);

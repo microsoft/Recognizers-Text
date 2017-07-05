@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -12,9 +14,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor OrdinalExtractor { get; }
 
+        public IExtractor CardinalExtractor { get; }
+
         public IParser NumberParser { get; }
 
+        public IExtractor DurationExtractor { get; }
+
+        public IParser DurationParser { get; }
+
         public IEnumerable<Regex> DateRegexes { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
 
         public Regex OnRegex { get; }
 
@@ -25,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex ThisRegex { get; }
 
         public Regex LastRegex { get; }
+
+        public Regex UnitRegex { get; }
 
         public Regex StrictWeekDay { get; }
 
@@ -40,18 +52,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTokenPrefix = "on ";
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
+            CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
             DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
             NextRegex = EnglishDateExtractorConfiguration.NextRegex;
             ThisRegex = EnglishDateExtractorConfiguration.ThisRegex;
             LastRegex = EnglishDateExtractorConfiguration.LastRegex;
+            UnitRegex = EnglishDateExtractorConfiguration.UnitRegex;
             StrictWeekDay = EnglishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
@@ -59,6 +77,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
             CardinalMap = config.CardinalMap;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public int GetSwiftDay(string text)

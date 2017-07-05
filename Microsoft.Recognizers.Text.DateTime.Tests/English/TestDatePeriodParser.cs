@@ -26,10 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(year, month, beginDay);
             Assert.AreEqual(beginDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item1);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item1);
             var endDate = new DateObject(year, month, endDay);
             Assert.AreEqual(endDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item2);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
@@ -41,10 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(beginYear, beginMonth, beginDay);
             Assert.AreEqual(beginDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item1);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item1);
             var endDate = new DateObject(endYear, endMonth, endDay);
             Assert.AreEqual(endDate,
-                ((Tuple<DateObject, DateObject>)((DTParseResult)pr.Value).FutureValue).Item2);
+                ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
-            Assert.AreEqual(luisValueStr, ((DTParseResult)pr.Value).Timex);
+            Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
 
         [TestMethod]
@@ -62,7 +62,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             int year = 2016, month = 11;
             bool inclusiveEnd = parser.GetInclusiveEndPeriodFlag();
 
-            BasicTestFuture("scheduel a meeting in two weeks", 4, 22, month, year);
             // test basic cases
             BasicTestFuture("I'll be out from 4 to 22 this month", 4, 22, month, year);
             BasicTestFuture("I'll be out from 4-23 in next month", 4, 23, 12, year);
@@ -76,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             if (inclusiveEnd)
             {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 13, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 9, 30);
@@ -86,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             }
             else
             {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 14, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 3, 1);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 10, 1);

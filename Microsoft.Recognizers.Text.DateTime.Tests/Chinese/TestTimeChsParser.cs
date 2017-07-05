@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], refTime);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
-            Assert.AreEqual(timex, ((DTParseResult) pr.Value).Timex);
+            Assert.AreEqual(timex, ((DateTimeResolutionResult) pr.Value).Timex);
         }
 
 

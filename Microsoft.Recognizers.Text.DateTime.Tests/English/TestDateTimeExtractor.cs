@@ -78,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back at 5th at 4 a.m.", 16, 13);
 
             BasicTest("I'll go back 2016-12-16T12:23:59", 13, 19);
+
+            BasicTest("I'll go back in 5 hours", 13, 10);
         }
     }
 }

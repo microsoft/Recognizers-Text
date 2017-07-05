@@ -50,11 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, Util.FormatDateTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.DATETIME, Util.FormatDateTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
 
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -88,9 +88,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimedText);
         }
 
-        private static DTParseResult ParseBasicRegex(string text, DateObject referenceTime)
+        private static DateTimeResolutionResult ParseBasicRegex(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLower();
 
             // handle "现在"
@@ -118,9 +118,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // merge a Date entity and a Time entity
-        private DTParseResult MergeDateAndTime(string text, DateObject referenceTime)
+        private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
 
             var er1 = _singleDateExtractor.Extract(text);
             if (er1.Count == 0)
@@ -143,9 +143,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            var futureDate = (DateObject) ((DTParseResult) pr1.Value).FutureValue;
-            var pastDate = (DateObject) ((DTParseResult) pr1.Value).PastValue;
-            var time = (DateObject) ((DTParseResult) pr2.Value).FutureValue;
+            var futureDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
+            var pastDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue;
+            var time = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -168,12 +168,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
-            var Val = (DTParseResult) pr2.Value;
+            var Val = (DateTimeResolutionResult) pr2.Value;
             if (hour <= 12 && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
-                !string.IsNullOrEmpty(Val.comment))
+                !string.IsNullOrEmpty(Val.Comment))
             {
                 //ret.Timex += "ampm";
-                ret.comment = "ampm";
+                ret.Comment = "ampm";
             }
             ret.FutureValue = new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
@@ -182,9 +182,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DTParseResult ParseTimeOfToday(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = _singleTimeExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            var time = (DateObject) ((DTParseResult) pr.Value).FutureValue;
+            var time = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -263,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
-                ret.Timex = Util.FormatDate(date) + timeStr;
+                ret.Timex = FormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue = ret.PastValue = new DateObject(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;

@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(
                 $@"(?<lth>((\s+y\s+)?cuarto|(\s*)menos cuarto|(\s+y\s+)media|{
                     BaseTimeExtractor.MinuteRegex.ToString().Replace("min", "deltamin")}(\s+(minuto|minutos|min|mins))|{
-                    MinuteNumRegex.ToString().Replace("minnum", "deltaminnum")}(\s+(minuto|minutos|min|mins))))", 
+                    MinuteNumRegex.ToString().Replace("minnum", "deltaminnum")}(\s+(minuto|minutos|min|mins))))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TensTimeRegex =
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex BasicTime =
             new Regex(
-                $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseTimeExtractor.HourRegex}:{BaseTimeExtractor.MinuteRegex}(:{BaseTimeExtractor.SecondRegex})?|{BaseTimeExtractor.HourRegex})", 
+                $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseTimeExtractor.HourRegex}:{BaseTimeExtractor.MinuteRegex}(:{BaseTimeExtractor.SecondRegex})?|{BaseTimeExtractor.HourRegex})",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
@@ -139,5 +139,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
+ 
+
+        public IExtractor DurationExtractor { get; }
+
+        public SpanishTimeExtractorConfiguration()
+        {
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+        }
     }
 }

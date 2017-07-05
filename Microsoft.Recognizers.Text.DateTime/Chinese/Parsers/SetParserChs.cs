@@ -73,15 +73,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        private DTParseResult ParseEachDuration(string text)
+        private DateTimeResolutionResult ParseEachDuration(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = _durationExtractor.Extract(text);
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
@@ -101,9 +101,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DTParseResult ParseEachUnit(string text)
+        private DateTimeResolutionResult ParseEachUnit(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             // handle "each month"
             var match = SetExtractorChs.EachUnitRegex.Match(text);
             if (match.Success && match.Length == text.Length)
@@ -140,9 +140,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DTParseResult ParserTimeEveryday(string text)
+        private DateTimeResolutionResult ParserTimeEveryday(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = _timeExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -163,9 +163,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DTParseResult ParseEachDate(string text)
+        private DateTimeResolutionResult ParseEachDate(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = _dateExtractor.Extract(text);
             if (ers.Count != 1)
             {
@@ -185,9 +185,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DTParseResult ParseEachDateTime(string text)
+        private DateTimeResolutionResult ParseEachDateTime(string text)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             var ers = _dateTimeExtractor.Extract(text);
             if (ers.Count != 1)
             {

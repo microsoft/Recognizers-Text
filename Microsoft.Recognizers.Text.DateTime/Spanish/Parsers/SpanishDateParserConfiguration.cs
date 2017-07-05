@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -12,7 +13,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor OrdinalExtractor { get; }
 
+        public IExtractor CardinalExtractor { get; }
+
         public IParser NumberParser { get; }
+
+        public IExtractor DurationExtractor { get; }
+
+        public IParser DurationParser { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 
@@ -25,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex ThisRegex { get; }
 
         public Regex LastRegex { get; }
+
+        public Regex UnitRegex { get; }
 
         public Regex StrictWeekDay { get; }
 
@@ -40,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
 
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTokenPrefix = "en ";
@@ -49,6 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NextRegex = SpanishDateExtractorConfiguration.NextRegex;
             ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
             LastRegex = SpanishDateExtractorConfiguration.LastRegex;
+            UnitRegex = SpanishDateExtractorConfiguration.UnitRegex;
             StrictWeekDay = SpanishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
@@ -58,7 +72,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             CardinalMap = config.CardinalMap;
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
+            CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
+            UnitMap = config.UnitMap;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public int GetSwiftDay(string text)

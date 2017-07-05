@@ -9,19 +9,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex AfterRegex = new Regex(@"(后|之后)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        
+
         public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration)
         {
         }
 
-        public ParseResult Parse(ExtractResult er)
+        public new ParseResult Parse(ExtractResult er)
         {
-            return Parse(er, null);
+            return Parse(er, DateObject.Now);
         }
 
-        public ParseResult Parse(ExtractResult er, DateObject? refTime)
+        public new ParseResult Parse(ExtractResult er, DateObject refTime)
         {
-            var referenceTime = refTime ?? DateObject.Now;
+            var referenceTime = refTime;
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
@@ -80,20 +80,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // pop, restore the MOD string
             if (hasBefore)
             {
-                var val = (DTParseResult) pr.Value;
+                var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.mod = TimeTypeConstants.beforeMod;
+                    val.Mod = TimeTypeConstants.beforeMod;
                 }
                 pr.Value = val;
             }
 
             if (hasAfter)
             {
-                var val = (DTParseResult) pr.Value;
+                var val = (DateTimeResolutionResult)pr.Value;
                 if (val != null)
                 {
-                    val.mod = TimeTypeConstants.afterMod;
+                    val.Mod = TimeTypeConstants.afterMod;
                 }
                 pr.Value = val;
             }

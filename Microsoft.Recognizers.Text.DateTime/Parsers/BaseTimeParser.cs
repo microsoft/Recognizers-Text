@@ -30,16 +30,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, Util.FormatTime((DateObject) innerResult.FutureValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.FutureValue)}
                     };
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
-                        {TimeTypeConstants.TIME, Util.FormatTime((DateObject) innerResult.PastValue)}
+                        {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.PastValue)}
                     };
                     value = innerResult;
                 }
             }
-            
+
             var ret = new DateTimeParseResult
             {
                 Text = er.Text,
@@ -48,20 +48,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DTParseResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
         }
 
-        protected virtual DTParseResult InternalParse(string text, DateObject referenceTime)
+        protected virtual DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
         {
             var innerResult = ParseBasicRegexMatch(text, referenceTime);
             return innerResult;
         }
 
         // parse basic patterns in TimeRegexList
-        private DTParseResult ParseBasicRegexMatch(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseBasicRegexMatch(string text, DateObject referenceTime)
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var offset = 0;
@@ -89,12 +89,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return Match2Time(match, referenceTime);
                 }
             }
-            return new DTParseResult();
+            return new DateTimeResolutionResult();
         }
 
-        private DTParseResult Match2Time(Match match, DateObject referenceTime)
+        private DateTimeResolutionResult Match2Time(Match match, DateObject referenceTime)
         {
-            var ret = new DTParseResult();
+            var ret = new DateTimeResolutionResult();
             int hour = 0,
                 min = 0,
                 second = 0,
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasSec = true;
                 }
             }
-            
+
             //adjust by desc string
             var descStr = match.Groups["desc"].Value.ToLower();
             if (!string.IsNullOrEmpty(descStr))
@@ -224,9 +224,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             if (hour <= 12 && !hasPm && !hasAm)
             {
-                ret.comment = "ampm";
+                ret.Comment = "ampm";
             }
-            
+
             ret.FutureValue = ret.PastValue = new DateObject(year, month, day, hour, min, second);
             ret.Success = true;
             return ret;
