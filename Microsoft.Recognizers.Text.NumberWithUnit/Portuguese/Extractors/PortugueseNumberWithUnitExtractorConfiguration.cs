@@ -1,13 +1,13 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 
-using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.Portuguese;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
-    public abstract class SpanishNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
+    public abstract class PortugueseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
     {
-        protected SpanishNumberWithUnitExtractorConfiguration(CultureInfo ci)
+        protected PortugueseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
             this.UnitNumExtractor = new NumberExtractor();
