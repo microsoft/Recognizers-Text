@@ -89,6 +89,14 @@
     <Compile Include="Parsers\AgnosticNumberParserFactory.cs" />
     <Compile Include="Parsers\BasePercentageParser.cs" />
     <Compile Include="Parsers\INumberParserConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\CardinalExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\DoubleExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\FractionExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\IntegerExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\NumberExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\OrdinalExtractor.cs" />
+    <Compile Include="Portuguese\Extractors\PercentageExtractor.cs" />
+    <Compile Include="Portuguese\Parsers\PortugueseNumberParserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spanish\Extractors\CardinalExtractor.cs" />
     <Compile Include="Spanish\Extractors\DoubleExtractor.cs" />

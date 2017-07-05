@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number
                 return null;
             }
 
-            string extra = null;
+            string extra;
             ParseResult ret = null;
             if ((extra = extResult.Data as string) == null)
             {
@@ -56,12 +56,12 @@ namespace Microsoft.Recognizers.Text.Number
                     extra = config.LangMarker;
                 }
             }
+
             if (extra.Contains("Num"))
             {
                 ret = DigitNumberParse(extResult);
             }
-            //Frac is a special number, parse via another method
-            else if (extra.Contains($"Frac{config.LangMarker}"))
+            else if (extra.Contains($"Frac{config.LangMarker}")) //Frac is a special number, parse via another method
             {
                 ret = FracLikeNumberParse(extResult);
             }
@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 ret = PowerNumberParse(extResult);
             }
+
             if (ret?.Value != null)
             {
                 ret.ResolutionStr = config.CultureInfo != null
@@ -147,6 +148,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     continue;
                 }
+
                 if (i == handle.Length - 1)
                 {
                     if (isLessZero)
@@ -171,7 +173,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result.Value = ret;
-            result.ResolutionStr = ret.ToString();
+            result.ResolutionStr = ret.ToString(); // @TODO Possible Culture bug.
 
             return result;
         }
@@ -193,15 +195,16 @@ namespace Microsoft.Recognizers.Text.Number
 
             #endregion
 
-            var numGroup = handle.Split(config.WrittenDecimalSeparatorTexts.ToArray(),
-                StringSplitOptions.RemoveEmptyEntries);
+            var numGroup = handle.Split(config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            #region intPart
+            #region IntegerPart
 
             var intPart = numGroup[0];
             var sMatch = TextNumberRegex.Match(intPart);
-            var matchStrs = new List<string>();
+
             //Store all match str.
+            var matchStrs = new List<string>();
+
             while (sMatch.Success)
             {
                 var matchStr = sMatch.Groups[0].Value.ToLower();
@@ -214,7 +217,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             #endregion
 
-            #region PointPart
+            #region DecimalPart
 
             double pointPartRet = 0;
             if (numGroup.Length == 2)
@@ -277,22 +280,28 @@ namespace Microsoft.Recognizers.Text.Number
 
                 for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
                 {
-                    if (config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]))
+
+                    if (config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
+                        config.WrittenIntegerSeparatorTexts.Contains(fracWords[splitIndex]))
                     {
                         continue;
                     }
+
                     var previousValue = currentValue;
                     currentValue = config.ResolveCompositeNumber(fracWords[splitIndex]);
+
+                    var smHundreds = 100;
+
                     // previous : hundred
                     // current : one
-                    if ((previousValue >= 100 && previousValue > currentValue)
-                        || (previousValue < 100 && IsComposable(currentValue, previousValue)))
+                    if ((previousValue >= smHundreds && previousValue > currentValue)
+                        || (previousValue < smHundreds && IsComposable(currentValue, previousValue)))
                     {
-                        if (previousValue < 100 && currentValue >= roundValue)
+                        if (previousValue < smHundreds && currentValue >= roundValue)
                         {
                             roundValue = currentValue;
                         }
-                        else if (previousValue < 100 && currentValue < roundValue)
+                        else if (previousValue < smHundreds && currentValue < roundValue)
                         {
                             splitIndex++;
                             break;
@@ -306,9 +315,9 @@ namespace Microsoft.Recognizers.Text.Number
                             {
                                 // e.g. one hundred thousand 
                                 // frac[i+1] % 100 && frac[i] % 100 = 0
-                                if (config.ResolveCompositeNumber(fracWords[splitIndex]) >= 100
+                                if (config.ResolveCompositeNumber(fracWords[splitIndex]) >= smHundreds
                                     && !config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1])
-                                    && config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < 100)
+                                    && config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < smHundreds)
                                 {
                                     splitIndex++;
                                     break;
@@ -575,9 +584,9 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         /// <summary>
-        /// Precondition: ExtResult must have arabian digitals.
+        /// Precondition: ExtResult must have arabic numerals.
         /// </summary>
-        /// <param name="extResult">input arabian number</param>
+        /// <param name="extResult">input arabic number</param>
         /// <returns></returns>
         protected ParseResult DigitNumberParse(ExtractResult extResult)
         {

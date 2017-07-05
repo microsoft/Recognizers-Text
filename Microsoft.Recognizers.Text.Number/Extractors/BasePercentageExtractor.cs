@@ -103,24 +103,24 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="ignoreCase"></param>
         protected static ImmutableHashSet<Regex> BuildRegexes(HashSet<string> regexStrs, bool ignoreCase = true)
         {
-            var _regexes = new HashSet<Regex>();
+            var regexes = new HashSet<Regex>();
 
             foreach (var regexStr in regexStrs)
             {
                 var sl = "(?=\\b)(" + regexStr + ")(?=(s?\\b))";
-                Regex regex;
+
+                var options = RegexOptions.Singleline;
                 if (ignoreCase)
                 {
-                    regex = new Regex(regexStr, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    options = options | RegexOptions.IgnoreCase;
                 }
-                else
-                {
-                    regex = new Regex(regexStr, RegexOptions.Singleline);
-                }
-                _regexes.Add(regex);
+
+                Regex regex = new Regex(regexStr, options);
+                
+                regexes.Add(regex);
             }
 
-            return _regexes.ToImmutableHashSet();
+            return regexes.ToImmutableHashSet();
         }
 
         /// <summary>

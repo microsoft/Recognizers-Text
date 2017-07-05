@@ -4,20 +4,21 @@ namespace Microsoft.Recognizers.Text
 {
     public sealed class Culture
     {
-            public const string English = "en-us";
-            public const string Chinese = "zh-cn";
-            public const string Spanish = "es-es";
-            public const string French = "fr-fr";
+        public const string English = "en-us";
+        public const string Chinese = "zh-cn";
+        public const string Spanish = "es-es";
+        public const string Portuguese = "pt-br";
+        public const string French = "fr-fr";
 
-            public string CultureName;
-            public string CultureCode;
+        public string CultureName;
+        public string CultureCode;
 
-            public static readonly Culture[] SupportedCultures = new Culture[] {
-                new Culture("English", English),
-                new Culture("Chinese", Chinese),
-                new Culture("Spanish", Spanish),
-                new Culture("French", French)
-
+        public static readonly Culture[] SupportedCultures = new Culture[] {
+            new Culture("English", English),
+            new Culture("Chinese", Chinese),
+            new Culture("Spanish", Spanish),
+            new Culture("Portuguese", Portuguese),
+            new Culture("French", French)
         };
 
         private Culture(string cultureName, string cultureCode)

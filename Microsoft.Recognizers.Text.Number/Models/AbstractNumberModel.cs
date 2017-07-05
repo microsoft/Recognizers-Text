@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 parseNums.Add(Parser.Parse(result));
             }
+
             return parseNums.Select(o => new ModelResult
             {
                 Start = o.Start.Value,
