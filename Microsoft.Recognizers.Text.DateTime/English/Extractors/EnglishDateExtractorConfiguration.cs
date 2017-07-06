@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex NextRegex = new Regex($@"\b(next(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+next\s*week))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDayRegex =
@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(the)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)",
+        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateExtractorConfiguration()

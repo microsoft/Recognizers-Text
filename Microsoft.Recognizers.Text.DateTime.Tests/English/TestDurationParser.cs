@@ -46,6 +46,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave for all year", 31536000, "P1Y");
 
             BasicTest("I'll leave for an hour", 3600, "PT1H");
+
+            BasicTest("half year", 15768000, "P0.5Y");
+            BasicTest("half an year", 15768000, "P0.5Y");
+
         }
     }
 }

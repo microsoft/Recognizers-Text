@@ -44,6 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll leave for an hour", 15, 7);
             BasicTest("I'll leave for a year", 15, 6);
+
+            BasicTest("half year", 0, 9);
+            BasicTest("half an year", 0, 12);
         }
     }
 }
