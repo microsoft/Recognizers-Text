@@ -584,7 +584,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Dólar bermudeño", "bd$|bmd"},
             {"Dólar de Brunéi", "brunéi $|bnd"},
             {"Dólar de Singapur", "s$|sgd"},
-            {"Dólar canadienser", "c$|can$|cad"},
+            {"Dólar canadiense", "c$|can$|cad"},
             {"Dólar de las Islas Caimán", "ci$|kyd"},
             {"Dólar neozelandés", "nz$|nzd"},
             {"Dólar fiyiano", "fj$|fjd"},

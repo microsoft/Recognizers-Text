@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Lira", "lira|liras" },
             { "Centavo", "centavo|cêntimo|centimo|centavos|cêntimos|centimo" },
             { "Centésimo", "centésimo|centésimos" },
-            { "Pêni", "pêni|péni|peni|pennies" },
+            { "Pêni", "pêni|péni|peni|penies|pennies" },
 
             //Euro
             { "Euro", "euro|euros|€|eur" },
@@ -59,12 +59,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Angola
             {"Kwanza angolano", "kwanza angolano|kwanzas angolanos|kwanzas|aoa|kz" },
             {"Cêntimo angolano", "cêntimo angolano|cêntimo|cêntimos" },
-            //Antillas Neerlandesas
-            { "Florín antillano neerlandés", "florín antillano neerlandés|florínes antillano neerlandés|ƒ antillano neerlandés|ang|naƒ" },
-            { "Cent antillano neerlandés", "cent|centen" },
+            //Antilhas Neerlandesas or Antilhas Holandesas
+            { "Florim das Antilhas Holandesas", "florim das antilhas holandesas|florim das antilhas neerlandesas|ang" },
             //Arabia Saudita
-            { "Riyal saudí", "riyal saudí|riyales saudí|sar" },
-            { "Halalá saudí", "halalá saudí|hallalah" },
+            { "Riyal saudita", "riyal saudí|riyales saudí|sar" },
+            { "Halalá saudita", "halalá saudí|hallalah" },
             //Argelia
             { "Dinar argelino", "dinar argelino|dinares argelinos|dzd" },
             { "Céntimo argelino", "centimo argelino|centimos argelinos|" },
@@ -121,7 +120,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Thebe", "thebe" },
             //Brasil
             { "Real brasileiro", "real brasileiro|real do Brasil|real|reais brasileiros|reais do brasil|reais|r$|brl" },
-            { "Centavo brasileiro", "centavo de real|centavo brasileiro|centavos de real|centavos brasileiros|centavo|centavos" },
+            { "Centavo brasileiro", "centavo de real|centavo brasileiro|centavos de real|centavos brasileiros" },
             //Brunéi
             { "Dólar de Brunéi", "dólar de brunei|dólares de brunéi|bnd" },
             { "Sen de Brunéi", "sen|sen de brunéi" },
@@ -130,24 +129,24 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Stotinki búlgaro", "stotinka búlgaro|stotinki búlgaros" },
             //Burkina Faso -> Franco CFA de África Occidental
             //Burundi
-            { "Franco de Burundi", "franco de burundi|francos de burundi|fbu|fib" },
-            { "Céntimo Burundi", "céntimo burundi|céntimos burundies" },
+            { "Franco do Burundi", "franco do burundi|francos do burundi|fbu|fib" },
+            { "Centavo Burundi", "centavo burundi|cêntimo burundi|centimo burundi|centavos burundi|cêntimo burundi|centimo burundi" },
             //Bután
             { "Ngultrum butanés", "ngultrum butanés|ngultrum butaneses|btn" },
             { "Chetrum  butanés", "chetrum butanés|chetrum butaneses" },
             //Cabo Verde
             { "Escudo caboverdiano", "escudo caboverdiano|escudos caboverdianos|cve" },
-            //Camboya
-            { "Riel camboyano", "riel camboyano|rieles camboyanos|khr" },
+            //Camboja
+            { "Riel cambojano", "riel cambojano|riels cambojanos|khr" },
             //Camerún -> Franco CFA de África Central
             //Canadá
-            { "Dólar canadiense", "dólar canadiense|dólares canadienses|c$|cad" },
-            { "Centavo canadiense", "centavo canadiense|centavos canadienses" },
+            { "Dólar canadense", "dólar canadense|dolar canadense|dólares canadenses|dolares canadenses|c$|cad" },
+            { "Centavo canadense", "centavo canadense|centavos canadenses" },
             //Chad -> Franco CFA de África Central
             //Chile
             { "Peso chileno", "peso chileno|pesos chilenos|cpl" },
             //China
-            { "Yuan chino", "yuan chino|yuanes chinos|yuan|yuanes|renminbi|rmb|cny|¥" },
+            { "Yuan chinês", "yuan chinês|yuans chineses|yuan|yuans|renminbi|rmb|cny|¥" },
             //Chipre -> Euro
             //Colombia
             { "Peso colombiano", "peso colombiano|pesos colombianos|cop|col$" },
@@ -202,7 +201,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Filipinas
             { "Peso filipino", "peso filipino|pesos filipinos|php" },
             //Finlandia -> Euro
-            { "Marco finlandés", "marco finlandés|marcos finlandeses" },
+            { "Marco finlandês", "marco finlandês|marco finlandes|marcos finlandeses" },
             //Fiyi
             { "Dólar fiyiano", "dólar fiyiano|dólares fiyianos|fj$|fjd" },
             { "Centavo fiyiano", "centavo fiyiano|centavos fiyianos" },
@@ -284,11 +283,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Israel
             { "Nuevo shéquel", "nuevo shéquel|nuevos shéquel|ils" },
             { "Agorot", "agorot" },
-            //Italia -> Euro
+            //Italia -> Europe
             //Jamaica
             { "Dólar jamaiquino", "dólar jamaiquino|dólares jamaiquinos|j$|ja$|jmd" },
             //Japón
-            { "Yen", "yen|yenes|jpy" },
+            { "Yen", "yen|iene|yenes|ienes|jpy" },
             //Jersey
             { "Libra de Jersey", "libra de Jersey|libras de Jersey|jep" },
             //Jordania
@@ -395,7 +394,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Baisa omaní", "baisa omaní|baisa omanies" },
             //Osetia del Sur -> Rublo ruso
             //Países Bajos -> Euro
-            { "Florín neerlandés", "florín neerlandés|florines neerlandeses|nlg" },
+            { "Florim holandês", "florim holandês|florim holandes|florins holandeses|nlg" },
             //Pakistán
             { "Rupia pakistaní", "rupia pakistaní|rupias pakistanies|pkr" },
             { "Paisa pakistaní", "paisa pakistaní|paisas pakistanies" },
@@ -477,31 +476,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Céntimo de Sri Lanka", "céntimo de Sri Lanka|céntimos de Sri Lanka" },
             //Suazilandia
             { "Lilangeni", "lilangeni|emalangeni|szl" },
-            //Sudáfrica
-            { "Rand sudafricano", "rand|rand sudafricano|zar" },
-            //Sudán
+            //África do Sul
+            { "Rand sulafricano", "rand|rand sulafricano|zar" },
+            //Sudão
             { "Libra sudanesa", "libra sudanesa|libras sudanesas|sdg" },
             { "Piastra sudanesa", "piastra sudanesa|piastras sudanesas" },
-            //Sudán del Sur
+            //Sudão do Sur
             { "Libra sursudanesa", "libra sursudanesa|libras sursudanesa|ssp" },
             { "Piastra sursudanesa", "piastra sursudanesa|piastras sursudanesas" },
-            //Suecia
-            { "Corona sueca", "corona sueca|coronas suecas|sek" },
-            //Suiza
-            { "Franco suizo", "franco suizo|francos suizos|sfr|chf" },
-            { "Rappen suizo", "rappen suizo|rappens suizos" },
-            //Surinam
-            { "Dólar surinamés", "óolar surinamés|dólares surinameses|srd" },
-            { "Centavo surinamés", "centavo surinamés|centavos surinamés" },
-            //Tailandia
-            { "Baht tailandés", "baht tailandés|baht tailandeses|thb" },
-            { "Satang tailandés", "satang tailandés|satang tailandeses" },
-            //Taiwán
-            { "Nuevo dólar taiwanés", "nuevo dólar taiwanés|dólar taiwanés|dólares taiwaneses|twd" },
-            { "Centavo taiwanés", "centavo taiwanés|centavos taiwaneses" },
-            //Tanzania
-            { "Chelín tanzano", "chelín tanzano|chelines tanzanos|tzs" },
-            { "Centavo tanzano", "centavo tanzano|centavos tanzanos" },
+            //Suéciama
+            { "Coroa sueca", "coroa sueca|coroas suecas|sek" },
+            //Suíça
+            { "Franco suíço", "franco suíço|franco suico|francos suíços|francos suicos|sfr|chf" },
+            { "Rappen suíço", "rappen suíço|rappen suico|rappens suíços|rappens suicos" },
+            //Suriname
+            { "Dólar surinamês", "dólar surinamês|dolar surinames|dólar do Suriname|dolar do Suriname|dólares surinameses|dolares surinameses|dólares do Suriname|dolares do Suriname|srd" },
+            { "Centavo surinamês", "centavo surinamês|centavo surinames|centavos surinameses" },
+            //Tailândia
+            { "Baht tailandês", "baht tailandês|bath tailandes|baht tailandeses|thb" },
+            { "Satang tailandês", "satang tailandês|satang tailandes|satang tailandeses" },
+            //Taiwan
+            { "Novo dólar taiwanês", "novo dólar taiwanês|novo dolar taiwanes|dólar taiwanês|dolar taiwanes|dólares taiwaneses|dolares taiwaneses|twd" },
+            { "Centavo taiwanês", "centavo taiwanês|centavo taiwanes|centavos taiwaneses" },
+            //Tanzânia
+            { "Xelim tanzaniano", "xelim tanzano|xelins tanzanos|tzs" },
+            { "Centavo tanzaniano", "centavo tanzano|centavos tanzanos" },
             //Tayikistán
             { "Somoni tayiko", "somoni tayiko|somoni|tjs" },
             { "Diram", "diram|dirams" },
@@ -577,7 +576,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             {"Dólar bermudeño", "bd$|bmd"},
             {"Dólar de Brunéi", "brunéi $|bnd"},
             {"Dólar de Singapur", "s$|sgd"},
-            {"Dólar canadienser", "c$|can$|cad"},
+            {"Dólar canadense", "c$|can$|cad"},
             {"Dólar de las Islas Caimán", "ci$|kyd"},
             {"Dólar neozelandés", "nz$|nzd"},
             {"Dólar fiyiano", "fj$|fjd"},
