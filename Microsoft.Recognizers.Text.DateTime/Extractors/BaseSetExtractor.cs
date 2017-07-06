@@ -20,8 +20,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text));
             tokens.AddRange(TimeEveryday(text));
-            tokens.AddRange(MatchEachDate(text));
-            tokens.AddRange(MatchEachDateTime(text));
+            tokens.AddRange(MatchEach(config.DateExtractor, text));
+            tokens.AddRange(MatchEach(config.TimeExtractor, text));
+            tokens.AddRange(MatchEach(config.DateTimeExtractor, text));
+            tokens.AddRange(MatchEach(config.DatePeriodExtractor, text));
+            tokens.AddRange(MatchEach(config.TimePeriodExtractor, text));
+            tokens.AddRange(MatchEach(config.DateTimePeriodExtractor, text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -98,26 +102,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<Token> MatchEachDate(string text)
+        public List<Token> MatchEach(IExtractor extractor, string text)
         {
             var ret = new List<Token>();
-            var ers = this.config.DateExtractor.Extract(text);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = this.config.EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
-                }
-            }
-            return ret;
-        }
-
-        public List<Token> MatchEachDateTime(string text)
-        {
-            var ret = new List<Token>();
-            var ers = this.config.DateTimeExtractor.Extract(text);
+            var ers = extractor.Extract(text);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);

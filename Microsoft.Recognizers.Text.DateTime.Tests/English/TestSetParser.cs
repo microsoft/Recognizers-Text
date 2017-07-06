@@ -38,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave each 4/15", "Set: XXXX-04-15", "XXXX-04-15");
             BasicTest("I'll leave every monday", "Set: XXXX-WXX-1", "XXXX-WXX-1");
             BasicTest("I'll leave each monday 4pm", "Set: XXXX-WXX-1T16", "XXXX-WXX-1T16");
+
+            BasicTest("I'll leave every morning", "Set: TMO", "TMO");
         }
     }
 }
