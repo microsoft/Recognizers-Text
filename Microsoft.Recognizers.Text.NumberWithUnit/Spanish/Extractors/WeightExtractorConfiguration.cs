@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Picogramo", "pg|picogramo|picogramos"},
             {"Libra", "lb|libra|libras"},
             {"Onza", "oz|onza|onzas"},
-            {"Grano", "grano|granos"},
+            {"Grano", "grano|granos|gr"},
             {"Quilate", "ct|kt|quilate|quilates"},
         }.ToImmutableDictionary();
     }

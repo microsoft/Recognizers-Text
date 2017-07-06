@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Milímetro", "mm|milimetro|milímetro|milimetros|milímetros"},
             {"Micrómetro", "µm|um|micrometro|micrómetro|micrometros|micrómetros|micrón|micrónes"},
             {"Nanómetro", "nm|nanometro|nanómetro|nanometros|nanómetros"},
-            {"Picómetro", "pm|picometro|picómetro|picometros|picometros"},
+            {"Picómetro", "pm|picometro|picómetro|picometros|picómetros"},
             {"Milla", "mi|milla|millas"},
             {"Yarda", "yd|yarda|yardas"},
             {"Pulgada", "pulgada|pulgadas|\""},
