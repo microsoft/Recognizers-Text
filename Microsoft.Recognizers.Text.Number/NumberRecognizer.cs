@@ -61,15 +61,15 @@ namespace Microsoft.Recognizers.Text.Number
                         [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                 new FrenchNumberParserConfiguration()),
-                            new Spanish.NumberExtractor(NumberMode.PureNumber)),
+                            new French.NumberExtractor(NumberMode.PureNumber)),
                         [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal,
                                 new FrenchNumberParserConfiguration()),
-                            new Spanish.OrdinalExtractor()),
+                            new French.OrdinalExtractor()),
                         [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage,
                                 new FrenchNumberParserConfiguration()),
-                            new Spanish.PercentageExtractor())
+                            new French.PercentageExtractor())
                     }
                 }
             };
