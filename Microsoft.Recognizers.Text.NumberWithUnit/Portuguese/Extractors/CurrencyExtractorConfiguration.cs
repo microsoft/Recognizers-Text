@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Florín", "florín|florin|floríns|florins|ƒ" },
             { "Dinar", "dinar|dinares" },
             { "Franco", "franco|francos" },
-            { "Rúpia", "rúpia|rupia|rúpias|rupias" },
+            { "Rupia", "rúpia|rupia|rúpias|rupias" },
             { "Escudo", "escudo|escudos" },
             { "Xelim", "xelim|xelins|xelims" },
             { "Lira", "lira|liras" },
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Franco CFA da África Central
             { "Franco CFA da África Central", "franco CFA da África Central|franco CFA da Africa Central|francos CFA da África Central|francos CFA da Africa Central|franco CFA central|xaf" },
             { "Centavo de CFA da África Central", "centavo de CFA de África Central|centavos de CFA da África Central|cêntimo de CFA de África Central|cêntimos de CFA da África Central" },
-
+            
             //Abcásia
             {"Apsar abcásio", "apsar abcásio|apsar abecásio|apsar abcasio|apsar|apsares"},
             //Afeganistão
@@ -105,8 +105,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Dólar bermudense", "dólar bermudense|dólares bermudenses|bd$|bmd" },
             { "Centavo bermudense", "centavo bermudense|centavos bermudenses|cêntimo bermudense| cêntimos bermudenses" },
             //Bielorrúsia / Belarus
-            { "Rublo bielorruso", "rublo bielorruso|rublos bielorrusos|br|byr" },
-            { "Copeque ruso", "copeque bielorruso|copeques bielorrusos|kopek bielorruso|kopeks bielorrusos|kap" },
+            { "Rublo bielorrusso", "rublo bielorrusso|rublos bielorrussos|br|byr" },
+            { "Copeque bielorusso", "copeque bielorrusso|copeques bielorrussos|kopek bielorrusso|kopeks bielorrussos|kap" },
             //Mianmar/Birmânia
             { "Quiate mianmarense", "quiate mianmarense|quiates mianmarenses|kyat mianmarense|kyates mianmarenses|quiate myanmarense|quiates myanmarenses|kyat myanmarense|kyates myanmarenses|quiate birmanês|quite birmanes|quiates birmaneses|kyat birmanês|kyat birmanes|kyates birmaneses|mmk" },
             { "Pya mianmarense", "pya mianmarense|pyas mianmarenses|pya myanmarense|pyas myanmarenses|pya birmanês|pya birmanes|pyas birmaneses" },
@@ -440,7 +440,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Sudão do Sur
             { "Libra sursudanesa", "libra sursudanesa|libras sursudanesa|ssp" },
             { "Piastra sursudanesa", "piastra sursudanesa|piastras sursudanesas" },
-            //Suéciama
+            //Suécia
             { "Coroa sueca", "coroa sueca|coroas suecas|sek" },
             //Suíça
             { "Franco suíço", "franco suíço|franco suico|francos suíços|francos suicos|sfr|chf" },
@@ -517,7 +517,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Zambia
             { "Kwacha zambiano", "kwacha zambiano|kwacha zambianos|zmw" },
             { "Ngwee zambiano", "ngwee zambiano|ngwee zambianos" },
-            //Zimbabue -> Dólar Estadounidense
         }.ToImmutableDictionary();
 
         public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
