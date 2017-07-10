@@ -87,6 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             BasicTest("Estare afuera verano", 14, 6);
             BasicTest("Estare afuera verano 2016", 14, 11);
             BasicTest("Estare afuera verano del 2016", 14, 15);
+
+            //TODO: add tests for week of and month of
         }
     }
 }

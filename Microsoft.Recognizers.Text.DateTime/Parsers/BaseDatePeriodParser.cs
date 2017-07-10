@@ -16,6 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool InclusiveEndPeriod = false;
 
+        private const string WeekOfComment="WeekOf";
+        private const string MonthOfComment = "MonthOf";
+
         public BaseDatePeriodParser(IDatePeriodParserConfiguration configuration)
         {
             config = configuration;
@@ -75,6 +78,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWhichWeek(er.Text, referenceDate);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseWeekOfDate(er.Text, referenceDate);
+                }
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseMonthOfDate(er.Text, referenceDate);
                 }
 
 
@@ -798,7 +809,65 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
             return ret;
+        }
+
+        private DateTimeResolutionResult ParseWeekOfDate(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = config.WeekOfRegex.Match(text);
+            var ex = config.DateExtractor.Extract(text);
+            if (match.Success && ex.Count==1)
+            {
+                var pr= (DateTimeResolutionResult)config.DateParser.Parse(ex[0], referenceDate).Value;
+                ret.Timex = pr.Timex;
+                ret.Comment = WeekOfComment;
+                ret.FutureValue= GetWeekRangeFromDate((DateObject)pr.FutureValue);
+                ret.PastValue= GetWeekRangeFromDate((DateObject)pr.PastValue);
+                ret.Success = true;
             }
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseMonthOfDate(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = config.MonthOfRegex.Match(text);
+            var ex = config.DateExtractor.Extract(text);
+            if (match.Success && ex.Count == 1)
+            {
+                var pr = (DateTimeResolutionResult)config.DateParser.Parse(ex[0], referenceDate).Value;
+                ret.Timex = pr.Timex;
+                ret.Comment = MonthOfComment;
+                ret.FutureValue = GetMonthRangeFromDate((DateObject)pr.FutureValue);
+                ret.PastValue = GetMonthRangeFromDate((DateObject)pr.PastValue);
+                ret.Success = true;
+            }
+            return ret;
+        }
+
+        private Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
+        {
+            var startDate = date.This(DayOfWeek.Monday);
+            var endDate = InclusiveEndPeriod ? startDate.AddDays(6) : startDate.AddDays(7);
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        private Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
+        {
+            var startDate = new DateObject(date.Year, date.Month, 1);
+            var endDate=new DateObject();
+            if (date.Month < 12)
+            {
+                endDate = new DateObject(date.Year, date.Month + 1, 1);
+            }
+            else
+            {
+                endDate = new DateObject(date.Year + 1, 1, 1);
+            }
+            endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
 
         private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
@@ -893,5 +962,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return InclusiveEndPeriod;
         }
+    }
+
+    public enum CalculateRangeMode
+    {
+        Week,
+        Month
     }
 }
