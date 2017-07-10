@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
-            // Reference Source: https://pt.wikipedia.org/wiki/Lista_de_moedas
+            // Reference Sources: https://pt.wikipedia.org/wiki/Lista_de_moedas and http://repositorio.ul.pt/bitstream/10451/9948/1/ulfl139260_tm.pdf
 
             // General Units
             { "Dólar", "dólar|dolar|dólares|dolares" },
@@ -213,160 +213,134 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Libra de Guernsey", "libra de Guernsey|libras de Guernsey|ggp" },
             { "Peni de Guernsey", "peni de Guernsey|penies de Guernsey" },
             //Guiné // @HERE
-            { "Franco guineano", "franco guineano|francos guineanos|gnf|fg" },
-            { "Céntimo guineano", "céntimo guineano|céntimos guineanos" },
-            //Guinea-Bisáu -> Franco CFA de África Occidental
-            //Guinea Ecuatorial -> Franco CFA de África Central
-            //Guyana
-            { "Dólar guyanés", "dólar guyanés|dólares guyaneses|gyd|gy" },
-            //Haití
-            { "Gourde haitiano", "gourde haitiano|gourde haitianos|htg" },
-            { "Céntimo haitiano", "céntimo haitiano|céntimos haitianos" },
+            { "Franco da Guiné", "franco da guiné|franco da guine| franco guineense|francos da guiné|francos da guine|francos guineense|gnf|fg" },
+            { "Centavo da Guiné", "cêntimo guineense|centimo guineense|centavo guineense|cêntimos guineenses|centimos guineenses|centavos guineenses" },
+            //Guiana
+            { "Dólar guianense", "dólar guianense|dólares guianense|dolar guianense|dolares guianense|gyd|gy" },
+            //Haiti
+            { "Gurde haitiano", "gurde haitiano|gourde|gurdes haitianos|htg" },
+            { "Centavo haitiano", "cêntimo haitiano|cêntimos haitianos|centavo haitiano|centavos haitianos" },
             //Honduras
-            { "Lempira hondureño", "lempira hondureño|lempira hondureños|hnl" },
-            { "Centavo hondureño", "centavo hondureño|centavos hondureño" },
+            { "Lempira hondurenha", "lempira hondurenha|lempiras hondurenhas|lempira|lempiras|hnl" },
+            { "Centavo hondurenho", "centavo hondurenho|centavos hondurehos|cêntimo hondurenho|cêntimos hondurenhos" },
             //Hong Kong
-            { "Dólar de Hong Kong", "dólar de hong kong|dólares de hong kong|hk$|hkd" },
+            { "Dólar de Hong Kong", "dólar de hong kong|dolar de hong kong|dólares de hong kong|dolares de hong kong|hk$|hkd" },
             //Hungría
-            { "Forinto húngaro", "forinto húngaro|forinto húngaros|huf" },
-            //India
-            { "Rupia india", "rupia india|rupias indias|inr" },
-            { "Paisa india", "paisa india|paise indias" },
-            //Indonesia
-            { "Rupia indonesia", "rupia indonesia|rupias indonesias|idr" },
-            { "Sen indonesia", "sen indonesia|sen indonesias" },
-            //Irán
-            { "Rial iraní", "rial iraní|rial iranies|irr" },
-            //Irak
-            { "Dinar iraquí", "dinar iraquí|dinares iraquies|iqd" },
-            { "Fil iraquí", "fil iraquí|fils iraquies" },
-            //Irlanda -> Euro
-            //Isla Ascensión -> Libra se Santa Elena
-            //Isla de Man
+            { "Florim húngaro", "florim húngaro|florim hungaro|florins húngaros|florins hungaros|forinte|forintes|huf" },
+            { "Filér húngaro", "fillér|filér|filler|filer" },
+            //Índia
+            { "Rupia indiana", "rúpia indiana|rupia indiana|rupias indianas|inr" },
+            { "Paisa indiana", "paisa indiana|paisas indianas" },
+            //Indonésia
+            { "Rupia indonésia", "rupia indonesia|rupia indonésia|rupias indonesias|rupias indonésias|idr" },
+            { "Sen indonésio", "send indonésio|sen indonesio|sen indonésios|sen indonesios" },
+            //Irã
+            { "Rial iraniano", "rial iraniano|riais iranianos|irr" },
+            //Iraque
+            { "Dinar iraquiano", "dinar iraquiano|dinares iraquianos|iqd" },
+            { "Fil iraquiano", "fil iraquiano|fils iraquianos|files iraquianos" },
+            //Ilha de Man
             { "Libra manesa", "libra manesa|libras manesas|imp" },
-            { "Penique manes", "penique manes|peniques maneses" },
-            //Islandia
-            { "Corona islandesa", "corona islandesa|coronas islandesas|isk|íkr" },
-            { "Aurar islandes", "aurar islandes|aurar islandeses" },
-            //Islas Caimán
-            { "Dólar de las Islas Caimán", "dólar de las Islas Caimán|dólares de las Islas Caimán|ci$|kyd" },
-            //Islas Cocos -> Dólar australiano
-            //Islas Cook
-            { "Dólar de las Islas Cook", "dólar de las Islas Cook|dólares de las Islas Cook" },
-            //Islas Feroe
-            { "Corona feroesa", "corona feroesa|coronas feroesas|fkr" },
-            //Islas Georgias del Sur y Sandwich del Sur
-            //Islas Malvinas
-            { "Libra malvinense", "libra malvinense|libras malvinenses|fk£|fkp" },
-            //Islas Marianas del Norte -> Dólar estadounidense
-            //Islas Marshall -> Dólar estadounidense
-            //Islas Pitcairn -> Dólar neozelandés
-            //Islas Salomón
-            { "Dólar de las Islas Salomón", "dólar de las Islas Salomón|dólares de las Islas Salomón|sbd" },
-            //Islas Turcas y Caicos -> Dólar estadounidense
-            //Islas Vírgenes Británicas -> Dólar estadounidense
+            { "Peni manês", "peni manes|peni manês|penies maneses" },
+            //Islândia
+            { "Coroa islandesa", "coroa islandesa|coroas islandesas|isk|íkr" },
+            { "Aurar islandês", "aurar islandês|aurar islandes|aurar islandeses|eyrir" },
+            //Ilhas Cayman
+            { "Dólar das Ilhas Cayman", "dólar das ilhas cayman|dolar das ilhas cayman|dólar das ilhas caimão|dólares das ilhas cayman|dolares das ilhas cayman|dólares das ilhas caimão|ci$|kyd" },
+            //Ilhas Cook
+            { "Dólar das Ilhas Cook", "dólar das ilhas cook|dolar das ilhas cook|dólares das ilhas cook|dolares das ilhas cook" },
+            //Ilhas Féroe/Faroé/Faroés
+            { "Coroa feroesa", "coroa feroesa|coroas feroesas|fkr" },
+            //Ilhas Malvinas
+            { "Libra das Malvinas", "libra das malvinas|libras das malvinas|fk£|fkp" },
+            //Ilhas Salomão
+            { "Dólar das Ilhas Salomão", "dólar das ilhas salomão|dolar das ilhas salomao|dólares das ilhas salomão|dolares das ilhas salomao|sbd" },
             //Israel
-            { "Nuevo shéquel", "nuevo shéquel|nuevos shéquel|ils" },
-            { "Agorot", "agorot" },
-            //Italia -> Europe
+            { "Novo shekel israelense", "novo shekel|novos shekeles|novo shequel|novo siclo|novo xéquel|shekeles novos|novos sheqalim|sheqalim novos|ils" },
+            { "Agora", "agora|agorot" },
             //Jamaica
-            { "Dólar jamaiquino", "dólar jamaiquino|dólares jamaiquinos|j$|ja$|jmd" },
-            //Japón
+            { "Dólar jamaicano", "dólar jamaicano|dolar jamaicano|dólares jamaicanos|dolares jamaicanos|j$|ja$|jmd" },
+            //Japão
             { "Yen", "yen|iene|yenes|ienes|jpy" },
             //Jersey
             { "Libra de Jersey", "libra de Jersey|libras de Jersey|jep" },
-            //Jordania
-            { "Dinar jordano", "dinar jordano|dinares jordanos|jd|jod" },
-            { "Piastra jordano", "piastra jordano|piastras jordanos" },
-            //Kazajistán
-            { "Tenge kazajo", "tenge|tenge kazajo|kzt" },
-            //Kenia
-            { "Chelín keniano", "chelín keniano|chelines kenianos|ksh|kes" },
-            //Kirguistán
-            { "Som kirguís", "som kirguís|kgs" },
-            { "Tyiyn", "tyiyn" },
+            //Jordânia
+            { "Dinar jordaniano", "dinar jordaniano|dinar jordano|dinares jordanianos|dinares jordanos|jd|jod" },
+            { "Piastra jordaniana", "piastra jordaniana|piastra jordano|piastras jordanianas|piastra jordaniano|piastras jordanianos|piastras jordanos" },
+            //Cazaquistão
+            { "Tengue cazaque", "tenge|tengue|tengué|tengue cazaque|kzt" },
+            { "Tiyin", "tiyin|tiyins"},
+            //Quênia
+            { "Xelim queniano", "xelim queniano|xelins quenianos|ksh|kes" },
+            //Quirguistão
+            { "Som quirguiz", "som quirguiz|som quirguizes|soms quirguizes|kgs" },
+            { "Tyiyn", "tyiyn|tyiyns" },
             //Kiribati
-            { "Dólar de Kiribati", "dólar de Kiribati|dólares de Kiribati" },
-            //Kosovo -> Euro
-            //Kuwait
-            { "Dinar kuwaití", "dinar kuwaití|dinares kuwaití" },
-            //Laos
-            { "Kip laosiano", "kip|kip laosiano|kip laosianos|lak" },
-            { "Att laosiano", "att|att laosiano|att laosianos" },
+            { "Dólar de Kiribati", "dólar de kiribati|dolar de kiribati|dólares de kiribati|dolares de kiribati" },
+            //Kuwait/Cuaite
+            { "Dinar kuwaitiano", "dinar kuwaitiano|dinar cuaitiano|dinares kuwaitiano|dinares cuaitianos|kwd" },
+            //Laos/Laus
+            { "Quipe laosiano", "quipe|quipes|kipe|kipes|kip|kip laosiano|kip laociano|kips laosianos|kips laocianos|lak" },
+            { "Att laosiano", "at|att|att laosiano|att laosianos" },
             //Lesoto
-            { "Loti", "loti|maloti|lsl" },
+            { "Loti do Lesoto", "loti|lóti|maloti|lotis|lótis|lsl" },
             { "Sente", "sente|lisente" },
-            //Letonia -> Euro
             //Líbano
             { "Libra libanesa", "libra libanesa|libras libanesas|lbp" },
-            //Liberia
-            { "Dólar liberiano", "dólar liberiano|dólares liberianos|l$|lrd" },
-            //Libia
-            { "Dinar libio", "dinar libio|dinares libios|ld|lyd" },
-            { "Dirham libio", "dirham libio|dirhams libios" },
-            //Liechtenstein -> Franco suizo
-            //Lituania -> Euro
+            //Libéria
+            { "Dólar liberiano", "dólar liberiano|dolar liberiano|dólares liberianos|dolares liberianos|l$|lrd" },
+            //Líbia
+            { "Dinar libio", "dinar libio|dinar líbio|dinares libios|dinares líbios|ld|lyd" },
+            { "Dirham libio", "dirham libio|dirhams libios|dirham líbio|dirhams líbios" },
+            //Lituania -> Euro + old lita
             {"Litas lituana", "litas lituana|litai lituanas|ltl" },
-            //Luxemburgo -> Euro
             //Macao
             { "Pataca macaense", "pataca macaense|patacas macaenses|mop$|mop" },
             { "Avo macaense", "avo macaense|avos macaenses" },
             { "Ho macaense", "ho macaense|ho macaenses" },
-            //Macedonia, República de
-            { "Denar macedonio", "denar macedonio|denare macedonios|den|mkd" },
-            { "Deni macedonio", "deni macedonio|deni macedonios" },
-            //Madagascar
-            { "Ariary malgache", "ariary malgache|ariary malgaches|mga" },
-            { "Iraimbilanja malgache", "iraimbilanja malgache|iraimbilanja malgaches" },
-            //Malasia
-            { "Ringgit malayo", "ringgit malayo|ringgit malayos|rm|myr" },
-            { "Sen malayo", "sen malayo|sen malayos" },
-            //Malaui
-            { "Kwacha malauí", "kwacha malauí|mk|mwk" },
-            { "Támbala malauí", "támbala malauí" },
+            //Macedônia, República de
+            { "Dinar macedônio", "denar macedonio|denare macedonios|denar macedônio|denar macedónio|denare macedônio|denare macedónio|dinar macedonio|dinar macedônio|dinar macedónio|dinares macedonios|dinares macedônios|dinares macedónios|den|mkd" },
+            { "Deni macedônio", "deni macedonio|deni macedônio|deni macedónio|denis macedonios|denis macedônios|denis macedónios" },
+            //Madagáscar
+            { "Ariary malgaxe", "ariai malgaxe|ariary malgaxe|ariary malgaxes|ariaris|mga" },
+            { "Iraimbilanja", "iraimbilanja|iraimbilanjas" },
+            //Malásia
+            { "Ringuite malaio", "ringgit malaio|ringgit malaios|ringgits malaios|ringuite malaio|ringuites malaios|rm|myr" },
+            { "Sen malaio", "sen malaio|sen malaios|centavo malaio|centavos malaios|cêntimo malaio|cêntimos malaios" },
+            //Malawi/Maláui
+            { "Kwacha do Malawi", "kwacha|cuacha|quacha|mk|mwk" },
+            { "Tambala", "tambala|tambalas|tambala malawi" },
             //Maldivas
-            { "Rupia de Maldivas", "rupia de Maldivas|rupias de Maldivas|mvr" },
-            //Malí -> Franco CFA de África Occidental
-            //Malta -> Euro
-            //Marruecos
-            { "Dirham marroquí", "dirham marroquí|dirhams marroquies|mad" },
-            //Mauricio
-            { "Rupia de Mauricio", "rupia de Mauricio|rupias de Mauricio|mur" },
-            //Mauritania
-            { "Uguiya", "uguiya|uguiyas|mro" },
-            { "Jum", "jum|jums" },
+            { "Rupia maldiva", "rupia maldiva|rupias maldivas|rupia das maldivas| rupias das maldivas|mvr" },
+            //Marrocos
+            { "Dirame marroquino", "dirame marroquino|dirham marroquinho|dirhams marroquinos|dirames marroquinos|mad" },
+            //Maurício/Maurícia
+            { "Rupia maurícia", "rupia maurícia|rupia de Maurício|rupia mauricia|rupia de mauricio|rupias de mauricio|rupias de maurício|rupias mauricias|rupias maurícias|mur" },
+            //Mauritânia
+            { "Uguia", "uguia|uguias|oguia|ouguiya|oguias|mro" },
+            { "Kume", "kumes|kume|khoums" },
             //México
             { "Peso mexicano", "peso mexicano|pesos mexicanos|mxn" },
             { "Centavo mexicano", "centavo mexicano|centavos mexicanos" },
-            //Micronesia, Estados Federados de -> Dólar estadounidense
-            //Moldavia
-            { "Leu moldavo", "leu moldavo|lei moldavos|mdl" },
-            { "Ban moldavo", "ban moldavo|bani moldavos" },
-            //Mónaco -> Euro
-            //Mongolia
-            { "Tugrik mongol", "tugrik mongol|tugrik|tugrik mongoles|tug|mnt" },
-            //Montenegro -> Euro
-            //Montserrat -> Dólar del Caribe Oriental
-            //Mozambique
-            { "Metical mozambiqueño", "metical|metical mozambiqueño|meticales|meticales mozambiqueños|mtn|mzn" },
-            //Nagorno Karabaj
-            { "Dram de Nagorno Karabaj", "dram de Nagorno Karabaj|drams de Nagorno Karabaj|" },
-            { "Luma de Nagorno Karabaj", "luma de Nagorno Karabaj" },
-            //Namibia
-            { "Dólar namibio", "dólar namibio|dólares namibios|n$|nad" },
-            { "Centavo namibio", "centavo namibio|centavos namibios" },
-            //Nauru -> Dólar australiano
+            //Moldávia
+            { "Leu moldávio", "leu moldavo|lei moldavos|leu moldávio|leu moldavio|lei moldávios|lei moldavios|leus moldavos|leus moldavios|leus moldávios|mdl" },
+            { "Ban moldávio", "ban moldavo|bani moldavos" },
+            //Mongólia
+            { "Tugrik mongol", "tugrik mongol|tugrik|tugriks mongóis|tugriks mongois|tug|mnt" },
+            //Moçambique
+            { "Metical moçambicao", "metical|metical moçambicano|metical mocambicano|meticais|meticais moçambicanos|meticais mocambicanos|mtn|mzn" },
+            //Namíbia
+            { "Dólar namibiano", "dólar namibiano|dólares namibianos|dolar namibio|dolares namibios|n$|nad" },
+            { "Centavo namibiano", "centavo namibiano|centavos namibianos|centavo namibio|centavos namibianos" },
             //Nepal
-            { "Rupia nepalí", "rupia nepalí|rupias nepalies|npr" },
-            { "Paisa nepalí", "paisa nepalí|paisas nepalies" },
-            //Nicaragua
+            { "Rupia nepalesa", "rupia nepalesa|rupias nepalesas|npr" },
+            { "Paisa nepalesa", "paisa nepalesa|paisas nepalesas" },
+            //Nicarágua //@HERE
             { "Córdoba nicaragüense", "córdoba nicaragüense|córdobas nicaragüenses|c$|nio" },
             { "Centavo nicaragüense", "centavo nicaragüense|centavos nicaragüenses" },
-            //Níger -> Franco CFA de África Occidental
             //Nigeria
             { "Naira", "naira|ngn" },
             { "Kobo", "kobo" },
-            //Niue -> Dólar neozelandés
             //Noruega
             { "Corona noruega", "corona noruega|coronas noruegas|nok" },
             //Nueva Caledonia
@@ -374,17 +348,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Nueva Zelanda
             { "Dólar neozelandés", "dólar neozelandés|dólares neozelandeses|dólar de Nueva Zelanda|dólares de Nueva Zelanda|nz$|nzd" },
             { "Centavo neozelandés", "centavo neozelandés|centavo de Nueva Zelanda|centavos de Nueva Zelanda|centavos neozelandeses" },
-            //Omán
+            //Oman
             { "Rial omaní", "rial omaní|riales omanies|omr" },
             { "Baisa omaní", "baisa omaní|baisa omanies" },
-            //Osetia del Sur -> Rublo ruso
-            //Países Bajos -> Euro
+            //Países Baixos/Holanda -> Euro + old florin
             { "Florim holandês", "florim holandês|florim holandes|florins holandeses|nlg" },
-            //Pakistán
+            //Paquistão
             { "Rupia pakistaní", "rupia pakistaní|rupias pakistanies|pkr" },
             { "Paisa pakistaní", "paisa pakistaní|paisas pakistanies" },
-            //Palaos -> Dólar estadounidense
-            //Palestina -> Nuevo shéquel | Dinar jordano
             //Panamá
             { "Balboa panameño", "balboa panameño|balboa panameños|pab" },
             { "Centésimo panameño", "centésimo panameño|centésimos panameños" },
