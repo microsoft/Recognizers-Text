@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberCombinedWithUnit { get; }
         Regex PastRegex { get; }
         Regex FutureRegex { get; }
+        Regex WeekOfRegex { get; }
+        Regex MonthOfRegex { get; }
 
         IExtractor DatePointExtractor { get; }
         IExtractor CardinalExtractor { get; }

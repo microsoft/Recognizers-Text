@@ -24,7 +24,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
         [TestMethod]
         public void TestDatePeriodExtract()
         {
-
             foreach (var month in shortMonths)
             {
                 BasicTest($"I'll be out in {month}", 15, month.Length);
@@ -108,6 +107,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("I'll leave summer", 11, 6);
             BasicTest("I'll leave summer 2016", 11, 11);
             BasicTest("I'll leave summer of 2016", 11, 14);
+
+            //test week of and month of
+            BasicTest("week of september.15th", 0, 22);
+            BasicTest("month of september.15th", 0, 23);
+
         }
     }
 }

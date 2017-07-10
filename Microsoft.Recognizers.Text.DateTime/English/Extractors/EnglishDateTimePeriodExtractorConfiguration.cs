@@ -37,13 +37,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex SpecificNightRegex => specificNightRegex;
 
         private static readonly Regex unitRegex =
-            new Regex(@"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)",
+            new Regex(@"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex followedUnit = new Regex($@"^\s*{unitRegex}\b",
+        private static readonly Regex followedUnit = new Regex($@"^\s*{unitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex($@"\b(?<num>\d+(\.\d*)?){unitRegex}\b",
+        public static readonly Regex NumberCombinedWithUnit = new Regex($@"\b(?<num>\d+(\.\d*)?){unitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex FollowedUnit => followedUnit;

@@ -63,6 +63,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 
             bool inclusiveEnd=parser.GetInclusiveEndPeriodFlag();
 
+
+            //TODO: add tests for week of and month of
+
             // test basic cases
             BasicTestFuture("Estare afuera desde el 4 hasta el 22 de este mes", 4, 22, month, year);
             BasicTestFuture("Estare afuera desde 4-23 del proximo mes", 4, 23, 12, year);

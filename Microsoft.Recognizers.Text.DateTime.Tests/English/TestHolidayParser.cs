@@ -49,6 +49,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestHolidayParse()
         {
+            BasicTest("I'll go back on christmas",
+                new DateObject(2016, 12, 25),
+                new DateObject(2015, 12, 25));
+
             BasicTest("I'll go back on Yuandan", 
                 new DateObject(2017, 1, 1), 
                 new DateObject(2016, 1, 1));
@@ -56,6 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back on thanks giving day", 
                 new DateObject(2016, 11, 24), 
                 new DateObject(2015, 11, 26));
+
+            BasicTest("I'll go back on thanksgiving",
+                new DateObject(2016, 11, 24),
+                new DateObject(2015, 11, 26));
+
             BasicTest("I'll go back on father's day",
                 new DateObject(2017, 6, 18),
                 new DateObject(2016, 6, 19));

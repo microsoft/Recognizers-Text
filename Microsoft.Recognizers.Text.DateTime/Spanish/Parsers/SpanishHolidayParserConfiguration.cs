@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 { "labour", new string[]{ "diadeltrabajadorusa" } },
                 { "columbus", new string[]{ "diadelaraza", "diadeladiversidadcultural" } },
                 { "memorial", new string[]{ "diadelamemoria" } },
+                //TODO: add all the fixed holidays for Spanish
             };
         }
 

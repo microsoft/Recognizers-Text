@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex UnitRegex = new Regex(@"(?<unit>年|(个)?月|周|日|天)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =

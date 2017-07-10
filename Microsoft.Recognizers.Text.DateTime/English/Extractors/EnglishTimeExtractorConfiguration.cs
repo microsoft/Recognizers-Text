@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex IshRegex = new Regex($@"{BaseTimeExtractor.HourRegex}(-|——)?ish|noonish|noon",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex =
