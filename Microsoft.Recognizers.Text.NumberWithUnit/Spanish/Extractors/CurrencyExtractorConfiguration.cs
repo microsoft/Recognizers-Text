@@ -21,7 +21,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             //Reference Source: https://es.wikipedia.org/wiki/Anexo:Monedas_circulantes
-            //GeneralsUnits
+
+            // General Units
             { "Dólar", "dólar|dólares" },
             { "Peso", "peso|pesos" },
             { "Rublo", "rublo|rublos"},

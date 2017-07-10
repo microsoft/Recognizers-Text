@@ -20,9 +20,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
+            // Reference Source: https://pt.wikipedia.org/wiki/Lista_de_moedas
+
             // General Units
             { "Dólar", "dólar|dolar|dólares|dolares" },
             { "Peso", "peso|pesos" },
+            { "Coroa", "coroa|coroas" },
             { "Rublo", "rublo|rublos"},
             { "Libra", "libra|libras" },
             { "Florín", "florín|florin|floríns|florins|ƒ" },
@@ -72,12 +75,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Argentina
             { "Peso argentino", "peso argentino|pesos argentinos|peso|pesos|ar$|ars" },
             { "Centavo argentino", "centavo argentino|centavos argentinos|centavo|ctvo.|ctvos." },
-            //Armenia
+            //Armênia
             { "Dram armênio", "dram armênio|dram armênios|dram arménio|dram arménios|dram armenio|dram armenios|dram|drame|drames|դր." },
             { "Luma armênio", "luma armênio|lumas armênios|luma arménio|lumas arménios|luma armenio|lumas armenios|luma|lumas" },
             //Aruba
             { "Florim arubano", "florín arubeño|florines arubeños|ƒ arubeños|aƒ|awg" },
-            //Australia
+            //Austrália
             { "Dólar australiano", "dólar australiano|dólares australianos|dolar australiano|dolares australianos|a$|aud" },
             { "Centavo australiano", "centavo australiano|centavos australianos" },
             //Azerbaijão
@@ -95,137 +98,121 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Barbados
             { "Dólar de Barbados", "dólar de barbados|dólares de barbados|dolar de barbados|dolares de barbados|dólar dos barbados|dólares dos barbados|bbd" },
             { "Centavo de Barbados", "centavo de barbados|centavos de barbados|centavo dos barbados|centavos dos barbados" },
-            //Belize //@HERE
-            { "Dólar beliceño", "dólar beliceño|dólares beliceños|bz$|bzd" },
-            { "Centavo beliceño", "centavo beliceño|centavos beliceños" },
+            //Belize
+            { "Dólar de Belize", "dólar de belize|dólares de belize|dolar de belize|dolares de belize|dólar do belize|dólares do belize|dolar do belize|dolares do belize|bz$|bzd" },
+            { "Centavo de Belize", "centavo de belize|centavos de belize|cêntimo do belize|cêntimos do belize" },
             //Bermudas
-            { "Dólar bermudeño", "dólar bermudeño|dólares bermudeños|bd$|bmd" },
-            { "Centavo bermudeño", "centavo bermudeño|centavos bermudeños" },
-            //Bielorrusia
+            { "Dólar bermudense", "dólar bermudense|dólares bermudenses|bd$|bmd" },
+            { "Centavo bermudense", "centavo bermudense|centavos bermudenses|cêntimo bermudense| cêntimos bermudenses" },
+            //Bielorrúsia / Belarus
             { "Rublo bielorruso", "rublo bielorruso|rublos bielorrusos|br|byr" },
-            { "Kópek bielorruso", "kópek bielorruso|kópeks bielorrusos|kap" },
-            //Birmania
-            { "Kyat birmano", "kyat birmano|kyats birmanos|mmk" },
-            { "Pya birmano", "pya birmano|pyas birmanos" },
-            //Bolivia
+            { "Copeque ruso", "copeque bielorruso|copeques bielorrusos|kopek bielorruso|kopeks bielorrusos|kap" },
+            //Mianmar/Birmânia
+            { "Quiate mianmarense", "quiate mianmarense|quiates mianmarenses|kyat mianmarense|kyates mianmarenses|quiate myanmarense|quiates myanmarenses|kyat myanmarense|kyates myanmarenses|quiate birmanês|quite birmanes|quiates birmaneses|kyat birmanês|kyat birmanes|kyates birmaneses|mmk" },
+            { "Pya mianmarense", "pya mianmarense|pyas mianmarenses|pya myanmarense|pyas myanmarenses|pya birmanês|pya birmanes|pyas birmaneses" },
+            //Bolívia
             { "Boliviano", "boliviano|bolivianos|bob|bs" },
-            { "Centésimo Boliviano", "centésimo boliviano|centésimos bolivianos" },
-            //Bosnia y Herzegovina
-            { "Marco bosnioherzegovino", "marco convertible|marco bosnioherzegovino|marcos convertibles|marcos bosnioherzegovinos|bam" },
-            { "Feningas bosnioherzegovino", "feninga convertible|feninga bosnioherzegovina|feningas convertibles" },
+            { "Centavo Boliviano", "centavo boliviano|centavos bolivianos" },
+            //Bósnia e Herzegovina
+            { "Marco da Bósnia e Herzegovina", "marco conversível|marco conversivel|marco convertível|marco convertivel|marcos conversíveis|marcos conversiveis|marcos convertíveis|marcos convertivies|bam" },
+            { "Fening da Bósnia e Herzegovina", "fening conversível|fening conversivel|fening convertível|fening convertivel|fenings conversíveis|fenings conversiveis|fenings convertíveis|fenings convertiveis" },
             //Botsuana
-            { "Pula", "pula|bwp" },
-            { "Thebe", "thebe" },
+            { "Pula", "pula|pulas|bwp" },
+            { "Thebe", "thebe|thebes" },
             //Brasil
-            { "Real brasileiro", "real brasileiro|real do Brasil|real|reais brasileiros|reais do brasil|reais|r$|brl" },
+            { "Real brasileiro", "real brasileiro|real do brasil|real|reais brasileiros|reais do brasil|reais|r$|brl" },
             { "Centavo brasileiro", "centavo de real|centavo brasileiro|centavos de real|centavos brasileiros" },
-            //Brunéi
-            { "Dólar de Brunéi", "dólar de brunei|dólares de brunéi|bnd" },
-            { "Sen de Brunéi", "sen|sen de brunéi" },
-            //Bulgaria
-            { "Lev búlgaro", "lev búlgaro|leva búlgaros|lv|bgn" },
-            { "Stotinki búlgaro", "stotinka búlgaro|stotinki búlgaros" },
-            //Burkina Faso -> Franco CFA de África Occidental
+            //Brunei
+            { "Dólar de Brunéi", "dólar de brunei|dolar de brunei|dólar do brunei|dolar do brunei|dólares de brunéi|dolares de brunei|dólares do brunei|dolares do brunei|bnd" },
+            { "Sen de Brunéi", "sen de brunei|sen do brunei|sens de brunei|sens do brunei" },
+            //Bulgária
+            { "Lev búlgaro", "lev búlgaro|leve búlgaro|leves búlgaros|lev bulgaro|leve bulgaro|leves bulgaros|lv|bgn" },
+            { "Stotinka búlgaro", "stotinka búlgaro|stotinki búlgaros|stotinka bulgaro|stotinki bulgaros" },
             //Burundi
             { "Franco do Burundi", "franco do burundi|francos do burundi|fbu|fib" },
             { "Centavo Burundi", "centavo burundi|cêntimo burundi|centimo burundi|centavos burundi|cêntimo burundi|centimo burundi" },
-            //Bután
-            { "Ngultrum butanés", "ngultrum butanés|ngultrum butaneses|btn" },
-            { "Chetrum  butanés", "chetrum butanés|chetrum butaneses" },
+            //Butão
+            { "Ngultrum butanês", "ngultrum butanês|ngultrum butanes|ngúltrume butanês|ngultrume butanes|ngultrum butaneses|ngúltrumes butaneses|ngultrumes butaneses|btn" },
+            { "Chetrum  butanês", "chetrum butanês|chetrum butanes|chetrum butaneses" },
             //Cabo Verde
-            { "Escudo caboverdiano", "escudo caboverdiano|escudos caboverdianos|cve" },
+            { "Escudo cabo-verdiano", "escudo cabo-verdiano|escudos cabo-verdianos|cve" },
             //Camboja
-            { "Riel cambojano", "riel cambojano|riels cambojanos|khr" },
-            //Camerún -> Franco CFA de África Central
+            { "Riel cambojano", "riel cambojano|riéis cambojanos|rieis cambojanos|khr" },
             //Canadá
             { "Dólar canadense", "dólar canadense|dolar canadense|dólares canadenses|dolares canadenses|c$|cad" },
             { "Centavo canadense", "centavo canadense|centavos canadenses" },
-            //Chad -> Franco CFA de África Central
             //Chile
             { "Peso chileno", "peso chileno|pesos chilenos|cpl" },
             //China
-            { "Yuan chinês", "yuan chinês|yuans chineses|yuan|yuans|renminbi|rmb|cny|¥" },
-            //Chipre -> Euro
-            //Colombia
+            { "Yuan chinês", "yuan chinês|yuan chines|yuans chineses|yuan|yuans|renminbi|rmb|cny|¥" },
+            //Colômbia
             { "Peso colombiano", "peso colombiano|pesos colombianos|cop|col$" },
             { "Centavo colombiano", "centavo colombiano|centavos colombianos" },
-            //Comoras
-            { "Franco comorano", "franco comorano|francos comoranos|kmf|₣" },
-            //Congo, República del -> Franco CFA de África Central
-            //Congo, República Democrática del
-            { "Franco congoleño", "franco congoleño|francos congoleños|cdf" },
-            { "Céntimo congoleño", "céntimo congoleño|céntimos congoleños" },
-            //Corea del Norte
-            { "Won norcoreano", "won norcoreano|wŏn norcoreano|wŏn norcoreanos|kpw" },
-            { "Chon norcoreano", "chon norcoreano|chŏn norcoreano|chŏn norcoreanos|chon norcoreanos" },
-            //Corea del Sur
-            { "Won surcoreano", "wŏn surcoreano|won surcoreano|wŏnes surcoreanos|wones surcoreanos|krw" },
-            { "Chon surcoreano", "chon surcoreano|chŏn surcoreano|chŏn surcoreanos|chon surcoreanos" },
-            //Costa de Marfil -> Franco CFA de África Occidental
+            //Comores
+            { "Franco comorense", "franco comorense|francos comorenses|kmf|₣" },
+            //Congo, República Democrática do
+            { "Franco congolês", "franco congolês|franco congoles|francos congoleses|cdf" },
+            { "Centavo congolês", "centavo congolês|centavo congoles|centavos congoleses|cêntimo congolês|centimo congoles|cêntimos congoleses|cêntimos congoleses" },
+            //Coréia do Norte
+            { "Won norte-coreano", "won norte-coreano|wŏn norte-coreano|won norte-coreanos|wŏn norte-coreanos|kpw" },
+            { "Chon norte-coreano", "chon norte-coreano|chŏn norte-coreano|chŏn norte-coreanos|chon norte-coreanos" },
+            //Coréia do Sur
+            { "Won sul-coreano", "wŏn sul-coreano|won sul-coreano|wŏnes sul-coreanos|wones sul-coreanos|krw" },
+            { "Jeon sul-coreano", "jeons sul-coreano|jeons sul-coreanos" },
             //Costa Rica
-            { "Colón costarricense", "colón costarricense|colones costarricenses|crc" },
-            //Croacia
-            { "Kuna croata", "kuna croata|kuna croatas|hrk" },
-            { "Lipa croata", "lipa croata|lipa croatas" },
+            { "Colón costarriquenho", "colón costarriquenho|colon costarriquenho|colons costarriquenho|colones costarriquenhos|crc" },
+            //Croácia
+            { "Kuna croata", "kuna croata|kunas croatas|hrk" },
+            { "Lipa croata", "lipa croata|lipas croatas" },
             //Cuba
             { "Peso cubano", "peso cubano|pesos cubanos|cup" },
-            { "Peso cubano convertible", "peso cubano convertible|pesos cubanos convertible|cuc" },
+            { "Peso cubano convertível", "peso cubano conversível|pesos cubanos conversíveis|peso cubano conversivel|pesos cubanos conversiveis|peso cubano convertível|pesos cubanos convertíveis|peso cubano convertivel|pesos cubanos convertiveis|cuc" },
             //Dinamarca
-            { "Corona danesa", "corona danesa|coronas danesas|dkk" },
-            //Dominica -> Dólar del Caribe Oriental
-            //Ecuador -> Dólar estadounidense
-            //Egipto
-            { "Libra egipcia", "libra egipcia|libras egipcias|egp|le" },
-            { "Piastra egipcia", "piastra egipcia|piastras egipcias" },
-            //El Salvador
-            { "Colón salvadoreño", "colón salvadoreño|colones salvadoreños|svc" },
-            //Emiratos Árabes Unidos
-            { "Dirham de los Emiratos Árabes Unidos", "dirham|dirhams|dirham de los Emiratos Árabes Unidos|aed|dhs" },
-            //Eritrea
+            { "Coroa dinamarquesa", "coroa dinamarquesa|coroas dinamarquesas|dkk" },
+            //Egito
+            { "Libra egípcia", "libra egípcia|libra egipcia|libras egípcias|libras egipcias|egp|le" },
+            { "Piastra egípcia", "piastra egípcia|piastra egipcia|pisastras egípcias|piastras egipcias" },
+            //Emirados Árabes Unidos
+            { "Dirham dos Emirados Árabes Unidos", "dirham|dirhams|dirham dos emirados arabes unidos|aed|dhs" },
+            //Eritréia
             { "Nakfa", "nakfa|nfk|ern" },
-            { "Céntimo de Nakfa", "céntimo de nakfa|céntimos de nakfa" },
-            //Eslovaquia -> Euro
-            //Eslovenia -> Euro
-            //España -> Euro
+            { "Centavo de Nakfa", "cêntimo de nakfa|cêntimos de nakfa|centavo de nafka|centavos de nafka" },
+            //Espanha -> Euro + old peseta
             { "Peseta", "peseta|pesetas|pts.|ptas.|esp" },
             //Estados Unidos
             { "Dólar estadunidense", "dólar dos estados unidos|dolar dos estados unidos|dólar estadunidense|dólar americano|dólares dos estados unidos|dolares dos estados unidos|dólares estadunidenses|dólares americanos|dolar estadunidense|dolar americano|dolares estadunidenses|dolares americanos|usd|u$d|us$" },
-            //Estonia
-            { "Corona estonia", "corona estonia|coronas estonias|eek" },
-            { "Senti estonia", "senti estonia|senti estonias" },
-            //Etiopía
-            { "Birr etíope", "birr etíope|birr etíopes|br|etb" },
-            { "Santim etíope", "santim etíope|santim etíopes" },
+            //Estônia -> Euro + old crown
+            { "Coroa estoniana", "coroa estoniana|coroas estonianas|eek" },
+            { "Senti estoniano", "senti estoniano|senti estonianos" },
+            //Etiópia
+            { "Birr etíope", "birr etíope|birr etiope|birr etíopes|birr etiopes|br|etb" },
+            { "Santim etíope", "santim etíope|santim etiope|santim etíopes|santim etiopes" },
             //Filipinas
             { "Peso filipino", "peso filipino|pesos filipinos|php" },
-            //Finlandia -> Euro
+            //Finlandia -> Euro + old mark
             { "Marco finlandês", "marco finlandês|marco finlandes|marcos finlandeses" },
-            //Fiyi
-            { "Dólar fiyiano", "dólar fiyiano|dólares fiyianos|fj$|fjd" },
-            { "Centavo fiyiano", "centavo fiyiano|centavos fiyianos" },
-            //Francia -> Euro
-            //Gabón -> Franco CFA de África Central
-            //Gambia
-            { "Dalasi", "dalasi|gmd" },
+            //Fiji
+            { "Dólar fijiano", "dólar fijiano|dolar fijiano|dólares fijianos|dolares fijianos|fj$|fjd" },
+            { "Centavo fijiano", "centavo fijiano|centavos fijianos" },
+            //Gâmbia
+            { "Dalasi gambiano", "dalasi|gmd" },
             { "Bututs", "butut|bututs" },
-            //Georgia
+            //Geórgia
             { "Lari georgiano", "lari georgiano|lari georgianos|gel" },
             { "Tetri georgiano", "tetri georgiano|tetri georgianos" },
-            //Ghana
+            //Gana
             { "Cedi", "cedi|ghs|gh₵" },
             { "Pesewa", "pesewa" },
             //Gibraltar
-            { "Libra gibraltareña", "libra gibraltareña|libras gibraltareñas|gip" },
-            { "Penique gibraltareña", "penique gibraltareña|peniques gibraltareñas" },
-            //Granada -> Dólar del Caribe Oriental
-            //Grecia -> Euro
+            { "Libra de Gibraltar", "libra de gibraltar|libras de gibraltar|gip" },
+            { "Peni de Gibraltar", "peni de gibraltar|penies de gibraltar" },
             //Guatemala
             { "Quetzal guatemalteco", "quetzal guatemalteco|quetzales guatemaltecos|quetzal|quetzales|gtq" },
             { "Centavo guatemalteco", "centavo guatemalteco|centavos guatemaltecos" },
             //Guernsey
             { "Libra de Guernsey", "libra de Guernsey|libras de Guernsey|ggp" },
-            { "Penique de Guernsey", "penique de Guernsey|peniques de Guernsey" },
-            //Guinea
+            { "Peni de Guernsey", "peni de Guernsey|penies de Guernsey" },
+            //Guiné // @HERE
             { "Franco guineano", "franco guineano|francos guineanos|gnf|fg" },
             { "Céntimo guineano", "céntimo guineano|céntimos guineanos" },
             //Guinea-Bisáu -> Franco CFA de África Occidental
