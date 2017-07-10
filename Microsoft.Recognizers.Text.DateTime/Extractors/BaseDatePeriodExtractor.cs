@@ -103,6 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        //Extract the month of date, week of date to a date range
         private List<Token> SingleTimePointWithPatterns(string text)
         {
             var ret = new List<Token>();
