@@ -83,6 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("I'll be out next june", year + 1, 6, 1, year + 1, 6, 30);
                 BasicTestFuture("I'll be out the third week of this month", 21, 27, month, year);
                 BasicTestFuture("I'll be out the last week of july", year + 1, 7, 24, year + 1, 7, 30);
+                BasicTestFuture("week of september.16th", 11, 17, 9, year + 1);
+                BasicTestFuture("month of september.16th", year, 9, 1, year, 9, 30);
             }
             else
             {
@@ -94,6 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("I'll be out next june", year + 1, 6, 1, year + 1, 7, 1);
                 BasicTestFuture("I'll be out the third week of this month", 21, 28, month, year);
                 BasicTestFuture("I'll be out the last week of july", year + 1, 7, 24, year + 1, 7, 31);
+                BasicTestFuture("week of september.16th", 11, 18, 9, year + 1);
+                BasicTestFuture("month of september.16th", year + 1, 9, 1, year + 1, 10, 1);
             }
 
             // test merging two time points

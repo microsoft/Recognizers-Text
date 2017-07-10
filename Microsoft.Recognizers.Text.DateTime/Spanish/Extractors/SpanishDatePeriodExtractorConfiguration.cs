@@ -125,6 +125,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add the week of and month of pattern for Spanish
+        public static readonly Regex WeekOfRegex =
+            new Regex(
+                $@"(week)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthOfRegex =
+            new Regex(
+                $@"(month)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex andRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex beforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -167,6 +178,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

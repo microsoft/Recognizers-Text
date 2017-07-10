@@ -130,6 +130,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 $@"(week)(\s*)(?<number>\d\d|\d|0\d)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WeekOfRegex =
+            new Regex(
+                $@"(week)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthOfRegex =
+            new Regex(
+                $@"(month)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -170,6 +180,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
