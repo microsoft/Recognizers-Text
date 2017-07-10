@@ -72,9 +72,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back on Yuandan of next year",
                 new DateObject(2017, 1, 1), 
                 new DateObject(2017, 1, 1));
+
             BasicTest("I'll go back on thanks giving day 2010", 
                 new DateObject(2010, 11, 25),
                 new DateObject(2010, 11, 25));
+
             BasicTest("I'll go back on father's day of 2015",
                 new DateObject(2015, 6, 21),
                 new DateObject(2015, 6, 21));

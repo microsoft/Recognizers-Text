@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class TimePeriodExtractorChs : BaseDateTimeExtractor<PeriodType>
     {
         internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
 
         public const string TimePeriodConnectWords = "(起|至|到|–|-|—|~|～)";
@@ -38,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public TimePeriodExtractorChs()
         {
-            var _regexes = new Dictionary<Regex, PeriodType>
+            var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
                     new Regex($@"({LeftDigitTimeRegex}{RightDigitTimeRegex}|{LeftChsTimeRegex}{RightChsTimeRegex})",
@@ -52,7 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     PeriodType.ShortTime
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 

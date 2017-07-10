@@ -8,14 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(@"(?<am>早|晨)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleAmRegex = new Regex(@"(?<am>早|晨)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SimplePmRegex = new Regex(@"(?<pm>晚)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimplePmRegex = new Regex(@"(?<pm>晚)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly IExtractor _singleDateExtractor = new DateExtractorChs();
-        private static readonly IExtractor _singleTimeExtractor = new TimeExtractorChs();
+        private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
+        private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -41,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult = ParseBasicRegex(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseTimeOfToday(er.Text, referenceTime);
@@ -52,10 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
+
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
 
                     value = innerResult;
@@ -109,6 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     ret.Timex = "FUTURE_REF";
                 }
+
                 ret.FutureValue = ret.PastValue = referenceTime;
                 ret.Success = true;
                 return ret;
@@ -122,18 +124,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var er1 = _singleDateExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text);
             if (er1.Count == 0)
             {
                 return ret;
             }
 
-            var er2 = _singleTimeExtractor.Extract(text);
+            var er2 = SingleTimeExtractor.Extract(text);
             if (er2.Count == 0)
             {
                 return ret;
             }
-
 
             var pr1 = this.config.DateParser.Parse(er1[0], referenceTime.Date);
             // TODO: Add reference time
@@ -168,13 +169,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
-            var Val = (DateTimeResolutionResult) pr2.Value;
+
+            var val = (DateTimeResolutionResult) pr2.Value;
+
             if (hour <= 12 && !SimplePmRegex.IsMatch(text) && !SimpleAmRegex.IsMatch(text) &&
-                !string.IsNullOrEmpty(Val.Comment))
+                !string.IsNullOrEmpty(val.Comment))
             {
                 //ret.Timex += "ampm";
                 ret.Comment = "ampm";
             }
+
             ret.FutureValue = new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;
@@ -185,7 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = _singleTimeExtractor.Extract(text);
+            var ers = SingleTimeExtractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;

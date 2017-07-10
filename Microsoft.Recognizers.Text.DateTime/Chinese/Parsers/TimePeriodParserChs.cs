@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var result = new TimeExtractorChs().Extract(er.Text);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;
             }
+
             if (extra != null)
             {
                 var parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime);
@@ -44,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             FormatUtil.FormatTime(((Tuple<DateObject, DateObject>) parseResult.FutureValue).Item2)
                         }
                     };
+
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
                         {
@@ -56,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         }
                     };
                 }
+
                 var ret = new DateTimeParseResult
                 {
                     Start = er.Start,
@@ -66,8 +69,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ResolutionStr = "",
                     TimexStr = parseResult.Timex
                 };
+
                 return ret;
             }
+
             return null;
         }
     }
@@ -79,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             //Left is a time
             var left = extra.NamedEntity["left"];
             TimeResult leftResult, rightResult = null;
+            
             // 下午四点十分到五点十分
             if (extra.Type == PeriodType.FullTime)
             {
@@ -91,11 +97,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 };
                 leftResult = timeParser.Parse(leftExtract, refTime).Data as TimeResult;
             }
-            // 下午四到五点
             else
             {
+                // 下午四到五点
                 leftResult = TimeFunctions.GetShortLeft(left.Value);
             }
+
             //Right is a time
             var right = extra.NamedEntity["right"];
             var rightExtract = new ExtractResult
@@ -105,6 +112,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Text = right.Value,
                 Type = Constants.SYS_DATETIME_TIME
             };
+
             rightResult = timeParser.Parse(rightExtract, refTime).Data as TimeResult;
 
             var ret = new DateTimeResolutionResult()
@@ -117,9 +125,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 rightResult.Hour += 12;
             }
+
             int day = refTime.Day,
                 month = refTime.Month,
                 year = refTime.Year;
+            
             //判断右侧是否比小测的小,如果比左侧的小,则增加一天
             int hour = leftResult.Hour > 0 ? leftResult.Hour : 0,
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
@@ -153,14 +163,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 build.Append(timeResult.Hour.ToString("D2"));
             }
+
             if (timeResult.Minute >= 0)
             {
                 build.Append(":" + timeResult.Minute.ToString("D2"));
             }
+
             if (timeResult.Second >= 0)
             {
                 build.Append(":" + timeResult.Second.ToString("D2"));
             }
+
             return build.ToString();
         }
 
@@ -170,14 +183,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 right.Minute = 0;
             }
+
             if (right.Second == -1)
             {
                 right.Second = 0;
             }
+
             if (left.Minute == -1)
             {
                 left.Minute = 0;
             }
+
             if (left.Second == -1)
             {
                 left.Second = 0;
@@ -191,17 +207,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 spanSecond += 60;
                 spanMinute -= 1;
             }
+
             if (spanMinute < 0)
             {
                 spanMinute += 60;
                 spanHour -= 1;
             }
+
             if (spanHour < 0)
             {
                 spanHour += 24;
             }
+
             var spanTimex = new StringBuilder();
             spanTimex.Append($"PT{spanHour}H");
+
             if (spanMinute != 0 && spanSecond == 0)
             {
                 spanTimex.Append($"{spanMinute}M");
@@ -210,6 +230,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 spanTimex.Append($"{spanMinute}M{spanSecond}S");
             }
+
             return spanTimex.ToString();
         }
     }

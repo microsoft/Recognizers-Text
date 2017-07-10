@@ -10,9 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly Regex AfterRegex = new Regex(@"(后|之后)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration)
-        {
-        }
+        public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
 
         public new ParseResult Parse(ExtractResult er)
         {
