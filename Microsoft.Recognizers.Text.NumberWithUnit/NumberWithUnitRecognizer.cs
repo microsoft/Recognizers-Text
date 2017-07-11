@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    public class NumberWithUnitRecognizer : BaseNumberRecognizer
+    public class NumberWithUnitRecognizer : Recognizer
     {
         static NumberWithUnitRecognizer()
         {
-            ModelInstances.Add(Culture.English, new Dictionary<Type, IModel>
+            Recognizer.RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -48,7 +47,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            ModelInstances.Add(Culture.Chinese, new Dictionary<Type, IModel>
+            Recognizer.RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
                     {
                         [typeof (CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -104,7 +103,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
                     });
 
-            ModelInstances.Add(Culture.Spanish, new Dictionary<Type, IModel>
+            Recognizer.RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -144,7 +143,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            ModelInstances.Add(Culture.Portuguese, new Dictionary<Type, IModel>
+            Recognizer.RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
