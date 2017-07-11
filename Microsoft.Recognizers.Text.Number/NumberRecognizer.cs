@@ -12,79 +12,70 @@ namespace Microsoft.Recognizers.Text.Number
     {
         static NumberRecognizer()
         {
-            ModelInstances = new Dictionary<string, Dictionary<Type, IModel>>(StringComparer.InvariantCultureIgnoreCase)
+            ModelInstances.Add(Culture.English, new Dictionary<Type, IModel>
             {
-                {
-                    Culture.English, new Dictionary<Type, IModel>
-                    {
-                        [typeof (NumberModel)] = new NumberModel(
+                [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
                             new English.NumberExtractor(NumberMode.PureNumber)),
-                        [typeof (OrdinalModel)] = new OrdinalModel(
+                [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()),
                             new English.OrdinalExtractor()),
-                        [typeof (PercentModel)] = new PercentModel(
+                [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
                             new English.PercentageExtractor())
-                    }
-                },
-                {
-                    Culture.Chinese, new Dictionary<Type, IModel>
-                    {
-                        [typeof (NumberModel)] = new NumberModel(
+            });
+
+            ModelInstances.Add(Culture.Chinese, new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
                             new Chinese.NumberExtractor()),
-                        [typeof (OrdinalModel)] = new OrdinalModel(
+                [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
                             new Chinese.OrdinalExtractor()),
-                        [typeof (PercentModel)] = new PercentModel(
+                [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
                             new Chinese.PercentageExtractor())
-                    }
-                },
-                {
-                    Culture.Spanish, new Dictionary<Type, IModel>
-                    {
-                        [typeof (NumberModel)] = new NumberModel(
+            });
+
+            ModelInstances.Add(Culture.Spanish, new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
                             new Spanish.NumberExtractor(NumberMode.PureNumber)),
-                        [typeof (OrdinalModel)] = new OrdinalModel(
+                [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
                             new Spanish.OrdinalExtractor()),
-                        [typeof (PercentModel)] = new PercentModel(
+                [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
                             new Spanish.PercentageExtractor())
-                    }
-                },
-                {
-                    Culture.Portuguese, new Dictionary<Type, IModel>
-                    {
-                        [typeof(NumberModel)] = new NumberModel(
+            });
+
+            ModelInstances.Add(Culture.Portuguese, new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
                             new Portuguese.NumberExtractor(NumberMode.PureNumber)),
-                        [typeof(OrdinalModel)] = new OrdinalModel(
+                [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
                             new Portuguese.OrdinalExtractor()),
-                        [typeof(PercentModel)] = new PercentModel(
+                [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
                             new Portuguese.PercentageExtractor())
-                    }
-                },
-                {
-                    Culture.French, new Dictionary<Type, IModel>
-                    {
-                        [typeof(NumberModel)] = new NumberModel(
+            });
+
+            ModelInstances.Add(Culture.French, new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
                             new French.NumberExtractor(NumberMode.PureNumber)),
-                        [typeof(OrdinalModel)] = new OrdinalModel(
+                [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
                             new French.OrdinalExtractor()),
-                        [typeof(PercentModel)] = new PercentModel(
+                [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                             new French.PercentageExtractor())
-                    }
-                }
-            };
+            });
         }
 
         public static IModel GetNumberModel(string culture, bool fallbackToDefaultCulture = true)

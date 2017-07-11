@@ -8,12 +8,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         static NumberWithUnitRecognizer()
         {
-            ModelInstances = new Dictionary<string, Dictionary<Type, IModel>>(StringComparer.InvariantCultureIgnoreCase)
+            ModelInstances.Add(Culture.English, new Dictionary<Type, IModel>
             {
-                {
-                    Culture.English, new Dictionary<Type, IModel>
-                    {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
+                [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -22,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
+                [typeof(TemperatureModel)] = new TemperatureModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -31,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (DimensionModel)] = new DimensionModel(
+                [typeof(DimensionModel)] = new DimensionModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -40,7 +37,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (AgeModel)] = new AgeModel(
+                [typeof(AgeModel)] = new AgeModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -49,10 +46,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                },
-                {
-                    Culture.Chinese, new Dictionary<Type, IModel>
+            });
+
+            ModelInstances.Add(Culture.Chinese, new Dictionary<Type, IModel>
                     {
                         [typeof (CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -106,12 +102,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                },
-                {
-                    Culture.Spanish, new Dictionary<Type, IModel>
-                    {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
+                    });
+
+            ModelInstances.Add(Culture.Spanish, new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -120,7 +115,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
+                [typeof(TemperatureModel)] = new TemperatureModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -129,7 +124,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (DimensionModel)] = new DimensionModel(
+                [typeof(DimensionModel)] = new DimensionModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -138,7 +133,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (AgeModel)] = new AgeModel(
+                [typeof(AgeModel)] = new AgeModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -147,12 +142,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                },
-                {
-                    Culture.Portuguese, new Dictionary<Type, IModel>
-                    {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
+            });
+
+            ModelInstances.Add(Culture.Portuguese, new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -161,7 +155,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
+                [typeof(TemperatureModel)] = new TemperatureModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -170,7 +164,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (DimensionModel)] = new DimensionModel(
+                [typeof(DimensionModel)] = new DimensionModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -179,7 +173,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (AgeModel)] = new AgeModel(
+                [typeof(AgeModel)] = new AgeModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -188,9 +182,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                }
-            };
+            });
         }
 
         public static IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)

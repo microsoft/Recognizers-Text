@@ -5,6 +5,11 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BaseNumberRecognizer : Recognizer<Dictionary<string, Dictionary<Type, IModel>>>
     {
+        static BaseNumberRecognizer()
+        {
+            ModelInstances = new Dictionary<string, Dictionary<Type, IModel>>(StringComparer.InvariantCultureIgnoreCase);
+        }
+
         public static IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
             if (!ModelInstances.ContainsKey(culture) || !ModelInstances[culture].ContainsKey(typeof(TModel)))
