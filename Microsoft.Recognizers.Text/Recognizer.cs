@@ -10,12 +10,7 @@ namespace Microsoft.Recognizers.Text
 
         private static ConcurrentDictionary<KeyValuePair<string, Type>, IModel> ModelInstances = new ConcurrentDictionary<KeyValuePair<string, Type>, IModel>();
 
-        public static ConcurrentDictionary<KeyValuePair<string, Type>, IModel> GetModels()
-        {
-            return ModelInstances;
-        }
-
-        public static IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        protected static IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
             var key = GenerateKey(culture, typeof(TModel));
             if (!ModelInstances.ContainsKey(key))
