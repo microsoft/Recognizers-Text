@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text
@@ -7,9 +8,9 @@ namespace Microsoft.Recognizers.Text
     {
         protected static readonly string DefaultCulture = Culture.English;
 
-        private static Dictionary<KeyValuePair<string, Type>, IModel> ModelInstances = new Dictionary<KeyValuePair<string, Type>, IModel>();
+        private static ConcurrentDictionary<KeyValuePair<string, Type>, IModel> ModelInstances = new ConcurrentDictionary<KeyValuePair<string, Type>, IModel>();
 
-        public static Dictionary<KeyValuePair<string, Type>, IModel> GetModels()
+        public static ConcurrentDictionary<KeyValuePair<string, Type>, IModel> GetModels()
         {
             return ModelInstances;
         }
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Text
                 throw new ArgumentException($"ERROR: {culture}-{type} has been registered.");
             }
 
-            ModelInstances.Add(key, model);
+            ModelInstances.GetOrAdd(key, model);
         }
 
         protected static void RegisterModel(string culture, Dictionary<Type, IModel> models)
