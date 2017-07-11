@@ -476,7 +476,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Piastra siria", "piastra siria|piastras sirias" },
             //Somalia
             { "Chelín somalí", "chelín somalí|chelines somalies|sos" },
-            { "Centavo somaplí", "centavo somaplí|centavos somalies" },
+            { "Centavo somalí", "centavo somalí|centavos somalies" },
             //Somalilandia
             { "Chelín somalilandés", "chelín somalilandés|chelines somalilandeses" },
             { "Centavo somalilandés", "centavo somalilandés|centavos somalilandeses" },
@@ -533,7 +533,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Lira turca", "lira turca|liras turcas|try" },
             { "Kuruş turca", "kuruş turca|kuruş turcas" },
             //Turkmenistán
-            { "Manat turkmeno", "manat turkmeno|anat turkmenos|tmt" },
+            { "Manat turkmeno", "manat turkmeno|manat turkmenos|tmt" },
             { "Tennesi turkmeno", "tennesi turkmeno|tenge turkmeno" },
             //Tuvalu
             { "Dólar tuvaluano", "dólar tuvaluano|dólares tuvaluanos" },
@@ -564,7 +564,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Rial yemení", "rial yemení|riales yemenies|yer" },
             { "Fils yemení", "fils yemení|fils yemenies" },
             //Yibuti
-            { "Franco yibutiano", "franco yibutiano| francos yibutianos|djf" },
+            { "Franco yibutiano", "franco yibutiano|francos yibutianos|djf" },
             //Yugoslavia
             {"Dinar yugoslavo", "dinar yugoslavo|dinares yugoslavos|yud"},
             //Zambia
