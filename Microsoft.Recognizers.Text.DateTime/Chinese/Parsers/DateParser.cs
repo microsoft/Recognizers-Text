@@ -60,27 +60,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 innerResult = ParseImplicitDate(text, reference);
             }
+
             if (!innerResult.Success)
             {
                 innerResult = ParseWeekdayOfMonth(text, reference);
             }
+
             if (!innerResult.Success)
             {
                 innerResult = ParserDurationWithBeforeAndAfter(text, reference);
             }
+
             if (innerResult.Success)
             {
                 innerResult.FutureResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
+
                 innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
+
                 innerResult.IsLunar = IsLunarCalendar(text);
+
                 return innerResult;
             }
+
             return null;
         }
 
@@ -115,7 +122,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return new DateTimeResolutionResult();
         }
 
-
         // match several other cases
         // including '今天', '后天', '十三日'
         protected DateTimeResolutionResult ParseImplicitDate(string text, DateObject referenceDate)
@@ -124,7 +130,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var ret = new DateTimeResolutionResult();
 
-            int[] ContainsDay = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            int[] containsDay = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            
             // handle "十二日" "明年这个月三日" "本月十一日"
             var match = DateExtractorChs.SpecialDate.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)
@@ -157,6 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             year--;
                         }
                     }
+
                     if (!string.IsNullOrEmpty(yearStr))
                     {
                         hasYear = true;
@@ -175,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 var futureDate = DateObject.MinValue;
                 var pastDate = DateObject.MinValue;
-                if (day > ContainsDay[month - 1])
+                if (day > containsDay[month - 1])
                 {
                     futureDate = new DateObject(year, month + 1, day);
                     pastDate = new DateObject(year, month - 1, day);
@@ -190,6 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             futureDate = futureDate.AddMonths(+1);
                         }
+
                         if (pastDate >= referenceDate)
                         {
                             pastDate = pastDate.AddMonths(-1);
@@ -201,16 +210,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             futureDate = futureDate.AddYears(+1);
                         }
+
                         if (pastDate >= referenceDate)
                         {
                             pastDate = pastDate.AddYears(-1);
                         }
                     }
                 }
+
                 ret.FutureValue = futureDate;
                 ret.PastValue = pastDate;
                 ret.Success = true;
-
 
                 return ret;
             }
@@ -253,14 +263,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 ret = MatchThisWeekday(text, referenceDate);
             }
+
             if (!ret.Success)
             {
                 ret = MatchLastWeekday(text, referenceDate);
             }
+
             if (!ret.Success)
             {
                 ret = MatchWeekdayAlone(text, referenceDate);
             }
+
             return ret;
         }
 
@@ -326,6 +339,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     weekday = 7;
                 }
+
                 if (weekday < (int)reference.DayOfWeek)
                 {
                     value = reference.Next((DayOfWeek)weekday);
@@ -338,6 +352,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     futureDate = futureDate.AddDays(7);
                 }
+
                 if (pastDate >= reference)
                 {
                     pastDate = pastDate.AddDays(-7);
@@ -347,6 +362,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 result.PastValue = pastDate;
                 result.Success = true;
             }
+
             return result;
         }
 
@@ -376,6 +392,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 cardinal = this.config.CardinalMap[cardinalStr];
             }
+
             var weekday = this.config.DayOfWeek[weekdayStr];
             int month;
             if (string.IsNullOrEmpty(monthStr))
@@ -416,6 +433,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     futureDate = futureDate.AddDays(-7);
                 }
             }
+
             if (noYear && pastDate >= referenceDate)
             {
                 pastDate = ComputeDate(cardinal, weekday, month, year - 1);
@@ -442,10 +460,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 weekday = 7;
             }
+
             if (weekday < (int)firstDay.DayOfWeek)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
+
             return firstWeekday.AddDays(7 * (cadinal - 1));
         }
 
@@ -453,21 +473,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var duration_res = durationExtractor.Extract(text);
+            var durationRes = durationExtractor.Extract(text);
             var numStr = string.Empty;
             var unitStr = string.Empty;
-            if (duration_res.Count > 0)
+            if (durationRes.Count > 0)
             {
                 var match = DateExtractorChs.UnitRegex.Match(text);
                 if (match.Success)
                 {
-                    var AfterStr =
-                        text.Substring((int)duration_res[0].Start + (int)duration_res[0].Length, 1)
+                    var afterStr =
+                        text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length, 1)
                             .Trim()
                             .ToLowerInvariant();
                     var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
                     var numberStr =
-                        text.Substring((int)duration_res[0].Start, match.Index - (int)duration_res[0].Start)
+                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
                             .Trim()
                             .ToLowerInvariant();
                     var number = ConvertChineseToNum(numberStr);
@@ -475,61 +495,62 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         unitStr = this.config.UnitMap[srcUnit];
                         numStr = number.ToString();
-                        if (AfterStr.Equals("前"))
+                        if (afterStr.Equals("前"))
                         {
-                            DateObject Date;
+                            DateObject date;
                             switch (unitStr)
                             {
                                 case "D":
-                                    Date = referenceDate.AddDays(-double.Parse(numStr));
+                                    date = referenceDate.AddDays(-double.Parse(numStr));
                                     break;
                                 case "W":
-                                    Date = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(-7 * double.Parse(numStr));
                                     break;
                                 case "MON":
-                                    Date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 case "Y":
-                                    Date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 default:
                                     return ret;
                             }
-                            ret.Timex = $"{FormatUtil.LuisDate(Date)}";
-                            ret.FutureValue = ret.PastValue = Date;
+                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;
                         }
-                        if (AfterStr.Equals("后"))
+
+                        if (afterStr.Equals("后"))
                         {
-                            DateObject Date;
+                            DateObject date;
                             switch (unitStr)
                             {
                                 case "D":
-                                    Date = referenceDate.AddDays(double.Parse(numStr));
+                                    date = referenceDate.AddDays(double.Parse(numStr));
                                     break;
                                 case "W":
-                                    Date = referenceDate.AddDays(7 * double.Parse(numStr));
+                                    date = referenceDate.AddDays(7 * double.Parse(numStr));
                                     break;
                                 case "MON":
-                                    Date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 case "Y":
-                                    Date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
+                                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)));
                                     break;
                                 default:
                                     return ret;
                             }
-                            ret.Timex =
-                                $"{FormatUtil.LuisDate(Date)}";
-                            ret.FutureValue =
-                                ret.PastValue = Date;
+
+                            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+                            ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;
                             return ret;
                         }
                     }
                 }
             }
+
             return ret;
         }
 
@@ -583,6 +604,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 futureDate = futureDate.AddYears(+1);
             }
+
             if (noYear && pastDate >= referenceDate)
             {
                 pastDate = pastDate.AddYears(-1);
@@ -624,6 +646,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     num = Convert.ToInt32((double)(numberParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             if (num < 10)
             {
                 num = 0;

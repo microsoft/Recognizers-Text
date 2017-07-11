@@ -5,30 +5,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedExtractorChs : IExtractor
     {
-        private static readonly DateExtractorChs _dateExtractor = new DateExtractorChs();
-        private static readonly TimeExtractorChs _timeExtractor = new TimeExtractorChs();
-        private static readonly DateTimeExtractorChs _dateTimeExtractor = new DateTimeExtractorChs();
-        private static readonly DatePeriodExtractorChs _datePeriodExtractor = new DatePeriodExtractorChs();
-        private static readonly TimePeriodExtractorChs _timePeriodExtractor = new TimePeriodExtractorChs();
-        private static readonly DateTimePeriodExtractorChs _dateTimePeriodExtractor = new DateTimePeriodExtractorChs();
-        private static readonly DurationExtractorChs _durationExtractor = new DurationExtractorChs();
-        private static readonly SetExtractorChs _setExtractor = new SetExtractorChs();
-        private static readonly BaseHolidayExtractor _holidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
-
+        private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
+        private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
+        private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly DatePeriodExtractorChs DatePeriodExtractor = new DatePeriodExtractorChs();
+        private static readonly TimePeriodExtractorChs TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly DateTimePeriodExtractorChs DateTimePeriodExtractor = new DateTimePeriodExtractorChs();
+        private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
+        private static readonly SetExtractorChs SetExtractor = new SetExtractorChs();
+        private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
 
         public List<ExtractResult> Extract(string text)
         {
-            var ret = new List<ExtractResult>();
+            var ret = DateExtractor.Extract(text);
+
             // the order is important, since there is a problem in merging
-            ret = _dateExtractor.Extract(text);
-            AddTo(ret, _timeExtractor.Extract(text));
-            AddTo(ret, _durationExtractor.Extract(text));
-            AddTo(ret, _datePeriodExtractor.Extract(text));
-            AddTo(ret, _dateTimeExtractor.Extract(text));
-            AddTo(ret, _timePeriodExtractor.Extract(text));
-            AddTo(ret, _dateTimePeriodExtractor.Extract(text));
-            AddTo(ret, _setExtractor.Extract(text));
-            AddTo(ret, _holidayExtractor.Extract(text));
+            AddTo(ret, TimeExtractor.Extract(text));
+            AddTo(ret, DurationExtractor.Extract(text));
+            AddTo(ret, DatePeriodExtractor.Extract(text));
+            AddTo(ret, DateTimeExtractor.Extract(text));
+            AddTo(ret, TimePeriodExtractor.Extract(text));
+            AddTo(ret, DateTimePeriodExtractor.Extract(text));
+            AddTo(ret, SetExtractor.Extract(text));
+            AddTo(ret, HolidayExtractor.Extract(text));
 
             CheckBlackList(ret, text);
             return ret;
@@ -41,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var regex = new Regex(@"^\d{1,2}号", RegexOptions.IgnoreCase);
             foreach (var d in dst)
             {
-                var tmp = (int) d.Start + (int) d.Length;
+                var tmp = (int)d.Start + (int)d.Length;
                 if (tmp != text.Length)
                 {
                     var tmpchar = text.Substring(tmp, 1);
@@ -50,6 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         continue;
                     }
                 }
+
                 if (regex.Match(d.Text).Success)
                 {
                     continue;
@@ -70,6 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     duplicate.Add(i);
                 }
             }
+
             foreach (var dup in duplicate)
             {
                 dst.RemoveAt(dup);
@@ -100,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         break;
                     }
                 }
+
                 if (!isFound)
                 {
                     dst.Add(result);

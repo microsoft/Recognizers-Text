@@ -8,10 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
         public static readonly Regex UnitRegex =
-            new Regex(
-                @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
+            new Regex(@"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)",
+                      RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(
             $@"(?<each>(每个|每一|每)\s*{UnitRegex})", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -25,10 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex EachDayRegex = new Regex(@"(每|每一)(天|日)\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly DurationExtractorChs _durationExtractor = new DurationExtractorChs();
-        private static readonly TimeExtractorChs _timeExtractor = new TimeExtractorChs();
-        private static readonly DateExtractorChs _dateExtractor = new DateExtractorChs();
-        private static readonly DateTimeExtractorChs _dateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
+        private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
+        private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
+        private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
 
         public List<ExtractResult> Extract(string text)
         {
@@ -46,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new List<Token>();
 
-            var ers = _durationExtractor.Extract(text);
+            var ers = DurationExtractor.Extract(text);
             foreach (var er in ers)
             {
                 // "each last summer" doesn't make sense
@@ -77,14 +75,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
 
-
             return ret;
         }
 
         public List<Token> TimeEveryday(string text)
         {
             var ret = new List<Token>();
-            var ers = _timeExtractor.Extract(text);
+            var ers = TimeExtractor.Extract(text);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -100,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public List<Token> MatchEachDate(string text)
         {
             var ret = new List<Token>();
-            var ers = _dateExtractor.Extract(text);
+            var ers = DateExtractor.Extract(text);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -116,7 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public List<Token> MatchEachDateTime(string text)
         {
             var ret = new List<Token>();
-            var ers = _dateTimeExtractor.Extract(text);
+            var ers = DateTimeExtractor.Extract(text);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);

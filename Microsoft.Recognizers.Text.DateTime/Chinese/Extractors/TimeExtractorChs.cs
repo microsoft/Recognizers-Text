@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class TimeExtractorChs : BaseDateTimeExtractor<TimeType>
     {
         internal sealed override ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
 
         public static readonly string HourNumRegex =
@@ -67,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public TimeExtractorChs()
         {
-            var _regexes = new Dictionary<Regex, TimeType>
+            var regexes = new Dictionary<Regex, TimeType>
             {
                 {
                     new Regex(
@@ -86,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     TimeType.LessTime
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 

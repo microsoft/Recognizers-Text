@@ -21,7 +21,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             //Reference Source: https://es.wikipedia.org/wiki/Anexo:Monedas_circulantes
-            //GeneralsUnits
+
+            // General Units
             { "Dólar", "dólar|dólares" },
             { "Peso", "peso|pesos" },
             { "Rublo", "rublo|rublos"},
@@ -584,7 +585,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Dólar bermudeño", "bd$|bmd"},
             {"Dólar de Brunéi", "brunéi $|bnd"},
             {"Dólar de Singapur", "s$|sgd"},
-            {"Dólar canadienser", "c$|can$|cad"},
+            {"Dólar canadiense", "c$|can$|cad"},
             {"Dólar de las Islas Caimán", "ci$|kyd"},
             {"Dólar neozelandés", "nz$|nzd"},
             {"Dólar fiyiano", "fj$|fjd"},

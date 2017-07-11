@@ -11,15 +11,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        private static readonly IExtractor _singleDateExtractor = new DateExtractorChs();
-        private static readonly IExtractor _singleTimeExtractor = new TimeExtractorChs();
-        private static readonly IExtractor _timeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly IExtractor _timePeriodExtractor = new TimePeriodExtractorChs();
-        private static readonly IExtractor _cardinalExtractor = new CardinalExtractor();
+        private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
+        private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();
+        private static readonly IExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
+        private static readonly IExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
-        private static readonly IParser _cardinalParser =
-            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
-                new ChineseNumberParserConfiguration());
+        private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
+                                                                                               new ChineseNumberParserConfiguration());
 
         public static readonly Regex MORegex = new Regex(@"(凌晨|清晨|早上|早|上午)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -79,6 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                         }
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {
@@ -90,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                             FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) innerResult.PastValue).Item2)
                         }
                     };
+
                     value = innerResult;
                 }
             }
@@ -111,8 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult MergeDateAndTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var er1 = _singleDateExtractor.Extract(text);
-            var er2 = _timePeriodExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text);
+            var er2 = TimePeriodExtractor.Extract(text);
             if (er1.Count != 1 || er2.Count != 1)
             {
                 return ret;
@@ -132,6 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         beginTime.Second),
                     new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, endTime.Hour, endTime.Minute,
                         endTime.Second));
+
             ret.PastValue =
                 new Tuple<DateObject, DateObject>(
                     new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute,
@@ -156,8 +158,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
             bool bothHasDate = false, beginHasDate = false, endHasDate = false;
-            var er1 = _singleTimeExtractor.Extract(text);
-            var er2 = _timeWithDateExtractor.Extract(text);
+            var er1 = SingleTimeExtractor.Extract(text);
+            var er2 = TimeWithDateExtractor.Extract(text);
             if (er2.Count == 2)
             {
                 pr1 = this.config.DateTimeParser.Parse(er2[0], referenceTime);
@@ -208,14 +210,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return ret;
             }
+
             DateObject futureBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue,
                 futureEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+
             DateObject pastBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue,
                 pastEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).PastValue;
+
             if (futureBegin > futureEnd)
             {
                 futureBegin = pastBegin;
             }
+
             if (pastEnd < pastBegin)
             {
                 pastEnd = futureEnd;
@@ -255,7 +261,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.Success = true;
             return ret;
         }
-
 
         // parse "this night"
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
@@ -382,24 +387,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
-                var ers = _singleDateExtractor.Extract(beforeStr);
+                var ers = SingleDateExtractor.Extract(beforeStr);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {
                     return ret;
                 }
+
                 var pr = this.config.DateParser.Parse(ers[0], referenceTime);
                 var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
                 var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
+
                 ret.Timex = pr.TimexStr + timeStr;
+
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
                         new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
                         new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
+
                 ret.PastValue =
                     new Tuple<DateObject, DateObject>(
                         new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
                         new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
+
                 ret.Success = true;
+
                 return ret;
             }
 
@@ -414,15 +425,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var unitStr = string.Empty;
 
             // if there are spaces between nubmer and unit
-            var ers = _cardinalExtractor.Extract(text);
+            var ers = CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
-                var pr = _cardinalParser.Parse(ers[0]);
+                var pr = CardinalParser.Parse(ers[0]);
                 var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
                 if (srcUnit.StartsWith("个"))
                 {
                     srcUnit = srcUnit.Substring(1);
                 }
+
                 var beforeStr = text.Substring(0, ers[0].Start ?? 0).Trim().ToLowerInvariant();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -456,6 +468,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         ret.Success = true;
                         return ret;
                     }
+
                     prefixMatch = DateTimePeriodExtractorChs.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
@@ -496,6 +509,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     unitStr = this.config.UnitMap[srcUnit];
+
                     var prefixMatch = DateTimePeriodExtractorChs.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
@@ -524,6 +538,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         ret.Success = true;
                         return ret;
                     }
+
                     prefixMatch = DateTimePeriodExtractorChs.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {

@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public abstract class BaseDateTimeExtractor<T> : IExtractor
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
+
         protected virtual string ExtractType { get; } = "";
 
         public virtual List<ExtractResult> Extract(string source)
@@ -16,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return new List<ExtractResult>();
             }
+
             var result = new List<ExtractResult>();
             var matchSource = new Dictionary<Match, T>();
             var matched = new bool[source.Length];
@@ -23,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 matched[i] = false;
             }
+
             foreach (var collection in Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value))
             {
                 foreach (Match m in collection.Key)
@@ -35,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     matchSource.Add(m, collection.Value);
                 }
             }
+
             var last = -1;
             for (var i = 0; i < source.Length; i++)
             {
@@ -45,6 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         var start = last + 1;
                         var length = i - last;
                         var substr = source.Substring(start, length);
+
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
                             var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
@@ -54,8 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 Length = length,
                                 Text = substr,
                                 Type = ExtractType,
-                                Data = matchSource.ContainsKey(srcMatch)
-                                    ? new DateTimeExtra<T>
+                                Data = matchSource.ContainsKey(srcMatch) ?
+                                    new DateTimeExtra<T>
                                     {
                                         NamedEntity = srcMatch.Groups,
                                         Type = matchSource[srcMatch]
@@ -78,6 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class DateTimeExtra<T>
     {
         public GroupCollection NamedEntity { get; set; }
+
         public T Type { get; set; }
     }
 }

@@ -4,9 +4,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class TimeParser : BaseTimeParser
     {
-        public TimeParser(ITimeParserConfiguration configuration) : 
-            base(configuration)
-        { }
+        public TimeParser(ITimeParserConfiguration configuration) : base(configuration) { }
 
         protected override DateTimeResolutionResult InternalParse(string text, DateObject referenceTime)
         {
@@ -23,6 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var ret = new DateTimeResolutionResult();
             var trimedText = text.ToLowerInvariant().Trim();
+
             var match = EnglishTimeExtractorConfiguration.IshRegex.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)
             {
@@ -32,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 {
                     hour = int.Parse(hourStr);
                 }
+
                 ret.Timex = "T" + hour.ToString("D2");
                 ret.FutureValue =
                     ret.PastValue =
@@ -39,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
     }

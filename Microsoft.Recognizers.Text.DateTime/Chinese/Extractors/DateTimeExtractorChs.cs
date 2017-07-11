@@ -20,8 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex TimeOfTodayRegex = new Regex(@"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly DateExtractorChs _datePointExtractor = new DateExtractorChs();
-        private static readonly TimeExtractorChs _timePointExtractor = new TimeExtractorChs();
+        private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
+        private static readonly TimeExtractorChs TimePointExtractor = new TimeExtractorChs();
 
         public List<ExtractResult> Extract(string text)
         {
@@ -53,13 +53,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public List<Token> MergeDateAndTime(string text)
         {
             var ret = new List<Token>();
-            var ers = _datePointExtractor.Extract(text);
+            var ers = DatePointExtractor.Extract(text);
             if (ers.Count == 0)
             {
                 return ret;
             }
 
-            ers.AddRange(_timePointExtractor.Extract(text));
+            ers.AddRange(TimePointExtractor.Extract(text));
             if (ers.Count < 2)
             {
                 return ret;
@@ -74,6 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     return -1;
                 }
+
                 if (start1 == start2)
                 {
                     return 0;
@@ -89,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     j++;
                 }
+
                 if (j >= ers.Count)
                 {
                     break;
@@ -102,14 +104,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         break;
                     }
+
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") ||
-                        PrepositionRegex.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
                         ret.Add(new Token(begin, end));
                     }
+
                     i = j + 1;
                     continue;
                 }
@@ -123,7 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public List<Token> TimeOfToday(string text)
         {
             var ret = new List<Token>();
-            var ers = _timePointExtractor.Extract(text);
+            var ers = TimePointExtractor.Extract(text);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -135,11 +138,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     beforeStr = text.Substring(0, (er.Start ?? 0) + innerMatch.Length);
                 }
 
-
                 if (string.IsNullOrEmpty(beforeStr))
                 {
                     continue;
                 }
+
                 var match = TimeOfTodayRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
