@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class DurationExtractorChs : BaseDateTimeExtractor<DurationType>
     {
         internal override ImmutableDictionary<Regex, DurationType> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_DURATION; // "Duration";
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(@"((19\d{2}|20\d{2})|两千)年",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(@"((19\d{2}|20\d{2})|两千)年", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // extract by number with unit
         public override List<ExtractResult> Extract(string source)
@@ -57,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }.ToImmutableDictionary();
 
             public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
+
             public static readonly ImmutableList<string> AmbiguousUnits = new List<string>()
             {
                 "分钟",

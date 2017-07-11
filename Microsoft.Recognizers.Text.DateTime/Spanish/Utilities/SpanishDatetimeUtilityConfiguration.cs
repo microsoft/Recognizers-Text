@@ -26,7 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         };
 
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
+
         List<string> IDateTimeUtilityConfiguration.LaterStringList => LaterStringList;
+
         List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
     }
 }

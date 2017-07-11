@@ -38,8 +38,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public string After => @"(后|之后)$";
 
         public string LastWeekDayToken => "最后一个";
+
         public string NextMonthToken => "下一个";
+
         public string LastMonthToken => "上一个";
+
         public string DatePrefix => " ";
 
         #region internalParsers
@@ -480,6 +483,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {"大年", 13}
             }.ToImmutableDictionary();
         }
+
         private static ImmutableDictionary<string, int> InitNumbers()
         {
             return new Dictionary<string, int>
