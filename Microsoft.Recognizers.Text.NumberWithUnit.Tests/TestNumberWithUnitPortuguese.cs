@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "250000 Dólar");
 
             BasicTest(model,
-            "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial del petróleo al 1 de diciembre en una cuenta que no está bajo la supervisión de las naciones unidas.",
+            "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial do petróleo a 1 de dezembro en una cuenta que no está bajo la supervisión de las naciones unidas.",
             "50 Centavo");
 
             BasicTest(model,
@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "10050000000 Dólar de Hong Kong");
 
             BasicTest(model,
-            "Las ventas del cuarto trimestre fiscal crecieron cerca de 18% a $ 1,17 bilhões en comparacion al año anterior.",
+            "Las ventas del cuarto trimestre fiscal crecieron cerca de 18% a $ 1,17 bilhões en comparacion com o ano anterior.",
             "1170000000 Dólar");
 
             BasicTest(model,
@@ -296,7 +296,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "1 Yen");
 
             BasicTest(model,
-            "250 milhões de florins holandeses de 7 3/4% de bonos debidos nov. 15, 1999, a un precio de 101 1/4 para dar 7. 57% al precio de emisión y 7. 86% menos los honorarios completos, vía el banco del amro.",
+            "250 milhões de florins holandeses de 7 3/4% de bonos debidos nov. 15, 1999, a un precio de 101 1/4 para dar 7. 57% do preço de emisión y 7. 86% menos los honorarios completos, vía el banco del amro.",
             "250000000 Florim holandês");
 
             BasicTest(model,
@@ -404,7 +404,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "186000000 Dólar");
 
             BasicTest(model,
-            "Apple y Creative llegaron a un acuerdo, con Apple pagando $ 100 milhões a Creative y Creative para unirse al programa de accesorios \"hecho para ipod\".",
+            "Apple y Creative llegaron a un acuerdo, con Apple pagando $ 100 milhões a Creative y Creative para unir-se ao programa de acesórios \"feito para ipod\".",
             "100000000 Dólar");
 
             BasicTest(model,
@@ -433,7 +433,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
         }
 
-        [TestMethod][Ignore] //@TODO Temporarily disabled as unit tests need fixing
+        [TestMethod]
         public void TestDimension()
         {
             var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Portuguese);
@@ -459,16 +459,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "10,5 Milha");
 
             BasicTest(model,
-            "El viaje de seis milhas de mi hotel al aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
-            "6 Milha");
-
-            BasicTest(model,
             "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dois pés de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
             "2 Pé");
-
-            BasicTest(model,
-            "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 oncas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron al comer hongos contaminados.",
-            "68 Onça");
 
             BasicTest(model,
             "El sr. Hulings se regodea que vendió todas sus acciones una semana antes de que el mercado se desplomara 190 puntos en oct. 13, y está utilizando el dinero para ayudar a comprar una granja de caballos de 45 acres.",
@@ -479,11 +471,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "10 Pé");
 
             BasicTest(model,
-            "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 milhões de galoes de combustible para aviones al año.",
+            "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 milhões de galoes de combustible para aviones ao ano.",
             "2400000000 Galão");
 
             BasicTest(model,
-            "Un refrigerador de agua de 10 galoes había caído al suelo, empapando la alfombra roja.",
+            "Un refrigerador de agua de 10 galoes había caído no solo, empapando la alfombra roja.",
             "10 Galão");
 
             BasicTest(model,
@@ -499,40 +491,40 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "25 Libra");
 
             BasicTest(model,
-            "Un tornado rugió através de un area de umas dez milhas de área, matando al menos a catorce personas y convirtiendo decenas de hogares en escombros",
+            "Un tornado rugió através de un area de umas dez milhas de área, matando ao menos a catorce personas y convirtiendo decenas de hogares en escombros",
             "10 Milha");
 
             BasicTest(model,
             "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 bilhões de pés cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
-            "900000000000 Pé cúbico");
+            "900000000 Pé cúbico");
 
             BasicTest(model,
-            "Ejércitos Tigrean ahora están 200 millas al norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
-            "200 Milla");
+            "Ejércitos Tigrean ahora están 200 milhas ao norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
+            "200 Milha");
 
             BasicTest(model,
-            "Dijo que una de las pc tomó un viaje de tres pies deslizándose por el suelo.",
-            "3 Pie");
+            "Dijo que una de las pc tomó un viaje de tres pes deslizándose por el suelo.",
+            "3 Pé");
 
             BasicTest(model,
-            "El núcleo de sus propiedades es de 190.000 metros cuadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
-            "190000 Metro cuadrado");
+            "El núcleo de sus propiedades es de 190.000 metros quadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
+            "190000 Metro quadrado");
 
             BasicTest(model,
             "El satélite, construido por Hughes para la organización internacional de satélites de telecomunicaciones, forma parte de un contrato de 700 millones de dólares otorgado a Hughes en 1982 para desarrollar cinco satélites de tres toneladas.",
             "3 Tonelada");
 
             BasicTest(model,
-            "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galones.",
-            "130 Galón");
+            "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galoes.",
+            "130 Galão");
 
             BasicTest(model,
             "La recopilación de datos del departamento de comercio del grupo de comercio mostró que las importaciones de Agosto, el segundo mayor mensual del año, subieron un 5% respecto de las 1.458.000 toneladas de julio, pero por debajo del máximo del año pasado en junio de 1988.",
             "1458000 Tonelada");
 
             BasicTest(model,
-            "El 1 de noviembre, Singh tiró a unos seis pies de la taza",
-            "6 Pie");
+            "El 1 de noviembre, Singh tiró a unos seis pés de la taza",
+            "6 Pé");
 
             BasicTest(model,
             "Una t.métrica es igual a 2.204,62 libras.",
@@ -547,51 +539,51 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "16 bit");
 
             BasicTest(model,
-            "El ''jiotto caspita'' puede funcionar a más de 188 millas por hora, dijo un portavoz de la compañía.",
-            "188 Milla por hora");
+            "El ''jiotto caspita'' puede funcionar a más de 188 milhas por hora, dijo un portavoz de la compañía.",
+            "188 Milha por hora");
 
             BasicTest(model,
             "La marina de guerra ha instalado una zona de aterrizaje para helicópteros de apenas 100 metros en una sala de operaciones móvil, apenas en las cercanías de Bagdad.",
             "100 Metro");
 
             BasicTest(model,
-            "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 millas de la autopista Harbor, al sur de Los Ángeles, cerca del coliseo conmemorativo.",
-            "2,5 Milla");
+            "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 milhas de la autopista Harbor, ao sul de Los Ángeles, cerca del coliseo conmemorativo.",
+            "2,5 Milha");
 
             BasicTest(model,
-            "En mi viaje de cuatro millas a la sede de la granja cada mañana, conduje por otras cuatro casas vacías.",
-            "4 Milla");
+            "Em minha viaje de quatro milhas a la sede de la granja cada mañana, conduje por otras quatro casas vacías.",
+            "4 Milha");
 
             BasicTest(model,
-            "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 kilómetros al noroeste de Bucarest.",
-            "325 Kilómetro");
+            "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 quilometro ao noroeste de Bucarest.",
+            "325 Quilômetro");
 
             BasicTest(model,
-            "Rotich es un pequeño (5 pies",
-            "5 Pie");
+            "Rotich es un pequeño (5 pés",
+            "5 Pé");
 
             BasicTest(model,
-            "4 pulgadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
-            "4 Pulgada");
+            "4 polegadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
+            "4 Polegada");
 
             BasicTest(model,
-            "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milla.",
-            "0,25 Milla");
+            "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milha.",
+            "0,25 Milha");
 
             BasicTest(model,
-            "Castlecrag montaña está situado al sur del lago Moat, 1,6 km al oeste del monte Frink a lo largo de la misma línea de cresta.",
-            "1,6 Kilómetro");
+            "Castlecrag montaña está situado ao sul do lago Moat, 1,6 km ao oeste del monte Frink a lo largo de la misma línea de cresta.",
+            "1,6 Quilômetro");
 
             BasicTest(model,
             "Las colinas de Javadi se encuentran a unos 17 km de Ambur.",
-            "17 Kilómetro");
+            "17 Quilômetro");
 
             BasicTest(model,
-            "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pies en el cercano aeropuerto Curtiss-Wright en Glenview.",
-            "776 Pie");
+            "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pes en el cercano aeropuerto Curtiss-Wright en Glenview.",
+            "776 Pé");
 
             BasicTest(model,
-            "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros al este de la carretera Bennett.",
+            "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros ao leste de la carretera Bennett.",
             "500 Metro");
 
             BasicTest(model,
@@ -599,11 +591,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "-300 Milímetro");
 
             BasicTest(model,
-            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros cuadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
-            "660 Metro cuadrado");
+            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros quadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
+            "660 Metro quadrado");
 
             BasicTest(model,
-            "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre al año.",
+            "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre ao ano.",
             "34500 Tonelada métrica");
 
             BasicTest(model,
@@ -612,23 +604,32 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
             "Las panteras floridas viven en el hogar que se extiende por 190 km2.",
-            "190 Kilómetro cuadrado");
+            "190 Quilômetro quadrado");
 
             BasicTest(model,
-            "Un asteroide de una milla de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
-            "1 Milla");
+            "Un asteroide de uma milha de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
+            "1 Milha");
 
             BasicTest(model,
             "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
             "1171 Centímetro cúbico");
 
             BasicTest(model,
-            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barriles diarios a [] barriles en los primeros ocho meses de este año.",
+            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barris diarios a [] barris nos primeiros oito meses deste año.",
             new string[] { "500000 Barril", "Barril" });
 
             BasicTest(model,
             "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
             new string[] { "7,62 Milímetro", "Barril" });
+
+            BasicTest(model,
+            "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 oncas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron a comer hongos contaminados.",
+            "68 Onça");
+
+            BasicTest(model,
+            "El viaje de seis milhas de meu hotel ao aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
+            "6 Milha");
+
             /*
             BasicTest(model,
             "Los precios al por mayor de la electricidad de California, que habían sido limitados a 250 dólares por megavatio hora en un mercado regulado, han alcanzado su pico bajo la desregulación a 1400 dólares por megavatio hora.",
