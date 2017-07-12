@@ -3,11 +3,13 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    public class NumberWithUnitRecognizer : Recognizer
+    public class NumberWithUnitRecognizer
     {
+        private static readonly ModelContainer ModelContainer = new ModelContainer();
+
         static NumberWithUnitRecognizer()
         {
-            Recognizer.RegisterModel(Culture.English, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -47,7 +49,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            Recognizer.RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
                     {
                         [typeof (CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -103,7 +105,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
                     });
 
-            Recognizer.RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -143,7 +145,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            Recognizer.RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -186,22 +188,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public static IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
         }
 
         public static IModel GetTemperatureModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
         }
 
         public static IModel GetDimensionModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
         public static IModel GetAgeModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<AgeModel>(culture, fallbackToDefaultCulture);
         }
     }
 }

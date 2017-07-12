@@ -4,20 +4,22 @@ using Microsoft.Recognizers.Text.DateTime.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class DateTimeRecognizer : Recognizer
+    public class DateTimeRecognizer
     {
+        private static readonly ModelContainer ModelContainer = new ModelContainer();
+
         static DateTimeRecognizer()
         {
             var type = typeof(DateTimeModel);
-            Recognizer.RegisterModel(Culture.English, type, new DateTimeModel(
+            ModelContainer.RegisterModel(Culture.English, type, new DateTimeModel(
                     new BaseMergedParser(new EnglishMergedParserConfiguration()),
                     new BaseMergedExtractor(new EnglishMergedExtractorConfiguration())
                     ));
-            Recognizer.RegisterModel(Culture.Chinese, type, new DateTimeModel(
+            ModelContainer.RegisterModel(Culture.Chinese, type, new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
                     new MergedExtractorChs()
                     ));
-            Recognizer.RegisterModel(Culture.Spanish, type, new DateTimeModel(
+            ModelContainer.RegisterModel(Culture.Spanish, type, new DateTimeModel(
                     new BaseMergedParser(new SpanishMergedParserConfiguration()),
                     new BaseMergedExtractor(new SpanishMergedExtractorConfiguration())
                     ));
@@ -25,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return (DateTimeModel)GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
+            return (DateTimeModel)ModelContainer.GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
     }
 }

@@ -8,11 +8,13 @@ using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number
 {
-    public class NumberRecognizer : Recognizer
+    public class NumberRecognizer
     {
+        private static readonly ModelContainer ModelContainer = new ModelContainer();
+
         static NumberRecognizer()
         {
-            Recognizer.RegisterModel(Culture.English, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
@@ -25,7 +27,7 @@ namespace Microsoft.Recognizers.Text.Number
                             new English.PercentageExtractor())
             });
 
-            Recognizer.RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
@@ -38,7 +40,7 @@ namespace Microsoft.Recognizers.Text.Number
                             new Chinese.PercentageExtractor())
             });
 
-            Recognizer.RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
@@ -51,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number
                             new Spanish.PercentageExtractor())
             });
 
-            Recognizer.RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
@@ -64,7 +66,7 @@ namespace Microsoft.Recognizers.Text.Number
                             new Portuguese.PercentageExtractor())
             });
 
-            Recognizer.RegisterModel(Culture.French, new Dictionary<Type, IModel>
+            ModelContainer.RegisterModel(Culture.French, new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
@@ -80,17 +82,17 @@ namespace Microsoft.Recognizers.Text.Number
 
         public static IModel GetNumberModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<NumberModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<NumberModel>(culture, fallbackToDefaultCulture);
         }
 
         public static IModel GetOrdinalModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<OrdinalModel>(culture, fallbackToDefaultCulture);
         }
 
         public static IModel GetPercentageModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<PercentModel>(culture, fallbackToDefaultCulture);
+            return ModelContainer.GetModel<PercentModel>(culture, fallbackToDefaultCulture);
         }
     }
 }
