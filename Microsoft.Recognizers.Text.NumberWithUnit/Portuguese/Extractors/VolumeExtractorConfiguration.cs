@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             {"Hectolitro", "hectolitro|hectolitros|hl"},
             {"Litro", "litro|litros|lts|l"},
             {"Mililitro", "mililitro|mililitros|ml"},
-            {"Galão", "galão|galões"},
+            {"Galão", "galão|galões|galao|galoes"},
             {"Pint", "pinta|pintas|pinto|pintos|quartilho|quartilhos|pint|pints"},
             {"Barril", "barril|barris|bbl"},
             {"Onça líquida", "onça líquida|onca liquida|onças líquidas|oncas liquidas"},
