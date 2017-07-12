@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text
             IModel model;
             if (!TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture))
             {
-                throw new Exception($"ERROR: No IModel instance for {typeof(TModel)}");
+                throw new Exception($"ERROR: No IModel instance for {culture}-{typeof(TModel)}");
             }
 
             return model;
