@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseNumberRecognizer.cs" />
     <Compile Include="Chinese\Extractors\CardinalExtractor.cs" />
     <Compile Include="Chinese\Extractors\DoubleExtractor.cs" />
     <Compile Include="Chinese\Extractors\FractionExtractor.cs" />
