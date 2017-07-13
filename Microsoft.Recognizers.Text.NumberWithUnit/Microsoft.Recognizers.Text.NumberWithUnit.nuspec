@@ -17,8 +17,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\release\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\net452"/>
-    <file src="bin\release\Microsoft.Recognizers.Text.NumberWithUnit.pdb" target="lib\net452" />
+    <file src="..\build\package\Microsoft.Recognizers.Text.NumberWithUnit.dll" target="lib\net452"/>
+    <file src="..\build\package\Microsoft.Recognizers.Text.NumberWithUnit.pdb" target="lib\net452" />
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
   </files>
 </package>
