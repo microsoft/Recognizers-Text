@@ -186,9 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="CreatePackage.cmd" />
-    <None Include="Microsoft.Recognizers.Text.DateTime.nuspec">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Microsoft.Recognizers.Text.DateTime.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
