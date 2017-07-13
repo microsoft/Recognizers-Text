@@ -84,4 +84,7 @@
     <None Include="Microsoft.Recognizers.Text.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(TargetDir)..\..\..\build\package\" /Y /I</PostBuildEvent>
+  </PropertyGroup>
 </Project>

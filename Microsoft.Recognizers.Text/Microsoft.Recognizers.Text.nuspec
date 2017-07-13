@@ -15,8 +15,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\release\Microsoft.Recognizers.Text.dll" target="lib\net452"/>
-    <file src="bin\release\Microsoft.Recognizers.Text.pdb" target="lib\net452" />
+    <file src="..\build\package\Microsoft.Recognizers.Text.dll" target="lib\net452"/>
+    <file src="..\build\package\Microsoft.Recognizers.Text.pdb" target="lib\net452" />
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
   </files>
 </package>
