@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.Chinese);
 
             BasicTest(model,
                 "江苏彩民15元中大乐透1600万 奖池36.57亿",
@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.Chinese);
 
             BasicTest(model,
                 "去年，潜江虾稻产业综合产值突破180亿元，带动就业超10万人，龙虾养殖户户平增收16000元，带动全省养殖小龙虾387万亩。",
@@ -113,13 +113,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod][Ignore]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.Chinese);
         }
 
         [TestMethod][Ignore]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.Chinese);
         }
     }
 }

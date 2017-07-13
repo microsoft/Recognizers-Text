@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text
             return ret;
         }
 
-        public bool ContainModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
             IModel model;
             return TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture);
