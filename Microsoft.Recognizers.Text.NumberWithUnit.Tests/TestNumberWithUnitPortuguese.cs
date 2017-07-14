@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Portuguese);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.Portuguese);
 
             BasicTest(model,
             "Condado de Montgomery, md. - - $ 75 milhões de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
@@ -436,7 +436,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Portuguese);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.Portuguese);
 
             BasicTest(model, "são 180,25ml liquidos", "180,25 Mililitro");
 
@@ -652,7 +652,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Portuguese);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.Portuguese);
 
             BasicTest(model,
                 "A temperatura externa é de 40 graus Celsius",
@@ -829,7 +829,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Portuguese);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.Portuguese);
 
             BasicTest(model,
                 "Quando tinha cinco anos, aprendeu a andar de bicicleta.",

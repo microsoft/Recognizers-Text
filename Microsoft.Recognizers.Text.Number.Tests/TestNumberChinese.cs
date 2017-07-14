@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestNumberModel()
         {
-            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.Chinese);
 
             #region Integer numbers
 
@@ -1013,7 +1013,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestFractionModel()
         {
-            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.Chinese);
 
             BasicTest(model,
                 "五 分之 一",
@@ -1251,7 +1251,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestPercentageModel()
         {
-            var model = NumberRecognizer.GetPercentageModel(Culture.Chinese);
+            var model = NumberRecognizer.Instance.GetPercentageModel(Culture.Chinese);
 
             MultiTest(model,
                 "打对折", 1);
@@ -1973,7 +1973,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = NumberRecognizer.GetOrdinalModel(Culture.Chinese);
+            var model = NumberRecognizer.Instance.GetOrdinalModel(Culture.Chinese);
 
             BasicTest(model,
                 "第二百五十",
@@ -1998,7 +1998,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestCompareModel()
         {
-            var model = NumberRecognizer.GetNumberModel(Culture.Chinese);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.Chinese);
             var wmodel = GetWithoutWhiteListNumberModel();
 
             MultiTest(model,

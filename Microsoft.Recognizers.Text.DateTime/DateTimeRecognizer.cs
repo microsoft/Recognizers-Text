@@ -4,30 +4,30 @@ using Microsoft.Recognizers.Text.DateTime.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class DateTimeRecognizer
+    public class DateTimeRecognizer : Recognizer
     {
-        private static readonly ModelContainer ModelContainer = new ModelContainer();
+        public static readonly DateTimeRecognizer Instance = new DateTimeRecognizer();
 
-        static DateTimeRecognizer()
+        private DateTimeRecognizer()
         {
             var type = typeof(DateTimeModel);
-            ModelContainer.RegisterModel(Culture.English, type, new DateTimeModel(
+            RegisterModel(Culture.English, type, new DateTimeModel(
                     new BaseMergedParser(new EnglishMergedParserConfiguration()),
                     new BaseMergedExtractor(new EnglishMergedExtractorConfiguration())
                     ));
-            ModelContainer.RegisterModel(Culture.Chinese, type, new DateTimeModel(
+            RegisterModel(Culture.Chinese, type, new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
                     new MergedExtractorChs()
                     ));
-            ModelContainer.RegisterModel(Culture.Spanish, type, new DateTimeModel(
+            RegisterModel(Culture.Spanish, type, new DateTimeModel(
                     new BaseMergedParser(new SpanishMergedParserConfiguration()),
                     new BaseMergedExtractor(new SpanishMergedExtractorConfiguration())
                     ));
         }
 
-        public static DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true)
+        public DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return (DateTimeModel)ModelContainer.GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
+            return (DateTimeModel)GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
     }
 }
