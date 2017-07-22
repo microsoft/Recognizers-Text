@@ -74,6 +74,47 @@ namespace Microsoft.Recognizers.Text.Number
 
             return result;
         }
+
+        public Regex AddArabicNumberRegex(ArabicType type, string placeholder = @"\D|\b")
+        {
+            Regex addedRegex = null;
+            string integerTemplate = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+" + $@"(?={placeholder})";
+            string doubleTemplate = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({0}\\d{{3}})+{1}\\d+" + $@"(?={placeholder})";
+            switch (type)
+            {
+                case ArabicType.IntegerNumComma:
+                    addedRegex = new Regex(string.Format(integerTemplate, ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.IntegerNumDot:
+                    addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.IntegerNumBlank:
+                    addedRegex = new Regex(string.Format(integerTemplate, " "), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.IntegerNumQuote:
+                    addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape("'")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumCommaDot:
+                    addedRegex = new Regex(string.Format(doubleTemplate, ",", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumDotComma:
+                    addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("."), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumBlankComma:
+                    addedRegex = new Regex(string.Format(doubleTemplate, " ", ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumBlankDot:
+                    addedRegex = new Regex(string.Format(doubleTemplate, " ", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumCommaCdot:
+                    addedRegex = new Regex(string.Format(doubleTemplate, ",", "·"), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+                case ArabicType.DoubleNumQuoteComma:
+                    addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("'"), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                    break;
+            }
+            return addedRegex;
+        }
     }
 
     public enum NumberMode
@@ -84,5 +125,32 @@ namespace Microsoft.Recognizers.Text.Number
         Currency,
         //Don't extract number from cases like 16ml
         PureNumber
+    }
+
+    public enum ArabicType
+    {
+        // Reference : https://www.wikiwand.com/en/Decimal_mark
+
+        // Value : 1234567.89
+        // 1,234,567
+        IntegerNumComma,
+        // 1.234.567
+        IntegerNumDot,
+        // 1 234 567
+        IntegerNumBlank,
+        // 1'234'567
+        IntegerNumQuote,
+        // 1,234,567.89
+        DoubleNumCommaDot,
+        // 1,234,567·89
+        DoubleNumCommaCdot,
+        // 1 234 567,89
+        DoubleNumBlankComma,
+        // 1 234 567.89
+        DoubleNumBlankDot,
+        // 1.234.567,89
+        DoubleNumDotComma,
+        // 1'234'567,89
+        DoubleNumQuoteComma
     }
 }

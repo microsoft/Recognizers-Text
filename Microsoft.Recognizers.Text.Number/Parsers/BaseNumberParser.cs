@@ -635,16 +635,16 @@ namespace Microsoft.Recognizers.Text.Number
             double scale = 10;
             var dot = false;
             var isLessZero = false;
-            var isFrac = false;
+            var isFrac = digitStr.Contains('/'); 
 
             var calStack = new Stack<double>();
 
             for (var i = 0; i < digitStr.Count(); i++)
             {
                 var ch = digitStr[i];
-                if (ch == '/')
+                if (!isFrac && ch == config.NonDecimalSeparatorChar)
                 {
-                    isFrac = true;
+                    continue;
                 }
 
                 if (ch == ' ' || ch == '/')

@@ -29,11 +29,6 @@ namespace Microsoft.Recognizers.Text.Number.English
                     "DoubleNum"
                 },
                 {
-                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d{1,3}(,\d{3})+\.\d+" + $@"(?={placeholder})",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "DoubleNum"
-                },
-                {
                     new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)",
                         RegexOptions.Singleline),
                     "DoubleNum"
@@ -59,6 +54,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     "DoublePow"
                 }
             };
+
+            _regexes.Add(AddArabicNumberRegex(ArabicType.DoubleNumCommaDot, placeholder), "DoubleNum");
             Regexes = _regexes.ToImmutableDictionary();
         }
     }
