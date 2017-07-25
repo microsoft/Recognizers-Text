@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex AnUnitRegex { get; }
         Regex AllRegex { get; }
         Regex HalfRegex { get; }
+        Regex AndRegex { get; }
+        Regex ColonRegex { get; }
 
         IExtractor CardinalExtractor { get; }
     }

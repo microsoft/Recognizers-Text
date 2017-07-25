@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex HalfDateUnitRegex { get; }
 
+        public Regex AndRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -29,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AnUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
             AllDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
             HalfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
+            AndRegex = SpanishDurationExtractorConfiguration.AndRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
         }

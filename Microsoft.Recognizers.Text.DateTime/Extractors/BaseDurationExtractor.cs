@@ -18,9 +18,26 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(NumberWithUnit(text));
+            tokens.AddRange(NumberWithUnitAndSuffix(text, NumberWithUnit(text)));
             tokens.AddRange(ImplicitDuration(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
+        }
+
+        // handle cases look like: {number} {unit} and {an|a} {half|quarter}
+        private List<Token> NumberWithUnitAndSuffix(string text, List<Token> ers)
+        {
+            var ret = new List<Token>();
+            foreach (var er in ers)
+            {
+                var afterStr = text.Substring(er.Start + er.Length);
+                var match = this.config.AndRegex.Match(afterStr);
+                if (match.Success && match.Index == 0)
+                {
+                    ret.Add(new Token(er.Start, (er.Start + er.Length) + match.Length));
+                }
+            }
+            return ret;
         }
 
         // simple cases made by a number followed an unit
