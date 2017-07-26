@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public static string PointRegexChsStr => @"[点點\.．]";
 
         public static string AllFloatRegexChs =>
-            $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.AllIntRegexChs}\s*{PointRegexChsStr}(\s*{IntegerExtractor
-                .ZeroToNineIntegerRegexChs})+";
+            $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.AllIntRegexChs}\s*{PointRegexChsStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{IntegerExtractor
+                .ZeroToNineIntegerRegexChs})*";
 
         public DoubleExtractor()
         {
