@@ -48,6 +48,29 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var model = NumberRecognizer.Instance.GetNumberModel(Culture.Chinese);
 
             #region Integer numbers
+            MultiTest(model,
+                "两百点两",
+                2);
+
+            MultiOneTest(model,
+                "一点两小时的会议",
+                2, "1");
+
+            MultiTest(model,
+                "一只",
+                1);
+
+            MultiTest(model,
+                "十斤",
+                1);
+
+            MultiTest(model,
+                "一切",
+                0);
+
+            MultiTest(model,
+                "九年八吨",
+                2);
 
             BasicTest(model,
                 "肆佰陸拾",
