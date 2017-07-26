@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        public Regex AddArabicNumberRegex(ArabicType type, string placeholder = @"\D|\b")
+        protected Regex GenerateArabicNumberRegex(ArabicType type, string placeholder = @"\D|\b")
         {
             Regex addedRegex = null;
             string integerTemplate = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+" + $@"(?={placeholder})";

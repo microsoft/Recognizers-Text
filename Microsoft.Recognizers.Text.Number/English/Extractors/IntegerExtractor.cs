@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                 }
             };
 
-            _regexes.Add(AddArabicNumberRegex(ArabicType.IntegerNumComma, placeholder), "IntegerNum");
+            _regexes.Add(GenerateArabicNumberRegex(ArabicType.IntegerNumComma, placeholder), "IntegerNum");
             Regexes = _regexes.ToImmutableDictionary();
         }
     }
