@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
+using System.Text;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -160,6 +161,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             bool bothHasDate = false, beginHasDate = false, endHasDate = false;
             var er1 = SingleTimeExtractor.Extract(text);
             var er2 = TimeWithDateExtractor.Extract(text);
+
+            DateObject leftTime, rightTime;
+
+            rightTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
+            leftTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
+
             if (er2.Count == 2)
             {
                 pr1 = this.config.DateTimeParser.Parse(er2[0], referenceTime);
@@ -229,9 +236,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (bothHasDate)
             {
-                ret.Timex =
-                    $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                //ret.Timex =
+                //$"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
                 // do nothing
+
+                rightTime = new DateObject(futureEnd.Year, futureEnd.Month, futureEnd.Day);
+                leftTime = new DateObject(futureBegin.Year, futureBegin.Month, futureBegin.Day);
             }
             else if (beginHasDate)
             {
@@ -240,9 +250,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
                 pastEnd = new DateObject(pastBegin.Year, pastBegin.Month, pastBegin.Day,
                     pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
-                var dateStr = pr1.TimexStr.Split('T')[0];
-                ret.Timex =
-                    $"({pr1.TimexStr},{dateStr + pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+
+                leftTime = new DateObject(futureBegin.Year, futureBegin.Month, futureBegin.Day);
+
+                /*if (futureEnd.Hour < futureBegin.Hour)
+                {
+                    futureEnd = futureEnd.AddHours(12);
+                }
+                if (pastEnd.Hour < pastBegin.Hour)
+                {
+                    pastEnd = pastEnd.AddHours(12);
+                }*/
+                //var dateStr = pr1.TimexStr.Split('T')[0];
+                //ret.Timex =
+                //$"({pr1.TimexStr},{dateStr + pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
             }
             else if (endHasDate)
             {
@@ -251,13 +272,60 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
                 pastBegin = new DateObject(pastEnd.Year, pastEnd.Month, pastEnd.Day,
                     pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
-                var dateStr = pr2.TimexStr.Split('T')[0];
-                ret.Timex =
-                    $"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+
+                rightTime = new DateObject(futureEnd.Year, futureEnd.Month, futureEnd.Day);
+                //var dateStr = pr2.TimexStr.Split('T')[0];
+                //ret.Timex =
+                //$"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
             }
 
-            ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
-            ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
+            var leftResult = (DateTimeResolutionResult) pr1.Value;
+            var rightResult = (DateTimeResolutionResult) pr2.Value;
+            var leftResultTime = (System.DateTime) leftResult.FutureValue;
+            var rightResultTime = (System.DateTime) rightResult.FutureValue;
+
+            //右侧有ampm ,左侧沒有
+            if (rightResult.Comment != null && rightResult.Comment.Equals("ampm") &&
+                leftResult.Comment == null && rightResultTime.Hour <= leftResultTime.Hour)
+            {
+                rightResultTime = rightResultTime.AddHours(12);
+            }
+
+            int day = referenceTime.Day,
+                month = referenceTime.Month,
+                year = referenceTime.Year;
+
+            //判断右侧是否比左侧的小,如果比左侧的小,则增加一天
+            int hour = leftResultTime.Hour > 0 ? leftResultTime.Hour : 0,
+                min = leftResultTime.Minute > 0 ? leftResultTime.Minute : 0,
+                second = leftResultTime.Second > 0 ? leftResultTime.Second : 0;
+
+            leftTime = leftTime.AddHours(hour);
+            leftTime = leftTime.AddMinutes(min);
+            leftTime = leftTime.AddSeconds(second);
+            new DateObject(year, month, day, hour, min, second);
+
+            hour = rightResultTime.Hour > 0 ? rightResultTime.Hour : 0;
+            min = rightResultTime.Minute > 0 ? rightResultTime.Minute : 0;
+            second = rightResultTime.Second > 0 ? rightResultTime.Second : 0;
+
+            rightTime = rightTime.AddHours(hour);
+            rightTime = rightTime.AddMinutes(min);
+            rightTime = rightTime.AddSeconds(second);
+
+            if (rightTime.Hour < leftTime.Hour)
+            {
+                rightTime = rightTime.AddDays(1);
+            }
+
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
+
+            var leftTimex = BuildTimex(DateObject2TimeResult(leftTime));
+            var rightTimex = BuildTimex(DateObject2TimeResult(rightTime));
+            ret.Timex = $"({leftTimex},{rightTimex},PT{Convert.ToInt32((rightTime - leftTime).TotalHours)}H)";
+
+            //ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
+            //ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;
             return ret;
         }
@@ -570,6 +638,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
             }
             return ret;
+        }
+
+        public static string BuildTimex(TimeResult timeResult)
+        {
+            var build = new StringBuilder("T");
+            if (timeResult.Hour >= 0)
+            {
+                build.Append(timeResult.Hour.ToString("D2"));
+            }
+
+            if (timeResult.Minute >= 0)
+            {
+                build.Append(":" + timeResult.Minute.ToString("D2"));
+            }
+
+            if (timeResult.Second >= 0)
+            {
+                build.Append(":" + timeResult.Second.ToString("D2"));
+            }
+
+            return build.ToString();
+        }
+
+        public static TimeResult DateObject2TimeResult(DateObject dateTime)
+        {
+            var timeResult = new TimeResult();
+            timeResult.Hour = dateTime.Hour;
+            timeResult.Minute = dateTime.Minute;
+            timeResult.Second = dateTime.Second;
+            return timeResult;
         }
     }
 }

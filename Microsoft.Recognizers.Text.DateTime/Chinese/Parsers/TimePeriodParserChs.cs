@@ -129,8 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int day = refTime.Day,
                 month = refTime.Month,
                 year = refTime.Year;
-            
-            //判断右侧是否比小测的小,如果比左侧的小,则增加一天
+
+            //判断右侧是否比左侧的小,如果比左侧的小,则增加一天
             int hour = leftResult.Hour > 0 ? leftResult.Hour : 0,
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
                 second = leftResult.Second > 0 ? leftResult.Second : 0;
