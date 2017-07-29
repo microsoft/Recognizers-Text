@@ -236,10 +236,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (bothHasDate)
             {
-                //ret.Timex =
-                //$"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
-                // do nothing
-
                 rightTime = new DateObject(futureEnd.Year, futureEnd.Month, futureEnd.Day);
                 leftTime = new DateObject(futureBegin.Year, futureBegin.Month, futureBegin.Day);
             }
@@ -252,18 +248,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
                 leftTime = new DateObject(futureBegin.Year, futureBegin.Month, futureBegin.Day);
-
-                /*if (futureEnd.Hour < futureBegin.Hour)
-                {
-                    futureEnd = futureEnd.AddHours(12);
-                }
-                if (pastEnd.Hour < pastBegin.Hour)
-                {
-                    pastEnd = pastEnd.AddHours(12);
-                }*/
-                //var dateStr = pr1.TimexStr.Split('T')[0];
-                //ret.Timex =
-                //$"({pr1.TimexStr},{dateStr + pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
             }
             else if (endHasDate)
             {
@@ -274,22 +258,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
                 rightTime = new DateObject(futureEnd.Year, futureEnd.Month, futureEnd.Day);
-                //var dateStr = pr2.TimexStr.Split('T')[0];
-                //ret.Timex =
-                //$"({dateStr + pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
             }
 
             var leftResult = (DateTimeResolutionResult) pr1.Value;
             var rightResult = (DateTimeResolutionResult) pr2.Value;
             var leftResultTime = (System.DateTime) leftResult.FutureValue;
             var rightResultTime = (System.DateTime) rightResult.FutureValue;
-
-            //右侧有ampm ,左侧沒有
-            if (rightResult.Comment != null && rightResult.Comment.Equals("ampm") &&
-                leftResult.Comment == null && rightResultTime.Hour <= leftResultTime.Hour)
-            {
-                rightResultTime = rightResultTime.AddHours(12);
-            }
 
             int day = referenceTime.Day,
                 month = referenceTime.Month,
@@ -313,7 +287,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddMinutes(min);
             rightTime = rightTime.AddSeconds(second);
 
-            if (rightTime.Hour < leftTime.Hour)
+            //右侧有ampm ,左侧沒有
+            if (rightResult.Comment != null && rightResult.Comment.Equals("ampm") &&
+                leftResult.Comment == null && rightTime < leftTime)
+            {
+                rightTime = rightTime.AddHours(12);
+            }
+
+            if (rightTime < leftTime)
             {
                 rightTime = rightTime.AddDays(1);
             }
