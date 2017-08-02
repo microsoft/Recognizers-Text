@@ -10,6 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: change to Spanish the AndRegex
+        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: modify the FollowedUnit to be like the follewing code
+        //       public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+        //       RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -25,14 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         //TODO: change to Spanish the HalfRegex
         public static readonly Regex HalfRegex = new Regex(@"\b(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        //TODO: change to Spanish the AndRegex
-        public static readonly Regex AndRegex = new Regex(@"(?<suffix>\s+(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        //TODO: change to Spanish the ColonRegex
-        public static readonly Regex ColonRegex = new Regex($@"(:\s*{NumberCombinedWithUnit})\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDurationExtractorConfiguration()
@@ -51,8 +50,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
 
-        Regex IDurationExtractorConfiguration.AndRegex => AndRegex;
-
-        Regex IDurationExtractorConfiguration.ColonRegex => ColonRegex;
+        Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
     }
 }

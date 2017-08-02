@@ -10,7 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*(-)?{UnitRegex}",
+        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{SuffixAndRegex}?(\s+|-)?{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
@@ -23,12 +26,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HalfRegex = new Regex(@"\b(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex AndRegex = new Regex(@"(?<suffix>\s+(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex ColonRegex = new Regex($@"(:\s*{NumberCombinedWithUnit})\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDurationExtractorConfiguration()
@@ -48,8 +45,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
         
-        Regex IDurationExtractorConfiguration.AndRegex => AndRegex;
-
-        Regex IDurationExtractorConfiguration.ColonRegex => ColonRegex;
+        Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
     }
 }

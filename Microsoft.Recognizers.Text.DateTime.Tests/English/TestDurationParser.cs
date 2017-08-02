@@ -57,12 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave for an hour and half", 5400, "PT1.5H");
             BasicTest("I'll leave for half hour", 1800, "PT0.5H");
 
-            BasicTest("I'll leave for: 30 mins", 1800, "PT30M");
-            BasicTest("I'll leave for: an hour and half", 5400, "PT1.5H");
-            BasicTest("I'll leave for: half hour", 1800, "PT0.5H");
-            BasicTest("I'll leave for:30 mins", 1800, "PT30M");
-            BasicTest("I'll leave for:an hour and half", 5400, "PT1.5H");
-            BasicTest("I'll leave for:half hour", 1800, "PT0.5H");
+            BasicTest("I'll leave for two hour", 7200, "PT2H");
+            BasicTest("I'll leave for two and a half hours", 9000, "PT2.5H");
         }
     }
 }

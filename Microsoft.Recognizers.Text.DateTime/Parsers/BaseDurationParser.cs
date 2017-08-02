@@ -66,19 +66,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         // check {and} suffix after a {number} {unit}
         private double ParseNumberWithUnitAndSuffix(string text)
         {
-            var dic = new Dictionary<string, double>();
-            dic.Add("half", 0.5);
-            dic.Add("quarter", 0.25);
             double numVal = 0;
             string numStr = string.Empty;
 
-            var match = this.config.AndRegex.Match(text);
+            var match = this.config.SuffixAndRegex.Match(text);
             if (match.Success)
             {
                 numStr = match.Groups["suffix_num"].Value.ToLower();
-                if (dic.ContainsKey(numStr))
+                if (this.config.DoubleNumbers.ContainsKey(numStr))
                 {
-                    numVal = dic[numStr];
+                    numVal = this.config.DoubleNumbers[numStr];
                 }
             }
             return numVal;
@@ -92,21 +89,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             var numStr = string.Empty;
             var unitStr = string.Empty;
             var suffixStr = text;
-
-            //split into two parts if {and} suffix is existed
-            var match = this.config.AndRegex.Match(text);
-            if (match.Success)
-            {
-                suffixStr = text.Substring(match.Index, match.Length);
-                text = text.Substring(0, match.Index);
-            }
+            Match match;
 
             // if there are spaces between nubmer and unit
             var ers = this.config.CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
                 var pr = this.config.NumberParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                // followed unit: {num} (<followed unit>and a half hours)
+                var srcUnit = string.Empty;
+                var noNum = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                match = this.config.FollowedUnit.Match(noNum);
+                if (match.Success)
+                {
+                    srcUnit = match.Groups["unit"].Value.ToLower();
+                    suffixStr = match.Groups["suffix"].Value.ToLower();
+                }
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     numVal = double.Parse(pr.Value.ToString()) + ParseNumberWithUnitAndSuffix(suffixStr);

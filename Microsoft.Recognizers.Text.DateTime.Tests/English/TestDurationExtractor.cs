@@ -55,12 +55,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave for an hour and half", 15, 16);
             BasicTest("I'll leave for half hour", 15, 9);
 
-            BasicTest("I'll leave for: 30 mins", 16, 7);
-            BasicTest("I'll leave for: an hour and half", 16, 16);
-            BasicTest("I'll leave for: half hour", 16, 9);
-            BasicTest("I'll leave for:30 mins", 15, 7);
-            BasicTest("I'll leave for:an hour and half", 15, 16);
-            BasicTest("I'll leave for:half hour", 15, 9);
+            BasicTest("I'll leave for two hours", 15, 9);
+            BasicTest("I'll leave for two and a half hours", 15, 20);
         }
     }
 }

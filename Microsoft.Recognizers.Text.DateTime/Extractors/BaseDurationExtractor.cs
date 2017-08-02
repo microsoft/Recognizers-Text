@@ -23,15 +23,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
-
-        // handle cases look like: {number} {unit} and {an|a} {half|quarter}
+        
+        // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
+        // define the part "and {an|a} {half|quarter}" as Suffix
         private List<Token> NumberWithUnitAndSuffix(string text, List<Token> ers)
         {
             var ret = new List<Token>();
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length);
-                var match = this.config.AndRegex.Match(afterStr);
+                var match = this.config.SuffixAndRegex.Match(afterStr);
                 if (match.Success && match.Index == 0)
                 {
                     ret.Add(new Token(er.Start, (er.Start + er.Length) + match.Length));
