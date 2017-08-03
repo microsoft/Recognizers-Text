@@ -475,7 +475,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
             "mr . hulings gloats that he sold all his stocks a week before the market plummeted 190 points on oct . 13 , and he is using the money to help buy a 45-acre horse farm .",
-            "45 Square meter");
+            "45 Acre");
 
             BasicTest(model,
             "then , to make these gardenettes quite literally rooms , ms . bartlett had thrown up windowless walls ( brick , lattice , hedge ) eight to 10 feet tall , casting her interiors into day - long stygian shade .",
@@ -715,11 +715,70 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model, "how to convert - 20 degrees fahrenheit to celsius", new string[] { "-20 F", "C" });
         }
 
-        [TestMethod][Ignore]
+        [TestMethod]
         public void TestAge()
         {
             var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.English);
 
+            BasicTest(model,
+                      "When she was five years old, she learned to ride a bike.",
+                      "5 Year");
+
+            BasicTest(model,
+                      "This saga is ten years old.",
+                      "10 Year");
+
+            BasicTest(model,
+                      "I'm only 29 years old!",
+                      "29 Year");
+
+            BasicTest(model,
+                      "Now, after ninety five years of age, perspectives change.",
+                      "95 Year");
+
+            BasicTest(model,
+                      "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
+                      "500 Year");
+
+            BasicTest(model,
+                      "She's 60 years old; she was born in May 8, 1945.",
+                      "60 Year");
+
+            BasicTest(model,
+                      "25% of cases are not diagnosed until around 3 years of age.",
+                      "3 Year");
+
+            BasicTest(model,
+                      "When will there be pressure to fulfil a promise that is one year old?",
+                      "1 Year");
+
+            BasicTest(model,
+                      "It happened when the baby was only ten months old.",
+                      "10 Month");
+
+            BasicTest(model,
+                      "The committee proposal is 8 months old.",
+                      "8 Month");
+
+            BasicTest(model,
+                      "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
+                      "18 Month");
+
+            BasicTest(model,
+                      "It is possible, but in 2006 95% of them were younger than three months old.",
+                      "3 Month");
+
+            BasicTest(model,
+                      "If we go ahead in December, it will be three weeks old.",
+                      "3 Week");
+
+            BasicTest(model,
+                      "At 6 weeks of age, one can already celebrate Christmas.",
+                      "6 Week");
+
+            BasicTest(model,
+                      "A 90 day old utilities bill is quite late.",
+                      "90 Day");
         }
     }
 }

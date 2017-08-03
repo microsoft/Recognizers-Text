@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                 "如今身高168公分",
-                "168 Cntimeter");
+                "168 Centimeter");
 
             BasicTest(model,
                 "澳联邦警察与维州警方在墨尔本缴获近一吨冰毒，为澳洲史上最大冰毒走私案。（澳洲联邦警察局 ...",
