@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_Date()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,
@@ -79,7 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_DatePeriod()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_DateTime()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2016, 11, 7, 14, 7, 0);
 
             BasicTest(model, reference,
@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_DateTimePeriod()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2016, 11, 7, 16, 12, 0);
 
             BasicTest(model, reference,
@@ -196,7 +196,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_Duration()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,
@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_Set()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese); ;
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese); ;
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,
@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_Time()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,
@@ -297,7 +297,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [TestMethod]
         public void TestDateTime_TimePeriod()
         {
-            var model = DateTimeRecognizer.GetModel(Culture.Chinese);
+            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.Chinese);
             var reference = new DateObject(2017, 3, 22);
 
             BasicTest(model, reference,

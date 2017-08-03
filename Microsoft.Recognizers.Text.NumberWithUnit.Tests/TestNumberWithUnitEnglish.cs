@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.English);
 
             BasicTest(model,
             "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
@@ -439,7 +439,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.English);
 
             BasicTest(model,
             "75ml",
@@ -648,7 +648,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.English);
 
             BasicTest(model, "the temperature outside is 40 deg celsius", "40 C");
 
@@ -718,7 +718,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod][Ignore]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.English);
 
         }
     }

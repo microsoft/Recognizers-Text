@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.Spanish);
 
             BasicTest(model,
             "Condado de Montgomery, md. - - $ 75 millones de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
@@ -436,7 +436,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.Spanish);
 
             BasicTest(model,
             "75ml",
@@ -643,7 +643,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.Spanish);
 
             BasicTest(model,
                 "La temperatura exterior es de 40 grados Celsius",
@@ -801,7 +801,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.Spanish);
 
             BasicTest(model,
                 "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",

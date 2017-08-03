@@ -1,14 +1,35 @@
-﻿namespace Microsoft.Recognizers.Text
+﻿using System;
+using System.Collections.Generic;
+
+namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer<T>
+    public abstract class Recognizer : IRecognizer
     {
-        protected static readonly string DefaultCulture = Culture.English;
+        private readonly ModelContainer ModelContainer = new ModelContainer();
 
-        protected static T ModelInstances;
-
-        public static T GetModels()
+        protected void RegisterModel(string culture, Type type, IModel model)
         {
-            return ModelInstances;
+            ModelContainer.RegisterModel(culture, type, model);
+        }
+
+        protected void RegisterModel(string culture, Dictionary<Type, IModel> models)
+        {
+            ModelContainer.RegisterModel(culture, models);
+        }
+
+        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        {
+            return ModelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture);
+        }
+
+        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true)
+        {
+            return ModelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture);
+        }
+
+        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        {
+            return ModelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture);
         }
     }
 }

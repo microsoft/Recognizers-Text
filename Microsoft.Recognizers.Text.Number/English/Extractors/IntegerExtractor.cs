@@ -46,11 +46,6 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , "IntegerNum"
                 },
                 {
-                    new Regex(@"(((?<!\d+\s*)-\s*)|(?<=\b))\d{1,3}(,\d{3})+" + $@"(?={placeholder})",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
-                },
-                {
                     new Regex($@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
@@ -74,6 +69,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     "IntegerEng"
                 }
             };
+
+            _regexes.Add(GenerateArabicNumberRegex(ArabicType.IntegerNumComma, placeholder), "IntegerNum");
             Regexes = _regexes.ToImmutableDictionary();
         }
     }
