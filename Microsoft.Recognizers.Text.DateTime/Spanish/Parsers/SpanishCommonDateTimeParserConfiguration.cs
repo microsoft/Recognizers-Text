@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DayOfWeek = InitDayOfWeek();
             MonthOfYear = InitMonthOfYear();
             Numbers = InitNumbers();
+            DoubleNumbers = InitDoubleNumbers();
             CardinalExtractor = new CardinalExtractor();
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
@@ -269,6 +270,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 {"veintiocho", 28 },
                 {"veintinueve", 29 },
                 {"treinta", 30 },
+            }.ToImmutableDictionary();
+        }
+
+        //TODO: translate English Key to Spanish Key
+        private static ImmutableDictionary<string, double> InitDoubleNumbers()
+        {
+            return new Dictionary<string, double>
+            {
+                {"half", 0.5},
+                {"quarter", 0.25}
             }.ToImmutableDictionary();
         }
     }

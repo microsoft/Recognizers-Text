@@ -10,11 +10,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
+        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{SuffixAndRegex}?(\s+|-)?{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?)(-)?{UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AnUnitRegex = new Regex($@"(((?<half>half\s+)*(an|a))|(an|a))\s+{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -41,5 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
+        
+        Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
     }
 }
