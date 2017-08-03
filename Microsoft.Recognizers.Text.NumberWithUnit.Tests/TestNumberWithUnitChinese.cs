@@ -118,12 +118,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model, "设置恒温器为85度", "85 Degree");
 
             BasicTest(model, "把温度升高5度", "5 Degree");
-            
-            //BasicTest(model, "正常的温度是华氏温度98.6度", "98.6 F");
-            //BasicTest(model, "华氏温度100度", "100 F");
-            //BasicTest(model, "20摄氏度", "20 C");
-            //BasicTest(model, "外面的温度是98度", "98 Degree");
-            //BasicTest(model, "你能把华氏温度51度转换为摄氏度吗", new string[] { "51 F", "C" });
+
+            BasicTest(model, "正常的温度是华氏温度98.6度", "98.6 F");
+            BasicTest(model, "华氏温度100度", "100 F");
+            BasicTest(model, "20摄氏度", "20 C");
+            BasicTest(model, "外面的温度是98度", "98 Degree");
+            BasicTest(model, "你能把华氏温度51度转换为摄氏度吗", new string[] { "51 F", "C" });
         }
 
         [TestMethod]
@@ -143,24 +143,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                       "这件事发生在宝宝只有十个月大的时候.",
                       "10 Month");
 
-            /*
-            BasicTest(model,
-                      "如果我们在十二月份开始，会有三周时间。",
-                      "3 Week");
-
-            BasicTest(model,
-                      "这封邮件已经发送出去15天了，回信在哪里?",
-                      "15 Day");
-
             BasicTest(model,
                       "她出生于1945年5月8号，现在60岁了",
                       "60 Year");
-
-            BasicTest(model,
-                      "中国长城有超过500年的历史，它长达5000多英里",
-                      "500 Year");
-            */
-            
         }
 
     }

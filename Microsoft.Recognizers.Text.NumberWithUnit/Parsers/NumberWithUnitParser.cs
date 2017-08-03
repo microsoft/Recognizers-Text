@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     if (unitKeyBuild.Length != 0)
                     {
-                        unitKeys.Add(unitKeyBuild.ToString().Trim());
+                        AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
                     }
                 }
                 // numberResult.start is a relative position
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     if (unitKeyBuild.Length != 0)
                     {
-                        unitKeys.Add(unitKeyBuild.ToString().Trim());
+                        AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
                         unitKeyBuild.Clear();
                     }
                     var o = numberResult.Start + numberResult.Length - 1;
@@ -77,6 +77,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
             }
             return ret;
+        }
+
+        public void AddIfNotContained(List<string> unitKeys, string unit)
+        {
+            bool add = true;
+            foreach (var unitKey in unitKeys)
+            {
+                if (unitKey.Contains(unit))
+                {
+                    add = false;
+                    break;
+                }
+            }
+            if (add)
+            {
+                unitKeys.Add(unit);
+            }
         }
     }
 
