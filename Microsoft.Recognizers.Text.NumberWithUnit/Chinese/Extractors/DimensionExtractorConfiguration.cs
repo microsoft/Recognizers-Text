@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Yard", "码"},
             {"Knot", "海里"},
             {"Light year", "光年"},
-            // Spped
+            // Speed
             {"Meter per second", "米每秒|米/秒"},
             {"Kilometer per hour", "公里每小时|千米每小时|公里/小时|千米/小时"},
             {"Kilometer per minute", "公里每分钟|千米每分钟|公里/分钟|千米/分钟"},
@@ -58,24 +58,25 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Square meter", "平方米"},
             {"Square kilometer", "平方公里"},
             {"Acre", "英亩|公亩"},
-            {"Mu", "亩|市亩"},
             {"Hectare", "公顷"},
+            {"Mu", "亩|市亩"},
+            // Volume
             {"Liter", "公升|升"},
-            {"Dou", "市斗|斗"},
-            {"Dan", "市石|石"},
-            {"Pt", "品脱"},
             {"Milliliter", "毫升"},
             {"Cubic meter", "立方米"},
             {"Cubic decimeter", "立方分米"},
             {"Cubic millimeter", "立方毫米"},
             {"Cubic feet", "立方英尺"},
+            {"Gallon", "加仑"},
+            {"Pint", "品脱"},
+            {"Dou", "市斗|斗"},
+            {"Dan", "市石|石"},
             // Weight
             {"Kilogram", "千克|公斤"},
             {"Jin", "市斤|斤"},
             {"Milligram", "毫克"},
             {"Barrel", "桶"},
             {"Pot", "罐"},
-            {"Gallon", "加仑"},
             {"Gram", "克"},
             {"Ton", "公吨|吨"},
             {"Pound", "磅"},
@@ -90,7 +91,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Petabyte", "千兆兆|千万亿字节"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "丈",
             "位",
