@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
 
-            // handl "an hour"
+            // handle "an hour"
             matches = this.config.AnUnitRegex.Matches(text);
             foreach (Match match in matches)
             {
@@ -58,15 +58,25 @@ namespace Microsoft.Recognizers.Text.DateTime
         // handle cases that don't contain nubmer
         private List<Token> ImplicitDuration(string text)
         {
-            // handle "all day", "all year"
             var ret = new List<Token>();
-            var matches = this.config.AllRegex.Matches(text);
+            // handle "all day", "all year"
+            ret.AddRange(GetTokenFromRegex(config.AllRegex, text));
+
+            // handle "half day", "half year"
+            ret.AddRange(GetTokenFromRegex(config.HalfRegex, text));
+
+            return ret;
+        }
+
+        private List<Token> GetTokenFromRegex(Regex regex, string text)
+        {
+            var ret = new List<Token>();
+            var matches = regex.Matches(text);
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
-
             return ret;
-        }
+        } 
     }
 }

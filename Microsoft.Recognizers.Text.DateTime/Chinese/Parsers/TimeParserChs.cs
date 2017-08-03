@@ -21,7 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {TimeType.LessTime, TimeFunctions.HandleLess}
             };
 
-
         private readonly IFullDateTimeParserConfiguration config;
 
         public TimeParserChs(IFullDateTimeParserConfiguration configuration)
@@ -42,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var result = TimeExtractor.Extract(er.Text);
                 extra = result[0]?.Data as DateTimeExtra<TimeType>;
             }
+
             if (extra != null)
             {
                 var timeResult = FunctionMap[extra.Type](extra);
@@ -52,11 +52,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.FutureValue)}
                     };
+
                     parseResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) parseResult.PastValue)}
                     };
                 }
+
                 var ret = new DateTimeParseResult
                 {
                     Start = er.Start,
@@ -68,8 +70,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ResolutionStr = "",
                     TimexStr = parseResult.Timex
                 };
+
                 return ret;
             }
+
             return null;
         }
     }
@@ -111,18 +115,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var hour = MatchToValue(extra.NamedEntity["hour"].Value);
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
-            var minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter*15 : 0;
+            var minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : 0;
             var second = MatchToValue(extra.NamedEntity["sec"].Value);
             var less = MatchToValue(extra.NamedEntity["min"].Value);
-            var all = hour*60 + minute - less;
+
+            var all = hour * 60 + minute - less;
             if (all < 0)
             {
                 all += 1440;
             }
+
             return new TimeResult
             {
-                Hour = all/60,
-                Minute = all%60,
+                Hour = all / 60,
+                Minute = all % 60,
                 Second = second
             };
         }
@@ -133,7 +139,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var quarter = MatchToValue(extra.NamedEntity["quarter"].Value);
             var minute = MatchToValue(extra.NamedEntity["min"].Value);
             var second = MatchToValue(extra.NamedEntity["sec"].Value);
-            minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter*15 : minute;
+            minute = !string.IsNullOrEmpty(extra.NamedEntity["half"].Value) ? 30 : quarter != -1 ? quarter * 15 : minute;
+
             return new TimeResult
             {
                 Hour = hour,
@@ -153,8 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return timeResult;
         }
 
-        public static DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult,
-            DateObject referenceTime)
+        public static DateTimeResolutionResult PackTimeResult(DateTimeExtra<TimeType> extra, TimeResult timeResult, DateObject referenceTime)
         {
             //Find if there is a description
             var noDesc = true;
@@ -174,30 +180,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var dtResult = new DateTimeResolutionResult();
 
-
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
                 build.Append(timeResult.Hour.ToString("D2"));
             }
+
             if (timeResult.Minute >= 0)
             {
                 build.Append(":" + timeResult.Minute.ToString("D2"));
             }
+
             if (timeResult.Second >= 0)
             {
                 build.Append(":" + timeResult.Second.ToString("D2"));
             }
+
             if (noDesc)
             {
                 //build.Append("ampm");
                 dtResult.Comment = "ampm";
             }
+
             dtResult.Timex = build.ToString();
             if (hour == 24)
             {
                 hour = 0;
             }
+
             dtResult.FutureValue = dtResult.PastValue = new DateObject(year, month, day, hour, min, second);
             dtResult.Success = true;
             return dtResult;
@@ -209,14 +219,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return -1;
             }
+
             if (Regex.IsMatch(text, @"\d+"))
             {
                 return Int32.Parse(text);
             }
+
             if (text.Length == 1)
             {
                 return NumberDictionary[text[0]];
             }
+            
             //五十九,十一,二
             var tempValue = 1;
             foreach (var c in text)
@@ -243,6 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return;
             }
+
             if (LowBoundDesc.ContainsKey(dayDesc) && result.Hour < LowBoundDesc[dayDesc])
             {
                 result.Hour += 12;
@@ -261,6 +275,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 des = text.Substring(0, text.Length - 1);
             }
+
             var hour = MatchToValue(text.Substring(text.Length - 1, 1));
             var timeResult = new TimeResult
             {
@@ -269,6 +284,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Second = -1
             };
             AddDesc(timeResult, des);
+
             return timeResult;
         }
     }
@@ -280,4 +296,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public int Second { get; set; }
         public int LowBound { get; set; } = -1;
     }
+
 }

@@ -7,10 +7,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
 
-        private static readonly IExtractor _durationExtractor = new DurationExtractorChs();
-        private static readonly IExtractor _timeExtractor = new TimeExtractorChs();
-        private static readonly IExtractor _dateExtractor = new DateExtractorChs();
-        private static readonly IExtractor _dateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly IExtractor DurationExtractor = new DurationExtractorChs();
+        private static readonly IExtractor TimeExtractor = new TimeExtractorChs();
+        private static readonly IExtractor DateExtractor = new DateExtractorChs();
+        private static readonly IExtractor DateTimeExtractor = new DateTimeExtractorChs();
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult = ParseEachDuration(er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParserTimeEveryday(er.Text);
@@ -46,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult = ParseEachDateTime(er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEachDate(er.Text);
@@ -57,10 +59,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {TimeTypeConstants.SET, (string) innerResult.FutureValue}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.SET, (string) innerResult.PastValue}
                     };
+
                     value = innerResult;
                 }
             }
@@ -82,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseEachDuration(string text)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = _durationExtractor.Extract(text);
+            var ers = DurationExtractor.Extract(text);
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
@@ -131,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         return ret;
                     }
+
                     ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                     ret.Success = true;
                     return ret;
@@ -143,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParserTimeEveryday(string text)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = _timeExtractor.Extract(text);
+            var ers = TimeExtractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;
@@ -166,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseEachDate(string text)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = _dateExtractor.Extract(text);
+            var ers = DateExtractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;
@@ -188,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseEachDateTime(string text)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = _dateTimeExtractor.Extract(text);
+            var ers = DateTimeExtractor.Extract(text);
             if (ers.Count != 1)
             {
                 return ret;
@@ -207,14 +212,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-
         private static bool IsLessThanDay(string unit)
         {
-            if (unit.Equals("S") || unit.Equals("M") || unit.Equals("H"))
-            {
-                return true;
-            }
-            return false;
+            return (unit.Equals("S") || unit.Equals("M") || unit.Equals("H"));
         }
     }
 }

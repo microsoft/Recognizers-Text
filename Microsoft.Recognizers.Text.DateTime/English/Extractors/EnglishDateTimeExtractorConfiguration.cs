@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TheEndOfRegex = new Regex(@"(the\s+)?end of(\s+the)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateTimeExtractorConfiguration()

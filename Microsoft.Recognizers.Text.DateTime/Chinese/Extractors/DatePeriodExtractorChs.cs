@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex UnitRegex = new Regex(@"(?<unit>年|(个)?月|周|日|天)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
@@ -126,8 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 YearInChineseRegex),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly DateExtractorChs _datePointExtractor = new DateExtractorChs();
-        private static readonly IntegerExtractor _integerExtractor = new IntegerExtractor();
+        private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
+        private static readonly IntegerExtractor IntegerExtractor = new IntegerExtractor();
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private List<Token> MergeTwoTimePoints(string text)
         {
             var ret = new List<Token>();
-            var er = _datePointExtractor.Extract(text);
+            var er = DatePointExtractor.Extract(text);
             if (er.Count <= 1)
             {
                 return ret;
@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var ers = _integerExtractor.Extract(text);
+            var ers = IntegerExtractor.Extract(text);
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -246,6 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     continue;
                 }
+
                 var match = PastRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
@@ -253,6 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     continue;
                 }
                 match = FutureRegex.Match(beforeStr);
+
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, duration.End));

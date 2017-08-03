@@ -33,34 +33,34 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.Portuguese);
 
             BasicTest(model,
-            "Condado de Montgomery, md. - - $ 75 millones de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
+            "Condado de Montgomery, md. - - $ 75 milhões de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
             "75000000 Dólar");
 
             BasicTest(model,
-            "Conglomerado finlandés nokia ( oy ab ) dijo que llegó a un acuerdo para comprar la compañía de cable holandés NKF kabel b.v. por 420 millones de marcos finlandeses",
-            "420000000 Marco finlandés");
+            "Conglomerado finlandés nokia ( oy ab ) dijo que llegó a un acuerdo para comprar la compañía de cable holandés NKF kabel b.v. por 420 milhoes de marcos finlandeses",
+            "420000000 Marco finlandês");
 
             BasicTest(model,
             "Nacional pagó a Siegel y Shuster $ 94.000 para cancelar todas las reclamaciones.",
             "94000 Dólar");
 
             BasicTest(model,
-            "Servicios de dinámica general co., una unidad de Dinámica General corp., ganó un contrato del ejército de $ 48,2 millones para establecer facilidades del mantenimiento para los vehículos con seguimiento en Paquistán.",
+            "Servicios de dinámica general co., una unidad de Dinámica General corp., ganó un contrato del ejército de $ 48,2 milhoes para establecer facilidades del mantenimiento para los vehículos con seguimiento en Paquistán.",
             "48200000 Dólar");
 
             BasicTest(model,
-            "El precio del segundo simulador oscila entre C$ 16,4 millones",
-            "16400000 Dólar canadiense");
+            "El precio del segundo simulador oscila entre C$ 16,4 milhoes",
+            "16400000 Dólar canadense");
 
             BasicTest(model,
-            "Golar Gas Holding co., una subsidiaria de Gotaas-Larsen Shipping corp., ofreciendo $ 280 millones por las notas preferidas de la hipoteca de buques, vía los mercados de capitales de Merrill Linch.",
+            "Golar Gas Holding co., una subsidiaria de Gotaas-Larsen Shipping corp., ofreciendo $ 280 milhoes por las notas preferidas de la hipoteca de buques, vía los mercados de capitales de Merrill Linch.",
             "280000000 Dólar");
 
             BasicTest(model,
-            "Bard/Ems tenía 1988 ventas de cerca de $ 14 millones, según Birtcher.",
+            "Bard/Ems tenía 1988 ventas de cerca de $ 14 milhões, según Birtcher.",
             "14000000 Dólar");
 
             BasicTest(model,
@@ -68,23 +68,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "12345 Dólar");
 
             BasicTest(model,
-            "solamente Batman ha acumulado mas de $247 millones en taquilla hasta la fecha, convirtiendola en la película con mejor recaudación de Warner Bros.",
+            "solamente Batman ha acumulado mas de $247 milhoes en taquilla hasta la fecha, convirtiendola en la película con mejor recaudación de Warner Bros.",
             "247000000 Dólar");
 
             BasicTest(model,
-            "El patrimonio neto de Coyle fue estimado en £ 8,10 millones en Octuble del 2014.",
+            "El patrimonio neto de Coyle fue estimado en £ 8,10 milhões en Octuble del 2014.",
             "8100000 Libra");
 
             BasicTest(model,
-            "Los ingresos netos por intereses cayeron un 27% en el trimestre a $ 254 millones",
+            "Los ingresos netos por intereses cayeron un 27% en el trimestre a $ 254 milhões",
             "254000000 Dólar");
 
             BasicTest(model,
-            "Un tribunal de apelaciones federal anuló una regulación de gas natural que había impedido que las compañías de gasoductos pasaran a los clientes un gasto de $ un mil millones en costos de contratos controversiales",
+            "Un tribunal de apelaciones federal anuló una regulación de gas natural que había impedido que las compañías de gasoductos pasaran a los clientes un gasto de $ um bilhão en costos de contratos controversiales",
             "1000000000 Dólar");
 
             BasicTest(model,
-            "El trimestre de 1988 también incluyó ganancias únicas por un total de aproximadamente $ 35 millones.",
+            "El trimestre de 1988 también incluyó ganancias únicas por un total de aproximadamente $ 35 milhões.",
             "35000000 Dólar");
 
             BasicTest(model,
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "250000 Dólar");
 
             BasicTest(model,
-            "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial del petróleo al 1 de diciembre en una cuenta que no está bajo la supervisión de las naciones unidas.",
+            "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial do petróleo a 1 de dezembro en una cuenta que no está bajo la supervisión de las naciones unidas.",
             "50 Centavo");
 
             BasicTest(model,
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "800 Dólar");
 
             BasicTest(model,
-            "(El almacenista también tomó $ 125 millones de bonos Junior SCI TV como pago parcial para los activos de TV).",
+            "(El almacenista también tomó $ 125 milhões de bonos Junior SCI TV como pago parcial para los activos de TV).",
             "125000000 Dólar");
 
             BasicTest(model,
@@ -112,15 +112,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "2,75 Dólar");
 
             BasicTest(model,
-            "Al mismo tiempo, los inversionistas estiman que la reestructuración reduciría la factura anual de intereses en efectivo de la compañía en aproximadamente U$D 90 millones.",
-            "90000000 Dólar estadounidense");
+            "Al mismo tiempo, los inversionistas estiman que la reestructuración reduciría la factura anual de intereses en efectivo de la compañía en aproximadamente U$D 90 milhões.",
+            "90000000 Dólar estadunidense");
 
             BasicTest(model,
-            "Los gastos de capital en 1990 aumentarán ligeramente, dijo Mr.Marous, de un estimado de $ 470 millones este año",
+            "Los gastos de capital en 1990 aumentarán ligeramente, dijo Mr.Marous, de un estimado de $ 470 milhões este año",
             "470000000 Dólar");
 
             BasicTest(model,
-            "Shearson \"realmente solo tiene $ 300 millones de capital\", dice el sr. Bowman de S&P.",
+            "Shearson \"realmente solo tiene $ 300 milhões de capital\", dice el sr. Bowman de S&P.",
             "300000000 Dólar");
 
             BasicTest(model,
@@ -136,15 +136,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "70 Dólar");
 
             BasicTest(model,
-            "Las ventas netas para el tercer trimestre de este año fueron de $ 14 millones más que el año pasado.",
+            "Las ventas netas para el tercer trimestre de este año fueron de $ 14 milhões más que el año pasado.",
             "14000000 Dólar");
 
             BasicTest(model,
-            "La compañía matriz del primer banco nacional de Chicago, con 48.000 millones de dólares en activos, dijo que se reservó de absorber pérdidas en préstamos e inversiones en países con dificultades financieras.",
+            "La compañía matriz del primer banco nacional de Chicago, con 48.000 milhões de dólares en activos, dijo que se reservó de absorber pérdidas en préstamos e inversiones en países con dificultades financieras.",
             "48000000000 Dólar");
 
             BasicTest(model,
-            "Fluor Corp. dijo que se le adjudicó un contrato de $ 300 millones para prestar servicios de ingeniería y gestión de la construcción en una mina de cobre en Irian Jaya, Indonesia, para una unidad de Freeport-McMoran Copper co.",
+            "Fluor Corp. dijo que se le adjudicó un contrato de $ 300 milhões para prestar servicios de ingeniería y gestión de la construcción en una mina de cobre en Irian Jaya, Indonesia, para una unidad de Freeport-McMoran Copper co.",
             "300000000 Dólar");
 
             BasicTest(model,
@@ -152,19 +152,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "5000 Dólar");
 
             BasicTest(model,
-            "Warner Communications Inc., que está siendo adquirida por Time Warner, ha presentado una demanda por violación de contrato de un mil millones de dólares contra Sony y dos productores.",
+            "Warner Communications Inc., que está siendo adquirida por Time Warner, ha presentado una demanda por violación de contrato de um bilhão de dólares contra Sony y dos productores.",
             "1000000000 Dólar");
 
             BasicTest(model,
-            "En agosto, Asarco, a través de su subsidiaria Lac d'amiante Du Québec, vendió el interés restante de un tercio en una sociedad limitada minera de amianto en Canadá por $ 11,7 millones.",
+            "En agosto, Asarco, a través de su subsidiaria Lac d'amiante Du Québec, vendió el interés restante de un tercio en una sociedad limitada minera de amianto en Canadá por $ 11,7 milhões.",
             "11700000 Dólar");
 
             BasicTest(model,
-            "En 1988, las exportaciones de juguetes y juegos de producción nacional cayeron un 19% desde 1987 hasta alcanzar los 10050 millones de dólares de Hong Kong.",
+            "En 1988, las exportaciones de juguetes y juegos de producción nacional cayeron un 19% desde 1987 hasta alcanzar los 10050 milhões de dólares de Hong Kong.",
             "10050000000 Dólar de Hong Kong");
 
             BasicTest(model,
-            "Las ventas del cuarto trimestre fiscal crecieron cerca de 18% a $ 1,17 mil millones en comparacion al año anterior.",
+            "Las ventas del cuarto trimestre fiscal crecieron cerca de 18% a $ 1,17 bilhões en comparacion com o ano anterior.",
             "1170000000 Dólar");
 
             BasicTest(model,
@@ -176,11 +176,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "300000 Dólar");
 
             BasicTest(model,
-            "Las ventas subieron 6,2% a $ 1,45 mil millones",
+            "Las ventas subieron 6,2% a $ 1,45 bilhões",
             "1450000000 Dólar");
 
             BasicTest(model,
-            "A partir de ayer por la tarde, los reembolsos representaron menos del 15% de la posición total de efectivo de alrededor de $ 2 mil millones de los fondos de acciones de fidelidad.",
+            "A partir de ayer por la tarde, los reembolsos representaron menos del 15% de la posición total de efectivo de alrededor de $ 2 bilhões de los fondos de acciones de fidelidad.",
             "2000000000 Dólar");
 
             BasicTest(model,
@@ -188,11 +188,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "34 Centavo");
 
             BasicTest(model,
-            "El nuevo folleto dice que si la adquisición hubiera sido completada antes, las ganancias antes de impuestos \"habrían sido insuficientes para cubrir sus cargos fijos, incluyendo intereses sobre títulos de deuda\", por aproximadamente $ 62,7 millones en el primer semestre de 1989.",
+            "El nuevo folleto dice que si la adquisición hubiera sido completada antes, las ganancias antes de impuestos \"habrían sido insuficientes para cubrir sus cargos fijos, incluyendo intereses sobre títulos de deuda\", por aproximadamente $ 62,7 milhões en el primer semestre de 1989.",
             "62700000 Dólar");
 
             BasicTest(model,
-            "Filenet señaló que tenía efectivo y valores negociables por un total de $ 22,5 millones en septiembre.",
+            "Filenet señaló que tenía efectivo y valores negociables por un total de $ 22,5 milhões en septiembre.",
             "22500000 Dólar");
 
             BasicTest(model,
@@ -200,7 +200,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "63,45 Dólar");
 
             BasicTest(model,
-            "Trans Mundo Airlines Inc., ofreciendo billetes senior de 150 millones de dólares, a través de Drexel Burnham.",
+            "Trans Mundo Airlines Inc., ofreciendo billetes senior de 150 milhões de dólares, a través de Drexel Burnham.",
             "150000000 Dólar");
 
             BasicTest(model,
@@ -212,31 +212,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "14,27 Centavo");
 
             BasicTest(model,
-            "En el tercer trimestre de 1988 fue de $ 75,3 millones",
+            "En el tercer trimestre de 1988 fue de $ 75,3 milhões",
             "75300000 Dólar");
 
             BasicTest(model,
-            "La confianza de los demandantes del protector del dalkon $ 2,38 mil millones fue establecida",
+            "La confianza de los demandantes del protector del dalkon $ 2,38 bilhões fue establecida",
             "2380000000 Dólar");
 
             BasicTest(model,
-            "Los términos de la oferta pusieron un valor de 528 millones de francos por 32,99% de participación",
+            "Los términos de la oferta pusieron un valor de 528 milhões de francos por 32,99% de participación",
             "528000000 Franco");
 
             BasicTest(model,
-            "Rusia aceptó un préstamo del Banco Mundial de US$ 150 millones para combatir la propagación del sida y la tuberculosis, poniendo fin a un proceso de negociación que duró cuatro años, dijeron el viernes funcionarios del Banco Mundial.",
-            "150000000 Dólar estadounidense");
+            "Rusia aceptó un préstamo del Banco Mundial de US$ 150 milhões para combatir la propagación del sida y la tuberculosis, poniendo fin a un proceso de negociación que duró cuatro años, dijeron el viernes funcionarios del Banco Mundial.",
+            "150000000 Dólar estadunidense");
 
             BasicTest(model,
             "El pacto de la campana anterior estaba valorado en alrededor de $ 98 por acción",
             "98 Dólar");
 
             BasicTest(model,
-            "Un distribuidor dijo que la conversación fue que la firma vendió cerca de 500 millones de dólares de bonos de 30 años",
+            "Un distribuidor dijo que la conversación fue que la firma vendió cerca de 500 milhões de dólares de bonos de 30 años",
             "500000000 Dólar");
 
             BasicTest(model,
-            "Para el tercer trimestre, Sears dijo que sus ingresos totales aumentaron 4. 8% a $ 13180 millones a un año antes.",
+            "Para el tercer trimestre, Sears dijo que sus ingresos totales aumentaron 4. 8% a $ 13180 milhões a un año antes.",
             "13180000000 Dólar");
 
             BasicTest(model,
@@ -244,15 +244,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "1,4 Dólar");
 
             BasicTest(model,
-            "Las expectativas de los analistas sugieren un déficit en cuenta corriente de septiembre de 1. 6 mil millones ($ 2,54 mil millones), comparado con los 2MM de agosto en déficit.",
+            "Las expectativas de los analistas sugieren un déficit en cuenta corriente de septiembre de 1. 6 bilhões ($ 2,54 bilhões), comparado con los 2MM de agosto en déficit.",
             "2540000000 Dólar");
 
             BasicTest(model,
-            "125 millones de dólares australianos de eurobonos de cupón, a un precio de 50,9375 para producir 15,06% menos comisiones a través de Hambros Bank ltd.",
+            "125 milhões de dólares australianos de eurobonos de cupón, a un precio de 50,9375 para producir 15,06% menos comisiones a través de Hambros Bank ltd.",
             "125000000 Dólar australiano");
 
             BasicTest(model,
-            "El viernes, el secretario jefe del gabinete anunció que ocho ministros del gabinete habían recibido cinco millones de yenes de la industria",
+            "El viernes, el secretario jefe del gabinete anunció que ocho ministros del gabinete habían recibido cinco milhões de ienes de la industria",
             "5000000 Yen");
 
             BasicTest(model,
@@ -260,100 +260,100 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "450000 Yen");
 
             BasicTest(model,
-            "Dóllar : 143,80 yenes, arriba de 0,95; 1.8500 puntos, arriba de 0,0085.",
+            "Dóllar : 143,80 yenes, arriba de 0,95; 1.8500 pontos, arriba de 0,0085.",
             "143,8 Yen");
 
             BasicTest(model,
-            "Orkem S.A., un fabricante francés de productos químicos controlados por el Estado, está haciendo una oferta amistosa de 470 peniques por acción para los 59,2% de UK",
-            "470 Penique");
+            "Orkem S.A., un fabricante francés de productos químicos controlados por el Estado, está haciendo una oferta amistosa de 470 penies por acción para los 59,2% de UK",
+            "470 Pêni");
 
             BasicTest(model,
             "Agosto, el gasto ajustado de las familias asalariadas disminuyó 0,6% a 309.381 yenes de un año antes.",
             "309381 Yen");
 
             BasicTest(model,
-            "Sr. Bowder dijo que los C$ 300 millones de ingresos...",
-            "300000000 Dólar canadiense");
+            "Sr. Bowder dijo que los C$ 300 milhões de ingresos...",
+            "300000000 Dólar canadense");
 
             BasicTest(model,
             "Ascendería a alrededor de C$ 1,34 por acción.",
-            "1,34 Dólar canadiense");
+            "1,34 Dólar canadense");
 
             BasicTest(model,
             "Los precios de los huevos promediaron 64,2 centavos la docena.",
             "64,2 Centavo");
 
             BasicTest(model,
-            "Aún así, dijo que espera que las ventas para 1989 sean del orden de los 20.000 millones de francos, lo que refleja la facturación anticipada de dos grandes contratos en la segunda mitad del año.",
+            "Aún así, dijo que espera que las ventas para 1989 sean del orden de los 20.000 milhões de francos, lo que refleja la facturación anticipada de dos grandes contratos en la segunda mitad del año.",
             "20000000000 Franco");
 
             BasicTest(model,
-            "La transacción pidió a Murdoch's News International, una unidad de noticias australia corp., para suscribir una emisión de derechos valorada en 6,65 mil millones de pesetas.",
+            "La transacción pidió a Murdoch's News International, una unidad de noticias australia corp., para suscribir una emisión de derechos valorada en 6,65 bilhões de pesetas.",
             "6650000000 Peseta");
 
             BasicTest(model,
-            "Fujitsu ltd dijo que quiere retirar su polémica oferta de un yen para diseñar un sistema de computadoras de agua para la ciudad de hiroshima.",
+            "Fujitsu ltd dijo que quiere retirar su polémica oferta de um yen para diseñar un sistema de computadoras de agua para la ciudad de hiroshima.",
             "1 Yen");
 
             BasicTest(model,
-            "250 millones de florines neerlandeses de 7 3/4% de bonos debidos nov. 15, 1999, a un precio de 101 1/4 para dar 7. 57% al precio de emisión y 7. 86% menos los honorarios completos, vía el banco del amro.",
-            "250000000 Florín neerlandés");
+            "250 milhões de florins holandeses de 7 3/4% de bonos debidos nov. 15, 1999, a un precio de 101 1/4 para dar 7. 57% do preço de emisión y 7. 86% menos los honorarios completos, vía el banco del amro.",
+            "250000000 Florim holandês");
 
             BasicTest(model,
             "Además, el banco tiene la opción de comprar una participación de 30,84% en BIP societe generale después de enero. 1.1990 a 1.015 francos por acción.",
             "1015 Franco");
 
             BasicTest(model,
-            "Sus acciones se deslizaron en los últimos tratos para cerrar un centavo",
+            "Sus acciones se deslizaron en los últimos tratos para cerrar um centavo",
             "1 Centavo");
 
             BasicTest(model,
-            "Por acción menor a 197 peniques.",
-            "197 Penique");
+            "Por acción menor a 197 penies.",
+            "197 Pêni");
 
             BasicTest(model,
-            "Su beneficio operativo trimestral mejoró a 361 millones de libras",
+            "Su beneficio operativo trimestral mejoró a 361 milhões de libras",
             "361000000 Libra");
 
             BasicTest(model,
-            "El año pasado, el valor bruto de producción de las empresas del municipio de toda la ciudad se rompió por 100 millones de yuanes por primera vez, ocupando el primer lugar en toda la provincia.",
-            "100000000 Yuan chino");
+            "El año pasado, el valor bruto de producción de las empresas del municipio de toda la ciudad se rompió por 100 milhões de yuans por primera vez, ocupando el primer lugar en toda la provincia.",
+            "100000000 Yuan chinês");
 
             BasicTest(model,
-            "Los guardabosques consiguieron guardar £ 50 millones ahorrados por el consejo de Baxendale-Walker.",
+            "Los guardabosques consiguieron guardar £ 50 milhões ahorrados por el consejo de Baxendale-Walker.",
             "50000000 Libra");
 
             BasicTest(model,
-            "A su vez, francis leung pak-to ha acordado vender una participación de 8% en PCCW a telefónica por 323 millones de euros.",
+            "A su vez, francis leung pak-to ha acordado vender una participación de 8% en PCCW a telefónica por 323 milhões de euros.",
             "323000000 Euro");
 
             BasicTest(model,
-            "La UEFA acusó a ferguson de desacreditar el juego con sus comentarios, y el 1 de mayo de ese año fue multado con 10.000 francos suizos.",
-            "10000 Franco suizo");
+            "La UEFA acusó a ferguson de desacreditar el juego con sus comentarios, y el 1 de mayo de ese año fue multado con 10.000 francos suicos.",
+            "10000 Franco suíço");
 
             BasicTest(model,
-            "El IPL firmó a las líneas aéreas de martín pescador como el socio oficial del árbitro para la serie en un reparto (aproximadamente £ 15 millones).",
+            "El IPL firmó a las líneas aéreas de martín pescador como el socio oficial del árbitro para la serie en un reparto (aproximadamente £ 15 milhões).",
             "15000000 Libra");
 
             BasicTest(model,
-            "Los ingresos de la industria electrónica de adelaide ha crecido en alrededor del 15% anual desde 1990, y en 2011 supera los $ 4 mil millones.",
+            "Los ingresos de la industria electrónica de adelaide ha crecido en alrededor del 15% anual desde 1990, y en 2011 supera os $ 4 bilhões.",
             "4000000000 Dólar");
 
             BasicTest(model,
-            "Abel y sus asociados ofrecen 4 millones de dólares por hacer los efectos de la película.",
+            "Abel y sus asociados ofrecen 4 milhoes de dólares por hacer los efectos de la película.",
             "4000000 Dólar");
 
             BasicTest(model,
-            "Malone demandó a 20th century-fox por $ 1,6 millones por incumplimiento de contrato.",
+            "Malone demandó a 20th century-fox por $ 1,6 milhões por incumplimiento de contrato.",
             "1600000 Dólar");
 
             BasicTest(model,
-            "En 2003, Bayern Munich prestó € 2 millones a Dortmund por un par de meses para pagar su nómina.",
+            "En 2003, Bayern Munich prestó € 2 milhões a Dortmund por un par de meses para pagar su nómina.",
             "2000000 Euro");
 
             BasicTest(model,
-            "Lockheed Martin y el gobierno de los Estados Unidos intensamente presionaron para el contrato de US$ 10 mil millones de la India para 126 aviones de combate.",
-            "10000000000 Dólar estadounidense");
+            "Lockheed Martin y el gobierno de los Estados Unidos intensamente presionaron para el contrato de US$ 10 bilhões de la India para 126 aviones de combate.",
+            "10000000000 Dólar estadunidense");
 
             BasicTest(model,
             "Según la firma de investigación NPD, el precio de venta promedio de todas las PC portátiles de las ventanas ha caído de $ 659 en octubre de 2008 a",
@@ -372,15 +372,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "100 Libra");
 
             BasicTest(model,
-            "Para los nueve meses, la red de AMR subió 15% a $ 415,9 millones",
+            "Para los nueve meses, la red de AMR subió 15% a $ 415,9 milhões",
             "415900000 Dólar");
 
             BasicTest(model,
-            "El precio de la acción de la aerolínea ya está muy por debajo del nivel de 210 peniques visto después de que la compañía anunció la emisión de derechos a fines de septiembre.",
-            "210 Penique");
+            "El precio de la acción de la aerolínea ya está muy por debajo del nivel de 210 penies visto después de que la compañía anunció la emisión de derechos a fines de septiembre.",
+            "210 Pêni");
 
             BasicTest(model,
-            "Rolling Stone observó, \"Harpercollins adquirió el proyecto de libro por $ 3 millones en 2008.",
+            "Rolling Stone observó, \"Harpercollins adquirió el proyecto de libro por $ 3 milhoes en 2008.",
             "3000000 Dólar");
 
             BasicTest(model,
@@ -388,11 +388,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "48 Dólar");
 
             BasicTest(model,
-            "2013, la edición de la revista forbes presenta a Keith en la portada con el título música country's $ 500 millones.",
+            "2013, la edición de la revista forbes presenta a Keith en la portada con el título música country's $ 500 milhoes.",
             "500000000 Dólar");
 
             BasicTest(model,
-            "Harry Ferguson nos demandó por el uso ilegal de sus patentes pidiendo una indemnización de £ 90 millones, resuelto fuera de la corte en 1952.",
+            "Harry Ferguson nos demandó por el uso ilegal de sus patentes pidiendo una indemnización de £ 90 milhões, resuelto fuera de la corte en 1952.",
             "90000000 Libra");
 
             BasicTest(model,
@@ -400,28 +400,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "125000 Dólar");
 
             BasicTest(model,
-            "Fue una de las mayores adquisiciones de Coke desde que compró Odwalla Inc. por $ 186 millones en 2001.",
+            "Fue una de las mayores adquisiciones de Coke desde que compró Odwalla Inc. por $ 186 milhões en 2001.",
             "186000000 Dólar");
 
             BasicTest(model,
-            "Apple y Creative llegaron a un acuerdo, con Apple pagando $ 100 millones a Creative y Creative para unirse al programa de accesorios \"hecho para ipod\".",
+            "Apple y Creative llegaron a un acuerdo, con Apple pagando $ 100 milhões a Creative y Creative para unir-se ao programa de acesórios \"feito para ipod\".",
             "100000000 Dólar");
 
             BasicTest(model,
-            "A su vez, francis leung pak-a ha acordado vender una participación de 8% en PCCW a telefónica por 323 millones de euros.",
+            "A su vez, francis leung pak-a ha acordado vender una participación de 8% en PCCW a telefónica por 323 milhões de euros.",
             "323000000 Euro");
 
             BasicTest(model,
-            "Malone demandó a 20th century-fox por 1,6 millones de dólares por incumplimiento de contrato;",
+            "Malone demandó a 20th century-fox por 1,6 milhoes de dólares por incumplimiento de contrato;",
             "1600000 Dólar");
 
             BasicTest(model,
-            "En 2003, Bayern munich prestó € 2 millones a Dortmund por un par de meses para pagar su nómina.",
+            "En 2003, Bayern munich prestó € 2 milhões a Dortmund por un par de meses para pagar su nómina.",
             "2000000 Euro");
 
             BasicTest(model,
-            "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de U$D 10 mil millones de la India para 126 aviones de combate.",
-            "10000000000 Dólar estadounidense");
+            "Lockheed martin y el gobierno de los estados unidos intensamente presionaron para el contrato de U$D 10 bilhões de la India para 126 aviones de combate.",
+            "10000000000 Dólar estadunidense");
 
             BasicTest(model,
             "La presentación de hart-scott se revisa y se resuelve cualquier problema antimonopolio. Por lo general, hart-scott se utiliza ahora para dar a los gerentes de las firmas objetivo noticias tempranas de una oferta y la oportunidad de utilizar la revisión regulatoria como una táctica de retraso. El impuesto de 20.000 dólares sería un pequeño costo en un acuerdo de varios billones de dólares, pero un grave obstáculo para miles de pequeños acuerdos amistosos.",
@@ -436,58 +436,54 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.Portuguese);
+
+            BasicTest(model, "são 180,25ml liquidos", "180,25 Mililitro");
+
+            BasicTest(model, "sao 180ml líquidos", "180 Mililitro");
+
+            BasicTest(model, " 29km caminhando ", "29 Quilômetro");
+
+            BasicTest(model, "são ,25ml liquidos", "0,25 Mililitro");
 
             BasicTest(model,
             "75ml",
             "75 Mililitro");
 
             BasicTest(model,
-            "Su mayor inconveniente puede ser su espesor de 3 pulgadas, lo suficientemente grande como para que un consultor lo describa como \"clunky\".",
-            "3 Pulgada");
+            "Su mayor inconveniente puede ser su espesor de 3 polegadas, lo suficientemente grande como para que un consultor lo describa como \"clunky\".",
+            "3 Polegada");
 
             BasicTest(model,
-            "Un tornado rugió a través de un area de unas diez millas de largo allí, matando al menos a catorce personas y convirtiendo decenas de hogares en escombros",
-            "10 Milla");
+            "Se necesita más de 10 1/2 milhas de cable y alambre para conectar todo y 23 equipos",
+            "10,5 Milha");
 
             BasicTest(model,
-            "Se necesita más de 10 1/2 millas de cable y alambre para conectar todo y 23 equipos",
-            "10,5 Milla");
-
-            BasicTest(model,
-            "El viaje de seis millas de mi hotel al aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
-            "6 Milla");
-
-            BasicTest(model,
-            "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dos pies de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
-            "2 Pie");
-
-            BasicTest(model,
-            "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 onzas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron al comer hongos contaminados.",
-            "68 Onza");
+            "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dois pés de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
+            "2 Pé");
 
             BasicTest(model,
             "El sr. Hulings se regodea que vendió todas sus acciones una semana antes de que el mercado se desplomara 190 puntos en oct. 13, y está utilizando el dinero para ayudar a comprar una granja de caballos de 45 acres.",
             "45 Acre");
 
             BasicTest(model,
-            "Bartlett había levantado paredes sin ventanas (ladrillo, enrejado, seto) de ocho a diez pies de alto, convirtiendo sus interiores en una sombra stygiana de un día.",
-            "10 Pie");
+            "Bartlett había levantado paredes sin ventanas (ladrillo, enrejado, seto) de ocho a dez pés de altura, convirtiendo sus interiores en una sombra stygiana de un día.",
+            "10 Pé");
 
             BasicTest(model,
-            "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 millones de galones de combustible para aviones al año.",
-            "2400000000 Galón");
+            "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 milhões de galoes de combustible para aviones ao ano.",
+            "2400000000 Galão");
 
             BasicTest(model,
-            "Un refrigerador de agua de 10 galones había caído al suelo, empapando la alfombra roja.",
-            "10 Galón");
+            "Un refrigerador de agua de 10 galoes había caído no solo, empapando la alfombra roja.",
+            "10 Galão");
 
             BasicTest(model,
-            "Cerca, seis delfines se divertirán en un acuario de agua salada de 1,5 millones de galones.",
-            "1500000 Galón");
+            "Cerca, seis delfines se divertirán en un acuario de agua salada de 1,5 milhoes de galões.",
+            "1500000 Galão");
 
             BasicTest(model,
-            "Y este bebé tiene más de dos libras.",
+            "Y este bebé tiene más de duas libras.",
             "2 Libra");
 
             BasicTest(model,
@@ -495,36 +491,40 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "25 Libra");
 
             BasicTest(model,
-            "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 billones de pies cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
-            "900000000000 Pie cúbico");
+            "Un tornado rugió através de un area de umas dez milhas de área, matando ao menos a catorce personas y convirtiendo decenas de hogares en escombros",
+            "10 Milha");
 
             BasicTest(model,
-            "Ejércitos Tigrean ahora están 200 millas al norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
-            "200 Milla");
+            "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 bilhões de pés cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
+            "900000000 Pé cúbico");
 
             BasicTest(model,
-            "Dijo que una de las pc tomó un viaje de tres pies deslizándose por el suelo.",
-            "3 Pie");
+            "Ejércitos Tigrean ahora están 200 milhas ao norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
+            "200 Milha");
 
             BasicTest(model,
-            "El núcleo de sus propiedades es de 190.000 metros cuadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
-            "190000 Metro cuadrado");
+            "Dijo que una de las pc tomó un viaje de tres pes deslizándose por el suelo.",
+            "3 Pé");
+
+            BasicTest(model,
+            "El núcleo de sus propiedades es de 190.000 metros quadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
+            "190000 Metro quadrado");
 
             BasicTest(model,
             "El satélite, construido por Hughes para la organización internacional de satélites de telecomunicaciones, forma parte de un contrato de 700 millones de dólares otorgado a Hughes en 1982 para desarrollar cinco satélites de tres toneladas.",
             "3 Tonelada");
 
             BasicTest(model,
-            "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galones.",
-            "130 Galón");
+            "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galoes.",
+            "130 Galão");
 
             BasicTest(model,
             "La recopilación de datos del departamento de comercio del grupo de comercio mostró que las importaciones de Agosto, el segundo mayor mensual del año, subieron un 5% respecto de las 1.458.000 toneladas de julio, pero por debajo del máximo del año pasado en junio de 1988.",
             "1458000 Tonelada");
 
             BasicTest(model,
-            "El 1 de noviembre, Singh tiró a unos seis pies de la taza",
-            "6 Pie");
+            "El 1 de noviembre, Singh tiró a unos seis pés de la taza",
+            "6 Pé");
 
             BasicTest(model,
             "Una t.métrica es igual a 2.204,62 libras.",
@@ -539,51 +539,51 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "16 bit");
 
             BasicTest(model,
-            "El ''jiotto caspita'' puede funcionar a más de 188 millas por hora, dijo un portavoz de la compañía.",
-            "188 Milla por hora");
+            "El ''jiotto caspita'' puede funcionar a más de 188 milhas por hora, dijo un portavoz de la compañía.",
+            "188 Milha por hora");
 
             BasicTest(model,
             "La marina de guerra ha instalado una zona de aterrizaje para helicópteros de apenas 100 metros en una sala de operaciones móvil, apenas en las cercanías de Bagdad.",
             "100 Metro");
 
             BasicTest(model,
-            "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 millas de la autopista Harbor, al sur de Los Ángeles, cerca del coliseo conmemorativo.",
-            "2,5 Milla");
+            "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 milhas de la autopista Harbor, ao sul de Los Ángeles, cerca del coliseo conmemorativo.",
+            "2,5 Milha");
 
             BasicTest(model,
-            "En mi viaje de cuatro millas a la sede de la granja cada mañana, conduje por otras cuatro casas vacías.",
-            "4 Milla");
+            "Em minha viaje de quatro milhas a la sede de la granja cada mañana, conduje por otras quatro casas vacías.",
+            "4 Milha");
 
             BasicTest(model,
-            "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 kilómetros al noroeste de Bucarest.",
-            "325 Kilómetro");
+            "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 quilometro ao noroeste de Bucarest.",
+            "325 Quilômetro");
 
             BasicTest(model,
-            "Rotich es un pequeño (5 pies",
-            "5 Pie");
+            "Rotich es un pequeño (5 pés",
+            "5 Pé");
 
             BasicTest(model,
-            "4 pulgadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
-            "4 Pulgada");
+            "4 polegadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
+            "4 Polegada");
 
             BasicTest(model,
-            "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milla.",
-            "0,25 Milla");
+            "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milha.",
+            "0,25 Milha");
 
             BasicTest(model,
-            "Castlecrag montaña está situado al sur del lago Moat, 1,6 km al oeste del monte Frink a lo largo de la misma línea de cresta.",
-            "1,6 Kilómetro");
+            "Castlecrag montaña está situado ao sul do lago Moat, 1,6 km ao oeste del monte Frink a lo largo de la misma línea de cresta.",
+            "1,6 Quilômetro");
 
             BasicTest(model,
             "Las colinas de Javadi se encuentran a unos 17 km de Ambur.",
-            "17 Kilómetro");
+            "17 Quilômetro");
 
             BasicTest(model,
-            "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pies en el cercano aeropuerto Curtiss-Wright en Glenview.",
-            "776 Pie");
+            "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pes en el cercano aeropuerto Curtiss-Wright en Glenview.",
+            "776 Pé");
 
             BasicTest(model,
-            "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros al este de la carretera Bennett.",
+            "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros ao leste de la carretera Bennett.",
             "500 Metro");
 
             BasicTest(model,
@@ -591,11 +591,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "-300 Milímetro");
 
             BasicTest(model,
-            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros cuadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
-            "660 Metro cuadrado");
+            "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros quadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
+            "660 Metro quadrado");
 
             BasicTest(model,
-            "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre al año.",
+            "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre ao ano.",
             "34500 Tonelada métrica");
 
             BasicTest(model,
@@ -604,23 +604,32 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
             "Las panteras floridas viven en el hogar que se extiende por 190 km2.",
-            "190 Kilómetro cuadrado");
+            "190 Quilômetro quadrado");
 
             BasicTest(model,
-            "Un asteroide de una milla de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
-            "1 Milla");
+            "Un asteroide de uma milha de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
+            "1 Milha");
 
             BasicTest(model,
             "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
             "1171 Centímetro cúbico");
 
             BasicTest(model,
-            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barriles diarios a [] barriles en los primeros ocho meses de este año.",
+            "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barris diarios a [] barris nos primeiros oito meses deste año.",
             new string[] { "500000 Barril", "Barril" });
 
             BasicTest(model,
             "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
             new string[] { "7,62 Milímetro", "Barril" });
+
+            BasicTest(model,
+            "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 oncas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron a comer hongos contaminados.",
+            "68 Onça");
+
+            BasicTest(model,
+            "El viaje de seis milhas de meu hotel ao aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
+            "6 Milha");
+
             /*
             BasicTest(model,
             "Los precios al por mayor de la electricidad de California, que habían sido limitados a 250 dólares por megavatio hora en un mercado regulado, han alcanzado su pico bajo la desregulación a 1400 dólares por megavatio hora.",
@@ -643,233 +652,253 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.Portuguese);
 
             BasicTest(model,
-                "La temperatura exterior es de 40 grados Celsius",
-                "40 Grado Celsius");
+                "A temperatura externa é de 40 graus Celsius",
+                "40 Grau Celsius");
 
             BasicTest(model,
-                "Hace 90 fahrenheit en Texas",
-                "90 Grado Fahrenheit");
+                "Faz 90 fahrenheit no Texas",
+                "90 Grau Fahrenheit");
 
             BasicTest(model,
-                "Convertir 10 celsius a fahrenheit",
-                new string[] { "10 Grado Celsius", "Grado Fahrenheit" });
+                "Converter 10 celsius em fahrenheit",
+                new string[] { "10 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "-5 grados Fahrenheit",
-                "-5 Grado Fahrenheit");
+                "-5 graus Fahrenheit",
+                "-5 Grau Fahrenheit");
 
             BasicTest(model,
-                "6 grados centígrados",
-                "6 Grado Celsius");
+                "6 graus centígrados",
+                "6 Grau Celsius");
 
             BasicTest(model,
-                "98,6 grados f es temperatura normal",
-                "98,6 Grado Fahrenheit");
+                "98,6 graus f é uma temperatura normal",
+                "98,6 Grau Fahrenheit");
 
             BasicTest(model,
-                "Ajuste la temperatura a 30 grados celsius",
-                "30 Grado Celsius");
+                "Ajuste a temperatura para 30 graus celsius",
+                "30 Grau Celsius");
 
             BasicTest(model,
-                "La temperatura normal es 98,6 grados Fahrenheit",
-                "98,6 Grado Fahrenheit");
+                "A temperatura normal é 98,6 graus Fahrenheit",
+                "98,6 Grau Fahrenheit");
 
             BasicTest(model,
-                "100 grados f",
-                "100 Grado Fahrenheit");
+                "100 graus f",
+                "100 Grau Fahrenheit");
 
             BasicTest(model,
-                "20 Grados c",
-                "20 Grado Celsius");
+                "20 Graus c",
+                "20 Grau Celsius");
 
             BasicTest(model,
                 "100 °f",
-                "100 Grado Fahrenheit");
+                "100 Grau Fahrenheit");
 
             BasicTest(model,
                 "20 °c",
-                "20 Grado Celsius");
+                "20 Grau Celsius");
 
             BasicTest(model,
-                "100,2 Grados Fahrenheit es bajo",
-                "100,2 Grado Fahrenheit");
+                "100,2 Graus Fahrenheit é baixo",
+                "100,2 Grau Fahrenheit");
 
             BasicTest(model,
-                "34,9 centígrado a fahrenheit",
-                new string[] { "34,9 Grado Celsius", "Grado Fahrenheit" });
+                "34,9 centígrado pra fahrenheit",
+                new string[] { "34,9 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "convertir 200 celsius celsius en fahrenheit",
-                new string[] { "200 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
+                "converter 200 celsius em fahrenheit",
+                new string[] { "200 Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "convertir 200 K en fahrenheit",
-                new string[] { "200 Kelvin", "Grado Fahrenheit" });
+                "convertir 200 K em fahrenheit",
+                new string[] { "200 Kelvin", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
-                new string[] { "101 Grado Fahrenheit", "Grado Fahrenheit", "Grado Celsius", "Grado Celsius" });
+                "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
+                new string[] { "101 Grau Fahrenheit", "Grau Fahrenheit", "Grau Celsius", "Grau Celsius" });
 
             BasicTest(model,
-                "50 grados centígrados celsius a fahrenheit",
-                new string[] { "50 Grado Celsius", "Grado Celsius", "Grado Fahrenheit" });
+                "50 graus centígrados celsius em fahrenheit",
+                new string[] { "50 Grau Celsius", "Grau Celsius", "Grau Fahrenheit" });
 
             BasicTest(model,
-                "Podría convertir 51 fahrenheit en grados celsius",
-                new string[] { "51 Grado Fahrenheit", "Grado Celsius" });
+                "Poderias converter 51 fahrenheit em graus celsius",
+                new string[] { "51 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 106 grados Fahrenheit a grados centígrados",
-                new string[] { "106 Grado Fahrenheit", "Grado Celsius" });
+                "Converter 106 graus Fahrenheit em graus centígrados",
+                new string[] { "106 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 106 K a grados centígrados",
-                new string[] { "106 Kelvin", "Grado Celsius" });
+                "Converter 106 K em graus centígrados",
+                new string[] { "106 Kelvin", "Grau Celsius" });
 
             BasicTest(model,
-                "Convertir 45 grados Fahrenheit a Celsius",
-                new string[] { "45 Grado Fahrenheit", "Grado Celsius" });
+                "Converter 45 graus Fahrenheit a Celsius",
+                new string[] { "45 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
-                "Cómo convertir - 20 grados Fahrenheit a Celsius",
-                new string[] { "-20 Grado Fahrenheit", "Grado Celsius" });
+                "Como convertir - 20 graus Fahrenheit para Celsius",
+                new string[] { "-20 Grau Fahrenheit", "Grau Celsius" });
 
             BasicTest(model,
                 "10,5 celsius",
-                "10,5 Grado Celsius");
+                "10,5 Grau Celsius");
 
             BasicTest(model,
-                "20 grados celsius",
-                "20 Grado Celsius");
+                "20 graus celsius",
+                "20 Grau Celsius");
 
             BasicTest(model,
                 "20,3 celsius",
-                "20,3 Grado Celsius");
+                "20,3 Grau Celsius");
 
             BasicTest(model,
                 "34,5 celsius",
-                "34,5 Grado Celsius");
+                "34,5 Grau Celsius");
 
             BasicTest(model,
-                "La temperatura exterior es de 98 grados",
-                "98 Grado");
+                "A temperatura exterior é de 98 graus",
+                "98 Grau");
 
             BasicTest(model,
-                "Ajuste el termostato a 85 °",
-                "85 Grado");
+                "Ajuste o termostato em 85 °",
+                "85 Grau");
 
             BasicTest(model,
-                "Ajuste el termostato a 85°",
-                "85 Grado");
+                "Ajuste o termostato em 85°",
+                "85 Grau");
 
             BasicTest(model,
-                "Aumentar la temperatura en 5 grados",
-                "5 Grado");
+                "Aumente a temperatura em 5 graus",
+                "5 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 70 grados f",
-                "70 Grado Fahrenheit");
+                "Ajuste a temperatura para 70 graus f",
+                "70 Grau Fahrenheit");
 
             BasicTest(model,
-                "Aumentar la temperatura en 20 grados",
-                "20 Grado");
+                "Aumentar a temperatura em 20 grau",
+                "20 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 100 grados",
-                "100 Grado");
+                "Ajuste a temperatura a 100 graus",
+                "100 Grau");
 
             BasicTest(model,
-                "Ajuste la temperatura a 100 Kelvin",
+                "Ajuste a temperatura a 100 Kelvin",
                 "100 Kelvin");
 
             BasicTest(model,
-                "Mantener la temperatura a 75 grados f",
-                "75 Grado Fahrenheit");
+                "Mantenha a temperatura de 75 graus f",
+                "75 Grau Fahrenheit");
 
             BasicTest(model,
-                "Deje que la temperatura esté a 40 centígrados",
-                "40 Grado Celsius");
+                "Deixe que a temperatura fique em 40 centígrados",
+                "40 Grau Celsius");
 
             BasicTest(model,
-                "Deje que la temperatura esté a 50 grados.",
-                "50 Grado");
+                "Deixe a temperatura em 50 graus.",
+                "50 Grau");
+
+            /* Not supported yet
+            BasicTest(model,
+                "menos 10 celsius",
+                "-10 Grau Celsius");
+
+            BasicTest(model,
+                "A temperatura exterior é de menos 98 graus",
+                "-98 Grau");
+
+            BasicTest(model,
+                "dez graus celsius negativos",
+                "-10 Grau Celsius");
+
+            BasicTest(model,
+                "A temperatura exterior é de 98 graus negativos",
+                "-98 Grau");
+            */
+
         }
 
         [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Spanish);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.Portuguese);
 
             BasicTest(model,
-                "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",
-                "5 Año");
+                "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
+                "5 Ano");
 
             BasicTest(model,
-                "Esta saga se remonta a casi diez años atrás.",
-                "10 Año");
+                "Esta saga remonta a quase dez anos atrás.",
+                "10 Ano");
 
             BasicTest(model,
-                "¡Mi pelo ya está gris y sólo tengo 29 años!",
-                "29 Año");
+                "Só tenho 29 anos!",
+                "29 Ano");
 
             BasicTest(model,
-                "Ahora cuenta noventa y cinco años: tiene una perspectiva de las cosas y tiene memoria.",
-                "95 Año");
+                "Agora com noventa e cinco anos tens perspectiva das coisas.",
+                "95 Ano");
 
             BasicTest(model,
-                "La Gran Muralla china tiene más de 500 años y se extiende más de 5,000 millas.",
-                "500 Año");
+                "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
+                "500 Ano");
 
             BasicTest(model,
-                "Ya tiene 60 años, pues en principio nació el 8 de mayo de 1945.",
-                "60 Año");
+                "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
+                "60 Ano");
 
             BasicTest(model,
-                "Y al 25% no se les diagnostica hasta que tienen casi tres años.",
-                "3 Año");
+                "25% dos casos não são diagnosticados até por volta dos tres anos.",
+                "3 Ano");
 
             BasicTest(model,
-                "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
-                "1 Año");
+                "Quando haverá pressão para comprir essa promessa feita há um ano?",
+                "1 Ano");
 
             BasicTest(model,
-                "La sublevación se produjo cuando yo era un bebé y tenía tan solo diez meses.",
-                "10 Mes");
+                "Aconteceu quando era um bebê e tinha apenas dez meses.",
+                "10 Mês");
 
             BasicTest(model,
-                "La propuesta de la Comisión tiene ya 8 meses.",
-                "8 Mes");
+                "A proposta da comissão já tem 8 meses de idade.",
+                "8 Mês");
 
             BasicTest(model,
-                "A alrededor del 50% de ellos no se les diagnostica hasta los dieciocho meses de edad.",
-                "18 Mes");
+                "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
+                "18 Mês");
 
             BasicTest(model,
-                "Es posible, pero en 2006 mataron a 330 000 focas arpa y el 95% de ellas tenían menos de tres meses.",
-                "3 Mes");
+                "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
+                "3 Mês");
 
             BasicTest(model,
-                "Si seguimos adelante con la resolución en el período parcial de sesiones de diciembre, tendrá para entonces tres semanas de antigüedad.",
+                "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
                 "3 Semana");
 
             BasicTest(model,
-                "También pueden revocar su consentimiento hasta que el hijo haya cumplido 6 semanas de edad.",
+                "Às 6 semanas de idade já comemora o Natal.",
                 "6 Semana");
 
             BasicTest(model,
-                "Otras materias primas deberán utilizarse en un plazo de cinco días.",
-                "5 Día");
+                "Outras matérias primas devem ser usadas num prazo de cinco dias.",
+                "5 Dia");
 
             BasicTest(model,
-                "Para clubes de los demás países, una cuenta vencida por 90 días se considera morosa.",
-                "90 Día");
+                "Uma conta vencida a 90 dias está bem atrasada.",
+                "90 Dia");
+            
             /* NOT SUPPORTED
             BasicTest(model,
-                "Barcelona tiene un año y medio de vida",
-                "1,5 Año");
+                "Barcelona tem un ano e meio de vida",
+                "1,5 Ano");
             */
         }
     }

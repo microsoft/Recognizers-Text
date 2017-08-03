@@ -21,7 +21,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             //Reference Source: https://es.wikipedia.org/wiki/Anexo:Monedas_circulantes
-            //GeneralsUnits
+
+            // General Units
             { "Dólar", "dólar|dólares" },
             { "Peso", "peso|pesos" },
             { "Rublo", "rublo|rublos"},
@@ -475,7 +476,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Piastra siria", "piastra siria|piastras sirias" },
             //Somalia
             { "Chelín somalí", "chelín somalí|chelines somalies|sos" },
-            { "Centavo somaplí", "centavo somaplí|centavos somalies" },
+            { "Centavo somalí", "centavo somalí|centavos somalies" },
             //Somalilandia
             { "Chelín somalilandés", "chelín somalilandés|chelines somalilandeses" },
             { "Centavo somalilandés", "centavo somalilandés|centavos somalilandeses" },
@@ -532,7 +533,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Lira turca", "lira turca|liras turcas|try" },
             { "Kuruş turca", "kuruş turca|kuruş turcas" },
             //Turkmenistán
-            { "Manat turkmeno", "manat turkmeno|anat turkmenos|tmt" },
+            { "Manat turkmeno", "manat turkmeno|manat turkmenos|tmt" },
             { "Tennesi turkmeno", "tennesi turkmeno|tenge turkmeno" },
             //Tuvalu
             { "Dólar tuvaluano", "dólar tuvaluano|dólares tuvaluanos" },
@@ -563,7 +564,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Rial yemení", "rial yemení|riales yemenies|yer" },
             { "Fils yemení", "fils yemení|fils yemenies" },
             //Yibuti
-            { "Franco yibutiano", "franco yibutiano| francos yibutianos|djf" },
+            { "Franco yibutiano", "franco yibutiano|francos yibutianos|djf" },
             //Yugoslavia
             {"Dinar yugoslavo", "dinar yugoslavo|dinares yugoslavos|yud"},
             //Zambia
@@ -584,7 +585,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Dólar bermudeño", "bd$|bmd"},
             {"Dólar de Brunéi", "brunéi $|bnd"},
             {"Dólar de Singapur", "s$|sgd"},
-            {"Dólar canadienser", "c$|can$|cad"},
+            {"Dólar canadiense", "c$|can$|cad"},
             {"Dólar de las Islas Caimán", "ci$|kyd"},
             {"Dólar neozelandés", "nz$|nzd"},
             {"Dólar fiyiano", "fj$|fjd"},

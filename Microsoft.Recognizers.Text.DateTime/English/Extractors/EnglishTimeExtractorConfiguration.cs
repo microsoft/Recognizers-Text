@@ -7,7 +7,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         // part 1: smallest component
         // --------------------------------------
-
         public static readonly Regex DescRegex = new Regex(@"(?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a\b)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -51,7 +50,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                     MinuteNumRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-
         public static readonly Regex TimePrefix =
             new Regex(string.Format(@"(?<prefix>({0} past|{0} to))", LessThanOneHour),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -64,7 +62,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 string.Format(@"(?<basictime>{4}|{0}|{1}:{2}(:{3})?|{1})", HourNumRegex, BaseTimeExtractor.HourRegex, BaseTimeExtractor.MinuteRegex,
                     BaseTimeExtractor.SecondRegex, EngTimeRegex), RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-
         // part 3: regex for time
         // --------------------------------------
         // handle "at four" "at 3"
@@ -75,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex IshRegex = new Regex($@"{BaseTimeExtractor.HourRegex}(-|——)?ish|noonish|noon",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex =

@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = NumberRecognizer.GetOrdinalModel(Culture.English);
+            var model = NumberRecognizer.Instance.GetOrdinalModel(Culture.English);
 
             BasicTest(model,
                 "three trillionth", "3000000000000");
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestNumberModel()
         {
-            var model = NumberRecognizer.GetNumberModel(Culture.English);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.English);
 
             WrappedTest(model,
                 "192.", "192", "192");
@@ -355,7 +355,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestFractionModel()
         {
-            var model = NumberRecognizer.GetNumberModel(Culture.English);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.English);
 
             BasicTest(model,
                 "a fifth", "0.2");
@@ -467,7 +467,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestPercentageModel()
         {
-            var model = NumberRecognizer.GetPercentageModel(Culture.English);
+            var model = NumberRecognizer.Instance.GetPercentageModel(Culture.English);
 
             BasicTest(model,
                 "100%", "100%");

@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchSimpleCases(text));
             tokens.AddRange(MergeTwoTimePoints(text));
             tokens.AddRange(MatchNumberWithUnit(text));
+            tokens.AddRange(SingleTimePointWithPatterns(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -99,6 +100,41 @@ namespace Microsoft.Recognizers.Text.DateTime
                 idx++;
             }
 
+            return ret;
+        }
+
+        //Extract the month of date, week of date to a date range
+        private List<Token> SingleTimePointWithPatterns(string text)
+        {
+            var ret = new List<Token>();
+            var er = this.config.DatePointExtractor.Extract(text);
+            if (er.Count < 1)
+            {
+                return ret;
+            }
+
+            foreach (var extractionResult in er)
+            {
+                if (extractionResult.Start != null && extractionResult.Length!=null)
+                {
+                    string beforeString = text.Substring(0, (int)extractionResult.Start);
+                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.WeekOfRegex, extractionResult));
+                    ret.AddRange(GetTokenForRegexMatching(beforeString, config.MonthOfRegex, extractionResult));
+                }
+            }
+
+            return ret;
+        }
+
+        private List<Token> GetTokenForRegexMatching(string text, Regex regex, ExtractResult er)
+        {
+            var ret = new List<Token>();
+            var match = regex.Match(text);
+            if (match.Success && text.Trim().EndsWith(match.Value.Trim()))
+            {
+                var startIndex = text.LastIndexOf(match.Value);
+                ret.Add(new Token(startIndex, (int)er.Start + (int)er.Length));
+            }
             return ret;
         }
 

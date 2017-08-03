@@ -293,16 +293,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             // '.' is group separator in spanish - so not understood as IP
             MultiTest(model, "192.168.1.2", 3);
 
-            //this will be supported for the NumberWithUnitModel
-            MultiTest(model, "são 180,25ml liquidos", 0);
-
-            MultiTest(model, "sao 180ml líquidos", 0);
-
-            MultiTest(model, " 29km caminhando ", 0);
-
             MultiTest(model, " subimos ao 4o piso ", 0);
-
-            MultiTest(model, "são ,25ml liquidos", 0);
 
             BasicTest(model, ",08", "0,08");
 
@@ -573,7 +564,6 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             #endregion
         }
-
 
         [TestMethod]
         public void TestFractionModel()

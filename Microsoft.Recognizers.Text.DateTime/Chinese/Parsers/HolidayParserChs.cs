@@ -11,14 +11,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
-        private static readonly IExtractor _integerExtractor = new IntegerExtractor();
+        private static readonly IExtractor IntegerExtractor = new IntegerExtractor();
 
-        private static readonly IParser _integerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
+        private static readonly IParser IntegerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
 
         public static readonly Dictionary<string, DateObject> FixedHolidaysDict = new Dictionary<string, DateObject>
         {
-            //fixed holidays
-            #region fix holidays
+            
+            #region Fixed Date Holidays
+
             {"元旦", TimexConstants.yuandan},
             {"元旦节", TimexConstants.yuandan},
             {"教师节", TimexConstants.teacherday},
@@ -48,28 +49,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {"光棍节", TimexConstants.singlesday},
             {"双十一", TimexConstants.singlesday},
             {"重阳节", TimexConstants.chongyangday}
+
             #endregion
+
         };
 
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
             <string, Func<int, DateObject>>
         {
-            #region holiday func
+            
+            #region Holiday Functions
+
             {"父亲节", GetFathersDayOfYear},
             {"母亲节", GetMothersDayOfYear},
             {"感恩节", GetThanksgivingDayOfYear}
+            
             #endregion
+
         };
 
         public static readonly Dictionary<string, string> NoFixedTimex = new Dictionary<string, string>
         {
-            #region holiday TimeX
+            
+            #region Holiday Timexes
+
             {"父亲节", @"-06-WXX-6-3"},
             {"母亲节", @"-05-WXX-7-2"},
             {"感恩节", @"-11-WXX-4-4"}
-            #endregion
-        };
 
+            #endregion
+
+        };
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -77,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             config = configuration;
         }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);
@@ -97,10 +108,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
                     };
+
                     innerResult.IsLunar = IsLunarCalendar(er.Text);
                     value = innerResult;
                 }
@@ -125,11 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var trimedText = text.Trim();
             var match = ChineseHolidayExtractorConfiguration.LunarHolidayRegex.Match(trimedText);
-            if (match.Success)
-            {
-                return true;
-            }
-            return false;
+            return match.Success;
         }
 
         private static DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
@@ -229,12 +238,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Success = true;
                     return ret;
                 }
+
                 ret.Timex = "XXXX" + timexStr;
                 ret.FutureValue = GetFutureValue(value, referenceDate, holidayStr);
                 ret.PastValue = GetPastValue(value, referenceDate, holidayStr);
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 
@@ -246,6 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     return value.AddYears(1);
                 }
+
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year + 1);
@@ -262,6 +274,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     return value.AddYears(-1);
                 }
+
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year - 1);
@@ -338,26 +351,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var year = 0;
             var num = 0;
 
-            var er = _integerExtractor.Extract(yearChsStr);
+            var er = IntegerExtractor.Extract(yearChsStr);
             if (er.Count != 0)
             {
                 if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                 {
-                    num = Convert.ToInt32((double) (_integerParser.Parse(er[0]).Value ?? 0));
+                    num = Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
                 }
             }
+
             if (num < 10)
             {
                 num = 0;
                 foreach (var ch in yearChsStr)
                 {
                     num *= 10;
-                    er = _integerExtractor.Extract(ch.ToString());
+                    er = IntegerExtractor.Extract(ch.ToString());
                     if (er.Count != 0)
                     {
                         if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                         {
-                            num += Convert.ToInt32((double) (_integerParser.Parse(er[0]).Value ?? 0));
+                            num += Convert.ToInt32((double) (IntegerParser.Parse(er[0]).Value ?? 0));
                         }
                     }
                 }
@@ -371,7 +385,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
     }
 
-    #region holiday timexconstants
+    #region Holiday Timex Constants
 
     internal static class TimexConstants
     {
@@ -404,4 +418,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     }
 
     #endregion
+
 }

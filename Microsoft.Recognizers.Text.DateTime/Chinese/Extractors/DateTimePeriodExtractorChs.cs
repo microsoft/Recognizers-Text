@@ -50,11 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             new Regex(@"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(@"(?<past>(前|上|之前))",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -62,12 +62,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex FutureRegex = new Regex(@"(?<past>(后|下|之后))",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly TimeExtractorChs _singleTimeExtractor = new TimeExtractorChs();
-        private static readonly DateTimeExtractorChs _timeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly DateExtractorChs _singleDateExtractor = new DateExtractorChs();
-        private static readonly CardinalExtractor _cardinalExtractor = new CardinalExtractor();
-        private static readonly TimePeriodExtractorChs _timePeriodExtractor = new TimePeriodExtractorChs();
-
+        private static readonly TimeExtractorChs SingleTimeExtractor = new TimeExtractorChs();
+        private static readonly DateTimeExtractorChs TimeWithDateExtractor = new DateTimeExtractorChs();
+        private static readonly DateExtractorChs SingleDateExtractor = new DateExtractorChs();
+        private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
+        private static readonly TimePeriodExtractorChs TimePeriodExtractor = new TimePeriodExtractorChs();
 
         public List<ExtractResult> Extract(string text)
         {
@@ -84,9 +83,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private List<Token> MergeDateAndTimePeriod(string text)
         {
             var ret = new List<Token>();
-            var er1 = _singleDateExtractor.Extract(text);
-            var er2 = _timePeriodExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text);
+            var er2 = TimePeriodExtractor.Extract(text);
             var timePoints = new List<ExtractResult>();
+            
             // handle the overlap problem
             var j = 0;
             for (var i = 0; i < er1.Count; i++)
@@ -97,15 +97,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     timePoints.Add(er2[j]);
                     j++;
                 }
+
                 while (j < er2.Count && er2[j].IsOverlap(er1[i]))
                 {
                     j++;
                 }
             }
+
             for (; j < er2.Count; j++)
             {
                 timePoints.Add(er2[j]);
             }
+
             timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
             {
                 var start1 = er_1.Start ?? 0;
@@ -114,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     return -1;
                 }
+
                 if (start1 == start2)
                 {
                     return 0;
@@ -151,9 +155,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private List<Token> MergeTwoTimePoints(string text)
         {
             var ret = new List<Token>();
-            var er1 = _timeWithDateExtractor.Extract(text);
-            var er2 = _singleTimeExtractor.Extract(text);
+            var er1 = TimeWithDateExtractor.Extract(text);
+            var er2 = SingleTimeExtractor.Extract(text);
             var timePoints = new List<ExtractResult>();
+
             // handle the overlap problem
             var j = 0;
             for (var i = 0; i < er1.Count; i++)
@@ -164,15 +169,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     timePoints.Add(er2[j]);
                     j++;
                 }
+
                 while (j < er2.Count && er2[j].IsOverlap(er1[i]))
                 {
                     j++;
                 }
             }
+
             for (; j < er2.Count; j++)
             {
                 timePoints.Add(er2[j]);
             }
+
             timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
             {
                 var start1 = er_1.Start ?? 0;
@@ -181,13 +189,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     return -1;
                 }
+
                 if (start1 == start2)
                 {
                     return 0;
                 }
                 return 1;
             });
-
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
             var idx = 0;
@@ -223,6 +231,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     idx += 2;
                     continue;
                 }
+               
                 // handle "between {TimePoint} and {TimePoint}"
                 if (middleStr.Equals("和") || middleStr.Equals("与") || middleStr.Equals("到"))
                 {
@@ -256,11 +265,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // Date followed by morning, afternoon
-            var ers = _singleDateExtractor.Extract(text);
+            var ers = SingleDateExtractor.Extract(text);
             if (ers.Count == 0)
             {
                 return ret;
             }
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -283,7 +293,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var ers = _cardinalExtractor.Extract(text);
+            var ers = CardinalExtractor.Extract(text);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -307,12 +318,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     continue;
                 }
+
                 var match = PastRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
+
                 match = FutureRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {

@@ -61,9 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Culture.cs" />
+    <Compile Include="IRecognizer.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\ModelResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModelContainer.cs" />
     <Compile Include="Recognizer.cs" />
     <Compile Include="Utilities\FormatUtility.cs" />
   </ItemGroup>
@@ -84,4 +86,7 @@
     <None Include="Microsoft.Recognizers.Text.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(TargetDir)..\..\..\build\package\" /Y /I</PostBuildEvent>
+  </PropertyGroup>
 </Project>

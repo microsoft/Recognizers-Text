@@ -86,6 +86,26 @@
     <Compile Include="NumberWithUnitRecognizer.cs" />
     <Compile Include="Parsers\NumberWithUnitParser.cs" />
     <Compile Include="Parsers\INumberWithUnitParserConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\AgeExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\AreaExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\CurrencyExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\DimensionExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\LengthExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\PortugueseNumberWithUnitExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\SpeedExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\TemperatureExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\VolumeExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Extractors\WeightExtractorConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\AgeParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\AreaParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\CurrencyParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\DimensionParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\LengthParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\PortugueseNumberWithUnitParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\SpeedParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\TemperatureParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\VolumeParserConfiguration.cs" />
+    <Compile Include="Portuguese\Parsers\WeightParserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spanish\Extractors\AgeExtractorConfiguration.cs" />
     <Compile Include="Spanish\Extractors\AreaExtractorConfiguration.cs" />
@@ -123,8 +143,9 @@
       <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Portuguese\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*" "$(TargetDir)..\..\..\build\package\" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

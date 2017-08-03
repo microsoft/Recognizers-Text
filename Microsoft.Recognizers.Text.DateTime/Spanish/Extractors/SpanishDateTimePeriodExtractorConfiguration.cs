@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class SpanishDateTimePeriodExtractorConfiguration : IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?)\s*{SpanishTimePeriodExtractorConfiguration.UnitRegex}\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?)\s*{SpanishTimePeriodExtractorConfiguration.UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex andRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);

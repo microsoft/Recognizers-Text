@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var dtParseResult = new DateTimeResolutionResult();
             var unitStr = unitResult.Unit;
             var numStr = unitResult.Number;
+
             dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
             dtParseResult.FutureValue = dtParseResult.PastValue = double.Parse(numStr)*UnitValueMap[unitStr];
             dtParseResult.Success = true;
@@ -60,11 +61,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     {TimeTypeConstants.DURATION, dtParseResult.FutureValue.ToString()}
                 };
+
                 dtParseResult.PastResolution = new Dictionary<string, string>
                 {
                     {TimeTypeConstants.DURATION, dtParseResult.PastValue.ToString()}
                 };
             }
+
             var ret = new DateTimeParseResult
             {
                 Text = er.Text,
@@ -76,6 +79,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 TimexStr = dtParseResult.Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
     }

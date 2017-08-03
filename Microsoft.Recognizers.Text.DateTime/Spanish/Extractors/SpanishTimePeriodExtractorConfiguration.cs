@@ -23,14 +23,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex UnitRegex =
-            new Regex(@"(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)",
+            new Regex(@"(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit = 
-            new Regex($@"\b(?<num>\d+(\,\d*)?)\s*{UnitRegex}\b", 
+            new Regex($@"\b(?<num>\d+(\,\d*)?)\s*{UnitRegex}", 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);

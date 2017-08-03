@@ -13,6 +13,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser DateParser { get; }
         IExtractor DateTimeExtractor { get; }
         IDateTimeParser DateTimeParser { get; }
+        IExtractor DatePeriodExtractor { get; }
+        IDateTimeParser DatePeriodParser { get; }
+        IExtractor TimePeriodExtractor { get; }
+        IDateTimeParser TimePeriodParser { get; }
+        IExtractor DateTimePeriodExtractor { get; }
+        IDateTimeParser DateTimePeriodParser { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

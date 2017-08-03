@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
-    public class NumberWithUnitRecognizer : BaseNumberRecognizer
+    public class NumberWithUnitRecognizer : Recognizer 
     {
-        static NumberWithUnitRecognizer()
+        public static readonly NumberWithUnitRecognizer Instance = new NumberWithUnitRecognizer();
+
+        private NumberWithUnitRecognizer()
         {
-            ModelInstances = new Dictionary<string, Dictionary<Type, IModel>>(StringComparer.InvariantCultureIgnoreCase)
+            RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {
-                {
-                    Culture.English, new Dictionary<Type, IModel>
-                    {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
+                [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -22,7 +20,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
+                [typeof(TemperatureModel)] = new TemperatureModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -31,7 +29,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (DimensionModel)] = new DimensionModel(
+                [typeof(DimensionModel)] = new DimensionModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -40,7 +38,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (AgeModel)] = new AgeModel(
+                [typeof(AgeModel)] = new AgeModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -49,69 +47,67 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                },
-                {
-                    Culture.Chinese, new Dictionary<Type, IModel>
+            });
+
+            RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
+            {
+                [typeof (CurrencyModel)] = new CurrencyModel(
+                    new Dictionary<IExtractor, IParser>
                     {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
-                            new Dictionary<IExtractor, IParser>
-                            {
-                                {
-                                    new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
-                                    new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
-                                },
-                                {
-                                    new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                                    new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                                }
-                            }
-                            ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
-                            new Dictionary<IExtractor, IParser>
-                            {
-                                {
-                                    new NumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
-                                    new NumberWithUnitParser(new Chinese.TemperatureParserConfiguration())
-                                },
-                                {
-                                    new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
-                                    new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-                                }
-                            }
-                            ),
-                        [typeof (DimensionModel)] = new DimensionModel(
-                            new Dictionary<IExtractor, IParser>
-                            {
-                                {
-                                    new NumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
-                                    new NumberWithUnitParser(new Chinese.DimensionParserConfiguration())
-                                },
-                                {
-                                    new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
-                                    new NumberWithUnitParser(new English.DimensionParserConfiguration())
-                                }
-                            }
-                            ),
-                        [typeof (AgeModel)] = new AgeModel(
-                            new Dictionary<IExtractor, IParser>
-                            {
-                                {
-                                    new NumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
-                                    new NumberWithUnitParser(new Chinese.AgeParserConfiguration())
-                                },
-                                {
-                                    new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
-                                    new NumberWithUnitParser(new English.AgeParserConfiguration())
-                                }
-                            }
-                            ),
+                        {
+                            new NumberWithUnitExtractor(new Chinese.CurrencyExtractorConfiguration()),
+                            new NumberWithUnitParser(new Chinese.CurrencyParserConfiguration())
+                        },
+                        {
+                            new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                            new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                        }
                     }
-                },
-                {
-                    Culture.Spanish, new Dictionary<Type, IModel>
+                    ),
+                [typeof (TemperatureModel)] = new TemperatureModel(
+                    new Dictionary<IExtractor, IParser>
                     {
-                        [typeof (CurrencyModel)] = new CurrencyModel(
+                        {
+                            new NumberWithUnitExtractor(new Chinese.TemperatureExtractorConfiguration()),
+                            new NumberWithUnitParser(new Chinese.TemperatureParserConfiguration())
+                        },
+                        {
+                            new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                            new NumberWithUnitParser(new English.TemperatureParserConfiguration())
+                        }
+                    }
+                    ),
+                [typeof (DimensionModel)] = new DimensionModel(
+                    new Dictionary<IExtractor, IParser>
+                    {
+                        {
+                            new NumberWithUnitExtractor(new Chinese.DimensionExtractorConfiguration()),
+                            new NumberWithUnitParser(new Chinese.DimensionParserConfiguration())
+                        },
+                        {
+                            new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                            new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                        }
+                    }
+                    ),
+                [typeof (AgeModel)] = new AgeModel(
+                    new Dictionary<IExtractor, IParser>
+                    {
+                        {
+                            new NumberWithUnitExtractor(new Chinese.AgeExtractorConfiguration()),
+                            new NumberWithUnitParser(new Chinese.AgeParserConfiguration())
+                        },
+                        {
+                            new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                            new NumberWithUnitParser(new English.AgeParserConfiguration())
+                        }
+                    }
+                    ),
+            });
+
+            RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -120,7 +116,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (TemperatureModel)] = new TemperatureModel(
+                [typeof(TemperatureModel)] = new TemperatureModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -129,7 +125,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (DimensionModel)] = new DimensionModel(
+                [typeof(DimensionModel)] = new DimensionModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -138,7 +134,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                        [typeof (AgeModel)] = new AgeModel(
+                [typeof(AgeModel)] = new AgeModel(
                             new Dictionary<IExtractor, IParser>
                             {
                                 {
@@ -147,27 +143,65 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 }
                             }
                             ),
-                    }
-                }
-            };
+            });
+
+            RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.CurrencyParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(TemperatureModel)] = new TemperatureModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.TemperatureExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.TemperatureParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(DimensionModel)] = new DimensionModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.DimensionExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.DimensionParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(AgeModel)] = new AgeModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new Portuguese.AgeExtractorConfiguration()),
+                                    new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
+                                }
+                            }
+                            ),
+            });
         }
 
-        public static IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetTemperatureModel(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetTemperatureModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetDimensionModel(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetDimensionModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
         }
 
-        public static IModel GetAgeModel(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetAgeModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
         }

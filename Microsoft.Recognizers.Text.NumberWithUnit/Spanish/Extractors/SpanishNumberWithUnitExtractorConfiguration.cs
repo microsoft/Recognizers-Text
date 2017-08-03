@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
@@ -16,6 +17,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         }
 
         public abstract string ExtractType { get; }
+
         public CultureInfo CultureInfo { get; }
 
         public IExtractor UnitNumExtractor { get; }
@@ -27,7 +29,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public string ConnectorToken { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
+
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
+
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
     }
 }

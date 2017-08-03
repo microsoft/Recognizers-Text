@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex($@"(?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{EngMonthRegex}))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(@"(?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)",
@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(?<woy>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?)\s+semana(\s+del?)?\s+({
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
@@ -123,6 +123,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex WhichWeekRegex =
             new Regex(
                 $@"",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: add the week of and month of pattern for Spanish
+        public static readonly Regex WeekOfRegex =
+            new Regex(
+                $@"(week)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthOfRegex =
+            new Regex(
+                $@"(month)(\s*)(of)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -167,6 +178,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

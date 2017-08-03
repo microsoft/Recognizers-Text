@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex($@"(?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{EngMonthRegex}))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)",
+        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(@"(?<past>\b(past|last|previous)\b)",
@@ -101,11 +101,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 $@"(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({
                     YearRegex}|(?<order>next|last|this)\s+year))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}\b",
+        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
@@ -128,6 +128,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex WhichWeekRegex =
             new Regex(
                 $@"(week)(\s*)(?<number>\d\d|\d|0\d)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex WeekOfRegex =
+            new Regex(
+                $@"(week)(\s*)(of)",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MonthOfRegex =
+            new Regex(
+                $@"(month)(\s*)(of)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
@@ -170,6 +180,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
+
+        Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

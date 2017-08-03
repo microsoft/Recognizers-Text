@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex UnitRegex =
             new Regex(
-                @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)",
+                @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodicRegex = new Regex(
@@ -31,6 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+            DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
         }
 
         public IExtractor DurationExtractor { get; }
@@ -40,6 +43,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IExtractor DateExtractor { get; }
 
         public IExtractor DateTimeExtractor { get; }
+
+        public IExtractor DatePeriodExtractor { get; }
+
+        public IExtractor TimePeriodExtractor { get; }
+
+        public IExtractor DateTimePeriodExtractor { get; }
 
         Regex ISetExtractorConfiguration.LastRegex => LastRegex;
 

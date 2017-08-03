@@ -14,11 +14,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor TimeExtractor { get; }
         IExtractor DateTimeExtractor { get; }
         IExtractor DurationExtractor { get; }
+        IExtractor DatePeriodExtractor { get; }
+        IExtractor TimePeriodExtractor { get; }
+        IExtractor DateTimePeriodExtractor { get; }
 
         IDateTimeParser DateParser { get; }
         IDateTimeParser TimeParser { get; }
         IDateTimeParser DateTimeParser { get; }
         IDateTimeParser DurationParser { get; }
+        IDateTimeParser DatePeriodParser { get; }
+        IDateTimeParser TimePeriodParser { get; }
+        IDateTimeParser DateTimePeriodParser { get; }
 
 
         IImmutableDictionary<string, int> MonthOfYear { get; }
