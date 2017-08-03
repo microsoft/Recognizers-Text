@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
@@ -24,14 +24,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             {"Meter", "m|meter|metre|meters|metres"},
             {"Kilometer", "km|kilometer|kilometer|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre"},
             {"Decimeter", "dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre"},
-            {
-                "Centimeter",
-                "cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre"
-            },
-            {
-                "Micrometer",
-                "mm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre"
-            },
+            {"Centimeter", "cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre"},
+            {"Micrometer", "mm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre"},
             {"Mile", "-mile|mile|miles"},
             {"Yard", "yard|yards"},
             {"Inch", "-inch|inch|inches"},
@@ -41,10 +35,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             {"Picometer", "picometer|picometre|picometers|picometres|pico meter|picometers|pico metres|pico metre"},
             {"Nanometer", "nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre"},
             // Speed
-            {
-                "Meter per second",
-                "meters / second|m/s|meters per second|metres per second|meter per second|metre per second"
-            },
+            {"Meter per second", "meters / second|m/s|meters per second|metres per second|meter per second|metre per second"},
             {"Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometers / hour"},
             {"Kilometer per minute", "km/min|kilometers per minute|kilometres per minute|kilometer per minute"},
             {"Kilometer per second", "km/s|kilometers per second|kilometres per second"},
@@ -55,22 +46,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             {"Yard per minute", "yards per minute|yards / minute|yards/min"},
             {"Yard per second", "yards per second|yards / second|yards/s"},
             // Area
-            {
-                "Square meter",
-                "m2|sq m|sq meter|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|-acre|acre|acres"
-            },
+            {"Square meter", "m2|sq m|sq meter|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres"},
+            {"Acre", "-acre|acre|acres"},
+            // Volume
             {"Cubic meter", "m3|cubic meter|cubic meters|cubic metre|cubic metres"},
-            {
-                "Square kilometer",
-                "square kilometers|square kilometer|square kilometres|square kilometre|sq kilometer|sq kilometers|sq kilometre|sq kilometres|km2"
-            },
+            {"Square kilometer", "square kilometers|square kilometer|square kilometres|square kilometre|sq kilometer|sq kilometers|sq kilometre|sq kilometres|km2"},
             {"Liter", "l|litre|liter|liters|litres"},
             {"Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters"},
             {"Cubic feet", "cubic foot|cubic feet"},
-            {
-                "Area",
-                "cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hecotoliter|hecotolitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|minim|barrel|cord|peck|bushel|hogshead"
-            },
+            {"Volume", "cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hectoliter|hectolitre|decaliter|decalitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|minim|barrel|cord|peck|bushel|hogshead"},
             // Weight
             {"Kilogram", "kg|kilogram|kilograms|kilo|kilos"},
             {"Milligram", "mg|milligram|milligrams"},
@@ -85,14 +69,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             // Information
             {"Bit", "-bit|bit"},
             {"Byte", "-byte|byte"},
-            {"Kilobyte", "-kilobyte|-kilobytes|kilobyte|kb|kilobytes|kilo byte|kilo bytes"},
-            {"Megabyte", "-megabyte|-megabytes|megabyte|mb|megabytes|mega byte|mega bytes"},
-            {"Gigabyte", "-gigabyte|-gigabytes|gigabyte|gb|gigabytes|giga byte|giga bytes"},
-            {"Terabyte", "-terabyte|-terabytes|terabyte|tb|terabytes|tera byte|tera bytes"},
-            {"Petabyte", "-petabyte|-petabytes|petabyte|pb|petabytes|peta byte|peta bytes"}
+            {"Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte"},
+            {"Megabyte", "-megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte"},
+            {"Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte"},
+            {"Terabyte", "-terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte"},
+            {"Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "barrel",
             "barrels",

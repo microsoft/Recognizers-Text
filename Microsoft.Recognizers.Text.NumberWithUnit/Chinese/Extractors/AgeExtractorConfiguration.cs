@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_AGE;
 
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Day", "天大"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "岁"
         }.ToImmutableList();

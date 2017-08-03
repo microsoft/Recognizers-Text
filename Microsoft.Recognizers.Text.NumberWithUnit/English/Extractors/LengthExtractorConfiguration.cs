@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             {"m", "m|meter|metre|meters|metres"},
             {"km", "km|kilometer|kilometer|kilometers|kilometres"},
             {"dm", "dm|decimeter|decimeters|decimetre|decimetres"},
-            {"cm", "cm|cntimeter|cntimeters|cntimetre|cntimetres"},
+            {"cm", "cm|centimeter|centimeters|centimetre|centimetres"},
             {"mm", "mm|micrometer|micrometre|micrometers|micrometres"},
             {"mile", "mile|miles"},
             {"yard", "yard|yards"},
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             {"nm", "nm|nanometer|nanometre"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "m",
             "yard",
