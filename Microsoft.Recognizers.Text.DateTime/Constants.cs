@@ -10,6 +10,5 @@
         public const string SYS_DATETIME_DATETIMEPERIOD = "datetimerange";
         public const string SYS_DATETIME_DURATION = "duration";
         public const string SYS_DATETIME_SET = "set";
-
     }
 }
