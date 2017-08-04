@@ -20,19 +20,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
         {
-            {"m", "m|meter|metre|meters|metres"},
-            {"km", "km|kilometer|kilometer|kilometers|kilometres"},
-            {"dm", "dm|decimeter|decimeters|decimetre|decimetres"},
-            {"cm", "cm|centimeter|centimeters|centimetre|centimetres"},
-            {"mm", "mm|micrometer|micrometre|micrometers|micrometres"},
-            {"mile", "mile|miles"},
-            {"yard", "yard|yards"},
-            {"inch", "inch|inches|in|\""},
-            {"foot", "foot|feet|ft"},
-            {"light year", "light year|light-year|light years|light-years"},
-            {"pt", "pt|pts"},
-            {"pm", "pm|picometer|picometre"},
-            {"nm", "nm|nanometer|nanometre"}
+            {"Kilometer", "km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre"},
+            {"Hectometer", "hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre"},
+            {"Decameter", "dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre"},
+            {"Meter", "m|meter|metre|meters|metres"},
+            {"Decimeter", "dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre"},
+            {"Centimeter", "cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre"},
+            {"Millimeter", "mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre"},
+            {"Micrometer", "μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre"},
+            {"Nanometer", "nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre"},
+            {"Picometer", "pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre"},
+            {"Mile", "-mile|mile|miles"},
+            {"Yard", "yard|yards"},
+            {"Inch", "-inch|inch|inches|in|\""},
+            {"Foot", "-foot|foot|feet|ft"},
+            {"Light year", "light year|light-year|light years|light-years"},
+            {"Pt", "pt|pts"},
+            
         }.ToImmutableDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = new List<string>

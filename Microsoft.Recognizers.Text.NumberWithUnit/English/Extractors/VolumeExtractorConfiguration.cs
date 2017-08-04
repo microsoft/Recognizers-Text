@@ -20,18 +20,30 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
         {
-            {"m3", "m3|cubic meter|cubic meters|cubic metre|cubic|metres"},
-            {"l", "l|litre|liter|liters|litres"},
-            {"ml", "ml|mls|millilitre|milliliter|millilitres|milliliters"},
-            {
-                "other",
-                "cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hectoliter|hectolitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic foot|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|gallon|minim|barrel|cord|peck|bushel|hogshead"
-            }
+            {"Cubic meter", "m3|cubic meter|cubic meters|cubic metre|cubic metres"},
+            {"Cubic centimeter", "cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres"},
+            {"Cubic millimiter", "cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres"},
+            {"Hectoliter", "hectoliter|hectolitre|hectoliters|hectolitres"},
+            {"Decaliter", "decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres"},
+            {"Liter", "l|litre|liter|liters|litres"},
+            {"Deciliter", "dl|deciliter|decilitre|deciliters|decilitres"},
+            {"Centiliter", "cl|centiliter|centilitre|centiliters|centilitres"},
+            {"Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters"},
+            {"Cubic yard", "cubic yard|cubic yards"},
+            {"Cubic inch", "cubic inch|cubic inches"},
+            {"Cubic foot", "cubic foot|cubic feet"},
+            {"Cubic mile", "cubic mile|cubic miles"},
+            {"Fluid ounce", "fl oz|fluid ounce|fluid ounces"},
+            {"Teaspoon", "teaspoon|teaspoons"},
+            {"Tablespoon", "tablespoon|tablespoons"},
+            {"Pint", "pint|pints" },
+            {"Volume unit", "fluid dram|gill|quart|minim|barrel|cord|peck|bushel|hogshead" }
         }.ToImmutableDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "l",
+            "ounce",
             "oz",
             "cup",
             "peck",

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
@@ -20,61 +21,26 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
         {
-            // Length
-            {"Meter", "m|meter|metre|meters|metres"},
-            {"Kilometer", "km|kilometer|kilometer|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre"},
-            {"Decimeter", "dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre"},
-            {"Centimeter", "cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre"},
-            {"Micrometer", "mm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre"},
-            {"Mile", "-mile|mile|miles"},
-            {"Yard", "yard|yards"},
-            {"Inch", "-inch|inch|inches"},
-            {"Foot", "-foot|foot|feet|ft"},
-            {"Light year", "light year|light-year|light years|light-years"},
-            {"Pt", "pt|pts"},
-            {"Picometer", "picometer|picometre|picometers|picometres|pico meter|picometers|pico metres|pico metre"},
-            {"Nanometer", "nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre"},
-            // Speed
-            {"Meter per second", "meters / second|m/s|meters per second|metres per second|meter per second|metre per second"},
-            {"Kilometer per hour", "km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometers / hour"},
-            {"Kilometer per minute", "km/min|kilometers per minute|kilometres per minute|kilometer per minute"},
-            {"Kilometer per second", "km/s|kilometers per second|kilometres per second"},
-            {"Mile per hour", "mph|miles per hour|mi/h|mile / hour|miles an hour"},
-            {"Knot", "kt|knot|kn"},
-            {"Foot per second", "ft/s|foot/s|feet per second|fps"},
-            {"Foot per minute", "ft/min|foot/min|feet per minute"},
-            {"Yard per minute", "yards per minute|yards / minute|yards/min"},
-            {"Yard per second", "yards per second|yards / second|yards/s"},
-            // Area
-            {"Square meter", "m2|sq m|sq meter|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres"},
-            {"Acre", "-acre|acre|acres"},
-            // Volume
-            {"Cubic meter", "m3|cubic meter|cubic meters|cubic metre|cubic metres"},
-            {"Square kilometer", "square kilometers|square kilometer|square kilometres|square kilometre|sq kilometer|sq kilometers|sq kilometre|sq kilometres|km2"},
-            {"Liter", "l|litre|liter|liters|litres"},
-            {"Milliliter", "ml|mls|millilitre|milliliter|millilitres|milliliters"},
-            {"Cubic feet", "cubic foot|cubic feet"},
-            {"Volume", "cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hectoliter|hectolitre|decaliter|decalitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|minim|barrel|cord|peck|bushel|hogshead"},
-            // Weight
-            {"Kilogram", "kg|kilogram|kilograms|kilo|kilos"},
-            {"Milligram", "mg|milligram|milligrams"},
-            {"Barrel", "barrels|barrel"},
-            {"Gallon", "-gallon|gallons|gallon"},
-            {"Gram", "g|gram|grams"},
-            {"Metric ton", "metric tons|metric ton"},
-            {"Ton", "-ton|ton|tons|tonne|tonnes"},
-            {"Pound", "pound|pounds|lb"},
-            {"Ounce", "-ounce|ounce|oz|ounces"},
-            {"Weight", "pennyweight|grain|british long ton|US short hundredweight|stone|dram"},
             // Information
-            {"Bit", "-bit|bit"},
-            {"Byte", "-byte|byte"},
+            {"Bit", "-bit|bit|bits"},
+            {"Kilobit", "kilobit|kilobits|kb|kbit"},
+            {"Megabit", "megabit|megabits|Mb|Mbit"},
+            {"Gigabit", "gigabit|gigabits|Gb|Gbit"},
+            {"Terabit", "terabit|terabits|Tb|Tbit"},
+            {"Petabit", "petabit|petabits|Pb|Pbit"},
+            {"Byte", "-byte|byte|bytes"},
             {"Kilobyte", "-kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte"},
             {"Megabyte", "-megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte"},
             {"Gigabyte", "-gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte"},
             {"Terabyte", "-terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte"},
-            {"Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte"}
-        }.ToImmutableDictionary();
+            {"Petabyte", "-petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte"},
+        }
+        .Concat(AreaExtractorConfiguration.AreaSuffixList)
+        .Concat(LengthExtractorConfiguration.LenghtSuffixList)
+        .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
+        .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
+        .Concat(WeightExtractorConfiguration.WeightSuffixList)
+        .ToImmutableDictionary(x => x.Key, x => x.Value);
 
         private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
@@ -95,6 +61,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             "cup",
             "fps",
             "pts",
+            "in",
+            "\""
         }.ToImmutableList();
     }
 }

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Meter", "米|	公尺"},
             {"Kilometer", "千米|公里"},
             {"Decimeter", "分米|公寸"},
-            {"Cntimeter", "釐米|厘米|公分"},
+            {"Centimeter", "釐米|厘米|公分"},
             {"Micrometer", "毫米|公釐"},
             {"Microns", "微米"},
             {"Picometer", "皮米"},

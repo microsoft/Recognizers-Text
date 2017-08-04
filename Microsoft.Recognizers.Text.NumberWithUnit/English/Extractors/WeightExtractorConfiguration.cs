@@ -13,22 +13,25 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => null;
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
 
         public static readonly ImmutableDictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
-            {"kg", "kg|kilogram|kilograms|kilo|kilos"},
-            {"mg", "mg|milligram|milligrams"},
-            {"g", "g|gram|grams"},
-            {"ton", "ton|tonne|tonnes"},
-            {"pound", "pound|pounds|lb"},
-            {"ounce", "ounce|oz|ounces"},
-            {"other", "pennyweight|grain|british long ton|US short hundredweight|stone|dram"}
+            {"Kilogram", "kg|kilogram|kilograms|kilo|kilos"},
+            {"Gram", "g|gram|grams"},
+            {"Milligram", "mg|milligram|milligrams"},
+            {"Barrel", "barrels|barrel"},
+            {"Gallon", "-gallon|gallons|gallon"},
+            {"Metric ton", "metric tons|metric ton"},
+            {"Ton", "-ton|ton|tons|tonne|tonnes"},
+            {"Pound", "pound|pounds|lb"},
+            {"Ounce", "-ounce|ounce|oz|ounces"},
+            {"Weight unit", "pennyweight|grain|british long ton|US short hundredweight|stone|dram"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "g",
             "oz",
