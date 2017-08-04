@@ -144,6 +144,18 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
                       "10 Month");
 
             BasicTest(model,
+                      "十二月初出生的话已经三周大了",
+                      "60 Year");
+
+            BasicTest(model,
+                      "她出生于1945年5月8号，现在60岁了",
+                      "60 Year");
+
+            BasicTest(model,
+                      "她已经满七周岁了，可以上小学了",
+                      "60 Year");
+
+            BasicTest(model,
                       "她出生于1945年5月8号，现在60岁了",
                       "60 Year");
         }
