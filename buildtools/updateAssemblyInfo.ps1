@@ -31,7 +31,7 @@ function UpdateAssemblyInfo()
 
 function AddCodeSign()
 {
-	$fileContent = $fileContent + "`r`n[assembly: AssemblyKeyFileAttribute(@`"..\\..\\buildtools\\35MSSharedLib1024.snk`")] `r`n [assembly: AssemblyDelaySignAttribute(true)]"
+	$fileContent = $fileContent + "`r`n[assembly: AssemblyKeyFileAttribute(@`"..\\buildtools\\35MSSharedLib1024.snk`")] `r`n [assembly: AssemblyDelaySignAttribute(true)]"
 	return $fileContent
 }
 
