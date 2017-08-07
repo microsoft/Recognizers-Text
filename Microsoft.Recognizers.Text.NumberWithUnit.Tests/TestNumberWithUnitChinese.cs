@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                       "十二月初出生的话已经三周大了",
-                      "60 Year");
+                      "3 Week");
 
             BasicTest(model,
                       "她出生于1945年5月8号，现在60岁了",
@@ -153,11 +153,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                       "她已经满七周岁了，可以上小学了",
-                      "60 Year");
+                      "7 Year");
 
             BasicTest(model,
-                      "她出生于1945年5月8号，现在60岁了",
-                      "60 Year");
+                      "90天大的小孩应该去医院做检查",
+                      "90 Day");
         }
 
     }
