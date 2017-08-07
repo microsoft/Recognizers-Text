@@ -124,7 +124,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 numVal = double.Parse(match.Groups["num"].Value) + ParseNumberWithUnitAndSuffix(suffixStr);
                 numStr = numVal.ToString();
-                //numStr = match.Groups["num"].Value;
                 var srcUnit = match.Groups["unit"].Value.ToLower();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -148,7 +147,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 numVal = match.Groups["half"].Success ? 0.5 : 1; 
                 numVal += ParseNumberWithUnitAndSuffix(suffixStr);
                 numStr = numVal.ToString();
-                //numStr = match.Groups["half"].Success ? "0.5" : "1";
                 var srcUnit = match.Groups["unit"].Value.ToLower();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {

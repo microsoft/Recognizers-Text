@@ -269,7 +269,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 month = referenceTime.Month,
                 year = referenceTime.Year;
 
-            //判断右侧是否比左侧的小,如果比左侧的小,则增加一天
+            //check if the right time is smaller than the left time, if yes, add one day
             int hour = leftResultTime.Hour > 0 ? leftResultTime.Hour : 0,
                 min = leftResultTime.Minute > 0 ? leftResultTime.Minute : 0,
                 second = leftResultTime.Second > 0 ? leftResultTime.Second : 0;
@@ -287,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             rightTime = rightTime.AddMinutes(min);
             rightTime = rightTime.AddSeconds(second);
 
-            //右侧有ampm ,左侧沒有
+            //the right side time contains "ampm", while the left side doesn't
             if (rightResult.Comment != null && rightResult.Comment.Equals("ampm") &&
                 leftResult.Comment == null && rightTime < leftTime)
             {

@@ -48,7 +48,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             BasicTestFuture("从昨天5:00-6:00", new DateObject(2016, 11, 6, 5, 0, 0), new DateObject(2016, 11, 6, 6, 0, 0));
             BasicTestFuture("1月15号4点和2月3号9点之间", new DateObject(2017, 1, 15, 4, 0, 0),
                 new DateObject(2017, 2, 3, 9, 0, 0));
-            //BasicTestFuture("2点-明天4点", new DateObject(2016, 11, 8, 2, 0, 0), new DateObject(2016, 11, 8, 4, 0, 0));
             BasicTestFuture("2点-明天4点", new DateObject(2016, 11, 7, 2, 0, 0), new DateObject(2016, 11, 8, 4, 0, 0));
 
             BasicTestFuture("昨晚", new DateObject(2016, 11, 6, 16, 0, 0), new DateObject(2016, 11, 6, 20, 0, 0));

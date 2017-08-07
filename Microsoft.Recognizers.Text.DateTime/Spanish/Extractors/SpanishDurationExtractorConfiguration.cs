@@ -14,9 +14,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: modify the FollowedUnit to be like the follewing code
-        //       public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
-        //       RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
