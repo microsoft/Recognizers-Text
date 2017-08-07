@@ -305,8 +305,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var rightTimex = BuildTimex(DateObject2TimeResult(rightTime));
             ret.Timex = $"({leftTimex},{rightTimex},PT{Convert.ToInt32((rightTime - leftTime).TotalHours)}H)";
 
-            //ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
-            //ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
             ret.Success = true;
             return ret;
         }
