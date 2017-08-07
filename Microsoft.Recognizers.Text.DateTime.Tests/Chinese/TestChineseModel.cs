@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
 
             BasicTest(model, reference,
                 "从昨天下午两点到明天四点",
-                Constants.SYS_DATETIME_DATETIMEPERIOD, "从昨天下午两点到明天四点", "(2016-11-06T14,2016-11-08T04,PT38H)");
+                Constants.SYS_DATETIME_DATETIMEPERIOD, "从昨天下午两点到明天四点", "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)");
 
             BasicTest(model, reference,
                 "从昨天5:00-6:00",

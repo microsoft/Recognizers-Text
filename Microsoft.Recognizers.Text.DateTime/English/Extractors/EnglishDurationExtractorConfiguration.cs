@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex AllRegex = new Regex(@"\b(?<all>all\s+(?<unit>year|month|week|day))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = new Regex(@"\b(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
+        public static readonly Regex HalfRegex = new Regex(@"((\b(a|an)\s*)|(\b))(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDurationExtractorConfiguration()

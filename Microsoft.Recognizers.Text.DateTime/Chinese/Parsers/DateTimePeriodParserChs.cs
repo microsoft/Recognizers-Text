@@ -301,8 +301,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
 
-            var leftTimex = BuildTimex(DateObject2TimeResult(leftTime));
-            var rightTimex = BuildTimex(DateObject2TimeResult(rightTime));
+            var leftTimex = "";
+            var rightTimex = "";
+            if (!pr1.TimexStr.Contains("X") && !pr2.TimexStr.Contains("X"))
+            {
+                leftTimex= FormatUtil.LuisDateTime(leftTime);
+                rightTimex = FormatUtil.LuisDateTime(rightTime);
+            }
+            else
+            {
+                leftTimex = pr1.TimexStr;
+                rightTimex = pr2.TimexStr;
+            }
+
             ret.Timex = $"({leftTimex},{rightTimex},PT{Convert.ToInt32((rightTime - leftTime).TotalHours)}H)";
 
             ret.Success = true;

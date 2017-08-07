@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
+            FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
         }
     }
 }
