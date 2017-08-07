@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public static readonly ImmutableDictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
         {
             // China 公制
-            {"Meter", "米|	公尺"},
+            {"Meter", "米|公尺"},
             {"Kilometer", "千米|公里"},
             {"Decimeter", "分米|公寸"},
             {"Centimeter", "釐米|厘米|公分"},
