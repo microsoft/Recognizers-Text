@@ -50,6 +50,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("half year", 15768000, "P0.5Y");
             BasicTest("half an year", 15768000, "P0.5Y");
 
+            BasicTest("I'll leave for 3-min", 180, "PT3M");
+            BasicTest("I'll leave for 30-minutes", 1800, "PT30M");
+
+            BasicTest("I'll leave for an hour and a half", 5400, "PT1.5H");
+            BasicTest("I'll leave for an hour and half", 5400, "PT1.5H");
+            BasicTest("I'll leave for half hour", 1800, "PT0.5H");
+
+            BasicTest("I'll leave for two hour", 7200, "PT2H");
+            BasicTest("I'll leave for two and a half hours", 9000, "PT2.5H");
         }
     }
 }

@@ -89,6 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> Numbers { get; protected set; }
+        public virtual IImmutableDictionary<string, double> DoubleNumbers { get; protected set; }
 
         public virtual IImmutableDictionary<string, long> UnitValueMap { get; protected set; }
 

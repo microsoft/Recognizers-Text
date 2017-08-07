@@ -266,6 +266,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (!ret.Success)
             {
+                ret = MatchNextWeekday(text, referenceDate);
+            }
+
+            if (!ret.Success)
+            {
                 ret = MatchLastWeekday(text, referenceDate);
             }
 

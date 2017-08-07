@@ -18,6 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DayOfWeek = InitDayOfWeek();
             MonthOfYear = InitMonthOfYear();
             Numbers = InitNumbers();
+            DoubleNumbers = InitDoubleNumbers();
             CardinalExtractor = new CardinalExtractor();
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
@@ -357,6 +358,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                     { "31st", 31}
                 });
             }
+        }
+
+        private static ImmutableDictionary<string, double> InitDoubleNumbers()
+        {
+            return new Dictionary<string, double>
+            {
+                {"half", 0.5},
+                {"quarter", 0.25}
+            }.ToImmutableDictionary();
         }
     }
 }

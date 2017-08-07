@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> CardinalMap { get; }
         IImmutableDictionary<string, int> DayOfMonth { get; }
         IImmutableDictionary<string, int> DayOfWeek { get; }
+        IImmutableDictionary<string, double> DoubleNumbers { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }

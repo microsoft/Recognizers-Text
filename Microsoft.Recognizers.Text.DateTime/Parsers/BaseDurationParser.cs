@@ -63,36 +63,67 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // check {and} suffix after a {number} {unit}
+        private double ParseNumberWithUnitAndSuffix(string text)
+        {
+            double numVal = 0;
+            string numStr = string.Empty;
+
+            var match = this.config.SuffixAndRegex.Match(text);
+            if (match.Success)
+            {
+                numStr = match.Groups["suffix_num"].Value.ToLower();
+                if (this.config.DoubleNumbers.ContainsKey(numStr))
+                {
+                    numVal = this.config.DoubleNumbers[numStr];
+                }
+            }
+            return numVal;
+        }
+
         // simple cases made by a number followed an unit
         private DateTimeResolutionResult ParseNumerWithUnit(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            double numVal = 0;
             var numStr = string.Empty;
             var unitStr = string.Empty;
+            var suffixStr = text;
+            Match match;
 
             // if there are spaces between nubmer and unit
             var ers = this.config.CardinalExtractor.Extract(text);
             if (ers.Count == 1)
             {
                 var pr = this.config.NumberParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                // followed unit: {num} (<followed unit>and a half hours)
+                var srcUnit = string.Empty;
+                var noNum = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
+                match = this.config.FollowedUnit.Match(noNum);
+                if (match.Success)
+                {
+                    srcUnit = match.Groups["unit"].Value.ToLower();
+                    suffixStr = match.Groups["suffix"].Value.ToLower();
+                }
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
-                    numStr = pr.Value.ToString();
+                    numVal = double.Parse(pr.Value.ToString()) + ParseNumberWithUnitAndSuffix(suffixStr);
+                    numStr = numVal.ToString();
                     unitStr = this.config.UnitMap[srcUnit];
 
                     ret.Timex = "P" + (IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
-                    ret.FutureValue = ret.PastValue = (double)pr.Value * this.config.UnitValueMap[srcUnit];
+                    ret.FutureValue = ret.PastValue = (double)numVal * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                     return ret;
                 }
             }
 
             // if there are NO spaces between number and unit
-            var match = this.config.NumberCombinedWithUnit.Match(text);
+            match = this.config.NumberCombinedWithUnit.Match(text);
             if (match.Success)
             {
-                numStr = match.Groups["num"].Value;
+                numVal = double.Parse(match.Groups["num"].Value) + ParseNumberWithUnitAndSuffix(suffixStr);
+                numStr = numVal.ToString();
                 var srcUnit = match.Groups["unit"].Value.ToLower();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -113,7 +144,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.AnUnitRegex.Match(text);
             if (match.Success)
             {
-                numStr = match.Groups["half"].Success ? "0.5" : "1";
+                numVal = match.Groups["half"].Success ? 0.5 : 1; 
+                numVal += ParseNumberWithUnitAndSuffix(suffixStr);
+                numStr = numVal.ToString();
                 var srcUnit = match.Groups["unit"].Value.ToLower();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -158,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (this.config.UnitValueMap.ContainsKey(srcUnit))
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
-                    ret.Timex = "P" + numStr + unitStr[0];
+                    ret.Timex = "P" + (IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
                     ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
