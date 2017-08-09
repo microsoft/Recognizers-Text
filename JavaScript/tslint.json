@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "member-ordering": [false]
+  }
+}
