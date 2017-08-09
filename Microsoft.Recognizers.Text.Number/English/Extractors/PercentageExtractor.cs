@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -12,8 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                $@"(@{numExtType})(\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)",
-                $@"(per cent of|percent of|percents of)(\s*)(@{numExtType})"
+                Numeric.NumberWithSuffixPercentage,
+                Numeric.NumberWithPrefixPercentage
             };
 
             return BuildRegexes(regexStrs);
