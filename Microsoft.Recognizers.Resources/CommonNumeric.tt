@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Common\Common-Numeric.yaml";
+	this.Language = null;
+	this.ClassName = "CommonNumeric";
+#>
+<#@ include file=".\NumericBase.ttinclude"#>
