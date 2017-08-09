@@ -3,15 +3,26 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: years old|year old|year-old|years-old|-year-old|-years-old
-    Month: months old|month old|month-old|months-old|-month-old|-months-old
-    Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old
-    Day: days old|day old|day-old|days-old|-day-old|-days-old
+    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age
+    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age
+    Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age
+    Day: days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    sq m: sq m|square meter|square meters|square metre|square metres|acre|acres
+    Square kilometer: sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²
+    Square hectometer: sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares
+    Square decameter: sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²
+    Square meter: sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²
+    Square decimeter: sq dm|sq decimeter|sq decimetre|sq decimeters|sq decimetres|square decimeter|square decimetre|square decimeters|square decimetres|dm2|dm^2|dm²
+    Square centimeter: sq cm|sq centimeter|sq centimetre|sq centimeters|sq centimetres|square centimeter|square centimetre|square centimeters|square centimetres|cm2|cm^2|cm²
+    Square millimeter: sq mm|sq millimeter|sq millimetre|sq millimeters|sq millimetres|square millimeter|square millimetre|square millimeters|square millimetres|mm2|mm^2|mm²
+    Square inch: sq in|sq inch|square inch|square inches|in2|in^2|in²
+    Square foot: sqft|sq ft|sq foot|sq feet|square foot|square feet|feet2|feet^2|feet²|ft2|ft^2|ft²
+    Square mile: sq mi|sq mile|sqmiles|square mile|square miles|mi2|mi^2|mi²
+    Square yard: sq yd|sq yard|sq yards|square yard|square yards|yd2|yd^2|yd²
+    Acre: -acre|acre|acres
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://en.wikipedia.org/wiki/List_of_circulating_currencies
@@ -453,59 +464,19 @@ AmbiguousCurrencyUnitList: !list
 DimensionSuffixList: !dictionary
   types: [ string, string ]
   entries:
-#Length
-    Meter: m|meter|metre|meters|metres
-    Kilometer: km|kilometer|kilometer|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre
-    Decimeter: dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre
-    Centimeter: cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre
-    Micrometer: mm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre
-    Mile: -mile|mile|miles
-    Yard: yard|yards
-    Inch: -inch|inch|inches
-    Foot: -foot|foot|feet|ft
-    Light year: light year|light-year|light years|light-years
-    Pt: pt|pts
-    Picometer: picometer|picometre|picometers|picometres|pico meter|picometers|pico metres|pico metre
-    Nanometer: nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre
-#Speed
-    Meter per second: meters / second|m/s|meters per second|metres per second|meter per second|metre per second
-    Kilometer per hour: km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometers / hour
-    Kilometer per minute: km/min|kilometers per minute|kilometres per minute|kilometer per minute
-    Kilometer per second: km/s|kilometers per second|kilometres per second
-    Mile per hour: mph|miles per hour|mi/h|mile / hour|miles an hour
-    Knot: kt|knot|kn
-    Foot per second: ft/s|foot/s|feet per second|fps
-    Foot per minute: ft/min|foot/min|feet per minute
-    Yard per minute: yards per minute|yards / minute|yards/min
-    Yard per second: yards per second|yards / second|yards/s
-#Area
-    Square meter: m2|sq m|sq meter|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|-acre|acre|acres
-    Cubic meter: m3|cubic meter|cubic meters|cubic metre|cubic metres
-    Square kilometer: square kilometers|square kilometer|square kilometres|square kilometre|sq kilometer|sq kilometers|sq kilometre|sq kilometres|km2
-    Liter: l|litre|liter|liters|litres
-    Milliliter: ml|mls|millilitre|milliliter|millilitres|milliliters
-    Cubic feet: cubic foot|cubic feet
-    Area: cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hecotoliter|hecotolitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|minim|barrel|cord|peck|bushel|hogshead
-#Weight
-    Kilogram: kg|kilogram|kilograms|kilo|kilos
-    Milligram: mg|milligram|milligrams
-    Barrel: barrels|barrel
-    Gallon: -gallon|gallons|gallon
-    Gram: g|gram|grams
-    Metric ton: metric tons|metric ton
-    Ton: -ton|ton|tons|tonne|tonnes
-    Pound: pound|pounds|lb
-    Ounce: -ounce|ounce|oz|ounces
-    Weight: pennyweight|grain|british long ton|US short hundredweight|stone|dram
 #Information
-    Bit: -bit|bit
-    Byte: -byte|byte
-    Kilobyte: -kilobyte|-kilobytes|kilobyte|kb|kilobytes|kilo byte|kilo bytes
-    Megabyte: -megabyte|-megabytes|megabyte|mb|megabytes|mega byte|mega bytes
-    Gigabyte: -gigabyte|-gigabytes|gigabyte|gb|gigabytes|giga byte|giga bytes
-    Terabyte: -terabyte|-terabytes|terabyte|tb|terabytes|tera byte|tera bytes
-    Petabyte: -petabyte|-petabytes|petabyte|pb|petabytes|peta byte|peta bytes
-
+    Bit: -bit|bit|bits
+    Kilobit: kilobit|kilobits|kb|kbit
+    Megabit: megabit|megabits|Mb|Mbit
+    Gigabit: gigabit|gigabits|Gb|Gbit
+    Terabit: terabit|terabits|Tb|Tbit
+    Petabit: petabit|petabits|Pb|Pbit
+    Byte: -byte|byte|bytes
+    Kilobyte: -kilobyte|-kilobytes|kilobyte|kB|kilobytes|kilo byte|kilo bytes|kByte
+    Megabyte: -megabyte|-megabytes|megabyte|mB|megabytes|mega byte|mega bytes|MByte
+    Gigabyte: -gigabyte|-gigabytes|gigabyte|gB|gigabytes|giga byte|giga bytes|GByte
+    Terabyte: -terabyte|-terabytes|terabyte|tB|terabytes|tera byte|tera bytes|TByte
+    Petabyte: -petabyte|-petabytes|petabyte|pB|petabytes|peta byte|peta bytes|PByte
 AmbiguousDimensionUnitList: !list
   types: [ string, string ]
   entries:
@@ -526,7 +497,8 @@ AmbiguousDimensionUnitList: !list
     - cup
     - fps
     - pts
-
+    - in
+    - \"
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\W))
@@ -536,19 +508,22 @@ BuildSuffix: !simpleRegex
 LenghtSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    m: m|meter|metre|meters|metres
-    km: km|kilometer|kilometer|kilometers|kilometres
-    dm: dm|decimeter|decimeters|decimetre|decimetres
-    cm: cm|cntimeter|cntimeters|cntimetre|cntimetres
-    mm: mm|micrometer|micrometre|micrometers|micrometres
-    mile: mile|miles
-    yard: yard|yards
-    inch: inch|inches|in|\"
-    foot: foot|feet|ft
-    light year: light year|light-year|light years|light-years
-    pt: pt|pts
-    pm: pm|picometer|picometre
-    nm: nm|nanometer|nanometre
+    Kilometer: km|kilometer|kilometre|kilometers|kilometres|kilo meter|kilo meters|kilo metres|kilo metre
+    Hectometer: hm|hectometer|hectometre|hectometers|hectometres|hecto meter|hecto meters|hecto metres|hecto metre
+    Decameter: dam|decameter|decametre|decameters|decametres|deca meter|deca meters|deca metres|deca metre
+    Meter: m|meter|metre|meters|metres
+    Decimeter: dm|decimeter|decimeters|decimetre|decimetres|deci meter|deci meters|deci metres|deci metre
+    Centimeter: cm|centimeter|centimeters|centimetre|centimetres|centi meter|centi meters|centi metres|centi metre
+    Millimeter: mm|millimeter|millimeters|millimetre|millimetres|milli meter|milli meters|milli metres|milli metre
+    Micrometer: μm|micrometer|micrometre|micrometers|micrometres|micro meter|micro meters|micro metres|micro metre
+    Nanometer: nm|nanometer|nanometre|nanometers|nanometres|nano meter|nano meters|nano metres|nano metre
+    Picometer: pm|picometer|picometre|picometers|picometres|pico meter|pico meters|pico metres|pico metre
+    Mile: -mile|mile|miles
+    Yard: yard|yards
+    Inch: -inch|inch|inches|in|\"
+    Foot: -foot|foot|feet|ft
+    Light year: light year|light-year|light years|light-years
+    Pt: pt|pts
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
@@ -563,15 +538,15 @@ SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Meter per second: meters / second|m/s|meters per second|metres per second|meter per second|metre per second
-    Kilometer per hour: km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometers / hour
-    Kilometer per minute: km/min|kilometers per minute|kilometres per minute|kilometer per minute
-    Kilometer per second: km/s|kilometers per second|kilometres per second
-    Mile per hour: mph|miles per hour|mi/h|mile / hour
+    Kilometer per hour: km/h|kilometres per hour|kilometers per hour|kilometer per hour|kilometre per hour
+    Kilometer per minute: km/min|kilometers per minute|kilometres per minute|kilometer per minute|kilometre per minute
+    Kilometer per second: km/s|kilometers per second|kilometres per second|kilometer per second|kilometre per second
+    Mile per hour: mph|mile per hour|miles per hour|mi/h|mile / hour|miles / hour|miles an hour
     Knot: kt|knot|kn
-    Foot per second: ft/s|foot/s|feet per second|fps
-    Foot per minute: ft/min|foot/min|feet per minute
-    Yard per minute: yards per minute|yards / minute|yards/min
-    Yard per second: yards per second|yards / second|yards/s
+    Foot per second: ft/s|foot/s|foot per second|feet per second|fps
+    Foot per minute: ft/min|foot/min|foot per minute|feet per minute
+    Yard per minute: yards per minute|yard per minute|yards / minute|yards/min|yard/min
+    Yard per second: yards per second|yard per second|yards / second|yards/s|yard/s
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
@@ -592,14 +567,29 @@ AmbiguousTemperatureUnitList: !list
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    m3: m3|cubic meter|cubic meters|cubic metre|cubic|metres
-    l: l|litre|liter|liters|litres
-    ml: ml|mls|millilitre|milliliter|millilitres|milliliters
-    other: cubic centimeter|cubic centimetre|cubic meter|cubic metre|fl oz|fluid ounce|ounce|oz|cup|hecotoliter|hecotolitre|dekaliter|dekalitre|deciliter|decilitre|cubic yard|cubic milliliter|cubic millilitre|cubic inch|cubic foot|cubic mile|teaspoon|tablespoon|fluid ounce|fluid dram|gill|pint|quart|gallon|minim|barrel|cord|peck|bushel|hogshead
+    Cubic meter: m3|cubic meter|cubic meters|cubic metre|cubic metres
+    Cubic centimeter: cubic centimeter|cubic centimetre|cubic centimeters|cubic centimetres
+    Cubic millimiter: cubic millimiter|cubic millimitre|cubic millimiters|cubic millimitres
+    Hectoliter: hectoliter|hectolitre|hectoliters|hectolitres
+    Decaliter: decaliter|decalitre|dekaliter|dekalitre|decaliters|decalitres|dekaliters|dekalitres
+    Liter: l|litre|liter|liters|litres
+    Deciliter: dl|deciliter|decilitre|deciliters|decilitres
+    Centiliter: cl|centiliter|centilitre|centiliters|centilitres
+    Milliliter: ml|mls|millilitre|milliliter|millilitres|milliliters
+    Cubic yard: cubic yard|cubic yards
+    Cubic inch: cubic inch|cubic inches
+    Cubic foot: cubic foot|cubic feet
+    Cubic mile: cubic mile|cubic miles
+    Fluid ounce: fl oz|fluid ounce|fluid ounces
+    Teaspoon: teaspoon|teaspoons
+    Tablespoon: tablespoon|tablespoons
+    Pint: pint|pints
+    Volume unit: fluid dram|gill|quart|minim|barrel|cord|peck|bushel|hogshead
 AmbiguousVolumeUnitList: !list
   types: [ string ]
   entries:
     - l
+    - ounce
     - oz
     - cup
     - peck
@@ -609,13 +599,16 @@ AmbiguousVolumeUnitList: !list
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    kg: kg|kilogram|kilograms|kilo|kilos
-    mg: mg|milligram|milligrams
-    g: g|gram|grams
-    ton: ton|tonne|tonnes
-    pound: pound|pounds|lb
-    ounce: ounce|oz|ounces
-    other: pennyweight|grain|british long ton|US short hundredweight|stone|dram
+    Kilogram: kg|kilogram|kilograms|kilo|kilos
+    Gram: g|gram|grams
+    Milligram: mg|milligram|milligrams
+    Barrel: barrels|barrel
+    Gallon: -gallon|gallons|gallon
+    Metric ton: metric tons|metric ton
+    Ton: -ton|ton|tons|tonne|tonnes
+    Pound: pound|pounds|lb
+    Ounce: -ounce|ounce|oz|ounces
+    Weight unit: pennyweight|grain|british long ton|US short hundredweight|stone|dram
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
@@ -13,30 +14,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => null;
-        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
+        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
 
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = new Dictionary<string, string>
-        {
-            {"Kilogram", "kg|kilogram|kilograms|kilo|kilos"},
-            {"Gram", "g|gram|grams"},
-            {"Milligram", "mg|milligram|milligrams"},
-            {"Barrel", "barrels|barrel"},
-            {"Gallon", "-gallon|gallons|gallon"},
-            {"Metric ton", "metric tons|metric ton"},
-            {"Ton", "-ton|ton|tons|tonne|tonnes"},
-            {"Pound", "pound|pounds|lb"},
-            {"Ounce", "-ounce|ounce|oz|ounces"},
-            {"Weight unit", "pennyweight|grain|british long ton|US short hundredweight|stone|dram"},
-        }.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumericWithUnit.WeightSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
-        {
-            "g",
-            "oz",
-            "stone",
-            "dram",
-        }.ToImmutableList();
+        private static readonly ImmutableList<string> ambiguousUnitList = NumericWithUnit.AmbiguousWeightUnitList.ToImmutableList();
     }
 }

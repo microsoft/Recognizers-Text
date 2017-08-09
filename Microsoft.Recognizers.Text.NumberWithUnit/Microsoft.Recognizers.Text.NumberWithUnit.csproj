@@ -134,6 +134,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Resources\Microsoft.Recognizers.Resources.csproj">
+      <Project>{87a1de51-0c7b-4beb-b3a5-f04b5e2d8ef1}</Project>
+      <Name>Microsoft.Recognizers.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
       <Project>{61205449-BDBA-4BF3-8B24-AE059E0B1B61}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
