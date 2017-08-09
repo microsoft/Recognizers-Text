@@ -13,7 +13,7 @@
 	var input = new StringReader(File.ReadAllText(this.DataFilename));
 	var yamlParser = new YamlParser();
 	var obj = yamlParser.Deserialize(input);
-#>namespace Microsoft.Recognizers.Resources.<#= this.Language #>
+#>namespace Microsoft.Recognizers.Resources<#= this.Language != null ? "." + this.Language : "" #>
 {
 	using System;
 	using System.Collections.Generic;
