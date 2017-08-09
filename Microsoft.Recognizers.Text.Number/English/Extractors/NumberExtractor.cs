@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.English
@@ -16,11 +17,10 @@ namespace Microsoft.Recognizers.Text.Number.English
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(@"\b");
+                    cardExtract = new CardinalExtractor(Numeric.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Singleline),
-                        "IntegerNum");
+                    builder.Add(new Regex(Numeric.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
                     break;
                 case NumberMode.Default:
                     break;

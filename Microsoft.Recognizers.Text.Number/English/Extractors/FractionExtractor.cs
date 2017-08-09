@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
 {
@@ -14,34 +15,29 @@ namespace Microsoft.Recognizers.Text.Number.English
             var _regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))",
+                    new Regex(Numeric.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))",
+                    new Regex(Numeric.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
                     new Regex(
-                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(and\s+)?)?({IntegerExtractor.AllIntRegex
-                            })(\s+|\s*-\s*)((({OrdinalExtractor.AllOrdinalRegex})|({
-                            OrdinalExtractor.RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)",
+                        Numeric.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 },
                 {
                     new Regex(
-                        $@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(({
-                            OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.RoundNumberOrdinalRegex
-                            })|half|quarter)(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        Numeric.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 },
                 {
                     new Regex(
-                        $@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+over\s+(({
-                            IntegerExtractor.AllIntRegex})|(\d+)(?!\.))(?=\b)",
+                        Numeric.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 }
