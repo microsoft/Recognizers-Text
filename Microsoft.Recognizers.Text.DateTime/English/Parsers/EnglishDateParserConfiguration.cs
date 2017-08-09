@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            DateTokenPrefix = "on ";
+            DateTokenPrefix = DateTimeDefinition.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;

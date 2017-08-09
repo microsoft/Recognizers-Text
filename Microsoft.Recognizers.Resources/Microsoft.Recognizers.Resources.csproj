@@ -46,6 +46,11 @@
   <ItemGroup>
     <Compile Include="CommonDateTime.cs" />
     <Compile Include="CommonNumeric.cs" />
+    <Compile Include="English\DateTimeDefinition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DateTimeDefinition.tt</DependentUpon>
+    </Compile>
     <Compile Include="English\NumericWithUnit.cs">
       <DependentUpon>NumericWithUnit.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -59,6 +64,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="English\DateTimeDefinition.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinition.cs</LastGenOutput>
+    </Content>
     <Content Include="English\NumericWithUnit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumericWithUnit.cs</LastGenOutput>

@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -51,22 +52,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = "on ";
-            TokenBeforeTime = "at ";
+            TokenBeforeDate = DateTimeDefinition.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinition.TokenBeforeTime;
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(@"(?<am>morning)", 
+            AMTimeRegex = new Regex(DateTimeDefinition.AMTimeRegex, 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(@"(?<pm>afternoon|evening|night)",
+            PMTimeRegex = new Regex(DateTimeDefinition.PMTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificNightRegex = EnglishDateTimeExtractorConfiguration.SpecificNightRegex;
             TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
-            UnitRegex = EnglishTimeExtractorConfiguration.UnitRegex;
+            UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;

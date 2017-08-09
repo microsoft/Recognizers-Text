@@ -2,45 +2,46 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>^(at|on|of)(\s+the)?$)",
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinition.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NowRegex =
-            new Regex(@"\b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b",
+            new Regex(DateTimeDefinition.NowRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SuffixRegex = new Regex(@"^\s*(in the\s+)?(morning|afternoon|evening|night)\b",
+        public static readonly Regex SuffixRegex = new Regex(DateTimeDefinition.SuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(@"\b(?<night>morning|afternoon|night|evening)\b",
+        public static readonly Regex NightRegex = new Regex(DateTimeDefinition.NightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecificNightRegex =
-            new Regex($@"\b(((this|next|last)\s+{NightRegex})\b|\btonight)\b",
+            new Regex(DateTimeDefinition.SpecificNightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex($@"^\s*(,\s*)?(in\s+)?{SpecificNightRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+             new Regex(DateTimeDefinition.TimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificNightRegex}(\s*,)?(\s+(at|for))?\s*$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinition.TimeOfTodayBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex($@"({EnglishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})\s*(,\s*)?(in\s+)?{SpecificNightRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinition.SimpleTimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificNightRegex}(\s*,)?(\s+(at|for))?\s*({EnglishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})",
+            new Regex(DateTimeDefinition.SimpleTimeOfTodayBeforeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheEndOfRegex = new Regex(@"(the\s+)?end of(\s+the)?\s*$",
+        public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinition.TheEndOfRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>hours|hour|hrs|seconds|second|minutes|minute|mins)\b",
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinition.TimeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateTimeExtractorConfiguration()

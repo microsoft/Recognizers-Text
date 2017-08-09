@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -26,31 +27,31 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex TillRegex => EnglishTimePeriodExtractorConfiguration.TillRegex;
 
-        private static readonly Regex nightRegex = new Regex(@"\b(?<night>morning|afternoon|(late\s+)?night|evening)\b",
+        private static readonly Regex PeriodNightRegex = new Regex(DateTimeDefinition.PeriodNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex specificNightRegex = new Regex($@"\b(((this|next|last)\s+{nightRegex})\b|\btonight)\b",
+        private static readonly Regex PeriodSpecificNightRegex = new Regex(DateTimeDefinition.PeriodSpecificNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public Regex NightRegex => nightRegex;
+        public Regex NightRegex => PeriodNightRegex;
 
-        public Regex SpecificNightRegex => specificNightRegex;
+        public Regex SpecificNightRegex => PeriodSpecificNightRegex;
 
-        private static readonly Regex unitRegex =
-            new Regex(@"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
+        private static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinition.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex followedUnit = new Regex($@"^\s*{unitRegex}",
+        private static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinition.TimeFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex($@"\b(?<num>\d+(\.\d*)?){unitRegex}",
+        public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinition.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public Regex FollowedUnit => followedUnit;
+        public Regex FollowedUnit => TimeFollowedUnit;
+
+        Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
         
-        Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
-        
-        public Regex UnitRegex => unitRegex;
+        public Regex UnitRegex => TimeUnitRegex;
 
         public Regex PastRegex => EnglishDatePeriodExtractorConfiguration.PastRegex;
 
