@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonDateTime.cs" />
+    <Compile Include="CommonDateTime.cs">
+      <DependentUpon>CommonDateTime.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="English\DateTimeDefinition.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CommonDateTime.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommonDateTime.cs</LastGenOutput>
+    </Content>
     <Content Include="English\DateTimeDefinition.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinition.cs</LastGenOutput>

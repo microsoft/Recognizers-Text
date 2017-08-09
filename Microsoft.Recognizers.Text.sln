@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.Number", "Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj", "{61205449-BDBA-4BF3-8B24-AE059E0B1B61}"
 EndProject
@@ -30,8 +30,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
 	ProjectSection(SolutionItems) = preProject
-		Common\DateTime-English.yaml = Common\DateTime-English.yaml
+		Common\Common-DateTime.yaml = Common\Common-DateTime.yaml
 		Common\Common-Numeric.yaml = Common\Common-Numeric.yaml
+		Common\DateTime-English.yaml = Common\DateTime-English.yaml
 		Common\Numeric-English.yaml = Common\Numeric-English.yaml
 		Common\NumericWithUnit-English.yaml = Common\NumericWithUnit-English.yaml
 	EndProjectSection
