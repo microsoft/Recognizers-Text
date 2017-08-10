@@ -1,7 +1,0 @@
-﻿<#@ template debug="true" hostspecific="true" language="C#" #>
-<#
-	this.DataFilename = @"Common\Common-DateTime.yaml";
-	this.Language = null;
-	this.ClassName = "CommonDateTime";
-#>
-<#@ include file=".\NumericBase.ttinclude"#>

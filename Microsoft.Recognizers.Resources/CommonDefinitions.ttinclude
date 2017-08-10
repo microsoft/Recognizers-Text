@@ -1,0 +1,91 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ assembly name="System.IO"#>
+<#@ assembly name="System.Runtime"#>
+<#@ assembly name="System.Runtime"#>
+<#@ assembly name="$(SolutionDir)build\package\Microsoft.Recognizers.Resources.Common.dll" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Microsoft.Recognizers.Resources.Common" #>
+<#
+	// Read the model file 
+	var input = new StringReader(File.ReadAllText(this.DataFilename));
+	var yamlParser = new YamlParser();
+	var obj = yamlParser.Deserialize(input);
+#>namespace Microsoft.Recognizers.Resources<#= this.Language != null ? "." + this.Language : "" #>
+{
+	using System;
+	using System.Collections.Generic;
+
+	public static class <#= this.ClassName #>
+	{
+<#
+    foreach (var node in obj)
+    {
+		var nodeType = node.Value.GetType();
+		if (nodeType == typeof(char)) {
+#>		public const char <#= node.Key #> = '<#= node.Value #>';<#
+        }
+		if (nodeType == typeof(string)) {
+#>		public const string <#= node.Key #> = "<#= node.Value #>";<#
+        }
+		if (node.Value is IList<object>) {
+			var values = node.Value as IList<object>;
+#>		public static readonly string[] <#= node.Key #> = { <#= string.Join(", ", values.Select(x => string.Format("\"{0}\"", x))) #> };<#
+        }
+		if (nodeType == typeof(SimpleRegex))
+		{
+			var value = node.Value as SimpleRegex;
+#>		public const string <#= node.Key #> = @"<#= value.Definition #>";<#
+		}
+		if (nodeType == typeof(NestedRegex))
+        {
+			var value = node.Value as NestedRegex;
+#>		public static readonly string <#= node.Key #> = $@"<#= value.SanitizedDefinition #>";<#
+        }
+		if (nodeType == typeof(ParamsRegex))
+        {
+			var value = node.Value as ParamsRegex;
+#>		public static readonly Func<string, string> <#= node.Key #> = (placeholder) => $@"<#= value.SanitizedDefinition #>";<#
+        }
+		if (nodeType == typeof(Dictionary))
+        {
+			var value = node.Value as Dictionary;
+#>		public static readonly Dictionary<<#= value.Types[0] #>, <#= value.Types[1] #>> <#= node.Key #> = new Dictionary<<#= value.Types[0] #>, <#= value.Types[1] #>>
+		{
+<#= string.Join("," + Environment.NewLine, value.Entries.Select(x => string.Format("\t\t\t{{ {0}, {1} }}", GetWriteable(x.Key, value.Types[0]), GetWriteable(x.Value, value.Types[1])))) #>
+		};<#
+		}
+		if (nodeType == typeof(List))
+        {
+			var value = node.Value as List;
+#>		public static readonly IList<<#= value.Types[0] #>> <#= node.Key #> = new List<<#= value.Types[0] #>>
+		{
+<#= string.Join("," + Environment.NewLine, value.Entries.Select(x => string.Format("\t\t\t{0}", GetWriteable(x, value.Types[0])))) #>
+		};<#
+		}
+#>
+
+<#
+    }
+#>
+	}
+}<#+
+	protected string DataFilename { get; set; }
+	protected string Language { get; set; }
+	protected string ClassName { get; set; }
+
+	private string GetWriteable(object value, string valueType)
+	{
+        switch (valueType)
+        {
+            case "char": return string.Format("'{0}'", value);
+			case "int": 
+			case "long": 
+			case "double": 
+			case "float": return string.Format("{0}", value);
+			default: return string.Format("\"{0}\"", value);
+        }
+    }
+#>

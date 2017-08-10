@@ -1,0 +1,6 @@
+---
+NumberReplaceToken: '@builtin.num'
+IntegerTemplateRegex: (((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+
+DoubleTemplateRegex: (((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({0}\\d{{3}})+{1}\\d+
+PlaceHolderDefault: \\D|\\b
+...
