@@ -21,7 +21,8 @@
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
+    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
+    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
     "start": "tsc-watch --onSuccess \"ava --watch --verbose\"",
     "test": "tsc && ava --verbose"
   },

@@ -1,6 +1,6 @@
 import { INumberParserConfiguration, ParseResult } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
-import { EnglishNumericResources } from "../../resources/englishNumeric";
+import { EnglishNumeric } from "../../resources/numericEnglish";
 import * as XRegExp from 'xregexp';
 
 export class EnglishNumberParserConfiguration implements INumberParserConfiguration {
@@ -29,23 +29,23 @@ export class EnglishNumberParserConfiguration implements INumberParserConfigurat
 
         this.cultureInfo = ci;
 
-        this.langMarker = EnglishNumericResources.LangMarker;
-        this.decimalSeparatorChar = EnglishNumericResources.DecimalSeparatorChar;
-        this.fractionMarkerToken = EnglishNumericResources.FractionMarkerToken;
-        this.nonDecimalSeparatorChar = EnglishNumericResources.NonDecimalSeparatorChar;
-        this.halfADozenText = EnglishNumericResources.HalfADozenText;
-        this.wordSeparatorToken = EnglishNumericResources.WordSeparatorToken;
+        this.langMarker = EnglishNumeric.LangMarker;
+        this.decimalSeparatorChar = EnglishNumeric.DecimalSeparatorChar;
+        this.fractionMarkerToken = EnglishNumeric.FractionMarkerToken;
+        this.nonDecimalSeparatorChar = EnglishNumeric.NonDecimalSeparatorChar;
+        this.halfADozenText = EnglishNumeric.HalfADozenText;
+        this.wordSeparatorToken = EnglishNumeric.WordSeparatorToken;
 
-        this.writtenDecimalSeparatorTexts = EnglishNumericResources.WrittenDecimalSeparatorTexts;
-        this.writtenGroupSeparatorTexts = EnglishNumericResources.WrittenGroupSeparatorTexts;
-        this.writtenIntegerSeparatorTexts = EnglishNumericResources.WrittenIntegerSeparatorTexts;
-        this.writtenFractionSeparatorTexts = EnglishNumericResources.WrittenFractionSeparatorTexts;
+        this.writtenDecimalSeparatorTexts = EnglishNumeric.WrittenDecimalSeparatorTexts;
+        this.writtenGroupSeparatorTexts = EnglishNumeric.WrittenGroupSeparatorTexts;
+        this.writtenIntegerSeparatorTexts = EnglishNumeric.WrittenIntegerSeparatorTexts;
+        this.writtenFractionSeparatorTexts = EnglishNumeric.WrittenFractionSeparatorTexts;
 
-        this.cardinalNumberMap = EnglishNumericResources.CardinalNumberMap;
-        this.ordinalNumberMap = EnglishNumericResources.OrdinalNumberMap;
-        this.roundNumberMap = EnglishNumericResources.RoundNumberMap;
-        this.halfADozenRegex = XRegExp(EnglishNumericResources.HalfADozenRegex, "gis");
-        this.digitalNumberRegex = XRegExp(EnglishNumericResources.DigitalNumberRegex, "gis");
+        this.cardinalNumberMap = EnglishNumeric.CardinalNumberMap;
+        this.ordinalNumberMap = EnglishNumeric.OrdinalNumberMap;
+        this.roundNumberMap = EnglishNumeric.RoundNumberMap;
+        this.halfADozenRegex = XRegExp(EnglishNumeric.HalfADozenRegex, "gis");
+        this.digitalNumberRegex = XRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
     }
 
     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {

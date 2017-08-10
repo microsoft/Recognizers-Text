@@ -1,7 +1,7 @@
 import * as generator from "./lib/base-code-generator";
 
-let resourcesPath = '../../../Common/';
-let outputPath = "../../src/resources/";
+let resourcesPath = '../Common/';
+let outputPath = "./src/resources/";
 
 let configs = [
     // COMMON
@@ -17,7 +17,7 @@ let configs = [
         output: `${outputPath}numericEnglish.ts`,
         header:
         `import { CommonNumeric } from "./numericCommon";
-export namespace Numeric {`,
+export namespace EnglishNumeric {`,
         footer: `}`
     }
 ];

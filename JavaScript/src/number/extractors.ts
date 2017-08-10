@@ -1,9 +1,9 @@
 import { Constants } from "./constants";
-import { CommonNumeric } from "../resources/commonNumeric";
+import { CommonNumeric } from "../resources/numericCommon";
+import { EnglishNumeric } from "../resources/numericEnglish";
 import * as XRegExp from 'xregexp';
 import { Match, RegExpUtility } from "../utilities";
 import { ArabicType } from "./models";
-import { EnglishNumericResources } from "../resources/englishNumeric";
 import * as _ from "lodash";
 
 export interface IExtractor {
@@ -85,32 +85,30 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
     protected generateArabicNumberRegex(type: ArabicType, placeholder: string = "\D|\b"): RegExp {
 
-        let integerTemplate = EnglishNumericResources.DottedNumbersWithPlaceHolder(placeholder);
-        // "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+" + $@"(?={placeholder})";
-        let doubleTemplate = EnglishNumericResources.DoubleWithThousandsRegex(placeholder);
-        // "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({0}\\d{{3}})+{1}\\d+" + $@"(?={placeholder})";
+        let integerTemplate = CommonNumeric.IntegerTemplateRegex + `(?=${placeholder})`;
+        let doubleTemplate = CommonNumeric.DoubleTemplateRegex + `(?=${placeholder})`;
 
         switch (type) {
             case ArabicType.IntegerNumComma:
-                return XRegExp(integerTemplate.replace('$0$', _.escapeRegExp(',')), "gis");
+                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp(',')), "gis");
             case ArabicType.IntegerNumDot:
-                return XRegExp(integerTemplate.replace('$0$', _.escapeRegExp('.')), "gis");
+                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp('.')), "gis");
             case ArabicType.IntegerNumBlank:
-                return XRegExp(integerTemplate.replace('$0$', ' '), "gis");
+                return XRegExp(integerTemplate.replace('{0}', ' '), "gis");
             case ArabicType.IntegerNumQuote:
-                return XRegExp(integerTemplate.replace('$0$', _.escapeRegExp("'")), "gis");
+                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp("'")), "gis");
             case ArabicType.DoubleNumCommaDot:
-                return XRegExp(doubleTemplate.replace('$0$', ",").replace('$1$', _.escapeRegExp(".")), "gis");
+                return XRegExp(doubleTemplate.replace('{0}', ",").replace('{1}', _.escapeRegExp(".")), "gis");
             case ArabicType.DoubleNumDotComma:
-                return XRegExp(doubleTemplate.replace('$0$', _.escapeRegExp(".")).replace('$1$', ","), "gis");
+                return XRegExp(doubleTemplate.replace('{0}', _.escapeRegExp(".")).replace('{1}', ","), "gis");
             case ArabicType.DoubleNumBlankComma:
-                return XRegExp(doubleTemplate.replace('$0$', ' ').replace('$1$', ","), "gis");
+                return XRegExp(doubleTemplate.replace('{0}', ' ').replace('{1}', ","), "gis");
             case ArabicType.DoubleNumBlankDot:
-                return XRegExp(doubleTemplate.replace('$0$',' ').replace('$1$', _.escapeRegExp(".")), "gis");
+                return XRegExp(doubleTemplate.replace('{0}',' ').replace('{1}', _.escapeRegExp(".")), "gis");
             case ArabicType.DoubleNumCommaCdot:
-                return XRegExp(doubleTemplate.replace('$0$', ",").replace('$1$', "·"), "gis");
+                return XRegExp(doubleTemplate.replace('{0}', ",").replace('{1}', "·"), "gis");
             case ArabicType.DoubleNumQuoteComma:
-                return XRegExp(doubleTemplate.replace('$0$', _.escapeRegExp("'")).replace('$1$', ","), "gis");
+                return XRegExp(doubleTemplate.replace('{0}', _.escapeRegExp("'")).replace('{1}', ","), "gis");
         }
 
         return null;
