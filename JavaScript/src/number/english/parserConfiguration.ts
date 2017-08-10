@@ -1,6 +1,6 @@
 import { INumberParserConfiguration, ParseResult } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
-import { EnglishNumeric } from "../../resources/numericEnglish";
+import { EnglishNumeric } from "../../resources/englishNumeric";
 import * as XRegExp from 'xregexp';
 
 export class EnglishNumberParserConfiguration implements INumberParserConfiguration {

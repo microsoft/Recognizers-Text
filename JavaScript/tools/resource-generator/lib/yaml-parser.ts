@@ -21,12 +21,17 @@ const DictionaryYamlType = new Yaml.Type('!dictionary', {
     construct: (data) => DataTypes.getDictionary(data)
 });
 
+const ListYamlType = new Yaml.Type('!list', {
+    kind: 'mapping',
+    construct: (data) => DataTypes.getList(data)
+});
+
 const CharYamlType = new Yaml.Type('!char', {
     kind: 'scalar',
     construct: (data) => DataTypes.getCharacter(data)
 })
 
-const SCHEMA = Yaml.Schema.create([SimpleRegexYamlType, NestedRegexYamlType, ParamsRegexYamlType, DictionaryYamlType, CharYamlType]);
+const SCHEMA = Yaml.Schema.create([SimpleRegexYamlType, NestedRegexYamlType, ParamsRegexYamlType, DictionaryYamlType, ListYamlType, CharYamlType]);
 const yamlOptions = { schema: SCHEMA };
 
 export function parse(fileStream: string) {

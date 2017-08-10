@@ -109,9 +109,8 @@ export abstract class BaseNumberWithUnitParserConfiguration implements INumberWi
 
     BindDictionary(dictionary: ReadonlyMap<string, string>): void {
         if (!dictionary) return;
-        for (let kv of dictionary) {
-            let key = kv[0];
-            let value = kv[1];
+        for (let key of dictionary.keys()) {
+            let value = dictionary.get(key);
 
             if (!key || key.length === 0) {
                 continue;

@@ -1,6 +1,6 @@
 import { Constants } from "./constants";
-import { BaseNumbers } from "../resources/numericBase";
-import { EnglishNumeric } from "../resources/numericEnglish";
+import { BaseNumbers } from "../resources/baseNumbers";
+import { EnglishNumeric } from "../resources/englishNumeric";
 import * as XRegExp from 'xregexp';
 import { Match, RegExpUtility } from "../utilities";
 import { LongFormatType } from "./models";

@@ -7,6 +7,7 @@ import { EnglishNumberParserConfiguration } from "../../number/english/parserCon
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";
+import { EnglishNumericWithUnit } from "../../resources/englishNumericWithUnit";
 
 export abstract class EnglishNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
     abstract readonly suffixList: ReadonlyMap<string, string>;
@@ -23,8 +24,9 @@ export abstract class EnglishNumberWithUnitExtractorConfiguration implements INu
     constructor(ci: CultureInfo) {
         this.cultureInfo = ci;
         this.unitNumExtractor = new EnglishNumberExtractor();
-        this.buildPrefix = String.raw`(?=(\s|^|\W)|(?!(\s|^|\W))\b)`;
-        this.buildSuffix = String.raw`(?=(\s|\W|$))`;
+
+        this.buildPrefix = EnglishNumericWithUnit.BuildPrefix;
+        this.buildSuffix = EnglishNumericWithUnit.BuildSuffix;
         this.connectorToken = '';
     }
 }

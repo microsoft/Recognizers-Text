@@ -538,7 +538,7 @@ describe('Dimension .', it => {
 
     basicTest(it, model,
         "shell , a subsidiary of royal dutch / shell group , will be allowed to export 0.9 trillion cubic feet , and gulf , a unit of olympia & york developments ltd . will be allowed to export",
-        "900000000000 Cubic feet");
+        "900000000000 Cubic foot");
 
     basicTest(it, model,
         "highlights of the bills , as currently framed , are : - - a restriction on the amount of real estate one family can own , to 660 square meters in the nation ' s six largest cities , but more in smaller cities and rural areas .",
@@ -629,14 +629,9 @@ describe('Dimension .', it => {
         "the interchange with highway 35 and highway 115 to lindsay and peterborough ( exit 436 ) lies 500 metres east of bennett road .",
         "500 Meter");
 
-    // TODO: Review. The 'NumbersWithPlaceHolder' does not have look behind as the original C#: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?=\D|\b)
-    // basicTest(it, model,
-    //     "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm .",
-    //     "300 Micrometer");
-
     basicTest(it, model,
         "sterling armaments of dagenham , essex produced a conversion kit comprising a new 7.62mm barrel , magazine , extractor and ejector for commercial sale .",
-        "7.62 Micrometer");
+        "7.62 Millimeter");
 
     basicTest(it, model,
         "the project costs $ 46 . 8 million , and is intended to boost the company ' s production capacity by 25 % to 34,500 metric tons of copper cathode a year .",

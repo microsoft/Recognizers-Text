@@ -78,7 +78,6 @@ export class BaseNumberParser implements IParser {
 
         let singleIntFrac = `${this.config.wordSeparatorToken}| -|${this.getKeyRegex(this.config.cardinalNumberMap)}|${this.getKeyRegex(this.config.ordinalNumberMap)}`;
 
-        // this.textNumberRegex = XRegExp("(?<=\b)(" + singleIntFrac + ")(?=\b)/i", "gis");
         this.textNumberRegex = XRegExp(String.raw`(?=\b)(${singleIntFrac})(?=\b)`, "gis");
         this.arabicNumberRegex = XRegExp(String.raw`\d+`, "is");
         this.roundNumberSet = new Set<string>();

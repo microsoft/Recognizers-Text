@@ -7,11 +7,6 @@ export abstract class CodeWriter {
     constructor(name: string) {
         this.name = name;
     }
-
-    sanitize(value: string) : string {
-        var stringified = JSON.stringify(value);
-        return stringified.slice(1, stringified.length - 1);
-    }
 }
 
 class DefaultWriter extends CodeWriter {
@@ -19,7 +14,7 @@ class DefaultWriter extends CodeWriter {
 
     constructor (name: string, definition: string) {
         super(name);
-        this.definition = this.sanitize(definition);
+        this.definition = sanitize(definition);
     }
 
     write() {
@@ -32,7 +27,7 @@ class SimpleRegexWriter extends CodeWriter {
 
     constructor (name: string, definition: string) {
         super(name);
-        this.definition = this.sanitize(definition);
+        this.definition = sanitize(definition);
     }
 
     write() {
@@ -50,7 +45,7 @@ class NestedRegexWriter extends CodeWriter {
             var token = `\${${value}}`;
             definition = definition.replace(regex, token);
         });
-        this.definition = this.sanitize(definition);
+        this.definition = sanitize(definition);
     }
 
     write() {
@@ -70,7 +65,7 @@ class ParamsRegexWriter extends CodeWriter {
             definition = definition.replace(regex, token);
         });
         this.params = params.join(': string, ').concat(': string');
-        this.definition = this.sanitize(definition);
+        this.definition = sanitize(definition);
     }
 
     write() {
@@ -86,19 +81,35 @@ class DictionaryWriter extends CodeWriter {
     constructor(name: string, keyType: string, valueType: string, entries: Object) {
         super(name);
         this.entries = [];
-        if (keyType === 'string') {
-            this.keyType = keyType;
-        }
-        if (valueType === 'long') {
-            this.valueType = 'number';
-        }
+        this.keyType = toJsType(keyType);
+        this.valueType = toJsType(valueType);
+
+        let valueQuote = this.valueType === 'number' ? '' : '"';
         for(var propName in entries) {
-            this.entries.push(`['${propName}', ${entries[propName]}]`);
+            this.entries.push(`["${propName}", ${valueQuote}${sanitize(entries[propName], this.valueType)}${valueQuote}]`);
         }
     }
 
     write() {
         return `export const ${this.name}: ReadonlyMap<${this.keyType}, ${this.valueType}> = new Map<${this.keyType}, ${this.valueType}>([${this.entries.join(',')}]);`
+    }
+}
+
+
+function sanitize(value: string, valueType: string = null) : string {
+    if(valueType === 'number') return value;
+
+    let stringified = JSON.stringify(value);
+    return stringified.slice(1, stringified.length - 1);
+}
+
+function toJsType(type: string): string {
+    switch(type) {
+        case 'char': return 'string';
+        case 'long':
+        case 'double':
+        case 'int': return 'number';
+        default: return type;
     }
 }
 
@@ -111,7 +122,7 @@ class ArrayWriter extends CodeWriter {
         this.entries = [];
         this.valueType = typeof(entries[0]);
         entries.forEach(element => {
-            this.entries.push(`'${this.sanitize(element)}'`)
+            this.entries.push(`'${sanitize(element)}'`)
         });
     }
 
@@ -135,6 +146,9 @@ export function GenerateCode(root: any): CodeWriter[] {
         }
         else if (token instanceof DataTypes.Dictionary) {
             lines.push(new DictionaryWriter(tokenName, token.keyType, token.valueType, token.entries));
+        }
+        else if (token instanceof DataTypes.List) {
+            lines.push(new ArrayWriter(tokenName, token.entries));
         }
         else if (token instanceof Array) {
             lines.push(new ArrayWriter(tokenName, token));

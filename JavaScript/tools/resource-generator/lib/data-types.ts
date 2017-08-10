@@ -19,6 +19,11 @@ export namespace DataTypes {
         entries: Object;
     }
 
+    export class List {
+        type: string;
+        entries: string[];
+    }
+
     export function getSimpleRegex(data: any) : SimpleRegex {
         var result = new SimpleRegex();
         result.def = data.def_js ? data.def_js : data.def;
@@ -44,6 +49,13 @@ export namespace DataTypes {
         result.keyType = data.types[0];
         result.valueType = data.types[1];
         result.entries =  data.entries;
+        return result;
+    }
+
+    export function getList(data: any): List {
+        var result = new List();
+        data.type = data.types[0];
+        result.entries = data.entries;
         return result;
     }
 

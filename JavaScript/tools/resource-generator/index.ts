@@ -7,17 +7,26 @@ let configs = [
     // COMMON
     {
         yaml: `${resourcesPath}Base-Numbers.yaml`,
-        output: `${outputPath}numericBase.ts`,
+        output: `${outputPath}baseNumbers.ts`,
         header: `export namespace BaseNumbers {`,
         footer: `}`
     },
     // ENGLISH NUMERIC
     {
         yaml: `${resourcesPath}/English/English-Numbers.yaml`,
-        output: `${outputPath}numericEnglish.ts`,
+        output: `${outputPath}englishNumeric.ts`,
         header:
-        `import { BaseNumbers } from "./numericBase";
+        `import { BaseNumbers } from "./baseNumbers";
 export namespace EnglishNumeric {`,
+        footer: `}`
+    },
+    // ENGLISH NUMERIC WITH UNIT
+    {
+        yaml: `${resourcesPath}/English/English-NumbersWithUnit.yaml`,
+        output: `${outputPath}englishNumericWithUnit.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace EnglishNumericWithUnit {`,
         footer: `}`
     }
 ];

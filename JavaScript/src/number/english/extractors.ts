@@ -1,7 +1,7 @@
 import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
-import { EnglishNumeric } from "../../resources/numericEnglish";
+import { EnglishNumeric } from "../../resources/englishNumeric";
 import * as XRegExp from "xregexp";
 
 export class EnglishNumberExtractor extends BaseNumberExtractor {
