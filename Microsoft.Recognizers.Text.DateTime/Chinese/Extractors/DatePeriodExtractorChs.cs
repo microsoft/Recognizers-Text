@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
@@ -35,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeMonthRegex =
-            new Regex(string.Format(@"(?<relmonth>({0}|{1}|{2})\s*月)", ThisRegex, LastRegex, NextRegex),
+            new Regex($@"(?<relmonth>({ThisRegex}|{LastRegex}|{NextRegex})\s*月)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthRegex =
@@ -71,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearAndMonth =
-            new Regex(string.Format(@"({0}|{1}){2}", YearInChineseRegex, YearRegex, MonthRegex),
+            new Regex($@"({YearInChineseRegex}|{YearRegex}){MonthRegex}",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // 2017.12, 2017-12, 2017/12, 12/2017
@@ -81,8 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
-                string.Format(@"(((明年|今年|去年)\s*)?{0}|({1}|{2}|{3})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)", MonthRegex,
-                    ThisRegex, LastRegex, NextRegex),
+                $@"(((明年|今年|去年)\s*)?{MonthRegex}|({ThisRegex}|{LastRegex}|{NextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekOfMonthRegex =
@@ -118,12 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex SeasonWithYear =
             new Regex(
-                string.Format(@"(({0}|{1}|(?<yearrel>明年|今年|去年))(的)?)?{2}", YearRegex, YearInChineseRegex, SeasonRegex),
+                $@"(({YearRegex}|{YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex = new Regex(
-            string.Format(@"(({0}|{1}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)", YearRegex,
-                YearInChineseRegex),
+            $@"(({YearRegex}|{YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
@@ -154,7 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // match pattern in simple case
-        private List<Token> MatchSimpleCases(string text)
+        private static List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();
             foreach (var regex in SimpleCasesRegexes)
@@ -169,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // merge two date
-        private List<Token> MergeTwoTimePoints(string text)
+        private static List<Token> MergeTwoTimePoints(string text)
         {
             var ret = new List<Token>();
             var er = DatePointExtractor.Extract(text);
@@ -201,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var beforeStr = text.Substring(0, periodBegin).ToLowerInvariant();
                     if (beforeStr.Trim().EndsWith("从"))
                     {
-                        periodBegin = beforeStr.LastIndexOf("从");
+                        periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
@@ -215,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // extract case like "前两年" "前三个月"
-        private List<Token> MatchNumberWithUnit(string text)
+        private static List<Token> MatchNumberWithUnit(string text)
         {
             var ret = new List<Token>();
 
@@ -230,6 +229,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
                 }
             }
+
             if (NumberCombinedWithUnit.IsMatch(text))
             {
                 var matches = NumberCombinedWithUnit.Matches(text);

@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private static bool InclusiveEndPeriod = false;
 
         private const string WeekOfComment="WeekOf";
+
         private const string MonthOfComment = "MonthOf";
 
         public BaseDatePeriodParser(IDatePeriodParserConfiguration configuration)
@@ -395,12 +396,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 InclusiveEndPeriod
                 ? new DateObject(futureYear, month, 1).AddMonths(1).AddDays(-1)
                 : new DateObject(futureYear, month, 1).AddMonths(1));
+
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 new DateObject(pastYear, month, 1),
                 InclusiveEndPeriod
                 ? new DateObject(pastYear, month, 1).AddMonths(1).AddDays(-1)
                 : new DateObject(pastYear, month, 1).AddMonths(1));
+
             ret.Success = true;
+
             return ret;
         }
 
@@ -434,14 +438,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     year = referenceDate.Year + swift;
                 }
+
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                     new DateObject(year, month, 1),
                     InclusiveEndPeriod
                         ? new DateObject(year, month, 1).AddMonths(1).AddDays(-1)
                         : new DateObject(year, month, 1).AddMonths(1));
+
                 ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
+
                 ret.Success = true;
             }
+
             return ret;
         }
 
@@ -452,13 +460,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && match.Length == text.Length)
             {
                 var year = int.Parse(match.Value);
+
                 var beginDay = new DateObject(year, 1, 1);
+
                 var endDay = InclusiveEndPeriod
                         ? new DateObject(year + 1, 1, 1).AddDays(-1)
                         : new DateObject(year + 1, 1, 1);
+
                 ret.Timex = year.ToString("D4");
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
+
                 return ret;
             }
 
@@ -525,10 +537,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pr = this.config.NumberParser.Parse(ers[0]);
                 var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLowerInvariant();
                 var beforeStr = text.Substring(0, ers[0].Start ?? 0).Trim().ToLowerInvariant();
+
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
                     numStr = pr.ResolutionStr;
                     unitStr = this.config.UnitMap[srcUnit];
+
                     var prefixMatch = this.config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
@@ -635,6 +649,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             default:
                                 return ret;
                         }
+
                         ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P{numStr}{unitStr[0]})";
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
@@ -667,11 +682,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                             default:
                                 return ret;
                         }
+
                         ret.Timex =
                             $"({FormatUtil.LuisDate(beginDate.AddDays(1))},{FormatUtil.LuisDate(endDate.AddDays(1))},P{numStr}{unitStr[0]})";
+
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate.AddDays(1), endDate.AddDays(1));
+
                         ret.Success = true;
+
                         return ret;
                     }
                 }
@@ -898,7 +917,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
-
         private DateTimeResolutionResult ParseWhichWeek(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -961,12 +979,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             ret.Timex += "-W" + cardinal.ToString("D2");
+
             ret.FutureValue = InclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(6))
                 : new Tuple<DateObject, DateObject>(futureDate, futureDate.AddDays(7));
+
             ret.PastValue = InclusiveEndPeriod
                 ? new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(6))
                 : new Tuple<DateObject, DateObject>(pastDate, pastDate.AddDays(7));
+
             ret.Success = true;
 
             return ret;

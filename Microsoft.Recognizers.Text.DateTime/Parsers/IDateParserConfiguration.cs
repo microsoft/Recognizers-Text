@@ -12,11 +12,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         #region internalParsers
 
         IExtractor IntegerExtractor { get; }
+
         IExtractor OrdinalExtractor { get; }
+
         IExtractor CardinalExtractor { get; }
+
         IParser NumberParser { get; }
 
         IExtractor DurationExtractor { get; }
+
         IParser DurationParser { get; }
 
         #endregion
@@ -46,7 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         #endregion
 
         int GetSwiftDay(string text);
+
         int GetSwiftMonth(string text);
+
         bool IsCardinalLast(string text);
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }

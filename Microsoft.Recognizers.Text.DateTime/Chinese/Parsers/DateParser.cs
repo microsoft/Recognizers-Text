@@ -11,11 +11,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
         private readonly IFullDateTimeParserConfiguration config;
-        private IExtractor integerExtractor;
-        private IExtractor ordinalExtractor;
-        private IParser numberParser;
 
-        private IExtractor durationExtractor;
+        private readonly IExtractor integerExtractor;
+        private readonly IExtractor ordinalExtractor;
+        private readonly IParser numberParser;
+        private readonly IExtractor durationExtractor;
 
         public DateParser(IFullDateTimeParserConfiguration configuration)
         {
@@ -96,11 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var trimedText = text.Trim();
             var match = DateExtractorChs.LunarRegex.Match(trimedText);
-            if (match.Success)
-            {
-                return true;
-            }
-            return false;
+
+            return match.Success;
         }
 
         // parse basic patterns in DateRegexList
@@ -119,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return ret;
                 }
             }
+
             return new DateTimeResolutionResult();
         }
 
@@ -181,8 +179,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 ret.Timex = FormatUtil.LuisDate(hasYear ? year : -1, hasMonth ? month : -1, day);
 
-                var futureDate = DateObject.MinValue;
-                var pastDate = DateObject.MinValue;
+                DateObject futureDate, pastDate;
+
                 if (day > containsDay[month - 1])
                 {
                     futureDate = new DateObject(year, month + 1, day);
@@ -286,6 +284,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var result = new DateTimeResolutionResult();
             var match = this.config.NextRegex.Match(text);
+
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
@@ -295,6 +294,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
+
             return result;
         }
 
@@ -302,6 +302,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var result = new DateTimeResolutionResult();
             var match = this.config.ThisRegex.Match(text);
+
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
@@ -311,6 +312,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
+
             return result;
         }
 
@@ -318,6 +320,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var result = new DateTimeResolutionResult();
             var match = this.config.LastRegex.Match(text);
+
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLowerInvariant();
@@ -327,6 +330,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 result.FutureValue = result.PastValue = value;
                 result.Success = true;
             }
+
             return result;
         }
 
@@ -334,6 +338,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var result = new DateTimeResolutionResult();
             var match = this.config.StrictWeekDayRegex.Match(text);
+
             if (match.Success && match.Index == 0 && match.Length == text.Length)
             {
                 var weekdayKey = match.Groups["weekday"].Value.ToLower();
@@ -668,7 +673,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
             }
+
             year = num;
+
             return year < 10 ? -1 : year;
         }
     }

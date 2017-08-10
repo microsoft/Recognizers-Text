@@ -11,8 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
 
         public const string TimePeriodConnectWords = "(起|至|到|–|-|—|~|～)";
+
         //五点十分四十八秒
         public static readonly string ChineseTimeRegex = TimeExtractorChs.ChineseTimeRegex;
+
         //六点 到 九点 | 六 到 九点
         public static readonly string LeftChsTimeRegex = $"(从)?(?<left>{TimeExtractorChs.DayDescRegex}?" +
                                                          $"({ChineseTimeRegex}))";

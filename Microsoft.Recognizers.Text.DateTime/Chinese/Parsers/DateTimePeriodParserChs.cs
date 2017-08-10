@@ -57,10 +57,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     innerResult = MergeTwoTimePoints(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseSpecificNight(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseNumberWithUnit(er.Text, referenceTime);
@@ -147,7 +149,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return ret;
             }
+
             var dateStr = pr1.TimexStr;
+
             ret.Timex = splited[0] + dateStr + "T" + splited[1] + dateStr + "T" + splited[2] + "T" + splited[3];
 
             ret.Success = true;
@@ -162,10 +166,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er1 = SingleTimeExtractor.Extract(text);
             var er2 = TimeWithDateExtractor.Extract(text);
 
-            DateObject leftTime, rightTime;
-
-            rightTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
-            leftTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
+            var rightTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
+            var leftTime = new DateObject(referenceTime.Year, referenceTime.Month, referenceTime.Day);
 
             if (er2.Count == 2)
             {
@@ -305,8 +307,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var rightTimex = "";
 
             //"X" is timex token for not determined time
-            if (!pr1.TimexStr.Contains("X") && !pr2.TimexStr.Contains("X")
-                )
+            if (!pr1.TimexStr.Contains("X") && !pr2.TimexStr.Contains("X"))
             {
                 leftTimex = FormatUtil.LuisDateTime(leftTime);
                 rightTimex = FormatUtil.LuisDateTime(rightTime);
@@ -329,7 +330,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             int beginHour, endHour, endMin = 0;
-            var timeStr = string.Empty;
+            string timeStr;
 
             // handle 昨晚，今晨
             var match = DateTimePeriodExtractorChs.SpecificNightRegex.Match(trimedText);
@@ -482,8 +483,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var numStr = string.Empty;
-            var unitStr = string.Empty;
+            string numStr, unitStr;
 
             // if there are spaces between nubmer and unit
             var ers = CardinalExtractor.Extract(text);
@@ -656,10 +656,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static TimeResult DateObject2TimeResult(DateObject dateTime)
         {
-            var timeResult = new TimeResult();
-            timeResult.Hour = dateTime.Hour;
-            timeResult.Minute = dateTime.Minute;
-            timeResult.Second = dateTime.Second;
+            var timeResult = new TimeResult {
+                Hour = dateTime.Hour,
+                Minute = dateTime.Minute,
+                Second = dateTime.Second
+            };
+
             return timeResult;
         }
     }

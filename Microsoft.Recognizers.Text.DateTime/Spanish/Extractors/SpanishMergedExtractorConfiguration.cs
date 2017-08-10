@@ -5,6 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
         private static readonly Regex BeforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex AfterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IExtractor DateExtractor { get; }

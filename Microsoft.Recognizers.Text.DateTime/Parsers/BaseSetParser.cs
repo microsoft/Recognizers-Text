@@ -29,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseEachDuration(er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParserTimeEveryday(er.Text);
@@ -40,22 +41,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text);
@@ -67,10 +73,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {TimeTypeConstants.SET, (string) innerResult.FutureValue}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.SET, (string) innerResult.PastValue}
                     };
+
                     value = innerResult;
                 }
             }
@@ -86,6 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
@@ -123,9 +132,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
                 ret.Timex = timex;
                 ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                 ret.Success = true;
+
                 return ret;
             }
 
@@ -141,6 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return ret;
                     }
+
                     ret.Timex = timex;
                     ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                     ret.Success = true;
@@ -193,6 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
     }

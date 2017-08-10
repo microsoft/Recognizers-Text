@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -86,8 +85,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 result -= 12;
             }
-
-            //TODO: Replace with a regex
             else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < 12)
             {
                 result += 12;
@@ -116,6 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 timex = null;
                 return false;
             }
+
             return true;
         }
 
@@ -130,14 +128,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
-
-            //TODO: Replace with a regex
             else if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                      trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima") ||
                      trimedText.StartsWith("siguiente"))
             {
                 swift = 1;
             }
+
             return swift;
         }
 

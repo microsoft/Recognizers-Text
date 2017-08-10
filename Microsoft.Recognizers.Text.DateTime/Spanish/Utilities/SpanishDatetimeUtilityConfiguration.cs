@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
@@ -12,17 +8,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         //TODO: add the word list for ago later and in
         public static readonly List<string> AgoStringList = new List<string>
         {
-
         };
 
         public static readonly List<string> LaterStringList = new List<string>
         {
-
         };
 
         public static readonly List<string> InStringList = new List<string>
         {
-
         };
 
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;

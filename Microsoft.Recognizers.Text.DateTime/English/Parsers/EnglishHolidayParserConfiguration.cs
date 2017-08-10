@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             this.HolidayNames = InitHolidayNames().ToImmutableDictionary();
         }
 
-        private IDictionary<string, IEnumerable<string>> InitHolidayNames()
+        private static IDictionary<string, IEnumerable<string>> InitHolidayNames()
         {
             return new Dictionary<string, IEnumerable<string>>
             {
@@ -97,8 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 {"mayday", Mayday},
                 {"cincodemayoday", CincoDeMayoday},
                 {"baptisteday", BaptisteDay},
-                {"usindependenceday", USAIndependenceDay},
-                {"independenceday", USAIndependenceDay},
+                {"usindependenceday", UsaIndependenceDay},
+                {"independenceday", UsaIndependenceDay},
                 {"bastilleday", BastilleDay},
                 {"halloweenday", HalloweenDay},
                 {"allhallowday", AllHallowDay},
@@ -132,15 +132,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
         private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
-        private static DateObject USAIndependenceDay(int year) => new DateObject(year, 7, 4);
+        private static DateObject UsaIndependenceDay(int year) => new DateObject(year, 7, 4);
         private static DateObject BastilleDay(int year) => new DateObject(year, 7, 14);
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
         private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
         private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
-
-
+        
         public override int GetSwiftYear(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();

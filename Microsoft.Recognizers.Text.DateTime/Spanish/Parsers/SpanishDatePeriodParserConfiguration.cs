@@ -45,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         #endregion
 
         #region Dictionaries
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> CardinalMap { get; }
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
+        
         #endregion
 
         public IImmutableList<string> InStringList { get; }
@@ -143,6 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = 1;
             }
+
             if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
                 trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
             {
@@ -152,6 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = 0;
             }
+
             return swift;
         }
 

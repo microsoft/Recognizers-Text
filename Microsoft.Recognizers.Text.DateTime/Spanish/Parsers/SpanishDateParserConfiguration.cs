@@ -84,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedText = text.Trim().ToLowerInvariant().Normalized();
             var swift = 0;
+
             if (trimedText.Equals("hoy") || trimedText.Equals("el dia"))
             {
                 swift = 0;
@@ -113,6 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
+
             return swift;
         }
 
@@ -134,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
+
             return swift;
         }
 

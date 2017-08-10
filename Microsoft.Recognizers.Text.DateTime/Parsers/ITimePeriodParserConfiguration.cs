@@ -6,9 +6,11 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface ITimePeriodParserConfiguration
     {
         IExtractor TimeExtractor { get; }
+
         IDateTimeParser TimeParser { get; }
 
         Regex PureNumberFromToRegex { get; }
+
         Regex PureNumberBetweenAndRegex { get; }
         
         IImmutableDictionary<string, int> Numbers { get; }

@@ -33,15 +33,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex($@"\b(?<num>\d+(\,\d*)?)\s*{UnitRegex}", 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex andRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex beforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
         }
-
 
         public IExtractor SingleTimeExtractor { get; }
 
@@ -54,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            var fromMatch = fromRegex.Match(text);
+            var fromMatch = FromRegex.Match(text);
             if (fromMatch.Success)
             {
                 index = fromMatch.Index;
@@ -65,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var beforeMatch = beforeRegex.Match(text);
+            var beforeMatch = BeforeRegex.Match(text);
             if (beforeMatch.Success)
             {
                 index = beforeMatch.Index;
@@ -75,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool HasConnectorToken(string text)
         {
-            return andRegex.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text);
         }
     }
 }
