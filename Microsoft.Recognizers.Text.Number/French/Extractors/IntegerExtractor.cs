@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public IntegerExtractor(string placeholder = @"\D|\b")
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex($@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})",
@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     "IntegerFr"
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

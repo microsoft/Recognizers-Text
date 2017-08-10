@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public DoubleExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(Numeric.DoubleDecimalPointRegex(placeholder),
@@ -50,8 +50,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                 }
             };
 
-            _regexes.Add(GenerateArabicNumberRegex(ArabicType.DoubleNumCommaDot, placeholder), "DoubleNum");
-            Regexes = _regexes.ToImmutableDictionary();
+            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum");
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

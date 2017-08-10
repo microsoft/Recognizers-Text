@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.config.SetParser.Parse(er, referenceTime);
+                pr = this.config.GetParser.Parse(er, referenceTime);
             }
             else
             {
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             pr.Value = DateTimeResolution(pr, hasBefore, hasAfter);
 
             //change the type at last for the after or before mode
-            pr.Type = string.Format("{0}.{1}", ParserTypeName, DetermineDateTimeType(er.Type, hasBefore, hasAfter));
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter)}";
 
             return pr;
         }

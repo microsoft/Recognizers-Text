@@ -8,11 +8,12 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class IntegerExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
 
         public IntegerExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(Numeric.NumbersWithPlaceHolder(placeholder),
@@ -45,8 +46,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                 }
             };
 
-            _regexes.Add(GenerateArabicNumberRegex(ArabicType.IntegerNumComma, placeholder), "IntegerNum");
-            Regexes = _regexes.ToImmutableDictionary();
+            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum");
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

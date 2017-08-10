@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text
     {
         public static readonly string DefaultCulture = Culture.English;
 
-        private Dictionary<KeyValuePair<string, Type>, IModel> ModelInstances = new Dictionary<KeyValuePair<string, Type>, IModel>();
+        private readonly Dictionary<KeyValuePair<string, Type>, IModel> modelInstances = new Dictionary<KeyValuePair<string, Type>, IModel>();
 
         public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text
             model = null;
             var ret = true;
             var key = GenerateKey(culture, typeof(TModel));
-            if (!ModelInstances.ContainsKey(key))
+            if (!modelInstances.ContainsKey(key))
             {
                 if (fallbackToDefaultCulture)
                 {
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text
                     key = GenerateKey(culture, typeof(TModel));
                 }
 
-                if (!ModelInstances.ContainsKey(key))
+                if (!modelInstances.ContainsKey(key))
                 {
                     ret = false;
                 }
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text
 
             if (ret)
             {
-                model = ModelInstances[key];
+                model = modelInstances[key];
             }
 
             return ret;
@@ -68,12 +68,12 @@ namespace Microsoft.Recognizers.Text
         public void RegisterModel(string culture, Type type, IModel model)
         {
             var key = GenerateKey(culture, type);
-            if (ModelInstances.ContainsKey(key))
+            if (modelInstances.ContainsKey(key))
             {
                 throw new ArgumentException($"ERROR: {culture}-{type} has been registered.");
             }
 
-            ModelInstances.Add(key, model);
+            modelInstances.Add(key, model);
         }
 
         public void RegisterModel(string culture, Dictionary<Type, IModel> models)

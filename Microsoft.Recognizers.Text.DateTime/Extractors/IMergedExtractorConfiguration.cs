@@ -9,7 +9,7 @@
         IExtractor TimePeriodExtractor { get; }
         IExtractor DateTimePeriodExtractor { get; }
         IExtractor DurationExtractor { get; }
-        IExtractor SetExtractor { get; }
+        IExtractor GetExtractor { get; }
         IExtractor HolidayExtractor { get; }
 
         bool HasBeforeTokenIndex(string text, out int index);

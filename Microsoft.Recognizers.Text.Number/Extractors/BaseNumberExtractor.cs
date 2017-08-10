@@ -76,41 +76,41 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateArabicNumberRegex(ArabicType type, string placeholder = CommonNumeric.PlaceHolderDefault)
+        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = CommonNumeric.PlaceHolderDefault)
         {
             Regex addedRegex = null;
             string integerTemplate = CommonNumeric.IntegerTemplateRegex + $@"(?={placeholder})";
             string doubleTemplate = CommonNumeric.DoubleTemplateRegex + $@"(?={placeholder})";
             switch (type)
             {
-                case ArabicType.IntegerNumComma:
+                case LongFormatType.IntegerNumComma:
                     addedRegex = new Regex(string.Format(integerTemplate, ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.IntegerNumDot:
+                case LongFormatType.IntegerNumDot:
                     addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.IntegerNumBlank:
+                case LongFormatType.IntegerNumBlank:
                     addedRegex = new Regex(string.Format(integerTemplate, " "), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.IntegerNumQuote:
+                case LongFormatType.IntegerNumQuote:
                     addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape("'")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumCommaDot:
+                case LongFormatType.DoubleNumCommaDot:
                     addedRegex = new Regex(string.Format(doubleTemplate, ",", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumDotComma:
+                case LongFormatType.DoubleNumDotComma:
                     addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("."), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumBlankComma:
+                case LongFormatType.DoubleNumBlankComma:
                     addedRegex = new Regex(string.Format(doubleTemplate, " ", ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumBlankDot:
+                case LongFormatType.DoubleNumBlankDot:
                     addedRegex = new Regex(string.Format(doubleTemplate, " ", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumCommaCdot:
+                case LongFormatType.DoubleNumCommaCdot:
                     addedRegex = new Regex(string.Format(doubleTemplate, ",", "·"), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
-                case ArabicType.DoubleNumQuoteComma:
+                case LongFormatType.DoubleNumQuoteComma:
                     addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("'"), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
                     break;
             }
@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.Number
         PureNumber
     }
 
-    public enum ArabicType
+    public enum LongFormatType
     {
         // Reference : https://www.wikiwand.com/en/Decimal_mark
 

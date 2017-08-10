@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.DateTimeExtractor.Extract(text));
             AddTo(ret, this.config.TimePeriodExtractor.Extract(text));
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.SetExtractor.Extract(text));
+            AddTo(ret, this.config.GetExtractor.Extract(text));
             AddTo(ret, this.config.HolidayExtractor.Extract(text));
 
             AddMod(ret, text);

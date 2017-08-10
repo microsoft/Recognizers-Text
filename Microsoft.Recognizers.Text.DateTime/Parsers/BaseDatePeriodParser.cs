@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; //"DatePeriod";
         
-        private static readonly Calendar _cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly IDatePeriodParserConfiguration config;
 
@@ -34,8 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceDate = refDate;
 
             object value = null;
-            var luisStr = string.Empty;
-            var valueStr = string.Empty;
+            
             if (er.Type.Equals(ParserName))
             {
                 var innerResult = ParseMonthWithYear(er.Text, referenceDate);
@@ -43,53 +42,62 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseSimpleCases(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseOneWordPeriod(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = MergeTwoTimePoints(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseYear(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseNumberWithUnit(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekOfMonth(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekOfYear(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseQuarter(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseSeason(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWhichWeek(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekOfDate(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseMonthOfDate(er.Text, referenceDate);
                 }
-
-
-
+                
                 if (innerResult.Success)
                 {
                     if (innerResult.FutureValue != null && innerResult.PastValue != null)
@@ -105,6 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
+
                         innerResult.PastResolution = new Dictionary<string, string>
                         {
                             {
@@ -143,24 +152,28 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceDate.Year, month = referenceDate.Month;
-            int beginDay = referenceDate.Day, endDay = referenceDate.Day;
+            int beginDay, endDay;
             var noYear = false;
 
             var trimedText = text.Trim();
             var match = this.config.MonthFrontBetweenRegex.Match(trimedText);
-            string beginLuisStr = string.Empty, endLuisStr = string.Empty;
+            string beginLuisStr, endLuisStr;
+
             if (!match.Success)
             {
                 match = this.config.BetweenRegex.Match(trimedText);
             }
+
             if (!match.Success)
             {
                 match = this.config.MonthFrontSimpleCasesRegex.Match(trimedText);
             }
+
             if (!match.Success)
             {
                 match = this.config.SimpleCasesRegex.Match(trimedText);
             }
+
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var days = match.Groups["day"];
@@ -205,6 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             break;
                     }
                 }
+
                 if (this.config.IsFuture(monthStr))
                 {
                     beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
@@ -231,10 +245,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             int futureYear = year, pastYear = year;
             var startDate = new DateObject(year, month, beginDay);
+
             if (noYear && startDate < referenceDate)
             {
                 futureYear++;
             }
+
             if (noYear && startDate >= referenceDate)
             {
                 pastYear--;
@@ -272,6 +288,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
+
                 if (this.config.IsMonthToDate(trimedText))
                 {
                     ret.Timex = referenceDate.Year.ToString("D4") + "-" + referenceDate.Month.ToString("D2");
@@ -282,6 +299,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
+
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     var swift = this.config.GetSwiftYear(trimedText);
@@ -301,6 +319,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             futureYear++;
                         }
+
                         if (month >= referenceDate.Month)
                         {
                             pastYear--;
@@ -315,7 +334,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
                         ret.Timex = monday.Year.ToString("D4") + "-W" +
-                                    _cal.GetWeekOfYear(monday, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
                                         .ToString("D2");
                         ret.FutureValue =
                             ret.PastValue =
@@ -327,14 +346,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
                     if (this.config.IsWeekend(trimedText))
                     {
-                        DateObject beginDate, endDate;
-                        beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
-                        endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
+                        var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7 * swift);
+                        var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7 * swift);
 
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                    _cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
                                         .ToString("D2") + "-WE";
                         endDate = InclusiveEndPeriod ? endDate : endDate.AddDays(1);
                         ret.FutureValue =
@@ -342,6 +361,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
                     if (this.config.IsMonthOnly(trimedText))
                     {
                         month = referenceDate.AddMonths(swift).Month;
@@ -392,6 +412,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 match = this.config.MonthNumWithYear.Match(text);
             }
+
             if (match.Success && match.Length == text.Length)
             {
                 var monthStr = match.Groups["month"].Value.ToLower();
@@ -471,16 +492,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
             DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
                 pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
+
             if (futureBegin > futureEnd)
             {
                 futureBegin = pastBegin;
             }
+
             if (pastEnd < pastBegin)
             {
                 pastEnd = futureEnd;
             }
-
-
+            
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},P{(futureEnd - futureBegin).TotalDays}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
             ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
@@ -493,8 +515,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var numStr = string.Empty;
-            var unitStr = string.Empty;
+            string numStr;
+            string unitStr;
 
             // if there are spaces between nubmer and unit
             var ers = this.config.CardinalExtractor.Extract(text);
@@ -538,7 +560,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
                     prefixMatch = this.config.FutureRegex.Match(beforeStr);
+
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -584,7 +608,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     unitStr = this.config.UnitMap[srcUnit];
                     numStr = match.Groups["num"].Value;
+
                     var prefixMatch = this.config.PastRegex.Match(beforeStr);
+
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -614,7 +640,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+
                     prefixMatch = this.config.FutureRegex.Match(beforeStr);
+
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         DateObject beginDate, endDate;
@@ -676,6 +704,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 cardinal = this.config.CardinalMap[cardinalStr];
             }
+
             int month;
             if (string.IsNullOrEmpty(monthStr))
             {
@@ -725,14 +754,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = referenceDate.Year + swift;
             }
 
-            int cardinal;
             if (this.config.IsLastCardinal(cardinalStr))
             {
                 ret = GetWeekOfMonth(5, 12, year, referenceDate, false);
             }
-            else
-            {
-                cardinal = this.config.CardinalMap[cardinalStr];
+            else {
+                var cardinal = this.config.CardinalMap[cardinalStr];
                 ret = GetWeekOfMonth(cardinal, 1, year, referenceDate, false);
             }
 
@@ -743,10 +770,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var match = this.config.QuarterRegex.Match(text);
+
             if (!(match.Success && match.Length == text.Length))
             {
                 match = this.config.QuarterRegexYearFront.Match(text);
             }
+
             if (!(match.Success && match.Length == text.Length))
             {
                 return ret;
@@ -770,6 +799,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 year = referenceDate.Year + swift;
             }
+
             var quarterNum = this.config.CardinalMap[cardinalStr];
             var beginDate = new DateObject(year, quarterNum * 3 - 2, 1);
             var endDate = new DateObject(year, quarterNum * 3 + 1, 1);
@@ -855,7 +885,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
         {
             var startDate = new DateObject(date.Year, date.Month, 1);
-            var endDate=new DateObject();
+            DateObject endDate;
             if (date.Month < 12)
             {
                 endDate = new DateObject(date.Year, date.Month + 1, 1);
@@ -890,10 +920,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret;
         }
-
-
-        private static DateTimeResolutionResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate,
-            bool noYear)
+        
+        private static DateTimeResolutionResult GetWeekOfMonth(int cardinal, int month, int year, DateObject referenceDate, bool noYear)
         {
             var ret = new DateTimeResolutionResult();
             var value = ComputeDate(cardinal, 1, month, year);
@@ -913,6 +941,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     futureDate = futureDate.AddDays(-7);
                 }
             }
+
             if (noYear && pastDate >= referenceDate)
             {
                 pastDate = ComputeDate(cardinal, 1, month, year - 1);
@@ -921,6 +950,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastDate = pastDate.AddDays(-7);
                 }
             }
+
             if (noYear)
             {
                 ret.Timex = "XXXX" + "-" + month.ToString("D2");
@@ -946,17 +976,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = new DateObject(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+
             if (weekday == 0)
             {
                 weekday = 7;
             }
+
             var firstDayOfWeek = firstDay.DayOfWeek != 0 ? (int)firstDay.DayOfWeek : 7;
+
             if (weekday < firstDayOfWeek)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
+
             return firstWeekday.AddDays(7 * (cardinal - 1));
-            }
+        }
 
         public bool GetInclusiveEndPeriodFlag()
         {

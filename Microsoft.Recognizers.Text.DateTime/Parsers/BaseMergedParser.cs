@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.config.SetParser.Parse(er, referenceTime);
+                pr = this.config.GetParser.Parse(er, referenceTime);
             }
             else
             {
