@@ -3,8 +3,8 @@
 	using System;
 	using System.Collections.Generic;
 
-	public static class Numeric
-    {
+	public static class NumbersDefinitions
+	{
 		public const string LangMarker = "Eng";
 		public const string RoundNumberIntegerRegex = @"(hundred|thousand|million|billion|trillion)";
 		public const string ZeroToNineIntegerRegex = @"(three|seven|eight|four|five|zero|nine|one|two|six)";
@@ -45,8 +45,8 @@
 		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
-		public static readonly string NumberWithSuffixPercentage = $@"({CommonNumeric.NumberReplaceToken})(\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)";
-		public static readonly string NumberWithPrefixPercentage = $@"(per cent of|percent of|percents of)(\s*)({CommonNumeric.NumberReplaceToken})";
+		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)";
+		public static readonly string NumberWithPrefixPercentage = $@"(per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})";
 		public const char DecimalSeparatorChar = '.';
 		public const string FractionMarkerToken = "over";
 		public const char NonDecimalSeparatorChar = ',';

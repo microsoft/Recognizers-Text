@@ -18,6 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
 
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumericWithUnit.AreaSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
     }
 }

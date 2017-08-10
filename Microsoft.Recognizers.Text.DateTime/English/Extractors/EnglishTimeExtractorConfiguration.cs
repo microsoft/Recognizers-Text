@@ -8,106 +8,106 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         // part 1: smallest component
         // --------------------------------------
-        public static readonly Regex DescRegex = new Regex(DateTimeDefinition.DescRegex,
+        public static readonly Regex DescRegex = new Regex(DateTimeDefinitions.DescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex =
-            new Regex(DateTimeDefinition.HourNumRegex,
+            new Regex(DateTimeDefinitions.HourNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MinuteNumRegex =
             new Regex(
-                DateTimeDefinition.MinuteNumRegex,
+                DateTimeDefinitions.MinuteNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // part 2: middle level component
         // --------------------------------------
         // handle "... o'clock"
-        public static readonly Regex OclockRegex = new Regex(DateTimeDefinition.OclockRegex,
+        public static readonly Regex OclockRegex = new Regex(DateTimeDefinitions.OclockRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "... afternoon"
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinition.PmRegex,
+            new Regex(DateTimeDefinitions.PmRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "... in the morning"
-        public static readonly Regex AmRegex = new Regex(DateTimeDefinition.AmRegex,
+        public static readonly Regex AmRegex = new Regex(DateTimeDefinitions.AmRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "half past ..." "a quarter to ..."
         // rename 'min' group to 'deltamin'
         public static readonly Regex LessThanOneHour =
             new Regex(
-                DateTimeDefinition.LessThanOneHour, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.LessThanOneHour, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // handle "six thirty", "six twenty one" 
         public static readonly Regex EngTimeRegex =
             new Regex(
-                DateTimeDefinition.EngTimeRegex,
+                DateTimeDefinitions.EngTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimePrefix =
-            new Regex(DateTimeDefinition.TimePrefix,
+            new Regex(DateTimeDefinitions.TimePrefix,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeSuffix =
-            new Regex(DateTimeDefinition.TimeSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex BasicTime =
             new Regex(
-                DateTimeDefinition.BasicTime, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.BasicTime, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // part 3: regex for time
         // --------------------------------------
         // handle "at four" "at 3"
         public static readonly Regex AtRegex =
-            new Regex(DateTimeDefinition.AtRegex,
+            new Regex(DateTimeDefinitions.AtRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex IshRegex = new Regex(DateTimeDefinition.IshRegex,
+        public static readonly Regex IshRegex = new Regex(DateTimeDefinitions.IshRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinition.TimeUnitRegex,
+        public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex ConnectNumRegex =
             new Regex(
-                DateTimeDefinition.ConnectNumRegex,
+                DateTimeDefinitions.ConnectNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeRegexList =
         {
             // (three min past)? seven|7|(senven thirty) pm
             new Regex(
-                DateTimeDefinition.TimeRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                DateTimeDefinitions.TimeRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (three min past)? 3:00(:00)? (pm)?
             new Regex(
-                DateTimeDefinition.TimeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                DateTimeDefinitions.TimeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (three min past)? 3.00 (pm)?
-            new Regex(DateTimeDefinition.TimeRegex3,
+            new Regex(DateTimeDefinitions.TimeRegex3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinition.TimeRegex4,
+            new Regex(DateTimeDefinitions.TimeRegex4,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinition.TimeRegex5,
+            new Regex(DateTimeDefinitions.TimeRegex5,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            new Regex(DateTimeDefinition.TimeRegex6,
+            new Regex(DateTimeDefinitions.TimeRegex6,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinition.TimeRegex7,
+            new Regex(DateTimeDefinitions.TimeRegex7,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinition.TimeRegex8,
+            new Regex(DateTimeDefinitions.TimeRegex8,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 340pm

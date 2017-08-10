@@ -3,7 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 
-	public static class CommonNumeric
+	public static class BaseNumbers
 	{
 		public const string NumberReplaceToken = "@builtin.num";
 		public const string IntegerTemplateRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+";

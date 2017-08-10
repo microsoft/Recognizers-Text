@@ -3,7 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 
-	public static class NumericWithUnit
+	public static class NumbersWithUnitDefinitions
 	{
 		public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
 		{

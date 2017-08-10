@@ -13,14 +13,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishCommonDateTimeParserConfiguration()
         {
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
-            UnitMap = DateTimeDefinition.UnitMap.ToImmutableDictionary();
-            UnitValueMap = DateTimeDefinition.UnitValueMap.ToImmutableDictionary();
-            SeasonMap = DateTimeDefinition.SeasonMap.ToImmutableDictionary();
-            CardinalMap = DateTimeDefinition.CardinalMap.ToImmutableDictionary();
-            DayOfWeek = DateTimeDefinition.DayOfWeek.ToImmutableDictionary();
-            MonthOfYear = DateTimeDefinition.MonthOfYear.ToImmutableDictionary();
-            Numbers = DateTimeDefinition.Numbers.ToImmutableDictionary();
-            DoubleNumbers = DateTimeDefinition.DoubleNumbers.ToImmutableDictionary();
+            UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
+            UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
+            SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
+            CardinalMap = DateTimeDefinitions.CardinalMap.ToImmutableDictionary();
+            DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
+            MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
+            Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
+            DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
             CardinalExtractor = new CardinalExtractor();
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
@@ -41,6 +41,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
         }
 
-        public override IImmutableDictionary<string, int> DayOfMonth => CommonDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinition.DayOfMonth);
+        public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTimeDefinitions.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);
     }
 }

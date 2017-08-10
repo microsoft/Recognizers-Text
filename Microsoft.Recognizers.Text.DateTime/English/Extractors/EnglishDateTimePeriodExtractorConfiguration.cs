@@ -28,10 +28,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex TillRegex => EnglishTimePeriodExtractorConfiguration.TillRegex;
 
-        private static readonly Regex PeriodNightRegex = new Regex(DateTimeDefinition.PeriodNightRegex,
+        private static readonly Regex PeriodNightRegex = new Regex(DateTimeDefinitions.PeriodNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex PeriodSpecificNightRegex = new Regex(DateTimeDefinition.PeriodSpecificNightRegex,
+        private static readonly Regex PeriodSpecificNightRegex = new Regex(DateTimeDefinitions.PeriodSpecificNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex NightRegex => PeriodNightRegex;
@@ -39,13 +39,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex SpecificNightRegex => PeriodSpecificNightRegex;
 
         private static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinition.TimeUnitRegex,
+            new Regex(DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinition.TimeFollowedUnit,
+        private static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinition.TimeNumberCombinedWithUnit,
+        public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex FollowedUnit => TimeFollowedUnit;

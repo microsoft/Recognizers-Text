@@ -13,25 +13,25 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public EnglishNumberParserConfiguration(CultureInfo ci)
         {
-            this.LangMarker = Numeric.LangMarker;
+            this.LangMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = ci;
 
-            this.DecimalSeparatorChar = Numeric.DecimalSeparatorChar;
-            this.FractionMarkerToken = Numeric.FractionMarkerToken;
-            this.NonDecimalSeparatorChar = Numeric.NonDecimalSeparatorChar;
-            this.HalfADozenText = Numeric.HalfADozenText;
-            this.WordSeparatorToken = Numeric.WordSeparatorToken;
+            this.DecimalSeparatorChar = NumbersDefinitions.DecimalSeparatorChar;
+            this.FractionMarkerToken = NumbersDefinitions.FractionMarkerToken;
+            this.NonDecimalSeparatorChar = NumbersDefinitions.NonDecimalSeparatorChar;
+            this.HalfADozenText = NumbersDefinitions.HalfADozenText;
+            this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
 
-            this.WrittenDecimalSeparatorTexts = Numeric.WrittenDecimalSeparatorTexts;
-            this.WrittenGroupSeparatorTexts = Numeric.WrittenGroupSeparatorTexts;
-            this.WrittenIntegerSeparatorTexts = Numeric.WrittenIntegerSeparatorTexts;
-            this.WrittenFractionSeparatorTexts = Numeric.WrittenFractionSeparatorTexts;
+            this.WrittenDecimalSeparatorTexts = NumbersDefinitions.WrittenDecimalSeparatorTexts;
+            this.WrittenGroupSeparatorTexts = NumbersDefinitions.WrittenGroupSeparatorTexts;
+            this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts;
+            this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
 
-            this.CardinalNumberMap = Numeric.CardinalNumberMap.ToImmutableDictionary();
-            this.OrdinalNumberMap = Numeric.OrdinalNumberMap.ToImmutableDictionary();
-            this.RoundNumberMap = Numeric.RoundNumberMap.ToImmutableDictionary();
-            this.HalfADozenRegex = new Regex(Numeric.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            this.DigitalNumberRegex = new Regex(Numeric.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
+            this.OrdinalNumberMap = NumbersDefinitions.OrdinalNumberMap.ToImmutableDictionary();
+            this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
 
         public ImmutableDictionary<string, long> CardinalNumberMap { get; private set; }

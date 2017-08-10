@@ -11,29 +11,29 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
 
-        public IntegerExtractor(string placeholder = Numeric.PlaceHolderDefault)
+        public IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var regexes = new Dictionary<Regex, string> {
                 {
-                    new Regex(Numeric.NumbersWithPlaceHolder(placeholder),
+                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder),
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 }, {
-                    new Regex(Numeric.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
+                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
                 }, {
-                    new Regex(Numeric.RoundNumberIntegerRegexWithLocks,
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 }, {
-                    new Regex(Numeric.NumbersWithDozenSuffix,
+                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 }, {
-                    new Regex(Numeric.AllIntRegexWithLocks,
+                    new Regex(NumbersDefinitions.AllIntRegexWithLocks,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
                 }, {
-                    new Regex(Numeric.AllIntRegexWithDozenSuffixLocks,
+                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
                 }, {

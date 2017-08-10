@@ -18,6 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_AGE;
 
-        public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumericWithUnit.AgeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
     }
 }

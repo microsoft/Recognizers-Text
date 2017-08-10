@@ -16,29 +16,29 @@ namespace Microsoft.Recognizers.Text.Number.English
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(Numeric.FractionNotationWithSpacesRegex,
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
-                    new Regex(Numeric.FractionNotationRegex,
+                    new Regex(NumbersDefinitions.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
                     new Regex(
-                        Numeric.FractionNounRegex,
+                        NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 },
                 {
                     new Regex(
-                        Numeric.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                        NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 },
                 {
                     new Regex(
-                        Numeric.FractionPrepositionRegex,
+                        NumbersDefinitions.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracEng"
                 }

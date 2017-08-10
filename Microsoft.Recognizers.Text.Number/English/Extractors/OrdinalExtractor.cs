@@ -17,21 +17,21 @@ namespace Microsoft.Recognizers.Text.Number.English
             {
                 {
                     new Regex(
-                        Numeric.OrdinalSuffixRegex,
+                        NumbersDefinitions.OrdinalSuffixRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
                 {
-                    new Regex(Numeric.OrdinalNumericRegex,
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdinalNum"
                 },
                 {
-                    new Regex(Numeric.OrdinalEnglishRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdEng"
                 },
                 {
-                    new Regex(Numeric.OrdinalRoundNumberRegex,
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OrdEng"
                 }

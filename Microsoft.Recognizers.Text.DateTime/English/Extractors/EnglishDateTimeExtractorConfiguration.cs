@@ -8,40 +8,40 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinition.PrepositionRegex,
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NowRegex =
-            new Regex(DateTimeDefinition.NowRegex,
+            new Regex(DateTimeDefinitions.NowRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SuffixRegex = new Regex(DateTimeDefinition.SuffixRegex,
+        public static readonly Regex SuffixRegex = new Regex(DateTimeDefinitions.SuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(DateTimeDefinition.NightRegex,
+        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecificNightRegex =
-            new Regex(DateTimeDefinition.SpecificNightRegex,
+            new Regex(DateTimeDefinitions.SpecificNightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex(DateTimeDefinition.TimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+             new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex(DateTimeDefinition.TimeOfTodayBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex(DateTimeDefinition.SimpleTimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex(DateTimeDefinition.SimpleTimeOfTodayBeforeRegex,
+            new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinition.TheEndOfRegex,
+        public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinitions.TheEndOfRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinition.TimeUnitRegex,
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateTimeExtractorConfiguration()

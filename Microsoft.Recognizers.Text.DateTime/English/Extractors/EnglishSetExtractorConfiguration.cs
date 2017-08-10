@@ -7,23 +7,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex SetUnitRegex =
             new Regex(
-                DateTimeDefinition.DurationUnitRegex,
+                DateTimeDefinitions.DurationUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodicRegex = new Regex(
-            DateTimeDefinition.PeriodicRegex,
+            DateTimeDefinitions.PeriodicRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(
-            DateTimeDefinition.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DateTimeDefinitions.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinition.EachPrefixRegex,
+        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.EachPrefixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SetLastRegex = new Regex(DateTimeDefinition.SetLastRegex,
+        public static readonly Regex SetLastRegex = new Regex(DateTimeDefinitions.SetLastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinition.EachDayRegex,
+        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.EachDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishSetExtractorConfiguration()

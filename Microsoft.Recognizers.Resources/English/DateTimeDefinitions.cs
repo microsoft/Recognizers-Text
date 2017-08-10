@@ -3,7 +3,7 @@
 	using System;
 	using System.Collections.Generic;
 
-	public static class DateTimeDefinition
+	public static class DateTimeDefinitions
 	{
 		public const string TillRegex = @"(?<till>to|till|until|thru|through|--|-|—|——)";
 		public const string AndRegex = @"(?<and>and|--|-|—|——)";
@@ -65,18 +65,18 @@
 		public const string OclockRegex = @"(?<oclock>o’clock|o'clock|oclock)";
 		public const string PmRegex = @"(?<pm>(in the\s+)?afternoon|(in the\s+)?evening|(in the\s+)?night)";
 		public const string AmRegex = @"(?<am>(in the\s+)?morning)";
-		public static readonly string LessThanOneHour = $@"(?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{CommonDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))";
+		public static readonly string LessThanOneHour = $@"(?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))";
 		public static readonly string EngTimeRegex = $@"(?<engtime>{HourNumRegex}\s+({MinuteNumRegex}|(?<tens>twenty|thirty|forty|fourty|fifty)\s+{MinuteNumRegex}))";
 		public static readonly string TimePrefix = $@"(?<prefix>({LessThanOneHour} past|{LessThanOneHour} to))";
 		public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
-		public static readonly string BasicTime = $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{CommonDateTime.HourRegex}:{CommonDateTime.MinuteRegex}(:{CommonDateTime.SecondRegex})?|{CommonDateTime.HourRegex})";
-		public static readonly string AtRegex = $@"\b(?<=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{CommonDateTime.HourRegex})\b";
-		public static readonly string IshRegex = $@"{CommonDateTime.HourRegex}(-|——)?ish|noonish|noon";
+		public static readonly string BasicTime = $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
+		public static readonly string AtRegex = $@"\b(?<=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b";
+		public static readonly string IshRegex = $@"{BaseDateTime.HourRegex}(-|——)?ish|noonish|noon";
 		public const string TimeUnitRegex = @"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b";
-		public static readonly string ConnectNumRegex = $@"{CommonDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
-		public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({EngTimeRegex}|{HourNumRegex}|{CommonDateTime.HourRegex})\s*{DescRegex}";
-		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{CommonDateTime.HourRegex}(\s*)?:(\s*)?{CommonDateTime.MinuteRegex}((\s*)?:(\s*)?{CommonDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
-		public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{CommonDateTime.HourRegex}\.{CommonDateTime.MinuteRegex}(\s*{DescRegex})";
+		public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
+		public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}";
+		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
+		public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
 		public static readonly string TimeRegex4 = $@"\b{TimePrefix}\s+{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
 		public static readonly string TimeRegex5 = $@"\b{TimePrefix}\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex6 = $@"{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b";
@@ -100,8 +100,8 @@
 		public static readonly string DateTimeSpecificNightRegex = $@"\b(((this|next|last)\s+{DateTimeNightRegex})\b|\btonight)\b";
 		public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(in\s+)?{DateTimeSpecificNightRegex}";
 		public static readonly string TimeOfTodayBeforeRegex = $@"{DateTimeSpecificNightRegex}(\s*,)?(\s+(at|for))?\s*$";
-		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{CommonDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificNightRegex}";
-		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificNightRegex}(\s*,)?(\s+(at|for))?\s*({HourNumRegex}|{CommonDateTime.HourRegex})";
+		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificNightRegex}";
+		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificNightRegex}(\s*,)?(\s+(at|for))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
 		public const string TheEndOfRegex = @"(the\s+)?end of(\s+the)?\s*$";
 		public const string PeriodNightRegex = @"\b(?<night>morning|afternoon|(late\s+)?night|evening)\b";
 		public static readonly string PeriodSpecificNightRegex = $@"\b(((this|next|last)\s+{PeriodNightRegex})\b|\btonight)\b";

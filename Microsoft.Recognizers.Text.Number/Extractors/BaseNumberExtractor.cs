@@ -77,11 +77,11 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = CommonNumeric.PlaceHolderDefault)
+        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
             Regex addedRegex = null;
-            string integerTemplate = CommonNumeric.IntegerTemplateRegex + $@"(?={placeholder})";
-            string doubleTemplate = CommonNumeric.DoubleTemplateRegex + $@"(?={placeholder})";
+            string integerTemplate = BaseNumbers.IntegerTemplateRegex + $@"(?={placeholder})";
+            string doubleTemplate = BaseNumbers.DoubleTemplateRegex + $@"(?={placeholder})";
             switch (type)
             {
                 case LongFormatType.IntegerNumComma:

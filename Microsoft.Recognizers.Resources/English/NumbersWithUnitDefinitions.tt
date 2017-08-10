@@ -2,6 +2,6 @@
 <#
 	this.DataFilename = @"Patterns\English\English-NumbersWithUnit.yaml";
 	this.Language = "English";
-	this.ClassName = "NumericWithUnit";
+	this.ClassName = "NumbersWithUnitDefinitions";
 #>
 <#@ include file="..\CommonDefinitions.ttinclude"#>

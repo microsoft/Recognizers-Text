@@ -13,8 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.English
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                Numeric.NumberWithSuffixPercentage,
-                Numeric.NumberWithPrefixPercentage
+                NumbersDefinitions.NumberWithSuffixPercentage,
+                NumbersDefinitions.NumberWithPrefixPercentage
             };
 
             return BuildRegexes(regexStrs);

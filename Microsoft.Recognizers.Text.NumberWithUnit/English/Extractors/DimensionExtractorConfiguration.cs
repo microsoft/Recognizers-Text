@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumericWithUnit.DimensionSuffixList
+        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.DimensionSuffixList
             .Concat(AreaExtractorConfiguration.AreaSuffixList)
             .Concat(LengthExtractorConfiguration.LenghtSuffixList)
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
@@ -27,6 +27,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(WeightExtractorConfiguration.WeightSuffixList)
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousDimensionUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
     }
 }
