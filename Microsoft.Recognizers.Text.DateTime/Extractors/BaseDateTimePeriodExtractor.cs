@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var begin = er[0].Start ?? 0;
                             var end = (er[0].Start ?? 0) + (er[0].Length ?? 0);
+
                             var middleStr = beforeStr.Substring(begin + (er[0].Length ?? 0)).Trim().ToLower();
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                             {
@@ -77,25 +78,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er1 = this.config.SingleDateTimeExtractor.Extract(text);
             var er2 = this.config.SingleTimeExtractor.Extract(text);
             var timePoints = new List<ExtractResult>();
+            
             // handle the overlap problem
             var j = 0;
             for (var i = 0; i < er1.Count; i++)
             {
                 timePoints.Add(er1[i]);
+
                 while (j < er2.Count && er2[j].Start + er2[j].Length < er1[i].Start)
                 {
                     timePoints.Add(er2[j]);
                     j++;
                 }
+
                 while (j < er2.Count && er2[j].IsOverlap(er1[i]))
                 {
                     j++;
                 }
             }
+
             for (; j < er2.Count; j++)
             {
                 timePoints.Add(er2[j]);
             }
+
             timePoints.Sort(delegate (ExtractResult er_1, ExtractResult er_2)
             {
                 var start1 = er_1.Start ?? 0;
@@ -138,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // handle "from"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     int fromIndex;
+
                     if (this.config.GetFromTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
@@ -147,6 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     idx += 2;
                     continue;
                 }
+
                 // handle "between {TimePoint} and {TimePoint}"
                 if (this.config.HasConnectorToken(middleStr))
                 {
@@ -156,6 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // handle "between"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     int beforeIndex;
+
                     if (this.config.GetBetweenTokenIndex(beforeStr, out beforeIndex))
                     {
                         periodBegin = beforeIndex;
@@ -186,9 +195,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
+
                 var match = this.config.NightRegex.Match(afterStr);
                 if (match.Success)// && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
@@ -208,12 +219,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
+
                 var match = this.config.FollowedUnit.Match(afterStr);
                 if (match.Success && match.Index == 0)
                 {
                     durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
                 }
             }
+
             var matches = this.config.NumberCombinedWithUnit.Matches(text);
             foreach (Match match in matches)
             {
@@ -233,12 +246,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     continue;
                 }
+
                 var match = this.config.PastRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
+
                 var futureMatches = this.config.FutureRegex.Matches(beforeStr);
                 if (futureMatches.Count > 0)
                 {

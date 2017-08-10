@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
-                // 8/3 
                 {
+                    // 8/3
                     new Regex(
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+[/／]{IntegerExtractor
@@ -39,12 +39,13 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
-                //四分之六十五
                 {
+                    //四分之六十五
                     new Regex($@"{AllFractionNumber}", RegexOptions.Singleline)
                     , "FracChs"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

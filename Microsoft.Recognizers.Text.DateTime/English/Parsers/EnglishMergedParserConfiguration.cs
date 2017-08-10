@@ -3,19 +3,13 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishMergedParserConfiguration : EnglishCommonDateTimeParserConfiguration, IMergedParserConfiguration
+    public sealed class EnglishMergedParserConfiguration : EnglishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
 
-        public IDateTimeParser DatePeriodParser { get; }
-
-        public IDateTimeParser TimePeriodParser { get; }
-
-        public IDateTimeParser DateTimePeriodParser { get; }
-
-        public IDateTimeParser SetParser { get; }
+        public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 
@@ -26,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-            SetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
+            GetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
         }
     }

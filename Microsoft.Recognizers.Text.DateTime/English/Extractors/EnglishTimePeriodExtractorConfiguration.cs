@@ -1,4 +1,6 @@
-﻿using Microsoft.Recognizers.Resources.English;
+﻿using System;
+
+using Microsoft.Recognizers.Resources.English;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -83,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("from"))
             {
-                index = text.LastIndexOf("from");
+                index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -94,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("between"))
             {
-                index = text.LastIndexOf("between");
+                index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
             return false;

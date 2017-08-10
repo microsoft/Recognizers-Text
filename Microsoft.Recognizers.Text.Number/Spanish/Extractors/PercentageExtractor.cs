@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                $@"(@{numExtType})(\s*)(%|por ciento|por cien)"
+                $@"(@{NumExtType})(\s*)(%|por ciento|por cien)"
             };
 
             return BuildRegexes(regexStrs);

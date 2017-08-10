@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime
+﻿// ReSharper disable InconsistentNaming
+
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class Constants
     {

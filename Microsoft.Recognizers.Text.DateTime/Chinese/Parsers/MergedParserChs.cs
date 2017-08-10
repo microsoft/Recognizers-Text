@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
             {
-                pr = this.config.DateParser.Parse(er, referenceTime);
+                pr = this.Config.DateParser.Parse(er, referenceTime);
                 if (pr.Value == null)
                 {
                     //pr = this.config.HolidayParser.Parse(er, referenceTime);
@@ -44,31 +44,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
-                pr = this.config.TimeParser.Parse(er, referenceTime);
+                pr = this.Config.TimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIME))
             {
-                pr = this.config.DateTimeParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimeParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD))
             {
-                pr = this.config.DatePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {
-                pr = this.config.TimePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.TimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEPERIOD))
             {
-                pr = this.config.DateTimePeriodParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimePeriodParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DURATION))
             {
-                pr = this.config.DurationParser.Parse(er, referenceTime);
+                pr = this.Config.DurationParser.Parse(er, referenceTime);
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_SET))
             {
-                pr = this.config.SetParser.Parse(er, referenceTime);
+                pr = this.Config.GetParser.Parse(er, referenceTime);
             }
             else
             {
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             pr.Value = DateTimeResolution(pr, hasBefore, hasAfter);
 
             //change the type at last for the after or before mode
-            pr.Type = string.Format("{0}.{1}", ParserTypeName, DetermineDateTimeType(er.Type, hasBefore, hasAfter));
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter)}";
 
             return pr;
         }

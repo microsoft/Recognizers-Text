@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_CURRENCY;
 
@@ -22,6 +22,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumericWithUnit.CurrencyPrefixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = NumericWithUnit.AmbiguousCurrencyUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousCurrencyUnitList.ToImmutableList();
     }
 }

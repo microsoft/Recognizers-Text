@@ -31,11 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
+
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
             {
                 swift = 1;
             }
+
             if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
                 trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
             {
@@ -45,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = 0;
             }
+
             return swift;
         }
 

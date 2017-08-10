@@ -15,8 +15,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return string.Join("-", "XXXX", "XX", day.ToString("D2"));
                 }
+
                 return string.Join("-", "XXXX", month.ToString("D2"), day.ToString("D2"));
             }
+
             return string.Join("-", year.ToString("D4"), month.ToString("D2"), day.ToString("D2"));
         }
 
@@ -68,14 +70,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 splited.Add(timeStr.Substring(match.Index, match.Length));
                 lastPos = match.Index + match.Length;
             }
+
             if (!string.IsNullOrEmpty(timeStr.Substring(lastPos)))
+            {
                 splited.Add(timeStr.Substring(lastPos));
+            }
 
             for (int i = 0; i < splited.Count; i += 1)
             {
                 if (HourTimexRegex.IsMatch(splited[i]))
+                {
                     splited[i] = ToPm(splited[i]);
+                }
             }
+
             return string.Concat(splited);
         }
 

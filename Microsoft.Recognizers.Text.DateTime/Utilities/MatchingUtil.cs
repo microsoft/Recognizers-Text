@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (text.TrimStart().ToLower().StartsWith(matchString))
                 {
-                    index = text.ToLower().LastIndexOf(matchString) + matchString.Length;
+                    index = text.ToLower().LastIndexOf(matchString, StringComparison.Ordinal) + matchString.Length;
                     return true;
                 }
             }
@@ -28,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (text.Trim().ToLower().Split(' ').Last().EndsWith(matchString))
                 {
-                    index = text.Length - text.ToLower().LastIndexOf(matchString);
+                    index = text.Length - text.ToLower().LastIndexOf(matchString, StringComparison.Ordinal);
                     return true;
                 }
             }

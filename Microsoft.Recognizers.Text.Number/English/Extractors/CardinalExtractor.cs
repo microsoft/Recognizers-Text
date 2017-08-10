@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class CardinalExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
         public CardinalExtractor(string placeholder = Numeric.PlaceHolderDefault)

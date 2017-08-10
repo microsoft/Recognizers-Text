@@ -4,8 +4,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
-        private static readonly Regex _beforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex _afterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex AfterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IExtractor DateExtractor { get; }
 
@@ -21,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor DurationExtractor { get; }
 
-        public IExtractor SetExtractor { get; }
+        public IExtractor GetExtractor { get; }
 
         public IExtractor HolidayExtractor { get; }
 
@@ -34,14 +35,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
+            GetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         }
 
         public bool HasBeforeTokenIndex(string text, out int index)
         {
             index = -1;
-            var match = _beforeRegex.Match(text);
+            var match = BeforeRegex.Match(text);
             if (match.Success)
             {
                 index = match.Index;
@@ -52,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool HasAfterTokenIndex(string text, out int index)
         {
             index = -1;
-            var match = _afterRegex.Match(text);
+            var match = AfterRegex.Match(text);
             if (match.Success)
             {
                 index = match.Index;

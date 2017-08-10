@@ -8,11 +8,12 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class OrdinalExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
         public OrdinalExtractor()
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(
@@ -35,7 +36,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , "OrdEng"
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

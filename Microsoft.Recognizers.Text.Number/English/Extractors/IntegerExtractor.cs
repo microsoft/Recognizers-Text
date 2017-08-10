@@ -8,45 +8,40 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class IntegerExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
 
         public IntegerExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
-            var _regexes = new Dictionary<Regex, string>
-            {
+            var regexes = new Dictionary<Regex, string> {
                 {
                     new Regex(Numeric.NumbersWithPlaceHolder(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "IntegerNum"
-                },
-                {
-                    new Regex(Numeric.NumbersWithSuffix, RegexOptions.Singleline)
-                    , "IntegerNum"
-                },
-                {
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "IntegerNum"
+                }, {
+                    new Regex(Numeric.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
+                }, {
                     new Regex(Numeric.RoundNumberIntegerRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.NumbersWithDozenSuffix,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.AllIntRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
-                },
-                {
+                }, {
                     new Regex(Numeric.AllIntRegexWithDozenSuffixLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
                 }
             };
 
-            _regexes.Add(GenerateArabicNumberRegex(ArabicType.IntegerNumComma, placeholder), "IntegerNum");
-            Regexes = _regexes.ToImmutableDictionary();
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

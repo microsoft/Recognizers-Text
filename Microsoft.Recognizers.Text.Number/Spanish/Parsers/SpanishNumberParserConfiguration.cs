@@ -318,7 +318,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 {"billonesima", 1000000000000}
             };
 
-            var PrefixCardinalDictionary = new Dictionary<string, long>()
+            var prefixCardinalDictionary = new Dictionary<string, long>()
             {
                 {"dos", 2 },
                 {"tres", 3 },
@@ -369,16 +369,16 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 {"novecientos", 900},
             };
 
-            var SufixOrdinalDictionary = new Dictionary<string, long>()
+            var sufixOrdinalDictionary = new Dictionary<string, long>()
             {
                 {"milesimo", 1000 },
                 {"millonesimo", 1000000 },
                 {"billonesimo", 1000000000000 },
             };
 
-            foreach (var sufix in SufixOrdinalDictionary)
+            foreach (var sufix in sufixOrdinalDictionary)
             {
-                foreach (var prefix in PrefixCardinalDictionary)
+                foreach (var prefix in prefixCardinalDictionary)
                 {
                     simpleOrdinalDictionary.Add(prefix.Key + sufix.Key, prefix.Value * sufix.Value);
                 }

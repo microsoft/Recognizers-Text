@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
@@ -118,11 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return -1;
                 }
 
-                if (start1 == start2)
-                {
-                    return 0;
-                }
-                return 1;
+                return start1 == start2 ? 0 : 1;
             });
 
             // merge {Date} {TimePeriod}
@@ -190,11 +187,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return -1;
                 }
 
-                if (start1 == start2)
-                {
-                    return 0;
-                }
-                return 1;
+                return start1 == start2 ? 0 : 1;
             });
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
@@ -224,7 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     var beforeStr = text.Substring(0, periodBegin).ToLowerInvariant();
                     if (beforeStr.Trim().EndsWith("从"))
                     {
-                        periodBegin = beforeStr.LastIndexOf("从");
+                        periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));

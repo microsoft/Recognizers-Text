@@ -11,14 +11,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeRecognizer()
         {
             var type = typeof(DateTimeModel);
+
             RegisterModel(Culture.English, type, new DateTimeModel(
                     new BaseMergedParser(new EnglishMergedParserConfiguration()),
                     new BaseMergedExtractor(new EnglishMergedExtractorConfiguration())
                     ));
+
             RegisterModel(Culture.Chinese, type, new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
                     new MergedExtractorChs()
                     ));
+
             RegisterModel(Culture.Spanish, type, new DateTimeModel(
                     new BaseMergedParser(new SpanishMergedParserConfiguration()),
                     new BaseMergedExtractor(new SpanishMergedExtractorConfiguration())

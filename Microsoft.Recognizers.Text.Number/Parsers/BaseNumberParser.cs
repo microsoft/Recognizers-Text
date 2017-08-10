@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -7,11 +8,11 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class BaseNumberParser : IParser
     {
-        protected readonly INumberParserConfiguration config;
+        protected readonly INumberParserConfiguration Config;
 
         protected Regex TextNumberRegex { get; }
 
-        protected Regex ArabicNumberRegex { get; }
+        protected Regex LongFormatRegex { get; }
 
         protected HashSet<string> RoundNumberSet { get; }
 
@@ -19,17 +20,16 @@ namespace Microsoft.Recognizers.Text.Number
 
         public BaseNumberParser(INumberParserConfiguration config)
         {
-            this.config = config;
+            this.Config = config;
 
-            var singleIntFrac = $"{this.config.WordSeparatorToken}| -|"
-                                + GetKeyRegex(this.config.CardinalNumberMap.Keys) + "|"
-                                + GetKeyRegex(this.config.OrdinalNumberMap.Keys);
-            TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            ArabicNumberRegex = new Regex(@"\d+",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|"
+                                + GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|"
+                                + GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
+            TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            LongFormatRegex = new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
             RoundNumberSet = new HashSet<string>();
-            foreach (var roundNumber in this.config.RoundNumberMap.Keys)
+            foreach (var roundNumber in this.Config.RoundNumberMap.Keys)
             {
                 RoundNumberSet.Add(roundNumber);
             }
@@ -47,13 +47,13 @@ namespace Microsoft.Recognizers.Text.Number
             ParseResult ret = null;
             if ((extra = extResult.Data as string) == null)
             {
-                if (ArabicNumberRegex.Match(extResult.Text).Success)
+                if (LongFormatRegex.Match(extResult.Text).Success)
                 {
                     extra = "Num";
                 }
                 else
                 {
-                    extra = config.LangMarker;
+                    extra = Config.LangMarker;
                 }
             }
 
@@ -61,11 +61,11 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 ret = DigitNumberParse(extResult);
             }
-            else if (extra.Contains($"Frac{config.LangMarker}")) //Frac is a special number, parse via another method
+            else if (extra.Contains($"Frac{Config.LangMarker}")) //Frac is a special number, parse via another method
             {
                 ret = FracLikeNumberParse(extResult);
             }
-            else if (extra.Contains(config.LangMarker))
+            else if (extra.Contains(Config.LangMarker))
             {
                 ret = TextNumberParse(extResult);
             }
@@ -76,8 +76,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret?.Value != null)
             {
-                ret.ResolutionStr = config.CultureInfo != null
-                    ? ((double)ret.Value).ToString(config.CultureInfo)
+                ret.ResolutionStr = Config.CultureInfo != null
+                    ? ((double)ret.Value).ToString(Config.CultureInfo)
                     : ret.Value.ToString();
             }
 
@@ -135,7 +135,7 @@ namespace Microsoft.Recognizers.Text.Number
                         tmp = tmp * scale + (ch - '0');
                     }
                 }
-                else if (ch == config.DecimalSeparatorChar)
+                else if (ch == Config.DecimalSeparatorChar)
                 {
                     dot = true;
                     scale = 0.1;
@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
             }
 
-            double ret = 0;
+            double ret;
             if (isE)
             {
                 ret = calStack.Dequeue() * Math.Pow(10, calStack.Dequeue());
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             result.Value = ret;
-            result.ResolutionStr = ret.ToString(); // @TODO Possible Culture bug.
+            result.ResolutionStr = ret.ToString(CultureInfo.InvariantCulture);
 
             return result;
         }
@@ -189,13 +189,13 @@ namespace Microsoft.Recognizers.Text.Number
             };
             var handle = extResult.Text.ToLower();
 
-            #region dozen special
+            #region Special case for "dozen"
 
-            handle = config.HalfADozenRegex.Replace(handle, config.HalfADozenText);
+            handle = Config.HalfADozenRegex.Replace(handle, Config.HalfADozenText);
 
             #endregion
 
-            var numGroup = handle.Split(config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+            var numGroup = handle.Split(Config.WrittenDecimalSeparatorTexts.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
             #region IntegerPart
 
@@ -252,12 +252,12 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text.ToLower();
-            if (resultText.Contains($@"{config.FractionMarkerToken}"))
+            if (resultText.Contains($@"{Config.FractionMarkerToken}"))
             {
-                var overIndex = resultText.IndexOf(config.FractionMarkerToken, StringComparison.Ordinal);
+                var overIndex = resultText.IndexOf(Config.FractionMarkerToken, StringComparison.Ordinal);
                 var smallPart = resultText.Substring(0, overIndex).Trim();
-                var bigPart = resultText.Substring(overIndex + config.FractionMarkerToken.Length,
-                    resultText.Length - overIndex - config.FractionMarkerToken.Length).Trim();
+                var bigPart = resultText.Substring(overIndex + Config.FractionMarkerToken.Length,
+                    resultText.Length - overIndex - Config.FractionMarkerToken.Length).Trim();
 
                 var smallValue = char.IsDigit(smallPart[0])
                     ? GetDigitalValue(smallPart, 1)
@@ -271,24 +271,24 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                var fracWords = config.NormalizeTokenSet(resultText.Split(null), result).ToList();
+                var fracWords = Config.NormalizeTokenSet(resultText.Split(null), result).ToList();
 
                 // Split fraction with integer
                 var splitIndex = fracWords.Count - 1;
-                var currentValue = config.ResolveCompositeNumber(fracWords[splitIndex]);
+                var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
                 long roundValue = 1;
 
                 for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
                 {
 
-                    if (config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
-                        config.WrittenIntegerSeparatorTexts.Contains(fracWords[splitIndex]))
+                    if (Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
+                        Config.WrittenIntegerSeparatorTexts.Contains(fracWords[splitIndex]))
                     {
                         continue;
                     }
 
                     var previousValue = currentValue;
-                    currentValue = config.ResolveCompositeNumber(fracWords[splitIndex]);
+                    currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
 
                     var smHundreds = 100;
 
@@ -306,6 +306,7 @@ namespace Microsoft.Recognizers.Text.Number
                             splitIndex++;
                             break;
                         }
+
                         // current is the first word
                         if (splitIndex == 0)
                         {
@@ -315,9 +316,9 @@ namespace Microsoft.Recognizers.Text.Number
                             {
                                 // e.g. one hundred thousand 
                                 // frac[i+1] % 100 && frac[i] % 100 = 0
-                                if (config.ResolveCompositeNumber(fracWords[splitIndex]) >= smHundreds
-                                    && !config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1])
-                                    && config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < smHundreds)
+                                if (Config.ResolveCompositeNumber(fracWords[splitIndex]) >= smHundreds
+                                    && !Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1])
+                                    && Config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < smHundreds)
                                 {
                                     splitIndex++;
                                     break;
@@ -358,7 +359,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var mixedIndex = fracWords.Count;
                 for (var i = fracWords.Count - 1; i >= 0; i--)
                 {
-                    if (i < fracWords.Count - 1 && config.WrittenFractionSeparatorTexts.Contains(fracWords[i]))
+                    if (i < fracWords.Count - 1 && Config.WrittenFractionSeparatorTexts.Contains(fracWords[i]))
                     {
                         var numerStr = string.Join(" ", fracWords.GetRange(i + 1, fracWords.Count - 1 - i));
                         numerValue = GetIntValue(GetMatches(numerStr));
@@ -366,6 +367,7 @@ namespace Microsoft.Recognizers.Text.Number
                         break;
                     }
                 }
+
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
                 intValue = GetIntValue(GetMatches(intStr));
 
@@ -437,12 +439,12 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     //if false,then continue
                     //You will meet hundred first, then thousand.
-                    if (endFlag > config.RoundNumberMap[matchStrs[i]])
+                    if (endFlag > Config.RoundNumberMap[matchStrs[i]])
                     {
                         continue;
                     }
                     isEnd[i] = true;
-                    endFlag = config.RoundNumberMap[matchStrs[i]];
+                    endFlag = Config.RoundNumberMap[matchStrs[i]];
                 }
             }
 
@@ -452,20 +454,23 @@ namespace Microsoft.Recognizers.Text.Number
                 var oldSym = "";
                 foreach (var matchStr in matchStrs)
                 {
-                    var isCardinal = config.CardinalNumberMap.ContainsKey(matchStr);
-                    var isOrdinal = config.OrdinalNumberMap.ContainsKey(matchStr);
+                    var isCardinal = Config.CardinalNumberMap.ContainsKey(matchStr);
+                    var isOrdinal = Config.OrdinalNumberMap.ContainsKey(matchStr);
+
                     if (isCardinal || isOrdinal)
                     {
                         var matchValue = isCardinal
-                            ? config.CardinalNumberMap[matchStr]
-                            : config.OrdinalNumberMap[matchStr];
+                            ? Config.CardinalNumberMap[matchStr]
+                            : Config.OrdinalNumberMap[matchStr];
+                    
                         //This is just for ordinal now. Not for fraction ever.
                         if (isOrdinal)
                         {
-                            double fracPart = config.OrdinalNumberMap[matchStr];
+                            double fracPart = Config.OrdinalNumberMap[matchStr];
                             if (tempStack.Any())
                             {
                                 var intPart = tempStack.Pop();
+                        
                                 // if intPart >= fracPart, it means it is an ordinal number
                                 // it begins with an integer, ends with an ordinal
                                 // e.g. ninety-ninth
@@ -473,10 +478,11 @@ namespace Microsoft.Recognizers.Text.Number
                                 {
                                     tempStack.Push(intPart + fracPart);
                                 }
-                                // another case of the type is ordinal
-                                // e.g. three hundredth
                                 else
                                 {
+                                    // another case of the type is ordinal
+                                    // e.g. three hundredth
+
                                     while (tempStack.Any())
                                     {
                                         intPart = intPart + tempStack.Pop();
@@ -489,14 +495,14 @@ namespace Microsoft.Recognizers.Text.Number
                                 tempStack.Push(fracPart);
                             }
                         }
-                        else if (config.CardinalNumberMap.ContainsKey(matchStr))
+                        else if (Config.CardinalNumberMap.ContainsKey(matchStr))
                         {
                             if (oldSym.Equals("-"))
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First()) || tempStack.Count() < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
@@ -510,7 +516,7 @@ namespace Microsoft.Recognizers.Text.Number
                     }
                     else
                     {
-                        var complexValue = config.ResolveCompositeNumber(matchStr);
+                        var complexValue = Config.ResolveCompositeNumber(matchStr);
                         if (complexValue != 0)
                         {
                             tempStack.Push(complexValue);
@@ -533,7 +539,7 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     if (isEnd[i])
                     {
-                        mulValue = config.RoundNumberMap[matchStrs[i]];
+                        mulValue = Config.RoundNumberMap[matchStrs[i]];
                         partValue = 1;
 
                         if (i != 0)
@@ -563,19 +569,17 @@ namespace Microsoft.Recognizers.Text.Number
             double ret = 0;
             var firstMatch = matchStrs.First();
 
-            if (config.CardinalNumberMap.ContainsKey(firstMatch) && config.CardinalNumberMap[firstMatch] >= 10)
+            if (Config.CardinalNumberMap.ContainsKey(firstMatch) && Config.CardinalNumberMap[firstMatch] >= 10)
             {
                 var prefix = "0.";
                 var tempInt = GetIntValue(matchStrs);
                 var all = prefix + tempInt;
                 ret = double.Parse(all);
             }
-            else
-            {
+            else {
                 var scale = 0.1;
-                for (var i = 0; i < matchStrs.Count; i++)
-                {
-                    ret += config.CardinalNumberMap[matchStrs[i]] * scale;
+                foreach (string matchStr in matchStrs) {
+                    ret += Config.CardinalNumberMap[matchStr] * scale;
                     scale *= 0.1;
                 }
             }
@@ -607,14 +611,17 @@ namespace Microsoft.Recognizers.Text.Number
             //dot occured.
             double power = 1;
             var handle = extResult.Text.ToLower();
-            var match = config.DigitalNumberRegex.Match(handle);
-            int tmpIndex = -1, startIndex = 0;
+            var match = Config.DigitalNumberRegex.Match(handle);
+            int startIndex = 0;
             while (match.Success)
             {
-                double rep = config.RoundNumberMap[match.Value];
+                var tmpIndex = -1;
+                double rep = Config.RoundNumberMap[match.Value];
+                
                 // \\s+ for filter the spaces.
                 power *= rep;
-                while ((tmpIndex = handle.IndexOf(match.Value, startIndex)) >= 0)
+                
+                while ((tmpIndex = handle.IndexOf(match.Value, startIndex, StringComparison.Ordinal)) >= 0)
                 {
                     var front = handle.Substring(0, tmpIndex).TrimEnd();
                     startIndex = front.Length;
@@ -642,7 +649,7 @@ namespace Microsoft.Recognizers.Text.Number
             for (var i = 0; i < digitStr.Count(); i++)
             {
                 var ch = digitStr[i];
-                if (!isFrac && ch == config.NonDecimalSeparatorChar)
+                if (!isFrac && ch == Config.NonDecimalSeparatorChar)
                 {
                     continue;
                 }
@@ -664,7 +671,7 @@ namespace Microsoft.Recognizers.Text.Number
                         temp = temp * scale + (ch - '0');
                     }
                 }
-                else if (ch == config.DecimalSeparatorChar)
+                else if (ch == Config.DecimalSeparatorChar)
                 {
                     dot = true;
                     scale = 0.1;

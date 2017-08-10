@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
+
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
         public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)

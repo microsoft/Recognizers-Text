@@ -33,15 +33,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseImplicitDate(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekdayOfMonth(er.Text, referenceDate);
                 }
+
                 // NumberWithMonth must be the last one, because it only need to find a number and a month to get a "success"
                 if (!innerResult.Success)
                 {
                     innerResult = ParseNumberWithMonth(er.Text, referenceDate);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParserDurationWithAgoAndLater(er.Text, referenceDate);
@@ -53,6 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.FutureValue)}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATE, FormatUtil.FormatDate((DateObject) innerResult.PastValue)}
@@ -73,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
@@ -124,10 +129,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     futureDate = new DateObject(year, month, day);
                     pastDate = new DateObject(year, month, day);
+
                     if (futureDate < referenceDate)
                     {
                         futureDate = futureDate.AddMonths(+1);
                     }
+
                     if (pastDate >= referenceDate)
                     {
                         pastDate = pastDate.AddMonths(-1);
@@ -217,6 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     weekDay = 7;
                 }
+
                 if (weekDay < (int)referenceDate.DayOfWeek)
                 {
                     value = referenceDate.Next((DayOfWeek)weekDay);
@@ -229,6 +237,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     futureDate = futureDate.AddDays(7);
                 }
+
                 if (pastDate >= referenceDate)
                 {
                     pastDate = pastDate.AddDays(-7);
@@ -251,11 +260,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var trimedText = text.Trim().ToLower();
             int month = 0, day = 0, year = referenceDate.Year;
+
             var match = this.config.MonthRegex.Match(trimedText);
             if (!match.Success)
             {
                 return ret;
             }
+
             month = this.config.MonthOfYear[match.Value.Trim()];
 
             var er = this.config.OrdinalExtractor.Extract(trimedText);
@@ -263,6 +274,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 er = this.config.IntegerExtractor.Extract(trimedText);
             }
+
             if (er.Count == 0)
             {
                 return ret;
@@ -274,10 +286,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Timex = FormatUtil.LuisDate(-1, month, day);
             var futureDate = new DateObject(year, month, day);
             var pastDate = new DateObject(year, month, day);
+
             if (futureDate < referenceDate)
             {
                 futureDate = futureDate.AddYears(+1);
             }
+
             if (pastDate >= referenceDate)
             {
                 pastDate = pastDate.AddYears(-1);
@@ -348,10 +362,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var futureDate = new DateObject(year, month, day);
             var pastDate = new DateObject(year, month, day);
+
             if (noYear && futureDate < referenceDate)
             {
                 futureDate = futureDate.AddYears(+1);
             }
+
             if (noYear && pastDate >= referenceDate)
             {
                 pastDate = pastDate.AddYears(-1);
@@ -390,6 +406,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 cardinal = this.config.CardinalMap[cardinalStr];
             }
+
             var weekday = this.config.DayOfWeek[weekdayStr];
             int month;
             if (string.IsNullOrEmpty(monthStr))
@@ -423,6 +440,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     futureDate = futureDate.AddDays(-7);
                 }
             }
+
             if (noYear && pastDate >= referenceDate)
             {
                 pastDate = ComputeDate(cardinal, weekday, month, year - 1);
@@ -445,14 +463,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = new DateObject(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+
             if (weekday == 0)
             {
                 weekday = 7;
             }
+
             if (weekday < (int)firstDay.DayOfWeek)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
+
             return firstWeekday.AddDays(7 * (cardinal - 1));
         }
     }

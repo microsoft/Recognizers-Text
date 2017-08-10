@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 numberResult = new ExtractResult { Start = -1, Length = 0 };
             }
+
             // key contains units
             var key = extResult.Text;
             var unitKeyBuild = new StringBuilder();
@@ -39,9 +40,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
                     }
                 }
-                // numberResult.start is a relative position
                 else if (i == numberResult.Start)
-                {
+                {   
+                    // numberResult.start is a relative position
+
                     if (unitKeyBuild.Length != 0)
                     {
                         AddIfNotContained(unitKeys, unitKeyBuild.ToString().Trim());
@@ -65,6 +67,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 lastUnit = lastUnit.Substring(this.config.ConnectorToken.Length).Trim();
             }
+
             if (!string.IsNullOrWhiteSpace(key) && (this.config.UnitMap != null) && this.config.UnitMap.ContainsKey(lastUnit))
             {
                 var unitValue = this.config.UnitMap[lastUnit];
@@ -90,6 +93,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     break;
                 }
             }
+
             if (add)
             {
                 unitKeys.Add(unit);

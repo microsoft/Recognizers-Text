@@ -14,12 +14,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
         public static readonly ImmutableDictionary<string, string> LenghtSuffixList = NumericWithUnit.LenghtSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = NumericWithUnit.AmbiguousLengthUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousLengthUnitList.ToImmutableList();
     }
 }

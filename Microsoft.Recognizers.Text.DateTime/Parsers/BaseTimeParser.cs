@@ -32,10 +32,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.FutureValue)}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.TIME, FormatUtil.FormatTime((DateObject) innerResult.PastValue)}
                     };
+
                     value = innerResult;
                 }
             }
@@ -51,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
@@ -72,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = this.config.AtRegex.Match(this.config.TimeTokenPrefix + trimedText);
                 offset = this.config.TimeTokenPrefix.Length;
             }
+
             if (match.Success && match.Index == offset && match.Length == trimedText.Length)
             {
                 return Match2Time(match, referenceTime);
@@ -89,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return Match2Time(match, referenceTime);
                 }
             }
+
             return new DateTimeResolutionResult();
         }
 
@@ -113,6 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // get minute
                 var minStr = match.Groups["minnum"].Value;
                 var tensStr = match.Groups["tens"].Value;
+
                 if (!string.IsNullOrEmpty(minStr))
                 {
                     min = this.config.Numbers[minStr];
@@ -150,6 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         min = this.config.Numbers[minStr];
                         hasMin = true;
                     }
+
                     var tensStr = match.Groups["tens"].Value;
                     if (!string.IsNullOrEmpty(tensStr))
                     {
@@ -218,10 +225,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.Timex += ":" + min.ToString("D2");
             }
+
             if (hasSec)
             {
                 ret.Timex += ":" + second.ToString("D2");
             }
+
             if (hour <= 12 && !hasPm && !hasAm)
             {
                 ret.Comment = "ampm";
@@ -229,6 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = ret.PastValue = new DateObject(year, month, day, hour, min, second);
             ret.Success = true;
+
             return ret;
         }
     }

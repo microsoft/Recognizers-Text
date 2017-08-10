@@ -68,7 +68,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseTimeExtractor.HourRegex}:{BaseTimeExtractor.MinuteRegex}(:{BaseTimeExtractor.SecondRegex})?|{BaseTimeExtractor.HourRegex})",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-
         // part 3: regex for time
         // --------------------------------------
         // handle "a las cuatro" "a las 3"

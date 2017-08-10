@@ -1,4 +1,6 @@
-﻿using DateObject = System.DateTime;
+﻿// ReSharper disable InconsistentNaming
+
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {

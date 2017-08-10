@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Resources.English;
@@ -15,13 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
         }
         
-        private static readonly Regex[] simpleCasesRegex = new Regex[]
+        private static readonly Regex[] SimpleCases = new Regex[]
         {
             EnglishTimePeriodExtractorConfiguration.PureNumFromTo,
             EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd
         };
 
-        public IEnumerable<Regex> SimpleCasesRegex => simpleCasesRegex;
+        public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 
         public Regex PrepositionRegex => EnglishTimePeriodExtractorConfiguration.PrepositionRegex;
 
@@ -70,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("from"))
             {
-                index = text.LastIndexOf("from");
+                index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -81,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("between"))
             {
-                index = text.LastIndexOf("between");
+                index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
             return false;

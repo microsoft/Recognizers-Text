@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> Numbers { get; }
 
         void AdjustByPrefix(string prefix, ref int hour, ref int min, ref bool hasMin);
+
         void AdjustBySuffix(string suffix, ref int hour, ref int min, ref bool hasMin, ref bool hasAm, ref bool hasPm);
 
     }

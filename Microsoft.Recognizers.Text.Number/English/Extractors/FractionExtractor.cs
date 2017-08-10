@@ -8,11 +8,12 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class FractionExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
         public FractionExtractor()
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(Numeric.FractionNotationWithSpacesRegex,
@@ -42,7 +43,8 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , "FracEng"
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }
