@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -59,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = "on ";
+            TokenBeforeDate = DateTimeDefinition.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
@@ -74,7 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
-            NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithUnit;
+            NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = EnglishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = EnglishDatePeriodExtractorConfiguration.WeekOfYearRegex;
             QuarterRegex = EnglishDatePeriodExtractorConfiguration.QuarterRegex;

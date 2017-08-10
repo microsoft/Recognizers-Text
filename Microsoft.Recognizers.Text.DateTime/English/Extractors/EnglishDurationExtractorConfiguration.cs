@@ -1,31 +1,32 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDurationExtractorConfiguration : IDurationExtractorConfiguration
     {
-        public static readonly Regex UnitRegex =
+        public static readonly Regex DurationUnitRegex =
             new Regex(
-                @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
+                DateTimeDefinition.DurationUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+        public static readonly Regex SuffixAndRegex = new Regex(DateTimeDefinition.SuffixAndRegex,
            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{SuffixAndRegex}?(\s+|-)?{UnitRegex}",
+        public static readonly Regex DurationFollowedUnit = new Regex(DateTimeDefinition.DurationFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?)(-)?{UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithDurationUnit =
+            new Regex(DateTimeDefinition.NumberCombinedWithDurationUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AnUnitRegex = new Regex($@"(((?<half>half\s+)*(an|a))|(an|a))\s+{UnitRegex}",
+        public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinition.AnUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AllRegex = new Regex(@"\b(?<all>all\s+(?<unit>year|month|week|day))\b",
+        public static readonly Regex AllRegex = new Regex(DateTimeDefinition.AllRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = new Regex(@"(((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
+        public static readonly Regex HalfRegex = new Regex(DateTimeDefinition.HalfRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDurationExtractorConfiguration()
@@ -35,9 +36,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
-        Regex IDurationExtractorConfiguration.FollowedUnit => FollowedUnit;
+        Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
-        Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
+        Regex IDurationExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithDurationUnit;
 
         Regex IDurationExtractorConfiguration.AnUnitRegex => AnUnitRegex;
 

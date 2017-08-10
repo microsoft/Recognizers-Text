@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -75,11 +76,11 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateArabicNumberRegex(ArabicType type, string placeholder = @"\D|\b")
+        protected Regex GenerateArabicNumberRegex(ArabicType type, string placeholder = CommonNumeric.PlaceHolderDefault)
         {
             Regex addedRegex = null;
-            string integerTemplate = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+" + $@"(?={placeholder})";
-            string doubleTemplate = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({0}\\d{{3}})+{1}\\d+" + $@"(?={placeholder})";
+            string integerTemplate = CommonNumeric.IntegerTemplateRegex + $@"(?={placeholder})";
+            string doubleTemplate = CommonNumeric.DoubleTemplateRegex + $@"(?={placeholder})";
             switch (type)
             {
                 case ArabicType.IntegerNumComma:

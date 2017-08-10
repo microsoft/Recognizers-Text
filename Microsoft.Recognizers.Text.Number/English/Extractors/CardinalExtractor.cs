@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.English
@@ -8,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.English
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        public CardinalExtractor(string placeholder = @"\D|\b")
+        public CardinalExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

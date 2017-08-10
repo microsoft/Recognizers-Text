@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Resources.English;
 using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
@@ -10,12 +11,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.CultureInfo = ci;
             this.UnitNumExtractor = new NumberExtractor();
-            this.BuildPrefix = @"(?<=(\s|^|\W))";
-            this.BuildSuffix = @"(?=(\s|\W|$))";
+            this.BuildPrefix = NumericWithUnit.BuildPrefix;
+            this.BuildSuffix = NumericWithUnit.BuildSuffix;
             this.ConnectorToken = string.Empty;
         }
 
         public abstract string ExtractType { get; }
+
         public CultureInfo CultureInfo { get; }
 
         public IExtractor UnitNumExtractor { get; }

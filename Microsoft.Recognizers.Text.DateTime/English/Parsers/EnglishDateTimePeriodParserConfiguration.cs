@@ -57,8 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             NightRegex = EnglishDateTimeExtractorConfiguration.NightRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
-            NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
-            UnitRegex = EnglishTimePeriodExtractorConfiguration.UnitRegex;
+            NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
+            UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

@@ -1,28 +1,29 @@
-﻿using System.Text.RegularExpressions;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishSetExtractorConfiguration : ISetExtractorConfiguration
     {
-        public static readonly Regex UnitRegex =
+        public static readonly Regex SetUnitRegex =
             new Regex(
-                @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
+                DateTimeDefinition.DurationUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodicRegex = new Regex(
-            @"\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\b",
+            DateTimeDefinition.PeriodicRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(
-            $@"(?<each>(each|every)\s*{UnitRegex})", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            DateTimeDefinition.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex = new Regex(@"(?<each>(each|every)\s*$)",
+        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinition.EachPrefixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(@"(?<last>last|this|next)",
+        public static readonly Regex SetLastRegex = new Regex(DateTimeDefinition.SetLastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex = new Regex(@"^\s*(each|every)\s*day\b",
+        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinition.EachDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishSetExtractorConfiguration()
@@ -50,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor DateTimePeriodExtractor { get; }
 
-        Regex ISetExtractorConfiguration.LastRegex => LastRegex;
+        Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 

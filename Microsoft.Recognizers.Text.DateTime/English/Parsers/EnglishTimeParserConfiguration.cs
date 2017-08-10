@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -16,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TimeTokenPrefix = "at ";
+            TimeTokenPrefix = DateTimeDefinition.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
             Numbers = config.Numbers;
