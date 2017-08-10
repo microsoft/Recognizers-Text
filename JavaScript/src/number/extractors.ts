@@ -1,9 +1,9 @@
 import { Constants } from "./constants";
-import { CommonNumeric } from "../resources/numericCommon";
+import { BaseNumbers } from "../resources/numericBase";
 import { EnglishNumeric } from "../resources/numericEnglish";
 import * as XRegExp from 'xregexp';
 import { Match, RegExpUtility } from "../utilities";
-import { ArabicType } from "./models";
+import { LongFormatType } from "./models";
 import * as _ from "lodash";
 
 export interface IExtractor {
@@ -83,35 +83,16 @@ export abstract class BaseNumberExtractor implements IExtractor {
         return result;
     }
 
-    protected generateArabicNumberRegex(type: ArabicType, placeholder: string = "\D|\b"): RegExp {
+    protected generateLongFormatNumberRegexes(type: LongFormatType, placeholder: string = BaseNumbers.PlaceHolderDefault): RegExp {
 
-        let integerTemplate = CommonNumeric.IntegerTemplateRegex + `(?=${placeholder})`;
-        let doubleTemplate = CommonNumeric.DoubleTemplateRegex + `(?=${placeholder})`;
+        let thousandsMark = _.escapeRegExp(type.thousandsMark);
+        let decimalsMark = _.escapeRegExp(type.decimalsMark);
 
-        switch (type) {
-            case ArabicType.IntegerNumComma:
-                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp(',')), "gis");
-            case ArabicType.IntegerNumDot:
-                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp('.')), "gis");
-            case ArabicType.IntegerNumBlank:
-                return XRegExp(integerTemplate.replace('{0}', ' '), "gis");
-            case ArabicType.IntegerNumQuote:
-                return XRegExp(integerTemplate.replace('{0}', _.escapeRegExp("'")), "gis");
-            case ArabicType.DoubleNumCommaDot:
-                return XRegExp(doubleTemplate.replace('{0}', ",").replace('{1}', _.escapeRegExp(".")), "gis");
-            case ArabicType.DoubleNumDotComma:
-                return XRegExp(doubleTemplate.replace('{0}', _.escapeRegExp(".")).replace('{1}', ","), "gis");
-            case ArabicType.DoubleNumBlankComma:
-                return XRegExp(doubleTemplate.replace('{0}', ' ').replace('{1}', ","), "gis");
-            case ArabicType.DoubleNumBlankDot:
-                return XRegExp(doubleTemplate.replace('{0}',' ').replace('{1}', _.escapeRegExp(".")), "gis");
-            case ArabicType.DoubleNumCommaCdot:
-                return XRegExp(doubleTemplate.replace('{0}', ",").replace('{1}', "·"), "gis");
-            case ArabicType.DoubleNumQuoteComma:
-                return XRegExp(doubleTemplate.replace('{0}', _.escapeRegExp("'")).replace('{1}', ","), "gis");
-        }
+        let  regexDefinition = type.decimalsMark === '\0'
+            ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
+            : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-        return null;
+        return XRegExp(regexDefinition, "gis");
     }
 }
 
@@ -195,7 +176,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
         let positionMap = new Map<number, number>();
 
         let numExtResults = this.numberExtractor.extract(str);
-        let replaceText = CommonNumeric.NumberReplaceToken;
+        let replaceText = BaseNumbers.NumberReplaceToken;
 
         let match = new Array<number>(str.length);
         let strParts = new Array<Array<number>>();
@@ -259,7 +240,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
 
     // replace the @sys.num to the real patterns, directly modifies the ExtractResult
     private postProcessing(results: Array<ExtractResult>, originSource: string, positionMap: Map<number, number>, numExtResults: Array<ExtractResult>): void {
-        let replaceText = CommonNumeric.NumberReplaceToken;
+        let replaceText = BaseNumbers.NumberReplaceToken;
         for (let i = 0; i < results.length; i++) {
             let start = results[i].start;
             let end = start + results[i].length;

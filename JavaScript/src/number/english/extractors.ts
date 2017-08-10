@@ -1,6 +1,6 @@
 import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
-import { NumberMode, ArabicType } from "../models";
+import { NumberMode, LongFormatType } from "../models";
 import { EnglishNumeric } from "../../resources/numericEnglish";
 import * as XRegExp from "xregexp";
 
@@ -73,7 +73,7 @@ export class EnglishIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
-                regExp: this.generateArabicNumberRegex(ArabicType.IntegerNumComma, placeholder),
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.integerNumComma, placeholder),
                 value: "IntegerNum"
             },
             {
@@ -114,7 +114,7 @@ export class EnglishDoubleExtractor extends BaseNumberExtractor {
                 value: "DoubleNum"
             },
             {
-                regExp: this.generateArabicNumberRegex(ArabicType.DoubleNumCommaDot, placeholder),
+                regExp: this.generateLongFormatNumberRegexes(LongFormatType.doubleNumCommaDot, placeholder),
                 value: "DoubleNum"
             },
             {

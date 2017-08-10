@@ -11,30 +11,46 @@ export enum NumberMode {
     PureNumber
 }
 
-export enum ArabicType {
+export class LongFormatType {
     // Reference : https://www.wikiwand.com/en/Decimal_mark
-
     // Value : 1234567.89
     // 1,234,567
-    IntegerNumComma,
+    static readonly integerNumComma = new LongFormatType(',', '\0');
+
     // 1.234.567
-    IntegerNumDot,
+    static readonly integerNumDot = new LongFormatType('.', '\0');
+
     // 1 234 567
-    IntegerNumBlank,
+    static readonly integerNumBlank = new LongFormatType(' ', '\0');
+
     // 1'234'567
-    IntegerNumQuote,
+    static readonly integerNumQuote = new LongFormatType('\'', '\0');
+
     // 1,234,567.89
-    DoubleNumCommaDot,
+    static readonly doubleNumCommaDot = new LongFormatType(',', '.');
+
     // 1,234,567·89
-    DoubleNumCommaCdot,
+    static readonly doubleNumCommaCdot = new LongFormatType(',', '·');
+
     // 1 234 567,89
-    DoubleNumBlankComma,
+    static readonly doubleNumBlankComma = new LongFormatType(' ', ',');
+
     // 1 234 567.89
-    DoubleNumBlankDot,
+    static readonly doubleNumBlankDot = new LongFormatType(' ', '.');
+
     // 1.234.567,89
-    DoubleNumDotComma,
+    static readonly doubleNumDotComma = new LongFormatType('.', ',');
+
     // 1'234'567,89
-    DoubleNumQuoteComma
+    static readonly doubleNumQuoteComma = new LongFormatType('\'', ',');
+
+    readonly thousandsMark: string;
+    readonly decimalsMark: string;
+
+    constructor(thousandsMark: string, decimalsMark: string) {
+        this.thousandsMark = thousandsMark;
+        this.decimalsMark = decimalsMark;
+    }
 }
 
 export abstract class AbstractNumberModel implements IModel {

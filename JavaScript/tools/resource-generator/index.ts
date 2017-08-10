@@ -1,22 +1,22 @@
 import * as generator from "./lib/base-code-generator";
 
-let resourcesPath = '../Common/';
+let resourcesPath = '../Patterns/';
 let outputPath = "./src/resources/";
 
 let configs = [
     // COMMON
     {
-        yaml: `${resourcesPath}Common-Numeric.yaml`,
-        output: `${outputPath}numericCommon.ts`,
-        header: `export namespace CommonNumeric {`,
+        yaml: `${resourcesPath}Base-Numbers.yaml`,
+        output: `${outputPath}numericBase.ts`,
+        header: `export namespace BaseNumbers {`,
         footer: `}`
     },
     // ENGLISH NUMERIC
     {
-        yaml: `${resourcesPath}Numeric-English.yaml`,
+        yaml: `${resourcesPath}/English/English-Numbers.yaml`,
         output: `${outputPath}numericEnglish.ts`,
         header:
-        `import { CommonNumeric } from "./numericCommon";
+        `import { BaseNumbers } from "./numericBase";
 export namespace EnglishNumeric {`,
         footer: `}`
     }
