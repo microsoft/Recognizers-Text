@@ -47,7 +47,7 @@
 		if (nodeType == typeof(ParamsRegex))
         {
 			var value = node.Value as ParamsRegex;
-#>		public static readonly Func<string, string> <#= node.Key #> = (placeholder) => $@"<#= value.SanitizedDefinition #>";<#
+#>		public static readonly Func<string, <#= string.Join(", ", value.Params.Select(x => "string")) #>> <#= node.Key #> = (<#= string.Join(", ", value.Params) #>) => $@"<#= value.SanitizedDefinition #>";<#
         }
 		if (nodeType == typeof(Dictionary))
         {

@@ -6,8 +6,8 @@
 	public static class BaseNumbers
 	{
 		public const string NumberReplaceToken = "@builtin.num";
-		public const string IntegerTemplateRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!(\\d+\\.|\\d+,))))\\d{{1,3}}({0}\\d{{3}})+";
-		public const string DoubleTemplateRegex = "(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\.|\\d+,)))\\d{{1,3}}({0}\\d{{3}})+{1}\\d+";
+		public static readonly Func<string, string, string> IntegerRegexDefinition = (placeholder, thousandsmark) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{{1,3}}({thousandsmark}\d{{3}})+(?={placeholder})";
+		public static readonly Func<string, string, string, string> DoubleRegexDefinition = (placeholder, thousandsmark, decimalmark) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{{1,3}}({thousandsmark}\d{{3}})+{decimalmark}\d+(?={placeholder})";
 		public const string PlaceHolderDefault = "\\D|\\b";
 	}
 }
