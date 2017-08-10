@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
 
-        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.DimensionSuffixList
+        public static readonly ImmutableDictionary<string, string> DimensionSuffixList = NumbersWithUnitDefinitions.InformationSuffixList
             .Concat(AreaExtractorConfiguration.AreaSuffixList)
             .Concat(LengthExtractorConfiguration.LenghtSuffixList)
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)

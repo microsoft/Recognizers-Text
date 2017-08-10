@@ -369,7 +369,7 @@
 			"yer",
 			"yen"
 		};
-		public static readonly Dictionary<string, string> DimensionSuffixList = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
 		{
 			{ "Bit", "-bit|bit|bits" },
 			{ "Kilobit", "kilobit|kilobits|kb|kbit" },

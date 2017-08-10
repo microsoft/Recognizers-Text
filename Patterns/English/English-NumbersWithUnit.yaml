@@ -461,7 +461,7 @@ AmbiguousCurrencyUnitList: !list
     - yer
     - yen
 #DimensionExtractorConfiguration
-DimensionSuffixList: !dictionary
+InformationSuffixList: !dictionary
   types: [ string, string ]
   entries:
 #Information
