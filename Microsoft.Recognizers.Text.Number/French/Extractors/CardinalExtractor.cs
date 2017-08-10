@@ -6,6 +6,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class CardinalExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
         public CardinalExtractor(string placeholder = @"\D|/b")

@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , "FracEng"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

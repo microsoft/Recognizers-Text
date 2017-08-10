@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class IntegerExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";   
    
         public const string RoundNumberIntegerRegex = @"(cent|mille|million|milliard|billion)";
@@ -78,6 +79,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     "IntegerFr"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

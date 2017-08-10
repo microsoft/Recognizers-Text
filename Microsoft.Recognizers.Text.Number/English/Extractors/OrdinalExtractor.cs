@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , "OrdEng"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     , "OrdFr"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

@@ -306,6 +306,7 @@ namespace Microsoft.Recognizers.Text.Number
                             splitIndex++;
                             break;
                         }
+
                         // current is the first word
                         if (splitIndex == 0)
                         {
@@ -366,6 +367,7 @@ namespace Microsoft.Recognizers.Text.Number
                         break;
                     }
                 }
+
                 var intStr = string.Join(" ", fracWords.GetRange(0, mixedIndex));
                 intValue = GetIntValue(GetMatches(intStr));
 
@@ -454,11 +456,13 @@ namespace Microsoft.Recognizers.Text.Number
                 {
                     var isCardinal = Config.CardinalNumberMap.ContainsKey(matchStr);
                     var isOrdinal = Config.OrdinalNumberMap.ContainsKey(matchStr);
+
                     if (isCardinal || isOrdinal)
                     {
                         var matchValue = isCardinal
                             ? Config.CardinalNumberMap[matchStr]
                             : Config.OrdinalNumberMap[matchStr];
+                    
                         //This is just for ordinal now. Not for fraction ever.
                         if (isOrdinal)
                         {
@@ -466,6 +470,7 @@ namespace Microsoft.Recognizers.Text.Number
                             if (tempStack.Any())
                             {
                                 var intPart = tempStack.Pop();
+                        
                                 // if intPart >= fracPart, it means it is an ordinal number
                                 // it begins with an integer, ends with an ordinal
                                 // e.g. ninety-ninth
@@ -473,10 +478,11 @@ namespace Microsoft.Recognizers.Text.Number
                                 {
                                     tempStack.Push(intPart + fracPart);
                                 }
-                                // another case of the type is ordinal
-                                // e.g. three hundredth
                                 else
                                 {
+                                    // another case of the type is ordinal
+                                    // e.g. three hundredth
+
                                     while (tempStack.Any())
                                     {
                                         intPart = intPart + tempStack.Pop();

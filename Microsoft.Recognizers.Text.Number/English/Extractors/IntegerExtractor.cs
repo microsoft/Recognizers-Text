@@ -13,40 +13,34 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public IntegerExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
-            var regexes = new Dictionary<Regex, string>
-            {
+            var regexes = new Dictionary<Regex, string> {
                 {
                     new Regex(Numeric.NumbersWithPlaceHolder(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "IntegerNum"
-                },
-                {
-                    new Regex(Numeric.NumbersWithSuffix, RegexOptions.Singleline)
-                    , "IntegerNum"
-                },
-                {
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "IntegerNum"
+                }, {
+                    new Regex(Numeric.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
+                }, {
                     new Regex(Numeric.RoundNumberIntegerRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.NumbersWithDozenSuffix,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.AllIntRegexWithLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
-                },
-                {
+                }, {
                     new Regex(Numeric.AllIntRegexWithDozenSuffixLocks,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerEng"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
                 }
             };
 
-            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum");
             Regexes = regexes.ToImmutableDictionary();
         }
     }

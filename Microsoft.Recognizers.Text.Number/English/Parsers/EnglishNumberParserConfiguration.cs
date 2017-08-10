@@ -118,6 +118,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             {
                 return this.CardinalNumberMap[numberStr];
             }
+
             return 0;
         }
     }

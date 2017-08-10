@@ -12,45 +12,39 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         public DoubleExtractor(string placeholder = Numeric.PlaceHolderDefault)
         {
-            var regexes = new Dictionary<Regex, string>
-            {
+            var regexes = new Dictionary<Regex, string> {
                 {
                     new Regex(Numeric.DoubleDecimalPointRegex(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleWithoutIntegralRegex(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleWithMultiplierRegex,
-                        RegexOptions.Singleline),
+                              RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleWithRoundNumber,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleEng"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleExponentialNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
-                },
-                {
+                }, {
                     new Regex(Numeric.DoubleCaretExponentialNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum"
                 }
             };
 
-            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum");
             Regexes = regexes.ToImmutableDictionary();
         }
     }

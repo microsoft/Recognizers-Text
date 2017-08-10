@@ -65,39 +65,41 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         {
             var regexes = new Dictionary<Regex, string>()
             {
-                // 123456,  －１２３４５６
+                
                 {
+                    // 123456,  －１２３４５６
                     new Regex(
                         $@"({SignSymbolRegexNum}\s*)?{ZeroToNineChsFullHalfRegexChs}+",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "IntegerNum"
                 },
-                //15k,  16 G
                 {
+                    //15k,  16 G
                     new Regex($@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}+\s*(K|k|M|G|T|Ｍ|Ｋ|ｋ|Ｇ|Ｔ)",
                         RegexOptions.Singleline)
                     , "IntegerNum"
                 },
-                //1,234,  ２，３３２，１１１
                 {
+                    //1,234,  ２，３３２，１１１
                     new Regex(
                         $@"{SignSymbolRegexNum}?{ZeroToNineChsFullHalfRegexChs}" + @"{1,3}([,，]" +
                         $@"{ZeroToNineChsFullHalfRegexChs}" + @"{3})+",
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "IntegerNum"
                 },
-                //半百  半打
                 {
+                    //半百  半打
                     new Regex($@"半({RoundNumberIntegerRegexChs}|打)", RegexOptions.Singleline)
                     , "IntegerChs"
                 },
-                //一打  五十打
                 {
+                    //一打  五十打
                     new Regex($@"{AllIntRegexChs}[双雙对對打](?!{AllIntRegexChs})",
                         RegexOptions.Singleline)
                     , "IntegerChs"
                 }
             };
+
             switch (mode)
             {
                 case ChineseNumberMode.Default:
@@ -119,6 +121,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         "IntegerChs");
                     break;
             }
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

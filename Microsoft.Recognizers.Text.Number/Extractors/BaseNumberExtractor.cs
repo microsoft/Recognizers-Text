@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.Number
                         var start = last + 1;
                         var length = i - last;
                         var substr = source.Substring(start, length);
+
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
                             var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
