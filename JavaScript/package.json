@@ -31,10 +31,12 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^8.0.0",
+    "@types/js-yaml": "^3.9.0",
+    "@types/node": "^8.0.20",
     "ava": "^0.20.0",
     "ava-spec": "^1.1.0",
     "colors": "^1.1.2",
+    "js-yaml": "^3.9.1",
     "lodash.camelcase": "^4.3.0",
     "prettier": "^1.4.4",
     "rimraf": "^2.6.1",
@@ -42,6 +44,7 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
+    "ts-node": "^3.3.0",
     "tsc-watch": "^1.0.5",
     "tslint": "^5.4.3",
     "tslint-config-prettier": "^1.1.0",
