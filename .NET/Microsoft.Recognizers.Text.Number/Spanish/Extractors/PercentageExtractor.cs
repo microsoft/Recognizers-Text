@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Definitions.Spanish;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                $@"(@{NumExtType})(\s*)(%|por ciento|por cien)"
+                NumbersDefinitions.NumberWithPrefixPercentage
             };
 
             return BuildRegexes(regexStrs);
