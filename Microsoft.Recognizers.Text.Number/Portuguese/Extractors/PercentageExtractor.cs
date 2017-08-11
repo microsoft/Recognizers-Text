@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
         {
             var regexStrs = new HashSet<string>
             {
-                $@"(@{NumExtType})(\s*)(%|por cento|pontos percentuais)"
+                NumbersDefinitions.NumberWithSuffixPercentage
             };
 
             var regexSet = BuildRegexes(regexStrs);
