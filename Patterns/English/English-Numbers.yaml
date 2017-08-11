@@ -65,11 +65,11 @@ OrdinalNumericRegex: !simpleRegex
   def_js: (?=\b)(\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
   def: (?<!(a|an)\s+){RoundNumberOrdinalRegex}
-  def_js: (?!(a|an)\s+)${EnglishNumeric.RoundNumberOrdinalRegex}
+  def_js: (?!(a|an)\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
 OrdinalEnglishRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
-  def_js: (?=\b)${EnglishNumeric.AllOrdinalRegex}(?=\b)
+  def_js: (?=\b){AllOrdinalRegex}(?=\b)
   references: [ AllOrdinalRegex ]
 #Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex

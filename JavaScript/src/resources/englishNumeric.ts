@@ -31,8 +31,8 @@ export namespace EnglishNumeric {
 	export const AllOrdinalRegex = `(${SuffixBasicOrdinalRegex}|${SuffixRoundNumberOrdinalRegex})`;
 	export const OrdinalSuffixRegex = '(?=\\b)((\\d*(1st|2nd|3rd|4th|5th|6th|7th|8th|9th|0th))|(11th|12th))(?=\\b)';
 	export const OrdinalNumericRegex = '(?=\\b)(\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)';
-	export const OrdinalRoundNumberRegex = `(?!(a|an)\\s+)${EnglishNumeric.RoundNumberOrdinalRegex}`;
-	export const OrdinalEnglishRegex = `(?=\\b)${EnglishNumeric.AllOrdinalRegex}(?=\\b)`;
+	export const OrdinalRoundNumberRegex = `(?!(a|an)\\s+)${RoundNumberOrdinalRegex}`;
+	export const OrdinalEnglishRegex = `(?=\\b)${AllOrdinalRegex}(?=\\b)`;
 	export const FractionNotationWithSpacesRegex = '(((?=\\W|^)-\\s*)|(?=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))';
 	export const FractionNotationRegex = '(((?=\\W|^)-\\s*)|(?=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))';
 	export const FractionNounRegex = `(?=\\b)(${AllIntRegex}\\s+(and\\s+)?)?(${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)`;
