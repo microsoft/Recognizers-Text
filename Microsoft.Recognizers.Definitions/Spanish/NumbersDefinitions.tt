@@ -1,0 +1,7 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Spanish\Spanish-Numbers.yaml";
+	this.Language = "Spanish";
+	this.ClassName = "NumbersDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>
