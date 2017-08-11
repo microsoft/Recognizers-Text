@@ -119,34 +119,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // parse "pm" 
+                var leftDesc = match.Groups["left_desc"].Value;
+                var rightDesc = match.Groups["right_desc"].Value;
                 var pmStr = match.Groups["pm"].Value;
                 var amStr = match.Groups["am"].Value;
                 var descStr = match.Groups["desc"].Value;
-                if (!string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("a"))
+                if (string.IsNullOrEmpty(leftDesc))
                 {
-                    if (beginHour >= 12)
+                    if (!string.IsNullOrEmpty(amStr) || (!string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("a")))
                     {
-                        beginHour -= 12;
+                        if (beginHour >= 12)
+                        {
+                            beginHour -= 12;
+                        }
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
+                        isValid = true;
                     }
-
-                    if (endHour >= 12)
+                    else if (!string.IsNullOrEmpty(pmStr) || (!string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("p")))
                     {
-                        endHour -= 12;
+                        if (beginHour < 12)
+                        {
+                            beginHour += 12;
+                        }
+                        if (endHour < 12)
+                        {
+                            endHour += 12;
+                        }
+                        isValid = true;
                     }
-                    isValid = true;
-                }
-                else if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("p"))
-                {
-                    if (beginHour < 12)
-                    {
-                        beginHour += 12;
-                    }
-
-                    if (endHour < 12)
-                    {
-                        endHour += 12;
-                    }
-                    isValid = true;
                 }
 
                 if (isValid)

@@ -26,12 +26,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
 
 
         [TestMethod]
-        public void TestTimeParser()
+        public void TestTimeParserChs()
         {
             BasicTest("两年", "P2Y");
             BasicTest("5分钟", "PT5M");
             BasicTest("3天", "P3D");
             BasicTest("15周", "P15W");
+            BasicTest("三年半", "P3.5Y");
         }
     }
 }
