@@ -62,7 +62,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
                 if (i + 1 === source.length || !matched[i + 1]) {
                     let start = last + 1;
                     let length = i - last;
-                    let substr = source.substring(start, start + length);
+                    let substr = source.substring(start, start + length).trim();
                     let srcMatch = Array.from(matchSource.keys()).find(m => m.index === start && m.length === length);
                     if (srcMatch) {
                         result.push({
@@ -250,7 +250,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
                 let originLenth = positionMap.get(end) - originStart;
                 results[i].start = originStart;
                 results[i].length = originLenth;
-                results[i].text = originSource.substring(originStart, originStart + originLenth);
+                results[i].text = originSource.substring(originStart, originStart + originLenth).trim();
                 let numStart = str.indexOf(replaceText);
                 if (numStart !== -1) {
                     let numOriginStart = start + numStart;

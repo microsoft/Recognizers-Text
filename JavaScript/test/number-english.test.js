@@ -140,7 +140,7 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "10G", "10000000000")
 
-    // basicTest(it, model, "- 10  k", "-10000")
+    basicTest(it, model, "- 10  k", "-10000")
 
     basicTest(it, model, "2 million", "2000000")
 
@@ -166,7 +166,7 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "two  thousand  and  two hundred", "2200")
 
-    // basicTest(it, model, " 2.33 k", "2330")
+    basicTest(it, model, " 2.33 k", "2330")
 
     basicTest(it, model, " two hundred point zero three", "200.03")
 
