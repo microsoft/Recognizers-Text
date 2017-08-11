@@ -45,6 +45,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Chinese\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="English\DateTimeDefinitions.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +76,10 @@
     <Content Include="BaseDateTime.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDateTime.cs</LastGenOutput>
+    </Content>
+    <Content Include="Chinese\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </Content>
     <Content Include="English\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
