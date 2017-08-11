@@ -41,8 +41,8 @@ class NestedRegexWriter extends CodeWriter {
     constructor (name: string, definition: string, references: string[]) {
         super(name);
         references.forEach((value, index) => {
-            var regex = new RegExp(`{${value}}`, 'g');
-            var token = `\${${value}}`;
+            let regex = new RegExp(`{${value}}`, 'g');
+            let token = `\${${value}}`;
             definition = definition.replace(regex, token);
         });
         this.definition = sanitize(definition);
@@ -60,8 +60,8 @@ class ParamsRegexWriter extends CodeWriter {
     constructor (name: string, definition: string, params: string[]) {
         super(name);
         params.forEach((value, index) => {
-            var regex = new RegExp(`{${value}}`, 'g');
-            var token = `\${${value}}`;
+            let regex = new RegExp(`{${value}}`, 'g');
+            let token = `\${${value}}`;
             definition = definition.replace(regex, token);
         });
         this.params = params.join(': string, ').concat(': string');
@@ -85,7 +85,7 @@ class DictionaryWriter extends CodeWriter {
         this.valueType = toJsType(valueType);
 
         let valueQuote = this.valueType === 'number' ? '' : '"';
-        for(var propName in entries) {
+        for(let propName in entries) {
             this.entries.push(`["${propName}", ${valueQuote}${sanitize(entries[propName], this.valueType)}${valueQuote}]`);
         }
     }
@@ -132,9 +132,9 @@ class ArrayWriter extends CodeWriter {
 }
 
 export function GenerateCode(root: any): CodeWriter[] {
-    var lines: CodeWriter[] = [];
-    for (var tokenName in root) {
-        var token = root[tokenName];
+    let lines: CodeWriter[] = [];
+    for (let tokenName in root) {
+        let token = root[tokenName];
         if (token instanceof DataTypes.SimpleRegex) {
             lines.push(new SimpleRegexWriter(tokenName, token.def));
         }
