@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
 
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumericWithUnit.WeightSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousWeightUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
     }
 }

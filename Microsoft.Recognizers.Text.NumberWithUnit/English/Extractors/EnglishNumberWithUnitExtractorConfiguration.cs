@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.CultureInfo = ci;
             this.UnitNumExtractor = new NumberExtractor();
-            this.BuildPrefix = NumericWithUnit.BuildPrefix;
-            this.BuildSuffix = NumericWithUnit.BuildSuffix;
+            this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
+            this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = string.Empty;
         }
 

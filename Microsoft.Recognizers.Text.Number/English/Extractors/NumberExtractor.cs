@@ -19,10 +19,10 @@ namespace Microsoft.Recognizers.Text.Number.English
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(Numeric.PlaceHolderPureNumber);
+                    cardExtract = new CardinalExtractor(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(Numeric.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
+                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
                     break;
                 case NumberMode.Default:
                     break;

@@ -29,17 +29,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text", "Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj", "{0FF232B5-8471-429F-B87F-4096576D32EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
-	ProjectSection(SolutionItems) = preProject
-		Common\Common-DateTime.yaml = Common\Common-DateTime.yaml
-		Common\Common-Numeric.yaml = Common\Common-Numeric.yaml
-		Common\DateTime-English.yaml = Common\DateTime-English.yaml
-		Common\Numeric-English.yaml = Common\Numeric-English.yaml
-		Common\NumericWithUnit-English.yaml = Common\NumericWithUnit-English.yaml
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Resources.Common", "Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Resources.Common.csproj", "{60AAEC39-306F-441B-8719-5E0A3A823568}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Resources", "Microsoft.Recognizers.Resources\Microsoft.Recognizers.Resources.csproj", "{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
+	ProjectSection(SolutionItems) = preProject
+		Patterns\Base-DateTime.yaml = Patterns\Base-DateTime.yaml
+		Patterns\Base-Numbers.yaml = Patterns\Base-Numbers.yaml
+		Patterns\English\English-DateTime.yaml = Patterns\English\English-DateTime.yaml
+		Patterns\English\English-Numbers.yaml = Patterns\English\English-Numbers.yaml
+		Patterns\English\English-NumbersWithUnit.yaml = Patterns\English\English-NumbersWithUnit.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,5 +95,6 @@ Global
 		{E2B2E9CC-E53F-4CBD-9B25-E95E84B266BB} = {ED7B6456-AB0A-48CE-8F85-711FE87F09C2}
 		{60AAEC39-306F-441B-8719-5E0A3A823568} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
 		{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
+		{23084BAE-6EB0-439A-BD71-31A783680711} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
 	EndGlobalSection
 EndGlobal

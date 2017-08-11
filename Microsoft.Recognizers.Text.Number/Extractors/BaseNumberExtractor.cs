@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Resources;
+using System;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -77,45 +78,15 @@ namespace Microsoft.Recognizers.Text.Number
             return result;
         }
 
-        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = CommonNumeric.PlaceHolderDefault)
+        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
         {
-            Regex addedRegex = null;
-            string integerTemplate = CommonNumeric.IntegerTemplateRegex + $@"(?={placeholder})";
-            string doubleTemplate = CommonNumeric.DoubleTemplateRegex + $@"(?={placeholder})";
-            switch (type)
-            {
-                case LongFormatType.IntegerNumComma:
-                    addedRegex = new Regex(string.Format(integerTemplate, ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.IntegerNumDot:
-                    addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.IntegerNumBlank:
-                    addedRegex = new Regex(string.Format(integerTemplate, " "), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.IntegerNumQuote:
-                    addedRegex = new Regex(string.Format(integerTemplate, Regex.Escape("'")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumCommaDot:
-                    addedRegex = new Regex(string.Format(doubleTemplate, ",", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumDotComma:
-                    addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("."), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumBlankComma:
-                    addedRegex = new Regex(string.Format(doubleTemplate, " ", ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumBlankDot:
-                    addedRegex = new Regex(string.Format(doubleTemplate, " ", Regex.Escape(".")), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumCommaCdot:
-                    addedRegex = new Regex(string.Format(doubleTemplate, ",", "·"), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-                case LongFormatType.DoubleNumQuoteComma:
-                    addedRegex = new Regex(string.Format(doubleTemplate, Regex.Escape("'"), ","), RegexOptions.IgnoreCase | RegexOptions.Singleline);
-                    break;
-            }
-            return addedRegex;
+            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
+            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
+
+            var regexDefinition = type.DecimalsMark.Equals('\0') ?
+                BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
+                BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
+            return new Regex(regexDefinition, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }
 
@@ -129,30 +100,48 @@ namespace Microsoft.Recognizers.Text.Number
         PureNumber
     }
 
-    public enum LongFormatType
+    public class LongFormatType
     {
-        // Reference : https://www.wikiwand.com/en/Decimal_mark
+        // Reference Value : 1234567.89
 
-        // Value : 1234567.89
         // 1,234,567
-        IntegerNumComma,
+        public static LongFormatType IntegerNumComma = new LongFormatType(',', '\0');
+
         // 1.234.567
-        IntegerNumDot,
+        public static LongFormatType IntegerNumDot = new LongFormatType('.', '\0');
+
         // 1 234 567
-        IntegerNumBlank,
+        public static LongFormatType IntegerNumBlank = new LongFormatType(' ', '\0');
+
         // 1'234'567
-        IntegerNumQuote,
+        public static LongFormatType IntegerNumQuote = new LongFormatType('\'', '\0');
+
         // 1,234,567.89
-        DoubleNumCommaDot,
+        public static LongFormatType DoubleNumCommaDot = new LongFormatType(',', '.');
+
         // 1,234,567·89
-        DoubleNumCommaCdot,
+        public static LongFormatType DoubleNumCommaCdot = new LongFormatType(',', '·');
+
         // 1 234 567,89
-        DoubleNumBlankComma,
+        public static LongFormatType DoubleNumBlankComma = new LongFormatType(' ', ',');
+
         // 1 234 567.89
-        DoubleNumBlankDot,
+        public static LongFormatType DoubleNumBlankDot = new LongFormatType(' ', '.');
+
         // 1.234.567,89
-        DoubleNumDotComma,
+        public static LongFormatType DoubleNumDotComma = new LongFormatType('.', ',');
+
         // 1'234'567,89
-        DoubleNumQuoteComma
+        public static LongFormatType DoubleNumQuoteComma = new LongFormatType('\'', ',');
+        
+        private LongFormatType(char thousandsMark, char decimalsMark)
+        {
+            ThousandsMark = thousandsMark;
+            DecimalsMark = decimalsMark;
+        }
+
+        public char DecimalsMark { get; }
+
+        public char ThousandsMark { get; }
     }
 }

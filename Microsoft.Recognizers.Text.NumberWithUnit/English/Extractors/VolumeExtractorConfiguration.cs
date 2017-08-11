@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_VOLUME;
 
-        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumericWithUnit.VolumeSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousVolumeUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
     }
 }

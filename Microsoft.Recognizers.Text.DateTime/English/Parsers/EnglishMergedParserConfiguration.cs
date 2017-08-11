@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishMergedParserConfiguration() : base()
         {
-            BeforeRegex = new Regex(DateTimeDefinition.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            AfterRegex = new Regex(DateTimeDefinition.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));

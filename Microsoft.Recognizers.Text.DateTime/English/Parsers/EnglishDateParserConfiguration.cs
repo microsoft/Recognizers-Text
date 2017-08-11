@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            DateTokenPrefix = DateTimeDefinition.DateTokenPrefix;
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;

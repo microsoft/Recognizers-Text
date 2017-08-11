@@ -1,0 +1,10 @@
+---
+NumberReplaceToken: '@builtin.num'
+IntegerRegexDefinition: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
+  params: [ placeholder, thousandsmark  ]
+DoubleRegexDefinition: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
+  params: [ placeholder, thousandsmark, decimalmark ]
+PlaceHolderDefault: \\D|\\b
+...

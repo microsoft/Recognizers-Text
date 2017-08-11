@@ -18,10 +18,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_CURRENCY;
 
-        public static readonly ImmutableDictionary<string, string> CurrencySuffixList = NumericWithUnit.CurrencySuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> CurrencySuffixList = NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
 
-        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumericWithUnit.CurrencyPrefixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = NumbersWithUnitDefinitions.CurrencyPrefixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousCurrencyUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousCurrencyUnitList.ToImmutableList();
     }
 }

@@ -72,44 +72,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     {
         public void ParseTest(LongFormatType type, string query, string value)
         {
-            char decimalSep = '.', nonDecimalSep = ',';
-            switch (type)
-            {
-                case LongFormatType.DoubleNumBlankComma:
-                case LongFormatType.DoubleNumBlankDot:
-                case LongFormatType.IntegerNumBlank:
-                    nonDecimalSep = ' ';
-                    break;
-                case LongFormatType.DoubleNumCommaCdot:
-                case LongFormatType.DoubleNumCommaDot:
-                case LongFormatType.IntegerNumComma:
-                    nonDecimalSep = ',';
-                    break;
-                case LongFormatType.DoubleNumDotComma:
-                case LongFormatType.IntegerNumDot:
-                    nonDecimalSep = '.';
-                    break;
-                case LongFormatType.DoubleNumQuoteComma:
-                case LongFormatType.IntegerNumQuote:
-                    nonDecimalSep = '\'';
-                    break;
-            }
-
-            switch (type)
-            {
-                case LongFormatType.DoubleNumQuoteComma:
-                case LongFormatType.DoubleNumBlankComma:
-                case LongFormatType.DoubleNumDotComma:
-                    decimalSep = ',';
-                    break;
-                case LongFormatType.DoubleNumBlankDot:
-                case LongFormatType.DoubleNumCommaDot:
-                    decimalSep = '.';
-                    break;
-                case LongFormatType.DoubleNumCommaCdot:
-                    decimalSep = '·';
-                    break;
-            }
+            char decimalSep = type.DecimalsMark, nonDecimalSep = type.ThousandsMark;
 
             var parser = AgnosticNumberParserFactory.GetParser(
             AgnosticNumberParserType.Double,

@@ -8,63 +8,63 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
     {
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinition.TillRegex,
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourRegex =
             new Regex(
-                DateTimeDefinition.HourRegex,
+                DateTimeDefinitions.HourRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodHourNumRegex =
             new Regex(
-                DateTimeDefinition.PeriodHourNumRegex,
+                DateTimeDefinitions.PeriodHourNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PeriodDescRegex = new Regex(DateTimeDefinition.PeriodDescRegex,
+        public static readonly Regex PeriodDescRegex = new Regex(DateTimeDefinitions.PeriodDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinition.PmRegex,
+            new Regex(DateTimeDefinitions.PmRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AmRegex = new Regex(DateTimeDefinition.AmRegex,
+        public static readonly Regex AmRegex = new Regex(DateTimeDefinitions.AmRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PureNumFromTo =
             new Regex(
-                DateTimeDefinition.PureNumFromTo,
+                DateTimeDefinitions.PureNumFromTo,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PureNumBetweenAnd =
             new Regex(
-                DateTimeDefinition.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinition.PrepositionRegex,
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NightRegex =
-            new Regex(DateTimeDefinition.NightRegex,
+            new Regex(DateTimeDefinitions.NightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecificNightRegex =
-            new Regex(DateTimeDefinition.SpecificNightRegex,
+            new Regex(DateTimeDefinitions.SpecificNightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinition.TimeUnitRegex,
+            new Regex(DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinition.TimeFollowedUnit,
+        public static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinition.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinition.PastRegex,
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinition.FutureRegex,
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishTimePeriodExtractorConfiguration()

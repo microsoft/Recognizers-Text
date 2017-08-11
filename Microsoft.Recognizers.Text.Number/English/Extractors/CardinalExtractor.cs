@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        public CardinalExtractor(string placeholder = Numeric.PlaceHolderDefault)
+        public CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

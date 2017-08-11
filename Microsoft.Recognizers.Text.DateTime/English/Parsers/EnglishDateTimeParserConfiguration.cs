@@ -51,16 +51,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = DateTimeDefinition.TokenBeforeDate;
-            TokenBeforeTime = DateTimeDefinition.TokenBeforeTime;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinition.AMTimeRegex, 
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, 
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinition.PMTimeRegex,
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

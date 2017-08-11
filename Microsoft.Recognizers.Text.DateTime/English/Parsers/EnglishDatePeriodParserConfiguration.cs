@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = DateTimeDefinition.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;

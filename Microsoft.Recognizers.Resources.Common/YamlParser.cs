@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YamlDotNet;
-using YamlDotNet.Core;
-using YamlDotNet.Core.Events;
-using YamlDotNet.RepresentationModel;
 using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NodeDeserializers;
 
 namespace Microsoft.Recognizers.Resources.Common
 {
     public class YamlParser
     {
-        YamlStream yamlStream;
-        Deserializer yamlDeserializer;
+        private readonly Deserializer yamlDeserializer;
 
         public YamlParser()
         {

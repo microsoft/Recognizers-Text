@@ -8,25 +8,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(
-                DateTimeDefinition.DurationUnitRegex,
+                DateTimeDefinitions.DurationUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SuffixAndRegex = new Regex(DateTimeDefinition.SuffixAndRegex,
+        public static readonly Regex SuffixAndRegex = new Regex(DateTimeDefinitions.SuffixAndRegex,
            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DurationFollowedUnit = new Regex(DateTimeDefinition.DurationFollowedUnit,
+        public static readonly Regex DurationFollowedUnit = new Regex(DateTimeDefinitions.DurationFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithDurationUnit =
-            new Regex(DateTimeDefinition.NumberCombinedWithDurationUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberCombinedWithDurationUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinition.AnUnitRegex,
+        public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AllRegex = new Regex(DateTimeDefinition.AllRegex,
+        public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.AllRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = new Regex(DateTimeDefinition.HalfRegex,
+        public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDurationExtractorConfiguration()

@@ -10,34 +10,34 @@ namespace Microsoft.Recognizers.Text.Number.English
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
-        public DoubleExtractor(string placeholder = Numeric.PlaceHolderDefault)
+        public DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var regexes = new Dictionary<Regex, string> {
                 {
-                    new Regex(Numeric.DoubleDecimalPointRegex(placeholder),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder),
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(Numeric.DoubleWithoutIntegralRegex(placeholder),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder),
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(Numeric.DoubleWithMultiplierRegex,
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex,
                               RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(Numeric.DoubleWithRoundNumber,
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(Numeric.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleEng"
                 }, {
-                    new Regex(Numeric.DoubleExponentialNotationRegex,
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {
-                    new Regex(Numeric.DoubleCaretExponentialNotationRegex,
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {

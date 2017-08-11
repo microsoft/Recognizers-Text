@@ -18,6 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
 
-        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumericWithUnit.SpeedSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
     }
 }

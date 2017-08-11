@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TimeTokenPrefix = DateTimeDefinition.TimeTokenPrefix;
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
             Numbers = config.Numbers;

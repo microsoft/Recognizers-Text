@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
-        public static readonly ImmutableDictionary<string, string> LenghtSuffixList = NumericWithUnit.LenghtSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> LenghtSuffixList = NumbersWithUnitDefinitions.LenghtSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumericWithUnit.AmbiguousLengthUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
     }
 }

@@ -40,60 +40,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonDateTime.cs">
-      <DependentUpon>CommonDateTime.tt</DependentUpon>
+    <Compile Include="BaseDateTime.cs">
+      <DependentUpon>BaseDateTime.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="English\DateTimeDefinition.cs">
+    <Compile Include="English\DateTimeDefinitions.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DateTimeDefinition.tt</DependentUpon>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Include="English\NumericWithUnit.cs">
-      <DependentUpon>NumericWithUnit.tt</DependentUpon>
+    <Compile Include="English\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="English\Numeric.cs">
+    <Compile Include="English\NumbersDefinitions.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Numeric.tt</DependentUpon>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
-    <Compile Include="CommonNumeric.cs">
-      <DependentUpon>CommonNumeric.tt</DependentUpon>
+    <Compile Include="BaseNumbers.cs">
+      <DependentUpon>BaseNumbers.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CommonDateTime.tt">
+    <Content Include="BaseDateTime.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CommonDateTime.cs</LastGenOutput>
+      <LastGenOutput>BaseDateTime.cs</LastGenOutput>
     </Content>
-    <Content Include="English\DateTimeDefinition.tt">
+    <Content Include="English\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinition.cs</LastGenOutput>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </Content>
-    <Content Include="English\NumericWithUnit.tt">
+    <Content Include="English\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumericWithUnit.cs</LastGenOutput>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </Content>
-    <Content Include="English\Numeric.tt">
+    <Content Include="English\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Numeric.cs</LastGenOutput>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </Content>
-    <Content Include="CommonNumeric.tt">
+    <Content Include="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CommonNumeric.cs</LastGenOutput>
+      <LastGenOutput>BaseNumbers.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NumericBase.ttinclude" />
+    <None Include="CommonDefinitions.ttinclude" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Resources.Common.csproj">
