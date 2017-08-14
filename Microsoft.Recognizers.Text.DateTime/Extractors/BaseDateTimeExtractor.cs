@@ -130,7 +130,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> TimeOfTodayAfter(string text)
         {
             var ret = new List<Token>();
+
             var ers = this.config.TimePointExtractor.Extract(text);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -138,6 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     continue;
                 }
+
                 var match = this.config.TimeOfTodayAfterRegex.Match(afterStr);
                 if (match.Success)
                 {
@@ -146,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(begin, end));
                 }
             }
+
             var matches = this.config.SimpleTimeOfTodayAfterRegex.Matches(text);
             foreach (Match match in matches)
             {
@@ -171,11 +175,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     beforeStr = text.Substring(0, (er.Start ?? 0) + innerMatch.Length);
                 }
 
-
                 if (string.IsNullOrEmpty(beforeStr))
                 {
                     continue;
                 }
+
                 var match = this.config.TimeOfTodayBeforeRegex.Match(beforeStr);
                 if (match.Success)
                 {
@@ -184,11 +188,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(begin, end));
                 }
             }
+
             var matches = this.config.SimpleTimeOfTodayBeforeRegex.Matches(text);
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
+
             return ret;
         }
 
@@ -201,6 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
+
                 var match = this.config.TheEndOfRegex.Match(beforeStr);
                 if (match.Success)
                 {
@@ -209,6 +216,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     var afterStr = text.Substring(er.Start + er.Length ?? 0);
+
                     match = this.config.TheEndOfRegex.Match(afterStr);
                     if (match.Success)
                     {
@@ -216,6 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
 
@@ -223,19 +232,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> DurationWithBeforeAndAfter(string text)
         {
             var ret = new List<Token>();
-            var duration_er = config.DurationExtractor.Extract(text);
-            foreach (var er in duration_er)
+
+            var durationEr = config.DurationExtractor.Extract(text);
+            foreach (var er in durationEr)
             {
                 var match = config.UnitRegex.Match(er.Text);
                 if (!match.Success)
                 {
                     continue;
                 }
+
                 ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
                     er,
                     ret,
                     config.UtilityConfiguration);
             }
+
             return ret;
         }
     }

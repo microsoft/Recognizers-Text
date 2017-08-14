@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Año luz", "año luz|años luz|al"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "mi",
             "área",

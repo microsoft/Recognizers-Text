@@ -503,7 +503,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
             "shell , a subsidiary of royal dutch / shell group , will be allowed to export 0.9 trillion cubic feet , and gulf , a unit of olympia & york developments ltd. will be allowed to export",
-            "900000000000 Cubic feet");
+            "900000000000 Cubic foot");
 
             BasicTest(model,
             "highlights of the bills , as currently framed , are : - - a restriction on the amount of real estate one family can own , to 660 square meters in the nation ' s six largest cities , but more in smaller cities and rural areas.",
@@ -563,7 +563,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "4 Mile");
 
             BasicTest(model,
-            "we are insulted , \" said langa from the greek catholic headquarters , some 325 kilometer northwest of bucharest.",
+            "we are insulted, said langa from the greek catholic headquarters , some 325 kilometer northwest of bucharest.",
             "325 Kilometer");
 
             BasicTest(model,
@@ -596,11 +596,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
             "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm.",
-            "300 Micrometer");
+            "300 Millimeter");
 
             BasicTest(model,
             "sterling armaments of dagenham , essex produced a conversion kit comprising a new 7.62mm barrel , magazine , extractor and ejector for commercial sale.",
-            "7.62 Micrometer");
+            "7.62 Millimeter");
 
             BasicTest(model,
             "the project costs $ 46 . 8 million , and is intended to boost the company ' s production capacity by 25 % to 34,500 metric tons of copper cathode a year.",

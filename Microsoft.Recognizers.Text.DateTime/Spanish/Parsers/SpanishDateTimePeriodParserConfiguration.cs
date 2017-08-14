@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (trimedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";
@@ -105,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 timeStr = null;
                 return false;
             }
+
             return true;
         }
 
@@ -120,14 +122,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
-
-            //TODO: Replace with a regex
             else if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                      trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima") ||
                      trimedText.StartsWith("siguiente"))
             {
                 swift = 1;
             }
+
             return swift;
         }
     }

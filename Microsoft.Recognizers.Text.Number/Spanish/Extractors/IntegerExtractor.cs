@@ -6,9 +6,9 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class IntegerExtractor : BaseNumberExtractor
     {
-        internal override sealed ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected override sealed string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER;
 
         public const string HundredsNumberIntegerRegex = @"(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))";
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public IntegerExtractor(string placeholder = @"\D|\b")
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex($@"(((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})",
@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 }
             };
 
-            this.Regexes = _regexes.ToImmutableDictionary();
+            this.Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

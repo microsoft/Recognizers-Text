@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {
@@ -18,9 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
 
-        public static readonly ImmutableDictionary<string, string> AreaSuffixList = new Dictionary<string, string>
-        {
-            {"sq m", "sq m|square meter|square meters|square metre|square metres|acre|acres"}
-        }.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
     }
 }

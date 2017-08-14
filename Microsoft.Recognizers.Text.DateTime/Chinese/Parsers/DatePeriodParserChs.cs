@@ -37,8 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var referenceDate = refDate;
 
             object value = null;
-            var luisStr = string.Empty;
-            var valueStr = string.Empty;
+
             if (er.Type.Equals(ParserName))
             {
                 var innerResult = ParseSimpleCases(er.Text, referenceDate);
@@ -142,13 +141,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
             int year = referenceDate.Year, month = referenceDate.Month;
-            int beginDay = referenceDate.Day, endDay = referenceDate.Day;
+            int beginDay, endDay;
             var noYear = false;
             var inputYear = false;
 
             var trimedText = text.Trim();
             var match = DatePeriodExtractorChs.SimpleCasesRegex.Match(trimedText);
-            string beginLuisStr = string.Empty, endLuisStr = string.Empty;
+            string beginLuisStr, endLuisStr;
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var days = match.Groups["day"];
@@ -238,12 +237,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{endDay - beginDay}D)";
+
             ret.FutureValue = new Tuple<DateObject, DateObject>(
                 new DateObject(futureYear, month, beginDay),
                 new DateObject(futureYear, month, endDay));
+
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 new DateObject(pastYear, month, beginDay),
                 new DateObject(pastYear, month, endDay));
+
             ret.Success = true;
 
             return ret;
@@ -258,21 +260,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 var yearMatch = DatePeriodExtractorChs.YearRegex.Matches(text);
                 var yearInChineseMatch = DatePeriodExtractorChs.YearInChineseRegex.Matches(text);
-                var BeginYear = 0;
-                var EndYear = 0;
+                var beginYear = 0;
+                var endYear = 0;
                 if (yearMatch.Count == 2)
                 {
                     var yearFrom = yearMatch[0].Groups["year"].Value;
                     var yearTo = yearMatch[1].Groups["year"].Value;
-                    BeginYear = int.Parse(yearFrom);
-                    EndYear = int.Parse(yearTo);
+                    beginYear = int.Parse(yearFrom);
+                    endYear = int.Parse(yearTo);
                 }
                 else if (yearInChineseMatch.Count == 2)
                 {
                     var yearFrom = yearInChineseMatch[0].Groups["yearchs"].Value;
                     var yearTo = yearInChineseMatch[1].Groups["yearchs"].Value;
-                    BeginYear = ConvertChineseToInteger(yearFrom);
-                    EndYear = ConvertChineseToInteger(yearTo);
+                    beginYear = ConvertChineseToInteger(yearFrom);
+                    endYear = ConvertChineseToInteger(yearTo);
                 }
                 else if (yearInChineseMatch.Count == 1 && yearMatch.Count == 1)
                 {
@@ -280,41 +282,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         var yearFrom = yearMatch[0].Groups["year"].Value;
                         var yearTo = yearInChineseMatch[0].Groups["yearch"].Value;
-                        BeginYear = int.Parse(yearFrom);
-                        EndYear = ConvertChineseToInteger(yearTo);
+                        beginYear = int.Parse(yearFrom);
+                        endYear = ConvertChineseToInteger(yearTo);
                     }
                     else
                     {
                         var yearFrom = yearInChineseMatch[0].Groups["yearch"].Value;
                         var yearTo = yearMatch[0].Groups["year"].Value;
-                        BeginYear = ConvertChineseToInteger(yearFrom);
-                        EndYear = int.Parse(yearTo);
+                        beginYear = ConvertChineseToInteger(yearFrom);
+                        endYear = int.Parse(yearTo);
                     }
                 }
 
-                if (BeginYear < 100 && BeginYear >= 90)
+                if (beginYear < 100 && beginYear >= 90)
                 {
-                    BeginYear += 1900;
+                    beginYear += 1900;
                 }
-                else if (BeginYear < 100 && BeginYear < 20)
+                else if (beginYear < 100 && beginYear < 20)
                 {
-                    BeginYear += 2000;
-                }
-
-                if (EndYear < 100 && EndYear >= 90)
-                {
-                    EndYear += 1900;
-                }
-                else if (EndYear < 100 && EndYear < 20)
-                {
-                    EndYear += 2000;
+                    beginYear += 2000;
                 }
 
-                var beginDay = new DateObject(BeginYear, 1, 1);
-                var endDay = new DateObject(EndYear, 12, 31);
-                var beginTimex = BeginYear.ToString("D4");
-                var endTimex = EndYear.ToString("D4");
-                ret.Timex = $"({beginTimex},{endTimex},P{EndYear - BeginYear}Y)";
+                if (endYear < 100 && endYear >= 90)
+                {
+                    endYear += 1900;
+                }
+                else if (endYear < 100 && endYear < 20)
+                {
+                    endYear += 2000;
+                }
+
+                var beginDay = new DateObject(beginYear, 1, 1);
+                var endDay = new DateObject(endYear, 12, 31);
+                var beginTimex = beginYear.ToString("D4");
+                var endTimex = endYear.ToString("D4");
+                ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
                 return ret;
@@ -382,7 +384,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var monthStr = match.Groups["month"].Value;
             var month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr]%12 : this.config.MonthOfYear[monthStr];
             var beginDay = new DateObject(year, month, 1);
-            var endDay = new DateObject();
+            DateObject endDay;
+
             if (month == 12)
             {
                 endDay = new DateObject(year + 1, 1, 1);
@@ -391,6 +394,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 endDay = new DateObject(year, month + 1, 1);
             }
+
             ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
             ret.Success = true;
@@ -422,6 +426,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var thismatch = DatePeriodExtractorChs.ThisRegex.Match(trimedText);
                 var nextmatch = DatePeriodExtractorChs.NextRegex.Match(trimedText);
                 var lastmatch = DatePeriodExtractorChs.LastRegex.Match(trimedText);
+
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     var swift = -10;
@@ -438,6 +443,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         swift = 0;
                     }
+
                     month = this.config.MonthOfYear[monthStr.ToLower()];
 
                     if (swift >= -1)
@@ -489,16 +495,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                     if (trimedText.EndsWith("周末"))
                     {
-                        DateObject beginDate, endDate;
-                        beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7*swift);
-                        endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift);
+                        var beginDate = referenceDate.This(DayOfWeek.Saturday).AddDays(7*swift);
+                        var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift);
 
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
                                     Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
                                         .ToString("D2") + "-WE";
+
                         ret.FutureValue =
                             ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate.AddDays(1));
+
                         ret.Success = true;
+
                         return ret;
                     }
 
@@ -528,6 +536,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             year += 2;
                         }
+
                         ret.Timex = year.ToString("D4");
                         ret.FutureValue =
                             ret.PastValue =
@@ -547,10 +556,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.FutureValue = new Tuple<DateObject, DateObject>(
                 new DateObject(futureYear, month, 1),
                 new DateObject(futureYear, month, 1).AddMonths(1));
+
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 new DateObject(pastYear, month, 1),
                 new DateObject(pastYear, month, 1).AddMonths(1));
+
             ret.Success = true;
+
             return ret;
         }
 
@@ -737,8 +749,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var numStr = string.Empty;
-            var unitStr = string.Empty;
+            string numStr, unitStr;
 
             // if there are NO spaces between number and unit
             var match = DatePeriodExtractorChs.NumberCombinedWithUnit.Match(text);

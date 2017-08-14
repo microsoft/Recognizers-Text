@@ -171,6 +171,10 @@
     <Compile Include="Utilities\Token.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Resources\Microsoft.Recognizers.Resources.csproj">
+      <Project>{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}</Project>
+      <Name>Microsoft.Recognizers.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
       <Project>{d7ea6651-8118-478d-aaa7-437613159978}</Project>
       <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>

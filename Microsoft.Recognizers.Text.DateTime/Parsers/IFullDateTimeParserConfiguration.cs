@@ -7,11 +7,15 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface IFullDateTimeParserConfiguration
     {
         string Before { get; }
+
         string After { get; }
 
         string LastWeekDayToken { get; }
+
         string NextMonthToken { get; }
+
         string LastMonthToken { get; }
+
         string DatePrefix { get; }
 
         #region Regexes
@@ -62,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimePeriodParser { get; }
         IDateTimeParser DateTimePeriodParser { get; }
         IDateTimeParser DurationParser { get; }
-        IDateTimeParser SetParser { get; }
+        IDateTimeParser GetParser { get; }
         IDateTimeParser HolidayParser { get; }
 
         #endregion

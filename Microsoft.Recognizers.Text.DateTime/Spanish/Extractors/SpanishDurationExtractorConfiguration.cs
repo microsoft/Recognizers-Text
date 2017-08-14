@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             CardinalExtractor = new CardinalExtractor();
         }
+
         public IExtractor CardinalExtractor { get; }
 
         Regex IDurationExtractorConfiguration.FollowedUnit => FollowedUnit;

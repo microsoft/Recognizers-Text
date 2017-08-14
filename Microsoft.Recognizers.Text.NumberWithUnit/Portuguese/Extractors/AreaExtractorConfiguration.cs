@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
             {"Quilômetro quadrado", "quilômetro quadrado|quilómetro quadrado|quilometro quadrado|quilômetros quadrados|quilómetros quadrados|quilomeros quadrados|km2|km^2|km²"},
             {"Hectare", "hectômetro quadrado|hectómetro quadrado|hectômetros quadrados|hectómetros cuadrados|hm2|hm^2|hm²|hectare|hectares"},
-            {"Decâmetro quadrado", "decâmetro quadrado|decametro quadrado|decâmetros quadrados|decametro quadrado|dam2|dam^2|dam²|area|ares"},
+            {"Decâmetro quadrado", "decâmetro quadrado|decametro quadrado|decâmetros quadrados|decametro quadrado|dam2|dam^2|dam²|are|ares"},
             {"Metro quadrado", "metro quadrado|metros quadrados|m2|m^2|m²"},
             {"Decímetro quadrado", "decímetro quadrado|decimentro quadrado|decímetros quadrados|decimentros quadrados|dm2|dm^2|dm²"},
             {"Centímetro quadrado", "centímetro quadrado|centimetro quadrado|centímetros quadrados|centrimetros quadrados|cm2|cm^2|cm²"},

@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public override ImmutableDictionary<string, string> SuffixList => TemperatureSuffixList;
 
         public override ImmutableDictionary<string, string> PrefixList => TemperaturePrefixList;
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
@@ -29,13 +30,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public static readonly ImmutableDictionary<string, string> TemperaturePrefixList = new Dictionary<string, string>
         {
             //华氏十三度
-            {"F", "华氏"},
-            {"K", "开氏"},
-            {"R", "兰氏"},
-            {"C", "摄氏"}
+            {"F", "华氏温度|华氏"},
+            {"K", "开氏温度|开氏"},
+            {"R", "兰氏温度|兰氏"},
+            {"C", "摄氏温度|摄氏"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "度",
         }.ToImmutableList();

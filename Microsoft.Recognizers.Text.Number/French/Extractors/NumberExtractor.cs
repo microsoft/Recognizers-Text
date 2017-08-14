@@ -6,6 +6,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class NumberExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
         public NumberExtractor(NumberMode mode = NumberMode.Default)
@@ -25,7 +26,8 @@ namespace Microsoft.Recognizers.Text.Number.French
                 case NumberMode.Default:
                     break;
             }
-            if(cardExtract == null)
+
+            if (cardExtract == null)
             {
                 cardExtract = new CardinalExtractor();
             }

@@ -31,14 +31,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseBasicRegex(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseTimeOfToday(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseSpecailTimeOfDate(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParserDurationWithAgoAndLater(er.Text, referenceTime);
@@ -50,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.FutureValue)}
                     };
+
                     innerResult.PastResolution = new Dictionary<string, string>
                     {
                         {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
@@ -142,6 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 correctTimeIdx++;
             }
+
             if (correctTimeIdx >= er2.Count)
             {
                 return ret;
@@ -200,7 +205,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var trimedText = text.ToLowerInvariant().Trim();
 
             int hour = 0, min = 0, sec = 0;
-            string timeStr = string.Empty;
+            string timeStr;
 
             var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.Match(trimedText);
             if (!(wholeMatch.Success && wholeMatch.Length == trimedText.Length))
@@ -300,6 +305,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Success = true;
                 return ret;
             }
+
             return ret;
         }
 

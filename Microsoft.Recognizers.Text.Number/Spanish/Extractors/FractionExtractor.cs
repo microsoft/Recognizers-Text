@@ -6,15 +6,15 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class FractionExtractor : BaseNumberExtractor
     {
-        internal override sealed ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected override sealed string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
         public FractionExtractor()
         {
             string specialFractionInteger = $@"((({IntegerExtractor.AllIntRegex})i?({IntegerExtractor.ZeroToNineIntegerRegex})|({IntegerExtractor.AllIntRegex}))a?v[oa]s?)";
 
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))",
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 },
             };
 
-            this.Regexes = _regexes.ToImmutableDictionary();
+            this.Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

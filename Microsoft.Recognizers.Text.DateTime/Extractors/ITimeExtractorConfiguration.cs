@@ -6,7 +6,9 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface ITimeExtractorConfiguration
     {
         IEnumerable<Regex> TimeRegexList { get; }
+
         Regex AtRegex { get; }
+
         Regex IshRegex { get; }
     }
 }

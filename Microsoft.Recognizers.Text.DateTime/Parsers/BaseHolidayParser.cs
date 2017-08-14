@@ -87,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var orderStr = match.Groups["order"].Value.ToLower();
             int year;
             var hasYear = false;
+
             if (!string.IsNullOrEmpty(yearStr))
             {
                 year = int.Parse(yearStr);
@@ -131,6 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         timexStr = $"-{value.Month:D2}-{value.Day:D2}";
                     }
                 }
+
                 if (function == null)
                 {
                     return ret;
@@ -143,12 +145,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
+
                 ret.Timex = "XXXX" + timexStr;
                 ret.FutureValue = GetFutureValue(value, referenceDate, holidayKey);
                 ret.PastValue = GetPastValue(value, referenceDate, holidayKey);
                 ret.Success = true;
+
                 return ret;
             }
+
             return ret;
         }
 
@@ -162,6 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return function(value.Year + 1);
                 }
             }
+
             return value;
         }
 
@@ -175,6 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return function(value.Year - 1);
                 }
             }
+
             return value;
         }
     }

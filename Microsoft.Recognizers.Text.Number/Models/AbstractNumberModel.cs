@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.Number
         public abstract string ModelTypeName { get; }
 
         protected IExtractor Extractor { get; private set; }
+
         protected IParser Parser { get; private set; }
 
         public List<ModelResult> Parse(string query)

@@ -65,7 +65,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-
             ers.Sort(delegate(ExtractResult er1, ExtractResult er2)
             {
                 var start1 = er1.Start ?? 0;

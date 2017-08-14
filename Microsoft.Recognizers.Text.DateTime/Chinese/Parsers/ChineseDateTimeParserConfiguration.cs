@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             TimePeriodParser = new TimePeriodParserChs(this);
             DateTimePeriodParser = new DateTimePeriodParserChs(this);
             DurationParser = new DurationParserChs(this);
-            SetParser = new SetParserChs(this);
+            GetParser = new SetParserChs(this);
             HolidayParser = new HolidayParserChs(this);
             UnitMap = InitUnitMap();
             UnitValueMap = InitUnitValueMap();
@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeParser DurationParser { get; }
 
-        public IDateTimeParser SetParser { get; }
+        public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
 

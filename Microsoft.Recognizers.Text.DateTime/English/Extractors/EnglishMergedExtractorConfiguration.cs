@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime.English
+﻿using System;
+
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
@@ -16,7 +18,7 @@
 
         public IExtractor DurationExtractor { get; }
 
-        public IExtractor SetExtractor { get; }
+        public IExtractor GetExtractor { get; }
 
         public IExtractor HolidayExtractor { get; }
 
@@ -29,7 +31,7 @@
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+            GetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
         }
 
@@ -38,7 +40,7 @@
             index = -1;
             if (text.EndsWith("after"))
             {
-                index = text.LastIndexOf("after");
+                index = text.LastIndexOf("after", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -49,7 +51,7 @@
             index = -1;
             if (text.EndsWith("before"))
             {
-                index = text.LastIndexOf("before");
+                index = text.LastIndexOf("before", StringComparison.Ordinal);
                 return true;
             }
             return false;

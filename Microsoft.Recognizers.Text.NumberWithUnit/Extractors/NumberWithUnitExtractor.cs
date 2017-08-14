@@ -9,19 +9,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         private readonly INumberWithUnitExtractorConfiguration config;
 
-        private readonly HashSet<Regex> SuffixRegexes = new HashSet<Regex>();
-        private readonly HashSet<Regex> PrefixRegexes = new HashSet<Regex>();
-        private readonly Regex SeparateRegex = null;
+        private readonly HashSet<Regex> suffixRegexes = new HashSet<Regex>();
+        private readonly HashSet<Regex> prefixRegexes = new HashSet<Regex>();
+        private readonly Regex separateRegex = null;
 
-        private readonly int _maxPrefixMatchLen;
+        private readonly int maxPrefixMatchLen;
 
         public NumberWithUnitExtractor(INumberWithUnitExtractorConfiguration config)
         {
             this.config = config;
+
             if (this.config.SuffixList?.Count > 0)
             {
-                SuffixRegexes = BuildRegexFromSet(this.config.SuffixList.Values);
+                suffixRegexes = BuildRegexFromSet(this.config.SuffixList.Values);
             }
+
             if (this.config.PrefixList?.Count > 0)
             {
                 foreach (var preMatch in this.config.PrefixList.Values)
@@ -29,14 +31,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var matchList = preMatch.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
                     foreach (var match in matchList)
                     {
-                        _maxPrefixMatchLen = _maxPrefixMatchLen >= match.Length ? _maxPrefixMatchLen : match.Length;
+                        maxPrefixMatchLen = maxPrefixMatchLen >= match.Length ? maxPrefixMatchLen : match.Length;
                     }
                 }
+
                 // 2 is the maxium length of spaces.
-                _maxPrefixMatchLen += 2;
-                PrefixRegexes = BuildRegexFromSet(this.config.PrefixList.Values);
+                maxPrefixMatchLen += 2;
+                prefixRegexes = BuildRegexFromSet(this.config.PrefixList.Values);
             }
-            SeparateRegex = BuildSeparateRegexFromSet();
+
+            separateRegex = BuildSeparateRegexFromSet();
         }
 
         protected HashSet<Regex> BuildRegexFromSet(IEnumerable<string> collection, bool ignoreCase = true)
@@ -49,74 +53,78 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     regexTokens.Add(Regex.Escape(token));
                 }
+
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
                 var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+
                 var regex = new Regex(pattern, options);
                 regexes.Add(regex);
             }
+
             return regexes;
         }
 
         protected Regex BuildSeparateRegexFromSet(bool ignoreCase = true)
         {
-            HashSet<string> SeparateWords = new HashSet<string>();
+            HashSet<string> separateWords = new HashSet<string>();
             if (config.PrefixList?.Count > 0)
             {
                 foreach (var addWord in config.PrefixList.Values)
                 {
                     foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
                     {
-                        if (ValidiateUnit(word))
+                        if (ValidateUnit(word))
                         {
-                            SeparateWords.Add(word);
+                            separateWords.Add(word);
                         }
                     }
                 }
             }
+
             if (config.SuffixList?.Count > 0)
             {
                 foreach (var addWord in config.SuffixList.Values)
                 {
                     foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
                     {
-                        if (ValidiateUnit(word))
+                        if (ValidateUnit(word))
                         {
-                            SeparateWords.Add(word);
+                            separateWords.Add(word);
                         }
                     }
                 }
             }
+
             if (config.AmbiguousUnitList?.Count > 0)
             {
                 var abandonWords = config.AmbiguousUnitList;
                 foreach (var abandonWord in abandonWords)
                 {
-                    if (SeparateWords.Contains(abandonWord))
+                    if (separateWords.Contains(abandonWord))
                     {
-                        SeparateWords.Remove(abandonWord);
+                        separateWords.Remove(abandonWord);
                     }
                 }
             }
-            //Sort SeparateWords using descending length.
-            var regexTokens = SeparateWords.Select(Regex.Escape).ToList();
+
+            //Sort separateWords using descending length.
+            var regexTokens = separateWords.Select(Regex.Escape).ToList();
             if (regexTokens.Count == 0)
             {
                 return null;
             }
+
             regexTokens.Sort(new DinoComparer());
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
             var options = RegexOptions.Singleline | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
+
             var regex = new Regex(pattern, options);
             return regex;
         }
 
-        public bool ValidiateUnit(string source)
+        public bool ValidateUnit(string source)
         {
-            if (source.StartsWith("-"))
-            {
-                return false;
-            }
-            return true;
+            return !source.StartsWith("-");
         }
 
         public List<ExtractResult> Extract(string source)
@@ -133,7 +141,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var sourceLen = source.Length;
 
             /* Mix prefix and numbers, make up a prefix-number combination */
-            if (_maxPrefixMatchLen != 0)
+            if (maxPrefixMatchLen != 0)
             {
                 foreach (var number in numbers)
                 {
@@ -141,26 +149,29 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         continue;
                     }
-                    var maxFindPref = Math.Min(_maxPrefixMatchLen, number.Start.Value);
+
+                    var maxFindPref = Math.Min(maxPrefixMatchLen, number.Start.Value);
                     if (maxFindPref == 0)
                     {
                         continue;
                     }
+
                     /* Scan from left to right , find the longest match */
                     var leftStr = source.Substring(number.Start.Value - maxFindPref, maxFindPref);
                     var lastIndex = leftStr.Length;
+
                     Match bestMatch = null;
-                    foreach (var regex in PrefixRegexes)
+                    foreach (var regex in prefixRegexes)
                     {
                         var collection = regex.Matches(leftStr);
                         if (collection.Count == 0)
                         {
                             continue;
                         }
+
                         foreach (Match match in collection)
                         {
-                            if (match.Success &&
-                                leftStr.Substring(match.Index, lastIndex - match.Index).Trim() == match.Value)
+                            if (match.Success && leftStr.Substring(match.Index, lastIndex - match.Index).Trim() == match.Value)
                             {
                                 if (bestMatch == null || bestMatch.Index >= match.Index)
                                 {
@@ -169,6 +180,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                         }
                     }
+
                     if (bestMatch != null)
                     {
                         var offSet = lastIndex - bestMatch.Index;
@@ -184,6 +196,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 {
                     continue;
                 }
+
                 int start = (int)number.Start, length = (int)number.Length;
                 var maxFindLen = sourceLen - start - length;
                 PrefixUnitResult prefixUnit;
@@ -192,7 +205,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (maxFindLen > 0)
                 {
                     var rightSub = source.Substring(start + length, maxFindLen);
-                    var unitMatch = SuffixRegexes.Select(r => r.Matches(rightSub)).ToList();
+                    var unitMatch = suffixRegexes.Select(r => r.Matches(rightSub)).ToList();
 
                     var maxlen = 0;
                     for (var i = 0; i < unitMatch.Count; i++)
@@ -213,12 +226,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                         }
                     }
+
                     if (maxlen != 0)
                     {
                         for (var i = 0; i < length + maxlen; i++)
                         {
                             matched[i + start] = true;
                         }
+
                         var substr = source.Substring(start, length + maxlen);
                         var er = new ExtractResult
                         {
@@ -227,16 +242,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             Text = substr,
                             Type = this.config.ExtractType
                         };
+
                         if (prefixUnit != null)
                         {
                             er.Start -= prefixUnit.Offset;
                             er.Length += prefixUnit.Offset;
                             er.Text = prefixUnit.UnitStr + er.Text;
                         }
+
                         /* Relative position will be used in Parser */
                         number.Start = start - er.Start;
                         er.Data = number;
                         result.Add(er);
+
                         continue;
                     }
                 }
@@ -250,22 +268,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Text = prefixUnit.UnitStr + number.Text,
                         Type = this.config.ExtractType
                     };
+                    
                     /* Relative position will be used in Parser */
                     number.Start = start - er.Start;
                     er.Data = number;
                     result.Add(er);
                 }
             }
+            
             //extract Separate unit
-            if (SeparateRegex != null)
+            if (separateRegex != null)
             {
                 ExtractSeparateUnits(source, result);
             }
 
             return result;
         }
-
-
+        
         public void ExtractSeparateUnits(string source, List<ExtractResult> numDependResults)
         {
             //Default is false
@@ -279,8 +298,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     matchResult[start + i++] = true;
                 } while (i < numDependResult.Length.Value);
             }
+
             //Extract all SeparateUnits, then merge it with numDependResults
-            var matchCollection = SeparateRegex.Matches(source);
+            var matchCollection = separateRegex.Matches(source);
             if (matchCollection.Count != 0)
             {
                 foreach (Match match in matchCollection)
@@ -292,6 +312,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         {
                             i++;
                         }
+
                         if (i == match.Length)
                         {
                             //Mark as extracted
@@ -299,6 +320,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             {
                                 matchResult[j] = true;
                             }
+
                             numDependResults.Add(new ExtractResult
                             {
                                 Start = match.Index,
@@ -312,16 +334,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
         }
-
-
+        
         protected virtual bool PreCheckStr(string str)
         {
-            if (string.IsNullOrEmpty(str))
-            {
-                return false;
-            }
-            return true;
+            return !string.IsNullOrEmpty(str);
         }
+
     }
 
     public class DinoComparer : IComparer<string>
@@ -383,4 +401,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public int Offset;
         public string UnitStr;
     }
+ 
 }

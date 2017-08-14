@@ -9,6 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface IHolidayParserConfiguration
     {
         IImmutableDictionary<string, string> VariableHolidaysTimexDictionary { get; }
+
         IImmutableDictionary<string, Func<int, DateObject>> HolidayFuncDictionary { get; }
 
         IImmutableDictionary<string, IEnumerable<string>> HolidayNames { get; }

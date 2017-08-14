@@ -5,9 +5,9 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class NumberExtractor : BaseNumberExtractor
     {
-        internal override sealed ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected override sealed string ExtractType { get; } = Constants.SYS_NUM; // "Number";
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
         public NumberExtractor(NumberMode mode = NumberMode.Default)
         {
@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 case NumberMode.Default:
                     break;
             }
+
             if (cardExtract == null)
             {
                 cardExtract = new CardinalExtractor();

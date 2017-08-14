@@ -120,7 +120,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
-
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,

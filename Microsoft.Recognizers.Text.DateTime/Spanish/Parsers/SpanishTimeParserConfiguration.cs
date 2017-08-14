@@ -65,12 +65,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 deltaMin = -deltaMin;
             }
+
             min += deltaMin;
             if (min < 0)
             {
                 min += 60;
                 hour -= 1;
             }
+
             hasMin = hasMin || min != 0;
         }
 
@@ -78,6 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedSuffix = suffix.Trim().ToLowerInvariant();
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
+
             var deltaHour = 0;
             var match = SpanishTimeExtractorConfiguration.TimeSuffix.Match(trimedSuffix);
             if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)

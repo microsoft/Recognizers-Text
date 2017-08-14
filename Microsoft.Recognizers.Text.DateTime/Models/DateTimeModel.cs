@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public string ModelTypeName => "datetime";
         
         protected IExtractor Extractor { get; private set; }
+
         protected IDateTimeParser Parser { get; private set; }
 
         public DateTimeModel(IDateTimeParser parser, IExtractor extractor)
@@ -26,11 +27,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             // preprocess the query
             query = FormatUtility.Preprocess(query);
             var extractResults = Extractor.Extract(query);
+
             var parseDateTimes = new List<DateTimeParseResult>();
             foreach (var result in extractResults)
             {
                 parseDateTimes.Add(Parser.Parse(result, refTime));
             }
+
             return parseDateTimes.Select(o => new ModelResult
             {
                 Start = o.Start.Value,

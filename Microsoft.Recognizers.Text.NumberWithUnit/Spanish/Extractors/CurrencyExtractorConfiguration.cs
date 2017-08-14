@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_CURRENCY;
 
@@ -38,7 +38,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             { "Céntimo", "céntimo|céntimos" },
             { "Centésimo", "centésimo|centésimos" },
             { "Penique", "penique|peniques" },
-
             //Euro
             { "Euro", "euro|euros|€|eur" },
             { "Céntimo de Euro", "céntimo de euro|céntimos de euros" },
@@ -608,7 +607,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
             {"Lira turca", "₺"},
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "le",
         }.ToImmutableList();

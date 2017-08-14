@@ -26,6 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, long> UnitValueMap { get; }
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
+        public IImmutableDictionary<string, double> DoubleNumbers { get; }
+
         public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             CardinalExtractor = config.CardinalExtractor;

@@ -91,6 +91,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> Numbers { get; protected set; }
         public virtual IImmutableDictionary<string, double> DoubleNumbers { get; protected set; }
 
+        public virtual IImmutableDictionary<string, double> DoubleNumbers { get; protected set; }
+
         public virtual IImmutableDictionary<string, long> UnitValueMap { get; protected set; }
 
         public virtual IImmutableDictionary<string, string> SeasonMap { get; protected set; }
@@ -101,10 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IImmutableDictionary<string, int> DayOfWeek { get; protected set; }
 
-        public virtual IImmutableDictionary<string, int> DayOfMonth
-        {
-            get { return DayOfMonthDictionary.ToImmutableDictionary(); }
-        }
+        public virtual IImmutableDictionary<string, int> DayOfMonth => DayOfMonthDictionary.ToImmutableDictionary();
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
     }

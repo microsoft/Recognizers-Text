@@ -27,9 +27,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimedText = text.Trim().ToLowerInvariant();
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (trimedText.EndsWith("madrugada"))
             {
                 timex = "TDA";
@@ -66,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 timex = null;
                 return false;
             }
+
             return true;
         }
     }

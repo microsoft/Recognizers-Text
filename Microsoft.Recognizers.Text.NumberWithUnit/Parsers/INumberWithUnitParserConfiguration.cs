@@ -7,7 +7,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     {
         IDictionary<string, string> UnitMap { get; }
 
-        #region language settings
+        #region Language settings
+
         CultureInfo CultureInfo { get; }
 
         IParser InternalNumberParser { get; }
@@ -15,6 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         IExtractor InternalNumberExtractor { get; }
 
         string ConnectorToken { get; }
+
         #endregion
 
         void BindDictionary(IDictionary<string, string> dictionary);
@@ -23,9 +25,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
     public abstract class BaseNumberWithUnitParserConfiguration : INumberWithUnitParserConfiguration
     {
         public IDictionary<string, string> UnitMap { get; }
+
         public CultureInfo CultureInfo { get; }
+
         public abstract IParser InternalNumberParser { get; }
+
         public abstract IExtractor InternalNumberExtractor { get; }
+
         public abstract string ConnectorToken { get; }
 
         protected BaseNumberWithUnitParserConfiguration(CultureInfo ci)
@@ -37,6 +43,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public void BindDictionary(IDictionary<string, string> dictionary)
         {
             if (dictionary == null) return;
+
             foreach (var pair in dictionary)
             {
                 if (string.IsNullOrEmpty(pair.Key))

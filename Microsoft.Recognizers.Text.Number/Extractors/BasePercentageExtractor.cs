@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number
     {
         private readonly BaseNumberExtractor numberExtractor;
 
-        protected static readonly string numExtType = Constants.SYS_NUM; //@sys.num
+        protected static readonly string NumExtType = Constants.SYS_NUM; //@sys.num
         protected string ExtractType = Constants.SYS_NUM_PERCENTAGE;
 
         private ImmutableHashSet<Regex> Regexes { get; }
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             this.numberExtractor = numberExtractor;
 
-            this.Regexes = this.InitRegexes();
+            Regexes = InitRegexes();
         }
 
         protected abstract ImmutableHashSet<Regex> InitRegexes();
@@ -64,6 +64,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             List<ExtractResult> result = new List<ExtractResult>();
             int last = -1;
+
             //get index of each matched results
             for (int i = 0; i < source.Length; i++)
             {
@@ -130,7 +131,7 @@ namespace Microsoft.Recognizers.Text.Number
         /// <param name="originSource">the sentense after replacing the @sys.num, Example: @sys.num %</param>
         private void PostProcessing(List<ExtractResult> results, string originSource, Dictionary<int, int> positionMap, IList<ExtractResult> numExtResults)
         {
-            string replaceText = "@" + numExtType;
+            string replaceText = "@" + NumExtType;
             for (int i = 0; i < results.Count; i++)
             {
                 int start = (int)results[i].Start;
@@ -143,7 +144,8 @@ namespace Microsoft.Recognizers.Text.Number
                     results[i].Start = originStart;
                     results[i].Length = originLenth;
                     results[i].Text = originSource.Substring(originStart, originLenth);
-                    int numStart = str.IndexOf(replaceText);
+
+                    int numStart = str.IndexOf(replaceText, StringComparison.Ordinal);
                     if (numStart != -1)
                     {
                         int numOriginStart = start + numStart;
@@ -176,7 +178,7 @@ namespace Microsoft.Recognizers.Text.Number
             positionMap = new Dictionary<int, int>();
 
             numExtResults = numberExtractor.Extract(str);
-            string replaceText = "@" + numExtType;
+            string replaceText = "@" + NumExtType;
 
             int[] match = new int[str.Length];
             List<Tuple<int, int>> strParts = new List<Tuple<int, int>>();

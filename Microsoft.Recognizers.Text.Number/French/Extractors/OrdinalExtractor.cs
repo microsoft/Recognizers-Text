@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class OrdinalExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
         public const string SimpleRoundOrdinalRegex = @"(centi[eè]me|milli[eè]me|millioni[eè]me|milliardi[eè]me|billioni[eè]me)";
@@ -36,7 +37,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public OrdinalExtractor()
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(
@@ -50,7 +51,8 @@ namespace Microsoft.Recognizers.Text.Number.French
                     , "OrdFr"
                 }
             };
-            Regexes = _regexes.ToImmutableDictionary();
+
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

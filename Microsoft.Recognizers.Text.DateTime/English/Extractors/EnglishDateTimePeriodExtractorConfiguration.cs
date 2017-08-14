@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -14,43 +16,43 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
         }
         
-        private static readonly Regex[] simpleCasesRegex = new Regex[]
+        private static readonly Regex[] SimpleCases = new Regex[]
         {
             EnglishTimePeriodExtractorConfiguration.PureNumFromTo,
             EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd
         };
 
-        public IEnumerable<Regex> SimpleCasesRegex => simpleCasesRegex;
+        public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 
         public Regex PrepositionRegex => EnglishTimePeriodExtractorConfiguration.PrepositionRegex;
 
         public Regex TillRegex => EnglishTimePeriodExtractorConfiguration.TillRegex;
 
-        private static readonly Regex nightRegex = new Regex(@"\b(?<night>morning|afternoon|(late\s+)?night|evening)\b",
+        private static readonly Regex PeriodNightRegex = new Regex(DateTimeDefinitions.PeriodNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex specificNightRegex = new Regex($@"\b(((this|next|last)\s+{nightRegex})\b|\btonight)\b",
+        private static readonly Regex PeriodSpecificNightRegex = new Regex(DateTimeDefinitions.PeriodSpecificNightRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public Regex NightRegex => nightRegex;
+        public Regex NightRegex => PeriodNightRegex;
 
-        public Regex SpecificNightRegex => specificNightRegex;
+        public Regex SpecificNightRegex => PeriodSpecificNightRegex;
 
-        private static readonly Regex unitRegex =
-            new Regex(@"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
+        private static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex followedUnit = new Regex($@"^\s*{unitRegex}",
+        private static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex($@"\b(?<num>\d+(\.\d*)?){unitRegex}",
+        public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public Regex FollowedUnit => followedUnit;
+        public Regex FollowedUnit => TimeFollowedUnit;
+
+        Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
         
-        Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
-        
-        public Regex UnitRegex => unitRegex;
+        public Regex UnitRegex => TimeUnitRegex;
 
         public Regex PastRegex => EnglishDatePeriodExtractorConfiguration.PastRegex;
 
@@ -69,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("from"))
             {
-                index = text.LastIndexOf("from");
+                index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -80,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("between"))
             {
-                index = text.LastIndexOf("between");
+                index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
             return false;

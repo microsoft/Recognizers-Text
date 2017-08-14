@@ -103,19 +103,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> DurationWithBeforeAndAfter(string text)
         {
             var ret = new List<Token>();
-            var duration_er = config.DurationExtractor.Extract(text);
-            foreach (var er in duration_er)
+            var durationEr = config.DurationExtractor.Extract(text);
+
+            foreach (var er in durationEr)
             {
                 var match = config.NonDateUnitRegex.Match(er.Text);
                 if (match.Success)
                 {
                     continue;
                 }
+
                 ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
                     er,
                     ret,
                     config.UtilityConfiguration);
             }
+
             return ret;
         }
 

@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public FractionExtractor()
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))",
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                 }
             };
 
-            Regexes = _regexes.ToImmutableDictionary();
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Microsoft.Recognizers.Text.Number.French
     public class DoubleExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE;
 
         public static string AllPointRegex => $@"((\s+{IntegerExtractor.ZeroToNineIntegerRegex})+|(\s+{IntegerExtractor.SeparaIntRegex}))";
@@ -15,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public DoubleExtractor(string placeholder = @"\D|\b")
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})",
@@ -54,8 +55,8 @@ namespace Microsoft.Recognizers.Text.Number.French
                 }
             };
 
-            _regexes.Add(GenerateArabicNumberRegex(ArabicType.DoubleNumDotComma, placeholder), "DoubleNum");
-            this.Regexes = _regexes.ToImmutableDictionary();
+            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
+            this.Regexes = regexes.ToImmutableDictionary();
         }
 
     }

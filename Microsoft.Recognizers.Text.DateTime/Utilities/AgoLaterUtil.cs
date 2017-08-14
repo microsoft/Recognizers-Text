@@ -8,9 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class AgoLaterUtil
     {
-        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text,
-            ExtractResult er,
-            List<Token> ret,
+        public static List<Token> ExtractorDurationWithBeforeAndAfter(string text, ExtractResult er, List<Token> ret,
             IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
@@ -46,8 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
-            AgoLaterMode mode
-            )
+            AgoLaterMode mode)
         {
             var ret = new DateTimeResolutionResult();
             var durationRes = durationExtractor.Extract(text);
@@ -69,6 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
                             .Trim()
                             .ToLowerInvariant();
+
                     var er = cardinalExtractor.Extract(numberStr);
                     if (er.Count != 0)
                     {
@@ -111,11 +109,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return GetDateResult(unitStr, numStr, referenceTime, false);
                     }
+
                     if (mode.Equals(AgoLaterMode.DateTime))
                     {
                         return GetDateTimeResult(unitStr, numStr, referenceTime, false);
                     }
                 }
+
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterStringList)
                     || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InStringList))
                 {
@@ -123,6 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return GetDateResult(unitStr, numStr, referenceTime, true);
                     }
+
                     if (mode.Equals(AgoLaterMode.DateTime))
                     {
                         return GetDateTimeResult(unitStr, numStr, referenceTime, true);
@@ -134,53 +135,57 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static DateTimeResolutionResult GetDateResult(string unitStr, string numStr, System.DateTime referenceDate, bool future)
         {
-            System.DateTime Date;
+            System.DateTime date;
             var ret = new DateTimeResolutionResult();
             int futureOrPast = future ? 1 : -1;
+
             switch (unitStr)
             {
                 case "D":
-                    Date = referenceDate.AddDays(double.Parse(numStr) * futureOrPast);
+                    date = referenceDate.AddDays(double.Parse(numStr) * futureOrPast);
                     break;
                 case "W":
-                    Date = referenceDate.AddDays(7 * double.Parse(numStr) * futureOrPast);
+                    date = referenceDate.AddDays(7 * double.Parse(numStr) * futureOrPast);
                     break;
                 case "MON":
-                    Date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
+                    date = referenceDate.AddMonths(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
                     break;
                 case "Y":
-                    Date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
+                    date = referenceDate.AddYears(Convert.ToInt32(double.Parse(numStr)) * futureOrPast);
                     break;
                 default:
                     return ret;
             }
-            ret.Timex = $"{FormatUtil.LuisDate(Date)}";
-            ret.FutureValue = ret.PastValue = Date;
+
+            ret.Timex = $"{FormatUtil.LuisDate(date)}";
+            ret.FutureValue = ret.PastValue = date;
             ret.Success = true;
             return ret;
         }
 
         private static DateTimeResolutionResult GetDateTimeResult(string unitStr, string numStr, System.DateTime referenceTime, bool future)
         {
-            System.DateTime Time;
+            System.DateTime time;
             var ret = new DateTimeResolutionResult();
             int futureOrPast = future ? 1 : -1;
+
             switch (unitStr)
             {
                 case "H":
-                    Time = referenceTime.AddHours(double.Parse(numStr)*futureOrPast);
+                    time = referenceTime.AddHours(double.Parse(numStr)*futureOrPast);
                     break;
                 case "M":
-                    Time = referenceTime.AddMinutes(double.Parse(numStr) * futureOrPast);
+                    time = referenceTime.AddMinutes(double.Parse(numStr) * futureOrPast);
                     break;
                 case "S":
-                    Time = referenceTime.AddSeconds(double.Parse(numStr) * futureOrPast);
+                    time = referenceTime.AddSeconds(double.Parse(numStr) * futureOrPast);
                     break;
                 default:
                     return ret;
             }
-            ret.Timex = $"{FormatUtil.LuisDateTime(Time)}";
-            ret.FutureValue = ret.PastValue = Time;
+
+            ret.Timex = $"{FormatUtil.LuisDateTime(time)}";
+            ret.FutureValue = ret.PastValue = time;
             ret.Success = true;
             return ret;
         }

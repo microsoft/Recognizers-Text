@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }
             };
 
-            regexes.Add(GenerateArabicNumberRegex(ArabicType.DoubleNumDotComma, placeholder), "DoubleNum");
+            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
             this.Regexes = regexes.ToImmutableDictionary();
         }
     }

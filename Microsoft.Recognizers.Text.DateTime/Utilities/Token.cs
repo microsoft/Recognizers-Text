@@ -44,11 +44,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             bAdd = false;
                         }
+
                         //if it contains overlap
                         if (token.Start > mergedTokens[index].Start && token.Start < mergedTokens[index].End)
                         {
                             bAdd = false;
                         }
+
                         // include one of the token, should replace the included one
                         if (token.Start <= mergedTokens[index].Start && token.End >= mergedTokens[index].End)
                         {
@@ -69,6 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var start = token.Start;
                 var length = token.Length;
                 var substr = text.Substring(start, length);
+
                 var er = new ExtractResult
                 {
                     Start = start,
@@ -77,6 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     Type = extractorName,
                     Data = null
                 };
+
                 ret.Add(er);
             }
 

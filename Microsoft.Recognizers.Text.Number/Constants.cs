@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.Number
+﻿// ReSharper disable InconsistentNaming
+
+namespace Microsoft.Recognizers.Text.Number
 {
     public static class Constants
     {
