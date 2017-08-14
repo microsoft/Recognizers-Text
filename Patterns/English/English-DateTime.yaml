@@ -136,7 +136,7 @@ MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
   references: [ MonthRegex ]
 NonDateUnitRegex: !simpleRegex
-  def: (?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b'
+  def: (?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b
 DescRegex: !simpleRegex
   def: (?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a\b)
 HourNumRegex: !simpleRegex
@@ -146,7 +146,7 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)
 OclockRegex: !simpleRegex
-  def: (?<oclock>o’clock|o'clock|oclock)
+  def: "(?<oclock>o’clock|o'clock|oclock)"
 PmRegex: !simpleRegex
   def: (?<pm>(in the\s+)?afternoon|(in the\s+)?evening|(in the\s+)?night)
 AmRegex: !simpleRegex

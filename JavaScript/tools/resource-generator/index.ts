@@ -4,11 +4,18 @@ let resourcesPath = '../Patterns/';
 let outputPath = "./src/resources/";
 
 let configs = [
-    // COMMON
+    // COMMON NUMERIC
     {
         yaml: `${resourcesPath}Base-Numbers.yaml`,
         output: `${outputPath}baseNumbers.ts`,
         header: `export namespace BaseNumbers {`,
+        footer: `}`
+    },
+    // COMMON DATE TIME
+    {
+        yaml: `${resourcesPath}Base-DateTime.yaml`,
+        output: `${outputPath}baseDateTime.ts`,
+        header: `export namespace BaseDateTime {`,
         footer: `}`
     },
     // ENGLISH NUMERIC
@@ -27,6 +34,15 @@ export namespace EnglishNumeric {`,
         header:
         `import { BaseNumbers } from "./baseNumbers";
 export namespace EnglishNumericWithUnit {`,
+        footer: `}`
+    },
+    // ENGLISH DATE TIME WITH UNIT
+    {
+        yaml: `${resourcesPath}/English/English-DateTime.yaml`,
+        output: `${outputPath}englishDateTime.ts`,
+        header:
+        `import { BaseDateTime } from "./baseDateTime";
+export namespace EnglishDateTime {`,
         footer: `}`
     }
 ];

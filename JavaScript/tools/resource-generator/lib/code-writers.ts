@@ -31,7 +31,7 @@ class SimpleRegexWriter extends CodeWriter {
     }
 
     write() {
-        return `export const ${this.name} = '${this.definition}';`;
+        return `export const ${this.name} = \`${this.definition}\`;`;
     }
 }
 

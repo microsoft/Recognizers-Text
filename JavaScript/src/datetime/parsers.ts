@@ -10,5 +10,3 @@ export class DateTimeParseResult extends ParseResult {
 export interface IDateTimeParser extends IParser {
     parse(extResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null
 }
-
-// TODO: add base parsers
