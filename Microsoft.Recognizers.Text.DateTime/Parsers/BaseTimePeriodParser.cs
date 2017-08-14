@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -126,8 +127,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var descStr = match.Groups["desc"].Value;
                 if (string.IsNullOrEmpty(leftDesc))
                 {
-                    if (!string.IsNullOrEmpty(amStr) || (!string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("a")))
+                    bool rightAmValid = !string.IsNullOrEmpty(rightDesc) && 
+                                            this.config.UtilityConfiguration.AmStringList.Contains(rightDesc);
+                    bool rightPmValid = !string.IsNullOrEmpty(rightDesc) && 
+                                    this.config.UtilityConfiguration.PmStringList.Contains(rightDesc);
+                    if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                     {
+                        
                         if (beginHour >= 12)
                         {
                             beginHour -= 12;
@@ -138,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         isValid = true;
                     }
-                    else if (!string.IsNullOrEmpty(pmStr) || (!string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("p")))
+                    else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
                     {
                         if (beginHour < 12)
                         {

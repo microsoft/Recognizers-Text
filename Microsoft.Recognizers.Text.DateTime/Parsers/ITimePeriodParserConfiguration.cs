@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -14,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex PureNumberBetweenAndRegex { get; }
         
         IImmutableDictionary<string, int> Numbers { get; }
+
+        IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin);
     }

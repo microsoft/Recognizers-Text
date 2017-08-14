@@ -9,5 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         List<string> LaterStringList { get; }
 
         List<string> InStringList { get; }
+
+        List<string> PmStringList { get; }
+
+        List<string> AmStringList { get; }
     }
 }

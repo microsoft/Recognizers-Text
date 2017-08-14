@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -40,7 +42,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+            UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IExtractor SingleTimeExtractor { get; }
 

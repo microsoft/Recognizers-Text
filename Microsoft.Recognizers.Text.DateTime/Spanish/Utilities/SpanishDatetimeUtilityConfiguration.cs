@@ -18,10 +18,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         {
         };
 
+        //TODO: add the word list for "am", "pm"
+        public static readonly List<string> AmStringList = new List<string>
+        {
+            "am",
+            "a.m.",
+            "a",
+        };
+
+        public static readonly List<string> PmStringList = new List<string>
+        {
+            "pm",
+            "p.m.",
+            "p",
+        };
+
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
 
         List<string> IDateTimeUtilityConfiguration.LaterStringList => LaterStringList;
 
         List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
+
+        List<string> IDateTimeUtilityConfiguration.AmStringList => AmStringList;
+
+        List<string> IDateTimeUtilityConfiguration.PmStringList => PmStringList;
+
     }
 }
