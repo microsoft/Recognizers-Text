@@ -3,7 +3,7 @@ import { EnglishCommonDateTimeParserConfiguration, EnglishDateParserConfiguratio
 import { BaseDateParser } from "../compiled/dateTime/parsers";
 import { EnglishDateExtractorConfiguration } from "../compiled/dateTime/english/extractorConfiguration";
 import { BaseDateExtractor } from "../compiled/dateTime/extractors";
-import { Constants } from "../constants";
+import { Constants } from "../compiled/dateTime/constants";
 
 var refrenceDay = new Date(2016, 11, 7);
 var parser = new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));

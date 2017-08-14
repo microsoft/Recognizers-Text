@@ -1,7 +1,7 @@
 var describe = require('ava-spec').describe;
-import { EnglishDateExtractorConfiguration } from "../compiled/dateTime/english/extractorConfiguration";
-import { BaseDateExtractor } from "../compiled/dateTime/extractors";
-import { Constants } from "../constants";
+var EnglishDateExtractorConfiguration = require('../compiled/dateTime/english/extractorConfiguration').EnglishDateExtractorConfiguration;
+var BaseDateExtractor = require('../compiled/dateTime/extractors').BaseDateExtractor;
+var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Date Extractor', it => {
     let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());

@@ -116,12 +116,14 @@ DateExtractor5: !nestedRegex
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<=\b(on|in|at)\s+){MonthNumRegex}[\-\.]{DayRegex}\b
+  def_js: (?=\b(on|in|at)\s+){MonthNumRegex}[\-\.]{DayRegex}\b
   references: [ MonthNumRegex, DayRegex ]
 DateExtractor7: !nestedRegex
   def: \b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor8: !nestedRegex
   def: (?<=\b(on|in|at)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
+  def_js: (?=\b(on|in|at)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
   references: [ DayRegex, MonthNumRegex ]
 DateExtractor9: !nestedRegex
   def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b

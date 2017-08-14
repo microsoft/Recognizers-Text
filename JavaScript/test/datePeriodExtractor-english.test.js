@@ -1,7 +1,7 @@
 var describe = require('ava-spec').describe;
 import { EnglishDatePeriodExtractorConfiguration } from "../compiled/dateTime/english/extractorConfiguration";
 import { BaseDatePeriodExtractor } from "../compiled/dateTime/extractors";
-import { Constants } from "../constants";
+import { Constants } from "../compiled/dateTime/constants";
 
 var extractor = new BaseDatePeriodExtractor(new EnglishDateExtractorConfiguration());
 var shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Sept", "Oct", "Nov", "Dec"];
