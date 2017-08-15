@@ -1,3 +1,5 @@
+import * as XRegExp from "xregexp";
+
 export class FormatUtility {
     static preProcess(query: string, toLower: boolean = true): string {
         if (toLower) {
@@ -54,5 +56,15 @@ export class RegExpUtility {
         } while (m);
 
         return matches;
+    }
+
+    static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
+
+    static sanitizeGroups(source: string): string {
+        let index = 0;
+        let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
+            return match.replace(token, token + index++);
+        });
+        return replacer;
     }
 }
