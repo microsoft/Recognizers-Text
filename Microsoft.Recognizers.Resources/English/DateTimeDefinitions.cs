@@ -99,8 +99,8 @@ namespace Microsoft.Recognizers.Resources.English
 		public const string PeriodDescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)";
 		public const string PeriodPmRegex = @"(?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?";
 		public const string PeriodAmRegex = @"(?<am>morning|in the morning)s?";
-		public static readonly string PureNumFromTo = $@"(from\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<left_desc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<right_desc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
-		public static readonly string PureNumBetweenAnd = $@"(between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<left_desc>{PeriodDescRegex}))?\s*and\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<right_desc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
+		public static readonly string PureNumFromTo = $@"(from\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
+		public static readonly string PureNumBetweenAnd = $@"(between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*and\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
 		public const string PrepositionRegex = @"(?<prep>^(at|on|of)(\s+the)?$)";
 		public const string NightRegex = @"\b(?<night>daytime|morning|afternoon|(late\s+)?night|evening)s?\b";
 		public static readonly string SpecificNightRegex = $@"\b(((this|next|last)\s+{NightRegex})\b|\btonight)s?\b";

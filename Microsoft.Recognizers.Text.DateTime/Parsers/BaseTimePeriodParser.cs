@@ -120,8 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // parse "pm" 
-                var leftDesc = match.Groups["left_desc"].Value;
-                var rightDesc = match.Groups["right_desc"].Value;
+                var leftDesc = match.Groups["leftDesc"].Value;
+                var rightDesc = match.Groups["rightDesc"].Value;
                 var pmStr = match.Groups["pm"].Value;
                 var amStr = match.Groups["am"].Value;
                 var descStr = match.Groups["desc"].Value;

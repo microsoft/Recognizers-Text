@@ -1,7 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -16,12 +16,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex PureNumFromTo =
             new Regex(
-                $@"((desde|de)\s+(la(s)?\s+)?)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<left_desc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*{SpanishDatePeriodExtractorConfiguration.TillRegex}\s*({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<right_desc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
+                $@"((desde|de)\s+(la(s)?\s+)?)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<leftDesc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*{SpanishDatePeriodExtractorConfiguration.TillRegex}\s*({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<rightDesc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PureNumBetweenAnd =
             new Regex(
-                $@"(entre\s+(la(s)?\s+)?)({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<left_desc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*y\s*(la(s)?\s+)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<right_desc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
+                $@"(entre\s+(la(s)?\s+)?)({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<leftDesc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*y\s*(la(s)?\s+)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<rightDesc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex UnitRegex =
