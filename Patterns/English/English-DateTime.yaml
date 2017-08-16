@@ -212,10 +212,10 @@ PeriodPmRegex: !simpleRegex
 PeriodAmRegex: !simpleRegex
   def: (?<am>morning|in the morning)s?
 PureNumFromTo: !nestedRegex
-  def: (from\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<left_desc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<right_desc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
+  def: (from\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
-  def: (between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<left_desc>{PeriodDescRegex}))?\s*and\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<right_desc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
+  def: (between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*and\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, PmRegex, AmRegex ]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(at|on|of)(\s+the)?$)
