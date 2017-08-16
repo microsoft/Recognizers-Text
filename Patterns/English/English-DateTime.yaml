@@ -172,6 +172,7 @@ BasicTime: !nestedRegex
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 AtRegex: !nestedRegex
   def: \b(?<=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b
+  def_js: \b(?!=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex ]
 IshRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(-|——)?ish|noonish|noon'

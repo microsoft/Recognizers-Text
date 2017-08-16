@@ -67,4 +67,9 @@ export class RegExpUtility {
         });
         return replacer;
     }
+
+    static getSafeRegExp(source: string, flags: string) {
+        let sanitizedSource = RegExpUtility.sanitizeGroups(source);
+        return XRegExp(sanitizedSource, flags);
+    }
 }

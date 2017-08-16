@@ -3,6 +3,7 @@ import { Token, AgoLaterUtil, IDateTimeUtilityConfiguration } from "./utilities"
 import { IExtractor, ExtractResult, BaseNumberExtractor } from "../number/extractors"
 import { BaseNumberParser } from "../number/parsers"
 import { Match, RegExpUtility } from "../utilities";
+import { BaseDateTime } from "../resources/baseDateTime";
 import * as _ from "lodash";
 
 export interface IDateExtractorConfiguration {
@@ -119,6 +120,72 @@ export class BaseDateExtractor implements IExtractor {
             if (match.length > 0) return;
             ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.dateTimeUtilityConfiguration);
         });
+        return ret;
+    }
+}
+
+export interface ITimeExtractorConfiguration {
+    timeRegexList: RegExp[]
+    atRegex: RegExp
+    ishRegex: RegExp
+}
+
+export class BaseTimeExtractor implements IExtractor {
+    readonly extractorName = Constants.SYS_DATETIME_TIME; // "Time";
+    readonly hourRegex = RegExpUtility.getSafeRegExp(BaseDateTime.HourRegex, "gis");
+    readonly minuteRegex = RegExpUtility.getSafeRegExp(BaseDateTime.MinuteRegex, "gis");
+    readonly secondRegex = RegExpUtility.getSafeRegExp(BaseDateTime.SecondRegex, "gis");
+
+    private readonly config: ITimeExtractorConfiguration;
+
+    constructor(config: ITimeExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(text: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.basicRegexMatch(text))
+            .concat(this.atRegexMatch(text))
+            .concat(this.specialsRegexMatch(text));
+
+        let result = Token.mergeAllTokens(tokens, text, this.extractorName);
+        return result;
+    }
+
+    basicRegexMatch(text: string): Array<Token> {
+        let ret = [];
+        this.config.timeRegexList.forEach(regexp => {
+            let matches = RegExpUtility.getMatches(regexp, text);
+            matches.forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length));
+            });
+        });
+        return ret;
+    }
+
+    atRegexMatch(text: string): Array<Token> {
+        let ret = [];
+        // handle "at 5", "at seven"
+        let matches = RegExpUtility.getMatches(this.config.atRegex, text);
+        matches.forEach(match => {
+            if (match.index + match.length < text.length &&
+                text.charAt(match.index + match.length) == '%') {
+                return;
+            }
+            ret.push(new Token(match.index, match.index + match.length));
+        });
+        return ret;
+    }
+
+    specialsRegexMatch(text: string): Array<Token> {
+        let ret = [];
+        // handle "ish"
+        if (this.config.ishRegex != null) {
+            let matches = RegExpUtility.getMatches(this.config.ishRegex, text);
+            matches.forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length));
+            });
+        }
         return ret;
     }
 }
