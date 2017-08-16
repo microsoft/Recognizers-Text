@@ -3,13 +3,11 @@ var EnglishDateExtractorConfiguration = require('../compiled/dateTime/english/ex
 var BaseDateExtractor = require('../compiled/dateTime/extractors').BaseDateExtractor;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
-var testPart = false;
-
 describe('Date Extractor', it => {
     let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
 
-    if (testPart) {
-        BasicTest(it, extractor, "I'll go back the first friday in this month", 13, 30);
+    if (false) {
+        BasicTest(it, extractor, "I'll go back two weeks from now", 13, 18);
     } else {
         BasicTest(it, extractor, "I'll go back on 15", 16, 2);
         BasicTest(it, extractor, "I'll go back April 22", 13, 8);

@@ -1,5 +1,5 @@
 import { Constants } from "./constants";
-import { Token } from "./utilities";
+import { Token, AgoLaterUtil, IDateTimeUtilityConfiguration } from "./utilities";
 import { IExtractor, ExtractResult, BaseNumberExtractor } from "../number/extractors"
 import { BaseNumberParser } from "../number/parsers"
 import { Match, RegExpUtility } from "../utilities";
@@ -11,9 +11,22 @@ export interface IDateExtractorConfiguration {
     implicitDateList: RegExp[],
     MonthEnd: RegExp,
     OfMonth: RegExp,
+    NonDateUnitRegex: RegExp,
     ordinalExtractor: BaseNumberExtractor,
     integerExtractor: BaseNumberExtractor,
     numberParser: BaseNumberParser
+    durationExtractor: IExtractor
+    dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration
+}
+
+export interface IDurationExtractorConfiguration {
+    AllRegex: RegExp,
+    HalfRegex: RegExp,
+    FollowedUnit: RegExp,
+    NumberCombinedWithUnit: RegExp,
+    AnUnitRegex: RegExp,
+    SuffixAndRegex: RegExp,
+    cardinalExtractor: BaseNumberExtractor
 }
 
 export class BaseDateExtractor implements IExtractor {
@@ -85,7 +98,12 @@ export class BaseDateExtractor implements IExtractor {
 
     private durationWithBeforeAndAfter(source: string): Array<Token> {
         let ret = [];
-        // TODO add support for duration extractor
+        let durEx = this.config.durationExtractor.extract(source);
+        durEx.forEach(er => {
+            let match = RegExpUtility.getMatches(this.config.NonDateUnitRegex, er.text);
+            if (match.length > 0) return;
+            ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.dateTimeUtilityConfiguration);
+        });
         return ret;
     }
 }
@@ -94,16 +112,6 @@ export interface ITimeExtractorConfiguration {
     timeRegexList: RegExp[]
     atRegex: RegExp
     ishRegex: RegExp
-}
-
-export interface IDurationExtractorConfiguration {
-    followedUnit: RegExp
-    numberCombinedWithUnit: RegExp
-    anUnitRegex: RegExp
-    allRegex: RegExp
-    halfRegex: RegExp
-    suffixAndRegex: RegExp
-    cardinalExtractor: IExtractor
 }
 
 export class BaseTimeExtractor implements IExtractor {
@@ -167,82 +175,52 @@ export class BaseTimeExtractor implements IExtractor {
 }
 
 export class BaseDurationExtractor implements IExtractor {
-    readonly extractorName = Constants.SYS_DATETIME_DURATION;
-    readonly config: IDurationExtractorConfiguration;
+    private readonly config: IDurationExtractorConfiguration;
 
     constructor(config: IDurationExtractorConfiguration) {
         this.config = config;
     }
 
-    extract(text: string): Array<ExtractResult> {
+    extract(source: string): Array<ExtractResult> {
+        let baseTokens = this.numberWithUnit(source);
         let tokens: Array<Token> = new Array<Token>()
-            .concat(this.numberWithUnit(text))
-            .concat(this.numberWithUnitAndSuffix(text, this.numberWithUnit(text)))
-            .concat(this.implicitDuration(text));
-
-        let result = Token.mergeAllTokens(tokens, text, this.extractorName);
+            .concat(baseTokens)
+            .concat(this.numberWithUnitAndSuffix(source, baseTokens))
+            .concat(this.implicitDuration(source))
+        let result = Token.mergeAllTokens(tokens, source, Constants.SYS_DATETIME_DURATION);
         return result;
     }
 
-    // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
-    // define the part "and {an|a} {half|quarter}" as Suffix
-    numberWithUnitAndSuffix(text: string, ers: Array<Token>): Array<Token> {
-        let ret = [];
-        ers.forEach(er => {
-            let afterStr = text.substring(er.start + er.length);
-            let matches = RegExpUtility.getMatches(this.config.suffixAndRegex, afterStr);
-            if (matches.length > 0 && matches[0].index == 0) {
-                ret.push(new Token(matches[0].index, matches[0].index + matches[0].length));
+    private numberWithUnit(source: string): Array<Token> {
+        return this.config.cardinalExtractor.extract(source)
+            .map(o => {
+                let afterString = source.substring(o.start + o.length);
+                let match = RegExpUtility.getMatches(this.config.FollowedUnit, afterString)[0];
+                if (match && match.index === 0) {
+                    return new Token(o.start | 0, o.start + o.length + match.length);
+                }
+            }).filter(o => o !== undefined)
+            .concat(this.getTokensFromRegex(this.config.NumberCombinedWithUnit, source))
+            .concat(this.getTokensFromRegex(this.config.AnUnitRegex, source));
+    }
+
+    private numberWithUnitAndSuffix(source: string, ers: Token[]): Array<Token> {
+        return ers.map(o => {
+            let afterString = source.substring(o.start + o.length);
+            let match = RegExpUtility.getMatches(this.config.SuffixAndRegex, afterString)[0];
+            if (match && match.index === 0) {
+                return new Token(o.start | 0, o.start + o.length + match.length);
             }
         });
-        return ret;
     }
 
-    // simple cases made by a number followed an unit
-    numberWithUnit(text: string): Array<Token> {
-        let ret = [];
-        let ers = this.config.cardinalExtractor.extract(text);
-        ers.forEach(er => {
-            let afterStr = text.substring(er.start + er.length);
-            let matches = RegExpUtility.getMatches(this.config.followedUnit, afterStr);
-            if (matches.length > 0 && matches[0].index == 0) {
-                ret.push(new Token(matches[0].index, matches[0].index + matches[0].length));
-            }
-        });
-
-        // handle "3hrs"
-        let matches = RegExpUtility.getMatches(this.config.numberCombinedWithUnit, text);
-        matches.forEach(match => {
-            ret.push(new Token(match.index, match.index + match.length));
-        });
-
-        // handle "an hour"
-        matches = RegExpUtility.getMatches(this.config.anUnitRegex, text);
-        matches.forEach(match => {
-            ret.push({ start: match.index, end: match.index + match.length });
-        });
-
-        return ret;
+    private implicitDuration(source: string) : Array<Token> {
+        return this.getTokensFromRegex(this.config.AllRegex, source)
+            .concat(this.getTokensFromRegex(this.config.HalfRegex, source));
     }
 
-    // handle cases that don't contain nubmer
-    implicitDuration(text: string): Array<Token> {
-        let ret = [];
-        // handle "all day", "all year"
-        ret.push(this.getTokenFromRegex(this.config.allRegex, text));
-
-        // handle "half day", "half year"
-        ret.push(this.getTokenFromRegex(this.config.halfRegex, text));
-
-        return ret;
-    }
-
-    getTokenFromRegex(regex: RegExp, text: string) {
-        let ret = [];
-        var matches = RegExpUtility.getMatches(regex, text);
-        matches.forEach(match => {
-            ret.push(new Token(match.index, match.index + match.length));
-        });
-        return ret;
+    private getTokensFromRegex(regexp: RegExp, source: string): Array<Token> {
+        return RegExpUtility.getMatches(regexp, source)
+            .map(o => new Token(o.index, o.index + o.length));
     }
 }

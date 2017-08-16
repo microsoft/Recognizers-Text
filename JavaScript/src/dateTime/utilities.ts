@@ -51,3 +51,64 @@ export class Token {
         return ret;
     }
 }
+
+export interface IDateTimeUtilityConfiguration {
+    agoStringList: string[]
+    laterStringList: string[]
+    inStringList: string[]
+}
+
+export class AgoLaterUtil {
+    static extractorDurationWithBeforeAndAfter(source: string, er: ExtractResult, ret: Token[], config: IDateTimeUtilityConfiguration): Array<Token> {
+        let pos = er.start + er.length;
+        if (pos <= source.length) {
+            let afterString = source.substring(pos);
+            let beforeString = source.substring(0, er.start);
+            let index = -1;
+            let value = MatchingUtil.getAgoLaterIndex(afterString, config.agoStringList);
+            if (value.matched) {
+                ret.push(new Token(er.start, er.start + er.length + value.index));
+            }
+            else {
+                value = MatchingUtil.getAgoLaterIndex(afterString, config.laterStringList);
+                if (value.matched) {
+                    ret.push(new Token(er.start, er.start + er.length + value.index));
+                }
+                else {
+                    value = MatchingUtil.getInIndex(beforeString, config.inStringList);
+                    if (er.start && er.length && er.start > value.index) {
+                        ret.push(new Token(er.start - value.index, er.start + er.length));
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+}
+
+export interface MatchedIndex {
+    matched: boolean,
+    index: number
+}
+
+export class MatchingUtil {
+    static getAgoLaterIndex(source: string, referenceList: string[]): MatchedIndex {
+        let result: MatchedIndex = { matched: false, index: -1 };
+        let referencedMatch = referenceList.find(o => source.trim().toLowerCase().startsWith(o));
+        if (referencedMatch) {
+            result.index = source.toLowerCase().lastIndexOf(referencedMatch) + referencedMatch.length;
+            result.matched = true;
+        }
+        return result;
+    }
+
+    static getInIndex(source: string, referenceList: string[]): MatchedIndex {
+        let result: MatchedIndex = { matched: false, index: -1 };
+        let referencedMatch = referenceList.find(o => source.trim().toLowerCase().split(' ').pop().endsWith(o));
+        if (referencedMatch) {
+            result.index = source.length - source.toLowerCase().lastIndexOf(referencedMatch);
+            result.matched = true;
+        }
+        return result;
+    }
+}

@@ -17,9 +17,12 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly implicitDateList: RegExp[];
     readonly MonthEnd: RegExp;
     readonly OfMonth: RegExp;
+    readonly NonDateUnitRegex: RegExp;
     readonly ordinalExtractor: EnglishOrdinalExtractor;
     readonly integerExtractor: EnglishIntegerExtractor;
     readonly numberParser: BaseNumberParser;
+    readonly durationExtractor: BaseDurationExtractor;
+    readonly dateTimeUtilityConfiguration;
 
     constructor() {
         this.dateRegexList = [
@@ -47,11 +50,19 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         ];
         this.MonthEnd = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthEnd, "gis");
         this.OfMonth = RegExpUtility.getSafeRegExp(EnglishDateTime.OfMonth, "gis");
+        this.NonDateUnitRegex = XRegExp(EnglishDateTime.NonDateUnitRegex, "gis");
         this.ordinalExtractor = new EnglishOrdinalExtractor();
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+        this.dateTimeUtilityConfiguration = {
+            agoStringList: ["ago"],
+            laterStringList: ["later", "from now"],
+            inStringList: ["in"]
+        };
     }
 }
+
 export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfiguration {
     readonly timeRegexList: RegExp[];
     readonly atRegex: RegExp;
@@ -86,21 +97,21 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
     }
 }
 export class EnglishDurationExtractorConfiguration implements IDurationExtractorConfiguration {
-    readonly followedUnit: RegExp;
-    readonly numberCombinedWithUnit: RegExp;
-    readonly anUnitRegex: RegExp;
-    readonly allRegex: RegExp;
-    readonly halfRegex: RegExp;
-    readonly suffixAndRegex: RegExp;
-    readonly cardinalExtractor: IExtractor;
+    readonly AllRegex: RegExp
+    readonly HalfRegex: RegExp
+    readonly FollowedUnit: RegExp
+    readonly NumberCombinedWithUnit: RegExp
+    readonly AnUnitRegex: RegExp
+    readonly SuffixAndRegex: RegExp
+    readonly cardinalExtractor: EnglishCardinalExtractor
 
     constructor() {
+        this.AllRegex = XRegExp(EnglishDateTime.AllRegex, "gis");
+        this.HalfRegex = XRegExp(EnglishDateTime.HalfRegex, "gis");
+        this.FollowedUnit = XRegExp(EnglishDateTime.DurationFollowedUnit, "gis");
+        this.NumberCombinedWithUnit = XRegExp(EnglishDateTime.NumberCombinedWithDurationUnit, "gis");
+        this.AnUnitRegex = XRegExp(EnglishDateTime.AnUnitRegex, "gis");
+        this.SuffixAndRegex = XRegExp(EnglishDateTime.SuffixAndRegex, "gis");
         this.cardinalExtractor = new EnglishCardinalExtractor();
-        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationUnitRegex, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit, "gis");
-        this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex, "gis");
-        this.allRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex, "gis");
-        this.halfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex, "gis");
-        this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex, "gis");
     }
 }
