@@ -10,7 +10,7 @@ describe('Date Period Extractor', it => {
     let extractor = new baseExtractor(new configuration());
 
     if (false) {
-        BasicTest(it, extractor, "I'll be out Oct. 2 to October 22", 12, 20);
+        BasicTest(it, extractor, "week of september.15th", 0, 22);
     }
     else {
 
@@ -56,7 +56,7 @@ describe('Date Period Extractor', it => {
         BasicTest(it, extractor, "I'll be out past 3 weeks", 12, 12);
         BasicTest(it, extractor, "I'll be out last 3year", 12, 10);
         BasicTest(it, extractor, "I'll be out previous 3 weeks", 12, 16);
-        return;
+
         // test merging two time points
         BasicTest(it, extractor, "I'll be out Oct. 2 to October 22", 12, 20);
         BasicTest(it, extractor, "I'll be out January 12, 2016 - 02/22/2016", 12, 29);

@@ -282,7 +282,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
                 idx++;
                 continue;
             }
-            let middleStr = source.substring(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+            let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
             let match = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
             if (match && match.length > 0 && match[0].index ===0 && match[0].length === middleStr.length) {
                 let periodBegin = er[idx].start;
@@ -355,7 +355,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         ers.forEach(er => {
             if (er.start && er.length) {
                 let beforeStr = source.substring(0, er.start);
-                tokens
+                tokens = tokens
                     .concat(this.getTokenForRegexMatching(beforeStr, this.config.weekOfRegex, er))
                     .concat(this.getTokenForRegexMatching(beforeStr, this.config.monthOfRegex, er))
             }
