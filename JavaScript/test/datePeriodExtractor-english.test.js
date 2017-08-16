@@ -3,7 +3,7 @@ var EnglishDatePeriodExtractorConfiguration = require('../compiled/dateTime/engl
 var BaseDatePeriodExtractor = require('../compiled/dateTime/extractors').BaseDatePeriodExtractor;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
-var extractor = new BaseDatePeriodExtractor(new EnglishDateExtractorConfiguration());
+var extractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
 var shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Sept", "Oct", "Nov", "Dec"];
 var fullMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -95,12 +95,12 @@ describe('Date Period Extractor', it => {
     BasicTest(it, extractor, "month of september.15th", 0, 23);
 });
 
-function basicTest(it, extractor, text, start, length) {
+function BasicTest(it, extractor, text, start, length) {
     it(text, t => {
         let results = extractor.extract(text);
-        t.is(1, results.Count);
-        t.is(start, results[0].Start);
-        t.is(length, results[0].Length);
-        t.is(Constants.SYS_DATETIME_DATEPERIOD, results[0].Type);
+        t.is(1, results.length);
+        t.is(start, results[0].start);
+        t.is(length, results[0].length);
+        t.is(Constants.SYS_DATETIME_DATEPERIOD, results[0].type);
     });
 }

@@ -2,7 +2,10 @@ import {
     IDateExtractorConfiguration,
     ITimeExtractorConfiguration,
     IDurationExtractorConfiguration,
-    BaseDurationExtractor
+    IDatePeriodExtractorConfiguration,
+    TokenIndex,
+    BaseDurationExtractor,
+    BaseDateExtractor
 } from "../extractors";
 import { EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishCardinalExtractor } from "../../number/english/extractors"
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration"
@@ -113,5 +116,68 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
         this.AnUnitRegex = XRegExp(EnglishDateTime.AnUnitRegex, "gis");
         this.SuffixAndRegex = XRegExp(EnglishDateTime.SuffixAndRegex, "gis");
         this.cardinalExtractor = new EnglishCardinalExtractor();
+    }
+}
+
+export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
+    simpleCasesRegexes: RegExp[];
+    tillRegex: RegExp;
+    followedUnit: RegExp;
+    numberCombinedWithUnit: RegExp;
+    pastRegex: RegExp;
+    futureRegex: RegExp;
+    weekOfRegex: RegExp;
+    monthOfRegex: RegExp;
+    datePointExtractor: IExtractor;
+    cardinalExtractor: IExtractor;
+
+    constructor() {
+        this.simpleCasesRegexes = [
+            RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex, "gis")
+        ];
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedUnit, "gis");
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithUnit, "gis");
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
+        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
+        this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex, "gis");
+        this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex, "gis");
+        this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.cardinalExtractor = new EnglishCardinalExtractor();
+    }
+
+    public getFromTokenIndex(text: string): TokenIndex {
+        let index = -1;
+        if (text.endsWith("from")) {
+            index = text.lastIndexOf("from");
+            return new TokenIndex(true, index);
+        }
+        return new TokenIndex(false, index);
+    }
+
+    public getBetweenTokenIndex(text: string): TokenIndex {
+        let index = -1;
+        if (text.endsWith("between")) {
+            index = text.lastIndexOf("between");
+            return new TokenIndex(true, index);
+        }
+        return new TokenIndex(false, index);
+    }
+
+    public hasConnectorToken(text: string): boolean {
+        return text == "and";
     }
 }

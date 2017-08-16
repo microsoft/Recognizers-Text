@@ -76,9 +76,9 @@ describe('Date Extractor', it => {
 function BasicTest(it, extractor, text, start, length) {
     it(text, t => {
         let results = extractor.extract(text);
-        t.is(1, results.Count);
-        t.is(start, results[0].Start);
-        t.is(length, results[0].Length);
-        t.is(Constants.SYS_DATETIME_DATE, results[0].Type);
+        t.is(1, results.length);
+        t.is(start, results[0].start);
+        t.is(length, results[0].length);
+        t.is(Constants.SYS_DATETIME_DATE, results[0].type);
     });
 }

@@ -181,13 +181,13 @@ export class BaseDurationExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
-        let baseTokens = this.numberWithUnit(source);
+    extract(input: string): Array<ExtractResult> {
+        let baseTokens = this.numberWithUnit(input);
         let tokens: Array<Token> = new Array<Token>()
             .concat(baseTokens)
-            .concat(this.numberWithUnitAndSuffix(source, baseTokens))
-            .concat(this.implicitDuration(source))
-        let result = Token.mergeAllTokens(tokens, source, Constants.SYS_DATETIME_DURATION);
+            .concat(this.numberWithUnitAndSuffix(input, baseTokens))
+            .concat(this.implicitDuration(input))
+        let result = Token.mergeAllTokens(tokens, input, Constants.SYS_DATETIME_DURATION);
         return result;
     }
 
@@ -214,7 +214,7 @@ export class BaseDurationExtractor implements IExtractor {
         });
     }
 
-    private implicitDuration(source: string) : Array<Token> {
+    private implicitDuration(source: string): Array<Token> {
         return this.getTokensFromRegex(this.config.AllRegex, source)
             .concat(this.getTokensFromRegex(this.config.HalfRegex, source));
     }
@@ -222,5 +222,189 @@ export class BaseDurationExtractor implements IExtractor {
     private getTokensFromRegex(regexp: RegExp, source: string): Array<Token> {
         return RegExpUtility.getMatches(regexp, source)
             .map(o => new Token(o.index, o.index + o.length));
+    }
+}
+
+export interface IDatePeriodExtractorConfiguration {
+    readonly simpleCasesRegexes: RegExp[]
+    readonly tillRegex: RegExp
+    readonly followedUnit: RegExp
+    readonly numberCombinedWithUnit: RegExp
+    readonly pastRegex: RegExp
+    readonly futureRegex: RegExp
+    readonly weekOfRegex: RegExp
+    readonly monthOfRegex: RegExp
+    readonly datePointExtractor: IExtractor
+    readonly cardinalExtractor: IExtractor
+    getFromTokenIndex(text: string): TokenIndex
+    hasConnectorToken(text: string)
+    getBetweenTokenIndex(text: string): TokenIndex
+}
+
+export class TokenIndex {
+    readonly found: boolean;
+    readonly index: number;
+
+    constructor(found: boolean, index: number) {
+        this.found = found;
+        this.index = index;
+    }
+}
+
+export class BaseDatePeriodExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
+    private readonly config: IDatePeriodExtractorConfiguration;
+
+    constructor(config: IDatePeriodExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(input: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.matchSimpleCases(input))
+            .concat(this.mergeTwoTimePoints(input))
+            .concat(this.matchNumberWithUnit(input))
+            .concat(this.singleTimePointWithPatterns(input));
+
+        let result = Token.mergeAllTokens(tokens, input, this.extractorName);
+        return result;
+
+    }
+
+    private matchSimpleCases(source: string): Array<Token> {
+        let ret = [];
+        this.config.simpleCasesRegexes.forEach(regexp => {
+            let matches = RegExpUtility.getMatches(regexp, source);
+            matches.forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length));
+            });
+        });
+        return ret;
+    }
+
+    private mergeTwoTimePoints(source: string): Array<Token> {
+        let ret = [];
+        let er = this.config.datePointExtractor.extract(source);
+        if (er.length <= 1) {
+            return ret;
+        }
+
+        // merge '{TimePoint} to {TimePoint}'
+        let idx = 0;
+        while (idx < er.length - 1) {
+            let middleBegin = er[idx].start + er[idx].length || 0;
+            let middleEnd = er[idx + 1].start || 0;
+            if (middleBegin >= middleEnd) {
+                idx++;
+                continue;
+            }
+
+            let middleStr = source.substring(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+            let matches = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
+            if (matches.length > 0 && matches[0].index == 0 && matches[0].length == middleStr.length) {
+                let periodBegin = er[idx].start || 0;
+                let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
+
+                // handle "desde"
+                let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
+                let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
+                if (fromTokenIndex.found) {
+                    periodBegin = fromTokenIndex.index;
+                }
+
+                ret.push(new Token(periodBegin, periodEnd));
+                idx += 2;
+                continue;
+            }
+
+            if (this.config.hasConnectorToken(middleStr)) {
+                let periodBegin = er[idx].start || 0;
+                let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
+
+                // handle "entre"
+                let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
+                let beforeTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
+                if (beforeTokenIndex.found) {
+                    periodBegin = beforeTokenIndex.index;
+                }
+
+                ret.push(new Token(periodBegin, periodEnd));
+                idx += 2;
+                continue;
+            }
+            idx++;
+        }
+
+        return ret;
+    }
+
+    //Extract the month of date, week of date to a date range
+    private singleTimePointWithPatterns(source: string): Array<Token> {
+        let ret = [];
+        let er = this.config.datePointExtractor.extract(source);
+        if (er.length < 1) {
+            return ret;
+        }
+
+        er.forEach(extractionResult => {
+            if (extractionResult.start != null && extractionResult.length != null) {
+                let beforeString = source.substring(0, extractionResult.start);
+                ret.push(this.getTokenForRegexMatching(beforeString, this.config.weekOfRegex, extractionResult));
+                ret.push(this.getTokenForRegexMatching(beforeString, this.config.monthOfRegex, extractionResult));
+            }
+        });
+
+        return ret;
+    }
+
+    private getTokenForRegexMatching(text: string, regex: RegExp, er: ExtractResult) {
+        let ret = [];
+        let matches = RegExpUtility.getMatches(regex, text);
+        if (matches.length > 0 && text.trim().endsWith(matches[0].value.trim())) {
+            let startIndex = text.lastIndexOf(matches[0].value);
+            ret.push(new Token(startIndex, er.start + er.length));
+        }
+        return ret;
+    }
+
+    private matchNumberWithUnit(source: string): Array<Token> {
+        let ret = [];
+        let durations = [];
+
+        let ers = this.config.cardinalExtractor.extract(source);
+        ers.forEach(er => {
+            let afterStr = source.substring(er.start + er.length || 0);
+            let matches = RegExpUtility.getMatches(this.config.followedUnit, afterStr);
+            if (matches.length > 0 && matches[0].index == 0) {
+                durations.push(new Token(er.start || 0, (er.start + er.length || 0) + matches[0].length));
+            }
+        });
+
+        let matches = RegExpUtility.getMatches(this.config.numberCombinedWithUnit, source);
+        if (matches.length > 0) {
+            matches.forEach(match => {
+                durations.push(new Token(match.index, match.index + match.length));
+            });
+        }
+
+        durations.forEach(duration => {
+            let beforeStr = source.substring(0, duration.Start).toLowerCase();
+            if (!beforeStr) {
+                return;
+            }
+
+            let matches = RegExpUtility.getMatches(this.config.pastRegex, beforeStr);
+            if (matches.length > 0 && !(beforeStr.substring(matches[0].index + matches[0].length))) {
+                ret.push(new Token(matches[0].index, duration.end));
+                return;
+            }
+
+            matches = RegExpUtility.getMatches(this.config.futureRegex, beforeStr);
+            if (matches.length > 0 && !(beforeStr.substring(matches[0].index + matches[0].length))) {
+                ret.push(new Token(matches[0].index, duration.End));
+            }
+        });
+
+        return ret;
     }
 }
