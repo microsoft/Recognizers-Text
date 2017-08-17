@@ -4,9 +4,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
-        private static readonly Regex BeforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex AfterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IExtractor DateExtractor { get; }
 
@@ -39,26 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         }
 
-        public bool HasBeforeTokenIndex(string text, out int index)
-        {
-            index = -1;
-            var match = BeforeRegex.Match(text);
-            if (match.Success)
-            {
-                index = match.Index;
-            }
-            return match.Success;
-        }
-
-        public bool HasAfterTokenIndex(string text, out int index)
-        {
-            index = -1;
-            var match = AfterRegex.Match(text);
-            if (match.Success)
-            {
-                index = match.Index;
-            }
-            return match.Success;
-        }
+        Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+        Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
     }
 }

@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("and");
+            return text.Equals("and") || text.Equals("through");
         }
     }
 }

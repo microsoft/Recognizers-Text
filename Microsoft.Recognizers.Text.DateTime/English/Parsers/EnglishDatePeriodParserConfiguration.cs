@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("last") || trimedText.StartsWith("past"))
             {
                 swift = -1;
             }

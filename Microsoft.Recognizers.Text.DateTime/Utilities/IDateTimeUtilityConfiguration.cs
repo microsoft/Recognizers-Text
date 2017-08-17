@@ -10,8 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
         List<string> InStringList { get; }
 
-        List<string> PmStringList { get; }
+        string AmPrefix { get; }
 
-        List<string> AmStringList { get; }
+        string PmPrefix { get; }
+
+        string AmPmPrefix { get; }
     }
 }

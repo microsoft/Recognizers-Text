@@ -183,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var descStr = match.Groups["desc"].Value.ToLower();
             if (!string.IsNullOrEmpty(descStr))
             {
-                if (descStr.ToLower().StartsWith("a"))
+                if (descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPrefix))
                 {
                     if (hour >= 12)
                     {
@@ -191,13 +191,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     hasAm = true;
                 }
-                else if (descStr.ToLower().StartsWith("p"))
+                else if (descStr.ToLower().StartsWith(config.UtilityConfiguration.PmPrefix))
                 {
                     if (hour < 12)
                     {
                         hour += 12;
                     }
                     hasPm = true;
+                }
+
+                //set the hasAm to false since it is ampm
+                if (descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPmPrefix))
+                {
+                    hasAm = false;
                 }
             }
 

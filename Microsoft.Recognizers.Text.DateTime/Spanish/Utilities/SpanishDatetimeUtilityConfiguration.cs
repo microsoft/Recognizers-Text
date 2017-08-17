@@ -18,20 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         {
         };
 
-        //TODO: add the word list for "am", "pm"
-        public static readonly List<string> AmStringList = new List<string>
-        {
-            "am",
-            "a.m.",
-            "a",
-        };
-
-        public static readonly List<string> PmStringList = new List<string>
-        {
-            "pm",
-            "p.m.",
-            "p",
-        };
+        //TODO: add the word prefix for "am", "pm", ampm is special
+        public static readonly string AmPrefix = "a";
+        public static readonly string PmPrefix = "p";
+        public static readonly string AmPmPrefix = "ampm";
 
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
 
@@ -39,9 +29,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
 
-        List<string> IDateTimeUtilityConfiguration.AmStringList => AmStringList;
+        string IDateTimeUtilityConfiguration.AmPrefix => AmPrefix;
 
-        List<string> IDateTimeUtilityConfiguration.PmStringList => PmStringList;
+        string IDateTimeUtilityConfiguration.PmPrefix => PmPrefix;
+
+        string IDateTimeUtilityConfiguration.AmPmPrefix => AmPmPrefix;
 
     }
 }

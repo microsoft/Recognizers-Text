@@ -21,19 +21,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
             "in",
         };
 
-        public static readonly List<string> AmStringList = new List<string>
-        {
-            "am",
-            "a.m.",
-            "a",
-        };
+        public static readonly string AmPrefix = "a";
+        public static readonly string PmPrefix = "p";
+        public static readonly string AmPmPrefix = "ampm";
 
-        public static readonly List<string> PmStringList = new List<string>
-        {
-            "pm",
-            "p.m.",
-            "p",
-        };
 
         List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
 
@@ -41,8 +32,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
 
         List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
 
-        List<string> IDateTimeUtilityConfiguration.AmStringList => AmStringList;
+        string IDateTimeUtilityConfiguration.AmPrefix=> AmPrefix;
 
-        List<string> IDateTimeUtilityConfiguration.PmStringList => PmStringList;
+        string IDateTimeUtilityConfiguration.PmPrefix => PmPrefix;
+
+        string IDateTimeUtilityConfiguration.AmPmPrefix => AmPmPrefix;
     }
 }

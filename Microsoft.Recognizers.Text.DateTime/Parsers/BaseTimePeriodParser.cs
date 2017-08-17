@@ -125,12 +125,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pmStr = match.Groups["pm"].Value;
                 var amStr = match.Groups["am"].Value;
                 var descStr = match.Groups["desc"].Value;
+                // The "ampm" only occurs in time, don't have to consider it here
                 if (string.IsNullOrEmpty(leftDesc))
                 {
                     bool rightAmValid = !string.IsNullOrEmpty(rightDesc) && 
-                                            this.config.UtilityConfiguration.AmStringList.Contains(rightDesc);
-                    bool rightPmValid = !string.IsNullOrEmpty(rightDesc) && 
-                                    this.config.UtilityConfiguration.PmStringList.Contains(rightDesc);
+                                            rightDesc.StartsWith(config.UtilityConfiguration.AmPrefix);
+                    bool rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
+                                    rightDesc.StartsWith(config.UtilityConfiguration.PmPrefix);
                     if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                     {
                         
