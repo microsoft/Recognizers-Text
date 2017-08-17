@@ -68,6 +68,26 @@ export interface IDateTimeExtractorConfiguration {
     isConnectorToken(source: string): boolean
 }
 
+export interface IDateTimePeriodExtractorConfiguration {
+    cardinalExtractor: BaseNumberExtractor
+    singleDateExtractor: BaseDateExtractor
+    singleTimeExtractor: BaseTimeExtractor
+    singleDateTimeExtractor: BaseDateTimeExtractor
+    simpleCasesRegexes: RegExp[]
+    prepositionRegex: RegExp
+    tillRegex: RegExp
+    specificNightRegex: RegExp
+    nightRegex: RegExp
+    followedUnit: RegExp
+    numberCombinedWithUnit: RegExp
+    unitRegex: RegExp
+    pastRegex: RegExp
+    futureRegex: RegExp
+    getFromTokenIndex(source: string): {matched: boolean, index: number};
+    getBetweenTokenIndex(source: string): {matched: boolean, index: number};
+    hasConnectorToken(source: string): boolean;
+}
+
 export class BaseDateExtractor implements IExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE;
 
@@ -551,6 +571,166 @@ export class BaseDateTimeExtractor implements IExtractor {
             if (matches && matches.length > 0) {
                 tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, tokens, this.config.dateTimeUtilityConfiguration);
             }
+        });
+        return tokens;
+    }
+}
+
+export class BaseDateTimePeriodExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
+
+    private readonly config: IDateTimePeriodExtractorConfiguration;
+
+    constructor(config: IDateTimePeriodExtractorConfiguration) {
+        this.config = config;
+    }
+    
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.matchSimpleCases(source))
+            .concat(this.mergeTwoTimePoints(source))
+            .concat(this.matchNumberWithUnit(source))
+            .concat(this.matchNight(source));
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private matchSimpleCases(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        this.config.simpleCasesRegexes.forEach(regexp => {
+            RegExpUtility.getMatches(regexp, source).forEach(match => {
+                let followedStr = source.substr(match.index + match.length);
+                if (isNullOrWhitespace(followedStr)) {
+                    let beforeStr = source.substr(0, match.index);
+                    let ers = this.config.singleDateExtractor.extract(beforeStr);
+                    if (ers && ers.length > 0) {
+                        let er = ers[0];
+                        let begin = er.start;
+                        let end = er.start + er.length;
+                        let middleStr = beforeStr.substr(begin + er.length).trim().toLowerCase();
+                        if (isNullOrWhitespace(middleStr) || RegExpUtility.getMatches(this.config.prepositionRegex, middleStr).length > 0) {
+                            tokens.push(new Token(begin, match.index + match.length));
+                        }
+                    }
+                } else {
+                    let ers = this.config.singleDateExtractor.extract(followedStr);
+                    if (ers && ers.length> 0) {
+                        let er = ers[0];
+                        let begin = er.start;
+                        let end = er.start + er.length;
+                        let middleStr = followedStr.substr(0, begin).trim().toLowerCase();
+                        if (isNullOrWhitespace(middleStr) || RegExpUtility.getMatches(this.config.prepositionRegex, middleStr).length > 0) {
+                            tokens.push(new Token(match.index, match.index + match.length + end));
+                        }
+                    }
+                }
+            });
+        });
+        return tokens;
+    }
+
+    private mergeTwoTimePoints(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let ersDateTime = this.config.singleDateTimeExtractor.extract(source);
+        let ersTime = this.config.singleTimeExtractor.extract(source);
+        let innerMarks: ExtractResult[] = [];
+        let j = 0;
+        ersDateTime.forEach((erDateTime, index) => {
+            innerMarks.push(erDateTime);
+            while(j < ersTime.length && ersTime[j].start + ersTime[j].length < erDateTime.start) {
+                innerMarks.push(ersTime[j++]);
+            }
+            while (j < ersTime.length && ExtractResult.isOverlap(ersTime[j], erDateTime)) {
+                j++;
+            }
+        });
+        while (j < ersTime.length) {
+            innerMarks.push(ersTime[j++]);
+        }
+        innerMarks = innerMarks.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
+        let idx = 0;
+        while(idx < innerMarks.length - 1) {
+            let currentMark = innerMarks[idx];
+            let nextMark = innerMarks[idx + 1];
+            if (currentMark.type === Constants.SYS_DATETIME_TIME && nextMark.type === Constants.SYS_DATETIME_TIME) {
+                idx++;
+                continue;
+            }
+            let middleBegin = currentMark.start + currentMark.length;
+            let middleEnd = nextMark.start;
+
+            let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+            let matches = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
+            if (matches && matches.length > 0 && matches[0].index === 0 && matches[0].length === middleStr.length) {
+                let periodBegin = currentMark.start;
+                let periodEnd = nextMark.start + nextMark.length;
+                let beforeStr = source.substr(0, periodBegin).trim().toLowerCase();
+                let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
+                if (fromTokenIndex.matched) {
+                    periodBegin = fromTokenIndex.index;
+                }
+                tokens.push(new Token(periodBegin, periodEnd))
+                idx += 2;
+                continue;
+            }
+            if (this.config.hasConnectorToken(middleStr)) {
+                let periodBegin = currentMark.start;
+                let periodEnd = nextMark.start + nextMark.length;
+                let beforeStr = source.substr(0, periodBegin).trim().toLowerCase();
+                let betweenTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
+                if (betweenTokenIndex.matched) {
+                    periodBegin = betweenTokenIndex.index;                    
+                    tokens.push(new Token(periodBegin, periodEnd))
+                    idx += 2;
+                    continue;
+                }
+            }
+            idx++;
+        };
+        return tokens;
+    }
+
+    private matchNumberWithUnit(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let durations: Array<Token> = new Array<Token>();
+        this.config.cardinalExtractor.extract(source).forEach(er => {
+            let afterStr = source.substr(er.start + er.length);
+            let matches = RegExpUtility.getMatches(this.config.followedUnit, afterStr);
+            if (matches && matches.length > 0 && matches[0].index === 0) {
+                durations.push(new Token(er.start, er.start + er.length + matches[0].length))
+            }
+        });
+        RegExpUtility.getMatches(this.config.numberCombinedWithUnit, source).forEach(match => {
+            durations.push(new Token(match.index, match.index + match.length))
+        });
+        RegExpUtility.getMatches(this.config.unitRegex, source).forEach(match => {
+            durations.push(new Token(match.index, match.index + match.length))
+        });
+        durations.forEach(duration => {
+            let beforeStr = source.substr(0, duration.start).toLowerCase()
+            if (isNullOrWhitespace(beforeStr)) return;
+            let matches = RegExpUtility.getMatches(this.config.pastRegex, beforeStr);
+            if (matches && matches.length > 0 && isNullOrWhitespace(beforeStr.substr(matches[0].index + matches[0].length))) {
+                tokens.push(new Token(matches[0].index, duration.end))
+            }
+            let futureMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
+            if (futureMatch && isNullOrWhitespace(beforeStr.substr(futureMatch.index + futureMatch.length))) {
+                tokens.push(new Token(futureMatch.index, duration.end))
+            }
+        });
+        return tokens;
+    }
+
+    private matchNight(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        RegExpUtility.getMatches(this.config.specificNightRegex, source).forEach(match => {
+            tokens.push(new Token(match.index, match.index + match.length))
+        });
+        this.config.singleDateExtractor.extract(source).forEach(er => {
+            let afterStr = source.substr(er.start + er.length);
+            RegExpUtility.getMatches(this.config.nightRegex, afterStr).forEach(match => {
+                tokens.push(new Token(er.start, er.start + er.length + match.index + match.length))
+            });
         });
         return tokens;
     }

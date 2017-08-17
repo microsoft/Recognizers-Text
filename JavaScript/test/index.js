@@ -5,3 +5,4 @@ require('./timeExtractor-english.test');
 require('./durationExtractor-english.test');
 require('./datePeriodExtractor-english.test');
 require('./dateTimeExtractor-english.test');
+require('./dateTimePeriodExtractor-english.test');
