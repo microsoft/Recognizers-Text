@@ -112,6 +112,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("week of september.15th", 0, 22);
             BasicTest("month of september.15th", 0, 23);
 
+            //next and upcoming
+            BasicTest("upcoming month holidays", 0, 14);
+            BasicTest("next month holidays", 0, 10);
+
         }
     }
 }

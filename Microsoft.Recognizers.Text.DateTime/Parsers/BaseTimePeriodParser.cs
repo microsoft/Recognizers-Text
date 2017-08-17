@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -119,34 +120,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // parse "pm" 
+                var leftDesc = match.Groups["leftDesc"].Value;
+                var rightDesc = match.Groups["rightDesc"].Value;
                 var pmStr = match.Groups["pm"].Value;
                 var amStr = match.Groups["am"].Value;
                 var descStr = match.Groups["desc"].Value;
-                if (!string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("a"))
+                if (string.IsNullOrEmpty(leftDesc))
                 {
-                    if (beginHour >= 12)
+                    bool rightAmValid = !string.IsNullOrEmpty(rightDesc) && 
+                                            this.config.UtilityConfiguration.AmStringList.Contains(rightDesc);
+                    bool rightPmValid = !string.IsNullOrEmpty(rightDesc) && 
+                                    this.config.UtilityConfiguration.PmStringList.Contains(rightDesc);
+                    if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                     {
-                        beginHour -= 12;
+                        
+                        if (beginHour >= 12)
+                        {
+                            beginHour -= 12;
+                        }
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
+                        isValid = true;
                     }
-
-                    if (endHour >= 12)
+                    else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
                     {
-                        endHour -= 12;
+                        if (beginHour < 12)
+                        {
+                            beginHour += 12;
+                        }
+                        if (endHour < 12)
+                        {
+                            endHour += 12;
+                        }
+                        isValid = true;
                     }
-                    isValid = true;
-                }
-                else if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(descStr) && descStr.StartsWith("p"))
-                {
-                    if (beginHour < 12)
-                    {
-                        beginHour += 12;
-                    }
-
-                    if (endHour < 12)
-                    {
-                        endHour += 12;
-                    }
-                    isValid = true;
                 }
 
                 if (isValid)

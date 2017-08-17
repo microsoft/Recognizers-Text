@@ -23,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             BasicTest("6 天");
             BasicTest("7 周");
             BasicTest("5 小时");
+            BasicTest("三年半");
+            BasicTest("三天半");
+            BasicTest("三个月半");
         }
     }
 }

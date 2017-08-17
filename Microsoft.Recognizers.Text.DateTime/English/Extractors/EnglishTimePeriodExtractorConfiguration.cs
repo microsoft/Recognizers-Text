@@ -3,6 +3,8 @@
 using Microsoft.Recognizers.Resources.English;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -70,7 +72,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IExtractor SingleTimeExtractor { get; }
 

@@ -192,6 +192,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave summer", "SU");
             BasicTest("I'll leave summer 2016", "2016-SU");
             BasicTest("I'll leave summer of 2016", "2016-SU");
+
+            //next and upcoming
+            BasicTest("upcoming month holidays", "2016-12");
+            BasicTest("next month holidays", "2016-12");
         }
     }
 }
