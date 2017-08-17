@@ -1,25 +1,26 @@
 var describe = require('ava-spec').describe;
-var EnglishDatePeriodExtractorConfiguration = require('../compiled/dateTime/english/extractorConfiguration').EnglishDatePeriodExtractorConfiguration;
-var BaseDatePeriodExtractor = require('../compiled/dateTime/extractors').BaseDatePeriodExtractor;
-var Constants = require('../compiled/dateTime/constants').Constants;
+var configuration = require("../compiled/dateTime/english/extractorConfiguration").EnglishDatePeriodExtractorConfiguration;
+var baseExtractor = require("../compiled/dateTime/extractors").BaseDatePeriodExtractor;
+var constants = require('../compiled/dateTime/constants').Constants;
 
-var extractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
 var shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Sept", "Oct", "Nov", "Dec"];
 var fullMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 describe('Date Period Extractor', it => {
+    let extractor = new baseExtractor(new configuration());
+
     shortMonths.forEach(function (month) {
-        BasicTest(it, extractor, `I'll be out in ${month}`, 15, month.Length);
-        BasicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.Length);
-        BasicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.Length);
-        BasicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.Length);
+        BasicTest(it, extractor, `I'll be out in ${month}`, 15, month.length);
+        BasicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.length);
+        BasicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.length);
+        BasicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.length);
     });
 
     fullMonths.forEach(function (month) {
-        BasicTest(it, extractor, `I'll be out in ${month}`, 15, month.Length);
-        BasicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.Length);
-        BasicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.Length);
-        BasicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.Length);
+        BasicTest(it, extractor, `I'll be out in ${month}`, 15, month.length);
+        BasicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.length);
+        BasicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.length);
+        BasicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.length);
     });
 
     // test basic cases
@@ -101,6 +102,6 @@ function BasicTest(it, extractor, text, start, length) {
         t.is(1, results.length);
         t.is(start, results[0].start);
         t.is(length, results[0].length);
-        t.is(Constants.SYS_DATETIME_DATEPERIOD, results[0].type);
+        t.is(constants.SYS_DATETIME_DATEPERIOD, results[0].type);
     });
 }
