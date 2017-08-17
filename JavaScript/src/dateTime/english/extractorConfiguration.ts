@@ -1,6 +1,7 @@
 import {
     IDateExtractorConfiguration,
     ITimeExtractorConfiguration,
+    ITimePeriodExtractorConfiguration,
     IDurationExtractorConfiguration,
     IDatePeriodExtractorConfiguration,
     IDateTimeExtractorConfiguration,
@@ -15,7 +16,7 @@ import { EnglishNumberParserConfiguration } from "../../number/english/parserCon
 import { BaseNumberParser } from "../../number/parsers"
 import { IExtractor } from "../../number/extractors"
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { Match, RegExpUtility, isNullOrWhitespace} from "../../utilities";
+import { Match, RegExpUtility, isNullOrWhitespace } from "../../utilities";
 
 export class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -133,7 +134,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly monthOfRegex: RegExp
     readonly datePointExtractor: BaseDateExtractor
     readonly cardinalExtractor: EnglishCardinalExtractor
-    
+
     constructor() {
         this.simpleCasesRegexes = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex, "gis"),
@@ -163,7 +164,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     }
 
     getFromTokenIndex(source: string) {
-        let result = {matched: false, index: -1};
+        let result = { matched: false, index: -1 };
         if (source.endsWith("from")) {
             result.index = source.lastIndexOf("from");
             result.matched = true;
@@ -172,7 +173,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     };
 
     getBetweenTokenIndex(source: string) {
-        let result = {matched: false, index: -1};
+        let result = { matched: false, index: -1 };
         if (source.endsWith("between")) {
             result.index = source.lastIndexOf("between");
             result.matched = true;
@@ -224,9 +225,9 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
 
     isConnectorToken(source: string): boolean {
         return (isNullOrWhitespace(source)
-            || source === "," 
-            || source === "t" 
-            || source === "for" 
+            || source === ","
+            || source === "t"
+            || source === "for"
             || source === "around"
             || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
     }
@@ -254,8 +255,8 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
         this.simpleCasesRegexes = [
-             RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
-             RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
         ]
         this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
@@ -269,7 +270,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     }
 
     getFromTokenIndex(source: string) {
-        let result = {matched: false, index: -1};
+        let result = { matched: false, index: -1 };
         if (source.endsWith("from")) {
             result.index = source.lastIndexOf("from");
             result.matched = true;
@@ -278,7 +279,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     };
 
     getBetweenTokenIndex(source: string) {
-        let result = {matched: false, index: -1};
+        let result = { matched: false, index: -1 };
         if (source.endsWith("between")) {
             result.index = source.lastIndexOf("between");
             result.matched = true;
@@ -289,4 +290,43 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     hasConnectorToken(source: string) {
         return source === "and";
     };
+}
+
+export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
+    readonly simpleCasesRegex: RegExp[];
+    readonly tillRegex: RegExp;
+    readonly nightRegex: RegExp;
+    readonly singleTimeExtractor: IExtractor;
+
+    constructor() {
+        this.simpleCasesRegex = [
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis")
+        ];
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex, "gis");
+        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+    }
+
+    public getFromTokenIndex(text: string): { matched: boolean, index: number } {
+        let index = -1;
+        if (text.endsWith("from")) {
+            index = text.lastIndexOf("from");
+            return { matched: true, index: index };
+        }
+        return { matched: false, index: index };
+    }
+
+    public getBetweenTokenIndex(text: string): { matched: boolean, index: number } {
+        let index = -1;
+        if (text.endsWith("between")) {
+            index = text.lastIndexOf("between");
+            return { matched: true, index: index };
+        }
+        return { matched: false, index: index };
+    }
+
+    public hasConnectorToken(text: string): boolean {
+        return text == "and";
+    }
 }

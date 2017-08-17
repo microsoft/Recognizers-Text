@@ -40,8 +40,8 @@ export interface IDatePeriodExtractorConfiguration {
     monthOfRegex: RegExp
     datePointExtractor: BaseDateExtractor
     cardinalExtractor: BaseNumberExtractor
-    getFromTokenIndex(source: string): {matched: boolean, index: number};
-    getBetweenTokenIndex(source: string): {matched: boolean, index: number};
+    getFromTokenIndex(source: string): { matched: boolean, index: number };
+    getBetweenTokenIndex(source: string): { matched: boolean, index: number };
     hasConnectorToken(source: string): boolean;
 }
 
@@ -83,8 +83,8 @@ export interface IDateTimePeriodExtractorConfiguration {
     unitRegex: RegExp
     pastRegex: RegExp
     futureRegex: RegExp
-    getFromTokenIndex(source: string): {matched: boolean, index: number};
-    getBetweenTokenIndex(source: string): {matched: boolean, index: number};
+    getFromTokenIndex(source: string): { matched: boolean, index: number };
+    getBetweenTokenIndex(source: string): { matched: boolean, index: number };
     hasConnectorToken(source: string): boolean;
 }
 
@@ -268,7 +268,7 @@ export class BaseDurationExtractor implements IExtractor {
         });
     }
 
-    private implicitDuration(source: string) : Array<Token> {
+    private implicitDuration(source: string): Array<Token> {
         return this.getTokensFromRegex(this.config.allRegex, source)
             .concat(this.getTokensFromRegex(this.config.halfRegex, source));
     }
@@ -315,7 +315,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
             return tokens;
         }
         let idx = 0;
-        while(idx < er.length - 1) {
+        while (idx < er.length - 1) {
             let middleBegin = er[idx].start + er[idx].length;
             let middleEnd = er[idx + 1].start;
             if (middleBegin >= middleEnd) {
@@ -324,7 +324,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
             }
             let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
             let match = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
-            if (match && match.length > 0 && match[0].index ===0 && match[0].length === middleStr.length) {
+            if (match && match.length > 0 && match[0].index === 0 && match[0].length === middleStr.length) {
                 let periodBegin = er[idx].start;
                 let periodEnd = er[idx + 1].start + er[idx + 1].length;
 
@@ -343,8 +343,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
 
                 let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
                 let betweenTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
-                if (betweenTokenIndex.matched)
-                {
+                if (betweenTokenIndex.matched) {
                     periodBegin = betweenTokenIndex.index;
                 }
                 tokens.push(new Token(periodBegin, periodEnd));
@@ -409,7 +408,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         if (match && source.trim().endsWith(match.value.trim())) {
             let startIndex = source.lastIndexOf(match.value);
             tokens.push(new Token(startIndex, er.start + er.length));
-        }    
+        }
         return tokens;
     }
 }
@@ -422,7 +421,7 @@ export class BaseDateTimeExtractor implements IExtractor {
     constructor(config: IDateTimeExtractorConfiguration) {
         this.config = config;
     }
-    
+
     extract(source: string): Array<ExtractResult> {
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.mergeDateAndTime(source))
@@ -456,7 +455,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         });
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
-        while(i < ers.length - 1) {
+        while (i < ers.length - 1) {
             let j = i + 1;
             while (j < ers.length && ExtractResult.isOverlap(ers[i], ers[j])) {
                 j++;
@@ -464,20 +463,20 @@ export class BaseDateTimeExtractor implements IExtractor {
             if (j >= ers.length) break;
             if ((ers[i].type === Constants.SYS_DATETIME_DATE && ers[j].type === Constants.SYS_DATETIME_TIME) ||
                 (ers[i].type === Constants.SYS_DATETIME_TIME && ers[j].type === Constants.SYS_DATETIME_DATE)) {
-                    let middleBegin = ers[i].start + ers[i].length;
-                    let middleEnd = ers[j].start;
-                    if (middleBegin > middleEnd) {
-                        i = j + 1;
-                        continue;
-                    }
-                    let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
-                    if (this.config.isConnectorToken(middleStr)) {
-                        let begin = ers[i].start;
-                        let end = ers[j].start + ers[j].length;
-                        tokens.push(new Token(begin, end));
-                    }
+                let middleBegin = ers[i].start + ers[i].length;
+                let middleEnd = ers[j].start;
+                if (middleBegin > middleEnd) {
                     i = j + 1;
                     continue;
+                }
+                let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+                if (this.config.isConnectorToken(middleStr)) {
+                    let begin = ers[i].start;
+                    let end = ers[j].start + ers[j].length;
+                    tokens.push(new Token(begin, end));
+                }
+                i = j + 1;
+                continue;
             }
             i = j;
         }
@@ -505,7 +504,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         let tokens: Array<Token> = new Array<Token>();
         let ers = this.config.timePointExtractor.extract(source);
         ers.forEach(er => {
-            let beforeStr  = source.substr(0, er.start);
+            let beforeStr = source.substr(0, er.start);
             let innerMatches = RegExpUtility.getMatches(this.config.nightRegex, er.text);
             if (innerMatches && innerMatches.length > 0 && innerMatches[0].index === 0) {
                 beforeStr = source.substr(0, er.start + innerMatches[0].length);
@@ -529,7 +528,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         let tokens: Array<Token> = new Array<Token>();
         let ers = this.config.timePointExtractor.extract(source);
         ers.forEach(er => {
-            let afterStr  = source.substr(er.start + er.length);
+            let afterStr = source.substr(er.start + er.length);
             if (isNullOrWhitespace(afterStr)) return;
             let matches = RegExpUtility.getMatches(this.config.timeOfTodayAfterRegex, afterStr);
             if (matches && matches.length > 0) {
@@ -584,7 +583,7 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
     constructor(config: IDateTimePeriodExtractorConfiguration) {
         this.config = config;
     }
-    
+
     extract(source: string): Array<ExtractResult> {
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.matchSimpleCases(source))
@@ -614,7 +613,7 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
                     }
                 } else {
                     let ers = this.config.singleDateExtractor.extract(followedStr);
-                    if (ers && ers.length> 0) {
+                    if (ers && ers.length > 0) {
                         let er = ers[0];
                         let begin = er.start;
                         let end = er.start + er.length;
@@ -637,7 +636,7 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
         let j = 0;
         ersDateTime.forEach((erDateTime, index) => {
             innerMarks.push(erDateTime);
-            while(j < ersTime.length && ersTime[j].start + ersTime[j].length < erDateTime.start) {
+            while (j < ersTime.length && ersTime[j].start + ersTime[j].length < erDateTime.start) {
                 innerMarks.push(ersTime[j++]);
             }
             while (j < ersTime.length && ExtractResult.isOverlap(ersTime[j], erDateTime)) {
@@ -649,7 +648,7 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
         }
         innerMarks = innerMarks.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let idx = 0;
-        while(idx < innerMarks.length - 1) {
+        while (idx < innerMarks.length - 1) {
             let currentMark = innerMarks[idx];
             let nextMark = innerMarks[idx + 1];
             if (currentMark.type === Constants.SYS_DATETIME_TIME && nextMark.type === Constants.SYS_DATETIME_TIME) {
@@ -679,7 +678,7 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
                 let beforeStr = source.substr(0, periodBegin).trim().toLowerCase();
                 let betweenTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (betweenTokenIndex.matched) {
-                    periodBegin = betweenTokenIndex.index;                    
+                    periodBegin = betweenTokenIndex.index;
                     tokens.push(new Token(periodBegin, periodEnd))
                     idx += 2;
                     continue;
@@ -733,5 +732,111 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
             });
         });
         return tokens;
+    }
+}
+
+export interface ITimePeriodExtractorConfiguration {
+    simpleCasesRegex: RegExp[];
+    tillRegex: RegExp;
+    nightRegex: RegExp;
+    singleTimeExtractor: IExtractor;
+    getFromTokenIndex(text: string): { matched: boolean, index: number };
+    hasConnectorToken(text: string): boolean;
+    getBetweenTokenIndex(text: string): { matched: boolean, index: number };
+}
+
+export class BaseTimePeriodExtractor implements IExtractor {
+    readonly extractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+    readonly config: ITimePeriodExtractorConfiguration;
+
+    constructor(config: ITimePeriodExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.matchSimpleCases(source))
+            .concat(this.mergeTwoTimePoints(source))
+            .concat(this.matchNight(source));
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private matchSimpleCases(text: string): Array<Token> {
+        let ret = [];
+        this.config.simpleCasesRegex.forEach(regex => {
+            let matches = RegExpUtility.getMatches(regex, text);
+            matches.forEach(match => {
+                // // // // is there "pm" or "am" ?
+                // // // let pmStr = match.Groups["pm"].Value;
+                // // // let amStr = match.Groups["am"].Value;
+                // // // let descStr = match.Groups["desc"].Value;
+                // // // // check "pm", "am"
+                // // // if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
+                // // // {
+                // // //     ret.Add(new Token(match.Index, match.Index + match.Length));
+                // // // }
+            });
+        });
+        return ret;
+    }
+
+    private mergeTwoTimePoints(text: string): Array<Token> {
+        let ret = [];
+        let ers = this.config.singleTimeExtractor.extract(text);
+
+        // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
+        let idx = 0;
+        while (idx < ers.length - 1) {
+            let middleBegin = ers[idx].start + ers[idx].length || 0;
+            let middleEnd = ers[idx + 1].start || 0;
+
+            let middleStr = text.substring(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+            let matches = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
+            // handle "{TimePoint} to {TimePoint}"
+            if (matches.length > 0 && matches[0].index == 0 && matches[0].length == middleStr.length) {
+                let periodBegin = ers[idx].start || 0;
+                let periodEnd = (ers[idx + 1].start || 0) + (ers[idx + 1].length || 0);
+
+                // handle "from"
+                let beforeStr = text.substring(0, periodBegin).trim().toLowerCase();
+                let fromIndex = this.config.getFromTokenIndex(beforeStr);
+                if (fromIndex.matched) {
+                    periodBegin = fromIndex.index;
+                }
+
+                ret.push(new Token(periodBegin, periodEnd));
+                idx += 2;
+                continue;
+            }
+            // handle "between {TimePoint} and {TimePoint}"
+            if (this.config.hasConnectorToken(middleStr)) {
+                let periodBegin = ers[idx].start || 0;
+                let periodEnd = (ers[idx + 1].start || 0) + (ers[idx + 1].length || 0);
+
+                // handle "between"
+                let beforeStr = text.substring(0, periodBegin).trim().toLowerCase();
+                let betweenIndex = this.config.getBetweenTokenIndex(beforeStr, );
+                if (betweenIndex.matched) {
+                    periodBegin = betweenIndex.index;
+                    ret.push(new Token(periodBegin, periodEnd));
+                    idx += 2;
+                    continue;
+                }
+            }
+
+            idx++;
+        }
+
+        return ret;
+    }
+
+    private matchNight(source: string): Array<Token> {
+        let ret = [];
+        let matches = RegExpUtility.getMatches(this.config.nightRegex, source);
+        matches.forEach(match => {
+            ret.push(new Token(match.index, match.index + match.length));
+        });
+        return ret;
     }
 }
