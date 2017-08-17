@@ -100,6 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             //TODO: Replace with a regex
+            //TODO: Add 'upcoming' key word
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
             {
@@ -121,6 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             //TODO: Replace with a regex
+            //TODO: Add 'upcoming' key wor
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
             {

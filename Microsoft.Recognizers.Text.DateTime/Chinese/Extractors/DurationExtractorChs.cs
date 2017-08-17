@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly Regex YearRegex = new Regex(@"((19\d{2}|20\d{2})|两千)年", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        private static readonly Regex HalfSuffixRegex = new Regex(@"半", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // extract by number with unit
         public override List<ExtractResult> Extract(string source)
         {
@@ -25,11 +27,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var res = new List<ExtractResult>();
             foreach (var ret in retList)
             {
+                //filter
                 var match = YearRegex.Match(ret.Text);
                 if (match.Success)
                 {
                     continue;
                 }
+
+                // match suffix "半"
+                var suffix = source.Substring((int)(ret.Start + ret.Length));
+                match = HalfSuffixRegex.Match(suffix);
+                if (match.Success && match.Index == 0)
+                {
+                    var matchString = suffix.Substring(match.Index, match.Length);
+                    ret.Text = ret.Text + matchString;
+                    ret.Length = ret.Length + match.Length;
+                }
+
                 res.Add(ret);
             }
             return res;
