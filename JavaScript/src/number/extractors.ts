@@ -16,6 +16,10 @@ export class ExtractResult {
     text: string;
     type: string;
     data?: any;
+
+    static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
+        return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
+    }
 }
 
 export interface RegExpValue {

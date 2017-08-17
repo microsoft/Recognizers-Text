@@ -51,6 +51,23 @@ export interface ITimeExtractorConfiguration {
     ishRegex: RegExp
 }
 
+export interface IDateTimeExtractorConfiguration {
+    datePointExtractor: BaseDateExtractor
+    timePointExtractor: BaseTimeExtractor
+    durationExtractor: BaseDurationExtractor
+    suffixRegex: RegExp
+    nowRegex: RegExp
+    timeOfTodayAfterRegex: RegExp
+    simpleTimeOfTodayAfterRegex: RegExp
+    nightRegex: RegExp
+    timeOfTodayBeforeRegex: RegExp
+    simpleTimeOfTodayBeforeRegex: RegExp
+    theEndOfRegex: RegExp
+    unitRegex: RegExp
+    dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration
+    isConnectorToken(source: string): boolean
+}
+
 export class BaseDateExtractor implements IExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE;
 
@@ -373,6 +390,168 @@ export class BaseDatePeriodExtractor implements IExtractor {
             let startIndex = source.lastIndexOf(match.value);
             tokens.push(new Token(startIndex, er.start + er.length));
         }    
+        return tokens;
+    }
+}
+
+export class BaseDateTimeExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATETIME;
+
+    private readonly config: IDateTimeExtractorConfiguration;
+
+    constructor(config: IDateTimeExtractorConfiguration) {
+        this.config = config;
+    }
+    
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.mergeDateAndTime(source))
+            .concat(this.basicRegexMatch(source))
+            .concat(this.timeOfTodayBefore(source))
+            .concat(this.timeOfTodayAfter(source))
+            .concat(this.specialTimeOfDate(source))
+            .concat(this.durationWithBeforeAndAfter(source));
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private mergeDateAndTime(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let ersTmp = this.config.datePointExtractor.extract(source);
+        if (ersTmp.length < 1) return tokens;
+        ersTmp = ersTmp.concat(this.config.timePointExtractor.extract(source));
+        if (ersTmp.length < 2) return tokens;
+        let ers: Array<ExtractResult> = [];
+        ersTmp.forEach(erTmp => {
+            let iOverlap = ers.findIndex(er => ExtractResult.isOverlap(er, erTmp));
+            if (iOverlap !== -1 && ers[iOverlap]) {
+                if (ers[iOverlap].length < erTmp.length) {
+                    ers[iOverlap] = erTmp;
+                    return;
+                } else if (ers[iOverlap].length === erTmp.length) {
+                    return;
+                }
+            }
+            ers.push(erTmp);
+        });
+        ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
+        let i = 0;
+        while(i < ers.length - 1) {
+            let j = i + 1;
+            while (j < ers.length && ExtractResult.isOverlap(ers[i], ers[j])) {
+                j++;
+            }
+            if (j >= ers.length) break;
+            if ((ers[i].type === Constants.SYS_DATETIME_DATE && ers[j].type === Constants.SYS_DATETIME_TIME) ||
+                (ers[i].type === Constants.SYS_DATETIME_TIME && ers[j].type === Constants.SYS_DATETIME_DATE)) {
+                    let middleBegin = ers[i].start + ers[i].length;
+                    let middleEnd = ers[j].start;
+                    if (middleBegin > middleEnd) {
+                        i = j + 1;
+                        continue;
+                    }
+                    let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+                    if (this.config.isConnectorToken(middleStr)) {
+                        let begin = ers[i].start;
+                        let end = ers[j].start + ers[j].length;
+                        tokens.push(new Token(begin, end));
+                    }
+                    i = j + 1;
+                    continue;
+            }
+            i = j;
+        }
+        tokens.forEach((token, index) => {
+            let afterStr = source.substr(token.end);
+            let match = RegExpUtility.getMatches(this.config.suffixRegex, afterStr);
+            if (match && match.length > 0) {
+                // TODO: verify element
+                token.end += match[0].length;
+            }
+        });
+        return tokens;
+    }
+
+    private basicRegexMatch(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        RegExpUtility.getMatches(this.config.nowRegex, source)
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length))
+            });
+        return tokens;
+    }
+
+    private timeOfTodayBefore(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let ers = this.config.timePointExtractor.extract(source);
+        ers.forEach(er => {
+            let beforeStr  = source.substr(0, er.start);
+            let innerMatches = RegExpUtility.getMatches(this.config.nightRegex, er.text);
+            if (innerMatches && innerMatches.length > 0 && innerMatches[0].index === 0) {
+                beforeStr = source.substr(0, er.start + innerMatches[0].length);
+            }
+            if (isNullOrWhitespace(beforeStr)) return;
+            let matches = RegExpUtility.getMatches(this.config.timeOfTodayBeforeRegex, beforeStr);
+            if (matches && matches.length > 0) {
+                let begin = matches[0].index;
+                let end = er.start + er.length;
+                tokens.push(new Token(begin, end));
+            }
+        });
+        RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, source)
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length))
+            });
+        return tokens;
+    }
+
+    private timeOfTodayAfter(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let ers = this.config.timePointExtractor.extract(source);
+        ers.forEach(er => {
+            let afterStr  = source.substr(er.start + er.length);
+            if (isNullOrWhitespace(afterStr)) return;
+            let matches = RegExpUtility.getMatches(this.config.timeOfTodayAfterRegex, afterStr);
+            if (matches && matches.length > 0) {
+                let begin = er.start;
+                let end = er.start + er.length + matches[0].length
+                tokens.push(new Token(begin, end));
+            }
+        });
+        RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, source)
+            .forEach(match => {
+                tokens.push(new Token(match.index, match.index + match.length))
+            });
+        return tokens;
+    }
+
+    private specialTimeOfDate(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        let ers = this.config.datePointExtractor.extract(source);
+        ers.forEach(er => {
+            let beforeStr = source.substr(0, er.start);
+            let beforeMatches = RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr);
+            if (beforeMatches && beforeMatches.length > 0) {
+                tokens.push(new Token(beforeMatches[0].index, er.start + er.length))
+            } else {
+                let afterStr = source.substr(er.start + er.length);
+                let afterMatches = RegExpUtility.getMatches(this.config.theEndOfRegex, afterStr);
+                if (afterMatches && afterMatches.length > 0) {
+                    tokens.push(new Token(er.start, er.start + er.length + afterMatches[0].index + afterMatches[0].length))
+                }
+            }
+        });
+        return tokens;
+    }
+
+    private durationWithBeforeAndAfter(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        this.config.durationExtractor.extract(source).forEach(er => {
+            let matches = RegExpUtility.getMatches(this.config.unitRegex, er.text);
+            if (matches && matches.length > 0) {
+                tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, tokens, this.config.dateTimeUtilityConfiguration);
+            }
+        });
         return tokens;
     }
 }

@@ -3,15 +3,17 @@ import {
     ITimeExtractorConfiguration,
     IDurationExtractorConfiguration,
     IDatePeriodExtractorConfiguration,
+    IDateTimeExtractorConfiguration,
     BaseDurationExtractor,
-    BaseDateExtractor
+    BaseDateExtractor,
+    BaseTimeExtractor
 } from "../extractors";
 import { EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishCardinalExtractor } from "../../number/english/extractors"
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration"
 import { BaseNumberParser } from "../../number/parsers"
 import { IExtractor } from "../../number/extractors"
 import { EnglishDateTime } from "../../resources/englishDateTime";
-import { Match, RegExpUtility } from "../../utilities";
+import { Match, RegExpUtility, isNullOrWhitespace} from "../../utilities";
 
 export class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -179,4 +181,51 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     hasConnectorToken(source: string) {
         return source === "and";
     };
+}
+
+export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
+    readonly datePointExtractor: BaseDateExtractor
+    readonly timePointExtractor: BaseTimeExtractor
+    readonly durationExtractor: BaseDurationExtractor
+    readonly suffixRegex: RegExp
+    readonly nowRegex: RegExp
+    readonly timeOfTodayAfterRegex: RegExp
+    readonly simpleTimeOfTodayAfterRegex: RegExp
+    readonly nightRegex: RegExp
+    readonly timeOfTodayBeforeRegex: RegExp
+    readonly simpleTimeOfTodayBeforeRegex: RegExp
+    readonly theEndOfRegex: RegExp
+    readonly unitRegex: RegExp
+    readonly prepositionRegex: RegExp
+    readonly dateTimeUtilityConfiguration
+
+    constructor() {
+        this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.timePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+        this.suffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixRegex, "gis");
+        this.nowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex, "gis");
+        this.timeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayAfterRegex, "gis");
+        this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex, "gis");
+        this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex, "gis");
+        this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex, "gis");
+        this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, "gis");
+        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
+        this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
+        this.dateTimeUtilityConfiguration = {
+            agoStringList: ["ago"],
+            laterStringList: ["later", "from now"],
+            inStringList: ["in"]
+        };
+    }
+
+    isConnectorToken(source: string): boolean {
+        return (isNullOrWhitespace(source)
+            || source === "," 
+            || source === "t" 
+            || source === "for" 
+            || source === "around"
+            || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
+    }
 }
