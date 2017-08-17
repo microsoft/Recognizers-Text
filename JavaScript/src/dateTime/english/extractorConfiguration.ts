@@ -4,9 +4,11 @@ import {
     IDurationExtractorConfiguration,
     IDatePeriodExtractorConfiguration,
     IDateTimeExtractorConfiguration,
+    IDateTimePeriodExtractorConfiguration,
     BaseDurationExtractor,
     BaseDateExtractor,
-    BaseTimeExtractor
+    BaseTimeExtractor,
+    BaseDateTimeExtractor
 } from "../extractors";
 import { EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishCardinalExtractor } from "../../number/english/extractors"
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration"
@@ -228,4 +230,63 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
             || source === "around"
             || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
     }
+}
+
+export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
+    readonly cardinalExtractor: EnglishCardinalExtractor
+    readonly singleDateExtractor: BaseDateExtractor
+    readonly singleTimeExtractor: BaseTimeExtractor
+    readonly singleDateTimeExtractor: BaseDateTimeExtractor
+    readonly simpleCasesRegexes: RegExp[]
+    readonly prepositionRegex: RegExp
+    readonly tillRegex: RegExp
+    readonly specificNightRegex: RegExp
+    readonly nightRegex: RegExp
+    readonly followedUnit: RegExp
+    readonly numberCombinedWithUnit: RegExp
+    readonly unitRegex: RegExp
+    readonly pastRegex: RegExp
+    readonly futureRegex: RegExp
+
+    constructor() {
+        this.cardinalExtractor = new EnglishCardinalExtractor();
+        this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.simpleCasesRegexes = [
+             RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+             RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
+        ]
+        this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+        this.specificNightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificNightRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodNightRegex, "gis");
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
+        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
+        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
+    }
+
+    getFromTokenIndex(source: string) {
+        let result = {matched: false, index: -1};
+        if (source.endsWith("from")) {
+            result.index = source.lastIndexOf("from");
+            result.matched = true;
+        }
+        return result;
+    };
+
+    getBetweenTokenIndex(source: string) {
+        let result = {matched: false, index: -1};
+        if (source.endsWith("between")) {
+            result.index = source.lastIndexOf("between");
+            result.matched = true;
+        }
+        return result;
+    };
+
+    hasConnectorToken(source: string) {
+        return source === "and";
+    };
 }
