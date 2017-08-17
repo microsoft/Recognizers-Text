@@ -32,6 +32,10 @@ export class FormatUtility {
     }
 }
 
+export function isNullOrWhitespace(input: string): boolean {
+    return !input || !input.trim();
+}
+
 export interface Match {
     index: number;
     length: number;
@@ -58,9 +62,9 @@ export class RegExpUtility {
         return matches;
     }
 
-    static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
+    private static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
 
-    static sanitizeGroups(source: string): string {
+    private static sanitizeGroups(source: string): string {
         let index = 0;
         let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
             return match.replace(token, token + index++);
@@ -68,8 +72,8 @@ export class RegExpUtility {
         return replacer;
     }
 
-    static getSafeRegExp(source: string, flags: string) {
-        let sanitizedSource = RegExpUtility.sanitizeGroups(source);
+    static getSafeRegExp(source: string, flags: string): RegExp {
+        let sanitizedSource = this.sanitizeGroups(source);
         return XRegExp(sanitizedSource, flags);
     }
 }

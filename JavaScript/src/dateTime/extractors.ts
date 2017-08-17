@@ -2,16 +2,16 @@ import { Constants } from "./constants";
 import { Token, AgoLaterUtil, IDateTimeUtilityConfiguration } from "./utilities";
 import { IExtractor, ExtractResult, BaseNumberExtractor } from "../number/extractors"
 import { BaseNumberParser } from "../number/parsers"
-import { Match, RegExpUtility } from "../utilities";
+import { Match, RegExpUtility, isNullOrWhitespace } from "../utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import * as _ from "lodash";
 
 export interface IDateExtractorConfiguration {
     dateRegexList: RegExp[],
     implicitDateList: RegExp[],
-    MonthEnd: RegExp,
-    OfMonth: RegExp,
-    NonDateUnitRegex: RegExp,
+    monthEnd: RegExp,
+    ofMonth: RegExp,
+    nonDateUnitRegex: RegExp,
     ordinalExtractor: BaseNumberExtractor,
     integerExtractor: BaseNumberExtractor,
     numberParser: BaseNumberParser
@@ -20,12 +20,12 @@ export interface IDateExtractorConfiguration {
 }
 
 export interface IDurationExtractorConfiguration {
-    AllRegex: RegExp,
-    HalfRegex: RegExp,
-    FollowedUnit: RegExp,
-    NumberCombinedWithUnit: RegExp,
-    AnUnitRegex: RegExp,
-    SuffixAndRegex: RegExp,
+    allRegex: RegExp,
+    halfRegex: RegExp,
+    followedUnit: RegExp,
+    numberCombinedWithUnit: RegExp,
+    anUnitRegex: RegExp,
+    suffixAndRegex: RegExp,
     cardinalExtractor: BaseNumberExtractor
 }
 
@@ -43,6 +43,12 @@ export interface IDatePeriodExtractorConfiguration {
     getFromTokenIndex(source: string): {matched: boolean, index: number};
     getBetweenTokenIndex(source: string): {matched: boolean, index: number};
     hasConnectorToken(source: string): boolean;
+}
+
+export interface ITimeExtractorConfiguration {
+    timeRegexList: RegExp[]
+    atRegex: RegExp
+    ishRegex: RegExp
 }
 
 export class BaseDateExtractor implements IExtractor {
@@ -94,7 +100,7 @@ export class BaseDateExtractor implements IExtractor {
             }
             if (result.start > 0) {
                 let frontString = source.substring(0, result.start | 0);
-                let match = RegExpUtility.getMatches(this.config.MonthEnd, frontString)[0];
+                let match = RegExpUtility.getMatches(this.config.monthEnd, frontString)[0];
                 if (match && match.length) {
                     ret.push(new Token(match.index, match.index + match.length + result.length));
                     return;
@@ -102,7 +108,7 @@ export class BaseDateExtractor implements IExtractor {
             }
             if (result.start + result.length < source.length) {
                 let afterString = source.substring(result.start + result.length);
-                let match = RegExpUtility.getMatches(this.config.OfMonth, afterString)[0];
+                let match = RegExpUtility.getMatches(this.config.ofMonth, afterString)[0];
                 if (match && match.length) {
                     ret.push(new Token(result.start, result.start + result.length + match.length));
                     return;
@@ -116,18 +122,12 @@ export class BaseDateExtractor implements IExtractor {
         let ret = [];
         let durEx = this.config.durationExtractor.extract(source);
         durEx.forEach(er => {
-            let match = RegExpUtility.getMatches(this.config.NonDateUnitRegex, er.text);
+            let match = RegExpUtility.getMatches(this.config.nonDateUnitRegex, er.text);
             if (match.length > 0) return;
             ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.dateTimeUtilityConfiguration);
         });
         return ret;
     }
-}
-
-export interface ITimeExtractorConfiguration {
-    timeRegexList: RegExp[]
-    atRegex: RegExp
-    ishRegex: RegExp
 }
 
 export class BaseTimeExtractor implements IExtractor {
@@ -169,7 +169,7 @@ export class BaseTimeExtractor implements IExtractor {
         let matches = RegExpUtility.getMatches(this.config.atRegex, text);
         matches.forEach(match => {
             if (match.index + match.length < text.length &&
-                text.charAt(match.index + match.length) == '%') {
+                text.charAt(match.index + match.length) === '%') {
                 return;
             }
             ret.push(new Token(match.index, match.index + match.length));
@@ -211,19 +211,19 @@ export class BaseDurationExtractor implements IExtractor {
         return this.config.cardinalExtractor.extract(source)
             .map(o => {
                 let afterString = source.substring(o.start + o.length);
-                let match = RegExpUtility.getMatches(this.config.FollowedUnit, afterString)[0];
+                let match = RegExpUtility.getMatches(this.config.followedUnit, afterString)[0];
                 if (match && match.index === 0) {
                     return new Token(o.start | 0, o.start + o.length + match.length);
                 }
             }).filter(o => o !== undefined)
-            .concat(this.getTokensFromRegex(this.config.NumberCombinedWithUnit, source))
-            .concat(this.getTokensFromRegex(this.config.AnUnitRegex, source));
+            .concat(this.getTokensFromRegex(this.config.numberCombinedWithUnit, source))
+            .concat(this.getTokensFromRegex(this.config.anUnitRegex, source));
     }
 
     private numberWithUnitAndSuffix(source: string, ers: Token[]): Array<Token> {
         return ers.map(o => {
             let afterString = source.substring(o.start + o.length);
-            let match = RegExpUtility.getMatches(this.config.SuffixAndRegex, afterString)[0];
+            let match = RegExpUtility.getMatches(this.config.suffixAndRegex, afterString)[0];
             if (match && match.index === 0) {
                 return new Token(o.start | 0, o.start + o.length + match.length);
             }
@@ -231,8 +231,8 @@ export class BaseDurationExtractor implements IExtractor {
     }
 
     private implicitDuration(source: string) : Array<Token> {
-        return this.getTokensFromRegex(this.config.AllRegex, source)
-            .concat(this.getTokensFromRegex(this.config.HalfRegex, source));
+        return this.getTokensFromRegex(this.config.allRegex, source)
+            .concat(this.getTokensFromRegex(this.config.halfRegex, source));
     }
 
     private getTokensFromRegex(regexp: RegExp, source: string): Array<Token> {
@@ -372,8 +372,4 @@ export class BaseDatePeriodExtractor implements IExtractor {
         }    
         return tokens;
     }
-}
-
-function isNullOrWhitespace(input: string): boolean {
-    return !input || !input.trim();
 }
