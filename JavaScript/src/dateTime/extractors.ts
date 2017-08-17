@@ -52,6 +52,8 @@ export interface ITimeExtractorConfiguration {
 }
 
 export class BaseDateExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATE;
+
     private readonly config: IDateExtractorConfiguration;
 
     constructor(config: IDateExtractorConfiguration) {
@@ -64,7 +66,7 @@ export class BaseDateExtractor implements IExtractor {
             .concat(this.implicitDate(source))
             .concat(this.numberWithMonth(source))
             .concat(this.durationWithBeforeAndAfter(source));
-        let result = Token.mergeAllTokens(tokens, source, Constants.SYS_DATETIME_DATE);
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
@@ -131,10 +133,7 @@ export class BaseDateExtractor implements IExtractor {
 }
 
 export class BaseTimeExtractor implements IExtractor {
-    readonly extractorName = Constants.SYS_DATETIME_TIME; // "Time";
-    readonly hourRegex = RegExpUtility.getSafeRegExp(BaseDateTime.HourRegex, "gis");
-    readonly minuteRegex = RegExpUtility.getSafeRegExp(BaseDateTime.MinuteRegex, "gis");
-    readonly secondRegex = RegExpUtility.getSafeRegExp(BaseDateTime.SecondRegex, "gis");
+    private readonly extractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
     private readonly config: ITimeExtractorConfiguration;
 
@@ -191,6 +190,8 @@ export class BaseTimeExtractor implements IExtractor {
 }
 
 export class BaseDurationExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DURATION;
+
     private readonly config: IDurationExtractorConfiguration;
 
     constructor(config: IDurationExtractorConfiguration) {
@@ -203,7 +204,7 @@ export class BaseDurationExtractor implements IExtractor {
             .concat(baseTokens)
             .concat(this.numberWithUnitAndSuffix(source, baseTokens))
             .concat(this.implicitDuration(source))
-        let result = Token.mergeAllTokens(tokens, source, Constants.SYS_DATETIME_DURATION);
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
@@ -242,6 +243,8 @@ export class BaseDurationExtractor implements IExtractor {
 }
 
 export class BaseDatePeriodExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD;
+
     private readonly config: IDatePeriodExtractorConfiguration;
 
     constructor(config: IDatePeriodExtractorConfiguration) {
@@ -254,7 +257,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
             .concat(this.mergeTwoTimePoints(source))
             .concat(this.matchNumberWithUnit(source))
             .concat(this.singleTimePointWithPatterns(source));
-        let result = Token.mergeAllTokens(tokens, source, Constants.SYS_DATETIME_DATEPERIOD);
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
