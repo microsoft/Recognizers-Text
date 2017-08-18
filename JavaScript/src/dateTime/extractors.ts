@@ -437,23 +437,10 @@ export class BaseDateTimeExtractor implements IExtractor {
 
     private mergeDateAndTime(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ersTmp = this.config.datePointExtractor.extract(source);
-        if (ersTmp.length < 1) return tokens;
-        ersTmp = ersTmp.concat(this.config.timePointExtractor.extract(source));
-        if (ersTmp.length < 2) return tokens;
-        let ers: Array<ExtractResult> = [];
-        ersTmp.forEach(erTmp => {
-            let iOverlap = ers.findIndex(er => ExtractResult.isOverlap(er, erTmp));
-            if (iOverlap !== -1 && ers[iOverlap]) {
-                if (ers[iOverlap].length < erTmp.length) {
-                    ers[iOverlap] = erTmp;
-                    return;
-                } else if (ers[iOverlap].length === erTmp.length) {
-                    return;
-                }
-            }
-            ers.push(erTmp);
-        });
+        let ers = this.config.datePointExtractor.extract(source);
+        if (ers.length < 1) return tokens;
+        ers = ers.concat(this.config.timePointExtractor.extract(source));
+        if (ers.length < 2) return tokens;
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
         while(i < ers.length - 1) {
