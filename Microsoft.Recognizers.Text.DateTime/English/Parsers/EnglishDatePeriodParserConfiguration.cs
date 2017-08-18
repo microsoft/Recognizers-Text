@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WhichWeekRegex { get; }
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
+        public Regex InConnectorRegex { get; }
 
         #endregion
 
@@ -84,12 +85,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex= EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
             MonthOfRegex = EnglishDatePeriodExtractorConfiguration.MonthOfRegex;
+            InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
-            InStringList = config.UtilityConfiguration.InStringList.ToImmutableList();
         }
 
         public int GetSwiftDay(string text)

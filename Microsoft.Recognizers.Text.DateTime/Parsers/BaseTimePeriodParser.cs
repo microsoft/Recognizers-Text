@@ -128,10 +128,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // The "ampm" only occurs in time, don't have to consider it here
                 if (string.IsNullOrEmpty(leftDesc))
                 {
-                    bool rightAmValid = !string.IsNullOrEmpty(rightDesc) && 
-                                            rightDesc.StartsWith(config.UtilityConfiguration.AmPrefix);
+                    bool rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
+                                            config.UtilityConfiguration.AmDescRegex.Match(rightDesc.ToLower()).Success;
                     bool rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
-                                    rightDesc.StartsWith(config.UtilityConfiguration.PmPrefix);
+                                    config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
                     if (!string.IsNullOrEmpty(amStr) || rightAmValid)
                     {
                         

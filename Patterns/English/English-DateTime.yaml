@@ -313,6 +313,18 @@ BeforeRegex: !simpleRegex
   def: \b(before)$
 AfterRegex: !simpleRegex
   def: \b(after|since)$
+AgoRegex: !simpleRegex
+  def: \b(ago)\b
+LaterRegex: !simpleRegex
+  def: \b(later|from now)\b
+InConnectorRegex: !simpleRegex
+  def: \b(in)\b
+AmDescRegex: !simpleRegex
+  def: (am\b|a\.m\.|a m\b|a. m.\b)
+PmDescRegex: !simpleRegex
+  def: (pm\b|p\.m\.|p\b|p m\b|p. m.\b|ampm)
+AmPmDescRegex: !simpleRegex
+  def: (ampm)
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

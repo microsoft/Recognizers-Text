@@ -183,19 +183,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             var descStr = match.Groups["desc"].Value.ToLower();
             if (!string.IsNullOrEmpty(descStr))
             {
-                if (descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPrefix))
+                //ampm is a special case in which at 6ampm = at 6
+                if (config.UtilityConfiguration.AmDescRegex.Match(descStr.ToLower()).Success
+                    || config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
                 {
                     if (hour >= 12)
                     {
                         hour -= 12;
                     }
-                    //ampm is a special case in which at 6ampm = at 6
-                    if (!descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPmPrefix))
+                    if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
                     {
                         hasAm = true;
                     }
                 }
-                else if (descStr.ToLower().StartsWith(config.UtilityConfiguration.PmPrefix))
+                else if (config.UtilityConfiguration.PmDescRegex.Match(descStr.ToLower()).Success)
                 {
                     if (hour < 12)
                     {

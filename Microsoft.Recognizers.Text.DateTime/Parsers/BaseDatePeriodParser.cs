@@ -587,7 +587,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endDate = referenceDate.AddDays((double)pr.Value);
                                 break;
                             case "W":
-                                beginDate = config.InStringList.Contains(beforeStr.ToLower()) ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
+                                beginDate = config.InConnectorRegex.Match(beforeStr.ToLower()).Success ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
                                 endDate = referenceDate.AddDays(7 * (double)pr.Value);
                                 break;
                             case "MON":

@@ -1,44 +1,39 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
 {
     public class EnlighDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
-        public static readonly List<string> AgoStringList = new List<string>
-        {
-            "ago",
-        };
+        public static readonly Regex AgoRegex = new Regex(DateTimeDefinitions.AgoRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly List<string> LaterStringList = new List<string>
-        {
-            "later",
-            "from now"
-        };
+        public static readonly Regex LaterRegex = new Regex(DateTimeDefinitions.LaterRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly List<string> InStringList = new List<string>
-        {
-            "in",
-        };
+        public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //Only prefix is used to determine am or pm
-        //The descRegex already limited the matchString will be am/pm like strings
-        //No worry for mis-matching of at, people, etc.
-        public static readonly string AmPrefix = "a";
-        public static readonly string PmPrefix = "p";
-        public static readonly string AmPmPrefix = "ampm";
+        public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex PmDescRegex = new Regex(DateTimeDefinitions.PmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
+        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        List<string> IDateTimeUtilityConfiguration.LaterStringList => LaterStringList;
+        Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 
-        List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
+        Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
 
-        string IDateTimeUtilityConfiguration.AmPrefix=> AmPrefix;
+        Regex IDateTimeUtilityConfiguration.InConnectorRegex => InConnectorRegex;
 
-        string IDateTimeUtilityConfiguration.PmPrefix => PmPrefix;
+        Regex IDateTimeUtilityConfiguration.AmDescRegex => AmDescRegex;
 
-        string IDateTimeUtilityConfiguration.AmPmPrefix => AmPmPrefix;
+        Regex IDateTimeUtilityConfiguration.PmDescRegex => PmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
     }
 }

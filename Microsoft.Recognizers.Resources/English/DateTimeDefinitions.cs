@@ -142,6 +142,12 @@ namespace Microsoft.Recognizers.Resources.English
 		public const string PMTimeRegex = @"(?<pm>afternoon|evening|night)";
 		public const string BeforeRegex = @"\b(before)$";
 		public const string AfterRegex = @"\b(after|since)$";
+		public const string AgoRegex = @"\b(ago)\b";
+		public const string LaterRegex = @"\b(later|from now)\b";
+		public const string InConnectorRegex = @"\b(in)\b";
+		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a. m.\b)";
+		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p. m.\b|ampm)";
+		public const string AmPmDescRegex = @"(ampm)";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

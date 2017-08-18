@@ -53,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthOfRegex { get; }
 
+        Regex InConnectorRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }
@@ -62,8 +64,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
-
-        IImmutableList<string> InStringList { get; }
 
         int GetSwiftMonth(string text);
 

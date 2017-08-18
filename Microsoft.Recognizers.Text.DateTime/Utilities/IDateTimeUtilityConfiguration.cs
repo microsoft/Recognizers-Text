@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
     public interface IDateTimeUtilityConfiguration
     {
-        List<string> AgoStringList { get; }
+        Regex AgoRegex { get; }
 
-        List<string> LaterStringList { get; }
+        Regex LaterRegex { get; }
 
-        List<string> InStringList { get; }
+        Regex InConnectorRegex { get; }
 
-        string AmPrefix { get; }
+        Regex AmDescRegex { get; }
 
-        string PmPrefix { get; }
+        Regex PmDescRegex { get; }
 
-        string AmPmPrefix { get; }
+        Regex AmPmDescRegex { get; }
     }
 }
