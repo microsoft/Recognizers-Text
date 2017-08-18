@@ -839,3 +839,13 @@ export class BaseTimePeriodExtractor implements IExtractor {
         return ret;
     }
 }
+
+export interface ITimePeriodExtractorConfiguration {
+    simpleCasesRegex: RegExp[];
+    tillRegex: RegExp;
+    nightRegex: RegExp;
+    singleTimeExtractor: IExtractor;
+    getFromTokenIndex(text: string): { matched: boolean, index: number };
+    hasConnectorToken(text: string): boolean;
+    getBetweenTokenIndex(text: string): { matched: boolean, index: number };
+}
