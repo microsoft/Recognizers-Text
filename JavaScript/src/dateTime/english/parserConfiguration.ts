@@ -1,93 +1,149 @@
-import * as Parers from "../parsers";
+import {
+    BaseDateExtractor,
+    BaseTimeExtractor,
+    BaseDateTimeExtractor,
+    BaseDurationExtractor,
+    BaseDatePeriodExtractor,
+    BaseTimePeriodExtractor,
+    BaseDateTimePeriodExtractor
+} from "../extractors";
+import {
+    EnglishTimeExtractorConfiguration,
+    EnglishDateExtractorConfiguration,
+    EnglishDateTimeExtractorConfiguration,
+    EnglishDurationExtractorConfiguration,
+    EnglishDatePeriodExtractorConfiguration,
+    EnglishTimePeriodExtractorConfiguration,
+    EnglishDateTimePeriodExtractorConfiguration
+} from "./extractorConfiguration";
+import {
+    BaseDateParserConfiguration,
+    ITimeParserConfiguration,
+    ICommonDateTimeParserConfiguration
+} from "../parsers";
+import {
+    EnglishCardinalExtractor,
+    EnglishIntegerExtractor,
+    EnglishOrdinalExtractor
+} from "../../number/english/extractors";
+import { BaseNumberParser } from "../../number/parsers";
+import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration";
 import { CultureInfo, Culture } from "../../culture";
 import { EnglishNumeric } from "../../resources/englishNumeric";
+import { EnglishDateTime } from "../../resources/englishDateTime"
+import { BaseDateTime } from "../../resources/baseDateTime"
+import { RegExpUtility } from "../../utilities";
 import * as XRegExp from 'xregexp';
 
-// export class EnglishNumberParserConfiguration implements INumberParserConfiguration {
+export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
+    constructor() {
+        super();
+        //this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+        this.unitMap = EnglishDateTime.UnitMap;
+        this.unitValueMap = EnglishDateTime.UnitValueMap;
+        this.seasonMap = EnglishDateTime.SeasonMap;
+        this.cardinalMap = EnglishDateTime.CardinalMap;
+        this.dayOfWeek = EnglishDateTime.DayOfWeek;
+        this.monthOfYear = EnglishDateTime.MonthOfYear;
+        this.numbers = EnglishDateTime.Numbers;
+        this.doubleNumbers = EnglishDateTime.DoubleNumbers;
+        this.cardinalExtractor = new EnglishCardinalExtractor();
+        this.integerExtractor = new EnglishIntegerExtractor();
+        this.ordinalExtractor = new EnglishOrdinalExtractor();
+        this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        // this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        // this.timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
+        // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
+        // this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
+        // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
+        // this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
+        // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
+        this.dayOfMonth = Object.assign({}, BaseDateTime.DayOfMonthDictionary, EnglishDateTime.DayOfMonth);
+    }
+}
 
-//     readonly cardinalNumberMap: ReadonlyMap<string, number>;
-//     readonly ordinalNumberMap: ReadonlyMap<string, number>;
-//     readonly roundNumberMap: ReadonlyMap<string, number>;
-//     readonly cultureInfo: CultureInfo;
-//     readonly digitalNumberRegex: RegExp;
-//     readonly fractionMarkerToken: string;
-//     readonly halfADozenRegex: RegExp;
-//     readonly halfADozenText: string;
-//     readonly langMarker: string;
-//     readonly nonDecimalSeparatorChar: string;
-//     readonly decimalSeparatorChar: string;
-//     readonly wordSeparatorToken: string;
-//     readonly writtenDecimalSeparatorTexts: ReadonlyArray<string>;
-//     readonly writtenGroupSeparatorTexts: ReadonlyArray<string>;
-//     readonly writtenIntegerSeparatorTexts: ReadonlyArray<string>;
-//     readonly writtenFractionSeparatorTexts: ReadonlyArray<string>;
+export class EnglishTimeParserConfiguration implements ITimeParserConfiguration {
+    readonly timeTokenPrefix: string;
+    readonly atRegex: RegExp
+    readonly timeRegexes: RegExp[];
+    readonly numbers: ReadonlyMap<string, number>;
 
-//     constructor(ci?: CultureInfo) {
-//         if (!ci) {
-//             ci = new CultureInfo(Culture.English);
-//         }
+    constructor(config: ICommonDateTimeParserConfiguration) {
+        this.timeTokenPrefix = EnglishDateTime.TimeTokenPrefix;
+        this.atRegex = EnglishTimeExtractorConfiguration.AtRegex;
+        this.timeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
+        this.numbers = config.numbers;
+    }
 
-//         this.cultureInfo = ci;
+    public adjustByPrefix(prefix: string, adjust: { hour: number, min: number, hasMin: boolean }) {
+        let deltaMin = 0;
+        let trimedPrefix = prefix.trim().toLowerCase();
 
-//         this.langMarker = EnglishNumeric.LangMarker;
-//         this.decimalSeparatorChar = EnglishNumeric.DecimalSeparatorChar;
-//         this.fractionMarkerToken = EnglishNumeric.FractionMarkerToken;
-//         this.nonDecimalSeparatorChar = EnglishNumeric.NonDecimalSeparatorChar;
-//         this.halfADozenText = EnglishNumeric.HalfADozenText;
-//         this.wordSeparatorToken = EnglishNumeric.WordSeparatorToken;
+        if (trimedPrefix.startsWith("half")) {
+            deltaMin = 30;
+        }
+        else if (trimedPrefix.startsWith("a quarter") || trimedPrefix.startsWith("quarter")) {
+            deltaMin = 15;
+        }
+        else if (trimedPrefix.startsWith("three quarter")) {
+            deltaMin = 45;
+        }
+        else {
+            let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.LessThanOneHour, trimedPrefix);
+            let minStr = match[0].groups["deltamin"];
+            if (minStr) {
+                deltaMin = parseInt(minStr);
+            }
+            else {
+                minStr = match[0].groups["deltaminnum"].toLower();
+                deltaMin = this.numbers[minStr];
+            }
+        }
 
-//         this.writtenDecimalSeparatorTexts = EnglishNumeric.WrittenDecimalSeparatorTexts;
-//         this.writtenGroupSeparatorTexts = EnglishNumeric.WrittenGroupSeparatorTexts;
-//         this.writtenIntegerSeparatorTexts = EnglishNumeric.WrittenIntegerSeparatorTexts;
-//         this.writtenFractionSeparatorTexts = EnglishNumeric.WrittenFractionSeparatorTexts;
+        if (trimedPrefix.endsWith("to")) {
+            deltaMin = -deltaMin;
+        }
 
-//         this.cardinalNumberMap = EnglishNumeric.CardinalNumberMap;
-//         this.ordinalNumberMap = EnglishNumeric.OrdinalNumberMap;
-//         this.roundNumberMap = EnglishNumeric.RoundNumberMap;
-//         this.halfADozenRegex = XRegExp(EnglishNumeric.HalfADozenRegex, "gis");
-//         this.digitalNumberRegex = XRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
-//     }
+        adjust.min += deltaMin;
+        if (adjust.min < 0) {
+            adjust.min += 60;
+            adjust.hour -= 1;
+        }
+        adjust.hasMin = true;
+    }
 
-//     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {
-//         let fracWords = new Array<string>();
-//         let tokenList = Array.from(tokens);
-//         let tokenLen = tokenList.length;
-//         for (let i = 0; i < tokenLen; i++) {
-//             if ((i < tokenLen - 2) && tokenList[i + 1] === "-") {
-//                 fracWords.push(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
-//                 i += 2;
-//             }
-//             else {
-//                 fracWords.push(tokenList[i]);
-//             }
-//         }
-//         return fracWords;
-//     }
+    public adjustBySuffix(suffix: string, adjust: { hour: number, min: number, hasMin: boolean, hasAm: boolean, hasPm: boolean }) {
+        let trimedSuffix = suffix.trim().toLowerCase();
+        let deltaHour = 0;
+        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.TimeSuffix, trimedSuffix);
+        if (matches.length > 0 && matches[0].index == 0 && matches[0].length == trimedSuffix.length) {
+            let oclockStr = matches[0].groups["oclock"];
+            if (!(oclockStr)) {
+                let amStr = matches[0].groups["am"];
+                if (amStr) {
+                    if (adjust.hour >= 12) {
+                        deltaHour = -12;
+                    }
+                    adjust.hasAm = true;
+                }
 
-//     resolveCompositeNumber(numberStr: string): number {
-//         if (numberStr.includes("-")) {
-//             let numbers = numberStr.split('-');
-//             let ret = 0;
-//             numbers.forEach(num => {
-//                 if (this.ordinalNumberMap.has(num)) {
-//                     ret += this.ordinalNumberMap.get(num) as number;
-//                 }
-//                 else if (this.cardinalNumberMap.has(num)) {
-//                     ret += this.cardinalNumberMap.get(num) as number;
-//                 }
-//             });
+                let pmStr = matches[0].groups["pm"];
+                if (pmStr) {
+                    if (adjust.hour < 12) {
+                        deltaHour = 12;
+                    }
+                    adjust.hasPm = true;
+                }
+            }
+        }
 
-//             return ret;
-//         }
-
-//         if (this.ordinalNumberMap.has(numberStr)) {
-//             return this.ordinalNumberMap.get(numberStr) as number;
-//         }
-
-//         if (this.cardinalNumberMap.has(numberStr)) {
-//             return this.cardinalNumberMap.get(numberStr) as number;
-//         }
-
-//         return 0;
-//     }
-// }
+        adjust.hour = (adjust.hour + deltaHour) % 24;
+    }
+}

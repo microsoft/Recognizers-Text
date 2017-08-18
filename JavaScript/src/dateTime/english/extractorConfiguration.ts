@@ -70,6 +70,30 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
 }
 
 export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfiguration {
+    public static TimeRegexList: RegExp[] = [
+        // (three min past)? seven|7|(senven thirty) pm
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, "gis"),
+        // (three min past)? 3:00(:00)? (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2, "gis"),
+        // (three min past)? 3.00 (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex3, "gis"),
+        // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex4, "gis"),
+        // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex5, "gis"),
+        // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex6, "gis"),
+        // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex7, "gis"),
+        // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8, "gis"),
+        // 340pm
+        RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectNumRegex, "gis")
+    ];
+    public static AtRegex: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.AtRegex, "gis");
+    public static LessThanOneHour: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanOneHour, "gis");
+    public static TimeSuffix: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffix, "gis");
+    
     readonly timeRegexList: RegExp[];
     readonly atRegex: RegExp;
     readonly ishRegex: RegExp;
@@ -77,27 +101,8 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
     public DurationExtractor: IExtractor;
 
     constructor() {
-        this.timeRegexList = [
-            // (three min past)? seven|7|(senven thirty) pm
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, "gis"),
-            // (three min past)? 3:00(:00)? (pm)?
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2, "gis"),
-            // (three min past)? 3.00 (pm)?
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex3, "gis"),
-            // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex4, "gis"),
-            // (three min past) (five thirty|seven|7|7:00(:00)?) (pm)?
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex5, "gis"),
-            // (five thirty|seven|7|7:00(:00)?) (pm)? (in the night)
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex6, "gis"),
-            // (in the night) at (five thirty|seven|7|7:00(:00)?) (pm)?
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex7, "gis"),
-            // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
-            RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8, "gis"),
-            // 340pm
-            RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectNumRegex, "gis")
-        ];
-        this.atRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AtRegex, "gis");
+        this.timeRegexList = EnglishTimeExtractorConfiguration.TimeRegexList;
+        this.atRegex = EnglishTimeExtractorConfiguration.AtRegex;
         this.ishRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.IshRegex, "gis");
         this.DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
     }
