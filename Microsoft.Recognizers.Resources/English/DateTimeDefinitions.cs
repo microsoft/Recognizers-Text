@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Resources.English
 	public static class DateTimeDefinitions
 	{
 		public const string TillRegex = @"(?<till>to|till|until|thru|through|--|-|—|——)";
-		public const string AndRegex = @"(?<and>and|through|--|-|—|——)";
+		public const string RangeConnectorRegex = @"(?<and>and|through|to|--|-|—|——)";
 		public const string RelativeRegex = @"(?<order>next|upcoming|this|last|past|previous|current)";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
@@ -32,8 +32,8 @@ namespace Microsoft.Recognizers.Resources.English
 		public const string FutureRegex = @"(?<past>\b(next|in)\b)";
 		public static readonly string SimpleCasesRegex = $@"\b(from\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b";
 		public static readonly string MonthFrontSimpleCasesRegex = $@"\b{MonthSuffixRegex}\s+(from\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
-		public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
-		public static readonly string BetweenRegex = $@"\b(between\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b";
+		public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
+		public static readonly string BetweenRegex = $@"\b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b";
 		public static readonly string MonthWithYear = $@"\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))";
 		public static readonly string OneWordPeriodRegex = $@"\b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(next|upcoming|this|last|past|previous|current)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b";
 		public static readonly string MonthNumWithYear = $@"({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})";
@@ -140,8 +140,8 @@ namespace Microsoft.Recognizers.Resources.English
 		public const string TokenBeforeTime = "at ";
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"(?<pm>afternoon|evening|night)";
-		public const string BeforeRegex = @"\b(before)\s+";
-		public const string AfterRegex = @"\b(after|since)\s+";
+		public const string BeforeRegex = @"\b(before)$";
+		public const string AfterRegex = @"\b(after|since)$";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

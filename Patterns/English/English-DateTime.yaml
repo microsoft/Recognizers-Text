@@ -1,8 +1,8 @@
 ---
 TillRegex: !simpleRegex
   def: (?<till>to|till|until|thru|through|--|-|—|——)
-AndRegex: !simpleRegex
-  def: (?<and>and|through|--|-|—|——)
+RangeConnectorRegex : !simpleRegex
+  def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>next|upcoming|this|last|past|previous|current)
 DayRegex: !simpleRegex
@@ -34,11 +34,11 @@ MonthFrontSimpleCasesRegex: !nestedRegex
   def: \b{MonthSuffixRegex}\s+(from\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, TillRegex, PeriodYearRegex ]
 MonthFrontBetweenRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, AndRegex, PeriodYearRegex ]
+  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex }\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , PeriodYearRegex ]
 BetweenRegex: !nestedRegex
-  def: \b(between\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ DayRegex, AndRegex, MonthSuffixRegex, PeriodYearRegex ]
+  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex }\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
+  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, PeriodYearRegex ]
 MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
   references: [ PeriodYearRegex ]
@@ -310,9 +310,9 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: (?<pm>afternoon|evening|night)
 BeforeRegex: !simpleRegex
-  def: \b(before)\s+
+  def: \b(before)$
 AfterRegex: !simpleRegex
-  def: \b(after|since)\s+
+  def: \b(after|since)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

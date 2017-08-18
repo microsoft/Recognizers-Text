@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
                 int tokenIndex;
                 
-                if (HasTokenIndex(beforeStr, config.BeforeRegex, out tokenIndex))
+                if (HasTokenIndex(beforeStr.TrimEnd(), config.BeforeRegex, out tokenIndex))
                 {
                     var modLengh = beforeStr.Length - tokenIndex;
                     er.Length += modLengh;
@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
                 
-                if (HasTokenIndex(beforeStr, config.AfterRegex, out tokenIndex))
+                if (HasTokenIndex(beforeStr.TrimEnd(), config.AfterRegex, out tokenIndex))
                 {
                     var modLengh = beforeStr.Length - tokenIndex;
                     er.Length += modLengh;
