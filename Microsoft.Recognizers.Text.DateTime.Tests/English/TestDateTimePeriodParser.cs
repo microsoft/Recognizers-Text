@@ -147,6 +147,77 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll go back next hour",
                 new DateObject(year, month, day, 16, 12, second),
                 new DateObject(year, month, day, 17, 12, second));
+
+            BasicTestFuture("I'll go back tuesday in the morning",
+                new DateObject(year, month, day + 1, 8, 0, 0),
+                new DateObject(year, month, day + 1, 12, 0, 0));
+
+            // late/early
+            BasicTestFuture("let's meet in the early-morning Tuesday",
+                new DateObject(year, month, day + 1, 8, 0, 0),
+                new DateObject(year, month, day + 1, 10, 0, 0));
+            BasicTestFuture("let's meet in the early-morning on Tuesday",
+                new DateObject(year, month, day + 1, 8, 0, 0),
+                new DateObject(year, month, day + 1, 10, 0, 0));
+            BasicTestFuture("let's meet in the late-morning Tuesday",
+                new DateObject(year, month, day + 1, 10, 0, 0),
+                new DateObject(year, month, day + 1, 12, 0, 0));
+            BasicTestFuture("let's meet in the early-afternoon Tuesday",
+                new DateObject(year, month, day + 1, 12, 0, 0),
+                new DateObject(year, month, day + 1, 14, 0, 0));
+            BasicTestFuture("let's meet in the late-afternoon Tuesday",
+                new DateObject(year, month, day + 1, 14, 0, 0),
+                new DateObject(year, month, day + 1, 16, 0, 0));
+            BasicTestFuture("let's meet in the early-evening Tuesday",
+                new DateObject(year, month, day + 1, 16, 0, 0),
+                new DateObject(year, month, day + 1, 18, 0, 0));
+            BasicTestFuture("let's meet in the late-evening Tuesday",
+                new DateObject(year, month, day + 1, 18, 0, 0),
+                new DateObject(year, month, day + 1, 20, 0, 0));
+            BasicTestFuture("let's meet in the early-night Tuesday",
+                new DateObject(year, month, day + 1, 20, 0, 0),
+                new DateObject(year, month, day + 1, 22, 0, 0));
+            BasicTestFuture("let's meet in the late-night Tuesday",
+                new DateObject(year, month, day + 1, 22, 0, 0),
+                new DateObject(year, month, day + 1, 23, 59, 59));
+            BasicTestFuture("let's meet in the early night Tuesday",
+                new DateObject(year, month, day + 1, 20, 0, 0),
+                new DateObject(year, month, day + 1, 22, 0, 0));
+            BasicTestFuture("let's meet in the late night Tuesday",
+                new DateObject(year, month, day + 1, 22, 0, 0),
+                new DateObject(year, month, day + 1, 23, 59, 59));
+
+            BasicTestFuture("let's meet on Tuesday early-morning",
+                new DateObject(year, month, day + 1, 8, 0, 0),
+                new DateObject(year, month, day + 1, 10, 0, 0));
+            BasicTestFuture("let's meet on Tuesday late-morning",
+                new DateObject(year, month, day + 1, 10, 0, 0),
+                new DateObject(year, month, day + 1, 12, 0, 0));
+            BasicTestFuture("let's meet on Tuesday early-afternoon",
+                new DateObject(year, month, day + 1, 12, 0, 0),
+                new DateObject(year, month, day + 1, 14, 0, 0));
+            BasicTestFuture("let's meet on Tuesday late-afternoon",
+                new DateObject(year, month, day + 1, 14, 0, 0),
+                new DateObject(year, month, day + 1, 16, 0, 0));
+            BasicTestFuture("let's meet on Tuesday early-evening",
+                new DateObject(year, month, day + 1, 16, 0, 0),
+                new DateObject(year, month, day + 1, 18, 0, 0));
+            BasicTestFuture("let's meet on Tuesday late-evening",
+                new DateObject(year, month, day + 1, 18, 0, 0),
+                new DateObject(year, month, day + 1, 20, 0, 0));
+            BasicTestFuture("let's meet on Tuesday early-night",
+                new DateObject(year, month, day + 1, 20, 0, 0),
+                new DateObject(year, month, day + 1, 22, 0, 0));
+            BasicTestFuture("let's meet on Tuesday late-night",
+                new DateObject(year, month, day + 1, 22, 0, 0),
+                new DateObject(year, month, day + 1, 23, 59, 59));
+            BasicTestFuture("let's meet on Tuesday early night",
+                new DateObject(year, month, day + 1, 20, 0, 0),
+                new DateObject(year, month, day + 1, 22, 0, 0));
+            BasicTestFuture("let's meet on Tuesday late night",
+                new DateObject(year, month, day + 1, 22, 0, 0),
+                new DateObject(year, month, day + 1, 23, 59, 59));
+
         }
 
         [TestMethod]
@@ -184,6 +255,33 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next 5 hrs", "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)");
             BasicTest("I'll go back last minute", "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)");
             BasicTest("I'll go back next hour", "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)");
+
+            BasicTest("I'll go back tuesday in the morning", "XXXX-WXX-2TMO");
+
+            // early/late date time
+            BasicTest("let's meet in the early-morning Tuesday", "XXXX-WXX-2TMO");
+            BasicTest("let's meet in the late-morning Tuesday", "XXXX-WXX-2TMO");
+            BasicTest("let's meet in the early-afternoon Tuesday", "XXXX-WXX-2TAF");
+            BasicTest("let's meet in the late-afternoon Tuesday", "XXXX-WXX-2TAF");
+            BasicTest("let's meet in the early-evening Tuesday", "XXXX-WXX-2TEV");
+            BasicTest("let's meet in the late-evening Tuesday", "XXXX-WXX-2TEV");
+            BasicTest("let's meet in the early-night Tuesday", "XXXX-WXX-2TNI");
+            BasicTest("let's meet in the late-night Tuesday", "XXXX-WXX-2TNI");
+            BasicTest("let's meet in the early night Tuesday", "XXXX-WXX-2TNI");
+            BasicTest("let's meet in the late night Tuesday", "XXXX-WXX-2TNI");
+
+            BasicTest("let's meet in the late night on Tuesday", "XXXX-WXX-2TNI");
+
+            BasicTest("let's meet on Tuesday early-morning", "XXXX-WXX-2TMO");
+            BasicTest("let's meet on Tuesday late-morning", "XXXX-WXX-2TMO");
+            BasicTest("let's meet on Tuesday early-afternoon", "XXXX-WXX-2TAF");
+            BasicTest("let's meet on Tuesday late-afternoon", "XXXX-WXX-2TAF");
+            BasicTest("let's meet on Tuesday early-evening", "XXXX-WXX-2TEV");
+            BasicTest("let's meet on Tuesday late-evening", "XXXX-WXX-2TEV");
+            BasicTest("let's meet on Tuesday early-night", "XXXX-WXX-2TNI");
+            BasicTest("let's meet on Tuesday late-night", "XXXX-WXX-2TNI");
+            BasicTest("let's meet on Tuesday early night", "XXXX-WXX-2TNI");
+            BasicTest("let's meet on Tuesday late night", "XXXX-WXX-2TNI");
         }
     }
 }

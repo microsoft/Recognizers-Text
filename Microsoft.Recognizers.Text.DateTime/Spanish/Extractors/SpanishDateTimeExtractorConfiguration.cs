@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SuffixRegex = new Regex(@"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the corresponding English regex
         public static readonly Regex NightRegex = new Regex(@"\b(?<night>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

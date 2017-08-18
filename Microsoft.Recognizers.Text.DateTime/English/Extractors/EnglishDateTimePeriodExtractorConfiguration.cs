@@ -48,6 +48,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimePeriodNightWithDateRegex = new Regex(DateTimeDefinitions.PeriodNightWithDateRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -57,6 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex PastRegex => EnglishDatePeriodExtractorConfiguration.PastRegex;
 
         public Regex FutureRegex => EnglishDatePeriodExtractorConfiguration.FutureRegex;
+
+        public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        Regex IDateTimePeriodExtractorConfiguration.PeriodNightWithDateRegex => TimePeriodNightWithDateRegex;
 
         public IExtractor CardinalExtractor { get; }
 

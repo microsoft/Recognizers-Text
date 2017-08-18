@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
             AMTimeRegex = new Regex(@"(?<am>(esta|(por|de|a|en)\s+la)\s+(mañana|madrugada))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            //TODO: modify it according to the corresponding English regex
             PMTimeRegex = new Regex(@"(?<pm>(esta|(por|de|a|en)\s+la)\s+(tarde|noche))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;

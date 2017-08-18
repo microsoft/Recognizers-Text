@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex NightRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -24,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            NightRegex = EnglishTimePeriodExtractorConfiguration.NightRegex;
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }

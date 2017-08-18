@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(NumberWithUnit(text));
             tokens.AddRange(NumberWithUnitAndSuffix(text, NumberWithUnit(text)));
             tokens.AddRange(ImplicitDuration(text));
+            tokens.AddRange(MergeUnit(tokens, text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -83,6 +84,49 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle "half day", "half year"
             ret.AddRange(GetTokenFromRegex(config.HalfRegex, text));
 
+            return ret;
+        }
+
+        // merge two Duration Unit with conjunction
+        private List<Token> MergeUnit(List<Token>  tokens, string text)
+        {
+            var ret = new List<Token>();
+            foreach (Token tokenLeft in tokens)
+            {
+                foreach (Token tokenRight in tokens)
+                {
+                    // keep token1 in front of token2
+                    if (!(tokenLeft.End < tokenRight.Start))
+                    {
+                        continue;
+                    }
+
+                    var conjuncStr = text.Substring(tokenLeft.End, tokenRight.Start - tokenLeft.End - 1);
+                    var matches = this.config.ConjunctionRegex.Matches(text);
+
+                    foreach (Match match in matches)
+                    {
+                        // check if valid
+                        var matchStart = match.Index;
+                        var matchEnd = match.Index + match.Length;
+                        var gapLeft = "";
+                        var gapRight = "";
+                        if (matchStart - tokenLeft.End - 1 > 0)
+                            gapLeft = text.Substring(tokenLeft.End + 1, matchStart - tokenLeft.End - 1);
+                        if (tokenRight.Start - matchEnd - 1 > 0)
+                            gapRight = text.Substring(matchEnd + 1, tokenRight.Start - matchEnd - 1);
+                        if (!string.IsNullOrEmpty(gapLeft) || !string.IsNullOrEmpty(gapRight))
+                        {
+                            continue;
+                        }
+
+                        if (tokenLeft.End <= match.Index && match.Index + match.Length <= tokenRight.Start)
+                        {
+                            ret.Add(new Token(tokenLeft.Start, tokenRight.End));
+                        }
+                    }
+                }
+            }
             return ret;
         }
 

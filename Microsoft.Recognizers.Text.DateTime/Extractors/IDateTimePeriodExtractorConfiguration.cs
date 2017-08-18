@@ -25,6 +25,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex WeekDayRegex { get; }
+
+        Regex PeriodNightWithDateRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IExtractor SingleDateExtractor { get; }

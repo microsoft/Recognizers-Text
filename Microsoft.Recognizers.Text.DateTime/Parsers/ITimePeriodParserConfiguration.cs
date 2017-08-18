@@ -13,7 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex PureNumberFromToRegex { get; }
 
         Regex PureNumberBetweenAndRegex { get; }
-        
+
+        Regex NightRegex { get; }
+
         IImmutableDictionary<string, int> Numbers { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }

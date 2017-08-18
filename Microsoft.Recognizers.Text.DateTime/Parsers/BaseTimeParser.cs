@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false;
+            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasSpecial = false;
 
             var engTimeStr = match.Groups["engtime"].Value;
             if (!string.IsNullOrEmpty(engTimeStr))
@@ -127,6 +127,34 @@ namespace Microsoft.Recognizers.Text.DateTime
                         min += this.config.Numbers[tensStr];
                     }
                     hasMin = true;
+                }
+            }
+            else if (!string.IsNullOrEmpty(match.Groups["special"].Value))
+            {
+                hasSpecial = true;
+                if (!string.IsNullOrEmpty(match.Groups["midnight"].Value))
+                {
+                    hour = 0;
+                    min = 0;
+                    second = 0;
+                }
+                else if (!string.IsNullOrEmpty(match.Groups["midmorning"].Value))
+                {
+                    hour = 10;
+                    min = 0;
+                    second = 0;
+                }
+                else if (!string.IsNullOrEmpty(match.Groups["midafternoon"].Value))
+                {
+                    hour = 14;
+                    min = 0;
+                    second = 0;
+                }
+                else if (!string.IsNullOrEmpty(match.Groups["midday"].Value))
+                {
+                    hour = 12;
+                    min = 0;
+                    second = 0;
                 }
             }
             else
@@ -231,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex += ":" + second.ToString("D2");
             }
 
-            if (hour <= 12 && !hasPm && !hasAm)
+            if (hour <= 12 && !hasPm && !hasAm && !hasSpecial)
             {
                 ret.Comment = "ampm";
             }

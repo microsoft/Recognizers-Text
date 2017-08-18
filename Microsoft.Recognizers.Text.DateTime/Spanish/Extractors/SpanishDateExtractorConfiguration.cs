@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex LastRegex = new Regex($@"\b(([uú]ltimo)\s*{WeekDayRegex})|({WeekDayRegex}(\s+((de\s+)?(esta|la)\s+([uú]ltima\s+)?semana)))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the coresponding English regex
         public static readonly Regex NextRegex = new Regex($@"\b(((pr[oó]ximo|siguiente)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?(la\s+)?(pr[oó]xima|siguiente)(\s*semana)))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex UnitRegex { get; }
 
+        public Regex PeriodNightWithDateRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -59,6 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
+            PeriodNightWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.TimePeriodNightWithDateRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
@@ -69,26 +72,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("morning"))
+            if (trimedText.EndsWith("morning") || trimedText.StartsWith("morning"))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("afternoon"))
+            else if (trimedText.EndsWith("afternoon") || trimedText.StartsWith("afternoon"))
             {
                 timeStr = "TAF";
                 beginHour = 12;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("evening") || trimedText.EndsWith("evenings"))
+            else if (trimedText.EndsWith("evening") || trimedText.StartsWith("evening"))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.EndsWith("night") || trimedText.EndsWith("late night") ||
-                     trimedText.EndsWith("overnight"))
+            else if (trimedText.EndsWith("night") || trimedText.StartsWith("night") ||
+                     trimedText.EndsWith("tonight") || trimedText.StartsWith("tonight") ||
+                     trimedText.EndsWith("overnight") || trimedText.StartsWith("overnight"))
             {
                 timeStr = "TNI";
                 beginHour = 20;

@@ -59,6 +59,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll leave for two hour", 7200, "PT2H");
             BasicTest("I'll leave for two and a half hours", 9000, "PT2.5H");
+
+            BasicTest("In a week and for an hour", 608400, "P1W1H");
+            BasicTest("In a week and for one hour", 608400, "P1W1H");
+            BasicTest("In a week and for two hour", 612000, "P1W2H");
+            BasicTest("In a week and an hour", 608400, "P1W1H");
+            BasicTest("In two week and half hour", 1211400, "P2W0.5H");
+            BasicTest("In two week and half an hour", 1211400, "P2W0.5H");
+            BasicTest("In two week and an hour and a half", 1215000, "P2W1.5H");
         }
     }
 }

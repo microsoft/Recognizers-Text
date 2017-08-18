@@ -31,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex HalfRegex = new Regex(@"\b(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: change to Spanish according to corresponding Regex
+        public static readonly Regex ConjunctionRegex = new Regex(@"^[\.]",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDurationExtractorConfiguration()
         {
             CardinalExtractor = new CardinalExtractor();
@@ -49,5 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
 
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
+
+        Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
     }
 }

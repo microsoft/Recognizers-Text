@@ -348,16 +348,51 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
-            
+            string timeText = trimedText;
+
+            var match = this.Config.PeriodNightWithDateRegex.Match(trimedText);
+
+            bool hasEarly = false, hasLate = false;
+            // extract early/late prefix from text
+            if (match.Success)
+            {
+                timeText = match.Groups["night"].Value;
+                if (!string.IsNullOrEmpty(match.Groups["early"].Value))
+                {
+                    hasEarly = true;
+                    ret.Comment = "early";
+                }
+                if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
+                {
+                    hasLate = true;
+                    ret.Comment = "late";
+                }
+            }
+
             // handle morning, afternoon..
             int beginHour, endHour, endMin = 0;
             string timeStr;
-            if (!this.Config.GetMatchedTimeRange(trimedText, out timeStr, out beginHour, out endHour, out endMin))
+            if (!this.Config.GetMatchedTimeRange(timeText, out timeStr, out beginHour, out endHour, out endMin))
             {
                 return ret;
             }
 
-            var match = this.Config.SpecificNightRegex.Match(trimedText);
+            // modify time period if "early" or "late" is existed
+            if (hasEarly)
+            {
+                endHour = beginHour + 2;
+                // handling case: night end with 23:59
+                if (endMin == 59)
+                {
+                    endMin = 0;
+                }
+            }
+            else if (hasLate)
+            {
+                beginHour = beginHour + 2;
+            }
+
+            match = this.Config.SpecificNightRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var swift = this.Config.GetSwiftPrefix(trimedText);
@@ -376,21 +411,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-
             // handle Date followed by morning, afternoon
-            match = this.Config.NightRegex.Match(trimedText);
+            // handle morning, afternoon followed by Date
+            match = this.Config.PeriodNightWithDateRegex.Match(trimedText);
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
                 var ers = this.Config.DateExtractor.Extract(beforeStr);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {
-                    return ret;
-                }
 
+                    var afterStr = trimedText.Substring(match.Index + match.Length).Trim();
+                    ers = this.Config.DateExtractor.Extract(afterStr);
+                    if (ers.Count == 0 || ers[0].Length != afterStr.Length)
+                    {
+                        return ret;
+                    }
+                }
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);
-                var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
-                var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
+                var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
                 ret.Timex = pr.TimexStr + timeStr;
 

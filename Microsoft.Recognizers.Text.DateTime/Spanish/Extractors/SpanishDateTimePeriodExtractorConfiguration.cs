@@ -51,6 +51,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex FutureRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
 
+        //TODO: add this
+        public Regex WeekDayRegex => new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: add this
+        public Regex PeriodNightWithDateRegex => new Regex(@"\b(?<night>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         public bool GetFromTokenIndex(string text, out int index)

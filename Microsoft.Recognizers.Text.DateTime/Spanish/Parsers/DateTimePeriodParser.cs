@@ -42,6 +42,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var startIndex = trimedText.IndexOf("mañana", StringComparison.Ordinal) == 0 ? 6 : 0;
 
             // handle Date followed by morning, afternoon
+            // Add handling code to handle morning, afternoon followed by Date
+            // Add handling code to handle early/late morning, afternoon
             match = this.Config.NightRegex.Match(trimedText.Substring(startIndex));
             if (match.Success)
             {

@@ -116,6 +116,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("upcoming month holidays", 0, 14);
             BasicTest("next month holidays", 0, 10);
 
+            // over the
+            BasicTest("I'll leave over the weekend", 11, 16);
+
         }
     }
 }

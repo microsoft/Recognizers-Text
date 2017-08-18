@@ -29,6 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex HalfRegex = new Regex(DateTimeDefinitions.HalfRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ConjunctionRegex = new Regex(DateTimeDefinitions.ConjunctionRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishDurationExtractorConfiguration()
         {
             CardinalExtractor = new CardinalExtractor();
@@ -47,5 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
         
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
+
+        Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
     }
 }

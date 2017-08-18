@@ -78,6 +78,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back 340pm", new DateObject(year, month, day, 15, 40, second));
             BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
+
+            BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
+            BasicTest("midnight", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("mid-night", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("mid night", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("midmorning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("mid-morning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("mid morning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("midafternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("mid-afternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("mid afternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("midday", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("mid-day", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("mid day", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("noon", new DateObject(year, month, day, 12, 0, second));
         }
 
         [TestMethod]
@@ -128,6 +143,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be back noon", "T12");
             BasicTest("I'll be back 11ish", "T11");
             BasicTest("I'll be back 11-ish", "T11");
+
+            BasicTest("midnight", "T00");
+            BasicTest("mid-night", "T00");
+            BasicTest("mid night", "T00");
+            BasicTest("midmorning", "T10");
+            BasicTest("mid-morning", "T10");
+            BasicTest("mid morning", "T10");
+            BasicTest("midafternoon", "T14");
+            BasicTest("mid-afternoon", "T14");
+            BasicTest("mid afternoon", "T14");
+            BasicTest("midday", "T12");
+            BasicTest("mid-day", "T12");
+            BasicTest("mid day", "T12");
+            BasicTest("noon", "T12");
         }
     }
 }

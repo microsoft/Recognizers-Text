@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex FollowedUnit { get; }
 
+        public Regex ConjunctionRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -40,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
+            ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
         }
     }
 }

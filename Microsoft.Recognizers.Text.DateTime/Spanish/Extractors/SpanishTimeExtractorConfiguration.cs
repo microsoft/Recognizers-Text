@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 2: middle level component
         // --------------------------------------
         // handle "... en punto"
+        //TODO: modify according to corresponding English regex
         public static readonly Regex OclockRegex = new Regex(@"(?<oclock>en\s+punto)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -71,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 3: regex for time
         // --------------------------------------
         // handle "a las cuatro" "a las 3"
+        //TODO: add some new regex which have used in AtRegex
+        //TODO: modify according to corresponding English regex
         public static readonly Regex AtRegex =
             new Regex(string.Format(@"\b(?<=\b(a las?)\s+)({2}|{0}|{1})\b", HourNumRegex, BaseTimeExtractor.HourRegex, EngTimeRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex UnitRegex { get; }
 
+        public Regex PeriodNightWithDateRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -70,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             endHour = 0;
             endMin = 0;
 
+            //TODO: modify it according to the coresponding function in English part
             if (trimedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";

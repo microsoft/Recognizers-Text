@@ -72,6 +72,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back 340pm", 13, 5);
             BasicTest("I'll be back 1140 a.m.", 13, 9);
+
+            BasicTest("midnight", 0, 8);
+            BasicTest("mid-night", 0, 9);
+            BasicTest("mid night", 0, 9);
+            BasicTest("midmorning", 0, 10);
+            BasicTest("mid-morning", 0, 11);
+            BasicTest("mid morning", 0, 11);
+            BasicTest("midafternoon", 0, 12);
+            BasicTest("mid-afternoon", 0, 13);
+            BasicTest("mid afternoon", 0, 13);
+            BasicTest("midday", 0, 6);
+            BasicTest("mid-day", 0, 7);
+            BasicTest("mid day", 0, 7);
+            BasicTest("noon", 0, 4);
         }
     }
 }
