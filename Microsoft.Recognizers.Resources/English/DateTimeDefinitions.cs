@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Resources.English
 		public static readonly string OfMonth = $@"^\s*of\s*{MonthRegex}";
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(the)?\s*$";
 		public const string NonDateUnitRegex = @"(?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b'";
-		public const string DescRegex = @"(?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a\b|a m\b|p m\b|a. m.\b|p. m.\b|ampm)";
+		public const string DescRegex = @"(?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a m\b|p m\b|a. m.\b|p. m.\b|ampm)";
 		public const string HourNumRegex = @"(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)";
 		public const string MinuteNumRegex = @"(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";

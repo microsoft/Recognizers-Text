@@ -34,10 +34,10 @@ MonthFrontSimpleCasesRegex: !nestedRegex
   def: \b{MonthSuffixRegex}\s+(from\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, TillRegex, PeriodYearRegex ]
 MonthFrontBetweenRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex }\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
+  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
   references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , PeriodYearRegex ]
 BetweenRegex: !nestedRegex
-  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex }\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
+  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, PeriodYearRegex ]
 MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
@@ -142,7 +142,7 @@ MonthEnd: !nestedRegex
 NonDateUnitRegex: !simpleRegex
   def: (?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b'
 DescRegex: !simpleRegex
-  def: (?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a\b|a m\b|p m\b|a. m.\b|p. m.\b|ampm)
+  def: (?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a m\b|p m\b|a. m.\b|p. m.\b|ampm)
 HourNumRegex: !simpleRegex
   def: (?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)
 MinuteNumRegex: !simpleRegex
