@@ -189,7 +189,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         hour -= 12;
                     }
-                    hasAm = true;
+                    //ampm is a special case in which at 6ampm = at 6
+                    if (!descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPmPrefix))
+                    {
+                        hasAm = true;
+                    }
                 }
                 else if (descStr.ToLower().StartsWith(config.UtilityConfiguration.PmPrefix))
                 {
@@ -198,12 +202,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         hour += 12;
                     }
                     hasPm = true;
-                }
-
-                //set the hasAm to false since it is ampm
-                if (descStr.ToLower().StartsWith(config.UtilityConfiguration.AmPmPrefix))
-                {
-                    hasAm = false;
                 }
             }
 

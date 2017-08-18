@@ -21,6 +21,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
             "in",
         };
 
+        //Only prefix is used to determine am or pm
+        //The descRegex already limited the matchString will be am/pm like strings
+        //No worry for mis-matching of at, people, etc.
         public static readonly string AmPrefix = "a";
         public static readonly string PmPrefix = "p";
         public static readonly string AmPmPrefix = "ampm";

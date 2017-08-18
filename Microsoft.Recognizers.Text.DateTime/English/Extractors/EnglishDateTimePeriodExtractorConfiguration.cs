@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("and") || text.Equals("through");
+            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
         }
     }
 }
