@@ -7,3 +7,4 @@ require('./datePeriodExtractor-english.test');
 require('./dateTimeExtractor-english.test');
 require('./dateTimePeriodExtractor-english.test');
 require('./timePeriodExtractor-english.test');
+require('./timeParser-english.test');
