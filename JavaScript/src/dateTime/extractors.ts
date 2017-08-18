@@ -767,15 +767,14 @@ export class BaseTimePeriodExtractor implements IExtractor {
         this.config.simpleCasesRegex.forEach(regex => {
             let matches = RegExpUtility.getMatches(regex, text);
             matches.forEach(match => {
-                // // // // is there "pm" or "am" ?
-                // // // let pmStr = match.Groups["pm"].Value;
-                // // // let amStr = match.Groups["am"].Value;
-                // // // let descStr = match.Groups["desc"].Value;
-                // // // // check "pm", "am"
-                // // // if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
-                // // // {
-                // // //     ret.Add(new Token(match.Index, match.Index + match.Length));
-                // // // }
+                // is there "pm" or "am" ?
+                let pmStr = match.groups["pm"];
+                let amStr = match.groups["am"];
+                let descStr = match.groups["desc"];
+                // check "pm", "am"
+                if (pmStr || amStr || descStr) {
+                    ret.push(new Token(match.index, match.index + match.length));
+                }
             });
         });
         return ret;
@@ -791,7 +790,7 @@ export class BaseTimePeriodExtractor implements IExtractor {
             let middleBegin = ers[idx].start + ers[idx].length || 0;
             let middleEnd = ers[idx + 1].start || 0;
 
-            let middleStr = text.substring(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
+            let middleStr = text.substring(middleBegin, middleEnd).trim().toLowerCase();
             let matches = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
             // handle "{TimePoint} to {TimePoint}"
             if (matches.length > 0 && matches[0].index == 0 && matches[0].length == middleStr.length) {

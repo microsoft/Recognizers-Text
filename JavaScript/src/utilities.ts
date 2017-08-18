@@ -40,26 +40,45 @@ export interface Match {
     index: number;
     length: number;
     value: string;
+    groups: ReadonlyMap<string, string>;
 }
 
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
         let matches = new Array<Match>();
 
-        let m;
-        regex.lastIndex = 0;
-        do {
-            m = regex.exec(source);
-            if (m) {
-                matches.push({
-                    value: m[0],
-                    index: m.index,
-                    length: m[0].length
-                });
-            }
-        } while (m);
+        let pos = 0;
+        let m = XRegExp.exec(source, regex);
+        while (m) {
+            matches.push({
+                value: m[0],
+                index: m.index,
+                length: m[0].length,
+                groups: RegExpUtility.getSanitizedGroups(m)
+            });
+            pos = m.index + m[0].length;
+            m = XRegExp.exec(source, regex, pos)
+        }
 
         return matches;
+    }
+
+    static getSafeRegExp(source: string, flags: string): RegExp {
+        let sanitizedSource = this.sanitizeGroups(source);
+        return XRegExp(sanitizedSource, flags);
+    }
+
+    private static getSanitizedGroups(match: any): Map<string, string> {
+        let groups = new Map<string, string>();
+        Object.getOwnPropertyNames(match).forEach(sanitizedName => {
+            let indexPos = sanitizedName.indexOf("_");
+            if (indexPos > 0) {
+                let name = sanitizedName.substring(0, indexPos);
+                groups[name] = match[sanitizedName];
+            }
+        });
+
+        return groups;
     }
 
     private static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
@@ -67,13 +86,8 @@ export class RegExpUtility {
     private static sanitizeGroups(source: string): string {
         let index = 0;
         let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
-            return match.replace(token, token + index++);
+            return match.replace(token, `${token}_${index++}`);
         });
         return replacer;
-    }
-
-    static getSafeRegExp(source: string, flags: string): RegExp {
-        let sanitizedSource = this.sanitizeGroups(source);
-        return XRegExp(sanitizedSource, flags);
     }
 }
