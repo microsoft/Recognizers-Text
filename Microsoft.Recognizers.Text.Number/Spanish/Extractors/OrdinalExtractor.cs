@@ -6,9 +6,9 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 {
     public class OrdinalExtractor : BaseNumberExtractor
     {
-        internal override sealed ImmutableDictionary<Regex, string> Regexes { get; }
+        internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
 
-        protected override sealed string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
         public const string SimpleRoundOrdinalRegex = @"(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])";
 
@@ -34,10 +34,9 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public static string AllOrdinalRegex => $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
 
-
         public OrdinalExtractor()
         {
-            var _regexes = new Dictionary<Regex, string>
+            var regexes = new Dictionary<Regex, string>
             {
                 {
                     new Regex(
@@ -52,7 +51,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 }
             };
 
-            this.Regexes = _regexes.ToImmutableDictionary();
+            this.Regexes = regexes.ToImmutableDictionary();
         }
     }
 }

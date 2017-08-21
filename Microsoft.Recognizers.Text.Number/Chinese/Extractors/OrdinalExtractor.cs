@@ -15,21 +15,19 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         {
             var regexes = new Dictionary<Regex, string>
             {
-                //第一百五十四
+                
                 {
-                    new Regex(
-                        OrdinalRegexChs,
-                        RegexOptions.Singleline)
+                    //第一百五十四
+                    new Regex(OrdinalRegexChs, RegexOptions.Singleline)
                     , "OrdinalChs"
                 },
-                //第２５６５,  第1234
                 {
-                    new Regex(
-                        $@"第{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",
-                        RegexOptions.Singleline)
+                    //第２５６５,  第1234
+                    new Regex($@"第{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+",RegexOptions.Singleline)
                     , "OrdinalChs"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

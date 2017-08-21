@@ -1,74 +1,81 @@
-﻿using System.Collections.Generic;
+﻿using System;
+
+using Microsoft.Recognizers.Resources.English;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
     {
-        public static readonly Regex TillRegex = new Regex(@"(?<till>to|till|until|thru|through|--|-|—|——)",
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourRegex =
             new Regex(
-                @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)",
+                DateTimeDefinitions.HourRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HourNumRegex =
+        public static readonly Regex PeriodHourNumRegex =
             new Regex(
-                @"(?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)",
+                DateTimeDefinitions.PeriodHourNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DescRegex = new Regex(@"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)",
+        public static readonly Regex PeriodDescRegex = new Regex(DateTimeDefinitions.PeriodDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =
-            new Regex(@"(?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?",
+            new Regex(DateTimeDefinitions.PmRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AmRegex = new Regex(@"(?<am>morning|in the morning)s?",
+        public static readonly Regex AmRegex = new Regex(DateTimeDefinitions.AmRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PureNumFromTo =
             new Regex(
-                string.Format(@"(from\s+)?({0}|{1})(\s*{5})?\s*{2}\s*({0}|{1})\s*({3}|{4}|{5})?", HourRegex,
-                    HourNumRegex, TillRegex, PmRegex, AmRegex, DescRegex),
+                DateTimeDefinitions.PureNumFromTo,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PureNumBetweenAnd =
             new Regex(
-                string.Format(@"(between\s+)({0}|{1})(\s*{5})?\s*{2}\s*({0}|{1})\s*({3}|{4}|{5})?", HourRegex,
-                    HourNumRegex, "and", PmRegex, AmRegex, DescRegex), RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>^(at|on|of)(\s+the)?$)",
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NightRegex =
-            new Regex(@"\b(?<night>daytime|morning|afternoon|(late\s+)?night|evening)s?\b",
+            new Regex(DateTimeDefinitions.NightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecificNightRegex =
-            new Regex($@"\b(((this|next|last)\s+{NightRegex})\b|\btonight)s?\b",
+            new Regex(DateTimeDefinitions.SpecificNightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex =
-            new Regex(@"(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b",
+        public static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
+        public static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeNumberCombinedWithUnit =
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastRegex = new Regex(@"(?<past>\b(past|last|previous)\b)",
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FutureRegex = new Regex(@"(?<past>\b(next|in)\b)");
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IExtractor SingleTimeExtractor { get; }
 
@@ -83,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("from"))
             {
-                index = text.LastIndexOf("from");
+                index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -94,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("between"))
             {
-                index = text.LastIndexOf("between");
+                index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
             return false;

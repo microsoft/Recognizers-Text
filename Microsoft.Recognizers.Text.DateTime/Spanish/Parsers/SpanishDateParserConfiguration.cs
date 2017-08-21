@@ -84,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedText = text.Trim().ToLowerInvariant().Normalized();
             var swift = 0;
+
             if (trimedText.Equals("hoy") || trimedText.Equals("el dia"))
             {
                 swift = 0;
@@ -113,6 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
+
             return swift;
         }
 
@@ -122,6 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             //TODO: Replace with a regex
+            //TODO: Add 'upcoming' key word
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
             {
@@ -134,6 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 swift = -1;
             }
+
             return swift;
         }
 

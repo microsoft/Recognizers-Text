@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         matched[m.Index + j] = true;
                     }
+
                     //Keep Source Data for extra information
                     matchSource.Add(m, collection.Value);
                 }

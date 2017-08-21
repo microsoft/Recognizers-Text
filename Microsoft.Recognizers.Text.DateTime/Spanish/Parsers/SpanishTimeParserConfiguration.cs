@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -13,12 +14,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
-        
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeTokenPrefix = "a las ";
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = SpanishTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }
 
@@ -65,12 +69,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             {
                 deltaMin = -deltaMin;
             }
+
             min += deltaMin;
             if (min < 0)
             {
                 min += 60;
                 hour -= 1;
             }
+
             hasMin = hasMin || min != 0;
         }
 
@@ -78,6 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedSuffix = suffix.Trim().ToLowerInvariant();
             AdjustByPrefix(trimedSuffix, ref hour, ref min, ref hasMin);
+
             var deltaHour = 0;
             var match = SpanishTimeExtractorConfiguration.TimeSuffix.Match(trimedSuffix);
             if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)

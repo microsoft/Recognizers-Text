@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Utilities
 {
     public interface IDateTimeUtilityConfiguration
     {
-        List<string> AgoStringList { get; }
+        Regex AgoRegex { get; }
 
-        List<string> LaterStringList { get; }
+        Regex LaterRegex { get; }
 
-        List<string> InStringList { get; }
+        Regex InConnectorRegex { get; }
+
+        Regex AmDescRegex { get; }
+
+        Regex PmDescRegex { get; }
+
+        Regex AmPmDescRegex { get; }
     }
 }

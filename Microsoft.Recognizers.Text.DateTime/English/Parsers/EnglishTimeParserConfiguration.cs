@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Resources.English;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -14,11 +16,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TimeTokenPrefix = "at ";
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }
 

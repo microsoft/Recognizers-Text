@@ -2,6 +2,8 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources;
+using System;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -51,6 +53,7 @@ namespace Microsoft.Recognizers.Text.Number
                         var start = last + 1;
                         var length = i - last;
                         var substr = source.Substring(start, length);
+
                         if (matchSource.Keys.Any(o => o.Index == start && o.Length == length))
                         {
                             var srcMatch = matchSource.Keys.First(o => o.Index == start && o.Length == length);
@@ -74,6 +77,17 @@ namespace Microsoft.Recognizers.Text.Number
 
             return result;
         }
+
+        protected Regex GenerateLongFormatNumberRegexes(LongFormatType type, string placeholder = BaseNumbers.PlaceHolderDefault)
+        {
+            var thousandsMark = Regex.Escape(type.ThousandsMark.ToString());
+            var decimalsMark = Regex.Escape(type.DecimalsMark.ToString());
+
+            var regexDefinition = type.DecimalsMark.Equals('\0') ?
+                BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
+                BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
+            return new Regex(regexDefinition, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        }
     }
 
     public enum NumberMode
@@ -84,5 +98,50 @@ namespace Microsoft.Recognizers.Text.Number
         Currency,
         //Don't extract number from cases like 16ml
         PureNumber
+    }
+
+    public class LongFormatType
+    {
+        // Reference Value : 1234567.89
+
+        // 1,234,567
+        public static LongFormatType IntegerNumComma = new LongFormatType(',', '\0');
+
+        // 1.234.567
+        public static LongFormatType IntegerNumDot = new LongFormatType('.', '\0');
+
+        // 1 234 567
+        public static LongFormatType IntegerNumBlank = new LongFormatType(' ', '\0');
+
+        // 1'234'567
+        public static LongFormatType IntegerNumQuote = new LongFormatType('\'', '\0');
+
+        // 1,234,567.89
+        public static LongFormatType DoubleNumCommaDot = new LongFormatType(',', '.');
+
+        // 1,234,567·89
+        public static LongFormatType DoubleNumCommaCdot = new LongFormatType(',', '·');
+
+        // 1 234 567,89
+        public static LongFormatType DoubleNumBlankComma = new LongFormatType(' ', ',');
+
+        // 1 234 567.89
+        public static LongFormatType DoubleNumBlankDot = new LongFormatType(' ', '.');
+
+        // 1.234.567,89
+        public static LongFormatType DoubleNumDotComma = new LongFormatType('.', ',');
+
+        // 1'234'567,89
+        public static LongFormatType DoubleNumQuoteComma = new LongFormatType('\'', ',');
+        
+        private LongFormatType(char thousandsMark, char decimalsMark)
+        {
+            ThousandsMark = thousandsMark;
+            DecimalsMark = decimalsMark;
+        }
+
+        public char DecimalsMark { get; }
+
+        public char ThousandsMark { get; }
     }
 }

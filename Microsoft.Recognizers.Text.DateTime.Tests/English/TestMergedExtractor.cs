@@ -18,7 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedExtract()
         {
-            BasicTest("this is 2 days in p ", 8, 6);
+            BasicTest("after 7/2 ", 0, 9);
+            BasicTest("since 7/2 ", 0, 9);
+
+            BasicTest("this is 2 days", 8, 6);
 
             BasicTest("this is before 4pm", 8, 10);
             BasicTest("this is before 4pm tomorrow", 8, 19);

@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [TestMethod]
         public void TestOrdinalModel()
         {
-            var model = NumberRecognizer.GetOrdinalModel(Culture.Spanish);
+            var model = NumberRecognizer.Instance.GetOrdinalModel(Culture.Spanish);
 
             BasicTest(model, "tresmillonesimo", "3000000");
 
@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = NumberRecognizer.GetNumberModel(Culture.Spanish);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.Spanish);
 
             #region Integer numbers
 
@@ -472,7 +472,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = NumberRecognizer.GetNumberModel(Culture.Spanish);
+            var model = NumberRecognizer.Instance.GetNumberModel(Culture.Spanish);
 
             BasicTest(model, "un quinto", "0,2");
 
@@ -577,7 +577,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var ci = new SpanishNumberParserConfiguration().CultureInfo;
 
-            var model = NumberRecognizer.GetPercentageModel(Culture.Spanish); ;
+            var model = NumberRecognizer.Instance.GetPercentageModel(Culture.Spanish); ;
 
             #region Integer percentages
 

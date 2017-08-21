@@ -1,143 +1,136 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
     {
         // base regexes
-        public static readonly Regex TillRegex = new Regex(@"(?<till>to|till|until|thru|through|--|-|—|——)",
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex = new Regex(@"(?<and>and|--|-|—|——)",
+        public static readonly Regex AndRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
             new Regex(
-                @"(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)",
+                DateTimeDefinitions.DayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex =
-            new Regex(@"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)",
+            new Regex(DateTimeDefinitions.MonthNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = new Regex(@"\b(?<year>19\d{2}|20\d{2})\b",
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex =
             new Regex(
-                @"(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)",
+                DateTimeDefinitions.WeekDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = new Regex(@"(?<relmonth>(this|next|last)\s+month)",
+        public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EngMonthRegex =
             new Regex(
-                @"(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)",
+                DateTimeDefinitions.EngMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex =
-            new Regex($@"(?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{EngMonthRegex}))",
+            new Regex(DateTimeDefinitions.MonthSuffixRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>years|year|months|month|weeks|week|days|day)\b",
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastRegex = new Regex(@"(?<past>\b(past|last|previous)\b)",
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FutureRegex = new Regex(@"(?<past>\b(next|in)\b)",
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(
-                string.Format(@"\b(from\s+)?({0})\s*{1}\s*({0})\s+{2}((\s+|\s*,\s*){3})?\b", DayRegex, TillRegex,
-                    MonthSuffixRegex, YearRegex),
+                DateTimeDefinitions.SimpleCasesRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthFrontSimpleCasesRegex =
             new Regex(
-                string.Format(@"\b{2}\s+(from\s+)?({0})\s*{1}\s*({0})((\s+|\s*,\s*){3})?\b", DayRegex, TillRegex,
-                    MonthSuffixRegex, YearRegex),
+                DateTimeDefinitions.MonthFrontSimpleCasesRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthFrontBetweenRegex =
             new Regex(
-                string.Format(@"\b{2}\s+(between\s+)({0})\s*{1}\s*({0})((\s+|\s*,\s*){3})?\b", DayRegex, AndRegex,
-                    MonthSuffixRegex, YearRegex),
+                DateTimeDefinitions.MonthFrontBetweenRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex BetweenRegex =
             new Regex(
-                string.Format(@"\b(between\s+)({0})\s*{1}\s*({0})\s+{2}((\s+|\s*,\s*){3})?\b", DayRegex, AndRegex,
-                    MonthSuffixRegex, YearRegex),
+                DateTimeDefinitions.BetweenRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthWithYear =
             new Regex(
-                $@"\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({YearRegex}|(?<order>next|last|this)\s+year))",
+                DateTimeDefinitions.MonthWithYear,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
-                @"\b(((next|this|last)\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(next|last|this)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b",
+                DateTimeDefinitions.OneWordPeriodRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumWithYear =
-            new Regex($@"({YearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearRegex})",
+            new Regex(DateTimeDefinitions.MonthNumWithYear,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
         public static readonly Regex WeekOfMonthRegex =
             new Regex(
-                $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{
-                    MonthSuffixRegex})", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.WeekOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekOfYearRegex =
             new Regex(
-                $@"(?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({
-                    YearRegex}|(?<order>next|last|this)\s+year))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.WeekOfYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
+        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
-                $@"(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter(\s+of|\s*,\s*)?\s+({
-                    YearRegex}|(?<order>next|last|this)\s+year)",
+                DateTimeDefinitions.QuarterRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegexYearFront =
             new Regex(
-                $@"({YearRegex
-                    }|(?<order>next|last|this)\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter",
+                DateTimeDefinitions.QuarterRegexYearFront,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SeasonRegex =
             new Regex(
-                $@"\b(?<season>((last|this|the|next)\s+)?(?<seas>spring|summer|fall|autumn|winter)((\s+of|\s*,\s*)?\s+({
-                    YearRegex}|(?<order>next|last|this)\s+year))?)\b",
+                DateTimeDefinitions.SeasonRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WhichWeekRegex =
             new Regex(
-                $@"(week)(\s*)(?<number>\d\d|\d|0\d)",
+                DateTimeDefinitions.WhichWeekRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekOfRegex =
             new Regex(
-                $@"(week)(\s*)(of)",
+                DateTimeDefinitions.WeekOfRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthOfRegex =
             new Regex(
-                $@"(month)(\s*)(of)",
+                DateTimeDefinitions.MonthOfRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
@@ -190,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("from"))
             {
-                index = text.LastIndexOf("from");
+                index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -201,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             index = -1;
             if (text.EndsWith("between"))
             {
-                index = text.LastIndexOf("between");
+                index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
             return false;
@@ -209,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("and");
+            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
         }
     }
 }

@@ -10,6 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: change to Spanish the SuffixAndRegex
+        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -31,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             CardinalExtractor = new CardinalExtractor();
         }
+
         public IExtractor CardinalExtractor { get; }
 
         Regex IDurationExtractorConfiguration.FollowedUnit => FollowedUnit;
@@ -42,5 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.AllRegex => AllRegex;
 
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
+
+        Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
     }
 }

@@ -70,7 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // handle "desde"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     int fromIndex;
-                    if (this.config.GetFromTokenIndex(beforeStr, out fromIndex))
+                    if (this.config.GetFromTokenIndex(beforeStr, out fromIndex)
+                        || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
                     }
@@ -169,12 +170,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     continue;
                 }
+
                 var match = this.config.PastRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
+
                 match = this.config.FutureRegex.Match(beforeStr);
                 if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {

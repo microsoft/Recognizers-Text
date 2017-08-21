@@ -23,14 +23,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             List<ModelResult> extractionResults = new List<ModelResult>();
             foreach (var p in ExtractorParserDic)
             {
-                var Extractor = p.Key;
-                var Parser = p.Value;
-                var extractResults = Extractor.Extract(query);
+                var extractor = p.Key;
+                var parser = p.Value;
+                var extractResults = extractor.Extract(query);
                 var parseResults = new List<ParseResult>();
 
                 foreach (var result in extractResults)
                 {
-                    parseResults.Add(Parser.Parse(result));
+                    parseResults.Add(parser.Parse(result));
                 }
 
                 var modelResults = parseResults.Select(o => new ModelResult

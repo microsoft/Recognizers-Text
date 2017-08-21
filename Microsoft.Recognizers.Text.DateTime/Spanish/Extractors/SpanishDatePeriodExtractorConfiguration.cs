@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     MonthSuffixRegex, YearRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the related regex in English
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
                 @"\b(((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en)\s+)?(?<month>Abril|Abr|Agosto|Ago|Diciembre|Dic|Enero|Ene|Febrero|Feb|Julio|Jul|Junio|Jun|Marzo|Mar|Mayo|May|Noviembre|Nov|Octubre|Oct|Septiembre|Setiembre|Sept|Set)|(?<=\b(del|de la|el|la)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]?|est(e|a))?\s+(fin de semana|semana|mes|año)|fin de semana|(mes|años)? a la fecha)\b",
@@ -83,7 +84,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthNumWithYear =
             new Regex($@"({YearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearRegex})",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
 
         public static readonly Regex WeekOfMonthRegex =
             new Regex(
@@ -136,9 +136,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(month)(\s*)(of)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex fromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex andRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex beforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            var fromMatch = fromRegex.Match(text);
+            var fromMatch = FromRegex.Match(text);
             if (fromMatch.Success)
             {
                 index = fromMatch.Index;
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var beforeMatch = beforeRegex.Match(text);
+            var beforeMatch = BeforeRegex.Match(text);
             if (beforeMatch.Success)
             {
                 index = beforeMatch.Index;
@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool HasConnectorToken(string text)
         {
-            return andRegex.IsMatch(text);
+            return ConnectorAndRegex.IsMatch(text);
         }
     }
 }

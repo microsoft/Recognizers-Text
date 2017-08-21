@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish and Chinese.</description>
+    <description>Microsoft.Recognizers.Text.NumberWithUnit provides robust recognition and resolution of numbers with units expressed in English, Spanish, Portuguese, and Chinese.</description>
     <licenseUrl>https://github.com/Microsoft/Recognizers-Text/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Microsoft/Recognizers-Text</projectUrl>
     <iconUrl>http://docs.botframework.com/images/bot_icon.png</iconUrl>

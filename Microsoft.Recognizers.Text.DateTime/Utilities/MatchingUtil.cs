@@ -1,50 +1,46 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class MatchingUtil
     {
-        public static bool GetAgoLaterIndex(string text, List<string> stringList, out int index)
+        public static bool GetAgoLaterIndex(string text, Regex regex, out int index)
         {
             index = -1;
-
-            foreach (var matchString in stringList)
+            var match = regex.Match(text.TrimStart().ToLower());
+            if (match.Success)
             {
-                if (text.TrimStart().ToLower().StartsWith(matchString))
-                {
-                    index = text.ToLower().LastIndexOf(matchString) + matchString.Length;
-                    return true;
-                }
+                index = text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
+                return true;
             }
             return false;
         }
 
-        public static bool GetInIndex(string text, List<string> stringList, out int index)
+        public static bool GetInIndex(string text, Regex regex, out int index)
         {
             index = -1;
-
-            foreach (var matchString in stringList)
+            var match = regex.Match(text.Trim().ToLower().Split(' ').Last());
+            if (match.Success)
             {
-                if (text.Trim().ToLower().Split(' ').Last().EndsWith(matchString))
-                {
-                    index = text.Length - text.ToLower().LastIndexOf(matchString);
-                    return true;
-                }
+                index = text.Length - text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal);
+                return true;
             }
             return false;
         }
 
-        public static bool ContainsAgoLaterIndex(string text, List<string> stringList)
+        public static bool ContainsAgoLaterIndex(string text, Regex regex)
         {
             int index = -1;
-            return GetAgoLaterIndex(text, stringList, out index);
+            return GetAgoLaterIndex(text, regex, out index);
         }
 
-        public static bool ContainsInIndex(string text, List<string> stringList)
+        public static bool ContainsInIndex(string text, Regex regex)
         {
             int index = -1;
-            return GetInIndex(text, stringList, out index);
+            return GetInIndex(text, regex, out index);
         }
     }
 }

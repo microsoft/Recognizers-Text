@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.English);
 
             BasicTest(model,
             "montgomery county , md . - - $ 75 million of general obligation , series b , consolidated public improvement bonds of 1989 , through a manufacturers hanover trust co . group .",
@@ -439,131 +439,131 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.English);
 
             BasicTest(model,
             "75ml",
             "75 Milliliter");
 
             BasicTest(model,
-            "its greatest drawback may be its 3-inch thickness , big enough for one consultant to describe it as ` ` clunky . ' '",
+            "its greatest drawback may be its 3-inch thickness , big enough for one consultant to describe it as clunky.",
             "3 Inch");
 
             BasicTest(model,
-            "a twister roared through an area about ten miles long there , killing at least fourteen people and turning dozens of homes into rubble .",
+            "a twister roared through an area about ten miles long there , killing at least fourteen people and turning dozens of homes into rubble.",
             "10 Mile");
 
             BasicTest(model,
-            "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers .",
+            "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
             "10.5 Mile");
 
             BasicTest(model,
-            "the six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours .",
+            "the six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.",
             "6 Mile");
 
             BasicTest(model,
-            "industrywide , oil production in this country fell by 500,000 barrels a day to barrels in the first eight months of this year .",
+            "industrywide , oil production in this country fell by 500,000 barrels a day to barrels in the first eight months of this year.",
             "500000 Barrel");
 
             BasicTest(model,
-            "it ' s what 1 ) explains why we are like , well , ourselves rather than bo jackson ; 2 ) cautions that it ' s possible to drown in a lake that averages two feet deep ; and 3 ) predicts that 10 , 000 monkeys placed before 10 , 000 pianos would produce 1 , 118 publishable rock ' n ' roll tunes .",
+            "it ' s what 1 ) explains why we are like , well , ourselves rather than bo jackson ; 2 ) cautions that it ' s possible to drown in a lake that averages two feet deep ; and 3 ) predicts that 10 , 000 monkeys placed before 10 , 000 pianos would produce 1 , 118 publishable rock ' n ' roll tunes.",
             "2 Foot");
 
             BasicTest(model,
-            "on may 19 , the fda began detaining chinese mushrooms in 68-ounce cans after more than 100 people in mississippi , new york and pennsylvania became ill from eating tainted mushrooms .",
+            "on may 19 , the fda began detaining chinese mushrooms in 68-ounce cans after more than 100 people in mississippi , new york and pennsylvania became ill from eating tainted mushrooms.",
             "68 Ounce");
 
             BasicTest(model,
-            "mr . hulings gloats that he sold all his stocks a week before the market plummeted 190 points on oct . 13 , and he is using the money to help buy a 45-acre horse farm .",
-            "45 Square meter");
+            "mr . hulings gloats that he sold all his stocks a week before the market plummeted 190 points on oct . 13 , and he is using the money to help buy a 45-acre horse farm.",
+            "45 Acre");
 
             BasicTest(model,
-            "then , to make these gardenettes quite literally rooms , ms . bartlett had thrown up windowless walls ( brick , lattice , hedge ) eight to 10 feet tall , casting her interiors into day - long stygian shade .",
+            "then , to make these gardenettes quite literally rooms , ms . bartlett had thrown up windowless walls (brick, lattice, hedge ) eight to 10 feet tall, casting her interiors into day - long stygian shade.",
             "10 Foot");
 
             BasicTest(model,
-            "` ` management does n ' t want surprises , ' ' notes jack zaves , who , as fuel - services director at american airlines , buys some 2.4 billion gallons of jet fuel a year .",
+            "` ` management does n ' t want surprises , ' ' notes jack zaves , who , as fuel - services director at american airlines , buys some 2.4 billion gallons of jet fuel a year.",
             "2400000000 Gallon");
 
             BasicTest(model,
-            "a 10-gallon water cooler had toppled onto the floor , soaking the red carpeting .",
+            "a 10-gallon water cooler had toppled onto the floor , soaking the red carpeting.",
             "10 Gallon");
 
             BasicTest(model,
-            "nearby , six dolphins will frolic in a 1.5 million gallon saltwater aquarium .",
+            "nearby , six dolphins will frolic in a 1.5 million gallon saltwater aquarium.",
             "1500000 Gallon");
 
             BasicTest(model,
-            "and this baby is over two pounds .",
+            "and this baby is over two pounds.",
             "2 Pound");
 
             BasicTest(model,
-            "` ` i do n ' t trust people who do n ' t eat , ' ' said ms . volokh , though she herself stopped eating lunch a few years ago to drop 25 pounds .",
+            "``i don't trust people who don't eat,'' said ms. volokh, though she herself stopped eating lunch a few years ago to drop 25 pounds.",
             "25 Pound");
 
             BasicTest(model,
-            "shell , a subsidiary of royal dutch / shell group , will be allowed to export 0.9 trillion cubic feet , and gulf , a unit of olympia & york developments ltd . will be allowed to export",
-            "900000000000 Cubic feet");
+            "shell , a subsidiary of royal dutch / shell group , will be allowed to export 0.9 trillion cubic feet , and gulf , a unit of olympia & york developments ltd. will be allowed to export",
+            "900000000000 Cubic foot");
 
             BasicTest(model,
-            "highlights of the bills , as currently framed , are : - - a restriction on the amount of real estate one family can own , to 660 square meters in the nation ' s six largest cities , but more in smaller cities and rural areas .",
+            "highlights of the bills , as currently framed , are : - - a restriction on the amount of real estate one family can own , to 660 square meters in the nation ' s six largest cities , but more in smaller cities and rural areas.",
             "660 Square meter");
 
             BasicTest(model,
-            "tigrean armies are now 200 miles north of addis ababa , threatening the town of dese , which would cut off mr . mengistu ' s capital from the port of assab , through which all fuel and other supplies reach addis ababa .",
+            "tigrean armies are now 200 miles north of addis ababa , threatening the town of dese , which would cut off mr . mengistu ' s capital from the port of assab , through which all fuel and other supplies reach addis ababa.",
             "200 Mile");
 
             BasicTest(model,
-            "he said that one of the computers took a three-foot trip sliding across the floor .",
+            "he said that one of the computers took a three-foot trip sliding across the floor.",
             "3 Foot");
 
             BasicTest(model,
-            "the core of its holdings is 190,000 square meters of incredibly expensive property in the marunouchi district , the business and financial center of tokyo , often jokingly called ` ` mitsubishi village . ' '",
+            "the core of its holdings is 190,000 square meters of incredibly expensive property in the marunouchi district , the business and financial center of tokyo , often jokingly called ` ` mitsubishi village. ' '",
             "190000 Square meter");
 
             BasicTest(model,
-            "the satellite , built by hughes for the international telecommunications satellite organization , is part of a $ 700 million contract awarded to hughes in 1982 to develop five of the three-ton satellites .",
+            "the satellite , built by hughes for the international telecommunications satellite organization , is part of a $ 700 million contract awarded to hughes in 1982 to develop five of the three-ton satellites.",
             "3 Ton");
 
 
             BasicTest(model,
-            "in a 1996 report on biological weapons , the center for strategic and international studies , a public policy research institution in washington , warned that it was easy for would - be terrorists to assemble biological weapons _ using commercial equipment with a capacity of 130 gallons .",
+            "in a 1996 report on biological weapons , the center for strategic and international studies , a public policy research institution in washington , warned that it was easy for would - be terrorists to assemble biological weapons _ using commercial equipment with a capacity of 130 gallons.",
             "130 Gallon");
 
             BasicTest(model,
-            "the trade group ' s compilation of commerce department data showed that august imports , the second largest monthly total of the year , were up 5 % from july ' s 1,458,000 tons but below last year ' s high of in june 1988 .",
+            "the trade group ' s compilation of commerce department data showed that august imports , the second largest monthly total of the year , were up 5 % from july ' s 1,458,000 tons but below last year ' s high of in june 1988.",
             "1458000 Ton");
 
             BasicTest(model,
-            "at no . 1 , singh hit a 9 - iron approach shot to within six feet of the cup .",
+            "at no . 1 , singh hit a 9 - iron approach shot to within six feet of the cup.",
             "6 Foot");
 
             BasicTest(model,
-            "so when next year ' s psyllium crop is harvested in march , it may be smaller than the 16,000 metric tons of the past few years - - right at the crest of the psyllium boom .",
+            "so when next year ' s psyllium crop is harvested in march , it may be smaller than the 16,000 metric tons of the past few years - - right at the crest of the psyllium boom.",
             "16000 Metric ton");
 
             BasicTest(model,
-            "the 486 is the descendant of a long series of intel chips that began dominating the market ever since ibm picked the 16-bit 8088 chip for its first personal computer .",
+            "the 486 is the descendant of a long series of intel chips that began dominating the market ever since ibm picked the 16-bit 8088 chip for its first personal computer.",
             "16 Bit");
 
             BasicTest(model,
-            "the ` ` jiotto caspita ' ' can run at over 188 miles an hour , a company spokesman said .",
+            "the ` ` jiotto caspita ' ' can run at over 188 miles an hour , a company spokesman said.",
             "188 Mile per hour");
 
             BasicTest(model,
-            "the navy has set up a helicopter landing zone just a 100 meters from a mobile operating room , just on the outskirts of baghdad .",
+            "the navy has set up a helicopter landing zone just a 100 meters from a mobile operating room , just on the outskirts of baghdad.",
             "100 Meter");
 
             BasicTest(model,
-            "caltrans plans to add a second deck for buses and car pools above the median of a 2.5-mile stretch of the harbor freeway just south of los angeles , near the memorial coliseum .",
+            "caltrans plans to add a second deck for buses and car pools above the median of a 2.5-mile stretch of the harbor freeway just south of los angeles , near the memorial coliseum.",
             "2.5 Mile");
 
             BasicTest(model,
-            "on my four-mile drive to farm headquarters each morning , i drive by another four empty houses .",
+            "on my four-mile drive to farm headquarters each morning , i drive by another four empty houses.",
             "4 Mile");
 
             BasicTest(model,
-            "we are insulted , \" said langa from the greek catholic headquarters , some 325 kilometer northwest of bucharest .",
+            "we are insulted, said langa from the greek catholic headquarters , some 325 kilometer northwest of bucharest.",
             "325 Kilometer");
 
             BasicTest(model,
@@ -571,51 +571,51 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             "5 Foot");
 
             BasicTest(model,
-            "4 inches) 28 - year - old who did not start running seriously until three years ago and had not competed indoors until this month .",
+            "4 inches) 28 - year - old who did not start running seriously until three years ago and had not competed indoors until this month.",
             "4 Inch");
 
             BasicTest(model,
-            "raceway park ( minnesota ) in shakopee is a 1/4 mile paved oval .",
+            "raceway park ( minnesota ) in shakopee is a 1/4 mile paved oval.",
             "0.25 Mile");
 
             BasicTest(model,
-            "castlecrag mountain is located south of moat lake , 1.6 km west of mount frink along the same ridge line .",
+            "castlecrag mountain is located south of moat lake , 1.6 km west of mount frink along the same ridge line.",
             "1.6 Kilometer");
 
             BasicTest(model,
-            "the javadi hills are located about 17 km from ambur .",
+            "the javadi hills are located about 17 km from ambur.",
             "17 Kilometer");
 
             BasicTest(model,
-            "after circling lake michigan near the exposition for two hours , commander hugo eckener landed the 776-foot airship at the nearby curtiss - wright airport in glenview .",
+            "after circling lake michigan near the exposition for two hours , commander hugo eckener landed the 776-foot airship at the nearby curtiss - wright airport in glenview.",
             "776 Foot");
 
             BasicTest(model,
-            "the interchange with highway 35 and highway 115 to lindsay and peterborough ( exit 436 ) lies 500 metres east of bennett road .",
+            "the interchange with highway 35 and highway 115 to lindsay and peterborough ( exit 436 ) lies 500 metres east of bennett road.",
             "500 Meter");
 
             BasicTest(model,
-            "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm .",
-            "300 Micrometer");
+            "in 1995 canon introduced the first commercially available slr lens with internal image stabilization , ef 75 -300mm f / 4 - 5 . 6 is usm.",
+            "300 Millimeter");
 
             BasicTest(model,
-            "sterling armaments of dagenham , essex produced a conversion kit comprising a new 7.62mm barrel , magazine , extractor and ejector for commercial sale .",
-            "7.62 Micrometer");
+            "sterling armaments of dagenham , essex produced a conversion kit comprising a new 7.62mm barrel , magazine , extractor and ejector for commercial sale.",
+            "7.62 Millimeter");
 
             BasicTest(model,
-            "the project costs $ 46 . 8 million , and is intended to boost the company ' s production capacity by 25 % to 34,500 metric tons of copper cathode a year .",
+            "the project costs $ 46 . 8 million , and is intended to boost the company ' s production capacity by 25 % to 34,500 metric tons of copper cathode a year.",
             "34500 Metric ton");
 
             BasicTest(model,
-            "canadian steel - ingot production totaled 291,890 metric tons in the week ended oct . 7 , up 14 . 8 % from the preceding week ' s total of , statistics canada , a federal agency , said .",
+            "canadian steel - ingot production totaled 291,890 metric tons in the week ended oct . 7 , up 14 . 8 % from the preceding week ' s total of , statistics canada , a federal agency , said.",
             "291890 Metric ton");
 
             BasicTest(model,
-            "florida panthers live in home ranges between 190 km2 .",
+            "florida panthers live in home ranges between 190 km2.",
             "190 Square kilometer");
 
             BasicTest(model,
-            "a metric ton is equal to 2,204.62 pounds .",
+            "a metric ton is equal to 2,204.62 pounds.",
             new string[] { "2204.62 Pound", "Metric ton" });
 
             /* Unpassed
@@ -648,7 +648,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.English);
 
             BasicTest(model, "the temperature outside is 40 deg celsius", "40 C");
 
@@ -715,11 +715,70 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             BasicTest(model, "how to convert - 20 degrees fahrenheit to celsius", new string[] { "-20 F", "C" });
         }
 
-        [TestMethod][Ignore]
+        [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.English);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.English);
 
+            BasicTest(model,
+                      "When she was five years old, she learned to ride a bike.",
+                      "5 Year");
+
+            BasicTest(model,
+                      "This saga is ten years old.",
+                      "10 Year");
+
+            BasicTest(model,
+                      "I'm only 29 years old!",
+                      "29 Year");
+
+            BasicTest(model,
+                      "Now, after ninety five years of age, perspectives change.",
+                      "95 Year");
+
+            BasicTest(model,
+                      "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
+                      "500 Year");
+
+            BasicTest(model,
+                      "She's 60 years old; she was born in May 8, 1945.",
+                      "60 Year");
+
+            BasicTest(model,
+                      "25% of cases are not diagnosed until around 3 years of age.",
+                      "3 Year");
+
+            BasicTest(model,
+                      "When will there be pressure to fulfil a promise that is one year old?",
+                      "1 Year");
+
+            BasicTest(model,
+                      "It happened when the baby was only ten months old.",
+                      "10 Month");
+
+            BasicTest(model,
+                      "The committee proposal is 8 months old.",
+                      "8 Month");
+
+            BasicTest(model,
+                      "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
+                      "18 Month");
+
+            BasicTest(model,
+                      "It is possible, but in 2006 95% of them were younger than three months old.",
+                      "3 Month");
+
+            BasicTest(model,
+                      "If we go ahead in December, it will be three weeks old.",
+                      "3 Week");
+
+            BasicTest(model,
+                      "At 6 weeks of age, one can already celebrate Christmas.",
+                      "6 Week");
+
+            BasicTest(model,
+                      "A 90 day old utilities bill is quite late.",
+                      "90 Day");
         }
     }
 }

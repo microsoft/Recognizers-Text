@@ -8,14 +8,17 @@ namespace Microsoft.Recognizers.Text.Number
     public interface INumberParserConfiguration
     {
         #region language dictionaries
+
         ImmutableDictionary<string, long> CardinalNumberMap { get; }
 
         ImmutableDictionary<string, long> OrdinalNumberMap { get; }
 
         ImmutableDictionary<string, long> RoundNumberMap { get; }
+
         #endregion
 
         #region language settings
+
         CultureInfo CultureInfo { get; }
 
         Regex DigitalNumberRegex { get; }
@@ -41,6 +44,7 @@ namespace Microsoft.Recognizers.Text.Number
         IEnumerable<string> WrittenIntegerSeparatorTexts { get; }
 
         IEnumerable<string> WrittenFractionSeparatorTexts { get; }
+
         #endregion
 
         /// <summary>

@@ -28,7 +28,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public string ConnectorToken { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
+
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
+
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
     }
 }

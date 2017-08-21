@@ -114,6 +114,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Resources\Microsoft.Recognizers.Resources.csproj">
+      <Project>{87a1de51-0c7b-4beb-b3a5-f04b5e2d8ef1}</Project>
+      <Name>Microsoft.Recognizers.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
       <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
       <Name>Microsoft.Recognizers.Text</Name>

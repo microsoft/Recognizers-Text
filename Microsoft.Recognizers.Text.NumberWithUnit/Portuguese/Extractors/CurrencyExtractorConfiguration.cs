@@ -39,7 +39,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             { "Centésimo", "centésimo|centésimos" },
             { "Pêni", "pêni|péni|peni|penies|pennies" },
             { "Manat", "manat|manate|mánate|man|manats|manates|mánates" },
-
             //Euro
             { "Euro", "euro|euros|€|eur" },
             { "Centavo de Euro", "centavo de euro|cêntimo de euro|centimo de euro|centavos de euro|cêntimos de euro|centimos de euro" },
@@ -52,7 +51,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             //Franco CFA da África Central
             { "Franco CFA da África Central", "franco CFA da África Central|franco CFA da Africa Central|francos CFA da África Central|francos CFA da Africa Central|franco CFA central|xaf" },
             { "Centavo de CFA da África Central", "centavo de CFA de África Central|centavos de CFA da África Central|cêntimo de CFA de África Central|cêntimos de CFA da África Central" },
-            
             //Abcásia
             {"Apsar abcásio", "apsar abcásio|apsar abecásio|apsar abcasio|apsar|apsares"},
             //Afeganistão

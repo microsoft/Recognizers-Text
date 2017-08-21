@@ -156,6 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     return ret;
                 }
             }
+
             return new DateTimeResolutionResult();
         }
 
@@ -209,10 +210,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 year += 2000;
             }
 
-            var timexStr = string.Empty;
             if (!string.IsNullOrEmpty(holidayStr))
             {
                 DateObject value;
+                string timexStr;
                 if (FixedHolidaysDict.ContainsKey(holidayStr))
                 {
                     value = FixedHolidaysDict[holidayStr];
@@ -381,6 +382,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 year = num;
             }
+
             return year == 0 ? -1 : year;
         }
     }

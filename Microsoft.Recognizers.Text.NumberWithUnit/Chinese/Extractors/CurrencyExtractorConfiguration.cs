@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public override ImmutableDictionary<string, string> PrefixList => CurrencyPrefixList;
 
-        public override ImmutableList<string> AmbiguousUnitList => ambiguousUnitList;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_CURRENCY;
 
@@ -341,7 +341,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             {"Costa Rican colón", "₡"}
         }.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> ambiguousUnitList = new List<string>
+        private static readonly ImmutableList<string> AmbiguousValues = new List<string>
         {
             "元",
             "仙",

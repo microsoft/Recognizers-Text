@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            DateTokenPrefix = "on ";
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;
             OrdinalExtractor = config.OrdinalExtractor;
             CardinalExtractor = config.CardinalExtractor;
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("next") || trimedText.StartsWith("upcoming"))
             {
                 swift = 1;
             }

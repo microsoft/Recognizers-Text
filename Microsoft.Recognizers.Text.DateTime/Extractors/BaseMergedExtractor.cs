@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -23,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.DateTimeExtractor.Extract(text));
             AddTo(ret, this.config.TimePeriodExtractor.Extract(text));
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.SetExtractor.Extract(text));
+            AddTo(ret, this.config.GetExtractor.Extract(text));
             AddTo(ret, this.config.HolidayExtractor.Extract(text));
 
             AddMod(ret, text);
@@ -76,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
                 int tokenIndex;
                 
-                if (this.config.HasBeforeTokenIndex(beforeStr.Trim(), out tokenIndex))
+                if (HasTokenIndex(beforeStr.TrimEnd(), config.BeforeRegex, out tokenIndex))
                 {
                     var modLengh = beforeStr.Length - tokenIndex;
                     er.Length += modLengh;
@@ -84,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
                 
-                if (this.config.HasAfterTokenIndex(beforeStr.Trim(), out tokenIndex))
+                if (HasTokenIndex(beforeStr.TrimEnd(), config.AfterRegex, out tokenIndex))
                 {
                     var modLengh = beforeStr.Length - tokenIndex;
                     er.Length += modLengh;
@@ -92,6 +93,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
             }
+        }
+
+        public bool HasTokenIndex(string text, Regex regex, out int index)
+        {
+            index = -1;
+            var match = regex.Match(text);
+            if (match.Success)
+            {
+                index = match.Index;
+            }
+            return match.Success;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             config = configuration;
         }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);

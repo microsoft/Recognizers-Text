@@ -46,11 +46,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
             var referenceTime = refDate;
+
+            // handle cases like "三年半"
+            var hasHalfSuffix = false;
+            if (er.Text.EndsWith("半"))
+            {
+                er.Length -= 1;
+                er.Text = er.Text.Substring(0, er.Text.Length - 1);
+                hasHalfSuffix = true;
+            }
+
             var parseResult = InternalParser.Parse(er);
             var unitResult = parseResult.Value as UnitValue;
+
+            if (unitResult == null)
+            {
+                return null;
+            }
+
             var dtParseResult = new DateTimeResolutionResult();
             var unitStr = unitResult.Unit;
             var numStr = unitResult.Number;
+
+            if (hasHalfSuffix)
+            {
+                numStr = (double.Parse(numStr) + 0.5).ToString();
+            }
 
             dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
             dtParseResult.FutureValue = dtParseResult.PastValue = double.Parse(numStr)*UnitValueMap[unitStr];

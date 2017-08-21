@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Success = true
             };
 
-            //右侧没有Desc,左侧有
+            //the right side doesn't contain desc while the left side does
             if (rightResult.LowBound == -1 && leftResult.LowBound != -1 && rightResult.Hour <= leftResult.LowBound)
             {
                 rightResult.Hour += 12;
@@ -129,8 +129,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             int day = refTime.Day,
                 month = refTime.Month,
                 year = refTime.Year;
-            
-            //判断右侧是否比小测的小,如果比左侧的小,则增加一天
+
+            //determine if the right side time is smaller than the left side, if yes, add one day
             int hour = leftResult.Hour > 0 ? leftResult.Hour : 0,
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
                 second = leftResult.Second > 0 ? leftResult.Second : 0;

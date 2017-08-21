@@ -48,12 +48,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back seven o'clock tomorrow", 13, 22);
 
             BasicTest("I'll go back tomorrow morning at 7", 13, 21);
-            //BasicTestFuture("I'll go back Oct. 5 in the afternoon at 7", 13, 28);
             BasicTest("I'll go back 7:00 on Sunday afternoon", 13, 24);
             BasicTest("I'll go back twenty minutes past five tomorrow morning", 13, 41);
             BasicTest("I'll go back October 14 8:00, October 14", 13, 15);
             BasicTest("I'll go back 7, this morning", 13, 15);
-            BasicTest("I'll go back tonight for 8", 13, 13);
 
             BasicTest("I'll go back 8pm in the evening, Monday", 13, 26);
             BasicTest("I'll go back 8pm in the evening, 1st Jan", 13, 27);
@@ -61,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back 10pm tonight", 13, 12);
             BasicTest("I'll go back 8am this morning", 13, 16);
             BasicTest("I'll go back 8pm this evening", 13, 16);
+            BasicTest("I'll go back tonight around 7", 13, 16);
 
             BasicTest("I'll go back this morning at 7", 13, 17);
             BasicTest("I'll go back this morning at 7pm", 13, 19);

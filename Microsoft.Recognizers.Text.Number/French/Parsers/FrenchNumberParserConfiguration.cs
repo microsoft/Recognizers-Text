@@ -91,11 +91,13 @@ namespace Microsoft.Recognizers.Text.Number.French
             for (int i = 0; i < numberStr.Length; i++)
             {
                 strBuilder.Append(numberStr[i]);
+
                 if (this.CardinalNumberMap.ContainsKey(strBuilder.ToString()) && this.CardinalNumberMap[strBuilder.ToString()] > value)
                 {
                     lastGoodChar = i;
                     value = this.CardinalNumberMap[strBuilder.ToString()];
                 }
+
                 if ((i + 1) == numberStr.Length)
                 {
                     finalValue += value;
@@ -104,6 +106,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     value = 0;
                 }
             }
+
             return finalValue;
         }
 
@@ -138,7 +141,6 @@ namespace Microsoft.Recognizers.Text.Number.French
                 {"quarante", 40},
                 {"cinquante", 50},
                 {"soixante", 60},
-
                 {"soixante-dix", 70},
                 {"septante", 70 },
                 {"quatre-vingts", 80},

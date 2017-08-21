@@ -1,7 +1,15 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime.English
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources.English;
+
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public IExtractor DateExtractor { get; }
 
         public IExtractor TimeExtractor { get; }
@@ -16,7 +24,7 @@
 
         public IExtractor DurationExtractor { get; }
 
-        public IExtractor SetExtractor { get; }
+        public IExtractor GetExtractor { get; }
 
         public IExtractor HolidayExtractor { get; }
 
@@ -29,30 +37,11 @@
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+            GetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
         }
 
-        public bool HasAfterTokenIndex(string text, out int index)
-        {
-            index = -1;
-            if (text.EndsWith("after"))
-            {
-                index = text.LastIndexOf("after");
-                return true;
-            }
-            return false;
-        }
-
-        public bool HasBeforeTokenIndex(string text, out int index)
-        {
-            index = -1;
-            if (text.EndsWith("before"))
-            {
-                index = text.LastIndexOf("before");
-                return true;
-            }
-            return false;
-        }
+        Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+        Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
     }
 }

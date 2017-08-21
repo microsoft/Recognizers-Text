@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestCurrency()
         {
-            var model = NumberWithUnitRecognizer.GetCurrencyModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.Chinese);
 
             BasicTest(model,
                 "江苏彩民15元中大乐透1600万 奖池36.57亿",
@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [TestMethod]
         public void TestDimension()
         {
-            var model = NumberWithUnitRecognizer.GetDimensionModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.Chinese);
 
             BasicTest(model,
                 "去年，潜江虾稻产业综合产值突破180亿元，带动就业超10万人，龙虾养殖户户平增收16000元，带动全省养殖小龙虾387万亩。",
@@ -103,23 +103,62 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 
             BasicTest(model,
                 "如今身高168公分",
-                "168 Cntimeter");
+                "168 Centimeter");
 
             BasicTest(model,
                 "澳联邦警察与维州警方在墨尔本缴获近一吨冰毒，为澳洲史上最大冰毒走私案。（澳洲联邦警察局 ...",
                 "1 Ton");
         }
 
-        [TestMethod][Ignore]
+        [TestMethod]
         public void TestTemperature()
         {
-            var model = NumberWithUnitRecognizer.GetTemperatureModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.Chinese);
+
+            BasicTest(model, "设置恒温器为85度", "85 Degree");
+
+            BasicTest(model, "把温度升高5度", "5 Degree");
+
+            BasicTest(model, "正常的温度是华氏温度98.6度", "98.6 F");
+            BasicTest(model, "华氏温度100度", "100 F");
+            BasicTest(model, "20摄氏度", "20 C");
+            BasicTest(model, "外面的温度是98度", "98 Degree");
+            BasicTest(model, "你能把华氏温度51度转换为摄氏度吗", new string[] { "51 F", "C" });
         }
 
-        [TestMethod][Ignore]
+        [TestMethod]
         public void TestAge()
         {
-            var model = NumberWithUnitRecognizer.GetAgeModel(Culture.Chinese);
+            var model = NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.Chinese);
+
+            BasicTest(model,
+                      "当她五岁的时候，她学会了骑自行车",
+                      "5 Year");
+
+            BasicTest(model,
+                      "我只有29岁！",
+                      "29 Year");
+
+            BasicTest(model,
+                      "这件事发生在宝宝只有十个月大的时候.",
+                      "10 Month");
+
+            BasicTest(model,
+                      "十二月初出生的话已经三周大了",
+                      "3 Week");
+
+            BasicTest(model,
+                      "她出生于1945年5月8号，现在60岁了",
+                      "60 Year");
+
+            BasicTest(model,
+                      "她已经满七周岁了，可以上小学了",
+                      "7 Year");
+
+            BasicTest(model,
+                      "90天大的小孩应该去医院做检查",
+                      "90 Day");
         }
+
     }
 }

@@ -34,7 +34,6 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         public static string AllOrdinalRegex => $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
 
-
         public OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, string>

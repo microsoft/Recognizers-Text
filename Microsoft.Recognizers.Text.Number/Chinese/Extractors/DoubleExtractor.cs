@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public static string PointRegexChsStr => @"[点點\.．]";
 
         public static string AllFloatRegexChs =>
-            $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.AllIntRegexChs}\s*{PointRegexChsStr}(\s*{IntegerExtractor
-                .ZeroToNineIntegerRegexChs})+";
+            $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.AllIntRegexChs}\s*{PointRegexChsStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{IntegerExtractor
+                .ZeroToNineIntegerRegexChs})*";
 
         public DoubleExtractor()
         {
@@ -38,8 +38,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
-                //(-).2 
                 {
+                    //(-).2 
                     new Regex(
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}" + @"{1,3}([,，]" +
@@ -48,8 +48,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 },
-                // 1.0 K
                 {
+                    // 1.0 K
                     new Regex(
                         $@"({IntegerExtractor.SignSymbolRegexNum}\s*)?{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+[\.．]{IntegerExtractor
@@ -57,24 +57,24 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.Singleline),
                     "DoubleNum"
                 },
-                //１５.２万
                 {
+                    //１５.２万
                     new Regex(
                         $@"{IntegerExtractor.SignSymbolRegexChs}?{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+([\.．]{IntegerExtractor
                             .ZeroToNineChsFullHalfRegexChs}+)?\s*[多几幾余]?[万亿萬億]" + @"{1,2}",
                         RegexOptions.Singleline),
                     "DoubleChs"
                 },
-                //四十五点三三
                 {
+                    //四十五点三三
                     new Regex(
                         $@"(?<![百佰]\s*分\s*之\s*(({IntegerExtractor.AllIntRegexChs}[点點]*)|{AllFloatRegexChs})*){AllFloatRegexChs}(?!{IntegerExtractor
                             .ZeroToNineIntegerRegexChs}*\s*[个個]\s*[百佰]\s*分\s*[点點])",
                         RegexOptions.Singleline),
                     "DoubleChs"
                 },
-                // 2e6, 21.2e0
                 {
+                    // 2e6, 21.2e0
                     new Regex(
                         $@"(?<!{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+[\.．])({IntegerExtractor
                             .SignSymbolRegexNum}\s*)?{IntegerExtractor
@@ -84,8 +84,8 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 },
-                //2^5
                 {
+                    //2^5
                     new Regex(
                         $@"(?<!{IntegerExtractor.ZeroToNineChsFullHalfRegexChs}+[\.．])({IntegerExtractor
                             .SignSymbolRegexNum}\s*)?({IntegerExtractor
@@ -95,6 +95,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     "DoublePow"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

@@ -48,7 +48,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         .Concat(AreaExtractorConfiguration.AreaSuffixList)
         .Concat(LengthExtractorConfiguration.LenghtSuffixList)
         .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
-        .Concat(TemperatureExtractorConfiguration.TemperatureSuffixList)
         .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
         .Concat(WeightExtractorConfiguration.WeightSuffixList)
         .ToImmutableDictionary(x => x.Key, x => x.Value);
