@@ -78,8 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back 340pm", new DateObject(year, month, day, 15, 40, second));
             BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
-
             BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
+
             BasicTest("midnight", new DateObject(year, month, day, 0, 0, second));
             BasicTest("mid-night", new DateObject(year, month, day, 0, 0, second));
             BasicTest("mid night", new DateObject(year, month, day, 0, 0, second));
@@ -112,7 +112,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("It's 8 in the morning", "T08");
             BasicTest("It's 8 in the night", "T20");
 
-
             BasicTest("It's half past eight", "T08:30");
             BasicTest("It's half past 8pm", "T20:30");
             BasicTest("It's 30 mins past eight", "T08:30");
@@ -144,6 +143,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be back 11ish", "T11");
             BasicTest("I'll be back 11-ish", "T11");
 
+            //TODO: discussion on the definition
+            //Default time period definition for now
+            //a.Morning: 08:00:00 - 12:00:00
+            //b.Afternoon: 12:00:00 – 16:00:00
+            //c.Evening: 16:00:00 – 20:00:00
+            //d.Night: 20:00:00 – 23:59:59
+            //e.Daytime: 08:00:00 – 16:00:00(morning + afternoon)
             BasicTest("midnight", "T00");
             BasicTest("mid-night", "T00");
             BasicTest("mid night", "T00");
