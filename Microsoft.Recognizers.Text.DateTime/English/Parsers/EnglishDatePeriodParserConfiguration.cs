@@ -43,6 +43,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
 
+        public static readonly Regex NextPrefixRegex =
+            new Regex(
+                DateTimeDefinitions.NextPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex =
+            new Regex(
+                DateTimeDefinitions.PastPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisPrefixRegex =
+            new Regex(
+                DateTimeDefinitions.ThisPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
         #endregion
 
         #region Dictionaries
@@ -93,30 +109,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SeasonMap = config.SeasonMap;
         }
 
-        public int GetSwiftDay(string text)
+        public int GetSwiftDayOrMonth(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("next") || trimedText.StartsWith("upcoming"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last") || trimedText.StartsWith("past"))
-            {
-                swift = -1;
-            }
-            return swift;
-        }
-
-        public int GetSwiftMonth(string text)
-        {
-            var trimedText = text.Trim().ToLowerInvariant();
-            var swift = 0;
-            if (trimedText.StartsWith("next") || trimedText.StartsWith("upcoming"))
-            {
-                swift = 1;
-            }
-            if (trimedText.StartsWith("last"))
+            else if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
@@ -127,15 +128,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.StartsWith("next"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("this"))
+            else if (ThisPrefixRegex.IsMatch(trimedText))
             {
                 swift = 0;
             }

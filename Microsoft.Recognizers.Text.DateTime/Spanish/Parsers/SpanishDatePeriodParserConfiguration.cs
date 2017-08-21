@@ -43,6 +43,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
 
+        //TODO: config this according to English
+        public static readonly Regex NextPrefixRegex =
+            new Regex(
+                @"(next|upcoming)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex =
+            new Regex(
+                @"(last|past|previous)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisPrefixRegex =
+            new Regex(
+                @"(this|current)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
+        Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
+        Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
+
         #endregion
 
         #region Dictionaries
@@ -94,35 +112,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SeasonMap = config.SeasonMap;
         }
 
-        public int GetSwiftDay(string text)
+        public int GetSwiftDayOrMonth(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
             //TODO: Replace with a regex
             //TODO: Add 'upcoming' key word
-            if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
-            {
-                swift = 1;
-            }
-
-            //TODO: Replace with a regex
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
-            {
-                swift = -1;
-            }
-            return swift;
-        }
-
-        public int GetSwiftMonth(string text)
-        {
-            var trimedText = text.Trim().ToLowerInvariant();
-            var swift = 0;
-
-            //TODO: Replace with a regex
-            //TODO: Add 'upcoming' key wor
             if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
                 trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
             {

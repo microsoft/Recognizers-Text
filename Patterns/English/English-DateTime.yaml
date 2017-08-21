@@ -43,7 +43,7 @@ MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
   references: [ PeriodYearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(next|upcoming|this|last|past|previous|current)\s+(weekend|week|month|year)|weekend|(month|year) to date)\b
+  def: \b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|{RelativeRegex}\s+(weekend|week|month|year)|weekend|(month|year) to date)\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})
@@ -142,7 +142,7 @@ MonthEnd: !nestedRegex
 NonDateUnitRegex: !simpleRegex
   def: (?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b'
 DescRegex: !simpleRegex
-  def: (?<desc>pm\b|am\b|p\.m\.|a\.m\.|p\b|a m\b|p m\b|a. m.\b|p. m.\b|ampm)
+  def: (?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.\b|p\.m\b|p\. m\b|p\b)
 HourNumRegex: !simpleRegex
   def: (?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)
 MinuteNumRegex: !simpleRegex
@@ -219,8 +219,8 @@ PureNumFromTo: !nestedRegex
   def: (from\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
-  def: (between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*(and|through)\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
-  references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, PmRegex, AmRegex ]
+  def: (between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
+  references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(at|on|of)(\s+the)?$)
 NightRegex: !simpleRegex
@@ -320,11 +320,17 @@ LaterRegex: !simpleRegex
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 AmDescRegex: !simpleRegex
-  def: (am\b|a\.m\.|a m\b|a. m.\b)
+  def: (am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)
 PmDescRegex: !simpleRegex
-  def: (pm\b|p\.m\.|p\b|p m\b|p. m.\b|ampm)
+  def: (pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)
 AmPmDescRegex: !simpleRegex
   def: (ampm)
+NextPrefixRegex: !simpleRegex
+  def: (next|upcoming)\b
+PastPrefixRegex: !simpleRegex
+  def: (last|past|previous)\b
+ThisPrefixRegex: !simpleRegex
+  def: (this|current)\b
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         public static readonly Regex InConnectorRegex = new Regex(@"\b(in)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AmDescRegex = new Regex(@"(am\b|a\.m\.|a m\b|a. m.\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AmDescRegex = new Regex(@"(am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PmDescRegex = new Regex(@"(pm\b|p\.m\.|p\b|p m\b|p. m.\b|ampm)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PmDescRegex = new Regex(@"(pm\b|p\.m\.|p\b|p m\b|p\. m\.\b|p\.m\b|p\. m\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AmPmDescRegex = new Regex(@"(ampm)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
