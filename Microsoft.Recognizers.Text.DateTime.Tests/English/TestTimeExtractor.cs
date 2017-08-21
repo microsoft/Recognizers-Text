@@ -16,8 +16,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
         }
 
-        
-
         [TestMethod]
         public void TestTimeExtract()
         {
@@ -38,7 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("It's seven o'clock", 5, 13);
             BasicTest("It's 8 in the morning", 5, 16);
             BasicTest("It's 8 in the night", 5, 14);
-
 
             BasicTest("It's half past eight", 5, 15);
             BasicTest("It's half past 8pm", 5, 13);
