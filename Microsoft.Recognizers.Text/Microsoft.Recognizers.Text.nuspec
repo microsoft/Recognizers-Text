@@ -20,7 +20,6 @@
     <file src="..\build\package\Microsoft.Recognizers.Resources.dll" target="lib\net452"/>
     <file src="..\build\package\Microsoft.Recognizers.Resources.pdb" target="lib\net452" />
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
-    <file src="..\Microsoft.Recognizers.Resources\*.cs" target="src" />
-    <file src="..\Microsoft.Recognizers.Resources\English\*.cs" target="src\English" />
+    <file src="..\Microsoft.Recognizers.Resources\**\*.cs" exclude="..\Microsoft.Recognizers.Resources\**\obj\**\*.cs" target="src\Resources" />
   </files>
 </package>
