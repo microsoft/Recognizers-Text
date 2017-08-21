@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             // extract early/late prefix from text
-            var match = this.config.NightRegex.Match(text);
+            var match = this.config.TimeOfDayRegex.Match(text);
             bool hasEarly = false, hasLate = false;
             if (match.Success)
             {

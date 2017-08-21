@@ -25,9 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PureNumberBetweenAndRegex { get; }
 
-        Regex SpecificNightRegex { get; }
+        Regex SpecificTimeOfDayRegex { get; }
 
-        Regex NightRegex { get; }
+        Regex TimeOfDayRegex { get; }
 
         Regex PastRegex { get; }
 
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
-        Regex PeriodNightWithDateRegex { get; }
+        Regex PeriodTimeOfDayWithDateRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

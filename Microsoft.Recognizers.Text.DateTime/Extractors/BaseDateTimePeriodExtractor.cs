@@ -185,7 +185,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
 
-            var matches = this.config.SpecificNightRegex.Matches(text);
+            var matches = this.config.SpecificTimeOfDayRegex.Matches(text);
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
-                var match = this.config.PeriodNightWithDateRegex.Match(afterStr);
+                var match = this.config.PeriodTimeOfDayWithDateRegex.Match(afterStr);
                 if (match.Success)// && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var prefixStr = text.Substring(0, er.Start?? 0);
 
-                match = this.config.PeriodNightWithDateRegex.Match(prefixStr);
+                match = this.config.PeriodTimeOfDayWithDateRegex.Match(prefixStr);
                 if (match.Success) // && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
                 {
                     var midStr = text.Substring(match.Index + match.Length, er.Start - match.Index - match.Length ?? 0);

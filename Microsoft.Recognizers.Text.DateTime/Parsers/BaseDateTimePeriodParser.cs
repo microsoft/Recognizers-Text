@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseSpecificNight(er.Text, referenceTime);
+                    innerResult = ParseSpecificTimeOfDay(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
@@ -343,20 +343,20 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
 
-        // parse "this night"
-        protected virtual DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
+        // parse specific TimeOfDay like "this night", "early morning", "late evening"
+        protected virtual DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
             var timeText = trimedText;
 
-            var match = this.Config.PeriodNightWithDateRegex.Match(trimedText);
+            var match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
 
+            // extract early/late prefix from text if any
             bool hasEarly = false, hasLate = false;
-            // extract early/late prefix from text
             if (match.Success)
             {
-                timeText = match.Groups["night"].Value;
+                timeText = match.Groups["timeOfDay"].Value;
                 if (!string.IsNullOrEmpty(match.Groups["early"].Value))
                 {
                     hasEarly = true;
@@ -369,19 +369,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            // handle morning, afternoon..
+            // handle time of day
             int beginHour, endHour, endMin = 0;
             string timeStr;
+            // late/early is only working iwth time of day
+            // only standard time of day (morinng, afternoon, evening and night) will not directly return
             if (!this.Config.GetMatchedTimeRange(timeText, out timeStr, out beginHour, out endHour, out endMin))
             {
                 return ret;
             }
 
             // modify time period if "early" or "late" is existed
+            // since time of day is all defined as four hours, 
+            // using previous 2 hours represents early
+            // late 2 hours represents late
             if (hasEarly)
             {
                 endHour = beginHour + 2;
-                // handling case: night end with 23:59
+                // handling speical case: night end with 23:59
                 if (endMin == 59)
                 {
                     endMin = 0;
@@ -392,7 +397,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginHour = beginHour + 2;
             }
 
-            match = this.Config.SpecificNightRegex.Match(trimedText);
+            match = this.Config.SpecificTimeOfDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var swift = this.Config.GetSwiftPrefix(trimedText);
@@ -413,7 +418,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // handle Date followed by morning, afternoon
             // handle morning, afternoon followed by Date
-            match = this.Config.PeriodNightWithDateRegex.Match(trimedText);
+            match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();

@@ -234,11 +234,11 @@ PureNumBetweenAnd: !nestedRegex
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, PmRegex, AmRegex, RangeConnectorRegex ]
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(at|on|of)(\s+the)?$)
-NightRegex: !simpleRegex
-  def: \b(?<night>((((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime)))s?)\b
-SpecificNightRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{NightRegex})\b|\btonight)s?\b
-  references: [ NightRegex, RelativeRegex ]
+TimeOfDayRegex: !simpleRegex
+  def: \b(?<timeOfDay>((((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime)))s?)\b
+SpecificTimeOfDayRegex: !nestedRegex
+  def: \b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b
+  references: [ TimeOfDayRegex, RelativeRegex ]
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -249,33 +249,33 @@ NowRegex: !simpleRegex
   def: \b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b
 SuffixRegex: !simpleRegex
   def: ^\s*(in the\s+)?(morning|afternoon|evening|night)\b
-DateTimeNightRegex: !simpleRegex
-  def: \b(?<night>morning|afternoon|night|evening)\b
-DateTimeSpecificNightRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{DateTimeNightRegex})\b|\btonight)\b
-  references: [ DateTimeNightRegex, RelativeRegex ]
+DateTimeTimeOfDayRegex: !simpleRegex
+  def: \b(?<timeOfDay>morning|afternoon|night|evening)\b
+DateTimeSpecificTimeOfDayRegex: !nestedRegex
+  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\btonight)\b
+  references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
-  def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificNightRegex}
-  references: [ DateTimeSpecificNightRegex ]
+  def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
+  references: [ DateTimeSpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: '{DateTimeSpecificNightRegex}(\s*,)?(\s+(at|for))?\s*$'
-  references: [ DateTimeSpecificNightRegex ]
+  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|for))?\s*$'
+  references: [ DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
-  def: ({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificNightRegex}
-  references: [ HourNumRegex, BaseDateTime.HourRegex, DateTimeSpecificNightRegex ]
+  def: ({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
+  references: [ HourNumRegex, BaseDateTime.HourRegex, DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: '{DateTimeSpecificNightRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
-  references: [ DateTimeSpecificNightRegex, HourNumRegex, BaseDateTime.HourRegex ]
+  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})'
+  references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 TheEndOfRegex: !simpleRegex
   def: (the\s+)?end of(\s+the)?\s*$
-PeriodNightRegex: !simpleRegex
-  def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<night>morning|afternoon|night|evening))\b
-PeriodSpecificNightRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{PeriodNightRegex})\b|\btonight)\b
-  references: [ PeriodNightRegex, RelativeRegex ]
-PeriodNightWithDateRegex: !nestedRegex
- def: \b(({NightRegex}(\s+on)?))\b
- references: [ NightRegex]
+PeriodTimeOfDayRegex: !simpleRegex
+  def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b
+PeriodSpecificTimeOfDayRegex: !nestedRegex
+  def: \b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
+  references: [ PeriodTimeOfDayRegex, RelativeRegex ]
+PeriodTimeOfDayWithDateRegex: !nestedRegex
+ def: \b(({TimeOfDayRegex}(\s+on)?))\b
+ references: [ TimeOfDayRegex]
 DurationUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
 SuffixAndRegex: !simpleRegex
@@ -347,6 +347,14 @@ PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
   def: (this|current|over the)\b
+MorningStartEndRegex: !simpleRegex
+  def: (^(morning))|((morning)$)
+AfternoonStartEndRegex: !simpleRegex
+  def: (^(afternoon))|((afternoon)$)
+EveningStartEndRegex: !simpleRegex
+  def: (^(evening))|((evening)$)
+NightStartEndRegex: !simpleRegex
+  def: (^(overnight|tonight|night))|((overnight|tonight|night)$)
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

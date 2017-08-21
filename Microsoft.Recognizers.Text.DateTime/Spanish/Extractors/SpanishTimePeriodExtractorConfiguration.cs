@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: add this according to coresponding English regex
-        public static readonly Regex NightRegex = new Regex(@"",
+        public static readonly Regex TimeOfDayRegex = new Regex(@"",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishTimePeriodExtractorConfiguration()
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => SpanishDatePeriodExtractorConfiguration.TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.NightRegex => SpanishDateTimeExtractorConfiguration.NightRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

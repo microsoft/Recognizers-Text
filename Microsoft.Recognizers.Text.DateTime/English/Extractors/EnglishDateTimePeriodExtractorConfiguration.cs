@@ -28,15 +28,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex TillRegex => EnglishTimePeriodExtractorConfiguration.TillRegex;
 
-        private static readonly Regex PeriodNightRegex = new Regex(DateTimeDefinitions.PeriodNightRegex,
+        private static readonly Regex PeriodTimeOfDayRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex PeriodSpecificNightRegex = new Regex(DateTimeDefinitions.PeriodSpecificNightRegex,
+        private static readonly Regex PeriodSpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public Regex NightRegex => PeriodNightRegex;
+        public Regex TimeOfDayRegex => PeriodTimeOfDayRegex;
 
-        public Regex SpecificNightRegex => PeriodSpecificNightRegex;
+        public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
         private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex,
@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimePeriodNightWithDateRegex = new Regex(DateTimeDefinitions.PeriodNightWithDateRegex,
+        public static readonly Regex TimePeriodTimeOfDayWithDateRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex FollowedUnit => TimeFollowedUnit;
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        Regex IDateTimePeriodExtractorConfiguration.PeriodNightWithDateRegex => TimePeriodNightWithDateRegex;
+        Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => TimePeriodTimeOfDayWithDateRegex;
 
         public IExtractor CardinalExtractor { get; }
 

@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SimpleTimeOfTodayBeforeRegex { get; }
 
-        public Regex SpecificNightRegex { get; }
+        public Regex SpecificTimeOfDayRegex { get; }
 
         public Regex TheEndOfRegex { get; }
 
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
-            SpecificNightRegex = SpanishDateTimeExtractorConfiguration.SpecificNightRegex;
+            SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = SpanishDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
             Numbers = config.Numbers;

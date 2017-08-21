@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(0, er.Start ?? 0);
 
                 // handle "this morningh at 7am"
-                var innerMatch = this.config.NightRegex.Match(er.Text);
+                var innerMatch = this.config.TimeOfDayRegex.Match(er.Text);
                 if (innerMatch.Success && innerMatch.Index == 0)
                 {
                     beforeStr = text.Substring(0, (er.Start ?? 0) + innerMatch.Length);

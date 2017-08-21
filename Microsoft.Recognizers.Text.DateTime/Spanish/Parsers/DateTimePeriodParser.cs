@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
         }
 
-        protected override DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
+        protected override DateTimeResolutionResult ParseSpecificTimeOfDay(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 return ret;
             }
 
-            var match = this.Config.SpecificNightRegex.Match(trimedText);
+            var match = this.Config.SpecificTimeOfDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var swift = this.Config.GetSwiftPrefix(trimedText);
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             // handle Date followed by morning, afternoon
             // Add handling code to handle morning, afternoon followed by Date
             // Add handling code to handle early/late morning, afternoon
-            match = this.Config.NightRegex.Match(trimedText.Substring(startIndex));
+            match = this.Config.TimeOfDayRegex.Match(trimedText.Substring(startIndex));
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index + startIndex).Trim();

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Resources.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -25,9 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PureNumberBetweenAndRegex { get; }
 
-        public Regex SpecificNightRegex { get; }
+        public Regex SpecificTimeOfDayRegex { get; }
 
-        public Regex NightRegex { get; }
+        public Regex TimeOfDayRegex { get; }
 
         public Regex PastRegex { get; }
 
@@ -37,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex UnitRegex { get; }
 
-        public Regex PeriodNightWithDateRegex { get; }
+        public Regex PeriodTimeOfDayWithDateRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -55,16 +56,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeParser = config.DateTimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificNightRegex = EnglishDateTimeExtractorConfiguration.SpecificNightRegex;
-            NightRegex = EnglishDateTimeExtractorConfiguration.NightRegex;
+            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodNightWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.TimePeriodNightWithDateRegex;
+            PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.TimePeriodTimeOfDayWithDateRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
+
+        public static readonly Regex MorningStartEndRegex = new Regex(DateTimeDefinitions.MorningStartEndRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfternoonStartEndRegex = new Regex(DateTimeDefinitions.AfternoonStartEndRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EveningStartEndRegex = new Regex(DateTimeDefinitions.EveningStartEndRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NightStartEndRegex = new Regex(DateTimeDefinitions.NightStartEndRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
@@ -72,29 +82,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("morning") || trimedText.StartsWith("morning"))
+            if (MorningStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("afternoon") || trimedText.StartsWith("afternoon"))
+            else if (AfternoonStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TAF";
                 beginHour = 12;
                 endHour = 16;
             }
-            else if (trimedText.EndsWith("evening") || trimedText.StartsWith("evening"))
+            else if (EveningStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            //TODO: change that to regex
-            //Since there are some more related changes, will do it later.
-            else if (trimedText.EndsWith("night") || trimedText.StartsWith("night") ||
-                     trimedText.EndsWith("tonight") || trimedText.StartsWith("tonight") ||
-                     trimedText.EndsWith("overnight") || trimedText.StartsWith("overnight"))
+            else if (NightStartEndRegex.IsMatch(trimedText))
             {
                 timeStr = "TNI";
                 beginHour = 20;

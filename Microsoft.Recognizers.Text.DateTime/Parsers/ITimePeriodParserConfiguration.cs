@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PureNumberBetweenAndRegex { get; }
         
-        Regex NightRegex { get; }
+        Regex TimeOfDayRegex { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }
 
