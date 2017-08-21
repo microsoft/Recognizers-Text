@@ -144,7 +144,7 @@ NonDateUnitRegex: !simpleRegex
 DescRegex: !simpleRegex
   def: (?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.\b|p\.m\b|p\. m\b|p\b)
 HourNumRegex: !simpleRegex
-  def: (?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)
+  def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
 MinuteNumRegex: !simpleRegex
   def: (?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)
 DeltaMinuteNumRegex: !simpleRegex
