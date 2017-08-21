@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "guyfawkesday", new string[]{ "guyfawkesday" } },
                 { "veteransday", new string[]{ "veteransday" } },
                 { "christmaseve", new string[]{ "christmaseve" } },
-                { "newyeareve", new string[]{ "newyearseve" } },
+                { "newyeareve", new string[]{ "newyearseve","newyeareve" } },
             };
         }
 
@@ -109,9 +109,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 {"newyeareve", NewYearEve},
             };
         }
-        
+
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
-        private static DateObject NewYearEve(int year) => new DateObject(year-1, 12, 31);
+        private static DateObject NewYearEve(int year) => new DateObject(year, 12, 31);
         private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
         private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
         private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);

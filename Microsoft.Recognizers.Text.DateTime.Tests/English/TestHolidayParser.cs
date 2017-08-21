@@ -49,6 +49,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestHolidayParse()
         {
+            BasicTest("I'll go back on new year eve",
+                new DateObject(2016, 12, 31),
+                new DateObject(2015, 12, 31));
+
+            BasicTest("I'll go back on new year's eve",
+                new DateObject(2016, 12, 31),
+                new DateObject(2015, 12, 31));
+
             BasicTest("I'll go back on christmas",
                 new DateObject(2016, 12, 25),
                 new DateObject(2015, 12, 25));

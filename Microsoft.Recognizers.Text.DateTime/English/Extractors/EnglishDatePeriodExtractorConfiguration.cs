@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AndRegex = new Regex(DateTimeDefinitions.AndRegex,
+        public static readonly Regex AndRegex = new Regex(DateTimeDefinitions.RangeConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegex =
@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("and");
+            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
         }
     }
 }

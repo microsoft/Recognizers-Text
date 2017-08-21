@@ -57,7 +57,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> DayOfWeek { get; }
         IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }
