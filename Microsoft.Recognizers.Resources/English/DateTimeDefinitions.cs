@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Resources.English
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(the)?\s*$";
 		public const string NonDateUnitRegex = @"(?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b'";
 		public const string DescRegex = @"(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.\b|a\.m\b|a\. m\b|pm\b|p\.m\.|p m\b|p\. m\.\b|p\.m\b|p\. m\b|p\b)";
-		public const string HourNumRegex = @"(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)";
+		public const string HourNumRegex = @"\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b";
 		public const string MinuteNumRegex = @"(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";
 		public const string OclockRegex = @"(?<oclock>o’clock|o'clock|oclock)";
