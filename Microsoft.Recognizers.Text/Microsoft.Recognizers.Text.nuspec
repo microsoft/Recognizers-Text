@@ -17,6 +17,10 @@
   <files>
     <file src="..\build\package\Microsoft.Recognizers.Text.dll" target="lib\net452"/>
     <file src="..\build\package\Microsoft.Recognizers.Text.pdb" target="lib\net452" />
+    <file src="..\build\package\Microsoft.Recognizers.Resources.dll" target="lib\net452"/>
+    <file src="..\build\package\Microsoft.Recognizers.Resources.pdb" target="lib\net452" />
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
+    <file src="..\Microsoft.Recognizers.Resources\*.cs" target="src" />
+    <file src="..\Microsoft.Recognizers.Resources\English\*.cs" target="src\English" />
   </files>
 </package>
