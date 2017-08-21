@@ -14,10 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishMergedParserConfiguration() : base()
         {
-            BeforeRegex = new Regex(@"^\s*antes\s+",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            AfterRegex = new Regex(@"^\s*despues\s+",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
 
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));

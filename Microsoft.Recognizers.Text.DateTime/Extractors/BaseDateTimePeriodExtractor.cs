@@ -145,7 +145,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     int fromIndex;
 
-                    if (this.config.GetFromTokenIndex(beforeStr, out fromIndex))
+                    if (this.config.GetFromTokenIndex(beforeStr, out fromIndex)
+                        || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
                     }

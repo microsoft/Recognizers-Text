@@ -211,15 +211,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             var descStr = match.Groups["desc"].Value.ToLower();
             if (!string.IsNullOrEmpty(descStr))
             {
-                if (descStr.ToLower().StartsWith("a"))
+                //ampm is a special case in which at 6ampm = at 6
+                if (config.UtilityConfiguration.AmDescRegex.Match(descStr.ToLower()).Success
+                    || config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
                 {
                     if (hour >= 12)
                     {
                         hour -= 12;
                     }
-                    hasAm = true;
+                    if (!config.UtilityConfiguration.AmPmDescRegex.Match(descStr.ToLower()).Success)
+                    {
+                        hasAm = true;
+                    }
                 }
-                else if (descStr.ToLower().StartsWith("p"))
+                else if (config.UtilityConfiguration.PmDescRegex.Match(descStr.ToLower()).Success)
                 {
                     if (hour < 12)
                     {

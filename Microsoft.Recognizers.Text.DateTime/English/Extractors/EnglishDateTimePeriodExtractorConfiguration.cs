@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("and");
+            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
         }
     }
 }

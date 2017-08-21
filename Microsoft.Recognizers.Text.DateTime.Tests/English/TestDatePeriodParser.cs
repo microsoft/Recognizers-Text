@@ -73,10 +73,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out from 4 to 22 January, 1995", 4, 22, 1, 1995);
             BasicTestFuture("I'll be out between 4-22 January, 1995", 4, 22, 1, 1995);
 
+            BasicTestFuture("I'll be out between september 4th through september 8th", 4, 8, 9, year+1);
+
             if (inclusiveEnd)
             {
                 BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 13, month, year);
+                BasicTestFuture("I'll be out on current week", 7, 13, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 9, 30);
                 BasicTestFuture("I'll be out last sept", year - 1, 9, 1, year - 1, 9, 30);
@@ -90,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             {
                 BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 14, month, year);
+                BasicTestFuture("I'll be out on current week", 7, 14, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 3, 1);
                 BasicTestFuture("I'll be out this September", year, 9, 1, year, 10, 1);
                 BasicTestFuture("I'll be out last sept", year - 1, 9, 1, year - 1, 10, 1);
@@ -128,10 +132,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("I'll be out 3/2015", 2015, 3, 1, 2015, 4, 1);
             }
 
-            //BasicTestFuture("I'll leave this summer", 2016, 6, 1, 2016, 9, 1);
-            //BasicTestFuture("I'll leave in summer", 2017, 6, 1, 2017, 9, 1);
-            //BasicTestFuture("I'll leave in winter", 2016, 12, 1, 2017, 3, 1);
-            //BasicTestFuture("I'll leave in winter, 2017", 2017, 12, 1, 2018, 3, 1);
         }
 
         [TestMethod]

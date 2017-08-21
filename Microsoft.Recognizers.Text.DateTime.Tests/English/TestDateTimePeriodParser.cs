@@ -95,6 +95,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll go back tonight",
                 new DateObject(year, month, day, 20, min, second),
                 new DateObject(year, month, day, 23, 59, 59));
+            BasicTestFuture("I'll go back tonight for 8",
+                new DateObject(year, month, day, 20, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
             BasicTestFuture("I'll go back this night",
                 new DateObject(year, month, day, 20, min, second),
                 new DateObject(year, month, day, 23, 59, 59));

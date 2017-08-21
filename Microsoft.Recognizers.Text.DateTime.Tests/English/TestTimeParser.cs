@@ -32,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             var today = DateObject.Today;
             int year = today.Year, month = today.Month, day = today.Day, min = 0, second = 0;
+            BasicTest("I'll be back at 7ampm", new DateObject(year, month, day, 7, min, second));
             BasicTest("I'll be back at 7", new DateObject(year, month, day, 7, min, second));
             BasicTest("I'll be back at seven", new DateObject(year, month, day, 7, min, second));
             BasicTest("I'll be back 7pm", new DateObject(year, month, day, 19, min, second));
@@ -45,7 +46,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("It's seven o'clock", new DateObject(year, month, day, 7, min, second));
             BasicTest("It's 8 in the morning", new DateObject(year, month, day, 8, min, second));
             BasicTest("It's 8 in the night", new DateObject(year, month, day, 20, min, second));
-
 
             BasicTest("It's half past eight", new DateObject(year, month, day, 8, 30, second));
             BasicTest("It's half past 8pm", new DateObject(year, month, day, 20, 30, second));
