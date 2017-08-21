@@ -55,10 +55,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"\b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a siguiente|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add unitregex for Spanish
         public static readonly Regex UnitRegex =
             new Regex(
-                @"",
+                @"(?<unit>anos|ano|meses|mes|semanas|semana|d[íi]as|d[íi]a)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex StrictWeekDay =
@@ -133,8 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(el)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add this for Spanish
-        public static readonly Regex NonDateUnitRegex = new Regex(@"",
+        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>horas|hora|hrs|segundos|segundo|secs|sec|minutos|minuto|mins)\b'",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDateExtractorConfiguration()

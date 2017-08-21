@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex =
-            new Regex(@"(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)",
+            new Regex(@"\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MinuteNumRegex =
@@ -54,7 +54,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(
                 $@"(?<engtime>{HourNumRegex}\s*((y|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*y\s+)?{MinuteNumRegex})?)))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
 
         public static readonly Regex TimePrefix =
             new Regex(
