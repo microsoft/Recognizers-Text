@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("I'll be out 4 till 23 of this month", 12, 23);
             BasicTest("I'll be out between 4 and 22 this month", 12, 27);
             BasicTest("I'll be out between 3 and 12 of Sept hahaha", 12, 24);
+            BasicTest("I'll be out between september 4th through september 8th", 12, 43);
+            BasicTest("I'll be out between 4 and 22 this month", 12, 27);
             BasicTest("I'll be out from 4 to 22 January, 2017", 12, 26);
             BasicTest("I'll be out between 4-22 January, 2017", 12, 26);
 
@@ -103,7 +105,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
 
             BasicTest("I'll leave this summer", 11, 11);
             BasicTest("I'll leave next spring", 11, 11);
-            BasicTest("I'll leave the summer", 11, 10);
+            BasicTest("I'll leave the summer", 15, 6);
             BasicTest("I'll leave summer", 11, 6);
             BasicTest("I'll leave summer 2016", 11, 11);
             BasicTest("I'll leave summer of 2016", 11, 14);

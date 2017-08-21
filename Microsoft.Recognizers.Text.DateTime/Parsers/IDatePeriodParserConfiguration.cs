@@ -53,6 +53,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthOfRegex { get; }
 
+        Regex InConnectorRegex { get; }
+
+        Regex NextPrefixRegex { get; }
+
+        Regex PastPrefixRegex { get; }
+
+        Regex ThisPrefixRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }
@@ -62,10 +70,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
-
-        IImmutableList<string> InStringList { get; }
-
-        int GetSwiftMonth(string text);
 
         bool IsFuture(string text);
 
@@ -83,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         int GetSwiftYear(string text);
 
-        int GetSwiftDay(string text);
+        int GetSwiftDayOrMonth(string text);
 
         bool IsLastCardinal(string text);
     }
