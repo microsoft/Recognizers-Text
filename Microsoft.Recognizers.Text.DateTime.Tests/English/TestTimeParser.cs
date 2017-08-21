@@ -145,6 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             //TODO: discussion on the definition
             //Default time period definition for now
+            //LUIS Time Resolution Spec address: https://microsoft.sharepoint.com/teams/luis_core/_layouts/15/WopiFrame2.aspx?sourcedoc=%7B852DBAAF-911B-4CCC-9401-996505EC9B67%7D&file=LUIS%20Time%20Resolution%20Spec.docx&action=default
             //a.Morning: 08:00:00 - 12:00:00
             //b.Afternoon: 12:00:00 – 16:00:00
             //c.Evening: 16:00:00 – 20:00:00
