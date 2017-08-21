@@ -78,6 +78,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back 340pm", new DateObject(year, month, day, 15, 40, second));
             BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
+            BasicTest("I'll be back 1140 a.m.", new DateObject(year, month, day, 11, 40, second));
+
+            BasicTest("midnight", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("mid-night", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("mid night", new DateObject(year, month, day, 0, 0, second));
+            BasicTest("midmorning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("mid-morning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("mid morning", new DateObject(year, month, day, 10, 0, second));
+            BasicTest("midafternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("mid-afternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("mid afternoon", new DateObject(year, month, day, 14, 0, second));
+            BasicTest("midday", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("mid-day", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("mid day", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("noon", new DateObject(year, month, day, 12, 0, second));
         }
 
         [TestMethod]
@@ -96,7 +111,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("It's seven o'clock", "T07");
             BasicTest("It's 8 in the morning", "T08");
             BasicTest("It's 8 in the night", "T20");
-
 
             BasicTest("It's half past eight", "T08:30");
             BasicTest("It's half past 8pm", "T20:30");
@@ -128,6 +142,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be back noon", "T12");
             BasicTest("I'll be back 11ish", "T11");
             BasicTest("I'll be back 11-ish", "T11");
+
+            //TODO: discussion on the definition
+            //Default time period definition for now
+            //LUIS Time Resolution Spec address: https://microsoft.sharepoint.com/teams/luis_core/_layouts/15/WopiFrame2.aspx?sourcedoc=%7B852DBAAF-911B-4CCC-9401-996505EC9B67%7D&file=LUIS%20Time%20Resolution%20Spec.docx&action=default
+            //a.Morning: 08:00:00 - 12:00:00
+            //b.Afternoon: 12:00:00 – 16:00:00
+            //c.Evening: 16:00:00 – 20:00:00
+            //d.Night: 20:00:00 – 23:59:59
+            //e.Daytime: 08:00:00 – 16:00:00(morning + afternoon)
+            BasicTest("midnight", "T00");
+            BasicTest("mid-night", "T00");
+            BasicTest("mid night", "T00");
+            BasicTest("midmorning", "T10");
+            BasicTest("mid-morning", "T10");
+            BasicTest("mid morning", "T10");
+            BasicTest("midafternoon", "T14");
+            BasicTest("mid-afternoon", "T14");
+            BasicTest("mid afternoon", "T14");
+            BasicTest("midday", "T12");
+            BasicTest("mid-day", "T12");
+            BasicTest("mid day", "T12");
+            BasicTest("noon", "T12");
         }
     }
 }

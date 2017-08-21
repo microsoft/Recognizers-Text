@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SimpleTimeOfTodayBeforeRegex { get; }
 
-        Regex NightRegex { get; }
+        Regex TimeOfDayRegex { get; }
 
         Regex TheEndOfRegex { get; }
 

@@ -58,6 +58,45 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next 5 hrs", 13, 10);
             BasicTest("I'll go back last minute", 13, 11);
             BasicTest("I'll go back next hour", 13, 9);
+
+            BasicTest("I'll go back tuesday in the morning", 13, 22);
+            BasicTest("I'll go back tuesday in the afternoon", 13, 24);
+            BasicTest("I'll go back tuesday in the evening", 13, 22);
+
+            // early/late date time
+            BasicTest("let's meet in the early-morning Tuesday", 11, 28);
+            BasicTest("let's meet in the late-morning Tuesday", 11, 27);
+            BasicTest("let's meet in the early-afternoon Tuesday", 11, 30);
+            BasicTest("let's meet in the late-afternoon Tuesday", 11, 29);
+            BasicTest("let's meet in the early-evening Tuesday", 11, 28);
+            BasicTest("let's meet in the late-evening Tuesday", 11, 27);
+            BasicTest("let's meet in the early-night Tuesday", 11, 26);
+            BasicTest("let's meet in the late-night Tuesday", 11, 25);
+            BasicTest("let's meet in the early night Tuesday", 11, 26);
+            BasicTest("let's meet in the late night Tuesday", 11, 25);
+
+            BasicTest("let's meet in the early-morning on Tuesday", 11, 31);
+            BasicTest("let's meet in the late-morning on Tuesday", 11, 30);
+            BasicTest("let's meet in the early-afternoon on Tuesday", 11, 33);
+            BasicTest("let's meet in the late-afternoon on Tuesday", 11, 32);
+            BasicTest("let's meet in the early-evening on Tuesday", 11, 31);
+            BasicTest("let's meet in the late-evening on Tuesday", 11, 30);
+            BasicTest("let's meet in the early-night on Tuesday", 11, 29);
+            BasicTest("let's meet in the late-night on Tuesday", 11, 28);
+            BasicTest("let's meet in the early night on Tuesday", 11, 29);
+            BasicTest("let's meet in the late night on Tuesday", 11, 28);
+
+            BasicTest("let's meet on Tuesday early-morning", 14, 21);
+            BasicTest("let's meet on Tuesday late-morning", 14, 20);
+            BasicTest("let's meet on Tuesday early-afternoon", 14, 23);
+            BasicTest("let's meet on Tuesday late-afternoon", 14, 22);
+            BasicTest("let's meet on Tuesday early-evening", 14, 21);
+            BasicTest("let's meet on Tuesday late-evening", 14, 20);
+            BasicTest("let's meet on Tuesday early-night", 14, 19);
+            BasicTest("let's meet on Tuesday late-night", 14, 18);
+            BasicTest("let's meet on Tuesday early night", 14, 19);
+            BasicTest("let's meet on Tuesday late night", 14, 18);
+
         }
     }
 }

@@ -12,7 +12,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
 
         public void BasicTest(string text, int start, int length, int expected = 1)
         {
-
             var results = extractor.Extract(text);
             Assert.AreEqual(expected, results.Count);
 
@@ -152,6 +151,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             //test week of and month of
             BasicTest("week of september.15th", 0, 22);
             BasicTest("month of september.15th", 0, 23);
+        }
+
+        [TestMethod]
+        public void TestDatePeriodExtractOver()
+        {
+            // over the weekend = this weekend
+            BasicTest("I'll leave over the weekend", 11, 16);
         }
 
     }

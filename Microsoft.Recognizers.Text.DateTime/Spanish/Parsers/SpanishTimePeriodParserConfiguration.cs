@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex TimeOfDayRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -24,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }

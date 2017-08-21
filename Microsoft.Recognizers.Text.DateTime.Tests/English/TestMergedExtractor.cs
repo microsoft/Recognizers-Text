@@ -15,6 +15,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(length, results[0].Length);
         }
 
+        public void BasicTestNone(string text)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(0, results.Count);
+        }
+
         [TestMethod]
         public void TestMergedExtract()
         {
@@ -30,6 +36,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("this is after 4pm", 8, 9);
             BasicTest("this is after 4pm tomorrow", 8, 18);
             BasicTest("this is after tomorrow 4pm ", 8, 18);
+
+            //Unit tests for text should not extract datetime
+            BasicTestNone("which email have gotten a reply");
+            BasicTestNone("He is often alone");
+            BasicTestNone("often a bird");
         }
     }
 }
