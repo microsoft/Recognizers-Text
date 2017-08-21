@@ -60,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next hour", 13, 9);
 
             BasicTest("I'll go back tuesday in the morning", 13, 22);
+            BasicTest("I'll go back tuesday in the afternoon", 13, 24);
+            BasicTest("I'll go back tuesday in the evening", 13, 22);
 
             // early/late date time
             BasicTest("let's meet in the early-morning Tuesday", 11, 28);

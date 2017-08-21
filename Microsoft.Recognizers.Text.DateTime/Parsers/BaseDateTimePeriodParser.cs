@@ -348,7 +348,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
-            string timeText = trimedText;
+            var timeText = trimedText;
 
             var match = this.Config.PeriodNightWithDateRegex.Match(trimedText);
 

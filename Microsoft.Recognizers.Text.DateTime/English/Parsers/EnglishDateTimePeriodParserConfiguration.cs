@@ -90,6 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 beginHour = 16;
                 endHour = 20;
             }
+            //TODO: change that to regex
+            //Since there are some more related changes, will do it later.
             else if (trimedText.EndsWith("night") || trimedText.StartsWith("night") ||
                      trimedText.EndsWith("tonight") || trimedText.StartsWith("tonight") ||
                      trimedText.EndsWith("overnight") || trimedText.StartsWith("overnight"))

@@ -120,7 +120,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
 
             // over the
             BasicTest("I'll leave over the weekend", 11, 16);
-
         }
     }
 }

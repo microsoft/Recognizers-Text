@@ -30,11 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var innerResult = new DateTimeResolutionResult();
 
-                innerResult = ParseMergeUnit(er.Text, referenceTime);
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseNumerWithUnit(er.Text, referenceTime);
-                }
+                innerResult = ParseNumerWithUnit(er.Text, referenceTime);
                 if (!innerResult.Success)
                 {
                     innerResult = ParseImplicitDuration(er.Text, referenceTime);
@@ -67,67 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ResolutionStr = ""
             };
             return ret;
-        }
-
-        // handle cases like "a week and for a hour", "a week and one hour"
-        private DateTimeResolutionResult ParseMergeUnit(string text, DateObject referenceTime)
-        {
-            var ret = new DateTimeResolutionResult();
-            var ConjunctionRegex = new Regex(@"\b((and(\s+for)?)|with)\b",
-                                        RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            var matches = this.config.ConjunctionRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                var matchStart = match.Index;
-                var matchEnd = match.Index + match.Length;
-                var tokenLeft = text.Substring(0, matchStart - 1);
-                var tokenRight = text.Substring(matchEnd, text.Length - matchEnd);
-
-                // parse left and right as a Unit
-                var leftResult = ParseNumerWithUnit(tokenLeft, referenceTime);
-                if (!leftResult.Success)
-                {
-                    leftResult = ParseImplicitDuration(tokenLeft, referenceTime);
-                }
-                
-                var rightResult = ParseNumerWithUnit(tokenRight, referenceTime);
-                if (!rightResult.Success)
-                {
-                    ParseImplicitDuration(tokenRight, referenceTime);
-                }
-
-                // check if both left and right are Unit
-                if (!leftResult.Success || !rightResult.Success)
-                {
-                    continue;
-                }
-
-                // merge
-                var prefix = "P";
-                if (leftResult.Timex.Contains("T") && rightResult.Timex.Contains("T"))
-                {
-                    prefix = "PT";
-                }
-                ret.Timex = prefix + GetTimexTimeStr(leftResult.Timex) + GetTimexTimeStr(rightResult.Timex);
-                var leftVal = double.Parse(leftResult.FutureValue.ToString());
-                var rightVal = double.Parse(rightResult.FutureValue.ToString());
-                ret.FutureValue = ret.PastValue = leftVal + rightVal;
-                ret.Success = true;
-            }
-            return ret;
-        }
-
-        private string GetTimexTimeStr(string timex)
-        {
-            var timeStr = "";
-            Regex timexTime = new Regex(@"(\d+(.\d+)?)\w",
-                                        RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            var match = timexTime.Match(timex);
-            if (match.Success)
-            {
-                timeStr = timex.Substring(match.Index, match.Length);
-            }
-            return timeStr;
         }
 
         // check {and} suffix after a {number} {unit}

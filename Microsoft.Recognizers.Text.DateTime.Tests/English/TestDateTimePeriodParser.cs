@@ -154,6 +154,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll go back tuesday in the morning",
                 new DateObject(year, month, day + 1, 8, 0, 0),
                 new DateObject(year, month, day + 1, 12, 0, 0));
+            BasicTestFuture("I'll go back tuesday in the afternoon",
+               new DateObject(year, month, day + 1, 12, 0, 0),
+               new DateObject(year, month, day + 1, 16, 0, 0));
+            BasicTestFuture("I'll go back tuesday in the evening",
+               new DateObject(year, month, day + 1, 16, 0, 0),
+               new DateObject(year, month, day + 1, 20, 0, 0));
 
             // late/early
             BasicTestFuture("let's meet in the early-morning Tuesday",

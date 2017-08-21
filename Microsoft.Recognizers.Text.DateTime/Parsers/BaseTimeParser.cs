@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasSpecial = false;
+            bool hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
             var engTimeStr = match.Groups["engtime"].Value;
             if (!string.IsNullOrEmpty(engTimeStr))
@@ -129,9 +129,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasMin = true;
                 }
             }
-            else if (!string.IsNullOrEmpty(match.Groups["special"].Value))
+            else if (!string.IsNullOrEmpty(match.Groups["mid"].Value))
             {
-                hasSpecial = true;
+                hasMid = true;
                 if (!string.IsNullOrEmpty(match.Groups["midnight"].Value))
                 {
                     hour = 0;
@@ -264,7 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex += ":" + second.ToString("D2");
             }
 
-            if (hour <= 12 && !hasPm && !hasAm && !hasSpecial)
+            if (hour <= 12 && !hasPm && !hasAm && !hasMid)
             {
                 ret.Comment = "ampm";
             }

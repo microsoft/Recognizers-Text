@@ -75,9 +75,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 DateTimeDefinitions.MiddayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimeRegex =
+        public static readonly Regex MidTimeRegex =
             new Regex(
-                DateTimeDefinitions.SpecialTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                DateTimeDefinitions.MidTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // part 3: regex for time
         // --------------------------------------

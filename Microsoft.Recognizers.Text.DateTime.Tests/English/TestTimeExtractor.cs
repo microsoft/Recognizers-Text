@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
         }
 
+        
+
         [TestMethod]
         public void TestTimeExtract()
         {
