@@ -7,13 +7,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         private readonly BaseTimeExtractor extractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
 
-        public void BasicTest(string text, int start, int length)
+        public void BasicTest(string text, int start, int length, int expected = 1)
         {
             var results = extractor.Extract(text);
-            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual(expected, results.Count);
+
+            if (expected < 1)
+            {
+                return;
+            }
+
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
+        }
+
+        public void BasicNegativeTest(string text)
+        {
+            BasicTest(text, -1, -1, 0);
         }
 
         [TestMethod]
@@ -85,6 +96,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("mid-day", 0, 7);
             BasicTest("mid day", 0, 7);
             BasicTest("noon", 0, 4);
+        }
+
+        [TestMethod]
+        public void TestDatePeriodExtractNegativeCase()
+        {
+
+            var sentence = "which emails have gotten p as subject";
+            BasicNegativeTest(sentence);
+
+            sentence = "which emails have gotten a reply";
+            BasicNegativeTest(sentence);
+
         }
     }
 }
