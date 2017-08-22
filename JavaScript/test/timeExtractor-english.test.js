@@ -24,7 +24,6 @@ describe('Time Extractor', it => {
     BasicTest(it, extractor, "It's 8 in the morning", 5, 16);
     BasicTest(it, extractor, "It's 8 in the night", 5, 14);
 
-
     BasicTest(it, extractor, "It's half past eight", 5, 15);
     BasicTest(it, extractor, "It's half past 8pm", 5, 13);
     BasicTest(it, extractor, "It's 30 mins past eight", 5, 18);
@@ -59,14 +58,36 @@ describe('Time Extractor', it => {
 
     BasicTest(it, extractor, "I'll be back 340pm", 13, 5);
     BasicTest(it, extractor, "I'll be back 1140 a.m.", 13, 9);
+
+    BasicTest(it, extractor, "midnight", 0, 8);
+    BasicTest(it, extractor, "mid-night", 0, 9);
+    BasicTest(it, extractor, "mid night", 0, 9);
+    BasicTest(it, extractor, "midmorning", 0, 10);
+    BasicTest(it, extractor, "mid-morning", 0, 11);
+    BasicTest(it, extractor, "mid morning", 0, 11);
+    BasicTest(it, extractor, "midafternoon", 0, 12);
+    BasicTest(it, extractor, "mid-afternoon", 0, 13);
+    BasicTest(it, extractor, "mid afternoon", 0, 13);
+    BasicTest(it, extractor, "midday", 0, 6);
+    BasicTest(it, extractor, "mid-day", 0, 7);
+    BasicTest(it, extractor, "mid day", 0, 7);
+    BasicTest(it, extractor, "noon", 0, 4);
+
+    BasicNegativeTest(it, extractor, "which emails have gotten p as subject");
+    BasicNegativeTest(it, extractor, "which emails have gotten a reply");
 });
 
-function BasicTest(it, extractor, text, start, length) {
+function BasicTest(it, extractor, text, start, length, expected = 1) {
     it(text, t => {
         let results = extractor.extract(text);
-        t.is(1, results.length);
+        t.is(expected, results.length);
+        if (expected < 1) return;
         t.is(start, results[0].start);
         t.is(length, results[0].length);
         t.is(Constants.SYS_DATETIME_TIME, results[0].type);
     });
+}
+
+function BasicNegativeTest(it, extractor, text) {
+    BasicTest(it, extractor, text, -1, -1, 0);
 }
