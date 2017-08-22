@@ -96,7 +96,7 @@
     <None Include="CommonDefinitions.ttinclude" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Definitions.Common.csproj">
+    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj">
       <Project>{60aaec39-306f-441b-8719-5e0a3a823568}</Project>
       <Name>Microsoft.Recognizers.Definitions.Common</Name>
     </ProjectReference>
