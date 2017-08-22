@@ -33,11 +33,24 @@ describe('Time Extractor', it => {
     BasicTest(it, extractor, "I'll be out between 4pm and half past five", 12, 30);
     BasicTest(it, extractor, "I'll be out between 3 in the morning and 5pm", 12, 32);
 
-    BasicTest(it, extractor, "let's meet in the morning", 18, 7);
-    BasicTest(it, extractor, "let's meet in the afternoon", 18, 9);
-    BasicTest(it, extractor, "let's meet in the night", 18, 5);
-    BasicTest(it, extractor, "let's meet in the evening", 18, 7);
-    BasicTest(it, extractor, "let's meet in the evenings", 18, 8);
+    BasicTest(it, extractor, "let's meet in the morning", 11, 14);
+    BasicTest(it, extractor, "let's meet in the afternoon", 11, 16);
+    BasicTest(it, extractor, "let's meet in the night", 11, 12);
+    BasicTest(it, extractor, "let's meet in the evening", 11, 14);
+    BasicTest(it, extractor, "let's meet in the evenings", 11, 15);
+
+    BasicTest(it, extractor, "let's meet in the early-mornings", 11, 21);
+    BasicTest(it, extractor, "let's meet in the late-mornings", 11, 20);
+    BasicTest(it, extractor, "let's meet in the early-morning", 11, 20);
+    BasicTest(it, extractor, "let's meet in the late-morning", 11, 19);
+    BasicTest(it, extractor, "let's meet in the early-afternoon", 11, 22);
+    BasicTest(it, extractor, "let's meet in the late-afternoon", 11, 21);
+    BasicTest(it, extractor, "let's meet in the early-evening", 11, 20);
+    BasicTest(it, extractor, "let's meet in the late-evening", 11, 19);
+    BasicTest(it, extractor, "let's meet in the early-night", 11, 18);
+    BasicTest(it, extractor, "let's meet in the late-night", 11, 17);
+    BasicTest(it, extractor, "let's meet in the early night", 11, 18);
+    BasicTest(it, extractor, "let's meet in the late night", 11, 17);
 });
 
 function BasicTest(it, extractor, text, start, length) {
