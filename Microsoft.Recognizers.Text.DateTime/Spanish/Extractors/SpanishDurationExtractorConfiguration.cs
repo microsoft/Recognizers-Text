@@ -34,6 +34,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex ConjunctionRegex = new Regex(@"^[\.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: change to Spanish according to corresponding Regex
+        public static readonly Regex InExactNumberRegex = new Regex(@"\b(a few|few|some|several)\b",
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex InExactNumberUnitRegex = new Regex($@"\b(a few|few|some|several)\s+{UnitRegex}",
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDurationExtractorConfiguration()
         {
             CardinalExtractor = new CardinalExtractor();
@@ -54,5 +61,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
+
+        Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
+
+        Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
     }
 }

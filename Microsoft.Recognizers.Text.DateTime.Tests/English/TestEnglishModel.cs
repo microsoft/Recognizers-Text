@@ -231,6 +231,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "I'll leave for an hour",
                 Constants.SYS_DATETIME_DURATION, "an hour", "PT1H");
+
+            BasicTest(model, reference,
+                "I'll leave for few hours",
+                Constants.SYS_DATETIME_DURATION, "few hours", "PT3H");
+
+            BasicTest(model, reference,
+                "I'll leave for a few minutes",
+                Constants.SYS_DATETIME_DURATION, "a few minutes", "PT3M");
+
+            BasicTest(model, reference,
+                "I'll leave for some days",
+                Constants.SYS_DATETIME_DURATION, "some days", "P3D");
+
+            BasicTest(model, reference,
+                "I'll leave for several weeks",
+                Constants.SYS_DATETIME_DURATION, "several weeks", "P3W");
         }
 
         [TestMethod]

@@ -162,6 +162,8 @@ namespace Microsoft.Recognizers.Resources.English
 		public const string AfternoonStartEndRegex = @"(^(afternoon))|((afternoon)$)";
 		public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
 		public const string NightStartEndRegex = @"(^(overnight|tonight|night))|((overnight|tonight|night)$)";
+		public const string InExactNumberRegex = @"\b(a few|few|some|several)\b";
+		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

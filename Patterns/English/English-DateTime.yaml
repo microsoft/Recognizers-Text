@@ -355,6 +355,11 @@ EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex
   def: (^(overnight|tonight|night))|((overnight|tonight|night)$)
+InExactNumberRegex: !simpleRegex
+  def: \b(a few|few|some|several)\b
+InExactNumberUnitRegex: !nestedRegex
+  def: ({InExactNumberRegex})\s+({DurationUnitRegex})
+  references: [InExactNumberRegex, DurationUnitRegex]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
