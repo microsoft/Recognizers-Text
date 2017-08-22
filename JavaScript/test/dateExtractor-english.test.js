@@ -71,6 +71,9 @@ describe('Date Extractor', it => {
 
     BasicTest(it, extractor, "I'll go back in two weeks", 13, 12);
     BasicTest(it, extractor, "I'll go back two weeks from now", 13, 18);
+
+    BasicTest(it, extractor, "I'll go back next week on Friday", 13, 19);
+    BasicTest(it, extractor, "I'll go back on Friday next week", 13, 19);
 });
 
 function BasicTest(it, extractor, text, start, length) {

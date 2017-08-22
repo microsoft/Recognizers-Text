@@ -1,4 +1,5 @@
 import { ExtractResult } from "../number/extractors"
+import { RegExpUtility } from "../utilities"
 
 export class Token {
     constructor(start: number, end: number) {
@@ -53,9 +54,9 @@ export class Token {
 }
 
 export interface IDateTimeUtilityConfiguration {
-    agoStringList: string[]
-    laterStringList: string[]
-    inStringList: string[]
+    agoRegex: RegExp
+    laterRegex: RegExp
+    inConnectorRegex: RegExp 
 }
 
 export class AgoLaterUtil {
@@ -65,17 +66,17 @@ export class AgoLaterUtil {
             let afterString = source.substring(pos);
             let beforeString = source.substring(0, er.start);
             let index = -1;
-            let value = MatchingUtil.getAgoLaterIndex(afterString, config.agoStringList);
+            let value = MatchingUtil.getAgoLaterIndex(afterString, config.agoRegex);
             if (value.matched) {
                 ret.push(new Token(er.start, er.start + er.length + value.index));
             }
             else {
-                value = MatchingUtil.getAgoLaterIndex(afterString, config.laterStringList);
+                value = MatchingUtil.getAgoLaterIndex(afterString, config.laterRegex);
                 if (value.matched) {
                     ret.push(new Token(er.start, er.start + er.length + value.index));
                 }
                 else {
-                    value = MatchingUtil.getInIndex(beforeString, config.inStringList);
+                    value = MatchingUtil.getInIndex(beforeString, config.inConnectorRegex);
                     if (er.start && er.length && er.start > value.index) {
                         ret.push(new Token(er.start - value.index, er.start + er.length));
                     }
@@ -92,21 +93,21 @@ export interface MatchedIndex {
 }
 
 export class MatchingUtil {
-    static getAgoLaterIndex(source: string, referenceList: string[]): MatchedIndex {
+    static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
-        let referencedMatch = referenceList.find(o => source.trim().toLowerCase().startsWith(o));
-        if (referencedMatch) {
-            result.index = source.toLowerCase().lastIndexOf(referencedMatch) + referencedMatch.length;
+        let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
+        if (referencedMatches && referencedMatches.length > 0) {
+            result.index = source.toLowerCase().lastIndexOf(referencedMatches[0].value) + referencedMatches[0].length;
             result.matched = true;
         }
         return result;
     }
 
-    static getInIndex(source: string, referenceList: string[]): MatchedIndex {
+    static getInIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
-        let referencedMatch = referenceList.find(o => source.trim().toLowerCase().split(' ').pop().endsWith(o));
-        if (referencedMatch) {
-            result.index = source.length - source.toLowerCase().lastIndexOf(referencedMatch);
+        let referencedMatch = RegExpUtility.getMatches(regex, source.trim().toLowerCase().split(' ').pop());
+        if (referencedMatch && referencedMatch.length > 0) {
+            result.index = source.length - source.toLowerCase().lastIndexOf(referencedMatch[0].value);
             result.matched = true;
         }
         return result;

@@ -45,6 +45,44 @@ describe('DateTimePeriod Extractor', it => {
     BasicTest(it, extractor, "I'll go back next 5 hrs", 13, 10);
     BasicTest(it, extractor, "I'll go back last minute", 13, 11);
     BasicTest(it, extractor, "I'll go back next hour", 13, 9);
+
+    BasicTest(it, extractor, "I'll go back tuesday in the morning", 13, 22);
+    BasicTest(it, extractor, "I'll go back tuesday in the afternoon", 13, 24);
+    BasicTest(it, extractor, "I'll go back tuesday in the evening", 13, 22);
+
+    // early/late date time
+    BasicTest(it, extractor, "let's meet in the early-morning Tuesday", 11, 28);
+    BasicTest(it, extractor, "let's meet in the late-morning Tuesday", 11, 27);
+    BasicTest(it, extractor, "let's meet in the early-afternoon Tuesday", 11, 30);
+    BasicTest(it, extractor, "let's meet in the late-afternoon Tuesday", 11, 29);
+    BasicTest(it, extractor, "let's meet in the early-evening Tuesday", 11, 28);
+    BasicTest(it, extractor, "let's meet in the late-evening Tuesday", 11, 27);
+    BasicTest(it, extractor, "let's meet in the early-night Tuesday", 11, 26);
+    BasicTest(it, extractor, "let's meet in the late-night Tuesday", 11, 25);
+    BasicTest(it, extractor, "let's meet in the early night Tuesday", 11, 26);
+    BasicTest(it, extractor, "let's meet in the late night Tuesday", 11, 25);
+
+    BasicTest(it, extractor, "let's meet in the early-morning on Tuesday", 11, 31);
+    BasicTest(it, extractor, "let's meet in the late-morning on Tuesday", 11, 30);
+    BasicTest(it, extractor, "let's meet in the early-afternoon on Tuesday", 11, 33);
+    BasicTest(it, extractor, "let's meet in the late-afternoon on Tuesday", 11, 32);
+    BasicTest(it, extractor, "let's meet in the early-evening on Tuesday", 11, 31);
+    BasicTest(it, extractor, "let's meet in the late-evening on Tuesday", 11, 30);
+    BasicTest(it, extractor, "let's meet in the early-night on Tuesday", 11, 29);
+    BasicTest(it, extractor, "let's meet in the late-night on Tuesday", 11, 28);
+    BasicTest(it, extractor, "let's meet in the early night on Tuesday", 11, 29);
+    BasicTest(it, extractor, "let's meet in the late night on Tuesday", 11, 28);
+
+    BasicTest(it, extractor, "let's meet on Tuesday early-morning", 14, 21);
+    BasicTest(it, extractor, "let's meet on Tuesday late-morning", 14, 20);
+    BasicTest(it, extractor, "let's meet on Tuesday early-afternoon", 14, 23);
+    BasicTest(it, extractor, "let's meet on Tuesday late-afternoon", 14, 22);
+    BasicTest(it, extractor, "let's meet on Tuesday early-evening", 14, 21);
+    BasicTest(it, extractor, "let's meet on Tuesday late-evening", 14, 20);
+    BasicTest(it, extractor, "let's meet on Tuesday early-night", 14, 19);
+    BasicTest(it, extractor, "let's meet on Tuesday late-night", 14, 18);
+    BasicTest(it, extractor, "let's meet on Tuesday early night", 14, 19);
+    BasicTest(it, extractor, "let's meet on Tuesday late night", 14, 18);
 });
 
 function BasicTest(it, extractor, text, start, length) {

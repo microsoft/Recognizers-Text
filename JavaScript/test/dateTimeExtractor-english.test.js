@@ -47,6 +47,7 @@ describe('DateTime Extractor', it => {
     BasicTest(it, extractor, "I'll go back 10pm tonight", 13, 12);
     BasicTest(it, extractor, "I'll go back 8am this morning", 13, 16);
     BasicTest(it, extractor, "I'll go back 8pm this evening", 13, 16);
+    BasicTest(it, extractor, "I'll go back tonight around 7", 13, 16);
 
     BasicTest(it, extractor, "I'll go back this morning at 7", 13, 17);
     BasicTest(it, extractor, "I'll go back this morning at 7pm", 13, 19);
@@ -62,8 +63,9 @@ describe('DateTime Extractor', it => {
     BasicTest(it, extractor, "I'll go back end of the sunday", 13, 17);
 
     BasicTest(it, extractor, "I'll go back at 5th at 4 a.m.", 16, 13);
+
     BasicTest(it, extractor, "I'll go back 2016-12-16T12:23:59", 13, 19);
-    
+
     BasicTest(it, extractor, "I'll go back in 5 hours", 13, 10);
 });
 

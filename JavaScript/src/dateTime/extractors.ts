@@ -2,7 +2,7 @@ import { Constants } from "./constants";
 import { Token, AgoLaterUtil, IDateTimeUtilityConfiguration } from "./utilities";
 import { IExtractor, ExtractResult, BaseNumberExtractor } from "../number/extractors"
 import { BaseNumberParser } from "../number/parsers"
-import { Match, RegExpUtility, isNullOrWhitespace } from "../utilities";
+import { Match, RegExpUtility, isNullOrWhitespace, isWhitespace } from "../utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import * as _ from "lodash";
 
@@ -76,8 +76,9 @@ export interface IDateTimePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
     prepositionRegex: RegExp
     tillRegex: RegExp
-    specificNightRegex: RegExp
-    nightRegex: RegExp
+    specificTimeOfDayRegex: RegExp
+    timeOfDayRegex: RegExp
+    periodTimeOfDayWithDateRegex: RegExp
     followedUnit: RegExp
     numberCombinedWithUnit: RegExp
     unitRegex: RegExp
@@ -330,8 +331,9 @@ export class BaseDatePeriodExtractor implements IExtractor {
 
                 let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
                 let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
-                if (fromTokenIndex.matched) {
-                    periodBegin = fromTokenIndex.index;
+                let betweenTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
+                if (fromTokenIndex.matched || betweenTokenIndex.matched) {
+                    periodBegin = fromTokenIndex.matched ? fromTokenIndex.index : betweenTokenIndex.index;
                 }
                 tokens.push(new Token(periodBegin, periodEnd));
                 idx += 2;
@@ -710,13 +712,20 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
 
     private matchNight(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        RegExpUtility.getMatches(this.config.specificNightRegex, source).forEach(match => {
+        RegExpUtility.getMatches(this.config.specificTimeOfDayRegex, source).forEach(match => {
             tokens.push(new Token(match.index, match.index + match.length))
         });
         this.config.singleDateExtractor.extract(source).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
-            RegExpUtility.getMatches(this.config.nightRegex, afterStr).forEach(match => {
+            RegExpUtility.getMatches(this.config.timeOfDayRegex, afterStr).forEach(match => {
                 tokens.push(new Token(er.start, er.start + er.length + match.index + match.length))
+            });
+            let beforeStr = source.substr(0, er.start);
+            RegExpUtility.getMatches(this.config.periodTimeOfDayWithDateRegex, beforeStr).forEach(match => {
+                let middleStr = source.substr(match.index + match.length, er.start - match.index - match.length);
+                if (isWhitespace(middleStr)) {
+                    tokens.push(new Token(match.index,er.start + er.length))
+                }
             });
         });
         return tokens;
