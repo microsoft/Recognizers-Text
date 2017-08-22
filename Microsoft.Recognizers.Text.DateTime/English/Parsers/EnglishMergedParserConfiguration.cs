@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Resources.English;
+﻿using Microsoft.Recognizers.Definitions.English;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English

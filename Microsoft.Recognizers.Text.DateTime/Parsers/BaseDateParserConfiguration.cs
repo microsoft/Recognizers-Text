@@ -1,5 +1,5 @@
 ﻿using System.Collections.Immutable;
-using Microsoft.Recognizers.Resources;
+using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime

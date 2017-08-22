@@ -10,7 +10,7 @@
 //     - ClassName: DateTimeDefinitions
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Microsoft.Recognizers.Resources.English
+namespace Microsoft.Recognizers.Definitions.English
 {
 	using System;
 	using System.Collections.Generic;

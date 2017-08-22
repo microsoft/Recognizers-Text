@@ -2,7 +2,7 @@
 using System.IO;
 using YamlDotNet.Serialization;
 
-namespace Microsoft.Recognizers.Resources.Common
+namespace Microsoft.Recognizers.Definitions.Common
 {
     public class YamlParser
     {
@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Resources.Common
         {
             return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);
         }
+
         public IDictionary<string, object> Deserialize(string obj)
         {
             return yamlDeserializer.Deserialize<IDictionary<string, object>>(obj);

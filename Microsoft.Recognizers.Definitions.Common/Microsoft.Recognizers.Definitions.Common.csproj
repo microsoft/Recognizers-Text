@@ -7,8 +7,8 @@
     <ProjectGuid>{60AAEC39-306F-441B-8719-5E0A3A823568}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Recognizers.Resources.Common</RootNamespace>
-    <AssemblyName>Microsoft.Recognizers.Resources.Common</AssemblyName>
+    <RootNamespace>Microsoft.Recognizers.Definitions.Common</RootNamespace>
+    <AssemblyName>Microsoft.Recognizers.Definitions.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

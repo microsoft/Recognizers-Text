@@ -17,9 +17,9 @@
   <files>
     <file src="..\build\package\Microsoft.Recognizers.Text.dll" target="lib\net452"/>
     <file src="..\build\package\Microsoft.Recognizers.Text.pdb" target="lib\net452" />
-    <file src="..\build\package\Microsoft.Recognizers.Resources.dll" target="lib\net452"/>
-    <file src="..\build\package\Microsoft.Recognizers.Resources.pdb" target="lib\net452" />
+    <file src="..\build\package\Microsoft.Recognizers.Definitions.dll" target="lib\net452"/>
+    <file src="..\build\package\Microsoft.Recognizers.Definitions.pdb" target="lib\net452" />
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
-    <file src="..\Microsoft.Recognizers.Resources\**\*.cs" exclude="..\Microsoft.Recognizers.Resources\**\obj\**\*.cs" target="src\Resources" />
+    <file src="..\Microsoft.Recognizers.Definitions\**\*.cs" exclude="..\Microsoft.Recognizers.Definitions\**\obj\**\*.cs" target="src\Definitions" />
   </files>
 </package>
