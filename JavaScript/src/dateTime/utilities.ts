@@ -113,7 +113,7 @@ export class MatchingUtil {
 }
 
 export class FormatUtil {
-    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp("(?<!P)T\d{2}", "gis");
+    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp("(?<nlb>P)T\d{2}", "gis");
 
     // Emulates .NET ToString("D{size}")
     public static toString(num: number, size: number): string {

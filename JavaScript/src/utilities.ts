@@ -60,7 +60,7 @@ export class RegExpUtility {
                     negativeLookbehind.push({key:key, value:match[key]});
                     return;
                 }
-                groups.set(key.substr(0, key.lastIndexOf('__')), match[key]);
+                groups[key.substr(0, key.lastIndexOf('__'))] = match[key];
             });
             
             let value = match[0];
