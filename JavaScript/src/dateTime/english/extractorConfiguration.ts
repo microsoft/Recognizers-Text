@@ -3,6 +3,7 @@ import {
     ITimeExtractorConfiguration,
     IDurationExtractorConfiguration,
     IDatePeriodExtractorConfiguration,
+    ITimePeriodExtractorConfiguration,
     IDateTimeExtractorConfiguration,
     IDateTimePeriodExtractorConfiguration,
     BaseDurationExtractor,
@@ -296,4 +297,45 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     hasConnectorToken(source: string): boolean {
         return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
     };
+}
+
+export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
+    readonly simpleCasesRegex: RegExp[];
+    readonly tillRegex: RegExp;
+    readonly timeOfDayRegex: RegExp;
+    readonly singleTimeExtractor: IExtractor;
+    readonly rangeConnectorRegex: RegExp;
+
+    constructor() {
+        this.simpleCasesRegex = [
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis")
+        ];
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
+        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+    }
+
+    public getFromTokenIndex(source: string): { matched: boolean, index: number } {
+        let index = -1;
+        if (source.endsWith("from")) {
+            index = source.lastIndexOf("from");
+            return { matched: true, index: index };
+        }
+        return { matched: false, index: index };
+    }
+
+    public getBetweenTokenIndex(source: string): { matched: boolean, index: number } {
+        let index = -1;
+        if (source.endsWith("between")) {
+            index = source.lastIndexOf("between");
+            return { matched: true, index: index };
+        }
+        return { matched: false, index: index };
+    }
+
+    public hasConnectorToken(source: string): boolean {
+        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+    }
 }
