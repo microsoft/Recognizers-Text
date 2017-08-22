@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.Number", "Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj", "{61205449-BDBA-4BF3-8B24-AE059E0B1B61}"
 EndProject
@@ -30,9 +30,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Resources.Common", "Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Resources.Common.csproj", "{60AAEC39-306F-441B-8719-5E0A3A823568}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Definitions.Common", "Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Definitions.Common.csproj", "{60AAEC39-306F-441B-8719-5E0A3A823568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Resources", "Microsoft.Recognizers.Resources\Microsoft.Recognizers.Resources.csproj", "{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Definitions", "Microsoft.Recognizers.Resources\Microsoft.Recognizers.Definitions.csproj", "{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
@@ -96,5 +96,8 @@ Global
 		{60AAEC39-306F-441B-8719-5E0A3A823568} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
 		{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
 		{23084BAE-6EB0-439A-BD71-31A783680711} = {F070C131-80C0-4B0E-A462-2F6DB796759D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}
 	EndGlobalSection
 EndGlobal

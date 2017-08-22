@@ -2,12 +2,12 @@
 <#@ assembly name="System.IO"#>
 <#@ assembly name="System.Runtime"#>
 <#@ assembly name="System.Runtime"#>
-<#@ assembly name="$(SolutionDir)build\package\Microsoft.Recognizers.Resources.Common.dll" #>
+<#@ assembly name="$(SolutionDir)build\package\Microsoft.Recognizers.Definitions.Common.dll" #>
 <#@ import namespace="System" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
-<#@ import namespace="Microsoft.Recognizers.Resources.Common" #>
+<#@ import namespace="Microsoft.Recognizers.Definitions.Common" #>
 <#
 	// Read the model file 
 	var input = new StringReader(File.ReadAllText(Host.ResolveAssemblyReference("$(SolutionDir)") + this.DataFilename)); 
@@ -25,7 +25,7 @@
 //     - ClassName: <#= this.GetSafeParameterValue(this.ClassName) #>
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Microsoft.Recognizers.Resources<#= this.Language != null ? "." + this.Language : "" #>
+namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + this.Language : "" #>
 {
 	using System;
 	using System.Collections.Generic;
