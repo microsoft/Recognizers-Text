@@ -32,6 +32,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ConjunctionRegex = new Regex(DateTimeDefinitions.ConjunctionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex InExactNumberRegex = new Regex(DateTimeDefinitions.InExactNumberRegex,
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex InExactNumberUnitRegex = new Regex(DateTimeDefinitions.InExactNumberUnitRegex,
+           RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishDurationExtractorConfiguration()
         {
             CardinalExtractor = new CardinalExtractor();
@@ -52,5 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
 
         Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
+
+        Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
+
+        Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
     }
 }
