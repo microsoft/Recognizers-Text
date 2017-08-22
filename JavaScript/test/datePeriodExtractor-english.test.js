@@ -86,7 +86,7 @@ describe('Date Period Extractor', it => {
 
     BasicTest(it, extractor, "I'll leave this summer", 11, 11);
     BasicTest(it, extractor, "I'll leave next spring", 11, 11);
-    BasicTest(it, extractor, "I'll leave the summer", 11, 10);
+    BasicTest(it, extractor, "I'll leave the summer", 15, 6);
     BasicTest(it, extractor, "I'll leave summer", 11, 6);
     BasicTest(it, extractor, "I'll leave summer 2016", 11, 11);
     BasicTest(it, extractor, "I'll leave summer of 2016", 11, 14);

@@ -209,7 +209,7 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.nowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex, "gis");
         this.timeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayAfterRegex, "gis");
         this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex, "gis");
-        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
         this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfTodayBeforeRegex, "gis");
         this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex, "gis");
         this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, "gis");
@@ -259,8 +259,8 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         ]
         this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-        this.specificNightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificNightRegex, "gis");
-        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodNightRegex, "gis");
+        this.specificNightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, "gis");
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
