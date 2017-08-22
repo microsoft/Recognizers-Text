@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     monthStr = match.Groups["relmonth"].Value.Trim().ToLower();
-                    var swiftMonth = this.config.GetSwiftMonth(monthStr);
+                    var swiftMonth = this.config.GetSwiftDayOrMonth(monthStr);
                     switch (swiftMonth)
                     {
                         case 1:
@@ -329,7 +329,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    var swift = this.config.GetSwiftDay(trimedText);
+                    var swift = this.config.GetSwiftDayOrMonth(trimedText);
 
                     if (this.config.IsWeekOnly(trimedText))
                     {
@@ -587,7 +587,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endDate = referenceDate.AddDays((double)pr.Value);
                                 break;
                             case "W":
-                                beginDate = config.InStringList.Contains(beforeStr.ToLower()) ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
+                                beginDate = config.InConnectorRegex.Match(beforeStr.ToLower()).Success ? referenceDate.AddDays(7 * ((double)pr.Value - 1)) : referenceDate;
                                 endDate = referenceDate.AddDays(7 * (double)pr.Value);
                                 break;
                             case "MON":
@@ -727,7 +727,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int month;
             if (string.IsNullOrEmpty(monthStr))
             {
-                var swift = this.config.GetSwiftMonth(trimedText);
+                var swift = this.config.GetSwiftDayOrMonth(trimedText);
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -13,12 +14,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
-        
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
         public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeTokenPrefix = "a las ";
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = SpanishTimeExtractorConfiguration.TimeRegexList;
+            UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }
 

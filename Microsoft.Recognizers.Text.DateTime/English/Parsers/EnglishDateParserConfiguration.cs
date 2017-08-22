@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Resources.English;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("next") || trimedText.StartsWith("upcoming"))
             {
                 swift = 1;
             }

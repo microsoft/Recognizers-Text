@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     MonthSuffixRegex, YearRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the related regex in English
         public static readonly Regex OneWordPeriodRegex =
             new Regex(
                 @"\b(((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en)\s+)?(?<month>Abril|Abr|Agosto|Ago|Diciembre|Dic|Enero|Ene|Febrero|Feb|Julio|Jul|Junio|Jun|Marzo|Mar|Mayo|May|Noviembre|Nov|Octubre|Oct|Septiembre|Setiembre|Sept|Set)|(?<=\b(del|de la|el|la)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]?|est(e|a))?\s+(fin de semana|semana|mes|año)|fin de semana|(mes|años)? a la fecha)\b",
@@ -118,21 +119,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))?)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add this for Spanish
         public static readonly Regex WhichWeekRegex =
             new Regex(
-                $@"",
+                $@"(semana)(\s*)(?<number>\d\d|\d|0\d)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add the week of and month of pattern for Spanish
         public static readonly Regex WeekOfRegex =
             new Regex(
-                $@"(week)(\s*)(of)",
+                $@"(semana)(\s*)((do|da|de))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthOfRegex =
             new Regex(
-                $@"(month)(\s*)(of)",
+                $@"(mes)(\s*)((do|da|de))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);

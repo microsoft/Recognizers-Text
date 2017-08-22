@@ -436,23 +436,10 @@ export class BaseDateTimeExtractor implements IExtractor {
 
     private mergeDateAndTime(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ersTmp = this.config.datePointExtractor.extract(source);
-        if (ersTmp.length < 1) return tokens;
-        ersTmp = ersTmp.concat(this.config.timePointExtractor.extract(source));
-        if (ersTmp.length < 2) return tokens;
-        let ers: Array<ExtractResult> = [];
-        ersTmp.forEach(erTmp => {
-            let iOverlap = ers.findIndex(er => ExtractResult.isOverlap(er, erTmp));
-            if (iOverlap !== -1 && ers[iOverlap]) {
-                if (ers[iOverlap].length < erTmp.length) {
-                    ers[iOverlap] = erTmp;
-                    return;
-                } else if (ers[iOverlap].length === erTmp.length) {
-                    return;
-                }
-            }
-            ers.push(erTmp);
-        });
+        let ers = this.config.datePointExtractor.extract(source);
+        if (ers.length < 1) return tokens;
+        ers = ers.concat(this.config.timePointExtractor.extract(source));
+        if (ers.length < 2) return tokens;
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
         while (i < ers.length - 1) {
@@ -735,16 +722,6 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
     }
 }
 
-export interface ITimePeriodExtractorConfiguration {
-    simpleCasesRegex: RegExp[];
-    tillRegex: RegExp;
-    nightRegex: RegExp;
-    singleTimeExtractor: IExtractor;
-    getFromTokenIndex(text: string): { matched: boolean, index: number };
-    hasConnectorToken(text: string): boolean;
-    getBetweenTokenIndex(text: string): { matched: boolean, index: number };
-}
-
 export class BaseTimePeriodExtractor implements IExtractor {
     readonly extractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
     readonly config: ITimePeriodExtractorConfiguration;
@@ -832,7 +809,7 @@ export class BaseTimePeriodExtractor implements IExtractor {
 
     private matchNight(source: string): Array<Token> {
         let ret = [];
-        let matches = RegExpUtility.getMatches(this.config.nightRegex, source);
+        let matches = RegExpUtility.getMatches(this.config.timeOfDayRegex, source);
         matches.forEach(match => {
             ret.push(new Token(match.index, match.index + match.length));
         });
@@ -843,7 +820,7 @@ export class BaseTimePeriodExtractor implements IExtractor {
 export interface ITimePeriodExtractorConfiguration {
     simpleCasesRegex: RegExp[];
     tillRegex: RegExp;
-    nightRegex: RegExp;
+    timeOfDayRegex: RegExp;
     singleTimeExtractor: IExtractor;
     getFromTokenIndex(text: string): { matched: boolean, index: number };
     hasConnectorToken(text: string): boolean;

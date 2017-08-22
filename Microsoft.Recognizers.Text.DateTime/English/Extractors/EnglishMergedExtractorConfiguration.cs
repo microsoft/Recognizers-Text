@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public IExtractor DateExtractor { get; }
 
         public IExtractor TimeExtractor { get; }
@@ -35,26 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
         }
 
-        public bool HasAfterTokenIndex(string text, out int index)
-        {
-            index = -1;
-            if (text.EndsWith("after"))
-            {
-                index = text.LastIndexOf("after", StringComparison.Ordinal);
-                return true;
-            }
-            return false;
-        }
-
-        public bool HasBeforeTokenIndex(string text, out int index)
-        {
-            index = -1;
-            if (text.EndsWith("before"))
-            {
-                index = text.LastIndexOf("before", StringComparison.Ordinal);
-                return true;
-            }
-            return false;
-        }
+        Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
+        Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
     }
 }

@@ -10,8 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"(?<unit>años|año|meses|mes|semanas|semana|d[ií]as|d[ií]a|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Spanish the AndRegex
-        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))",
+        //TODO: improve Spanish the SuffixAndRegex
+        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(y)\s+((un|uno|una)\s+)?(?<suffix_num>media|cuarto))",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
@@ -27,8 +27,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AllRegex = new Regex(@"\b(?<all>tod[oa]?\s+(el|la)\s+(?<unit>año|mes|semana|d[ií]a))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change to Spanish the HalfRegex
-        public static readonly Regex HalfRegex = new Regex(@"\b(?<half>half\s+(?<unit>year|month|week|day|hour))\b",
+        public static readonly Regex HalfRegex = new Regex(@"\b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: change to Spanish according to corresponding Regex
+        public static readonly Regex ConjunctionRegex = new Regex(@"^[\.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDurationExtractorConfiguration()
@@ -49,5 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.HalfRegex => HalfRegex;
 
         Regex IDurationExtractorConfiguration.SuffixAndRegex => SuffixAndRegex;
+
+        Regex IDurationExtractorConfiguration.ConjunctionRegex => ConjunctionRegex;
     }
 }

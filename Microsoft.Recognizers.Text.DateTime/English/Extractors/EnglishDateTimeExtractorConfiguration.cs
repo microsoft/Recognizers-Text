@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Resources.English;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -18,11 +18,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex SuffixRegex = new Regex(DateTimeDefinitions.SuffixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex,
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificNightRegex =
-            new Regex(DateTimeDefinitions.SpecificNightRegex,
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayAfterRegex =
@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex => SimpleTimeOfTodayBeforeRegex;
 
-        Regex IDateTimeExtractorConfiguration.NightRegex => NightRegex;
+        Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 

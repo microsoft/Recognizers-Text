@@ -17,15 +17,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
-                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoStringList, out index))
+                if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                 }
-                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterStringList, out index))
+                else if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.LaterRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
                 }
-                else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InStringList, out index))
+                else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
                     if (er.Start != null && er.Length != null && (int)er.Start > index)
                     {
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var unitStr = unitMap[srcUnit];
                 var numStr = number.ToString();
-                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoStringList))
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
                 {
                     if (mode.Equals(AgoLaterMode.Date))
                     {
@@ -116,8 +116,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterStringList)
-                    || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InStringList))
+                if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)
+                    || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
                 {
                     if (mode.Equals(AgoLaterMode.Date))
                     {

@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> MatchNight(string text)
         {
             var ret = new List<Token>();
-            var matches = this.config.NightRegex.Matches(text);
+            var matches = this.config.TimeOfDayRegex.Matches(text);
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));

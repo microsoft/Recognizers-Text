@@ -25,9 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PureNumberBetweenAndRegex { get; }
 
-        public Regex SpecificNightRegex { get; }
+        public Regex SpecificTimeOfDayRegex { get; }
 
-        public Regex NightRegex { get; }
+        public Regex TimeOfDayRegex { get; }
 
         public Regex PastRegex { get; }
 
@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
+
+        public Regex PeriodTimeOfDayWithDateRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
@@ -53,8 +55,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimeParser = config.DateTimeParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificNightRegex = SpanishDateTimeExtractorConfiguration.SpecificNightRegex;
-            NightRegex = SpanishDateTimeExtractorConfiguration.NightRegex;
+            SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
             NumberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
@@ -70,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             endHour = 0;
             endMin = 0;
 
+            //TODO: modify it according to the coresponding function in English part
             if (trimedText.EndsWith("madrugada"))
             {
                 timeStr = "TDA";

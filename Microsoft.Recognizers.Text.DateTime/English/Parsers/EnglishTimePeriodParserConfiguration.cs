@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -13,7 +14,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PureNumberBetweenAndRegex { get; }
 
+        public Regex TimeOfDayRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
@@ -21,7 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
+            TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             Numbers = config.Numbers;
+            UtilityConfiguration = config.UtilityConfiguration;
         }
 
         public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)

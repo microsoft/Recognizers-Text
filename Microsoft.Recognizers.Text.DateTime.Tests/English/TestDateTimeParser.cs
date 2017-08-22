@@ -87,13 +87,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back tomorrow 8:00am", new DateObject(year, month, 8, 8, 0, second));
             BasicTest("I'll go back tomorrow morning at 7", new DateObject(2016, 11, 8, 7, min, second));
-            //BasicTestFuture("I'll go back Oct. 5 in the afternoon at 7", new DateObject(2016, 10, 5, 19, min, second));
+            BasicTest("I'll go back tonight around 7", new DateObject(2016, 11, 7, 19, min, second));
             BasicTest("I'll go back 7:00 on next Sunday afternoon", new DateObject(2016, 11, 20, 19, min, second));
             BasicTest("I'll go back twenty minutes past five tomorrow morning",
                 new DateObject(2016, 11, 8, 5, 20, second));
             BasicTest("I'll go back 7, this morning", new DateObject(year, month, day, 7, min, second));
             BasicTest("I'll go back 10, tonight", new DateObject(year, month, day, 22, min, second));
-            BasicTest("I'll go back tonight for 8", new DateObject(year, month, day, 20, min, second));
 
             BasicTest("I'll go back 8pm in the evening, Sunday", new DateObject(2016, 11, 13, 20, min, second),
                 new DateObject(2016, 11, 6, 20, min, second));

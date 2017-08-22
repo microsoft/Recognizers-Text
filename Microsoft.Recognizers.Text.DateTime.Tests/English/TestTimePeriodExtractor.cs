@@ -46,11 +46,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out between 4pm and half past five", 12, 30);
             BasicTest("I'll be out between 3 in the morning and 5pm", 12, 32);
 
-            BasicTest("let's meet in the morning", 18, 7);
-            BasicTest("let's meet in the afternoon", 18, 9);
-            BasicTest("let's meet in the night", 18, 5);
-            BasicTest("let's meet in the evening", 18, 7);
-            BasicTest("let's meet in the evenings", 18, 8);
+            BasicTest("let's meet in the morning", 11, 14);
+            BasicTest("let's meet in the afternoon", 11, 16);
+            BasicTest("let's meet in the night", 11, 12);
+            BasicTest("let's meet in the evening", 11, 14);
+            BasicTest("let's meet in the evenings", 11, 15);
+
+            BasicTest("let's meet in the early-mornings", 11, 21);
+            BasicTest("let's meet in the late-mornings", 11, 20);
+            BasicTest("let's meet in the early-morning", 11, 20);
+            BasicTest("let's meet in the late-morning", 11, 19);
+            BasicTest("let's meet in the early-afternoon", 11, 22);
+            BasicTest("let's meet in the late-afternoon", 11, 21);
+            BasicTest("let's meet in the early-evening", 11, 20);
+            BasicTest("let's meet in the late-evening", 11, 19);
+            BasicTest("let's meet in the early-night", 11, 18);
+            BasicTest("let's meet in the late-night", 11, 17);
+            BasicTest("let's meet in the early night", 11, 18);
+            BasicTest("let's meet in the late night", 11, 17);
         }
     }
 }

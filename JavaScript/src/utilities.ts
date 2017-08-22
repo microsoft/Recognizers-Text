@@ -40,45 +40,47 @@ export interface Match {
     index: number;
     length: number;
     value: string;
-    groups: ReadonlyMap<string, string>;
+    groups: Map<string, string>;
 }
 
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
         let matches = new Array<Match>();
-
-        let pos = 0;
-        let m = XRegExp.exec(source, regex);
-        while (m) {
-            matches.push({
-                value: m[0],
-                index: m.index,
-                length: m[0].length,
-                groups: RegExpUtility.getSanitizedGroups(m)
+        XRegExp.forEach(source, regex, match => {
+            let positiveLookbehind = [];
+            let negativeLookbehind = [];
+            let groups = new Map<string, string>();
+            Object.keys(match).forEach(key => {
+                if (!key.includes('__')) return;
+                if (key.startsWith('plb') && match[key]) {
+                    positiveLookbehind.push({key:key, value:match[key]});
+                    return;
+                }
+                if (key.startsWith('nlb') && match[key]) {
+                    negativeLookbehind.push({key:key, value:match[key]});
+                    return;
+                }
+                groups.set(key.substr(0, key.lastIndexOf('__')), match[key]);
             });
-            pos = m.index + m[0].length;
-            m = XRegExp.exec(source, regex, pos)
-        }
+            
+            let value = match[0];
+            let index = match.index;
+            let length = value.length;
 
-        return matches;
-    }
-
-    static getSafeRegExp(source: string, flags: string): RegExp {
-        let sanitizedSource = this.sanitizeGroups(source);
-        return XRegExp(sanitizedSource, flags);
-    }
-
-    private static getSanitizedGroups(match: any): Map<string, string> {
-        let groups = new Map<string, string>();
-        Object.getOwnPropertyNames(match).forEach(sanitizedName => {
-            let indexPos = sanitizedName.indexOf("_");
-            if (indexPos > 0) {
-                let name = sanitizedName.substring(0, indexPos);
-                groups[name] = match[sanitizedName];
+            if (positiveLookbehind && positiveLookbehind.length > 0 && match[0].indexOf(positiveLookbehind[0].value) ===  0) {
+                value = value.substr(positiveLookbehind[0].value.length)
+                index += positiveLookbehind[0].value.length
+                length -= positiveLookbehind[0].value.length
             }
+            if (negativeLookbehind && negativeLookbehind.length > 0) return;
+            matches.push({
+                    value: value,
+                    index: index,
+                    length: length,
+                    groups: groups
+                });
         });
-
-        return groups;
+        return matches;
     }
 
     private static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
@@ -86,8 +88,13 @@ export class RegExpUtility {
     private static sanitizeGroups(source: string): string {
         let index = 0;
         let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
-            return match.replace(token, `${token}_${index++}`);
+            return match.replace(token, `${token}__${index++}`);
         });
         return replacer;
+    }
+
+    static getSafeRegExp(source: string, flags: string): RegExp {
+        let sanitizedSource = this.sanitizeGroups(source);
+        return XRegExp(sanitizedSource, flags);
     }
 }

@@ -60,6 +60,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll leave for two hours", 15, 9);
             BasicTest("I'll leave for two and a half hours", 15, 20);
+
+            BasicTest("In a week", 3, 6);
+            BasicTest("In a day", 3, 5);
+            BasicTest("for an hour", 4, 7);
+            BasicTest("for a month", 4, 7);
         }
     }
 }
