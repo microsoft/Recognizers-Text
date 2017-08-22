@@ -1,8 +1,9 @@
 ﻿using System;
-
-using Microsoft.Recognizers.Resources.English;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -43,12 +44,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex,
+        public static readonly Regex TimeOfDayRegex =
+            new Regex(DateTimeDefinitions.TimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificNightRegex =
-            new Regex(DateTimeDefinitions.SpecificNightRegex,
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
@@ -70,7 +71,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+            UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
+
+        public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IExtractor SingleTimeExtractor { get; }
 
@@ -78,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.NightRegex => NightRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

@@ -84,6 +84,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back in two weeks", 13, 12);
             BasicTest("I'll go back two weeks from now", 13, 18);
+
+            BasicTest("I'll go back next week on Friday", 13, 19);
+            BasicTest("I'll go back on Friday next week", 13, 19);
         }
     }
 }

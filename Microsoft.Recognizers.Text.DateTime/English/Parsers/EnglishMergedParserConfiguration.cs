@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Resources.English;
+﻿using Microsoft.Recognizers.Definitions.English;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -15,8 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishMergedParserConfiguration() : base()
         {
-            BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
+            AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));

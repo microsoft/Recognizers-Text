@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex =
-            new Regex(@"(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)",
+            new Regex(@"\b(?<hournum>cero|una|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MinuteNumRegex =
@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 2: middle level component
         // --------------------------------------
         // handle "... en punto"
+        //TODO: modify according to corresponding English regex
         public static readonly Regex OclockRegex = new Regex(@"(?<oclock>en\s+punto)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -54,7 +55,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(?<engtime>{HourNumRegex}\s*((y|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*y\s+)?{MinuteNumRegex})?)))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-
         public static readonly Regex TimePrefix =
             new Regex(
                 $@"(?<prefix>{LessThanOneHour}(\s+(pasad[ao]s)\s+(de\s+las|las)?|\s+(para|antes\s+de)?\s+(las?))?)",
@@ -71,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 3: regex for time
         // --------------------------------------
         // handle "a las cuatro" "a las 3"
+        //TODO: add some new regex which have used in AtRegex
+        //TODO: modify according to corresponding English regex
         public static readonly Regex AtRegex =
             new Regex(string.Format(@"\b(?<=\b(a las?)\s+)({2}|{0}|{1})\b", HourNumRegex, BaseTimeExtractor.HourRegex, EngTimeRegex),
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);

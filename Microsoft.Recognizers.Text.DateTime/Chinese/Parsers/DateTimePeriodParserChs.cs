@@ -333,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             string timeStr;
 
             // handle 昨晚，今晨
-            var match = DateTimePeriodExtractorChs.SpecificNightRegex.Match(trimedText);
+            var match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var swift = 0;
@@ -418,7 +418,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            match = DateTimePeriodExtractorChs.SpecificNightRegex.Match(trimedText);
+            match = DateTimePeriodExtractorChs.SpecificTimeOfDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var swift = 0;
@@ -445,7 +445,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
 
             // handle Date followed by morning, afternoon
-            match = DateTimePeriodExtractorChs.NightRegex.Match(trimedText);
+            match = DateTimePeriodExtractorChs.TimeOfDayRegex.Match(trimedText);
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();

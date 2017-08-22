@@ -112,6 +112,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back in two weeks", new DateObject(2016, 11, 21));
             BasicTest("I'll go back two weeks from now", new DateObject(2016, 11, 21));
+
+            BasicTest("I'll go back next week on Friday", new DateObject(2016, 11, 18));
+            BasicTest("I'll go back on Friday next week", new DateObject(2016, 11, 18));
         }
 
         [TestMethod]
@@ -160,6 +163,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back in two weeks", "2016-11-21");
             BasicTest("I'll go back two weeks from now", "2016-11-21");
+
+            BasicTest("I'll go back next week on Friday", "2016-11-18");
+            BasicTest("I'll go back on Friday next week", "2016-11-18");
 
         }
     }

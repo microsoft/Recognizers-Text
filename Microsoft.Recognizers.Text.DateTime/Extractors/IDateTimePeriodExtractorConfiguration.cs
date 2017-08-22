@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TillRegex { get; }
 
-        Regex SpecificNightRegex { get; }
+        Regex SpecificTimeOfDayRegex { get; }
 
-        Regex NightRegex { get; }
+        Regex TimeOfDayRegex { get; }
 
         Regex FollowedUnit { get; }
 
@@ -24,6 +24,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex PastRegex { get; }
 
         Regex FutureRegex { get; }
+
+        Regex WeekDayRegex { get; }
+
+        Regex PeriodTimeOfDayWithDateRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

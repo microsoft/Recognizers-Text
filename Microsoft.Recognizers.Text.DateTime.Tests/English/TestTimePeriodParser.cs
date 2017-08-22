@@ -68,6 +68,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 new DateObject(year, 11, 7, 17, min, second),
                 new DateObject(year, 11, 7, 18, min, second));
 
+            BasicTest("I'll be out from 1am to 5pm",
+                new DateObject(year, month, day, 1, min, second),
+                new DateObject(year, month, day, 17, min, second));
 
             // merge two time points
             BasicTest("I'll be out 4pm till 5pm",
@@ -114,6 +117,43 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("let's meet in the evenings",
                 new DateObject(year, month, day, 16, min, second),
                 new DateObject(year, month, day, 20, min, second));
+
+            BasicTest("let's meet in the early-mornings",
+                new DateObject(year, month, day, 8, min, second),
+                new DateObject(year, month, day, 10, min, second));
+            BasicTest("let's meet in the late-mornings",
+                new DateObject(year, month, day, 10, min, second),
+                new DateObject(year, month, day, 12, min, second));
+            BasicTest("let's meet in the early-morning",
+                new DateObject(year, month, day, 8, min, second),
+                new DateObject(year, month, day, 10, min, second));
+            BasicTest("let's meet in the late-morning",
+                new DateObject(year, month, day, 10, min, second),
+                new DateObject(year, month, day, 12, min, second));
+            BasicTest("let's meet in the early-afternoon",
+                new DateObject(year, month, day, 12, min, second),
+                new DateObject(year, month, day, 14, min, second));
+            BasicTest("let's meet in the late-afternoon",
+                new DateObject(year, month, day, 14, min, second),
+                new DateObject(year, month, day, 16, min, second));
+            BasicTest("let's meet in the early-evening",
+                new DateObject(year, month, day, 16, min, second),
+                new DateObject(year, month, day, 18, min, second));
+            BasicTest("let's meet in the late-evening",
+                new DateObject(year, month, day, 18, min, second),
+                new DateObject(year, month, day, 20, min, second));
+            BasicTest("let's meet in the early-night",
+                new DateObject(year, month, day, 20, min, second),
+                new DateObject(year, month, day, 22, min, second));
+            BasicTest("let's meet in the late-night",
+                new DateObject(year, month, day, 22, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+            BasicTest("let's meet in the early night",
+                new DateObject(year, month, day, 20, min, second),
+                new DateObject(year, month, day, 22, min, second));
+            BasicTest("let's meet in the late night",
+                new DateObject(year, month, day, 22, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
         }
 
         [TestMethod]
@@ -125,6 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out 5 to 6 p.m", "(T17,T18,PT1H)");
             BasicTest("I'll be out 5 to seven in the morning", "(T05,T07,PT2H)");
             BasicTest("I'll be out from 5 to 6 pm", "(T17,T18,PT1H)");
+            BasicTest("I'll be out from 1am to 5pm", "(T01,T17,PT16H)");
 
 
             // merge two time points
@@ -143,6 +184,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("let's meet in the afternoon", "TAF");
             BasicTest("let's meet in the night", "TNI");
             BasicTest("let's meet in the evening", "TEV");
+
+            BasicTest("let's meet in the early-mornings", "TMO");
+            BasicTest("let's meet in the late-mornings", "TMO");
+            BasicTest("let's meet in the early-morning", "TMO");
+            BasicTest("let's meet in the late-morning", "TMO");
+            BasicTest("let's meet in the early-afternoon", "TAF");
+            BasicTest("let's meet in the late-afternoon", "TAF");
+            BasicTest("let's meet in the early-evening", "TEV");
+            BasicTest("let's meet in the late-evening", "TEV");
+            BasicTest("let's meet in the early-night", "TNI");
+            BasicTest("let's meet in the late-night", "TNI");
+            BasicTest("let's meet in the early night", "TNI");
+            BasicTest("let's meet in the late night", "TNI");
         }
     }
 }

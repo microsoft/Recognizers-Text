@@ -148,6 +148,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             match = this.config.AnUnitRegex.Match(text);
+            if (!match.Success)
+            {
+                match = this.config.HalfDateUnitRegex.Match(text);
+            }
+
             if (match.Success)
             {
                 numVal = match.Groups["half"].Success ? 0.5 : 1; 

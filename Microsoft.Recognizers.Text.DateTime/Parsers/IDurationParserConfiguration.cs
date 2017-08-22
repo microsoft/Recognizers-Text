@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FollowedUnit { get; }
 
+        Regex ConjunctionRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }

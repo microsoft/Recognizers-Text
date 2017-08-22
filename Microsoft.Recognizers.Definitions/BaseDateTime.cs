@@ -10,7 +10,7 @@
 //     - ClassName: BaseDateTime
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Microsoft.Recognizers.Resources
+namespace Microsoft.Recognizers.Definitions
 {
 	using System;
 	using System.Collections.Generic;

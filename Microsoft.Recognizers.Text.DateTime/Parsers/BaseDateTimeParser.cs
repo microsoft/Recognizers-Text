@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
 
-            var match = this.config.SpecificNightRegex.Match(trimedText);
+            var match = this.config.SpecificTimeOfDayRegex.Match(trimedText);
 
             if (match.Success)
             {

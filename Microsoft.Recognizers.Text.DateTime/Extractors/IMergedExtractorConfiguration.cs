@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime
+﻿using System.Text.RegularExpressions;
+
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IMergedExtractorConfiguration
     {
@@ -20,8 +22,9 @@
 
         IExtractor HolidayExtractor { get; }
 
-        bool HasBeforeTokenIndex(string text, out int index);
+        Regex AfterRegex { get; }
 
-        bool HasAfterTokenIndex(string text, out int index);
+        Regex BeforeRegex { get; }
+
     }
 }

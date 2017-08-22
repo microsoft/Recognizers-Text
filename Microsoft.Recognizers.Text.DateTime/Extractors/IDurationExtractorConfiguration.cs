@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SuffixAndRegex { get; }
 
+        Regex ConjunctionRegex { get; }
+
         IExtractor CardinalExtractor { get; }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Resources;
+using Microsoft.Recognizers.Definitions;
 using System;
 
 namespace Microsoft.Recognizers.Text.Number
