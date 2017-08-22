@@ -39,9 +39,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TillRegex => SpanishDatePeriodExtractorConfiguration.TillRegex;
 
-        public Regex SpecificNightRegex => SpanishDateTimeExtractorConfiguration.SpecificNightRegex;
+        public Regex SpecificTimeOfDayRegex => SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
 
-        public Regex NightRegex => SpanishDateTimeExtractorConfiguration.NightRegex;
+        public Regex TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
 
         public Regex FollowedUnit => SpanishTimePeriodExtractorConfiguration.FollowedUnit;
 
@@ -50,6 +50,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex PastRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
 
         public Regex FutureRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
+
+        //TODO: add this
+        public Regex WeekDayRegex => new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: add this
+        public Regex PeriodTimeOfDayWithDateRegex => new Regex(@"\b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 

@@ -133,30 +133,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                     bool rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
                                     config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
                     if (!string.IsNullOrEmpty(amStr) || rightAmValid)
-                    {
+                {
                         
-                        if (beginHour >= 12)
-                        {
-                            beginHour -= 12;
-                        }
-                        if (endHour >= 12)
-                        {
-                            endHour -= 12;
-                        }
-                        isValid = true;
-                    }
-                    else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
+                    if (beginHour >= 12)
                     {
-                        if (beginHour < 12)
-                        {
-                            beginHour += 12;
-                        }
-                        if (endHour < 12)
-                        {
-                            endHour += 12;
-                        }
-                        isValid = true;
+                        beginHour -= 12;
                     }
+                    if (endHour >= 12)
+                    {
+                        endHour -= 12;
+                    }
+                    isValid = true;
+                }
+                    else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
+                {
+                    if (beginHour < 12)
+                    {
+                        beginHour += 12;
+                    }
+                    if (endHour < 12)
+                    {
+                        endHour += 12;
+                    }
+                    isValid = true;
+                }
                 }
 
                 if (isValid)
@@ -221,13 +221,48 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = referenceTime.Year;
             string timex;
             int beginHour, endHour, endMinSeg;
+            var ret = new DateTimeResolutionResult();
+
+            // extract early/late prefix from text
+            var match = this.config.TimeOfDayRegex.Match(text);
+            bool hasEarly = false, hasLate = false;
+            if (match.Success)
+            {
+                if (!string.IsNullOrEmpty(match.Groups["early"].Value))
+                {
+                    var early = match.Groups["early"].Value;
+                    text = text.Replace(early, "");
+                    hasEarly = true;
+                    ret.Comment = "early";
+                }
+                if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
+                {
+                    var late = match.Groups["late"].Value;
+                    text = text.Replace(late, "");
+                    hasLate = true;
+                    ret.Comment = "late";
+                }
+            }
 
             if (!this.config.GetMatchedTimexRange(text, out timex, out beginHour, out endHour, out endMinSeg))
             {
                 return new DateTimeResolutionResult();
             }
 
-            var ret = new DateTimeResolutionResult();
+            // modify time period if "early" or "late" is existed
+            if (hasEarly)
+            {
+                endHour = beginHour + 2;
+                // handling case: night end with 23:59
+                if (endMinSeg == 59)
+                {
+                    endMinSeg = 0;
+                }
+            }
+            else if (hasLate)
+            {
+                beginHour = beginHour + 2;
+            }
 
             ret.Timex = timex;
 

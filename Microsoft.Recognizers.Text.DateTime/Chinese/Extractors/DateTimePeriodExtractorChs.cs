@@ -40,11 +40,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex DescRegex = new Regex(@"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(@"(?<night>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)",
+        public static readonly Regex TimeOfDayRegex = new Regex(@"(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificNightRegex =
-            new Regex($@"((({ThisRegex}|{NextRegex}|{LastRegex})\s+{NightRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))",
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex($@"((({ThisRegex}|{NextRegex}|{LastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex UnitRegex =
@@ -251,7 +251,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private List<Token> MatchNight(string text)
         {
             var ret = new List<Token>();
-            var matches = SpecificNightRegex.Matches(text);
+            var matches = SpecificTimeOfDayRegex.Matches(text);
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
@@ -267,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = NightRegex.Match(afterStr);
+                var match = TimeOfDayRegex.Match(afterStr);
                 if (match.Success)
                 {
                     var middleStr = afterStr.Substring(0, match.Index);

@@ -58,6 +58,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(
                 DateTimeDefinitions.BasicTime, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        // handle special time such as 'at midnight', 'midnight', 'midday'
+        public static readonly Regex MidnightRegex =
+            new Regex(
+                DateTimeDefinitions.MidnightRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MidmorningRegex =
+            new Regex(
+                DateTimeDefinitions.MidmorningRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MidafternoonRegex =
+            new Regex(
+                DateTimeDefinitions.MidafternoonRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MiddayRegex =
+            new Regex(
+                DateTimeDefinitions.MiddayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MidTimeRegex =
+            new Regex(
+                DateTimeDefinitions.MidTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // part 3: regex for time
         // --------------------------------------
         // handle "at four" "at 3"

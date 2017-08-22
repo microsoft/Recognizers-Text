@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex FollowedUnit { get; }
 
+        public Regex ConjunctionRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -37,6 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             HalfDateUnitRegex = EnglishDurationExtractorConfiguration.HalfRegex;
             SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = EnglishDurationExtractorConfiguration.DurationFollowedUnit;
+            ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

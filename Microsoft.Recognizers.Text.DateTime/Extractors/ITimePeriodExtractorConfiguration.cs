@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TillRegex { get; }
 
-        Regex NightRegex { get; }
+        Regex TimeOfDayRegex { get; }
         
         IExtractor SingleTimeExtractor { get; }
         

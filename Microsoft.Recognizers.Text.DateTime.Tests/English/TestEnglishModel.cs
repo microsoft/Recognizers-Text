@@ -188,6 +188,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "I'll go back next hour",
                 Constants.SYS_DATETIME_DATETIMEPERIOD, "next hour", "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)");
+
+            BasicTest(model, reference,
+                "I'll go back tuesday in the morning",
+                Constants.SYS_DATETIME_DATETIMEPERIOD, "tuesday in the morning", "XXXX-WXX-2TMO");
         }
 
         [TestMethod]
@@ -339,11 +343,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest(model, reference,
                 "let's meet in the morning",
-                Constants.SYS_DATETIME_TIMEPERIOD, "morning", "TMO");
+                Constants.SYS_DATETIME_TIMEPERIOD, "in the morning", "TMO");
 
             BasicTest(model, reference,
                 "let's meet in the evening",
-                Constants.SYS_DATETIME_TIMEPERIOD, "evening", "TEV");
+                Constants.SYS_DATETIME_TIMEPERIOD, "in the evening", "TEV");
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SimpleTimeOfTodayBeforeRegex { get; }
 
-        public Regex SpecificNightRegex { get; }
+        public Regex SpecificTimeOfDayRegex { get; }
 
         public Regex TheEndOfRegex { get; }
 
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
-            SpecificNightRegex = EnglishDateTimeExtractorConfiguration.SpecificNightRegex;
+            SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
             Numbers = config.Numbers;

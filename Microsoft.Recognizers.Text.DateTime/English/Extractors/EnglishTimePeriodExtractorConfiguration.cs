@@ -45,12 +45,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex,
+        public static readonly Regex TimeOfDayRegex =
+            new Regex(DateTimeDefinitions.TimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificNightRegex =
-            new Regex(DateTimeDefinitions.SpecificNightRegex,
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex =
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.NightRegex => NightRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

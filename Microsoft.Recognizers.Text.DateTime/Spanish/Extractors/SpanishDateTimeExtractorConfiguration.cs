@@ -16,25 +16,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SuffixRegex = new Regex(@"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(@"\b(?<night>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b",
+        //TODO: modify it according to the corresponding English regex
+        public static readonly Regex TimeOfDayRegex = new Regex(@"\b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificNightRegex =
-            new Regex($@"\b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{NightRegex}))\b",
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex($@"\b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex($@"^\s*(,\s*)?(en|de(l)?\s+)?{SpecificNightRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+             new Regex($@"^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificNightRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex($@"({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificNightRegex}",
+            new Regex($@"({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificNightRegex}(\s*,)?(\s+(a\s+la|para))?\s*({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})",
+            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TheEndOfRegex = new Regex(@"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$",
@@ -72,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex => SimpleTimeOfTodayBeforeRegex;
 
-        Regex IDateTimeExtractorConfiguration.NightRegex => NightRegex;
+        Regex IDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 

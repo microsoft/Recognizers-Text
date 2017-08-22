@@ -14,11 +14,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"(?<hour>veintiuno|veintidos|veintitres|veinticuatro|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|diecis([eé])is|diecisiete|dieciocho|diecinueve|veinte)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the corresponding English regex
         public static readonly Regex PureNumFromTo =
             new Regex(
                 $@"((desde|de)\s+(la(s)?\s+)?)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<leftDesc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*{SpanishDatePeriodExtractorConfiguration.TillRegex}\s*({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<rightDesc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify it according to the corresponding English regex
         public static readonly Regex PureNumBetweenAnd =
             new Regex(
                 $@"(entre\s+(la(s)?\s+)?)({BaseTimeExtractor.HourRegex}|{HourNumRegex})(\s*(?<leftDesc>{SpanishTimeExtractorConfiguration.DescRegex}))?\s*y\s*(la(s)?\s+)?({BaseTimeExtractor.HourRegex}|{HourNumRegex})\s*(?<rightDesc>{SpanishTimeExtractorConfiguration.PmRegex}|{SpanishTimeExtractorConfiguration.AmRegex}|{SpanishTimeExtractorConfiguration.DescRegex})?",
@@ -39,6 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this according to coresponding English regex
+        public static readonly Regex TimeOfDayRegex = new Regex(@"",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
@@ -52,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => SpanishDatePeriodExtractorConfiguration.TillRegex;
 
-        Regex ITimePeriodExtractorConfiguration.NightRegex => SpanishDateTimeExtractorConfiguration.NightRegex;
+        Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
