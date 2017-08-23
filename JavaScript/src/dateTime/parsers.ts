@@ -186,8 +186,8 @@ export class BaseTimeParser implements IDateTimeParser {
 
             if (minStr) {
                 min = this.config.numbers.get(minStr);
-                if (!tensStr) {
-                    min += this.config.numbers.get(tensStr);
+                if (tensStr) {
+                    min += this.config.numbers.get(tensStr) || 0;
                 }
                 hasMin = true;
             }
@@ -336,7 +336,7 @@ export class TimeParser extends BaseTimeParser {
         if (matches.length > 0 && matches[0].length == trimedText.length) {
             var hourStr = matches[0].groups["hour"];
             var hour = 12;
-            if (!hourStr) {
+            if (hourStr) {
                 hour = parseInt(hourStr);
             }
 
