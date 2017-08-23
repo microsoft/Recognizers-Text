@@ -115,6 +115,10 @@ export interface ISetExtractorConfiguration {
     eachDayRegex: RegExp
 }
 
+export interface IHolidayExtractorConfiguration {
+    holidayRegexes: RegExp[]
+}
+
 export class BaseDateExtractor implements IExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE;
 
@@ -930,6 +934,33 @@ export class BaseSetExtractor implements IExtractor {
             if (matches && matches.length > 0) {
                 ret.push(new Token(matches[0].index, matches[0].index + matches[0].length + er.length))
             }
+        });
+        return ret;
+    }
+}
+
+export class BaseHolidayExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATE
+
+    private readonly config: IHolidayExtractorConfiguration;
+
+    constructor(config: IHolidayExtractorConfiguration) {
+        this.config = config;
+    }
+    
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.holidayMatch(source))
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private holidayMatch(source: string): Array<Token> {
+        let ret = [];
+        this.config.holidayRegexes.forEach(regex => {
+            RegExpUtility.getMatches(regex, source).forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length))
+            });
         });
         return ret;
     }

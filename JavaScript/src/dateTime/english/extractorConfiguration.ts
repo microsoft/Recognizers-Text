@@ -7,6 +7,7 @@ import {
     ITimePeriodExtractorConfiguration,
     IDateTimeExtractorConfiguration,
     IDateTimePeriodExtractorConfiguration,
+    IHolidayExtractorConfiguration,
     BaseDurationExtractor,
     BaseDateExtractor,
     BaseTimeExtractor,
@@ -373,5 +374,17 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex, "gis")
         this.beforeEachDayRegex = null;
         this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex, "gis")
+    }
+}
+
+export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
+    readonly holidayRegexes: RegExp[]
+
+    constructor() {
+        this.holidayRegexes = [
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+        ];
     }
 }
