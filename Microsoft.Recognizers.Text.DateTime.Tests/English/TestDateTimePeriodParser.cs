@@ -135,12 +135,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll go back previous 3mins",
                 new DateObject(year, month, day, 16, 9, second),
                 new DateObject(year, month, day, 16, 12, second));
-            BasicTestFuture("I'll go back in 3 hours",
-                new DateObject(year, month, day, 16, 12, second),
-                new DateObject(year, month, day, 19, 12, second));
-            BasicTestFuture("I'll go back in 5 hrs",
-                new DateObject(year, month, day, 16, 12, second),
-                new DateObject(year, month, day, 21, 12, second));
             BasicTestFuture("I'll go back next 5 hrs",
                 new DateObject(year, month, day, 16, 12, second),
                 new DateObject(year, month, day, 21, 12, second));
@@ -150,6 +144,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll go back next hour",
                 new DateObject(year, month, day, 16, 12, second),
                 new DateObject(year, month, day, 17, 12, second));
+            BasicTestFuture("I'll go back next few hours",
+                new DateObject(year, month, day, 16, 12, second),
+                new DateObject(year, month, day, 19, 12, second));
 
             BasicTestFuture("I'll go back tuesday in the morning",
                 new DateObject(year, month, day + 1, 8, 0, 0),
@@ -259,8 +256,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back past 3 minute", "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)");
             BasicTest("I'll go back previous 3 minute", "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)");
             BasicTest("I'll go back previous 3mins", "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)");
-            BasicTest("I'll go back in 3 hours", "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)");
-            BasicTest("I'll go back in 5 hrs", "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)");
             BasicTest("I'll go back next 5 hrs", "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)");
             BasicTest("I'll go back last minute", "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)");
             BasicTest("I'll go back next hour", "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)");

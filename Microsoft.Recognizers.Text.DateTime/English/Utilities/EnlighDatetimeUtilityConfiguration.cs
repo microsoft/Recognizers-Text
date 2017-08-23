@@ -24,6 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
         public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 
         Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
@@ -35,5 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Utilities
         Regex IDateTimeUtilityConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
     }
 }

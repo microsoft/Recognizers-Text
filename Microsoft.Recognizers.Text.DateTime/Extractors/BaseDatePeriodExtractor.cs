@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             tokens.AddRange(MergeTwoTimePoints(text));
-            tokens.AddRange(MatchNumberWithUnit(text));
+            tokens.AddRange(MatchDuration(text));
             tokens.AddRange(SingleTimePointWithPatterns(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
@@ -139,27 +139,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchNumberWithUnit(string text)
+        public List<Token> MatchDuration(string text)
         {
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var ers = this.config.CardinalExtractor.Extract(text);
-            foreach (var er in ers)
+            var durationExtractions = config.DurationExtractor.Extract(text);
+            foreach (var durationExtraction in durationExtractions)
             {
-                var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                var match = this.config.FollowedUnit.Match(afterStr);
-                if (match.Success && match.Index == 0)
+                var match = config.DateUnitRegex.Match(durationExtraction.Text);
+                if (match.Success)
                 {
-                    durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
-                }
-            }
-            if (this.config.NumberCombinedWithUnit.IsMatch(text))
-            {
-                var matches = this.config.NumberCombinedWithUnit.Matches(text);
-                foreach (Match match in matches)
-                {
-                    durations.Add(new Token(match.Index, match.Index + match.Length));
+                    durations.Add(new Token(durationExtraction.Start ?? 0,
+                        (durationExtraction.Start + durationExtraction.Length ?? 0)));
                 }
             }
 
@@ -172,21 +164,45 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var match = this.config.PastRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                if (MatchRegexInPrefix(beforeStr, match))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
 
                 match = this.config.FutureRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                if (MatchRegexInPrefix(beforeStr, match))
                 {
                     ret.Add(new Token(match.Index, duration.End));
+                    continue;
+                }
+
+                // in Range Weeks should be handled as dateRange here
+                match = config.InConnectorRegex.Match(beforeStr);
+                if (MatchRegexInPrefix(beforeStr, match))
+                {
+                    var startToken = match.Index;
+                    match = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(startToken, duration.End));
+                    }
                 }
             }
 
             return ret;
         }
 
+        private bool MatchRegexInPrefix(string beforeStr, Match match)
+        {
+            if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
+
+    
 }

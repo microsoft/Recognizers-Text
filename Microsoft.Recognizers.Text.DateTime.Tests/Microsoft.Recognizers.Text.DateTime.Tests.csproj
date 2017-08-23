@@ -79,6 +79,7 @@
     <Compile Include="English\TestHolidayExtractor.cs" />
     <Compile Include="English\TestHolidayParser.cs" />
     <Compile Include="English\TestMergedExtractor.cs" />
+    <Compile Include="English\TestMergedParser.cs" />
     <Compile Include="English\TestSetExtractor.cs" />
     <Compile Include="English\TestSetParser.cs" />
     <Compile Include="English\TestTimeExtractor.cs" />

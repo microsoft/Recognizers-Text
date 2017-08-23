@@ -66,10 +66,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
-            NextRegex = EnglishDateExtractorConfiguration.NextRegex;
+            NextRegex = EnglishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = EnglishDateExtractorConfiguration.ThisRegex;
-            LastRegex = EnglishDateExtractorConfiguration.LastRegex;
-            UnitRegex = EnglishDateExtractorConfiguration.UnitRegex;
+            LastRegex = EnglishDateExtractorConfiguration.LastDateRegex;
+            UnitRegex = EnglishDateExtractorConfiguration.DateUnitRegex;
             StrictWeekDay = EnglishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
