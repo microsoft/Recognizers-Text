@@ -37,7 +37,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly integerExtractor: EnglishIntegerExtractor;
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: BaseDurationExtractor;
-    readonly dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor() {
         this.dateRegexList = [
@@ -70,10 +70,14 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.dateTimeUtilityConfiguration = {
+        this.utilityConfiguration = {
             agoRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, "gis"),
             laterRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, "gis"),
             inConnectorRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis"),
+            // TODO: utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            amDescRegex:null,
+            pmDescRegex:null,
+            amPmDescRegex:null
         };
     }
 }
@@ -233,10 +237,14 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
         this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
+        // TODO: utilityConfiguration = new EnlighDatetimeUtilityConfiguration()
         this.dateTimeUtilityConfiguration = {
             agoRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, "gis"),
             laterRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, "gis"),
             inConnectorRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis"),
+            amDescRegex: null,
+            pmDescRegex: null,
+            amPmDescRegex: null
         };
     }
 

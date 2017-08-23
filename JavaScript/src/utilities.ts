@@ -100,8 +100,8 @@ export class RegExpUtility {
         return replacer;
     }
 
-    static getSafeRegExp(source: string, flags: string): RegExp {
+    static getSafeRegExp(source: string, flags?: string): RegExp {
         let sanitizedSource = this.sanitizeGroups(source);
-        return XRegExp(sanitizedSource, flags);
+        return XRegExp(sanitizedSource, flags || 'gis');
     }
 }

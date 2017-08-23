@@ -55,6 +55,9 @@ export interface IDateTimeUtilityConfiguration {
     agoRegex: RegExp
     laterRegex: RegExp
     inConnectorRegex: RegExp
+    amDescRegex: RegExp
+    pmDescRegex: RegExp
+    amPmDescRegex: RegExp
 }
 
 export class AgoLaterUtil {

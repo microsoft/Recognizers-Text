@@ -16,7 +16,7 @@ export interface IDateExtractorConfiguration {
     integerExtractor: BaseNumberExtractor,
     numberParser: BaseNumberParser
     durationExtractor: IExtractor
-    dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration
+    utilityConfiguration: IDateTimeUtilityConfiguration
 }
 
 export interface IDurationExtractorConfiguration {
@@ -208,7 +208,7 @@ export class BaseDateExtractor implements IExtractor {
         durEx.forEach(er => {
             let match = RegExpUtility.getMatches(this.config.nonDateUnitRegex, er.text);
             if (match.length > 0) return;
-            ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.dateTimeUtilityConfiguration);
+            ret = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, ret, this.config.utilityConfiguration);
         });
         return ret;
     }

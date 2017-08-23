@@ -14,7 +14,7 @@ export class DateTimeParseResult extends ParseResult {
 }
 
 export interface IDateTimeParser extends IParser {
-    parse(extResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null
+    parse(extResult: ExtractResult, referenceDate?:Date): DateTimeParseResult | null;
 }
 
 export interface ICommonDateTimeParserConfiguration {
@@ -304,6 +304,274 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         ret.futureValue = ret.pastValue = new Date(year, month, day, hour, min, second);
+        ret.success = true;
+
+        return ret;
+    }
+}
+
+export interface ITimePeriodParserConfiguration {
+    timeExtractor: IExtractor;
+    timeParser: IDateTimeParser;
+    pureNumberFromToRegex: RegExp;
+    pureNumberBetweenAndRegex: RegExp;
+    timeOfDayRegex: RegExp;
+    numbers: ReadonlyMap<string, number>;
+    utilityConfiguration: IDateTimeUtilityConfiguration;
+    getMatchedTimexRange(text: string): {
+        matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number
+    };
+}  
+
+export class BaseTimePeriodParser implements IDateTimeParser
+{
+    public static readonly  ParserName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+    
+    private readonly  config:ITimePeriodParserConfiguration;
+
+    constructor( configuration:ITimePeriodParserConfiguration)
+    {
+        this.config = configuration;
+    }
+
+    public parse(er: ExtractResult, refTime?: Date): DateTimeParseResult {
+        let referenceTime = refTime || new Date();
+        let value = null;
+        if (er.type == BaseTimePeriodParser.ParserName) {
+            let innerResult = this.parseSimpleCases(er.text, referenceTime);
+            if (!innerResult.success) {
+                innerResult = this.mergeTwoTimePoints(er.text, referenceTime);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseNight(er.text, referenceTime);
+            }
+
+            if (innerResult.success) {
+                innerResult.futureResolution = new Map<string, string>(
+                    [
+                        [
+                            TimeTypeConstants.START_TIME,
+                            FormatUtil.formatTime(innerResult.futureValue.Item1)
+                        ],
+                        [
+                            TimeTypeConstants.END_TIME,
+                            FormatUtil.formatTime(innerResult.futureValue.Item2)
+                        ]
+                    ]);
+
+                innerResult.pastResolution = new Map<string, string>(
+                    [
+                        [
+                            TimeTypeConstants.START_TIME,
+                            FormatUtil.formatTime(innerResult.pastValue.Item1)
+                        ],
+                        [
+                            TimeTypeConstants.END_TIME,
+                            FormatUtil.formatTime(innerResult.pastValue.Item2)
+                        ]
+                    ]);
+
+                value = innerResult;
+            }
+        }
+
+        let ret = new DateTimeParseResult(er);
+        ret.value = value;
+        ret.timexStr = value == null ? "" : value.timex;
+        ret.resolutionStr = "";
+
+        return ret;
+    }
+
+    private  parseSimpleCases( text:string, referenceTime:Date):DateTimeResolutionResult
+    {
+        let ret = new DateTimeResolutionResult();
+        let year = referenceTime.getFullYear(), month = referenceTime.getMonth(), day = referenceTime.getDay();
+        let trimedText = text.trim().toLowerCase();
+
+        let matches = RegExpUtility.getMatches( this.config.pureNumberFromToRegex,trimedText);
+        if (!matches.length)
+        {
+            matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex,trimedText);
+        }
+
+        if (matches.length && matches[0].index == 0)
+        {
+            // this "from .. to .." pattern is valid if followed by a Date OR "pm"
+            let isValid = false;
+
+            // get hours
+            let hourGroup = matches[0].groups["hour"];
+            let hourStr = hourGroup.captures[0];
+
+            let beginHour=this.config.numbers.get(hourStr);
+            if (!beginHour)
+            {
+                beginHour = parseInt(hourStr);
+            }
+
+            hourStr = hourGroup.captures[1].Value;
+
+            let endHour=this.config.numbers.get(hourStr);
+            if (!endHour)
+            {
+                endHour = parseInt(hourStr);
+            }
+
+            // parse "pm" 
+            let leftDesc = matches[0].groups["leftDesc"];
+            let rightDesc = matches[0].groups["rightDesc"];
+            let pmStr = matches[0].groups["pm"];
+            let amStr = matches[0].groups["am"];
+            let descStr = matches[0].groups["desc"];
+            // The "ampm" only occurs in time, don't have to consider it here
+            if (!leftDesc)
+            {
+                let rightAmValid = (rightDesc) &&
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.toLowerCase()).length;
+                let rightPmValid = (rightDesc) &&
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
+                if (amStr || rightAmValid)
+            {
+                    
+                if (beginHour >= 12)
+                {
+                    beginHour -= 12;
+                }
+                if (endHour >= 12)
+                {
+                    endHour -= 12;
+                }
+                isValid = true;
+            }
+                else if (pmStr || rightPmValid)
+            {
+                if (beginHour < 12)
+                {
+                    beginHour += 12;
+                }
+                if (endHour < 12)
+                {
+                    endHour += 12;
+                }
+                isValid = true;
+            }
+            }
+
+            if (isValid)
+            {
+                let beginStr = "T" + FormatUtil.toString(beginHour,2);
+                let endStr = "T" + FormatUtil.toString(endHour,2);
+
+                ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
+
+                ret.futureValue = ret.pastValue = {
+                    item1: new Date(year, month, day, beginHour, 0, 0),
+                    item2: new Date(year, month, day, endHour, 0, 0)
+                };
+
+                ret.success = true;
+
+                return ret;
+            }
+        }
+        return ret;
+    }
+
+    private mergeTwoTimePoints(text:string , referenceTime:Date):DateTimeResolutionResult 
+    {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.timeExtractor.extract(text);
+        let pr1: DateTimeParseResult = null;
+        let pr2: DateTimeParseResult = null;
+        if (ers.length != 2)
+        {
+            return ret;
+        }
+
+         pr1 = this.config.timeParser.parse(ers[0], referenceTime);
+         pr2 = this.config.timeParser.parse(ers[1], referenceTime);
+
+        if (pr1.value == null || pr2.value == null)
+        {
+            return ret;
+        }
+
+        let beginTime:Date = pr1.value.futureValue;
+        let endTime:Date = pr2.value.futureValue;
+
+        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getHours()}H)`;
+        ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
+        ret.success = true;
+
+        let ampmStr1 = pr1.value.comment;
+        let ampmStr2 = pr2.value.comment;
+        if (ampmStr1 && ampmStr1.endsWith("ampm") && ampmStr2 && ampmStr2.endsWith("ampm"))
+        {
+            ret.comment = "ampm";
+        }
+
+        return ret;
+    }
+
+    // parse "morning", "afternoon", "night"
+    private parseNight( text:string,  referenceTime:Date):DateTimeResolutionResult 
+    {
+        let day = referenceTime.getDay(),
+            month = referenceTime.getMonth(),
+            year = referenceTime.getFullYear();
+        let ret = new DateTimeResolutionResult();
+
+        // extract early/late prefix from text
+        let matches = RegExpUtility.getMatches(this.config.timeOfDayRegex,text);
+        let hasEarly = false, hasLate = false;
+        if (matches.length)
+        {
+            if (matches[0].groups["early"])
+            {
+                let early = matches[0].groups["early"];
+                text = text.replace(early, "");
+                hasEarly = true;
+                ret.comment = "early";
+            }
+            if (!hasEarly && matches[0].groups["late"])
+            {
+                let late = matches[0].groups["late"];
+                text = text.replace(late, "");
+                hasLate = true;
+                ret.comment = "late";
+            }
+        }
+
+        let timexRange=this.config.getMatchedTimexRange(text);
+        if (!timexRange.matched)
+        {
+            return new DateTimeResolutionResult();
+        }
+
+        // modify time period if "early" or "late" is existed
+        if (hasEarly)
+        {
+            timexRange.endHour = timexRange.beginHour + 2;
+            // handling case: night end with 23:59
+            if (timexRange.endMin == 59)
+            {
+                timexRange.endMin = 0;
+            }
+        }
+        else if (hasLate)
+        {
+            timexRange.beginHour = timexRange.beginHour + 2;
+        }
+
+        ret.timex = timexRange.timex;
+
+        ret.futureValue = ret.pastValue = {
+            item1:new Date(year, month, day, beginHour, 0, 0),
+            item2:new Date(year, month, day, endHour, endMinSeg, endMinSeg)
+        };
+
         ret.success = true;
 
         return ret;
