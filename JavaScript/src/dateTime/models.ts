@@ -28,7 +28,7 @@ export class DateTimeModel implements IDateTimeModel {
 
         let extractResults = this.extractor.extract(query);
         let parseDates = extractResults
-            .map(r => this.parser.parseWithReferenceTime(r, referenceDate));
+            .map(r => this.parser.parse(r, referenceDate));
 
         return parseDates
             .map(o => ({

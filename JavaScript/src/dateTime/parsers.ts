@@ -14,8 +14,7 @@ export class DateTimeParseResult extends ParseResult {
 }
 
 export interface IDateTimeParser extends IParser {
-    parse(extResult: ExtractResult): ParseResult | null;
-    parseWithReferenceTime(extResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null;
+    parse(extResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null
 }
 
 export interface ICommonDateTimeParserConfiguration {
@@ -101,11 +100,8 @@ export class BaseTimeParser implements IDateTimeParser {
         this.config = configuration;
     }
 
-    public parse(result: ExtractResult): ParseResult {
-        return this.parseWithReferenceTime(result, new Date());
-    }
-
-    public parseWithReferenceTime(er: ExtractResult, referenceTime: Date): DateTimeParseResult {
+    public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
+        if (!referenceTime) referenceTime = new Date();
         let value = null;
         if (er.type == this.ParserName) {
             let innerResult = this.internalParse(er.text, referenceTime);

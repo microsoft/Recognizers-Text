@@ -10,4 +10,5 @@ require('./dateTimePeriodExtractor-english.test');
 require('./setExtractor-english.test');
 require('./holidayExtractor-english.test');
 require('./mergedExtractor-english.test');
+
 require('./timeParser-english.test');
