@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
         [TestMethod]
         public void TestMergedParseIn()
         {
+            BasicTest("schedule a meeting in 8 minutes", Constants.SYS_DATETIME_DATETIME);
             BasicTest("schedule a meeting in 10 hours", Constants.SYS_DATETIME_DATETIME);
             BasicTest("schedule a meeting in 10 days", Constants.SYS_DATETIME_DATE);
             BasicTest("schedule a meeting in 3 weeks", Constants.SYS_DATETIME_DATEPERIOD);
