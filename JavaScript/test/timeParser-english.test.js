@@ -3,14 +3,14 @@ var EnglishTimeExtractorConfiguration = require('../compiled/dateTime/english/ex
 var BaseTimeExtractor = require('../compiled/dateTime/extractors').BaseTimeExtractor;
 var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/parserConfiguration').EnglishCommonDateTimeParserConfiguration;
 var EnglishTimeParserConfiguration = require('../compiled/dateTime/english/parserConfiguration').EnglishTimeParserConfiguration;
-var TimeParser = require('../compiled/dateTime/parsers').TimeParser;
+var EnglishTimeParser = require('../compiled/dateTime/english/parserConfiguration').EnglishTimeParser;
 var constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Time Parse', it => {
     let today = new Date();
     let year = today.getFullYear(), month = today.getMonth(), day = today.getDay(), min = 0, second = 0;
     let extractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-    let parser = new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
+    let parser = new EnglishTimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 
     BasicTestFuture(it, extractor, parser, "I'll be back at 7ampm", new Date(year, month, day, 7, min, second));
     BasicTestFuture(it, extractor, parser, "I'll be back at 7", new Date(year, month, day, 7, min, second));
@@ -77,7 +77,7 @@ describe('Time Parse', it => {
 
 describe('Time Parse Luis', it => {
     let extractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-    let parser = new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
+    let parser = new EnglishTimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 
     BasicTest_Luis(it, extractor, parser, "I'll be back at 7", "T07");
     BasicTest_Luis(it, extractor, parser, "I'll be back at seven", "T07");

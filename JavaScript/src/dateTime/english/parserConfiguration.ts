@@ -19,7 +19,8 @@ import {
 import {
     BaseDateParserConfiguration,
     ITimeParserConfiguration,
-    ICommonDateTimeParserConfiguration
+    ICommonDateTimeParserConfiguration,
+    BaseTimeParser
 } from "../parsers";
 import {
     EnglishCardinalExtractor,
@@ -33,6 +34,7 @@ import { EnglishNumeric } from "../../resources/englishNumeric";
 import { EnglishDateTime } from "../../resources/englishDateTime"
 import { BaseDateTime } from "../../resources/baseDateTime"
 import { RegExpUtility } from "../../utilities";
+import { FormatUtil, DateTimeResolutionResult } from "../utilities"
 import * as XRegExp from 'xregexp';
 
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
@@ -145,5 +147,44 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         }
 
         adjust.hour = (adjust.hour + deltaHour) % 24;
+    }
+}
+
+
+export class EnglishTimeParser extends BaseTimeParser {
+    constructor(configuration: ITimeParserConfiguration) {
+        super(configuration);
+    }
+
+    internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let innerResult = super.internalParse(text, referenceTime);
+        if (!innerResult.success) {
+            innerResult = this.parseIsh(text, referenceTime);
+        }
+        return innerResult;
+    }
+
+    // parse "noonish", "11-ish"
+    private parseIsh(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let trimedText = text.toLowerCase().trim();
+
+        var matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.IshRegex, trimedText);
+        if (matches.length > 0 && matches[0].length == trimedText.length) {
+            var hourStr = matches[0].groups["hour"];
+            var hour = 12;
+            if (hourStr) {
+                hour = parseInt(hourStr);
+            }
+
+            ret.timex = "T" + FormatUtil.toString(hour, 2);
+            ret.futureValue =
+                ret.pastValue =
+                new Date(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDay(), hour, 0, 0);
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
     }
 }
