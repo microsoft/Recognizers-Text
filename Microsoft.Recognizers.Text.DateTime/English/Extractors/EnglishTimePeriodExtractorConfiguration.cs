@@ -63,12 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public EnglishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());

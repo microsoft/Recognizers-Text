@@ -25,8 +25,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out from 5 to 6 next sunday", 12, 23);
             BasicTest("I'll be out from 5 to 6pm next sunday", 12, 25);
 
-            // merge to time points 49);
-
             BasicTest("I'll be out from 4pm to 5pm today", 12, 21);
             BasicTest("I'll be out from 4pm today to 5pm tomorrow", 12, 30);
             BasicTest("I'll be out from 4pm to 5pm of tomorrow", 12, 27);
@@ -58,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next 5 hrs", 13, 10);
             BasicTest("I'll go back last minute", 13, 11);
             BasicTest("I'll go back next hour", 13, 9);
+            BasicTest("I'll go back last few minutes", 13, 16);
+            BasicTest("I'll go back past several minutes", 13, 20);
 
             BasicTest("I'll go back tuesday in the morning", 13, 22);
             BasicTest("I'll go back tuesday in the afternoon", 13, 24);

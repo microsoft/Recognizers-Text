@@ -44,6 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishDateTimeExtractorConfiguration()
         {
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
@@ -80,9 +83,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool IsConnector(string text)
         {
-            return (string.IsNullOrEmpty(text) || text.Equals(",") ||
-                        PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("for") ||
-                        text.Equals("around"));
+            text = text.Trim();
+            return (string.IsNullOrEmpty(text) 
+                    || PrepositionRegex.IsMatch(text)
+                    || ConnectorRegex.IsMatch(text));
         }
     }
 }

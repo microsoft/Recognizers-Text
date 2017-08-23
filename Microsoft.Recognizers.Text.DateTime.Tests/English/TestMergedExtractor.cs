@@ -24,9 +24,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedExtract()
         {
-            BasicTest("after 7/2 ", 0, 9);
-            BasicTest("since 7/2 ", 0, 9);
-
             BasicTest("this is 2 days", 8, 6);
 
             BasicTest("this is before 4pm", 8, 10);
@@ -37,6 +34,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("this is after 4pm tomorrow", 8, 18);
             BasicTest("this is after tomorrow 4pm ", 8, 18);
 
+            BasicTest("I'll be back in 5 minutes", 13, 12);
+            BasicTest("past week", 0, 9);
+            BasicTest("past Monday", 0, 11);
+            BasicTest("schedule a meeting in 10 hours", 19, 11);
+        }
+
+        [TestMethod]
+        public void TestAfterBefore()
+        {
+            BasicTest("after 7/2 ", 0, 9);
+            BasicTest("since 7/2 ", 0, 9);
+            BasicTest("before 7/2 ", 0, 10);
+        }
+
+        [TestMethod]
+        public void TestNegativeExtract()
+        {
             //Unit tests for text should not extract datetime
             BasicTestNone("which email have gotten a reply");
             BasicTestNone("He is often alone");

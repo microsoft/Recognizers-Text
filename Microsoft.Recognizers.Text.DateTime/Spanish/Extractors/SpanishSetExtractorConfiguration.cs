@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor DateTimePeriodExtractor { get; }
 
-        Regex ISetExtractorConfiguration.LastRegex => SpanishDateExtractorConfiguration.LastRegex;
+        Regex ISetExtractorConfiguration.LastRegex => SpanishDateExtractorConfiguration.LastDateRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 

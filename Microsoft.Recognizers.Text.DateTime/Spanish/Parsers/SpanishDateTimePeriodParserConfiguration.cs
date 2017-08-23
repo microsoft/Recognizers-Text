@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeParser DateParser { get; }
@@ -20,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeParser TimeParser { get; }
 
         public IDateTimeParser DateTimeParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
 
@@ -39,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PeriodTimeOfDayWithDateRegex { get; }
 
+        public Regex RelativeTimeUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -49,10 +55,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
             CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
             NumberParser = config.NumberParser;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             DateTimeParser = config.DateTimeParser;
+            DurationParser = config.DurationParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -61,6 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
             NumberCombinedWithUnitRegex = SpanishDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit;
             UnitRegex = SpanishTimePeriodExtractorConfiguration.UnitRegex;
+            PeriodTimeOfDayWithDateRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = SpanishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

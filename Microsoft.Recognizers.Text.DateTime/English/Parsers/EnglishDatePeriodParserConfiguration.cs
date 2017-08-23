@@ -14,9 +14,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeParser DateParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         #endregion
 
@@ -81,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
+            DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
             DateParser = config.DateParser;
             MonthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
@@ -90,8 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthWithYear = EnglishDatePeriodExtractorConfiguration.MonthWithYear;
             MonthNumWithYear = EnglishDatePeriodExtractorConfiguration.MonthNumWithYear;
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
-            PastRegex = EnglishDatePeriodExtractorConfiguration.PastRegex;
-            FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
+            PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = EnglishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = EnglishDatePeriodExtractorConfiguration.WeekOfYearRegex;

@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+            DurationExtractor=new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }
         
         private static readonly Regex[] SimpleCases = new Regex[]
@@ -38,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
-        private static readonly Regex TimeUnitRegex =
+        private static readonly Regex TimeTimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -48,23 +49,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeNumberCombinedWithUnit = new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimePeriodTimeOfDayWithDateRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
+        public static readonly Regex PeriodTimeOfDayWithDateRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RelativeTimeUnitRegex = new Regex(DateTimeDefinitions.RelativeTimeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
         
-        public Regex UnitRegex => TimeUnitRegex;
+        Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeTimeUnitRegex;
 
-        public Regex PastRegex => EnglishDatePeriodExtractorConfiguration.PastRegex;
+        Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
 
-        public Regex FutureRegex => EnglishDatePeriodExtractorConfiguration.FutureRegex;
+        public Regex PastPrefixRegex => EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+
+        public Regex NextPrefixRegex => EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
 
         public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => TimePeriodTimeOfDayWithDateRegex;
+        Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
 
         public IExtractor CardinalExtractor { get; }
 
@@ -73,6 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IExtractor SingleTimeExtractor { get; }
 
         public IExtractor SingleDateTimeExtractor { get; }
+
+        public IExtractor DurationExtractor { get; }
 
         public bool GetFromTokenIndex(string text, out int index)
         {
