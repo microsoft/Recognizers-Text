@@ -119,6 +119,20 @@ export interface IHolidayExtractorConfiguration {
     holidayRegexes: RegExp[]
 }
 
+export interface IMergedExtractorConfiguration {
+    dateExtractor: BaseDateExtractor
+    timeExtractor: BaseTimeExtractor
+    dateTimeExtractor: BaseDateTimeExtractor
+    datePeriodExtractor: BaseDatePeriodExtractor
+    timePeriodExtractor: BaseTimePeriodExtractor
+    dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+    holidayExtractor: BaseHolidayExtractor
+    durationExtractor: BaseDurationExtractor
+    setExtractor: BaseSetExtractor
+    AfterRegex: RegExp
+    BeforeRegex: RegExp
+}
+
 export class BaseDateExtractor implements IExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE;
 
@@ -963,5 +977,86 @@ export class BaseHolidayExtractor implements IExtractor {
             });
         });
         return ret;
+    }
+}
+
+export class BaseMergedExtractor implements IExtractor {
+    private readonly config: IMergedExtractorConfiguration;
+
+    constructor(config: IMergedExtractorConfiguration) {
+        this.config = config;
+    }
+    
+    extract(source: string): Array<ExtractResult> {
+        let result: Array<ExtractResult> = new Array<ExtractResult>()
+            .concat(this.config.dateExtractor.extract(source));
+        this.addTo(result, this.config.timeExtractor.extract(source));
+        this.addTo(result, this.config.durationExtractor.extract(source));
+        this.addTo(result, this.config.datePeriodExtractor.extract(source));
+        this.addTo(result, this.config.dateTimeExtractor.extract(source));
+        this.addTo(result, this.config.timePeriodExtractor.extract(source));
+        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source));
+        this.addTo(result, this.config.setExtractor.extract(source));
+        this.addTo(result, this.config.holidayExtractor.extract(source));
+        this.addMod(result, source);
+        return result;
+    }
+
+    private addTo(destination: ExtractResult[], source: ExtractResult[]) {
+        source.forEach(value => {
+            let isFound = false;
+            let rmIndex = -1;
+            let rmLength = 1;
+            destination.some((dest, index) => {
+                if (ExtractResult.isOverlap(dest, value)) {
+                    isFound = true;
+                    if (value.length > dest.length) {
+                        rmIndex = index;
+                        let overlapIndex = index + 1;
+                        while (overlapIndex < destination.length && ExtractResult.isOverlap(destination[overlapIndex], value)) {
+                            rmLength++
+                            overlapIndex++
+                        }
+                    }
+                    return true;
+                }
+            });
+            if (!isFound) {
+                destination.push(value)
+            } else if (rmIndex >= 0) {
+                destination = destination.splice(rmIndex, rmLength, value)
+            }
+        });
+    }
+
+    private addMod(ers: ExtractResult[], source: string) {
+        let lastEnd = 0;
+        ers.forEach(er => {
+            let beforeStr = source.substr(lastEnd, er.start).toLowerCase();
+            let before = this.hasTokenIndex(beforeStr.trim(), this.config.BeforeRegex);
+            if (before.matched) {
+                let modLength = beforeStr.length - before.index;
+                er.length += modLength;
+                er.start -= modLength;
+                er.text = source.substr(er.start, er.length);
+            }
+            let after = this.hasTokenIndex(beforeStr.trim(), this.config.AfterRegex);
+            if (after.matched) {
+                let modLength = beforeStr.length - after.index;
+                er.length += modLength;
+                er.start -= modLength;
+                er.text = source.substr(er.start, er.length);
+            }
+        });
+    }
+
+    private hasTokenIndex(source: string, regex: RegExp): {matched: boolean, index: number} {
+        let result = {matched: false, index: -1};
+        let match = RegExpUtility.getMatches(regex, source).pop();
+        if (match) {
+            result.matched  = true
+            result.index = match.index
+        }
+        return result;
     }
 }

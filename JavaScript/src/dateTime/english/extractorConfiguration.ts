@@ -8,13 +8,16 @@ import {
     IDateTimeExtractorConfiguration,
     IDateTimePeriodExtractorConfiguration,
     IHolidayExtractorConfiguration,
+    IMergedExtractorConfiguration,
     BaseDurationExtractor,
     BaseDateExtractor,
     BaseTimeExtractor,
     BaseDateTimeExtractor,
     BaseDatePeriodExtractor,
     BaseTimePeriodExtractor,
-    BaseDateTimePeriodExtractor
+    BaseDateTimePeriodExtractor,
+    BaseHolidayExtractor,
+    BaseSetExtractor
 } from "../extractors";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishCardinalExtractor } from "../../number/english/extractors"
@@ -386,5 +389,33 @@ export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorCo
             RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
         ];
+    }
+}
+
+export class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
+    readonly dateExtractor: BaseDateExtractor
+    readonly timeExtractor: BaseTimeExtractor
+    readonly dateTimeExtractor: BaseDateTimeExtractor
+    readonly datePeriodExtractor: BaseDatePeriodExtractor
+    readonly timePeriodExtractor: BaseTimePeriodExtractor
+    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+    readonly holidayExtractor: BaseHolidayExtractor
+    readonly durationExtractor: BaseDurationExtractor
+    readonly setExtractor: BaseSetExtractor
+    readonly AfterRegex: RegExp
+    readonly BeforeRegex: RegExp
+
+    constructor() {
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
+        this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
+        this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
+        this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration())
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
+        this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration())
+        this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, "gis")
+        this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, "gis")
     }
 }
