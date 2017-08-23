@@ -38,7 +38,7 @@ describe('Time Extractor', it => {
     BasicTest(it, extractor, "let's meet in the night", 11, 12);
     BasicTest(it, extractor, "let's meet in the evening", 11, 14);
     BasicTest(it, extractor, "let's meet in the evenings", 11, 15);
-    
+
     BasicTest(it, extractor, "let's meet in the early-mornings", 11, 21);
     BasicTest(it, extractor, "let's meet in the late-mornings", 11, 20);
     BasicTest(it, extractor, "let's meet in the early-morning", 11, 20);

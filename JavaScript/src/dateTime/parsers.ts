@@ -230,7 +230,7 @@ export class BaseTimeParser implements IDateTimeParser {
             }
 
             // get minute
-            let minStr = match.groups["min"]?match.groups["min"].toLowerCase():null;
+            let minStr = match.groups["min"] ? match.groups["min"].toLowerCase() : null;
             if (!(minStr)) {
                 minStr = match.groups["minnum"];
                 if (minStr) {
@@ -250,7 +250,7 @@ export class BaseTimeParser implements IDateTimeParser {
             }
 
             // get second
-            let secStr = match.groups["sec"]?match.groups["sec"].toLowerCase():null;
+            let secStr = match.groups["sec"] ? match.groups["sec"].toLowerCase() : null;
             if (secStr) {
                 second = parseInt(secStr);
                 hasSec = true;
@@ -258,7 +258,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         //adjust by desc string
-        let descStr = match.groups["desc"]?match.groups["desc"].toLowerCase():null;
+        let descStr = match.groups["desc"] ? match.groups["desc"].toLowerCase() : null;
         if (descStr) {
             if (descStr.toLowerCase().startsWith("a")) {
                 if (hour >= 12) {
@@ -275,7 +275,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         // adjust min by prefix
-        let timePrefix = match.groups["prefix"]?match.groups["prefix"].toLowerCase():null;
+        let timePrefix = match.groups["prefix"] ? match.groups["prefix"].toLowerCase() : null;
         if (timePrefix) {
             let adjust = { hour: hour, min: min, hasMin: hasMin };
             this.config.adjustByPrefix(timePrefix, adjust);
@@ -283,7 +283,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         // adjust hour by suffix
-        let timeSuffix = match.groups["suffix"]?match.groups["suffix"].toLowerCase():null;
+        let timeSuffix = match.groups["suffix"] ? match.groups["suffix"].toLowerCase() : null;
         if (timeSuffix) {
             let adjust = { hour: hour, min: min, hasMin: hasMin, hasAm: hasAm, hasPm: hasPm };
             this.config.adjustBySuffix(timeSuffix, adjust);

@@ -89,6 +89,50 @@ export interface IDateTimePeriodExtractorConfiguration {
     hasConnectorToken(source: string): boolean;
 }
 
+export interface ITimePeriodExtractorConfiguration {
+    simpleCasesRegex: RegExp[];
+    tillRegex: RegExp;
+    timeOfDayRegex: RegExp;
+    singleTimeExtractor: IExtractor;
+    getFromTokenIndex(source: string): { matched: boolean, index: number };
+    getBetweenTokenIndex(source: string): { matched: boolean, index: number };
+    hasConnectorToken(source: string): boolean;
+}
+
+export interface ISetExtractorConfiguration {
+    dateExtractor: BaseDateExtractor
+    timeExtractor: BaseTimeExtractor
+    dateTimeExtractor: BaseDateTimeExtractor
+    datePeriodExtractor: BaseDatePeriodExtractor
+    timePeriodExtractor: BaseTimePeriodExtractor
+    dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+    durationExtractor: BaseDurationExtractor
+    lastRegex: RegExp
+    eachPrefixRegex: RegExp
+    periodicRegex: RegExp
+    eachUnitRegex: RegExp
+    beforeEachDayRegex: RegExp
+    eachDayRegex: RegExp
+}
+
+export interface IHolidayExtractorConfiguration {
+    holidayRegexes: RegExp[]
+}
+
+export interface IMergedExtractorConfiguration {
+    dateExtractor: BaseDateExtractor
+    timeExtractor: BaseTimeExtractor
+    dateTimeExtractor: BaseDateTimeExtractor
+    datePeriodExtractor: BaseDatePeriodExtractor
+    timePeriodExtractor: BaseTimePeriodExtractor
+    dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+    holidayExtractor: BaseHolidayExtractor
+    durationExtractor: BaseDurationExtractor
+    setExtractor: BaseSetExtractor
+    AfterRegex: RegExp
+    BeforeRegex: RegExp
+}
+
 export class BaseDateExtractor implements IExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE;
 
@@ -723,11 +767,200 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
             RegExpUtility.getMatches(this.config.periodTimeOfDayWithDateRegex, beforeStr).forEach(match => {
                 let middleStr = source.substr(match.index + match.length, er.start - match.index - match.length);
                 if (isWhitespace(middleStr)) {
-                    tokens.push(new Token(match.index,er.start + er.length))
+                    tokens.push(new Token(match.index, er.start + er.length))
                 }
             });
         });
         return tokens;
+    }
+}
+
+export class BaseSetExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_SET
+
+    private readonly config: ISetExtractorConfiguration;
+
+    constructor(config: ISetExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.matchEachUnit(source))
+            .concat(this.matchEachDuration(source))
+            .concat(this.timeEveryday(source))
+            .concat(this.matchEach(this.config.dateExtractor, source))
+            .concat(this.matchEach(this.config.timeExtractor, source))
+            .concat(this.matchEach(this.config.dateTimeExtractor, source))
+            .concat(this.matchEach(this.config.datePeriodExtractor, source))
+            .concat(this.matchEach(this.config.timePeriodExtractor, source))
+            .concat(this.matchEach(this.config.dateTimePeriodExtractor, source))
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private matchEachUnit(source: string): Array<Token> {
+        let ret = [];
+        RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
+            ret.push(new Token(match.index, match.index + match.length))
+        });
+        RegExpUtility.getMatches(this.config.eachUnitRegex, source).forEach(match => {
+            ret.push(new Token(match.index, match.index + match.length))
+        });
+        return ret;
+    }
+
+    private matchEachDuration(source: string): Array<Token> {
+        let ret = [];
+        this.config.durationExtractor.extract(source).forEach(er => {
+            if (RegExpUtility.getMatches(this.config.lastRegex, er.text).length > 0) return;
+            let beforeStr = source.substr(0, er.start);
+            let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
+            if (matches && matches.length > 0) {
+                ret.push(new Token(matches[0].index, er.start + er.length))
+            }
+        });
+        return ret;
+    }
+
+    private timeEveryday(source: string): Array<Token> {
+        let ret = [];
+        this.config.timeExtractor.extract(source).forEach(er => {
+            let afterStr = source.substr(er.start + er.length);
+            if (isNullOrWhitespace(afterStr) && this.config.beforeEachDayRegex) {
+                let beforeStr = source.substr(0, er.start);
+                let beforeMatches = RegExpUtility.getMatches(this.config.beforeEachDayRegex, beforeStr);
+                if (beforeMatches && beforeMatches.length > 0) {
+                    ret.push(new Token(beforeMatches[0].index, er.start + er.length))
+                }
+            } else {
+                let afterMatches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
+                if (afterMatches && afterMatches.length > 0) {
+                    ret.push(new Token(er.start, er.start + er.length + afterMatches[0].length))
+                }
+            }
+        });
+        return ret;
+    }
+
+    private matchEach(extractor: IExtractor, source: string): Array<Token> {
+        let ret = [];
+        extractor.extract(source).forEach(er => {
+            let beforeStr = source.substr(0, er.start);
+            let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
+            if (matches && matches.length > 0) {
+                ret.push(new Token(matches[0].index, matches[0].index + matches[0].length + er.length))
+            }
+        });
+        return ret;
+    }
+}
+
+export class BaseHolidayExtractor implements IExtractor {
+    private readonly extractorName = Constants.SYS_DATETIME_DATE
+
+    private readonly config: IHolidayExtractorConfiguration;
+
+    constructor(config: IHolidayExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(source: string): Array<ExtractResult> {
+        let tokens: Array<Token> = new Array<Token>()
+            .concat(this.holidayMatch(source))
+        let result = Token.mergeAllTokens(tokens, source, this.extractorName);
+        return result;
+    }
+
+    private holidayMatch(source: string): Array<Token> {
+        let ret = [];
+        this.config.holidayRegexes.forEach(regex => {
+            RegExpUtility.getMatches(regex, source).forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length))
+            });
+        });
+        return ret;
+    }
+}
+
+export class BaseMergedExtractor implements IExtractor {
+    private readonly config: IMergedExtractorConfiguration;
+
+    constructor(config: IMergedExtractorConfiguration) {
+        this.config = config;
+    }
+
+    extract(source: string): Array<ExtractResult> {
+        let result: Array<ExtractResult> = new Array<ExtractResult>()
+            .concat(this.config.dateExtractor.extract(source));
+        this.addTo(result, this.config.timeExtractor.extract(source));
+        this.addTo(result, this.config.durationExtractor.extract(source));
+        this.addTo(result, this.config.datePeriodExtractor.extract(source));
+        this.addTo(result, this.config.dateTimeExtractor.extract(source));
+        this.addTo(result, this.config.timePeriodExtractor.extract(source));
+        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source));
+        this.addTo(result, this.config.setExtractor.extract(source));
+        this.addTo(result, this.config.holidayExtractor.extract(source));
+        this.addMod(result, source);
+        return result;
+    }
+
+    private addTo(destination: ExtractResult[], source: ExtractResult[]) {
+        source.forEach(value => {
+            let isFound = false;
+            let rmIndex = -1;
+            let rmLength = 1;
+            destination.some((dest, index) => {
+                if (ExtractResult.isOverlap(dest, value)) {
+                    isFound = true;
+                    if (value.length > dest.length) {
+                        rmIndex = index;
+                        let overlapIndex = index + 1;
+                        while (overlapIndex < destination.length && ExtractResult.isOverlap(destination[overlapIndex], value)) {
+                            rmLength++
+                            overlapIndex++
+                        }
+                    }
+                    return true;
+                }
+            });
+            if (!isFound) {
+                destination.push(value)
+            } else if (rmIndex >= 0) {
+                destination = destination.splice(rmIndex, rmLength, value)
+            }
+        });
+    }
+
+    private addMod(ers: ExtractResult[], source: string) {
+        let lastEnd = 0;
+        ers.forEach(er => {
+            let beforeStr = source.substr(lastEnd, er.start).toLowerCase();
+            let before = this.hasTokenIndex(beforeStr.trim(), this.config.BeforeRegex);
+            if (before.matched) {
+                let modLength = beforeStr.length - before.index;
+                er.length += modLength;
+                er.start -= modLength;
+                er.text = source.substr(er.start, er.length);
+            }
+            let after = this.hasTokenIndex(beforeStr.trim(), this.config.AfterRegex);
+            if (after.matched) {
+                let modLength = beforeStr.length - after.index;
+                er.length += modLength;
+                er.start -= modLength;
+                er.text = source.substr(er.start, er.length);
+            }
+        });
+    }
+
+    private hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {
+        let result = { matched: false, index: -1 };
+        let match = RegExpUtility.getMatches(regex, source).pop();
+        if (match) {
+            result.matched = true
+            result.index = match.index
+        }
+        return result;
     }
 }
 

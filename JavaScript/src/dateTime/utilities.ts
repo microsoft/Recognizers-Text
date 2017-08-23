@@ -54,7 +54,7 @@ export class Token {
 export interface IDateTimeUtilityConfiguration {
     agoRegex: RegExp
     laterRegex: RegExp
-    inConnectorRegex: RegExp 
+    inConnectorRegex: RegExp
 }
 
 export class AgoLaterUtil {
@@ -75,7 +75,7 @@ export class AgoLaterUtil {
                 }
                 else {
                     value = MatchingUtil.getInIndex(beforeString, config.inConnectorRegex);
-                    if (er.start && er.length && er.start > value.index) {
+                    if (value.matched && er.start && er.length && er.start > value.index) {
                         ret.push(new Token(er.start - value.index, er.start + er.length));
                     }
                 }
