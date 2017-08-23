@@ -102,8 +102,8 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                 deltaMin = parseInt(minStr);
             }
             else {
-                minStr = match[0].groups["deltaminnum"].toLower();
-                deltaMin = this.numbers[minStr];
+                minStr = match[0].groups["deltaminnum"].toLowerCase();
+                deltaMin = this.numbers.get(minStr);
             }
         }
 

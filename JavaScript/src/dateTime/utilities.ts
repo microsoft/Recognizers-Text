@@ -117,7 +117,7 @@ export class FormatUtil {
 
     // Emulates .NET ToString("D{size}")
     public static toString(num: number, size: number): string {
-        let s = "000000" + num;
+        let s = "000000" + (num || "");
         return s.substr(s.length - size);
     }
 

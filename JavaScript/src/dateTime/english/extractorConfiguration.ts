@@ -94,6 +94,7 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
     public static AtRegex: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.AtRegex, "gis");
     public static LessThanOneHour: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanOneHour, "gis");
     public static TimeSuffix: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffix, "gis");
+    public static IshRegex: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.IshRegex, "gis");
     
     readonly timeRegexList: RegExp[];
     readonly atRegex: RegExp;
@@ -104,7 +105,7 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
     constructor() {
         this.timeRegexList = EnglishTimeExtractorConfiguration.TimeRegexList;
         this.atRegex = EnglishTimeExtractorConfiguration.AtRegex;
-        this.ishRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.IshRegex, "gis");
+        this.ishRegex = EnglishTimeExtractorConfiguration.IshRegex;
         this.DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
     }
 }

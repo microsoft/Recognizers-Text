@@ -44,7 +44,7 @@ export interface Match {
     index: number;
     length: number;
     value: string;
-    groups: Map<string, string>;
+    groups: { [id: string]: string }; //Map<string, string>;
 }
 
 export class RegExpUtility {
@@ -53,7 +53,7 @@ export class RegExpUtility {
         XRegExp.forEach(source, regex, match => {
             let positiveLookbehind = [];
             let negativeLookbehind = [];
-            let groups = new Map<string, string>();
+            let groups = {};
             Object.keys(match).forEach(key => {
                 if (!key.includes('__')) return;
                 if (key.startsWith('plb') && match[key]) {
