@@ -180,6 +180,7 @@ namespace Microsoft.Recognizers.Text.Number
             numExtResults = numberExtractor.Extract(str);
             string replaceText = "@" + NumExtType;
 
+            //@TODO pontential cause of GC
             int[] match = new int[str.Length];
             List<Tuple<int, int>> strParts = new List<Tuple<int, int>>();
             int start, end;

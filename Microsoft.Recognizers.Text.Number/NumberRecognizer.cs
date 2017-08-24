@@ -18,10 +18,10 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration()),
-                            new English.NumberExtractor(NumberMode.PureNumber)),
+                            English.NumberExtractor.GetInstance(NumberMode.PureNumber)),
                 [typeof(OrdinalModel)] = new OrdinalModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new EnglishNumberParserConfiguration()),
-                            new English.OrdinalExtractor()),
+                            English.OrdinalExtractor.GetInstance()),
                 [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
                             new English.PercentageExtractor())

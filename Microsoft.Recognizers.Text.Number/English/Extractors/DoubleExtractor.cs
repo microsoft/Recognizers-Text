@@ -8,9 +8,24 @@ namespace Microsoft.Recognizers.Text.Number.English
     public class DoubleExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
-        public DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private static readonly Dictionary<string, DoubleExtractor> Instances = new Dictionary<string, DoubleExtractor>();
+
+        public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new DoubleExtractor(placeholder);
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var regexes = new Dictionary<Regex, string> {
                 {

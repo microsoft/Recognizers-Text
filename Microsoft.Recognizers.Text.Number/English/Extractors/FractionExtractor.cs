@@ -11,7 +11,21 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION; // "Fraction";
 
-        public FractionExtractor()
+        private static readonly Dictionary<string, FractionExtractor> Instances = new Dictionary<string, FractionExtractor>();
+
+        public static FractionExtractor GetInstance(string placeholder = "")
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new FractionExtractor();
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private FractionExtractor()
         {
             var regexes = new Dictionary<Regex, string>
             {

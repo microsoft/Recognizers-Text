@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     {
         public EnglishDateTimePeriodExtractorConfiguration()
         {
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());

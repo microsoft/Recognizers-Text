@@ -40,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDurationExtractorConfiguration()
         {
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
         }
 
         public IExtractor CardinalExtractor { get; }
