@@ -36,6 +36,7 @@ import { CultureInfo, Culture } from "../../culture";
 import { EnglishNumeric } from "../../resources/englishNumeric";
 import { EnglishDateTime } from "../../resources/englishDateTime"
 import { BaseDateTime } from "../../resources/baseDateTime"
+import { EnlighDatetimeUtilityConfiguration } from "./utilities";
 import { RegExpUtility } from "../../utilities";
 import { FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities"
 import * as XRegExp from 'xregexp';
@@ -43,7 +44,7 @@ import * as XRegExp from 'xregexp';
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
     constructor() {
         super();
-        //this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+        this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         this.unitMap = EnglishDateTime.UnitMap;
         this.unitValueMap = EnglishDateTime.UnitValueMap;
         this.seasonMap = EnglishDateTime.SeasonMap;
@@ -63,8 +64,8 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-        // this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
-        // this.timeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
+        //this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         // this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
@@ -252,7 +253,7 @@ export class EnglishTimeParser extends BaseTimeParser {
             ret.timex = "T" + FormatUtil.toString(hour, 2);
             ret.futureValue =
                 ret.pastValue =
-                new Date(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDay(), hour, 0, 0);
+                new Date(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDate(), hour, 0, 0);
             ret.success = true;
             return ret;
         }

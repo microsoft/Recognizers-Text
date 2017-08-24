@@ -122,7 +122,7 @@ export class BaseTimeParser implements IDateTimeParser {
 
         let ret = new DateTimeParseResult(er);
         ret.value = value,
-            ret.timexStr = value == null ? "" : value.Timex,
+            ret.timexStr = value == null ? "" : value.timex,
             ret.resolutionStr = ""
 
         return ret;
@@ -165,7 +165,7 @@ export class BaseTimeParser implements IDateTimeParser {
         let hour = 0,
             min = 0,
             second = 0,
-            day = referenceTime.getDay(),
+            day = referenceTime.getDate(),
             month = referenceTime.getMonth(),
             year = referenceTime.getFullYear();
         let hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
@@ -350,11 +350,11 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     [
                         [
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.formatTime(innerResult.futureValue.Item1)
+                            FormatUtil.formatTime(innerResult.futureValue.item1)
                         ],
                         [
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.formatTime(innerResult.futureValue.Item2)
+                            FormatUtil.formatTime(innerResult.futureValue.item2)
                         ]
                     ]);
 
@@ -362,11 +362,11 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     [
                         [
                             TimeTypeConstants.START_TIME,
-                            FormatUtil.formatTime(innerResult.pastValue.Item1)
+                            FormatUtil.formatTime(innerResult.pastValue.item1)
                         ],
                         [
                             TimeTypeConstants.END_TIME,
-                            FormatUtil.formatTime(innerResult.pastValue.Item2)
+                            FormatUtil.formatTime(innerResult.pastValue.item2)
                         ]
                     ]);
 
@@ -384,7 +384,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
 
     private parseSimpleCases(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let year = referenceTime.getFullYear(), month = referenceTime.getMonth(), day = referenceTime.getDay();
+        let year = referenceTime.getFullYear(), month = referenceTime.getMonth(), day = referenceTime.getDate();
         let trimedText = text.trim().toLowerCase();
 
         let matches = RegExpUtility.getMatches(this.config.pureNumberFromToRegex, trimedText);
@@ -483,7 +483,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let beginTime: Date = pr1.value.futureValue;
         let endTime: Date = pr2.value.futureValue;
 
-        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getHours()}H)`;
+        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getUTCHours()}H)`;
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
         ret.success = true;
 
@@ -498,7 +498,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
 
     // parse "morning", "afternoon", "night"
     private parseNight(text: string, referenceTime: Date): DateTimeResolutionResult {
-        let day = referenceTime.getDay(),
+        let day = referenceTime.getDate(),
             month = referenceTime.getMonth(),
             year = referenceTime.getFullYear();
         let ret = new DateTimeResolutionResult();
@@ -513,7 +513,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 hasEarly = true;
                 ret.comment = "early";
             }
-            if (!hasEarly && matches[0].groups["late"].value) {
+            if (!hasEarly && matches[0].groups["late"] && matches[0].groups["late"].value) {
                 let late = matches[0].groups["late"].value;
                 text = text.replace(late, "");
                 hasLate = true;

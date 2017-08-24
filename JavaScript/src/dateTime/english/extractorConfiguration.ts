@@ -19,6 +19,7 @@ import {
     BaseHolidayExtractor,
     BaseSetExtractor
 } from "../extractors";
+import { EnlighDatetimeUtilityConfiguration } from "./utilities";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishCardinalExtractor } from "../../number/english/extractors"
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration"
@@ -70,15 +71,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.utilityConfiguration = {
-            agoRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, "gis"),
-            laterRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, "gis"),
-            inConnectorRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis"),
-            // TODO: utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
-            amDescRegex: null,
-            pmDescRegex: null,
-            amPmDescRegex: null
-        };
+        this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
     }
 }
 
@@ -221,7 +214,7 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
     readonly theEndOfRegex: RegExp
     readonly unitRegex: RegExp
     readonly prepositionRegex: RegExp
-    readonly dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration
+    readonly utilityConfiguration: IDateTimeUtilityConfiguration
 
     constructor() {
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
@@ -237,199 +230,191 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
         this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
         this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
-        // TODO: utilityConfiguration = new EnlighDatetimeUtilityConfiguration()
-        this.dateTimeUtilityConfiguration = {
-            agoRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.AgoRegex, "gis"),
-            laterRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, "gis"),
-            inConnectorRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis"),
-            amDescRegex: null,
-            pmDescRegex: null,
-            amPmDescRegex: null
-        };
+        this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
     }
-
+            
     isConnectorToken(source: string): boolean {
         return (isNullOrWhitespace(source)
-            || source === ","
-            || source === "t"
-            || source === "for"
-            || source === "around"
-            || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
-    }
+                    || source === ","
+                    || source === "t"
+                    || source === "for"
+                    || source === "around"
+                    || RegExpUtility.getMatches(this.prepositionRegex, source).length > 0);
+            }
 }
-
+        
 export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
-    readonly cardinalExtractor: EnglishCardinalExtractor
-    readonly singleDateExtractor: BaseDateExtractor
-    readonly singleTimeExtractor: BaseTimeExtractor
-    readonly singleDateTimeExtractor: BaseDateTimeExtractor
-    readonly simpleCasesRegexes: RegExp[]
-    readonly prepositionRegex: RegExp
-    readonly tillRegex: RegExp
-    readonly specificTimeOfDayRegex: RegExp
-    readonly timeOfDayRegex: RegExp
-    readonly periodTimeOfDayWithDateRegex: RegExp
-    readonly followedUnit: RegExp
-    readonly numberCombinedWithUnit: RegExp
-    readonly unitRegex: RegExp
-    readonly pastRegex: RegExp
-    readonly futureRegex: RegExp
+            readonly cardinalExtractor: EnglishCardinalExtractor
+            readonly singleDateExtractor: BaseDateExtractor
+            readonly singleTimeExtractor: BaseTimeExtractor
+            readonly singleDateTimeExtractor: BaseDateTimeExtractor
+            readonly simpleCasesRegexes: RegExp[]
+            readonly prepositionRegex: RegExp
+            readonly tillRegex: RegExp
+            readonly specificTimeOfDayRegex: RegExp
+            readonly timeOfDayRegex: RegExp
+            readonly periodTimeOfDayWithDateRegex: RegExp
+            readonly followedUnit: RegExp
+            readonly numberCombinedWithUnit: RegExp
+            readonly unitRegex: RegExp
+            readonly pastRegex: RegExp
+            readonly futureRegex: RegExp
     readonly rangeConnectorRegex: RegExp
-
+            
     constructor() {
-        this.cardinalExtractor = new EnglishCardinalExtractor();
-        this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+                this.cardinalExtractor = new EnglishCardinalExtractor();
+                this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+                this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+                this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
-        ]
-        this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
-        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, "gis");
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
-        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
-        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
+                ]
+                this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
+                this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+                this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, "gis");
+                this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, "gis");
+                this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
+                this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
+                this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
+                this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
+                this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
+                this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
+                this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }
-
+            
     getFromTokenIndex(source: string) {
-        let result = { matched: false, index: -1 };
+                let result = { matched: false, index: -1 };
         if (source.endsWith("from")) {
-            result.index = source.lastIndexOf("from");
-            result.matched = true;
-        }
-        return result;
+                    result.index = source.lastIndexOf("from");
+                    result.matched = true;
+                }
+                return result;
     };
-
+            
     getBetweenTokenIndex(source: string) {
-        let result = { matched: false, index: -1 };
+                let result = { matched: false, index: -1 };
         if (source.endsWith("between")) {
-            result.index = source.lastIndexOf("between");
-            result.matched = true;
-        }
-        return result;
+                    result.index = source.lastIndexOf("between");
+                    result.matched = true;
+                }
+                return result;
     };
-
+            
     hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
-    };
+                return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+            };
 }
-
+        
 export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
-    readonly simpleCasesRegex: RegExp[];
-    readonly tillRegex: RegExp;
-    readonly timeOfDayRegex: RegExp;
-    readonly singleTimeExtractor: IExtractor;
+            readonly simpleCasesRegex: RegExp[];
+            readonly tillRegex: RegExp;
+            readonly timeOfDayRegex: RegExp;
+            readonly singleTimeExtractor: IExtractor;
     readonly rangeConnectorRegex: RegExp;
-
+            
     constructor() {
         this.simpleCasesRegex = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis")
-        ];
-        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
-        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis")
+                ];
+                this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+                this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
+                this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+                this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }
-
+            
     public getFromTokenIndex(source: string): { matched: boolean, index: number } {
-        let index = -1;
+                let index = -1;
         if (source.endsWith("from")) {
-            index = source.lastIndexOf("from");
-            return { matched: true, index: index };
-        }
-        return { matched: false, index: index };
+                    index = source.lastIndexOf("from");
+                    return { matched: true, index: index };
+                }
+                return { matched: false, index: index };
     }
-
+            
     public getBetweenTokenIndex(source: string): { matched: boolean, index: number } {
-        let index = -1;
+                let index = -1;
         if (source.endsWith("between")) {
-            index = source.lastIndexOf("between");
-            return { matched: true, index: index };
-        }
-        return { matched: false, index: index };
+                    index = source.lastIndexOf("between");
+                    return { matched: true, index: index };
+                }
+                return { matched: false, index: index };
     }
-
+            
     public hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
-    }
+                return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+            }
 }
-
+        
 export class EnglishSetExtractorConfiguration implements ISetExtractorConfiguration {
-    readonly dateExtractor: BaseDateExtractor
-    readonly timeExtractor: BaseTimeExtractor
-    readonly dateTimeExtractor: BaseDateTimeExtractor
-    readonly datePeriodExtractor: BaseDatePeriodExtractor
-    readonly timePeriodExtractor: BaseTimePeriodExtractor
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-    readonly durationExtractor: BaseDurationExtractor
-    readonly lastRegex: RegExp
-    readonly eachPrefixRegex: RegExp
-    readonly periodicRegex: RegExp
-    readonly eachUnitRegex: RegExp
-    readonly beforeEachDayRegex: RegExp
+            readonly dateExtractor: BaseDateExtractor
+            readonly timeExtractor: BaseTimeExtractor
+            readonly dateTimeExtractor: BaseDateTimeExtractor
+            readonly datePeriodExtractor: BaseDatePeriodExtractor
+            readonly timePeriodExtractor: BaseTimePeriodExtractor
+            readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+            readonly durationExtractor: BaseDurationExtractor
+            readonly lastRegex: RegExp
+            readonly eachPrefixRegex: RegExp
+            readonly periodicRegex: RegExp
+            readonly eachUnitRegex: RegExp
+            readonly beforeEachDayRegex: RegExp
     readonly eachDayRegex: RegExp
-
+            
     constructor() {
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
-        this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
-        this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
-        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
-        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex, "gis")
-        this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex, "gis")
-        this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex, "gis")
-        this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex, "gis")
-        this.beforeEachDayRegex = null;
-        this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex, "gis")
-    }
+                this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
+                this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
+                this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
+                this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
+                this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
+                this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
+                this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
+                this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex, "gis")
+                this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex, "gis")
+                this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex, "gis")
+                this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex, "gis")
+                this.beforeEachDayRegex = null;
+                this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex, "gis")
+            }
 }
-
+        
 export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
     readonly holidayRegexes: RegExp[]
-
+            
     constructor() {
         this.holidayRegexes = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
-        ];
-    }
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
+                    RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+                ];
+            }
 }
-
+        
 export class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
-    readonly dateExtractor: BaseDateExtractor
-    readonly timeExtractor: BaseTimeExtractor
-    readonly dateTimeExtractor: BaseDateTimeExtractor
-    readonly datePeriodExtractor: BaseDatePeriodExtractor
-    readonly timePeriodExtractor: BaseTimePeriodExtractor
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-    readonly holidayExtractor: BaseHolidayExtractor
-    readonly durationExtractor: BaseDurationExtractor
-    readonly setExtractor: BaseSetExtractor
-    readonly AfterRegex: RegExp
+            readonly dateExtractor: BaseDateExtractor
+            readonly timeExtractor: BaseTimeExtractor
+            readonly dateTimeExtractor: BaseDateTimeExtractor
+            readonly datePeriodExtractor: BaseDatePeriodExtractor
+            readonly timePeriodExtractor: BaseTimePeriodExtractor
+            readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
+            readonly holidayExtractor: BaseHolidayExtractor
+            readonly durationExtractor: BaseDurationExtractor
+            readonly setExtractor: BaseSetExtractor
+            readonly AfterRegex: RegExp
     readonly BeforeRegex: RegExp
-
+            
     constructor() {
-        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
-        this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
-        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
-        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
-        this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
-        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
-        this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration())
-        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
-        this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration())
-        this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, "gis")
-        this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, "gis")
-    }
+                this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
+                this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
+                this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
+                this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
+                this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
+                this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
+                this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration())
+                this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
+                this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration())
+                this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, "gis")
+                this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, "gis")
+            }
 }

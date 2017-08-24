@@ -137,7 +137,7 @@ export class FormatUtil {
     }
 
     public static luisDateFromDate(date: Date): string {
-        return FormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDay());
+        return FormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDate());
     }
 
     public static luisTime(hour: number, min: number, second: number): string {
@@ -155,7 +155,7 @@ export class FormatUtil {
     public static formatDate(date: Date): string {
         return new Array(FormatUtil.toString(date.getFullYear(), 4),
             FormatUtil.toString(date.getMonth(), 2),
-            FormatUtil.toString(date.getDay(), 2)).join("-");
+            FormatUtil.toString(date.getDate(), 2)).join("-");
     }
 
     public static formatTime(time: Date) {

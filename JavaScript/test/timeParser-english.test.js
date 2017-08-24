@@ -8,7 +8,7 @@ var constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Time Parse', it => {
     let today = new Date();
-    let year = today.getFullYear(), month = today.getMonth(), day = today.getDay(), min = 0, second = 0;
+    let year = today.getFullYear(), month = today.getMonth(), day = today.getDate(), min = 0, second = 0;
     let extractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
     let parser = new EnglishTimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 

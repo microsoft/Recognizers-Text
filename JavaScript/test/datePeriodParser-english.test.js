@@ -146,9 +146,9 @@ function BasicTestFuture_Day(it, extractor, text, beginDay, endDay, month, year)
     var pr = parser.Parse(er[0], referenceDay);
     Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
     var beginDate = new DateObject(year, month, beginDay);
-    Assert.AreEqual(beginDate, pr.Value.FutureValue.Item1);
+    Assert.AreEqual(beginDate, pr.Value.FutureValue.item1);
     var endDate = new DateObject(year, month, endDay);
-    Assert.AreEqual(endDate, pr.Value.FutureValue.Item2);
+    Assert.AreEqual(endDate, pr.Value.FutureValue.item2);
 }
 
 function BasicTestFuture(it, extractor, text, beginYear, beginMonth, beginDay, endYear, endMonth, endDay) {
@@ -157,9 +157,9 @@ function BasicTestFuture(it, extractor, text, beginYear, beginMonth, beginDay, e
     var pr = parser.Parse(er[0], referenceDay);
     Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
     var beginDate = new DateObject(beginYear, beginMonth, beginDay);
-    Assert.AreEqual(beginDate, pr.Value.FutureValue.Item1);
+    Assert.AreEqual(beginDate, pr.Value.FutureValue.item1);
     var endDate = new DateObject(endYear, endMonth, endDay);
-    Assert.AreEqual(endDate, pr.Value.FutureValue.Item2);
+    Assert.AreEqual(endDate, pr.Value.FutureValue.item2);
 }
 
 function BasicTest_Luis(it, extractor, text, luisValueStr) {
@@ -167,5 +167,5 @@ function BasicTest_Luis(it, extractor, text, luisValueStr) {
     Assert.AreEqual(1, er.Count);
     var pr = parser.Parse(er[0], referenceDay);
     Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
-    Assert.AreEqual(luisValueStr, pr.Value.Timex);
+    Assert.AreEqual(luisValueStr, pr.value.timex);
 }

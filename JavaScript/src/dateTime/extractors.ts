@@ -64,7 +64,7 @@ export interface IDateTimeExtractorConfiguration {
     simpleTimeOfTodayBeforeRegex: RegExp
     theEndOfRegex: RegExp
     unitRegex: RegExp
-    dateTimeUtilityConfiguration: IDateTimeUtilityConfiguration
+    utilityConfiguration: IDateTimeUtilityConfiguration
     isConnectorToken(source: string): boolean
 }
 
@@ -601,7 +601,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         this.config.durationExtractor.extract(source).forEach(er => {
             let matches = RegExpUtility.getMatches(this.config.unitRegex, er.text);
             if (matches && matches.length > 0) {
-                tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, tokens, this.config.dateTimeUtilityConfiguration);
+                tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, tokens, this.config.utilityConfiguration);
             }
         });
         return tokens;
