@@ -246,7 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             int futureYear = year, pastYear = year;
-            var startDate = new DateObject(year, month, beginDay);
+            var startDate = DateObject.MinValue.SetValue(year, month, beginDay);
 
             if (noYear && startDate < referenceDate)
             {
@@ -260,11 +260,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{endDay - beginDay}D)";
             ret.FutureValue = new Tuple<DateObject, DateObject>(
-                new DateObject(futureYear, month, beginDay),
-                new DateObject(futureYear, month, endDay));
+                DateObject.MinValue.SetValue(futureYear, month, beginDay),
+                DateObject.MinValue.SetValue(futureYear, month, endDay));
             ret.PastValue = new Tuple<DateObject, DateObject>(
-                new DateObject(pastYear, month, beginDay),
-                new DateObject(pastYear, month, endDay));
+                DateObject.MinValue.SetValue(pastYear, month, beginDay),
+                DateObject.MinValue.SetValue(pastYear, month, endDay));
             ret.Success = true;
 
             return ret;
@@ -286,7 +286,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Timex = referenceDate.Year.ToString("D4");
                     ret.FutureValue =
                         ret.PastValue =
-                            new Tuple<DateObject, DateObject>(new DateObject(referenceDate.Year, 1, 1), referenceDate);
+                            new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(referenceDate.Year, 1, 1), referenceDate);
                     ret.Success = true;
                     return ret;
                 }
@@ -297,7 +297,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.FutureValue =
                         ret.PastValue =
                             new Tuple<DateObject, DateObject>(
-                                new DateObject(referenceDate.Year, referenceDate.Month, 1), referenceDate);
+                                DateObject.MinValue.SetValue(referenceDate.Year, referenceDate.Month, 1), referenceDate);
                     ret.Success = true;
                     return ret;
                 }
@@ -377,10 +377,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Timex = year.ToString("D4");
                         ret.FutureValue =
                             ret.PastValue =
-                                new Tuple<DateObject, DateObject>(new DateObject(year, 1, 1),
+                                new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(year, 1, 1),
                                     InclusiveEndPeriod
-                                    ? new DateObject(year, 12, 31)
-                                    : new DateObject(year, 12, 31).AddDays(1));
+                                    ? DateObject.MinValue.SetValue(year, 12, 31)
+                                    : DateObject.MinValue.SetValue(year, 12, 31).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
@@ -393,16 +393,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // only "month" will come to here
             ret.FutureValue = new Tuple<DateObject, DateObject>(
-                new DateObject(futureYear, month, 1),
+                DateObject.MinValue.SetValue(futureYear, month, 1),
                 InclusiveEndPeriod
-                ? new DateObject(futureYear, month, 1).AddMonths(1).AddDays(-1)
-                : new DateObject(futureYear, month, 1).AddMonths(1));
+                ? DateObject.MinValue.SetValue(futureYear, month, 1).AddMonths(1).AddDays(-1)
+                : DateObject.MinValue.SetValue(futureYear, month, 1).AddMonths(1));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
-                new DateObject(pastYear, month, 1),
+                DateObject.MinValue.SetValue(pastYear, month, 1),
                 InclusiveEndPeriod
-                ? new DateObject(pastYear, month, 1).AddMonths(1).AddDays(-1)
-                : new DateObject(pastYear, month, 1).AddMonths(1));
+                ? DateObject.MinValue.SetValue(pastYear, month, 1).AddMonths(1).AddDays(-1)
+                : DateObject.MinValue.SetValue(pastYear, month, 1).AddMonths(1));
 
             ret.Success = true;
 
@@ -441,10 +441,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-                    new DateObject(year, month, 1),
+                    DateObject.MinValue.SetValue(year, month, 1),
                     InclusiveEndPeriod
-                        ? new DateObject(year, month, 1).AddMonths(1).AddDays(-1)
-                        : new DateObject(year, month, 1).AddMonths(1));
+                        ? DateObject.MinValue.SetValue(year, month, 1).AddMonths(1).AddDays(-1)
+                        : DateObject.MinValue.SetValue(year, month, 1).AddMonths(1));
 
                 ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
 
@@ -462,11 +462,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var year = int.Parse(match.Value);
 
-                var beginDay = new DateObject(year, 1, 1);
+                var beginDay = DateObject.MinValue.SetValue(year, 1, 1);
 
                 var endDay = InclusiveEndPeriod
-                        ? new DateObject(year + 1, 1, 1).AddDays(-1)
-                        : new DateObject(year + 1, 1, 1);
+                        ? DateObject.MinValue.SetValue(year + 1, 1, 1).AddDays(-1)
+                        : DateObject.MinValue.SetValue(year + 1, 1, 1);
 
                 ret.Timex = year.ToString("D4");
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
@@ -749,8 +749,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var quarterNum = this.config.CardinalMap[cardinalStr];
-            var beginDate = new DateObject(year, quarterNum * 3 - 2, 1);
-            var endDate = new DateObject(year, quarterNum * 3 + 1, 1);
+            var beginDate = DateObject.MinValue.SetValue(year, quarterNum * 3 - 2, 1);
+            var endDate = DateObject.MinValue.SetValue(year, quarterNum * 3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
@@ -832,15 +832,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
         {
-            var startDate = new DateObject(date.Year, date.Month, 1);
+            var startDate = DateObject.MinValue.SetValue(date.Year, date.Month, 1);
             DateObject endDate;
             if (date.Month < 12)
             {
-                endDate = new DateObject(date.Year, date.Month + 1, 1);
+                endDate = DateObject.MinValue.SetValue(date.Year, date.Month + 1, 1);
             }
             else
             {
-                endDate = new DateObject(date.Year + 1, 1, 1);
+                endDate = DateObject.MinValue.SetValue(date.Year + 1, 1, 1);
             }
             endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
             return new Tuple<DateObject, DateObject>(startDate, endDate);
@@ -855,7 +855,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var num = int.Parse(match.Groups["number"].ToString());
                 int year = referenceDate.Year;
                 ret.Timex = year.ToString("D4");
-                var firstDay = new DateObject(year, 1, 1);
+                var firstDay = DateObject.MinValue.SetValue(year, 1, 1);
                 var firstWeekday = firstDay.This((DayOfWeek)1);
                 var value = firstWeekday.AddDays(7 * num);
                 var futureDate = value;
@@ -924,7 +924,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
-            var firstDay = new DateObject(year, month, 1);
+            var firstDay = DateObject.MinValue.SetValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
 
             if (weekday == 0)

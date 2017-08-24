@@ -225,7 +225,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             int futureYear = year, pastYear = year;
-            var startDate = new DateObject(year, month, beginDay);
+            var startDate = DateObject.MinValue.SetValue(year, month, beginDay);
             if (noYear && startDate < referenceDate)
             {
                 futureYear++;
@@ -239,12 +239,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ret.Timex = $"({beginLuisStr},{endLuisStr},P{endDay - beginDay}D)";
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(
-                new DateObject(futureYear, month, beginDay),
-                new DateObject(futureYear, month, endDay));
+                DateObject.MinValue.SetValue(futureYear, month, beginDay),
+                DateObject.MinValue.SetValue(futureYear, month, endDay));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
-                new DateObject(pastYear, month, beginDay),
-                new DateObject(pastYear, month, endDay));
+                DateObject.MinValue.SetValue(pastYear, month, beginDay),
+                DateObject.MinValue.SetValue(pastYear, month, endDay));
 
             ret.Success = true;
 
@@ -312,8 +312,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     endYear += 2000;
                 }
 
-                var beginDay = new DateObject(beginYear, 1, 1);
-                var endDay = new DateObject(endYear, 12, 31);
+                var beginDay = DateObject.MinValue.SetValue(beginYear, 1, 1);
+                var endDay = DateObject.MinValue.SetValue(endYear, 12, 31);
                 var beginTimex = beginYear.ToString("D4");
                 var endTimex = endYear.ToString("D4");
                 ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";
@@ -383,16 +383,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var monthStr = match.Groups["month"].Value;
             var month = this.config.MonthOfYear[monthStr] > 12 ? this.config.MonthOfYear[monthStr]%12 : this.config.MonthOfYear[monthStr];
-            var beginDay = new DateObject(year, month, 1);
+            var beginDay = DateObject.MinValue.SetValue(year, month, 1);
             DateObject endDay;
 
             if (month == 12)
             {
-                endDay = new DateObject(year + 1, 1, 1);
+                endDay = DateObject.MinValue.SetValue(year + 1, 1, 1);
             }
             else
             {
-                endDay = new DateObject(year, month + 1, 1);
+                endDay = DateObject.MinValue.SetValue(year, month + 1, 1);
             }
 
             ret.Timex = year.ToString("D4") + "-" + month.ToString("D2");
@@ -418,7 +418,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     ret.Timex = referenceDate.Year.ToString("D4");
                     ret.FutureValue =
                         ret.PastValue =
-                            new Tuple<DateObject, DateObject>(new DateObject(referenceDate.Year, 1, 1), referenceDate);
+                            new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(referenceDate.Year, 1, 1), referenceDate);
                     ret.Success = true;
                     return ret;
                 }
@@ -540,8 +540,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         ret.Timex = year.ToString("D4");
                         ret.FutureValue =
                             ret.PastValue =
-                                new Tuple<DateObject, DateObject>(new DateObject(year, 1, 1),
-                                    new DateObject(year, 12, 31).AddDays(1));
+                                new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(year, 1, 1),
+                                    DateObject.MinValue.SetValue(year, 12, 31).AddDays(1));
                         ret.Success = true;
                         return ret;
                     }
@@ -554,12 +554,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             // only "month" will come to here
             ret.FutureValue = new Tuple<DateObject, DateObject>(
-                new DateObject(futureYear, month, 1),
-                new DateObject(futureYear, month, 1).AddMonths(1));
+                DateObject.MinValue.SetValue(futureYear, month, 1),
+                DateObject.MinValue.SetValue(futureYear, month, 1).AddMonths(1));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
-                new DateObject(pastYear, month, 1),
-                new DateObject(pastYear, month, 1).AddMonths(1));
+                DateObject.MinValue.SetValue(pastYear, month, 1),
+                DateObject.MinValue.SetValue(pastYear, month, 1).AddMonths(1));
 
             ret.Success = true;
 
@@ -653,8 +653,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     year = int.Parse(tmp);
                 }
 
-                var beginDay = new DateObject(year, 1, 1);
-                var endDay = new DateObject(year + 1, 1, 1);
+                var beginDay = DateObject.MinValue.SetValue(year, 1, 1);
+                var endDay = DateObject.MinValue.SetValue(year + 1, 1, 1);
                 ret.Timex = year.ToString("D4");
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
@@ -687,8 +687,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     year += 2000;
                 }
 
-                var beginDay = new DateObject(year, 1, 1);
-                var endDay = new DateObject(year + 1, 1, 1);
+                var beginDay = DateObject.MinValue.SetValue(year, 1, 1);
+                var endDay = DateObject.MinValue.SetValue(year + 1, 1, 1);
                 ret.Timex = year.ToString("D4");
                 ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
                 ret.Success = true;
@@ -1119,8 +1119,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var cardinalStr = match.Groups["cardinal"].Value;
             var quarterNum = this.config.CardinalMap[cardinalStr];
 
-            var beginDate = new DateObject(year, quarterNum*3 - 2, 1);
-            var endDate = new DateObject(year, quarterNum*3 + 1, 1);
+            var beginDate = DateObject.MinValue.SetValue(year, quarterNum*3 - 2, 1);
+            var endDate = DateObject.MinValue.SetValue(year, quarterNum*3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
             ret.Success = true;
@@ -1130,7 +1130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
         {
-            var firstDay = new DateObject(year, month, 1);
+            var firstDay = DateObject.MinValue.SetValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek) weekday);
             if (weekday == 0)
             {

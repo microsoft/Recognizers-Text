@@ -183,13 +183,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 if (day > containsDay[month - 1])
                 {
-                    futureDate = new DateObject(year, month + 1, day);
-                    pastDate = new DateObject(year, month - 1, day);
+                    futureDate = DateObject.MinValue.SetValue(year, month + 1, day);
+                    pastDate = DateObject.MinValue.SetValue(year, month - 1, day);
                 }
                 else
                 {
-                    futureDate = new DateObject(year, month, day);
-                    pastDate = new DateObject(year, month, day);
+                    futureDate = DateObject.MinValue.SetValue(year, month, day);
+                    pastDate = DateObject.MinValue.SetValue(year, month, day);
                     if (!hasMonth)
                     {
                         if (futureDate < referenceDate)
@@ -464,7 +464,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private DateObject ComputeDate(int cadinal, int weekday, int month, int year)
         {
-            var firstDay = new DateObject(year, month, 1);
+            var firstDay = DateObject.MinValue.SetValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
             if (weekday == 0)
             {
@@ -608,8 +608,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Timex = FormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = new DateObject(year, month, day);
-            var pastDate = new DateObject(year, month, day);
+            var futureDate = DateObject.MinValue.SetValue(year, month, day);
+            var pastDate = DateObject.MinValue.SetValue(year, month, day);
             if (noYear && futureDate < referenceDate)
             {
                 futureDate = futureDate.AddYears(+1);

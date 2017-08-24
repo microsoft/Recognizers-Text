@@ -33,8 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 ret.Timex = FormatUtil.FormatDate(date) + timeStr;
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(new DateObject(year, month, day, beginHour, 0, 0),
-                            new DateObject(year, month, day, endHour, endMin, endMin));
+                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(year, month, day, beginHour, 0, 0),
+                            DateObject.MinValue.SetValue(year, month, day, endHour, endMin, endMin));
                 ret.Success = true;
                 return ret;
             }
@@ -62,13 +62,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
-                        new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
-                        new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SetValue(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SetValue(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
 
                 ret.PastValue =
                     new Tuple<DateObject, DateObject>(
-                        new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
-                        new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SetValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SetValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
 
                 ret.Success = true;
 

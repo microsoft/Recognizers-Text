@@ -179,8 +179,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Comment = "ampm";
             }
 
-            ret.FutureValue = new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
-            ret.PastValue = new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+            ret.FutureValue = DateObject.MinValue.SetValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
+            ret.PastValue = DateObject.MinValue.SetValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;
 
             return ret;
@@ -268,7 +268,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
                 ret.Timex = FormatUtil.FormatDate(date) + timeStr;
-                ret.FutureValue = ret.PastValue = new DateObject(date.Year, date.Month, date.Day, hour, min, sec);
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SetValue(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;
             }

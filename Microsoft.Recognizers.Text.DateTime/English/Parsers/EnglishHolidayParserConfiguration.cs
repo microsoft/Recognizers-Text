@@ -110,35 +110,35 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             };
         }
 
-        private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
-        private static DateObject NewYearEve(int year) => new DateObject(year, 12, 31);
-        private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
-        private static DateObject ChristmasEve(int year) => new DateObject(year, 12, 24);
-        private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);
-        private static DateObject WhiteLoverDay(int year) => new DateObject(year, 3, 14);
-        private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
-        private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
-        private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
-        private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
-        private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
-        private static DateObject YouthDay(int year) => new DateObject(year, 5, 4);
-        private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
-        private static DateObject SinglesDay(int year) => new DateObject(year, 11, 11);
-        private static DateObject MaoBirthday(int year) => new DateObject(year, 12, 26);
-        private static DateObject InaugurationDay(int year) => new DateObject(year, 1, 20);
-        private static DateObject GroundhogDay(int year) => new DateObject(year, 2, 2);
-        private static DateObject StPatrickDay(int year) => new DateObject(year, 3, 17);
-        private static DateObject StGeorgeDay(int year) => new DateObject(year, 4, 23);
-        private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
-        private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
-        private static DateObject UsaIndependenceDay(int year) => new DateObject(year, 7, 4);
-        private static DateObject BastilleDay(int year) => new DateObject(year, 7, 14);
-        private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
-        private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
-        private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject NewYear(int year) => DateObject.MinValue.SetValue(year, 1, 1);
+        private static DateObject NewYearEve(int year) => DateObject.MinValue.SetValue(year, 12, 31);
+        private static DateObject ChristmasDay(int year) => DateObject.MinValue.SetValue(year, 12, 25);
+        private static DateObject ChristmasEve(int year) => DateObject.MinValue.SetValue(year, 12, 24);
+        private static DateObject ValentinesDay(int year) => DateObject.MinValue.SetValue(year, 2, 14);
+        private static DateObject WhiteLoverDay(int year) => DateObject.MinValue.SetValue(year, 3, 14);
+        private static DateObject FoolDay(int year) => DateObject.MinValue.SetValue(year, 4, 1);
+        private static DateObject GirlsDay(int year) => DateObject.MinValue.SetValue(year, 3, 7);
+        private static DateObject TreePlantDay(int year) => DateObject.MinValue.SetValue(year, 3, 12);
+        private static DateObject FemaleDay(int year) => DateObject.MinValue.SetValue(year, 3, 8);
+        private static DateObject ChildrenDay(int year) => DateObject.MinValue.SetValue(year, 6, 1);
+        private static DateObject YouthDay(int year) => DateObject.MinValue.SetValue(year, 5, 4);
+        private static DateObject TeacherDay(int year) => DateObject.MinValue.SetValue(year, 9, 10);
+        private static DateObject SinglesDay(int year) => DateObject.MinValue.SetValue(year, 11, 11);
+        private static DateObject MaoBirthday(int year) => DateObject.MinValue.SetValue(year, 12, 26);
+        private static DateObject InaugurationDay(int year) => DateObject.MinValue.SetValue(year, 1, 20);
+        private static DateObject GroundhogDay(int year) => DateObject.MinValue.SetValue(year, 2, 2);
+        private static DateObject StPatrickDay(int year) => DateObject.MinValue.SetValue(year, 3, 17);
+        private static DateObject StGeorgeDay(int year) => DateObject.MinValue.SetValue(year, 4, 23);
+        private static DateObject Mayday(int year) => DateObject.MinValue.SetValue(year, 5, 1);
+        private static DateObject CincoDeMayoday(int year) => DateObject.MinValue.SetValue(year, 5, 5);
+        private static DateObject BaptisteDay(int year) => DateObject.MinValue.SetValue(year, 6, 24);
+        private static DateObject UsaIndependenceDay(int year) => DateObject.MinValue.SetValue(year, 7, 4);
+        private static DateObject BastilleDay(int year) => DateObject.MinValue.SetValue(year, 7, 14);
+        private static DateObject HalloweenDay(int year) => DateObject.MinValue.SetValue(year, 10, 31);
+        private static DateObject AllHallowDay(int year) => DateObject.MinValue.SetValue(year, 11, 1);
+        private static DateObject AllSoulsday(int year) => DateObject.MinValue.SetValue(year, 11, 2);
+        private static DateObject GuyFawkesDay(int year) => DateObject.MinValue.SetValue(year, 11, 5);
+        private static DateObject Veteransday(int year) => DateObject.MinValue.SetValue(year, 11, 11);
         
         public override int GetSwiftYear(string text)
         {

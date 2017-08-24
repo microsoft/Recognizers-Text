@@ -167,8 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
 
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-                        new DateObject(year, month, day, beginHour, 0, 0),
-                        new DateObject(year, month, day, endHour, 0, 0));
+                        DateObject.MinValue.SetValue(year, month, day, beginHour, 0, 0),
+                        DateObject.MinValue.SetValue(year, month, day, endHour, 0, 0));
 
                     ret.Success = true;
 
@@ -267,8 +267,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Timex = timex;
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-                new DateObject(year, month, day, beginHour, 0, 0),
-                new DateObject(year, month, day, endHour, endMinSeg, endMinSeg)
+                DateObject.MinValue.SetValue(year, month, day, beginHour, 0, 0),
+                DateObject.MinValue.SetValue(year, month, day, endHour, endMinSeg, endMinSeg)
                 );
 
             ret.Success = true;
