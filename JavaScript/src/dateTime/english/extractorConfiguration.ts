@@ -75,9 +75,9 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             laterRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.LaterRegex, "gis"),
             inConnectorRegex: RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis"),
             // TODO: utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
-            amDescRegex:null,
-            pmDescRegex:null,
-            amPmDescRegex:null
+            amDescRegex: null,
+            pmDescRegex: null,
+            amPmDescRegex: null
         };
     }
 }

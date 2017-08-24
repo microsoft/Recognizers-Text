@@ -102,12 +102,12 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         }
         else {
             let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.LessThanOneHour, trimedPrefix);
-            let minStr = match[0].groups["deltamin"];
+            let minStr = match[0].groups["deltamin"] ? match[0].groups["deltamin"].value : null;
             if (minStr) {
                 deltaMin = parseInt(minStr);
             }
             else {
-                minStr = match[0].groups["deltaminnum"].toLowerCase();
+                minStr = match[0].groups["deltaminnum"] ? match[0].groups["deltaminnum"].value.toLowerCase() : null;
                 deltaMin = this.numbers.get(minStr);
             }
         }
@@ -129,9 +129,9 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         let deltaHour = 0;
         let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.TimeSuffix, trimedSuffix);
         if (matches.length > 0 && matches[0].index == 0 && matches[0].length == trimedSuffix.length) {
-            let oclockStr = matches[0].groups["oclock"];
-            if (!(oclockStr)) {
-                let amStr = matches[0].groups["am"];
+            let oclockStr = matches[0].groups["oclock"] ? matches[0].groups["oclock"].value : null;
+            if (!oclockStr) {
+                let amStr = matches[0].groups["am"] ? matches[0].groups["am"].value : null;
                 if (amStr) {
                     if (adjust.hour >= 12) {
                         deltaHour = -12;
@@ -139,7 +139,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                     adjust.hasAm = true;
                 }
 
-                let pmStr = matches[0].groups["pm"];
+                let pmStr = matches[0].groups["pm"] ? matches[0].groups["pm"].value : null;
                 if (pmStr) {
                     if (adjust.hour < 12) {
                         deltaHour = 12;
@@ -243,7 +243,7 @@ export class EnglishTimeParser extends BaseTimeParser {
 
         var matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.IshRegex, trimedText);
         if (matches.length > 0 && matches[0].length == trimedText.length) {
-            var hourStr = matches[0].groups["hour"];
+            var hourStr = matches[0].groups["hour"] ? matches[0].groups["hour"].value : null;
             var hour = 12;
             if (hourStr) {
                 hour = parseInt(hourStr);

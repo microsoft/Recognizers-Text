@@ -14,7 +14,7 @@ export class DateTimeParseResult extends ParseResult {
 }
 
 export interface IDateTimeParser extends IParser {
-    parse(extResult: ExtractResult, referenceDate?:Date): DateTimeParseResult | null;
+    parse(extResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null;
 }
 
 export interface ICommonDateTimeParserConfiguration {
@@ -170,15 +170,15 @@ export class BaseTimeParser implements IDateTimeParser {
             year = referenceTime.getFullYear();
         let hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
-        let engTimeStr = match.groups["engtime"];
+        let engTimeStr = match.groups["engtime"] ? match.groups["engtime"].value : null;
         if (engTimeStr) {
             // get hour
-            let hourStr = match.groups["hournum"] ? match.groups["hournum"].toLowerCase() : null;
+            let hourStr = match.groups["hournum"].value ? match.groups["hournum"].value.toLowerCase() : null;
             hour = this.config.numbers.get(hourStr);
 
             // get minute
-            let minStr = match.groups["minnum"];
-            let tensStr = match.groups["tens"];
+            let minStr = match.groups["minnum"] ? match.groups["minnum"].value : null;
+            let tensStr = match.groups["tens"] ? match.groups["tens"].value : null;
 
             if (minStr) {
                 min = this.config.numbers.get(minStr);
@@ -213,9 +213,9 @@ export class BaseTimeParser implements IDateTimeParser {
         }
         else {
             // get hour
-            let hourStr = match.groups["hour"];
-            if (!(hourStr)) {
-                hourStr = match.groups["hournum"] ? match.groups["hournum"].toLowerCase() : null;
+            let hourStr = match.groups["hour"] ? match.groups["hour"].value : null;
+            if (!hourStr) {
+                hourStr = match.groups["hournum"] ? match.groups["hournum"].value.toLowerCase() : null;
                 hour = this.config.numbers.get(hourStr);
                 if (!hour) {
                     return ret;
@@ -226,15 +226,15 @@ export class BaseTimeParser implements IDateTimeParser {
             }
 
             // get minute
-            let minStr = match.groups["min"] ? match.groups["min"].toLowerCase() : null;
-            if (!(minStr)) {
-                minStr = match.groups["minnum"];
+            let minStr = match.groups["min"] ? match.groups["min"].value.toLowerCase() : null;
+            if (!minStr) {
+                minStr = match.groups["minnum"] ? match.groups["minnum"].value : null;
                 if (minStr) {
                     min = this.config.numbers.get(minStr);
                     hasMin = true;
                 }
 
-                let tensStr = match.groups["tens"];
+                let tensStr = match.groups["tens"] ? match.groups["tens"].value : null;
                 if (tensStr) {
                     min += this.config.numbers.get(tensStr);
                     hasMin = true;
@@ -246,7 +246,7 @@ export class BaseTimeParser implements IDateTimeParser {
             }
 
             // get second
-            let secStr = match.groups["sec"] ? match.groups["sec"].toLowerCase() : null;
+            let secStr = match.groups["sec"] ? match.groups["sec"].value.toLowerCase() : null;
             if (secStr) {
                 second = parseInt(secStr);
                 hasSec = true;
@@ -254,7 +254,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         //adjust by desc string
-        let descStr = match.groups["desc"] ? match.groups["desc"].toLowerCase() : null;
+        let descStr = match.groups["desc"] ? match.groups["desc"].value.toLowerCase() : null;
         if (descStr) {
             if (descStr.toLowerCase().startsWith("a")) {
                 if (hour >= 12) {
@@ -271,7 +271,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         // adjust min by prefix
-        let timePrefix = match.groups["prefix"] ? match.groups["prefix"].toLowerCase() : null;
+        let timePrefix = match.groups["prefix"] ? match.groups["prefix"].value.toLowerCase() : null;
         if (timePrefix) {
             let adjust = { hour: hour, min: min, hasMin: hasMin };
             this.config.adjustByPrefix(timePrefix, adjust);
@@ -279,7 +279,7 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         // adjust hour by suffix
-        let timeSuffix = match.groups["suffix"] ? match.groups["suffix"].toLowerCase() : null;
+        let timeSuffix = match.groups["suffix"] ? match.groups["suffix"].value.toLowerCase() : null;
         if (timeSuffix) {
             let adjust = { hour: hour, min: min, hasMin: hasMin, hasAm: hasAm, hasPm: hasPm };
             this.config.adjustBySuffix(timeSuffix, adjust);
@@ -321,16 +321,14 @@ export interface ITimePeriodParserConfiguration {
     getMatchedTimexRange(text: string): {
         matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number
     };
-}  
+}
 
-export class BaseTimePeriodParser implements IDateTimeParser
-{
-    public static readonly  ParserName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
-    
-    private readonly  config:ITimePeriodParserConfiguration;
+export class BaseTimePeriodParser implements IDateTimeParser {
+    public static readonly ParserName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
-    constructor( configuration:ITimePeriodParserConfiguration)
-    {
+    private readonly config: ITimePeriodParserConfiguration;
+
+    constructor(configuration: ITimePeriodParserConfiguration) {
         this.config = configuration;
     }
 
@@ -384,20 +382,17 @@ export class BaseTimePeriodParser implements IDateTimeParser
         return ret;
     }
 
-    private  parseSimpleCases( text:string, referenceTime:Date):DateTimeResolutionResult
-    {
+    private parseSimpleCases(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let year = referenceTime.getFullYear(), month = referenceTime.getMonth(), day = referenceTime.getDay();
         let trimedText = text.trim().toLowerCase();
 
-        let matches = RegExpUtility.getMatches( this.config.pureNumberFromToRegex,trimedText);
-        if (!matches.length)
-        {
-            matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex,trimedText);
+        let matches = RegExpUtility.getMatches(this.config.pureNumberFromToRegex, trimedText);
+        if (!matches.length) {
+            matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex, trimedText);
         }
 
-        if (matches.length && matches[0].index == 0)
-        {
+        if (matches.length && matches[0].index == 0) {
             // this "from .. to .." pattern is valid if followed by a Date OR "pm"
             let isValid = false;
 
@@ -405,17 +400,15 @@ export class BaseTimePeriodParser implements IDateTimeParser
             let hourGroup = matches[0].groups["hour"];
             let hourStr = hourGroup.captures[0];
 
-            let beginHour=this.config.numbers.get(hourStr);
-            if (!beginHour)
-            {
+            let beginHour = this.config.numbers.get(hourStr);
+            if (!beginHour) {
                 beginHour = parseInt(hourStr);
             }
 
-            hourStr = hourGroup.captures[1].Value;
+            hourStr = hourGroup.captures[1];
 
-            let endHour=this.config.numbers.get(hourStr);
-            if (!endHour)
-            {
+            let endHour = this.config.numbers.get(hourStr);
+            if (!endHour) {
                 endHour = parseInt(hourStr);
             }
 
@@ -426,43 +419,35 @@ export class BaseTimePeriodParser implements IDateTimeParser
             let amStr = matches[0].groups["am"];
             let descStr = matches[0].groups["desc"];
             // The "ampm" only occurs in time, don't have to consider it here
-            if (!leftDesc)
-            {
+            if (!leftDesc) {
                 let rightAmValid = (rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.toLowerCase()).length;
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.value.toLowerCase()).length;
                 let rightPmValid = (rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
-                if (amStr || rightAmValid)
-            {
-                    
-                if (beginHour >= 12)
-                {
-                    beginHour -= 12;
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.value.toLowerCase()).length;
+                if (amStr || rightAmValid) {
+
+                    if (beginHour >= 12) {
+                        beginHour -= 12;
+                    }
+                    if (endHour >= 12) {
+                        endHour -= 12;
+                    }
+                    isValid = true;
                 }
-                if (endHour >= 12)
-                {
-                    endHour -= 12;
+                else if (pmStr || rightPmValid) {
+                    if (beginHour < 12) {
+                        beginHour += 12;
+                    }
+                    if (endHour < 12) {
+                        endHour += 12;
+                    }
+                    isValid = true;
                 }
-                isValid = true;
-            }
-                else if (pmStr || rightPmValid)
-            {
-                if (beginHour < 12)
-                {
-                    beginHour += 12;
-                }
-                if (endHour < 12)
-                {
-                    endHour += 12;
-                }
-                isValid = true;
-            }
             }
 
-            if (isValid)
-            {
-                let beginStr = "T" + FormatUtil.toString(beginHour,2);
-                let endStr = "T" + FormatUtil.toString(endHour,2);
+            if (isValid) {
+                let beginStr = "T" + FormatUtil.toString(beginHour, 2);
+                let endStr = "T" + FormatUtil.toString(endHour, 2);
 
                 ret.timex = `(${beginStr},${endStr},PT${endHour - beginHour}H)`;
 
@@ -479,27 +464,24 @@ export class BaseTimePeriodParser implements IDateTimeParser
         return ret;
     }
 
-    private mergeTwoTimePoints(text:string , referenceTime:Date):DateTimeResolutionResult 
-    {
+    private mergeTwoTimePoints(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let ers = this.config.timeExtractor.extract(text);
         let pr1: DateTimeParseResult = null;
         let pr2: DateTimeParseResult = null;
-        if (ers.length != 2)
-        {
+        if (ers.length != 2) {
             return ret;
         }
 
-         pr1 = this.config.timeParser.parse(ers[0], referenceTime);
-         pr2 = this.config.timeParser.parse(ers[1], referenceTime);
+        pr1 = this.config.timeParser.parse(ers[0], referenceTime);
+        pr2 = this.config.timeParser.parse(ers[1], referenceTime);
 
-        if (pr1.value == null || pr2.value == null)
-        {
+        if (pr1.value == null || pr2.value == null) {
             return ret;
         }
 
-        let beginTime:Date = pr1.value.futureValue;
-        let endTime:Date = pr2.value.futureValue;
+        let beginTime: Date = pr1.value.futureValue;
+        let endTime: Date = pr2.value.futureValue;
 
         ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getHours()}H)`;
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
@@ -507,8 +489,7 @@ export class BaseTimePeriodParser implements IDateTimeParser
 
         let ampmStr1 = pr1.value.comment;
         let ampmStr2 = pr2.value.comment;
-        if (ampmStr1 && ampmStr1.endsWith("ampm") && ampmStr2 && ampmStr2.endsWith("ampm"))
-        {
+        if (ampmStr1 && ampmStr1.endsWith("ampm") && ampmStr2 && ampmStr2.endsWith("ampm")) {
             ret.comment = "ampm";
         }
 
@@ -516,60 +497,52 @@ export class BaseTimePeriodParser implements IDateTimeParser
     }
 
     // parse "morning", "afternoon", "night"
-    private parseNight( text:string,  referenceTime:Date):DateTimeResolutionResult 
-    {
+    private parseNight(text: string, referenceTime: Date): DateTimeResolutionResult {
         let day = referenceTime.getDay(),
             month = referenceTime.getMonth(),
             year = referenceTime.getFullYear();
         let ret = new DateTimeResolutionResult();
 
         // extract early/late prefix from text
-        let matches = RegExpUtility.getMatches(this.config.timeOfDayRegex,text);
+        let matches = RegExpUtility.getMatches(this.config.timeOfDayRegex, text);
         let hasEarly = false, hasLate = false;
-        if (matches.length)
-        {
-            if (matches[0].groups["early"])
-            {
-                let early = matches[0].groups["early"];
+        if (matches.length) {
+            if (matches[0].groups["early"]) {
+                let early = matches[0].groups["early"].value;
                 text = text.replace(early, "");
                 hasEarly = true;
                 ret.comment = "early";
             }
-            if (!hasEarly && matches[0].groups["late"])
-            {
-                let late = matches[0].groups["late"];
+            if (!hasEarly && matches[0].groups["late"].value) {
+                let late = matches[0].groups["late"].value;
                 text = text.replace(late, "");
                 hasLate = true;
                 ret.comment = "late";
             }
         }
 
-        let timexRange=this.config.getMatchedTimexRange(text);
-        if (!timexRange.matched)
-        {
+        let timexRange = this.config.getMatchedTimexRange(text);
+        if (!timexRange.matched) {
             return new DateTimeResolutionResult();
         }
 
         // modify time period if "early" or "late" is existed
-        if (hasEarly)
-        {
+        if (hasEarly) {
             timexRange.endHour = timexRange.beginHour + 2;
             // handling case: night end with 23:59
-            if (timexRange.endMin == 59)
-            {
+            if (timexRange.endMin == 59) {
                 timexRange.endMin = 0;
             }
         }
-        else if (hasLate)
-        {
+        else if (hasLate) {
             timexRange.beginHour = timexRange.beginHour + 2;
         }
 
         ret.timex = timexRange.timex;
 
         ret.futureValue = ret.pastValue = {
-            item1:new Date(year, month, day, beginHour, 0, 0),
-            item2:new Date(year, month, day, endHour, endMinSeg, endMinSeg)
+            item1: new Date(year, month, day, timexRange.beginHour, 0, 0),
+            item2: new Date(year, month, day, timexRange.endHour, timexRange.endMin, timexRange.endMin)
         };
 
         ret.success = true;

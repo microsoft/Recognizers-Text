@@ -44,7 +44,7 @@ export interface Match {
     index: number;
     length: number;
     value: string;
-    groups: { [id: string]: string }; //Map<string, string>;
+    groups: { [id: string]: { value: string, captures: string[] } };
 }
 
 export class RegExpUtility {
@@ -53,7 +53,8 @@ export class RegExpUtility {
         XRegExp.forEach(source, regex, match => {
             let positiveLookbehind = [];
             let negativeLookbehind = [];
-            let groups = {};
+            let groups = { }
+
             Object.keys(match).forEach(key => {
                 if (!key.includes('__')) return;
                 if (key.startsWith('plb') && match[key]) {
@@ -65,8 +66,14 @@ export class RegExpUtility {
                     return;
                 }
 
+                let groupKey = key.substr(0, key.lastIndexOf('__'));
                 if (match[key]) {
-                    groups[key.substr(0, key.lastIndexOf('__'))] = match[key];
+                    if (groups[groupKey]) {
+                        groups[groupKey].value = match[key];
+                        groups[groupKey].captures.push(match[key]);
+                    } else {
+                        groups[groupKey] = { value: match[key], captures: [match[key]] };
+                    }
                 }
             });
             
