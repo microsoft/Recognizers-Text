@@ -21,6 +21,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(0, results.Count);
         }
 
+        public void BasicTestWithOptions(string text, int count, DateTimeOptions options = DateTimeOptions.None)
+        {
+            IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
+            var results = extractorWithOptions.Extract(text);
+            Assert.AreEqual(count, results.Count);
+        }
+
         [TestMethod]
         public void TestMergedExtract()
         {
@@ -38,6 +45,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("past week", 0, 9);
             BasicTest("past Monday", 0, 11);
             BasicTest("schedule a meeting in 10 hours", 19, 11);
+        }
+
+        [TestMethod]
+        public void TestMergedSkipFromTo()
+        {
+            BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SplitFromTo);
+            BasicTestWithOptions("Change my meeting from Nov.19th to Nov.23th", 2, DateTimeOptions.SplitFromTo);
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am", 1);
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am tomorrow", 1);
         }
 
         [TestMethod]

@@ -164,6 +164,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"({RelativeRegex})\s+({TimeUnitRegex})";
 		public const string ConnectorRegex = @"^(,|for|t|around)$";
+		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

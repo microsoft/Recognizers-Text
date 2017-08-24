@@ -6,10 +6,12 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseMergedExtractor : IExtractor
     {
         private readonly IMergedExtractorConfiguration config;
+        private readonly DateTimeOptions options;
 
-        public BaseMergedExtractor(IMergedExtractorConfiguration config)
+        public BaseMergedExtractor(IMergedExtractorConfiguration config, DateTimeOptions options = DateTimeOptions.None)
         {
             this.config = config;
+            this.options = options;
         }
 
         public List<ExtractResult> Extract(string text)
@@ -36,6 +38,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var result in src)
             {
+                if ((options & DateTimeOptions.SplitFromTo) != 0)
+                {
+                    if (SkipFromTo(result))
+                    {
+                        continue;
+                    }
+                }
+
                 var isFound = false;
                 int rmIndex = -1, rmLength = 1;
                 for (var i = 0; i < dst.Count; i++)
@@ -67,6 +77,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dst.Insert(rmIndex, result);
                 }
             }
+        }
+
+        private bool SkipFromTo(ExtractResult er)
+        {
+            if (config.FromToRegex.IsMatch(er.Text))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)

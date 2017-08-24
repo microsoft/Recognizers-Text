@@ -26,5 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex BeforeRegex { get; }
 
+        Regex FromToRegex { get; }
+
     }
 }

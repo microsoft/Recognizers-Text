@@ -15,6 +15,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly SetExtractorChs SetExtractor = new SetExtractorChs();
         private static readonly BaseHolidayExtractor HolidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
 
+        private readonly DateTimeOptions options;
+
+        public MergedExtractorChs(DateTimeOptions options = DateTimeOptions.None)
+        {
+            this.options = options;
+        }
+
         public List<ExtractResult> Extract(string text)
         {
             var ret = DateExtractor.Extract(text);

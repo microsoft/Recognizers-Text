@@ -361,6 +361,8 @@ RelativeTimeUnitRegex: !nestedRegex
   references: [RelativeRegex, TimeUnitRegex]
 ConnectorRegex: !simpleRegex
   def: ^(,|for|t|around)$
+FromToRegex: !simpleRegex
+  def: \b(from).+(to)\b.+
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
