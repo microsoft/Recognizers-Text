@@ -171,7 +171,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    hour = int.Parse(hourStr);
+                    if (!int.TryParse(hourStr, out hour))
+                    {
+                        if (!this.config.Numbers.TryGetValue(hourStr.ToLower(), out hour))
+                        {
+                            return ret;
+                        }
+                    }
                 }
 
                 // get minute
