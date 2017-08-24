@@ -209,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 hour = 0;
             }
 
-            dtResult.FutureValue = dtResult.PastValue = DateObject.MinValue.SetValue(year, month, day, hour, min, second);
+            dtResult.FutureValue = dtResult.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
             dtResult.Success = true;
             return dtResult;
         }

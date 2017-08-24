@@ -127,8 +127,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var tryStr = FormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out temp))
                 {
-                    futureDate = DateObject.MinValue.SetValue(year, month, day);
-                    pastDate = DateObject.MinValue.SetValue(year, month, day);
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
                     if (futureDate < referenceDate)
                     {
@@ -142,8 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    futureDate = DateObject.MinValue.SetValue(year, month + 1, day);
-                    pastDate = DateObject.MinValue.SetValue(year, month - 1, day);
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
+                    pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                 }
 
 
@@ -284,8 +284,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // for LUIS format value string
             ret.Timex = FormatUtil.LuisDate(-1, month, day);
-            var futureDate = DateObject.MinValue.SetValue(year, month, day);
-            var pastDate = DateObject.MinValue.SetValue(year, month, day);
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
             if (futureDate < referenceDate)
             {
@@ -359,8 +359,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = FormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SetValue(year, month, day);
-            var pastDate = DateObject.MinValue.SetValue(year, month, day);
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
             if (noYear && futureDate < referenceDate)
             {
@@ -460,7 +460,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
         {
-            var firstDay = DateObject.MinValue.SetValue(year, month, 1);
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
 
             if (weekday == 0)

@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 ret.Timex = "T" + hour.ToString("D2");
                 ret.FutureValue =
                     ret.PastValue =
-                        DateObject.MinValue.SetValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
+                        DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
                 ret.Success = true;
                 return ret;
             }

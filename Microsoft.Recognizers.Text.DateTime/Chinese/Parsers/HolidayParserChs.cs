@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (hasYear)
                 {
                     ret.Timex = year.ToString("D4") + timexStr;
-                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SetValue(year, value.Month, value.Day);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;
                 }
@@ -286,64 +286,64 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static DateObject GetMothersDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 5, (from day in Enumerable.Range(1, 31)
-                where DateObject.MinValue.SetValue(year, 5, day).DayOfWeek == DayOfWeek.Sunday
+            return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 5, day).DayOfWeek == DayOfWeek.Sunday
                 select day).ElementAt(1));
         }
 
         private static DateObject GetFathersDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 6, (from day in Enumerable.Range(1, 30)
-                where DateObject.MinValue.SetValue(year, 6, day).DayOfWeek == DayOfWeek.Sunday
+            return DateObject.MinValue.SafeCreateFromValue(year, 6, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 6, day).DayOfWeek == DayOfWeek.Sunday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetMartinLutherKingDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 1, (from day in Enumerable.Range(1, 31)
-                where DateObject.MinValue.SetValue(year, 1, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 1, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 1, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetWashingtonsBirthdayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 2, (from day in Enumerable.Range(1, 29)
-                where DateObject.MinValue.SetValue(year, 2, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 2, (from day in Enumerable.Range(1, 29)
+                where DateObject.MinValue.SafeCreateFromValue(year, 2, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetCanberraDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 3, (from day in Enumerable.Range(1, 31)
-                where DateObject.MinValue.SetValue(year, 3, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 3, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 3, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(0));
         }
 
         private static DateObject GetMemorialDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 5, (from day in Enumerable.Range(1, 31)
-                where DateObject.MinValue.SetValue(year, 5, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 5, day).DayOfWeek == DayOfWeek.Monday
                 select day).Last());
         }
 
         private static DateObject GetLabourDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 9, (from day in Enumerable.Range(1, 30)
-                where DateObject.MinValue.SetValue(year, 9, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 9, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(0));
         }
 
         private static DateObject GetColumbusDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 10, (from day in Enumerable.Range(1, 31)
-                where DateObject.MinValue.SetValue(year, 10, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 10, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 10, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(1));
         }
 
         private static DateObject GetThanksgivingDayOfYear(int year)
         {
-            return DateObject.MinValue.SetValue(year, 11, (from day in Enumerable.Range(1, 30)
-                where DateObject.MinValue.SetValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
                 select day).ElementAt(3));
         }
 
@@ -392,31 +392,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     internal static class TimexConstants
     {
         internal static readonly DateObject now = DateObject.Now;
-        internal static readonly DateObject yuandan = DateObject.MinValue.SetValue(now.Year, 1, 1);
-        internal static readonly DateObject chsnationalday = DateObject.MinValue.SetValue(now.Year, 10, 1);
-        internal static readonly DateObject laborday = DateObject.MinValue.SetValue(now.Year, 5, 1);
-        internal static readonly DateObject christmasday = DateObject.MinValue.SetValue(now.Year, 12, 25);
-        internal static readonly DateObject loverday = DateObject.MinValue.SetValue(now.Year, 2, 14);
-        internal static readonly DateObject chsmilbuildday = DateObject.MinValue.SetValue(now.Year, 8, 1);
-        internal static readonly DateObject foolday = DateObject.MinValue.SetValue(now.Year, 4, 1);
-        internal static readonly DateObject girlsday = DateObject.MinValue.SetValue(now.Year, 3, 7);
-        internal static readonly DateObject treeplantday = DateObject.MinValue.SetValue(now.Year, 3, 12);
-        internal static readonly DateObject femaleday = DateObject.MinValue.SetValue(now.Year, 3, 8);
-        internal static readonly DateObject childrenday = DateObject.MinValue.SetValue(now.Year, 6, 1);
-        internal static readonly DateObject youthday = DateObject.MinValue.SetValue(now.Year, 5, 4);
-        internal static readonly DateObject teacherday = DateObject.MinValue.SetValue(now.Year, 9, 10);
-        internal static readonly DateObject singlesday = DateObject.MinValue.SetValue(now.Year, 11, 11);
+        internal static readonly DateObject yuandan = new DateObject(now.Year, 1, 1);
+        internal static readonly DateObject chsnationalday = new DateObject(now.Year, 10, 1);
+        internal static readonly DateObject laborday = new DateObject(now.Year, 5, 1);
+        internal static readonly DateObject christmasday = new DateObject(now.Year, 12, 25);
+        internal static readonly DateObject loverday = new DateObject(now.Year, 2, 14);
+        internal static readonly DateObject chsmilbuildday = new DateObject(now.Year, 8, 1);
+        internal static readonly DateObject foolday = new DateObject(now.Year, 4, 1);
+        internal static readonly DateObject girlsday = new DateObject(now.Year, 3, 7);
+        internal static readonly DateObject treeplantday = new DateObject(now.Year, 3, 12);
+        internal static readonly DateObject femaleday = new DateObject(now.Year, 3, 8);
+        internal static readonly DateObject childrenday = new DateObject(now.Year, 6, 1);
+        internal static readonly DateObject youthday = new DateObject(now.Year, 5, 4);
+        internal static readonly DateObject teacherday = new DateObject(now.Year, 9, 10);
+        internal static readonly DateObject singlesday = new DateObject(now.Year, 11, 11);
 
-        internal static readonly DateObject halloweenday = DateObject.MinValue.SetValue(now.Year, 10, 31);
+        internal static readonly DateObject halloweenday = new DateObject(now.Year, 10, 31);
 
-        internal static readonly DateObject midautumnday = DateObject.MinValue.SetValue(now.Year, 8, 15);
-        internal static readonly DateObject springday = DateObject.MinValue.SetValue(now.Year, 1, 1);
-        internal static readonly DateObject chuxiday = DateObject.MinValue.SetValue(now.Year, 1, 1).AddDays(-1);
+        internal static readonly DateObject midautumnday = new DateObject(now.Year, 8, 15);
+        internal static readonly DateObject springday = new DateObject(now.Year, 1, 1);
+        internal static readonly DateObject chuxiday = new DateObject(now.Year, 1, 1).AddDays(-1);
 
-        internal static readonly DateObject lanternday = DateObject.MinValue.SetValue(now.Year, 1, 15);
-        internal static readonly DateObject qingmingday = DateObject.MinValue.SetValue(now.Year, 4, 4);
-        internal static readonly DateObject dragonboatday = DateObject.MinValue.SetValue(now.Year, 5, 5);
-        internal static readonly DateObject chongyangday = DateObject.MinValue.SetValue(now.Year, 9, 9);
+        internal static readonly DateObject lanternday = new DateObject(now.Year, 1, 15);
+        internal static readonly DateObject qingmingday = new DateObject(now.Year, 4, 4);
+        internal static readonly DateObject dragonboatday = new DateObject(now.Year, 5, 5);
+        internal static readonly DateObject chongyangday = new DateObject(now.Year, 9, 9);
     }
 
     #endregion

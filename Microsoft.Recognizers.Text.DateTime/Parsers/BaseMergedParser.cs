@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // pop, restore the MOD string
-            if (hasBefore)
+            if (hasBefore && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasAfter)
+            if (hasAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -145,6 +145,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter)
         {
+            if (slot == null)
+            {
+                return null;
+            }
             var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 

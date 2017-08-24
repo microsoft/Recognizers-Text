@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return from.AddDays(target - start - 7);
         }
 
-        public static System.DateTime SetValue(this System.DateTime datetime, int year, int month, int day)
+        public static System.DateTime SafeCreateFromValue(this System.DateTime datetime, int year, int month, int day)
         {
             if (IsValidDate(year, month, day))
             {
@@ -70,11 +70,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return datetime;
         }
 
-        public static System.DateTime SetValue(this System.DateTime datetime, int year, int month, int day, int hour, int minute, int second)
+        public static System.DateTime SafeCreateFromValue(this System.DateTime datetime, int year, int month, int day, int hour, int minute, int second)
         {
             if (IsValidDate(year, month, day) && IsValidTime(hour, minute, second))
             {
-                datetime = datetime.SetValue(year, month, day);
+                datetime = datetime.SafeCreateFromValue(year, month, day);
                 datetime = datetime.AddHours(hour - datetime.Hour);
                 datetime = datetime.AddMinutes(minute - datetime.Minute);
                 datetime = datetime.AddSeconds(second - datetime.Second);

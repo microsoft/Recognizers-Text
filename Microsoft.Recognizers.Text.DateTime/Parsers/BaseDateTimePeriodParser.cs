@@ -208,12 +208,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
 
                 ret.FutureValue = new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SetValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
-                    DateObject.MinValue.SetValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
+                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
 
                 ret.PastValue = new Tuple<DateObject, DateObject>(
-                    DateObject.MinValue.SetValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
-                    DateObject.MinValue.SetValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
+                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
 
                 ret.Success = true;
 
@@ -310,10 +310,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (beginHasDate)
             {
-                futureEnd = DateObject.MinValue.SetValue(futureBegin.Year, futureBegin.Month, futureBegin.Day,
+                futureEnd = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day,
                     futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
 
-                pastEnd = DateObject.MinValue.SetValue(pastBegin.Year, pastBegin.Month, pastBegin.Day,
+                pastEnd = DateObject.MinValue.SafeCreateFromValue(pastBegin.Year, pastBegin.Month, pastBegin.Day,
                     pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
                 var dateStr = pr1.TimexStr.Split('T')[0];
@@ -322,10 +322,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (endHasDate)
             {
-                futureBegin = DateObject.MinValue.SetValue(futureEnd.Year, futureEnd.Month, futureEnd.Day,
+                futureBegin = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day,
                     futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
 
-                pastBegin = DateObject.MinValue.SetValue(pastEnd.Year, pastEnd.Month, pastEnd.Day,
+                pastBegin = DateObject.MinValue.SafeCreateFromValue(pastEnd.Year, pastEnd.Month, pastEnd.Day,
                     pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
                 var dateStr = pr2.TimexStr.Split('T')[0];
@@ -414,8 +414,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SetValue(year, month, day, beginHour, 0, 0),
-                            DateObject.MinValue.SetValue(year, month, day, endHour, endMin, endMin));
+                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
 
                 ret.Success = true;
                 return ret;
@@ -446,13 +446,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
-                        DateObject.MinValue.SetValue(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
-                        DateObject.MinValue.SetValue(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
 
                 ret.PastValue =
                     new Tuple<DateObject, DateObject>(
-                        DateObject.MinValue.SetValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
-                        DateObject.MinValue.SetValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
 
                 ret.Success = true;
 

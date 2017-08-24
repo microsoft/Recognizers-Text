@@ -60,32 +60,32 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public abstract string SanitizeHolidayToken(string holiday);
 
-        private static DateObject MothersDay(int year) => DateObject.MinValue.SetValue(year, 5, GetDay(year, 5, 1, DayOfWeek.Sunday));
+        private static DateObject MothersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetDay(year, 5, 1, DayOfWeek.Sunday));
 
-        private static DateObject FathersDay(int year) => DateObject.MinValue.SetValue(year, 6, GetDay(year, 6, 2, DayOfWeek.Sunday));
+        private static DateObject FathersDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 6, GetDay(year, 6, 2, DayOfWeek.Sunday));
 
-        private static DateObject MartinLutherKingDay(int year) => DateObject.MinValue.SetValue(year, 1, GetDay(year, 1, 2, DayOfWeek.Monday));
+        private static DateObject MartinLutherKingDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 1, GetDay(year, 1, 2, DayOfWeek.Monday));
 
-        private static DateObject WashingtonsBirthday(int year) => DateObject.MinValue.SetValue(year, 2, GetDay(year, 2, 2, DayOfWeek.Monday));
+        private static DateObject WashingtonsBirthday(int year) => DateObject.MinValue.SafeCreateFromValue(year, 2, GetDay(year, 2, 2, DayOfWeek.Monday));
 
-        private static DateObject CanberraDay(int year) => DateObject.MinValue.SetValue(year, 3, GetDay(year, 3, 0, DayOfWeek.Monday));
+        private static DateObject CanberraDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 3, GetDay(year, 3, 0, DayOfWeek.Monday));
 
-        private static DateObject MemorialDay(int year) => DateObject.MinValue.SetValue(year, 5, GetLastDay(year, 5, DayOfWeek.Monday));
+        private static DateObject MemorialDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 5, GetLastDay(year, 5, DayOfWeek.Monday));
 
-        private static DateObject LabourDay(int year) => DateObject.MinValue.SetValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
+        private static DateObject LabourDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 9, GetDay(year, 9, 0, DayOfWeek.Monday));
 
-        private static DateObject ColumbusDay(int year) => DateObject.MinValue.SetValue(year, 10, GetDay(year, 10, 1, DayOfWeek.Monday));
+        private static DateObject ColumbusDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 10, GetDay(year, 10, 1, DayOfWeek.Monday));
 
-        private static DateObject ThanksgivingDay(int year) => DateObject.MinValue.SetValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Thursday));
+        private static DateObject ThanksgivingDay(int year) => DateObject.MinValue.SafeCreateFromValue(year, 11, GetDay(year, 11, 3, DayOfWeek.Thursday));
 
         protected static int GetDay(int year, int month, int week, DayOfWeek dayOfWeek) =>
             (from day in Enumerable.Range(1, DateObject.DaysInMonth(year, month))
-             where DateObject.MinValue.SetValue(year, month, day).DayOfWeek == dayOfWeek
+             where DateObject.MinValue.SafeCreateFromValue(year, month, day).DayOfWeek == dayOfWeek
              select day).ElementAt(week);
 
         protected static int GetLastDay(int year, int month, DayOfWeek dayOfWeek) =>
             (from day in Enumerable.Range(1, DateObject.DaysInMonth(year, month))
-             where DateObject.MinValue.SetValue(year, month, day).DayOfWeek == dayOfWeek
+             where DateObject.MinValue.SafeCreateFromValue(year, month, day).DayOfWeek == dayOfWeek
              select day).Last();
     }
 }
