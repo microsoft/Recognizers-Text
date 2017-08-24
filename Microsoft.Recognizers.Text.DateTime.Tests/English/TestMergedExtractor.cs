@@ -65,12 +65,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateWithTime()
+        {
+            BasicTest("06/06 12:15", 0, 11);
+            BasicTest("06/06/12 15:15", 0, 14);
+            BasicTest("06/06, 2015", 0, 11);
+        }
+
+        [TestMethod]
         public void TestNegativeExtract()
         {
             //Unit tests for text should not extract datetime
             BasicTestNone("which email have gotten a reply");
             BasicTestNone("He is often alone");
             BasicTestNone("often a bird");
+            BasicTestNone("michigan hours");
         }
     }
 }

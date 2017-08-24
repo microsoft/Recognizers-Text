@@ -80,7 +80,7 @@ MonthOfRegex: !simpleRegex
 MonthRegex: !simpleRegex
   def: (?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)
 DateYearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)
+  def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!\s*\:)))
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -305,7 +305,7 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: (((?<half>half\s+)?(an|a))|(an|a))\s+{DurationUnitRegex}
+  def: \b(((?<half>half\s+)?(an|a))|(an|a))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AllRegex: !simpleRegex
   def: \b(?<all>all\s+(?<unit>year|month|week|day))\b
