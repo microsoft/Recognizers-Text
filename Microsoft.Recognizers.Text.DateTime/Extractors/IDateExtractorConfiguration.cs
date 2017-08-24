@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthEnd { get; }
 
-        Regex NonDateUnitRegex { get; }
+        Regex DateUnitRegex { get; }
 
         IExtractor IntegerExtractor { get; }
 

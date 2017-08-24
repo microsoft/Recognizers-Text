@@ -59,10 +59,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
             OnRegex = SpanishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
-            NextRegex = SpanishDateExtractorConfiguration.NextRegex;
+            NextRegex = SpanishDateExtractorConfiguration.NextDateRegex;
             ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
-            LastRegex = SpanishDateExtractorConfiguration.LastRegex;
-            UnitRegex = SpanishDateExtractorConfiguration.UnitRegex;
+            LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;
+            UnitRegex = SpanishDateExtractorConfiguration.DateUnitRegex;
             StrictWeekDay = SpanishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;

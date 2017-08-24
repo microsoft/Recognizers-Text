@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next Sunday", new DateObject(2016, 11, 20));
             BasicTest("I'll go back last Sunday", new DateObject(2016, 11, 6));
             BasicTest("I'll go back this week Friday", new DateObject(2016, 11, 11));
-            BasicTest("I'll go back nextweek Sunday", new DateObject(2016, 11, 20));
+            BasicTest("I'll go back next week Sunday", new DateObject(2016, 11, 20));
             BasicTest("I'll go back last week Sunday", new DateObject(2016, 11, 6));
             BasicTest("I'll go back last day", new DateObject(2016, 11, 6));
             BasicTest("I'll go back the last day", new DateObject(2016, 11, 6));
@@ -110,11 +110,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back the first friday of july", new DateObject(2017, 7, 7), new DateObject(2016, 7, 1));
             BasicTest("I'll go back the first friday in this month", new DateObject(2016, 11, 4));
 
-            BasicTest("I'll go back in two weeks", new DateObject(2016, 11, 21));
-            BasicTest("I'll go back two weeks from now", new DateObject(2016, 11, 21));
-
             BasicTest("I'll go back next week on Friday", new DateObject(2016, 11, 18));
             BasicTest("I'll go back on Friday next week", new DateObject(2016, 11, 18));
+        }
+
+        [TestMethod]
+        public void TestDateParseAgoLater()
+        {
+            BasicTest("I'll go back two weeks from now", new DateObject(2016, 11, 21));
+            BasicTest("who did I email a month ago", new DateObject(2016, 10, 7));
+            BasicTest("who did I email few month ago", new DateObject(2016, 8, 7));
+            BasicTest("who did I email a few day ago", new DateObject(2016, 11, 4));
         }
 
         [TestMethod]
@@ -161,7 +167,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I went back two days ago", "2016-11-05");
             BasicTest("I went back two years ago", "2014-11-07");
 
-            BasicTest("I'll go back in two weeks", "2016-11-21");
             BasicTest("I'll go back two weeks from now", "2016-11-21");
 
             BasicTest("I'll go back next week on Friday", "2016-11-18");

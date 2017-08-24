@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
 
         public static readonly Regex AmPmDescRegex = new Regex(@"(ampm)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RangeUnitRegex = new Regex(@"\b(?<unit>años|año|meses|mes|semanas|semana)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 
         Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
@@ -30,6 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Utilities
         Regex IDateTimeUtilityConfiguration.PmDescRegex => PmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
 
     }
 }

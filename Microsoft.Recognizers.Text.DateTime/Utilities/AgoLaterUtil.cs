@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -27,20 +28,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
-                    if (er.Start != null && er.Length != null && (int)er.Start > index)
+                    // for range unit like "week, month, year", it should output dateRange or datetimeRange
+                    if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
                     {
-                        ret.Add(new Token((int)er.Start - index, (int)er.Start + (int)er.Length));
+                        if (er.Start != null && er.Length != null && (int) er.Start >= index)
+                        {
+                            ret.Add(new Token((int) er.Start - index, (int) er.Start + (int) er.Length));
+                        }
                     }
                 }
             }
             return ret;
         }
 
-        public static DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, 
+        public static DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, 
             System.DateTime referenceTime, 
             IExtractor durationExtractor,
-            IExtractor cardinalExtractor,
-            IParser numberParser,
+            IParser durationParser, 
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
@@ -50,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationRes = durationExtractor.Extract(text);
             if (durationRes.Count > 0)
             {
+                var pr = durationParser.Parse(durationRes[0]);
                 var match = unitRegex.Match(text);
                 if (match.Success)
                 {
@@ -62,31 +67,33 @@ namespace Microsoft.Recognizers.Text.DateTime
                             .Trim()
                             .ToLowerInvariant();
                     var srcUnit = match.Groups["unit"].Value.ToLowerInvariant();
-                    var numberStr =
-                        text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
 
-                    var er = cardinalExtractor.Extract(numberStr);
-                    if (er.Count != 0)
+                    if (pr.Value!=null)
                     {
-                        return GetAgoLaterResult(numberParser,
-                            er[0],
-                            unitMap,
-                            srcUnit,
-                            afterStr,
-                            beforeStr,
-                            referenceTime,
-                            utilityConfiguration,
-                            mode);
+                        var durationResult = (DateTimeResolutionResult)pr.Value;
+                        var numStr = durationResult.Timex.Substring(0, durationResult.Timex.Length - 1)
+                            .Replace("P", "")
+                            .Replace("T", "");
+
+                        double number = 0;
+                        if (double.TryParse(numStr, out number))
+                        {
+                            return GetAgoLaterResult(number,
+                                unitMap,
+                                srcUnit,
+                                afterStr,
+                                beforeStr,
+                                referenceTime,
+                                utilityConfiguration,
+                                mode);
+                        }
                     }
                 }
             }
             return ret;
         }
 
-        private static DateTimeResolutionResult GetAgoLaterResult(IParser numberParser,
-            ExtractResult er,
+        private static DateTimeResolutionResult GetAgoLaterResult(double number,
             IImmutableDictionary<string, string> unitMap,
             string srcUnit,
             string afterStr,
@@ -96,13 +103,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             AgoLaterMode mode)
         {
             var ret = new DateTimeResolutionResult();
-            var pr = numberParser.Parse(er);
-
-            var number = int.Parse(pr.ResolutionStr);
+ 
             if (unitMap.ContainsKey(srcUnit))
             {
                 var unitStr = unitMap[srcUnit];
-                var numStr = number.ToString();
+                var numStr = number.ToString(CultureInfo.InvariantCulture);
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
                 {
                     if (mode.Equals(AgoLaterMode.Date))

@@ -68,6 +68,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("I'll be out between 4 and 22 this month", 12, 27);
             BasicTest("I'll be out between 3 and 12 of Sept hahaha", 12, 24);
             BasicTest("I'll be out between september 4th through september 8th", 12, 43);
+            BasicTest("I'll be out between November 15th through 19th", 12, 34);
+            BasicTest("I'll be out between November 15th through the 19th", 12, 38);
+            BasicTest("I'll be out between November the 15th through 19th", 12, 38);
             BasicTest("I'll be out between 4 and 22 this month", 12, 27);
             BasicTest("I'll be out from 4 to 22 January, 2017", 12, 26);
             BasicTest("I'll be out between 4-22 January, 2017", 12, 26);
@@ -82,13 +85,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
             BasicTest("I'll be out this weekend", 12, 12);
             BasicTest("I'll be out the third week of this month", 12, 28);
             BasicTest("I'll be out the last week of july", 12, 21);
+        }
 
+        [TestMethod]
+        public void TestDatePeriodExtractDuration()
+        {
             BasicTest("I'll be out next 3 days", 12, 11);
             BasicTest("I'll be out next 3 months", 12, 13);
             BasicTest("I'll be out in 3 year", 12, 9);
+            BasicTest("I'll be out in 3 years", 12, 10);
+            BasicTest("I'll be out in 3 weeks", 12, 10);
+            BasicTest("I'll be out in 3 months", 12, 11);
             BasicTest("I'll be out past 3 weeks", 12, 12);
             BasicTest("I'll be out last 3year", 12, 10);
+            BasicTest("I'll be out last year", 12, 9);
+            BasicTest("I'll be out past month", 12, 10);
             BasicTest("I'll be out previous 3 weeks", 12, 16);
+
+            BasicTest("past few weeks", 0, 14);
+            BasicTest("past several days", 0, 17);
         }
 
         [TestMethod]

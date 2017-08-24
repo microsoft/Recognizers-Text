@@ -312,12 +312,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         // handle like "two hours ago" 
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
-            return AgoLaterUtil.ParserDurationWithAgoAndLater(
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(
                 text,
                 referenceTime,
                 config.DurationExtractor,
-                config.CardinalExtractor,
-                config.NumberParser,
+                config.DurationParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,

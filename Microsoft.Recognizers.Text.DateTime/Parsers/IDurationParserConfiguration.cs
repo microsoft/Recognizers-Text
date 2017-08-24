@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ConjunctionRegex { get; }
 
+        Regex InExactNumberRegex { get; }
+
+        Regex InExactNumberUnitRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, long> UnitValueMap { get; }

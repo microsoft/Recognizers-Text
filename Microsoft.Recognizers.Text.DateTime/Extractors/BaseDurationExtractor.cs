@@ -57,18 +57,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "3hrs"
-            var matches = this.config.NumberCombinedWithUnit.Matches(text);
-            foreach (Match match in matches)
-            {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
+            ret.AddRange(GetTokenFromRegex(config.NumberCombinedWithUnit, text));
 
             // handle "an hour"
-            matches = this.config.AnUnitRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
+            ret.AddRange(GetTokenFromRegex(config.AnUnitRegex, text));
+
+            // handle "few" related cases
+            ret.AddRange(GetTokenFromRegex(config.InExactNumberUnitRegex, text));
 
             return ret;
         }
