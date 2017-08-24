@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserDurationWithAgoAndLater(er.Text, referenceDate);
+                    innerResult = ParseDurationWithAgoAndLater(er.Text, referenceDate);
                 }
 
                 if (innerResult.Success)
@@ -305,14 +305,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle like "two days ago" 
-        private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
-            return AgoLaterUtil.ParserDurationWithAgoAndLater(
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(
                 text,
                 referenceDate,
                 config.DurationExtractor,
-                config.CardinalExtractor,
-                config.NumberParser,
+                config.DurationParser,
                 config.UnitMap,
                 config.UnitRegex,
                 config.UtilityConfiguration,

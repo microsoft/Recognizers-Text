@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
-using Microsoft.Recognizers.Resources.English;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -44,13 +44,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.ThisRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.LastRegex,
+        public static readonly Regex LastDateRegex = new Regex(DateTimeDefinitions.LastDateRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.NextRegex,
+        public static readonly Regex NextDateRegex = new Regex(DateTimeDefinitions.NextDateRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex,
+        public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDayRegex =
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex[] ImplicitDateList =
         {
-            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
             StrictWeekDay, WeekDayOfMonthRegex, SpecialDate
         };
 
@@ -125,9 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthEnd = new Regex(DateTimeDefinitions.MonthEnd,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex NonDateUnitRegex = new Regex(DateTimeDefinitions.NonDateUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishDateExtractorConfiguration()
@@ -157,6 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
-        Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
+        Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
     }
 }

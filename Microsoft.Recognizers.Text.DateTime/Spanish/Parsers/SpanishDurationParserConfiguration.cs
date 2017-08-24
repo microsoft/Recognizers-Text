@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex ConjunctionRegex { get; }
 
+        public Regex InExactNumberRegex { get; }
+
+        public Regex InExactNumberUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -43,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DoubleNumbers = config.DoubleNumbers;
             FollowedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
             ConjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
+            InExactNumberRegex = SpanishDurationExtractorConfiguration.InExactNumberRegex;
+            InExactNumberUnitRegex = SpanishDurationExtractorConfiguration.InExactNumberUnitRegex;
         }
     }
 }

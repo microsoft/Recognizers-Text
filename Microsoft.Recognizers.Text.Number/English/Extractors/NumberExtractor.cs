@@ -1,4 +1,4 @@
-﻿using Microsoft.Recognizers.Resources.English;
+﻿using Microsoft.Recognizers.Definitions.English;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 

@@ -107,16 +107,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var er in durationEr)
             {
-                var match = config.NonDateUnitRegex.Match(er.Text);
+                var match = config.DateUnitRegex.Match(er.Text);
                 if (match.Success)
                 {
-                    continue;
+                    ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
+                        er,
+                        ret,
+                        config.UtilityConfiguration);
                 }
-
-                ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                    er,
-                    ret,
-                    config.UtilityConfiguration);
             }
 
             return ret;

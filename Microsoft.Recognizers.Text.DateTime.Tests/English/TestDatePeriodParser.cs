@@ -72,12 +72,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out between 3 and 12 of Sept hahaha", 3, 12, 9, year + 1);
             BasicTestFuture("I'll be out from 4 to 22 January, 1995", 4, 22, 1, 1995);
             BasicTestFuture("I'll be out between 4-22 January, 1995", 4, 22, 1, 1995);
-
             BasicTestFuture("I'll be out between september 4th through september 8th", 4, 8, 9, year+1);
 
             if (inclusiveEnd)
             {
-                BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 13, month, year);
                 BasicTestFuture("I'll be out on current week", 7, 13, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 2, 28);
@@ -91,7 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             }
             else
             {
-                BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
                 BasicTestFuture("I'll be out on this week", 7, 14, month, year);
                 BasicTestFuture("I'll be out on current week", 7, 14, month, year);
                 BasicTestFuture("I'll be out February", year + 1, 2, 1, year + 1, 3, 1);
@@ -103,19 +100,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("week of september.16th", 11, 18, 9, year + 1);
                 BasicTestFuture("month of september.16th", year + 1, 9, 1, year + 1, 10, 1);
             }
-
-            // test merging two time points
-            BasicTestFuture("I'll be out Oct. 2 to October 22", 2, 22, 10, year + 1);
-            BasicTestFuture("I'll be out January 12, 2016 - 01/22/2016", 12, 22, 1, year);
-            BasicTestFuture("I'll be out 1st Jan until Wed, 22 of Jan", 1, 22, 1, year + 1);
-            BasicTestFuture("I'll be out today till tomorrow", 7, 8, month, year);
-
-            BasicTestFuture("I'll be out from Oct. 2 to October 22", 2, 22, 10, year + 1);
-            BasicTestFuture("I'll be out between Oct. 2 and October 22", 2, 22, 10, year + 1);
-
-            BasicTestFuture("I'll be out November 19-20", 19, 20, 11, year);
-            BasicTestFuture("I'll be out November 19 to 20", 19, 20, 11, year);
-            BasicTestFuture("I'll be out November between 19 and 20", 19, 20, 11, year);
 
             if (inclusiveEnd)
             {
@@ -132,6 +116,45 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("I'll be out 3/2015", 2015, 3, 1, 2015, 4, 1);
             }
 
+        }
+
+        [TestMethod]
+        public void TestDatePeriodParseDuration()
+        {
+            int year = 2016, month = 11;
+            bool inclusiveEnd = parser.GetInclusiveEndPeriodFlag();
+
+            if (inclusiveEnd)
+            {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
+                BasicTestFuture("next 2 days", 8, 9, month, year);
+                BasicTestFuture("past few days", 4, 6, month, year);
+            }
+            else
+            {
+                BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
+                BasicTestFuture("next 2 days", 8, 10, month, year);
+                BasicTestFuture("past few days", 4, 7, month, year);
+            }
+        }
+
+        [TestMethod]
+        public void TestDatePeriodMergeTwoTimepoints()
+        {
+            int year = 2016, month = 11;
+
+            // test merging two time points
+            BasicTestFuture("I'll be out Oct. 2 to October 22", 2, 22, 10, year + 1);
+            BasicTestFuture("I'll be out January 12, 2016 - 01/22/2016", 12, 22, 1, year);
+            BasicTestFuture("I'll be out 1st Jan until Wed, 22 of Jan", 1, 22, 1, year + 1);
+            BasicTestFuture("I'll be out today till tomorrow", 7, 8, month, year);
+
+            BasicTestFuture("I'll be out from Oct. 2 to October 22", 2, 22, 10, year + 1);
+            BasicTestFuture("I'll be out between Oct. 2 and October 22", 2, 22, 10, year + 1);
+
+            BasicTestFuture("I'll be out November 19-20", 19, 20, 11, year);
+            BasicTestFuture("I'll be out November 19 to 20", 19, 20, 11, year);
+            BasicTestFuture("I'll be out November between 19 and 20", 19, 20, 11, year);
         }
 
         [TestMethod]
@@ -157,7 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be out next 3 days", "(2016-11-08,2016-11-11,P3D)");
             BasicTest("I'll be out next 3 months", "(2016-11-08,2017-02-08,P3M)");
-            BasicTest("I'll be out in 3 year", "(2016-11-08,2019-11-08,P3Y)");
+            BasicTest("I'll be out in 3 year", "(2018-11-08,2019-11-08,P1Y)");
             BasicTest("I'll be out past 3 weeks", "(2016-10-17,2016-11-07,P3W)");
             BasicTest("I'll be out last 3year", "(2013-11-07,2016-11-07,P3Y)");
             BasicTest("I'll be out previous 3 weeks", "(2016-10-17,2016-11-07,P3W)");

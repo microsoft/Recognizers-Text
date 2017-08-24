@@ -19,15 +19,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NumberCombinedWithUnit { get; }
 
-        Regex UnitRegex { get; }
+        Regex TimeUnitRegex { get; }
 
-        Regex PastRegex { get; }
+        Regex PastPrefixRegex { get; }
 
-        Regex FutureRegex { get; }
+        Regex NextPrefixRegex { get; }
 
         Regex WeekDayRegex { get; }
 
         Regex PeriodTimeOfDayWithDateRegex { get; }
+
+        Regex RelativeTimeUnitRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 
@@ -36,7 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor SingleTimeExtractor { get; }
 
         IExtractor SingleDateTimeExtractor { get; }
-        
+
+        IExtractor DurationExtractor { get; }
+
         bool GetFromTokenIndex(string text, out int index);
 
         bool HasConnectorToken(string text);

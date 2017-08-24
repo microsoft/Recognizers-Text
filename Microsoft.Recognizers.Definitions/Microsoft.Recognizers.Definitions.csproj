@@ -7,8 +7,8 @@
     <ProjectGuid>{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Recognizers.Resources</RootNamespace>
-    <AssemblyName>Microsoft.Recognizers.Resources</AssemblyName>
+    <RootNamespace>Microsoft.Recognizers.Definitions</RootNamespace>
+    <AssemblyName>Microsoft.Recognizers.Definitions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -96,9 +96,9 @@
     <None Include="CommonDefinitions.ttinclude" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Resources.Common\Microsoft.Recognizers.Resources.Common.csproj">
+    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj">
       <Project>{60aaec39-306f-441b-8719-5e0a3a823568}</Project>
-      <Name>Microsoft.Recognizers.Resources.Common</Name>
+      <Name>Microsoft.Recognizers.Definitions.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

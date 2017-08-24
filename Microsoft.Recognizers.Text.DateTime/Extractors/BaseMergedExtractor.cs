@@ -99,11 +99,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             index = -1;
             var match = regex.Match(text);
-            if (match.Success)
+            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index+match.Length)))
             {
                 index = match.Index;
+                return true;
             }
-            return match.Success;
+            return false;
         }
     }
 }

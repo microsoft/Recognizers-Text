@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Resources.English;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeParser DateParser { get; }
@@ -21,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeParser TimeParser { get; }
 
         public IDateTimeParser DateTimeParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public Regex PureNumberFromToRegex { get; }
 
@@ -40,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex PeriodTimeOfDayWithDateRegex { get; }
 
+        public Regex RelativeTimeUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -50,19 +56,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
             CardinalExtractor = config.CardinalExtractor;
+            DurationExtractor = config.DurationExtractor;
             NumberParser = config.NumberParser;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = EnglishDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = EnglishDatePeriodExtractorConfiguration.PastRegex;
-            FutureRegex = EnglishDatePeriodExtractorConfiguration.FutureRegex;
+            PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnitRegex = EnglishDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.TimePeriodTimeOfDayWithDateRegex;
+            PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
+            RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

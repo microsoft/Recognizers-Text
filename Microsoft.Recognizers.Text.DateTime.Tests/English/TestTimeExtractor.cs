@@ -99,6 +99,32 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestTimeDescExtract()
+        {
+            BasicTest("I'll be back 7pm", 13, 3);
+            BasicTest("I'll be back 7 p m", 13, 5);
+            BasicTest("I'll be back 7 p. m", 13, 6);
+            BasicTest("I'll be back 7 p. m.", 13, 7);
+            BasicTest("I'll be back 7p.m.", 13, 5);
+            BasicTest("I'll be back 7 p.m.", 13, 6);
+            BasicTest("I'll be back 7:56 a m", 13, 8);
+            BasicTest("I'll be back 7:56:35 a. m", 13, 12);
+            BasicTest("I'll be back 7:56:35 am", 13, 10);
+            BasicTest("I'll be back 7:56:35 a. m.", 13, 13);
+
+            BasicTest("I'll go back seven thirty pm", 13, 15);
+            BasicTest("I'll go back seven thirty p.m.", 13, 17);
+            BasicTest("I'll go back seven thirty p m", 13, 16);
+            BasicTest("I'll go back seven thirty p. m", 13, 17);
+            BasicTest("I'll go back seven thirty p. m.", 13, 18);
+
+            BasicTest("I'll be back 340pm", 13, 5);
+            BasicTest("I'll be back 340 pm", 13, 6);
+            BasicTest("I'll be back 1140 a.m.", 13, 9);
+            BasicTest("I'll be back 1140 a m", 13, 8);
+        }
+
+        [TestMethod]
         public void TestDatePeriodExtractNegativeCase()
         {
 

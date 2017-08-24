@@ -18,6 +18,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ConjunctionRegex { get; }
 
+        Regex InExactNumberRegex { get; }
+
+        Regex InExactNumberUnitRegex { get; }
+
         IExtractor CardinalExtractor { get; }
     }
 }

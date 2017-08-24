@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex($@"(?<msuf>(en\s+|del\s+|de\s+)?({RelativeMonthRegex}|{EngMonthRegex}))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\b",
+        public static readonly Regex DateUnitRegex = new Regex(@"(?<unit>años|año|meses|mes|semanas|semana|d[ií]a(s)?)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(@"(?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)",
@@ -95,11 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(?<woy>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?)\s+semana(\s+del?)?\s+({
                     YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
+        public static readonly Regex FollowedDateUnit = new Regex($@"^\s*{DateUnitRegex}",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithDateUnit =
+            new Regex($@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex QuarterRegex =
             new Regex(
@@ -134,6 +134,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 $@"(mes)(\s*)((do|da|de))",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this two regex
+        public static readonly Regex RangeUnitRegex =
+            new Regex(
+                @"\b(?<unit>años|año|meses|mes|semanas|semana)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex InConnectorRegex =
+            new Regex(
+                @"\b(in)\b",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -159,19 +170,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             CardinalExtractor = new CardinalExtractor();
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }
 
         public IExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 
-        Regex IDatePeriodExtractorConfiguration.FollowedUnit => FollowedUnit;
+        Regex IDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
-        Regex IDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
+        Regex IDatePeriodExtractorConfiguration.FollowedDateUnit => FollowedDateUnit;
+
+        Regex IDatePeriodExtractorConfiguration.NumberCombinedWithDateUnit => NumberCombinedWithDateUnit;
 
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
@@ -180,6 +196,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
 
         Regex IDatePeriodExtractorConfiguration.MonthOfRegex => MonthOfRegex;
+
+        Regex IDatePeriodExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
+
+        Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

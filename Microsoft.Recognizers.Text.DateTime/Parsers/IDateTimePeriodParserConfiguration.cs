@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor DateTimeExtractor { get; }
 
+        IExtractor DurationExtractor { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IParser NumberParser { get; }
@@ -20,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeParser { get; }
 
         IDateTimeParser DateTimeParser { get; }
+
+        IDateTimeParser DurationParser { get; }
 
         Regex PureNumberFromToRegex { get; }
 
@@ -38,6 +42,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UnitRegex { get; }
 
         Regex PeriodTimeOfDayWithDateRegex { get; }
+
+        Regex RelativeTimeUnitRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

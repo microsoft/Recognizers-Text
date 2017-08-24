@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
                 var match = this.config.EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
+                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }

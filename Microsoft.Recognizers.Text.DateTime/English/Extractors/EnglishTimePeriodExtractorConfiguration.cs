@@ -1,10 +1,9 @@
 ﻿using System;
-
-using Microsoft.Recognizers.Resources.English;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -62,12 +61,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishTimePeriodExtractorConfiguration()
         {

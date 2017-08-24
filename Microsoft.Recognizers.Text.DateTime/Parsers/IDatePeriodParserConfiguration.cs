@@ -13,6 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IParser NumberParser { get; }
 
+        IExtractor DurationExtractor { get; }
+
+        IDateTimeParser DurationParser { get; }
+
         IDateTimeParser DateParser { get; }
 
         Regex MonthFrontBetweenRegex { get; }
