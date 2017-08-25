@@ -20,6 +20,7 @@ import {
     BaseDateParserConfiguration,
     ITimeParserConfiguration,
     ICommonDateTimeParserConfiguration,
+    IDateParserConfiguration,
     BaseTimeParser,
     IDateTimeParser,
     ITimePeriodParserConfiguration
@@ -29,7 +30,8 @@ import {
     EnglishIntegerExtractor,
     EnglishOrdinalExtractor
 } from "../../number/english/extractors";
-import { BaseNumberParser } from "../../number/parsers";
+import { BaseNumberParser, IParser } from "../../number/parsers";
+import { IExtractor } from "../../number/extractors";
 import { IExtractor } from "../../number/extractors";
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration";
 import { CultureInfo, Culture } from "../../culture";
@@ -71,7 +73,7 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         // this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-        this.dayOfMonth = Object.assign({}, BaseDateTime.DayOfMonthDictionary, EnglishDateTime.DayOfMonth);
+        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
     }
 }
 
@@ -259,5 +261,103 @@ export class EnglishTimeParser extends BaseTimeParser {
         }
 
         return ret;
+    }
+}
+
+export class EnglishDateParserConfiguration implements IDateParserConfiguration {
+    readonly ordinalExtractor: IExtractor
+    readonly integerExtractor: IExtractor
+    readonly cardinalExtractor: IExtractor
+    readonly durationExtractor: IExtractor
+    readonly numberParser: IParser
+    readonly monthOfYear: ReadonlyMap<string, number>
+    readonly dayOfMonth: ReadonlyMap<string, number>
+    readonly dayOfWeek: ReadonlyMap<string, number>
+    readonly unitMap: ReadonlyMap<string, string>
+    readonly cardinalMap: ReadonlyMap<string, number>
+    readonly dateRegex: RegExp[]
+    readonly onRegex: RegExp
+    readonly specialDayRegex: RegExp
+    readonly nextRegex: RegExp
+    readonly unitRegex: RegExp
+    readonly monthRegex: RegExp
+    readonly strictWeekDay: RegExp
+    readonly lastRegex: RegExp
+    readonly thisRegex: RegExp
+    readonly weekDayOfMonthRegex: RegExp
+    readonly utilityConfiguration: IDateTimeUtilityConfiguration
+    readonly dateTokenPrefix: string
+
+    constructor(config: ICommonDateTimeParserConfiguration) {
+        this.ordinalExtractor = config.ordinalExtractor;
+        this.integerExtractor = config.integerExtractor;
+        this.cardinalExtractor = config.cardinalExtractor;
+        this.durationExtractor = config.durationExtractor;
+        this.numberParser = config.numberParser;
+        this.monthOfYear = config.monthOfYear;
+        this.dayOfMonth = config.dayOfMonth;
+        this.dayOfWeek = config.dayOfWeek;
+        this.unitMap = config.unitMap;
+        this.cardinalMap = config.cardinalMap;
+        this.dateRegex = [
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor1, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor2, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor3, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor4, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor5, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor6, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor7, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor8, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractor9, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.DateExtractorA, "gis"),
+        ];
+        this.onRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex, "gis");
+        this.specialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex, "gis");
+        this.nextRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextRegex, "gis");
+        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnitRegex, "gis");
+        this.monthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex, "gis");
+        this.strictWeekDay = RegExpUtility.getSafeRegExp(EnglishDateTime.StrictWeekDay, "gis");
+        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastRegex, "gis");
+        this.thisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis");
+        this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis");
+        this.utilityConfiguration = config.utilityConfiguration;
+        this.dateTokenPrefix = EnglishDateTime.DateTokenPrefix;
+    }
+
+    getSwiftDay(source: string):number {
+        let trimedText = source.trim().toLowerCase();
+        let swift = 0;
+        if (trimedText === "today" || trimedText === "the day") {
+            swift = 0;
+        } else if (trimedText === "tomorrow" || trimedText === "tmr" ||
+                    trimedText === "next day" || trimedText === "the next day") {
+            swift = 1;
+        } else if (trimedText === "yesterday") {
+            swift = -1;
+        } else if (trimedText.endsWith("day after tomorrow") ||
+                    trimedText.endsWith("day after tmr")) {
+            swift = 2;
+        } else if (trimedText.endsWith("day before yesterday")) {
+            swift = -2;
+        } else if (trimedText.endsWith("last day")) {
+            swift = -1;
+        }
+        return swift;
+    }
+
+    getSwiftMonth(source: string): number {
+        let trimedText = source.trim().toLowerCase();
+        let swift = 0;
+        if (trimedText.startsWith("next") || trimedText.startsWith("upcoming")) {
+            swift = 1;
+        } else if (trimedText.startsWith("last")) {
+            swift = -1;
+        }
+        return swift;
+    }
+
+    isCardinalLast(source: string): boolean {
+        let trimedText = source.trim().toLowerCase();
+        return trimedText === "last";
     }
 }

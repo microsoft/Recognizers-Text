@@ -36,8 +36,12 @@ export function isNullOrWhitespace(input: string): boolean {
     return !input || !input.trim();
 }
 
+export function isNullOrEmpty(input: string): boolean {
+    return !input || input === '';
+}
+
 export function isWhitespace(input: string): boolean {
-    return input && !input.trim();
+    return input && input !== '' && !input.trim();
 }
 
 export interface Match {
