@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish
@@ -9,7 +10,21 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        public CardinalExtractor(string placeholder = @"\D|\b")
+        private static readonly Dictionary<string, CardinalExtractor> Instances = new Dictionary<string, CardinalExtractor>();
+
+        public static CardinalExtractor GetInstance(string placeholder = @"\D|\b")
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new CardinalExtractor(placeholder);
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private CardinalExtractor(string placeholder = @"\D|\b")
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

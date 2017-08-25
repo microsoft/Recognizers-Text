@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDatePeriodExtractorConfiguration()
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }
 

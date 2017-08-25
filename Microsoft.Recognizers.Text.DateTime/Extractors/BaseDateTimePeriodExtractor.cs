@@ -111,10 +111,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return -1;
                 }
+
                 if (start1 == start2)
                 {
                     return 0;
                 }
+
                 return 1;
             });
 
@@ -136,6 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                 var match = this.config.TillRegex.Match(middleStr);
+
                 // handle "{TimePoint} to {TimePoint}"
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
