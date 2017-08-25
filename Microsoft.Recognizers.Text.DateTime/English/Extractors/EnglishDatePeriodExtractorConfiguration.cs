@@ -221,7 +221,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
+            var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
+            return match.Success && match.Length == text.Trim().Length;
         }
     }
 }

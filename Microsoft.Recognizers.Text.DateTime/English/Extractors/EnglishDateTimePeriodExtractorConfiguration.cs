@@ -82,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor DurationExtractor { get; }
 
+        //TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
@@ -106,7 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public bool HasConnectorToken(string text)
         {
-            return Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex).Success;
+            var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
+            return match.Success && match.Length == text.Trim().Length;
         }
     }
 }

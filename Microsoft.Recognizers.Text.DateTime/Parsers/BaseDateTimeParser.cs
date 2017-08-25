@@ -192,8 +192,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 //ret.Timex += "ampm";
                 ret.Comment = "ampm";
             }
-            ret.FutureValue = new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
-            ret.PastValue = new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+            ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
+            ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;
 
             return ret;
@@ -277,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = "T" + hour.ToString("D2") + timeStr.Substring(3);
 
                 ret.Timex = FormatUtil.FormatDate(date) + timeStr;
-                ret.FutureValue = ret.PastValue = new DateObject(date.Year, date.Month, date.Day, hour, min, sec);
+                ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, date.Day, hour, min, sec);
                 ret.Success = true;
                 return ret;
             }

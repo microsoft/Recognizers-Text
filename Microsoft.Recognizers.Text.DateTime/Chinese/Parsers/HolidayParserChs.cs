@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (hasYear)
                 {
                     ret.Timex = year.ToString("D4") + timexStr;
-                    ret.FutureValue = ret.PastValue = new DateObject(year, value.Month, value.Day);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;
                 }
@@ -286,64 +286,64 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static DateObject GetMothersDayOfYear(int year)
         {
-            return new DateObject(year, 5, (from day in Enumerable.Range(1, 31)
-                where new DateObject(year, 5, day).DayOfWeek == DayOfWeek.Sunday
+            return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 5, day).DayOfWeek == DayOfWeek.Sunday
                 select day).ElementAt(1));
         }
 
         private static DateObject GetFathersDayOfYear(int year)
         {
-            return new DateObject(year, 6, (from day in Enumerable.Range(1, 30)
-                where new DateObject(year, 6, day).DayOfWeek == DayOfWeek.Sunday
+            return DateObject.MinValue.SafeCreateFromValue(year, 6, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 6, day).DayOfWeek == DayOfWeek.Sunday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetMartinLutherKingDayOfYear(int year)
         {
-            return new DateObject(year, 1, (from day in Enumerable.Range(1, 31)
-                where new DateObject(year, 1, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 1, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 1, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetWashingtonsBirthdayOfYear(int year)
         {
-            return new DateObject(year, 2, (from day in Enumerable.Range(1, 29)
-                where new DateObject(year, 2, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 2, (from day in Enumerable.Range(1, 29)
+                where DateObject.MinValue.SafeCreateFromValue(year, 2, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(2));
         }
 
         private static DateObject GetCanberraDayOfYear(int year)
         {
-            return new DateObject(year, 3, (from day in Enumerable.Range(1, 31)
-                where new DateObject(year, 3, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 3, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 3, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(0));
         }
 
         private static DateObject GetMemorialDayOfYear(int year)
         {
-            return new DateObject(year, 5, (from day in Enumerable.Range(1, 31)
-                where new DateObject(year, 5, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 5, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 5, day).DayOfWeek == DayOfWeek.Monday
                 select day).Last());
         }
 
         private static DateObject GetLabourDayOfYear(int year)
         {
-            return new DateObject(year, 9, (from day in Enumerable.Range(1, 30)
-                where new DateObject(year, 9, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 9, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 9, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(0));
         }
 
         private static DateObject GetColumbusDayOfYear(int year)
         {
-            return new DateObject(year, 10, (from day in Enumerable.Range(1, 31)
-                where new DateObject(year, 10, day).DayOfWeek == DayOfWeek.Monday
+            return DateObject.MinValue.SafeCreateFromValue(year, 10, (from day in Enumerable.Range(1, 31)
+                where DateObject.MinValue.SafeCreateFromValue(year, 10, day).DayOfWeek == DayOfWeek.Monday
                 select day).ElementAt(1));
         }
 
         private static DateObject GetThanksgivingDayOfYear(int year)
         {
-            return new DateObject(year, 11, (from day in Enumerable.Range(1, 30)
-                where new DateObject(year, 11, day).DayOfWeek == DayOfWeek.Thursday
+            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
+                where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
                 select day).ElementAt(3));
         }
 

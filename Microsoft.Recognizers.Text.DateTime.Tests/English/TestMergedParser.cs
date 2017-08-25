@@ -67,8 +67,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
         }
 
         [TestMethod]
+        public void TestMergedParseInvalidDatetime()
+        {
+            BasicTest("2016-2-30", Constants.SYS_DATETIME_DATE);
+            //only 2015-1 is extracted
+            BasicTest("2015-1-32", Constants.SYS_DATETIME_DATEPERIOD);
+            //only 2017 is extracted
+            BasicTest("2017-13-12", Constants.SYS_DATETIME_DATEPERIOD);
+        }
+
+        [TestMethod]
         public void TestMergedParseWithTwoResults()
         {
+            BasicTestWithTwoResults("Change July 22nd meeting in Bellevue to August 22nd", Constants.SYS_DATETIME_DATE,
+                Constants.SYS_DATETIME_DATE);
             BasicTestWithTwoResults("on Friday for 3 in Bellevue in the afternoon", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_TIMEPERIOD);
         }
