@@ -110,6 +110,14 @@ export class MatchingUtil {
         }
         return result;
     }
+
+    static containsAgoLaterIndex(source: string, regex: RegExp): boolean {
+        return this.getAgoLaterIndex(source, regex).matched;
+    }
+
+    static containsInIndex(source: string, regex: RegExp): boolean {
+        return this.getInIndex(source, regex).matched;
+    }
 }
 
 export class FormatUtil {
@@ -134,7 +142,7 @@ export class FormatUtil {
     }
 
     public static luisDateFromDate(date: Date): string {
-        return FormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDay());
+        return FormatUtil.luisDate(date.getFullYear(), date.getMonth(), date.getDate());
     }
 
     public static luisTime(hour: number, min: number, second: number): string {
@@ -217,5 +225,47 @@ export class DateTimeResolutionResult {
 
     constructor() {
         this.success = false;
+    }
+}
+
+export enum DayOfWeek {
+        Sunday = 0,
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 3,
+        Thursday = 4,
+        Friday = 5,
+        Saturday = 6
+}
+
+export class DateUtils {
+    static next(from: Date, dayOfWeek: DayOfWeek): Date {
+        let start = from.getDay();
+        let target = dayOfWeek;
+        if (start === 0) start = 7;
+        if (target === 0) target = 7;
+        let result = new Date(from);
+        result.setDate(from.getDate() + target - start + 7);
+        return result;
+    }
+
+    static this(from: Date, dayOfWeek: DayOfWeek): Date {
+        let start = from.getDay();
+        let target = dayOfWeek;
+        if (start === 0) start = 7;
+        if (target === 0) target = 7;
+        let result = new Date(from);
+        result.setDate(from.getDate() + target - start);
+        return result;
+    }
+
+    static last(from: Date, dayOfWeek: DayOfWeek): Date {
+        let start = from.getDay();
+        let target = dayOfWeek;
+        if (start === 0) start = 7;
+        if (target === 0) target = 7;
+        let result = new Date(from);
+        result.setDate(from.getDate() + target - start - 7);
+        return result;
     }
 }

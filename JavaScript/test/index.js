@@ -12,3 +12,4 @@ require('./holidayExtractor-english.test');
 require('./mergedExtractor-english.test');
 
 require('./timeParser-english.test');
+require('./dateParser-english.test');
