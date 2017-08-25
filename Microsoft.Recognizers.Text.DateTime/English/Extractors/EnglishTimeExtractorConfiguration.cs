@@ -131,6 +131,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.TimeRegex8,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
+            new Regex(DateTimeDefinitions.TimeRegex9,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
             // 340pm
             ConnectNumRegex
         };
