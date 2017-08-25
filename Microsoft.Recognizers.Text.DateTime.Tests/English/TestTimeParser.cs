@@ -28,6 +28,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestTimeParseWithTwoNumbers()
+        {
+            var today = DateObject.Today;
+            int year = today.Year, month = today.Month, day = today.Day, min = 0, second = 0;
+            BasicTest("set an alarm for eight forty", new DateObject(year, month, day, 8, 40, second));
+            BasicTest("set an alarm for eight forty am", new DateObject(year, month, day, 8, 40, second));
+            BasicTest("set an alarm for eight forty pm", new DateObject(year, month, day, 20, 40, second));
+            BasicTest("set an alarm for ten forty five", new DateObject(year, month, day, 10, 45, second));
+            BasicTest("set an alarm for fifteen fifteen p m", new DateObject(year, month, day, 15 , 15, second));
+            BasicTest("set an alarm for fifteen thirty p m", new DateObject(year, month, day, 15, 30, second));
+            BasicTest("set an alarm for ten ten", new DateObject(year, month, day, 10, 10, second));
+            BasicTest("set an alarm for ten fifty five p. m.", new DateObject(year, month, day, 22, 55, second));
+        }
+
+        [TestMethod]
         public void TestTimeParse()
         {
             var today = DateObject.Today;

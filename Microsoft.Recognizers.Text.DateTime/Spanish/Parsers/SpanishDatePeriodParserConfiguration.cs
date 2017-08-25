@@ -14,9 +14,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeParser DateParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         #endregion
 
@@ -83,7 +87,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TokenBeforeDate = "en ";
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DurationParser = config.DurationParser;
             DateParser = config.DateParser;
             MonthFrontBetweenRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = SpanishDatePeriodExtractorConfiguration.BetweenRegex;

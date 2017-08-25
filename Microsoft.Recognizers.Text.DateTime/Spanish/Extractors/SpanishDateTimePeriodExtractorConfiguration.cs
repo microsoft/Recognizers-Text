@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+            DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }
 
         public IExtractor CardinalExtractor { get; }
@@ -28,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IExtractor SingleTimeExtractor { get; }
 
         public IExtractor SingleDateTimeExtractor { get; }
+
+        public IExtractor DurationExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new Regex[] 
             {
@@ -45,19 +48,34 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex FollowedUnit => SpanishTimePeriodExtractorConfiguration.FollowedUnit;
 
-        public Regex UnitRegex => SpanishTimePeriodExtractorConfiguration.UnitRegex;
+        public Regex TimeUnitRegex => SpanishTimePeriodExtractorConfiguration.UnitRegex;
 
-        public Regex PastRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
+        public Regex PastPrefixRegex => SpanishDatePeriodExtractorConfiguration.PastRegex;
 
-        public Regex FutureRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
-
-        //TODO: add this
-        public Regex WeekDayRegex => new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public Regex NextPrefixRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
 
         //TODO: add this
-        public Regex PeriodTimeOfDayWithDateRegex => new Regex(@"\b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: add this
+        public static readonly Regex PeriodTimeOfDayWithDateRegex = new Regex(@"\b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: add this according to English
+        public static readonly Regex RelativeTimeUnitRegex =
+            new Regex(
+                $@"({SpanishDatePeriodExtractorConfiguration.PastRegex}|{
+                    SpanishDatePeriodExtractorConfiguration.FutureRegex})\s+{
+                    SpanishTimePeriodExtractorConfiguration.UnitRegex
+                    }",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
+
+        Regex IDateTimePeriodExtractorConfiguration.WeekDayRegex => WeekDayRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

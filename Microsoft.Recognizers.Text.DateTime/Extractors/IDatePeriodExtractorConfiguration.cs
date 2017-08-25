@@ -9,9 +9,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TillRegex { get; }
 
-        Regex FollowedUnit { get; }
+        Regex DateUnitRegex { get; }
 
-        Regex NumberCombinedWithUnit { get; }
+        Regex FollowedDateUnit { get; }
+
+        Regex NumberCombinedWithDateUnit { get; }
 
         Regex PastRegex { get; }
 
@@ -21,9 +23,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthOfRegex { get; }
 
+        Regex RangeUnitRegex { get; }
+
+        Regex InConnectorRegex { get; }
+
         IExtractor DatePointExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor DurationExtractor { get; }
 
         bool GetFromTokenIndex(string text, out int index);
 

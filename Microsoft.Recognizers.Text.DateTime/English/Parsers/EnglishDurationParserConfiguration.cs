@@ -23,6 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex ConjunctionRegex { get; }
 
+        public Regex InExactNumberRegex { get; }
+
+        public Regex InExactNumberUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -40,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SuffixAndRegex = EnglishDurationExtractorConfiguration.SuffixAndRegex;
             FollowedUnit = EnglishDurationExtractorConfiguration.DurationFollowedUnit;
             ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
+            InExactNumberRegex = EnglishDurationExtractorConfiguration.InExactNumberRegex;
+            InExactNumberUnitRegex = EnglishDurationExtractorConfiguration.InExactNumberUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

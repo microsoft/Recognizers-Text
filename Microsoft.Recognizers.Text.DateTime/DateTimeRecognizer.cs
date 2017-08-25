@@ -6,25 +6,29 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer
     {
-        public static readonly DateTimeRecognizer Instance = new DateTimeRecognizer();
-
-        private DateTimeRecognizer()
+        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
         {
+            return new DateTimeRecognizer(options);
+        }
+
+        private DateTimeRecognizer(DateTimeOptions options)
+        {
+
             var type = typeof(DateTimeModel);
 
             RegisterModel(Culture.English, type, new DateTimeModel(
                     new BaseMergedParser(new EnglishMergedParserConfiguration()),
-                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration())
+                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
                     ));
 
             RegisterModel(Culture.Chinese, type, new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
-                    new MergedExtractorChs()
+                    new MergedExtractorChs(options)
                     ));
 
             RegisterModel(Culture.Spanish, type, new DateTimeModel(
                     new BaseMergedParser(new SpanishMergedParserConfiguration()),
-                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration())
+                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
                     ));
         }
 
@@ -32,5 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return (DateTimeModel)GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
+  
     }
 }

@@ -91,6 +91,34 @@ namespace Microsoft.Recognizers.Text.DateTime
             var suffixStr = text;
             Match match;
 
+            if ((ret = ParseNumeberSpaceUnit(text)).Success)
+            {
+                return ret;
+            }
+            if ((ret = ParseNumeberCombinedUnit(text)).Success)
+            {
+                return ret;
+            }
+            if ((ret = ParseAnUnit(text)).Success)
+            {
+                return ret;
+            }
+            if ((ret = ParseInExactNumberUnit(text)).Success)
+            {
+                return ret;
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseNumeberSpaceUnit(string text)
+        {
+            var ret = new DateTimeResolutionResult();
+            double numVal = 0;
+            string numStr, unitStr;
+            var suffixStr = text;
+            Match match;
+
             // if there are spaces between nubmer and unit
             var ers = this.config.CardinalExtractor.Extract(text);
             if (ers.Count == 1)
@@ -121,6 +149,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseNumeberCombinedUnit(string text)
+        {
+            var ret = new DateTimeResolutionResult();
+            double numVal = 0;
+            string numStr, unitStr;
+            var suffixStr = text;
+            Match match;
 
             // if there are NO spaces between number and unit
             match = this.config.NumberCombinedWithUnit.Match(text);
@@ -146,6 +184,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseAnUnit(string text)
+        {
+            var ret = new DateTimeResolutionResult();
+            double numVal = 0;
+            string numStr, unitStr;
+            var suffixStr = text;
+            Match match;
 
             match = this.config.AnUnitRegex.Match(text);
             if (!match.Success)
@@ -155,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                numVal = match.Groups["half"].Success ? 0.5 : 1; 
+                numVal = match.Groups["half"].Success ? 0.5 : 1;
                 numVal += ParseNumberWithUnitAndSuffix(suffixStr);
                 numStr = numVal.ToString(CultureInfo.InvariantCulture);
 
@@ -172,6 +220,41 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseInExactNumberUnit(string text)
+        {
+            var ret = new DateTimeResolutionResult();
+            double numVal = 0;
+            string numStr, unitStr;
+            var suffixStr = text;
+            Match match;
+
+            match = config.InExactNumberUnitRegex.Match(text);
+            if (match.Success)
+            {
+                // set the inexact number "few", "some" to 3 for now
+                numVal = 3;
+                numStr = numVal.ToString(CultureInfo.InvariantCulture);
+
+                var srcUnit = match.Groups["unit"].Value.ToLower();
+                if (this.config.UnitMap.ContainsKey(srcUnit))
+                {
+                    unitStr = this.config.UnitMap[srcUnit];
+
+                    if ((double.Parse(numStr) > 1000) && (unitStr.Equals("Y") || unitStr.Equals("MON") || unitStr.Equals("W")))
+                    {
+                        return ret;
+                    }
+
+                    ret.Timex = "P" + (IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
+                    ret.FutureValue = ret.PastValue = double.Parse(numStr) * this.config.UnitValueMap[srcUnit];
+                    ret.Success = true;
+
+                    return ret;
+                }
+            }
             return ret;
         }
 

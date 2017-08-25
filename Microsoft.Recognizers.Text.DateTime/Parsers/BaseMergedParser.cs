@@ -10,6 +10,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         protected readonly IMergedParserConfiguration Config;
 
+        public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
+        public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
+
         public BaseMergedParser(IMergedParserConfiguration configuration)
         {
             Config = configuration;
@@ -89,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // pop, restore the MOD string
-            if (hasBefore)
+            if (hasBefore && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -99,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (hasAfter)
+            if (hasAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
@@ -142,6 +145,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter)
         {
+            if (slot == null)
+            {
+                return null;
+            }
             var resolutions = new List<Dictionary<string, string>>();
             var res = new Dictionary<string, object>();
 
@@ -187,7 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // if past and future are same, keep only one
             if (resolutionFuture.OrderBy(t => t.Key).Select(t => t.Value)
-                                                    .SequenceEqual(resolutionPast.OrderBy(t => t.Key).Select(t => t.Value)))
+                .SequenceEqual(resolutionPast.OrderBy(t => t.Key).Select(t => t.Value)))
             {
                 if (resolutionPast.Count > 0)
                 {
@@ -380,7 +387,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, 
             Dictionary<string, string> res)
         {
-            if (resolutionDic.ContainsKey(type))
+            if (resolutionDic.ContainsKey(type) 
+                && !resolutionDic[type].Equals(DateMinString)
+                && !resolutionDic[type].Equals(DateTimeMinString))
             {
                 if (!string.IsNullOrEmpty(mod))
                 {

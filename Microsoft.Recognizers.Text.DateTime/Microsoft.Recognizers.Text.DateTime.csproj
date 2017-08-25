@@ -66,6 +66,7 @@
     <Compile Include="Chinese\Parsers\TimeParserChs.cs" />
     <Compile Include="Chinese\Parsers\TimePeriodParserChs.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DateTimeOptions.cs" />
     <Compile Include="DateTimeRecognizer.cs" />
     <Compile Include="English\Extractors\EnglishDateExtractorConfiguration.cs" />
     <Compile Include="English\Extractors\EnglishDatePeriodExtractorConfiguration.cs" />

@@ -6,18 +6,19 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseMergedExtractor : IExtractor
     {
         private readonly IMergedExtractorConfiguration config;
+        private readonly DateTimeOptions options;
 
-        public BaseMergedExtractor(IMergedExtractorConfiguration config)
+        public BaseMergedExtractor(IMergedExtractorConfiguration config, DateTimeOptions options)
         {
             this.config = config;
+            this.options = options;
         }
 
         public List<ExtractResult> Extract(string text)
         {
-            var ret = new List<ExtractResult>();
 
             // the order is important, since there is a problem in merging
-            ret = this.config.DateExtractor.Extract(text);
+            var ret = this.config.DateExtractor.Extract(text);
             AddTo(ret, this.config.TimeExtractor.Extract(text));
             AddTo(ret, this.config.DurationExtractor.Extract(text));
             AddTo(ret, this.config.DatePeriodExtractor.Extract(text));
@@ -36,6 +37,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var result in src)
             {
+                if ((options & DateTimeOptions.SkipFromToMerge) != 0)
+                {
+                    if (ShouldSkipFromToMerge(result))
+                    {
+                        continue;
+                    }
+                }
+
                 var isFound = false;
                 int rmIndex = -1, rmLength = 1;
                 for (var i = 0; i < dst.Count; i++)
@@ -69,6 +78,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        private bool ShouldSkipFromToMerge(ExtractResult er) {
+            return config.FromToRegex.IsMatch(er.Text);
+        }
+
         private void AddMod(List<ExtractResult> ers, string text)
         {
             var lastEnd = 0;
@@ -99,11 +112,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             index = -1;
             var match = regex.Match(text);
-            if (match.Success)
+
+            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index+match.Length)))
             {
                 index = match.Index;
+                return true;
             }
-            return match.Success;
+
+            return false;
         }
     }
 }

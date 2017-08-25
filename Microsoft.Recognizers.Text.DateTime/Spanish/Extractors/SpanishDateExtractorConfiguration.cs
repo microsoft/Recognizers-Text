@@ -17,11 +17,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex DayRegex =
             new Regex(
-                @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)",
+                @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex =
-            new Regex(@"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)",
+            new Regex(@"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = new Regex(@"(?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)",
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex WeekDayRegex =
             new Regex(
-                @"(?<weekday>Domingo|Lunes|Martes|Mi[eé]rcoles|Jueves|Viernes|S[aá]bado|Lu|Ma|Mi|Ju|Vi|Sa|Do)",
+                @"(?<weekday>Domingo|Lunes|Martes|Mi[eé]rcoles|Jueves|Viernes|S[aá]bado|Lu|Ma|Mi|Ju|Vi|Sa|Do)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex OnRegex = new Regex($@"(?<=\ben\s+)({DayRegex}s?)\b",
@@ -43,11 +43,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex ThisRegex = new Regex($@"\b((este\s*){WeekDayRegex})|({WeekDayRegex}\s*((de\s+)?esta\s+semana))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex($@"\b(([uú]ltimo)\s*{WeekDayRegex})|({WeekDayRegex}(\s+((de\s+)?(esta|la)\s+([uú]ltima\s+)?semana)))\b",
+        public static readonly Regex LastDateRegex = new Regex($@"\b(([uú]ltimo)\s*{WeekDayRegex})|({WeekDayRegex}(\s+((de\s+)?(esta|la)\s+([uú]ltima\s+)?semana)))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: modify it according to the coresponding English regex
-        public static readonly Regex NextRegex = new Regex($@"\b(((pr[oó]ximo|siguiente)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?(la\s+)?(pr[oó]xima|siguiente)(\s*semana)))\b",
+        public static readonly Regex NextDateRegex = new Regex($@"\b(((pr[oó]ximo|siguiente)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?(la\s+)?(pr[oó]xima|siguiente)(\s*semana)))\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDayRegex =
@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 @"\b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a siguiente|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex =
+        public static readonly Regex DateUnitRegex =
             new Regex(
                 @"(?<unit>anos|ano|meses|mes|semanas|semana|d[íi]as|d[íi]a)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex[] ImplicitDateList =
         {
-            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+            OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
             StrictWeekDay, WeekDayOfMonthRegex, SpecialDate
         };
 
@@ -130,9 +130,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(el)?\s*$",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex NonDateUnitRegex = new Regex(@"(?<unit>horas|hora|hrs|segundos|segundo|secs|sec|minutos|minuto|mins)\b'",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDateExtractorConfiguration()
@@ -162,6 +159,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
-        Regex IDateExtractorConfiguration.NonDateUnitRegex => NonDateUnitRegex;
+        Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
     }
 }

@@ -40,7 +40,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseNumberWithUnit(er.Text, referenceTime);
+                    innerResult = ParseDuration(er.Text, referenceTime);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseRelativeUnit(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -203,12 +208,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = $"({beginStr},{endStr},PT{endHour - beginHour}H)";
 
                 ret.FutureValue = new Tuple<DateObject, DateObject>(
-                    new DateObject(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
-                    new DateObject(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
+                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(futureTime.Year, futureTime.Month, futureTime.Day, endHour, 0, 0));
 
                 ret.PastValue = new Tuple<DateObject, DateObject>(
-                    new DateObject(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
-                    new DateObject(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
+                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, beginHour, 0, 0),
+                    DateObject.MinValue.SafeCreateFromValue(pastTime.Year, pastTime.Month, pastTime.Day, endHour, 0, 0));
 
                 ret.Success = true;
 
@@ -305,10 +310,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (beginHasDate)
             {
-                futureEnd = new DateObject(futureBegin.Year, futureBegin.Month, futureBegin.Day,
+                futureEnd = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day,
                     futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
 
-                pastEnd = new DateObject(pastBegin.Year, pastBegin.Month, pastBegin.Day,
+                pastEnd = DateObject.MinValue.SafeCreateFromValue(pastBegin.Year, pastBegin.Month, pastBegin.Day,
                     pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
                 var dateStr = pr1.TimexStr.Split('T')[0];
@@ -317,10 +322,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (endHasDate)
             {
-                futureBegin = new DateObject(futureEnd.Year, futureEnd.Month, futureEnd.Day,
+                futureBegin = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day,
                     futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
 
-                pastBegin = new DateObject(pastEnd.Year, pastEnd.Month, pastEnd.Day,
+                pastBegin = DateObject.MinValue.SafeCreateFromValue(pastEnd.Year, pastEnd.Month, pastEnd.Day,
                     pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
                 var dateStr = pr2.TimexStr.Split('T')[0];
@@ -409,8 +414,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.FutureValue =
                     ret.PastValue =
-                        new Tuple<DateObject, DateObject>(new DateObject(year, month, day, beginHour, 0, 0),
-                            new DateObject(year, month, day, endHour, endMin, endMin));
+                        new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
+                            DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMin, endMin));
 
                 ret.Success = true;
                 return ret;
@@ -441,13 +446,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
-                        new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
-                        new DateObject(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin));
 
                 ret.PastValue =
                     new Tuple<DateObject, DateObject>(
-                        new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
-                        new DateObject(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
+                        DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
+                        DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin));
 
                 ret.Success = true;
 
@@ -457,230 +462,108 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        //TODO: this can be abstracted with the similar method in BaseDatePeriodParser
         // parse "in 20 minutes"
-        private DateTimeResolutionResult ParseNumberWithUnit(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseDuration(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            string numStr, unitStr;
 
-            // if there are spaces between nubmer and unit
-            var ers = this.Config.CardinalExtractor.Extract(text);
+            var ers = Config.DurationExtractor.Extract(text);
             if (ers.Count == 1)
             {
-                var pr = this.Config.NumberParser.Parse(ers[0]);
-                var srcUnit = text.Substring(ers[0].Start + ers[0].Length ?? 0).Trim().ToLower();
-                var beforeStr = text.Substring(0, ers[0].Start ?? 0).Trim().ToLowerInvariant();
-
-                if (this.Config.UnitMap.ContainsKey(srcUnit))
+                var pr = Config.DurationParser.Parse(ers[0]);
+                var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
+                if (pr.Value != null)
                 {
-                    numStr = pr.ResolutionStr;
-                    unitStr = this.Config.UnitMap[srcUnit];
-                    var prefixMatch = this.Config.PastRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    var swiftSeconds = 0;
+                    var durationResult = (DateTimeResolutionResult)pr.Value;
+                    if (durationResult.PastValue is double && durationResult.FutureValue is double)
                     {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime.AddHours(-(double) pr.Value);
-                                endDate = referenceTime;
-                                break;
-                            case "M":
-                                beginDate = referenceTime.AddMinutes(-(double) pr.Value);
-                                endDate = referenceTime;
-                                break;
-                            case "S":
-                                beginDate = referenceTime.AddSeconds(-(double) pr.Value);
-                                endDate = referenceTime;
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-                        return ret;
+                        swiftSeconds = (int)((double)durationResult.FutureValue);
                     }
 
-                    prefixMatch = this.Config.FutureRegex.Match(beforeStr);
+                    DateObject beginTime;
+                    var  endTime = beginTime = referenceTime;
+
+                    var prefixMatch = Config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddHours((double) pr.Value);
-                                break;
-                            case "M":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddMinutes((double) pr.Value);
-                                break;
-                            case "S":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddSeconds((double) pr.Value);
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-
-                        return ret;
+                        beginTime = referenceTime.AddSeconds(-swiftSeconds);
                     }
-                }
-            }
 
-            // if there are NO spaces between number and unit
-            var match = this.Config.NumberCombinedWithUnitRegex.Match(text);
-            if (match.Success)
-            {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
-                if (this.Config.UnitMap.ContainsKey(srcUnit))
-                {
-                    unitStr = this.Config.UnitMap[srcUnit];
-                    numStr = match.Groups["num"].Value;
-
-                    var prefixMatch = this.Config.PastRegex.Match(beforeStr);
+                    prefixMatch = Config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime.AddHours(-double.Parse(numStr));
-                                endDate = referenceTime;
-                                break;
-                            case "M":
-                                beginDate = referenceTime.AddMinutes(-double.Parse(numStr));
-                                endDate = referenceTime;
-                                break;
-                            case "S":
-                                beginDate = referenceTime.AddSeconds(-double.Parse(numStr));
-                                endDate = referenceTime;
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-
-                        return ret;
+                        endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
-                    prefixMatch = this.Config.FutureRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
-                    {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddHours(double.Parse(numStr));
-                                break;
-                            case "M":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddMinutes(double.Parse(numStr));
-                                break;
-                            case "S":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddSeconds(double.Parse(numStr));
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT{numStr}{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-
-                        return ret;
-                    }
-                }
-            }
-
-            // handle "last hour"
-            match = this.Config.UnitRegex.Match(text);
-            if (match.Success)
-            {
-                var srcUnit = match.Groups["unit"].Value.ToLower();
-                var beforeStr = text.Substring(0, match.Index).Trim().ToLowerInvariant();
-                if (this.Config.UnitMap.ContainsKey(srcUnit))
-                {
-                    unitStr = this.Config.UnitMap[srcUnit];
-                    var prefixMatch = this.Config.PastRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
-                    {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime.AddHours(-1);
-                                endDate = referenceTime;
-                                break;
-                            case "M":
-                                beginDate = referenceTime.AddMinutes(-1);
-                                endDate = referenceTime;
-                                break;
-                            case "S":
-                                beginDate = referenceTime.AddSeconds(-1);
-                                endDate = referenceTime;
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT1{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-
-                        return ret;
-                    }
-
-                    prefixMatch = this.Config.FutureRegex.Match(beforeStr);
-                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
-                    {
-                        DateObject beginDate, endDate;
-                        switch (unitStr)
-                        {
-                            case "H":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddHours(1);
-                                break;
-                            case "M":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddMinutes(1);
-                                break;
-                            case "S":
-                                beginDate = referenceTime;
-                                endDate = referenceTime.AddSeconds(1);
-                                break;
-                            default:
-                                return ret;
-                        }
-
-                        ret.Timex =
-                            $"({FormatUtil.LuisDate(beginDate)}T{FormatUtil.LuisTime(beginDate)},{FormatUtil.LuisDate(endDate)}T{FormatUtil.LuisTime(endDate)},PT1{unitStr[0]})";
-                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                        ret.Success = true;
-
-                        return ret;
-                    }
+                    ret.Timex =
+                        $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
+                        $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)}," +
+                        $"{durationResult.Timex})";
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
+                    ret.Success = true;
+                    return ret;
                 }
             }
 
             return ret;
         }
+
+        // parse "last minute", "next hour"
+        private DateTimeResolutionResult ParseRelativeUnit(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var match = Config.RelativeTimeUnitRegex.Match(text);
+            if (match.Success)
+            {
+                var srcUnit = match.Groups["unit"].Value.ToLower();
+
+                var unitStr = Config.UnitMap[srcUnit];
+
+                int swiftValue = 1;
+                var prefixMatch = Config.PastRegex.Match(text);
+                if (prefixMatch.Success)
+                {
+                    swiftValue = -1;
+                }
+
+                DateObject beginTime;
+                var endTime = beginTime = referenceTime;
+
+                if (Config.UnitMap.ContainsKey(srcUnit))
+                {
+                    switch (unitStr)
+                    {
+                        case "H":
+                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddHours(swiftValue);
+                            endTime = swiftValue > 0 ? referenceTime.AddHours(swiftValue) : endTime;
+                            break;
+                        case "M":
+                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddMinutes(swiftValue);
+                            endTime = swiftValue > 0 ? referenceTime.AddMinutes(swiftValue) : endTime;
+                            break;
+                        case "S":
+                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddSeconds(swiftValue);
+                            endTime = swiftValue > 0 ? referenceTime.AddSeconds(swiftValue) : endTime;
+                            break;
+                        default:
+                            return ret;
+                    }
+
+                    ret.Timex =
+                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)},{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},PT1{unitStr[0]})";
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
+                    ret.Success = true;
+
+                    return ret;
+                }
+            }
+
+            return ret;
+        }
+
+
     }
 }

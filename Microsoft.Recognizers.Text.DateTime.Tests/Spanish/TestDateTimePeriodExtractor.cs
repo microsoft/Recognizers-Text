@@ -28,7 +28,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             BasicTest("Estaré fuera desde las 5 hasta las 6pm el próximo domingo", 13, 44);
             BasicTest("Estaré fuera desde las 5 hasta las 6pm del próximo domingo", 13, 45);
 
-            // merge to time points 49);
             BasicTest("Estaré afuera de 4pm a 5pm hoy", 14, 16);
             BasicTest("Estaré afuera de 4pm a 5pm de hoy", 14, 19);
             BasicTest("Estaré afuera de 4pm de hoy a 5pm de mañana", 14, 29);

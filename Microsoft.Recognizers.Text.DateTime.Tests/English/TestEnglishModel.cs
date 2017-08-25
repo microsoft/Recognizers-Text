@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Date()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DatePeriod()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DateTime()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_DateTimePeriod()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7, 16, 12, 0);
 
             BasicTest(model, reference,
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Duration()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -231,12 +231,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "I'll leave for an hour",
                 Constants.SYS_DATETIME_DURATION, "an hour", "PT1H");
+
+            BasicTest(model, reference,
+                "I'll leave for few hours",
+                Constants.SYS_DATETIME_DURATION, "few hours", "PT3H");
+
+            BasicTest(model, reference,
+                "I'll leave for a few minutes",
+                Constants.SYS_DATETIME_DURATION, "a few minutes", "PT3M");
+
+            BasicTest(model, reference,
+                "I'll leave for some days",
+                Constants.SYS_DATETIME_DURATION, "some days", "P3D");
+
+            BasicTest(model, reference,
+                "I'll leave for several weeks",
+                Constants.SYS_DATETIME_DURATION, "several weeks", "P3W");
         }
 
         [TestMethod]
         public void TestDateTime_Set()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -275,7 +291,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_Time()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7);
 
             BasicTest(model, reference,
@@ -314,7 +330,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTime_TimePeriod()
         {
-            var model = DateTimeRecognizer.Instance.GetDateTimeModel(Culture.English);
+            var model = DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English);
             var reference = new DateObject(2016, 11, 7, 16, 12, 0);
 
             BasicTest(model, reference,
