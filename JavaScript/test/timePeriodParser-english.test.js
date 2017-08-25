@@ -168,8 +168,8 @@ function BasicTestBeginEnd(it, extractor, parser, referenceTime, text, beginDate
         t.is(1, er.length);
         let pr = parser.parse(er[0], referenceTime);
         t.is(Constants.SYS_DATETIME_TIMEPERIOD, pr.type);
-        t.is(beginDate.toISOString(), pr.value.futureValue.item1.toISOString());
-        t.is(endDate.toISOString(), pr.value.futureValue.item2.toISOString());
+        t.deepEqual(beginDate, pr.value.futureValue.item1);
+        t.deepEqual(endDate, pr.value.futureValue.item2);
     });
 }
 

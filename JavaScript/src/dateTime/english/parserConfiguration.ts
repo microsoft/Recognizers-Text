@@ -32,7 +32,6 @@ import {
 } from "../../number/english/extractors";
 import { BaseNumberParser, IParser } from "../../number/parsers";
 import { IExtractor } from "../../number/extractors";
-import { IExtractor } from "../../number/extractors";
 import { EnglishNumberParserConfiguration } from "../../number/english/parserConfiguration";
 import { CultureInfo, Culture } from "../../culture";
 import { EnglishNumeric } from "../../resources/englishNumeric";

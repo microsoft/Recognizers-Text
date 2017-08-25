@@ -649,7 +649,7 @@ export class BaseDateParser implements IDateTimeParser {
             let day = 0;
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
-            let dayStr = match.groups['day'];
+            let dayStr = match.groups['day'].value;
             day = this.config.dayOfMonth.get(dayStr);
             result.timex = FormatUtil.luisDate(-1, -1, day);
             let futureDate = new Date(year, month + 1, day);
@@ -684,7 +684,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "next Sunday"
         match = RegExpUtility.getMatches(this.config.nextRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'];
+            let weekdayStr = match.groups['weekday'].value;
             let value = DateUtils.next(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -697,7 +697,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "this Friday"
         match = RegExpUtility.getMatches(this.config.thisRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'];
+            let weekdayStr = match.groups['weekday'].value;
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -710,7 +710,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "last Friday", "last mon"
         match = RegExpUtility.getMatches(this.config.lastRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'];
+            let weekdayStr = match.groups['weekday'].value;
             let value = DateUtils.last(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -723,7 +723,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "Friday"
         match = RegExpUtility.getMatches(this.config.strictWeekDay, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'];
+            let weekdayStr = match.groups['weekday'].value;
             let weekday = this.config.dayOfWeek.get(weekdayStr);
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
@@ -789,9 +789,9 @@ export class BaseDateParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekDayOfMonthRegex, trimedSource).pop();
         if (!match) return result;
-        let cardinalStr = match.groups['cardinal'];
-        let weekdayStr = match.groups['weekday'];
-        let monthStr = match.groups['month'];
+        let cardinalStr = match.groups['cardinal'] ? match.groups['cardinal'].value : '';
+        let weekdayStr = match.groups['weekday'] ? match.groups['weekday'].value : '';
+        let monthStr = match.groups['month'] ? match.groups['month'].value : '';
         let noYear = false;
         let cardinal = this.config.isCardinalLast(cardinalStr) ? 5 : this.config.cardinalMap.get(cardinalStr);
         let weekday = this.config.dayOfWeek.get(weekdayStr);
@@ -831,9 +831,9 @@ export class BaseDateParser implements IDateTimeParser {
 
     private matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let yearStr = match.groups['year'];
-        let monthStr = match.groups['month'];
-        let dayStr = match.groups['day'];
+        let yearStr = match.groups['year'] ? match.groups['year'].value : '';
+        let monthStr = match.groups['month'] ? match.groups['month'].value : '';
+        let dayStr = match.groups['day'] ? match.groups['day'].value : '';
         let month = 0;
         let day = 0;
         let year = 0;
@@ -891,7 +891,7 @@ function parserDurationWithAgoAndLater(source: string, referenceDate: Date, dura
     let afterStr = source.substr(duration.start + duration.length);
     let beforeStr = source.substr(0, duration.start);
     let numberStr = source.substr(duration.start, match.index - duration.start);
-    let srcUnit = match.groups['unit'];
+    let srcUnit = match.groups['unit'].value;
     let er = cardinalExtractor.extract(numberStr).pop();
     if (!er) return result;
     return getAgoLaterResult(numberParser, er, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);

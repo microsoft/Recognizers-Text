@@ -153,7 +153,7 @@ function BasicTestFuture(it, extractor, parser, text, date) {
         t.is(1, er.length);
         let pr = parser.parse(er[0]);
         t.is(constants.SYS_DATETIME_TIME, pr.type);
-        t.is(date.toISOString(), pr.value.futureValue.toISOString());
+        t.deepEqual(date, pr.value.futureValue);
     });
 }
 
