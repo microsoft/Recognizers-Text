@@ -5,14 +5,12 @@ var constants = require('../compiled/dateTime/constants').Constants;
 
 describe('DateTimePeriod Extractor', it => {
     let extractor = new baseExtractor(new configuration());
-
+    
     // basic match
     BasicTest(it, extractor, "I'll be out five to seven today", 12, 19);
     BasicTest(it, extractor, "I'll be out five to seven of tomorrow", 12, 25);
     BasicTest(it, extractor, "I'll be out from 5 to 6 next sunday", 12, 23);
     BasicTest(it, extractor, "I'll be out from 5 to 6pm next sunday", 12, 25);
-
-    // merge to time points 49);
 
     BasicTest(it, extractor, "I'll be out from 4pm to 5pm today", 12, 21);
     BasicTest(it, extractor, "I'll be out from 4pm today to 5pm tomorrow", 12, 30);
@@ -45,6 +43,8 @@ describe('DateTimePeriod Extractor', it => {
     BasicTest(it, extractor, "I'll go back next 5 hrs", 13, 10);
     BasicTest(it, extractor, "I'll go back last minute", 13, 11);
     BasicTest(it, extractor, "I'll go back next hour", 13, 9);
+    BasicTest(it, extractor, "I'll go back last few minutes", 13, 16);
+    BasicTest(it, extractor, "I'll go back past several minutes", 13, 20);
 
     BasicTest(it, extractor, "I'll go back tuesday in the morning", 13, 22);
     BasicTest(it, extractor, "I'll go back tuesday in the afternoon", 13, 24);

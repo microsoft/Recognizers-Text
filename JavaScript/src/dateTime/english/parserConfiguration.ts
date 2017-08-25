@@ -68,7 +68,7 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         //this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
-        // this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
+        //this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         // this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
@@ -269,6 +269,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly cardinalExtractor: IExtractor
     readonly durationExtractor: IExtractor
     readonly numberParser: IParser
+    readonly durationParser: IDateTimeParser
     readonly monthOfYear: ReadonlyMap<string, number>
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly dayOfWeek: ReadonlyMap<string, number>
@@ -293,6 +294,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.cardinalExtractor = config.cardinalExtractor;
         this.durationExtractor = config.durationExtractor;
         this.numberParser = config.numberParser;
+        this.durationParser = config.durationParser;
         this.monthOfYear = config.monthOfYear;
         this.dayOfMonth = config.dayOfMonth;
         this.dayOfWeek = config.dayOfWeek;

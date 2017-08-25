@@ -138,10 +138,10 @@ export class FormatUtil {
                 return new Array("XXXX", "XX", FormatUtil.toString(day, 2)).join("-");
             }
 
-            return new Array("XXXX", FormatUtil.toString(month, 2), FormatUtil.toString(day, 2)).join("-");
+            return new Array("XXXX", FormatUtil.toString(month + 1, 2), FormatUtil.toString(day, 2)).join("-");
         }
 
-        return new Array(FormatUtil.toString(year, 4), FormatUtil.toString(month, 2), FormatUtil.toString(day, 2)).join("-");
+        return new Array(FormatUtil.toString(year, 4), FormatUtil.toString(month + 1, 2), FormatUtil.toString(day, 2)).join("-");
     }
 
     public static luisDateFromDate(date: Date): string {

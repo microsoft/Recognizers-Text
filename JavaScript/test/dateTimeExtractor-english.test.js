@@ -3,7 +3,6 @@ var configuration = require("../compiled/dateTime/english/extractorConfiguration
 var baseExtractor = require("../compiled/dateTime/extractors").BaseDateTimeExtractor;
 var constants = require('../compiled/dateTime/constants').Constants;
 
-
 describe('DateTime Extractor', it => {
     let extractor = new baseExtractor(new configuration());
 

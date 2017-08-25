@@ -97,6 +97,7 @@ export interface IDateParserConfiguration {
     integerExtractor: IExtractor
     cardinalExtractor: IExtractor
     durationExtractor: IExtractor
+    durationParser: IDateTimeParser
     numberParser: IParser
     monthOfYear: ReadonlyMap<string, number>
     dayOfMonth: ReadonlyMap<string, number>
@@ -163,24 +164,24 @@ export class BaseTimeParser implements IDateTimeParser {
 
     // parse basic patterns in TimeRegexList
     private parseBasicRegexMatch(text: string, referenceTime: Date): DateTimeResolutionResult {
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
         let offset = 0;
 
-        let matches = RegExpUtility.getMatches(this.config.atRegex, trimedText);
+        let matches = RegExpUtility.getMatches(this.config.atRegex, trimmedText);
         if (matches.length == 0) {
-            matches = RegExpUtility.getMatches(this.config.atRegex, this.config.timeTokenPrefix + trimedText);
+            matches = RegExpUtility.getMatches(this.config.atRegex, this.config.timeTokenPrefix + trimmedText);
             offset = this.config.timeTokenPrefix.length;
         }
 
-        if (matches.length > 0 && matches[0].index == offset && matches[0].length == trimedText.length) {
+        if (matches.length > 0 && matches[0].index == offset && matches[0].length == trimmedText.length) {
             return this.match2Time(matches[0], referenceTime);
         }
 
         for (let regex of this.config.timeRegexes) {
             offset = 0;
-            matches = RegExpUtility.getMatches(regex, trimedText);
+            matches = RegExpUtility.getMatches(regex, trimmedText);
 
-            if (matches.length && matches[0].index == offset && matches[0].length == trimedText.length) {
+            if (matches.length && matches[0].index == offset && matches[0].length == trimmedText.length) {
                 return this.match2Time(matches[0], referenceTime);
             }
         }
@@ -250,7 +251,13 @@ export class BaseTimeParser implements IDateTimeParser {
                 }
             }
             else {
-                hour = parseInt(hourStr);
+                hour = Number.parseInt(hourStr);
+                if (!hour) {
+                    hour = this.config.numbers.get(hourStr);
+                    if (!hour) {
+                        return ret;
+                    }
+                }
             }
 
             // get minute
@@ -368,11 +375,9 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             if (!innerResult.success) {
                 innerResult = this.mergeTwoTimePoints(er.text, referenceTime);
             }
-
             if (!innerResult.success) {
                 innerResult = this.parseNight(er.text, referenceTime);
             }
-
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>(
                     [
@@ -755,7 +760,7 @@ export class BaseDateParser implements IDateTimeParser {
         if (!er || er.length === 0) return result;
 
         let year = referenceDate.getFullYear();
-        let month = this.config.monthOfYear.get(match.value.trim());
+        let month = this.config.monthOfYear.get(match.value.trim()) - 1;
         let day = Number.parseInt(this.config.numberParser.parse(er[0]).value);
 
         result.timex = FormatUtil.luisDate(-1, month, day);
@@ -775,8 +780,7 @@ export class BaseDateParser implements IDateTimeParser {
             source, 
             referenceDate, 
             this.config.durationExtractor, 
-            this.config.cardinalExtractor, 
-            this.config.numberParser, 
+            this.config.durationParser, 
             this.config.unitMap, 
             this.config.unitRegex, 
             this.config.utilityConfiguration, 
@@ -838,7 +842,7 @@ export class BaseDateParser implements IDateTimeParser {
         let day = 0;
         let year = 0;
         if (this.config.monthOfYear.has(monthStr) && this.config.dayOfMonth.has(dayStr)) {
-            month = this.config.monthOfYear.get(monthStr);
+            month = this.config.monthOfYear.get(monthStr) - 1;
             day = this.config.dayOfMonth.get(dayStr);
             if (!isNullOrEmpty(yearStr)) {
                 year = Number.parseInt(yearStr);
@@ -882,25 +886,28 @@ enum AgoLaterMode {
     Date, DateTime
 }
 
-function parserDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, cardinalExtractor: IExtractor, numberParser: IParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
+function parserDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
     let result = new DateTimeResolutionResult();
     let duration = durationExtractor.extract(source).pop();
     if (!duration) return result;
+    let pr = durationParser.parse(duration);
+    if (!pr) return result;
     let match = RegExpUtility.getMatches(unitRegex, source).pop();
     if (!match) return result;
     let afterStr = source.substr(duration.start + duration.length);
     let beforeStr = source.substr(0, duration.start);
-    let numberStr = source.substr(duration.start, match.index - duration.start);
     let srcUnit = match.groups['unit'].value;
-    let er = cardinalExtractor.extract(numberStr).pop();
-    if (!er) return result;
-    return getAgoLaterResult(numberParser, er, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
+    let durationResult: DateTimeResolutionResult = pr.value;
+    let numStr = durationResult.timex.substr(0, durationResult.timex.length - 1)
+        .replace('P', '')
+        .replace('T', '');
+    let num = Number.parseInt(numStr);
+    if (num) return result;
+    return getAgoLaterResult(num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
 }
 
-function getAgoLaterResult(numberParser: IParser, er: ExtractResult, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
+function getAgoLaterResult(num: number, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
     let result = new DateTimeResolutionResult();
-    let pr = numberParser.parse(er);
-    let num = Number.parseInt(pr.resolutionStr);
     let unitStr = unitMap.get(srcUnit);
     if (!unitStr) return result;
     let numStr = num.toString();

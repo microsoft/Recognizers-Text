@@ -6,8 +6,6 @@ var constants = require('../compiled/dateTime/constants').Constants;
 describe('Set Extractor', it => {
     let extractor = new baseExtractor(new configuration());
     
-    BasicTest(it, extractor, "I'll leave each two days", 11, 13);
-
     BasicTest(it, extractor, "I'll leave weekly", 11, 6);
     BasicTest(it, extractor, "I'll leave daily", 11, 5);
     BasicTest(it, extractor, "I'll leave every day", 11, 9);

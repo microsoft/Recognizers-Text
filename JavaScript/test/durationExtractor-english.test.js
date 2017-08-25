@@ -52,6 +52,11 @@ describe('Duration Extractor', it => {
     BasicTest(it, extractor, "In a day", 3, 5);
     BasicTest(it, extractor, "for an hour", 4, 7);
     BasicTest(it, extractor, "for a month", 4, 7);
+
+    BasicTest(it, extractor, "I'll leave for few hours", 15, 9);
+    BasicTest(it, extractor, "I'll leave for a few minutes", 15, 13);
+    BasicTest(it, extractor, "I'll leave for some days", 15, 9);
+    BasicTest(it, extractor, "I'll leave for several days", 15, 12);
 });
 
 function BasicTest(it, extractor, text, start, length) {

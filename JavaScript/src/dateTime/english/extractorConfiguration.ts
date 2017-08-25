@@ -93,6 +93,7 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex7, "gis"),
         // (in the night) (five thirty|seven|7|7:00(:00)?) (pm)?
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex8, "gis"),
+        RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex9, "gis"),
         // 340pm
         RegExpUtility.getSafeRegExp(EnglishDateTime.ConnectNumRegex, "gis")
     ];
@@ -121,6 +122,7 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
     readonly anUnitRegex: RegExp
+    readonly inExactNumberUnitRegex: RegExp
     readonly suffixAndRegex: RegExp
     readonly cardinalExtractor: EnglishCardinalExtractor
 
@@ -130,6 +132,7 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit, "gis");
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit, "gis");
         this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex, "gis");
+        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex, "gis");
         this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex, "gis");
         this.cardinalExtractor = new EnglishCardinalExtractor();
     }
@@ -252,47 +255,51 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
 }
         
 export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
-            readonly cardinalExtractor: EnglishCardinalExtractor
-            readonly singleDateExtractor: BaseDateExtractor
-            readonly singleTimeExtractor: BaseTimeExtractor
-            readonly singleDateTimeExtractor: BaseDateTimeExtractor
-            readonly simpleCasesRegexes: RegExp[]
-            readonly prepositionRegex: RegExp
-            readonly tillRegex: RegExp
-            readonly specificTimeOfDayRegex: RegExp
-            readonly timeOfDayRegex: RegExp
-            readonly periodTimeOfDayWithDateRegex: RegExp
-            readonly followedUnit: RegExp
-            readonly numberCombinedWithUnit: RegExp
-            readonly unitRegex: RegExp
-            readonly pastRegex: RegExp
-            readonly futureRegex: RegExp
+    readonly cardinalExtractor: EnglishCardinalExtractor
+    readonly singleDateExtractor: BaseDateExtractor
+    readonly singleTimeExtractor: BaseTimeExtractor
+    readonly singleDateTimeExtractor: BaseDateTimeExtractor
+    readonly durationExtractor: BaseDurationExtractor
+    readonly simpleCasesRegexes: RegExp[]
+    readonly prepositionRegex: RegExp
+    readonly tillRegex: RegExp
+    readonly specificTimeOfDayRegex: RegExp
+    readonly timeOfDayRegex: RegExp
+    readonly periodTimeOfDayWithDateRegex: RegExp
+    readonly followedUnit: RegExp
+    readonly numberCombinedWithUnit: RegExp
+    readonly timeUnitRegex: RegExp
+    readonly pastPrefixRegex: RegExp
+    readonly nextPrefixRegex: RegExp
     readonly rangeConnectorRegex: RegExp
+    readonly relativeTimeUnitRegex: RegExp
             
     constructor() {
-                this.cardinalExtractor = new EnglishCardinalExtractor();
-                this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-                this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-                this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.cardinalExtractor = new EnglishCardinalExtractor();
+        this.singleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.singleDateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.simpleCasesRegexes = [
-                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
-                    RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
-                ]
-                this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
-                this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-                this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, "gis");
-                this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, "gis");
-                this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-                this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
-                this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
-                this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
-                this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
-                this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
-                this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis"),
+        ]
+        this.prepositionRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodSpecificTimeOfDayRegex, "gis");
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayRegex, "gis");
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
+        this.timeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
+        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
+        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
+        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex, "gis");
     }
             
     getFromTokenIndex(source: string) {
-                let result = { matched: false, index: -1 };
+        let result = { matched: false, index: -1 };
         if (source.endsWith("from")) {
                     result.index = source.lastIndexOf("from");
                     result.matched = true;

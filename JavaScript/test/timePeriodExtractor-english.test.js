@@ -16,7 +16,7 @@ describe('Time Extractor', it => {
     BasicTest(it, extractor, "I'll be out between 5pm and 6pm", 12, 19);
     BasicTest(it, extractor, "I'll be out between 5 and 6 in the afternoon", 12, 32);
 
-    // merge to time points
+    //// merge to time points
     BasicTest(it, extractor, "I'll be out 4pm till 5pm", 12, 12);
     BasicTest(it, extractor, "I'll be out 4:00 till 5pm", 12, 13);
     BasicTest(it, extractor, "I'll be out 4:00 to 7 oclock", 12, 16);

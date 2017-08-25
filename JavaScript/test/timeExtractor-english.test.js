@@ -73,6 +73,30 @@ describe('Time Extractor', it => {
     BasicTest(it, extractor, "mid day", 0, 7);
     BasicTest(it, extractor, "noon", 0, 4);
 
+    // Desc extractor
+    BasicTest(it, extractor, "I'll be back 7pm", 13, 3);
+    BasicTest(it, extractor, "I'll be back 7 p m", 13, 5);
+    BasicTest(it, extractor, "I'll be back 7 p. m", 13, 6);
+    BasicTest(it, extractor, "I'll be back 7 p. m.", 13, 7);
+    BasicTest(it, extractor, "I'll be back 7p.m.", 13, 5);
+    BasicTest(it, extractor, "I'll be back 7 p.m.", 13, 6);
+    BasicTest(it, extractor, "I'll be back 7:56 a m", 13, 8);
+    BasicTest(it, extractor, "I'll be back 7:56:35 a. m", 13, 12);
+    BasicTest(it, extractor, "I'll be back 7:56:35 am", 13, 10);
+    BasicTest(it, extractor, "I'll be back 7:56:35 a. m.", 13, 13);
+
+    BasicTest(it, extractor, "I'll go back seven thirty pm", 13, 15);
+    BasicTest(it, extractor, "I'll go back seven thirty p.m.", 13, 17);
+    BasicTest(it, extractor, "I'll go back seven thirty p m", 13, 16);
+    BasicTest(it, extractor, "I'll go back seven thirty p. m", 13, 17);
+    BasicTest(it, extractor, "I'll go back seven thirty p. m.", 13, 18);
+
+    BasicTest(it, extractor, "I'll be back 340pm", 13, 5);
+    BasicTest(it, extractor, "I'll be back 340 pm", 13, 6);
+    BasicTest(it, extractor, "I'll be back 1140 a.m.", 13, 9);
+    BasicTest(it, extractor, "I'll be back 1140 a m", 13, 8);
+
+    // negative case
     BasicNegativeTest(it, extractor, "which emails have gotten p as subject");
     BasicNegativeTest(it, extractor, "which emails have gotten a reply");
 });

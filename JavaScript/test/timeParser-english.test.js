@@ -44,7 +44,7 @@ describe('Time Parse', it => {
     BasicTestFuture(it, extractor, parser, "I'll be back in the afternoon at 7", new Date(year, month, day, 19, 0, second));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon at 7", new Date(year, month, day, 19, 0, second));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00", new Date(year, month, day, 19, 0, second));
-    BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00:05", new Date(year, month, day, 19, 0, 5));
+    BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00:05", new Date(year, month, day, 19, 0, 05));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon seven pm", new Date(year, month, day, 19, 0, second));
 
     BasicTestFuture(it, extractor, parser, "I'll go back seven thirty pm", new Date(year, month, day, 19, 30, second));
@@ -73,6 +73,16 @@ describe('Time Parse', it => {
     BasicTestFuture(it, extractor, parser, "mid-day", new Date(year, month, day, 12, 0, second));
     BasicTestFuture(it, extractor, parser, "mid day", new Date(year, month, day, 12, 0, second));
     BasicTestFuture(it, extractor, parser, "noon", new Date(year, month, day, 12, 0, second));
+
+    // parse with two numbers
+    BasicTestFuture(it, extractor, parser, "set an alarm for eight forty", new Date(year, month, day, 8, 40, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for eight forty am", new Date(year, month, day, 8, 40, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for eight forty pm", new Date(year, month, day, 20, 40, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for ten forty five", new Date(year, month, day, 10, 45, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for fifteen fifteen p m", new Date(year, month, day, 15 , 15, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for fifteen thirty p m", new Date(year, month, day, 15, 30, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for ten ten", new Date(year, month, day, 10, 10, second));
+    BasicTestFuture(it, extractor, parser, "set an alarm for ten fifty five p. m.", new Date(year, month, day, 22, 55, second));
 });
 
 describe('Time Parse Luis', it => {

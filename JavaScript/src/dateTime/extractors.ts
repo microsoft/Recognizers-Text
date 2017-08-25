@@ -25,6 +25,7 @@ export interface IDurationExtractorConfiguration {
     followedUnit: RegExp,
     numberCombinedWithUnit: RegExp,
     anUnitRegex: RegExp,
+    inExactNumberUnitRegex: RegExp,
     suffixAndRegex: RegExp,
     cardinalExtractor: BaseNumberExtractor
 }
@@ -77,6 +78,7 @@ export interface IDateTimePeriodExtractorConfiguration {
     singleDateExtractor: BaseDateExtractor
     singleTimeExtractor: BaseTimeExtractor
     singleDateTimeExtractor: BaseDateTimeExtractor
+    durationExtractor: BaseDurationExtractor
     simpleCasesRegexes: RegExp[]
     prepositionRegex: RegExp
     tillRegex: RegExp
@@ -85,9 +87,10 @@ export interface IDateTimePeriodExtractorConfiguration {
     periodTimeOfDayWithDateRegex: RegExp
     followedUnit: RegExp
     numberCombinedWithUnit: RegExp
-    unitRegex: RegExp
-    pastRegex: RegExp
-    futureRegex: RegExp
+    timeUnitRegex: RegExp
+    pastPrefixRegex: RegExp
+    nextPrefixRegex: RegExp
+    relativeTimeUnitRegex: RegExp
     getFromTokenIndex(source: string): { matched: boolean, index: number };
     getBetweenTokenIndex(source: string): { matched: boolean, index: number };
     hasConnectorToken(source: string): boolean;
@@ -304,7 +307,8 @@ export class BaseDurationExtractor implements IExtractor {
                 }
             }).filter(o => o !== undefined)
             .concat(this.getTokensFromRegex(this.config.numberCombinedWithUnit, source))
-            .concat(this.getTokensFromRegex(this.config.anUnitRegex, source));
+            .concat(this.getTokensFromRegex(this.config.anUnitRegex, source))
+            .concat(this.getTokensFromRegex(this.config.inExactNumberUnitRegex, source));
     }
 
     private numberWithUnitAndSuffix(source: string, ers: Token[]): Array<Token> {
@@ -632,8 +636,9 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.matchSimpleCases(source))
             .concat(this.mergeTwoTimePoints(source))
-            .concat(this.matchNumberWithUnit(source))
-            .concat(this.matchNight(source));
+            .concat(this.matchDuration(source))
+            .concat(this.matchNight(source))
+            .concat(this.matchRelativeUnit(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -733,32 +738,26 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
         return tokens;
     }
 
-    private matchNumberWithUnit(source: string): Array<Token> {
+    private matchDuration(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         let durations: Array<Token> = new Array<Token>();
-        this.config.cardinalExtractor.extract(source).forEach(er => {
-            let afterStr = source.substr(er.start + er.length);
-            let matches = RegExpUtility.getMatches(this.config.followedUnit, afterStr);
-            if (matches && matches.length > 0 && matches[0].index === 0) {
-                durations.push(new Token(er.start, er.start + er.length + matches[0].length))
+        this.config.durationExtractor.extract(source).forEach(duration => {
+            let match = RegExpUtility.getMatches(this.config.timeUnitRegex, duration.text).pop();
+            if (match) {
+                durations.push(new Token(duration.start, duration.start + duration.length));
             }
-        });
-        RegExpUtility.getMatches(this.config.numberCombinedWithUnit, source).forEach(match => {
-            durations.push(new Token(match.index, match.index + match.length))
-        });
-        RegExpUtility.getMatches(this.config.unitRegex, source).forEach(match => {
-            durations.push(new Token(match.index, match.index + match.length))
         });
         durations.forEach(duration => {
             let beforeStr = source.substr(0, duration.start).toLowerCase()
             if (isNullOrWhitespace(beforeStr)) return;
-            let matches = RegExpUtility.getMatches(this.config.pastRegex, beforeStr);
-            if (matches && matches.length > 0 && isNullOrWhitespace(beforeStr.substr(matches[0].index + matches[0].length))) {
-                tokens.push(new Token(matches[0].index, duration.end))
+            let match = RegExpUtility.getMatches(this.config.pastPrefixRegex, beforeStr).pop();
+            if (match && isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
+                tokens.push(new Token(match.index, duration.end))
+                return;
             }
-            let futureMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
-            if (futureMatch && isNullOrWhitespace(beforeStr.substr(futureMatch.index + futureMatch.length))) {
-                tokens.push(new Token(futureMatch.index, duration.end))
+            match = RegExpUtility.getMatches(this.config.nextPrefixRegex, beforeStr).pop();
+            if (match && isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
+                tokens.push(new Token(match.index, duration.end))
             }
         });
         return tokens;
@@ -781,6 +780,14 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
                     tokens.push(new Token(match.index, er.start + er.length))
                 }
             });
+        });
+        return tokens;
+    }
+
+    private matchRelativeUnit(source: string): Array<Token> {
+        let tokens: Array<Token> = new Array<Token>();
+        RegExpUtility.getMatches(this.config.relativeTimeUnitRegex, source).forEach(match => {
+            tokens.push(new Token(match.index, match.index + match.length));
         });
         return tokens;
     }

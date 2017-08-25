@@ -32,6 +32,9 @@ describe('Date Period Extractor', it => {
     BasicTest(it, extractor, "I'll be out between 4 and 22 this month", 12, 27);
     BasicTest(it, extractor, "I'll be out between 3 and 12 of Sept hahaha", 12, 24);
     BasicTest(it, extractor, "I'll be out between september 4th through september 8th", 12, 43);
+    BasicTest(it, extractor, "I'll be out between November 15th through 19th", 12, 34);
+    BasicTest(it, extractor, "I'll be out between November 15th through the 19th", 12, 38);
+    BasicTest(it, extractor, "I'll be out between November the 15th through 19th", 12, 38);
     BasicTest(it, extractor, "I'll be out between 4 and 22 this month", 12, 27);
     BasicTest(it, extractor, "I'll be out from 4 to 22 January, 2017", 12, 26);
     BasicTest(it, extractor, "I'll be out between 4-22 January, 2017", 12, 26);
@@ -47,12 +50,21 @@ describe('Date Period Extractor', it => {
     BasicTest(it, extractor, "I'll be out the third week of this month", 12, 28);
     BasicTest(it, extractor, "I'll be out the last week of july", 12, 21);
 
+    // Duration
     BasicTest(it, extractor, "I'll be out next 3 days", 12, 11);
     BasicTest(it, extractor, "I'll be out next 3 months", 12, 13);
     BasicTest(it, extractor, "I'll be out in 3 year", 12, 9);
+    BasicTest(it, extractor, "I'll be out in 3 years", 12, 10);
+    BasicTest(it, extractor, "I'll be out in 3 weeks", 12, 10);
+    BasicTest(it, extractor, "I'll be out in 3 months", 12, 11);
     BasicTest(it, extractor, "I'll be out past 3 weeks", 12, 12);
     BasicTest(it, extractor, "I'll be out last 3year", 12, 10);
+    BasicTest(it, extractor, "I'll be out last year", 12, 9);
+    BasicTest(it, extractor, "I'll be out past month", 12, 10);
     BasicTest(it, extractor, "I'll be out previous 3 weeks", 12, 16);
+
+    BasicTest(it, extractor, "past few weeks", 0, 14);
+    BasicTest(it, extractor, "past several days", 0, 17);
 
     // Merging two time points
     BasicTest(it, extractor, "I'll be out Oct. 2 to October 22", 12, 20);
@@ -94,7 +106,7 @@ describe('Date Period Extractor', it => {
     BasicTest(it, extractor, "I'll leave summer 2016", 11, 11);
     BasicTest(it, extractor, "I'll leave summer of 2016", 11, 14);
 
-    //Next and upcoming
+    // Next and upcoming
     BasicTest(it, extractor, "upcoming month holidays", 0, 14);
     BasicTest(it, extractor, "next month holidays", 0, 10);
 

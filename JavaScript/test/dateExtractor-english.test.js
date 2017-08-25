@@ -66,14 +66,17 @@ describe('Date Extractor', it => {
     BasicTest(it, extractor, "I'll go back the first friday of july", 13, 24);
     BasicTest(it, extractor, "I'll go back the first friday in this month", 13, 30);
 
-    BasicTest(it, extractor, "I went back two months ago", 12, 14);
-    BasicTest(it, extractor, "I'll go back two days later", 13, 14);
-
-    BasicTest(it, extractor, "I'll go back in two weeks", 13, 12);
     BasicTest(it, extractor, "I'll go back two weeks from now", 13, 18);
 
     BasicTest(it, extractor, "I'll go back next week on Friday", 13, 19);
     BasicTest(it, extractor, "I'll go back on Friday next week", 13, 19);
+
+    BasicTest(it, extractor, "past Monday", 0, 11);
+
+    
+    BasicTest(it, extractor, "I went back two months ago", 12, 14);
+    BasicTest(it, extractor, "I'll go back two days later", 13, 14);
+    BasicTest(it, extractor, "who did i email a month ago", 16, 11);
 });
 
 function BasicTest(it, extractor, text, start, length) {
