@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     [TestClass]
     public class TestMergedExtractor
     {
-        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
+        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
 
         public void BasicTest(string text, int start, int length)
         {
@@ -50,10 +50,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedSkipFromTo()
         {
-            BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SplitFromTo);
-            BasicTestWithOptions("Change my meeting from Nov.19th to Nov.23th", 2, DateTimeOptions.SplitFromTo);
+            BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SkipFromToMerge);
+            BasicTestWithOptions("Change my meeting from Nov.19th to Nov.23th", 2, DateTimeOptions.SkipFromToMerge);
+
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am", 1, DateTimeOptions.None); // Testing None.
             BasicTestWithOptions("Schedule a meeting from 9am to 11am", 1);
             BasicTestWithOptions("Schedule a meeting from 9am to 11am tomorrow", 1);
+
+            BasicTestWithOptions("Change July 22nd meeting in Bellevue to August 22nd", 2); // No merge.
         }
 
         [TestMethod]

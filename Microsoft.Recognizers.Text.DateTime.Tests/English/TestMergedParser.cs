@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Recognizers.Text.DateTime.English;
+﻿using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
@@ -12,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
     [TestClass]
     public class TestMergedParser
     {
-        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
+        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
         private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration());
 
         readonly DateObject refrenceDate;

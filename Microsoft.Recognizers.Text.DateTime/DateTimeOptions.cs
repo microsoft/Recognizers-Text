@@ -6,6 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     public enum DateTimeOptions
     {
         None = 0,
-        SplitFromTo = 1,
+        SkipFromToMerge = 1,
     }
 }
