@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private readonly DateTimeOptions options;
 
-        public MergedExtractorChs(DateTimeOptions options = DateTimeOptions.None)
+        public MergedExtractorChs(DateTimeOptions options)
         {
             this.options = options;
         }

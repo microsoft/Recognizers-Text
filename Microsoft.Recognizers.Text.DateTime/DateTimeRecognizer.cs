@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Recognizers.Text.DateTime.Chinese;
+﻿using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 
@@ -7,13 +6,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer
     {
-        public static DateTimeRecognizer GetInstance(DateTimeOptions options=DateTimeOptions.None)
+        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
         {
             return new DateTimeRecognizer(options);
         }
 
-        private DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None)
+        private DateTimeRecognizer(DateTimeOptions options)
         {
+
             var type = typeof(DateTimeModel);
 
             RegisterModel(Culture.English, type, new DateTimeModel(
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             RegisterModel(Culture.Chinese, type, new DateTimeModel(
                     new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
-                    new MergedExtractorChs()
+                    new MergedExtractorChs(options)
                     ));
 
             RegisterModel(Culture.Spanish, type, new DateTimeModel(
@@ -36,7 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return (DateTimeModel)GetModel<DateTimeModel>(culture, fallbackToDefaultCulture);
         }
-
-        
+  
     }
 }

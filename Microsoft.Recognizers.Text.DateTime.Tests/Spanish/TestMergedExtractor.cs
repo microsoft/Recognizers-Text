@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     [TestClass]
     public class TestMergedExtractor
     {
-        private readonly IExtractor extractor = new BaseMergedExtractor(new SpanishMergedExtractorConfiguration());
+        private readonly IExtractor extractor = new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), DateTimeOptions.None);
 
         public void BasicTest(string text, int start, int length)
         {

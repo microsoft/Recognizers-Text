@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = 
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = 
+            new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FromToRegex = new Regex(DateTimeDefinitions.FromToRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex FromToRegex = 
+            new Regex(DateTimeDefinitions.FromToRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IExtractor DateExtractor { get; }
 
