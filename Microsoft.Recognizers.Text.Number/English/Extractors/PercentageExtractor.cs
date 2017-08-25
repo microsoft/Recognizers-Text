@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor() : base(new NumberExtractor()) { }
+        public PercentageExtractor() : base(NumberExtractor.GetInstance()) { }
 
         protected override ImmutableHashSet<Regex> InitRegexes()
         {

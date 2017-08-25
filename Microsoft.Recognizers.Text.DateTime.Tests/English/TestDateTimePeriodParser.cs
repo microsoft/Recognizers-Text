@@ -62,7 +62,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 new DateObject(year + 1, 1, 1, 5, min, second),
                 new DateObject(year + 1, 1, 1, 6, min, second));
 
-
             // merge two time points
             BasicTestFuture("I'll be out 3pm to 4pm tomorrow",
                 new DateObject(year, month, 8, 15, min, second),
@@ -90,7 +89,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out between 4pm on Jan 1, 2016 and 5pm today",
                 new DateObject(2016, 1, 1, 16, min, second),
                 new DateObject(year, month, day, 17, min, second));
-
 
             BasicTestFuture("I'll go back tonight",
                 new DateObject(year, month, day, 20, min, second),
@@ -234,7 +232,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out from 5 to 6 of 4/22/2016", "(2016-04-22T05,2016-04-22T06,PT1H)");
             BasicTest("I'll be out from 5 to 6 of April 22", "(XXXX-04-22T05,XXXX-04-22T06,PT1H)");
             BasicTest("I'll be out from 5 to 6 on 1st Jan", "(XXXX-01-01T05,XXXX-01-01T06,PT1H)");
-
 
             // merge two time points
             BasicTest("I'll be out 3pm to 4pm tomorrow", "(2016-11-08T15,2016-11-08T16,PT1H)");

@@ -6,25 +6,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
     public class EnglishSetExtractorConfiguration : ISetExtractorConfiguration
     {
         public static readonly Regex SetUnitRegex =
-            new Regex(
-                DateTimeDefinitions.DurationUnitRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PeriodicRegex = new Regex(
-            DateTimeDefinitions.PeriodicRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PeriodicRegex = 
+            new Regex(DateTimeDefinitions.PeriodicRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachUnitRegex = new Regex(
-            DateTimeDefinitions.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachUnitRegex = 
+            new Regex(DateTimeDefinitions.EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.EachPrefixRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachPrefixRegex = 
+            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SetLastRegex = new Regex(DateTimeDefinitions.SetLastRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SetLastRegex = 
+            new Regex(DateTimeDefinitions.SetLastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.EachDayRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachDayRegex = 
+            new Regex(DateTimeDefinitions.EachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public EnglishSetExtractorConfiguration()
         {

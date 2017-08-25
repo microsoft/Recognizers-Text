@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
+        private static readonly int[] MonthMaxDays = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
         private readonly IFullDateTimeParserConfiguration config;
 
         private readonly IExtractor integerExtractor;
@@ -128,8 +130,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var ret = new DateTimeResolutionResult();
 
-            int[] containsDay = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            
             // handle "十二日" "明年这个月三日" "本月十一日"
             var match = DateExtractorChs.SpecialDate.Match(trimedText);
             if (match.Success && match.Length == trimedText.Length)
@@ -181,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
                 DateObject futureDate, pastDate;
 
-                if (day > containsDay[month - 1])
+                if (day > MonthMaxDays[month - 1])
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);

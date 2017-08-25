@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateTimePeriodExtractorConfiguration()
         {
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());

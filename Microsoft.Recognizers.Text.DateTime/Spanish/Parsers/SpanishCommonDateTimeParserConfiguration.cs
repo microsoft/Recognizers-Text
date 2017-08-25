@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthOfYear = InitMonthOfYear();
             Numbers = InitNumbers();
             DoubleNumbers = InitDoubleNumbers();
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());

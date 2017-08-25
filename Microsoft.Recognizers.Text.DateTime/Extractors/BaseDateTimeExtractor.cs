@@ -60,7 +60,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-
             ers.Sort(delegate (ExtractResult er1, ExtractResult er2)
             {
                 var start1 = er1.Start ?? 0;
@@ -69,10 +68,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return -1;
                 }
+
                 if (start1 == start2)
                 {
                     return 0;
                 }
+
                 return 1;
             });
 
@@ -84,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     j++;
                 }
+
                 if (j >= ers.Count)
                 {
                     break;
@@ -99,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         i = j + 1;
                         continue;
                     }
+
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                     if (this.config.IsConnector(middleStr))
                     {
@@ -106,6 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
                         ret.Add(new Token(begin, end));
                     }
+
                     i = j + 1;
                     continue;
                 }
@@ -242,10 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                    er,
-                    ret,
-                    config.UtilityConfiguration);
+                ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text, er, ret, config.UtilityConfiguration);
             }
 
             return ret;

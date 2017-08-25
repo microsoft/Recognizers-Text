@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDurationExtractorConfiguration()
         {
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
         }
 
         public IExtractor CardinalExtractor { get; }
