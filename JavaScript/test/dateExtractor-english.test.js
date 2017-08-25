@@ -58,7 +58,7 @@ describe('Date Extractor', it => {
     BasicTest(it, extractor, "I'll go back the last day", 13, 12);
     BasicTest(it, extractor, "I'll go back the day", 13, 7);
     BasicTest(it, extractor, "I'll go back this week Friday", 13, 16);
-    BasicTest(it, extractor, "I'll go back nextweek Sunday", 13, 15);
+    BasicTest(it, extractor, "I'll go back next week Sunday", 13, 16);
     BasicTest(it, extractor, "I'll go back last week Sunday", 13, 16);
     BasicTest(it, extractor, "I'll go back 15 June 2016", 13, 12);
     BasicTest(it, extractor, "a baseball on may the eleventh", 14, 16);

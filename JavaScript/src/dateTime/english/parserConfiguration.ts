@@ -312,11 +312,11 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         ];
         this.onRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex, "gis");
-        this.nextRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextRegex, "gis");
-        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.UnitRegex, "gis");
+        this.nextRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextDateRegex, "gis");
+        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
         this.monthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex, "gis");
         this.strictWeekDay = RegExpUtility.getSafeRegExp(EnglishDateTime.StrictWeekDay, "gis");
-        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastRegex, "gis");
+        this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, "gis");
         this.thisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis");
         this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;

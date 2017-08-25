@@ -33,7 +33,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly implicitDateList: RegExp[];
     readonly monthEnd: RegExp;
     readonly ofMonth: RegExp;
-    readonly nonDateUnitRegex: RegExp;
+    readonly dateUnitRegex: RegExp;
     readonly ordinalExtractor: EnglishOrdinalExtractor;
     readonly integerExtractor: EnglishIntegerExtractor;
     readonly numberParser: BaseNumberParser;
@@ -58,15 +58,15 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             RegExpUtility.getSafeRegExp(EnglishDateTime.RelaxedOnRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDayRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.LastRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.NextRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.NextDateRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.StrictWeekDay, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDate, "gis"),
         ];
         this.monthEnd = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthEnd, "gis");
         this.ofMonth = RegExpUtility.getSafeRegExp(EnglishDateTime.OfMonth, "gis");
-        this.nonDateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NonDateUnitRegex, "gis");
+        this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
         this.ordinalExtractor = new EnglishOrdinalExtractor();
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
@@ -144,8 +144,12 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly futureRegex: RegExp
     readonly weekOfRegex: RegExp
     readonly monthOfRegex: RegExp
+    readonly dateUnitRegex: RegExp
+    readonly inConnectorRegex: RegExp
+    readonly rangeUnitRegex: RegExp
     readonly datePointExtractor: BaseDateExtractor
     readonly cardinalExtractor: EnglishCardinalExtractor
+    readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
 
     constructor() {
@@ -166,14 +170,18 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex, "gis"),
         ];
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithUnit, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit, "gis");
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit, "gis");
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
+        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
         this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex, "gis");
         this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex, "gis");
+        this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
+        this.inConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis");
+        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, "gis");
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         this.cardinalExtractor = new EnglishCardinalExtractor();
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }
 
@@ -278,8 +286,8 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
                 this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeFollowedUnit, "gis");
                 this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeNumberCombinedWithUnit, "gis");
                 this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex, "gis");
-                this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastRegex, "gis");
-                this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FutureRegex, "gis");
+                this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
+                this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
                 this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }
             

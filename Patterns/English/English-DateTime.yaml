@@ -145,7 +145,6 @@ OfMonth: !nestedRegex
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
   references: [ MonthRegex ]
-  def: (?<unit>hours|hour|hrs|seconds|second|secs|sec|minutes|minute|mins)\b
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
 DescRegex: !simpleRegex
@@ -157,7 +156,7 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)
 OclockRegex: !simpleRegex
-  def: "(?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)"
+  def: (?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)
 PmRegex: !simpleRegex
   def: (?<pm>(in the\s+)?afternoon|(in the\s+)?evening|(in the\s+)?night)
 AmRegex: !simpleRegex
@@ -197,6 +196,18 @@ IshRegex: !nestedRegex
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
   def: (?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
+FivesRegex: !simpleRegex
+  def: (?<tens>(fifteen|twenty(\s*five)?|thirty(\s*five)?|forty(\s*five)?|fourty(\s*five)?|fifty(\s*five)?|ten|five))\b
+HourRegex: !simpleRegex
+  def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
+PeriodHourNumRegex: !simpleRegex
+  def: (?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)
+PeriodDescRegex: !simpleRegex
+  def: (?<desc>pm|am|p\.m\.|a\.m\.|p)
+PeriodPmRegex: !simpleRegex
+  def: (?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?
+PeriodAmRegex: !simpleRegex
+  def: (?<am>morning|in the morning)s?
 ConnectNumRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}'
   references: [ BaseDateTime.HourRegex, DescRegex ]
@@ -227,18 +238,6 @@ TimeRegex8: !nestedRegex
 TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
-FivesRegex: !simpleRegex
-  def: (?<tens>(fifteen|twenty(\s*five)?|thirty(\s*five)?|forty(\s*five)?|fourty(\s*five)?|fifty(\s*five)?|ten|five))\b
-HourRegex: !simpleRegex
-  def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
-PeriodHourNumRegex: !simpleRegex
-  def: (?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)
-PeriodDescRegex: !simpleRegex
-  def: (?<desc>pm|am|p\.m\.|a\.m\.|p)
-PeriodPmRegex: !simpleRegex
-  def: (?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?
-PeriodAmRegex: !simpleRegex
-  def: (?<am>morning|in the morning)s?
 PureNumFromTo: !nestedRegex
   def: ((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]

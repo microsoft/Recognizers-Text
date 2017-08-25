@@ -63,7 +63,7 @@ describe('Date Parser', it => {
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back next Sunday", new Date(2016, 10, 20));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back last Sunday", new Date(2016, 10, 6));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back this week Friday", new Date(2016, 10, 11));
-    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back nextweek Sunday", new Date(2016, 10, 20));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back next week Sunday", new Date(2016, 10, 20));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back last week Sunday", new Date(2016, 10, 6));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back last day", new Date(2016, 10, 6));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back the last day", new Date(2016, 10, 6));
