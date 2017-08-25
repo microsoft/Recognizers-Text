@@ -1005,9 +1005,9 @@ export class BaseTimePeriodExtractor implements IExtractor {
             let matches = RegExpUtility.getMatches(regex, text);
             matches.forEach(match => {
                 // is there "pm" or "am" ?
-                let pmStr = match.groups["pm"];
-                let amStr = match.groups["am"];
-                let descStr = match.groups["desc"];
+                let pmStr = match.groups("pm").value;
+                let amStr = match.groups("am").value;
+                let descStr = match.groups("desc").value;
                 // check "pm", "am"
                 if (pmStr || amStr || descStr) {
                     ret.push(new Token(match.index, match.index + match.length));
@@ -1030,7 +1030,7 @@ export class BaseTimePeriodExtractor implements IExtractor {
             let middleStr = text.substring(middleBegin, middleEnd).trim().toLowerCase();
             let matches = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
             // handle "{TimePoint} to {TimePoint}"
-            if (matches.length > 0 && matches[0].index == 0 && matches[0].length == middleStr.length) {
+            if (matches.length > 0 && matches[0].index === 0 && matches[0].length === middleStr.length) {
                 let periodBegin = ers[idx].start || 0;
                 let periodEnd = (ers[idx + 1].start || 0) + (ers[idx + 1].length || 0);
 

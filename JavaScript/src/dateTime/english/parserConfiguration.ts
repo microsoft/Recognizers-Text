@@ -104,12 +104,12 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         }
         else {
             let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.LessThanOneHour, trimedPrefix);
-            let minStr = match[0].groups["deltamin"] ? match[0].groups["deltamin"].value : null;
+            let minStr = match[0].groups("deltamin").value;
             if (minStr) {
-                deltaMin = parseInt(minStr);
+                deltaMin = Number.parseInt(minStr);
             }
             else {
-                minStr = match[0].groups["deltaminnum"] ? match[0].groups["deltaminnum"].value.toLowerCase() : null;
+                minStr = match[0].groups("deltaminnum").value.toLowerCase();
                 deltaMin = this.numbers.get(minStr);
             }
         }
@@ -130,10 +130,10 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         let trimedSuffix = suffix.trim().toLowerCase();
         let deltaHour = 0;
         let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.TimeSuffix, trimedSuffix);
-        if (matches.length > 0 && matches[0].index == 0 && matches[0].length == trimedSuffix.length) {
-            let oclockStr = matches[0].groups["oclock"] ? matches[0].groups["oclock"].value : null;
+        if (matches.length > 0 && matches[0].index === 0 && matches[0].length === trimedSuffix.length) {
+            let oclockStr = matches[0].groups("oclock").value;
             if (!oclockStr) {
-                let amStr = matches[0].groups["am"] ? matches[0].groups["am"].value : null;
+                let amStr = matches[0].groups("am").value;
                 if (amStr) {
                     if (adjust.hour >= 12) {
                         deltaHour = -12;
@@ -141,7 +141,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                     adjust.hasAm = true;
                 }
 
-                let pmStr = matches[0].groups["pm"] ? matches[0].groups["pm"].value : null;
+                let pmStr = matches[0].groups("pm").value;
                 if (pmStr) {
                     if (adjust.hour < 12) {
                         deltaHour = 12;
@@ -203,7 +203,7 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
             result.beginHour = 16;
             result.endHour = 20;
         }
-        else if (trimedText == "daytime") {
+        else if (trimedText === "daytime") {
             result.timex = "TDT";
             result.beginHour = 8;
             result.endHour = 18;
@@ -243,12 +243,12 @@ export class EnglishTimeParser extends BaseTimeParser {
         let ret = new DateTimeResolutionResult();
         let trimedText = text.toLowerCase().trim();
 
-        var matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.IshRegex, trimedText);
-        if (matches.length > 0 && matches[0].length == trimedText.length) {
-            var hourStr = matches[0].groups["hour"] ? matches[0].groups["hour"].value : null;
-            var hour = 12;
+        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.IshRegex, trimedText);
+        if (matches.length > 0 && matches[0].length === trimedText.length) {
+            let hourStr = matches[0].groups("hour").value;
+            let hour = 12;
             if (hourStr) {
-                hour = parseInt(hourStr);
+                hour = Number.parseInt(hourStr);
             }
 
             ret.timex = "T" + FormatUtil.toString(hour, 2);

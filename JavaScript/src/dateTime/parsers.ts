@@ -5,7 +5,7 @@ import { IDateTimeUtilityConfiguration } from "./utilities"
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";
 import { FormatUtil, DateTimeResolutionResult, DateUtils, MatchingUtil } from "./utilities";
-import { RegExpUtility, Match, isNullOrEmpty } from "../utilities";
+import { RegExpUtility, Match, isNullOrEmpty, isNullOrWhitespace } from "../utilities";
 
 export class DateTimeParseResult extends ParseResult {
     // TimexStr is only used in extractors related with date and time
@@ -132,7 +132,7 @@ export class BaseTimeParser implements IDateTimeParser {
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
         if (!referenceTime) referenceTime = new Date();
         let value = null;
-        if (er.type == this.ParserName) {
+        if (er.type === this.ParserName) {
             let innerResult = this.internalParse(er.text, referenceTime);
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>(
@@ -168,12 +168,12 @@ export class BaseTimeParser implements IDateTimeParser {
         let offset = 0;
 
         let matches = RegExpUtility.getMatches(this.config.atRegex, trimmedText);
-        if (matches.length == 0) {
+        if (matches.length === 0) {
             matches = RegExpUtility.getMatches(this.config.atRegex, this.config.timeTokenPrefix + trimmedText);
             offset = this.config.timeTokenPrefix.length;
         }
 
-        if (matches.length > 0 && matches[0].index == offset && matches[0].length == trimmedText.length) {
+        if (matches.length > 0 && matches[0].index === offset && matches[0].length === trimmedText.length) {
             return this.match2Time(matches[0], referenceTime);
         }
 
@@ -181,7 +181,7 @@ export class BaseTimeParser implements IDateTimeParser {
             offset = 0;
             matches = RegExpUtility.getMatches(regex, trimmedText);
 
-            if (matches.length && matches[0].index == offset && matches[0].length == trimmedText.length) {
+            if (matches.length && matches[0].index === offset && matches[0].length === trimmedText.length) {
                 return this.match2Time(matches[0], referenceTime);
             }
         }
@@ -199,42 +199,42 @@ export class BaseTimeParser implements IDateTimeParser {
             year = referenceTime.getFullYear();
         let hasMin = false, hasSec = false, hasAm = false, hasPm = false, hasMid = false;
 
-        let engTimeStr = match.groups["engtime"] ? match.groups["engtime"].value : null;
-        if (engTimeStr) {
+        let engTimeStr = match.groups('engtime').value;
+        if (!isNullOrWhitespace(engTimeStr)) {
             // get hour
-            let hourStr = match.groups["hournum"].value ? match.groups["hournum"].value.toLowerCase() : null;
+            let hourStr = match.groups('hournum').value.toLowerCase();
             hour = this.config.numbers.get(hourStr);
 
             // get minute
-            let minStr = match.groups["minnum"] ? match.groups["minnum"].value : null;
-            let tensStr = match.groups["tens"] ? match.groups["tens"].value : null;
+            let minStr = match.groups('minnum').value;
+            let tensStr = match.groups('tens').value;
 
-            if (minStr) {
+            if (!isNullOrWhitespace(minStr)) {
                 min = this.config.numbers.get(minStr);
                 if (tensStr) {
-                    min += this.config.numbers.get(tensStr) || 0;
+                    min += this.config.numbers.get(tensStr);
                 }
                 hasMin = true;
             }
         }
-        else if (match.groups["mid"]) {
+        else if (!isNullOrWhitespace(match.groups('mid').value)) {
             hasMid = true;
-            if (match.groups["midnight"]) {
+            if (!isNullOrWhitespace(match.groups('midnight').value)) {
                 hour = 0;
                 min = 0;
                 second = 0;
             }
-            else if (match.groups["midmorning"]) {
+            else if (!isNullOrWhitespace(match.groups('midmorning').value)) {
                 hour = 10;
                 min = 0;
                 second = 0;
             }
-            else if (match.groups["midafternoon"]) {
+            else if (!isNullOrWhitespace(match.groups('midafternoon').value)) {
                 hour = 14;
                 min = 0;
                 second = 0;
             }
-            else if (match.groups["midday"]) {
+            else if (!isNullOrWhitespace(match.groups('midday').value)) {
                 hour = 12;
                 min = 0;
                 second = 0;
@@ -242,9 +242,9 @@ export class BaseTimeParser implements IDateTimeParser {
         }
         else {
             // get hour
-            let hourStr = match.groups["hour"] ? match.groups["hour"].value : null;
-            if (!hourStr) {
-                hourStr = match.groups["hournum"] ? match.groups["hournum"].value.toLowerCase() : null;
+            let hourStr = match.groups('hour').value;
+            if (isNullOrWhitespace(hourStr)) {
+                hourStr = match.groups('hournum').value.toLowerCase();
                 hour = this.config.numbers.get(hourStr);
                 if (!hour) {
                     return ret;
@@ -261,43 +261,43 @@ export class BaseTimeParser implements IDateTimeParser {
             }
 
             // get minute
-            let minStr = match.groups["min"] ? match.groups["min"].value.toLowerCase() : null;
-            if (!minStr) {
-                minStr = match.groups["minnum"] ? match.groups["minnum"].value : null;
-                if (minStr) {
+            let minStr = match.groups('min').value.toLowerCase();
+            if (isNullOrWhitespace(minStr)) {
+                minStr = match.groups('minnum').value;
+                if (!isNullOrWhitespace(minStr)) {
                     min = this.config.numbers.get(minStr);
                     hasMin = true;
                 }
 
-                let tensStr = match.groups["tens"] ? match.groups["tens"].value : null;
-                if (tensStr) {
+                let tensStr = match.groups('tens').value;
+                if (!isNullOrWhitespace(tensStr)) {
                     min += this.config.numbers.get(tensStr);
                     hasMin = true;
                 }
             }
             else {
-                min = parseInt(minStr);
+                min = Number.parseInt(minStr);
                 hasMin = true;
             }
 
             // get second
-            let secStr = match.groups["sec"] ? match.groups["sec"].value.toLowerCase() : null;
-            if (secStr) {
-                second = parseInt(secStr);
+            let secStr = match.groups('sec').value.toLowerCase();
+            if (!isNullOrWhitespace(secStr)) {
+                second = Number.parseInt(secStr);
                 hasSec = true;
             }
         }
 
-        //adjust by desc string
-        let descStr = match.groups["desc"] ? match.groups["desc"].value.toLowerCase() : null;
-        if (descStr) {
-            if (descStr.toLowerCase().startsWith("a")) {
+        // adjust by desc string
+        let descStr = match.groups('desc').value.toLowerCase();
+        if (!isNullOrWhitespace(descStr)) {
+            if (descStr.startsWith("a")) {
                 if (hour >= 12) {
                     hour -= 12;
                 }
                 hasAm = true;
             }
-            else if (descStr.toLowerCase().startsWith("p")) {
+            else if (descStr.startsWith("p")) {
                 if (hour < 12) {
                     hour += 12;
                 }
@@ -306,22 +306,22 @@ export class BaseTimeParser implements IDateTimeParser {
         }
 
         // adjust min by prefix
-        let timePrefix = match.groups["prefix"] ? match.groups["prefix"].value.toLowerCase() : null;
-        if (timePrefix) {
+        let timePrefix = match.groups('prefix').value.toLowerCase();
+        if (!isNullOrWhitespace(timePrefix)) {
             let adjust = { hour: hour, min: min, hasMin: hasMin };
             this.config.adjustByPrefix(timePrefix, adjust);
             hour = adjust.hour; min = adjust.min; hasMin = adjust.hasMin;
         }
 
         // adjust hour by suffix
-        let timeSuffix = match.groups["suffix"] ? match.groups["suffix"].value.toLowerCase() : null;
-        if (timeSuffix) {
+        let timeSuffix = match.groups('suffix').value.toLowerCase();
+        if (!isNullOrWhitespace(timeSuffix)) {
             let adjust = { hour: hour, min: min, hasMin: hasMin, hasAm: hasAm, hasPm: hasPm };
             this.config.adjustBySuffix(timeSuffix, adjust);
             hour = adjust.hour; min = adjust.min; hasMin = adjust.hasMin; hasAm = adjust.hasAm; hasPm = adjust.hasPm;
         }
 
-        if (hour == 24) {
+        if (hour === 24) {
             hour = 0;
         }
 
@@ -370,7 +370,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
     public parse(er: ExtractResult, refTime?: Date): DateTimeParseResult {
         let referenceTime = refTime || new Date();
         let value = null;
-        if (er.type == BaseTimePeriodParser.ParserName) {
+        if (er.type === BaseTimePeriodParser.ParserName) {
             let innerResult = this.parseSimpleCases(er.text, referenceTime);
             if (!innerResult.success) {
                 innerResult = this.mergeTwoTimePoints(er.text, referenceTime);
@@ -425,39 +425,38 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex, trimedText);
         }
 
-        if (matches.length && matches[0].index == 0) {
+        if (matches.length && matches[0].index === 0) {
             // this "from .. to .." pattern is valid if followed by a Date OR "pm"
             let isValid = false;
 
             // get hours
-            let hourGroup = matches[0].groups["hour"];
+            let hourGroup = matches[0].groups('hour');
             let hourStr = hourGroup.captures[0];
 
             let beginHour = this.config.numbers.get(hourStr);
             if (!beginHour) {
-                beginHour = parseInt(hourStr);
+                beginHour = Number.parseInt(hourStr);
             }
 
             hourStr = hourGroup.captures[1];
 
             let endHour = this.config.numbers.get(hourStr);
             if (!endHour) {
-                endHour = parseInt(hourStr);
+                endHour = Number.parseInt(hourStr);
             }
 
             // parse "pm" 
-            let leftDesc = matches[0].groups["leftDesc"];
-            let rightDesc = matches[0].groups["rightDesc"];
-            let pmStr = matches[0].groups["pm"];
-            let amStr = matches[0].groups["am"];
-            let descStr = matches[0].groups["desc"];
+            let leftDesc = matches[0].groups("leftDesc").value;
+            let rightDesc = matches[0].groups("rightDesc").value;
+            let pmStr = matches[0].groups("pm").value;
+            let amStr = matches[0].groups("am").value;
             // The "ampm" only occurs in time, don't have to consider it here
-            if (!leftDesc) {
-                let rightAmValid = (rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.value.toLowerCase()).length;
-                let rightPmValid = (rightDesc) &&
-                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.value.toLowerCase()).length;
-                if (amStr || rightAmValid) {
+            if (isNullOrWhitespace(leftDesc)) {
+                let rightAmValid = !isNullOrEmpty(rightDesc) &&
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, rightDesc.toLowerCase()).length;
+                let rightPmValid = !isNullOrEmpty(rightDesc) &&
+                    RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, rightDesc.toLowerCase()).length;
+                if (!isNullOrEmpty(amStr) || rightAmValid) {
 
                     if (beginHour >= 12) {
                         beginHour -= 12;
@@ -467,7 +466,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                     }
                     isValid = true;
                 }
-                else if (pmStr || rightPmValid) {
+                else if (!isNullOrEmpty(pmStr) || rightPmValid) {
                     if (beginHour < 12) {
                         beginHour += 12;
                     }
@@ -502,7 +501,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let ers = this.config.timeExtractor.extract(text);
         let pr1: DateTimeParseResult = null;
         let pr2: DateTimeParseResult = null;
-        if (ers.length != 2) {
+        if (ers.length !== 2) {
             return ret;
         }
 
@@ -540,14 +539,14 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let matches = RegExpUtility.getMatches(this.config.timeOfDayRegex, text);
         let hasEarly = false, hasLate = false;
         if (matches.length) {
-            if (matches[0].groups["early"]) {
-                let early = matches[0].groups["early"].value;
+            if (!isNullOrEmpty(matches[0].groups("early").value)) {
+                let early = matches[0].groups("early").value;
                 text = text.replace(early, "");
                 hasEarly = true;
                 ret.comment = "early";
             }
-            if (!hasEarly && matches[0].groups["late"] && matches[0].groups["late"].value) {
-                let late = matches[0].groups["late"].value;
+            if (!hasEarly && !isNullOrEmpty(matches[0].groups("late").value)) {
+                let late = matches[0].groups("late").value;
                 text = text.replace(late, "");
                 hasLate = true;
                 ret.comment = "late";
@@ -563,7 +562,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         if (hasEarly) {
             timexRange.endHour = timexRange.beginHour + 2;
             // handling case: night end with 23:59
-            if (timexRange.endMin == 59) {
+            if (timexRange.endMin === 59) {
                 timexRange.endMin = 0;
             }
         }
@@ -654,7 +653,7 @@ export class BaseDateParser implements IDateTimeParser {
             let day = 0;
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
-            let dayStr = match.groups['day'].value;
+            let dayStr = match.groups('day').value;
             day = this.config.dayOfMonth.get(dayStr);
             result.timex = FormatUtil.luisDate(-1, -1, day);
             let futureDate = new Date(year, month + 1, day);
@@ -689,7 +688,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "next Sunday"
         match = RegExpUtility.getMatches(this.config.nextRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'].value;
+            let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.next(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -702,7 +701,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "this Friday"
         match = RegExpUtility.getMatches(this.config.thisRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'].value;
+            let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -715,7 +714,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "last Friday", "last mon"
         match = RegExpUtility.getMatches(this.config.lastRegex, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'].value;
+            let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.last(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -728,7 +727,7 @@ export class BaseDateParser implements IDateTimeParser {
         // handle "Friday"
         match = RegExpUtility.getMatches(this.config.strictWeekDay, trimedSource).pop();
         if (match && match.index === 0 && match.length === trimedSource.length) {
-            let weekdayStr = match.groups['weekday'].value;
+            let weekdayStr = match.groups('weekday').value;
             let weekday = this.config.dayOfWeek.get(weekdayStr);
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
@@ -793,9 +792,9 @@ export class BaseDateParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekDayOfMonthRegex, trimedSource).pop();
         if (!match) return result;
-        let cardinalStr = match.groups['cardinal'] ? match.groups['cardinal'].value : '';
-        let weekdayStr = match.groups['weekday'] ? match.groups['weekday'].value : '';
-        let monthStr = match.groups['month'] ? match.groups['month'].value : '';
+        let cardinalStr = match.groups('cardinal').value;
+        let weekdayStr = match.groups('weekday').value;
+        let monthStr = match.groups('month').value;
         let noYear = false;
         let cardinal = this.config.isCardinalLast(cardinalStr) ? 5 : this.config.cardinalMap.get(cardinalStr);
         let weekday = this.config.dayOfWeek.get(weekdayStr);
@@ -835,9 +834,9 @@ export class BaseDateParser implements IDateTimeParser {
 
     private matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let yearStr = match.groups['year'] ? match.groups['year'].value : '';
-        let monthStr = match.groups['month'] ? match.groups['month'].value : '';
-        let dayStr = match.groups['day'] ? match.groups['day'].value : '';
+        let yearStr = match.groups('year').value;
+        let monthStr = match.groups('month').value;
+        let dayStr = match.groups('day').value;
         let month = 0;
         let day = 0;
         let year = 0;
@@ -896,7 +895,7 @@ function parserDurationWithAgoAndLater(source: string, referenceDate: Date, dura
     if (!match) return result;
     let afterStr = source.substr(duration.start + duration.length);
     let beforeStr = source.substr(0, duration.start);
-    let srcUnit = match.groups['unit'].value;
+    let srcUnit = match.groups('unit').value;
     let durationResult: DateTimeResolutionResult = pr.value;
     let numStr = durationResult.timex.substr(0, durationResult.timex.length - 1)
         .replace('P', '')

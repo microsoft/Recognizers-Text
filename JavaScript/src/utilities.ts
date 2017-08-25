@@ -44,11 +44,22 @@ export function isWhitespace(input: string): boolean {
     return input && input !== '' && !input.trim();
 }
 
-export interface Match {
+export class Match {
+    constructor (index: number, length: number, value: string, groups) {
+        this.index = index;
+        this.length = length;
+        this.value = value;
+        this.innerGroups = groups;
+    }
+
     index: number;
     length: number;
     value: string;
-    groups: { [id: string]: { value: string, captures: string[] } };
+    private innerGroups: { [id: string]: { value: string, captures: string[] } };
+
+    groups(key: string): { value: string, captures: string[] } {
+        return this.innerGroups[key] ? this.innerGroups[key] : { value: '', captures: [] };
+    }
 }
 
 export class RegExpUtility {
@@ -71,13 +82,12 @@ export class RegExpUtility {
                 }
 
                 let groupKey = key.substr(0, key.lastIndexOf('__'));
+
+                if (!groups[groupKey]) groups[groupKey] = { value: '', captures: [] };
+
                 if (match[key]) {
-                    if (groups[groupKey]) {
-                        groups[groupKey].value = match[key];
-                        groups[groupKey].captures.push(match[key]);
-                    } else {
-                        groups[groupKey] = { value: match[key], captures: [match[key]] };
-                    }
+                    groups[groupKey].value = match[key];
+                    groups[groupKey].captures.push(match[key]);
                 }
             });
             
@@ -91,12 +101,7 @@ export class RegExpUtility {
                 length -= positiveLookbehind[0].value.length
             }
             if (negativeLookbehind && negativeLookbehind.length > 0) return;
-            matches.push({
-                    value: value,
-                    index: index,
-                    length: length,
-                    groups: groups
-                });
+            matches.push(new Match(index, length, value, groups));
         });
         return matches;
     }
