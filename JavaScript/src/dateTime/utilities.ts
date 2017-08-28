@@ -1,4 +1,6 @@
-import { ExtractResult } from "../number/extractors"
+import { IExtractor, ExtractResult } from "../number/extractors"
+import { IParser } from "../number/parsers"
+import { AgoLaterMode } from "./parsers"
 import { RegExpUtility } from "../utilities"
 
 export class Token {
@@ -86,6 +88,58 @@ export class AgoLaterUtil {
         }
         return ret;
     }
+
+    // static  ParseDurationWithAgoAndLater( text:string, 
+    //     referenceTime:Date, 
+    //      durationExtractor:IExtractor,
+    //      durationParser:IParser, 
+    //     unitMap:ReadonlyMap<string,string>,
+    //     unitRegex:RegExp    ,
+    //      utilityConfiguration:IDateTimeUtilityConfiguration,
+    //      mode:AgoLaterMode):DateTimeResolutionResult
+    // {
+    //     let ret = new DateTimeResolutionResult();
+    //     let durationRes = durationExtractor.extract(text);
+    //     if (durationRes.length > 0)
+    //     {
+    //         let pr = durationParser.parse(durationRes[0]);
+    //         let matches =RegExpUtility.getMatches( unitRegex,text);
+    //         if (matches.length)
+    //         {
+    //             var afterStr =
+    //                 text.substring(durationRes[0].start + durationRes[0].length)
+    //                     .trim()
+    //                     .toLowerCase();
+    //             var beforeStr =
+    //                 text.substring(0, durationRes[0].start)
+    //                     .trim()
+    //                     .toLowerCase();
+    //             var srcUnit = matches[0].groups("unit").value.toLowerCase();
+
+    //             if (pr.value!=null)
+    //             {
+    //                 var durationResult = pr.value;
+    //                 var numStr = durationResult.timex.Substring(0, durationResult.timex.Length - 1)
+    //                     .Replace("P", "")
+    //                     .Replace("T", "");
+
+    //                 let number = parseFloat(numStr);
+    //                 if (!Number.isNaN(number))
+    //                 {
+    //                     return this.getAgoLaterResult(number,
+    //                         unitMap,
+    //                         srcUnit,
+    //                         afterStr,
+    //                         beforeStr,
+    //                         referenceTime,
+    //                         utilityConfiguration,
+    //                         mode);
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return ret;
+    // }
 }
 
 export interface MatchedIndex {

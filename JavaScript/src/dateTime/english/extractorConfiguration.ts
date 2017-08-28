@@ -363,34 +363,34 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 }
         
 export class EnglishSetExtractorConfiguration implements ISetExtractorConfiguration {
-            readonly dateExtractor: BaseDateExtractor
-            readonly timeExtractor: BaseTimeExtractor
-            readonly dateTimeExtractor: BaseDateTimeExtractor
-            readonly datePeriodExtractor: BaseDatePeriodExtractor
-            readonly timePeriodExtractor: BaseTimePeriodExtractor
-            readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-            readonly durationExtractor: BaseDurationExtractor
-            readonly lastRegex: RegExp
-            readonly eachPrefixRegex: RegExp
-            readonly periodicRegex: RegExp
-            readonly eachUnitRegex: RegExp
-            readonly beforeEachDayRegex: RegExp
-    readonly eachDayRegex: RegExp
+    lastRegex: RegExp;
+    eachPrefixRegex: RegExp;
+    periodicRegex: RegExp;
+    eachUnitRegex: RegExp;
+    eachDayRegex: RegExp;
+    beforeEachDayRegex: RegExp;
+    durationExtractor: IExtractor;
+    timeExtractor: IExtractor;
+    dateExtractor: IExtractor;
+    dateTimeExtractor: IExtractor;
+    datePeriodExtractor: IExtractor;
+    timePeriodExtractor: IExtractor;
+    dateTimePeriodExtractor: IExtractor;
             
     constructor() {
-                this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
-                this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration())
-                this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration())
-                this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration())
-                this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration())
-                this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration())
-                this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
-                this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex, "gis")
-                this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex, "gis")
-                this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex, "gis")
-                this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex, "gis")
+        this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+        this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+        this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        this.dateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+        this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+        this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+        this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+                this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetLastRegex)
+                this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex)
+                this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex)
+                this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex)
+                this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex)
                 this.beforeEachDayRegex = null;
-                this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex, "gis")
             }
 }
         

@@ -24,7 +24,13 @@ import {
     BaseTimeParser,
     IDateTimeParser,
     ITimePeriodParserConfiguration,
-    IDurationParserConfiguration
+    ISetParserConfiguration,
+    IDurationParserConfiguration,
+    BaseDurationParser,
+    BaseDateParser,
+    BaseTimePeriodParser,
+    IDateTimeParserConfiguration,
+    BaseDateTimeParser
 } from "../parsers";
 import {
     EnglishCardinalExtractor,
@@ -66,12 +72,12 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-        //this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
-        // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
-        //this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
+        this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
+        this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
-        // this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
+        this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
         this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
     }
@@ -326,18 +332,18 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.dateTokenPrefix = EnglishDateTime.DateTokenPrefix;
     }
 
-    getSwiftDay(source: string):number {
+    getSwiftDay(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (trimedText === "today" || trimedText === "the day") {
             swift = 0;
         } else if (trimedText === "tomorrow" || trimedText === "tmr" ||
-                    trimedText === "next day" || trimedText === "the next day") {
+            trimedText === "next day" || trimedText === "the next day") {
             swift = 1;
         } else if (trimedText === "yesterday") {
             swift = -1;
         } else if (trimedText.endsWith("day after tomorrow") ||
-                    trimedText.endsWith("day after tmr")) {
+            trimedText.endsWith("day after tmr")) {
             swift = 2;
         } else if (trimedText.endsWith("day before yesterday")) {
             swift = -2;
@@ -392,4 +398,191 @@ export class EnglishDurationParserConfiguration implements IDurationParserConfig
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;
     }
+}
+
+export class EnglishSetParserConfiguration implements ISetParserConfiguration {
+    durationExtractor: IExtractor;
+    durationParser: IDateTimeParser;
+    timeExtractor: IExtractor;
+    timeParser: IDateTimeParser;
+    dateExtractor: IExtractor;
+    dateParser: IDateTimeParser;
+    dateTimeExtractor: IExtractor;
+    dateTimeParser: IDateTimeParser;
+    datePeriodExtractor: IExtractor;
+    datePeriodParser: IDateTimeParser;
+    timePeriodExtractor: IExtractor;
+    timePeriodParser: IDateTimeParser;
+    dateTimePeriodExtractor: IExtractor;
+    dateTimePeriodParser: IDateTimeParser;
+    unitMap: ReadonlyMap<string, string>;
+    eachPrefixRegex: RegExp;
+    periodicRegex: RegExp;
+    eachUnitRegex: RegExp;
+    eachDayRegex: RegExp;
+
+    constructor(config: ICommonDateTimeParserConfiguration) {
+        this.durationExtractor = config.durationExtractor;
+        this.timeExtractor = config.timeExtractor;
+        this.dateExtractor = config.dateExtractor;
+        this.dateTimeExtractor = config.dateTimeExtractor;
+        this.datePeriodExtractor = config.datePeriodExtractor;
+        this.timePeriodExtractor = config.timePeriodExtractor;
+        this.dateTimePeriodExtractor = config.dateTimePeriodExtractor;
+
+        this.durationParser = config.durationParser;
+        this.timeParser = config.timeParser;
+        this.dateParser = config.dateParser;
+        this.dateTimeParser = config.dateTimeParser;
+        this.datePeriodParser = config.datePeriodParser;
+        this.timePeriodParser = config.timePeriodParser;
+        this.dateTimePeriodParser = config.dateTimePeriodParser;
+        this.unitMap = config.unitMap;
+
+        this.eachPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachPrefixRegex);
+        this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex);
+        this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex);
+        this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex);
+    }
+
+    public getMatchedDailyTimex(text: string): { matched: boolean, timex: string } {
+        let timex = "";
+        let trimedText = text.trim().toLowerCase();
+        if (trimedText == "daily") {
+            timex = "P1D";
+        }
+        else if (trimedText == "weekly") {
+            timex = "P1W";
+        }
+        else if (trimedText == "biweekly") {
+            timex = "P2W";
+        }
+        else if (trimedText == "monthly") {
+            timex = "P1M";
+        }
+        else if (trimedText == "yearly" || trimedText == "annually" || trimedText == "annual") {
+            timex = "P1Y";
+        }
+        else {
+            timex = null;
+            return { matched: false, timex: timex };
+        }
+        return { matched: true, timex: timex };
+    }
+
+    public getMatchedUnitTimex(text: string): { matched: boolean, timex: string } {
+        let timex = "";
+        var trimedText = text.trim().toLowerCase();
+        if (trimedText == "day") {
+            timex = "P1D";
+        }
+        else if (trimedText == "week") {
+            timex = "P1W";
+        }
+        else if (trimedText == "month") {
+            timex = "P1M";
+        }
+        else if (trimedText == "year") {
+            timex = "P1Y";
+        }
+        else {
+            timex = null;
+            return { matched: false, timex: timex };
+        }
+
+        return { matched: true, timex: timex };
+    }
+}
+
+export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfiguration {
+    tokenBeforeDate: string;
+    tokenBeforeTime: string;
+    dateExtractor: IExtractor;
+    timeExtractor: IExtractor;
+    dateParser: IDateTimeParser;
+    timeParser: IDateTimeParser;
+    cardinalExtractor: IExtractor;
+    numberParser: IParser;
+    durationExtractor: IExtractor;
+    durationParser: IParser;
+    nowRegex: RegExp;
+    aMTimeRegex: RegExp;
+    pMTimeRegex: RegExp;
+    simpleTimeOfTodayAfterRegex: RegExp;
+    simpleTimeOfTodayBeforeRegex: RegExp;
+    specificTimeOfDayRegex: RegExp;
+    theEndOfRegex: RegExp;
+    unitRegex: RegExp;
+    unitMap: ReadonlyMap<string, string>;
+    numbers: ReadonlyMap<string, number>;
+    utilityConfiguration: IDateTimeUtilityConfiguration;
+
+    constructor(config: ICommonDateTimeParserConfiguration) {
+        this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
+        this.tokenBeforeTime = EnglishDateTime.TokenBeforeTime;
+        this.dateExtractor = config.dateExtractor;
+        this.timeExtractor = config.timeExtractor;
+        this.dateParser = config.dateParser;
+        this.timeParser = config.timeParser;
+        this.nowRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowRegex);
+        this.aMTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AMTimeRegex);
+        this.pMTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PMTimeRegex);
+        this.simpleTimeOfTodayAfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayAfterRegex);
+        this.simpleTimeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleTimeOfTodayBeforeRegex);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
+        this.theEndOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TheEndOfRegex);
+        this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeUnitRegex);
+        this.numbers = config.numbers;
+        this.cardinalExtractor = config.cardinalExtractor;
+        this.numberParser = config.numberParser;
+        this.durationExtractor = config.durationExtractor;
+        this.durationParser = config.durationParser;
+        this.unitMap = config.unitMap;
+        this.utilityConfiguration = config.utilityConfiguration;
+    }
+
+    public getHour(text: string, hour: number): number {
+        let trimedText = text.trim().toLowerCase();
+        let result = hour;
+        if (trimedText.endsWith("morning") && hour >= 12) {
+            result -= 12;
+        }
+        else if (!trimedText.endsWith("morning") && hour < 12) {
+            result += 12;
+        }
+        return result;
+    }
+
+    public getMatchedNowTimex(text: string): { matched: boolean, timex: string } {
+        var trimedText = text.trim().toLowerCase();
+        let timex: string;
+        if (trimedText.endsWith("now")) {
+            timex = "PRESENT_REF";
+        }
+        else if (trimedText == "recently" || trimedText == "previously") {
+            timex = "PAST_REF";
+        }
+        else if (trimedText == "as soon as possible" || trimedText == "asap") {
+            timex = "FUTURE_REF";
+        }
+        else {
+            timex = null;
+            return { matched: false, timex: timex };
+        }
+        return { matched: true, timex: timex };
+    }
+
+    public getSwiftDay(text: string): number {
+        var trimedText = text.trim().toLowerCase();
+        var swift = 0;
+        if (trimedText.startsWith("next")) {
+            swift = 1;
+        }
+        else if (trimedText.startsWith("last")) {
+            swift = -1;
+        }
+        return swift;
+    }
+
+    public haveAmbiguousToken(text: string, matchedText: string): boolean { return false; }
 }
