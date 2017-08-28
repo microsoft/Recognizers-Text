@@ -121,6 +121,21 @@ export interface IDateParserConfiguration {
     isCardinalLast(source: string): boolean
 }
 
+export interface IDurationParserConfiguration {
+    cardinalExtractor: IExtractor
+    numberParser: IParser
+    followedUnit: RegExp
+    suffixAndRegex: RegExp
+    numberCombinedWithUnit: RegExp
+    anUnitRegex: RegExp
+    allDateUnitRegex: RegExp
+    halfDateUnitRegex: RegExp
+    inExactNumberUnitRegex: RegExp
+    unitMap: ReadonlyMap<string, string>
+    unitValueMap: ReadonlyMap<string, number>
+    doubleNumbers: ReadonlyMap<string, number>
+}
+
 export class BaseTimeParser implements IDateTimeParser {
     readonly ParserName = Constants.SYS_DATETIME_TIME; //"Time";
     readonly config: ITimeParserConfiguration;
@@ -878,6 +893,194 @@ export class BaseDateParser implements IDateTimeParser {
         if (weekday < firstDay.getDay()) firstWeekday = DateUtils.next(firstDay, weekday);
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
+    }
+}
+
+export class BaseDurationParser implements IDateTimeParser {
+    private readonly parserName = Constants.SYS_DATETIME_DURATION;
+
+    private readonly config: IDurationParserConfiguration;
+
+    constructor(config: IDurationParserConfiguration) {
+        this.config = config;
+    }
+
+    parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
+        if (!referenceDate) referenceDate = new Date();
+        let resultValue;
+        if (extractorResult.type === this.parserName) {
+            let source = extractorResult.text.toLowerCase();
+            let innerResult = this.parseNumberWithUnit(source, referenceDate);
+            if (!innerResult.success) {
+                innerResult = this.parseImplicitDuration(source, referenceDate);
+            }
+            if (innerResult.success) {
+                innerResult.futureResolution = new Map<string, string>()
+                    .set(TimeTypeConstants.DURATION, innerResult.futureValue);
+                innerResult.pastResolution = new Map<string, string>()
+                    .set(TimeTypeConstants.DURATION, innerResult.pastValue);
+                resultValue = innerResult;
+            }
+        }
+        let result = new DateTimeParseResult(extractorResult);
+        result.value = resultValue;
+        result.timexStr = resultValue ? resultValue.timex : '';
+        result.resolutionStr = '';
+
+        return result;
+    }
+    
+    private parseNumberWithUnit(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let trimmedSource = source.trim();
+        let result = this.parseNumberSpaceUnit(trimmedSource);
+        if (!result.success) {
+            result = this.parseNumberCombinedUnit(trimmedSource);
+        }
+        if (!result.success) {
+            result = this.parseAnUnit(trimmedSource);
+        }
+        if (!result.success) {
+            result = this.parseInExactNumberUnit(trimmedSource);
+        }
+        return result;
+    }
+    
+    private parseImplicitDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let trimmedSource = source.trim();
+        let result = this.getResultFromRegex(this.config.allDateUnitRegex, trimmedSource, 1);
+        if (!result.success) {
+            result = this.getResultFromRegex(this.config.halfDateUnitRegex, trimmedSource, 0.5);
+        }
+        return result;
+    }
+
+    private getResultFromRegex(regex: RegExp, source: string, num: number): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let match = RegExpUtility.getMatches(regex, source).pop();
+        if (!match) return result;
+        
+        let sourceUnit = match.groups('unit').value;
+        if (!this.config.unitMap.has(sourceUnit)) return result;
+
+        let unitStr = this.config.unitMap.get(sourceUnit);
+        result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
+        result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
+        result.pastValue = result.futureValue;
+        result.success = true;
+        return result;
+    }
+
+    private parseNumberSpaceUnit(source: string): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let suffixStr = source;
+        let ers = this.config.cardinalExtractor.extract(source);
+        if (ers && ers.length === 1) {
+            let er = ers[0];
+            let sourceUnit = '';
+            let pr = this.config.numberParser.parse(er);
+            let noNumStr = source.substr(er. start + er.length).trim().toLowerCase();
+            let match = RegExpUtility.getMatches(this.config.followedUnit, noNumStr).pop();
+            if (match) {
+                sourceUnit = match.groups('unit').value;
+                suffixStr = match.groups('suffix').value;
+            }
+            if (this.config.unitMap.has(sourceUnit)) {
+                let num = Number.parseFloat(pr.value) + this.parseNumberWithUnitAndSuffix(suffixStr);
+                let unitStr = this.config.unitMap.get(sourceUnit);
+
+                result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
+                result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
+                result.pastValue = result.futureValue;
+                result.success = true;
+                return result;
+            }
+        }
+        return result;
+    }
+
+    private parseNumberWithUnitAndSuffix(source: string): number {
+        let match = RegExpUtility.getMatches(this.config.suffixAndRegex, source).pop();
+        if (match) {
+            let numStr = match.groups('suffix_num').value;
+            if (this.config.doubleNumbers.has(numStr)) {
+                return this.config.doubleNumbers.get(numStr);
+            }
+        }
+        return 0;
+    }
+
+    private parseNumberCombinedUnit(source: string): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let match = RegExpUtility.getMatches(this.config.numberCombinedWithUnit, source).pop();
+        if (!match) return result;
+        let num = Number.parseFloat(match.groups('num').value) + this.parseNumberWithUnitAndSuffix(source);
+
+        let sourceUnit = match.groups('unit').value;
+        if (this.config.unitMap.has(sourceUnit)) {
+            let unitStr = this.config.unitMap.get(sourceUnit);
+            if (num > 1000 && (unitStr === 'Y' || unitStr === 'MON' || unitStr === 'W')) {
+                return result;
+            }
+
+            result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
+            result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
+            result.pastValue = result.futureValue;
+            result.success = true;
+            return result;
+        }
+        return result;
+    }
+
+    private parseAnUnit(source: string): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let match = RegExpUtility.getMatches(this.config.anUnitRegex, source).pop();
+        if (!match) {
+            match = RegExpUtility.getMatches(this.config.halfDateUnitRegex, source).pop();
+        }
+        if (!match) return result;
+        let num = isNullOrEmpty(match.groups('half').value) ? 1 : 0.5
+        num += this.parseNumberWithUnitAndSuffix(source);
+        let numStr = num.toString();
+        
+        let sourceUnit = match.groups('unit').value;
+        if (this.config.unitMap.has(sourceUnit)) {
+            let unitStr = this.config.unitMap.get(sourceUnit);
+
+            result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
+            result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
+            result.pastValue = result.futureValue;
+            result.success = true;
+            return result;
+        }
+        return result;
+    }
+
+    private parseInExactNumberUnit(source: string): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let match = RegExpUtility.getMatches(this.config.inExactNumberUnitRegex, source).pop();
+        if (!match) return result;
+
+        let num = 3;
+        let numStr = num.toString();
+        
+        let sourceUnit = match.groups('unit').value;
+        if (this.config.unitMap.has(sourceUnit)) {
+            let unitStr = this.config.unitMap.get(sourceUnit);
+            if (num > 1000 && (unitStr === 'Y' || unitStr === 'MON' || unitStr === 'W')) {
+                return result;
+            }
+
+            result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
+            result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
+            result.pastValue = result.futureValue;
+            result.success = true;
+            return result;
+        }
+        return result;
+    }
+
+    private isLessThanDay(source: string): boolean {
+        return (source === 'S') || (source === 'M') || (source === 'H')
     }
 }
 

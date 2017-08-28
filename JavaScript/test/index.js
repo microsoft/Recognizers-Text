@@ -14,3 +14,4 @@ require('./mergedExtractor-english.test');
 require('./timeParser-english.test');
 require('./dateParser-english.test');
 require('./timePeriodParser-english.test');
+require('./durationParser-english.test');

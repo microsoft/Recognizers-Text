@@ -23,7 +23,8 @@ import {
     IDateParserConfiguration,
     BaseTimeParser,
     IDateTimeParser,
-    ITimePeriodParserConfiguration
+    ITimePeriodParserConfiguration,
+    IDurationParserConfiguration
 } from "../parsers";
 import {
     EnglishCardinalExtractor,
@@ -360,5 +361,35 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     isCardinalLast(source: string): boolean {
         let trimedText = source.trim().toLowerCase();
         return trimedText === "last";
+    }
+}
+
+export class EnglishDurationParserConfiguration implements IDurationParserConfiguration {
+    readonly cardinalExtractor: IExtractor
+    readonly numberParser: IParser
+    readonly followedUnit: RegExp
+    readonly suffixAndRegex: RegExp
+    readonly numberCombinedWithUnit: RegExp
+    readonly anUnitRegex: RegExp
+    readonly allDateUnitRegex: RegExp
+    readonly halfDateUnitRegex: RegExp
+    readonly inExactNumberUnitRegex: RegExp
+    readonly unitMap: ReadonlyMap<string, string>
+    readonly unitValueMap: ReadonlyMap<string, number>
+    readonly doubleNumbers: ReadonlyMap<string, number>
+
+    constructor(config: ICommonDateTimeParserConfiguration) {
+        this.cardinalExtractor = config.cardinalExtractor;
+        this.numberParser = config.numberParser;
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit);
+        this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit);
+        this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
+        this.allDateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex);
+        this.halfDateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex);
+        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex);
+        this.unitMap = config.unitMap;
+        this.unitValueMap = config.unitValueMap;
+        this.doubleNumbers = config.doubleNumbers;
     }
 }
