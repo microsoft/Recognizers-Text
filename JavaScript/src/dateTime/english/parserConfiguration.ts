@@ -52,6 +52,7 @@ import * as XRegExp from 'xregexp';
 export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConfiguration {
     constructor() {
         super();
+        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
         this.utilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         this.unitMap = EnglishDateTime.UnitMap;
         this.unitValueMap = EnglishDateTime.UnitValueMap;
@@ -79,7 +80,6 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
     }
 }
 

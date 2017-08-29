@@ -89,57 +89,167 @@ export class AgoLaterUtil {
         return ret;
     }
 
-    // static  ParseDurationWithAgoAndLater( text:string, 
-    //     referenceTime:Date, 
-    //      durationExtractor:IExtractor,
-    //      durationParser:IParser, 
-    //     unitMap:ReadonlyMap<string,string>,
-    //     unitRegex:RegExp    ,
-    //      utilityConfiguration:IDateTimeUtilityConfiguration,
-    //      mode:AgoLaterMode):DateTimeResolutionResult
-    // {
-    //     let ret = new DateTimeResolutionResult();
-    //     let durationRes = durationExtractor.extract(text);
-    //     if (durationRes.length > 0)
-    //     {
-    //         let pr = durationParser.parse(durationRes[0]);
-    //         let matches =RegExpUtility.getMatches( unitRegex,text);
-    //         if (matches.length)
-    //         {
-    //             var afterStr =
-    //                 text.substring(durationRes[0].start + durationRes[0].length)
-    //                     .trim()
-    //                     .toLowerCase();
-    //             var beforeStr =
-    //                 text.substring(0, durationRes[0].start)
-    //                     .trim()
-    //                     .toLowerCase();
-    //             var srcUnit = matches[0].groups("unit").value.toLowerCase();
+    static parseDurationWithAgoAndLater( text:string, 
+        referenceTime:Date, 
+         durationExtractor:IExtractor,
+         durationParser:IParser, 
+        unitMap:ReadonlyMap<string,string>,
+        unitRegex:RegExp    ,
+         utilityConfiguration:IDateTimeUtilityConfiguration,
+         mode:AgoLaterMode):DateTimeResolutionResult
+    {
+        let ret = new DateTimeResolutionResult();
+        let durationRes = durationExtractor.extract(text);
+        if (durationRes.length > 0)
+        {
+            let pr = durationParser.parse(durationRes[0]);
+            let matches =RegExpUtility.getMatches( unitRegex,text);
+            if (matches.length)
+            {
+                var afterStr =
+                    text.substring(durationRes[0].start + durationRes[0].length)
+                        .trim()
+                        .toLowerCase();
+                var beforeStr =
+                    text.substring(0, durationRes[0].start)
+                        .trim()
+                        .toLowerCase();
+                var srcUnit = matches[0].groups("unit").value.toLowerCase();
 
-    //             if (pr.value!=null)
-    //             {
-    //                 var durationResult = pr.value;
-    //                 var numStr = durationResult.timex.Substring(0, durationResult.timex.Length - 1)
-    //                     .Replace("P", "")
-    //                     .Replace("T", "");
+                if (pr.value!=null)
+                {
+                    var durationResult = pr.value;
+                    var numStr = durationResult.timex.substring(0, durationResult.timex.length - 1)
+                        .replace("P", "")
+                        .replace("T", "");
 
-    //                 let number = parseFloat(numStr);
-    //                 if (!Number.isNaN(number))
-    //                 {
-    //                     return this.getAgoLaterResult(number,
-    //                         unitMap,
-    //                         srcUnit,
-    //                         afterStr,
-    //                         beforeStr,
-    //                         referenceTime,
-    //                         utilityConfiguration,
-    //                         mode);
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return ret;
-    // }
+                    let number = parseFloat(numStr);
+                    if (!Number.isNaN(number))
+                    {
+                        return AgoLaterUtil.getAgoLaterResult(number,
+                            unitMap,
+                            srcUnit,
+                            afterStr,
+                            beforeStr,
+                            referenceTime,
+                            utilityConfiguration,
+                            mode);
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    static getAgoLaterResult(numberParam:number,
+        unitMap:ReadonlyMap<string, string> ,
+         srcUnit:string,
+        afterStr:string,
+        beforeStr:string,
+         referenceTime:Date,
+         utilityConfiguration:IDateTimeUtilityConfiguration,
+         mode:AgoLaterMode):DateTimeResolutionResult
+    {
+        let ret = new DateTimeResolutionResult();
+
+        if (unitMap.has(srcUnit))
+        {
+            var unitStr = unitMap.get(srcUnit);
+            var numStr = numberParam.toString();
+            if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.agoRegex))
+            {
+                if (mode==AgoLaterMode.Date)
+                {
+                    return AgoLaterUtil.getDateResult(unitStr, numStr, referenceTime, false);
+                }
+
+                if (mode==AgoLaterMode.DateTime)
+                {
+                    return AgoLaterUtil.getDateTimeResult(unitStr, numStr, referenceTime, false);
+                }
+            }
+
+            if (MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.laterRegex)
+                || MatchingUtil.containsInIndex(beforeStr, utilityConfiguration.inConnectorRegex))
+            {
+                if (mode==AgoLaterMode.Date)
+                {
+                    return AgoLaterUtil.getDateResult(unitStr, numStr, referenceTime, true);
+                }
+
+                if (mode==AgoLaterMode.DateTime)
+                {
+                    return AgoLaterUtil.getDateTimeResult(unitStr, numStr, referenceTime, true);
+                }
+            }
+        }
+        return ret;
+    }
+
+    static getDateResult(unitStr:string , numStr:string , referenceDate:Date, future:boolean):DateTimeResolutionResult
+    {
+        let date=new Date(referenceDate);
+        let ret = new DateTimeResolutionResult();
+        let futureOrPast = future ? 1 : -1;
+
+        switch (unitStr)
+        {
+            case "D":{
+                date.setDate(date.getDate()+(parseFloat(numStr) * futureOrPast));
+                break;
+            } 
+            case "W":{
+                date.setDate(date.getDate()+(7 * parseFloat(numStr) * futureOrPast));
+                break;
+            }
+            case "MON": {
+                date.setMonth(date.getDate()+(Math.round(parseFloat(numStr)) * futureOrPast));
+                break;
+            }
+            case "Y": {
+                date.setFullYear(date.getFullYear() + (Math.round(parseFloat(numStr)) * futureOrPast));
+                break;
+                }
+            default: {
+                return ret;
+            }
+        }
+
+        ret.timex = `${FormatUtil.luisDateFromDate(date)}`;
+        ret.futureValue = ret.pastValue = date;
+        ret.success = true;
+        return ret;
+    }
+
+    static getDateTimeResult( unitStr:string,  numStr:string, referenceTime:Date, future: boolean):DateTimeResolutionResult
+    {
+        let time=new Date(referenceTime);
+        var ret = new DateTimeResolutionResult();
+        let futureOrPast = future ? 1 : -1;
+
+        switch (unitStr) {
+            case "H": {
+                time.setHours(time.getHours()+parseFloat(numStr)*futureOrPast);
+                break;
+            }
+            case "M": {
+                time.setHours(time.getHours()+parseFloat(numStr) * futureOrPast);
+                break;
+            }
+            case "S": {
+                time.setHours(time.getHours()+parseFloat(numStr) * futureOrPast);
+                break;
+            }
+            default: {
+                return ret;
+            }
+        }
+
+        ret.timex = `${FormatUtil.luisDateTime(time)}`;
+        ret.futureValue = ret.pastValue = time;
+        ret.success = true;
+        return ret;
+    }
 }
 
 export interface MatchedIndex {
@@ -148,7 +258,7 @@ export interface MatchedIndex {
 }
 
 export class MatchingUtil {
-    static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
+    public static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());
         if (referencedMatches && referencedMatches.length > 0) {
@@ -158,7 +268,7 @@ export class MatchingUtil {
         return result;
     }
 
-    static getInIndex(source: string, regex: RegExp): MatchedIndex {
+    public static getInIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatch = RegExpUtility.getMatches(regex, source.trim().toLowerCase().split(' ').pop());
         if (referencedMatch && referencedMatch.length > 0) {
@@ -168,11 +278,11 @@ export class MatchingUtil {
         return result;
     }
 
-    static containsAgoLaterIndex(source: string, regex: RegExp): boolean {
+    public static containsAgoLaterIndex(source: string, regex: RegExp): boolean {
         return this.getAgoLaterIndex(source, regex).matched;
     }
 
-    static containsInIndex(source: string, regex: RegExp): boolean {
+    public static containsInIndex(source: string, regex: RegExp): boolean {
         return this.getInIndex(source, regex).matched;
     }
 }
@@ -216,7 +326,7 @@ export class FormatUtil {
 
     public static formatDate(date: Date): string {
         return new Array(FormatUtil.toString(date.getFullYear(), 4),
-            FormatUtil.toString(date.getMonth(), 2),
+            FormatUtil.toString(date.getMonth()+1, 2),
             FormatUtil.toString(date.getDate(), 2)).join("-");
     }
 

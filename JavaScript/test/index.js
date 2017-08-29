@@ -17,3 +17,4 @@ require('./dateParser-english.test');
 require('./timePeriodParser-english.test');
 require('./durationParser-english.test');
 require('./setParser-english.test');
+require('./dateTimeParser-english.test');
