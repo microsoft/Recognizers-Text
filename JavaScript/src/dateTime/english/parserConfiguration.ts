@@ -24,7 +24,11 @@ import {
     BaseTimeParser,
     IDateTimeParser,
     ITimePeriodParserConfiguration,
-    IDurationParserConfiguration
+    IDurationParserConfiguration,
+    IDatePeriodParserConfiguration,
+    BaseDateParser,
+    BaseDurationParser,
+    BaseDatePeriodParser
 } from "../parsers";
 import {
     EnglishCardinalExtractor,
@@ -58,6 +62,7 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.cardinalExtractor = new EnglishCardinalExtractor();
         this.integerExtractor = new EnglishIntegerExtractor();
         this.ordinalExtractor = new EnglishOrdinalExtractor();
+        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
@@ -66,14 +71,13 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-        //this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+        this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
-        //this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
+        this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         // this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
-        this.dayOfMonth = new Map<string, number>([...BaseDateTime.DayOfMonthDictionary, ...EnglishDateTime.DayOfMonth]);
     }
 }
 
@@ -391,5 +395,137 @@ export class EnglishDurationParserConfiguration implements IDurationParserConfig
         this.unitMap = config.unitMap;
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;
+    }
+}
+
+export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserConfiguration {
+    readonly DateExtractor: IExtractor
+    readonly DateParser: IDateTimeParser
+    readonly DurationExtractor: IExtractor
+    readonly DurationParser: IDateTimeParser
+    readonly MonthFrontBetweenRegex: RegExp
+    readonly BetweenRegex: RegExp
+    readonly MonthFrontSimpleCasesRegex: RegExp
+    readonly SimpleCasesRegex: RegExp
+    readonly OneWordPeriodRegex: RegExp
+    readonly MonthWithYear: RegExp
+    readonly MonthNumWithYear: RegExp
+    readonly YearRegex: RegExp
+    readonly PastRegex: RegExp
+    readonly FutureRegex: RegExp
+    readonly InConnectorRegex: RegExp
+    readonly WeekOfMonthRegex: RegExp
+    readonly WeekOfYearRegex: RegExp
+    readonly QuarterRegex: RegExp
+    readonly QuarterRegexYearFront: RegExp
+    readonly SeasonRegex: RegExp
+    readonly WeekOfRegex: RegExp
+    readonly MonthOfRegex: RegExp
+    readonly WhichWeekRegex: RegExp
+    readonly NextPrefixRegex: RegExp
+    readonly PastPrefixRegex: RegExp
+    readonly ThisPrefixRegex: RegExp
+    readonly TokenBeforeDate: string
+    readonly DayOfMonth: ReadonlyMap<string, number>
+    readonly MonthOfYear: ReadonlyMap<string, number>
+    readonly CardinalMap: ReadonlyMap<string, number>
+    readonly SeasonMap: ReadonlyMap<string, string>
+
+    constructor(config: EnglishCommonDateTimeParserConfiguration) {
+        this.DateExtractor = config.dateExtractor;
+        this.DateParser = config.dateParser;
+        this.DurationExtractor = config.durationExtractor;
+        this.DurationParser = config.durationParser;
+        this.MonthFrontBetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex);
+        this.BetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex);
+        this.MonthFrontSimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex);
+        this.SimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex);
+        this.OneWordPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex);
+        this.MonthWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear);
+        this.MonthNumWithYear = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear);
+        this.YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
+        this.PastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.FutureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        this.InConnectorRegex = config.utilityConfiguration.inConnectorRegex;
+        this.WeekOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex);
+        this.WeekOfYearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex);
+        this.QuarterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex);
+        this.QuarterRegexYearFront = RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront);
+        this.SeasonRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex);
+        this.WeekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
+        this.MonthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
+        this.WhichWeekRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex);
+        this.NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        this.PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.ThisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+        this.TokenBeforeDate = EnglishDateTime.TokenBeforeDate;
+        this.DayOfMonth = config.dayOfMonth;
+        this.MonthOfYear = config.monthOfYear;
+        this.CardinalMap = config.cardinalMap;
+        this.SeasonMap = config.seasonMap;
+    }
+
+    getSwiftDayOrMonth(source: string): number {
+        let trimedSource = source.trim().toLowerCase();
+        let swift = 0;
+        if (RegExpUtility.getMatches(this.NextPrefixRegex, trimedSource).length > 0) {
+            swift = 1;
+        } else if (RegExpUtility.getMatches(this.PastPrefixRegex, trimedSource).length > 0) {
+            swift = -1;
+        }
+        return swift;
+    }
+
+    GetSwiftYear(source: string): number {
+        let trimedSource = source.trim().toLowerCase();
+        let swift = -10;
+        if (RegExpUtility.getMatches(this.NextPrefixRegex, trimedSource).length > 0) {
+            swift = 1;
+        } else if (RegExpUtility.getMatches(this.PastPrefixRegex, trimedSource).length > 0) {
+            swift = -1;
+        } else if (RegExpUtility.getMatches(this.ThisPrefixRegex, trimedSource).length > 0) {
+            swift = 0;
+        }
+        return swift;
+    }
+    
+    IsFuture(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return (trimedSource.startsWith('this') || trimedSource.startsWith('next'));
+    }
+    
+    IsYearToDate(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource === 'year to date';
+    }
+    
+    IsMonthToDate(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource === 'month to date';
+    }
+    
+    IsWeekOnly(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource.endsWith('week');
+    }
+    
+    IsWeekend(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource.endsWith('weekend');
+    }
+    
+    IsMonthOnly(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource.endsWith('month');
+    }
+    
+    IsYearOnly(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource.endsWith('year');
+    }
+
+    IsLastCardinal(source: string): boolean {
+        let trimedSource = source.trim().toLowerCase();
+        return trimedSource === 'last';
     }
 }

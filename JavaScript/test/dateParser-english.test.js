@@ -14,6 +14,8 @@ describe('Date Parser', it => {
     let tMonth = referenceDate.getMonth();
     let tDay = referenceDate.getDate();
 
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back two weeks from now", new Date(2016, 10, 21));
+
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back on 15", new Date(tYear, tMonth, 15), new Date(tYear, tMonth - 1, 15));
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back Oct. 2", new Date(tYear + 1, 9, 2), new Date(tYear, 9, 2));
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back Oct-2", new Date(tYear + 1, 9, 2), new Date(tYear, 9, 2));
@@ -76,11 +78,10 @@ describe('Date Parser', it => {
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back next week on Friday", new Date(2016, 10, 18));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back on Friday next week", new Date(2016, 10, 18));
 
-    // TODO Implement Duration parser
-    // BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back two weeks from now", new Date(2016, 10, 21));
-    // BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a month ago", new Date(2016, 9, 7));
-    // BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email few month ago", new Date(2016, 7, 7));
-    // BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a few day ago", new Date(2016, 10, 4));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back two weeks from now", new Date(2016, 10, 21));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a month ago", new Date(2016, 9, 7));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email few month ago", new Date(2016, 7, 7));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a few day ago", new Date(2016, 10, 4));
 });
 
 describe('Date Parser LUIS', it => {
@@ -127,11 +128,10 @@ describe('Date Parser LUIS', it => {
     BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back the day", "2016-11-07");
     BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back 15 June 2016", "2016-06-15");
 
-    // TODO Implement Duration parser
-    // BasicTestWithLUIS(it, extractor, parser, referenceDate, "I went back two days ago", "2016-11-05");
-    // BasicTestWithLUIS(it, extractor, parser, referenceDate, "I went back two years ago", "2014-11-07");
+    BasicTestWithLUIS(it, extractor, parser, referenceDate, "I went back two days ago", "2016-11-05");
+    BasicTestWithLUIS(it, extractor, parser, referenceDate, "I went back two years ago", "2014-11-07");
 
-    // BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back two weeks from now", "2016-11-21");
+    BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back two weeks from now", "2016-11-21");
 
     BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back next week on Friday", "2016-11-18");
     BasicTestWithLUIS(it, extractor, parser, referenceDate, "I'll go back on Friday next week", "2016-11-18");

@@ -10,11 +10,6 @@ describe('Duration Parser', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
 
-
-
-    BasicTest(it, extractor, parser, "I'll leave for an hour and a half", 5400, "PT1.5H");
-
-
     BasicTest(it, extractor, parser, "I'll leave for 3h", 10800, "PT3H");
     BasicTest(it, extractor, parser, "I'll leave for 3day", 259200, "P3D");
     BasicTest(it, extractor, parser, "I'll leave for 3.5years", 110376000, "P3.5Y");

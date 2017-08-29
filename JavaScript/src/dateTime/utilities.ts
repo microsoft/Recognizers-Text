@@ -242,6 +242,8 @@ export enum DayOfWeek {
 }
 
 export class DateUtils {
+    private static readonly oneDay = 24 * 60 * 60 * 1000;
+
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
         let target = dayOfWeek;
@@ -271,4 +273,57 @@ export class DateUtils {
         result.setDate(from.getDate() + target - start - 7);
         return result;
     }
+
+    static diffDays(from: Date, to: Date): number {
+        return Math.round(Math.abs((from.getTime() - to.getTime())/this.oneDay));
+    }
+
+    static addDays(seedDate: Date, daysToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setDate(seedDate.getDate() + daysToAdd);
+        return date;
+    }
+
+    static addMonths(seedDate: Date, monthsToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setMonth(seedDate.getMonth() + monthsToAdd);
+        return date;
+    }
+
+    static getWeekNumber(referenceDate: Date): {weekNo: number, year: number} {
+        let date = new Date(Date.UTC(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate()));
+        date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
+        let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+        let weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
+        return {weekNo: weekNo, year: date.getUTCFullYear()}
+    }
+
+    static minValue(): Date { return new Date(1, 0, 1, 0, 0, 0, 0); }
+
+    static safeCreateFromValue(seedDate: Date, year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
+        let result = new Date(seedDate);
+        if (this.isValidDate(year, month, day) && this.isValidTime(hour, minute, second)) {
+            result = new Date(year, month, day, hour, minute, second, 0);
+        }
+        return result;
+    }
+
+    static isLeapYear(year: number): boolean {
+      return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
+
+    private static validDays(year: number) { return [ 31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }
+
+    private static isValidDate(year: number, month: number, day: number): boolean {
+        return year > 0 && year <= 9999
+            && month >= 0 && month < 12
+            && day > 0 && day <= this.validDays(year)[month];
+    }
+
+    private static isValidTime(hour: number, minute: number, second: number) {
+        return hour >= 0 && hour < 24
+            && minute >= 0 && minute < 60
+            && second >= 0 && minute < 60;
+    }
+
 }
