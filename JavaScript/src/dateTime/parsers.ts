@@ -1,10 +1,9 @@
 import { EnglishTimeExtractorConfiguration } from "./english/extractorConfiguration";
 import { IParser, ParseResult } from "../number/parsers";
 import { ExtractResult, IExtractor } from "../number/extractors";
-import { IDateTimeUtilityConfiguration } from "./utilities"
+import { IDateTimeUtilityConfiguration, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";
-import { FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { RegExpUtility, Match, isNullOrEmpty, isNullOrWhitespace } from "../utilities";
 
 export class DateTimeParseResult extends ParseResult {
@@ -2247,5 +2246,80 @@ export class BaseDateTimeParser implements IDateTimeParser {
             this.config.utilityConfiguration,
             AgoLaterMode.DateTime
             );
+    }
+}
+
+export interface IHolidayParserConfiguration {
+    variableHolidaysTimexDictionary: ReadonlyMap<string, string>;
+    holidayFuncDictionary: ReadonlyMap<string, (year: number) => Date>;
+    holidayNames: ReadonlyMap<string, string[]>;
+    holidayRegexList: RegExp[];
+    getSwiftYear(text: string): number;
+    sanitizeHolidayToken(holiday: string): string;
+}
+
+export abstract class BaseHolidayParserConfiguration implements IHolidayParserConfiguration
+{
+    variableHolidaysTimexDictionary: ReadonlyMap<string, string>;
+    holidayFuncDictionary: ReadonlyMap<string, (year: number) => Date>;
+    holidayNames: ReadonlyMap<string, string[]>;
+    holidayRegexList: RegExp[];
+    abstract getSwiftYear(text: string): number;
+    abstract sanitizeHolidayToken(holiday: string): string;
+
+    constructor()
+    {
+        this.variableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary;
+        this.holidayFuncDictionary = this.initHolidayFuncs();
+    }
+
+    protected initHolidayFuncs(): ReadonlyMap<string, (year: number) => Date> {
+        return new Map<string, (year: number) => Date>(
+            [
+                ["fathers", BaseHolidayParserConfiguration.FathersDay],
+                ["mothers", BaseHolidayParserConfiguration.MothersDay],
+                ["thanksgivingday", BaseHolidayParserConfiguration.ThanksgivingDay],
+                ["thanksgiving", BaseHolidayParserConfiguration.ThanksgivingDay],
+                ["martinlutherking", BaseHolidayParserConfiguration.MartinLutherKingDay],
+                ["washingtonsbirthday", BaseHolidayParserConfiguration.WashingtonsBirthday],
+                ["canberra", BaseHolidayParserConfiguration.CanberraDay],
+                ["labour", BaseHolidayParserConfiguration.LabourDay],
+                ["columbus", BaseHolidayParserConfiguration.ColumbusDay],
+                ["memorial", BaseHolidayParserConfiguration.MemorialDay]
+            ]);
+    }
+
+    private static MothersDay(year: number): Date { return new Date(year, 5 + 1, BaseHolidayParserConfiguration.getDay(year, 5, 1, DayOfWeek.Sunday)); }
+
+    private static FathersDay(year: number): Date { return new Date(year, 6, BaseHolidayParserConfiguration.getDay(year, 6, 2, DayOfWeek.Sunday)); }
+
+    private static MartinLutherKingDay(year: number): Date { return new Date(year, 1, BaseHolidayParserConfiguration.getDay(year, 1, 2, DayOfWeek.Monday)); }
+
+    private static WashingtonsBirthday(year: number): Date { return new Date(year, 2, BaseHolidayParserConfiguration.getDay(year, 2, 2, DayOfWeek.Monday)); }
+
+    private static CanberraDay(year: number): Date { return new Date(year, 3, BaseHolidayParserConfiguration.getDay(year, 3, 0, DayOfWeek.Monday)); }
+
+    private static MemorialDay(year: number): Date { return new Date(year, 5, BaseHolidayParserConfiguration.getLastDay(year, 5, DayOfWeek.Monday)); }
+
+    private static LabourDay(year: number): Date { return new Date(year, 9, BaseHolidayParserConfiguration.getDay(year, 9, 0, DayOfWeek.Monday)); }
+
+    private static ColumbusDay(year: number): Date { return new Date(year, 10, BaseHolidayParserConfiguration.getDay(year, 10, 1, DayOfWeek.Monday)); }
+
+    private static ThanksgivingDay(year: number): Date { return new Date(year, 11, BaseHolidayParserConfiguration.getDay(year, 11, 3, DayOfWeek.Thursday)); }
+
+    protected static getDay(year: number, month: number, week: number, dayOfWeek: DayOfWeek): number {
+        let days = new Array(new Date(year, month, 0).getDate())
+            .filter(function (empty, day) {
+                return new Date(year, month, day + 1).getDay() == dayOfWeek;
+            });
+        return days[week];
+    }
+
+    protected static getLastDay(year: number, month: number, dayOfWeek: DayOfWeek): number {
+        let days = new Array(new Date(year, month, 0).getDate())
+            .filter(function (empty, day) {
+                return new Date(year, month, day + 1).getDay() == dayOfWeek;
+            });
+        return days[days.length - 1];
     }
 }
