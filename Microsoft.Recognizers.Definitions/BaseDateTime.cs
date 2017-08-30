@@ -64,5 +64,17 @@ namespace Microsoft.Recognizers.Definitions
 			{ "30", 30 },
 			{ "31", 31 }
 		};
+		public static readonly Dictionary<string, string> VariableHolidaysTimexDictionary = new Dictionary<string, string>
+		{
+			{ "fathers", "-06-WXX-6-3" },
+			{ "mothers", "-05-WXX-7-2" },
+			{ "thanksgiving", "-11-WXX-4-4" },
+			{ "martinlutherking", "-01-WXX-1-3" },
+			{ "washingtonsbirthday", "-02-WXX-1-3" },
+			{ "canberra", "-03-WXX-1-1" },
+			{ "labour", "-09-WXX-1-1" },
+			{ "columbus", "-10-WXX-1-2" },
+			{ "memorial", "-05-WXX-1-4" }
+		};
 	}
 }
