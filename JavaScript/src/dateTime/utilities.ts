@@ -407,6 +407,7 @@ export enum DayOfWeek {
 
 export class DateUtils {
     private static readonly oneDay = 24 * 60 * 60 * 1000;
+    private static readonly oneHour = 60 * 60 * 1000;
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
@@ -439,7 +440,11 @@ export class DateUtils {
     }
 
     static diffDays(from: Date, to: Date): number {
-        return Math.round(Math.abs((from.getTime() - to.getTime())/this.oneDay));
+        return Math.round(Math.abs((from.getTime() - to.getTime()) / this.oneDay));
+    }
+
+    static totalHours(from: Date, to: Date): number {
+        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneHour);
     }
 
     static addDays(seedDate: Date, daysToAdd: number): Date {
@@ -470,6 +475,10 @@ export class DateUtils {
             result = new Date(year, month, day, hour, minute, second, 0);
         }
         return result;
+    }
+
+    static safeCreateFromMinValue(year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
+        return this.safeCreateFromValue(this.minValue(), year, month, day, hour, minute, second);
     }
 
     static isLeapYear(year: number): boolean {

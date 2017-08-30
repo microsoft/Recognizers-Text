@@ -6,7 +6,7 @@ var EnglishSetParserConfiguration = require('../compiled/dateTime/english/parser
 var BaseSetParser = require('../compiled/dateTime/parsers').BaseSetParser;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
-describe('Set Parse', it => {
+describe('Set Parser', it => {
     let extractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
     let parser = new BaseSetParser(new EnglishSetParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 

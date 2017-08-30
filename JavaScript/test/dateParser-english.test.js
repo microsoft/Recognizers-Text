@@ -14,8 +14,6 @@ describe('Date Parser', it => {
     let tMonth = referenceDate.getMonth();
     let tDay = referenceDate.getDate();
 
-    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back two weeks from now", new Date(2016, 10, 21));
-
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back on 15", new Date(tYear, tMonth, 15), new Date(tYear, tMonth - 1, 15));
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back Oct. 2", new Date(tYear + 1, 9, 2), new Date(tYear, 9, 2));
     BasicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back Oct-2", new Date(tYear + 1, 9, 2), new Date(tYear, 9, 2));
