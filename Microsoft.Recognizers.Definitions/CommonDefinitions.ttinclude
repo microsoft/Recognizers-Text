@@ -5,6 +5,7 @@
 <#@ assembly name="$(SolutionDir)build\package\Microsoft.Recognizers.Definitions.Common.dll" #>
 <#@ import namespace="System" #>
 <#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Microsoft.Recognizers.Definitions.Common" #>
@@ -64,7 +65,9 @@ namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + thi
 		if (nodeType == typeof(Dictionary))
         {
 			var value = node.Value as Dictionary;
-#>		public static readonly Dictionary<<#= value.Types[0] #>, <#= value.Types[1] #>> <#= node.Key #> = new Dictionary<<#= value.Types[0] #>, <#= value.Types[1] #>>
+			var keyDeclarationType = GetDeclarationType(value.Types[0]);
+			var valueDeclarationType = GetDeclarationType(value.Types[1]);
+#>		public static readonly Dictionary<<#= keyDeclarationType #>, <#= valueDeclarationType #>> <#= node.Key #> = new Dictionary<<#= keyDeclarationType #>, <#= valueDeclarationType #>>
 		{
 <#= string.Join("," + Environment.NewLine, value.Entries.Select(x => string.Format("\t\t\t{{ {0}, {1} }}", GetWriteable(x.Key, value.Types[0]), GetWriteable(x.Value, value.Types[1])))) #>
 		};<#
@@ -90,18 +93,37 @@ namespace Microsoft.Recognizers.Definitions<#= this.Language != null ? "." + thi
 
 	private string GetWriteable(object value, string valueType)
 	{
-        switch (valueType)
-        {
-            case "char": return string.Format("'{0}'", value);
-			case "int": 
-			case "long": 
-			case "double": 
-			case "float": return string.Format("{0}", value);
-			default: return string.Format("\"{0}\"", value);
-        }
-    }
+		var enumerableValue = value as IEnumerable;
+		if(valueType.EndsWith("[]") && enumerableValue != null) {
+			var basicType = valueType.Substring(0, valueType.Length - 2);
+			var writeableEnumerable = enumerableValue.Cast<string>().Select(x => GetWriteable(x, basicType));
 
-	private string GetSafeParameterValue(string value){
+			return string.Format("new {0} {{ {1} }}",
+				valueType,
+				string.Join(", ", writeableEnumerable));
+		}
+		else {
+			switch (valueType) {
+				case "char": return string.Format("'{0}'", value);
+				case "int": 
+				case "long": 
+				case "double": 
+				case "float": return string.Format("{0}", value);
+				default: return string.Format("\"{0}\"", value);
+			}
+		}
+	}
+
+	private string GetDeclarationType(string valueType) {
+		if(valueType.EndsWith("[]")) {
+			var basicType = valueType.Substring(0, valueType.Length - 2);
+			return string.Format("IEnumerable<{0}>", basicType);
+		}
+
+		return valueType;
+	}
+
+	private string GetSafeParameterValue(string value) {
 		return value == null ? "NULL" : value;
 	}
 #>
