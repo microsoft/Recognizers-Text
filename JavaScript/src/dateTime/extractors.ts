@@ -106,22 +106,6 @@ export interface ITimePeriodExtractorConfiguration {
     hasConnectorToken(source: string): boolean;
 }
 
-export interface ISetExtractorConfiguration {
-    dateExtractor: BaseDateExtractor
-    timeExtractor: BaseTimeExtractor
-    dateTimeExtractor: BaseDateTimeExtractor
-    datePeriodExtractor: BaseDatePeriodExtractor
-    timePeriodExtractor: BaseTimePeriodExtractor
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-    durationExtractor: BaseDurationExtractor
-    lastRegex: RegExp
-    eachPrefixRegex: RegExp
-    periodicRegex: RegExp
-    eachUnitRegex: RegExp
-    beforeEachDayRegex: RegExp
-    eachDayRegex: RegExp
-}
-
 export interface IHolidayExtractorConfiguration {
     holidayRegexes: RegExp[]
 }
@@ -1085,4 +1069,20 @@ export interface ITimePeriodExtractorConfiguration {
     getFromTokenIndex(text: string): { matched: boolean, index: number };
     hasConnectorToken(text: string): boolean;
     getBetweenTokenIndex(text: string): { matched: boolean, index: number };
+}
+
+export interface ISetExtractorConfiguration {
+    lastRegex: RegExp;
+    eachPrefixRegex: RegExp;
+    periodicRegex: RegExp;
+    eachUnitRegex: RegExp;
+    eachDayRegex: RegExp;
+    beforeEachDayRegex: RegExp;
+    durationExtractor: IExtractor;
+    timeExtractor: IExtractor;
+    dateExtractor: IExtractor;
+    dateTimeExtractor: IExtractor;
+    datePeriodExtractor: IExtractor;
+    timePeriodExtractor: IExtractor;
+    dateTimePeriodExtractor: IExtractor;
 }

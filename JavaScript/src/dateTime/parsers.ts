@@ -4,7 +4,7 @@ import { ExtractResult, IExtractor } from "../number/extractors";
 import { IDateTimeUtilityConfiguration } from "./utilities"
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";
-import { FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil } from "./utilities";
+import { FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { RegExpUtility, Match, isNullOrEmpty, isNullOrWhitespace } from "../utilities";
 
 export class DateTimeParseResult extends ParseResult {
@@ -823,7 +823,7 @@ export class BaseDateParser implements IDateTimeParser {
         let pastDate = new Date(year, month, day);
         if (futureDate < referenceDate) futureDate.setFullYear(year + 1);
         if (pastDate >= referenceDate) pastDate.setFullYear(year - 1);
-        
+
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;
@@ -832,13 +832,13 @@ export class BaseDateParser implements IDateTimeParser {
 
     private parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         return parserDurationWithAgoAndLater(
-            source, 
-            referenceDate, 
-            this.config.durationExtractor, 
-            this.config.durationParser, 
-            this.config.unitMap, 
-            this.config.unitRegex, 
-            this.config.utilityConfiguration, 
+            source,
+            referenceDate,
+            this.config.durationExtractor,
+            this.config.durationParser,
+            this.config.unitMap,
+            this.config.unitRegex,
+            this.config.utilityConfiguration,
             AgoLaterMode.Date
         );
     }
@@ -879,7 +879,7 @@ export class BaseDateParser implements IDateTimeParser {
         }
         if (noYear && pastDate >= referenceDate) {
             pastDate = this.computeDate(cardinal, weekday, month, year - 1);
-            if (pastDate.getMonth() !== month)pastDate.setDate(pastDate.getDate() - 7);
+            if (pastDate.getMonth() !== month) pastDate.setDate(pastDate.getDate() - 7);
         }
         result.timex = '';
         result.futureValue = futureDate;
@@ -970,7 +970,7 @@ export class BaseDurationParser implements IDateTimeParser {
 
         return result;
     }
-    
+
     private parseNumberWithUnit(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = this.parseNumberSpaceUnit(trimmedSource);
@@ -985,7 +985,7 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private parseImplicitDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = this.getResultFromRegex(this.config.allDateUnitRegex, trimmedSource, 1);
@@ -999,7 +999,7 @@ export class BaseDurationParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(regex, source).pop();
         if (!match) return result;
-        
+
         let sourceUnit = match.groups('unit').value;
         if (!this.config.unitMap.has(sourceUnit)) return result;
 
@@ -1019,7 +1019,7 @@ export class BaseDurationParser implements IDateTimeParser {
             let er = ers[0];
             let sourceUnit = '';
             let pr = this.config.numberParser.parse(er);
-            let noNumStr = source.substr(er. start + er.length).trim().toLowerCase();
+            let noNumStr = source.substr(er.start + er.length).trim().toLowerCase();
             let match = RegExpUtility.getMatches(this.config.followedUnit, noNumStr).pop();
             if (match) {
                 sourceUnit = match.groups('unit').value;
@@ -1082,7 +1082,7 @@ export class BaseDurationParser implements IDateTimeParser {
         let num = isNullOrEmpty(match.groups('half').value) ? 1 : 0.5
         num += this.parseNumberWithUnitAndSuffix(source);
         let numStr = num.toString();
-        
+
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);
@@ -1103,7 +1103,7 @@ export class BaseDurationParser implements IDateTimeParser {
 
         let num = 3;
         let numStr = num.toString();
-        
+
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);
@@ -1693,7 +1693,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
     }
 }
 
-enum AgoLaterMode {
+export enum AgoLaterMode {
     Date, DateTime
 }
 
@@ -1752,4 +1752,500 @@ function getDateResult(unitStr: string, num: number, referenceDate: Date, isFutu
     result.pastValue = value;
     result.success = true;
     return result;
+}
+
+export interface ISetParserConfiguration {
+    durationExtractor: IExtractor;
+    durationParser: IDateTimeParser;
+    timeExtractor: IExtractor;
+    timeParser: IDateTimeParser;
+    dateExtractor: IExtractor;
+    dateParser: IDateTimeParser;
+    dateTimeExtractor: IExtractor;
+    dateTimeParser: IDateTimeParser;
+    datePeriodExtractor: IExtractor;
+    datePeriodParser: IDateTimeParser;
+    timePeriodExtractor: IExtractor;
+    timePeriodParser: IDateTimeParser;
+    dateTimePeriodExtractor: IExtractor;
+    dateTimePeriodParser: IDateTimeParser;
+    unitMap: ReadonlyMap<string, string>;
+    eachPrefixRegex: RegExp;
+    periodicRegex: RegExp;
+    eachUnitRegex: RegExp;
+    eachDayRegex: RegExp;
+    getMatchedDailyTimex(text: string): { matched: boolean, timex: string };
+    getMatchedUnitTimex(text: string): { matched: boolean, timex: string };
+}
+
+export class BaseSetParser implements IDateTimeParser {
+    public static readonly ParserName = Constants.SYS_DATETIME_SET;
+    private readonly config: ISetParserConfiguration;
+
+    constructor(configuration: ISetParserConfiguration) {
+        this.config = configuration;
+    }
+
+    parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
+        if (!referenceDate) referenceDate = new Date();
+        let value = null;
+        if (er.type == BaseSetParser.ParserName) {
+            let innerResult = this.parseEachUnit(er.text);
+            if (!innerResult.success) {
+                innerResult = this.parseEachDuration(er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parserTimeEveryday(er.text);
+            }
+
+            // NOTE: Please do not change the order of following function
+            // datetimeperiod>dateperiod>timeperiod>datetime>date>time
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.dateTimePeriodExtractor, this.config.dateTimePeriodParser, er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.datePeriodExtractor, this.config.datePeriodParser, er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.timePeriodExtractor, this.config.timePeriodParser, er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseEach(this.config.timeExtractor, this.config.timeParser, er.text);
+            }
+
+            if (innerResult.success) {
+                innerResult.futureResolution = new Map<string, string>(
+                    [
+                        [TimeTypeConstants.SET, innerResult.futureValue]
+                    ]);
+
+                innerResult.pastResolution = new Map<string, string>(
+                    [
+                        [TimeTypeConstants.SET, innerResult.pastValue]
+                    ]);
+
+                value = innerResult;
+            }
+        }
+
+        let ret = new DateTimeParseResult(er);
+        ret.value = value,
+            ret.timexStr = value == null ? "" : value.timex,
+            ret.resolutionStr = ""
+
+        return ret;
+    }
+
+    private parseEachDuration(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.durationExtractor.extract(text);
+        if (ers.length != 1 || text.substring(ers[0].start + ers[0].length || 0)) {
+            return ret;
+        }
+
+        let beforeStr = text.substring(0, ers[0].start || 0);
+        let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
+        if (matches.length) {
+            let pr = this.config.durationParser.parse(ers[0], new Date());
+            ret.timex = pr.timexStr;
+            ret.futureValue = ret.pastValue = "Set: " + pr.timexStr;
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+
+    private parseEachUnit(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        // handle "daily", "weekly"
+        let matches = RegExpUtility.getMatches(this.config.periodicRegex, text);
+        if (matches.length) {
+            let getMatchedDailyTimex = this.config.getMatchedDailyTimex(text);
+            if (!getMatchedDailyTimex.matched) {
+                return ret;
+            }
+
+            ret.timex = getMatchedDailyTimex.timex;
+            ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+            ret.success = true;
+
+            return ret;
+        }
+
+        // handle "each month"
+        matches = RegExpUtility.getMatches(this.config.eachUnitRegex, text);
+        if (matches.length && matches[0].length == text.length) {
+            let sourceUnit = matches[0].groups("unit").value;
+            if (sourceUnit && this.config.unitMap.has(sourceUnit)) {
+                let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
+                if (!getMatchedUnitTimex.matched) {
+                    return ret;
+                }
+
+                ret.timex = getMatchedUnitTimex.timex;
+                ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+                ret.success = true;
+                return ret;
+            }
+        }
+
+        return ret;
+    }
+
+    private parserTimeEveryday(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.timeExtractor.extract(text);
+        if (ers.length != 1) {
+            return ret;
+        }
+
+        let afterStr = text.replace(ers[0].text, "");
+        let matches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
+        if (matches.length) {
+            let pr = this.config.timeParser.parse(ers[0], new Date());
+            ret.timex = pr.timexStr;
+            ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+
+    private parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = extractor.extract(text);
+        if (ers.length != 1) {
+            return ret;
+        }
+
+        let beforeStr = text.substring(0, ers[0].start || 0);
+        let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
+        if (matches.length) {
+            let pr = parser.parse(ers[0], new Date());
+            ret.timex = pr.timexStr;
+            ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+}
+
+export interface IDateTimeParserConfiguration {
+    tokenBeforeDate: string;
+    tokenBeforeTime: string;
+    dateExtractor: IExtractor;
+    timeExtractor: IExtractor;
+    dateParser: IDateTimeParser;
+    timeParser: IDateTimeParser;
+    cardinalExtractor: IExtractor;
+    numberParser: IParser;
+    durationExtractor: IExtractor;
+    durationParser: IParser;
+    nowRegex: RegExp;
+    aMTimeRegex: RegExp;
+    pMTimeRegex: RegExp;
+    simpleTimeOfTodayAfterRegex: RegExp;
+    simpleTimeOfTodayBeforeRegex: RegExp;
+    specificTimeOfDayRegex: RegExp;
+    theEndOfRegex: RegExp;
+    unitRegex: RegExp;
+    unitMap: ReadonlyMap<string, string>;
+    numbers: ReadonlyMap<string, number>;
+    haveAmbiguousToken(text: string, matchedText: string): boolean;
+    getMatchedNowTimex(text: string): { matched: boolean, timex: string };
+    getSwiftDay(text: string): number;
+    getHour(text: string, hour: number): number;
+    utilityConfiguration: IDateTimeUtilityConfiguration;
+}
+
+export class BaseDateTimeParser implements IDateTimeParser {
+    public static readonly ParserName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
+
+    private readonly config: IDateTimeParserConfiguration;
+
+    constructor(configuration: IDateTimeParserConfiguration) {
+        this.config = configuration;
+    }
+
+    public parse(er: ExtractResult, refTime: Date): DateTimeParseResult {
+        if (!refTime) refTime = new Date();
+        let referenceTime = refTime;
+
+        let value = null;
+        if (er.type == BaseDateTimeParser.ParserName) {
+            let innerResult = this.mergeDateAndTime(er.text, referenceTime);
+            if (!innerResult.success) {
+                innerResult = this.parseBasicRegex(er.text, referenceTime);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseTimeOfToday(er.text, referenceTime);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parseSpecailTimeOfDate(er.text, referenceTime);
+            }
+
+            if (!innerResult.success) {
+                innerResult = this.parserDurationWithAgoAndLater(er.text, referenceTime);
+            }
+
+            if (innerResult.success) {
+                innerResult.futureResolution = new Map<string, string>(
+                    [
+                        [TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime(innerResult.futureValue)]
+                    ]);
+
+                innerResult.pastResolution = new Map<string, string>(
+                    [
+                        [TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime(innerResult.pastValue)]
+                    ]);
+                value = innerResult;
+            }
+        }
+
+        let ret = new DateTimeParseResult(er);
+        {
+            ret.value = value,
+                ret.timexStr = value == null ? "" : value.timex,
+                ret.resolutionStr = ""
+        };
+        return ret;
+    }
+
+    private parseBasicRegex(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let trimedText = text.trim().toLowerCase();
+
+        // handle "now"
+        let matches = RegExpUtility.getMatches(this.config.nowRegex, trimedText);
+        if (matches.length && matches[0].index == 0 && matches[0].length == trimedText.length) {
+            let getMatchedNowTimex = this.config.getMatchedNowTimex(trimedText);
+            ret.timex = getMatchedNowTimex.timex;
+            ret.futureValue = ret.pastValue = referenceTime;
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+
+    // merge a Date entity and a Time entity
+    private mergeDateAndTime(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+
+        let er1 = this.config.dateExtractor.extract(text);
+        if (er1.length == 0) {
+            er1 = this.config.dateExtractor.extract(this.config.tokenBeforeDate + text);
+            if (er1.length == 1) {
+                er1[0].start -= this.config.tokenBeforeDate.length;
+            }
+            else {
+                return ret;
+            }
+        }
+        else {
+            // this is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish)
+            // the same word could mean different things (e.g a time in the day or an specific day).
+            if (this.config.haveAmbiguousToken(text, er1[0].text)) {
+                return ret;
+            }
+        }
+
+        let er2 = this.config.timeExtractor.extract(text);
+        if (er2.length == 0) {
+            // here we filter out "morning, afternoon, night..." time entities
+            er2 = this.config.timeExtractor.extract(this.config.tokenBeforeTime + text);
+            if (er2.length == 1) {
+                er2[0].start -= this.config.tokenBeforeTime.length;
+            }
+            else {
+                return ret;
+            }
+        }
+
+        // handle case "Oct. 5 in the afternoon at 7:00"
+        // in this case "5 in the afternoon" will be extract as a Time entity
+        let correctTimeIdx = 0;
+        while (correctTimeIdx < er2.length && ExtractResult.isOverlap(er2[correctTimeIdx], er1[0])) {
+            correctTimeIdx++;
+        }
+
+        if (correctTimeIdx >= er2.length) {
+            return ret;
+        }
+
+        let pr1 = this.config.dateParser.parse(er1[0], new Date(referenceTime.toDateString()))
+        let pr2 = this.config.timeParser.parse(er2[correctTimeIdx], referenceTime);
+        if (pr1.value == null || pr2.value == null) {
+            return ret;
+        }
+
+        let futureDate = pr1.value.futureValue;
+        let pastDate = pr1.value.pastValue;
+        let time = pr2.value.futureValue;
+
+        let hour = time.getHours();
+        let min = time.getMinutes();
+        let sec = time.getSeconds();
+
+        // handle morning, afternoon
+        if (RegExpUtility.getMatches(this.config.pMTimeRegex, text).length && hour < 12) {
+            hour += 12;
+        }
+        else if (RegExpUtility.getMatches(this.config.aMTimeRegex, text).length && hour >= 12) {
+            hour -= 12;
+        }
+
+        let timeStr = pr2.timexStr;
+        if (timeStr.endsWith("ampm")) {
+            timeStr = timeStr.substring(0, timeStr.length - 4);
+        }
+        timeStr = "T" + FormatUtil.toString(hour, 2) + timeStr.substring(3);
+        ret.timex = pr1.timexStr + timeStr;
+
+        let val = pr2.value;
+        if (hour <= 12 && !RegExpUtility.getMatches(this.config.pMTimeRegex, text).length
+            && !RegExpUtility.getMatches(this.config.aMTimeRegex, text).length &&
+            val.Comment) {
+            //ret.Timex += "ampm";
+            ret.comment = "ampm";
+        }
+        ret.futureValue = new Date(futureDate.getFullYear(), futureDate.getMonth(), futureDate.getDate(), hour, min, sec);
+        ret.pastValue = new Date(pastDate.getFullYear(), pastDate.getMonth(), pastDate.getDate(), hour, min, sec);
+        ret.success = true;
+
+        return ret;
+    }
+
+    private parseTimeOfToday(text: string, referenceTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let trimedText = text.toLowerCase().trim();
+
+        let hour = 0, min = 0, sec = 0;
+        let timeStr: string;
+
+        let wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, trimedText);
+        if (!(wholeMatches.length && wholeMatches[0].length == trimedText.length))
+            wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, trimedText);
+        if (wholeMatches.length && wholeMatches[0].length == trimedText.length) {
+            let hourStr = wholeMatches[0].groups("hour").value;
+            if (!hourStr) {
+                hourStr = wholeMatches[0].groups("hournum").value.toLowerCase();
+                hour = this.config.numbers.get(hourStr);
+            }
+            else {
+                hour = parseInt(hourStr);
+            }
+            timeStr = "T" + FormatUtil.toString(hour, 2);
+        }
+        else {
+            let ers = this.config.timeExtractor.extract(trimedText);
+            if (ers.length != 1) {
+                ers = this.config.timeExtractor.extract(this.config.tokenBeforeTime + trimedText);
+                if (ers.length == 1) {
+                    ers[0].start -= this.config.tokenBeforeTime.length;
+                }
+                else {
+                    return ret;
+                }
+            }
+
+            let pr = this.config.timeParser.parse(ers[0], referenceTime);
+            if (pr.value == null) {
+                return ret;
+            }
+
+            let time = pr.value.futureValue;
+
+            hour = time.getHours();
+            min = time.getMinutes();
+            sec = time.getSeconds();
+            timeStr = pr.timexStr;
+        }
+
+
+        let matches = RegExpUtility.getMatches(this.config.specificTimeOfDayRegex, trimedText);
+
+        if (matches.length) {
+            let matchStr = matches[0].value.toLowerCase();
+
+            // handle "last", "next"
+            let swift = this.config.getSwiftDay(matchStr);
+
+            let date = new Date(referenceTime);
+            date.setDate(date.getDate() + swift);
+
+            // handle "morning", "afternoon"
+            hour = this.config.getHour(matchStr, hour);
+
+            // in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
+            if (timeStr.endsWith("ampm")) {
+                timeStr = timeStr.substring(0, timeStr.length - 4);
+            }
+            timeStr = "T" + FormatUtil.toString(hour, 2) + timeStr.substring(3);
+
+            ret.timex = FormatUtil.formatDate(date) + timeStr;
+            ret.futureValue = ret.pastValue = new Date(date.getFullYear(), date.getMonth(), date.getDate(), hour, min, sec);
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+
+    private parseSpecailTimeOfDate(text: string, refeDateTime: Date): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.dateExtractor.extract(text);
+        if (ers.length != 1) {
+            return ret;
+        }
+        let beforeStr = text.substring(0, ers[0].start || 0);
+        if (RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr).length) {
+            let pr = this.config.dateParser.parse(ers[0], refeDateTime);
+            let futureDate = new Date(pr.value.futureValue);
+            let pastDate = new Date(pr.value.pastValue);
+            ret.timex = pr.timexStr + "T23:59";
+            futureDate.setDate(futureDate.getDate() + 1);
+            futureDate.setMinutes(futureDate.getMinutes() - 1);
+            ret.futureValue = futureDate;
+            pastDate.setDate(pastDate.getDate() + 1);
+            pastDate.setMinutes(pastDate.getMinutes() - 1);
+            ret.pastValue = pastDate;
+            ret.success = true;
+            return ret;
+        }
+
+        return ret;
+    }
+
+    // handle like "two hours ago" 
+    private parserDurationWithAgoAndLater(text: string, referenceTime: Date): DateTimeResolutionResult {
+        return AgoLaterUtil.parseDurationWithAgoAndLater(
+            text,
+            referenceTime,
+            this.config.durationExtractor,
+            this.config.durationParser,
+            this.config.unitMap,
+            this.config.unitRegex,
+            this.config.utilityConfiguration,
+            AgoLaterMode.DateTime
+            );
+    }
 }
