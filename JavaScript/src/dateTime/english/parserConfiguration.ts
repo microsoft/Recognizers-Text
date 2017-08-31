@@ -37,6 +37,7 @@ import {
     BaseDateTimeParser,
     BaseDateTimePeriodParser,
     BaseSetParser,
+    BaseHolidayParser,
     BaseHolidayParserConfiguration
 } from "../parsers";
 import {
@@ -423,7 +424,7 @@ export class EnglishMergedParserConfiguration implements IMergedParserConfigurat
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex);
         this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
-        this.HolidayParser = null;
+        this.HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
         this.DateParser = config.dateParser;
         this.TimeParser = config.timeParser;
         this.DateTimeParser = config.dateTimeParser;
