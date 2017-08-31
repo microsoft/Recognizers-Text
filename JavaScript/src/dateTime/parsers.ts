@@ -1865,12 +1865,12 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             futureEnd = DateUtils.safeCreateFromMinValue(futureBegin.getFullYear(), futureBegin.getMonth(), futureBegin.getDate(), futureEnd.getHours(), futureEnd.getMinutes(), futureEnd.getSeconds());
             pastEnd = DateUtils.safeCreateFromMinValue(pastBegin.getFullYear(), pastBegin.getMonth(), pastBegin.getDate(), pastEnd.getHours(), pastEnd.getMinutes(), pastEnd.getSeconds());
             let dateStr = prs.begin.timexStr.split('T').pop();
-            result.timex = `(${prs.begin.timexStr},${dateStr}${prs.end.timexStr}PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
+            result.timex = `(${prs.begin.timexStr},${dateStr}${prs.end.timexStr},PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
         } else if(endHasDate) {
             futureBegin = DateUtils.safeCreateFromMinValue(futureEnd.getFullYear(), futureEnd.getMonth(), futureEnd.getDate(), futureBegin.getHours(), futureBegin.getMinutes(), futureBegin.getSeconds());
             pastBegin = DateUtils.safeCreateFromMinValue(pastEnd.getFullYear(), pastEnd.getMonth(), pastEnd.getDate(), pastBegin.getHours(), pastBegin.getMinutes(), pastBegin.getSeconds());
-            let dateStr = prs.end.timexStr.split('T').pop();
-            result.timex = `(${dateStr}${prs.begin.timexStr},${prs.end.timexStr}PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
+            let dateStr = prs.end.timexStr.split('T')[0];
+            result.timex = `(${dateStr}${prs.begin.timexStr},${prs.end.timexStr},PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
         }
         if (!isNullOrEmpty(begin.comment) && begin.comment.endsWith('ampm') && !isNullOrEmpty(end.comment) && end.comment.endsWith('ampm')) {
             result.comment = 'ampm';
@@ -2049,6 +2049,279 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         result.success = true;
         return result;
     }
+}
+
+export interface IMergedParserConfiguration {
+    BeforeRegex: RegExp
+    AfterRegex: RegExp
+    DateParser: IDateTimeParser
+    HolidayParser: IDateTimeParser
+    TimeParser: IDateTimeParser
+    DateTimeParser: IDateTimeParser
+    DatePeriodParser: IDateTimeParser
+    TimePeriodParser: IDateTimeParser
+    DateTimePeriodParser: IDateTimeParser
+    DurationParser: IDateTimeParser
+    SetParser: IDateTimeParser
+}
+
+export class BaseMergedParser implements IDateTimeParser {
+    readonly parserName = 'datetimeV2';
+
+    private readonly config: IMergedParserConfiguration;
+
+    private readonly dateMinValue = FormatUtil.formatDate(DateUtils.minValue());
+    private readonly dateTimeMinValue = FormatUtil.FormatDateTime(DateUtils.minValue());
+
+    constructor(config: IMergedParserConfiguration) {
+        this.config = config;
+    }
+
+    parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
+        if (!referenceDate) referenceDate = new Date();
+        let matchMode = MatchMode.None;
+        let match = RegExpUtility.getMatches(this.config.BeforeRegex, extractorResult.text).pop();
+        if (match) {
+            matchMode = MatchMode.Before;
+        } else {
+            match = RegExpUtility.getMatches(this.config.AfterRegex, extractorResult.text).pop();
+            if (match) matchMode = MatchMode.After;
+        }
+        if (match) {
+            extractorResult.start += match.length;
+            extractorResult.length -= match.length;
+            extractorResult.text = extractorResult.text.substr(match.length);
+        }
+        let result = this.getParseResult(extractorResult, referenceDate);
+        if (!result) return null;
+
+        if (match && matchMode !== MatchMode.None && result.value) {
+            result.start -= match.length;
+            result.length += match.length;
+            result.text = match.value + result.text;
+            let value: DateTimeResolutionResult = result.value;
+            value.mod = matchMode === MatchMode.Before ? TimeTypeConstants.beforeMod : TimeTypeConstants.afterMod;
+            result.value = value;
+        }
+        result.value = this.dateTimeResolution(result, matchMode);
+        result.type = `${this.parserName}.${this.determineDateTimeType(extractorResult.type, matchMode)}`;
+        return result;
+    }
+
+    protected getParseResult(extractorResult: ExtractResult, referenceDate: Date): DateTimeParseResult | null {
+        let extractorType = extractorResult.type;
+        if (extractorType === Constants.SYS_DATETIME_DATE) {
+            let pr = this.config.DateParser.parse(extractorResult, referenceDate);
+            if (!pr || !pr.value) return this.config.HolidayParser.parse(extractorResult, referenceDate);
+            return pr;
+        }
+        if (extractorType === Constants.SYS_DATETIME_TIME) {
+            return this.config.TimeParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_DATETIME) {
+            return this.config.DateTimeParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_DATEPERIOD) {
+            return this.config.DatePeriodParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_TIMEPERIOD) {
+            return this.config.TimePeriodParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_DATETIMEPERIOD) {
+            return this.config.DateTimePeriodParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_DURATION) {
+            return this.config.DurationParser.parse(extractorResult, referenceDate);
+        }
+        if (extractorType === Constants.SYS_DATETIME_SET) {
+            return this.config.SetParser.parse(extractorResult, referenceDate);
+        }
+        return null;
+    }
+
+    private determineDateTimeType(type: string, matchMode: MatchMode): string {
+        if (matchMode !== MatchMode.None) {
+            if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
+            if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
+            if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
+        }
+        return type;
+    }
+
+    private dateTimeResolution(slot: DateTimeParseResult, matchMode: MatchMode): Map<string, any> {
+        if (!slot) return null;
+        
+        let result = new Map<string, any>();
+        let resolutions = new Array<Map<string, string>>();
+
+        let type = slot.type;
+        let outputType = this.determineDateTimeType(type, matchMode);
+        let timex = slot.timexStr;
+
+        let value: DateTimeResolutionResult = slot.value;
+        if (!value) return null;
+
+        let isLunar = value.isLunar;
+        let mod = value.mod;
+        let comment = value.comment;
+
+        if (!isNullOrEmpty(timex)) result.set('timex', timex);
+        if (!isNullOrEmpty(comment)) result.set('Comment', comment);
+        if (!isNullOrEmpty(mod)) result.set('Mod', mod);
+        if (!isNullOrEmpty(type)) result.set('type', type);
+
+        let futureResolution = value.futureResolution;
+        let pastResolution = value.pastResolution;
+
+        let future = this.generateFromResolution(type, futureResolution, mod);
+        let past = this.generateFromResolution(type, pastResolution, mod);
+
+        let futureValues = Array.from(future.values()).sort();
+        let pastValues = Array.from(past.values()).sort();
+        if (futureValues.length === pastValues.length && futureValues.every((v,i) => v === pastValues[i])) {
+            if (past.size > 0) result.set('resolve', past);
+        } else {
+            if (past.size > 0) result.set('resolveToPast', past);
+            if (future.size > 0) result.set('resolveToFuture', future);
+        }
+
+        if (comment && comment === 'ampm') {
+            if (result.has('resolve')) {
+                this.resolveAMPM(result, 'resolve');
+            } else {
+                this.resolveAMPM(result, 'resolveToPast');
+                this.resolveAMPM(result, 'resolveToFuture');
+            }
+        }
+
+        if (isLunar) result.set('isLunar', isLunar);
+
+        result.forEach((value, key) => {
+            if (value instanceof Map) {
+                let newValues = new Map<string, string>();
+                if (!isNullOrEmpty(timex)) newValues.set('timex', timex);
+                if (!isNullOrEmpty(type)) newValues.set('type', type);
+                value.forEach((innerValue, innerKey) => {
+                    newValues.set(innerKey, innerValue);
+                });
+                resolutions.push(newValues);
+            }
+        });
+
+        if (past.size === 0 && future.size === 0) {
+            resolutions.push(new Map<string, string>()
+                .set('timex', timex)
+                .set('type', outputType)
+                .set('value', 'not resolved'));
+        }
+        return new Map<string, any>().set('values', resolutions);
+    }
+
+    private generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {
+        let result = new Map<string, string>();
+        switch (type) {
+            case Constants.SYS_DATETIME_DATETIME:
+                this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.DATETIME, mod, result);
+                break;
+            case Constants.SYS_DATETIME_TIME:
+                this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.TIME, mod, result);
+                break;
+            case Constants.SYS_DATETIME_DATE:
+                this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.DATE, mod, result);
+                break;
+            case Constants.SYS_DATETIME_DURATION:
+                if (resolutions.has(TimeTypeConstants.DURATION)) {
+                    result.set(TimeTypeConstants.VALUE, resolutions.get(TimeTypeConstants.DURATION));
+                }
+                break;
+            case Constants.SYS_DATETIME_TIMEPERIOD:
+                this.addPeriodToResolution(resolutions, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, result);
+                break;
+            case Constants.SYS_DATETIME_DATEPERIOD:
+                this.addPeriodToResolution(resolutions, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, result);
+                break;
+            case Constants.SYS_DATETIME_DATETIMEPERIOD:
+                this.addPeriodToResolution(resolutions, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, result);
+                break;
+        }
+        return result;
+    }
+
+    private addSingleDateTimeToResolution(resolutions: Map<string, string>, type: string, mod: string, result: Map<string, string>) {
+        let key = TimeTypeConstants.VALUE;
+        let value = resolutions.get(type);
+        if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) return;
+
+        if (!isNullOrEmpty(mod)) {
+            if (mod === TimeTypeConstants.beforeMod) key = TimeTypeConstants.END;
+            else if (mod === TimeTypeConstants.afterMod) key = TimeTypeConstants.START;
+        }
+        result.set(key, value);
+    }
+
+    private addPeriodToResolution(resolutions: Map<string, string>, startType: string, endType: string, mod: string, result: Map<string, string>) {
+        let start = resolutions.get(startType);
+        let end = resolutions.get(endType);
+        if (!isNullOrEmpty(mod)) {
+            if (mod === TimeTypeConstants.beforeMod) {
+                result.set(TimeTypeConstants.END, start);
+                return;
+            }
+            if (mod === TimeTypeConstants.afterMod) {
+                result.set(TimeTypeConstants.START, end);
+                return;
+            }
+        }
+        if (isNullOrEmpty(start) || isNullOrEmpty(end)) return;
+
+        result.set(TimeTypeConstants.START, start);
+        result.set(TimeTypeConstants.END, end);
+    }
+
+    private resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
+        if (!valuesMap.has(keyName)) return;
+
+        let resolution: Map<string, string> = valuesMap.get(keyName);
+        if (!resolution.has('timex')) return;
+
+        let timex = resolution.get('timex');
+        valuesMap.delete(keyName);
+        valuesMap.set(keyName + 'Am', resolution);
+
+        let resolutionPm = new Map<string, string>();
+        switch (valuesMap.get('type')) {
+            case Constants.SYS_DATETIME_TIME:
+                resolutionPm.set(TimeTypeConstants.VALUE, FormatUtil.toPm(resolution.get(TimeTypeConstants.VALUE)));
+                resolutionPm.set('timex', FormatUtil.toPm(timex));
+                break;
+            case Constants.SYS_DATETIME_DATETIME:
+                let splitValue = resolution.get(TimeTypeConstants.VALUE).split(' ');
+                resolutionPm.set(TimeTypeConstants.VALUE, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
+                resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+                break;
+            case Constants.SYS_DATETIME_TIMEPERIOD:
+                if (resolution.has(TimeTypeConstants.START)) resolutionPm.set(TimeTypeConstants.START, FormatUtil.toPm(resolution.get(TimeTypeConstants.START)));
+                if (resolution.has(TimeTypeConstants.END)) resolutionPm.set(TimeTypeConstants.END, FormatUtil.toPm(resolution.get(TimeTypeConstants.END)));
+                resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+                break;
+            case Constants.SYS_DATETIME_DATETIMEPERIOD:
+                if (resolution.has(TimeTypeConstants.START)) {
+                    let splitValue = resolution.get(TimeTypeConstants.START).split(' ');
+                    resolutionPm.set(TimeTypeConstants.START, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
+                }
+                if (resolution.has(TimeTypeConstants.END)) {
+                    let splitValue = resolution.get(TimeTypeConstants.END).split(' ');
+                    resolutionPm.set(TimeTypeConstants.END, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
+                }
+                resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+                break;
+        }
+        valuesMap.set(keyName + 'Pm', resolutionPm);
+    }
+}
+
+enum MatchMode {
+    Before, After, None
 }
 
 export enum AgoLaterMode {
@@ -2481,7 +2754,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
         let val = pr2.value;
         if (hour <= 12 && !RegExpUtility.getMatches(this.config.pMTimeRegex, text).length
             && !RegExpUtility.getMatches(this.config.aMTimeRegex, text).length &&
-            val.Comment) {
+            val.comment) {
             //ret.Timex += "ampm";
             ret.comment = "ampm";
         }

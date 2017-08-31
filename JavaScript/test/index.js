@@ -22,3 +22,6 @@ require('./dateTimePeriodParser-english.test');
 require('./durationParser-english.test')
 require('./setParser-english.test');
 require('./holidayParser-english.test');
+require('./dateMergedParser-english.test');
+
+require('./dateTime-english.test');

@@ -33,8 +33,10 @@ import {
     IDateTimePeriodParserConfiguration,
     BaseTimePeriodParser,
     IDateTimeParserConfiguration,
+    IMergedParserConfiguration,
     BaseDateTimeParser,
     BaseDateTimePeriodParser,
+    BaseSetParser,
     BaseHolidayParserConfiguration
 } from "../parsers";
 import {
@@ -78,12 +80,10 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.datePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
         this.timePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
         this.dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+        this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         this.dateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
-        this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
-        this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
         this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
         this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
@@ -404,6 +404,34 @@ export class EnglishDurationParserConfiguration implements IDurationParserConfig
         this.unitMap = config.unitMap;
         this.unitValueMap = config.unitValueMap;
         this.doubleNumbers = config.doubleNumbers;
+    }
+}
+
+export class EnglishMergedParserConfiguration implements IMergedParserConfiguration {
+    readonly BeforeRegex: RegExp
+    readonly AfterRegex: RegExp
+    readonly DateParser: IDateTimeParser
+    readonly HolidayParser: IDateTimeParser
+    readonly TimeParser: IDateTimeParser
+    readonly DateTimeParser: IDateTimeParser
+    readonly DatePeriodParser: IDateTimeParser
+    readonly TimePeriodParser: IDateTimeParser
+    readonly DateTimePeriodParser: IDateTimeParser
+    readonly DurationParser: IDateTimeParser
+    readonly SetParser: IDateTimeParser
+
+    constructor(config: EnglishCommonDateTimeParserConfiguration) {
+        this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex);
+        this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
+        this.HolidayParser = null;
+        this.DateParser = config.dateParser;
+        this.TimeParser = config.timeParser;
+        this.DateTimeParser = config.dateTimeParser;
+        this.DatePeriodParser = config.datePeriodParser;
+        this.TimePeriodParser = config.timePeriodParser;
+        this.DateTimePeriodParser = config.dateTimePeriodParser;
+        this.DurationParser = config.durationParser;
+        this.SetParser = new BaseSetParser(new EnglishSetParserConfiguration(config));
     }
 }
 

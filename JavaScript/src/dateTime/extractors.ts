@@ -110,6 +110,10 @@ export interface IHolidayExtractorConfiguration {
     holidayRegexes: RegExp[]
 }
 
+export enum DateTimeOptions {
+    None, SkipFromToMerge
+}
+
 export interface IMergedExtractorConfiguration {
     dateExtractor: BaseDateExtractor
     timeExtractor: BaseTimeExtractor
@@ -122,6 +126,8 @@ export interface IMergedExtractorConfiguration {
     setExtractor: BaseSetExtractor
     AfterRegex: RegExp
     BeforeRegex: RegExp
+    FromToRegex: RegExp
+    options: DateTimeOptions
 }
 
 export class BaseDateExtractor implements IExtractor {
@@ -754,16 +760,18 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
         });
         this.config.singleDateExtractor.extract(source).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
-            RegExpUtility.getMatches(this.config.timeOfDayRegex, afterStr).forEach(match => {
+            let match = RegExpUtility.getMatches(this.config.periodTimeOfDayWithDateRegex, afterStr).pop();
+            if (match && isNullOrWhitespace(afterStr.substr(0, match.index))) {
                 tokens.push(new Token(er.start, er.start + er.length + match.index + match.length))
-            });
+            }
             let beforeStr = source.substr(0, er.start);
-            RegExpUtility.getMatches(this.config.periodTimeOfDayWithDateRegex, beforeStr).forEach(match => {
+            match = RegExpUtility.getMatches(this.config.periodTimeOfDayWithDateRegex, beforeStr).pop();
+            if (match && isNullOrWhitespace(beforeStr.substr(match.index + match.length))) {
                 let middleStr = source.substr(match.index + match.length, er.start - match.index - match.length);
                 if (isWhitespace(middleStr)) {
                     tokens.push(new Token(match.index, er.start + er.length))
                 }
-            });
+            };
         });
         return tokens;
     }
@@ -909,6 +917,7 @@ export class BaseMergedExtractor implements IExtractor {
 
     private addTo(destination: ExtractResult[], source: ExtractResult[]) {
         source.forEach(value => {
+            if (this.config.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
             let isFound = false;
             let rmIndex = -1;
             let rmLength = 1;
@@ -932,6 +941,10 @@ export class BaseMergedExtractor implements IExtractor {
                 destination = destination.splice(rmIndex, rmLength, value)
             }
         });
+    }
+
+    private shouldSkipFromMerge(er: ExtractResult): boolean {
+        return RegExpUtility.getMatches(this.config.FromToRegex, er.text).length > 0;
     }
 
     private addMod(ers: ExtractResult[], source: string) {
