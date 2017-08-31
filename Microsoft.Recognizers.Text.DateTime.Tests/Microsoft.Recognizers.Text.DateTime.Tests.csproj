@@ -82,6 +82,7 @@
     <Compile Include="English\TestMergedParser.cs" />
     <Compile Include="English\TestSetExtractor.cs" />
     <Compile Include="English\TestSetParser.cs" />
+    <Compile Include="English\TestSingleCultureDateTimeRecognizer.cs" />
     <Compile Include="English\TestTimeExtractor.cs" />
     <Compile Include="English\TestTimeParser.cs" />
     <Compile Include="English\TestTimePeriodExtractor.cs" />

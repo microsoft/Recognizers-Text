@@ -84,9 +84,17 @@ class DictionaryWriter extends CodeWriter {
         this.keyType = toJsType(keyType);
         this.valueType = toJsType(valueType);
 
-        let valueQuote = this.valueType === 'number' ? '' : '"';
+        let valueQuote1: string, valueQuote2: string;
+        if (this.valueType.endsWith("[]")) {
+            valueQuote1 = "[";
+            valueQuote2 = "]";
+        }
+        else {
+            valueQuote1 = valueQuote2 = this.valueType === 'number' ? '' : '"';
+        }
+        
         for(let propName in entries) {
-            this.entries.push(`["${propName}", ${valueQuote}${sanitize(entries[propName], this.valueType)}${valueQuote}]`);
+            this.entries.push(`["${propName}", ${valueQuote1}${sanitize(entries[propName], this.valueType)}${valueQuote2}]`);
         }
     }
 
