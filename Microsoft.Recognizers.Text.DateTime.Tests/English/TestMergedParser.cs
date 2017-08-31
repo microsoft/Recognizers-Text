@@ -1,8 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Tests.English
+namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
     [TestClass]
     public class TestMergedParser

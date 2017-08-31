@@ -31,5 +31,10 @@ namespace Microsoft.Recognizers.Text
         {
             return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture);
         }
+
+        protected IModel GetSingleModel<TModel>()
+        {
+            return modelContainer.GetSingleModel<TModel>();
+        }
     }
 }

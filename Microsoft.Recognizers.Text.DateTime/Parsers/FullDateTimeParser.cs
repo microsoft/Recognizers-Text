@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return null;
             }
 
-            var islunar = val.IsLunar;
+            var isLunar = val.IsLunar;
             var mod = val.Mod;
             var comment = val.Comment;
 
@@ -227,9 +227,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (islunar)
+            if (isLunar)
             {
-                res.Add("isLunar", islunar);
+                res.Add("isLunar", isLunar);
             }
 
             foreach (var p in res)
@@ -259,6 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             value.Add(q.Key, q.Value);
                         }
                     }
+
                     resolutions.Add(value);
                 }
             }
@@ -274,6 +275,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         "value", "not resolved"
                     }
                 };
+
                 resolutions.Add(notResolved);
             }
 

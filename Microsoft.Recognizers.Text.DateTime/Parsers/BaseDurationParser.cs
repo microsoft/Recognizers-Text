@@ -85,24 +85,24 @@ namespace Microsoft.Recognizers.Text.DateTime
         // simple cases made by a number followed an unit
         private DateTimeResolutionResult ParseNumerWithUnit(string text, DateObject referenceTime)
         {
-            var ret = new DateTimeResolutionResult();
-            double numVal = 0;
-            string numStr, unitStr;
-            var suffixStr = text;
-            Match match;
+
+            DateTimeResolutionResult ret;
 
             if ((ret = ParseNumeberSpaceUnit(text)).Success)
             {
                 return ret;
             }
+
             if ((ret = ParseNumeberCombinedUnit(text)).Success)
             {
                 return ret;
             }
+
             if ((ret = ParseAnUnit(text)).Success)
             {
                 return ret;
             }
+
             if ((ret = ParseInExactNumberUnit(text)).Success)
             {
                 return ret;
@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseNumeberSpaceUnit(string text)
         {
             var ret = new DateTimeResolutionResult();
-            double numVal = 0;
+            double numVal;
             string numStr, unitStr;
             var suffixStr = text;
             Match match;

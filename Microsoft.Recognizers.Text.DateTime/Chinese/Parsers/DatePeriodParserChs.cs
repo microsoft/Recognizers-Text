@@ -101,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                                 FormatUtil.FormatDate(((Tuple<DateObject, DateObject>) innerResult.FutureValue).Item2)
                             }
                         };
+
                         innerResult.PastResolution = new Dictionary<string, string>
                         {
                             {
