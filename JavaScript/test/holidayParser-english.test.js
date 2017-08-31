@@ -6,7 +6,7 @@ var BaseHolidayParser = require('../compiled/dateTime/parsers').BaseHolidayParse
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Holiday Parse', it => {
-    let refrenceDay = new Date(2016, 11 - 1, 7);
+    let referenceDay = new Date(2016, 11 - 1, 7);
     let extractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
     let parser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
 
@@ -53,20 +53,20 @@ describe('Holiday Parse', it => {
 });
 
 describe('Holiday Luis', it => {
-    let refrenceDay = new Date(2016, 11 - 1, 7);
+    let referenceDay = new Date(2016, 11 - 1, 7);
     let extractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
     let parser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
 
-    BasicTest("I'll go back on Yuandan", "XXXX-01-01");
-    BasicTest("I'll go back on thanks giving day", "XXXX-11-WXX-4-4");
-    BasicTest("I'll go back on father's day", "XXXX-06-WXX-6-3");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on Yuandan", "XXXX-01-01");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on thanks giving day", "XXXX-11-WXX-4-4");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on father's day", "XXXX-06-WXX-6-3");
 
-    BasicTest("I'll go back on Yuandan of next year", "2017-01-01");
-    BasicTest("I'll go back on thanks giving day 2010", "2010-11-WXX-4-4");
-    BasicTest("I'll go back on father's day of 2015", "2015-06-WXX-6-3");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on Yuandan of next year", "2017-01-01");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on thanks giving day 2010", "2010-11-WXX-4-4");
+    BasicTest_Luis(it, extractor, parser, referenceDay, "I'll go back on father's day of 2015", "2015-06-WXX-6-3");
 });
 
-function BasicTest(it, extractor, parser, referenceDay, text, futureTime, pastTime) {
+function BasicTest(it, extractor, parser, referenceDay, text, futureDate, pastDate) {
     it(text, t => {
         let er = extractor.extract(text);
         t.is(1, er.length);
