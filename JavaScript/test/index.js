@@ -25,3 +25,5 @@ require('./holidayParser-english.test');
 require('./dateMergedParser-english.test');
 
 require('./dateTime-english.test');
+
+require('./singleCultureDateTimeRecognizer-english.test');
