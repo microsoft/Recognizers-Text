@@ -430,10 +430,10 @@ export class BaseNumberParser implements IParser {
         let ret = 0;
         if (isE) {
             // ret = calStack.shift() * Math.pow(10, calStack.shift());
-            ret = calStack.shift().times(Math.pow(10, calStack.shift()));
+            ret = calStack.shift().times(Math.pow(10, calStack.shift().toNumber())).toNumber();
         }
         else {
-            ret = Math.pow(calStack.shift(), calStack.shift());
+            ret = Math.pow(calStack.shift().toNumber(), calStack.shift().toNumber());
         }
 
         result.value = ret;

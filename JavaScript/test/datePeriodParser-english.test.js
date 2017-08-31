@@ -15,8 +15,6 @@ describe('Date Period Parser', it => {
     let day = referenceDate.getDate();
     let inclusiveEnd = false;
 
-    BasicTestLuis(it, extractor, parser, referenceDate, "I'll leave this summer", "2016-SU");
-
     // test basic cases
     BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "I'll be out from 4 to 22 this month", 4, 22, month, year);
     BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "I'll be out from 4-23 in next month", 4, 23, 11, year);

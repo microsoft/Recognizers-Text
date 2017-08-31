@@ -30,9 +30,11 @@ import {
     BaseDurationParser,
     BaseDatePeriodParser,
     ISetParserConfiguration,
+    IDateTimePeriodParserConfiguration,
     BaseTimePeriodParser,
     IDateTimeParserConfiguration,
     BaseDateTimeParser,
+    BaseDateTimePeriodParser,
     BaseHolidayParserConfiguration
 } from "../parsers";
 import {
@@ -80,11 +82,11 @@ export class EnglishCommonDateTimeParserConfiguration extends BaseDateParserConf
         this.timeParser = new EnglishTimeParser(new EnglishTimeParserConfiguration(this));
         this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        // this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
+        this.dateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
         this.durationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
-        // this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
+        this.datePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
-        // this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
+        this.dateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
     }
 }
 
@@ -534,6 +536,92 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     IsLastCardinal(source: string): boolean {
         let trimedSource = source.trim().toLowerCase();
         return trimedSource === 'last';
+    }
+}
+
+export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriodParserConfiguration {
+    readonly PureNumberFromToRegex: RegExp
+    readonly PureNumberBetweenAndRegex: RegExp
+    readonly PeriodTimeOfDayWithDateRegex: RegExp
+    readonly SpecificTimeOfDayRegex: RegExp
+    readonly PastRegex: RegExp
+    readonly FutureRegex: RegExp
+    readonly RelativeTimeUnitRegex: RegExp
+    readonly Numbers: ReadonlyMap<string, number>
+    readonly UnitMap: ReadonlyMap<string, string>
+    readonly DateExtractor: IExtractor
+    readonly TimeExtractor: IExtractor
+    readonly DateTimeExtractor: IExtractor
+    readonly DurationExtractor: IExtractor
+    readonly DateParser: IDateTimeParser
+    readonly TimeParser: IDateTimeParser
+    readonly DateTimeParser: IDateTimeParser
+    readonly DurationParser: IDateTimeParser
+    readonly MorningStartEndRegex: RegExp
+    readonly AfternoonStartEndRegex: RegExp
+    readonly EveningStartEndRegex: RegExp
+    readonly NightStartEndRegex: RegExp
+
+    constructor(config: EnglishCommonDateTimeParserConfiguration) {
+        this.PureNumberFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo);
+        this.PureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd);
+        this.PeriodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex);
+        this.SpecificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
+        this.PastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.FutureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        this.RelativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex);
+        this.Numbers = config.numbers;
+        this.UnitMap = config.unitMap;
+        this.DateExtractor = config.dateExtractor;
+        this.TimeExtractor = config.timeExtractor;
+        this.DateTimeExtractor = config.dateTimeExtractor;
+        this.DurationExtractor = config.durationExtractor;
+        this.DateParser = config.dateParser;
+        this.TimeParser = config.timeParser;
+        this.DateTimeParser = config.dateTimeParser;
+        this.DurationParser = config.durationParser;
+        this.MorningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex);
+        this.AfternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex);
+        this.EveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex);
+        this.NightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex);
+    }
+
+    GetMatchedTimeRange(source: string): {timeStr: string, beginHour: number, endHour: number, endMin: number, success: boolean} {
+        let timeStr: string;
+        let beginHour = 0;
+        let endHour = 0;
+        let endMin = 0;
+        let success = false;
+        if (RegExpUtility.getMatches(this.MorningStartEndRegex, source).length > 0) {
+            timeStr = 'TMO';
+            beginHour = 8;
+            endHour = 12;
+            success = true;
+        } else if (RegExpUtility.getMatches(this.AfternoonStartEndRegex, source).length > 0) {
+            timeStr = 'TAF';
+            beginHour = 12;
+            endHour = 16;
+            success = true;
+        } else if (RegExpUtility.getMatches(this.EveningStartEndRegex, source).length > 0) {
+            timeStr = 'TEV';
+            beginHour = 16;
+            endHour = 20;
+            success = true;
+        } else if (RegExpUtility.getMatches(this.NightStartEndRegex, source).length > 0) {
+            timeStr = 'TNI';
+            beginHour = 20;
+            endHour = 23;
+            endMin = 59;
+            success = true;
+        }
+        return {timeStr: timeStr, beginHour: beginHour, endHour: endHour, endMin: endMin, success: success};
+    }    
+
+    GetSwiftPrefix(source: string): number {
+        let swift = 0;
+        if (source.startsWith('next')) swift = 1;
+        else if (source.startsWith('last')) swift = -1;
+        return swift;
     }
 }
 
