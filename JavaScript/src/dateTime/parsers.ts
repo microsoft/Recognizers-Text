@@ -830,7 +830,7 @@ export class BaseDateParser implements IDateTimeParser {
     }
 
     private parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
-        return parserDurationWithAgoAndLater(
+        return AgoLaterUtil.parseDurationWithAgoAndLater(
             source,
             referenceDate,
             this.config.durationExtractor,
@@ -2326,63 +2326,6 @@ enum MatchMode {
 
 export enum AgoLaterMode {
     Date, DateTime
-}
-
-function parserDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
-    let result = new DateTimeResolutionResult();
-    let duration = durationExtractor.extract(source).pop();
-    if (!duration) return result;
-    let pr = durationParser.parse(duration);
-    if (!pr) return result;
-    let match = RegExpUtility.getMatches(unitRegex, source).pop();
-    if (!match) return result;
-    let afterStr = source.substr(duration.start + duration.length);
-    let beforeStr = source.substr(0, duration.start);
-    let srcUnit = match.groups('unit').value;
-    let durationResult: DateTimeResolutionResult = pr.value;
-    let numStr = durationResult.timex.substr(0, durationResult.timex.length - 1)
-        .replace('P', '')
-        .replace('T', '');
-    let num = Number.parseInt(numStr);
-    if (!num) return result;
-    return getAgoLaterResult(num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
-}
-
-function getAgoLaterResult(num: number, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
-    let result = new DateTimeResolutionResult();
-    let unitStr = unitMap.get(srcUnit);
-    if (!unitStr) return result;
-    let numStr = num.toString();
-    let containsAgo = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.agoRegex);
-    let containsLaterOrIn = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.laterRegex) || MatchingUtil.containsInIndex(beforeStr, utilityConfiguration.inConnectorRegex);
-    if (containsAgo) {
-        return getDateResult(unitStr, num, referenceDate, false, mode);
-    }
-    if (containsLaterOrIn) {
-        return getDateResult(unitStr, num, referenceDate, true, mode);
-    }
-    return result;
-}
-
-function getDateResult(unitStr: string, num: number, referenceDate: Date, isFuture: boolean, mode: AgoLaterMode): DateTimeResolutionResult {
-    let value = new Date(referenceDate);
-    let result = new DateTimeResolutionResult();
-    let swift = isFuture ? 1 : -1;
-    switch (unitStr) {
-        case 'D': value.setDate(referenceDate.getDate() + (num * swift)); break;
-        case 'W': value.setDate(referenceDate.getDate() + (num * swift * 7)); break;
-        case 'MON': value.setMonth(referenceDate.getMonth() + (num * swift)); break;
-        case 'Y': value.setFullYear(referenceDate.getFullYear() + (num * swift)); break;
-        case 'H': value.setHours(referenceDate.getHours() + (num * swift)); break;
-        case 'M': value.setMinutes(referenceDate.getMinutes() + (num * swift)); break;
-        case 'S': value.setSeconds(referenceDate.getSeconds() + (num * swift)); break;
-        default: return result;
-    }
-    result.timex = mode === AgoLaterMode.Date ? FormatUtil.luisDateFromDate(value) : FormatUtil.luisTimeFromDate(value);
-    result.futureValue = value;
-    result.pastValue = value;
-    result.success = true;
-    return result;
 }
 
 export interface ISetParserConfiguration {
