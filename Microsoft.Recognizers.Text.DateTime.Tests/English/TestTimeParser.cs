@@ -3,6 +3,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
+
     [TestClass]
     public class TestTimeParser
     {
@@ -31,7 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         public void TestTimeParseWithTwoNumbers()
         {
             var today = DateObject.Today;
-            int year = today.Year, month = today.Month, day = today.Day, min = 0, second = 0;
+            int year = today.Year, month = today.Month, day = today.Day, second = 0;
+
             BasicTest("set an alarm for eight forty", new DateObject(year, month, day, 8, 40, second));
             BasicTest("set an alarm for eight forty am", new DateObject(year, month, day, 8, 40, second));
             BasicTest("set an alarm for eight forty pm", new DateObject(year, month, day, 20, 40, second));
@@ -85,7 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back seven thirty pm", new DateObject(year, month, day, 19, 30, second));
             BasicTest("I'll go back seven thirty five pm", new DateObject(year, month, day, 19, 35, second));
             BasicTest("I'll go back eleven twenty pm", new DateObject(year, month, day, 23, 20, second));
-
 
             BasicTest("I'll be back noonish", new DateObject(year, month, day, 12, 0, second));
             BasicTest("I'll be back 11ish", new DateObject(year, month, day, 11, 0, second));

@@ -4,6 +4,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
+
     [TestClass]
     public class TestDatePeriodParser
     {

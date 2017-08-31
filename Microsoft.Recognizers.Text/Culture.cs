@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text
         public string CultureName;
         public string CultureCode;
 
-        public static readonly Culture[] SupportedCultures = new Culture[] {
+        public static readonly Culture[] SupportedCultures = {
             new Culture("English", English),
             new Culture("Chinese", Chinese),
             new Culture("Spanish", Spanish),
