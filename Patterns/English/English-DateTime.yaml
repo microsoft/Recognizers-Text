@@ -372,6 +372,10 @@ ConnectorRegex: !simpleRegex
   def: ^(,|for|t|around)$
 FromToRegex: !simpleRegex
   def: \b(from).+(to)\b.+
+SingleAmbiguousMonthRegex: !simpleRegex
+  def: ^(the\s+)?(may|march)$
+PrepositionSuffixRegex: !simpleRegex
+  def: \b(on|in|at|around|during|for|since|from|to)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

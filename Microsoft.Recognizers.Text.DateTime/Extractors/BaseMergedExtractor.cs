@@ -17,17 +17,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text)
         {
-
+            var ret = new List<ExtractResult>();
             // the order is important, since there is a problem in merging
-            var ret = this.config.DateExtractor.Extract(text);
-            AddTo(ret, this.config.TimeExtractor.Extract(text));
-            AddTo(ret, this.config.DurationExtractor.Extract(text));
-            AddTo(ret, this.config.DatePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.DateTimeExtractor.Extract(text));
-            AddTo(ret, this.config.TimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.GetExtractor.Extract(text));
-            AddTo(ret, this.config.HolidayExtractor.Extract(text));
+            AddTo(ret, this.config.DateExtractor.Extract(text), text);
+            AddTo(ret, this.config.TimeExtractor.Extract(text), text);
+            AddTo(ret, this.config.DurationExtractor.Extract(text), text);
+            AddTo(ret, this.config.DatePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.DateTimeExtractor.Extract(text), text);
+            AddTo(ret, this.config.TimePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.GetExtractor.Extract(text), text);
+            AddTo(ret, this.config.HolidayExtractor.Extract(text), text);
 
             AddMod(ret, text);
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void AddTo(List<ExtractResult> dst, List<ExtractResult> src)
+        private void AddTo(List<ExtractResult> dst, List<ExtractResult> src, string text)
         {
             foreach (var result in src)
             {
@@ -46,6 +46,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         continue;
                     }
+                }
+
+                if (FilterAmbiguousSingleWord(result, text))
+                {
+                    continue;
                 }
 
                 var isFound = false;
@@ -91,6 +96,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool ShouldSkipFromToMerge(ExtractResult er) {
             return config.FromToRegex.IsMatch(er.Text);
+        }
+
+        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
+        {
+            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
+            {
+                var stringBefore = text.Substring(0, (int) er.Start).TrimEnd();
+                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)
