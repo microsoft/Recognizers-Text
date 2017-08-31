@@ -1,7 +1,6 @@
-﻿using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Recognizers.Text.DateTime.Tests.English
+namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
 
     [TestClass]
