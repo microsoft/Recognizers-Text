@@ -129,12 +129,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("scheduel a meeting in two weeks", 15, 21, month, year);
                 BasicTestFuture("next 2 days", 8, 9, month, year);
                 BasicTestFuture("past few days", 4, 6, month, year);
+                BasicTestFuture("the week", 7, 13, month, year);
+                BasicTestFuture("this week", 7, 13, month, year);
+                BasicTestFuture("my week", 7, 13, month, year);
+                BasicTestFuture("the weekend", 12, 13, month, year);
+                BasicTestFuture("this weekend", 12, 13, month, year);
+                BasicTestFuture("my weekend", 12, 13, month, year);
             }
             else
             {
                 BasicTestFuture("scheduel a meeting in two weeks", 15, 22, month, year);
                 BasicTestFuture("next 2 days", 8, 10, month, year);
                 BasicTestFuture("past few days", 4, 7, month, year);
+                BasicTestFuture("the week", 7, 14, month, year);
+                BasicTestFuture("this week", 7, 14, month, year);
+                BasicTestFuture("my week", 7, 14, month, year);
+                BasicTestFuture("the weekend", 12, 14, month, year);
+                BasicTestFuture("this weekend", 12, 14, month, year);
+                BasicTestFuture("my weekend", 12, 14, month, year);
             }
         }
 

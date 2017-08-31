@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -30,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             AddMod(ret, text);
 
+            ret = ret.OrderBy(p => p.Start).ToList();
+
             return ret;
         }
 
@@ -46,23 +49,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var isFound = false;
-                int rmIndex = -1, rmLength = 1;
+                List<int> overlapIndexes=new List<int>();
+                int firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
                     {
+                        if (firstIndex == -1)
+                        {
+                            firstIndex = i;
+                        }
                         isFound = true;
                         if (result.Length > dst[i].Length)
                         {
-                            rmIndex = i;
-                            var j = i + 1;
-                            while (j < dst.Count && dst[j].IsOverlap(result))
-                            {
-                                rmLength++;
-                                j++;
-                            }
+                            overlapIndexes.Add(i);
                         }
-                        break;
                     }
                 }
 
@@ -70,10 +71,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     dst.Add(result);
                 }
-                else if (rmIndex >= 0)
+                else if (overlapIndexes.Count>0)
                 {
-                    dst.RemoveRange(rmIndex, rmLength);
-                    dst.Insert(rmIndex, result);
+                    var tempDst = new List<ExtractResult>();
+                    for (var i = 0; i < dst.Count; i++)
+                    {
+                        if (!overlapIndexes.Contains(i))
+                        {
+                            tempDst.Add(dst[i]);
+                        }
+                    }
+                    //insert at the first overlap occurence to keep the order
+                    tempDst.Insert(firstIndex, result);
+                    dst.Clear();
+                    dst.AddRange(tempDst);
                 }
             }
         }

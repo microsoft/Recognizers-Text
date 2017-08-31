@@ -31,23 +31,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             // push, save teh MOD string
             bool hasBefore = false, hasAfter = false;
             var modStr = string.Empty;
-            if (this.Config.BeforeRegex.IsMatch(er.Text))
+            var beforeMatch= Config.BeforeRegex.Match(er.Text);
+            var afterMatch= Config.AfterRegex.Match(er.Text);
+            if (beforeMatch.Success && beforeMatch.Index==0)
             {
                 hasBefore = true;
-                var match = this.Config.BeforeRegex.Match(er.Text);
-                er.Start += match.Length;
-                er.Length -= match.Length;
-                er.Text = er.Text.Substring(match.Length);
-                modStr = match.Value;
+                er.Start += beforeMatch.Length;
+                er.Length -= beforeMatch.Length;
+                er.Text = er.Text.Substring(beforeMatch.Length);
+                modStr = beforeMatch.Value;
             }
-            else if (this.Config.AfterRegex.IsMatch(er.Text))
+            else if (afterMatch.Success && afterMatch.Index == 0)
             {
                 hasAfter = true;
-                var match = this.Config.AfterRegex.Match(er.Text);
-                er.Start += match.Length;
-                er.Length -= match.Length;
-                er.Text = er.Text.Substring(match.Length);
-                modStr = match.Value;
+                er.Start += afterMatch.Length;
+                er.Length -= afterMatch.Length;
+                er.Text = er.Text.Substring(afterMatch.Length);
+                modStr = afterMatch.Value;
             }
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))

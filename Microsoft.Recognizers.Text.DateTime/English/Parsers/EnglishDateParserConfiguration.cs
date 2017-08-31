@@ -44,6 +44,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        //The following three regexes only used in this configuration
+        //They are not used in the base parser, therefore they are not extracted
+        //If the spanish date parser need the same regexes, they should be extracted
+        public static readonly Regex RelativeDayRegex= new Regex(
+                DateTimeDefinitions.RelativeDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex NextPrefixRegex = new Regex(
+                DateTimeDefinitions.NextPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PastPrefixRegex = new Regex(
+                DateTimeDefinitions.PastPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -85,12 +100,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.Equals("today") || trimedText.Equals("the day"))
+
+            var match = RelativeDayRegex.Match(text);
+
+            if (trimedText.Equals("today"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("tomorrow") || trimedText.Equals("tmr") ||
-                     trimedText.Equals("next day") || trimedText.Equals("the next day"))
+            else if (trimedText.Equals("tomorrow") || trimedText.Equals("tmr"))
             {
                 swift = 1;
             }
@@ -107,22 +124,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -2;
             }
-            else if (trimedText.EndsWith("last day"))
+            else if (match.Success)
             {
-                swift = -1;
+                swift = GetSwift(text);
             }
             return swift;
         }
 
         public int GetSwiftMonth(string text)
         {
+            return GetSwift(text);
+        }
+
+        public int GetSwift(string text)
+        {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("next") || trimedText.StartsWith("upcoming"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }

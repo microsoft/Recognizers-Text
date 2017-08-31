@@ -48,6 +48,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestMergedExtract_TheDuration()
+        {
+            BasicTest("What's this day look like?", 7, 8);
+            BasicTest("What's this week look like?", 7, 9);
+            BasicTest("What's my week look like?", 7, 7);
+            BasicTest("What's the week look like?", 7, 8);
+            BasicTest("What's my day look like?", 7, 6);
+            BasicTest("What's the day look like?", 7, 7);
+        }
+
+        [TestMethod]
         public void TestMergedSkipFromTo()
         {
             BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SkipFromToMerge);
