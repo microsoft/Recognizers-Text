@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Definitions.English;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -10,60 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishHolidayParserConfiguration() : base()
         {
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
-            this.HolidayNames = InitHolidayNames().ToImmutableDictionary();
-        }
-
-        private static IDictionary<string, IEnumerable<string>> InitHolidayNames()
-        {
-            return new Dictionary<string, IEnumerable<string>>
-            {
-                { "fathers", new string[]{ "fatherday", "fathersday" } },
-                { "mothers", new string[]{ "motherday", "mothersday" } },
-                { "thanksgiving", new string[]{ "thanksgivingday", "thanksgiving" } },
-                { "martinlutherking", new string[]{ "martinlutherkingday", "martinlutherkingjrday" } },
-                { "washingtonsbirthday", new string[]{ "washingtonsbirthday", "washingtonbirthday" } },
-                { "canberra", new string[]{ "canberraday" } },
-                { "labour", new string[]{ "labourday", "laborday" } },
-                { "columbus", new string[]{ "columbusday" } },
-                { "memorial", new string[]{ "memorialday" } },
-                { "yuandan", new string[]{ "yuandan" } },
-                { "maosbirthday", new string[]{ "maosbirthday" } },
-                { "teachersday", new string[]{ "teachersday", "teacherday" } },
-                { "singleday", new string[]{ "singleday" } },
-                { "allsaintsday", new string[]{ "allsaintsday" } },
-                { "youthday", new string[]{ "youthday" } },
-                { "childrenday", new string[]{ "childrenday, childday" } },
-                { "femaleday", new string[]{ "femaleday" } },
-                { "treeplantingday", new string[]{ "treeplantingday" } },
-                { "arborday", new string[]{ "arborday" } },
-                { "girlsday", new string[]{ "girlsday" } },
-                { "whiteloverday", new string[]{ "whiteloverday" } },
-                { "loverday", new string[]{ "loverday" } },
-                { "christmas", new string[]{ "christmas" } },
-                { "xmas", new string[]{ "xmas" } },
-                { "newyear", new string[]{ "newyear" } },
-                { "newyearday", new string[]{ "newyearday" } },
-                { "newyearsday", new string[]{ "newyearsday" } },
-                { "inaugurationday", new string[]{ "inaugurationday" } },
-                { "groundhougday", new string[]{ "groundhougday" } },
-                { "valentinesday", new string[]{ "valentinesday" } },
-                { "stpatrickday", new string[]{ "stpatrickday" } },
-                { "aprilfools", new string[]{ "aprilfools" } },
-                { "stgeorgeday", new string[]{ "stgeorgeday" } },
-                { "mayday", new string[]{ "mayday" } },
-                { "cincodemayoday", new string[]{ "cincodemayoday" } },
-                { "baptisteday", new string[]{ "baptisteday" } },
-                { "usindependenceday", new string[]{ "usindependenceday" } },
-                { "independenceday", new string[]{ "independenceday" } },
-                { "bastilleday", new string[]{ "bastilleday" } },
-                { "halloweenday", new string[]{ "halloweenday" } },
-                { "allhallowday", new string[]{ "allhallowday" } },
-                { "allsoulsday", new string[]{ "allsoulsday" } },
-                { "guyfawkesday", new string[]{ "guyfawkesday" } },
-                { "veteransday", new string[]{ "veteransday" } },
-                { "christmaseve", new string[]{ "christmaseve" } },
-                { "newyeareve", new string[]{ "newyearseve","newyeareve" } },
-            };
+            this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
 
         protected override IDictionary<string, Func<int, DateObject>> InitHolidayFuncs()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -19,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         protected BaseHolidayParserConfiguration()
         {
-            this.VariableHolidaysTimexDictionary = InitVariableHolidaysTimex().ToImmutableDictionary();
+            this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary.ToImmutableDictionary();
             this.HolidayFuncDictionary = InitHolidayFuncs().ToImmutableDictionary();
         }
 
@@ -37,22 +38,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {"labour", LabourDay},
                 {"columbus", ColumbusDay},
                 {"memorial", MemorialDay}
-            };
-        }
-
-        protected virtual IDictionary<string, string> InitVariableHolidaysTimex()
-        {
-            return new Dictionary<string, string>
-            {
-                {"fathers", @"-06-WXX-6-3"},
-                {"mothers", @"-05-WXX-7-2"},
-                {"thanksgiving", @"-11-WXX-4-4"},
-                {"martinlutherking", @"-01-WXX-1-3"},
-                {"washingtonsbirthday", @"-02-WXX-1-3"},
-                {"canberra", @"-03-WXX-1-1"},
-                {"labour", @"-09-WXX-1-1"},
-                {"columbus", @"-10-WXX-1-2"},
-                {"memorial", @"-05-WXX-1-4"}
             };
         }
 
