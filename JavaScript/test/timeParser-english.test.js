@@ -44,7 +44,7 @@ describe('Time Parse', it => {
     BasicTestFuture(it, extractor, parser, "I'll be back in the afternoon at 7", new Date(year, month, day, 19, 0, second));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon at 7", new Date(year, month, day, 19, 0, second));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00", new Date(year, month, day, 19, 0, second));
-    BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00:05", new Date(year, month, day, 19, 0, 05));
+    BasicTestFuture(it, extractor, parser, "I'll be back afternoon 7:00:05", new Date(year, month, day, 19, 0, 5));
     BasicTestFuture(it, extractor, parser, "I'll be back afternoon seven pm", new Date(year, month, day, 19, 0, second));
 
     BasicTestFuture(it, extractor, parser, "I'll go back seven thirty pm", new Date(year, month, day, 19, 30, second));
