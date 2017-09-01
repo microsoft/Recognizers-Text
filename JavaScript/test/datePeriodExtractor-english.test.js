@@ -101,7 +101,7 @@ describe('Date Period Extractor', it => {
     // Season
     BasicTest(it, extractor, "I'll leave this summer", 11, 11);
     BasicTest(it, extractor, "I'll leave next spring", 11, 11);
-    BasicTest(it, extractor, "I'll leave the summer", 15, 6);
+    BasicTest(it, extractor, "I'll leave the summer", 11, 10);
     BasicTest(it, extractor, "I'll leave summer", 11, 6);
     BasicTest(it, extractor, "I'll leave summer 2016", 11, 11);
     BasicTest(it, extractor, "I'll leave summer of 2016", 11, 14);
@@ -114,8 +114,8 @@ describe('Date Period Extractor', it => {
     BasicTest(it, extractor, "week of september.15th", 0, 22);
     BasicTest(it, extractor, "month of september.15th", 0, 23);
 
-    // over the weekend = this weekend
-    BasicTest(it, extractor, "I'll leave over the weekend", 11, 16);
+    // the weekend = this weekend
+    BasicTest(it, extractor, "I'll leave over the weekend", 16, 11);
 });
 
 function BasicTest(it, extractor, text, start, length, expected = 1) {
