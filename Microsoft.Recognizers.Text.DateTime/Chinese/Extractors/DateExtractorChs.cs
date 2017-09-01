@@ -53,10 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex ThisRegex = new Regex(string.Format(@"(这个|这一个|这|这一|本){0}", WeekDayRegex),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(string.Format(@"(上个|上一个|上|上一){0}", WeekDayRegex),
+        public static readonly Regex LastRegex = new Regex(string.Format(@"(上一个|上个|上一|上|最后一个|最后)(的)?{0}", WeekDayRegex),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(string.Format(@"(下个|下一个|下|下一){0}", WeekDayRegex),
+        public static readonly Regex NextRegex = new Regex(string.Format(@"(下一个|下个|下一|下)(的)?{0}", WeekDayRegex),
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDayRegex = new Regex(@"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日)",

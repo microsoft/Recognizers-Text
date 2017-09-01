@@ -28,5 +28,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FromToRegex { get; }
 
+        Regex SingleAmbiguousMonthRegex { get; }
+
+        Regex PrepositionSuffixRegex { get; }
+
     }
 }

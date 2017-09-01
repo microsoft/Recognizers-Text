@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
+            BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
             BasicTest("on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
             BasicTest("on Friday for 3 in the afternoon", Constants.SYS_DATETIME_DATETIME);
         }
@@ -73,6 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParseWithTwoResults()
         {
+            BasicTestWithTwoResults("block 1 hour on my calendar tomorrow morning", Constants.SYS_DATETIME_DURATION,
+                Constants.SYS_DATETIME_DATETIMEPERIOD);
             BasicTestWithTwoResults("Change July 22nd meeting in Bellevue to August 22nd", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_DATE);
             BasicTestWithTwoResults("on Friday for 3 in Bellevue in the afternoon", Constants.SYS_DATETIME_DATE,

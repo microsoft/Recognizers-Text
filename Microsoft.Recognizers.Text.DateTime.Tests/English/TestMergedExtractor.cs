@@ -48,6 +48,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestMergedExtract_TheDuration()
+        {
+            BasicTest("What's this day look like?", 7, 8);
+            BasicTest("What's this week look like?", 7, 9);
+            BasicTest("What's my week look like?", 7, 7);
+            BasicTest("What's the week look like?", 7, 8);
+            BasicTest("What's my day look like?", 7, 6);
+            BasicTest("What's the day look like?", 7, 7);
+        }
+
+        [TestMethod]
         public void TestMergedSkipFromTo()
         {
             BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SkipFromToMerge);
@@ -77,9 +88,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestAmbiguousWordExtract()
+        {
+            BasicTest("May 29th", 0, 8);
+            BasicTest("March 29th", 0, 10);
+            BasicTest("I born in March", 10, 5);
+            BasicTest("I born in the March", 10, 9);
+            BasicTest("what happend at the May", 16, 7);
+        }
+
+        [TestMethod]
         public void TestNegativeExtract()
         {
             //Unit tests for text should not extract datetime
+            BasicTestNone("in the sun");
+            BasicTestNone("may i help you");
+            BasicTestNone("the group proceeded with a march they knew would lead to bloodshed");
             BasicTestNone("which email have gotten a reply");
             BasicTestNone("He is often alone");
             BasicTestNone("often a bird");
