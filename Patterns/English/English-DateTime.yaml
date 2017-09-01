@@ -375,7 +375,7 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
 PrepositionSuffixRegex: !simpleRegex
-  def: \b(on|in|at|around|during|for|since|from|to)$
+  def: \b(on|in|at|around|from|to)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

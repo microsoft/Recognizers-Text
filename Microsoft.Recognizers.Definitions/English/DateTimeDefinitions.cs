@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string ConnectorRegex = @"^(,|for|t|around)$";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
-		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|during|for|since|from|to)$";
+		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|since|from|to)$";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

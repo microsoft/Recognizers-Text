@@ -88,6 +88,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestAmbiguousWordExtract()
+        {
+            BasicTest("May 29th", 0, 8);
+            BasicTest("March 29th", 0, 10);
+            BasicTest("I born in March", 10, 5);
+            BasicTest("I born in the March", 10, 9);
+            BasicTest("what happend at the May", 16, 7);
+        }
+
+        [TestMethod]
         public void TestNegativeExtract()
         {
             //Unit tests for text should not extract datetime
