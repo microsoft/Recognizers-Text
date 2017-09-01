@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -16,24 +17,26 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text)
         {
-
+            var ret = new List<ExtractResult>();
             // the order is important, since there is a problem in merging
-            var ret = this.config.DateExtractor.Extract(text);
-            AddTo(ret, this.config.TimeExtractor.Extract(text));
-            AddTo(ret, this.config.DurationExtractor.Extract(text));
-            AddTo(ret, this.config.DatePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.DateTimeExtractor.Extract(text));
-            AddTo(ret, this.config.TimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text));
-            AddTo(ret, this.config.GetExtractor.Extract(text));
-            AddTo(ret, this.config.HolidayExtractor.Extract(text));
+            AddTo(ret, this.config.DateExtractor.Extract(text), text);
+            AddTo(ret, this.config.TimeExtractor.Extract(text), text);
+            AddTo(ret, this.config.DurationExtractor.Extract(text), text);
+            AddTo(ret, this.config.DatePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.DateTimeExtractor.Extract(text), text);
+            AddTo(ret, this.config.TimePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text), text);
+            AddTo(ret, this.config.GetExtractor.Extract(text), text);
+            AddTo(ret, this.config.HolidayExtractor.Extract(text), text);
 
             AddMod(ret, text);
+
+            ret = ret.OrderBy(p => p.Start).ToList();
 
             return ret;
         }
 
-        private void AddTo(List<ExtractResult> dst, List<ExtractResult> src)
+        private void AddTo(List<ExtractResult> dst, List<ExtractResult> src, string text)
         {
             foreach (var result in src)
             {
@@ -45,24 +48,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                if (FilterAmbiguousSingleWord(result, text))
+                {
+                    continue;
+                }
+
                 var isFound = false;
-                int rmIndex = -1, rmLength = 1;
+                List<int> overlapIndexes=new List<int>();
+                int firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
                     if (dst[i].IsOverlap(result))
                     {
+                        if (firstIndex == -1)
+                        {
+                            firstIndex = i;
+                        }
                         isFound = true;
                         if (result.Length > dst[i].Length)
                         {
-                            rmIndex = i;
-                            var j = i + 1;
-                            while (j < dst.Count && dst[j].IsOverlap(result))
-                            {
-                                rmLength++;
-                                j++;
-                            }
+                            overlapIndexes.Add(i);
                         }
-                        break;
                     }
                 }
 
@@ -70,16 +76,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     dst.Add(result);
                 }
-                else if (rmIndex >= 0)
+                else if (overlapIndexes.Count>0)
                 {
-                    dst.RemoveRange(rmIndex, rmLength);
-                    dst.Insert(rmIndex, result);
+                    var tempDst = new List<ExtractResult>();
+                    for (var i = 0; i < dst.Count; i++)
+                    {
+                        if (!overlapIndexes.Contains(i))
+                        {
+                            tempDst.Add(dst[i]);
+                        }
+                    }
+                    //insert at the first overlap occurence to keep the order
+                    tempDst.Insert(firstIndex, result);
+                    dst.Clear();
+                    dst.AddRange(tempDst);
                 }
             }
         }
 
         private bool ShouldSkipFromToMerge(ExtractResult er) {
             return config.FromToRegex.IsMatch(er.Text);
+        }
+
+        private bool FilterAmbiguousSingleWord(ExtractResult er, string text)
+        {
+            if (config.SingleAmbiguousMonthRegex.IsMatch(er.Text.ToLowerInvariant()))
+            {
+                var stringBefore = text.Substring(0, (int) er.Start).TrimEnd();
+                if (!config.PrepositionSuffixRegex.IsMatch(stringBefore))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)

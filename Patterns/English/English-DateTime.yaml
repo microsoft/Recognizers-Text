@@ -4,7 +4,7 @@ TillRegex: !simpleRegex
 RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
-  def: (?<order>next|upcoming|this|last|past|previous|current|over the)
+  def: (?<order>next|upcoming|this|last|past|previous|current|the|my)
 NextPrefixRegex: !simpleRegex
   def: (next|upcoming)\b
 PastPrefixRegex: !simpleRegex
@@ -45,7 +45,7 @@ MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
   references: [ PeriodYearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|{RelativeRegex}\s+(weekend|week|month|year)|weekend|(month|year) to date)\b
+  def: \b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|({RelativeRegex}\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})
@@ -95,8 +95,12 @@ LastDateRegex: !nestedRegex
 NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*on)?)?\s+{WeekDayRegex})|((on\s+)?{WeekDayRegex}(\s+next\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex ]
-SpecialDayRegex: !simpleRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|(the\s)?next day|(the\s+)?last day|the day|yesterday|tomorrow|tmr|today)\b
+SpecialDayRegex: !nestedRegex
+  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|((the\s+)?{RelativeRegex}\s+day)|yesterday|tomorrow|tmr|today)\b
+  references: [ RelativeRegex]
+RelativeDayRegex: !nestedRegex
+  def: \b(((the\s+)?{RelativeRegex}\s+day))\b
+  references: [ RelativeRegex]
 StrictWeekDay: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Fri|Sat)s?\b
 WeekDayOfMonthRegex: !nestedRegex
@@ -368,6 +372,10 @@ ConnectorRegex: !simpleRegex
   def: ^(,|for|t|around)$
 FromToRegex: !simpleRegex
   def: \b(from).+(to)\b.+
+SingleAmbiguousMonthRegex: !simpleRegex
+  def: ^(the\s+)?(may|march)$
+PrepositionSuffixRegex: !simpleRegex
+  def: \b(on|in|at|around|from|to)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

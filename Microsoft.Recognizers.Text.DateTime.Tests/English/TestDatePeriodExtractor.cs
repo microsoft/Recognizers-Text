@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             BasicTest("I'll leave this summer", 11, 11);
             BasicTest("I'll leave next spring", 11, 11);
-            BasicTest("I'll leave the summer", 15, 6);
+            BasicTest("I'll leave the summer", 11, 10);
             BasicTest("I'll leave summer", 11, 6);
             BasicTest("I'll leave summer 2016", 11, 11);
             BasicTest("I'll leave summer of 2016", 11, 14);
@@ -170,8 +170,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDatePeriodExtractOver()
         {
-            // over the weekend = this weekend
-            BasicTest("I'll leave over the weekend", 11, 16);
+            // the weekend = this weekend
+            BasicTest("I'll leave over the weekend", 16, 11);
         }
 
     }

@@ -117,6 +117,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateParse_TheDay()
+        {
+            int tYear = 2016, tMonth = 11, tDay = 7;
+            
+            BasicTest("I'll go back next day", new DateObject(2016, 11, 8));
+            BasicTest("I'll go back the day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back my day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back this day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back last day", new DateObject(2016, 11, 6));
+            BasicTest("I'll go back past day", new DateObject(2016, 11, 6));
+        }
+
+        [TestMethod]
         public void TestDateParseAgoLater()
         {
             BasicTest("I'll go back two weeks from now", new DateObject(2016, 11, 21));

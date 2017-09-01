@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
-        private static readonly Regex TimeTimeUnitRegex =
+        private static readonly Regex TimeUnitRegex =
             new Regex(DateTimeDefinitions.TimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex TimeFollowedUnit = 
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
         
-        Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeTimeUnitRegex;
+        Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
 
