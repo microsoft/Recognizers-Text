@@ -71,10 +71,22 @@ describe('Date Period Parser', it => {
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "scheduel a meeting in two weeks", 15, 21, month, year);
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "next 2 days", 8, 9, month, year);
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "past few days", 4, 6, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the week", 7, 13, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this week", 7, 13, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my week", 7, 13, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the weekend", 12, 13, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this weekend", 12, 13, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my weekend", 12, 13, month, year);
     } else {
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "scheduel a meeting in two weeks", 15, 22, month, year);
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "next 2 days", 8, 10, month, year);
         BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "past few days", 4, 7, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the week", 7, 14, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this week", 7, 14, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my week", 7, 14, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the weekend", 12, 14, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this weekend", 12, 14, month, year);
+        BasicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my weekend", 12, 14, month, year);
     }
 
     // test merging two time points
