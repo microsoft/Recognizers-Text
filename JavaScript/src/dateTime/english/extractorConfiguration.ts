@@ -421,7 +421,8 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly AfterRegex: RegExp
     readonly BeforeRegex: RegExp
     readonly FromToRegex: RegExp
-    readonly options: DateTimeOptions
+    readonly singleAmbiguousMonthRegex: RegExp
+    readonly prepositionSuffixRegex: RegExp
             
     constructor() {
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration())
@@ -433,9 +434,10 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration())
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration())
         this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration())
-        this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex, "gis")
-        this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex, "gis")
+        this.AfterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex)
+        this.BeforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex)
         this.FromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
-        this.options = DateTimeOptions.None
+        this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex);
+        this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex);
     }
 }

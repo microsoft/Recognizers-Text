@@ -127,7 +127,8 @@ export interface IMergedExtractorConfiguration {
     AfterRegex: RegExp
     BeforeRegex: RegExp
     FromToRegex: RegExp
-    options: DateTimeOptions
+    singleAmbiguousMonthRegex: RegExp
+    prepositionSuffixRegex: RegExp
 }
 
 export class BaseDateExtractor implements IExtractor {
@@ -895,56 +896,80 @@ export class BaseHolidayExtractor implements IExtractor {
 
 export class BaseMergedExtractor implements IExtractor {
     private readonly config: IMergedExtractorConfiguration;
+    private readonly options: DateTimeOptions;
 
-    constructor(config: IMergedExtractorConfiguration) {
+    constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
         this.config = config;
+        this.options = options;
     }
 
     extract(source: string): Array<ExtractResult> {
-        let result: Array<ExtractResult> = new Array<ExtractResult>()
-            .concat(this.config.dateExtractor.extract(source));
-        this.addTo(result, this.config.timeExtractor.extract(source));
-        this.addTo(result, this.config.durationExtractor.extract(source));
-        this.addTo(result, this.config.datePeriodExtractor.extract(source));
-        this.addTo(result, this.config.dateTimeExtractor.extract(source));
-        this.addTo(result, this.config.timePeriodExtractor.extract(source));
-        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source));
-        this.addTo(result, this.config.setExtractor.extract(source));
-        this.addTo(result, this.config.holidayExtractor.extract(source));
+        let result: Array<ExtractResult> = new Array<ExtractResult>();
+        this.addTo(result, this.config.dateExtractor.extract(source), source);
+        this.addTo(result, this.config.timeExtractor.extract(source), source);
+        this.addTo(result, this.config.durationExtractor.extract(source), source);
+        this.addTo(result, this.config.datePeriodExtractor.extract(source), source);
+        this.addTo(result, this.config.dateTimeExtractor.extract(source), source);
+        this.addTo(result, this.config.timePeriodExtractor.extract(source), source);
+        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source), source);
+        this.addTo(result, this.config.setExtractor.extract(source), source);
+        this.addTo(result, this.config.holidayExtractor.extract(source), source);
         this.addMod(result, source);
+
+        result = result.sort((a, b) => a.start - b.start);
         return result;
     }
 
-    private addTo(destination: ExtractResult[], source: ExtractResult[]) {
+    private addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
         source.forEach(value => {
-            if (this.config.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
+            if (this.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
+            if (this.filterAmbiguousSingleWord(value, text)) return;
             let isFound = false;
-            let rmIndex = -1;
-            let rmLength = 1;
-            destination.some((dest, index) => {
+            let overlapIndexes = new Array<number>();
+            let firstIndex = -1;
+            destination.forEach((dest, index) => {
                 if (ExtractResult.isOverlap(dest, value)) {
+                    if (firstIndex == -1) {
+                        firstIndex = index;
+                    }
                     isFound = true;
                     if (value.length > dest.length) {
-                        rmIndex = index;
-                        let overlapIndex = index + 1;
-                        while (overlapIndex < destination.length && ExtractResult.isOverlap(destination[overlapIndex], value)) {
-                            rmLength++
-                            overlapIndex++
-                        }
+                        overlapIndexes.push(index);
                     }
-                    return true;
                 }
             });
             if (!isFound) {
                 destination.push(value)
-            } else if (rmIndex >= 0) {
-                destination = destination.splice(rmIndex, rmLength, value)
+            } else if (overlapIndexes.length) {
+                let tempDst = new Array<ExtractResult>();
+                for (let i = 0; i < destination.length; i++) {
+                    if (overlapIndexes.indexOf(i) === -1) {
+                        tempDst.push(destination[i]);
+                    }
+                }
+
+                //insert at the first overlap occurence to keep the order
+                tempDst.splice(firstIndex, 0, value);
+                destination.length = 0;
+                destination.push.apply(destination, tempDst);
             }
         });
     }
 
     private shouldSkipFromMerge(er: ExtractResult): boolean {
         return RegExpUtility.getMatches(this.config.FromToRegex, er.text).length > 0;
+    }
+
+    private filterAmbiguousSingleWord(er: ExtractResult, text: string): boolean {
+        let matches = RegExpUtility.getMatches(this.config.singleAmbiguousMonthRegex, er.text.toLowerCase())
+        if (matches.length) {
+            let stringBefore = text.substring(0, er.start).replace(/\s+$/, '');
+            matches = RegExpUtility.getMatches(this.config.prepositionSuffixRegex, stringBefore);
+            if (!matches.length) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private addMod(ers: ExtractResult[], source: string) {
