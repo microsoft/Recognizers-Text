@@ -259,7 +259,7 @@ export class BaseTimeExtractor implements IExtractor {
     specialsRegexMatch(text: string): Array<Token> {
         let ret = [];
         // handle "ish"
-        if (this.config.ishRegex != null) {
+        if (this.config.ishRegex !== null) {
             let matches = RegExpUtility.getMatches(this.config.ishRegex, text);
             matches.forEach(match => {
                 ret.push(new Token(match.index, match.index + match.length));
@@ -929,7 +929,7 @@ export class BaseMergedExtractor implements IExtractor {
             let firstIndex = -1;
             destination.forEach((dest, index) => {
                 if (ExtractResult.isOverlap(dest, value)) {
-                    if (firstIndex == -1) {
+                    if (firstIndex === -1) {
                         firstIndex = index;
                     }
                     isFound = true;
@@ -948,7 +948,7 @@ export class BaseMergedExtractor implements IExtractor {
                     }
                 }
 
-                //insert at the first overlap occurence to keep the order
+                // insert at the first overlap occurence to keep the order
                 tempDst.splice(firstIndex, 0, value);
                 destination.length = 0;
                 destination.push.apply(destination, tempDst);
@@ -1005,7 +1005,7 @@ export class BaseMergedExtractor implements IExtractor {
 }
 
 export class BaseTimePeriodExtractor implements IExtractor {
-    readonly extractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
+    readonly extractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
     readonly config: ITimePeriodExtractorConfiguration;
 
     constructor(config: ITimePeriodExtractorConfiguration) {

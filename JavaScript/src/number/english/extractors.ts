@@ -24,7 +24,7 @@ export class EnglishNumberExtractor extends BaseNumberExtractor {
                 break;
         }
 
-        if (cardExtract == null) {
+        if (cardExtract === null) {
             cardExtract = new EnglishCardinalExtractor();
         }
 

@@ -29,7 +29,7 @@ export abstract class AbstractNumberWithUnitModel implements IModel {
             let parser = kv[1];
             let extractResults = extractor.extract(query);
             let parseResults = extractResults.map(r => parser.parse(r))
-                .filter(o => o.value != null);
+                .filter(o => o.value !== null);
             let modelResults = parseResults.map(o =>
                 ({
                     start: o.start,

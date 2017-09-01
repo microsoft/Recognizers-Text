@@ -86,14 +86,14 @@ export class NumberWithUnitExtractor implements IExtractor {
 
                     collection.forEach(match => {
                         if (leftStr.substring(match.index, lastIndex).trim() === match.value) {
-                            if (bestMatch == null || bestMatch.index >= match.index) {
+                            if (bestMatch === null || bestMatch.index >= match.index) {
                                 bestMatch = match;
                             }
                         }
                     });
                 });
 
-                if (bestMatch != null) {
+                if (bestMatch !== null) {
                     let offSet = lastIndex - bestMatch.index;
                     let unitStr = leftStr.substring(bestMatch.index, lastIndex);
                     mappingPrefix.set(num.start, {
@@ -148,7 +148,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                         type: this.config.extractType
                     } as ExtractResult;
 
-                    if (prefixUnit != null) {
+                    if (prefixUnit !== null) {
                         er.start -= prefixUnit.offset;
                         er.length += prefixUnit.offset;
                         er.text = prefixUnit.unitString + er.text;
@@ -162,7 +162,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                 }
             }
 
-            if (prefixUnit != null) {
+            if (prefixUnit !== null) {
                 let er = {
                     start: num.start - prefixUnit.offset,
                     length: num.length + prefixUnit.offset,
@@ -178,7 +178,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         });
 
         // extract Separate unit
-        if (this.separateRegex != null) {
+        if (this.separateRegex !== null) {
             this.extractSeparateUnits(source, result);
         }
 
@@ -283,8 +283,8 @@ export class NumberWithUnitExtractor implements IExtractor {
     }
 
     protected dinoComparer(x: string, y: string): number {
-        if (x == null) {
-            if (y == null) {
+        if (x === null) {
+            if (y === null) {
                 // If x is null and y is null, they're
                 // equal.
                 return 0;
@@ -298,7 +298,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         else {
             // If x is not null...
             //
-            if (y == null)
+            if (y === null)
             // ...and y is null, x is greater.
             {
                 return -1;

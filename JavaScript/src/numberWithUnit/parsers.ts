@@ -43,7 +43,7 @@ export class NumberWithUnitParser implements IParser {
                 }
 
                 let o = numberResult.start + numberResult.length - 1;
-                if (o != null && !isNaN(o)) {
+                if (o !== null && !isNaN(o)) {
                     i = o;
                 }
             }
@@ -58,7 +58,7 @@ export class NumberWithUnitParser implements IParser {
         if (this.config.connectorToken && this.config.connectorToken.length && lastUnit.indexOf(this.config.connectorToken) === 0) {
             lastUnit = lastUnit.substring(this.config.connectorToken.length).trim();
         }
-        if (key && key.length && (this.config.unitMap != null) && this.config.unitMap.has(lastUnit)) {
+        if (key && key.length && (this.config.unitMap !== null) && this.config.unitMap.has(lastUnit)) {
             let unitValue = this.config.unitMap.get(lastUnit);
             let numValue = numberResult.text && numberResult.text.length
                 ? this.config.internalNumberParser.parse(numberResult)

@@ -121,7 +121,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
             let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.LessThanOneHour, trimedPrefix);
             let minStr = match[0].groups("deltamin").value;
             if (minStr) {
-                deltaMin = Number.parseInt(minStr);
+                deltaMin = Number.parseInt(minStr, 10);
             }
             else {
                 minStr = match[0].groups("deltaminnum").value.toLowerCase();
@@ -263,7 +263,7 @@ export class EnglishTimeParser extends BaseTimeParser {
             let hourStr = matches[0].groups("hour").value;
             let hour = 12;
             if (hourStr) {
-                hour = Number.parseInt(hourStr);
+                hour = Number.parseInt(hourStr, 10);
             }
 
             ret.timex = "T" + FormatUtil.toString(hour, 2);
@@ -303,9 +303,9 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
 
-    //The following three regexes only used in this configuration
-    //They are not used in the base parser, therefore they are not extracted
-    //If the spanish date parser need the same regexes, they should be extracted
+    // The following three regexes only used in this configuration
+    // They are not used in the base parser, therefore they are not extracted
+    // If the spanish date parser need the same regexes, they should be extracted
     static readonly RelativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
     static readonly NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
     static readonly PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
@@ -715,19 +715,19 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
     public getMatchedDailyTimex(text: string): { matched: boolean, timex: string } {
         let timex = "";
         let trimedText = text.trim().toLowerCase();
-        if (trimedText == "daily") {
+        if (trimedText === "daily") {
             timex = "P1D";
         }
-        else if (trimedText == "weekly") {
+        else if (trimedText === "weekly") {
             timex = "P1W";
         }
-        else if (trimedText == "biweekly") {
+        else if (trimedText === "biweekly") {
             timex = "P2W";
         }
-        else if (trimedText == "monthly") {
+        else if (trimedText === "monthly") {
             timex = "P1M";
         }
-        else if (trimedText == "yearly" || trimedText == "annually" || trimedText == "annual") {
+        else if (trimedText === "yearly" || trimedText === "annually" || trimedText === "annual") {
             timex = "P1Y";
         }
         else {
@@ -739,17 +739,17 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
 
     public getMatchedUnitTimex(text: string): { matched: boolean, timex: string } {
         let timex = "";
-        var trimedText = text.trim().toLowerCase();
-        if (trimedText == "day") {
+        let trimedText = text.trim().toLowerCase();
+        if (trimedText === "day") {
             timex = "P1D";
         }
-        else if (trimedText == "week") {
+        else if (trimedText === "week") {
             timex = "P1W";
         }
-        else if (trimedText == "month") {
+        else if (trimedText === "month") {
             timex = "P1M";
         }
-        else if (trimedText == "year") {
+        else if (trimedText === "year") {
             timex = "P1Y";
         }
         else {
@@ -821,15 +821,15 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     }
 
     public getMatchedNowTimex(text: string): { matched: boolean, timex: string } {
-        var trimedText = text.trim().toLowerCase();
+        let trimedText = text.trim().toLowerCase();
         let timex: string;
         if (trimedText.endsWith("now")) {
             timex = "PRESENT_REF";
         }
-        else if (trimedText == "recently" || trimedText == "previously") {
+        else if (trimedText === "recently" || trimedText === "previously") {
             timex = "PAST_REF";
         }
-        else if (trimedText == "as soon as possible" || trimedText == "asap") {
+        else if (trimedText === "as soon as possible" || trimedText === "asap") {
             timex = "FUTURE_REF";
         }
         else {
@@ -840,8 +840,8 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     }
 
     public getSwiftDay(text: string): number {
-        var trimedText = text.trim().toLowerCase();
-        var swift = 0;
+        let trimedText = text.trim().toLowerCase();
+        let swift = 0;
         if (trimedText.startsWith("next")) {
             swift = 1;
         }
@@ -942,8 +942,8 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     private static Veteransday(year: number): Date { return new Date(year, 11 - 1, 11); }
 
     public getSwiftYear(text: string): number {
-        var trimedText = text.trim().toLowerCase();
-        var swift = -10;
+        let trimedText = text.trim().toLowerCase();
+        let swift = -10;
         if (trimedText.startsWith("next")) {
             swift = 1;
         }

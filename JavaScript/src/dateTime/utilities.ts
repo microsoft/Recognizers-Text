@@ -107,7 +107,7 @@ export class AgoLaterUtil {
         let numStr = durationResult.timex.substr(0, durationResult.timex.length - 1)
             .replace('P', '')
             .replace('T', '');
-        let num = Number.parseInt(numStr);
+        let num = Number.parseInt(numStr, 10);
         if (!num) return result;
         return AgoLaterUtil.getAgoLaterResult(num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
     }
@@ -195,8 +195,8 @@ export class FormatUtil {
     }
 
     public static luisDate(year: number, month: number, day: number): string {
-        if (year == -1) {
-            if (month == -1) {
+        if (year === -1) {
+            if (month === -1) {
                 return new Array("XXXX", "XX", FormatUtil.toString(day, 2)).join("-");
             }
 
@@ -224,7 +224,7 @@ export class FormatUtil {
 
     public static formatDate(date: Date): string {
         return new Array(FormatUtil.toString(date.getFullYear(), 4),
-            FormatUtil.toString(date.getMonth()+1, 2),
+            FormatUtil.toString(date.getMonth() + 1, 2),
             FormatUtil.toString(date.getDate(), 2)).join("-");
     }
 
@@ -243,8 +243,8 @@ export class FormatUtil {
         let splited = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
-            if (lastPos != match.index)
-                splited.push(timeStr.substring(lastPos, match.index));
+            if (lastPos !== match.index)
+            { splited.push(timeStr.substring(lastPos, match.index)); }
             splited.push(timeStr.substring(match.index, match.length));
             lastPos = match.index + match.length;
         });
@@ -270,7 +270,7 @@ export class FormatUtil {
         }
 
         let splited = timeStr.split(':');
-        let hour = parseInt(splited[0]);
+        let hour = parseInt(splited[0], 10);
         splited[0] = FormatUtil.toString(hour + 12, 2);
 
         return (hasT ? "T" : "") + splited.join(":");
@@ -294,13 +294,13 @@ export class DateTimeResolutionResult {
 }
 
 export enum DayOfWeek {
-        Sunday = 0,
-        Monday = 1,
-        Tuesday = 2,
-        Wednesday = 3,
-        Thursday = 4,
-        Friday = 5,
-        Saturday = 6
+    Sunday = 0,
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 3,
+    Thursday = 4,
+    Friday = 5,
+    Saturday = 6
 }
 
 export class DateUtils {
@@ -357,12 +357,12 @@ export class DateUtils {
         return date;
     }
 
-    static getWeekNumber(referenceDate: Date): {weekNo: number, year: number} {
+    static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
         let date = new Date(Date.UTC(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate()));
         date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
         let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
         let weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-        return {weekNo: weekNo, year: date.getUTCFullYear()}
+        return { weekNo: weekNo, year: date.getUTCFullYear() }
     }
 
     static minValue(): Date { return new Date(1, 0, 1, 0, 0, 0, 0); }
@@ -380,10 +380,10 @@ export class DateUtils {
     }
 
     static isLeapYear(year: number): boolean {
-      return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+        return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
     }
 
-    private static validDays(year: number) { return [ 31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }
+    private static validDays(year: number) { return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }
 
     private static isValidDate(year: number, month: number, day: number): boolean {
         return year > 0 && year <= 9999
