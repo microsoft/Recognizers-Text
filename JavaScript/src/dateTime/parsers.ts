@@ -2066,7 +2066,7 @@ export interface IMergedParserConfiguration {
 }
 
 export class BaseMergedParser implements IDateTimeParser {
-    readonly parserName = 'datetimeV2';
+    readonly parserTypeName = 'datetimeV2';
 
     private readonly config: IMergedParserConfiguration;
 
@@ -2077,35 +2077,101 @@ export class BaseMergedParser implements IDateTimeParser {
         this.config = config;
     }
 
-    parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
-        if (!referenceDate) referenceDate = new Date();
-        let matchMode = MatchMode.None;
-        let match = RegExpUtility.getMatches(this.config.BeforeRegex, extractorResult.text).pop();
-        if (match) {
-            matchMode = MatchMode.Before;
-        } else {
-            match = RegExpUtility.getMatches(this.config.AfterRegex, extractorResult.text).pop();
-            if (match) matchMode = MatchMode.After;
-        }
-        if (match) {
-            extractorResult.start += match.length;
-            extractorResult.length -= match.length;
-            extractorResult.text = extractorResult.text.substr(match.length);
-        }
-        let result = this.getParseResult(extractorResult, referenceDate);
-        if (!result) return null;
+    parse( er:ExtractResult,  refTime?:Date): DateTimeParseResult | null
+    {
+        let referenceTime = refTime ||new Date();
+        let pr: DateTimeParseResult = null;
 
-        if (match && matchMode !== MatchMode.None && result.value) {
-            result.start -= match.length;
-            result.length += match.length;
-            result.text = match.value + result.text;
-            let value: DateTimeResolutionResult = result.value;
-            value.mod = matchMode === MatchMode.Before ? TimeTypeConstants.beforeMod : TimeTypeConstants.afterMod;
-            result.value = value;
+        // push, save teh MOD string
+        let hasBefore = false, hasAfter = false;
+        let modStr = "";
+        let beforeMatch= RegExpUtility.getMatches(this.config.BeforeRegex,er.text).shift();
+        let afterMatch= RegExpUtility.getMatches(this.config.AfterRegex,er.text).shift();
+        if (beforeMatch && beforeMatch.index==0)
+        {
+            hasBefore = true;
+            er.start += beforeMatch.length;
+            er.length -= beforeMatch.length;
+            er.text = er.text.substring(beforeMatch.length);
+            modStr = beforeMatch.value;
         }
-        result.value = this.dateTimeResolution(result, matchMode);
-        result.type = `${this.parserName}.${this.determineDateTimeType(extractorResult.type, matchMode)}`;
-        return result;
+        else if (afterMatch && afterMatch.index == 0)
+        {
+            hasAfter = true;
+            er.start += afterMatch.length;
+            er.length -= afterMatch.length;
+            er.text = er.text.substring(afterMatch.length);
+            modStr = afterMatch.value;
+        }
+
+        if (er.type===Constants.SYS_DATETIME_DATE)
+        {
+            pr = this.config.DateParser.parse(er, referenceTime);
+            if (pr.value == null)
+            {
+                pr = this.config.HolidayParser.parse(er, referenceTime);
+            }
+        }
+        else if (er.type===Constants.SYS_DATETIME_TIME)
+        {
+            pr = this.config.TimeParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_DATETIME)
+        {
+            pr = this.config.DateTimeParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_DATEPERIOD)
+        {
+            pr = this.config.DatePeriodParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_TIMEPERIOD)
+        {
+            pr = this.config.TimePeriodParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_DATETIMEPERIOD)
+        {
+            pr = this.config.DateTimePeriodParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_DURATION)
+        {
+            pr = this.config.DurationParser.parse(er, referenceTime);
+        }
+        else if (er.type===Constants.SYS_DATETIME_SET)
+        {
+            pr = this.config.SetParser.parse(er, referenceTime);
+        }
+        else
+        {
+            return null;
+        }
+
+        // pop, restore the MOD string
+        if (hasBefore && pr.value != null)
+        {
+            pr.length += modStr.length;
+            pr.start -= modStr.length;
+            pr.text = modStr + pr.text;
+            var val = pr.value;
+            val.mod = TimeTypeConstants.beforeMod;
+            pr.value = val;
+        }
+
+        if (hasAfter && pr.value != null)
+        {
+            pr.length += modStr.length;
+            pr.start -= modStr.length;
+            pr.text = modStr + pr.text;
+            var val = pr.value;
+            val.mod = TimeTypeConstants.afterMod;
+            pr.value = val;
+        }
+
+        pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter);
+
+        //change the type at last for the after or before mode
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter)}`;
+
+        return pr;
     }
 
     protected getParseResult(extractorResult: ExtractResult, referenceDate: Date): DateTimeParseResult | null {
@@ -2139,8 +2205,8 @@ export class BaseMergedParser implements IDateTimeParser {
         return null;
     }
 
-    private determineDateTimeType(type: string, matchMode: MatchMode): string {
-        if (matchMode !== MatchMode.None) {
+    private determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean): string {
+        if (hasBefore || hasAfter) {
             if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
             if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
             if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
@@ -2148,14 +2214,14 @@ export class BaseMergedParser implements IDateTimeParser {
         return type;
     }
 
-    private dateTimeResolution(slot: DateTimeParseResult, matchMode: MatchMode): Map<string, any> {
+    private dateTimeResolution(slot: DateTimeParseResult,  hasBefore:boolean,  hasAfter:boolean): Map<string, any> {
         if (!slot) return null;
         
         let result = new Map<string, any>();
         let resolutions = new Array<Map<string, string>>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, matchMode);
+        let outputType = this.determineDateTimeType(type,  hasBefore, hasAfter);
         let timex = slot.timexStr;
 
         let value: DateTimeResolutionResult = slot.value;
