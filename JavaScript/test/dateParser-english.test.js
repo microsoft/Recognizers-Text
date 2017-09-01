@@ -75,6 +75,26 @@ describe('Date Parser', it => {
 
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back next week on Friday", new Date(2016, 10, 18));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back on Friday next week", new Date(2016, 10, 18));
+});
+
+describe('Date Parser The Day', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+    
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back next day", new Date(2016, 10, 8));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back the day", new Date(2016, 10, 7));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back my day", new Date(2016, 10, 7));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back this day", new Date(2016, 10, 7));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back last day", new Date(2016, 10, 6));
+    BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back past day", new Date(2016, 10, 6));
+});
+
+
+describe('Date Parser Ago Later', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
 
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back two weeks from now", new Date(2016, 10, 21));
     BasicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a month ago", new Date(2016, 9, 7));

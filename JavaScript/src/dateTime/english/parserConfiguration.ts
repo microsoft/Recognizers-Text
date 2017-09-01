@@ -303,6 +303,13 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
 
+    //The following three regexes only used in this configuration
+    //They are not used in the base parser, therefore they are not extracted
+    //If the spanish date parser need the same regexes, they should be extracted
+    static readonly RelativeDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDayRegex);
+    static readonly NextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+    static readonly PastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.ordinalExtractor = config.ordinalExtractor;
         this.integerExtractor = config.integerExtractor;
@@ -343,10 +350,10 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     getSwiftDay(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
-        if (trimedText === "today" || trimedText === "the day") {
+        let matches = RegExpUtility.getMatches(EnglishDateParserConfiguration.RelativeDayRegex, source);
+        if (trimedText === "today") {
             swift = 0;
-        } else if (trimedText === "tomorrow" || trimedText === "tmr" ||
-            trimedText === "next day" || trimedText === "the next day") {
+        } else if (trimedText === "tomorrow" || trimedText === "tmr") {
             swift = 1;
         } else if (trimedText === "yesterday") {
             swift = -1;
@@ -355,18 +362,24 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
             swift = 2;
         } else if (trimedText.endsWith("day before yesterday")) {
             swift = -2;
-        } else if (trimedText.endsWith("last day")) {
-            swift = -1;
+        } else if (matches.length) {
+            swift = this.getSwift(source);
         }
         return swift;
     }
 
     getSwiftMonth(source: string): number {
+        return this.getSwift(source);
+    }
+
+    getSwift(source: string): number {
         let trimedText = source.trim().toLowerCase();
         let swift = 0;
-        if (trimedText.startsWith("next") || trimedText.startsWith("upcoming")) {
+        let nextPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.NextPrefixRegex, source);
+        let pastPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.PastPrefixRegex, source);
+        if (nextPrefixMatches.length) {
             swift = 1;
-        } else if (trimedText.startsWith("last")) {
+        } else if (pastPrefixMatches.length) {
             swift = -1;
         }
         return swift;

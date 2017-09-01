@@ -10,7 +10,7 @@ import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
 	export const TillRegex = `(?<till>to|till|until|thru|through|--|-|—|——)`;
 	export const RangeConnectorRegex = `(?<and>and|through|to|--|-|—|——)`;
-	export const RelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current|over the)`;
+	export const RelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current|the|my)`;
 	export const NextPrefixRegex = `(next|upcoming)\\b`;
 	export const PastPrefixRegex = `(last|past|previous)\\b`;
 	export const ThisPrefixRegex = `(this|current|over the)\\b`;
@@ -27,7 +27,7 @@ export namespace EnglishDateTime {
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const MonthWithYear = `\\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\\s+of)?\\s+(${PeriodYearRegex}|(?<order>next|last|this)\\s+year))`;
-	export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|${RelativeRegex}\\s+(weekend|week|month|year)|weekend|(month|year) to date)\\b`;
+	export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|(${RelativeRegex}\\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\\b`;
 	export const MonthNumWithYear = `(${PeriodYearRegex}[/\\-\\.]${MonthNumRegex})|(${MonthNumRegex}[/\\-]${PeriodYearRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})`;
 	export const WeekOfYearRegex = `(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${PeriodYearRegex}|${RelativeRegex}\\s+year))`;
@@ -46,7 +46,8 @@ export namespace EnglishDateTime {
 	export const ThisRegex = `\\b((this(\\s*week)?\\s+)${WeekDayRegex})|(${WeekDayRegex}(\\s+this\\s*week))\\b`;
 	export const LastDateRegex = `\\b(${PastPrefixRegex}(\\s*week)?\\s+${WeekDayRegex})|(${WeekDayRegex}(\\s+last\\s*week))\\b`;
 	export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week(\\s*on)?)?\\s+${WeekDayRegex})|((on\\s+)?${WeekDayRegex}(\\s+next\\s*week))\\b`;
-	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|(the\\s)?next day|(the\\s+)?last day|the day|yesterday|tomorrow|tmr|today)\\b`;
+	export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|((the\\s+)?${RelativeRegex}\\s+day)|yesterday|tomorrow|tmr|today)\\b`;
+	export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
 	export const StrictWeekDay = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Fri|Sat)s?\\b`;
 	export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
 	export const SpecialDate = `(?=\\b(on|at)\\s+the\\s+)${DayRegex}\\b`;
@@ -158,6 +159,8 @@ export namespace EnglishDateTime {
 	export const RelativeTimeUnitRegex = `(${RelativeRegex})\\s+(${TimeUnitRegex})`;
 	export const ConnectorRegex = `^(,|for|t|around)$`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
+	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
+	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);
