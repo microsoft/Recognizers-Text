@@ -6,18 +6,18 @@ var constants = require('../compiled/dateTime/constants').Constants;
 describe('Holiday Extractor', it => {
     let extractor = new baseExtractor(new configuration());
     
-    BasicTest(it, extractor, "I'll go back on Yuandan", 16, 7);
-    BasicTest(it, extractor, "I'll go back on thanks giving day", 16, 17);
-    BasicTest(it, extractor, "I'll go back on father's day", 16, 12);
+    basicTest(it, extractor, "I'll go back on Yuandan", 16, 7);
+    basicTest(it, extractor, "I'll go back on thanks giving day", 16, 17);
+    basicTest(it, extractor, "I'll go back on father's day", 16, 12);
 
-    BasicTest(it, extractor, "I'll go back on Yuandan of this year", 16, 20);
-    BasicTest(it, extractor, "I'll go back on Yuandan of 2016", 16, 15);
-    BasicTest(it, extractor, "I'll go back on Yuandan 2016", 16, 12);
+    basicTest(it, extractor, "I'll go back on Yuandan of this year", 16, 20);
+    basicTest(it, extractor, "I'll go back on Yuandan of 2016", 16, 15);
+    basicTest(it, extractor, "I'll go back on Yuandan 2016", 16, 12);
 
-    BasicTest(it, extractor, "I'll go back on clean monday", 16, 12);
+    basicTest(it, extractor, "I'll go back on clean monday", 16, 12);
 });
 
-function BasicTest(it, extractor, text, start, length) {
+function basicTest(it, extractor, text, start, length) {
     it(text, t => {
         let results = extractor.extract(text);
         t.is(1, results.length);

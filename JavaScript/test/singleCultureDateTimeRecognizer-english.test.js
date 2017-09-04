@@ -7,10 +7,10 @@ var DateTimeRecognizer = require('../compiled/dateTime/dateTimeRecognizer').defa
 describe('Single Culture Date Extract', it => {
     let model = DateTimeRecognizer.getSingleCultureInstance(Culture.English).getDateTimeModel();
 
-    BasicTest(it, model, "I'll go back now", "now");
+    basicTest(it, model, "I'll go back now", "now");
 });
 
-function BasicTest(it, model, text, expected) {
+function basicTest(it, model, text, expected) {
     it(text, t => {
         let pr = model.parse(text);
         t.is(1, pr.length);
