@@ -32,16 +32,18 @@ export class FormatUtility {
     }
 }
 
-export function isNullOrWhitespace(input: string): boolean {
-    return !input || !input.trim();
-}
+export class StringUtility {
+    static isNullOrWhitespace(input: string): boolean {
+        return !input || !input.trim();
+    }
 
-export function isNullOrEmpty(input: string): boolean {
-    return !input || input === '';
-}
+    static isNullOrEmpty(input: string): boolean {
+        return !input || input === '';
+    }
 
-export function isWhitespace(input: string): boolean {
-    return input && input !== '' && !input.trim();
+    static isWhitespace(input: string): boolean {
+        return input && input !== '' && !input.trim();
+    }
 }
 
 export class Match {

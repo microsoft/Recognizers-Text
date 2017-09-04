@@ -2,7 +2,7 @@
 var describe = require('ava-spec').describe;
 var Culture = require('../compiled/culture').Culture;
 var Constants = require('../compiled/dateTime/constants').Constants;
-var DateTimeRecognizer = require('../compiled/datetime/dateTimeRecognizer').default;
+var DateTimeRecognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
 
 describe('Single Culture Date Extract', it => {
     let model = DateTimeRecognizer.getSingleCultureInstance(Culture.English).getDateTimeModel();

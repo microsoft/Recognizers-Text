@@ -1,6 +1,6 @@
 var describe = require('ava-spec').describe;
-var configuration = require('../compiled/dateTime/english/extractorConfiguration').EnglishSetExtractorConfiguration;
-var baseExtractor = require('../compiled/dateTime/extractors').BaseSetExtractor;
+var configuration = require('../compiled/dateTime/english/setConfiguration').EnglishSetExtractorConfiguration;
+var baseExtractor = require('../compiled/dateTime/baseSet').BaseSetExtractor;
 var constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Set Extractor', it => {

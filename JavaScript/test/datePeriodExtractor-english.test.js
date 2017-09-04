@@ -1,6 +1,6 @@
 var describe = require('ava-spec').describe;
-var configuration = require("../compiled/dateTime/english/extractorConfiguration").EnglishDatePeriodExtractorConfiguration;
-var baseExtractor = require("../compiled/dateTime/extractors").BaseDatePeriodExtractor;
+var configuration = require("../compiled/dateTime/english/datePeriodConfiguration").EnglishDatePeriodExtractorConfiguration;
+var baseExtractor = require("../compiled/dateTime/baseDatePeriod").BaseDatePeriodExtractor;
 var constants = require('../compiled/dateTime/constants').Constants;
 
 var shortMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Sept", "Oct", "Nov", "Dec"];

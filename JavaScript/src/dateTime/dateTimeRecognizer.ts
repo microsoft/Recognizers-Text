@@ -2,10 +2,9 @@ import { IModel } from "../models";
 import { IDateTimeModel, DateTimeModel } from "./models";
 import { Recognizer } from "../recognizer";
 import { Culture } from "../culture";
-import { BaseMergedParser } from "./parsers";
-import { BaseMergedExtractor, DateTimeOptions } from "./extractors";
-import { EnglishCommonDateTimeParserConfiguration, EnglishMergedParserConfiguration } from "./english/parserConfiguration";
-import { EnglishMergedExtractorConfiguration } from "./english/extractorConfiguration";
+import { BaseMergedParser, BaseMergedExtractor, DateTimeOptions } from "./baseMerged";
+import { EnglishCommonDateTimeParserConfiguration } from "./english/baseConfiguration";
+import { EnglishMergedExtractorConfiguration, EnglishMergedParserConfiguration } from "./english/mergedConfiguration";
 
 export default class DateTimeRecognizer extends Recognizer {
     static readonly instance: DateTimeRecognizer = new DateTimeRecognizer();

@@ -1,9 +1,9 @@
 var describe = require('ava-spec').describe;
-var ExtractorConfig = require("../compiled/dateTime/english/extractorConfiguration").EnglishMergedExtractorConfiguration;
-var Extractor = require("../compiled/dateTime/extractors").BaseMergedExtractor;
-var CommonParserConfig = require("../compiled/dateTime/english/parserConfiguration").EnglishCommonDateTimeParserConfiguration;
-var ParserConfig = require("../compiled/dateTime/english/parserConfiguration").EnglishMergedParserConfiguration;
-var Parser = require("../compiled/dateTime/parsers").BaseMergedParser;
+var ExtractorConfig = require("../compiled/dateTime/english/mergedConfiguration").EnglishMergedExtractorConfiguration;
+var Extractor = require("../compiled/dateTime/baseMerged").BaseMergedExtractor;
+var CommonParserConfig = require("../compiled/dateTime/english/baseConfiguration").EnglishCommonDateTimeParserConfiguration;
+var ParserConfig = require("../compiled/dateTime/english/mergedConfiguration").EnglishMergedParserConfiguration;
+var Parser = require("../compiled/dateTime/baseMerged").BaseMergedParser;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('DateTime Merged Parser', it => {

@@ -1,8 +1,8 @@
 var describe = require('ava-spec').describe;
-var EnglishHolidayExtractorConfiguration = require('../compiled/dateTime/english/extractorConfiguration').EnglishHolidayExtractorConfiguration;
-var BaseHolidayExtractor = require('../compiled/dateTime/extractors').BaseHolidayExtractor;
-var EnglishHolidayParserConfiguration = require('../compiled/dateTime/english/parserConfiguration').EnglishHolidayParserConfiguration;
-var BaseHolidayParser = require('../compiled/dateTime/parsers').BaseHolidayParser;
+var EnglishHolidayExtractorConfiguration = require('../compiled/dateTime/english/holidayConfiguration').EnglishHolidayExtractorConfiguration;
+var BaseHolidayExtractor = require('../compiled/dateTime/baseHoliday').BaseHolidayExtractor;
+var EnglishHolidayParserConfiguration = require('../compiled/dateTime/english/holidayConfiguration').EnglishHolidayParserConfiguration;
+var BaseHolidayParser = require('../compiled/dateTime/baseHoliday').BaseHolidayParser;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Holiday Parse', it => {

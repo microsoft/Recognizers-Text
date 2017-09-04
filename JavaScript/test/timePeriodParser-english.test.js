@@ -1,9 +1,9 @@
 var describe = require('ava-spec').describe;
-var EnglishTimePeriodExtractorConfiguration = require('../compiled/dateTime/english/extractorConfiguration').EnglishTimePeriodExtractorConfiguration;
-var BaseTimePeriodExtractor = require('../compiled/dateTime/extractors').BaseTimePeriodExtractor;
-var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/parserConfiguration').EnglishCommonDateTimeParserConfiguration;
-var EnglishTimePeriodParserConfiguration = require('../compiled/dateTime/english/parserConfiguration').EnglishTimePeriodParserConfiguration;
-var BaseTimePeriodParser = require('../compiled/dateTime/parsers').BaseTimePeriodParser;
+var EnglishTimePeriodExtractorConfiguration = require('../compiled/dateTime/english/timePeriodConfiguration').EnglishTimePeriodExtractorConfiguration;
+var BaseTimePeriodExtractor = require('../compiled/dateTime/baseTimePeriod').BaseTimePeriodExtractor;
+var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/baseConfiguration').EnglishCommonDateTimeParserConfiguration;
+var EnglishTimePeriodParserConfiguration = require('../compiled/dateTime/english/timePeriodConfiguration').EnglishTimePeriodParserConfiguration;
+var BaseTimePeriodParser = require('../compiled/dateTime/baseTimePeriod').BaseTimePeriodParser;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Time Period Parse', it => {

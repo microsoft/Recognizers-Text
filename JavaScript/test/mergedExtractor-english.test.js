@@ -1,7 +1,7 @@
 var describe = require('ava-spec').describe;
-var EnglishMergedExtractorConfiguration = require('../compiled/dateTime/english/extractorConfiguration').EnglishMergedExtractorConfiguration;
-var BaseMergedExtractor = require('../compiled/dateTime/extractors').BaseMergedExtractor;
-var DateTimeOptions = require('../compiled/dateTime/extractors').DateTimeOptions;
+var EnglishMergedExtractorConfiguration = require('../compiled/dateTime/english/mergedConfiguration').EnglishMergedExtractorConfiguration;
+var BaseMergedExtractor = require('../compiled/dateTime/baseMerged').BaseMergedExtractor;
+var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
 var Constants = require('../compiled/dateTime/Constants').Constants;
 
 describe('Merged Extractor', it => {

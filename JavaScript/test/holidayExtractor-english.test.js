@@ -1,6 +1,6 @@
 var describe = require('ava-spec').describe;
-var configuration = require('../compiled/dateTime/english/extractorConfiguration').EnglishHolidayExtractorConfiguration;
-var baseExtractor = require('../compiled/dateTime/extractors').BaseHolidayExtractor;
+var configuration = require('../compiled/dateTime/english/holidayConfiguration').EnglishHolidayExtractorConfiguration;
+var baseExtractor = require('../compiled/dateTime/baseHoliday').BaseHolidayExtractor;
 var constants = require('../compiled/dateTime/constants').Constants;
 
 describe('Holiday Extractor', it => {

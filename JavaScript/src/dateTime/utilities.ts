@@ -1,6 +1,5 @@
 import { IExtractor, ExtractResult } from "../number/extractors"
 import { IParser } from "../number/parsers"
-import { AgoLaterMode } from "./parsers"
 import { RegExpUtility } from "../utilities"
 
 export class Token {
@@ -61,6 +60,10 @@ export interface IDateTimeUtilityConfiguration {
     amDescRegex: RegExp
     pmDescRegex: RegExp
     amPmDescRegex: RegExp
+}
+
+export enum AgoLaterMode {
+    Date, DateTime
 }
 
 export class AgoLaterUtil {
