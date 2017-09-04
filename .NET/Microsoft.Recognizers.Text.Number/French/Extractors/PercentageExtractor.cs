@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
@@ -12,8 +13,8 @@ namespace Microsoft.Recognizers.Text.Number.French
         {
             HashSet<string> regexStrs = new HashSet<string>
             {
-                $@"(@{NumExtType})(\s*)(%|pourcentages|pourcents|pourcentage|pourcent)",
-                $@"(%|pourcent|pourcent des|pourcentage de)(\s*)(@{NumExtType})"                
+                NumbersDefinitions.NumberWithSuffixPercentage,
+                NumbersDefinitions.NumberWithPrefixPercentage
             };
 
             return BuildRegexes(regexStrs);

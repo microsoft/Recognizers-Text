@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
@@ -17,11 +18,10 @@ namespace Microsoft.Recognizers.Text.Number.French
             switch(mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(@"\b");
+                    cardExtract = new CardinalExtractor(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Singleline),
-                        "IntegerNum");
+                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
                     break;
                 case NumberMode.Default:
                     break;
@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             {
                 cardExtract = new CardinalExtractor();
             }
+
             builder.AddRange(cardExtract.Regexes);
 
             var fracExtract = new FractionExtractor();

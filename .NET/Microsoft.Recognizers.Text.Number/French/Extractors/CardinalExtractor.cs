@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
@@ -9,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
 
-        public CardinalExtractor(string placeholder = @"\D|/b")
+        public CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
