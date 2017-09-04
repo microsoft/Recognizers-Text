@@ -225,7 +225,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
             }
             
             if (!innerResult.success) {
-                innerResult = this.parseSpecailTimeOfDate(er.text, referenceTime);
+                innerResult = this.parseSpecialTimeOfDate(er.text, referenceTime);
             }
             
             if (!innerResult.success) {
@@ -235,12 +235,12 @@ export class BaseDateTimeParser implements IDateTimeParser {
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>(
                     [
-                        [TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime(innerResult.futureValue)]
+                        [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.futureValue)]
                     ]);
                     
                     innerResult.pastResolution = new Map<string, string>(
                         [
-                            [TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime(innerResult.pastValue)]
+                            [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.pastValue)]
                         ]);
                         value = innerResult;
                     }
@@ -257,12 +257,12 @@ export class BaseDateTimeParser implements IDateTimeParser {
             
             private parseBasicRegex(text: string, referenceTime: Date): DateTimeResolutionResult {
                 let ret = new DateTimeResolutionResult();
-                let trimedText = text.trim().toLowerCase();
+                let trimmedText = text.trim().toLowerCase();
                 
                 // handle "now"
-                let matches = RegExpUtility.getMatches(this.config.nowRegex, trimedText);
-                if (matches.length && matches[0].index === 0 && matches[0].length === trimedText.length) {
-                    let getMatchedNowTimex = this.config.getMatchedNowTimex(trimedText);
+                let matches = RegExpUtility.getMatches(this.config.nowRegex, trimmedText);
+                if (matches.length && matches[0].index === 0 && matches[0].length === trimmedText.length) {
+                    let getMatchedNowTimex = this.config.getMatchedNowTimex(trimmedText);
                     ret.timex = getMatchedNowTimex.timex;
                     ret.futureValue = ret.pastValue = referenceTime;
                     ret.success = true;
@@ -362,17 +362,17 @@ export class BaseDateTimeParser implements IDateTimeParser {
             
             private parseTimeOfToday(text: string, referenceTime: Date): DateTimeResolutionResult {
                 let ret = new DateTimeResolutionResult();
-                let trimedText = text.toLowerCase().trim();
+                let trimmedText = text.toLowerCase().trim();
                 
                 let hour = 0;
                 let min = 0;
                 let sec = 0;
                 let timeStr: string;
                 
-                let wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, trimedText);
-                if (!(wholeMatches.length && wholeMatches[0].length === trimedText.length))
-                    { wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, trimedText); }
-                if (wholeMatches.length && wholeMatches[0].length === trimedText.length) {
+                let wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, trimmedText);
+                if (!(wholeMatches.length && wholeMatches[0].length === trimmedText.length))
+                    { wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, trimmedText); }
+                if (wholeMatches.length && wholeMatches[0].length === trimmedText.length) {
                     let hourStr = wholeMatches[0].groups("hour").value;
                     if (!hourStr) {
                         hourStr = wholeMatches[0].groups("hournum").value.toLowerCase();
@@ -384,9 +384,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
                     timeStr = "T" + FormatUtil.toString(hour, 2);
                 }
                 else {
-                    let ers = this.config.timeExtractor.extract(trimedText);
+                    let ers = this.config.timeExtractor.extract(trimmedText);
                     if (ers.length !== 1) {
-                        ers = this.config.timeExtractor.extract(this.config.tokenBeforeTime + trimedText);
+                        ers = this.config.timeExtractor.extract(this.config.tokenBeforeTime + trimmedText);
                         if (ers.length === 1) {
                             ers[0].start -= this.config.tokenBeforeTime.length;
                         }
@@ -409,7 +409,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 }
                 
                 
-                let matches = RegExpUtility.getMatches(this.config.specificTimeOfDayRegex, trimedText);
+                let matches = RegExpUtility.getMatches(this.config.specificTimeOfDayRegex, trimmedText);
                 
                 if (matches.length) {
                     let matchStr = matches[0].value.toLowerCase();
@@ -438,7 +438,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 return ret;
             }
             
-            private parseSpecailTimeOfDate(text: string, refeDateTime: Date): DateTimeResolutionResult {
+            private parseSpecialTimeOfDate(text: string, refDateTime: Date): DateTimeResolutionResult {
                 let ret = new DateTimeResolutionResult();
                 let ers = this.config.dateExtractor.extract(text);
                 if (ers.length !== 1) {
@@ -446,7 +446,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 }
                 let beforeStr = text.substring(0, ers[0].start || 0);
                 if (RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr).length) {
-                    let pr = this.config.dateParser.parse(ers[0], refeDateTime);
+                    let pr = this.config.dateParser.parse(ers[0], refDateTime);
                     let futureDate = new Date(pr.value.futureValue);
                     let pastDate = new Date(pr.value.pastValue);
                     ret.timex = pr.timexStr + "T23:59";

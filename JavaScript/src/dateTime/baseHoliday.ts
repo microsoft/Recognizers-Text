@@ -81,11 +81,11 @@ export class BaseHolidayParser implements IDateTimeParser {
     }
 
     private parseHolidayRegexMatch(text: string, referenceDate: Date): DateTimeResolutionResult {
-        let trimedText = text.trim();
+        let trimmedText = text.trim();
         for (let regex of this.config.holidayRegexList) {
             let offset = 0;
-            let matches = RegExpUtility.getMatches(regex, trimedText);
-            if (matches.length && matches[0].index === offset && matches[0].length === trimedText.length) {
+            let matches = RegExpUtility.getMatches(regex, trimmedText);
+            if (matches.length && matches[0].index === offset && matches[0].length === trimmedText.length) {
                 // LUIS value string will be set in Match2Date method
                 let ret = this.match2Date(matches[0], referenceDate);
                 return ret;

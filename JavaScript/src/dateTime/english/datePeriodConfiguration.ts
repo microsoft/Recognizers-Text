@@ -151,66 +151,66 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     getSwiftDayOrMonth(source: string): number {
-        let trimedSource = source.trim().toLowerCase();
+        let trimmedSource = source.trim().toLowerCase();
         let swift = 0;
-        if (RegExpUtility.getMatches(this.nextPrefixRegex, trimedSource).length > 0) {
+        if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimedSource).length > 0) {
+        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
         }
         return swift;
     }
 
     getSwiftYear(source: string): number {
-        let trimedSource = source.trim().toLowerCase();
+        let trimmedSource = source.trim().toLowerCase();
         let swift = -10;
-        if (RegExpUtility.getMatches(this.nextPrefixRegex, trimedSource).length > 0) {
+        if (RegExpUtility.getMatches(this.nextPrefixRegex, trimmedSource).length > 0) {
             swift = 1;
-        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimedSource).length > 0) {
+        } else if (RegExpUtility.getMatches(this.pastPrefixRegex, trimmedSource).length > 0) {
             swift = -1;
-        } else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimedSource).length > 0) {
+        } else if (RegExpUtility.getMatches(this.thisPrefixRegex, trimmedSource).length > 0) {
             swift = 0;
         }
         return swift;
     }
 
     isFuture(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return (trimedSource.startsWith('this') || trimedSource.startsWith('next'));
+        let trimmedSource = source.trim().toLowerCase();
+        return (trimmedSource.startsWith('this') || trimmedSource.startsWith('next'));
     }
 
     isYearToDate(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource === 'year to date';
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource === 'year to date';
     }
 
     isMonthToDate(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource === 'month to date';
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource === 'month to date';
     }
 
     isWeekOnly(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource.endsWith('week');
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource.endsWith('week');
     }
 
     isWeekend(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource.endsWith('weekend');
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource.endsWith('weekend');
     }
 
     isMonthOnly(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource.endsWith('month');
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource.endsWith('month');
     }
 
     isYearOnly(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource.endsWith('year');
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource.endsWith('year');
     }
 
     isLastCardinal(source: string): boolean {
-        let trimedSource = source.trim().toLowerCase();
-        return trimedSource === 'last';
+        let trimmedSource = source.trim().toLowerCase();
+        return trimmedSource === 'last';
     }
 }

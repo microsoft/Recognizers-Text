@@ -184,11 +184,11 @@ export class BaseTimePeriodParser implements IDateTimeParser {
         let year = referenceTime.getFullYear();
         let month = referenceTime.getMonth();
         let day = referenceTime.getDate();
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
 
-        let matches = RegExpUtility.getMatches(this.config.pureNumberFromToRegex, trimedText);
+        let matches = RegExpUtility.getMatches(this.config.pureNumberFromToRegex, trimmedText);
         if (!matches.length) {
-            matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex, trimedText);
+            matches = RegExpUtility.getMatches(this.config.pureNumberBetweenAndRegex, trimmedText);
         }
 
         if (matches.length && matches[0].index === 0) {

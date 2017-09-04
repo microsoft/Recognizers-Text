@@ -102,15 +102,15 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     private static Veteransday(year: number): Date { return new Date(year, 11 - 1, 11); }
 
     public getSwiftYear(text: string): number {
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
         let swift = -10;
-        if (trimedText.startsWith("next")) {
+        if (trimmedText.startsWith("next")) {
             swift = 1;
         }
-        else if (trimedText.startsWith("last")) {
+        else if (trimmedText.startsWith("last")) {
             swift = -1;
         }
-        else if (trimedText.startsWith("this")) {
+        else if (trimmedText.startsWith("this")) {
             swift = 0;
         }
         return swift;

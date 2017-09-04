@@ -105,27 +105,27 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     }
 
     public getHour(text: string, hour: number): number {
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
         let result = hour;
-        if (trimedText.endsWith("morning") && hour >= 12) {
+        if (trimmedText.endsWith("morning") && hour >= 12) {
             result -= 12;
         }
-        else if (!trimedText.endsWith("morning") && hour < 12) {
+        else if (!trimmedText.endsWith("morning") && hour < 12) {
             result += 12;
         }
         return result;
     }
 
     public getMatchedNowTimex(text: string): { matched: boolean, timex: string } {
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
         let timex: string;
-        if (trimedText.endsWith("now")) {
+        if (trimmedText.endsWith("now")) {
             timex = "PRESENT_REF";
         }
-        else if (trimedText === "recently" || trimedText === "previously") {
+        else if (trimmedText === "recently" || trimmedText === "previously") {
             timex = "PAST_REF";
         }
-        else if (trimedText === "as soon as possible" || trimedText === "asap") {
+        else if (trimmedText === "as soon as possible" || trimmedText === "asap") {
             timex = "FUTURE_REF";
         }
         else {
@@ -136,12 +136,12 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     }
 
     public getSwiftDay(text: string): number {
-        let trimedText = text.trim().toLowerCase();
+        let trimmedText = text.trim().toLowerCase();
         let swift = 0;
-        if (trimedText.startsWith("next")) {
+        if (trimmedText.startsWith("next")) {
             swift = 1;
         }
-        else if (trimedText.startsWith("last")) {
+        else if (trimmedText.startsWith("last")) {
             swift = -1;
         }
         return swift;

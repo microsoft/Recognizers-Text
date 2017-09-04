@@ -190,11 +190,11 @@ export class BaseDateParser implements IDateTimeParser {
     }
 
     private parseImplicitDate(source: string, referenceDate: Date): DateTimeResolutionResult {
-        let trimedSource = source.trim();
+        let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         // handle "on 12"
-        let match = RegExpUtility.getMatches(this.config.onRegex, this.config.dateTokenPrefix + trimedSource).pop();
-        if (match && match.index === this.config.dateTokenPrefix.length && match.length === trimedSource.length) {
+        let match = RegExpUtility.getMatches(this.config.onRegex, this.config.dateTokenPrefix + trimmedSource).pop();
+        if (match && match.index === this.config.dateTokenPrefix.length && match.length === trimmedSource.length) {
             let day = 0;
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
@@ -219,8 +219,8 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "today", "the day before yesterday"
-        match = RegExpUtility.getMatches(this.config.specialDayRegex, trimedSource).pop();
-        if (match && match.index === 0 && match.length === trimedSource.length) {
+        match = RegExpUtility.getMatches(this.config.specialDayRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
             let value = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + swift);
             result.timex = FormatUtil.luisDateFromDate(value);
@@ -231,8 +231,8 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "next Sunday"
-        match = RegExpUtility.getMatches(this.config.nextRegex, trimedSource).pop();
-        if (match && match.index === 0 && match.length === trimedSource.length) {
+        match = RegExpUtility.getMatches(this.config.nextRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.next(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
@@ -244,8 +244,8 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "this Friday"
-        match = RegExpUtility.getMatches(this.config.thisRegex, trimedSource).pop();
-        if (match && match.index === 0 && match.length === trimedSource.length) {
+        match = RegExpUtility.getMatches(this.config.thisRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
@@ -257,8 +257,8 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "last Friday", "last mon"
-        match = RegExpUtility.getMatches(this.config.lastRegex, trimedSource).pop();
-        if (match && match.index === 0 && match.length === trimedSource.length) {
+        match = RegExpUtility.getMatches(this.config.lastRegex, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let value = DateUtils.last(referenceDate, this.config.dayOfWeek.get(weekdayStr));
 
@@ -270,8 +270,8 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "Friday"
-        match = RegExpUtility.getMatches(this.config.strictWeekDay, trimedSource).pop();
-        if (match && match.index === 0 && match.length === trimedSource.length) {
+        match = RegExpUtility.getMatches(this.config.strictWeekDay, trimmedSource).pop();
+        if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let weekday = this.config.dayOfWeek.get(weekdayStr);
             let value = DateUtils.this(referenceDate, this.config.dayOfWeek.get(weekdayStr));
@@ -293,13 +293,13 @@ export class BaseDateParser implements IDateTimeParser {
     }
 
     private parseNumberWithMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
-        let trimedSource = source.trim();
+        let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
-        let match = RegExpUtility.getMatches(this.config.monthRegex, trimedSource).pop();
+        let match = RegExpUtility.getMatches(this.config.monthRegex, trimmedSource).pop();
         if (!match) return result;
-        let er = this.config.ordinalExtractor.extract(trimedSource);
+        let er = this.config.ordinalExtractor.extract(trimmedSource);
         if (!er || er.length === 0) {
-            er = this.config.integerExtractor.extract(trimedSource);
+            er = this.config.integerExtractor.extract(trimmedSource);
         }
         if (!er || er.length === 0) return result;
 
@@ -333,9 +333,9 @@ export class BaseDateParser implements IDateTimeParser {
     }
 
     private parseWeekdayOfMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
-        let trimedSource = source.trim();
+        let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
-        let match = RegExpUtility.getMatches(this.config.weekDayOfMonthRegex, trimedSource).pop();
+        let match = RegExpUtility.getMatches(this.config.weekDayOfMonthRegex, trimmedSource).pop();
         if (!match) return result;
         let cardinalStr = match.groups('cardinal').value;
         let weekdayStr = match.groups('weekday').value;
@@ -346,7 +346,7 @@ export class BaseDateParser implements IDateTimeParser {
         let month = referenceDate.getMonth();
         let year = referenceDate.getFullYear();
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftMonth(trimedSource);
+            let swift = this.config.getSwiftMonth(trimmedSource);
             let temp = new Date(referenceDate);
             temp.setMonth(referenceDate.getMonth() + swift);
             month = temp.getMonth();

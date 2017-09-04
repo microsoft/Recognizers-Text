@@ -164,7 +164,7 @@ export class BaseMergedParser implements IDateTimeParser {
     private readonly config: IMergedParserConfiguration;
 
     private readonly dateMinValue = FormatUtil.formatDate(DateUtils.minValue());
-    private readonly dateTimeMinValue = FormatUtil.FormatDateTime(DateUtils.minValue());
+    private readonly dateTimeMinValue = FormatUtil.formatDateTime(DateUtils.minValue());
 
     constructor(config: IMergedParserConfiguration) {
         this.config = config;
@@ -442,12 +442,12 @@ export class BaseMergedParser implements IDateTimeParser {
             case Constants.SYS_DATETIME_DATETIME:
             let splitValue = resolution.get(TimeTypeConstants.VALUE).split(' ');
             resolutionPm.set(TimeTypeConstants.VALUE, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
-            resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+            resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
             break;
             case Constants.SYS_DATETIME_TIMEPERIOD:
             if (resolution.has(TimeTypeConstants.START)) resolutionPm.set(TimeTypeConstants.START, FormatUtil.toPm(resolution.get(TimeTypeConstants.START)));
             if (resolution.has(TimeTypeConstants.END)) resolutionPm.set(TimeTypeConstants.END, FormatUtil.toPm(resolution.get(TimeTypeConstants.END)));
-            resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+            resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
             break;
             case Constants.SYS_DATETIME_DATETIMEPERIOD:
             if (resolution.has(TimeTypeConstants.START)) {
@@ -458,7 +458,7 @@ export class BaseMergedParser implements IDateTimeParser {
                 let splitValue = resolution.get(TimeTypeConstants.END).split(' ');
                 resolutionPm.set(TimeTypeConstants.END, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
             }
-            resolutionPm.set('timex', FormatUtil.AllStringToPm(timex));
+            resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
             break;
         }
         valuesMap.set(keyName + 'Pm', resolutionPm);

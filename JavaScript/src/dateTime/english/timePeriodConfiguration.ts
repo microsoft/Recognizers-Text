@@ -69,9 +69,9 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
     getMatchedTimexRange(text: string): {
         matched: boolean, timex: string, beginHour: number, endHour: number, endMin: number
     } {
-        let trimedText = text.trim().toLowerCase();
-        if (trimedText.endsWith("s")) {
-            trimedText = trimedText.substring(0, trimedText.length - 1);
+        let trimmedText = text.trim().toLowerCase();
+        if (trimmedText.endsWith("s")) {
+            trimmedText = trimmedText.substring(0, trimmedText.length - 1);
         }
         let result = {
             matched: false,
@@ -80,27 +80,27 @@ export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserCo
             endHour: 0,
             endMin: 0
         };
-        if (trimedText.endsWith("morning")) {
+        if (trimmedText.endsWith("morning")) {
             result.timex = "TMO";
             result.beginHour = 8;
             result.endHour = 12;
         }
-        else if (trimedText.endsWith("afternoon")) {
+        else if (trimmedText.endsWith("afternoon")) {
             result.timex = "TAF";
             result.beginHour = 12;
             result.endHour = 16;
         }
-        else if (trimedText.endsWith("evening")) {
+        else if (trimmedText.endsWith("evening")) {
             result.timex = "TEV";
             result.beginHour = 16;
             result.endHour = 20;
         }
-        else if (trimedText === "daytime") {
+        else if (trimmedText === "daytime") {
             result.timex = "TDT";
             result.beginHour = 8;
             result.endHour = 18;
         }
-        else if (trimedText.endsWith("night")) {
+        else if (trimmedText.endsWith("night")) {
             result.timex = "TNI";
             result.beginHour = 20;
             result.endHour = 23;

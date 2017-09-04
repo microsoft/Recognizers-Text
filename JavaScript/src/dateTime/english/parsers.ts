@@ -19,10 +19,10 @@ export class EnglishTimeParser extends BaseTimeParser {
     // parse "noonish", "11-ish"
     private parseIsh(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let trimedText = text.toLowerCase().trim();
+        let trimmedText = text.toLowerCase().trim();
 
-        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.ishRegex, trimedText);
-        if (matches.length > 0 && matches[0].length === trimedText.length) {
+        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.ishRegex, trimmedText);
+        if (matches.length > 0 && matches[0].length === trimmedText.length) {
             let hourStr = matches[0].groups("hour").value;
             let hour = 12;
             if (hourStr) {

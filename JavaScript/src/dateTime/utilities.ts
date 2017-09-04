@@ -237,32 +237,32 @@ export class FormatUtil {
             FormatUtil.toString(time.getSeconds(), 2)).join(":");
     }
 
-    public static FormatDateTime(datetime: Date): string {
+    public static formatDateTime(datetime: Date): string {
         return `${FormatUtil.formatDate(datetime)} ${FormatUtil.formatTime(datetime)}`;
     }
 
-    public static AllStringToPm(timeStr: string): string {
+    public static allStringToPm(timeStr: string): string {
         let matches = RegExpUtility.getMatches(FormatUtil.HourTimexRegex, timeStr);
-        let splited = Array<string>();
+        let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
             if (lastPos !== match.index)
-            { splited.push(timeStr.substring(lastPos, match.index)); }
-            splited.push(timeStr.substring(match.index, match.length));
+            { split.push(timeStr.substring(lastPos, match.index)); }
+            split.push(timeStr.substring(match.index, match.length));
             lastPos = match.index + match.length;
         });
 
         if (timeStr.substring(lastPos)) {
-            splited.push(timeStr.substring(lastPos));
+            split.push(timeStr.substring(lastPos));
         }
 
-        for (let i = 0; i < splited.length; i += 1) {
-            if (RegExpUtility.getMatches(FormatUtil.HourTimexRegex, splited[i]).length > 0) {
-                splited[i] = FormatUtil.toPm(splited[i]);
+        for (let i = 0; i < split.length; i += 1) {
+            if (RegExpUtility.getMatches(FormatUtil.HourTimexRegex, split[i]).length > 0) {
+                split[i] = FormatUtil.toPm(split[i]);
             }
         }
 
-        return splited.join();
+        return split.join();
     }
 
     public static toPm(timeStr: string): string {
@@ -272,11 +272,11 @@ export class FormatUtil {
             timeStr = timeStr.substring(1);
         }
 
-        let splited = timeStr.split(':');
-        let hour = parseInt(splited[0], 10);
-        splited[0] = FormatUtil.toString(hour + 12, 2);
+        let split = timeStr.split(':');
+        let hour = parseInt(split[0], 10);
+        split[0] = FormatUtil.toString(hour + 12, 2);
 
-        return (hasT ? "T" : "") + splited.join(":");
+        return (hasT ? "T" : "") + split.join(":");
     }
 }
 

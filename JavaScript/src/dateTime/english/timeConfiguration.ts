@@ -5,7 +5,7 @@ import { ICommonDateTimeParserConfiguration } from "../parsers"
 
 export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfiguration {
     public static timeRegexList: RegExp[] = [
-        // (three min past)? seven|7|(senven thirty) pm
+        // (three min past)? seven|7|(seven thirty) pm
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex1, "gis"),
         // (three min past)? 3:00(:00)? (pm)?
         RegExpUtility.getSafeRegExp(EnglishDateTime.TimeRegex2, "gis"),
@@ -56,19 +56,19 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
 
     public adjustByPrefix(prefix: string, adjust: { hour: number, min: number, hasMin: boolean }) {
         let deltaMin = 0;
-        let trimedPrefix = prefix.trim().toLowerCase();
+        let trimmedPrefix = prefix.trim().toLowerCase();
 
-        if (trimedPrefix.startsWith("half")) {
+        if (trimmedPrefix.startsWith("half")) {
             deltaMin = 30;
         }
-        else if (trimedPrefix.startsWith("a quarter") || trimedPrefix.startsWith("quarter")) {
+        else if (trimmedPrefix.startsWith("a quarter") || trimmedPrefix.startsWith("quarter")) {
             deltaMin = 15;
         }
-        else if (trimedPrefix.startsWith("three quarter")) {
+        else if (trimmedPrefix.startsWith("three quarter")) {
             deltaMin = 45;
         }
         else {
-            let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.lessThanOneHour, trimedPrefix);
+            let match = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.lessThanOneHour, trimmedPrefix);
             let minStr = match[0].groups("deltamin").value;
             if (minStr) {
                 deltaMin = Number.parseInt(minStr, 10);
@@ -79,7 +79,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
             }
         }
 
-        if (trimedPrefix.endsWith("to")) {
+        if (trimmedPrefix.endsWith("to")) {
             deltaMin = -deltaMin;
         }
 
@@ -92,10 +92,10 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
     }
 
     public adjustBySuffix(suffix: string, adjust: { hour: number, min: number, hasMin: boolean, hasAm: boolean, hasPm: boolean }) {
-        let trimedSuffix = suffix.trim().toLowerCase();
+        let trimmedSuffix = suffix.trim().toLowerCase();
         let deltaHour = 0;
-        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.timeSuffix, trimedSuffix);
-        if (matches.length > 0 && matches[0].index === 0 && matches[0].length === trimedSuffix.length) {
+        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.timeSuffix, trimmedSuffix);
+        if (matches.length > 0 && matches[0].index === 0 && matches[0].length === trimmedSuffix.length) {
             let oclockStr = matches[0].groups("oclock").value;
             if (!oclockStr) {
                 let amStr = matches[0].groups("am").value;

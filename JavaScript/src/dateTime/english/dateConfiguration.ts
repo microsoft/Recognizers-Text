@@ -127,19 +127,19 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     }
 
     getSwiftDay(source: string): number {
-        let trimedText = source.trim().toLowerCase();
+        let trimmedText = source.trim().toLowerCase();
         let swift = 0;
         let matches = RegExpUtility.getMatches(EnglishDateParserConfiguration.relativeDayRegex, source);
-        if (trimedText === "today") {
+        if (trimmedText === "today") {
             swift = 0;
-        } else if (trimedText === "tomorrow" || trimedText === "tmr") {
+        } else if (trimmedText === "tomorrow" || trimmedText === "tmr") {
             swift = 1;
-        } else if (trimedText === "yesterday") {
+        } else if (trimmedText === "yesterday") {
             swift = -1;
-        } else if (trimedText.endsWith("day after tomorrow") ||
-            trimedText.endsWith("day after tmr")) {
+        } else if (trimmedText.endsWith("day after tomorrow") ||
+            trimmedText.endsWith("day after tmr")) {
             swift = 2;
-        } else if (trimedText.endsWith("day before yesterday")) {
+        } else if (trimmedText.endsWith("day before yesterday")) {
             swift = -2;
         } else if (matches.length) {
             swift = this.getSwift(source);
@@ -152,10 +152,10 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     }
 
     getSwift(source: string): number {
-        let trimedText = source.trim().toLowerCase();
+        let trimmedText = source.trim().toLowerCase();
         let swift = 0;
-        let nextPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.nextPrefixRegex, source);
-        let pastPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.pastPrefixRegex, source);
+        let nextPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.nextPrefixRegex, trimmedText);
+        let pastPrefixMatches = RegExpUtility.getMatches(EnglishDateParserConfiguration.pastPrefixRegex, trimmedText);
         if (nextPrefixMatches.length) {
             swift = 1;
         } else if (pastPrefixMatches.length) {
@@ -165,7 +165,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     }
 
     isCardinalLast(source: string): boolean {
-        let trimedText = source.trim().toLowerCase();
-        return trimedText === "last";
+        let trimmedText = source.trim().toLowerCase();
+        return trimmedText === "last";
     }
 }

@@ -96,20 +96,20 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
 
     public getMatchedDailyTimex(text: string): { matched: boolean, timex: string } {
         let timex = "";
-        let trimedText = text.trim().toLowerCase();
-        if (trimedText === "daily") {
+        let trimmedText = text.trim().toLowerCase();
+        if (trimmedText === "daily") {
             timex = "P1D";
         }
-        else if (trimedText === "weekly") {
+        else if (trimmedText === "weekly") {
             timex = "P1W";
         }
-        else if (trimedText === "biweekly") {
+        else if (trimmedText === "biweekly") {
             timex = "P2W";
         }
-        else if (trimedText === "monthly") {
+        else if (trimmedText === "monthly") {
             timex = "P1M";
         }
-        else if (trimedText === "yearly" || trimedText === "annually" || trimedText === "annual") {
+        else if (trimmedText === "yearly" || trimmedText === "annually" || trimmedText === "annual") {
             timex = "P1Y";
         }
         else {
@@ -121,17 +121,17 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
 
     public getMatchedUnitTimex(text: string): { matched: boolean, timex: string } {
         let timex = "";
-        let trimedText = text.trim().toLowerCase();
-        if (trimedText === "day") {
+        let trimmedText = text.trim().toLowerCase();
+        if (trimmedText === "day") {
             timex = "P1D";
         }
-        else if (trimedText === "week") {
+        else if (trimmedText === "week") {
             timex = "P1W";
         }
-        else if (trimedText === "month") {
+        else if (trimmedText === "month") {
             timex = "P1M";
         }
-        else if (trimedText === "year") {
+        else if (trimmedText === "year") {
             timex = "P1Y";
         }
         else {
