@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex ForTheRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -73,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StrictWeekDay = EnglishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

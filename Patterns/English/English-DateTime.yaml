@@ -179,7 +179,7 @@ MidmorningRegex: !simpleRegex
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>midafternoon|mid-afternoon|mid afternoon)
 MiddayRegex: !simpleRegex
-  def: (?<midday>midday|mid-day|mid day|noon)
+  def: (?<midday>midday|mid-day|mid day|((12\s)?noon))
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
@@ -361,6 +361,8 @@ RelativeTimeUnitRegex: !nestedRegex
   references: [RelativeRegex, TimeUnitRegex]
 ConnectorRegex: !simpleRegex
   def: ^(,|for|t|around)$
+ForTheRegex: !simpleRegex
+  def: (for the (?<day>([A-Za-z]+\s)?[A-Za-z\d]+)(?<end>\s*(,|\.|!|\?|$)))
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

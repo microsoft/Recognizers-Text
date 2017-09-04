@@ -83,6 +83,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Add(new Token(match.Index, match.Index + match.Length + (result.Length ?? 0)));
                         continue;
                     }
+
+                    // handling cases like 'for the 25th'
+                    match = this.config.ForTheRegex.Match(text);
+                    if (match.Success)
+                    {
+                        var ordinalNum = match.Groups["day"].Value.ToString();
+                        if (ordinalNum == result.Text)
+                        {
+                            var endLenght = 0;
+                            if (match.Groups["end"].Value != string.Empty)
+                            {
+                                endLenght = match.Groups["end"].Value.ToString().Length;
+                            }
+                            ret.Add(new Token(match.Index, match.Index + match.Length - endLenght));
+                            continue;
+                        }
+                    }
                 }
 
                 if (result.Start + result.Length < text.Length)

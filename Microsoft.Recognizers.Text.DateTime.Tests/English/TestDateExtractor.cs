@@ -94,5 +94,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back two days later", 13, 14);
             BasicTest("who did i email a month ago", 16, 11);
         }
+
+        [TestMethod]
+        public void TestDateExtractForThe()
+        {
+            BasicTest("I went back for the 27", 12, 10);
+            BasicTest("I went back for the 27th", 12, 12);
+            BasicTest("I went back for the 27.", 12, 10);
+            BasicTest("I went back for the 27!", 12, 10);
+            BasicTest("I went back for the 27 .", 12, 10);
+            BasicTest("I went back for the 21st", 12, 12);
+            BasicTest("I went back for the 22nd", 12, 12);
+            BasicTest("I went back for the second", 12, 14);
+            BasicTest("I went back for the twenty second", 12, 21);
+            BasicTest("I went back for the thirty first", 12, 20);
+        }
     }
 }

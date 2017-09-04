@@ -124,6 +124,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateParseForThe()
+        {
+            BasicTest("I went back for the 27", new DateObject(2016, 11, 27));
+            BasicTest("I went back for the 27th", new DateObject(2016, 11, 27));
+            BasicTest("I went back for the 27.", new DateObject(2016, 11, 27));
+            BasicTest("I went back for the 27!", new DateObject(2016, 11, 27));
+            BasicTest("I went back for the 27 .", new DateObject(2016, 11, 27));
+            BasicTest("I went back for the 21st", new DateObject(2016, 11, 21));
+            BasicTest("I went back for the 22nd", new DateObject(2016, 11, 22));
+            BasicTest("I went back for the second", new DateObject(2016, 11, 2));
+            BasicTest("I went back for the twenty second", new DateObject(2016, 11, 22));
+            BasicTest("I went back for the thirty", new DateObject(2016, 11, 30));
+        }
+
+        [TestMethod]
         public void TestDateParseLuis()
         {
             BasicTest("I'll go back on 15", "XXXX-XX-15");
@@ -172,6 +187,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back next week on Friday", "2016-11-18");
             BasicTest("I'll go back on Friday next week", "2016-11-18");
 
+        }
+
+        [TestMethod]
+        public void TestDateParseForTheLuis()
+        {
+            BasicTest("I went back for the 27", "XXXX-XX-27");
+            BasicTest("I went back for the 27th", "XXXX-XX-27");
+            BasicTest("I went back for the 27.", "XXXX-XX-27");
+            BasicTest("I went back for the 27!", "XXXX-XX-27");
+            BasicTest("I went back for the 27 .", "XXXX-XX-27");
+            BasicTest("I went back for the 21st", "XXXX-XX-21");
+            BasicTest("I went back for the 22nd", "XXXX-XX-22");
+            BasicTest("I went back for the second", "XXXX-XX-02");
+            BasicTest("I went back for the twenty second", "XXXX-XX-22");
+            BasicTest("I went back for the thirty", "XXXX-XX-30");
         }
     }
 }

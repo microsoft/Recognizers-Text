@@ -70,6 +70,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ForTheRegex =
+            new Regex(
+                DateTimeDefinitions.ForTheRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (Sunday,)? April 5
@@ -155,5 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
+
+        Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
     }
 }

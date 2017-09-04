@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
 
             BasicTest("I'll be back noonish", new DateObject(year, month, day, 12, 0, second));
+            BasicTest("I'll be back 12 noon", new DateObject(year, month, day, 12, 0, second));
             BasicTest("I'll be back 11ish", new DateObject(year, month, day, 11, 0, second));
             BasicTest("I'll be back 11-ish", new DateObject(year, month, day, 11, 0, second));
 
@@ -140,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back noonish", "T12");
             BasicTest("I'll be back noon", "T12");
+            BasicTest("I'll be back 12 noon", "T12");
             BasicTest("I'll be back 11ish", "T11");
             BasicTest("I'll be back 11-ish", "T11");
 

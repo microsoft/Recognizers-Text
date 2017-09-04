@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateUnitRegex { get; }
 
+        Regex ForTheRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }

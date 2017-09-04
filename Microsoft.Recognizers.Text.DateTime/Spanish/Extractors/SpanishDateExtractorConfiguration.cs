@@ -73,6 +73,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex SpecialDate = new Regex($@"(?<=\b(en)\s+el\s+){DayRegex}\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify below regex according to the counterpart in English
+        public static readonly Regex ForTheRegex = new Regex($@"^[.]",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (domingo,)? 5 de Abril
@@ -160,5 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
+
+        Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
     }
 }
