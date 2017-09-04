@@ -65,6 +65,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Portuguese\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Portuguese\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +97,14 @@
     <Content Include="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseNumbers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Portuguese\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </Content>
+    <Content Include="Portuguese\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

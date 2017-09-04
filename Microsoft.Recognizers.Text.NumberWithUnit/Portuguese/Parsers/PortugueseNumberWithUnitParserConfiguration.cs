@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 
@@ -10,7 +11,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
             this.InternalNumberExtractor = new NumberExtractor(NumberMode.Default);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration());
-            this.ConnectorToken = "de";
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 
         public override IParser InternalNumberParser { get; }
