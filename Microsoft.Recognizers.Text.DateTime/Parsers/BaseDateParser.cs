@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // handle "Friday"
-            match = this.config.StrictWeekDay.Match(trimedText);
+            match = this.config.WeekDayRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var weekdayStr = match.Groups["weekday"].Value.ToLower();

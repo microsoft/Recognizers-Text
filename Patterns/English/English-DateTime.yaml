@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>to|till|until|thru|through|--|-|—|——)
+  def: (?<till>to|till|til|until|thru|through|--|-|—|——)
 RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
@@ -18,7 +18,7 @@ MonthNumRegex: !simpleRegex
 PeriodYearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\b
+  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri)\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
@@ -101,8 +101,8 @@ SpecialDayRegex: !nestedRegex
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
   references: [ RelativeRegex]
-StrictWeekDay: !simpleRegex
-  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Fri|Sat)s?\b
+SetWeekDayRegex: !simpleRegex
+  def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Fri|Sat)s\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -236,7 +236,7 @@ PeriodDescRegex: !simpleRegex
 PeriodPmRegex: !simpleRegex
   def: (?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?
 PeriodAmRegex: !simpleRegex
-  def: (?<am>morning|in the morning)s?
+  def: (?<am>morning|in the morning)
 PureNumFromTo: !nestedRegex
   def: ((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]
@@ -297,7 +297,9 @@ EachUnitRegex: !nestedRegex
   def: (?<each>(each|every)\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
 EachPrefixRegex: !simpleRegex
-  def: (?<each>(each|every)\s*$)
+  def: \b(?<each>(each|(every(\s+other)?))\s*$)
+SetEachRegex: !simpleRegex
+  def: \b(?<each>(each|(every(\s+other)?))\s*)
 SetLastRegex: !simpleRegex
   def: (?<last>next|upcoming|this|last|past|previous|current)
 EachDayRegex: !simpleRegex

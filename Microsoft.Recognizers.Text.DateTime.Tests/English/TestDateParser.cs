@@ -88,8 +88,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             // cases below change with reference day
             BasicTest("I'll go back on Friday", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
             BasicTest("I'll go back |Friday", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
-            BasicTest("I'll go back on Fridays", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
-            BasicTest("I'll go back |Fridays", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
             BasicTest("I'll go back today", new DateObject(2016, 11, 7));
             BasicTest("I'll go back tomorrow", new DateObject(2016, 11, 8));
             BasicTest("I'll go back yesterday", new DateObject(2016, 11, 6));

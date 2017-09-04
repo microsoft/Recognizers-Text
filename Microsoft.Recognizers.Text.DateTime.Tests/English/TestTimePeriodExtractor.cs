@@ -31,7 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             // merge to time points
             BasicTest("I'll be out 4pm till 5pm", 12, 12);
+            BasicTest("I'll be out 4 til 5pm", 12, 9);
             BasicTest("I'll be out 4:00 till 5pm", 12, 13);
+            BasicTest("I'll be out 4:00 til 5pm", 12, 12);
             BasicTest("I'll be out 4:00 to 7 oclock", 12, 16);
             BasicTest("I'll be out 3pm to half past seven", 12, 22);
             BasicTest("I'll be out 4pm-5pm", 12, 7);
