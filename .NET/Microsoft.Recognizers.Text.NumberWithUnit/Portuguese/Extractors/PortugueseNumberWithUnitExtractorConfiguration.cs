@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
+using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         {
             this.CultureInfo = ci;
             this.UnitNumExtractor = new NumberExtractor();
-            this.BuildPrefix = @"(?<=(\s|^|\W))";
-            this.BuildSuffix = @"(?=(\s|\W|$))";
-            this.ConnectorToken = "de";
+            this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
+            this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 
         public abstract string ExtractType { get; }
