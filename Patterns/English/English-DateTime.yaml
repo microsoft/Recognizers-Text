@@ -85,9 +85,11 @@ DateYearRegex: !simpleRegex
   def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!\s*\:)))
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
+  def_js: (?<plb>\bon\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b
+  def_js: (?<plb>\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b
 ThisRegex: !nestedRegex
   def: \b((this(\s*week)?\s+){WeekDayRegex})|({WeekDayRegex}(\s+this\s*week))\b
   references: [ WeekDayRegex ]
@@ -109,7 +111,7 @@ WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
 SpecialDate: !nestedRegex
-  def: (?<=\b(on|at)\s+the\s+){DayRegex}\b
+  def: (?=\b(on|at)\s+the\s+){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}\b
@@ -128,12 +130,14 @@ DateExtractor5: !nestedRegex
   references: [ DayRegex, MonthNumRegex, DateYearRegex ]
 DateExtractor6: !nestedRegex
   def: (?<=\b(on|in|at)\s+){MonthNumRegex}[\-\.]{DayRegex}\b
+  def_js: (?<plb>\b(on|in|at)\s+){MonthNumRegex}[\-\.]{DayRegex}\b
   references: [ MonthNumRegex, DayRegex ]
 DateExtractor7: !nestedRegex
   def: \b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
 DateExtractor8: !nestedRegex
   def: (?<=\b(on|in|at)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
+  def_js: (?<plb>\b(on|in|at)\s+){DayRegex}[\\\-]{MonthNumRegex}\b
   references: [ DayRegex, MonthNumRegex ]
 DateExtractor9: !nestedRegex
   def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b
@@ -191,12 +195,25 @@ MidTimeRegex: !nestedRegex
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
 AtRegex: !nestedRegex
   def: \b(((?<=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
+  def_js: \b(((?<plb>\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
   def: (?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
+FivesRegex: !simpleRegex
+  def: (?<tens>(fifteen|twenty(\s*five)?|thirty(\s*five)?|forty(\s*five)?|fourty(\s*five)?|fifty(\s*five)?|ten|five))\b
+HourRegex: !simpleRegex
+  def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
+PeriodHourNumRegex: !simpleRegex
+  def: (?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)
+PeriodDescRegex: !simpleRegex
+  def: (?<desc>pm|am|p\.m\.|a\.m\.|p)
+PeriodPmRegex: !simpleRegex
+  def: (?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?
+PeriodAmRegex: !simpleRegex
+  def: (?<am>morning|in the morning)s?
 ConnectNumRegex: !nestedRegex
   def: '{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}'
   references: [ BaseDateTime.HourRegex, DescRegex ]
@@ -227,18 +244,6 @@ TimeRegex8: !nestedRegex
 TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]
-FivesRegex: !simpleRegex
-  def: (?<tens>(fifteen|twenty(\s*five)?|thirty(\s*five)?|forty(\s*five)?|fourty(\s*five)?|fifty(\s*five)?|ten|five))\b
-HourRegex: !simpleRegex
-  def: (?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
-PeriodHourNumRegex: !simpleRegex
-  def: (?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)
-PeriodDescRegex: !simpleRegex
-  def: (?<desc>pm|am|p\.m\.|a\.m\.|p)
-PeriodPmRegex: !simpleRegex
-  def: (?<pm>afternoon|evening|in the afternoon|in the evening|in the night)s?
-PeriodAmRegex: !simpleRegex
-  def: (?<am>morning|in the morning)
 PureNumFromTo: !nestedRegex
   def: ((from|between)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?
   references: [ HourRegex, PeriodHourNumRegex, PeriodDescRegex, TillRegex, PmRegex, AmRegex ]
