@@ -42,6 +42,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave every morning", "Set: TMO", "TMO");
         }
 
+        public void TestSetParse_EveryOther()
+        {
+            BasicTest("every other day", "Set: P2D", "P2D");
+            BasicTest("every other week", "Set: P2W", "P2W");
+            BasicTest("every other month", "Set: P2M", "P2M");
+        }
+
         [TestMethod]
         public void TestSetParseTimePeriod_Time()
         {

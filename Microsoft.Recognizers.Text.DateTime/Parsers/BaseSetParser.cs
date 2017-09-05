@@ -154,6 +154,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                         return ret;
                     }
 
+                    //"handle every other month"
+                    if (match.Groups["other"].Success)
+                    {
+                        timex = timex.Replace("1", "2");
+                    }
+
                     ret.Timex = timex;
                     ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                     ret.Success = true;
