@@ -42,7 +42,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
             RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.NextDateRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.StrictWeekDay, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.SingleWeekDayRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.SpecialDate, "gis"),
         ];
@@ -75,7 +75,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly nextRegex: RegExp
     readonly unitRegex: RegExp
     readonly monthRegex: RegExp
-    readonly strictWeekDay: RegExp
+    readonly weekDayRegex: RegExp
     readonly lastRegex: RegExp
     readonly thisRegex: RegExp
     readonly weekDayOfMonthRegex: RegExp
@@ -118,7 +118,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.nextRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextDateRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
         this.monthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthRegex, "gis");
-        this.strictWeekDay = RegExpUtility.getSafeRegExp(EnglishDateTime.StrictWeekDay, "gis");
+        this.weekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayRegex, "gis");
         this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, "gis");
         this.thisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis");
         this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis");

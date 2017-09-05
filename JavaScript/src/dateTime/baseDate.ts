@@ -118,7 +118,7 @@ export interface IDateParserConfiguration {
     nextRegex: RegExp
     unitRegex: RegExp
     monthRegex: RegExp
-    strictWeekDay: RegExp
+    weekDayRegex: RegExp
     lastRegex: RegExp
     thisRegex: RegExp
     weekDayOfMonthRegex: RegExp
@@ -270,7 +270,7 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "Friday"
-        match = RegExpUtility.getMatches(this.config.strictWeekDay, trimmedSource).pop();
+        match = RegExpUtility.getMatches(this.config.weekDayRegex , trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let weekday = this.config.dayOfWeek.get(weekdayStr);

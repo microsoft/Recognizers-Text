@@ -24,6 +24,25 @@ describe('Set Extractor', it => {
     basicTest(it, extractor, "I'll leave each monday 4pm", 11, 15);
 
     basicTest(it, extractor, "I'll leave every morning", 11, 13);
+
+
+    // SetExtractMergeTimePeriod_Time
+    basicTest(it, extractor, "I'll leave every morning at 9am", 11, 20);
+    basicTest(it, extractor, "I'll leave every afternoon at 4pm", 11, 22);
+    basicTest(it, extractor, "I'll leave every night at 9pm", 11, 18);
+    basicTest(it, extractor, "I'll leave every night at 9", 11, 16);
+    basicTest(it, extractor, "I'll leave mornings at 9am", 11, 15);
+    basicTest(it, extractor, "I'll leave on mornings at 9", 11, 16);
+
+    // SetExtractMergeDate_Time
+    basicTest(it, extractor, "I'll leave at 9am every Sunday", 14, 16);
+    basicTest(it, extractor, "I'll leave at 9am on Mondays", 14, 14);
+    basicTest(it, extractor, "I'll leave at 9am Mondays", 14, 11);
+
+    // SetExtractDate
+    basicTest(it, extractor, "I'll leave on Mondays", 11, 10);
+    basicTest(it, extractor, "I'll leave on Sundays", 11, 10);
+    basicTest(it, extractor, "I'll leave Sundays", 11, 7);
 });
 
 function basicTest(it, extractor, text, start, length) {

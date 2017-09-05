@@ -43,6 +43,10 @@ describe('Time Period Parse', it => {
     basicTestBeginEnd(it, extractor, parser, referenceTime, "I'll be out 4pm till 5pm",
         new Date(year, month, day, 16, min, second),
         new Date(year, month, day, 17, min, second));
+    
+    basicTestBeginEnd(it, extractor, parser, referenceTime, "I'll be out 4pm til 5pm",
+        new Date(year, month, day, 16, min, second),
+        new Date(year, month, day, 17, min, second));
 
     basicTestBeginEnd(it, extractor, parser, referenceTime, "I'll be out 4:00 to 7 oclock",
         new Date(year, month, day, 4, min, second),
