@@ -1,14 +1,14 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedParserChs : BaseMergedParser
     {
-        private static readonly Regex BeforeRegex = new Regex(@"(前|之前)$",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.Merged_BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex AfterRegex = new Regex(@"(后|之后)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
 

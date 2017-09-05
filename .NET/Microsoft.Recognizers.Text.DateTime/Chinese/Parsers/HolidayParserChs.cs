@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
 
@@ -68,18 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         };
 
-        public static readonly Dictionary<string, string> NoFixedTimex = new Dictionary<string, string>
-        {
-            
-            #region Holiday Timexes
-
-            {"父亲节", @"-06-WXX-6-3"},
-            {"母亲节", @"-05-WXX-7-2"},
-            {"感恩节", @"-11-WXX-4-4"}
-
-            #endregion
-
-        };
+        public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.Holiday_NoFixedTimex;
 
         private readonly IFullDateTimeParserConfiguration config;
 

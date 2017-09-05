@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -9,59 +10,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex TillRegex = new Regex(@"(?<till>到|直到|--|-|—|——)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriod_TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>^\s*的|在\s*$)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriod_PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HourRegex =
-            new Regex(
-                @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HourNumRegex =
-            new Regex(
-                @"(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ZhijianRegex = new Regex(@"^\s*(之间|之内|期间|中间|间)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ThisRegex = new Regex(@"这个|这一个|这|这一",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriod_ThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(@"上个|上一个|上|上一",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriod_LastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(@"下个|下一个|下|下一",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriod_NextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DescRegex = new Regex(@"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DescRegex = new Regex(DateTimeDefinitions.DescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimeOfDayRegex = new Regex(@"(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex($@"((({ThisRegex}|{NextRegex}|{LastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex =
-            new Regex(@"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriod_UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex($@"^\s*{UnitRegex}",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriod_FollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?){UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriod_NumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastRegex = new Regex(@"(?<past>(前|上|之前))",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FutureRegex = new Regex(@"(?<past>(后|下|之后))",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly TimeExtractorChs SingleTimeExtractor = new TimeExtractorChs();
         private static readonly DateTimeExtractorChs TimeWithDateExtractor = new DateTimeExtractorChs();
@@ -87,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var er1 = SingleDateExtractor.Extract(text);
             var er2 = TimePeriodExtractor.Extract(text);
             var timePoints = new List<ExtractResult>();
-            
+
             // handle the overlap problem
             var j = 0;
             for (var i = 0; i < er1.Count; i++)
@@ -110,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timePoints.Add(er2[j]);
             }
 
-            timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
+            timePoints.Sort(delegate (ExtractResult er_1, ExtractResult er_2)
             {
                 var start1 = er_1.Start ?? 0;
                 var start2 = er_2.Start ?? 0;
@@ -178,7 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timePoints.Add(er2[j]);
             }
 
-            timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
+            timePoints.Sort(delegate (ExtractResult er_1, ExtractResult er_2)
             {
                 var start1 = er_1.Start ?? 0;
                 var start2 = er_2.Start ?? 0;
@@ -224,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     idx += 2;
                     continue;
                 }
-               
+
                 // handle "between {TimePoint} and {TimePoint}"
                 if (middleStr.Equals("和") || middleStr.Equals("与") || middleStr.Equals("到"))
                 {

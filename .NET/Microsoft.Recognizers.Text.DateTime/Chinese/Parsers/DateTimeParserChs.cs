@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -8,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(@"(?<am>早|晨)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTime_SimpleAmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SimplePmRegex = new Regex(@"(?<pm>晚)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTime_SimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
         private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();

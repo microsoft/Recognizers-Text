@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
 using System.Text;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -21,17 +22,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
                                                                                                new ChineseNumberParserConfiguration());
 
-        public static readonly Regex MORegex = new Regex(@"(凌晨|清晨|早上|早|上午)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriod_MORegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AFRegex = new Regex(@"(中午|下午|午后|傍晚)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriod_AFRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EVRegex = new Regex(@"(晚上|夜里|夜晚|晚)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriod_EVRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NIRegex = new Regex(@"(半夜|夜间|深夜)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriod_NIRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -106,7 +103,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 Type = er.Type,
                 Data = er.Data,
                 Value = value,
-                TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
+                TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
             return ret;
@@ -124,11 +121,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var pr1 = this.config.DateParser.Parse(er1[0], referenceTime);
             var pr2 = this.config.TimePeriodParser.Parse(er2[0], referenceTime);
-            var timerange = (Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+            var timerange = (Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr2.Value).FutureValue;
             var beginTime = timerange.Item1;
             var endTime = timerange.Item2;
-            var futureDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
-            var pastDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue;
+            var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
+            var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
 
             ret.FutureValue =
                 new Tuple<DateObject, DateObject>(
@@ -220,11 +217,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            DateObject futureBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue,
-                futureEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+            DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
+                futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
-            DateObject pastBegin = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue,
-                pastEnd = (DateObject) ((DateTimeResolutionResult) pr2.Value).PastValue;
+            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
+                pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
 
             if (futureBegin > futureEnd)
             {
@@ -262,10 +259,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 rightTime = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day);
             }
 
-            var leftResult = (DateTimeResolutionResult) pr1.Value;
-            var rightResult = (DateTimeResolutionResult) pr2.Value;
-            var leftResultTime = (System.DateTime) leftResult.FutureValue;
-            var rightResultTime = (System.DateTime) rightResult.FutureValue;
+            var leftResult = (DateTimeResolutionResult)pr1.Value;
+            var rightResult = (DateTimeResolutionResult)pr2.Value;
+            var leftResultTime = (System.DateTime)leftResult.FutureValue;
+            var rightResultTime = (System.DateTime)rightResult.FutureValue;
 
             int day = referenceTime.Day,
                 month = referenceTime.Month,
@@ -456,8 +453,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 }
 
                 var pr = this.config.DateParser.Parse(ers[0], referenceTime);
-                var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
-                var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
+                var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
                 ret.Timex = pr.TimexStr + timeStr;
 
@@ -508,15 +505,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         switch (unitStr)
                         {
                             case "H":
-                                beginDate = referenceTime.AddHours(-(double) pr.Value);
+                                beginDate = referenceTime.AddHours(-(double)pr.Value);
                                 endDate = referenceTime;
                                 break;
                             case "M":
-                                beginDate = referenceTime.AddMinutes(-(double) pr.Value);
+                                beginDate = referenceTime.AddMinutes(-(double)pr.Value);
                                 endDate = referenceTime;
                                 break;
                             case "S":
-                                beginDate = referenceTime.AddSeconds(-(double) pr.Value);
+                                beginDate = referenceTime.AddSeconds(-(double)pr.Value);
                                 endDate = referenceTime;
                                 break;
                             default:
@@ -538,15 +535,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         {
                             case "H":
                                 beginDate = referenceTime;
-                                endDate = referenceTime.AddHours((double) pr.Value);
+                                endDate = referenceTime.AddHours((double)pr.Value);
                                 break;
                             case "M":
                                 beginDate = referenceTime;
-                                endDate = referenceTime.AddMinutes((double) pr.Value);
+                                endDate = referenceTime.AddMinutes((double)pr.Value);
                                 break;
                             case "S":
                                 beginDate = referenceTime;
-                                endDate = referenceTime.AddSeconds((double) pr.Value);
+                                endDate = referenceTime.AddSeconds((double)pr.Value);
                                 break;
                             default:
                                 return ret;
@@ -656,7 +653,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static TimeResult DateObject2TimeResult(DateObject dateTime)
         {
-            var timeResult = new TimeResult {
+            var timeResult = new TimeResult
+            {
                 Hour = dateTime.Hour,
                 Minute = dateTime.Minute,
                 Second = dateTime.Second

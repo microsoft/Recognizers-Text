@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
@@ -21,17 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
         }
 
-        public static readonly Dictionary<string, int> UnitValueMap = new Dictionary<string, int>
-        {
-            {"Y", 31536000},
-            {"Mon", 2592000},
-            {"W", 604800},
-            {"D", 86400},
-            {"H", 3600},
-            {"M", 60},
-            {"S", 1}
-        };
-        
+        public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.Duration_UnitValueMap;
+
         private readonly IFullDateTimeParserConfiguration config;
 
         public DurationParserChs(IFullDateTimeParserConfiguration configuration)

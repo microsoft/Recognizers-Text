@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -7,18 +8,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>^的|在$)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NowRegex =
-            new Regex(@"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NightRegex = new Regex(@"(?<night>早|晚)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TimeOfTodayRegex = new Regex(@"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfTodayRegex = new Regex(DateTimeDefinitions.TimeOfTodayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimePointExtractor = new TimeExtractorChs();
@@ -65,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            ers.Sort(delegate(ExtractResult er1, ExtractResult er2)
+            ers.Sort(delegate (ExtractResult er1, ExtractResult er2)
             {
                 var start1 = er1.Start ?? 0;
                 var start2 = er2.Start ?? 0;
