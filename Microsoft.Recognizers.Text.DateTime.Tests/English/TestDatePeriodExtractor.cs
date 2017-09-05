@@ -84,6 +84,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out this weekend", 12, 12);
             BasicTest("I'll be out the third week of this month", 12, 28);
             BasicTest("I'll be out the last week of july", 12, 21);
+
+            BasicTest("schedule camping for Friday through Sunday", 21, 21);
         }
 
         [TestMethod]

@@ -41,120 +41,133 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDateTimePeriodParse()
-        {
+        public void TestDateTimePeriodBasicParse() {
+
             int year = 2016, month = 11, day = 7, min = 0, second = 0;
 
             // basic match
             BasicTestFuture("I'll be out five to seven today",
-                new DateObject(year, month, day, 5, min, second),
-                new DateObject(year, month, day, 7, min, second));
+                            new DateObject(year, month, day, 5, min, second),
+                            new DateObject(year, month, day, 7, min, second));
             BasicTestFuture("I'll be out from 5 to 6 of 4/22/2016",
-                new DateObject(2016, 4, 22, 5, min, second),
-                new DateObject(2016, 4, 22, 6, min, second));
+                            new DateObject(2016, 4, 22, 5, min, second),
+                            new DateObject(2016, 4, 22, 6, min, second));
             BasicTestFuture("I'll be out from 5 to 6 of April 22",
-                new DateObject(year + 1, 4, 22, 5, min, second),
-                new DateObject(year + 1, 4, 22, 6, min, second));
+                            new DateObject(year + 1, 4, 22, 5, min, second),
+                            new DateObject(year + 1, 4, 22, 6, min, second));
             BasicTestFuture("I'll be out from 5 to 6pm of April 22",
-                new DateObject(year + 1, 4, 22, 17, min, second),
-                new DateObject(year + 1, 4, 22, 18, min, second));
+                            new DateObject(year + 1, 4, 22, 17, min, second),
+                            new DateObject(year + 1, 4, 22, 18, min, second));
             BasicTestFuture("I'll be out from 5 to 6 on 1st Jan",
-                new DateObject(year + 1, 1, 1, 5, min, second),
-                new DateObject(year + 1, 1, 1, 6, min, second));
+                            new DateObject(year + 1, 1, 1, 5, min, second),
+                            new DateObject(year + 1, 1, 1, 6, min, second));
+        }
+
+        [TestMethod]
+        public void TestDateTimePeriodParse()
+        {
+
+            int year = 2016, month = 11, day = 7, min = 0, second = 0;
 
             // merge two time points
             BasicTestFuture("I'll be out 3pm to 4pm tomorrow",
-                new DateObject(year, month, 8, 15, min, second),
-                new DateObject(year, month, 8, 16, min, second));
+                            new DateObject(year, month, 8, 15, min, second),
+                            new DateObject(year, month, 8, 16, min, second));
 
             BasicTestFuture("I'll be out 3:00 to 4:00 tomorrow",
-                new DateObject(year, month, 8, 3, min, second),
-                new DateObject(year, month, 8, 4, min, second));
+                            new DateObject(year, month, 8, 3, min, second),
+                            new DateObject(year, month, 8, 4, min, second));
 
             BasicTestFuture("I'll be out half past seven to 4pm tomorrow",
-                new DateObject(year, month, 8, 7, 30, second),
-                new DateObject(year, month, 8, 16, min, second));
+                            new DateObject(year, month, 8, 7, 30, second),
+                            new DateObject(year, month, 8, 16, min, second));
 
             BasicTestFuture("I'll be out from 4pm today to 5pm tomorrow",
-                new DateObject(year, month, day, 16, min, second),
-                new DateObject(year, month, 8, 17, min, second));
+                            new DateObject(year, month, day, 16, min, second),
+                            new DateObject(year, month, 8, 17, min, second));
 
             BasicTestFuture("I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-                new DateObject(2016, 2, 21, 14, min, second),
-                new DateObject(2016, 4, 23, 3, 32, second));
+                            new DateObject(2016, 2, 21, 14, min, second),
+                            new DateObject(2016, 4, 23, 3, 32, second));
             BasicTestFuture("I'll be out between 4pm and 5pm today",
-                new DateObject(year, month, day, 16, min, second),
-                new DateObject(year, month, day, 17, min, second));
+                            new DateObject(year, month, day, 16, min, second),
+                            new DateObject(year, month, day, 17, min, second));
 
             BasicTestFuture("I'll be out between 4pm on Jan 1, 2016 and 5pm today",
-                new DateObject(2016, 1, 1, 16, min, second),
-                new DateObject(year, month, day, 17, min, second));
+                            new DateObject(2016, 1, 1, 16, min, second),
+                            new DateObject(year, month, day, 17, min, second));
 
             BasicTestFuture("I'll go back tonight",
-                new DateObject(year, month, day, 20, min, second),
-                new DateObject(year, month, day, 23, 59, 59));
+                            new DateObject(year, month, day, 20, min, second),
+                            new DateObject(year, month, day, 23, 59, 59));
             BasicTestFuture("I'll go back tonight for 8",
-                new DateObject(year, month, day, 20, min, second),
-                new DateObject(year, month, day, 23, 59, 59));
+                            new DateObject(year, month, day, 20, min, second),
+                            new DateObject(year, month, day, 23, 59, 59));
             BasicTestFuture("I'll go back this night",
-                new DateObject(year, month, day, 20, min, second),
-                new DateObject(year, month, day, 23, 59, 59));
+                            new DateObject(year, month, day, 20, min, second),
+                            new DateObject(year, month, day, 23, 59, 59));
             BasicTestFuture("I'll go back this evening",
-                new DateObject(year, month, day, 16, min, second),
-                new DateObject(year, month, day, 20, min, second));
+                            new DateObject(year, month, day, 16, min, second),
+                            new DateObject(year, month, day, 20, min, second));
             BasicTestFuture("I'll go back this morning",
-                new DateObject(year, month, day, 8, min, second),
-                new DateObject(year, month, day, 12, min, second));
+                            new DateObject(year, month, day, 8, min, second),
+                            new DateObject(year, month, day, 12, min, second));
             BasicTestFuture("I'll go back this afternoon",
-                new DateObject(year, month, day, 12, min, second),
-                new DateObject(year, month, day, 16, min, second));
+                            new DateObject(year, month, day, 12, min, second),
+                            new DateObject(year, month, day, 16, min, second));
             BasicTestFuture("I'll go back next night",
-                new DateObject(year, month, day + 1, 20, min, second),
-                new DateObject(year, month, day + 1, 23, 59, 59));
+                            new DateObject(year, month, day + 1, 20, min, second),
+                            new DateObject(year, month, day + 1, 23, 59, 59));
             BasicTestFuture("I'll go back last night",
-                new DateObject(year, month, day - 1, 20, min, second),
-                new DateObject(year, month, day - 1, 23, 59, 59));
+                            new DateObject(year, month, day - 1, 20, min, second),
+                            new DateObject(year, month, day - 1, 23, 59, 59));
             BasicTestFuture("I'll go back tomorrow night",
-                new DateObject(year, month, day + 1, 20, min, second),
-                new DateObject(year, month, day + 1, 23, 59, 59));
+                            new DateObject(year, month, day + 1, 20, min, second),
+                            new DateObject(year, month, day + 1, 23, 59, 59));
             BasicTestFuture("I'll go back next monday afternoon",
-                new DateObject(year, month, 14, 12, min, second),
-                new DateObject(year, month, 14, 16, min, second));
+                            new DateObject(year, month, 14, 12, min, second),
+                            new DateObject(year, month, 14, 16, min, second));
 
             BasicTestFuture("I'll go back last 3 minute",
-                new DateObject(year, month, day, 16, 9, second),
-                new DateObject(year, month, day, 16, 12, second));
+                            new DateObject(year, month, day, 16, 9, second),
+                            new DateObject(year, month, day, 16, 12, second));
             BasicTestFuture("I'll go back past 3 minute",
-                new DateObject(year, month, day, 16, 9, second),
-                new DateObject(year, month, day, 16, 12, second));
+                            new DateObject(year, month, day, 16, 9, second),
+                            new DateObject(year, month, day, 16, 12, second));
             BasicTestFuture("I'll go back previous 3 minute",
-                new DateObject(year, month, day, 16, 9, second),
-                new DateObject(year, month, day, 16, 12, second));
+                            new DateObject(year, month, day, 16, 9, second),
+                            new DateObject(year, month, day, 16, 12, second));
             BasicTestFuture("I'll go back previous 3mins",
-                new DateObject(year, month, day, 16, 9, second),
-                new DateObject(year, month, day, 16, 12, second));
+                            new DateObject(year, month, day, 16, 9, second),
+                            new DateObject(year, month, day, 16, 12, second));
             BasicTestFuture("I'll go back next 5 hrs",
-                new DateObject(year, month, day, 16, 12, second),
-                new DateObject(year, month, day, 21, 12, second));
+                            new DateObject(year, month, day, 16, 12, second),
+                            new DateObject(year, month, day, 21, 12, second));
             BasicTestFuture("I'll go back last minute",
-                new DateObject(year, month, day, 16, 11, second),
-                new DateObject(year, month, day, 16, 12, second));
+                            new DateObject(year, month, day, 16, 11, second),
+                            new DateObject(year, month, day, 16, 12, second));
             BasicTestFuture("I'll go back next hour",
-                new DateObject(year, month, day, 16, 12, second),
-                new DateObject(year, month, day, 17, 12, second));
+                            new DateObject(year, month, day, 16, 12, second),
+                            new DateObject(year, month, day, 17, 12, second));
             BasicTestFuture("I'll go back next few hours",
-                new DateObject(year, month, day, 16, 12, second),
-                new DateObject(year, month, day, 19, 12, second));
+                            new DateObject(year, month, day, 16, 12, second),
+                            new DateObject(year, month, day, 19, 12, second));
 
             BasicTestFuture("I'll go back tuesday in the morning",
-                new DateObject(year, month, day + 1, 8, 0, 0),
-                new DateObject(year, month, day + 1, 12, 0, 0));
+                            new DateObject(year, month, day + 1, 8, 0, 0),
+                            new DateObject(year, month, day + 1, 12, 0, 0));
             BasicTestFuture("I'll go back tuesday in the afternoon",
-               new DateObject(year, month, day + 1, 12, 0, 0),
-               new DateObject(year, month, day + 1, 16, 0, 0));
+                            new DateObject(year, month, day + 1, 12, 0, 0),
+                            new DateObject(year, month, day + 1, 16, 0, 0));
             BasicTestFuture("I'll go back tuesday in the evening",
-               new DateObject(year, month, day + 1, 16, 0, 0),
-               new DateObject(year, month, day + 1, 20, 0, 0));
+                            new DateObject(year, month, day + 1, 16, 0, 0),
+                            new DateObject(year, month, day + 1, 20, 0, 0));
+        }
+
+        [TestMethod]
+        public void TestDateTimePeriodLateEarlyParse()
+        {
+            int year = 2016, month = 11, day = 7, min = 0, second = 0;
 
             // late/early
             BasicTestFuture("let's meet in the early-morning Tuesday",

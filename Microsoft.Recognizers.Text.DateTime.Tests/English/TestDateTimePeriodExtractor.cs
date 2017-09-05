@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTimePeriodExtract()
         {
+
             // basic match
             BasicTest("I'll be out five to seven today", 12, 19);
             BasicTest("I'll be out five to seven of tomorrow", 12, 25);
@@ -62,6 +63,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back tuesday in the morning", 13, 22);
             BasicTest("I'll go back tuesday in the afternoon", 13, 24);
             BasicTest("I'll go back tuesday in the evening", 13, 22);
+        }
+
+        [TestMethod]
+        public void TestDateTimePeriodEarlyLateExtract()
+        {
 
             // early/late date time
             BasicTest("let's meet in the early-morning Tuesday", 11, 28);

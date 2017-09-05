@@ -136,6 +136,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTestFuture("the weekend", 12, 13, month, year);
                 BasicTestFuture("this weekend", 12, 13, month, year);
                 BasicTestFuture("my weekend", 12, 13, month, year);
+
+                BasicTestFuture("What is my schedule for the week?", 7, 13, month, year);
+                BasicTestFuture("Show me my calendar for the week", 7, 13, month, year);
+                BasicTestFuture("What's my day looking like?", 7, 7, month, year);
+                BasicTestFuture("how does your day look like?", 7, 7, month, year);
             }
             else
             {
