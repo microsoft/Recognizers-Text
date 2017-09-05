@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex UnitRegex { get; }
 
-        public Regex StrictWeekDay { get; }
+        public Regex WeekDayRegex { get; }
 
         public Regex MonthRegex { get; }
 
@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ThisRegex = EnglishDateExtractorConfiguration.ThisRegex;
             LastRegex = EnglishDateExtractorConfiguration.LastDateRegex;
             UnitRegex = EnglishDateExtractorConfiguration.DateUnitRegex;
-            StrictWeekDay = EnglishDateExtractorConfiguration.StrictWeekDay;
+            WeekDayRegex = EnglishDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;

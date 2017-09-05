@@ -43,6 +43,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex EachDayRegex { get; }
 
+        public Regex SetWeekDayRegex { get; }
+
+        public Regex SetEachRegex { get; }
+
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DurationExtractor = config.DurationExtractor;
@@ -66,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PeriodicRegex = EnglishSetExtractorConfiguration.PeriodicRegex;
             EachUnitRegex = EnglishSetExtractorConfiguration.EachUnitRegex;
             EachDayRegex = EnglishSetExtractorConfiguration.EachDayRegex;
+            SetWeekDayRegex = EnglishSetExtractorConfiguration.SetWeekDayRegex;
+            SetEachRegex = EnglishSetExtractorConfiguration.SetEachRegex;
         }
 
         public bool GetMatchedDailyTimex(string text, out string timex)
