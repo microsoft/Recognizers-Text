@@ -90,6 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             StrictWeekDay = EnglishDateExtractorConfiguration.StrictWeekDay;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

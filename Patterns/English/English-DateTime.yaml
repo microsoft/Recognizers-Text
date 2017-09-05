@@ -4,7 +4,7 @@ TillRegex: !simpleRegex
 RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
-  def: (?<order>next|upcoming|this|last|past|previous|current|(over\s)?the|my)
+  def: (?<order>next|upcoming|this|last|past|previous|current|the|my)
 NextPrefixRegex: !simpleRegex
   def: (next|upcoming)\b
 PastPrefixRegex: !simpleRegex
