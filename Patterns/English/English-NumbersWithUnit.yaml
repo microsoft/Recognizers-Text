@@ -55,7 +55,7 @@ CurrencySuffixList: !dictionary
     Chetrum: chetrums|chetrum
 #Bolivian boliviano
     Bolivian boliviano: bolivian boliviano|bob|bs.|bolivia boliviano|bolivia bolivianos|bolivian bolivianos
-#Bosnia and Herzegovina convertible mark	
+#Bosnia and Herzegovina convertible mark
     Bosnia and Herzegovina convertible mark: bosnia and herzegovina convertible mark|bam
     Fening: fenings|fenings
 #Botswana pula
@@ -63,7 +63,7 @@ CurrencySuffixList: !dictionary
     Thebe: thebe
 #Brazilian real
     Brazilian real: brazilian real|r$|brl|brazil real|brazil reals|brazilian reals
-#Bulgarian lev	
+#Bulgarian lev
     Bulgarian lev: bulgarian lev|bgn|лв|bulgaria lev|bulgaria levs|bulgarian levs
     Stotinka: stotinki|stotinka
 #Cambodian riel
@@ -71,7 +71,7 @@ CurrencySuffixList: !dictionary
 #Cape Verdean escudo
 #No use of "esc" and "$"
     Cape Verdean escudo: cape verdean escudo|cve
-#Costa Rican colón	
+#Costa Rican colón
     Costa Rican colón: costa rican colón|costa rican colóns|crc|₡|costa rica colón|costa rica colóns|costa rican colon|costa rican colons|costa rica colon|costa rica colons
 #Salvadoran colón
     Salvadoran colón: svc|salvadoran colón|salvadoran colóns|salvador colón|salvador colóns|salvadoran colon|salvadoran colons|salvador colon|salvador colons
@@ -410,7 +410,7 @@ CurrencyPrefixList: !dictionary
     Japanese yen: ¥
     Euro: €
     Pound: £
-    Costa Rican colón: ₡    
+    Costa Rican colón: ₡
     Turkish lira: ₺
 AmbiguousCurrencyUnitList: !list
   types: [ string ]

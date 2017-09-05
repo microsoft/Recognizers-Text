@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Recognizers.Definitions.Spanish;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -39,7 +40,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 return ret;
             }
 
-            var startIndex = trimedText.IndexOf("mañana", StringComparison.Ordinal) == 0 ? 6 : 0;
+            var startIndex = trimedText.IndexOf(DateTimeDefinitions.Tomorrow, StringComparison.Ordinal) == 0 ? DateTimeDefinitions.Tomorrow.Length : 0;
 
             // handle Date followed by morning, afternoon
             // Add handling code to handle morning, afternoon followed by Date

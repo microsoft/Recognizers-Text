@@ -1,14 +1,13 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = 
-            new Regex(@"(antes(\s+de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AfterRegex = 
-            new Regex(@"(despues(\s*de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
         public static readonly Regex FromToRegex = 
