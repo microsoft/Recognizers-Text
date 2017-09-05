@@ -91,6 +91,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Spanish\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="BaseDateTime.tt">
@@ -132,6 +137,10 @@
     <Content Include="Spanish\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </Content>
+    <Content Include="Spanish\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

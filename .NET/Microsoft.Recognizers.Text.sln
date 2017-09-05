@@ -44,6 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
+		..\Patterns\Spanish\Spanish-Numbers.yaml = ..\Patterns\Spanish\Spanish-Numbers.yaml
+		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
 	EndProjectSection
 EndProject
 Global

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {
@@ -18,24 +18,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
 
-        public static readonly ImmutableDictionary<string, string> WeightSuffixList = new Dictionary<string, string>
-        {
-            {"Tonelada métrica", "tonelada métrica|toneladas métricas"},
-            {"Tonelada", "ton|tonelada|toneladas"},
-            {"Kilogramo", "kg|kilogramo|kilogramos"},
-            {"Hectogramo", "hg|hectogramo|hectogramos"},
-            {"Decagramo", "dag|decagramo|decagramos"},
-            {"Gramo", "g|gr|gramo|gramos"},
-            {"Decigramo", "dg|decigramo|decigramos"},
-            {"Centigramo", "cg|centigramo|centigramos"},
-            {"Miligramo", "mg|miligramo|miligramos"},
-            {"Microgramo", "µg|ug|microgramo|microgramos"},
-            {"Nanogramo", "ng|nanogramo|nanogramos"},
-            {"Picogramo", "pg|picogramo|picogramos"},
-            {"Libra", "lb|libra|libras"},
-            {"Onza", "oz|onza|onzas"},
-            {"Grano", "grano|granos|gr"},
-            {"Quilate", "ct|kt|quilate|quilates"},
-        }.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
     }
 }
