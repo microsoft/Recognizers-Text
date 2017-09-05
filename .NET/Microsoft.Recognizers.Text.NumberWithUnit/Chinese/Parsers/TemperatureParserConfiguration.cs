@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
@@ -8,8 +9,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public TemperatureParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.BindDictionary(TemperatureExtractorConfiguration.TemperaturePrefixList);
-            this.BindDictionary(TemperatureExtractorConfiguration.TemperatureSuffixList);
+            this.BindDictionary(NumbersWithUnitDefinitions.TemperaturePrefixList);
+            this.BindDictionary(NumbersWithUnitDefinitions.TemperatureSuffixList);
         }
     }
 }

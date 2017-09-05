@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
@@ -10,11 +11,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         {
             this.CultureInfo = ci;
             this.UnitNumExtractor = new NumberExtractor(ChineseNumberMode.ExtractAll);
-            this.BuildPrefix = @"";
-            this.BuildSuffix = @"";
-            this.ConnectorToken = string.Empty;
+            this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
+            this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
-
+         
         public abstract string ExtractType { get; }
 
         public CultureInfo CultureInfo { get; }

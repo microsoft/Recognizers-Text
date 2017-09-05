@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
@@ -8,7 +9,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public AgeParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.BindDictionary(AgeExtractorConfiguration.AgeSuffixList);
+            this.BindDictionary(NumbersWithUnitDefinitions.AgeSuffixList);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
@@ -8,8 +9,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public CurrencyParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
-            this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
+            this.BindDictionary(NumbersWithUnitDefinitions.CurrencyPrefixList);
+            this.BindDictionary(NumbersWithUnitDefinitions.CurrencySuffixList);
         }
     }
 }
