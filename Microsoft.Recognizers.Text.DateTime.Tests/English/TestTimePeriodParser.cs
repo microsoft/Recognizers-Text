@@ -81,6 +81,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 new DateObject(year, month, day, 16, min, second),
                 new DateObject(year, month, day, 17, min, second));
 
+            BasicTest("I'll be out 4 til 5pm",
+                new DateObject(year, month, day, 16, min, second),
+                new DateObject(year, month, day, 17, min, second));
+
             BasicTest("I'll be out 4:00 to 7 oclock",
                 new DateObject(year, month, day, 4, min, second),
                 new DateObject(year, month, day, 7, min, second));

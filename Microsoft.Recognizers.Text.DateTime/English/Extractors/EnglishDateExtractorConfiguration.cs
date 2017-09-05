@@ -33,6 +33,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.WeekDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex SingleWeekDayRegex =
+            new Regex(
+                DateTimeDefinitions.SingleWeekDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex OnRegex = new Regex(DateTimeDefinitions.OnRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -56,11 +61,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex SpecialDayRegex =
             new Regex(
                 DateTimeDefinitions.SpecialDayRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex StrictWeekDay =
-            new Regex(
-                DateTimeDefinitions.StrictWeekDay,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekDayOfMonthRegex =
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex[] ImplicitDateList =
         {
             OnRegex, RelaxedOnRegex, SpecialDayRegex, ThisRegex, LastDateRegex, NextDateRegex,
-            StrictWeekDay, WeekDayOfMonthRegex, SpecialDate
+            SingleWeekDayRegex, WeekDayOfMonthRegex, SpecialDate
         };
 
         public static readonly Regex OfMonth = new Regex(DateTimeDefinitions.OfMonth,

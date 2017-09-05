@@ -56,8 +56,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back on Friday", 16, 6);
             BasicTest("I'll go back Friday", 13, 6);
-            BasicTest("I'll go back on Fridays", 16, 7);
-            BasicTest("I'll go back Fridays", 13, 7);
             BasicTest("I'll go back today", 13, 5);
             BasicTest("I'll go back tomorrow", 13, 8);
             BasicTest("I'll go back yesterday", 13, 9);

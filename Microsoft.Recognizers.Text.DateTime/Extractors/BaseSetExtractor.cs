@@ -105,16 +105,48 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> MatchEach(IExtractor extractor, string text)
         {
             var ret = new List<Token>();
-            var ers = extractor.Extract(text);
-            foreach (var er in ers)
+            var matches = config.SetEachRegex.Matches(text);
+            foreach (Match match in matches)
             {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = this.config.EachPrefixRegex.Match(beforeStr);
-                if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
+                if (match.Success)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
+                    var trimedText = text.Remove(match.Index, match.Length);
+                    var ers = extractor.Extract(trimedText);
+                    foreach (var er in ers)
+                    {
+                        if (er.Start <= match.Index)
+                        {
+                            ret.Add(new Token(er.Start ?? 0, (er.Start + match.Length + er.Length) ?? 0));
+                        }
+                    }
                 }
             }
+
+            // handle "Mondays"
+            matches = this.config.SetWeekDayRegex.Matches(text);
+            foreach (Match match in matches)
+            {
+                if (match.Success)
+                {
+                    var trimedText = text.Remove(match.Index, match.Length);
+                    trimedText = trimedText.Insert(match.Index, match.Groups["weekday"].ToString());
+
+                    var ers = extractor.Extract(trimedText);
+                    foreach (var er in ers)
+                    {
+                        if (er.Start <= match.Index)
+                        {
+                            var len = (er.Length ?? 0) + 1;
+                            if (match.Groups["prefix"].ToString() != string.Empty)
+                            {
+                                len += match.Groups["prefix"].ToString().Length;
+                            }
+                            ret.Add(new Token(er.Start ?? 0, (er.Start + len) ?? 0));
+                        }
+                    }
+                }
+            }
+
             return ret;
         }
     }

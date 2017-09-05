@@ -38,5 +38,32 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll leave every morning", 11, 13);
         }
+
+        [TestMethod]
+        public void TestSetExtractMergeTimePeriod_Time()
+        {
+            BasicTest("I'll leave every morning at 9am", 11, 20);
+            BasicTest("I'll leave every afternoon at 4pm", 11, 22);
+            BasicTest("I'll leave every night at 9pm", 11, 18);
+            BasicTest("I'll leave every night at 9", 11, 16);
+            BasicTest("I'll leave mornings at 9am", 11, 15);
+            BasicTest("I'll leave on mornings at 9", 11, 16);
+        }
+
+        [TestMethod]
+        public void TestSetExtractMergeDate_Time()
+        {
+            BasicTest("I'll leave at 9am every Sunday", 14, 16);
+            BasicTest("I'll leave at 9am on Mondays", 14, 14);
+            BasicTest("I'll leave at 9am Mondays", 14, 11);
+        }
+
+       [TestMethod]
+       public void TestSetExtractDate()
+       {
+            BasicTest("I'll leave on Mondays", 11, 10);
+            BasicTest("I'll leave on Sundays", 11, 10);
+            BasicTest("I'll leave Sundays", 11, 7);
+       }
     }
 }

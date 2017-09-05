@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex UnitRegex { get; }
 
-        public Regex StrictWeekDay { get; }
+        public Regex WeekDayRegex { get; }
 
         public Regex MonthRegex { get; }
 
@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             ThisRegex = SpanishDateExtractorConfiguration.ThisRegex;
             LastRegex = SpanishDateExtractorConfiguration.LastDateRegex;
             UnitRegex = SpanishDateExtractorConfiguration.DateUnitRegex;
-            StrictWeekDay = SpanishDateExtractorConfiguration.StrictWeekDay;
+            WeekDayRegex = SpanishDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = SpanishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
             DayOfMonth = config.DayOfMonth;

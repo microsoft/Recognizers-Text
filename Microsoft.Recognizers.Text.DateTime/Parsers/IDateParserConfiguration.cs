@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex ThisRegex { get; }
         Regex LastRegex { get; }
         Regex UnitRegex { get; }
-        Regex StrictWeekDay { get; }
+        Regex WeekDayRegex { get; }
         Regex MonthRegex { get; }
         Regex WeekDayOfMonthRegex { get; }
 
