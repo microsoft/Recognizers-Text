@@ -50,6 +50,8 @@ describe('Date Period Extractor', it => {
     basicTest(it, extractor, "I'll be out the third week of this month", 12, 28);
     basicTest(it, extractor, "I'll be out the last week of july", 12, 21);
 
+    basicTest(it, extractor, "schedule camping for Friday through Sunday", 21, 21);
+
     // Duration
     basicTest(it, extractor, "I'll be out next 3 days", 12, 11);
     basicTest(it, extractor, "I'll be out next 3 months", 12, 13);

@@ -51,6 +51,15 @@ describe('Time Extractor', it => {
     basicTest(it, extractor, "let's meet in the late-night", 11, 17);
     basicTest(it, extractor, "let's meet in the early night", 11, 18);
     basicTest(it, extractor, "let's meet in the late night", 11, 17);
+
+    // TimePeriodExtraExtract
+    basicTest(it, extractor, "set up meeting from two to five pm", 15, 19);
+    basicTest(it, extractor, "Party at Jean’s from 6 to 11 pm", 16, 15);
+    basicTest(it, extractor, "set up meeting from 14:00 to 16:30", 15, 19);
+
+    // TODO fix these for next release
+    // basicTest(it, extractor, "set up meeting from two to five p m", 15, 20);
+    // basicTest(it, extractor, "set up meeting from 14 to 16h", 15, 14);
 });
 
 function basicTest(it, extractor, text, start, length) {

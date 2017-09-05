@@ -77,6 +77,11 @@ describe('Date Period Parser', it => {
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the weekend", 12, 13, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this weekend", 12, 13, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my weekend", 12, 13, month, year);
+
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What is my schedule for the week?", 7, 13, month, year);
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "Show me my calendar for the week", 7, 13, month, year);
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What's my day looking like?", 7, 7, month, year);
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "how does your day look like?", 7, 7, month, year);
     } else {
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "scheduel a meeting in two weeks", 15, 22, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "next 2 days", 8, 10, month, year);
@@ -87,6 +92,11 @@ describe('Date Period Parser', it => {
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the weekend", 12, 14, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this weekend", 12, 14, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my weekend", 12, 14, month, year);
+        
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What is my schedule for the week?", 7, 14, month, year);
+        basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "Show me my calendar for the week", 7, 14, month, year);
+        // basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What's my day looking like?", 7, 8, month, year);
+        // basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "how does your day look like?", 7, 8, month, year);
     }
 
     // test merging two time points
