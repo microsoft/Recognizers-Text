@@ -4,9 +4,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = new Regex(@"(antes(\s+de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex BeforeRegex = 
+            new Regex(@"(antes(\s+de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AfterRegex = new Regex(@"(despues(\s*de(\s+las?)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = 
+            new Regex(@"(despues(\s*de(\s+las?)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        //TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
+        public static readonly Regex FromToRegex = 
+            new Regex(@"\b(from).+(to)\b.+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SingleAmbiguousMonthRegex =
+            new Regex(@"\b(may|march)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PrepositionSuffixRegex =
+            new Regex(@"\b(on|in|at|around|for|during|since|from|to)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IExtractor DateExtractor { get; }
 
@@ -41,5 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
         Regex IMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
+        Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
+        Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
+        Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
     }
 }

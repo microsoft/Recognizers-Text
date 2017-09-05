@@ -135,13 +135,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
                 second = leftResult.Second > 0 ? leftResult.Second : 0;
 
-            var leftTime = new DateObject(year, month, day, hour, min, second);
+            var leftTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
 
             hour = rightResult.Hour > 0 ? rightResult.Hour : 0;
             min = rightResult.Minute > 0 ? rightResult.Minute : 0;
             second = rightResult.Second > 0 ? rightResult.Second : 0;
 
-            var rightTime = new DateObject(year, month, day, hour, min, second);
+            var rightTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
 
             if (rightTime.Hour < leftTime.Hour)
             {

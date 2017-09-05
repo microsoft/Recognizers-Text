@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(@"\b");
+                    cardExtract = CardinalExtractor.GetInstance(@"\b");
                     break;
                 case NumberMode.Currency:
                     builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Singleline),
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
             if (cardExtract == null)
             {
-                cardExtract = new CardinalExtractor();
+                cardExtract = CardinalExtractor.GetInstance();
             }
             builder.AddRange(cardExtract.Regexes);
 

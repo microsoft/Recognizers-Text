@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -14,7 +15,7 @@ namespace Microsoft.Recognizers.Text
             IModel model;
             if (!TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture))
             {
-                throw new Exception($"ERROR: No IModel instance for {culture}-{typeof(TModel)}");
+                throw new ArgumentException($"ERROR: No IModel instance for {culture}-{typeof(TModel)}");
             }
 
             return model;
@@ -24,7 +25,9 @@ namespace Microsoft.Recognizers.Text
         {
             model = null;
             var ret = true;
+
             var key = GenerateKey(culture, typeof(TModel));
+
             if (!modelInstances.ContainsKey(key))
             {
                 if (fallbackToDefaultCulture)
@@ -70,7 +73,7 @@ namespace Microsoft.Recognizers.Text
             var key = GenerateKey(culture, type);
             if (modelInstances.ContainsKey(key))
             {
-                throw new ArgumentException($"ERROR: {culture}-{type} has been registered.");
+                throw new ArgumentException($"ERROR: {culture}-{type} has already been registered.");
             }
 
             modelInstances.Add(key, model);
@@ -81,6 +84,23 @@ namespace Microsoft.Recognizers.Text
             foreach (var model in models)
             {
                 RegisterModel(culture, model.Key, model.Value);
+            }
+        }
+
+        public bool IsSingleModel()
+        {
+            return modelInstances.Count == 1;
+        }
+
+        public IModel GetSingleModel<TModel>()
+        {
+            if (IsSingleModel())
+            {
+                return modelInstances[modelInstances.Keys.FirstOrDefault()];
+            }
+            else
+            {
+                throw new InvalidOperationException($"Please request a specific culture for {typeof(TModel)}.");
             }
         }
     }

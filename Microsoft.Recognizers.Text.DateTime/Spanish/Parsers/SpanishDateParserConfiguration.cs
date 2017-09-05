@@ -43,6 +43,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        //TODO: implement the relative day regex if needed. If yes, they should be abstracted
+        public static readonly Regex RelativeDayRegex = new Regex(
+               "",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex NextPrefixRegexRegex = new Regex(
+                "",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PastPrefixRegexRegex = new Regex(
+                "",
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex ForTheRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
@@ -88,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant().Normalized();
             var swift = 0;
 
+            //TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
             if (trimedText.Equals("hoy") || trimedText.Equals("el dia"))
             {
                 swift = 0;

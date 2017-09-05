@@ -1,8 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
+
     [TestClass]
     public class TestDateParser
     {
@@ -112,6 +114,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back next week on Friday", new DateObject(2016, 11, 18));
             BasicTest("I'll go back on Friday next week", new DateObject(2016, 11, 18));
+        }
+
+        [TestMethod]
+        public void TestDateParse_TheDay()
+        {
+            int tYear = 2016, tMonth = 11, tDay = 7;
+            
+            BasicTest("I'll go back next day", new DateObject(2016, 11, 8));
+            BasicTest("I'll go back the day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back my day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back this day", new DateObject(2016, 11, 7));
+            BasicTest("I'll go back last day", new DateObject(2016, 11, 6));
+            BasicTest("I'll go back past day", new DateObject(2016, 11, 6));
         }
 
         [TestMethod]

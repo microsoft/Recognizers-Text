@@ -11,7 +11,21 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        public OrdinalExtractor()
+        private static readonly Dictionary<string, OrdinalExtractor> Instances = new Dictionary<string, OrdinalExtractor>();
+
+        public static OrdinalExtractor GetInstance(string placeholder = "")
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new OrdinalExtractor();
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, string>
             {

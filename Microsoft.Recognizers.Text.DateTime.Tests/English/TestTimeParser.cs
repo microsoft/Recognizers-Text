@@ -3,6 +3,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
+
     [TestClass]
     public class TestTimeParser
     {
@@ -25,6 +26,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
+        }
+
+        [TestMethod]
+        public void TestTimeParseWithTwoNumbers()
+        {
+            var today = DateObject.Today;
+            int year = today.Year, month = today.Month, day = today.Day, second = 0;
+
+            BasicTest("set an alarm for eight forty", new DateObject(year, month, day, 8, 40, second));
+            BasicTest("set an alarm for eight forty am", new DateObject(year, month, day, 8, 40, second));
+            BasicTest("set an alarm for eight forty pm", new DateObject(year, month, day, 20, 40, second));
+            BasicTest("set an alarm for ten forty five", new DateObject(year, month, day, 10, 45, second));
+            BasicTest("set an alarm for fifteen fifteen p m", new DateObject(year, month, day, 15 , 15, second));
+            BasicTest("set an alarm for fifteen thirty p m", new DateObject(year, month, day, 15, 30, second));
+            BasicTest("set an alarm for ten ten", new DateObject(year, month, day, 10, 10, second));
+            BasicTest("set an alarm for ten fifty five p. m.", new DateObject(year, month, day, 22, 55, second));
         }
 
         [TestMethod]
@@ -70,7 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back seven thirty pm", new DateObject(year, month, day, 19, 30, second));
             BasicTest("I'll go back seven thirty five pm", new DateObject(year, month, day, 19, 35, second));
             BasicTest("I'll go back eleven twenty pm", new DateObject(year, month, day, 23, 20, second));
-
 
             BasicTest("I'll be back noonish", new DateObject(year, month, day, 12, 0, second));
             BasicTest("I'll be back 12 noon", new DateObject(year, month, day, 12, 0, second));

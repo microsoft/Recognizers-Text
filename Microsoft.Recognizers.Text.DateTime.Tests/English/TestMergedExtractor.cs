@@ -5,7 +5,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     [TestClass]
     public class TestMergedExtractor
     {
-        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
+        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
 
         public void BasicTest(string text, int start, int length)
         {
@@ -19,6 +19,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(0, results.Count);
+        }
+
+        public void BasicTestWithOptions(string text, int count, DateTimeOptions options = DateTimeOptions.None)
+        {
+            IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
+            var results = extractorWithOptions.Extract(text);
+            Assert.AreEqual(count, results.Count);
         }
 
         [TestMethod]
@@ -41,6 +48,30 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestMergedExtract_TheDuration()
+        {
+            BasicTest("What's this day look like?", 7, 8);
+            BasicTest("What's this week look like?", 7, 9);
+            BasicTest("What's my week look like?", 7, 7);
+            BasicTest("What's the week look like?", 7, 8);
+            BasicTest("What's my day look like?", 7, 6);
+            BasicTest("What's the day look like?", 7, 7);
+        }
+
+        [TestMethod]
+        public void TestMergedSkipFromTo()
+        {
+            BasicTestWithOptions("Change my meeting from 9am to 11am", 2, DateTimeOptions.SkipFromToMerge);
+            BasicTestWithOptions("Change my meeting from Nov.19th to Nov.23th", 2, DateTimeOptions.SkipFromToMerge);
+
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am", 1, DateTimeOptions.None); // Testing None.
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am", 1);
+            BasicTestWithOptions("Schedule a meeting from 9am to 11am tomorrow", 1);
+
+            BasicTestWithOptions("Change July 22nd meeting in Bellevue to August 22nd", 2); // No merge.
+        }
+
+        [TestMethod]
         public void TestAfterBefore()
         {
             BasicTest("after 7/2 ", 0, 9);
@@ -49,12 +80,34 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateWithTime()
+        {
+            BasicTest("06/06 12:15", 0, 11);
+            BasicTest("06/06/12 15:15", 0, 14);
+            BasicTest("06/06, 2015", 0, 11);
+        }
+
+        [TestMethod]
+        public void TestAmbiguousWordExtract()
+        {
+            BasicTest("May 29th", 0, 8);
+            BasicTest("March 29th", 0, 10);
+            BasicTest("I born in March", 10, 5);
+            BasicTest("I born in the March", 10, 9);
+            BasicTest("what happend at the May", 16, 7);
+        }
+
+        [TestMethod]
         public void TestNegativeExtract()
         {
             //Unit tests for text should not extract datetime
+            BasicTestNone("in the sun");
+            BasicTestNone("may i help you");
+            BasicTestNone("the group proceeded with a march they knew would lead to bloodshed");
             BasicTestNone("which email have gotten a reply");
             BasicTestNone("He is often alone");
             BasicTestNone("often a bird");
+            BasicTestNone("michigan hours");
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public EnglishCommonDateTimeParserConfiguration()
         {
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
@@ -20,15 +21,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
-            CardinalExtractor = new CardinalExtractor();
-            IntegerExtractor = new IntegerExtractor();
-            OrdinalExtractor = new OrdinalExtractor();
+
+            CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
+            OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
+
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            DatePeriodExtractor=new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+            DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));

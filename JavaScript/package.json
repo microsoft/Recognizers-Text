@@ -1,0 +1,63 @@
+{
+  "name": "recognizers-text",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "dist/recognizers-text.umd.js",
+  "module": "dist/recognizers-text.es5.js",
+  "typings": "dist/types/recognizers-text.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Microsoft",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/recognizers-text"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "prebuild": "rimraf dist",
+    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
+    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
+    "start": "tsc-watch --onSuccess \"ava --watch --verbose\"",
+    "test": "tsc && ava --verbose"
+  },
+  "ava": {
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^3.9.0",
+    "@types/node": "^8.0.20",
+    "ava": "^0.20.0",
+    "ava-spec": "^1.1.0",
+    "colors": "^1.1.2",
+    "js-yaml": "^3.9.1",
+    "lodash.camelcase": "^4.3.0",
+    "prettier": "^1.6.1",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.1",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "ts-node": "^3.3.0",
+    "tsc-watch": "^1.0.8",
+    "tslint": "^5.7.0",
+    "tslint-config-prettier": "^1.4.0",
+    "tslint-config-standard": "^6.0.0"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.74",
+    "@types/xregexp": "^3.0.29",
+    "bignumber.js": "^4.0.3",
+    "lodash": "^4.17.4",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.1",
+    "xregexp": "^3.2.0"
+  }
+}

@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
     {
         public EnglishNumberWithUnitParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.InternalNumberExtractor = new NumberExtractor(NumberMode.Default);
+            this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new EnglishNumberParserConfiguration());
             this.ConnectorToken = string.Empty;
         }

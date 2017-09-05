@@ -141,7 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (hasYear)
                 {
                     ret.Timex = year.ToString("D4") + timexStr;
-                    ret.FutureValue = ret.PastValue = new DateObject(year, value.Month, value.Day);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
                     ret.Success = true;
                     return ret;
                 }

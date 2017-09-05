@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex YearRegex = new Regex(@"\b(?<year>19\d{2}|20\d{2})\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex RelativeMonthRegex = new Regex(@"(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)",
+        public static readonly Regex RelativeMonthRegex = new Regex(@"(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)\b",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EngMonthRegex =
@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDatePeriodExtractorConfiguration()
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            CardinalExtractor = new CardinalExtractor();
+            CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }
 

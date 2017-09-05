@@ -17,11 +17,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex DayRegex =
             new Regex(
-                @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)",
+                @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex =
-            new Regex(@"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)",
+            new Regex(@"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex YearRegex = new Regex(@"(?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)",
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex WeekDayRegex =
             new Regex(
-                @"(?<weekday>Domingo|Lunes|Martes|Mi[eé]rcoles|Jueves|Viernes|S[aá]bado|Lu|Ma|Mi|Ju|Vi|Sa|Do)",
+                @"(?<weekday>Domingo|Lunes|Martes|Mi[eé]rcoles|Jueves|Viernes|S[aá]bado|Lu|Ma|Mi|Ju|Vi|Sa|Do)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex OnRegex = new Regex($@"(?<=\ben\s+)({DayRegex}s?)\b",

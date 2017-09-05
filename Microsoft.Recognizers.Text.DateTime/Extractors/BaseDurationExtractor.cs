@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -81,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> GetTokenFromRegex(Regex regex, string text)
+        private static List<Token> GetTokenFromRegex(Regex regex, string text)
         {
             var ret = new List<Token>();
             var matches = regex.Matches(text);

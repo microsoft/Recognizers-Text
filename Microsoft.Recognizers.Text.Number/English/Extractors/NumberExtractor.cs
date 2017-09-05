@@ -1,4 +1,6 @@
-﻿using Microsoft.Recognizers.Definitions.English;
+﻿using System.Collections.Generic;
+
+using Microsoft.Recognizers.Definitions.English;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -10,7 +12,22 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
-        public NumberExtractor(NumberMode mode = NumberMode.Default)
+        private static readonly Dictionary<string, NumberExtractor> Instances = new Dictionary<string, NumberExtractor>();
+
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
+
+            var placeholder = mode.ToString();
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new NumberExtractor(mode);
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private NumberExtractor(NumberMode mode = NumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
             
@@ -19,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(NumbersDefinitions.PlaceHolderPureNumber);
+                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
                     builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
@@ -30,13 +47,13 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             if (cardExtract == null)
             {
-                cardExtract = new CardinalExtractor();
+                cardExtract = CardinalExtractor.GetInstance();
             }
 
             builder.AddRange(cardExtract.Regexes);
             
             //Add Fraction
-            var fracExtract = new FractionExtractor();
+            var fracExtract = FractionExtractor.GetInstance();
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();

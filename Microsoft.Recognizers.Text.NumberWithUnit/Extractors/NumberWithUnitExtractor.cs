@@ -11,9 +11,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly HashSet<Regex> suffixRegexes = new HashSet<Regex>();
         private readonly HashSet<Regex> prefixRegexes = new HashSet<Regex>();
-        private readonly Regex separateRegex = null;
+        private readonly Regex separateRegex;
 
         private readonly int maxPrefixMatchLen;
+
+        private readonly char[] separators = { '|' };
 
         public NumberWithUnitExtractor(INumberWithUnitExtractorConfiguration config)
         {
@@ -24,11 +26,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 suffixRegexes = BuildRegexFromSet(this.config.SuffixList.Values);
             }
 
-            if (this.config.PrefixList?.Count > 0)
-            {
+            if (this.config.PrefixList?.Count > 0) {
+
                 foreach (var preMatch in this.config.PrefixList.Values)
                 {
-                    var matchList = preMatch.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                    var matchList = preMatch.Split(separators, StringSplitOptions.RemoveEmptyEntries);
                     foreach (var match in matchList)
                     {
                         maxPrefixMatchLen = maxPrefixMatchLen >= match.Length ? maxPrefixMatchLen : match.Length;
@@ -71,7 +73,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 foreach (var addWord in config.PrefixList.Values)
                 {
-                    foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+                    foreach (var word in addWord.Split(separators, StringSplitOptions.RemoveEmptyEntries))
                     {
                         if (ValidateUnit(word))
                         {
@@ -85,7 +87,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 foreach (var addWord in config.SuffixList.Values)
                 {
-                    foreach (var word in addWord.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries))
+                    foreach (var word in addWord.Split(separators, StringSplitOptions.RemoveEmptyEntries))
                     {
                         if (ValidateUnit(word))
                         {
@@ -129,15 +131,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public List<ExtractResult> Extract(string source)
         {
+
+            var result = new List<ExtractResult>();
+
             if (!PreCheckStr(source))
             {
-                return new List<ExtractResult>();
+                return result;
             }
 
             var mappingPrefix = new Dictionary<int, PrefixUnitResult>();
             var matched = new bool[source.Length];
             var numbers = this.config.UnitNumExtractor.Extract(source);
-            var result = new List<ExtractResult>();
             var sourceLen = source.Length;
 
             /* Mix prefix and numbers, make up a prefix-number combination */

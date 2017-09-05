@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
-namespace Microsoft.Recognizers.Text.DateTime.Tests.English
+namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
     [TestClass]
     public class TestMergedParser
     {
-        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
+        private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
         private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration());
 
         readonly DateObject refrenceDate;
@@ -43,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
+            BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
             BasicTest("on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
             BasicTest("on Friday for 3 in the afternoon", Constants.SYS_DATETIME_DATETIME);
         }
@@ -67,8 +63,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests.English
         }
 
         [TestMethod]
+        public void TestMergedParseInvalidDatetime()
+        {
+            BasicTest("2016-2-30", Constants.SYS_DATETIME_DATE);
+            //only 2015-1 is extracted
+            BasicTest("2015-1-32", Constants.SYS_DATETIME_DATEPERIOD);
+            //only 2017 is extracted
+            BasicTest("2017-13-12", Constants.SYS_DATETIME_DATEPERIOD);
+        }
+
+        [TestMethod]
         public void TestMergedParseWithTwoResults()
         {
+            BasicTestWithTwoResults("block 1 hour on my calendar tomorrow morning", Constants.SYS_DATETIME_DURATION,
+                Constants.SYS_DATETIME_DATETIMEPERIOD);
+            BasicTestWithTwoResults("Change July 22nd meeting in Bellevue to August 22nd", Constants.SYS_DATETIME_DATE,
+                Constants.SYS_DATETIME_DATE);
             BasicTestWithTwoResults("on Friday for 3 in Bellevue in the afternoon", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_TIMEPERIOD);
         }

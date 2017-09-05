@@ -11,31 +11,38 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_INTEGER; // "Integer";
 
-        public IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private static readonly Dictionary<string, IntegerExtractor> Instances = new Dictionary<string, IntegerExtractor>();
+
+        public static IntegerExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault) {
+
+            if (!Instances.ContainsKey(placeholder)) {
+                var instance = new IntegerExtractor(placeholder);
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private IntegerExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var regexes = new Dictionary<Regex, string> {
                 {
                     new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder),
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
                 }, {
                     new Regex(NumbersDefinitions.NumbersWithSuffix, RegexOptions.Singleline), "IntegerNum"
                 }, {
                     new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
                 }, {
                     new Regex(NumbersDefinitions.NumbersWithDozenSuffix,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerNum"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerNum"
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerEng"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerEng"
                 }, {
                     new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "IntegerEng"
+                              RegexOptions.IgnoreCase | RegexOptions.Singleline), "IntegerEng"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder), "IntegerNum"
                 }

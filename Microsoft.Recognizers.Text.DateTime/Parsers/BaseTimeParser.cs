@@ -171,7 +171,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    hour = int.Parse(hourStr);
+                    if (!int.TryParse(hourStr, out hour))
+                    {
+                        if (!this.config.Numbers.TryGetValue(hourStr.ToLower(), out hour))
+                        {
+                            return ret;
+                        }
+                    }
                 }
 
                 // get minute
@@ -269,7 +275,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Comment = "ampm";
             }
 
-            ret.FutureValue = ret.PastValue = new DateObject(year, month, day, hour, min, second);
+            ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
             ret.Success = true;
 
             return ret;

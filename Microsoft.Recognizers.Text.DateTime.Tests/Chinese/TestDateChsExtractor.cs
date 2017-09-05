@@ -49,5 +49,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             BasicTest("去年本月十日", 0, 6);
             BasicTest("本月十日", 0, 4);
         }
+
+        [TestMethod]
+        public void TestDateChsLast_Extract()
+        {
+            BasicTest("最后一个周三", 0, 6);
+            BasicTest("最后一个的周三", 0, 7);
+            BasicTest("上一个周三", 0, 5);
+        }
     }
 }
