@@ -70,6 +70,8 @@ export class RegExpUtility {
         XRegExp.forEach(source, regex, match => {
             let positiveLookbehind = [];
             let negativeLookbehind = [];
+            let nlbCount = 0;
+            let nlbFound = 0;
             let groups = { }
 
             Object.keys(match).forEach(key => {
@@ -78,7 +80,9 @@ export class RegExpUtility {
                     positiveLookbehind.push({key:key, value:match[key]});
                     return;
                 }
-                if (key.startsWith('nlb') && match[key]) {
+                if (key.startsWith('nlb')) {
+                    nlbCount++;
+                    if (match[key]) nlbFound++;
                     negativeLookbehind.push({key:key, value:match[key]});
                     return;
                 }
@@ -102,20 +106,49 @@ export class RegExpUtility {
                 index += positiveLookbehind[0].value.length
                 length -= positiveLookbehind[0].value.length
             }
-            if (negativeLookbehind && negativeLookbehind.length > 0) return;
+            if (negativeLookbehind && negativeLookbehind.length > 0 && nlbCount === nlbFound) return;
             matches.push(new Match(index, length, value, groups));
         });
         return matches;
     }
 
     private static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
+    private static plbtokenizer = XRegExp(String.raw`\(\?<=`, 'gis');
+    private static nlbtokenizer = XRegExp(String.raw`\(\?<!`, 'gis');
 
     private static sanitizeGroups(source: string): string {
+        let debugF = false;
         let index = 0;
         let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
             return match.replace(token, `${token}__${index++}`);
         });
+        replacer = XRegExp.replace(replacer, this.plbtokenizer, function(match) {
+            debugF = true;
+            return match.replace(match, `(?<plb__${index++}>`);
+        });
+        replacer = XRegExp.replace(replacer, this.nlbtokenizer, function(match) {
+            debugF = true;
+            return match.replace(match, `(?<nlb__${index++}>`);
+        });
+        let closePos = 0;
+        let startPos = replacer.indexOf('(?<nlb__', closePos);
+        while (startPos >= 0) {
+            closePos = this.getClosePos(replacer, startPos);
+            replacer = replacer.substr(0, closePos + 1) + '?' + replacer.substr(closePos + 1);
+            startPos = replacer.indexOf('(?<nlb__', closePos);
+        }
         return replacer;
+    }
+
+    private static getClosePos(source: string, startPos: number): number {
+        let counter = 1;
+        let closePos = startPos;
+        while (counter > 0 && closePos < source.length) {
+            let c = source[++closePos];
+            if (c === '(') counter++;
+            else if (c === ')') counter--;
+        }
+        return closePos;
     }
 
     static getSafeRegExp(source: string, flags?: string): RegExp {
