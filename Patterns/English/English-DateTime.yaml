@@ -25,7 +25,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
 EngMonthRegex: !simpleRegex
-  def: (?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)
+  def: (((the\s+)?month of\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(in\s+|of\s+|on\s+)?({RelativeMonthRegex}|{EngMonthRegex}))
   references: [ RelativeMonthRegex, EngMonthRegex ]
@@ -47,7 +47,7 @@ MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
   references: [ PeriodYearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept)|({RelativeRegex}\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\b
+  def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|({RelativeRegex}\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})
@@ -81,8 +81,9 @@ MonthOfRegex: !simpleRegex
   def: (month)(\s*)(of)
 MonthRegex: !simpleRegex
   def: (?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)
-DateYearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!\s*\:)))
+DateYearRegex: !nestedRegex
+  def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
+  references: [ DescRegex, AmDescRegex, PmDescRegex ]
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
   def_js: (?<plb>\bon\s+)({DayRegex}s?)\b
@@ -153,8 +154,9 @@ MonthEnd: !nestedRegex
   references: [ MonthRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
-DescRegex: !simpleRegex
-  def: (?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b)
+DescRegex: !nestedRegex
+  def: (({OclockRegex})|(({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b)))
+  references: [ OclockRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
 MinuteNumRegex: !simpleRegex
