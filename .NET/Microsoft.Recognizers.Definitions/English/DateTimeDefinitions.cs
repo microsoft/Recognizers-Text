@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string YearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|mayday|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>martin luther king|martin luther king jr|all saint's|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|all hallow|all souls|guy fawkes)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b";
-		public static readonly string HolidayRegex3 = $@"(?<holiday>(canberra|easter|columbus|thanks\s*giving|labour|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
+		public static readonly string HolidayRegex3 = $@"(?<holiday>(canberra|easter|columbus|thanks\s*giving|christmas|xmas|labour|mother's|mother|mothers|father's|father|fathers|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?";
 		public const string DateTokenPrefix = "on ";
 		public const string TimeTokenPrefix = "at ";
 		public const string TokenBeforeDate = "on ";
@@ -491,8 +491,8 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "girlsday", new string[] { "girlsday" } },
 			{ "whiteloverday", new string[] { "whiteloverday" } },
 			{ "loverday", new string[] { "loverday" } },
-			{ "christmas", new string[] { "christmas" } },
-			{ "xmas", new string[] { "xmas" } },
+			{ "christmas", new string[] { "christmasday", "christmas" } },
+			{ "xmas", new string[] { "xmasday", "xmas" } },
 			{ "newyear", new string[] { "newyear" } },
 			{ "newyearday", new string[] { "newyearday" } },
 			{ "newyearsday", new string[] { "newyearsday" } },

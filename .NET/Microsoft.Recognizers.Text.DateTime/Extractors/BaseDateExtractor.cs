@@ -117,9 +117,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var referenceDate = DateObject.Now;
                             var date = new DateObject(referenceDate.Year, referenceDate.Month, num);
-                            var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
+                            var date2WeekdayStr = date.DayOfWeek.ToString().ToLower();
                             var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
-                            if (this.config.DayOfWeek[date2weekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
+                            if (this.config.DayOfWeek[date2WeekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
                             {
                                 ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
                                 continue;

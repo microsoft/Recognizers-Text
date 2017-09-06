@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 BasicTest($"I was missing {month}, 2001", 14, 6 + month.Length);
             }
 
+            BasicTest($"Calendar for the month of September.", 13, 22);
+
         }
 
         [TestMethod]
