@@ -136,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(GenWeekDaynDayMonthTest(21) + " the twenty first", 12, 25);
             BasicTest(GenWeekDaynDayMonthTest(22) + " the twenty second", 12, 24);
             BasicTest(GenWeekDaynDayMonthTest(15) + " the fifteen", 12, 18);
+            BasicTest(GenWeekDaynDayMonthTest(7) + " the seventh", 12, 20);
         }
     }
 }
