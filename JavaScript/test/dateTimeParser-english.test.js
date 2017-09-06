@@ -43,6 +43,8 @@ describe('Date Time Parse', it => {
 
     basicTest_FuturePastTime(it, extractor, parser, referenceTime, "I'll go back 8pm on 15", new Date(year, month, 15, 20, min, second),
         new Date(year, month - 1, 15, 20, min, second));
+    basicTest_FuturePastTime(it, extractor, parser, referenceTime, "I'll go back 8pm on the 15", new Date(year, month, 15, 20, min, second),
+        new Date(year, month - 1, 15, 20, min, second));
     basicTest_FuturePastTime(it, extractor, parser, referenceTime, "I'll go back at seven on 15", new Date(year, month, 15, 7, min, second),
         new Date(year, month - 1, 15, 7, min, second));
     basicTest(it, extractor, parser, referenceTime, "I'll go back 8pm today", new Date(year, month, day, 20, min, second));

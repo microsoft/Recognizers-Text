@@ -277,6 +277,11 @@ describe('Time Model .', it => {
     basicTest(it, model, reference,
         "I'll be back 1140 a.m.",
         Constants.SYS_DATETIME_TIME, "1140 a.m.", "T11:40");
+
+    // TODO fix this for next release
+    // basicTest(it, model, reference,
+    //     "12 noon",
+    //     Constants.SYS_DATETIME_TIME, "12 noon", "T12");
 });
 
 describe('TimePeriod Model .', it => {

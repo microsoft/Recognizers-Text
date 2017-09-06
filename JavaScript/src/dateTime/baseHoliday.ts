@@ -194,6 +194,7 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
         this.holidayFuncDictionary = this.initHolidayFuncs();
     }
 
+    // TODO auto-generate from YAML
     protected initHolidayFuncs(): ReadonlyMap<string, (year: number) => Date> {
         return new Map<string, (year: number) => Date>(
             [
@@ -211,6 +212,7 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
     }
 
     // All months are zero-based (-1)
+    // TODO auto-generate from YAML
     private static MothersDay(year: number): Date { return new Date(year, 5 - 1, BaseHolidayParserConfiguration.getDay(year, 5 - 1, 1, DayOfWeek.Sunday)); }
 
     private static FathersDay(year: number): Date { return new Date(year, 6 - 1, BaseHolidayParserConfiguration.getDay(year, 6 - 1, 2, DayOfWeek.Sunday)); }

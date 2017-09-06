@@ -24,6 +24,8 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly eachUnitRegex: RegExp;
     readonly eachDayRegex: RegExp;
     readonly beforeEachDayRegex: RegExp;
+    readonly setWeekDayRegex: RegExp;
+    readonly setEachRegex: RegExp;
     readonly durationExtractor: BaseDurationExtractor;
     readonly timeExtractor: BaseTimeExtractor;
     readonly dateExtractor: BaseDateExtractor;
@@ -45,6 +47,8 @@ export class EnglishSetExtractorConfiguration implements ISetExtractorConfigurat
         this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex)
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex)
         this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex)
+        this.setWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex)
+        this.setEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex)
         this.beforeEachDayRegex = null;
     }
 }
@@ -69,6 +73,8 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
     readonly periodicRegex: RegExp;
     readonly eachUnitRegex: RegExp;
     readonly eachDayRegex: RegExp;
+    readonly setWeekDayRegex: RegExp;
+    readonly setEachRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.durationExtractor = config.durationExtractor;
@@ -92,6 +98,8 @@ export class EnglishSetParserConfiguration implements ISetParserConfiguration {
         this.periodicRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodicRegex);
         this.eachUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachUnitRegex);
         this.eachDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EachDayRegex);
+        this.setWeekDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetWeekDayRegex);
+        this.setEachRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SetEachRegex);
     }
 
     public getMatchedDailyTimex(text: string): { matched: boolean, timex: string } {

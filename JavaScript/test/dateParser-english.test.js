@@ -49,8 +49,6 @@ describe('Date Parser', it => {
     // cases below change with reference day
     basicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back on Friday", new Date(2016, 10, 11), new Date(2016, 10, 4));
     basicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back |Friday", new Date(2016, 10, 11), new Date(2016, 10, 4));
-    basicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back on Fridays", new Date(2016, 10, 11), new Date(2016, 10, 4));
-    basicTestWithFutureAndPast(it, extractor, parser, referenceDate, "I'll go back |Fridays", new Date(2016, 10, 11), new Date(2016, 10, 4));
     basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back today", new Date(2016, 10, 7));
     basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back tomorrow", new Date(2016, 10, 8));
     basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back yesterday", new Date(2016, 10, 6));
