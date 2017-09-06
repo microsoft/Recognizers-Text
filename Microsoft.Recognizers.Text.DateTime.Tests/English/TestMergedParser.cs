@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
             BasicTest("on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
             BasicTest("on Friday for 3 in the afternoon", Constants.SYS_DATETIME_DATETIME);
+
+            BasicTest("Set appointment for tomorrow morning at 9 o'clock.", Constants.SYS_DATETIME_DATETIME);
         }
 
         [TestMethod]

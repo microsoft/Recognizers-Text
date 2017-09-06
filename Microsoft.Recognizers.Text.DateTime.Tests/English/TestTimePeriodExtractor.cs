@@ -17,8 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestTimePeriodExtract()
+        public void TestTimePeriodBasicExtract()
         {
+
             // basic match
             BasicTest("I'll be out 5 to 6pm", 12, 8);
             BasicTest("I'll be out 5 to 6 p.m.", 12, 11);
@@ -28,6 +29,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out between 5 and 6pm", 12, 17);
             BasicTest("I'll be out between 5pm and 6pm", 12, 19);
             BasicTest("I'll be out between 5 and 6 in the afternoon", 12, 32);
+        }
+
+        [TestMethod]
+        public void TestTimePeriodMergeExtract()
+        {
 
             // merge to time points
             BasicTest("I'll be out 4pm till 5pm", 12, 12);
@@ -47,12 +53,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be out between 4pm and half past five", 12, 30);
             BasicTest("I'll be out between 3 in the morning and 5pm", 12, 32);
+        }
+
+        [TestMethod]
+        public void TestTimePeriodTimeOfDayExtract()
+        {
 
             BasicTest("let's meet in the morning", 11, 14);
             BasicTest("let's meet in the afternoon", 11, 16);
             BasicTest("let's meet in the night", 11, 12);
             BasicTest("let's meet in the evening", 11, 14);
             BasicTest("let's meet in the evenings", 11, 15);
+
+        }
+
+        [TestMethod]
+        public void TestTimePeriodEarlyLateExtract()
+        {
 
             BasicTest("let's meet in the early-mornings", 11, 21);
             BasicTest("let's meet in the late-mornings", 11, 20);
@@ -67,5 +84,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("let's meet in the early night", 11, 18);
             BasicTest("let's meet in the late night", 11, 17);
         }
+
+        [TestMethod]
+        public void TestTimePeriodExtraExtract()
+        {
+            BasicTest("set up meeting from two to five pm", 15, 19);
+            BasicTest("Party at Jean’s from 6 to 11 pm", 16, 15);
+            BasicTest("set up meeting from 14:00 to 16:30", 15, 19);
+
+            //TODO fix these for next release
+            //BasicTest("set up meeting from two to five p m", 15, 20);
+            //BasicTest("set up meeting from 14 to 16h", 15, 14);
+        }
+
     }
 }

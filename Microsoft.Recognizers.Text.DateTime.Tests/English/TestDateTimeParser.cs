@@ -79,6 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll go back 8pm on 15", new DateObject(year, month, 15, 20, min, second),
                 new DateObject(year, month - 1, 15, 20, min, second));
+            BasicTest("I'll go back 8pm on the 15", new DateObject(year, month, 15, 20, min, second),
+                      new DateObject(year, month - 1, 15, 20, min, second));
             BasicTest("I'll go back at seven on 15", new DateObject(year, month, 15, 7, min, second),
                 new DateObject(year, month - 1, 15, 7, min, second));
             BasicTest("I'll go back 8pm today", new DateObject(year, month, day, 20, min, second));

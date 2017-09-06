@@ -325,6 +325,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "I'll be back 1140 a.m.",
                 Constants.SYS_DATETIME_TIME, "1140 a.m.", "T11:40");
+
+            //TODO fix this for next release
+            //BasicTest(model, reference,
+            //          "12 noon",
+            //          Constants.SYS_DATETIME_TIME, "12 noon", "T12");
         }
 
         [TestMethod]
