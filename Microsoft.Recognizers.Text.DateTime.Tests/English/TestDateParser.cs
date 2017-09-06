@@ -22,21 +22,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(pastDate, ((DateTimeResolutionResult)pr.Value).PastValue);
         }
 
-        public void BasicTest(string text, DateObject date)
+        public void BasicTest(string text, DateObject date, bool now = false)
         {
+            var refDay = refrenceDay;
+            if (now) refDay = DateObject.Now;
+
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDay);
+            var pr = parser.Parse(er[0], refDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
         }
 
-        public void BasicTest(string text, string luisValueStr)
+        public void BasicTest(string text, string luisValueStr, bool now = false)
         {
+            var refDay = refrenceDay;
+            if (now) refDay = DateObject.Now;
+
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDay);
+            var pr = parser.Parse(er[0], refDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
@@ -46,6 +52,34 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             refrenceDay = new DateObject(2016, 11, 7);
             parser = new BaseDateParser(new EnglishDateParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
             extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+        }
+
+        // test using DateObject.Now as a reference time
+        public void BasicTestDateNow(string text, DateObject date)
+        {
+            var er = extractor.Extract(text);
+            Assert.AreEqual(1, er.Count);
+            var pr = parser.Parse(er[0], DateObject.Now);
+            Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
+            Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).FutureValue);
+            Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
+        }
+
+        // use to generate the test cases sentences inside TestDateExtractWeekDayAndDayOfMonth function
+        // return a day of current week which the parameter refer to
+        public System.Tuple<string, string> GenWeekDaynDayMonthTest(int dayOfMonth)
+        {
+            var weekDay = "None";
+            var now = DateObject.Now;
+            var date = new DateObject(now.Year, now.Month, dayOfMonth);
+            if (dayOfMonth >= 1 && dayOfMonth <= 31)
+            {
+                weekDay = date.DayOfWeek.ToString();
+            }
+
+            var sentence = "I went back " + weekDay;
+            var dateStr = now.Year.ToString().PadLeft(2, '0') + "-" + now.Month.ToString().PadLeft(2, '0') + "-" + dayOfMonth.ToString().PadLeft(2, '0');
+            return new System.Tuple<string, string>(sentence, dateStr);
         }
 
         [TestMethod]
@@ -152,6 +186,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateExtractWeekDayAndDayOfMonth()
+        {
+            int y = DateObject.Now.Year, m = DateObject.Now.Month;
+            BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the 21st", new DateObject(y, m, 21), true);
+            BasicTest(GenWeekDaynDayMonthTest(22).Item1 + " the 22nd", new DateObject(y, m, 22), true);
+            BasicTest(GenWeekDaynDayMonthTest(23).Item1 + " the 23rd", new DateObject(y, m, 23), true);
+            BasicTest(GenWeekDaynDayMonthTest(15).Item1 + " the 15th", new DateObject(y, m, 15), true);
+            BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the twenty first", new DateObject(y, m, 21), true);
+            BasicTest(GenWeekDaynDayMonthTest(22).Item1 + " the twenty second", new DateObject(y, m, 22), true);
+            BasicTest(GenWeekDaynDayMonthTest(15).Item1 + " the fifteen", new DateObject(y, m, 15), true);
+        }
+
+        [TestMethod]
         public void TestDateParseLuis()
         {
             BasicTest("I'll go back on 15", "XXXX-XX-15");
@@ -215,6 +262,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I went back for the second", "XXXX-XX-02");
             BasicTest("I went back for the twenty second", "XXXX-XX-22");
             BasicTest("I went back for the thirty", "XXXX-XX-30");
+        }
+
+        [TestMethod]
+        public void TestDateExtractWeekDayAndDayOfMonthLuis()
+        {
+            int y = DateObject.Now.Year, m = DateObject.Now.Month;
+            BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the 21st", GenWeekDaynDayMonthTest(21).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(22).Item1 + " the 22nd", GenWeekDaynDayMonthTest(22).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(23).Item1 + " the 23rd", GenWeekDaynDayMonthTest(23).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(15).Item1 + " the 15th", GenWeekDaynDayMonthTest(15).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the twenty first", GenWeekDaynDayMonthTest(21).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(22).Item1 + " the twenty second", GenWeekDaynDayMonthTest(22).Item2, true);
+            BasicTest(GenWeekDaynDayMonthTest(15).Item1 + " the fifteen", GenWeekDaynDayMonthTest(15).Item2, true);
         }
     }
 }

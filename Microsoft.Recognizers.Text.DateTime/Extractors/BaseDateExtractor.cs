@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -98,6 +99,31 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             ret.Add(new Token(match.Index, match.Index + match.Length - endLenght));
                             continue;
+                        }
+                    }
+
+                    // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+                    match = this.config.WeekDayAndDayOfMothRegex.Match(text);
+                    if (match.Success)
+                    {
+                        // create a extract result which content ordinal string of text
+                        ExtractResult erTmp = new ExtractResult();
+                        erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
+                        erTmp.Start = match.Groups["DayOfMonth"].Index;
+                        erTmp.Length = match.Groups["DayOfMonth"].Length;
+                        var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
+
+                        if (day == num)
+                        {
+                            var referenceDate = DateObject.Now;
+                            var date = new DateObject(referenceDate.Year, referenceDate.Month, num);
+                            var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
+                            var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
+                            if (this.config.DayOfWeek[date2weekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
+                            {
+                                ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
+                                continue;
+                            }
                         }
                     }
                 }

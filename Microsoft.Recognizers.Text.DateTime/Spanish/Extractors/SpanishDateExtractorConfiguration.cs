@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -73,6 +74,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex ForTheRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify below regex according to the counterpart in English
+        public static readonly Regex WeekDayAndDayOfMothRegex = new Regex($@"^[.]",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (domingo,)? 5 de Abril
@@ -132,6 +137,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthEnd = new Regex(MonthRegex + @"\s*(el)?\s*$",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly ImmutableDictionary<string, int> DayOfWeek = InitDayOfWeek();
+
         public SpanishDateExtractorConfiguration()
         {
             IntegerExtractor = new IntegerExtractor();
@@ -155,6 +162,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
@@ -162,5 +171,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
+
+        Regex IDateExtractorConfiguration.WeekDayAndDayOfMothRegex => WeekDayAndDayOfMothRegex;
+
+        private static ImmutableDictionary<string, int> InitDayOfWeek()
+        {
+            return new Dictionary<string, int>
+            {
+                {"lunes", 1},
+                {"martes", 2},
+                {"miercoles", 3},
+                {"miércoles", 3},
+                {"jueves", 4},
+                {"viernes", 5},
+                {"sabado", 6},
+                {"domingo", 0},
+                {"lu", 1},
+                {"ma", 2},
+                {"mi", 3},
+                {"ju", 4},
+                {"vi", 5},
+                {"sa", 6},
+                {"do", 0}
+            }.ToImmutableDictionary();
+        }
     }
 }

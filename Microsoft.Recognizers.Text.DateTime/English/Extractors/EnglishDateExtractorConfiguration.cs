@@ -6,6 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Definitions.English;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -75,6 +76,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.ForTheRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WeekDayAndDayOfMothRegex =
+            new Regex(
+                DateTimeDefinitions.WeekDayAndDayOfMothRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (Sunday,)? April 5
@@ -132,6 +138,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex MonthEnd = new Regex(DateTimeDefinitions.MonthEnd,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly ImmutableDictionary<string, int> DayOfWeek = 
+            DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
+
         public EnglishDateExtractorConfiguration()
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
@@ -155,6 +164,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
 
+        IImmutableDictionary<string, int> IDateExtractorConfiguration.DayOfWeek => DayOfWeek;
+
         Regex IDateExtractorConfiguration.OfMonth => OfMonth;
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
@@ -162,5 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
+
+        Regex IDateExtractorConfiguration.WeekDayAndDayOfMothRegex => WeekDayAndDayOfMothRegex;
     }
 }

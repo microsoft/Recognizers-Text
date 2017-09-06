@@ -189,7 +189,7 @@ MidmorningRegex: !simpleRegex
 MidafternoonRegex: !simpleRegex
   def: (?<midafternoon>midafternoon|mid-afternoon|mid afternoon)
 MiddayRegex: !simpleRegex
-  def: (?<midday>midday|mid-day|mid day|noon)
+  def: (?<midday>midday|mid-day|mid day|((12\s)?noon))
 MidTimeRegex: !nestedRegex
   def: (?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex ]
@@ -387,6 +387,9 @@ PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
 ForTheRegex: !simpleRegex
   def: (for the (?<day>([A-Za-z]+\s)?[A-Za-z\d]+)(?<end>\s*(,|\.|!|\?|$)))
+WeekDayAndDayOfMothRegex: !nestedRegex
+  def: \b{WeekDayRegex}(\s+the\s+)(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)\b
+  references: [WeekDayRegex]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
