@@ -29,6 +29,29 @@ describe('Set Parser', it => {
     basicTest(it, extractor, parser, "I'll leave each monday 4pm", "Set: XXXX-WXX-1T16", "XXXX-WXX-1T16");
 
     basicTest(it, extractor, parser, "I'll leave every morning", "Set: TMO", "TMO");
+
+    // SetParse_EveryOther
+    basicTest(it, extractor, parser, "every other day", "Set: P2D", "P2D");
+    basicTest(it, extractor, parser, "every other week", "Set: P2W", "P2W");
+    basicTest(it, extractor, parser, "every other month", "Set: P2M", "P2M");
+
+    // SetParseTimePeriod_Time
+    basicTest(it, extractor, parser, "I'll leave every morning at 9am", "Set: T09", "T09");
+    basicTest(it, extractor, parser, "I'll leave every afternoon at 4pm", "Set: T16", "T16");
+    basicTest(it, extractor, parser, "I'll leave every night at 9pm", "Set: T21", "T21");
+    basicTest(it, extractor, parser, "I'll leave every night at 9", "Set: T21", "T21");
+    basicTest(it, extractor, parser, "I'll leave mornings at 9am", "Set: T09", "T09");
+    basicTest(it, extractor, parser, "I'll leave on mornings at 9", "Set: T09", "T09");
+
+    // SetExtractMergeDate_Time
+    basicTest(it, extractor, parser, "I'll leave at 9am every Sunday", "Set: XXXX-WXX-7T09", "XXXX-WXX-7T09");
+    basicTest(it, extractor, parser, "I'll leave at 9am on Sundays", "Set: XXXX-WXX-7T09", "XXXX-WXX-7T09");
+    basicTest(it, extractor, parser, "I'll leave at 9am Sundays", "Set: XXXX-WXX-7T09", "XXXX-WXX-7T09");
+
+    // SetExtractDate
+    basicTest(it, extractor, parser, "I'll leave on Mondays", "Set: XXXX-WXX-1", "XXXX-WXX-1");
+    basicTest(it, extractor, parser, "I'll leave on Sundays", "Set: XXXX-WXX-7", "XXXX-WXX-7");
+    basicTest(it, extractor, parser, "I'll leave Sundays", "Set: XXXX-WXX-7", "XXXX-WXX-7");
 });
 
 function basicTest(it, extractor, parser, text, value, luisValue) {

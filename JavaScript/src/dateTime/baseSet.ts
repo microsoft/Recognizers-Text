@@ -18,6 +18,8 @@ export interface ISetExtractorConfiguration {
     eachUnitRegex: RegExp;
     eachDayRegex: RegExp;
     beforeEachDayRegex: RegExp;
+    setWeekDayRegex: RegExp;
+    setEachRegex: RegExp;
     durationExtractor: BaseDurationExtractor;
     timeExtractor: BaseTimeExtractor;
     dateExtractor: BaseDateExtractor;
@@ -96,12 +98,25 @@ export class BaseSetExtractor implements IExtractor {
     
     private matchEach(extractor: IExtractor, source: string): Array<Token> {
         let ret = [];
-        extractor.extract(source).forEach(er => {
-            let beforeStr = source.substr(0, er.start);
-            let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
-            if (matches && matches.length > 0) {
-                ret.push(new Token(matches[0].index, matches[0].index + matches[0].length + er.length))
-            }
+        RegExpUtility.getMatches(this.config.setEachRegex, source).forEach(match => {
+            let trimmedSource = source.substr(0, match.index) + source.substr(match.index + match.length);
+            extractor.extract(trimmedSource).forEach(er => {
+                if (er.start <= match.index) {
+                    ret.push(new Token(er.start, er.start + match.length + er.length));
+                }
+            });
+        });
+        RegExpUtility.getMatches(this.config.setWeekDayRegex, source).forEach(match => {
+            let trimmedSource = source.substr(0, match.index) + match.groups('weekday').value + source.substr(match.index + match.length);
+            extractor.extract(trimmedSource).forEach(er => {
+                if (er.start <= match.index) {
+                    let length = er.length + 1;
+                    if (!StringUtility.isNullOrEmpty(match.groups('prefix').value)) {
+                        length += match.groups('prefix').value.length;
+                    }
+                    ret.push(new Token(er.start, er.start + length));
+                }
+            });
         });
         return ret;
     }
@@ -127,6 +142,8 @@ export interface ISetParserConfiguration {
     periodicRegex: RegExp;
     eachUnitRegex: RegExp;
     eachDayRegex: RegExp;
+    setWeekDayRegex: RegExp;
+    setEachRegex: RegExp;
     getMatchedDailyTimex(text: string): { matched: boolean, timex: string };
     getMatchedUnitTimex(text: string): { matched: boolean, timex: string };
 }
@@ -247,6 +264,10 @@ export class BaseSetParser implements IDateTimeParser {
                         if (!getMatchedUnitTimex.matched) {
                             return ret;
                         }
+
+                        if (!StringUtility.isNullOrEmpty(matches[0].groups('other').value)) {
+                            getMatchedUnitTimex.timex = getMatchedUnitTimex.timex.replace('1', '2');
+                        }
                         
                         ret.timex = getMatchedUnitTimex.timex;
                         ret.futureValue = ret.pastValue = "Set: " + ret.timex;
@@ -280,21 +301,32 @@ export class BaseSetParser implements IDateTimeParser {
             
             private parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
                 let ret = new DateTimeResolutionResult();
-                let ers = extractor.extract(text);
-                if (ers.length !== 1) {
-                    return ret;
+                let success = false;
+                let er: ExtractResult;
+                let match = RegExpUtility.getMatches(this.config.setEachRegex, text).pop();
+                if (match) {
+                    let trimmedText = text.substr(0, match.index) + text.substr(match.index + match.length);
+                    let ers = extractor.extract(trimmedText);
+                    if (ers.length === 1 && ers[0].length === trimmedText.length) {
+                        er = ers[0];
+                    }
                 }
-                
-                let beforeStr = text.substring(0, ers[0].start || 0);
-                let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
-                if (matches.length) {
-                    let pr = parser.parse(ers[0], new Date());
+                match = RegExpUtility.getMatches(this.config.setWeekDayRegex, text).pop();
+                if (match) {
+                    let trimmedText = text.substr(0, match.index) + match.groups('weekday').value + text.substr(match.index + match.length);
+                    let ers = extractor.extract(trimmedText);
+                    if (ers.length === 1 && ers[0].length === trimmedText.length) {
+                        er = ers[0];
+                    }
+                }
+                if (er) {
+                    let pr = parser.parse(er);
                     ret.timex = pr.timexStr;
-                    ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+                    ret.futureValue = `Set: ${pr.timexStr}`;
+                    ret.pastValue = `Set: ${pr.timexStr}`;
                     ret.success = true;
                     return ret;
                 }
-                
                 return ret;
             }
         }

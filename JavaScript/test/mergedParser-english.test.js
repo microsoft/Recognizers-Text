@@ -15,6 +15,8 @@ describe('DateTime Merged Parser', it => {
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
     basicTest(it, extractor, parser, referenceDate, "on Friday for 3 in the afternoon", Constants.SYS_DATETIME_DATETIME);
+
+    basicTest(it, extractor, parser, referenceDate, "Set appointment for tomorrow morning at 9 o'clock.", Constants.SYS_DATETIME_DATETIME);
 });
 
 describe('DateTime Merged Parser In', it => {

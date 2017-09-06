@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 echo *** Building Microsoft.Recognizers.Text.NumberWithUnit
 setlocal
 setlocal enabledelayedexpansion

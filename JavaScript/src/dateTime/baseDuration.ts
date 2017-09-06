@@ -247,6 +247,7 @@ export class BaseDurationParser implements IDateTimeParser {
         let match = RegExpUtility.getMatches(this.config.inExactNumberUnitRegex, source).pop();
         if (!match) return result;
         
+        // set the inexact number "few", "some" to 3 for now
         let num = 3;
         let numStr = num.toString();
         
