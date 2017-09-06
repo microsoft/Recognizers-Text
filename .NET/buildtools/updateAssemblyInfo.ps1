@@ -1,8 +1,10 @@
-Param ([string]$rootFolder = $(get-location).Path, 
+Param ([string]$rootFolder = $(get-location).Path, [string]$codeFolder = (Split-Path -parent $PSScriptRoot),
        [string]$filePattern
 )
 
 Write-Host ("Root folder: " + $rootFolder)
+Write-Host ("Code folder: " + $codeFolder)
+Write-Host ("Script location folder: " + $PSScriptRoot)
 Write-Host ("File pattern: " + $filePattern)
 
 $replace = $true;
@@ -42,4 +44,4 @@ function TryRemove($attributeName)
 }
 
 Write-Host ("Updating files...")
-Get-Childitem -Path $rootFolder -recurse |? {$_.Name -like $filePattern} | UpdateAssemblyInfo; 
+Get-Childitem -Path $codeFolder -recurse |? {$_.Name -like $filePattern} | UpdateAssemblyInfo; 
