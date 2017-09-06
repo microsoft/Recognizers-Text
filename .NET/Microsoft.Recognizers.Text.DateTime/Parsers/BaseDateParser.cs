@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
@@ -248,6 +250,73 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Success = true;
 
                 return ret;
+            }
+
+            // handle "for the 27th."
+            match = this.config.ForTheRegex.Match(text);
+            if (match.Success)
+            {
+                int day = 0, month = referenceDate.Month, year = referenceDate.Year;
+                var dayStr = match.Groups["day"].Value.ToLower();
+
+                // create a extract result which content ordinal string of text
+                ExtractResult er = new ExtractResult();
+                er.Text = dayStr;
+                er.Start = match.Groups["day"].Index;
+                er.Length = match.Groups["day"].Length;
+
+                day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+
+                ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+
+                DateObject futureDate, pastDate, temp;
+                var tryStr = FormatUtil.LuisDate(year, month, day);
+                if (DateObject.TryParse(tryStr, out temp))
+                {
+                    futureDate = new DateObject(year, month, day);
+                    pastDate = new DateObject(year, month, day);
+                }
+                else
+                {
+                    futureDate = new DateObject(year, month + 1, day);
+                }
+
+                ret.FutureValue = futureDate;
+                ret.PastValue = ret.FutureValue;
+                ret.Success = true;
+
+                return ret;
+            }
+
+            // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+            match = this.config.WeekDayAndDayOfMothRegex.Match(text);
+            if (match.Success)
+            {
+                // create a extract result which content ordinal string of text
+                ExtractResult erTmp = new ExtractResult();
+                erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
+                erTmp.Start = match.Groups["DayOfMonth"].Index;
+                erTmp.Length = match.Groups["DayOfMonth"].Length;
+
+                // parse the day in text into number, and get week of day of this number which regarded as a day in this month
+                var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
+                var date = new DateObject(referenceDate.Year, referenceDate.Month, day);
+                var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
+
+                // get week day from text directly, compare it with the weekday parse above
+                // to see whether they refer to a same week day
+                var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
+                if (this.config.DayOfWeek[date2weekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
+                {
+                    int month = referenceDate.Month, year = referenceDate.Year;
+
+                    ret.Timex = FormatUtil.LuisDate(year, month, day);
+                    ret.FutureValue = new DateObject(year, month, day); ;
+                    ret.PastValue = new DateObject(year, month, day); ;
+                    ret.Success = true;
+
+                    return ret;
+                }
             }
 
             return ret;

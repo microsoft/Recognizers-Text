@@ -44,6 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex ForTheRegex { get; }
+
+        public Regex WeekDayAndDayOfMothRegex { get; }
+
         //The following three regexes only used in this configuration
         //They are not used in the base parser, therefore they are not extracted
         //If the spanish date parser need the same regexes, they should be extracted
@@ -88,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WeekDayRegex = EnglishDateExtractorConfiguration.WeekDayRegex;
             MonthRegex = EnglishDateExtractorConfiguration.MonthRegex;
             WeekDayOfMonthRegex = EnglishDateExtractorConfiguration.WeekDayOfMonthRegex;
+            ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
+            WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

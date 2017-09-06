@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -16,6 +17,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DateUnitRegex { get; }
 
+        Regex ForTheRegex { get; }
+
+        Regex WeekDayAndDayOfMothRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }
@@ -25,5 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor DurationExtractor { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        IImmutableDictionary<string, int> DayOfWeek { get; }
     }
 }
