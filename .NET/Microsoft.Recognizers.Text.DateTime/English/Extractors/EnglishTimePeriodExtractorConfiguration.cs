@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.PeriodHourNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PeriodDescRegex = new Regex(DateTimeDefinitions.PeriodDescRegex,
+        public static readonly Regex PeriodDescRegex = new Regex(DateTimeDefinitions.DescRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =

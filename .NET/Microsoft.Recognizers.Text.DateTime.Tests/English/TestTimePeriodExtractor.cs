@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("set up meeting from 14:00 to 16:30", 15, 19);
 
             //TODO fix these for next release
-            //BasicTest("set up meeting from two to five p m", 15, 20);
+            BasicTest("set up meeting from two to five p m", 15, 20);
             //BasicTest("set up meeting from 14 to 16h", 15, 14);
         }
 
