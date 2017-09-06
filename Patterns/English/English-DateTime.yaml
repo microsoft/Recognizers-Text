@@ -20,7 +20,7 @@ PeriodYearRegex: !simpleRegex
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\b
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri)\b
+  def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
@@ -155,7 +155,7 @@ MonthEnd: !nestedRegex
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
 DescRegex: !nestedRegex
-  def: (({OclockRegex})|(({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b)))
+  def: ((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})
   references: [ OclockRegex ]
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b
@@ -387,11 +387,14 @@ SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(the\s+)?(may|march)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|from|to)$
-ForTheRegex: !simpleRegex
-  def: (for the (?<day>([A-Za-z]+\s)?[A-Za-z\d]+)(?<end>\s*(,|\.|!|\?|$)))
+FlexibleDayRegex: !simpleRegex
+  def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
+ForTheRegex: !nestedRegex
+  def: \b(((for the {FlexibleDayRegex})|(on (the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))
+  references: [FlexibleDayRegex]
 WeekDayAndDayOfMothRegex: !nestedRegex
-  def: \b{WeekDayRegex}(\s+the\s+)(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)\b
-  references: [WeekDayRegex]
+  def: \b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b
+  references: [WeekDayRegex, FlexibleDayRegex]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

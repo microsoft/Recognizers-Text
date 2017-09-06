@@ -25,6 +25,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(expectedOutput, results[0].Text);
         }
 
+        public void BasicTestTwoOutputs(string text, string expectedOutput1, string expectedOutput2)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(2, results.Count);
+            Assert.AreEqual(expectedOutput1, results[0].Text);
+            Assert.AreEqual(expectedOutput2, results[1].Text);
+        }
+
         public void BasicTestNone(string text)
         {
             var results = extractor.Extract(text);
@@ -145,6 +153,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateExtractOn()
+        {
+            BasicTest("I went back on the 27th", 12, 11);
+            BasicTest("I went back on the 21st", 12, 11);
+            BasicTest("I went back on 22nd", 12, 7);
+            BasicTest("I went back on the second!", 12, 13);
+            BasicTest("I went back on twenty second?", 12, 16);
+        }
+
+        [TestMethod]
         public void TestDateExtractForTheNegative()
         {
             BasicTestNone("the first prize");
@@ -154,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDateExtractWeekDayAndDayOfMonth()
+        public void TestDateExtractWeekDayAndDayOfMonthMerge()
         {
             //Need to calculate the DayOfWeek by the date
             //Example: What do I have on Wednesday the second?
@@ -170,6 +188,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back " + CalculateWeekOfDay(22) + " the twenty second", CalculateWeekOfDay(22) + " the twenty second");
             BasicTest("I'll go back " + CalculateWeekOfDay(15) + " the fifteen", CalculateWeekOfDay(15) + " the fifteen");
             BasicTest("I'll go back " + CalculateWeekOfDay(7) + " the seventh", CalculateWeekOfDay(7) + " the seventh");
+        }
+
+        [TestMethod]
+        public void TestDateExtractWeekDayAndDayOfMonthSeparate()
+        {
+            //Need to calculate the DayOfWeek by the date
+            //Example: What do I have on Wednesday the second?
+            //Should separate the Wednesday and the second to two outputs if the second of current month is not Wednesday
+            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(3) + " the second?", CalculateWeekOfDay(3),
+                "second");
+            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(28) + " the 27th", CalculateWeekOfDay(28),
+                "27th");
+            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(24) + " the 21st", CalculateWeekOfDay(24),
+                "21st");
         }
     }
 }

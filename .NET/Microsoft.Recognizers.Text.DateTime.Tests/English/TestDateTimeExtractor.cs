@@ -84,10 +84,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTimeExtractWithAmbiguous()
         {
+            BasicTest("see if I am available for 3pm on Sun", 26, 10);
+
             //TODO: triage if we will support the following
             //BasicTest("five tomorrow", 0, 13);
             //BasicTest("dinner 5 tomorrow", 0, 13);
-            //BasicTest("3pm on Sun", 0, 10);
         }
 
         [TestMethod]
@@ -98,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back tomorrow morning at 9 oclock", 13, 28);
             BasicTest("I'll go back tomorrow at 9 o'clock", 13, 21);
             BasicTest("I'll go back tomorrow at 9 oclock", 13, 20);
+            BasicTest("this friday at one o'clock pm", 0, 29);
 
             //TODO: need a pattern to support this
             //BasicTest("Set an appointment for the 30th at 5:30 PM for language sessions.", 23, 19);
