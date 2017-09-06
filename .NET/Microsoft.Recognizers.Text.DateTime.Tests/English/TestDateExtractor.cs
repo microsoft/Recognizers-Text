@@ -18,6 +18,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
         }
 
+        public void BasicTestNone(string text)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(0, results.Count);
+        }
+
         // use to generate the test cases sentences inside TestDateExtractWeekDayAndDayOfMonth function
         // return a day of current week which the parameter refer to
         public string GenWeekDaynDayMonthTest(int dayOfMonth)
@@ -124,6 +130,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I went back for the second", 12, 14);
             BasicTest("I went back for the twenty second", 12, 21);
             BasicTest("I went back for the thirty first", 12, 20);
+        }
+
+        [TestMethod]
+        public void TestDateExtractForTheNegative()
+        {
+            BasicTestNone("the first prize");
+            BasicTestNone("I'll go to the 27th floor");
+            BasicTestNone("Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China");
+            BasicTestNone("Get tickets for the 17th Door Haunted Experience");
         }
 
         [TestMethod]
