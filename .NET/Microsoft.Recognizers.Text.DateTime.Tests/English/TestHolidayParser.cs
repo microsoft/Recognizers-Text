@@ -49,6 +49,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestHolidayParse()
         {
+            //For Easter day, we return the Datetime.Minvalue, it will be filtered in the mergedParser
+            BasicTest("I'll go back on easter",
+                DateObject.MinValue,
+                DateObject.MinValue);
+
             BasicTest("I'll go back on christmas day",
                 new DateObject(2016, 12, 25),
                 new DateObject(2015, 12, 25));
