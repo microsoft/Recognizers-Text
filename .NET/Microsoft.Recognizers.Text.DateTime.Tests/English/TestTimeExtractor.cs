@@ -77,6 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             BasicTest("I'll be back noonish", 13, 7);
             BasicTest("I'll be back noon", 13, 4);
+            BasicTest("I'll be back 12 noon", 13, 7);
             BasicTest("I'll be back 11ish", 13, 5);
             BasicTest("I'll be back 11-ish", 13, 6);
 

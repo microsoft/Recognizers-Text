@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string MidnightRegex = @"(?<midnight>midnight|mid-night|mid night)";
 		public const string MidmorningRegex = @"(?<midmorning>midmorning|mid-morning|mid morning)";
 		public const string MidafternoonRegex = @"(?<midafternoon>midafternoon|mid-afternoon|mid afternoon)";
-		public const string MiddayRegex = @"(?<midday>midday|mid-day|mid day|noon)";
+		public const string MiddayRegex = @"(?<midday>midday|mid-day|mid day|((12\s)?noon))";
 		public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
 		public static readonly string AtRegex = $@"\b(((?<=\bat\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\b";
@@ -172,6 +172,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
 		public const string PrepositionSuffixRegex = @"\b(on|in|at|around|from|to)$";
+		public const string ForTheRegex = @"(for the (?<day>([A-Za-z]+\s)?[A-Za-z\d]+)(?<end>\s*(,|\.|!|\?|$)))";
+		public static readonly string WeekDayAndDayOfMothRegex = $@"\b{WeekDayRegex}(\s+the\s+)(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)\b";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },
