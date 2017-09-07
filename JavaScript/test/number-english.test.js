@@ -7,7 +7,7 @@ describe('Ordinal Model .', it => {
 
     basicTest(it, model, "three trillionth", "3000000000000")
 
-    // multiTest(it, model, "a trillionth", 0) // TODO: review!
+    multiTest(it, model, "a trillionth", 0) // TODO: review!
 
     basicTest(it, model, "a hundred trillionth", "100000000000000")
 
