@@ -12,6 +12,8 @@ describe('Date Period Extractor', it => {
     shortMonths.forEach(function (month) {
         basicTest(it, extractor, `I'll be out in ${month}`, 15, month.length);
         basicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.length);
+        basicTest(it, extractor, `I'll be out month of ${month}`, 12,  9 + month.Length);
+        basicTest(it, extractor, `I'll be out the month of ${month}`, 12, 13 + month.Length);
         basicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.length);
         basicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.length);
     });
@@ -19,9 +21,13 @@ describe('Date Period Extractor', it => {
     fullMonths.forEach(function (month) {
         basicTest(it, extractor, `I'll be out in ${month}`, 15, month.length);
         basicTest(it, extractor, `I'll be out this ${month}`, 12, 5 + month.length);
+        basicTest(it, extractor, `I'll be out month of ${month}`, 12, 9 + month.Length);
+        basicTest(it, extractor, `I'll be out the month of ${month}`, 12, 13 + month.Length);
         basicTest(it, extractor, `I was missing ${month} 2001`, 14, 5 + month.length);
         basicTest(it, extractor, `I was missing ${month}, 2001`, 14, 6 + month.length);
     });
+
+    basicTest(it, extractor, "Calendar for the month of September.", 13, 22);
 
     // Basic Cases
     basicTest(it, extractor, "I'll be out from 4 to 22 this month", 12, 23);

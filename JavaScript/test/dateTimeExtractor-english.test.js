@@ -68,6 +68,39 @@ describe('DateTime Extractor', it => {
     basicTest(it, extractor, "I'll go back in 5 hours", 13, 10);
 });
 
+describe('DateTime Extractor With Ambiguous', it => {
+    let extractor = new baseExtractor(new configuration());
+
+    basicTest(it, extractor, "see if I am available for 3pm on Sun", 26, 10);
+    
+    // TODO: triage if we will support the following
+    // basicTest(it, extractor, "five tomorrow", 0, 13);
+    // basicTest(it, extractor, "dinner 5 tomorrow", 0, 13);
+});
+
+describe("DateTime Extractor o'clock", it => {
+    let extractor = new baseExtractor(new configuration());
+
+    basicTest(it, extractor, "Set appointment for tomorrow morning at 9 o'clock.", 20, 29);
+    basicTest(it, extractor, "I'll go back tomorrow morning at 9 o'clock", 13, 29);
+    basicTest(it, extractor, "I'll go back tomorrow morning at 9 oclock", 13, 28);
+    basicTest(it, extractor, "I'll go back tomorrow at 9 o'clock", 13, 21);
+    basicTest(it, extractor, "I'll go back tomorrow at 9 oclock", 13, 20);
+    basicTest(it, extractor, "this friday at one o'clock pm", 0, 29);
+
+    //TODO: need a pattern to support this
+    //basicTest(it, extractor, "Set an appointment for the 30th at 5:30 PM for language sessions.", 23, 19);
+});
+
+describe('DateTime Extractor Date With Time', it => {
+    let extractor = new baseExtractor(new configuration());
+
+    basicTest(it, extractor, "I'll go back August 1st 11 AM", 13, 16);
+    basicTest(it, extractor, "I'll go back August 1st 11 pm", 13, 16);
+    basicTest(it, extractor, "I'll go back August 1st 11 p.m.", 13, 18);
+    basicTest(it, extractor, "I'll go back 25/02 11 am", 13, 11);
+});
+
 function basicTest(it, extractor, text, start, length) {
     it(text, t => {
         let results = extractor.extract(text);

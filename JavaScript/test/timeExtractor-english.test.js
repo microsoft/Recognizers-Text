@@ -53,6 +53,7 @@ describe('Time Extractor', it => {
 
     basicTest(it, extractor, "I'll be back noonish", 13, 7);
     basicTest(it, extractor, "I'll be back noon", 13, 4);
+    basicTest(it, extractor, "I'll be back 12 noon", 13, 7);
     basicTest(it, extractor, "I'll be back 11ish", 13, 5);
     basicTest(it, extractor, "I'll be back 11-ish", 13, 6);
 
