@@ -113,16 +113,16 @@ describe('Date Extractor', it => {
     // ExtractWeekDayAndDayOfMonthMerge
     // Need to calculate the DayOfWeek by the date
     // Example: What do I have on Wednesday the second?
-    basicTest(it, extractor, "What do I have on " + getWeekDay(2) + " the second", getWeekDay(2) + " the second");
-    basicTest(it, extractor, "A meeting for " + getWeekDay(27) + " the 27th with Joe Smith", getWeekDay(27) + " the 27th");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(21) + " the 21st", getWeekDay(21) + " the 21st");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(22) + " the 22nd", getWeekDay(22) + " the 22nd");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(23) + " the 23rd", getWeekDay(23) + " the 23rd");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(15) + " the 15th", getWeekDay(15) + " the 15th");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(21) + " the twenty first", getWeekDay(21) + " the twenty first");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(22) + " the twenty second", getWeekDay(22) + " the twenty second");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(15) + " the fifteen", getWeekDay(15) + " the fifteen");
-    basicTest(it, extractor, "I'll go back " + getWeekDay(7) + " the seventh", getWeekDay(7) + " the seventh");
+    basicTestOneOutput(it, extractor, "What do I have on " + getWeekDay(2) + " the second", getWeekDay(2) + " the second");
+    basicTestOneOutput(it, extractor, "A meeting for " + getWeekDay(27) + " the 27th with Joe Smith", getWeekDay(27) + " the 27th");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(21) + " the 21st", getWeekDay(21) + " the 21st");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(22) + " the 22nd", getWeekDay(22) + " the 22nd");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(23) + " the 23rd", getWeekDay(23) + " the 23rd");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(15) + " the 15th", getWeekDay(15) + " the 15th");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(21) + " the twenty first", getWeekDay(21) + " the twenty first");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(22) + " the twenty second", getWeekDay(22) + " the twenty second");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(15) + " the fifteen", getWeekDay(15) + " the fifteen");
+    basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(7) + " the seventh", getWeekDay(7) + " the seventh");
 
     // ExtractWeekDayAndDayOfMonthSeparate
     // Need to calculate the DayOfWeek by the date

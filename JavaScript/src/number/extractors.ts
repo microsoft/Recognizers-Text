@@ -19,6 +19,15 @@ export class ExtractResult {
     static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
         return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
     }
+
+    static getFromText(source: string): ExtractResult {
+        return {
+            start: 0,
+            length: source.length,
+            text: source,
+            type: 'custom'
+        }
+    }
 }
 
 export interface RegExpValue {
