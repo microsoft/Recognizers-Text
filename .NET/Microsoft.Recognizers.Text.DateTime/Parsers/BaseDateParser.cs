@@ -276,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate, pastDate, temp;
+                DateObject futureDate, temp;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out temp))
                 {
