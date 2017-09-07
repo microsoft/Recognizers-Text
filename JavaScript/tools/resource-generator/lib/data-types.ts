@@ -26,20 +26,20 @@ export namespace DataTypes {
 
     export function getSimpleRegex(data: any) : SimpleRegex {
         let result = new SimpleRegex();
-        result.def = data.def_js ? data.def_js : data.def;
+        result.def = data.def;
         return result;
     }
 
     export function getNestedRegex(data: any) : NestedRegex {
         let result = new NestedRegex();
-        result.def = data.def_js ? data.def_js : data.def;
+        result.def = data.def;
         result.references = data.references;
         return result;
     }
 
     export function getParamsRegex(data: any) : ParamsRegex {
         let result = new ParamsRegex();
-        result.def = data.def_js ? data.def_js : data.def;
+        result.def = data.def;
         result.params = data.params;
         return result;
     }

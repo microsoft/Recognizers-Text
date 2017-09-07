@@ -1,7 +1,6 @@
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
-import * as XRegExp from 'xregexp';
 import { Match, RegExpUtility } from "../utilities";
 import { LongFormatType } from "./models";
 import * as _ from "lodash";
@@ -96,7 +95,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
             ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
             : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-        return XRegExp(regexDefinition, "gis");
+        return RegExpUtility.getSafeRegExp(regexDefinition, "gis");
     }
 }
 
@@ -281,7 +280,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
                 options += "i";
             }
 
-            return XRegExp(regexStr, options);
+            return RegExpUtility.getSafeRegExp(regexStr, options);
         });
     }
 }

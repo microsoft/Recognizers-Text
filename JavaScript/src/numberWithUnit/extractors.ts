@@ -1,7 +1,6 @@
 import { Culture, CultureInfo } from "../culture";
 import { IExtractor, ExtractResult } from "../number/extractors";
 import * as _ from "lodash";
-import * as XRegExp from 'xregexp';
 import { RegExpUtility, Match } from "../utilities";
 
 export interface INumberWithUnitExtractorConfiguration {
@@ -237,7 +236,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                 let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
                 let options = "gs";
                 if (ignoreCase) options += "i";
-                return XRegExp(pattern, options);
+                return RegExpUtility.getSafeRegExp(pattern, options);
             }));
     }
 
@@ -279,7 +278,7 @@ export class NumberWithUnitExtractor implements IExtractor {
         let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
         let options = "gs";
         if (ignoreCase) options += "i";
-        return XRegExp(pattern, options);
+        return RegExpUtility.getSafeRegExp(pattern, options);
     }
 
     protected dinoComparer(x: string, y: string): number {
