@@ -50,6 +50,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string WeekOfRegex = @"(week)(\s*)(of)";
 		public const string MonthOfRegex = @"(month)(\s*)(of)";
 		public const string MonthRegex = @"(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)";
+		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)";
+		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)";
 		public static readonly string DateYearRegex = $@"(?<year>19\d{{2}}|20\d{{2}}|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))";
 		public static readonly string OnRegex = $@"(?<=\bon\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(on|at|in)\s+)((?<day>10th|11th|11st|12nd|12th|13rd|13th|14th|15th|16th|17th|18th|19th|1st|20th|21st|22nd|23rd|24th|25th|26th|27th|28th|29th|2nd|30th|31st|3rd|4th|5th|6th|7th|8th|9th)s?)\b";
@@ -74,11 +76,11 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string OfMonth = $@"^\s*of\s*{MonthRegex}";
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(the)?\s*$";
 		public const string RangeUnitRegex = @"\b(?<unit>years|year|months|month|weeks|week)\b";
+		public const string OclockRegex = @"(?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)";
 		public static readonly string DescRegex = $@"((({OclockRegex}\s+)?(?<desc>ampm|am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b|pm\b|p\.m\.|p m\b|p\. m\.|p\.m\b|p\. m\b|p\b|p m\b))|{OclockRegex})";
 		public const string HourNumRegex = @"\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b";
 		public const string MinuteNumRegex = @"(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)";
-		public const string OclockRegex = @"(?<oclock>o\s*’\s*clock|o\s*‘\s*clock|o\s*'\s*clock|o\s*clock)";
 		public const string PmRegex = @"(?<pm>(in the\s+)?afternoon|(in the\s+)?evening|(in the\s+)?night)";
 		public const string AmRegex = @"(?<am>(in the\s+)?morning)";
 		public static readonly string LessThanOneHour = $@"(?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))";
@@ -155,8 +157,6 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
-		public const string AmDescRegex = @"(am\b|a\.m\.|a m\b|a\. m\.|a\.m\b|a\. m\b|a m\b)";
-		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)";
 		public const string AmPmDescRegex = @"(ampm)";
 		public const string MorningStartEndRegex = @"(^(morning))|((morning)$)";
 		public const string AfternoonStartEndRegex = @"(^(afternoon))|((afternoon)$)";
