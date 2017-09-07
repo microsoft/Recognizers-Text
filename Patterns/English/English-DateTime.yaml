@@ -81,7 +81,8 @@ MonthOfRegex: !simpleRegex
   def: (month)(\s*)(of)
 MonthRegex: !simpleRegex
   def: (?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)
-#the two digits number as year should not be connected with : or any ampm desc regex
+#This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
+#The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
   def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
