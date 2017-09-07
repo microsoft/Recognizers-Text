@@ -81,6 +81,7 @@ MonthOfRegex: !simpleRegex
   def: (month)(\s*)(of)
 MonthRegex: !simpleRegex
   def: (?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep)
+#the two digits number as year should not be connected with : or any ampm desc regex
 DateYearRegex: !nestedRegex
   def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
