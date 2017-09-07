@@ -19,6 +19,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestHolidayExtract()
         {
+            BasicTest("I'll go back on christmas", 16, 9);
+            BasicTest("I'll go back on christmas day", 16, 13);
+
             BasicTest("I'll go back on Yuandan", 16, 7);
             BasicTest("I'll go back on thanks giving day", 16, 17);
             BasicTest("I'll go back on father's day", 16, 12);

@@ -38,21 +38,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         };
 
         [TestMethod]
-        public void TestDatePeriodExtract() {
+        public void TestDatePeriodExtractMonth() {
 
             foreach (var month in shortMonths) {
                 BasicTest($"I'll be out in {month}", 15, month.Length);
                 BasicTest($"I'll be out this {month}", 12, 5 + month.Length);
+                BasicTest($"I'll be out month of {month}", 12,  9 + month.Length);
+                BasicTest($"I'll be out the month of {month}", 12, 13 + month.Length);
                 BasicTest($"I was missing {month} 2001", 14, 5 + month.Length);
                 BasicTest($"I was missing {month}, 2001", 14, 6 + month.Length);
+
             }
 
             foreach (var month in fullMonths) {
                 BasicTest($"I'll be out in {month}", 15, month.Length);
                 BasicTest($"I'll be out this {month}", 12, 5 + month.Length);
+                BasicTest($"I'll be out month of {month}", 12, 9 + month.Length);
+                BasicTest($"I'll be out the month of {month}", 12, 13 + month.Length);
                 BasicTest($"I was missing {month} 2001", 14, 5 + month.Length);
                 BasicTest($"I was missing {month}, 2001", 14, 6 + month.Length);
             }
+
+            BasicTest($"Calendar for the month of September.", 13, 22);
 
         }
 

@@ -41,16 +41,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseWeekdayOfMonth(er.Text, referenceDate);
                 }
 
-                // NumberWithMonth must be the last one, because it only need to find a number and a month to get a "success"
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDurationWithAgoAndLater(er.Text, referenceDate);
+                }
+
+                // NumberWithMonth must be the second last one, because it only need to find a number and a month to get a "success"
                 if (!innerResult.Success)
                 {
                     innerResult = ParseNumberWithMonth(er.Text, referenceDate);
                 }
 
+                // SingleNumber last one
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseDurationWithAgoAndLater(er.Text, referenceDate);
+                    innerResult = ParseSingleNumber(er.Text, referenceDate);
                 }
+
 
                 if (innerResult.Success)
                 {
@@ -257,24 +264,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 int day = 0, month = referenceDate.Month, year = referenceDate.Year;
-                var dayStr = match.Groups["day"].Value.ToLower();
+                var dayStr = match.Groups["DayOfMonth"].Value.ToLower();
 
                 // create a extract result which content ordinal string of text
                 ExtractResult er = new ExtractResult();
                 er.Text = dayStr;
-                er.Start = match.Groups["day"].Index;
-                er.Length = match.Groups["day"].Length;
+                er.Start = match.Groups["DayOfMonth"].Index;
+                er.Length = match.Groups["DayOfMonth"].Length;
 
                 day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate, pastDate, temp;
+                DateObject futureDate, temp;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out temp))
                 {
                     futureDate = new DateObject(year, month, day);
-                    pastDate = new DateObject(year, month, day);
                 }
                 else
                 {
@@ -364,6 +370,49 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (pastDate >= referenceDate)
             {
                 pastDate = pastDate.AddYears(-1);
+            }
+
+            ret.FutureValue = futureDate;
+            ret.PastValue = pastDate;
+            ret.Success = true;
+
+            return ret;
+        }
+
+        // handle cases like "the 27th". In the extractor, only the unmatched weekday and date will output this date.
+        private DateTimeResolutionResult ParseSingleNumber(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var trimedText = text.Trim().ToLower();
+            int month = referenceDate.Month, day = 0, year = referenceDate.Year;
+
+            var er = this.config.OrdinalExtractor.Extract(trimedText);
+            if (er.Count == 0)
+            {
+                er = this.config.IntegerExtractor.Extract(trimedText);
+            }
+
+            if (er.Count == 0)
+            {
+                return ret;
+            }
+
+            day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+
+            // for LUIS format value string
+            ret.Timex = FormatUtil.LuisDate(-1, -1, day);
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+
+            if (futureDate < referenceDate)
+            {
+                futureDate = futureDate.AddMonths(1);
+            }
+
+            if (pastDate >= referenceDate)
+            {
+                pastDate = pastDate.AddMonths(-1);
             }
 
             ret.FutureValue = futureDate;

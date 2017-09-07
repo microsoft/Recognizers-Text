@@ -186,7 +186,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDateExtractWeekDayAndDayOfMonth()
+        public void TestDateParseWeekDayAndDayOfMonth()
         {
             int y = DateObject.Now.Year, m = DateObject.Now.Month;
             BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the 21st", new DateObject(y, m, 21), true);
@@ -265,7 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDateExtractWeekDayAndDayOfMonthLuis()
+        public void TestDateParseWeekDayAndDayOfMonthLuis()
         {
             int y = DateObject.Now.Year, m = DateObject.Now.Month;
             BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the 21st", GenWeekDaynDayMonthTest(21).Item2, true);

@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
@@ -24,6 +26,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(type, pr.Type.Replace("datetimeV2.",""));
         }
 
+        public void BasicTestResolution(string text, string resolution)
+        {
+            var er = extractor.Extract(text);
+            Assert.AreEqual(1, er.Count);
+            var pr = parser.Parse(er[0], refrenceDate);
+            var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>) pr.Value).First().Value);
+            Assert.AreEqual(resolution, prValue.First()["value"]);
+        }
+
         public void BasicTestWithTwoResults(string text, string type1, string type2)
         {
             var er = extractor.Extract(text);
@@ -37,12 +48,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
             BasicTest("on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
             BasicTest("on Friday for 3 in the afternoon", Constants.SYS_DATETIME_DATETIME);
 
             BasicTest("Set appointment for tomorrow morning at 9 o'clock.", Constants.SYS_DATETIME_DATETIME);
+        }
+
+        [TestMethod]
+        public void TestMergedParseResolution()
+        {
+            BasicTestResolution("Set an appointment for Easter", "not resolved");
         }
 
         [TestMethod]
@@ -77,10 +95,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParseWithTwoResults()
         {
+            BasicTestWithTwoResults("Set an appointment for Easter Sunday", Constants.SYS_DATETIME_DATE,
+                Constants.SYS_DATETIME_DATE);
+
             BasicTestWithTwoResults("block 1 hour on my calendar tomorrow morning", Constants.SYS_DATETIME_DURATION,
                 Constants.SYS_DATETIME_DATETIMEPERIOD);
+
             BasicTestWithTwoResults("Change July 22nd meeting in Bellevue to August 22nd", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_DATE);
+
             BasicTestWithTwoResults("on Friday for 3 in Bellevue in the afternoon", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_TIMEPERIOD);
         }
