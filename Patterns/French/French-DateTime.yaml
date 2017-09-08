@@ -373,7 +373,7 @@ UnitMap: !dictionary
     semaine: W
     journees: D
     journee: D
-	jour: D
+    jour: D
     heures: H
     heure: H
     hrs: H
@@ -397,7 +397,7 @@ UnitValueMap: !dictionary
     semaine: 604800
     journees: 86400
     journee: 86400
-	jour: 86400
+    jour: 86400
     heures: 3600
     heure: 3600
     hrs: 3600
@@ -472,23 +472,23 @@ MonthOfYear: !dictionary
     'novembre': 11
     'decembre': 12
     'janv': 1
-	'janv.' : 1
-	'jan' : 1
+    'janv.' : 1
+    'jan' : 1
     'fevr': 2
-	'fevr.': 2
-	'févr.': 2
-	'févr' : 2
+    'fevr.': 2
+    'févr.': 2
+    'févr' : 2
     'mars': 3
     'juil': 7
     'sep': 9
     'sept.': 9
-	'oct': 10
+    'oct': 10
     'oct.': 10
     'nov': 11
-	'nov.': 11
+    'nov.': 11
     'dec': 12
-	'déc.': 12
-	'déc' : 12
+    'déc.': 12
+    'déc' : 12
     '1': 1
     '2': 2
     '3': 3
@@ -536,166 +536,166 @@ Numbers: !dictionary
     'dix-huit': 18
     'dix-neuf': 19
     'vingt': 20
-	'vingt et un': 21
+    'vingt et un': 21
     'vingt-et-un': 21
     'vingt deux': 22
-	'vingt-duex' : 22
+    'vingt-duex' : 22
     'vingt trois': 23
-	'vingt-trois' : 23
+    'vingt-trois' : 23
     'vingt quatre': 24
-	'vingt-quatre' : 24
+    'vingt-quatre' : 24
     'vingt cinq': 25
-	'vingt-cinq': 25
+    'vingt-cinq': 25
     'vingt six': 26
-	'vingt-six' : 26
+    'vingt-six' : 26
     'vingt sept': 27
-	'vingt-sept': 27
+    'vingt-sept': 27
     'vingt huit': 28
-	'vingt-huit': 28
+    'vingt-huit': 28
     'vingt neuf': 29
-	'vingt-neuf': 29
+    'vingt-neuf': 29
     'trente': 30
-	'trente et un': 31
+    'trente et un': 31
     'trente-et-un': 31
     'trente deux': 32
-	'trente-deux': 32
+    'trente-deux': 32
     'trente trois': 33
-	'trente-trois': 33
+    'trente-trois': 33
     'trente quatre': 34
-	'trente-quatre': 34
+    'trente-quatre': 34
     'trente cinq': 35
-	'trente-cinq': 35
+    'trente-cinq': 35
     'trente six': 36
-	'trente-six': 36
+    'trente-six': 36
     'trente sept': 37
-	'trente-sept': 37
+    'trente-sept': 37
     'thirty eight': 38
-	'trente-huit': 38
+    'trente-huit': 38
     'thirty nine': 39
-	'trente-neuf': 39
+    'trente-neuf': 39
     'quarante': 40
-	'quarante et un': 41
+    'quarante et un': 41
     'quarante-et-un': 41
     'quarante deux': 42
-	'quarante-duex': 42
+    'quarante-duex': 42
     'quarante trois': 43
-	'quarante-trois': 43
+    'quarante-trois': 43
     'quarante quatre': 44
-	'quarante-quatre': 44
+    'quarante-quatre': 44
     'quarante-cinq': 45
-	'quarante cinq': 45
+    'quarante cinq': 45
     'quarante six': 46
-	'quarante-six': 46
+    'quarante-six': 46
     'quarante sept': 47
-	'quarante-sept': 47
+    'quarante-sept': 47
     'quarante huit': 48
-	'quarante-huit': 48
+    'quarante-huit': 48
     'quarante neuf': 49
-	'quarante-neuf': 49
+    'quarante-neuf': 49
     'cinquante': 50
-	'cinquante et un': 51
+    'cinquante et un': 51
     'cinquante-et-un': 51
     'cinquante deux': 52
-	'cinquante-deux': 52
+    'cinquante-deux': 52
     'cinquante trois': 53
-	'cinquante-trois': 53
+    'cinquante-trois': 53
     'cinquante quatre': 54
-	'cinquante-quatre': 54
-	'cinquante cinq': 55
+    'cinquante-quatre': 54
+    'cinquante cinq': 55
     'cinquante-cinq': 55
     'cinquante six': 56
-	'cinquante-six': 56
+    'cinquante-six': 56
     'cinquante sept': 57
-	'cinquante-sept': 57
+    'cinquante-sept': 57
     'cinquante huit': 58
-	'cinquante-huit': 58
+    'cinquante-huit': 58
     'cinquante neuf': 59
-	'cinquante-neuf': 59
+    'cinquante-neuf': 59
     'soixante': 60
-	'soixante et un': 61
+    'soixante et un': 61
     'soixante-et-un': 61
     'soixante deux': 62
-	'soixante-deux': 62
+    'soixante-deux': 62
     'soixante trois': 63
-	'soixante-trois': 63
+    'soixante-trois': 63
     'soixante quatre': 64
-	'soixante-quatre': 64
+    'soixante-quatre': 64
     'soixante cinq': 65
-	'soixante-cinq': 65
+    'soixante-cinq': 65
     'soixante six': 66
-	'soixante-six': 66
+    'soixante-six': 66
     'soixante sept': 67
-	'soixante-sept': 67
+    'soixante-sept': 67
     'soixante huit': 68
-	'soixante-huit': 68
+    'soixante-huit': 68
     'soixante neuf': 69
-	'soixante-neuf': 69
+    'soixante-neuf': 69
     'soixante dix': 70
-	'soixante-dix': 70
+    'soixante-dix': 70
     'soixante et onze': 71
-	'soixante-et-onze': 71
+    'soixante-et-onze': 71
     'soixante douze': 72
-	'soixante-douze': 72
+    'soixante-douze': 72
     'soixante treize': 73
-	'soixante-treize': 73
+    'soixante-treize': 73
     'soixante quatorze': 74
-	'soixante-quatore': 74
+    'soixante-quatore': 74
     'soixante quinze': 75
-	'soixante-quinze': 75
+    'soixante-quinze': 75
     'soixante seize': 76
-	'soixante-seize': 76
+    'soixante-seize': 76
     'soixante dix sept': 77
-	'soixante-dix-sept': 77
+    'soixante-dix-sept': 77
     'soixante dix huit': 78
-	'soixante-dix-huit': 78
+    'soixante-dix-huit': 78
     'soixante dix neuf': 79
-	'soixante-dix-neuf': 79
+    'soixante-dix-neuf': 79
     'quatre vingt': 80
-	'quatre-vingt': 80
+    'quatre-vingt': 80
     'quatre vingt un': 81
-	'quatre-vingt-un': 81
+    'quatre-vingt-un': 81
     'quatre vingt deux': 82
-	'quatre-vingt-duex': 82
+    'quatre-vingt-duex': 82
     'quatre vingt trois': 83
-	'quatre-vingt-trois': 83
+    'quatre-vingt-trois': 83
     'quatre vingt quatre': 84
-	'quatre-vingt-quatre': 84
+    'quatre-vingt-quatre': 84
     'quatre vingt cinq': 85
-	'quatre-vingt-cinq': 85
+    'quatre-vingt-cinq': 85
     'quatre vingt six': 86
-	'quatre-vingt-six': 86
+    'quatre-vingt-six': 86
     'quatre vingt sept': 87
-	'quatre-vingt-sept': 87
+    'quatre-vingt-sept': 87
     'quatre vingt huit': 88
     'quatre-vingt-huit': 88
     'quatre vingt neuf': 89
-	'quatre-vingt-neuf': 89
+    'quatre-vingt-neuf': 89
     'quatre vingt dix': 90
-	'quatre-vingt-dix': 90
+    'quatre-vingt-dix': 90
     'quatre vingt un': 91
-	'quatre-vingt-un': 91
+    'quatre-vingt-un': 91
     'quatre vingt deux': 92
-	'quatre-vingt-deux': 92
+    'quatre-vingt-deux': 92
     'quatre vingt trois': 93
-	'quatre-vingt-trois': 93
+    'quatre-vingt-trois': 93
     'quatre vingt quatre': 94
-	'quatre-vingt-quatre': 94
+    'quatre-vingt-quatre': 94
     'quatre vingt cinq': 95
-	'quatre-vingt-cinq': 95
+    'quatre-vingt-cinq': 95
     'quantre vingt six': 96
-	'quatre-vingt-six': 96
+    'quatre-vingt-six': 96
     'quatre vingt sept': 97
-	'quatre-vingt-sept': 97
+    'quatre-vingt-sept': 97
     'quatre vingt huit': 98
-	'quatre-vingt-huit': 98
+    'quatre-vingt-huit': 98
     'quatre vingt neuf': 99
-	'quatre-vingt-neuf': 99
+    'quatre-vingt-neuf': 99
     'cent': 100
 DayOfMonth: !dictionary
   types: [ string, int ]
   entries:
     '1er': 1
-	'1': 1
+    '1': 1
     '2': 2
     '3': 3
     '4': 4
@@ -736,21 +736,21 @@ HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries: 
     peres: [ fatherday, fathersday ]
-	pères: [ fatherday, fathersday ]
+    pères: [ fatherday, fathersday ]
     meres: [ motherday, mothersday ]
-	mères: [ motherday, mothersday ]
+    mères: [ motherday, mothersday ]
     thanksgiving: [ thanksgivingday, thanksgiving ]
     martinlutherking: [ martinlutherkingday, martinlutherkingjrday ]
     canberra: [ canberraday ]
     travail: [ labourday, laborday ]
     colomb: [ columbusday ]
     commémoratif: [ memorialday ]
-	commemoratif: [ memorialday ]
+    commemoratif: [ memorialday ]
     yuandan: [ yuandan ]
     toussaint: [ allsaintsday ]
     femme: [ femaleday ]
     noel: [ christmas ]
-	noël: [ christmas ]
+    noël: [ christmas ]
     newyear: [ newyear ]
     newyearday: [ newyearday ]
     newyearsday: [ newyearsday ]
