@@ -16,6 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_SET, pr.Type);
             Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, pr.TimexStr);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         [TestMethod]

@@ -14,12 +14,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             if (expected < 1)
             {
+                TestWriter.Write("Eng", extractor, text);
                 return;
             }
 
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
+            TestWriter.Write("Eng", extractor, text, results[0]);
         }
 
         public void BasicNegativeTest(string text)

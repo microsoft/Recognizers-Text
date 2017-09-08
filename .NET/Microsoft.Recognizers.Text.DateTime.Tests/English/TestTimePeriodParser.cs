@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_TIMEPERIOD, pr.Type);
             Assert.AreEqual(beginDate, ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item1);
             Assert.AreEqual(endDate, ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item2);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -36,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_TIMEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         [TestMethod]

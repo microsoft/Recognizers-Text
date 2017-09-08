@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(futureDate, ((DateTimeResolutionResult)pr.Value).FutureValue);
             Assert.AreEqual(pastDate, ((DateTimeResolutionResult)pr.Value).PastValue);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public void BasicTest(string text, DateObject date, bool now = false)
@@ -33,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr, bool now = false)
@@ -45,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public TestDateParser()
@@ -63,6 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         // use to generate the test cases sentences inside TestDateParserWeekDayAndDayOfMonth function

@@ -14,12 +14,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
+            TestWriter.Write("Chs", extractor, text, results[0]);
         }
 
         public void NullTest(string text)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(0, results.Count);
+            TestWriter.Write("Chs", extractor, text);
         }
 
         [TestMethod]

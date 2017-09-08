@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write("Chs", model, source, resultStr[0]);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -24,6 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write("Chs", model, source, resultStr[0]);
         }
 
 
@@ -32,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
+            TestWriter.Write("Chs", model, source, count);
         }
 
         private void MultiOneTest(IModel model, string source, int count, string first)
@@ -40,6 +43,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
             Assert.AreEqual(resultJson[0].Resolution["value"], first);
+            TestWriter.Write("Chs", model, source, resultStr[0], count);
         }
 
         [TestMethod]

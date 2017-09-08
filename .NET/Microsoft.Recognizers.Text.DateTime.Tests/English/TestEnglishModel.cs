@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var values = result.Resolution["values"] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(expectedType, values.First()["type"]);
             Assert.AreEqual(expectedTimex, values.First()["timex"]);
+            TestWriter.Write("Eng", model, text, results[0]);
         }
 
         public void BasicTest(DateTimeModel model, DateObject baseDateTime, string text, string expectedType, string expectedString, string expectedTimex, string expectedFuture, string expectedPast)
@@ -36,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(expectedFuture ?? values.Last()["value"], values.Last()["value"]);
 
             Assert.AreEqual(expectedPast ?? values.First()["value"], values.First()["value"]);
+            TestWriter.Write("Eng", model, text, results[0]);
         }
 
         [TestMethod]

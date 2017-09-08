@@ -13,12 +13,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
+            TestWriter.Write("Eng", extractor, text, results[0]);
         }
 
         public void BasicTestNone(string text)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(0, results.Count);
+            TestWriter.Write("Eng", extractor, text);
         }
 
         public void BasicTestWithOptions(string text, int count, DateTimeOptions options = DateTimeOptions.None)
@@ -26,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
             var results = extractorWithOptions.Extract(text);
             Assert.AreEqual(count, results.Count);
+            TestWriter.Write("Eng", extractor, text, results, count);
         }
 
         [TestMethod]

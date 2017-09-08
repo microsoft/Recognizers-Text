@@ -31,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var endDate = new DateObject(year, month, endDay);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
@@ -52,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var endDate = new DateObject(endYear, endMonth, endDay);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -66,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDateTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
+            TestWriter.Write("Eng", parser, text, pr);
         }
 
         [TestMethod]

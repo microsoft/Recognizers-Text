@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
+            TestWriter.Write("Eng", model, source, resultStr[0]);
         }
 
         private void BasicTest(IModel model, string source, string[] values)
@@ -20,6 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(values.Length, results.Count);
             var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
             CollectionAssert.AreEqual(values, resultsValues);
+            TestWriter.Write("Eng", model, source, results, values.Length);
         }
 
         private string GetStringValue(ModelResult source)

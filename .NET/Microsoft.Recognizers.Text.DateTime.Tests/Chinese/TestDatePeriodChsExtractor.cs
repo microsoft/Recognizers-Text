@@ -17,6 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, results[0].Type);
+            TestWriter.Write("Chs", extractor, text, results[0]);
         }
 
         [TestMethod]

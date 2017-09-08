@@ -14,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
+            TestWriter.Write("Spa", extractor, text, results[0]);
         }
 
         [TestMethod]

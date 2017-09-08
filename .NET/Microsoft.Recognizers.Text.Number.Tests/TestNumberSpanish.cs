@@ -12,12 +12,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
             Assert.AreEqual(value, result[0].Resolution["value"]);
+            TestWriter.Write("Spa", model, source, result[0]);
         }
 
         private void MultiTest(IModel model, string source, int count)
         {
             var result = model.Parse(source);
             Assert.AreEqual(count, result.Count);
+            TestWriter.Write("Spa", model, source, count);
         }
 
         [TestMethod]
