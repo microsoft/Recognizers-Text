@@ -18,7 +18,7 @@ ECHO # Restoring NuGet dependencies
 CALL "buildtools\nuget" restore
 
 ECHO # Building .NET solution (debug)
-CALL "%MsBuildDir%\msbuild" Microsoft.Recognizers.Text.sln /t:Restore,Clean,Build /p:Configuration=Debug
+CALL "%MsBuildDir%\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Debug
 
 
 ECHO # Running .NET Tests
@@ -28,4 +28,4 @@ FOR /R %%f IN (*.Tests.dll) DO (
 		SET testcontainer=!testcontainer! /testcontainer:%%f
 	)
 )
-CALL "%MsTestDir%\mstest" %testcontainer% /usestderr
+CALL "%MsTestDir%\mstest" %testcontainer%
