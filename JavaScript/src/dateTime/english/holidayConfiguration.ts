@@ -1,5 +1,6 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday"
 import { RegExpUtility } from "../../utilities";
+import { DateUtils } from "../utilities";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 
 export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
@@ -67,6 +68,7 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
                 ["veteransday", EnglishHolidayParserConfiguration.Veteransday],
                 ["christmaseve", EnglishHolidayParserConfiguration.ChristmasEve],
                 ["newyeareve", EnglishHolidayParserConfiguration.NewYearEve],
+                ["easterday", EnglishHolidayParserConfiguration.EasterDay]
             ]);
     }
 
@@ -100,6 +102,7 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     private static AllSoulsday(year: number): Date { return new Date(year, 11 - 1, 2); }
     private static GuyFawkesDay(year: number): Date { return new Date(year, 11 - 1, 5); }
     private static Veteransday(year: number): Date { return new Date(year, 11 - 1, 11); }
+    private static EasterDay(year: number): Date { return DateUtils.minValue(); }
 
     public getSwiftYear(text: string): number {
         let trimmedText = text.trim().toLowerCase();

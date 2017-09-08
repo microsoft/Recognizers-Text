@@ -13,11 +13,14 @@ export interface IDateExtractorConfiguration {
     monthEnd: RegExp,
     ofMonth: RegExp,
     dateUnitRegex: RegExp,
+    forTheRegex: RegExp,
+    weekDayAndDayOfMothRegex: RegExp,
+    dayOfWeek: ReadonlyMap<string, number>;
     ordinalExtractor: BaseNumberExtractor,
     integerExtractor: BaseNumberExtractor,
-    numberParser: BaseNumberParser
-    durationExtractor: BaseDurationExtractor
-    utilityConfiguration: IDateTimeUtilityConfiguration
+    numberParser: BaseNumberParser,
+    durationExtractor: BaseDurationExtractor,
+    utilityConfiguration: IDateTimeUtilityConfiguration,
 }
 
 export class BaseDateExtractor implements IExtractor {
@@ -62,7 +65,7 @@ export class BaseDateExtractor implements IExtractor {
 
     private numberWithMonth(source: string): Array<Token> {
         let ret = [];
-        let er = Array.prototype.concat(this.config.ordinalExtractor.extract(source), this.config.integerExtractor.extract(source));
+        let er = this.config.ordinalExtractor.extract(source).concat(this.config.integerExtractor.extract(source));
         er.forEach(result => {
             let num = toNumber(this.config.numberParser.parse(result).value);
             if (num < 1 || num > 31) {
@@ -74,6 +77,46 @@ export class BaseDateExtractor implements IExtractor {
                 if (match && match.length) {
                     ret.push(new Token(match.index, match.index + match.length + result.length));
                     return;
+                }
+
+                // handling cases like 'for the 25th'
+                match = RegExpUtility.getMatches(this.config.forTheRegex, source).pop();
+                if (match) {
+                    let ordinalNum = match.groups('DayOfMonth').value;
+                    if (ordinalNum === result.text) {
+                        let length = match.groups('end').value.length;
+                        ret.push(new Token(match.index, match.index + match.length - length));
+                        return;
+                    }
+                }
+
+                // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+                match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMothRegex, source).pop();
+                if (match) {
+                    // create a extract result which content ordinal string of text
+                    let numberStr = match.groups('DayOfMonth').value;
+                    let numberEr: ExtractResult = {
+                        text: numberStr,
+                        start: 0,
+                        length: numberStr.length,
+                        type: null
+                    }
+                    let day = Number.parseInt(this.config.numberParser.parse(numberEr).value);
+                    if (day === num) {
+                        let currentDate = new Date();
+                        currentDate.setDate(num);
+                        let dayOfWeek = currentDate.getDay();
+                        let dayOfWeekStr = match.groups('weekday').value.toLowerCase();
+                        if (this.config.dayOfWeek.get(dayOfWeekStr) === dayOfWeek) {
+                            ret.push(new Token(match.index, result.start + result.length));
+                            return;
+                        } else {
+                            let weekdayMatch = match.groups('weekday');
+                            let dayOfMonthMatch = match.groups('DayOfMonth');
+                            ret.push(new Token(weekdayMatch.index, weekdayMatch.index + weekdayMatch.length));
+                            ret.push(new Token(dayOfMonthMatch.index, dayOfMonthMatch.index + dayOfMonthMatch.length));
+                        }
+                    }
                 }
             }
             if (result.start + result.length < source.length) {
@@ -122,6 +165,8 @@ export interface IDateParserConfiguration {
     lastRegex: RegExp
     thisRegex: RegExp
     weekDayOfMonthRegex: RegExp
+    forTheRegex: RegExp
+    weekDayAndDayOfMothRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
     getSwiftDay(source: string): number
@@ -150,10 +195,13 @@ export class BaseDateParser implements IDateTimeParser {
                 innerResult = this.parseWeekdayOfMonth(source, referenceDate);
             }
             if (!innerResult.success) {
+                innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
+            }
+            if (!innerResult.success) {
                 innerResult = this.parseNumberWithMonth(source, referenceDate);
             }
             if (!innerResult.success) {
-                innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
+                innerResult = this.parseSingleNumber(source, referenceDate);
             }
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>()
@@ -289,6 +337,47 @@ export class BaseDateParser implements IDateTimeParser {
             result.success = true;
             return result;
         }
+
+        // handle "for the 27th."
+        match = RegExpUtility.getMatches(this.config.forTheRegex, trimmedSource).pop();
+        if (match) {
+            let dayStr = match.groups('DayOfMonth').value;
+            let er = ExtractResult.getFromText(dayStr);
+            let day = Number.parseInt(this.config.numberParser.parse(er).value);
+            
+            let month = referenceDate.getMonth();
+            let year = referenceDate.getFullYear();
+
+            result.timex = FormatUtil.luisDate(-1, -1, day)
+            let date = new Date(year, month, day);
+            result.futureValue = date;
+            result.pastValue = date;
+            result.success = true;
+
+            return result;
+        }
+
+        // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+        match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMothRegex, trimmedSource).pop();
+        if (match) {
+            let dayStr = match.groups('DayOfMonth').value;
+            let er = ExtractResult.getFromText(dayStr);
+            let day = Number.parseInt(this.config.numberParser.parse(er).value);
+            let month = referenceDate.getMonth();
+            let year = referenceDate.getFullYear();
+
+            let date = new Date(year, month, day);
+
+            let weekdayStr = match.groups('weekday').value;
+            if (this.config.dayOfWeek.get(weekdayStr) === date.getDay()) {
+                result.timex = FormatUtil.luisDate(year, month, day)
+                result.futureValue = new Date(year, month, day);
+                result.pastValue = new Date(year, month, day);
+                result.success = true;
+
+                return result;
+            }
+        }
         return result;
     }
 
@@ -313,6 +402,34 @@ export class BaseDateParser implements IDateTimeParser {
         if (futureDate < referenceDate) futureDate.setFullYear(year + 1);
         if (pastDate >= referenceDate) pastDate.setFullYear(year - 1);
 
+        result.futureValue = futureDate;
+        result.pastValue = pastDate;
+        result.success = true;
+        return result;
+    }
+
+    // handle cases like "the 27th". In the extractor, only the unmatched weekday and date will output this date.
+    private parseSingleNumber(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let trimmedSource = source.trim();
+        let result = new DateTimeResolutionResult();
+        
+        let er = this.config.ordinalExtractor.extract(trimmedSource).pop();
+        if (!er || StringUtility.isNullOrEmpty(er.text)) {
+            er = this.config.integerExtractor.extract(trimmedSource).pop();
+        }
+        if (!er || StringUtility.isNullOrEmpty(er.text)) return result;
+        
+        let day = Number.parseInt(this.config.numberParser.parse(er).value);
+        let month = referenceDate.getMonth();
+        let year = referenceDate.getFullYear();
+
+        result.timex = FormatUtil.luisDate(-1, -1, day);
+        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+
+        if (futureDate < referenceDate) futureDate.setMonth(month + 1);
+        if (pastDate >= referenceDate) pastDate.setMonth(month - 1);
+        
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;

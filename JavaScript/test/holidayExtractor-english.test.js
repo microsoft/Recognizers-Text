@@ -6,6 +6,9 @@ var constants = require('../compiled/dateTime/constants').Constants;
 describe('Holiday Extractor', it => {
     let extractor = new baseExtractor(new configuration());
     
+    basicTest(it, extractor, "I'll go back on christmas", 16, 9);
+    basicTest(it, extractor, "I'll go back on christmas day", 16, 13);
+
     basicTest(it, extractor, "I'll go back on Yuandan", 16, 7);
     basicTest(it, extractor, "I'll go back on thanks giving day", 16, 17);
     basicTest(it, extractor, "I'll go back on father's day", 16, 12);

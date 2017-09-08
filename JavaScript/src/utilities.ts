@@ -61,10 +61,10 @@ export class Match {
     index: number;
     length: number;
     value: string;
-    private innerGroups: { [id: string]: { value: string, captures: string[] } };
+    private innerGroups: { [id: string]: { value: string, index: number, length: number, captures: string[] } };
 
-    groups(key: string): { value: string, captures: string[] } {
-        return this.innerGroups[key] ? this.innerGroups[key] : { value: '', captures: [] };
+    groups(key: string): { value: string, index: number, length: number, captures: string[] } {
+        return this.innerGroups[key] ? this.innerGroups[key] : { value: '', index: 0, length: 0, captures: [] };
     }
 }
 
@@ -75,11 +75,15 @@ export class RegExpUtility {
             let positiveLookbehinds = [];
             let nlbCount = 0;
             let nlbFound = 0;
-            let groups = { };
+            let groups: { [id: string]: { value: string, index: number, length: number, captures: string[] } } = { };
+            let lastGroup = '';
 
             Object.keys(match).forEach(key => {
                 if (!key.includes('__')) return;
                 if (key.startsWith('plb') && match[key]) {
+                    if (match[0].indexOf(match[key]) !== 0 && !StringUtility.isNullOrEmpty(lastGroup)) {
+                        groups[lastGroup].value = groups[lastGroup].value + match[key];
+                    }
                     positiveLookbehinds.push({key:key, value:match[key]});
                     return;
                 }
@@ -90,11 +94,14 @@ export class RegExpUtility {
                 }
 
                 let groupKey = key.substr(0, key.lastIndexOf('__'));
+                lastGroup = groupKey;
 
-                if (!groups[groupKey]) groups[groupKey] = { value: '', captures: [] };
+                if (!groups[groupKey]) groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
 
                 if (match[key]) {
                     groups[groupKey].value = match[key];
+                    groups[groupKey].index = match.index + match[0].indexOf(match[key]);
+                    groups[groupKey].length = match[key].length;
                     groups[groupKey].captures.push(match[key]);
                 }
             });

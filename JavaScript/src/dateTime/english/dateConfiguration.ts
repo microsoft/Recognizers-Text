@@ -16,6 +16,9 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly monthEnd: RegExp;
     readonly ofMonth: RegExp;
     readonly dateUnitRegex: RegExp;
+    readonly forTheRegex: RegExp;
+    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly dayOfWeek: ReadonlyMap<string, number>;
     readonly ordinalExtractor: BaseNumberExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
@@ -49,6 +52,9 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         this.monthEnd = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthEnd, "gis");
         this.ofMonth = RegExpUtility.getSafeRegExp(EnglishDateTime.OfMonth, "gis");
         this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
+        this.forTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex, "gis");
+        this.weekDayAndDayOfMothRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMothRegex, "gis");
+        this.dayOfWeek = EnglishDateTime.DayOfWeek;
         this.ordinalExtractor = new EnglishOrdinalExtractor();
         this.integerExtractor = new EnglishIntegerExtractor();
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
@@ -79,6 +85,8 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly lastRegex: RegExp
     readonly thisRegex: RegExp
     readonly weekDayOfMonthRegex: RegExp
+    readonly forTheRegex: RegExp;
+    readonly weekDayAndDayOfMothRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string
 
@@ -122,6 +130,8 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
         this.lastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LastDateRegex, "gis");
         this.thisRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisRegex, "gis");
         this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayOfMonthRegex, "gis");
+        this.forTheRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ForTheRegex, "gis");
+        this.weekDayAndDayOfMothRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekDayAndDayOfMothRegex, "gis");
         this.utilityConfiguration = config.utilityConfiguration;
         this.dateTokenPrefix = EnglishDateTime.DateTokenPrefix;
     }

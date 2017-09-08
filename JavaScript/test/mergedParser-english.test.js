@@ -10,7 +10,8 @@ describe('DateTime Merged Parser', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date(2016, 10, 7);
-
+    
+    basicTest(it, extractor, parser, referenceDate, "Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "on Friday in the afternoon", Constants.SYS_DATETIME_DATETIMEPERIOD);
@@ -54,14 +55,22 @@ describe('DateTime Merged Parser Invalid Datetime', it => {
     basicTest(it, extractor, parser, referenceDate, "2017-13-12", Constants.SYS_DATETIME_DATEPERIOD);
 });
 
-describe('DateTime Merged Parser Invalid Datetime', it => {
+describe('DateTime Merged Parser with two results', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date(2016, 10, 7);
 
-    basicTestWithTwoResults(it, extractor, parser, referenceDate, "block 1 hour on my calendar tomorrow morning", Constants.SYS_DATETIME_DURATION, Constants.SYS_DATETIME_DATETIMEPERIOD);
-    basicTestWithTwoResults(it, extractor, parser, referenceDate, "Change July 22nd meeting in Bellevue to August 22nd", Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATE);
-    basicTestWithTwoResults(it, extractor, parser, referenceDate, "on Friday for 3 in Bellevue in the afternoon", Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_TIMEPERIOD);
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "Set an appointment for Easter Sunday",
+        Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATE);
+
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "block 1 hour on my calendar tomorrow morning",
+        Constants.SYS_DATETIME_DURATION, Constants.SYS_DATETIME_DATETIMEPERIOD);
+
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "Change July 22nd meeting in Bellevue to August 22nd",
+        Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATE);
+    
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "on Friday for 3 in Bellevue in the afternoon",
+        Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_TIMEPERIOD);
 });
 
 function basicTest(it, extractor, parser, referenceDate, text, type) {
