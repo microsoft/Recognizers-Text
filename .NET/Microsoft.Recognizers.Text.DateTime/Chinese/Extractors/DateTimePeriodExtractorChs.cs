@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.Chinese;
@@ -110,17 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timePoints.Add(er2[j]);
             }
 
-            timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
-            {
-                var start1 = er_1.Start ?? 0;
-                var start2 = er_2.Start ?? 0;
-                if (start1 < start2)
-                {
-                    return -1;
-                }
-
-                return start1 == start2 ? 0 : 1;
-            });
+            timePoints = timePoints.OrderBy(o => o.Start).ToList();
 
             // merge {Date} {TimePeriod}
             var idx = 0;
@@ -178,17 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 timePoints.Add(er2[j]);
             }
 
-            timePoints.Sort(delegate(ExtractResult er_1, ExtractResult er_2)
-            {
-                var start1 = er_1.Start ?? 0;
-                var start2 = er_2.Start ?? 0;
-                if (start1 < start2)
-                {
-                    return -1;
-                }
-
-                return start1 == start2 ? 0 : 1;
-            });
+            timePoints = timePoints.OrderBy(o => o.Start).ToList();
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
             var idx = 0;
