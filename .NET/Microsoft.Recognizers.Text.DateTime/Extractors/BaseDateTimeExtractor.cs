@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -60,22 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            ers.Sort(delegate (ExtractResult er1, ExtractResult er2)
-            {
-                var start1 = er1.Start ?? 0;
-                var start2 = er2.Start ?? 0;
-                if (start1 < start2)
-                {
-                    return -1;
-                }
-
-                if (start1 == start2)
-                {
-                    return 0;
-                }
-
-                return 1;
-            });
+            ers = ers.OrderBy(o => o.Start).ToList();
 
             var i = 0;
             while (i < ers.Count - 1)

@@ -1,7 +1,7 @@
 import { INumberParserConfiguration, ParseResult } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { EnglishNumeric } from "../../resources/englishNumeric";
-import * as XRegExp from 'xregexp';
+import { RegExpUtility } from "../../utilities"
 
 export class EnglishNumberParserConfiguration implements INumberParserConfiguration {
 
@@ -44,8 +44,8 @@ export class EnglishNumberParserConfiguration implements INumberParserConfigurat
         this.cardinalNumberMap = EnglishNumeric.CardinalNumberMap;
         this.ordinalNumberMap = EnglishNumeric.OrdinalNumberMap;
         this.roundNumberMap = EnglishNumeric.RoundNumberMap;
-        this.halfADozenRegex = XRegExp(EnglishNumeric.HalfADozenRegex, "gis");
-        this.digitalNumberRegex = XRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
+        this.halfADozenRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.HalfADozenRegex, "gis");
+        this.digitalNumberRegex = RegExpUtility.getSafeRegExp(EnglishNumeric.DigitalNumberRegex, "gis");
     }
 
     normalizeTokenSet(tokens: ReadonlyArray<string>, context: ParseResult): ReadonlyArray<string> {

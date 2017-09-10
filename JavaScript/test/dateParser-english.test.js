@@ -88,7 +88,6 @@ describe('Date Parser The Day', it => {
     basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back past day", new Date(2016, 10, 6));
 });
 
-
 describe('Date Parser Ago Later', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
@@ -98,6 +97,39 @@ describe('Date Parser Ago Later', it => {
     basicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a month ago", new Date(2016, 9, 7));
     basicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email few month ago", new Date(2016, 7, 7));
     basicTestWithOneDate(it, extractor, parser, referenceDate, "who did I email a few day ago", new Date(2016, 10, 4));
+});
+
+describe('Date Parser For The', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 27", new Date(2016, 10, 27));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 27th", new Date(2016, 10, 27));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 27.", new Date(2016, 10, 27));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 27!", new Date(2016, 10, 27));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 27 .", new Date(2016, 10, 27));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 21st", new Date(2016, 10, 21));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the 22nd", new Date(2016, 10, 22));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the second", new Date(2016, 10, 2));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the twenty second", new Date(2016, 10, 22));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the thirty", new Date(2016, 10, 30));
+});
+
+describe('Date Parser For The', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date();
+    let year = referenceDate.getFullYear();
+    let month = referenceDate.getMonth();
+
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(21) + " the 21st", new Date(year, month, 21));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(22) + " the 22nd", new Date(year, month, 22));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(23) + " the 23rd", new Date(year, month, 23));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(15) + " the 15th", new Date(year, month, 15));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(21) + " the twenty first", new Date(year, month, 21));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(22) + " the twenty second", new Date(year, month, 22));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(15) + " the fifteen", new Date(year, month, 15));
 });
 
 describe('Date Parser LUIS', it => {
@@ -152,6 +184,60 @@ describe('Date Parser LUIS', it => {
     basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back next week on Friday", "2016-11-18");
     basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back on Friday next week", "2016-11-18");
 });
+
+describe('Date Parser LUIS For the', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 27", "XXXX-XX-27");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 27th", "XXXX-XX-27");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 27.", "XXXX-XX-27");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 27!", "XXXX-XX-27");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 27 .", "XXXX-XX-27");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 21st", "XXXX-XX-21");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the 22nd", "XXXX-XX-22");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the second", "XXXX-XX-02");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the twenty second", "XXXX-XX-22");
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back for the thirty", "XXXX-XX-30");
+});
+
+describe('Date Parser LUIS weekday', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date();
+
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(21) + " the 21st", getLuisDateFor(21));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(22) + " the 22nd", getLuisDateFor(22));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(23) + " the 23rd", getLuisDateFor(23));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(15) + " the 15th", getLuisDateFor(15));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(21) + " the twenty first", getLuisDateFor(21));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(22) + " the twenty second", getLuisDateFor(22));
+    basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(15) + " the fifteen", getLuisDateFor(15));
+});
+
+function getWeekDay(dayOfMonth) {
+    let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    let weekDay = 'None';
+    if (dayOfMonth >= 1 && dayOfMonth <= 31) {
+        let referenceDate = new Date();
+        let dummyDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), dayOfMonth);
+        weekDay = weekDays[dummyDate.getDay()];
+    }
+    return weekDay;
+}
+
+function getIWentBack(dayOfMonth) {
+    return 'I went back ' + getWeekDay(dayOfMonth);
+}
+
+function getLuisDateFor(dayOfMonth) {
+    let referenceDate = new Date();
+    let yearStr = '0000' + referenceDate.getFullYear();
+    let monthStr = '00' + (referenceDate.getMonth() + 1);
+    let dayOfMonthStr = '00' + dayOfMonth;
+    return `${yearStr.substr(yearStr.length - 4)}-${monthStr.substr(monthStr.length - 2)}-${dayOfMonthStr.substr(dayOfMonthStr.length - 2)}`;
+}
 
 function basicTestWithFutureAndPast(it, extractor, parser, referenceDate, text, futureDate, pastDate) {
     it(text, t => {

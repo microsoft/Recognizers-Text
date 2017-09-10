@@ -11,6 +11,15 @@ describe('Holiday Parse', it => {
     let parser = new BaseHolidayParser(new EnglishHolidayParserConfiguration());
 
     // All date's month are zero-based (-1)
+
+
+    // For Easter day, we return the Datetime.Minvalue, it will be filtered in the mergedParser
+    // basicTest("I'll go back on easter", DateObject.MinValue, DateObject.MinValue);
+
+    basicTest(it, extractor, parser, referenceDay, "I'll go back on christmas day",
+        new Date(2016, 12 - 1, 25),
+        new Date(2015, 12 - 1, 25));
+
     basicTest(it, extractor, parser, referenceDay, "I'll go back on new year eve",
         new Date(2016, 12 - 1, 31),
         new Date(2015, 12 - 1, 31));

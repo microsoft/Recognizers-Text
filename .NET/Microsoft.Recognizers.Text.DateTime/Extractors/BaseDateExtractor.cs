@@ -89,13 +89,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     match = this.config.ForTheRegex.Match(text);
                     if (match.Success)
                     {
-                        var ordinalNum = match.Groups["day"].Value.ToString();
+                        var ordinalNum = match.Groups["DayOfMonth"].Value;
                         if (ordinalNum == result.Text)
                         {
                             var endLenght = 0;
                             if (match.Groups["end"].Value != string.Empty)
                             {
-                                endLenght = match.Groups["end"].Value.ToString().Length;
+                                endLenght = match.Groups["end"].Value.Length;
                             }
                             ret.Add(new Token(match.Index, match.Index + match.Length - endLenght));
                             continue;
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // create a extract result which content ordinal string of text
                         ExtractResult erTmp = new ExtractResult();
-                        erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
+                        erTmp.Text = match.Groups["DayOfMonth"].Value;
                         erTmp.Start = match.Groups["DayOfMonth"].Index;
                         erTmp.Length = match.Groups["DayOfMonth"].Length;
                         var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
@@ -117,11 +117,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             var referenceDate = DateObject.Now;
                             var date = new DateObject(referenceDate.Year, referenceDate.Month, num);
-                            var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
-                            var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
-                            if (this.config.DayOfWeek[date2weekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
+                            var date2WeekdayStr = date.DayOfWeek.ToString().ToLowerInvariant();
+                            var extractedWeekDayStr = match.Groups["weekday"].Value.ToLowerInvariant();
+                            if (this.config.DayOfWeek[date2WeekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
                             {
                                 ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
+                                continue;
+                            }
+                            else
+                            {
+                                //separate to two date points
+                                ret.Add(new Token(match.Groups["weekday"].Index,
+                                    match.Groups["weekday"].Index + match.Groups["weekday"].Length));
+                                ret.Add(new Token(match.Groups["DayOfMonth"].Index,
+                                    match.Groups["DayOfMonth"].Index + match.Groups["DayOfMonth"].Length));
                                 continue;
                             }
                         }

@@ -69,6 +69,7 @@ describe('Time Parse', it => {
 
 
     basicTestFuture(it, extractor, parser, "I'll be back noonish", new Date(year, month, day, 12, 0, second));
+    basicTestFuture(it, extractor, parser, "I'll be back 12 noon", new Date(year, month, day, 12, 0, second));
     basicTestFuture(it, extractor, parser, "I'll be back 11ish", new Date(year, month, day, 11, 0, second));
     basicTestFuture(it, extractor, parser, "I'll be back 11-ish", new Date(year, month, day, 11, 0, second));
 
@@ -147,6 +148,7 @@ describe('Time Parse Luis', it => {
 
     basicTest_Luis(it, extractor, parser, "I'll be back noonish", "T12");
     basicTest_Luis(it, extractor, parser, "I'll be back noon", "T12");
+    basicTest_Luis(it, extractor, parser, "I'll be back 12 noon", "T12");
     basicTest_Luis(it, extractor, parser, "I'll be back 11ish", "T11");
     basicTest_Luis(it, extractor, parser, "I'll be back 11-ish", "T11");
 

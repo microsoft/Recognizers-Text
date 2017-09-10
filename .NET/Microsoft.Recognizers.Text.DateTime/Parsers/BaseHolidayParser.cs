@@ -137,7 +137,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
-                
+
+                if (value.Equals(DateObject.MinValue))
+                {
+                    ret.Timex = "";
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue;
+                    ret.Success = true;
+                    return ret;
+                }
+
                 if (hasYear)
                 {
                     ret.Timex = year.ToString("D4") + timexStr;

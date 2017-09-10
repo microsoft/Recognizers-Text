@@ -1,6 +1,5 @@
 import { ExtractResult } from "./extractors";
 import { CultureInfo, Culture } from "../culture";
-import * as XRegExp from "xregexp";
 import { Constants } from "./constants";
 import * as _ from 'lodash';
 import { RegExpUtility } from "../utilities";
@@ -78,8 +77,8 @@ export class BaseNumberParser implements IParser {
 
         let singleIntFrac = `${this.config.wordSeparatorToken}| -|${this.getKeyRegex(this.config.cardinalNumberMap)}|${this.getKeyRegex(this.config.ordinalNumberMap)}`;
 
-        this.textNumberRegex = XRegExp(String.raw`(?=\b)(${singleIntFrac})(?=\b)`, "gis");
-        this.arabicNumberRegex = XRegExp(String.raw`\d+`, "is");
+        this.textNumberRegex = RegExpUtility.getSafeRegExp(String.raw`(?=\b)(${singleIntFrac})(?=\b)`, "gis");
+        this.arabicNumberRegex = RegExpUtility.getSafeRegExp(String.raw`\d+`, "is");
         this.roundNumberSet = new Set<string>();
         this.config.roundNumberMap.forEach((value, key) =>
             this.roundNumberSet.add(key)

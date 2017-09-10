@@ -44,6 +44,10 @@ export class StringUtility {
     static isWhitespace(input: string): boolean {
         return input && input !== '' && !input.trim();
     }
+
+    static insertInto(input: string, value: string, index: number): string {
+        return input.substr(0, index) + value + input.substr(index);
+    }
 }
 
 export class Match {
@@ -57,10 +61,10 @@ export class Match {
     index: number;
     length: number;
     value: string;
-    private innerGroups: { [id: string]: { value: string, captures: string[] } };
+    private innerGroups: { [id: string]: { value: string, index: number, length: number, captures: string[] } };
 
-    groups(key: string): { value: string, captures: string[] } {
-        return this.innerGroups[key] ? this.innerGroups[key] : { value: '', captures: [] };
+    groups(key: string): { value: string, index: number, length: number, captures: string[] } {
+        return this.innerGroups[key] ? this.innerGroups[key] : { value: '', index: 0, length: 0, captures: [] };
     }
 }
 
@@ -68,27 +72,36 @@ export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
         let matches = new Array<Match>();
         XRegExp.forEach(source, regex, match => {
-            let positiveLookbehind = [];
-            let negativeLookbehind = [];
-            let groups = { }
+            let positiveLookbehinds = [];
+            let nlbCount = 0;
+            let nlbFound = 0;
+            let groups: { [id: string]: { value: string, index: number, length: number, captures: string[] } } = { };
+            let lastGroup = '';
 
             Object.keys(match).forEach(key => {
                 if (!key.includes('__')) return;
                 if (key.startsWith('plb') && match[key]) {
-                    positiveLookbehind.push({key:key, value:match[key]});
+                    if (match[0].indexOf(match[key]) !== 0 && !StringUtility.isNullOrEmpty(lastGroup)) {
+                        groups[lastGroup].value = groups[lastGroup].value + match[key];
+                    }
+                    positiveLookbehinds.push({key:key, value:match[key]});
                     return;
                 }
-                if (key.startsWith('nlb') && match[key]) {
-                    negativeLookbehind.push({key:key, value:match[key]});
+                if (key.startsWith('nlb')) {
+                    nlbCount++;
+                    if (match[key]) nlbFound++;
                     return;
                 }
 
                 let groupKey = key.substr(0, key.lastIndexOf('__'));
+                lastGroup = groupKey;
 
-                if (!groups[groupKey]) groups[groupKey] = { value: '', captures: [] };
+                if (!groups[groupKey]) groups[groupKey] = { value: '', index: 0, length: 0, captures: [] };
 
                 if (match[key]) {
                     groups[groupKey].value = match[key];
+                    groups[groupKey].index = match.index + match[0].indexOf(match[key]);
+                    groups[groupKey].length = match[key].length;
                     groups[groupKey].captures.push(match[key]);
                 }
             });
@@ -97,25 +110,47 @@ export class RegExpUtility {
             let index = match.index;
             let length = value.length;
 
-            if (positiveLookbehind && positiveLookbehind.length > 0 && match[0].indexOf(positiveLookbehind[0].value) ===  0) {
-                value = value.substr(positiveLookbehind[0].value.length)
-                index += positiveLookbehind[0].value.length
-                length -= positiveLookbehind[0].value.length
+            if (positiveLookbehinds && positiveLookbehinds.length > 0 && value.indexOf(positiveLookbehinds[0].value) ===  0) {
+                value = value.substr(positiveLookbehinds[0].value.length)
+                index += positiveLookbehinds[0].value.length
+                length -= positiveLookbehinds[0].value.length
             }
-            if (negativeLookbehind && negativeLookbehind.length > 0) return;
+            if (nlbCount > 0 && nlbCount === nlbFound) return;
             matches.push(new Match(index, length, value, groups));
         });
         return matches;
     }
 
-    private static tokenizer = XRegExp('\\?<(?<token>\\w+)>', 'gis');
+    private static matchGroup = XRegExp(String.raw`\?<(?<name>\w+)>`, 'gis');
+    private static matchPositiveLookbehind = XRegExp(String.raw`\(\?<=`, 'gis');
+    private static matchNegativeLookbehind = XRegExp(String.raw`\(\?<!`, 'gis');
 
     private static sanitizeGroups(source: string): string {
         let index = 0;
-        let replacer = XRegExp.replace(source, this.tokenizer, function(match, token) {
-            return match.replace(token, `${token}__${index++}`);
-        });
-        return replacer;
+        let result = XRegExp.replace(source, this.matchGroup, (match, name) => match.replace(name, `${name}__${index++}`));
+        index = 0;
+        result = XRegExp.replace(result, this.matchPositiveLookbehind, () => `(?<plb__${index++}>`);
+        index = 0;
+        result = XRegExp.replace(result, this.matchNegativeLookbehind, () => `(?<nlb__${index++}>`);
+        let closePos = 0;
+        let startPos = result.indexOf('(?<nlb__', closePos);
+        while (startPos >= 0) {
+            closePos = this.getClosePos(result, startPos);
+            result = StringUtility.insertInto(result, '?', closePos + 1);
+            startPos = result.indexOf('(?<nlb__', closePos);
+        }
+        return result;
+    }
+
+    private static getClosePos(source: string, startPos: number): number {
+        let counter = 1;
+        let closePos = startPos;
+        while (counter > 0 && closePos < source.length) {
+            let c = source[++closePos];
+            if (c === '(') counter++;
+            else if (c === ')') counter--;
+        }
+        return closePos;
     }
 
     static getSafeRegExp(source: string, flags?: string): RegExp {

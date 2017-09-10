@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { EnglishNumeric } from "../../resources/englishNumeric";
-import * as XRegExp from "xregexp";
+import { RegExpUtility } from "../../utilities"
 
 export class EnglishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;
@@ -18,7 +18,7 @@ export class EnglishNumberExtractor extends BaseNumberExtractor {
                 cardExtract = new EnglishCardinalExtractor(EnglishNumeric.PlaceHolderPureNumber);
                 break;
             case NumberMode.Currency:
-                regexes.push({ regExp: XRegExp(EnglishNumeric.CurrencyRegex, "gs"), value: "IntegerNum" });
+                regexes.push({ regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.CurrencyRegex, "gs"), value: "IntegerNum" });
                 break;
             case NumberMode.Default:
                 break;
@@ -65,11 +65,11 @@ export class EnglishIntegerExtractor extends BaseNumberExtractor {
 
         let regexes = new Array<RegExpValue>(
             {
-                regExp: XRegExp(EnglishNumeric.NumbersWithPlaceHolder(placeholder), "gi"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.NumbersWithPlaceHolder(placeholder), "gi"),
                 value: "IntegerNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.NumbersWithSuffix, "gs"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.NumbersWithSuffix, "gs"),
                 value: "IntegerNum"
             },
             {
@@ -77,19 +77,19 @@ export class EnglishIntegerExtractor extends BaseNumberExtractor {
                 value: "IntegerNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.RoundNumberIntegerRegexWithLocks, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.RoundNumberIntegerRegexWithLocks, "gis"),
                 value: "IntegerNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.NumbersWithDozenSuffix, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.NumbersWithDozenSuffix, "gis"),
                 value: "IntegerNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.AllIntRegexWithLocks, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.AllIntRegexWithLocks, "gis"),
                 value: "IntegerEng"
             },
             {
-                regExp: XRegExp(EnglishNumeric.AllIntRegexWithDozenSuffixLocks, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.AllIntRegexWithDozenSuffixLocks, "gis"),
                 value: "IntegerEng"
             }
         );
@@ -106,11 +106,11 @@ export class EnglishDoubleExtractor extends BaseNumberExtractor {
 
         let regexes = new Array<RegExpValue>(
             {
-                regExp: XRegExp(EnglishNumeric.DoubleDecimalPointRegex(placeholder), "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleDecimalPointRegex(placeholder), "gis"),
                 value: "DoubleNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleWithoutIntegralRegex(placeholder), "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleWithoutIntegralRegex(placeholder), "gis"),
                 value: "DoubleNum"
             },
             {
@@ -118,23 +118,23 @@ export class EnglishDoubleExtractor extends BaseNumberExtractor {
                 value: "DoubleNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleWithMultiplierRegex, "gs"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleWithMultiplierRegex, "gs"),
                 value: "DoubleNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleWithRoundNumber, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleWithRoundNumber, "gis"),
                 value: "DoubleNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleAllFloatRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleAllFloatRegex, "gis"),
                 value: "DoubleEng"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleExponentialNotationRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleExponentialNotationRegex, "gis"),
                 value: "DoublePow"
             },
             {
-                regExp: XRegExp(EnglishNumeric.DoubleCaretExponentialNotationRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.DoubleCaretExponentialNotationRegex, "gis"),
                 value: "DoublePow"
             }
         );
@@ -152,23 +152,23 @@ export class EnglishFractionExtractor extends BaseNumberExtractor {
 
         let regexes = new Array<RegExpValue>(
             {
-                regExp: XRegExp(EnglishNumeric.FractionNotationWithSpacesRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionNotationWithSpacesRegex, "gis"),
                 value: "FracNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.FractionNotationRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionNotationRegex, "gis"),
                 value: "FracNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.FractionNounRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionNounRegex, "gis"),
                 value: "FracEng"
             },
             {
-                regExp: XRegExp(EnglishNumeric.FractionNounWithArticleRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionNounWithArticleRegex, "gis"),
                 value: "FracEng"
             },
             {
-                regExp: XRegExp(EnglishNumeric.FractionPrepositionRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.FractionPrepositionRegex, "gis"),
                 value: "FracEng"
             }
         );
@@ -184,19 +184,19 @@ export class EnglishOrdinalExtractor extends BaseNumberExtractor {
         super();
         let regexes = new Array<RegExpValue>(
             {
-                regExp: XRegExp(EnglishNumeric.OrdinalSuffixRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.OrdinalSuffixRegex, "gis"),
                 value: "OrdinalNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.OrdinalNumericRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.OrdinalNumericRegex, "gis"),
                 value: "OrdinalNum"
             },
             {
-                regExp: XRegExp(EnglishNumeric.OrdinalEnglishRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.OrdinalEnglishRegex, "gis"),
                 value: "OrdEng"
             },
             {
-                regExp: XRegExp(EnglishNumeric.OrdinalRoundNumberRegex, "gis"),
+                regExp: RegExpUtility.getSafeRegExp(EnglishNumeric.OrdinalRoundNumberRegex, "gis"),
                 value: "OrdEng"
             }
         );

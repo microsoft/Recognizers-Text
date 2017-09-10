@@ -23,8 +23,8 @@
     "prebuild": "rimraf dist",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
     "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
-    "start": "tsc-watch --onSuccess \"ava --watch --verbose\"",
-    "test": "tsc && ava --verbose"
+    "start": "tsc-watch --onSuccess \"ava --watch\"",
+    "test": "tsc && ava"
   },
   "ava": {
     "files": [

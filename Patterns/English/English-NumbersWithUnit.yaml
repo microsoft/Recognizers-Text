@@ -502,10 +502,8 @@ AmbiguousDimensionUnitList: !list
 #EnglishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\W))
-  def_js: (?=(\s|^|\W)|(?!(\s|^|\W))\b)
 BuildSuffix: !simpleRegex
   def: (?=(\s|\W|$))
-  def_js: (?=(\s|\W|$))
 #LengthExtractorConfiguration
 LenghtSuffixList: !dictionary
   types: [ string, string ]

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -103,22 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timePoints.Add(er2[j]);
             }
 
-            timePoints.Sort(delegate (ExtractResult er_1, ExtractResult er_2)
-            {
-                var start1 = er_1.Start ?? 0;
-                var start2 = er_2.Start ?? 0;
-                if (start1 < start2)
-                {
-                    return -1;
-                }
-
-                if (start1 == start2)
-                {
-                    return 0;
-                }
-
-                return 1;
-            });
+            timePoints = timePoints.OrderBy(o => o.Start).ToList();
 
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"

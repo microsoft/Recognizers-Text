@@ -1,7 +1,6 @@
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
-import * as XRegExp from 'xregexp';
 import { Match, RegExpUtility } from "../utilities";
 import { LongFormatType } from "./models";
 import * as _ from "lodash";
@@ -19,6 +18,15 @@ export class ExtractResult {
 
     static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
         return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
+    }
+
+    static getFromText(source: string): ExtractResult {
+        return {
+            start: 0,
+            length: source.length,
+            text: source,
+            type: 'custom'
+        }
     }
 }
 
@@ -96,7 +104,7 @@ export abstract class BaseNumberExtractor implements IExtractor {
             ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
             : BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-        return XRegExp(regexDefinition, "gis");
+        return RegExpUtility.getSafeRegExp(regexDefinition, "gis");
     }
 }
 
@@ -281,7 +289,7 @@ export abstract class BasePercentageExtractor implements IExtractor {
                 options += "i";
             }
 
-            return XRegExp(regexStr, options);
+            return RegExpUtility.getSafeRegExp(regexStr, options);
         });
     }
 }

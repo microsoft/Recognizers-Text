@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult } from "../number/extractors"
 import { RegExpUtility, Match } from "../utilities";
-import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateTime } from "../resources/baseDateTime";
 
@@ -139,6 +139,14 @@ export class BaseHolidayParser implements IDateTimeParser {
                 }
             }
             else {
+                return ret;
+            }
+
+            if (value === DateUtils.minValue()) {
+                ret.timex = '';
+                ret.futureValue = DateUtils.minValue();
+                ret.pastValue = DateUtils.minValue();
+                ret.success = true;
                 return ret;
             }
 
