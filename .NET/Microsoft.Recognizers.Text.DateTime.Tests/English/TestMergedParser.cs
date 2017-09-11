@@ -11,27 +11,32 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
         private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration());
 
-        readonly DateObject refrenceDate;
+        readonly DateObject referenceDate;
 
         public TestMergedParser()
         {
-            refrenceDate = new DateObject(2016, 11, 7);
+            referenceDate = new DateObject(2016, 11, 7);
         }
 
         public void BasicTest(string text, string type)
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDate);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type, pr.Type.Replace("datetimeV2.",""));
         }
 
         public void BasicTestResolution(string text, string resolution)
         {
+            BasicTestResolution(text, resolution, referenceDate);
+        }
+
+        public void BasicTestResolution(string text, string resolution, DateObject refDate)
+        {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDate);
-            var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>) pr.Value).First().Value);
+            var pr = parser.Parse(er[0], refDate);
+            var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>)pr.Value).First().Value);
             Assert.AreEqual(resolution, prValue.First()["value"]);
         }
 
@@ -39,9 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(2, er.Count);
-            var pr = parser.Parse(er[0], refrenceDate);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type1, pr.Type.Replace("datetimeV2.", ""));
-            pr = parser.Parse(er[1], refrenceDate);
+            pr = parser.Parse(er[1], referenceDate);
             Assert.AreEqual(type2, pr.Type.Replace("datetimeV2.", ""));
         }
 
@@ -61,6 +66,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         public void TestMergedParseResolution()
         {
             BasicTestResolution("Set an appointment for Easter", "not resolved");
+        }
+
+        [TestMethod]
+        public void TestMergedParseResolutionWeekDayAndOrdinary()
+        {
+            BasicTestResolution("put make cable's wedding in my calendar for wednesday the thirty first", "not resolved", new DateObject(2017, 09, 15));
+            BasicTestResolution("put make cable's wedding in my calendar for wednesday the thirty first", "not resolved", new DateObject(2017, 10, 15));
+            BasicTestResolution("put make cable's wedding in my calendar for tuesday the thirty first", "2017-10-31", new DateObject(2017, 10, 15));
         }
 
         [TestMethod]

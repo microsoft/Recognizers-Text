@@ -115,24 +115,28 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (day == num)
                         {
-                            var referenceDate = DateObject.Now;
-                            var date = new DateObject(referenceDate.Year, referenceDate.Month, num);
-                            var date2WeekdayStr = date.DayOfWeek.ToString().ToLowerInvariant();
-                            var extractedWeekDayStr = match.Groups["weekday"].Value.ToLowerInvariant();
-                            if (this.config.DayOfWeek[date2WeekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
-                            {
-                                ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
-                                continue;
-                            }
-                            else
-                            {
-                                //separate to two date points
-                                ret.Add(new Token(match.Groups["weekday"].Index,
-                                    match.Groups["weekday"].Index + match.Groups["weekday"].Length));
-                                ret.Add(new Token(match.Groups["DayOfMonth"].Index,
-                                    match.Groups["DayOfMonth"].Index + match.Groups["DayOfMonth"].Length));
-                                continue;
-                            }
+                            ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
+                            continue;
+                            //var referenceDate = DateObject.Now;
+                            //var date = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, num);
+                            //var date2WeekdayStr = date.DayOfWeek.ToString().ToLowerInvariant();
+                            //var extractedWeekDayStr = match.Groups["weekday"].Value.ToLowerInvariant();
+                            
+                            //if (date.Equals(DateObject.MinValue)
+                            //    || this.config.DayOfWeek[date2WeekdayStr] != this.config.DayOfWeek[extractedWeekDayStr])
+                            //{
+                            //    //separate to two date points
+                            //    ret.Add(new Token(match.Groups["weekday"].Index,
+                            //        match.Groups["weekday"].Index + match.Groups["weekday"].Length));
+                            //    ret.Add(new Token(match.Groups["DayOfMonth"].Index,
+                            //        match.Groups["DayOfMonth"].Index + match.Groups["DayOfMonth"].Length));
+                            //    continue;
+                            //}
+                            //else
+                            //{
+                            //    ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
+                            //    continue;
+                            //}
                         }
                     }
                 }
