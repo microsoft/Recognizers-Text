@@ -33,10 +33,10 @@ export class BaseDateExtractor implements IExtractor {
 
     extract(source: string): Array<ExtractResult> {
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.basicRegexMatch(source))
-        .concat(this.implicitDate(source))
-        .concat(this.numberWithMonth(source))
-        .concat(this.durationWithBeforeAndAfter(source));
+            .concat(this.basicRegexMatch(source))
+            .concat(this.implicitDate(source))
+            .concat(this.numberWithMonth(source))
+            .concat(this.durationWithBeforeAndAfter(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -103,19 +103,8 @@ export class BaseDateExtractor implements IExtractor {
                     }
                     let day = Number.parseInt(this.config.numberParser.parse(numberEr).value);
                     if (day === num) {
-                        let currentDate = new Date();
-                        currentDate.setDate(num);
-                        let dayOfWeek = currentDate.getDay();
-                        let dayOfWeekStr = match.groups('weekday').value.toLowerCase();
-                        if (this.config.dayOfWeek.get(dayOfWeekStr) === dayOfWeek) {
-                            ret.push(new Token(match.index, result.start + result.length));
-                            return;
-                        } else {
-                            let weekdayMatch = match.groups('weekday');
-                            let dayOfMonthMatch = match.groups('DayOfMonth');
-                            ret.push(new Token(weekdayMatch.index, weekdayMatch.index + weekdayMatch.length));
-                            ret.push(new Token(dayOfMonthMatch.index, dayOfMonthMatch.index + dayOfMonthMatch.length));
-                        }
+                        ret.push(new Token(match.index, result.start + result.length));
+                        return;
                     }
                 }
             }
@@ -205,9 +194,9 @@ export class BaseDateParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
+                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
                 innerResult.pastResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
+                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
                 resultValue = innerResult;
             }
         }
@@ -318,7 +307,7 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         // handle "Friday"
-        match = RegExpUtility.getMatches(this.config.weekDayRegex , trimmedSource).pop();
+        match = RegExpUtility.getMatches(this.config.weekDayRegex, trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let weekdayStr = match.groups('weekday').value;
             let weekday = this.config.dayOfWeek.get(weekdayStr);
@@ -344,7 +333,7 @@ export class BaseDateParser implements IDateTimeParser {
             let dayStr = match.groups('DayOfMonth').value;
             let er = ExtractResult.getFromText(dayStr);
             let day = Number.parseInt(this.config.numberParser.parse(er).value);
-            
+
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
 
@@ -366,16 +355,28 @@ export class BaseDateParser implements IDateTimeParser {
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
 
-            let date = new Date(year, month, day);
+            let date = DateUtils.safeCreateFromMinValue(year, month, day);
 
             let weekdayStr = match.groups('weekday').value;
-            if (this.config.dayOfWeek.get(weekdayStr) === date.getDay()) {
+            if (date !== DateUtils.minValue() &&
+                this.config.dayOfWeek.get(weekdayStr) === date.getDay()) {
                 result.timex = FormatUtil.luisDate(year, month, day)
                 result.futureValue = new Date(year, month, day);
                 result.pastValue = new Date(year, month, day);
                 result.success = true;
 
                 return result;
+            }
+            else {
+                //the resolution should have no value
+                let weekDay = this.config.dayOfWeek[weekdayStr];
+                let timexDayOfWeek = "XXXX-WXX-" + weekDay;
+                let timexDay = FormatUtil.luisDate(-1, -1, day);
+                result.timex = timexDayOfWeek + "," + timexDay;
+
+                result.futureValue = DateUtils.minValue();
+                result.pastValue = DateUtils.minValue();
+                result.success = true;
             }
         }
         return result;
@@ -412,24 +413,24 @@ export class BaseDateParser implements IDateTimeParser {
     private parseSingleNumber(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
-        
+
         let er = this.config.ordinalExtractor.extract(trimmedSource).pop();
         if (!er || StringUtility.isNullOrEmpty(er.text)) {
             er = this.config.integerExtractor.extract(trimmedSource).pop();
         }
         if (!er || StringUtility.isNullOrEmpty(er.text)) return result;
-        
+
         let day = Number.parseInt(this.config.numberParser.parse(er).value);
         let month = referenceDate.getMonth();
         let year = referenceDate.getFullYear();
 
         result.timex = FormatUtil.luisDate(-1, -1, day);
-        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
         let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
 
-        if (futureDate < referenceDate) futureDate.setMonth(month + 1);
-        if (pastDate >= referenceDate) pastDate.setMonth(month - 1);
-        
+        if (futureDate !== DateUtils.minValue() && futureDate < referenceDate) futureDate.setMonth(month + 1);
+        if (pastDate !== DateUtils.minValue() && pastDate >= referenceDate) pastDate.setMonth(month - 1);
+
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;
