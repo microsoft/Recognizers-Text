@@ -193,15 +193,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateExtractWeekDayAndDayOfMonthSeparate()
         {
-            //Need to calculate the DayOfWeek by the date
-            //Example: What do I have on Wednesday the second?
-            //Should separate the Wednesday and the second to two outputs if the second of current month is not Wednesday
-            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(3) + " the second?", CalculateWeekOfDay(3),
-                "second");
-            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(28) + " the 27th", CalculateWeekOfDay(28),
-                "27th");
-            BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(24) + " the 21st", CalculateWeekOfDay(24),
-                "21st");
+            //comment this method since we output a merged one even the weekday and date is not matching
+
+            ////Need to calculate the DayOfWeek by the date
+            ////Example: What do I have on Wednesday the second?
+            ////Should separate the Wednesday and the second to two outputs if the second of current month is not Wednesday
+            //BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(3) + " the second?", CalculateWeekOfDay(3),
+            //    "second");
+            //BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(28) + " the 27th", CalculateWeekOfDay(28),
+            //    "27th");
+            //BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(24) + " the 21st", CalculateWeekOfDay(24),
+            //    "21st");
         }
     }
 }

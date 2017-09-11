@@ -298,6 +298,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.WeekDayAndDayOfMothRegex.Match(text);
             if (match.Success)
             {
+                int month = referenceDate.Month, year = referenceDate.Year;
+
                 // create a extract result which content ordinal string of text
                 ExtractResult erTmp = new ExtractResult();
                 erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
@@ -306,22 +308,34 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // parse the day in text into number, and get week of day of this number which regarded as a day in this month
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
-                var date = new DateObject(referenceDate.Year, referenceDate.Month, day);
+                var date = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, day);
                 var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
 
                 // get week day from text directly, compare it with the weekday parse above
                 // to see whether they refer to a same week day
                 var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
-                if (this.config.DayOfWeek[date2weekdayStr] == this.config.DayOfWeek[extractedWeekDayStr])
+                if (!date.Equals(DateObject.MinValue) &&
+                    config.DayOfWeek[date2weekdayStr] == config.DayOfWeek[extractedWeekDayStr])
                 {
-                    int month = referenceDate.Month, year = referenceDate.Year;
-
                     ret.Timex = FormatUtil.LuisDate(year, month, day);
                     ret.FutureValue = new DateObject(year, month, day); ;
                     ret.PastValue = new DateObject(year, month, day); ;
                     ret.Success = true;
 
                     return ret;
+                }
+                else
+                {
+                    //the resolution should have no value
+                    var weekdayStr = match.Groups["weekday"].Value.ToLower();
+                    var weekDay = this.config.DayOfWeek[weekdayStr];
+                    var timexDayOfWeek="XXXX-WXX-" + weekDay;
+                    var timexDay = FormatUtil.LuisDate(-1, -1, day);
+                    ret.Timex = timexDayOfWeek + "," + timexDay;
+
+                    ret.FutureValue = DateObject.MinValue;
+                    ret.PastValue = DateObject.MinValue;
+                    ret.Success = true;
                 }
             }
 
@@ -402,15 +416,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // for LUIS format value string
             ret.Timex = FormatUtil.LuisDate(-1, -1, day);
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
-            if (futureDate < referenceDate)
+            if (!futureDate.Equals(DateObject.MinValue) && futureDate < referenceDate)
             {
                 futureDate = futureDate.AddMonths(1);
             }
 
-            if (pastDate >= referenceDate)
+            if (!pastDate.Equals(DateObject.MinValue) && pastDate >= referenceDate)
             {
                 pastDate = pastDate.AddMonths(-1);
             }
