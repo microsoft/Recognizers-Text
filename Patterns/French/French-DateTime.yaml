@@ -66,7 +66,7 @@ QuarterRegexYearFront: !nestedRegex
   def: ({PeriodYearRegex}|l'année\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+ann[eé]e)\s+(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quarts
   references: [ PeriodYearRegex, RelativeRegex ]
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({RelativeRegex}\s+)?(?<seas>spring|summer|fall|autumn|winter)((\s+of|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year))?)\b
+  def: \b(?<season>({RelativeRegex}\s+)?(?<seas>printemps|été|automne|hiver((\s+de|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year))?)\b
   references: [ PeriodYearRegex, RelativeRegex ]
 WhichWeekRegex: !simpleRegex
   def: (semaine)(\s*)(?<number>\d\d|\d|0\d)
@@ -170,11 +170,11 @@ BasicTime: !nestedRegex
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidnightRegex: !simpleRegex
   def: (?<midnight>minuit|min-nuit|min nuit)
-MorningRegex: !simpleRegex
+MorningRegex: !nestedRegex
   def: (?<morning>matin[eé]e)
 AfternoonRegex: !simpleRegex
   def: (?<afternoon>apr[eè]s(-)?midi)
-MidmorningRegex: !simpleRegex
+MidmorningRegex: !nextedRegex
   def: (?<midmorning>milieu(*s+de\s+la\s+){MorningRegex})
   references: [ MorningRegex ]
 MiddayRegex: !simpleRegex
@@ -771,3 +771,4 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
+...
