@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 
@@ -15,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(@"((19\d{2}|20\d{2})|两千)年", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.Duration_YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(@"半", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.Duration_HalfSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // extract by number with unit
         public override List<ExtractResult> Extract(string source)
@@ -59,33 +60,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             public override string ExtractType => Constants.SYS_DATETIME_DURATION;
 
-            public static readonly ImmutableDictionary<string, string> DurationSuffixList = new Dictionary<string, string>
-            {
-                {"M", "分钟"},
-                {"S", "秒钟|秒"},
-                {"H", "个小时|小时"},
-                {"D", "天"},
-                {"W", "星期|个星期|周"},
-                {"Mon", "个月"},
-                {"Y", "年"}
-            }.ToImmutableDictionary();
+            public static readonly ImmutableDictionary<string, string> DurationSuffixList = DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
 
-            public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
-
-            public static readonly ImmutableList<string> AmbiguousUnits = new List<string>()
-            {
-                "分钟",
-                "秒钟",
-                "秒",
-                "个小时",
-                "小时",
-                "天",
-                "星期",
-                "个星期",
-                "周",
-                "个月",
-                "年",
-            }.ToImmutableList();
+            public override ImmutableList<string> AmbiguousUnitList => DateTimeDefinitions.Duration_AmbiguousUnits.ToImmutableList();
         }
     }
 

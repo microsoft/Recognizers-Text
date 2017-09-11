@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -7,21 +8,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
-        public static readonly Regex UnitRegex =
-            new Regex(@"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)",
-                      RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.Set_UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachUnitRegex = new Regex(
-            $@"(?<each>(每个|每一|每)\s*{UnitRegex})", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.Set_EachUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachPrefixRegex = new Regex(@"(?<each>(每)\s*$)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.Set_EachPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(@"(?<last>last|this|next)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.Set_LastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex EachDayRegex = new Regex(@"(每|每一)(天|日)\s*$",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.Set_EachDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
         private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();

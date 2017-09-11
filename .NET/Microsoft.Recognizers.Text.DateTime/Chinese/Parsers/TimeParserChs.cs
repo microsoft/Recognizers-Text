@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -81,36 +82,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
     public static class TimeFunctions
     {
-        public static readonly Dictionary<char, int> NumberDictionary = new Dictionary<char, int>
-        {
-            {'零', 0},
-            {'一', 1},
-            {'二', 2},
-            {'三', 3},
-            {'四', 4},
-            {'五', 5},
-            {'六', 6},
-            {'七', 7},
-            {'八', 8},
-            {'九', 9},
-            {'〇', 0},
-            {'两', 2},
-            {'十', 10}
-        };
+        public static readonly Dictionary<char, int> NumberDictionary = DateTimeDefinitions.Time_NumberDictionary;
 
-        public static readonly Dictionary<string, int> LowBoundDesc = new Dictionary<string, int>
-        {
-            {"中午", 11},
-            {"下午", 12},
-            {"午后", 12},
-            {"晚上", 18},
-            {"夜里", 18},
-            {"夜晚", 18},
-            {"夜间", 18},
-            {"深夜", 18},
-            {"傍晚", 18},
-            {"晚", 18}
-        };
+        public static readonly Dictionary<string, int> LowBoundDesc = DateTimeDefinitions.Time_LowBoundDesc;
 
         public static TimeResult HandleLess(DateTimeExtra<TimeType> extra)
         {

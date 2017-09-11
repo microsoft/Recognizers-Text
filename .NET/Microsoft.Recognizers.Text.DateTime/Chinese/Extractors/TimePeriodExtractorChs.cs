@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -10,48 +11,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
 
-        public const string TimePeriodConnectWords = "(起|至|到|–|-|—|~|～)";
+        public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriod_TimePeriodConnectWords;
 
         //五点十分四十八秒
         public static readonly string ChineseTimeRegex = TimeExtractorChs.ChineseTimeRegex;
 
         //六点 到 九点 | 六 到 九点
-        public static readonly string LeftChsTimeRegex = $"(从)?(?<left>{TimeExtractorChs.DayDescRegex}?" +
-                                                         $"({ChineseTimeRegex}))";
+        public static readonly string LeftChsTimeRegex = DateTimeDefinitions.TimePeriod_LeftChsTimeRegex;
 
-        public static readonly string RightChsTimeRegex =
-            $"{TimePeriodConnectWords}(?<right>{TimeExtractorChs.DayDescRegex}?" +
-            $"{ChineseTimeRegex})(之间)?";
+        public static readonly string RightChsTimeRegex = DateTimeDefinitions.TimePeriod_RightChsTimeRegex;
 
         //2:45
         public static readonly string DigitTimeRegex = TimeExtractorChs.DigitTimeRegex;
 
-        public static readonly string LeftDigitTimeRegex = $"(从)?(?<left>{TimeExtractorChs.DayDescRegex}?" +
-                                                           $"({DigitTimeRegex}))";
+        public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriod_LeftDigitTimeRegex;
 
-        public static readonly string RightDigitTimeRegex =
-            $"{TimePeriodConnectWords}(?<right>{TimeExtractorChs.DayDescRegex}?" +
-            $"{DigitTimeRegex})(之间)?";
+        public static readonly string RightDigitTimeRegex = DateTimeDefinitions.TimePeriod_RightDigitTimeRegex;
 
-        public static readonly string ShortLeftChsTimeRegex =
-            $"(从)?(?<left>{TimeExtractorChs.DayDescRegex}?({TimeExtractorChs.HourChsRegex}))";
+        public static readonly string ShortLeftChsTimeRegex = DateTimeDefinitions.TimePeriod_ShortLeftChsTimeRegex;
 
-        public static readonly string ShortLeftDigitTimeRegex =
-            $"(从)?(?<left>{TimeExtractorChs.DayDescRegex}?({TimeExtractorChs.HourNumRegex}))";
+        public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriod_ShortLeftDigitTimeRegex;
 
         public TimePeriodExtractorChs()
         {
             var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
-                    new Regex($@"({LeftDigitTimeRegex}{RightDigitTimeRegex}|{LeftChsTimeRegex}{RightChsTimeRegex})",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriod_Regexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     PeriodType.FullTime
                 },
                 {
-                    new Regex(
-                        $@"({ShortLeftDigitTimeRegex}{RightDigitTimeRegex}|{ShortLeftChsTimeRegex}{RightChsTimeRegex})",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimePeriod_Regexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     PeriodType.ShortTime
                 }
             };

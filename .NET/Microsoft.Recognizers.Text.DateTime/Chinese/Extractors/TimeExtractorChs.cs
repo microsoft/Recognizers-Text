@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -10,80 +11,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
 
-        public static readonly string HourNumRegex =
-            @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
+        public static readonly string HourNumRegex = DateTimeDefinitions.Time_HourNumRegex;
 
-        public static readonly string MinuteNumRegex =
-            @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
+        public static readonly string MinuteNumRegex = DateTimeDefinitions.Time_MinuteNumRegex;
 
-        public static readonly string SecondNumRegex =
-            @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
+        public static readonly string SecondNumRegex = DateTimeDefinitions.Time_SecondNumRegex;
 
-        public static readonly string HourChsRegex =
-            @"([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
+        public static readonly string HourChsRegex = DateTimeDefinitions.Time_HourChsRegex;
 
-        public static readonly string MinuteChsRegex =
-            @"([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])";
+        public static readonly string MinuteChsRegex = DateTimeDefinitions.Time_MinuteChsRegex;
 
-        public static readonly string SecondChsRegex = MinuteChsRegex;
+        public static readonly string SecondChsRegex = DateTimeDefinitions.Time_SecondChsRegex;
 
-        public static readonly string ClockDescRegex = @"(点\s*整|点\s*钟|点|时)";
+        public static readonly string ClockDescRegex = DateTimeDefinitions.Time_ClockDescRegex;
 
-        public static readonly string MinuteDescRegex = @"(分钟|分|)";
+        public static readonly string MinuteDescRegex = DateTimeDefinitions.Time_MinuteDescRegex;
 
-        public static readonly string SecondDescRegex = @"(秒钟|秒)";
+        public static readonly string SecondDescRegex = DateTimeDefinitions.Time_SecondDescRegex;
 
-        public static readonly string BanHourPrefixRegex = @"(第)";
+        public static readonly string BanHourPrefixRegex = DateTimeDefinitions.Time_BanHourPrefixRegex;
         //e.g: 12点, 十二点, 十二点整
-        public static readonly string HourRegex =
-            $@"(?<!{BanHourPrefixRegex})(?<hour>{HourChsRegex}|{HourNumRegex}){ClockDescRegex}";
+        public static readonly string HourRegex = DateTimeDefinitions.Time_HourRegex;
 
-        public static readonly string MinuteRegex =
-            $@"(?<min>{MinuteChsRegex}|{MinuteNumRegex}){MinuteDescRegex}";
+        public static readonly string MinuteRegex = DateTimeDefinitions.Time_MinuteRegex;
 
-        public static readonly string SecondRegex =
-            $@"(?<sec>{SecondChsRegex}|{SecondNumRegex}){SecondDescRegex}";
+        public static readonly string SecondRegex = DateTimeDefinitions.Time_SecondRegex;
 
-        public static readonly string HalfRegex = @"(?<half>过半|半)";
+        public static readonly string HalfRegex = DateTimeDefinitions.Time_HalfRegex;
 
-        public static readonly string QuareterRegex = @"(?<quarter>[一两二三四1-4])\s*(刻钟|刻)";
+        public static readonly string QuarterRegex = DateTimeDefinitions.Time_QuarterRegex;
 
         //e.g: 十二点五十八分|半|一刻
-        public static readonly string ChineseTimeRegex =
-            $@"{HourRegex}({QuareterRegex}|{HalfRegex}|((过|又)?{MinuteRegex})({SecondRegex})?)?";
+        public static readonly string ChineseTimeRegex = DateTimeDefinitions.Time_ChineseTimeRegex;
 
         //e.g: 12:23
-        public static readonly string DigitTimeRegex =
-            $@"(?<hour>{HourNumRegex}):(?<min>{MinuteNumRegex})(:(?<sec>{SecondNumRegex}))?";
+        public static readonly string DigitTimeRegex = DateTimeDefinitions.Time_DigitTimeRegex;
 
         //e.g: 早上九点
-        public static readonly string DayDescRegex =
-            @"(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
+        public static readonly string DayDescRegex = DateTimeDefinitions.Time_DayDescRegex;
 
-        public static readonly string ApproximateDescPreffixRegex =
-            @"(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
+        public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.Time_ApproximateDescPreffixRegex;
 
-        public static readonly string ApproximateDescSuffixRegex =
-            @"(之前|以前|以后|之后|前|后|左右)";
+        public static readonly string ApproximateDescSuffixRegex = DateTimeDefinitions.Time_ApproximateDescSuffixRegex;
 
         public TimeExtractorChs()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(
-                        $@"{ApproximateDescPreffixRegex}?{DayDescRegex}?{ChineseTimeRegex}{ApproximateDescSuffixRegex}?",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.Time_Regexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.ChineseTime
                 },
                 {
-                    new Regex(
-                        $@"{ApproximateDescPreffixRegex}?{DayDescRegex}?{DigitTimeRegex}{ApproximateDescSuffixRegex}?",
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.Time_Regexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex($@"差{MinuteRegex}{ChineseTimeRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.Time_Regexes3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.LessTime
                 }
             };
