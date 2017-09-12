@@ -10,7 +10,7 @@ describe('DateTime Merged Parser', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date(2016, 10, 7);
-    
+
     basicTest(it, extractor, parser, referenceDate, "Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);
@@ -68,9 +68,19 @@ describe('DateTime Merged Parser with two results', it => {
 
     basicTestWithTwoResults(it, extractor, parser, referenceDate, "Change July 22nd meeting in Bellevue to August 22nd",
         Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATE);
-    
+
     basicTestWithTwoResults(it, extractor, parser, referenceDate, "on Friday for 3 in Bellevue in the afternoon",
         Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_TIMEPERIOD);
+});
+
+describe('DateTime Merged Parse resolution weekday and ordinary', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+
+    basicTestResolution(it, extractor, parser, "put make cable's wedding in my calendar for wednesday the thirty first", "not resolved", new Date(2017, 8, 15));
+    basicTestResolution(it, extractor, parser, "put make cable's wedding in my calendar for wednesday the thirty first", "not resolved", new Date(2017, 9, 15));
+    basicTestResolution(it, extractor, parser, "put make cable's wedding in my calendar for tuesday the thirty first", "2017-10-31", new Date(2017, 9, 15));
 });
 
 function basicTest(it, extractor, parser, referenceDate, text, type) {
@@ -89,5 +99,15 @@ function basicTestWithTwoResults(it, extractor, parser, referenceDate, text, sta
         let prs = ers.map(er => { return parser.parse(er, referenceDate) });
         t.is(startType, prs[0].type.substr('datetimeV2.'.length));
         t.is(endType, prs[1].type.substr('datetimeV2.'.length));
+    });
+}
+
+function basicTestResolution(it, extractor, parser, text, resolution, refDate) {
+    it(text, t => {
+        let er = extractor.extract(text);
+        t.is(1, er.length);
+        let pr = parser.parse(er[0], refDate)
+        let prValue = pr.value.get("values");
+        t.is(resolution, prValue[0].get("value"));
     });
 }

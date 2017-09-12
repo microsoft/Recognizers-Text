@@ -123,14 +123,6 @@ describe('Date Extractor', it => {
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(22) + " the twenty second", getWeekDay(22) + " the twenty second");
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(15) + " the fifteen", getWeekDay(15) + " the fifteen");
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(7) + " the seventh", getWeekDay(7) + " the seventh");
-
-    // ExtractWeekDayAndDayOfMonthSeparate
-    // Need to calculate the DayOfWeek by the date
-    // Example: What do I have on Wednesday the second?
-    // Should separate the Wednesday and the second to two outputs if the second of current month is not Wednesday
-    basicTestTwoOutputs(it, extractor, "What do I have on " + getWeekDay(3) + " the second?", getWeekDay(3), "second");
-    basicTestTwoOutputs(it, extractor, "What do I have on " + getWeekDay(28) + " the 27th", getWeekDay(28), "27th");
-    basicTestTwoOutputs(it, extractor, "What do I have on " + getWeekDay(24) + " the 21st", getWeekDay(24), "21st");
 });
 
 function getWeekDay(dayOfMonth) {
