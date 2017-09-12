@@ -11,6 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         readonly BaseDatePeriodExtractor extractor;
         readonly DateObject referenceDay;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(BaseDatePeriodParser));
+        }
+
+
         public TestDatePeriodParser()
         {
             referenceDay = new DateObject(2016, 11, 7);

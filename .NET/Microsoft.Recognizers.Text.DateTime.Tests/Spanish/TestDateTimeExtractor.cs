@@ -7,6 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     {
         private readonly IExtractor extractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(BaseDateTimeExtractor));
+        }
+
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -14,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, results[0].Type);
-            TestWriter.Write("Spa", extractor, text, results[0]);
+            TestWriter.Write("Spa", extractor, text, results);
         }
 
         [TestMethod]

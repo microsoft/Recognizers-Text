@@ -12,6 +12,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         readonly IDateTimeParser parser;
         readonly BaseDateExtractor extractor;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseDateParser));
+        }
+
         public void BasicTest(string text, DateObject futureDate, DateObject pastDate)
         {
             var er = extractor.Extract(text);

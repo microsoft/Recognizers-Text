@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         readonly IDateTimeParser parser;
         readonly DateObject referenceTime;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseDateTimeParser));
+        }
+
         public TestDateTimeParser()
         {
             referenceTime = new DateObject(2016, 11, 7, 0, 0, 0);

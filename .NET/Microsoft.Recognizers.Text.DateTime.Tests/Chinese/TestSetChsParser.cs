@@ -11,6 +11,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly SetExtractorChs extractor = new SetExtractorChs();
         private readonly SetParserChs parser = new SetParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(SetParserChs));
+        }
+
         public void BasicTest(string text, string timex)
         {
             var er = extractor.Extract(text);

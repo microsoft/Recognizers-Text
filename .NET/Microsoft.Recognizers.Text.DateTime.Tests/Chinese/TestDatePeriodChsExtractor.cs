@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
     {
         private readonly DatePeriodExtractorChs extractor = new DatePeriodExtractorChs();
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(DatePeriodExtractorChs));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -17,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, results[0].Type);
-            TestWriter.Write("Chs", extractor, text, results[0]);
+            TestWriter.Write("Chs", extractor, text, results);
         }
 
         [TestMethod]

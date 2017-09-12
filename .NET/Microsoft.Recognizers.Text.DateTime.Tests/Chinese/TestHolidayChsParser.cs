@@ -13,6 +13,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly BaseHolidayExtractor extractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         private readonly HolidayParserChs parser = new HolidayParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(HolidayParserChs));
+        }
+
         public TestHolidayChsParser()
         {
             refTime = new DateObject(2017, 3, 22);

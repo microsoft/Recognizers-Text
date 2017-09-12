@@ -7,13 +7,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
     {
         private readonly TimePeriodExtractorChs extractor = new TimePeriodExtractorChs();
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(TimePeriodExtractorChs));
+        }
+
         public void BasicTest(string text)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(results[0].Text, text);
             Assert.AreEqual(Constants.SYS_DATETIME_TIMEPERIOD, results[0].Type);
-            TestWriter.Write("Chs", extractor, text, results[0]);
+            TestWriter.Write("Chs", extractor, text, results);
         }
 
         [TestMethod]

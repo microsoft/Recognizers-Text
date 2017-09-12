@@ -6,13 +6,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
     [TestClass]
     public class TestNumberWithUnitSpanish
     {
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(AgeModel));
+            TestWriter.Close("Spa", typeof(CurrencyModel));
+            TestWriter.Close("Spa", typeof(DimensionModel));
+            TestWriter.Close("Spa", typeof(TemperatureModel));
+        }
+
         private void BasicTest(IModel model, string source, string value)
         {
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
-            TestWriter.Write("Spa", model, source, resultStr[0]);
+            TestWriter.Write("Spa", model, source, resultStr);
         }
 
         private void BasicTest(IModel model, string source, string[] values)

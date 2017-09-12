@@ -9,6 +9,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         readonly BaseDurationExtractor extractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         readonly IDateTimeParser parser = new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseDurationParser));
+        }
+
         public void BasicTest(string text, double value, string luisValue)
         {
             var er = extractor.Extract(text);

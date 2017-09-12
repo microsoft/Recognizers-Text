@@ -7,6 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         private readonly BaseDateTimeExtractor extractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseDateTimeExtractor));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -14,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, results[0].Type);
-            TestWriter.Write("Eng", extractor, text, results[0]);
+            TestWriter.Write("Eng", extractor, text, results);
         }
 
         [TestMethod]

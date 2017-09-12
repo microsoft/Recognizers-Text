@@ -6,13 +6,22 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumberSpanish
     {
+
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(NumberModel));
+            TestWriter.Close("Spa", typeof(PercentModel));
+            TestWriter.Close("Spa", typeof(OrdinalModel));
+        }
+
         private void BasicTest(IModel model, string source, string value, string text = null)
         {
             var result = model.Parse(source);
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
             Assert.AreEqual(value, result[0].Resolution["value"]);
-            TestWriter.Write("Spa", model, source, result[0]);
+            TestWriter.Write("Spa", model, source, result);
         }
 
         private void MultiTest(IModel model, string source, int count)

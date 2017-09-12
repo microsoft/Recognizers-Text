@@ -9,6 +9,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         readonly BaseTimeExtractor extractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
         readonly IDateTimeParser parser = new BaseTimeParser(new SpanishTimeParserConfiguration(new SpanishCommonDateTimeParserConfiguration()));
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(BaseTimeParser));
+        }
+
+
         public void BasicTest(string text, DateObject date)
         {
             var er = extractor.Extract(text);

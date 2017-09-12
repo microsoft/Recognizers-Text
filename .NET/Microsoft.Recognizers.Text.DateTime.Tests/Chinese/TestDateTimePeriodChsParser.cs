@@ -12,6 +12,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
 
         readonly DateObject referenceTime;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(DateTimePeriodParserChs));
+        }
+
         public TestDateTimePeriodChsParser()
         {
             referenceTime = new DateObject(2016, 11, 7, 16, 12, 0);

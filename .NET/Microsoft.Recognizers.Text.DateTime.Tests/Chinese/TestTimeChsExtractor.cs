@@ -7,6 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
     {
         private readonly TimeExtractorChs extractor = new TimeExtractorChs();
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(TimeExtractorChs));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -14,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
-            TestWriter.Write("Chs", extractor, text, results[0]);
+            TestWriter.Write("Chs", extractor, text, results);
         }
 
         public void NullTest(string text)

@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly DateTimeExtractorChs extractor = new DateTimeExtractorChs();
         private readonly DateTimeParserChs parser = new DateTimeParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Chs", typeof(DateTimeParserChs));
+        }
+
         public TestDateTimeChsParser()
         {
             refTime = new DateObject(2016, 11, 7, 14, 7, 0);

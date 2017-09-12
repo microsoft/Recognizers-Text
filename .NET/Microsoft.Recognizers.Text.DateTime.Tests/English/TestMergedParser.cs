@@ -14,6 +14,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
         readonly DateObject referenceDate;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseMergedParser));
+        }
+
         public TestMergedParser()
         {
             referenceDate = new DateObject(2016, 11, 7);

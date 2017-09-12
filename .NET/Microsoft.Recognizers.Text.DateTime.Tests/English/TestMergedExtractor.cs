@@ -7,13 +7,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseMergedExtractor));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
-            TestWriter.Write("Eng", extractor, text, results[0]);
+            TestWriter.Write("Eng", extractor, text, results);
         }
 
         public void BasicTestNone(string text)

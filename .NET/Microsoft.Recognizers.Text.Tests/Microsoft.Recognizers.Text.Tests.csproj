@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="TestWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraceListeners.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

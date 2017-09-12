@@ -9,13 +9,22 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumberPortuguese
     {
+
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Por", typeof(NumberModel));
+            TestWriter.Close("Por", typeof(PercentModel));
+            TestWriter.Close("Por", typeof(OrdinalModel));
+        }
+
         private void BasicTest(IModel model, string source, string value, string text = null)
         {
             var result = model.Parse(source);
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
             Assert.AreEqual(value, result[0].Resolution["value"]);
-            TestWriter.Write("Por", model, source, result[0]);
+            TestWriter.Write("Por", model, source, result);
         }
 
         private void MultiTest(IModel model, string source, int count)

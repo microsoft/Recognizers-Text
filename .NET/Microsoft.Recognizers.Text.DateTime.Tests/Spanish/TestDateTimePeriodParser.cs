@@ -12,6 +12,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 
         readonly DateObject referenceTime;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Spa", typeof(DateTimePeriodParser));
+        }
+
+
         public TestDateTimePeriodParser()
         {
             referenceTime = new DateObject(2016, 11, 7, 16, 12, 0);

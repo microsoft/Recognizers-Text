@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         readonly BaseHolidayParser parser;
         readonly BaseHolidayExtractor extractor;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close("Eng", typeof(BaseHolidayParser));
+        }
+
         public void BasicTest(string text, DateObject futureDate, DateObject pastDate)
         {
             var er = extractor.Extract(text);
