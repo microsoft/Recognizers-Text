@@ -45,19 +45,36 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestNumber.cs" />
+    <Compile Include="Number\TestNumber_Fra.cs" />
+    <Compile Include="Number\TestNumber_Por.cs" />
+    <Compile Include="Number\TestNumber_Chs.cs" />
+    <Compile Include="Number\TestNumber_Spa.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TestHelpers.cs" />
+    <Compile Include="TestModel.cs" />
+    <Compile Include="Number\TestNumber_Eng.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="numberResults.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
+      <Project>{61205449-bdba-4bf3-8b24-ae059e0b1b61}</Project>
+      <Name>Microsoft.Recognizers.Text.Number</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
+      <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
+      <Name>Microsoft.Recognizers.Text</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
