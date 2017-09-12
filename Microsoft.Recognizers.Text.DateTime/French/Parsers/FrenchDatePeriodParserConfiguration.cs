@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -96,8 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MonthWithYear = FrenchDatePeriodExtractorConfiguration.MonthWithYear;
             MonthNumWithYear = FrenchDatePeriodExtractorConfiguration.MonthNumWithYear;
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
-            PastRegex = FrenchDatePeriodExtractorConfiguration.PastRegex;
-            FutureRegex = FrenchDatePeriodExtractorConfiguration.FutureRegex;
+            PastRegex = FrenchDatePeriodExtractorConfiguration.PastSuffixRegex;
+            FutureRegex = FrenchDatePeriodExtractorConfiguration.NextSuffixRegex;
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = FrenchDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = FrenchDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -105,8 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             QuarterRegexYearFront = FrenchDatePeriodExtractorConfiguration.QuarterRegexYearFront;
             SeasonRegex = FrenchDatePeriodExtractorConfiguration.SeasonRegex;
             WhichWeekRegex = FrenchDatePeriodExtractorConfiguration.WhichWeekRegex;
-            WeekOfRegex = EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
-            MonthOfRegex = EnglishDatePeriodExtractorConfiguration.MonthOfRegex;
+            WeekOfRegex = FrenchDatePeriodExtractorConfiguration.WeekOfRegex;
+            MonthOfRegex = FrenchDatePeriodExtractorConfiguration.MonthOfRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

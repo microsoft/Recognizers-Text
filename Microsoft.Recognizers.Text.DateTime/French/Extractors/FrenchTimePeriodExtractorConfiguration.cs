@@ -2,37 +2,71 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimePeriodExtractorConfiguration :ITimePeriodExtractorConfiguration
+    public class FrenchTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex HourRegex =
             new Regex(
-                $@"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)",
+                DateTimeDefinitions.HourRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodHourNumRegex =
             new Regex(
-                $@"?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|un(e)?|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)",
+                DateTimeDefinitions.PeriodHourNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PeriodDescRegex =
             new Regex(
-                $@"(?<desc>pm|am|p\.m\.|a\.m\.|p)",
+                DateTimeDefinitions.PeriodDescRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PmRegex =
             new Regex(
-                $@"",
+                DateTimeDefinitions.PmRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex AmRegex =
             new Regex(
-                $@"",
+                DateTimeDefinitions.AmRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PureNumFromTo =
+            new Regex(
+                DateTimeDefinitions.PureNumFromTo,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PureNumBetweenAnd =
+            new Regex(
+                DateTimeDefinitions.PureNumBetweenAnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TimeOfDayRegex =
+            new Regex(DateTimeDefinitions.TimeOfDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex SpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TimeUnitRegex =
+            new Regex(DateTimeDefinitions.TimeUnitRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TimeFollowedUnit = new Regex(DateTimeDefinitions.TimeFollowedUnit,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TimeNumberCombinedWithUnit =
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);

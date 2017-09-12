@@ -24,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             TimeExtractor = config.TimeExtractor;
             TimeParser = config.TimeParser;
-            PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; // add these
-            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd; // add these
-            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex; // add these 
+            PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
+            PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd; 
+            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex; 
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }

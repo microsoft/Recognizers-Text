@@ -2,7 +2,7 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-// using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -32,15 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (trimedPrefix.StartsWith("demi"))
             {
                 deltaMin = 30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if (trimedPrefix.StartsWith("un quart") || trimedPrefix.StartsWith("quart"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("three quarter"))
+            else if (trimedPrefix.StartsWith("trois quarts"))
             {
                 deltaMin = 45;
             }
@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (trimedPrefix.EndsWith("à")) // 'to' i.e 'one to five' = 'un à cinq'
             {
                 deltaMin = -deltaMin;
             }
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var match = FrenchTimeExtractorConfiguration.TimeSuffix.Match(trimedSuffix);
             if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)
             {
-                var oclockStr = match.Groups["oclock"].Value;
+                var oclockStr = match.Groups["heures"].Value;
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var amStr = match.Groups["am"].Value;

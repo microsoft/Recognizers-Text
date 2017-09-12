@@ -144,15 +144,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.EndsWith("prochain")) // next
+            if (trimedText.EndsWith("prochain")) // next - 'l'annee prochain'
             {
                 swift = 1;
             }
-            else if (trimedText.EndsWith("dernier")) // last
+            else if (trimedText.EndsWith("dernier")) // last - 'l'annee dernier'
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("cette")) // this
+            else if (trimedText.StartsWith("cette")) // this - 'cette annees'
             {
                 swift = 0;
             }

@@ -1,33 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
 {
     public class FrenchDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
-        public static readonly List<string> AgoStringList = new List<string>
-        {
-            "ago",
-        };
+        public static readonly Regex AgoRegex = new Regex(DateTimeDefinitions.AgoPrefixRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly List<string> LaterStringList = new List<string>
-        {
-            "plus tard",
-            // "from now"
-        };
+        public static readonly Regex LaterRegex = new Regex(DateTimeDefinitions.LaterRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly List<string> InStringList = new List<string>
-        {
-            // two propositions - "en" and "dans" which differ depending on meaning/grammer/context 
-            "in",
-        };
+        public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        List<string> IDateTimeUtilityConfiguration.AgoStringList => AgoStringList;
-        List<string> IDateTimeUtilityConfiguration.LaterStringList => LaterStringList;
-        List<string> IDateTimeUtilityConfiguration.InStringList => InStringList;
+        public static readonly Regex AmDescRegex = new Regex(DateTimeDefinitions.AmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PmDescRegex = new Regex(DateTimeDefinitions.PmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
+
+        Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
+
+        Regex IDateTimeUtilityConfiguration.InConnectorRegex => InConnectorRegex;
+
+        Regex IDateTimeUtilityConfiguration.AmDescRegex => AmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.PmDescRegex => PmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
+
+        Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -7,36 +8,53 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(
-                @"(?<unit>ann[eé]es|ann[eé]e|ans|mois|semaines|semaine|heure|heures|h|hr|hrs|minutes|minute|mins|min|secondes|seconde|secs|sec)\b",
+                DateTimeDefinitions.DurationUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: improve French the SuffixAndRegex
-        public static readonly Regex SuffixAndRegex = new Regex(@"(?<suffix>\s*(et)\s+((une)\s+)?(?<suffix_num>demi|quart))",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SuffixAndRegex = 
+            new Regex(
+                DateTimeDefinitions.SuffixAndRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DurationFollowedUnit = new Regex($@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DurationFollowedUnit = 
+            new Regex(
+                DateTimeDefinitions.DurationFollowedUnit,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithDurationUnit = new Regex($@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithDurationUnit = 
+            new Regex(
+                DateTimeDefinitions.NumberCombinedWithDurationUnit,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AnUnitRegex = new Regex($@"\b(((?<half>demi(-)?\s+)?(une|un))|(un|une))\s+{DurationUnitRegex}",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AnUnitRegex = 
+            new Regex(
+                DateTimeDefinitions.AnUnitRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex AllRegex = new Regex(@"\b(?<all>tout?\s+(le|la|l')\s+(?<unit>ann[eé]e|mois|semaine|journ[eé]e))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AllRegex = 
+            new Regex(
+                DateTimeDefinitions.AllRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex HalfRegex = new Regex(@"\b(?<half>demi(-)?\s+(?<unit>ann[eé]e|mois|semaine|journ[eé]e|heure))\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex HalfRegex = 
+            new Regex(
+                DateTimeDefinitions.HalfRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ConjunctionRegex = new Regex(@"\b((et(\s+pendant)?)|avec)\b", 
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ConjunctionRegex = 
+            new Regex(
+                DateTimeDefinitions.ConjunctionRegex, 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberRegex = new Regex(@"\b(quelques|peu|some|plusieurs)\b", //quelques = "a few, some," etc 
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex InExactNumberRegex = 
+            new Regex(
+                DateTimeDefinitions.InExactNumberRegex, //quelques = "a few, some," etc 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex InExactNumberUnitRegex = new Regex($@"({InExactNumberRegex})\s+({DurationUnitRegex})",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex InExactNumberUnitRegex = 
+            new Regex(
+                DateTimeDefinitions.InExactNumberUnitRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public FrenchDurationExtractorConfiguration()
         {

@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -6,29 +7,28 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
-        public static readonly Regex PeriodicRegex = new Regex(
-            @"\b(?<periodic>quotidien|mensuel|hebdomadaire|bihebdomadaire|annuel|annuellement)\b", // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement' 
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        private static readonly string EachExpression = @"chaque|(tou[ts]?)\s*(l[ea](s)?)?";
+        public static readonly Regex PeriodicRegex = 
+            new Regex(
+                DateTimeDefinitions.PeriodicRegex, // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement' 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachUnitRegex = new Regex(
-            $@"(?<each>({EachExpression})\s*{FrenchDurationExtractorConfiguration.DurationUnitRegex})",
+            DateTimeDefinitions.EachUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachPrefixRegex = new Regex(
-            $@"(?<each>({EachExpression})\s*$)",
+            DateTimeDefinitions.EachPrefixRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex EachDayRegex = new Regex(
-            $@"\s*({EachExpression})\s*jours\s*\b",        // the noun is 'journees' but short hand is used in convo, i.e 'thirty days' - 'trente jours'
+            DateTimeDefinitions.EachDayRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex BeforeEachDayRegex = new Regex(
-            $@"({EachExpression})\s*jous(\s+[àa]\s)?\s*\b",
+        public static readonly Regex SetLastRegex = new Regex(
+            DateTimeDefinitions.SetLastRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishSetExtractorConfiguration()
+        public FrenchSetExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor DateTimePeriodExtractor { get; }
 
-        Regex ISetExtractorConfiguration.LastRegex => FrenchDateExtractorConfiguration.LastDateRegex;
+        Regex ISetExtractorConfiguration.LastRegex => FrenchDateExtractorConfiguration.LastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 
@@ -63,6 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => BeforeEachDayRegex;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => null;
     }
 }

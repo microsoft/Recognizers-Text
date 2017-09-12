@@ -2,48 +2,66 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>([aà]?|en|de?)?(\s*(la(s)?|el|los))?$)", // à - time at which, en - length of time, dans - amount of time
+        public static readonly Regex PrepositionRegex = 
+          new Regex(  
+            DateTimeDefinitions.PrepositionRegex, // à - time at which, en - length of time, dans - amount of time
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NowRegex =
-            new Regex(@"\b(?<now>(au\s+)?maintenant|d[eé]s\s+que\s+possible|plus\s+vite|r[eé]cemment|pr[eé]c[eé]demment)\b", // right now, as soon as possible, recently, previously
+            new Regex(
+                DateTimeDefinitions.NowRegex, // right now, as soon as possible, recently, previously
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SuffixRegex = new Regex(@"^\s*(dans\s+l['ae]\s+)?(soir[eé]e|matinee|matin|apr[èe]s\s+midi|nuit)\b", // in the evening, afternoon, morning, night
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SuffixRegex = 
+            new Regex(
+                DateTimeDefinitions.SuffixRegex, // in the evening, afternoon, morning, night
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: modify it according to the corresponding English regex
-        public static readonly Regex TimeOfDayRegex = new Regex(@"\b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>(t[oô]t||d[ée]but)(\s+|-))|(?<late>((fin\s+de)|(tard))((\s+|-)))?(matin|matin[ée]e|apr[èe]s-midi)|\s+(l[ea])?+nuit|soir[ée]e)))|(((dans\s+(l[ea])?\s+)?)(journ[ée]e)))s?)\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfDayRegex = 
+            new Regex(
+                DateTimeDefinitions.TimeOfDayRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex($@"\b(((((a)?\s+l[ea]|ce|ceci|dernier)\s+)?{TimeOfDayRegex}))\b",
+            new Regex(
+                DateTimeDefinitions.SpecificTimeOfDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex($@"^\s*(,\s*)?(en|l[ea]?\s+)?{SpecificTimeOfDayRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+             new Regex(
+                 DateTimeDefinitions.TimeOfTodayAfterRegex, 
+                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+([aà]\s+la(s)?|pour))?\s*", RegexOptions.IgnoreCase | RegexOptions.Singleline); 
+            new Regex(
+                DateTimeDefinitions.TimeOfTodayBeforeRegex, 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline); 
 
         public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex($@"({FrenchTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}",
+            new Regex(
+                DateTimeDefinitions.SimpleTimeOfTodayAfterRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({FrenchTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})",
+            new Regex(
+                DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheEndOfRegex = new Regex(@"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TheEndOfRegex = 
+            new Regex(
+                DateTimeDefinitions.TheEndOfRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(@"(?<unit>heures|heure|hrs|hr|secondes|seconde|minutes|minute|mins)\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = 
+            new Regex(
+                DateTimeDefinitions.TimeUnitRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public FrenchDateTimeExtractorConfiguration()
         {
