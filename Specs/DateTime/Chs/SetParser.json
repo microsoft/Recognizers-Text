@@ -1,0 +1,280 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "事件 每天都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1D"
+        },
+        "FutureValue": "Set: P1D",
+        "PastValue": "Set: P1D"
+      },
+      "ResolutionStr": "",
+      "Start": 3,
+      "Length": 2,
+      "Text": "每天",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每日都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1D"
+        },
+        "FutureValue": "Set: P1D",
+        "PastValue": "Set: P1D"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 2,
+      "Text": "每日",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每周都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1W"
+        },
+        "FutureValue": "Set: P1W",
+        "PastValue": "Set: P1W"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 2,
+      "Text": "每周",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每个星期都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1W"
+        },
+        "FutureValue": "Set: P1W",
+        "PastValue": "Set: P1W"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 4,
+      "Text": "每个星期",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每个月都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1M"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1M"
+        },
+        "FutureValue": "Set: P1M",
+        "PastValue": "Set: P1M"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 3,
+      "Text": "每个月",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每年都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1Y"
+        },
+        "FutureValue": "Set: P1Y",
+        "PastValue": "Set: P1Y"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 2,
+      "Text": "每年",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每周一都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "FutureValue": "Set: XXXX-WXX-1",
+        "PastValue": "Set: XXXX-WXX-1"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 3,
+      "Text": "每周一",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "事件每周一下午八点都发生",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-1T20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-1T20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-1T20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-1T20"
+        },
+        "FutureValue": "Set: XXXX-WXX-1T20",
+        "PastValue": "Set: XXXX-WXX-1T20"
+      },
+      "ResolutionStr": "",
+      "Start": 2,
+      "Length": 7,
+      "Text": "每周一下午八点",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+]

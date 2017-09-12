@@ -1,0 +1,399 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "setimo",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "7"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quadragesimo setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quadragesimo setimo",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "47"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tricentésimo quadragésima sétima",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tricentésimo quadragésima sétima",
+      "Start": 0,
+      "End": 31,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois milesimo tricentesimo quadragesimo setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois milesimo tricentesimo quadragesimo setimo",
+      "Start": 0,
+      "End": 45,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "2347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
+      "Start": 0,
+      "End": 57,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "52347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "milesimo quingentesimo vigesimo terceiro",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "milesimo quingentesimo vigesimo terceiro",
+      "Start": 0,
+      "End": 39,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "1523"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vigesimo quinto",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vigesimo quinto",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vigesimo primeiro",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vigesimo primeiro",
+      "Start": 0,
+      "End": 16,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "centesimo vigesimo quinto",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "centesimo vigesimo quinto",
+      "Start": 0,
+      "End": 24,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "ducentesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "ducentesimo",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "21o",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "21o",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "30a",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "30a",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2a",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2a",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "undecimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "undecimo",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "décimo primeiro",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "décimo primeiro",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vigesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vigesimo",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "centesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "centesimo",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e dois milesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e dois milesimo",
+      "Start": 0,
+      "End": 20,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "22000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
+      "Start": 0,
+      "End": 72,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
+      "Start": 0,
+      "End": 85,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "3452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
+      "Start": 0,
+      "End": 117,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "3524694673"
+      }
+    }
+  ]
+}
+]

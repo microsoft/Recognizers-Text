@@ -1,0 +1,1005 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-morning Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 28,
+      "Text": "in the early-morning Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-morning Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 27,
+      "Text": "in the late-morning Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-afternoon Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 30,
+      "Text": "in the early-afternoon Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-afternoon Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 29,
+      "Text": "in the late-afternoon Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-evening Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 28,
+      "Text": "in the early-evening Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-evening Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 27,
+      "Text": "in the late-evening Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-night Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 26,
+      "Text": "in the early-night Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-night Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 25,
+      "Text": "in the late-night Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early night Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 26,
+      "Text": "in the early night Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late night Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 25,
+      "Text": "in the late night Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-morning on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 31,
+      "Text": "in the early-morning on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-morning on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 30,
+      "Text": "in the late-morning on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-afternoon on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 33,
+      "Text": "in the early-afternoon on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-afternoon on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 32,
+      "Text": "in the late-afternoon on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-evening on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 31,
+      "Text": "in the early-evening on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-evening on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 30,
+      "Text": "in the late-evening on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-night on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 29,
+      "Text": "in the early-night on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-night on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 28,
+      "Text": "in the late-night on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early night on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 29,
+      "Text": "in the early night on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late night on Tuesday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 28,
+      "Text": "in the late night on Tuesday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday early-morning",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 21,
+      "Text": "Tuesday early-morning",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday late-morning",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 20,
+      "Text": "Tuesday late-morning",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday early-afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 23,
+      "Text": "Tuesday early-afternoon",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday late-afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 22,
+      "Text": "Tuesday late-afternoon",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday early-evening",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 21,
+      "Text": "Tuesday early-evening",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday late-evening",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 20,
+      "Text": "Tuesday late-evening",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday early-night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 19,
+      "Text": "Tuesday early-night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday late-night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 18,
+      "Text": "Tuesday late-night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday early night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 19,
+      "Text": "Tuesday early night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet on Tuesday late night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 18,
+      "Text": "Tuesday late night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out five to seven today",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 19,
+      "Text": "five to seven today",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out five to seven of tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 25,
+      "Text": "five to seven of tomorrow",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 5 to 6 next sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 23,
+      "Text": "from 5 to 6 next sunday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 5 to 6pm next sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 25,
+      "Text": "from 5 to 6pm next sunday",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to 5pm today",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 21,
+      "Text": "from 4pm to 5pm today",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm today to 5pm tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 30,
+      "Text": "from 4pm today to 5pm tomorrow",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to 5pm of tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 27,
+      "Text": "from 4pm to 5pm of tomorrow",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to 5pm of 2017-6-6",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 27,
+      "Text": "from 4pm to 5pm of 2017-6-6",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to 5pm May 5, 2018",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 27,
+      "Text": "from 4pm to 5pm May 5, 2018",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4:00 to 5pm May 5, 2018",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 28,
+      "Text": "from 4:00 to 5pm May 5, 2018",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm on Jan 1, 2016 to 5pm today",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 36,
+      "Text": "from 4pm on Jan 1, 2016 to 5pm today",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 42,
+      "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from today at 4 to next Wedn at 5",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 33,
+      "Text": "from today at 4 to next Wedn at 5",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 4pm and 5pm today",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 25,
+      "Text": "between 4pm and 5pm today",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 4pm on Jan 1, 2016 and 5pm today",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 40,
+      "Text": "between 4pm on Jan 1, 2016 and 5pm today",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tonight",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 7,
+      "Text": "tonight",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 10,
+      "Text": "this night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this evening",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 12,
+      "Text": "this evening",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this morning",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 12,
+      "Text": "this morning",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 14,
+      "Text": "this afternoon",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 10,
+      "Text": "next night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 10,
+      "Text": "last night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tomorrow night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 14,
+      "Text": "tomorrow night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next monday afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 21,
+      "Text": "next monday afternoon",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May 5th night",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 13,
+      "Text": "May 5th night",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last 3 minute",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 13,
+      "Text": "last 3 minute",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back past 3 minute",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 13,
+      "Text": "past 3 minute",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back previous 3 minute",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 17,
+      "Text": "previous 3 minute",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back previous 3mins",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 14,
+      "Text": "previous 3mins",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next 5 hrs",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 10,
+      "Text": "next 5 hrs",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last minute",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 11,
+      "Text": "last minute",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next hour",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 9,
+      "Text": "next hour",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last few minutes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 16,
+      "Text": "last few minutes",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back past several minutes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 20,
+      "Text": "past several minutes",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tuesday in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 22,
+      "Text": "tuesday in the morning",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tuesday in the afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 24,
+      "Text": "tuesday in the afternoon",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tuesday in the evening",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 22,
+      "Text": "tuesday in the evening",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+]

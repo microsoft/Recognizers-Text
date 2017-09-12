@@ -1,0 +1,1050 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3h",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "10800"
+        },
+        "FutureValue": 10800.0,
+        "PastValue": 10800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 2,
+      "Text": "3h",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "259200"
+        },
+        "FutureValue": 259200.0,
+        "PastValue": 259200.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 4,
+      "Text": "3day",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3.5years",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3.5Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3.5Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "110376000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "110376000"
+        },
+        "FutureValue": 110376000.0,
+        "PastValue": 110376000.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 8,
+      "Text": "3.5years",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 h",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "10800"
+        },
+        "FutureValue": 10800.0,
+        "PastValue": 10800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 3,
+      "Text": "3 h",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 hours",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "10800"
+        },
+        "FutureValue": 10800.0,
+        "PastValue": 10800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 7,
+      "Text": "3 hours",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 hrs",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "10800"
+        },
+        "FutureValue": 10800.0,
+        "PastValue": 10800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 5,
+      "Text": "3 hrs",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 hr",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "10800"
+        },
+        "FutureValue": 10800.0,
+        "PastValue": 10800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 4,
+      "Text": "3 hr",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "259200"
+        },
+        "FutureValue": 259200.0,
+        "PastValue": 259200.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 5,
+      "Text": "3 day",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 months",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "7776000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "7776000"
+        },
+        "FutureValue": 7776000.0,
+        "PastValue": 7776000.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 8,
+      "Text": "3 months",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 minutes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "180"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "180"
+        },
+        "FutureValue": 180.0,
+        "PastValue": 180.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 9,
+      "Text": "3 minutes",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 min",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "180"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "180"
+        },
+        "FutureValue": 180.0,
+        "PastValue": 180.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 5,
+      "Text": "3 min",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3.5 second ",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3.5S",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3.5S",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "3.5"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "3.5"
+        },
+        "FutureValue": 3.5,
+        "PastValue": 3.5
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 10,
+      "Text": "3.5 second",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 123.45 sec",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT123.45S",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT123.45S",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "123.45"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "123.45"
+        },
+        "FutureValue": 123.45,
+        "PastValue": 123.45
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 10,
+      "Text": "123.45 sec",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for two weeks",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P2W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P2W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "1209600"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "1209600"
+        },
+        "FutureValue": 1209600.0,
+        "PastValue": 1209600.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 9,
+      "Text": "two weeks",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for twenty min",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT20M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT20M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "1200"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "1200"
+        },
+        "FutureValue": 1200.0,
+        "PastValue": 1200.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 10,
+      "Text": "twenty min",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for twenty and four hours",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT24H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT24H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "86400"
+        },
+        "FutureValue": 86400.0,
+        "PastValue": 86400.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 21,
+      "Text": "twenty and four hours",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "86400"
+        },
+        "FutureValue": 86400.0,
+        "PastValue": 86400.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 7,
+      "Text": "all day",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all week",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "604800"
+        },
+        "FutureValue": 604800.0,
+        "PastValue": 604800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 8,
+      "Text": "all week",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all month",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "2592000"
+        },
+        "FutureValue": 2592000.0,
+        "PastValue": 2592000.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 9,
+      "Text": "all month",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all year",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "31536000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "31536000"
+        },
+        "FutureValue": 31536000.0,
+        "PastValue": 31536000.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 8,
+      "Text": "all year",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for an hour",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT1H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT1H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "3600"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "3600"
+        },
+        "FutureValue": 3600.0,
+        "PastValue": 3600.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 7,
+      "Text": "an hour",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "half year",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P0.5Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P0.5Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "15768000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "15768000"
+        },
+        "FutureValue": 15768000.0,
+        "PastValue": 15768000.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "half year",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "half an year",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P0.5Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P0.5Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "15768000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "15768000"
+        },
+        "FutureValue": 15768000.0,
+        "PastValue": 15768000.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "half an year",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3-min",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT3M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT3M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "180"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "180"
+        },
+        "FutureValue": 180.0,
+        "PastValue": 180.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 5,
+      "Text": "3-min",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 30-minutes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT30M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT30M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "1800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "1800"
+        },
+        "FutureValue": 1800.0,
+        "PastValue": 1800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 10,
+      "Text": "30-minutes",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for an hour and a half",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT1.5H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT1.5H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "5400"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "5400"
+        },
+        "FutureValue": 5400.0,
+        "PastValue": 5400.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 18,
+      "Text": "an hour and a half",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for an hour and half",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT1.5H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT1.5H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "5400"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "5400"
+        },
+        "FutureValue": 5400.0,
+        "PastValue": 5400.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 16,
+      "Text": "an hour and half",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for half hour",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT0.5H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT0.5H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "1800"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "1800"
+        },
+        "FutureValue": 1800.0,
+        "PastValue": 1800.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 9,
+      "Text": "half hour",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for two hour",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT2H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT2H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "7200"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "7200"
+        },
+        "FutureValue": 7200.0,
+        "PastValue": 7200.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 8,
+      "Text": "two hour",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for two and a half hours",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT2.5H",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT2.5H",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "9000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "9000"
+        },
+        "FutureValue": 9000.0,
+        "PastValue": 9000.0
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 20,
+      "Text": "two and a half hours",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+]

@@ -1,0 +1,3706 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "今天晚上9:30,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 6,
+      "Text": "晚上9:30",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": true,
+                "Name": "2",
+                "Captures": [
+                  {
+                    "$ref": "5"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "9"
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 6,
+                "Length": 2,
+                "Value": "30"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": false,
+                "Name": "5",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "10"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "晚上"
+              },
+              {
+                "$id": "11",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "11"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "9"
+              },
+              {
+                "$id": "12",
+                "Success": true,
+                "Name": "min",
+                "Captures": [
+                  {
+                    "$ref": "12"
+                  }
+                ],
+                "Index": 6,
+                "Length": 2,
+                "Value": "30"
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 6,
+            "Value": "晚上9:30"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          }
+        ],
+        "Type": 2
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天晚上19:30,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 7,
+      "Text": "晚上19:30",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": true,
+                "Name": "2",
+                "Captures": [
+                  {
+                    "$ref": "5"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "19"
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 7,
+                "Length": 2,
+                "Value": "30"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": false,
+                "Name": "5",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "10"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "晚上"
+              },
+              {
+                "$id": "11",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "11"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "19"
+              },
+              {
+                "$id": "12",
+                "Success": true,
+                "Name": "min",
+                "Captures": [
+                  {
+                    "$ref": "12"
+                  }
+                ],
+                "Index": 7,
+                "Length": 2,
+                "Value": "30"
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 7,
+            "Value": "晚上19:30"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          }
+        ],
+        "Type": 2
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天下午十一点半,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 6,
+      "Text": "下午十一点半",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "十一"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": true,
+                "Name": "6",
+                "Captures": [
+                  {
+                    "$ref": "9"
+                  }
+                ],
+                "Index": 7,
+                "Length": 1,
+                "Value": "半"
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "21"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "下午"
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "十一"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": true,
+                "Name": "half",
+                "Captures": [
+                  {
+                    "$ref": "24"
+                  }
+                ],
+                "Index": 7,
+                "Length": 1,
+                "Value": "半"
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 6,
+            "Value": "下午十一点半"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天大约十点以后,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 6,
+      "Text": "大约十点以后",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": true,
+                "Name": "1",
+                "Captures": [
+                  {
+                    "$ref": "4"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "大约"
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 5,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": true,
+                "Name": "17",
+                "Captures": [
+                  {
+                    "$ref": "20"
+                  }
+                ],
+                "Index": 6,
+                "Length": 2,
+                "Value": "以后"
+              },
+              {
+                "$id": "21",
+                "Success": false,
+                "Name": "daydesc",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 6,
+            "Value": "大约十点以后"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天大约早上十点左右,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 8,
+      "Text": "大约早上十点左右",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": true,
+                "Name": "1",
+                "Captures": [
+                  {
+                    "$ref": "4"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "大约"
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 7,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": true,
+                "Name": "17",
+                "Captures": [
+                  {
+                    "$ref": "20"
+                  }
+                ],
+                "Index": 8,
+                "Length": 2,
+                "Value": "左右"
+              },
+              {
+                "$id": "21",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "21"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "早上"
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 8,
+            "Value": "大约早上十点左右"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天大约晚上十点以后,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 8,
+      "Text": "大约晚上十点以后",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": true,
+                "Name": "1",
+                "Captures": [
+                  {
+                    "$ref": "4"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "大约"
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 7,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": true,
+                "Name": "17",
+                "Captures": [
+                  {
+                    "$ref": "20"
+                  }
+                ],
+                "Index": 8,
+                "Length": 2,
+                "Value": "以后"
+              },
+              {
+                "$id": "21",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "21"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "晚上"
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "十"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 8,
+            "Value": "大约晚上十点以后"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天早上11点,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 5,
+      "Text": "早上11点",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": false,
+                "Name": "3",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "7",
+                "Success": true,
+                "Name": "4",
+                "Captures": [
+                  {
+                    "$ref": "7"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "11"
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "21"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "早上"
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "11"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 5,
+            "Value": "早上11点"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天晚2点半,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 4,
+      "Text": "晚2点半",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": false,
+                "Name": "3",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "7",
+                "Success": true,
+                "Name": "4",
+                "Captures": [
+                  {
+                    "$ref": "7"
+                  }
+                ],
+                "Index": 3,
+                "Length": 1,
+                "Value": "2"
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": true,
+                "Name": "6",
+                "Captures": [
+                  {
+                    "$ref": "9"
+                  }
+                ],
+                "Index": 5,
+                "Length": 1,
+                "Value": "半"
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": true,
+                "Name": "daydesc",
+                "Captures": [
+                  {
+                    "$ref": "21"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "晚"
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 3,
+                "Length": 1,
+                "Value": "2"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": true,
+                "Name": "half",
+                "Captures": [
+                  {
+                    "$ref": "24"
+                  }
+                ],
+                "Index": 5,
+                "Length": 1,
+                "Value": "半"
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 4,
+            "Value": "晚2点半"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天零点,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 2,
+      "Text": "零点",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 3,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": false,
+                "Name": "daydesc",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 2,
+            "Value": "零点"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天零点整,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 3,
+      "Text": "零点整",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 3,
+                "Length": 2,
+                "Value": "点整"
+              },
+              {
+                "$id": "9",
+                "Success": false,
+                "Name": "6",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "10",
+                "Success": false,
+                "Name": "7",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": false,
+                "Name": "daydesc",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "23",
+                "Success": false,
+                "Name": "quarter",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 3,
+            "Value": "零点整"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天零点一刻,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 4,
+      "Text": "零点一刻",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": true,
+                "Name": "3",
+                "Captures": [
+                  {
+                    "$ref": "6"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "7",
+                "Success": false,
+                "Name": "4",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 3,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": true,
+                "Name": "6",
+                "Captures": [
+                  {
+                    "$ref": "9"
+                  }
+                ],
+                "Index": 4,
+                "Length": 2,
+                "Value": "一刻"
+              },
+              {
+                "$id": "10",
+                "Success": true,
+                "Name": "7",
+                "Captures": [
+                  {
+                    "$ref": "10"
+                  }
+                ],
+                "Index": 5,
+                "Length": 1,
+                "Value": "刻"
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": false,
+                "Name": "daydesc",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 2,
+                "Length": 1,
+                "Value": "零"
+              },
+              {
+                "$id": "23",
+                "Success": true,
+                "Name": "quarter",
+                "Captures": [
+                  {
+                    "$ref": "23"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "一"
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 4,
+            "Value": "零点一刻"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今天11点3刻,微软大厦门口见",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 5,
+      "Text": "11点3刻",
+      "Type": "time",
+      "Data": {
+        "$id": "2",
+        "NamedEntity": [
+          {
+            "$id": "3",
+            "Groups": [
+              {
+                "$ref": "3"
+              },
+              {
+                "$id": "4",
+                "Success": false,
+                "Name": "1",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "5",
+                "Success": false,
+                "Name": "2",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "6",
+                "Success": false,
+                "Name": "3",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "7",
+                "Success": true,
+                "Name": "4",
+                "Captures": [
+                  {
+                    "$ref": "7"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "11"
+              },
+              {
+                "$id": "8",
+                "Success": true,
+                "Name": "5",
+                "Captures": [
+                  {
+                    "$ref": "8"
+                  }
+                ],
+                "Index": 4,
+                "Length": 1,
+                "Value": "点"
+              },
+              {
+                "$id": "9",
+                "Success": true,
+                "Name": "6",
+                "Captures": [
+                  {
+                    "$ref": "9"
+                  }
+                ],
+                "Index": 5,
+                "Length": 2,
+                "Value": "3刻"
+              },
+              {
+                "$id": "10",
+                "Success": true,
+                "Name": "7",
+                "Captures": [
+                  {
+                    "$ref": "10"
+                  }
+                ],
+                "Index": 6,
+                "Length": 1,
+                "Value": "刻"
+              },
+              {
+                "$id": "11",
+                "Success": false,
+                "Name": "8",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "12",
+                "Success": false,
+                "Name": "9",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "13",
+                "Success": false,
+                "Name": "10",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "14",
+                "Success": false,
+                "Name": "11",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "15",
+                "Success": false,
+                "Name": "12",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "16",
+                "Success": false,
+                "Name": "13",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "17",
+                "Success": false,
+                "Name": "14",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "18",
+                "Success": false,
+                "Name": "15",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "19",
+                "Success": false,
+                "Name": "16",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "20",
+                "Success": false,
+                "Name": "17",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "21",
+                "Success": false,
+                "Name": "daydesc",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "22",
+                "Success": true,
+                "Name": "hour",
+                "Captures": [
+                  {
+                    "$ref": "22"
+                  }
+                ],
+                "Index": 2,
+                "Length": 2,
+                "Value": "11"
+              },
+              {
+                "$id": "23",
+                "Success": true,
+                "Name": "quarter",
+                "Captures": [
+                  {
+                    "$ref": "23"
+                  }
+                ],
+                "Index": 5,
+                "Length": 1,
+                "Value": "3"
+              },
+              {
+                "$id": "24",
+                "Success": false,
+                "Name": "half",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "25",
+                "Success": false,
+                "Name": "min",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              },
+              {
+                "$id": "26",
+                "Success": false,
+                "Name": "sec",
+                "Captures": [],
+                "Index": 0,
+                "Length": 0,
+                "Value": ""
+              }
+            ],
+            "Success": true,
+            "Name": "0",
+            "Captures": [
+              {
+                "$ref": "3"
+              }
+            ],
+            "Index": 2,
+            "Length": 5,
+            "Value": "11点3刻"
+          },
+          {
+            "$ref": "4"
+          },
+          {
+            "$ref": "5"
+          },
+          {
+            "$ref": "6"
+          },
+          {
+            "$ref": "7"
+          },
+          {
+            "$ref": "8"
+          },
+          {
+            "$ref": "9"
+          },
+          {
+            "$ref": "10"
+          },
+          {
+            "$ref": "11"
+          },
+          {
+            "$ref": "12"
+          },
+          {
+            "$ref": "13"
+          },
+          {
+            "$ref": "14"
+          },
+          {
+            "$ref": "15"
+          },
+          {
+            "$ref": "16"
+          },
+          {
+            "$ref": "17"
+          },
+          {
+            "$ref": "18"
+          },
+          {
+            "$ref": "19"
+          },
+          {
+            "$ref": "20"
+          },
+          {
+            "$ref": "21"
+          },
+          {
+            "$ref": "22"
+          },
+          {
+            "$ref": "23"
+          },
+          {
+            "$ref": "24"
+          },
+          {
+            "$ref": "25"
+          },
+          {
+            "$ref": "26"
+          }
+        ],
+        "Type": 0
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "NullTest",
+  "Input": "今天第1时",
+  "Results": null
+}
+]

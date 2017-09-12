@@ -1,0 +1,3115 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-15"
+        },
+        "FutureValue": "2016-11-15T00:00:00",
+        "PastValue": "2016-10-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2 Oct",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2 Oct",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2-Oct",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2-Oct",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2/Oct",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2/Oct",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 2 Octubre",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 9,
+      "Text": "2 Octubre",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 12 de enero, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-12"
+        },
+        "FutureValue": "2016-01-12T00:00:00",
+        "PastValue": "2016-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "12 de enero, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el lunes 12 de enero, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-12"
+        },
+        "FutureValue": "2016-01-12T00:00:00",
+        "PastValue": "2016-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 23,
+      "Text": "lunes 12 de enero, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 22/02/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-02-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-02-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-02-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-02-22"
+        },
+        "FutureValue": "2016-02-22T00:00:00",
+        "PastValue": "2016-02-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "22/02/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/16",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21-04-2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "21-04-2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el     4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré     4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré 08/12,2015",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 10,
+      "Text": "08/12,2015",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré 08/12,15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 8,
+      "Text": "08/12,15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré 1ro de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 10,
+      "Text": "1ro de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 1-Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "1-Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el Mi, 22 de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-22"
+        },
+        "FutureValue": "2017-01-22T00:00:00",
+        "PastValue": "2016-01-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "Mi, 22 de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el primero de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "primero de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el veintiuno de Mayo",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "veintiuno de Mayo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en Mayo veintiuno",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "Mayo veintiuno",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el segundo de Ago.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-08-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-08-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-08-02"
+        },
+        "FutureValue": "2017-08-02T00:00:00",
+        "PastValue": "2016-08-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "segundo de Ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el vigesimo segundo de Junio",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-06-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-06-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-22"
+        },
+        "FutureValue": "2017-06-22T00:00:00",
+        "PastValue": "2016-06-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 25,
+      "Text": "vigesimo segundo de Junio",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en |viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré los viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré |Viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 9,
+      "Length": 7,
+      "Text": "Viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 3,
+      "Text": "hoy",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 6,
+      "Text": "mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volví ayer",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 4,
+      "Text": "ayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volví anteayer",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 8,
+      "Text": "anteayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré pasado mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 13,
+      "Text": "pasado mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el día despues de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 24,
+      "Text": "el día despues de mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el próximo dia",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 14,
+      "Text": "el próximo dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el día siguiente",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 16,
+      "Text": "el día siguiente",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el este viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 12,
+      "Text": "este viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el proximo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 15,
+      "Text": "proximo domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el ultimo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "ultimo domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el viernes de esta semana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 22,
+      "Text": "viernes de esta semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el domingo de la siguiente semana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 30,
+      "Text": "domingo de la siguiente semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el domingo de la última semana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 27,
+      "Text": "domingo de la última semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el último dia",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 13,
+      "Text": "el último dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en el último día",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "el último día",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en el día",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 6,
+      "Text": "el día",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 15 Junio 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-06-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-06-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-15"
+        },
+        "FutureValue": "2016-06-15T00:00:00",
+        "PastValue": "2016-06-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "15 Junio 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el primer viernes de julio",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-07-WXX-5-#1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-07-WXX-5-#1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-07-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-07-01"
+        },
+        "FutureValue": "2017-07-07T00:00:00",
+        "PastValue": "2016-07-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 26,
+      "Text": "el primer viernes de julio",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el primer viernes de este mes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-11-WXX-5-#1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-11-WXX-5-#1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-04"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-04T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 29,
+      "Text": "el primer viernes de este mes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-15"
+        },
+        "FutureValue": "2016-11-15T00:00:00",
+        "PastValue": "2016-10-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2 Oct",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2 Oct",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2/Oct",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2/Oct",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 12 de enero, 2018",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2018-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2018-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2018-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2018-01-12"
+        },
+        "FutureValue": "2018-01-12T00:00:00",
+        "PastValue": "2018-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "12 de enero, 2018",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el     4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/16",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 9-18-15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-09-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-09-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-09-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-09-18"
+        },
+        "FutureValue": "2015-09-18T00:00:00",
+        "PastValue": "2015-09-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "9-18-15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 08/12,2015",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "08/12,2015",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 1ro de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "1ro de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el Mi, 22 de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-22"
+        },
+        "FutureValue": "2017-01-22T00:00:00",
+        "PastValue": "2016-01-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "Mi, 22 de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el primero de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "primero de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el veintiuno de Mayo",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "veintiuno de Mayo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el Mayo veintiuno",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "Mayo veintiuno",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el segundo de Ago.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-08-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-08-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-08-02"
+        },
+        "FutureValue": "2017-08-02T00:00:00",
+        "PastValue": "2016-08-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "segundo de Ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el vigesimo segundo de Junio",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-06-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-06-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-22"
+        },
+        "FutureValue": "2017-06-22T00:00:00",
+        "PastValue": "2016-06-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 25,
+      "Text": "vigesimo segundo de Junio",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en |viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 3,
+      "Text": "hoy",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 6,
+      "Text": "mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volví ayer",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 4,
+      "Text": "ayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvi el dia antes de ayer",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 20,
+      "Text": "el dia antes de ayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré pasado mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 13,
+      "Text": "pasado mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "El día despues de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 24,
+      "Text": "El día despues de mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el día siguiente",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 16,
+      "Text": "el día siguiente",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el proximo día",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 14,
+      "Text": "el proximo día",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el este viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 12,
+      "Text": "este viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el próximo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 15,
+      "Text": "próximo domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en el día",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 6,
+      "Text": "el día",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 15 Junio 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-06-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-06-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-15"
+        },
+        "FutureValue": "2016-06-15T00:00:00",
+        "PastValue": "2016-06-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "15 Junio 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+]

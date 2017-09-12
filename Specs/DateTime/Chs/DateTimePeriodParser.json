@@ -1,0 +1,610 @@
+[{
+  "TestType": "BasicTestFuture",
+  "Input": "从昨天下午两点到四点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-06T14,2016-11-06T16,PT2H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-06T14,2016-11-06T16,PT2H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 14:00:00",
+          "endDateTime": "2016-11-06 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 14:00:00",
+          "endDateTime": "2016-11-06 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T14:00:00",
+          "Item2": "2016-11-06T16:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-06T14:00:00",
+          "Item2": "2016-11-06T16:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 10,
+      "Text": "从昨天下午两点到四点",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "从昨天下午两点到明天四点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 14:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 14:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T14:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "从昨天下午两点到明天四点",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "从昨天5:00-6:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 05:00:00",
+          "endDateTime": "2016-11-06 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 05:00:00",
+          "endDateTime": "2016-11-06 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T05:00:00",
+          "Item2": "2016-11-06T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-06T05:00:00",
+          "Item2": "2016-11-06T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "从昨天5:00-6:00",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "1月15号4点和2月3号9点之间",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-01-15 04:00:00",
+          "endDateTime": "2017-02-03 09:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2017-01-15 04:00:00",
+          "endDateTime": "2017-02-03 09:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-01-15T04:00:00",
+          "Item2": "2017-02-03T09:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 16,
+      "Text": "1月15号4点和2月3号9点之间",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "2点-明天4点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 02:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 02:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T02:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "2点-明天4点",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "昨晚",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 16:00:00",
+          "endDateTime": "2016-11-06 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 16:00:00",
+          "endDateTime": "2016-11-06 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T16:00:00",
+          "Item2": "2016-11-06T20:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 2,
+      "Text": "昨晚",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "昨天晚上",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 16:00:00",
+          "endDateTime": "2016-11-06 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 16:00:00",
+          "endDateTime": "2016-11-06 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T16:00:00",
+          "Item2": "2016-11-06T20:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-06T16:00:00",
+          "Item2": "2016-11-06T20:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "昨天晚上",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "明天上午",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TMO",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TMO",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T08:00:00",
+          "Item2": "2016-11-08T12:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T08:00:00",
+          "Item2": "2016-11-08T12:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "明天上午",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "上个小时",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 15:12:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 15:12:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T15:12:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "上个小时",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "之后5分钟",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 16:17:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 16:17:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T16:17:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 5,
+      "Text": "之后5分钟",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "之前3小时",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 13:12:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 13:12:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T13:12:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 5,
+      "Text": "之前3小时",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "帮我定一个从现在到八点的会议",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T20:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 6,
+      "Text": "从现在到八点",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "今晚八点到九点有会议室吗",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T20:00:00,2016-11-07T21:00:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T20:00:00,2016-11-07T21:00:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 21:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 21:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T21:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "今晚八点到九点",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "帮我在今晚7点到7点30定个会",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 19:00:00",
+          "endDateTime": "2016-11-07 19:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 19:00:00",
+          "endDateTime": "2016-11-07 19:30:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T19:00:00",
+          "Item2": "2016-11-07T19:30:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 3,
+      "Length": 9,
+      "Text": "今晚7点到7点30",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+]

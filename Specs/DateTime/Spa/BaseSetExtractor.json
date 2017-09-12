@@ -1,0 +1,270 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "saldré semanalmente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 12,
+      "Text": "semanalmente",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saltré diariamente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 11,
+      "Text": "diariamente",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saltré a diario",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 8,
+      "Text": "a diario",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré todos los dias",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 14,
+      "Text": "todos los dias",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré cada mes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 8,
+      "Text": "cada mes",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré todos los meses",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 15,
+      "Text": "todos los meses",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré todos las semanas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 17,
+      "Text": "todos las semanas",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré mensualmente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 12,
+      "Text": "mensualmente",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré anualmente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 10,
+      "Text": "anualmente",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré todos los años",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 14,
+      "Text": "todos los años",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me iré cada dos dias",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 13,
+      "Text": "cada dos dias",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me iré cada tres semanas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 17,
+      "Text": "cada tres semanas",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me iré cada 3 semanas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 14,
+      "Text": "cada 3 semanas",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me iré a las 3pm todos los dias",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 18,
+      "Text": "3pm todos los dias",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me iré todos los dias a las 3pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 24,
+      "Text": "todos los dias a las 3pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré cada 15/4",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 9,
+      "Text": "cada 15/4",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré todos los lunes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 15,
+      "Text": "todos los lunes",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "saldré cada lunes a las 4pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 20,
+      "Text": "cada lunes a las 4pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+]

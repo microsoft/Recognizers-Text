@@ -1,0 +1,210 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "两年",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P2Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P2Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "63072000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "63072000"
+        },
+        "FutureValue": 63072000.0,
+        "PastValue": 63072000.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 2,
+      "Text": "两年",
+      "Type": "duration",
+      "Data": {
+        "$id": "5",
+        "Start": 0,
+        "Length": 1,
+        "Text": "两",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "5分钟",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "PT5M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "PT5M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "300"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "300"
+        },
+        "FutureValue": 300.0,
+        "PastValue": 300.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 3,
+      "Text": "5分钟",
+      "Type": "duration",
+      "Data": {
+        "$id": "5",
+        "Start": 0,
+        "Length": 1,
+        "Text": "5",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "3天",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "259200"
+        },
+        "FutureValue": 259200.0,
+        "PastValue": 259200.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 2,
+      "Text": "3天",
+      "Type": "duration",
+      "Data": {
+        "$id": "5",
+        "Start": 0,
+        "Length": 1,
+        "Text": "3",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "15周",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P15W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P15W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "9072000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "9072000"
+        },
+        "FutureValue": 9072000.0,
+        "PastValue": 9072000.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 3,
+      "Text": "15周",
+      "Type": "duration",
+      "Data": {
+        "$id": "5",
+        "Start": 0,
+        "Length": 2,
+        "Text": "15",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三年半",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3.5Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3.5Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "duration": "110376000"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "duration": "110376000"
+        },
+        "FutureValue": 110376000.0,
+        "PastValue": 110376000.0
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 2,
+      "Text": "三年",
+      "Type": "duration",
+      "Data": {
+        "$id": "5",
+        "Start": 0,
+        "Length": 1,
+        "Text": "三",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+]

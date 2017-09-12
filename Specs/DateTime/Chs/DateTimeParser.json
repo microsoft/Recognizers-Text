@@ -1,0 +1,770 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "2010-01-29早上七点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 07:00:00"
+        },
+        "FutureValue": "2010-01-29T07:00:00",
+        "PastValue": "2010-01-29T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 14,
+      "Text": "2010-01-29早上七点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010.01.29晚上六点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 18:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 18:00:00"
+        },
+        "FutureValue": "2010-01-29T18:00:00",
+        "PastValue": "2010-01-29T18:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 14,
+      "Text": "2010.01.29晚上六点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010/01/29中午十二点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 12:00:00"
+        },
+        "FutureValue": "2010-01-29T12:00:00",
+        "PastValue": "2010-01-29T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 15,
+      "Text": "2010/01/29中午十二点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010 01 29五点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 05:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 05:00:00"
+        },
+        "FutureValue": "2010-01-29T05:00:00",
+        "PastValue": "2010-01-29T05:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "2010 01 29五点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1987年1月11日八点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "1987-01-11T08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "1987-01-11T08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "1987-01-11 08:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "1987-01-11 08:00:00"
+        },
+        "FutureValue": "1987-01-11T08:00:00",
+        "PastValue": "1987-01-11T08:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "1987年1月11日八点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "农历2015年十月初一早上九点二十",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-10-01T09:20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-10-01T09:20",
+        "IsLunar": true,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2015-10-01 09:20:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2015-10-01 09:20:00"
+        },
+        "FutureValue": "2015-10-01T09:20:00",
+        "PastValue": "2015-10-01T09:20:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 17,
+      "Text": "农历2015年十月初一早上九点二十",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1月19号下午5:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-19T17:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-19T17:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2017-01-19 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-01-19 17:00:00"
+        },
+        "FutureValue": "2017-01-19T17:00:00",
+        "PastValue": "2016-01-19T17:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "1月19号下午5:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "明天下午5:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08T17:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08T17:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-08 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-08 17:00:00"
+        },
+        "FutureValue": "2016-11-08T17:00:00",
+        "PastValue": "2016-11-08T17:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 8,
+      "Text": "明天下午5:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今晚6点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 18:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 18:00:00"
+        },
+        "FutureValue": "2016-11-07T18:00:00",
+        "PastValue": "2016-11-07T18:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "今晚6点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今晨5点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 05:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 05:00:00"
+        },
+        "FutureValue": "2016-11-07T05:00:00",
+        "PastValue": "2016-11-07T05:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "今晨5点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今早8点十五分",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T08:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T08:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 08:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 08:15:00"
+        },
+        "FutureValue": "2016-11-07T08:15:00",
+        "PastValue": "2016-11-07T08:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "今早8点十五分",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010-01-29早上七点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 07:00:00"
+        },
+        "FutureValue": "2010-01-29T07:00:00",
+        "PastValue": "2010-01-29T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 14,
+      "Text": "2010-01-29早上七点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010.01.29晚上六点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 18:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 18:00:00"
+        },
+        "FutureValue": "2010-01-29T18:00:00",
+        "PastValue": "2010-01-29T18:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 14,
+      "Text": "2010.01.29晚上六点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010/01/29中午十二点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 12:00:00"
+        },
+        "FutureValue": "2010-01-29T12:00:00",
+        "PastValue": "2010-01-29T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 15,
+      "Text": "2010/01/29中午十二点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010 01 29五点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2010-01-29T05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2010-01-29T05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2010-01-29 05:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2010-01-29 05:00:00"
+        },
+        "FutureValue": "2010-01-29T05:00:00",
+        "PastValue": "2010-01-29T05:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "2010 01 29五点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1987年1月11日八点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "1987-01-11T08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "1987-01-11T08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "1987-01-11 08:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "1987-01-11 08:00:00"
+        },
+        "FutureValue": "1987-01-11T08:00:00",
+        "PastValue": "1987-01-11T08:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "1987年1月11日八点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "农历2015年十月初一早上九点二十",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-10-01T09:20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-10-01T09:20",
+        "IsLunar": true,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2015-10-01 09:20:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2015-10-01 09:20:00"
+        },
+        "FutureValue": "2015-10-01T09:20:00",
+        "PastValue": "2015-10-01T09:20:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 17,
+      "Text": "农历2015年十月初一早上九点二十",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1月19号下午5:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-19T17:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-19T17:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2017-01-19 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-01-19 17:00:00"
+        },
+        "FutureValue": "2017-01-19T17:00:00",
+        "PastValue": "2016-01-19T17:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "1月19号下午5:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "明天下午5:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08T17:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08T17:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-08 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-08 17:00:00"
+        },
+        "FutureValue": "2016-11-08T17:00:00",
+        "PastValue": "2016-11-08T17:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 8,
+      "Text": "明天下午5:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今晚6点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 18:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 18:00:00"
+        },
+        "FutureValue": "2016-11-07T18:00:00",
+        "PastValue": "2016-11-07T18:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "今晚6点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今晨5点",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 05:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 05:00:00"
+        },
+        "FutureValue": "2016-11-07T05:00:00",
+        "PastValue": "2016-11-07T05:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "今晨5点",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "今早8点十五分",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T08:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07T08:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "dateTime": "2016-11-07 08:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "dateTime": "2016-11-07 08:15:00"
+        },
+        "FutureValue": "2016-11-07T08:15:00",
+        "PastValue": "2016-11-07T08:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "今早8点十五分",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+]

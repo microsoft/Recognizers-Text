@@ -1,0 +1,902 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "La temperatura exterior es de 40 grados Celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "40 grados Celsius",
+      "Start": 30,
+      "End": 46,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "40"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Hace 90 fahrenheit en Texas",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "90 fahrenheit",
+      "Start": 5,
+      "End": 17,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "90"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Convertir 10 celsius a fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10 celsius",
+      "Start": 10,
+      "End": 19,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "10"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "fahrenheit",
+      "Start": 23,
+      "End": 32,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-5 grados Fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-5 grados Fahrenheit",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "-5"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "6 grados centígrados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "6 grados centígrados",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "98,6 grados f es temperatura normal",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "98,6 grados f",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "98,6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste la temperatura a 30 grados celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "30 grados celsius",
+      "Start": 24,
+      "End": 40,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "La temperatura normal es 98,6 grados Fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "98,6 grados Fahrenheit",
+      "Start": 25,
+      "End": 46,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "98,6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "100 grados f",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 grados f",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "20 Grados c",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "20 Grados c",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "100 °f",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 °f",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "20 °c",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "20 °c",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "100,2 Grados Fahrenheit es bajo",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100,2 Grados Fahrenheit",
+      "Start": 0,
+      "End": 22,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "100,2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "34,9 centígrado a fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "34,9 centígrado",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "34,9"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "fahrenheit",
+      "Start": 18,
+      "End": 27,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "convertir 200 celsius celsius en fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "200 celsius",
+      "Start": 10,
+      "End": 20,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "200"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "celsius",
+      "Start": 22,
+      "End": 28,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    },
+    {
+      "$id": "5",
+      "Text": "fahrenheit",
+      "Start": 33,
+      "End": 42,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "6",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "convertir 200 K en fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "200 K",
+      "Start": 10,
+      "End": 14,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Kelvin",
+        "value": "200"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "fahrenheit",
+      "Start": 19,
+      "End": 28,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "101 fahrenheit",
+      "Start": 42,
+      "End": 55,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "101"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "fahrenheit",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    },
+    {
+      "$id": "5",
+      "Text": "celsius",
+      "Start": 13,
+      "End": 19,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "6",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    },
+    {
+      "$id": "7",
+      "Text": "celsius",
+      "Start": 30,
+      "End": 36,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "8",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "50 grados centígrados celsius a fahrenheit",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "50 grados centígrados",
+      "Start": 0,
+      "End": 20,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "50"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "celsius",
+      "Start": 22,
+      "End": 28,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    },
+    {
+      "$id": "5",
+      "Text": "fahrenheit",
+      "Start": 32,
+      "End": 41,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "6",
+        "unit": "Grado Fahrenheit",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Podría convertir 51 fahrenheit en grados celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "51 fahrenheit",
+      "Start": 17,
+      "End": 29,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "51"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "grados celsius",
+      "Start": 34,
+      "End": 47,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Convertir 106 grados Fahrenheit a grados centígrados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "106 grados Fahrenheit",
+      "Start": 10,
+      "End": 30,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "106"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "grados centígrados",
+      "Start": 34,
+      "End": 51,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Convertir 106 K a grados centígrados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "106 K",
+      "Start": 10,
+      "End": 14,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Kelvin",
+        "value": "106"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "grados centígrados",
+      "Start": 18,
+      "End": 35,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Convertir 45 grados Fahrenheit a Celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "45 grados Fahrenheit",
+      "Start": 10,
+      "End": 29,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "45"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "Celsius",
+      "Start": 33,
+      "End": 39,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Cómo convertir - 20 grados Fahrenheit a Celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "- 20 grados Fahrenheit",
+      "Start": 15,
+      "End": 36,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "-20"
+      }
+    },
+    {
+      "$id": "3",
+      "Text": "Celsius",
+      "Start": 40,
+      "End": 46,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "4",
+        "unit": "Grado Celsius",
+        "value": null
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10,5 celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10,5 celsius",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "10,5"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "20 grados celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "20 grados celsius",
+      "Start": 0,
+      "End": 16,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "20,3 celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "20,3 celsius",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "20,3"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "34,5 celsius",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "34,5 celsius",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "34,5"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "La temperatura exterior es de 98 grados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "98 grados",
+      "Start": 30,
+      "End": 38,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "98"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste el termostato a 85 °",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "85 °",
+      "Start": 23,
+      "End": 26,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "85"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste el termostato a 85°",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "85°",
+      "Start": 23,
+      "End": 25,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "85"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Aumentar la temperatura en 5 grados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "5 grados",
+      "Start": 27,
+      "End": 34,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "5"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste la temperatura a 70 grados f",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "70 grados f",
+      "Start": 24,
+      "End": 34,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "70"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Aumentar la temperatura en 20 grados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "20 grados",
+      "Start": 27,
+      "End": 35,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste la temperatura a 100 grados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 grados",
+      "Start": 24,
+      "End": 33,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Ajuste la temperatura a 100 Kelvin",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 Kelvin",
+      "Start": 24,
+      "End": 33,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Kelvin",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Mantener la temperatura a 75 grados f",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75 grados f",
+      "Start": 26,
+      "End": 36,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Fahrenheit",
+        "value": "75"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Deje que la temperatura esté a 40 centígrados",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "40 centígrados",
+      "Start": 31,
+      "End": 44,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado Celsius",
+        "value": "40"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Deje que la temperatura esté a 50 grados.",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "50 grados",
+      "Start": 31,
+      "End": 39,
+      "TypeName": "temperature",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Grado",
+        "value": "50"
+      }
+    }
+  ]
+}
+]

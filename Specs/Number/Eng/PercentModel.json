@@ -1,0 +1,266 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "100%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100%",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 100% ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100%",
+      "Start": 1,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 100 percent",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 percent",
+      "Start": 1,
+      "End": 11,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 100 percentage",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 percentage",
+      "Start": 1,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "240 percent",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "240 percent",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "240%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "twenty percent",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "twenty percent",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "thirty percentage",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "thirty percentage",
+      "Start": 0,
+      "End": 16,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "one hundred percent",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "one hundred percent",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "one hundred percents",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "one hundred percents",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "percents of twenty",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "percents of twenty",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "percent of 10",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "percent of 10",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "per cent of twenty-two",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "per cent of twenty-two",
+      "Start": 0,
+      "End": 21,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "per cent of 210",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "per cent of 210",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "210%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10 percent",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10 percent",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "10%"
+      }
+    }
+  ]
+}
+]

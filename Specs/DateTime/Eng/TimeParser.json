@@ -1,0 +1,3955 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:40:00"
+        },
+        "FutureValue": "2017-09-12T08:40:00",
+        "PastValue": "2017-09-12T08:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 11,
+      "Text": "eight forty",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty am",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:40:00"
+        },
+        "FutureValue": "2017-09-12T08:40:00",
+        "PastValue": "2017-09-12T08:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "eight forty am",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:40:00"
+        },
+        "FutureValue": "2017-09-12T20:40:00",
+        "PastValue": "2017-09-12T20:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "eight forty pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten forty five",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:45:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:45:00"
+        },
+        "FutureValue": "2017-09-12T10:45:00",
+        "PastValue": "2017-09-12T10:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "ten forty five",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for fifteen fifteen p m",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T15:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T15:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "15:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "15:15:00"
+        },
+        "FutureValue": "2017-09-12T15:15:00",
+        "PastValue": "2017-09-12T15:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 19,
+      "Text": "fifteen fifteen p m",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for fifteen thirty p m",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T15:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T15:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "15:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "15:30:00"
+        },
+        "FutureValue": "2017-09-12T15:30:00",
+        "PastValue": "2017-09-12T15:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 18,
+      "Text": "fifteen thirty p m",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten ten",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10:10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10:10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:10:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:10:00"
+        },
+        "FutureValue": "2017-09-12T10:10:00",
+        "PastValue": "2017-09-12T10:10:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 7,
+      "Text": "ten ten",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten fifty five p. m.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T22:55",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T22:55",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "22:55:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "22:55:00"
+        },
+        "FutureValue": "2017-09-12T22:55:00",
+        "PastValue": "2017-09-12T22:55:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 20,
+      "Text": "ten fifty five p. m.",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back at 7ampm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "7ampm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 1,
+      "Text": "7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back at seven",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "seven",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 3,
+      "Text": "7pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:00"
+        },
+        "FutureValue": "2017-09-12T19:56:00",
+        "PastValue": "2017-09-12T19:56:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "7:56pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:30pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:30"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:30"
+        },
+        "FutureValue": "2017-09-12T19:56:30",
+        "PastValue": "2017-09-12T19:56:30"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "7:56:30pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:30 pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:30"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:30"
+        },
+        "FutureValue": "2017-09-12T19:56:30",
+        "PastValue": "2017-09-12T19:56:30"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "7:56:30 pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12:34",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12:34",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12:34",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:34:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:34:00"
+        },
+        "FutureValue": "2017-09-12T12:34:00",
+        "PastValue": "2017-09-12T12:34:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "12:34",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12:34:25 ",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12:34:25",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12:34:25",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:34:25"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:34:25"
+        },
+        "FutureValue": "2017-09-12T12:34:25",
+        "PastValue": "2017-09-12T12:34:25"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "12:34:25",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 7 o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 9,
+      "Text": "7 o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's seven o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 13,
+      "Text": "seven o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 8 in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:00:00"
+        },
+        "FutureValue": "2017-09-12T08:00:00",
+        "PastValue": "2017-09-12T08:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 16,
+      "Text": "8 in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 8 in the night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:00:00"
+        },
+        "FutureValue": "2017-09-12T20:00:00",
+        "PastValue": "2017-09-12T20:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 14,
+      "Text": "8 in the night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:30:00"
+        },
+        "FutureValue": "2017-09-12T08:30:00",
+        "PastValue": "2017-09-12T08:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 15,
+      "Text": "half past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:30:00"
+        },
+        "FutureValue": "2017-09-12T20:30:00",
+        "PastValue": "2017-09-12T20:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 13,
+      "Text": "half past 8pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 30 mins past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:30:00"
+        },
+        "FutureValue": "2017-09-12T08:30:00",
+        "PastValue": "2017-09-12T08:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 18,
+      "Text": "30 mins past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's a quarter past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:15:00"
+        },
+        "FutureValue": "2017-09-12T08:15:00",
+        "PastValue": "2017-09-12T08:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 20,
+      "Text": "a quarter past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's quarter past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:15:00"
+        },
+        "FutureValue": "2017-09-12T08:15:00",
+        "PastValue": "2017-09-12T08:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 18,
+      "Text": "quarter past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's three quarters past 9pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T21:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T21:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "21:45:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "21:45:00"
+        },
+        "FutureValue": "2017-09-12T21:45:00",
+        "PastValue": "2017-09-12T21:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 23,
+      "Text": "three quarters past 9pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's three minutes to eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:57",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:57",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:57:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:57:00"
+        },
+        "FutureValue": "2017-09-12T07:57:00",
+        "PastValue": "2017-09-12T07:57:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 22,
+      "Text": "three minutes to eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:30:00"
+        },
+        "FutureValue": "2017-09-12T07:30:00",
+        "PastValue": "2017-09-12T07:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 23,
+      "Text": "half past seven o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:30:00"
+        },
+        "FutureValue": "2017-09-12T19:30:00",
+        "PastValue": "2017-09-12T19:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 25,
+      "Text": "half past seven afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:30:00"
+        },
+        "FutureValue": "2017-09-12T07:30:00",
+        "PastValue": "2017-09-12T07:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 30,
+      "Text": "half past seven in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's a quarter to 8 in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:45:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:45:00"
+        },
+        "FutureValue": "2017-09-12T07:45:00",
+        "PastValue": "2017-09-12T07:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 29,
+      "Text": "a quarter to 8 in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 20 min past eight in the evening",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20:20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20:20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:20:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:20:00"
+        },
+        "FutureValue": "2017-09-12T20:20:00",
+        "PastValue": "2017-09-12T20:20:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 32,
+      "Text": "20 min past eight in the evening",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back in the afternoon at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 21,
+      "Text": "in the afternoon at 7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "afternoon at 7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon 7:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "afternoon 7:00",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon 7:00:05",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:00:05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:00:05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:05"
+        },
+        "FutureValue": "2017-09-12T19:00:05",
+        "PastValue": "2017-09-12T19:00:05"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 17,
+      "Text": "afternoon 7:00:05",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon seven pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 18,
+      "Text": "afternoon seven pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:30:00"
+        },
+        "FutureValue": "2017-09-12T19:30:00",
+        "PastValue": "2017-09-12T19:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 15,
+      "Text": "seven thirty pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty five pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:35",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:35",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:35:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:35:00"
+        },
+        "FutureValue": "2017-09-12T19:35:00",
+        "PastValue": "2017-09-12T19:35:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 20,
+      "Text": "seven thirty five pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back eleven twenty pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T23:20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T23:20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "23:20:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "23:20:00"
+        },
+        "FutureValue": "2017-09-12T23:20:00",
+        "PastValue": "2017-09-12T23:20:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "eleven twenty pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back noonish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "noonish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12 noon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "12 noon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 11ish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:00:00"
+        },
+        "FutureValue": "2017-09-12T11:00:00",
+        "PastValue": "2017-09-12T11:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "11ish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 11-ish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:00:00"
+        },
+        "FutureValue": "2017-09-12T11:00:00",
+        "PastValue": "2017-09-12T11:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "11-ish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 340pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T15:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T15:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "15:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "15:40:00"
+        },
+        "FutureValue": "2017-09-12T15:40:00",
+        "PastValue": "2017-09-12T15:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "340pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a.m.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:40:00"
+        },
+        "FutureValue": "2017-09-12T11:40:00",
+        "PastValue": "2017-09-12T11:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "1140 a.m.",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a.m.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11:40",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11:40",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:40:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:40:00"
+        },
+        "FutureValue": "2017-09-12T11:40:00",
+        "PastValue": "2017-09-12T11:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "1140 a.m.",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midnight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 8,
+      "Text": "midnight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "mid-night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "mid night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midmorning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 10,
+      "Text": "midmorning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "mid-morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "mid morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midafternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "midafternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 13,
+      "Text": "mid-afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 13,
+      "Text": "mid afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 6,
+      "Text": "midday",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "mid-day",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "mid day",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "noon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "noon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 1,
+      "Text": "7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back at seven",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "seven",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 3,
+      "Text": "7pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:00"
+        },
+        "FutureValue": "2017-09-12T19:56:00",
+        "PastValue": "2017-09-12T19:56:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "7:56pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:30pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:30"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:30"
+        },
+        "FutureValue": "2017-09-12T19:56:30",
+        "PastValue": "2017-09-12T19:56:30"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "7:56:30pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:13 pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:56:13",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:56:13",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:56:13"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:56:13"
+        },
+        "FutureValue": "2017-09-12T19:56:13",
+        "PastValue": "2017-09-12T19:56:13"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "7:56:13 pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12:34",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12:34",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12:34",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:34:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:34:00"
+        },
+        "FutureValue": "2017-09-12T12:34:00",
+        "PastValue": "2017-09-12T12:34:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "12:34",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12:34:45 ",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12:34:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12:34:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:34:45"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:34:45"
+        },
+        "FutureValue": "2017-09-12T12:34:45",
+        "PastValue": "2017-09-12T12:34:45"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "12:34:45",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 7 o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 9,
+      "Text": "7 o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's seven o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:00:00"
+        },
+        "FutureValue": "2017-09-12T07:00:00",
+        "PastValue": "2017-09-12T07:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 13,
+      "Text": "seven o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 8 in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:00:00"
+        },
+        "FutureValue": "2017-09-12T08:00:00",
+        "PastValue": "2017-09-12T08:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 16,
+      "Text": "8 in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 8 in the night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:00:00"
+        },
+        "FutureValue": "2017-09-12T20:00:00",
+        "PastValue": "2017-09-12T20:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 14,
+      "Text": "8 in the night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:30:00"
+        },
+        "FutureValue": "2017-09-12T08:30:00",
+        "PastValue": "2017-09-12T08:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 15,
+      "Text": "half past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:30:00"
+        },
+        "FutureValue": "2017-09-12T20:30:00",
+        "PastValue": "2017-09-12T20:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 13,
+      "Text": "half past 8pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 30 mins past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:30:00"
+        },
+        "FutureValue": "2017-09-12T08:30:00",
+        "PastValue": "2017-09-12T08:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 18,
+      "Text": "30 mins past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's a quarter past eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T08:15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T08:15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "08:15:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "08:15:00"
+        },
+        "FutureValue": "2017-09-12T08:15:00",
+        "PastValue": "2017-09-12T08:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 20,
+      "Text": "a quarter past eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's three quarters past 9pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T21:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T21:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "21:45:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "21:45:00"
+        },
+        "FutureValue": "2017-09-12T21:45:00",
+        "PastValue": "2017-09-12T21:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 23,
+      "Text": "three quarters past 9pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's three minutes to eight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:57",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:57",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:57:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:57:00"
+        },
+        "FutureValue": "2017-09-12T07:57:00",
+        "PastValue": "2017-09-12T07:57:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 22,
+      "Text": "three minutes to eight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven o'clock",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:30:00"
+        },
+        "FutureValue": "2017-09-12T07:30:00",
+        "PastValue": "2017-09-12T07:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 23,
+      "Text": "half past seven o'clock",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:30:00"
+        },
+        "FutureValue": "2017-09-12T19:30:00",
+        "PastValue": "2017-09-12T19:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 25,
+      "Text": "half past seven afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's half past seven in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:30:00"
+        },
+        "FutureValue": "2017-09-12T07:30:00",
+        "PastValue": "2017-09-12T07:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 30,
+      "Text": "half past seven in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's a quarter to 8 in the morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:45",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:45",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:45:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:45:00"
+        },
+        "FutureValue": "2017-09-12T07:45:00",
+        "PastValue": "2017-09-12T07:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 29,
+      "Text": "a quarter to 8 in the morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "It's 20 min past eight in the evening",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20:20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T20:20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "20:20:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "20:20:00"
+        },
+        "FutureValue": "2017-09-12T20:20:00",
+        "PastValue": "2017-09-12T20:20:00"
+      },
+      "ResolutionStr": "",
+      "Start": 5,
+      "Length": 32,
+      "Text": "20 min past eight in the evening",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back in the afternoon at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 21,
+      "Text": "in the afternoon at 7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon at 7",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "afternoon at 7",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon 7:00",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "afternoon 7:00",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon 7:00:25",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:00:25",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:00:25",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:25"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:25"
+        },
+        "FutureValue": "2017-09-12T19:00:25",
+        "PastValue": "2017-09-12T19:00:25"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 17,
+      "Text": "afternoon 7:00:25",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back afternoon seven pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:00:00"
+        },
+        "FutureValue": "2017-09-12T19:00:00",
+        "PastValue": "2017-09-12T19:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 18,
+      "Text": "afternoon seven pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty am",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T07:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T07:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "07:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "07:30:00"
+        },
+        "FutureValue": "2017-09-12T07:30:00",
+        "PastValue": "2017-09-12T07:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 15,
+      "Text": "seven thirty am",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty five pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T19:35",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T19:35",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "19:35:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "19:35:00"
+        },
+        "FutureValue": "2017-09-12T19:35:00",
+        "PastValue": "2017-09-12T19:35:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 20,
+      "Text": "seven thirty five pm",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back at eleven five",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11:05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11:05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:05:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:05:00"
+        },
+        "FutureValue": "2017-09-12T11:05:00",
+        "PastValue": "2017-09-12T11:05:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 11,
+      "Text": "eleven five",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back three mins to five thirty ",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T05:27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T05:27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "time": "05:27:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "05:27:00"
+        },
+        "FutureValue": "2017-09-12T05:27:00",
+        "PastValue": "2017-09-12T05:27:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 25,
+      "Text": "three mins to five thirty",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back five thirty in the night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T17:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T17:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "17:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "17:30:00"
+        },
+        "FutureValue": "2017-09-12T17:30:00",
+        "PastValue": "2017-09-12T17:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "five thirty in the night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back in the night five thirty",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T17:30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T17:30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "17:30:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "17:30:00"
+        },
+        "FutureValue": "2017-09-12T17:30:00",
+        "PastValue": "2017-09-12T17:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "in the night five thirty",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back noonish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "noonish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back noon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 4,
+      "Text": "noon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 12 noon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "12 noon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 11ish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:00:00"
+        },
+        "FutureValue": "2017-09-12T11:00:00",
+        "PastValue": "2017-09-12T11:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "11ish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 11-ish",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "11:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "11:00:00"
+        },
+        "FutureValue": "2017-09-12T11:00:00",
+        "PastValue": "2017-09-12T11:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "11-ish",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midnight",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 8,
+      "Text": "midnight",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "mid-night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid night",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T00",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T00",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "00:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "00:00:00"
+        },
+        "FutureValue": "2017-09-12T00:00:00",
+        "PastValue": "2017-09-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "mid night",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midmorning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 10,
+      "Text": "midmorning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "mid-morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T10",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T10",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "10:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "10:00:00"
+        },
+        "FutureValue": "2017-09-12T10:00:00",
+        "PastValue": "2017-09-12T10:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "mid morning",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midafternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "midafternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 13,
+      "Text": "mid-afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T14",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T14",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "14:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "14:00:00"
+        },
+        "FutureValue": "2017-09-12T14:00:00",
+        "PastValue": "2017-09-12T14:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 13,
+      "Text": "mid afternoon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "midday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 6,
+      "Text": "midday",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid-day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "mid-day",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mid day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "mid day",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "noon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "time": "12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "time": "12:00:00"
+        },
+        "FutureValue": "2017-09-12T12:00:00",
+        "PastValue": "2017-09-12T12:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "noon",
+      "Type": "time",
+      "Data": null
+    }
+  ]
+}
+]

@@ -1,0 +1,870 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver ahora",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 5,
+      "Text": "ahora",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver tan pronto como sea posible",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 27,
+      "Text": "tan pronto como sea posible",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Vamos a volver tan pronto como podamos",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 15,
+      "Length": 23,
+      "Text": "tan pronto como podamos",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver lo mas pronto posible",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 21,
+      "Text": "lo mas pronto posible",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver ahora mismo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 11,
+      "Text": "ahora mismo",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver justo ahora",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 11,
+      "Text": "justo ahora",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver en este momento",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 15,
+      "Text": "en este momento",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 15 a las 8:00",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 13,
+      "Text": "15 a las 8:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 15 a las 8:00:30",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 16,
+      "Text": "15 a las 8:00:30",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 15, 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 7,
+      "Text": "15, 8pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 04/21/2016, 8:00pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 18,
+      "Text": "04/21/2016, 8:00pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 21,
+      "Text": "04/21/2016, 8:00:13pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 23 de Oct a las siete",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 21,
+      "Text": "23 de Oct a las siete",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 14 de Octubre 8:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 20,
+      "Text": "14 de Octubre 8:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 14 de Octubre a las 8:00:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 29,
+      "Text": "14 de Octubre a las 8:00:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 14 de Octubre, 8:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 21,
+      "Text": "14 de Octubre, 8:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 14 de Octubre, 8:00:01am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 24,
+      "Text": "14 de Octubre, 8:00:01am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver mañana 8:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 13,
+      "Text": "mañana 8:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver mañana cerca de las 8:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 26,
+      "Text": "mañana cerca de las 8:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver mañana para las 8:00am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 22,
+      "Text": "mañana para las 8:00am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver mañana a las 8:00:05am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 22,
+      "Text": "mañana a las 8:00:05am",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el próximo viernes a las tres y media",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 34,
+      "Text": "próximo viernes a las tres y media",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 56,
+      "Text": "5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8pm del 15",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 10,
+      "Text": "8pm del 15",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las siete del 15",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 12,
+      "Text": "siete del 15",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8pm del próximo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 23,
+      "Text": "8pm del próximo domingo",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 8pm de hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 10,
+      "Text": "8pm de hoy",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las siete menos cuarto de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 28,
+      "Text": "siete menos cuarto de mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 19:00, 2016-12-22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 17,
+      "Text": "19:00, 2016-12-22",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 7 en punto mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 17,
+      "Text": "7 en punto mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver mañana por la mañana a las 7",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 28,
+      "Text": "mañana por la mañana a las 7",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 7:00 el domingo a la tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 26,
+      "Text": "7:00 el domingo a la tarde",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 35,
+      "Text": "cinco y veinte mañana por la mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 14 de octubre 8:00, 14 de Octubre",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 18,
+      "Text": "14 de octubre 8:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 7, esta mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 14,
+      "Text": "7, esta mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver esta noche a las 8",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 18,
+      "Text": "esta noche a las 8",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 8pm de la tarde, Lunes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 22,
+      "Text": "8pm de la tarde, Lunes",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8pm de la tarde, 1ro de Enero",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 29,
+      "Text": "8pm de la tarde, 1ro de Enero",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8pm de la tarde, 1 de Enero",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 27,
+      "Text": "8pm de la tarde, 1 de Enero",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 10pm de esta noche",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 18,
+      "Text": "10pm de esta noche",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver a las 10pm esta noche",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 19,
+      "Length": 15,
+      "Text": "10pm esta noche",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8am de esta mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 18,
+      "Text": "8am de esta mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 8pm de esta tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 17,
+      "Text": "8pm de esta tarde",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volví esta mañana a las 7",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 19,
+      "Text": "esta mañana a las 7",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volví esta mañana 7pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 15,
+      "Text": "esta mañana 7pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volví esta mañana a las siete",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 23,
+      "Text": "esta mañana a las siete",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volví esta mañana a las 7:00",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 22,
+      "Text": "esta mañana a las 7:00",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver esta noche a las 7",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 18,
+      "Text": "esta noche a las 7",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volví esta noche a las 7",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 18,
+      "Text": "esta noche a las 7",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "para dos personas esta noche a las 9:30 pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 18,
+      "Length": 24,
+      "Text": "esta noche a las 9:30 pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "para dos personas esta noche a las 9:30:31 pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 18,
+      "Length": 27,
+      "Text": "esta noche a las 9:30:31 pm",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré al final del día",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 16,
+      "Text": "al final del día",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré al finalizar el día",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 19,
+      "Text": "al finalizar el día",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré al finalizar el día de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 29,
+      "Text": "al finalizar el día de mañana",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré mañana al finalizar el día",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 26,
+      "Text": "mañana al finalizar el día",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré al finalizar el domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 23,
+      "Text": "al finalizar el domingo",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver el 5 a las 4 a.m.",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 14,
+      "Text": "5 a las 4 a.m.",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver 2016-12-16T12:23:59",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 13,
+      "Length": 19,
+      "Text": "2016-12-16T12:23:59",
+      "Type": "datetime",
+      "Data": null
+    }
+  ]
+}
+]

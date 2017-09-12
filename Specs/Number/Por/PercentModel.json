@@ -1,0 +1,950 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "100%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100%",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 100% ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100%",
+      "Start": 1,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 100 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "100 por cento",
+      "Start": 1,
+      "End": 13,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " cem por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cem por cento",
+      "Start": 1,
+      "End": 13,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "243 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "243 por cento",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "243%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte por cento",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "trinta e cinco por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "trinta e cinco por cento",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "35%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e trinta e cinco por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e trinta e cinco por cento",
+      "Start": 0,
+      "End": 36,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "535%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10 por cento",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dez por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dez por cento",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete por cento",
+      "Start": 0,
+      "End": 70,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3052347%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "algo como uns 11%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "11%",
+      "Start": 14,
+      "End": 16,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "11%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "claro, somente uns 15 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "15 por cento",
+      "Start": 19,
+      "End": 30,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "sim, nada mais que vinte e cinco por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e cinco por cento",
+      "Start": 19,
+      "End": 41,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "derrame cem por cento do liquido",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cem por cento",
+      "Start": 8,
+      "End": 20,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um percentual de 25%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "25%",
+      "Start": 17,
+      "End": 19,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "uma percentagem de trinta e seis por cento do total",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "trinta e seis por cento",
+      "Start": 19,
+      "End": 41,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "36%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um percentual de oitenta e quatro por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "oitenta e quatro por cento",
+      "Start": 17,
+      "End": 42,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "84%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 101231,2353%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "101231,2353%",
+      "Start": 1,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "101231,2353%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-101231,4323%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-101231,4323%",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-101231,4323%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -89101231,5127%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-89101231,5127%",
+      "Start": 1,
+      "End": 15,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " - 89101231,5127%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "- 89101231,5127%",
+      "Start": 1,
+      "End": 16,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",23456000%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",23456000%",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,23456%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "4,800%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "4,800%",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,8%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "4,8 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "4,8 por cento",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,8%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -89101231,5127 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-89101231,5127 por cento",
+      "Start": 1,
+      "End": 24,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-89101231,5127 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-89101231,5127 por cento",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " - 89101231,5127 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "- 89101231,5127 por cento",
+      "Start": 1,
+      "End": 25,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -1,1234567 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1,1234567 por cento",
+      "Start": 1,
+      "End": 20,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1,1234567%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1.234.567,51274 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.234.567,51274 por cento",
+      "Start": 0,
+      "End": 24,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1234567,51274%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",08 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",08 por cento",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,08%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9,2321312%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9,2321312%",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "9,2321312%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -9,2321312 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-9,2321312 por cento",
+      "Start": 1,
+      "End": 20,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-9,2321312%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1e10%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1e10%",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "10000000000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,1^23 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,1^23 por cento",
+      "Start": 0,
+      "End": 15,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "8,95430243255239%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quarenta e sete virgula vinte e oito por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quarenta e sete virgula vinte e oito por cento",
+      "Start": 0,
+      "End": 45,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "47,28%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres quintos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres quintos por cento",
+      "Start": 0,
+      "End": 21,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,6%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois virgula cinco por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois virgula cinco por cento",
+      "Start": 0,
+      "End": 27,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2,5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um quinto por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um quinto por cento",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um bilionesimo por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um bilionesimo por cento",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1E-09%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um vinte e um avos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um vinte e um avos por cento",
+      "Start": 0,
+      "End": 27,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0476190476190476%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta e tres vinte e um avos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta e tres vinte e um avos por cento",
+      "Start": 0,
+      "End": 46,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "6,33333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e dois trinta avos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e dois trinta avos por cento",
+      "Start": 0,
+      "End": 33,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,733333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres dois milesimos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres dois milesimos por cento",
+      "Start": 0,
+      "End": 28,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0015%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta quintos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta quintos por cento",
+      "Start": 0,
+      "End": 31,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "26%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta e dois quintos por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta e dois quintos por cento",
+      "Start": 0,
+      "End": 38,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "26,4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre tres por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre tres por cento",
+      "Start": 0,
+      "End": 22,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1 sobre 3 por cento",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1 sobre 3 por cento",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "3/4%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "3/4%",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,75%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2/3%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2/3%",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,666666666666667%"
+      }
+    }
+  ]
+}
+]

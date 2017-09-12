@@ -1,0 +1,677 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "after 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "T20",
+            "type": "timerange",
+            "start": "20:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "after 8pm",
+      "Type": "datetimeV2.timerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "before 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "T20",
+            "type": "timerange",
+            "end": "20:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 10,
+      "Text": "before 8pm",
+      "Type": "datetimeV2.timerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "since 8pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T20",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "T20",
+            "type": "timerange",
+            "start": "20:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "since 8pm",
+      "Type": "datetimeV2.timerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Set an appointment for Easter",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 23,
+      "Length": 6,
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "day after tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-09",
+            "type": "date",
+            "value": "2016-11-09"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 18,
+      "Text": "day after tomorrow",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "day after tomorrow at 8am",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09T08",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-09T08",
+            "type": "datetime",
+            "value": "2016-11-09 08:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 25,
+      "Text": "day after tomorrow at 8am",
+      "Type": "datetimeV2.datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "on Friday in the afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5TAF",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "XXXX-WXX-5TAF",
+            "type": "datetimerange",
+            "start": "2016-11-04 12:00:00",
+            "end": "2016-11-04 16:00:00"
+          },
+          {
+            "$id": "4",
+            "timex": "XXXX-WXX-5TAF",
+            "type": "datetimerange",
+            "start": "2016-11-11 12:00:00",
+            "end": "2016-11-11 16:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 3,
+      "Length": 23,
+      "Text": "Friday in the afternoon",
+      "Type": "datetimeV2.datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "on Friday for 3 in the afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5T15",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "XXXX-WXX-5T15",
+            "type": "datetime",
+            "value": "2016-11-04 15:00:00"
+          },
+          {
+            "$id": "4",
+            "timex": "XXXX-WXX-5T15",
+            "type": "datetime",
+            "value": "2016-11-11 15:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 3,
+      "Length": 29,
+      "Text": "Friday for 3 in the afternoon",
+      "Type": "datetimeV2.datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08T09",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-08T09",
+            "type": "datetime",
+            "value": "2016-11-08 09:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 20,
+      "Length": 29,
+      "Text": "tomorrow morning at 9 o'clock",
+      "Type": "datetimeV2.datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestWithTwoResults",
+  "Input": "Set an appointment for Easter Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-06"
+          },
+          {
+            "$id": "4",
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-13"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 30,
+      "Length": 6,
+      "Text": "Sunday",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestWithTwoResults",
+  "Input": "block 1 hour on my calendar tomorrow morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TMO",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-08TMO",
+            "type": "datetimerange",
+            "start": "2016-11-08 08:00:00",
+            "end": "2016-11-08 12:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 28,
+      "Length": 16,
+      "Text": "tomorrow morning",
+      "Type": "datetimeV2.datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestWithTwoResults",
+  "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-08-22",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2016-08-22"
+          },
+          {
+            "$id": "4",
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2017-08-22"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 40,
+      "Length": 11,
+      "Text": "August 22nd",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestWithTwoResults",
+  "Input": "on Friday for 3 in Bellevue in the afternoon",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "TAF",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "TAF",
+            "type": "timerange",
+            "start": "12:00:00",
+            "end": "16:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 28,
+      "Length": 16,
+      "Text": "in the afternoon",
+      "Type": "datetimeV2.timerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "schedule a meeting in 8 minutes",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T00:08:00",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-07T00:08:00",
+            "type": "datetime",
+            "value": "2016-11-07 00:08:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 12,
+      "Text": "in 8 minutes",
+      "Type": "datetimeV2.datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "schedule a meeting in 10 hours",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07T10:00:00",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-07T10:00:00",
+            "type": "datetime",
+            "value": "2016-11-07 10:00:00"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 11,
+      "Text": "in 10 hours",
+      "Type": "datetimeV2.datetime",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "schedule a meeting in 10 days",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-17",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-11-17",
+            "type": "date",
+            "value": "2016-11-17"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 10,
+      "Text": "in 10 days",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "schedule a meeting in 3 weeks",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-22,2016-11-29,P1W)",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "(2016-11-22,2016-11-29,P1W)",
+            "type": "daterange",
+            "start": "2016-11-22",
+            "end": "2016-11-29"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 10,
+      "Text": "in 3 weeks",
+      "Type": "datetimeV2.daterange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "schedule a meeting in 3 months",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2017-01-08,2017-02-08,P1M)",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "(2017-01-08,2017-02-08,P1M)",
+            "type": "daterange",
+            "start": "2017-01-08",
+            "end": "2017-02-08"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 11,
+      "Text": "in 3 months",
+      "Type": "datetimeV2.daterange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out in 3 year",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2018-11-08,2019-11-08,P1Y)",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "(2018-11-08,2019-11-08,P1Y)",
+            "type": "daterange",
+            "start": "2018-11-08",
+            "end": "2019-11-08"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 9,
+      "Text": "in 3 year",
+      "Type": "datetimeV2.daterange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestResolution",
+  "Input": "Set an appointment for Easter",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 23,
+      "Length": 6,
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2016-2-30",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-02-30",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2016-02-30",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "2016-2-30",
+      "Type": "datetimeV2.date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2015-1-32",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-01",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2015-01",
+            "type": "daterange",
+            "start": "2015-01-01",
+            "end": "2015-02-01"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 6,
+      "Text": "2015-1",
+      "Type": "datetimeV2.daterange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2017-13-12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017",
+      "Value": {
+        "$id": "2",
+        "values": [
+          {
+            "$id": "3",
+            "timex": "2017",
+            "type": "daterange",
+            "start": "2017-01-01",
+            "end": "2018-01-01"
+          }
+        ]
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 4,
+      "Text": "2017",
+      "Type": "datetimeV2.daterange",
+      "Data": null
+    }
+  ]
+}
+]

@@ -1,0 +1,292 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "three trillionth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "three trillionth",
+      "Start": 0,
+      "End": 15,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "a trillionth",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "a hundred trillionth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "a hundred trillionth",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "100000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "11th",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "11th",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "21st",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "21st",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "30th",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "30th",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2nd",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2nd",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "eleventh",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "eleventh",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "twentieth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "twentieth",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "twenty-fifth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "twenty-fifth",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "twenty-first",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "twenty-first",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "one hundred twenty fifth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "one hundred twenty fifth",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "one hundred twenty-fifth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "one hundred twenty-fifth",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "trillionth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "trillionth",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "twenty-one trillion and three hundred twenty second",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "twenty-one trillion and three hundred twenty second",
+      "Start": 0,
+      "End": 50,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "21000000000322"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "two hundredth",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "two hundredth",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "ordinal",
+      "Resolution": {
+        "$id": "2",
+        "value": "200"
+      }
+    }
+  ]
+}
+]

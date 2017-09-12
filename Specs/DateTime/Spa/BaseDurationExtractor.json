@@ -1,0 +1,300 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3h",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 2,
+      "Text": "3h",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 dias",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 6,
+      "Text": "3 dias",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3,5 años",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 8,
+      "Text": "3,5 años",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 h",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 3,
+      "Text": "3 h",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 horas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 7,
+      "Text": "3 horas",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy 3 dias",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 6,
+      "Text": "3 dias",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 meses",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 7,
+      "Text": "3 meses",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 9,
+      "Text": "3 minutos",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3 min",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "3 min",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 3,5 segundos ",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 12,
+      "Text": "3,5 segundos",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por 123,45 seg",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "123,45 seg",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por dos semanas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 11,
+      "Text": "dos semanas",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy 20 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 10,
+      "Text": "20 minutos",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por veinticuatro horas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 18,
+      "Text": "veinticuatro horas",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy todo el dia",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 11,
+      "Text": "todo el dia",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy toda la semana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 7,
+      "Length": 14,
+      "Text": "toda la semana",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por todo el mes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 11,
+      "Text": "todo el mes",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por todo el año",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 11,
+      "Text": "todo el año",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por una hora",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 8,
+      "Text": "una hora",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me voy por un año",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 6,
+      "Text": "un año",
+      "Type": "duration",
+      "Data": null
+    }
+  ]
+}
+]

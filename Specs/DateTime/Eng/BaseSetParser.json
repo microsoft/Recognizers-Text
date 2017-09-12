@@ -1,0 +1,945 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every morning at 9am",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T09"
+        },
+        "FutureValue": "Set: T09",
+        "PastValue": "Set: T09"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 20,
+      "Text": "every morning at 9am",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every afternoon at 4pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T16",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T16",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T16"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T16"
+        },
+        "FutureValue": "Set: T16",
+        "PastValue": "Set: T16"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 22,
+      "Text": "every afternoon at 4pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every night at 9pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T21"
+        },
+        "FutureValue": "Set: T21",
+        "PastValue": "Set: T21"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 18,
+      "Text": "every night at 9pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every night at 9",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T21"
+        },
+        "FutureValue": "Set: T21",
+        "PastValue": "Set: T21"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 16,
+      "Text": "every night at 9",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave mornings at 9am",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T09"
+        },
+        "FutureValue": "Set: T09",
+        "PastValue": "Set: T09"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 15,
+      "Text": "mornings at 9am",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on mornings at 9",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T09"
+        },
+        "FutureValue": "Set: T09",
+        "PastValue": "Set: T09"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 16,
+      "Text": "on mornings at 9",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave weekly",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1W"
+        },
+        "FutureValue": "Set: P1W",
+        "PastValue": "Set: P1W"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 6,
+      "Text": "weekly",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave biweekly",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P2W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P2W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P2W"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P2W"
+        },
+        "FutureValue": "Set: P2W",
+        "PastValue": "Set: P2W"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 8,
+      "Text": "biweekly",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave daily",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1D"
+        },
+        "FutureValue": "Set: P1D",
+        "PastValue": "Set: P1D"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "daily",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1D"
+        },
+        "FutureValue": "Set: P1D",
+        "PastValue": "Set: P1D"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 9,
+      "Text": "every day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each month",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1M",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1M",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1M"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1M"
+        },
+        "FutureValue": "Set: P1M",
+        "PastValue": "Set: P1M"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "each month",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave annually",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1Y"
+        },
+        "FutureValue": "Set: P1Y",
+        "PastValue": "Set: P1Y"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 8,
+      "Text": "annually",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave annual",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P1Y",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P1Y",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P1Y"
+        },
+        "FutureValue": "Set: P1Y",
+        "PastValue": "Set: P1Y"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 6,
+      "Text": "annual",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each two days",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P2D",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P2D",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P2D"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P2D"
+        },
+        "FutureValue": "Set: P2D",
+        "PastValue": "Set: P2D"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "each two days",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every three week",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "P3W",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "P3W",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: P3W"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: P3W"
+        },
+        "FutureValue": "Set: P3W",
+        "PastValue": "Set: P3W"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 16,
+      "Text": "every three week",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave 3pm every day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T15"
+        },
+        "FutureValue": "Set: T15",
+        "PastValue": "Set: T15"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "3pm every day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave 3pm each day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "T15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "T15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: T15"
+        },
+        "FutureValue": "Set: T15",
+        "PastValue": "Set: T15"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 12,
+      "Text": "3pm each day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each 4/15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-04-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-04-15"
+        },
+        "FutureValue": "Set: XXXX-04-15",
+        "PastValue": "Set: XXXX-04-15"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 9,
+      "Text": "each 4/15",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every monday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "FutureValue": "Set: XXXX-WXX-1",
+        "PastValue": "Set: XXXX-WXX-1"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 12,
+      "Text": "every monday",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each monday 4pm",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-1T16",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-1T16",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-1T16"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-1T16"
+        },
+        "FutureValue": "Set: XXXX-WXX-1T16",
+        "PastValue": "Set: XXXX-WXX-1T16"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 15,
+      "Text": "each monday 4pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every morning",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "TMO",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "TMO",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: TMO"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: TMO"
+        },
+        "FutureValue": "Set: TMO",
+        "PastValue": "Set: TMO"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "every morning",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on Mondays",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-1"
+        },
+        "FutureValue": "Set: XXXX-WXX-1",
+        "PastValue": "Set: XXXX-WXX-1"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Mondays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-7",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-7"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-7"
+        },
+        "FutureValue": "Set: XXXX-WXX-7",
+        "PastValue": "Set: XXXX-WXX-7"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-7",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-7"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-7"
+        },
+        "FutureValue": "Set: XXXX-WXX-7",
+        "PastValue": "Set: XXXX-WXX-7"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am every Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-7T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "FutureValue": "Set: XXXX-WXX-7T09",
+        "PastValue": "Set: XXXX-WXX-7T09"
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 16,
+      "Text": "9am every Sunday",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am on Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-7T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "FutureValue": "Set: XXXX-WXX-7T09",
+        "PastValue": "Set: XXXX-WXX-7T09"
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 14,
+      "Text": "9am on Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-7T09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-7T09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "FutureValue": "Set: XXXX-WXX-7T09",
+        "PastValue": "Set: XXXX-WXX-7T09"
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 11,
+      "Text": "9am Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+]

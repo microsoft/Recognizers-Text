@@ -1,0 +1,390 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on Mondays",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Mondays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave Sundays",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 7,
+      "Text": "Sundays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every morning at 9am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 20,
+      "Text": "every morning at 9am",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every afternoon at 4pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 22,
+      "Text": "every afternoon at 4pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every night at 9pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 18,
+      "Text": "every night at 9pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every night at 9",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 16,
+      "Text": "every night at 9",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave mornings at 9am",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 15,
+      "Text": "mornings at 9am",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on mornings at 9",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 16,
+      "Text": "on mornings at 9",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave weekly",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 6,
+      "Text": "weekly",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave daily",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "daily",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 9,
+      "Text": "every day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each month",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "each month",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave annually",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 8,
+      "Text": "annually",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave annual",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 6,
+      "Text": "annual",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each two days",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 13,
+      "Text": "each two days",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every three week",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 16,
+      "Text": "every three week",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave 3pm every day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 13,
+      "Text": "3pm every day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave 3pm each day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 12,
+      "Text": "3pm each day",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each 4/15",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 9,
+      "Text": "each 4/15",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every monday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 12,
+      "Text": "every monday",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave each monday 4pm",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 15,
+      "Text": "each monday 4pm",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave every morning",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 13,
+      "Text": "every morning",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am every Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 16,
+      "Text": "9am every Sunday",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am on Mondays",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 14,
+      "Text": "9am on Mondays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave at 9am Mondays",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 11,
+      "Text": "9am Mondays",
+      "Type": "set",
+      "Data": null
+    }
+  ]
+}
+]

@@ -1,0 +1,3474 @@
+[{
+  "TestType": "MultiTest",
+  "Input": "打对折",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiOneTest",
+  "Input": "打对折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "对折",
+      "Start": 1,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "对折",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "陆 点 五 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "陆 点 五 折",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "９成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "９成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "七成 六",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "七成 六",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "76%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "7.２成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "7.２成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "7 2 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "7 2 折",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六 点 五 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六 点 五 成",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１０ 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１０ 成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１0 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１0 成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十 成",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75折",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9.9折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9.9折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "九 九 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "九 九 折",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三点一折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三点一折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "半成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "半成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "半折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "半折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10成",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "十折",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9.5成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9.5成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "95%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "九成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "九成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三成半",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三成半",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "35%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２.５成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２.５成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "两折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "两折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "两成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "两成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三八折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三八折",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "38%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三点一折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三点一折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "2成,2.5成,２．１成，２成",
+  "ResultsLength": 4,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "九成,五成,八点五成",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "2折,2.5折,２．１折，２折",
+  "ResultsLength": 4,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "九折,五五折,八点五折",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "五折",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之２．４",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之２．４",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "二三十个百分点",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "百分之二三十",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之２．４",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之２．４",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之五",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一百五十    个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一百五十    个百分点",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六个百分点",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２．４个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２．４个百分点",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-22.2%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-22.2%",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-22.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２２％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２２％",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "－1２２％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "－1２２％",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-122%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之22",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之22",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１２０",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１２０",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之15Ｋ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之15Ｋ",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之1,111",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之1,111",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1111%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之９，９９９",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之９，９９９",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "9999%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12个百分点",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2,123个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2,123个百分点",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "二十个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "二十个百分点",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "四点 五个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "四点 五个百分点",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "4.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之五 十",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之五 十",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一 点五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一 点五",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之５６.２",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之５６.２",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "56.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１２",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１２",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3,000",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3,000",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１，１２３",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１，１２３",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3.2k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3.2k",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3200%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3.2M",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3.2M",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3200000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12.56个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12.56个百分点",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12.56%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "０.４个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "０.４个百分点",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "15,123个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "15,123个百分点",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１１１，１１１个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１１１，１１１个百分点",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "111111%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "25%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "25%",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12k个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12k个百分点",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１５k个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１５k个百分点",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一百五十个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一百五十个百分点",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "七十五万个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "七十五万个百分点",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "750000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "拾万零五十六点叁叁个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "拾万零五十六点叁叁个百分点",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100056.33%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75.2个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75.2个百分点",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75个百分点",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,075个百分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,075个百分点",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1075%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一百",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一百",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之百",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之百",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一百二十点五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一百二十点五",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之2.4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之2.4",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之2",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之2",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之1,669",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之1,669",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1669%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之５２.５",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之５２.５",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "52.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "五百分之2.2",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "上升了百分之2.2",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "5％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "5％",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "５．５％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "５．５％",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一 百 五 十 个 百 分 点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一 百 五 十 个 百 分 点",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六   个 百 分点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六   个 百 分点",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２．４   个百分 点",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２．４   个百分 点",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分之 一百二十点五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分之 一百二十点五",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分 之2.4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分 之2.4",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分之 2",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分之 2",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百  分 之 669",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百  分 之 669",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "669%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分 之  ５２.５ k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分 之  ５２.５ k",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "52500%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分 之 一 百二 十点 五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分 之 一 百二 十点 五",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "打對折",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiOneTest",
+  "Input": "打對折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "對折",
+      "Start": 1,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "對折",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "陸 點 五 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "陸 點 五 折",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "９成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "９成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "七成 六",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "七成 六",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "76%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "7.２成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "7.２成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "7 2 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "7 2 折",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六 點 五 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六 點 五 成",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１０ 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１０ 成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１0 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１0 成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十 成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十 成",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75折",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9.9折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9.9折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "九 九 折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "九 九 折",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三點一折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三點一折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "半成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "半成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "半折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "半折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10成",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "十折",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9.5成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9.5成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "95%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "九成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "九成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三成半",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三成半",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "35%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２.５成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２.５成",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "兩折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "兩折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "兩成",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "兩成",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三八折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三八折",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "38%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三點一折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "三點一折",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "2成,2.5成,２．１成，２成",
+  "ResultsLength": 4,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "九成,五成,八點五成",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2折",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2折",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "2折,2.5折,２．１折，２折",
+  "ResultsLength": 4,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "九折,五五折,八點五折",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "五折",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之２．４",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之２．４",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "二三十個百分點",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "百分之二三十",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之２．４",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之２．４",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之五",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一百五十 個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一百五十 個百分點",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六個百分點",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２．４個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２．４個百分點",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-22.2%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-22.2%",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-22.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２２％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２２％",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "－1２２％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "－1２２％",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "-122%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之22",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之22",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１２０",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１２０",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之15Ｋ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之15Ｋ",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之1,111",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之1,111",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1111%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之９，９９９",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之９，９９９",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "9999%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12個百分點",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2,123個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2,123個百分點",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "二十個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "二十個百分點",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "四點 五個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "四點 五個百分點",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "4.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之五 十",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之五 十",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一 點五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一 點五",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之５６.２",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之５６.２",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "56.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１２",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１２",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3,000",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3,000",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之１，１２３",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之１，１２３",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3.2k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3.2k",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3200%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之3.2M",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之3.2M",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "3200000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12.56個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12.56個百分點",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12.56%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "０.４個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "０.４個百分點",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "0.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "15,123個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "15,123個百分點",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15123%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１１１，１１１個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１１１，１１１個百分點",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "111111%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "25%",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "25%",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12k個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12k個百分點",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "12000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１５k個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "１５k個百分點",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一百五十個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一百五十個百分點",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "七十五萬個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "七十五萬個百分點",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "750000%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "拾萬零五十六點叁叁個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "拾萬零五十六點叁叁個百分點",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100056.33%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75.2個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75.2個百分點",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "75個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "75個百分點",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,075個百分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,075個百分點",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1075%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一百",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一百",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之百",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之百",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之一百二十點五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之一百二十點五",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之2.4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之2.4",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之2",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之2",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之1,669",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之1,669",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "1669%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百分之５２.５",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百分之５２.５",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "52.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "五百分之2.2",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "上升了百分之2.2",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "5％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "5％",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "５．５％",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "５．５％",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "5.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "一 百 五 十 個 百 分 點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "一 百 五 十 個 百 分 點",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "六   個 百 分點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "六   個 百 分點",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "２．４   個百分 點",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "２．４   個百分 點",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分之 一百二十點五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分之 一百二十點五",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分 之2.4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分 之2.4",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分之 2",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分之 2",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百  分 之 669",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百  分 之 669",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "669%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "百 分 之  ５２.５ k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "百 分 之  ５２.５ k",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "52500%"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "佰 分 之 一 百二 十點 五",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "佰 分 之 一 百二 十點 五",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "percentage",
+      "Resolution": {
+        "$id": "2",
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+]

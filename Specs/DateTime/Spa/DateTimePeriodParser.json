@@ -1,0 +1,2460 @@
+[{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré fuera de cinco a siete hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T05,2016-11-07T07,PT2H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 05:00:00",
+          "endDateTime": "2016-11-07 07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 05:00:00",
+          "endDateTime": "2016-11-07 07:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 20,
+      "Text": "de cinco a siete hoy",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré fuera de 5 a 6 del 4/22/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-04-22T05,2016-04-22T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 22,
+      "Text": "de 5 a 6 del 4/22/2016",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré fuera de 5 a 6 del 22 de Abril",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-04-22 05:00:00",
+          "endDateTime": "2017-04-22 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-04-22T05:00:00",
+          "Item2": "2017-04-22T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "de 5 a 6 del 22 de Abril",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré fuera de 5 a 6pm del 22 de Abril",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-04-22 17:00:00",
+          "endDateTime": "2017-04-22 18:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-04-22 17:00:00",
+          "endDateTime": "2016-04-22 18:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-04-22T17:00:00",
+          "Item2": "2017-04-22T18:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-04-22T17:00:00",
+          "Item2": "2016-04-22T18:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 26,
+      "Text": "de 5 a 6pm del 22 de Abril",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré fuera de 5 a 6 del 1ro de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-01-01 05:00:00",
+          "endDateTime": "2017-01-01 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-01-01 05:00:00",
+          "endDateTime": "2016-01-01 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-01-01T05:00:00",
+          "Item2": "2017-01-01T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-01-01T05:00:00",
+          "Item2": "2016-01-01T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 23,
+      "Text": "de 5 a 6 del 1ro de Ene",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera de 3pm a 4pm mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-08T15,2016-11-08T16,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 15:00:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 15:00:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T15:00:00",
+          "Item2": "2016-11-08T16:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T15:00:00",
+          "Item2": "2016-11-08T16:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 19,
+      "Text": "de 3pm a 4pm mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera de 3:00 a 4:00 de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 03:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 03:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T03:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T03:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 24,
+      "Text": "de 3:00 a 4:00 de mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera de siete y media a 4pm mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-08T07:30,2016-11-08T16,PT8H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 07:30:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 07:30:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T07:30:00",
+          "Item2": "2016-11-08T16:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T07:30:00",
+          "Item2": "2016-11-08T16:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 29,
+      "Text": "de siete y media a 4pm mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera desde las 4pm de hoy hasta las 5pm de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16,2016-11-08T17,PT25H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-08 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-08 17:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-08T17:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-08T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 44,
+      "Text": "desde las 4pm de hoy hasta las 5pm de mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-02-21 14:00:00",
+          "endDateTime": "2016-04-23 03:32:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-02-21 14:00:00",
+          "endDateTime": "2016-04-23 03:32:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-02-21T14:00:00",
+          "Item2": "2016-04-23T03:32:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-02-21T14:00:00",
+          "Item2": "2016-04-23T03:32:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 39,
+      "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera entre las 4pm a 5pm hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16,2016-11-07T17,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 17:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 23,
+      "Text": "entre las 4pm a 5pm hoy",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estaré afuera entre las 4pm del 1 Ene, 2016 y las 5pm de hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-01-01 16:00:00",
+          "endDateTime": "2016-11-07 17:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-01-01 16:00:00",
+          "endDateTime": "2016-11-07 17:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-01-01T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-01-01T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 46,
+      "Text": "entre las 4pm del 1 Ene, 2016 y las 5pm de hoy",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré a la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "a la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré esta noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "esta noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré esta tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T20:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "esta tarde",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresé esta mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TMO",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TMO",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 08:00:00",
+          "endDateTime": "2016-11-07 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 08:00:00",
+          "endDateTime": "2016-11-07 12:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T08:00:00",
+          "Item2": "2016-11-07T12:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 11,
+      "Text": "esta mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré pasado el mediodia de hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TAF",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TAF",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 12:00:00",
+          "endDateTime": "2016-11-07 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 12:00:00",
+          "endDateTime": "2016-11-07 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T12:00:00",
+          "Item2": "2016-11-07T16:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 18,
+      "Text": "pasado el mediodia",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré mañana a la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 17,
+      "Text": "mañana a la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresé anoche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 20:00:00",
+          "endDateTime": "2016-11-06 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 20:00:00",
+          "endDateTime": "2016-11-06 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T20:00:00",
+          "Item2": "2016-11-06T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 6,
+      "Text": "anoche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré mañana por la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 19,
+      "Text": "mañana por la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Regresaré el próximo lunes a la tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-14TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-14TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-14 16:00:00",
+          "endDateTime": "2016-11-14 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-14 16:00:00",
+          "endDateTime": "2016-11-14 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-14T16:00:00",
+          "Item2": "2016-11-14T20:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-14T16:00:00",
+          "Item2": "2016-11-14T20:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "próximo lunes a la tarde",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a retroceder los últimos 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "últimos 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a retroceder los pasados 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "pasados 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a retroceder los previos 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "previos 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a retroceder los anteriores 3mins",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 16,
+      "Text": "anteriores 3mins",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a volver en 3 horas",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T19:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "en 3 horas",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a volver en 5 h",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T21:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "en 5 h",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a volver dentro de 5 horas",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T21:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 17,
+      "Text": "dentro de 5 horas",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a volver en el último minuto",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:11:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:11:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:11:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 13,
+      "Text": "último minuto",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Voy a volver en la próxima hora",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 17:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 17:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T17:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 12,
+      "Text": "próxima hora",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera de cinco a siete hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T05,2016-11-07T07,PT2H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 05:00:00",
+          "endDateTime": "2016-11-07 07:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 05:00:00",
+          "endDateTime": "2016-11-07 07:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 20,
+      "Text": "de cinco a siete hoy",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera de 5 a 6 del 4/22/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-04-22T05,2016-04-22T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 22,
+      "Text": "de 5 a 6 del 4/22/2016",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera de 5 a 6 del 22 de Abril",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-04-22 05:00:00",
+          "endDateTime": "2017-04-22 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-04-22 05:00:00",
+          "endDateTime": "2016-04-22 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-04-22T05:00:00",
+          "Item2": "2017-04-22T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-04-22T05:00:00",
+          "Item2": "2016-04-22T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "de 5 a 6 del 22 de Abril",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera de 5 a 6 del 1ro de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2017-01-01 05:00:00",
+          "endDateTime": "2017-01-01 06:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-01-01 05:00:00",
+          "endDateTime": "2016-01-01 06:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2017-01-01T05:00:00",
+          "Item2": "2017-01-01T06:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-01-01T05:00:00",
+          "Item2": "2016-01-01T06:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 23,
+      "Text": "de 5 a 6 del 1ro de Ene",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 3pm a 4pm mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-08T15,2016-11-08T16,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 15:00:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 15:00:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T15:00:00",
+          "Item2": "2016-11-08T16:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T15:00:00",
+          "Item2": "2016-11-08T16:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 19,
+      "Text": "de 3pm a 4pm mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 3:00 a 4:00 mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 03:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 03:00:00",
+          "endDateTime": "2016-11-08 04:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T03:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T03:00:00",
+          "Item2": "2016-11-08T04:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 21,
+      "Text": "de 3:00 a 4:00 mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-02-21 14:00:00",
+          "endDateTime": "2016-04-23 03:32:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-02-21 14:00:00",
+          "endDateTime": "2016-04-23 03:32:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-02-21T14:00:00",
+          "Item2": "2016-04-23T03:32:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-02-21T14:00:00",
+          "Item2": "2016-04-23T03:32:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 39,
+      "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré a la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "a la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré esta noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 20:00:00",
+          "endDateTime": "2016-11-07 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "esta noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré esta tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:00:00",
+          "endDateTime": "2016-11-07 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T20:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 10,
+      "Text": "esta tarde",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresé esta mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TMO",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TMO",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 08:00:00",
+          "endDateTime": "2016-11-07 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 08:00:00",
+          "endDateTime": "2016-11-07 12:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T08:00:00",
+          "Item2": "2016-11-07T12:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 11,
+      "Text": "esta mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré pasado el mediodia de hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07TAF",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07TAF",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 12:00:00",
+          "endDateTime": "2016-11-07 16:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 12:00:00",
+          "endDateTime": "2016-11-07 16:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T12:00:00",
+          "Item2": "2016-11-07T16:00:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 18,
+      "Text": "pasado el mediodia",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré mañana a la mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TMO",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TMO",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T08:00:00",
+          "Item2": "2016-11-08T12:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T08:00:00",
+          "Item2": "2016-11-08T12:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 18,
+      "Text": "mañana a la mañana",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré mañana a la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 17,
+      "Text": "mañana a la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresé anoche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-06 20:00:00",
+          "endDateTime": "2016-11-06 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-06 20:00:00",
+          "endDateTime": "2016-11-06 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-06T20:00:00",
+          "Item2": "2016-11-06T23:59:59"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 6,
+      "Text": "anoche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré mañana por la noche",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08TNI",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08TNI",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-08 20:00:00",
+          "endDateTime": "2016-11-08 23:59:59"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-08T20:00:00",
+          "Item2": "2016-11-08T23:59:59"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
+      "Length": 19,
+      "Text": "mañana por la noche",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Regresaré el próximo lunes a la tarde",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-14TEV",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-14TEV",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-14 16:00:00",
+          "endDateTime": "2016-11-14 20:00:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-14 16:00:00",
+          "endDateTime": "2016-11-14 20:00:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-14T16:00:00",
+          "Item2": "2016-11-14T20:00:00"
+        },
+        "PastValue": {
+          "$id": "6",
+          "Item1": "2016-11-14T16:00:00",
+          "Item2": "2016-11-14T20:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "próximo lunes a la tarde",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a retroceder los últimos 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "últimos 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a retroceder los pasados 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "pasados 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a retroceder los previos 3 minutos",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 17,
+      "Text": "previos 3 minutos",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a retroceder los anteriores 3mins",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:09:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 21,
+      "Length": 16,
+      "Text": "anteriores 3mins",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver en 3 horas",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 19:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T19:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "en 3 horas",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver en 5 h",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T21:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "en 5 h",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver dentro de 5 horas",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 21:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T21:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 17,
+      "Text": "dentro de 5 horas",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver en el último minuto",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:11:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:11:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:11:00",
+          "Item2": "2016-11-07T16:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 13,
+      "Text": "último minuto",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Voy a volver en la próxima hora",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 17:12:00"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 17:12:00"
+        },
+        "FutureValue": {
+          "$id": "5",
+          "Item1": "2016-11-07T16:12:00",
+          "Item2": "2016-11-07T17:12:00"
+        },
+        "PastValue": {
+          "$ref": "5"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 12,
+      "Text": "próxima hora",
+      "Type": "datetimerange",
+      "Data": null
+    }
+  ]
+}
+]

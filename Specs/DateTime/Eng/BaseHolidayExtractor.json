@@ -1,0 +1,135 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on christmas",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 9,
+      "Text": "christmas",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on christmas day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 13,
+      "Text": "christmas day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 7,
+      "Text": "Yuandan",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on thanks giving day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 17,
+      "Text": "thanks giving day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on father's day",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 12,
+      "Text": "father's day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan of this year",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 20,
+      "Text": "Yuandan of this year",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan of 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 15,
+      "Text": "Yuandan of 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 12,
+      "Text": "Yuandan 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on clean monday",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 16,
+      "Length": 12,
+      "Text": "clean monday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+]

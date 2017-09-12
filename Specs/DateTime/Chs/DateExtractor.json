@@ -1,0 +1,435 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "2010-01-29",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "2010-01-29",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010.01.29",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "2010.01.29",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010/01/29",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "2010/01/29",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2010 01 29",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "2010 01 29",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1987年1月11日",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "1987年1月11日",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "农历2015年十月初一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 11,
+      "Text": "农历2015年十月初一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2015年农历正月初一是春节",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 11,
+      "Text": "2015年农历正月初一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "我们定在三月初一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 4,
+      "Length": 4,
+      "Text": "三月初一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "微软在正月三十有活动",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 3,
+      "Length": 4,
+      "Text": "正月三十",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "大年初一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 4,
+      "Text": "大年初一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "大年三十",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 4,
+      "Text": "大年三十",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "快到1月19日了",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 2,
+      "Length": 5,
+      "Text": "1月19日",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1月19号",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 5,
+      "Text": "1月19号",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10月12号，星期一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 10,
+      "Text": "10月12号，星期一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2009年10月12号，星期一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 15,
+      "Text": "2009年10月12号，星期一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "明天可以吗",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 2,
+      "Text": "明天",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "最近还好吗",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 2,
+      "Text": "最近",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "星期一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "星期一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "上周一有考试",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "上周一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "下次的12号",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 3,
+      "Length": 3,
+      "Text": "12号",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "会议在这个星期一",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 3,
+      "Length": 5,
+      "Text": "这个星期一",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "两千零四年八月十五",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 9,
+      "Text": "两千零四年八月十五",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "两千年八月十五",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 7,
+      "Text": "两千年八月十五",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "二零零四年八月十五",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 9,
+      "Text": "二零零四年八月十五",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "去年本月十日",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 6,
+      "Text": "去年本月十日",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "本月十日",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 4,
+      "Text": "本月十日",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "最后一个周三",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 6,
+      "Text": "最后一个周三",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "最后一个的周三",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 7,
+      "Text": "最后一个的周三",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "上一个周三",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 5,
+      "Text": "上一个周三",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+]

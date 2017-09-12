@@ -1,0 +1,3303 @@
+[{
+  "TestType": "BasicTest",
+  "Input": " 123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "123456789101231",
+      "Start": 1,
+      "End": 15,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-123456789101231",
+      "Start": 0,
+      "End": 15,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-123456789101231",
+      "Start": 1,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1",
+      "Start": 1,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1.234.567",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.234.567",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "sete",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "7"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dezessete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dezessete",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "17"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dezassete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dezassete",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "17"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cem",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cem",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil e cem",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil e cem",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil cento e dez",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil cento e dez",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1110"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil e duzentos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil e duzentos",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1200"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil duzentos e vinte",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil duzentos e vinte",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1220"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e sete",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "27"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quarenta e sete",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "47"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 26,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 35,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "duas mil trezentas e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "duas mil trezentas e quarenta e sete",
+      "Start": 0,
+      "End": 35,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 47,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "52347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 62,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil quinhentos e vinte e três",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil quinhentos e vinte e três",
+      "Start": 0,
+      "End": 28,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1523"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "mil quinhentos e vinte e tres",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil quinhentos e vinte e tres",
+      "Start": 0,
+      "End": 28,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1523"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois bilhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois bilhoes",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "treze milhoes quatrocentos e cinquenta e dois mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "treze milhoes quatrocentos e cinquenta e dois mil",
+      "Start": 0,
+      "End": 48,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "13452000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois bilhões",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois bilhões",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "três milhões",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "três milhões",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes e sete",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000007"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes e quarenta e sete",
+      "Start": 0,
+      "End": 29,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000047"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 39,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 48,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3002347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 60,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3052347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 75,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 76,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "13452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 0,
+      "End": 89,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta",
+      "Start": 0,
+      "End": 82,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513452340"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil trezentos",
+      "Start": 0,
+      "End": 71,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513452300"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes quatrocentos e cinquenta e dois mil",
+      "Start": 0,
+      "End": 61,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513452000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes quatrocentos e cinquenta mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes quatrocentos e cinquenta mil",
+      "Start": 0,
+      "End": 54,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513450000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes e quatrocentos mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes e quatrocentos mil",
+      "Start": 0,
+      "End": 44,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513400000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos e treze milhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos e treze milhoes",
+      "Start": 0,
+      "End": 25,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "513000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinhentos milhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinhentos milhoes",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "500000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes e quinhentos e cinquenta e seis mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes e quinhentos e cinquenta e seis mil",
+      "Start": 0,
+      "End": 121,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3455228556000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes duzentos e vinte e oito milhoes",
+      "Start": 0,
+      "End": 85,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3455228000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres trilhoes quatrocentos e cinquenta e cinco bilhoes",
+      "Start": 0,
+      "End": 53,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3455000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "três trilhões",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "três trilhões",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "me dê mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil",
+      "Start": 6,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tirasse um fino",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um",
+      "Start": 8,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "compre só uma vaca",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "uma",
+      "Start": 10,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vá e compre duzentas vacas",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "duzentas",
+      "Start": 12,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "só tenho mil e cem reais",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil e cem",
+      "Start": 9,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1100"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "so tenho sete mil duzentos e trinta e cinco euros",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "sete mil duzentos e trinta e cinco",
+      "Start": 9,
+      "End": 42,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "7235"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "creio que vou gastar algo em torno de treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete escudos no projeto",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "treze milhoes quatrocentos e cinquenta e dois mil trezentos e quarenta e sete",
+      "Start": 38,
+      "End": 114,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "13452347"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "meia duzia",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "meia duzia",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "meia dúzia",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "meia dúzia",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "três",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "três",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres duzias",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres duzias",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "36"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "uma dúzia",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "uma dúzia",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quinze dúzias",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quinze dúzias",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "180"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "uma dezena",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "uma dezena",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "10"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 101231,2353",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "101231,2353",
+      "Start": 1,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "101231,2353"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-101231,4323",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-101231,4323",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-101231,4323"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -89101231,5127",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-89101231,5127",
+      "Start": 1,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-89101231,5127"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -1,1234567",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1,1234567",
+      "Start": 1,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1,1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1.234.567,51274",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.234.567,51274",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1234567,51274"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "192,",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "192",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "192"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",23456000",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",23456000",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,23456"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "4,800",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "4,800",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,8"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",08",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",08",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,08"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9,2321312",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9,2321312",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "9,2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -9,2321312",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-9,2321312",
+      "Start": 1,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-9,2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1e10",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1e10",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "10000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,1^23",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,1^23",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "8,95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "sete vírgula cinco",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "sete vírgula cinco",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "7,5"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quarenta e sete vírgula vinte e oito",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quarenta e sete vírgula vinte e oito",
+      "Start": 0,
+      "End": 35,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "47,28"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois mil trezentos e quarenta e sete virgula mil quinhentos e setenta e oito",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois mil trezentos e quarenta e sete virgula mil quinhentos e setenta e oito",
+      "Start": 0,
+      "End": 75,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2347,1578"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinquenta e dois mil trezentos e quarenta e sete virgula duzentos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinquenta e dois mil trezentos e quarenta e sete virgula duzentos",
+      "Start": 0,
+      "End": 64,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "52347,2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete virgula vinte e dois",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "quatrocentos e cinquenta e dois mil trezentos e quarenta e sete virgula vinte e dois",
+      "Start": 0,
+      "End": 83,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "452347,22"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,1^+23",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,1^+23",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "8,95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2,5^-1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2,5^-1",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,4"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-2500^-1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-2500^-1",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-0,0004"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-1,1^+23",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1,1^+23",
+      "Start": 0,
+      "End": 7,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-8,95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-2,5^-1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-2,5^-1",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-0,4"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-1,1^--23",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1,1^--23",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-8,95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-127,32e13",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-127,32e13",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1,2732E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "12,32e+14",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "12,32e+14",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1,232E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-12e-1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-12e-1",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1,2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "hum mil e três",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "mil e três",
+      "Start": 4,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1003"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "192.",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "192",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "192"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "192.168.1.2",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": " subimos ao 4o piso ",
+  "ResultsLength": 0,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",08",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",08",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,08"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um décimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um décimo",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um milésimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um milésimo",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,001"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um  centesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um  centesimo",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,01"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "um",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "uma",
+  "ResultsLength": 1,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": ",23456000",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": ",23456000",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,23456"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "4,800",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "4,800",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,8"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dezesseis",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dezesseis",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "16"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e dezesseis",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e dezesseis",
+      "Start": 0,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "116"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e seis",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e seis",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "106"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e sessenta e um",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e sessenta e um",
+      "Start": 0,
+      "End": 20,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "161"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um milionésimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um milionésimo",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1E-06"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " meia   duzia ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "meia   duzia",
+      "Start": 1,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "uma duzia",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "uma duzia",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " tres duzias ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres duzias",
+      "Start": 1,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "36"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1.234.567",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.234.567",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1234567"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "1. 234. 567",
+  "ResultsLength": 3,
+  "Results": null
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "9,2321312",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "9,2321312",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "9,2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -9,2321312",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-9,2321312",
+      "Start": 1,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-9,2321312"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-1",
+      "Start": 1,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-4/5",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-4/5",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-0,8"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "- 1 4/5",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "- 1 4/5",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-1,8"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "123456789101231",
+      "Start": 1,
+      "End": 15,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "-123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-123456789101231",
+      "Start": 0,
+      "End": 15,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " -123456789101231",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "-123456789101231",
+      "Start": 1,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-123456789101231"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10k",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "10000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "10G",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "10G",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "10000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "- 10  k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "- 10  k",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2 milhoes",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2 milhoes",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " tres ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres",
+      "Start": 1,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinquenta   e   dois",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinquenta   e   dois",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "52"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "trezentos  e trinta  e   um",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "trezentos  e trinta  e   um",
+      "Start": 0,
+      "End": 26,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "331"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "duzentos e dois mil",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "duzentos e dois mil",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "202000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois mil e duzentos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois mil e duzentos",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2200"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 2,33 k",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2,33 k",
+      "Start": 1,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2330"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " duzentos virgula zero tres",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "duzentos virgula zero tres",
+      "Start": 1,
+      "End": 26,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "200,03"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1e10",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1e10",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "10000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1,1^23",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1,1^23",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "8,95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": " 322 milhoes ",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "322 milhoes",
+      "Start": 1,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "322000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "setenta",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "setenta",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "70"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinquenta e dois",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinquenta e dois",
+      "Start": 0,
+      "End": 15,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "52"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2  1/4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "2  1/4",
+      "Start": 0,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "2,25"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "3/4",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "3/4",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,75"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um oitavo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um oitavo",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,125"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cinco oitavos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cinco oitavos",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,625"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres quartos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres quartos",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,75"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e tres quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e tres quintos",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um centesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um centesimo",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,01"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um quinto",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um quinto",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um bilionesimo",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um bilionesimo",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "1E-09"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cem mil bilionesimos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cem mil bilionesimos",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0001"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres quintos",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte quintos",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e tres quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e tres quintos",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,6"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois sobre onze",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois sobre onze",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,181818181818182"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um vinte e um avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um vinte e um avos",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "dois onze avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "dois onze avos",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,181818181818182"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta e tres vinte e um avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta e tres vinte e um avos",
+      "Start": 0,
+      "End": 36,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "6,33333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e dois trinta avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e dois trinta avos",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,733333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um vinte e cinco avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um vinte e cinco avos",
+      "Start": 0,
+      "End": 20,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,04"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre vinte e cinco",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre vinte e cinco",
+      "Start": 0,
+      "End": 21,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,04"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte vinte e cinco avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte vinte e cinco avos",
+      "Start": 0,
+      "End": 23,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,8"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres vinte e um avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres vinte e um avos",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,142857142857143"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres vinte avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres vinte avos",
+      "Start": 0,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,15"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres duzentos avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres duzentos avos",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,015"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres dois milesimos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres dois milesimos",
+      "Start": 0,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0015"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres vinte milesimos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres vinte milesimos",
+      "Start": 0,
+      "End": 19,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,00015"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta quintos",
+      "Start": 0,
+      "End": 21,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "26"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "vinte e um quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "vinte e um quintos",
+      "Start": 0,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "4,2"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta e dois cinco avos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta e dois cinco avos",
+      "Start": 0,
+      "End": 31,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "26,4"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "cento e trinta e dois quintos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "cento e trinta e dois quintos",
+      "Start": 0,
+      "End": 28,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "26,4"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre tres",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre tres",
+      "Start": 0,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1 sobre 21",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1 sobre 21",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1 sobre tres",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1 sobre tres",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1 sobre 3",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1 sobre 3",
+      "Start": 0,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre 3",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre 3",
+      "Start": 0,
+      "End": 9,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1/3",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1/3",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre 20",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre 20",
+      "Start": 0,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,05"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre vinte",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre vinte",
+      "Start": 0,
+      "End": 13,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,05"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre cem",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre cem",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,01"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "1 sobre cento e vinte e um",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1 sobre cento e vinte e um",
+      "Start": 0,
+      "End": 25,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,00826446280991736"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "um sobre cento e trinta e cinco",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "um sobre cento e trinta e cinco",
+      "Start": 0,
+      "End": 30,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,00740740740740741"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "tres quartos",
+  "ResultsLength": 1,
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "tres quartos",
+      "Start": 0,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "$id": "2",
+        "value": "0,75"
+      }
+    }
+  ]
+}
+]

@@ -1,0 +1,247 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "江苏彩民15元中大乐透1600万 奖池36.57亿",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "15元",
+      "Start": 4,
+      "End": 6,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Chinese yuan",
+        "value": "15"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "其中，四川彩友中得1注1000万元基本头奖；",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1000万元",
+      "Start": 11,
+      "End": 16,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Chinese yuan",
+        "value": "10000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "本期开奖结束后，奖池金额攀升至36.57亿元。",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "36.57亿元",
+      "Start": 15,
+      "End": 21,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Chinese yuan",
+        "value": "3657000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "１欧元可以",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1欧元",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Euro",
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "兑换１．０７５３美元",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.0753美元",
+      "Start": 2,
+      "End": 9,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "United States dollar",
+        "value": "1.0753"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "兑换1.0092瑞士法郎",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.0092瑞士法郎",
+      "Start": 2,
+      "End": 11,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Swiss franc",
+        "value": "1.0092"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "2016年由于并购等直接投资，中国资金净流出1200亿美元",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1200亿美元",
+      "Start": 22,
+      "End": 28,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "United States dollar",
+        "value": "120000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "宝安科技公司与国际精密的15位股东签署收购协议，以每股1.95港元",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1.95港元",
+      "Start": 27,
+      "End": 32,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Hong Kong dollar",
+        "value": "1.95"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "央行到期定存单5306亿台币",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "5306亿台币",
+      "Start": 7,
+      "End": 13,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "New Taiwan dollar",
+        "value": "530600000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "东芝重组另需1万亿日元 已向交易银行申请贷款",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "1万亿日元",
+      "Start": 6,
+      "End": 10,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Japanese yen",
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "达到445奈拉兑换",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "445奈拉",
+      "Start": 2,
+      "End": 6,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "Nigerian naira",
+        "value": "445"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十五美元",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十五美元",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "United States dollar",
+        "value": "15"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "十美元",
+  "Results": [
+    {
+      "$id": "1",
+      "Text": "十美元",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "currency",
+      "Resolution": {
+        "$id": "2",
+        "unit": "United States dollar",
+        "value": "10"
+      }
+    }
+  ]
+}
+]

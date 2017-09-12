@@ -1,0 +1,154 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "两年",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 2,
+      "Text": "两年",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "两",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "6 天",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "6 天",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "6",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "7 周",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "7 周",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "7",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "5 小时",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 4,
+      "Text": "5 小时",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "5",
+        "Type": "builtin.num",
+        "Data": "IntegerNum"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三年半",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "三年半",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "三",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三天半",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 3,
+      "Text": "三天半",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "三",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "三个月半",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 0,
+      "Length": 4,
+      "Text": "三个月半",
+      "Type": "duration",
+      "Data": {
+        "$id": "2",
+        "Start": 0,
+        "Length": 1,
+        "Text": "三",
+        "Type": "builtin.num",
+        "Data": "IntegerChs"
+      }
+    }
+  ]
+}
+]

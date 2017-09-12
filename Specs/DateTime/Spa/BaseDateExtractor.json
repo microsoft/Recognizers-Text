@@ -1,0 +1,900 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 15",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 22 de Abril",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 11,
+      "Text": "22 de Abril",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 1-Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "1-Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 1/Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "1/Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 2. Octubre",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2. Octubre",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 12 de enero, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 17,
+      "Text": "12 de enero, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 12 de Enero de 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 19,
+      "Text": "12 de Enero de 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el Lunes 12 de enero, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 23,
+      "Text": "Lunes 12 de enero, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 02/22/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "02/22/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 21/04/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 21/04/16",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 9-18-15",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 7,
+      "Text": "9-18-15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el    4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere       4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 14,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 11/12,2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "11/12,2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 11/12,16",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 8,
+      "Text": "11/12,16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 1ro de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 10,
+      "Text": "1ro de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 1-Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 5,
+      "Text": "1-Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 28-Nov",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 6,
+      "Text": "28-Nov",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el Mi, 22 de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 13,
+      "Text": "Mi, 22 de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el primero de Ene",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 14,
+      "Text": "primero de Ene",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el veintiuno de Mayo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 17,
+      "Text": "veintiuno de Mayo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere en Mayo veintiuno",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 14,
+      "Text": "Mayo veintiuno",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el segundo de Ago",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 14,
+      "Text": "segundo de Ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el vigesimo segundo de Junio",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 25,
+      "Text": "vigesimo segundo de Junio",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere los viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere los sabados",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 12,
+      "Length": 7,
+      "Text": "sabados",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere hoy",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 3,
+      "Text": "hoy",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 6,
+      "Text": "mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvi ayer",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 4,
+      "Text": "ayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvi el dia antes de ayer",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 20,
+      "Text": "el dia antes de ayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvi anteayer",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 6,
+      "Length": 8,
+      "Text": "anteayer",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el dia despues de mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 24,
+      "Text": "el dia despues de mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere pasado mañana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 13,
+      "Text": "pasado mañana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el dia siguiente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 16,
+      "Text": "el dia siguiente",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el proximo dia",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 14,
+      "Text": "el proximo dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el dia siguiente",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 16,
+      "Text": "el dia siguiente",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere este viernes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 12,
+      "Text": "este viernes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el proximo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 15,
+      "Text": "proximo domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el siguiente domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 17,
+      "Text": "siguiente domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el ultimo domingo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 14,
+      "Text": "ultimo domingo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere ultimo dia",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 10,
+      "Text": "ultimo dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el ultimo dia",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 13,
+      "Text": "el ultimo dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el dia",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 6,
+      "Text": "el dia",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el viernes de esta semana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 22,
+      "Text": "viernes de esta semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el domingo de la siguiente semana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 30,
+      "Text": "domingo de la siguiente semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el domingo de la ultima semana",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 27,
+      "Text": "domingo de la ultima semana",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 15 Junio 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 13,
+      "Text": "15 Junio 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el undecimo de mayo",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 11,
+      "Length": 16,
+      "Text": "undecimo de mayo",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el primer viernes de julio",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 26,
+      "Text": "el primer viernes de julio",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el primer viernes de este mes",
+  "Results": [
+    {
+      "$id": "1",
+      "Start": 8,
+      "Length": 29,
+      "Text": "el primer viernes de este mes",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+]

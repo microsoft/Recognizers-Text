@@ -1,0 +1,4830 @@
+[{
+  "TestType": "BasicTest",
+  "Input": "I'll go back two weeks from now",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-21"
+        },
+        "FutureValue": "2016-11-21T00:00:00",
+        "PastValue": "2016-11-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 18,
+      "Text": "two weeks from now",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "who did I email a month ago",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-10-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-10-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-10-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-07"
+        },
+        "FutureValue": "2016-10-07T00:00:00",
+        "PastValue": "2016-10-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 11,
+      "Text": "a month ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "who did I email few month ago",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-08-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-08-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-08-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-08-07"
+        },
+        "FutureValue": "2016-08-07T00:00:00",
+        "PastValue": "2016-08-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 13,
+      "Text": "few month ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "who did I email a few day ago",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-04",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-04",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-04"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-04T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 13,
+      "Text": "a few day ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27th",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 27th",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27!",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27 .",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 21st",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-21"
+        },
+        "FutureValue": "2016-11-21T00:00:00",
+        "PastValue": "2016-11-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 21st",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 22nd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-22"
+        },
+        "FutureValue": "2016-11-22T00:00:00",
+        "PastValue": "2016-11-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 22nd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-02"
+        },
+        "FutureValue": "2016-11-02T00:00:00",
+        "PastValue": "2016-11-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 14,
+      "Text": "for the second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the twenty second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-22"
+        },
+        "FutureValue": "2016-11-22T00:00:00",
+        "PastValue": "2016-11-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 21,
+      "Text": "for the twenty second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the thirty",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-30"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-30"
+        },
+        "FutureValue": "2016-11-30T00:00:00",
+        "PastValue": "2016-11-30T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 14,
+      "Text": "for the thirty",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Thursday the 21st",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-21"
+        },
+        "FutureValue": "2017-09-21T00:00:00",
+        "PastValue": "2017-09-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 17,
+      "Text": "Thursday the 21st",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the 22nd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-22"
+        },
+        "FutureValue": "2017-09-22T00:00:00",
+        "PastValue": "2017-09-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 15,
+      "Text": "Friday the 22nd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Saturday the 23rd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-23",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-23",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-23"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-23"
+        },
+        "FutureValue": "2017-09-23T00:00:00",
+        "PastValue": "2017-09-23T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 17,
+      "Text": "Saturday the 23rd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the 15th",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-15"
+        },
+        "FutureValue": "2017-09-15T00:00:00",
+        "PastValue": "2017-09-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 15,
+      "Text": "Friday the 15th",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Thursday the twenty first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-21"
+        },
+        "FutureValue": "2017-09-21T00:00:00",
+        "PastValue": "2017-09-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 25,
+      "Text": "Thursday the twenty first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the twenty second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-22"
+        },
+        "FutureValue": "2017-09-22T00:00:00",
+        "PastValue": "2017-09-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 24,
+      "Text": "Friday the twenty second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the fifteen",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-15"
+        },
+        "FutureValue": "2017-09-15T00:00:00",
+        "PastValue": "2017-09-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 18,
+      "Text": "Friday the fifteen",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-15"
+        },
+        "FutureValue": "2016-11-15T00:00:00",
+        "PastValue": "2016-10-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct. 2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "Oct. 2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct-2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "Oct-2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct/2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "Oct/2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back October. 2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "October. 2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back January 12, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-12"
+        },
+        "FutureValue": "2016-01-12T00:00:00",
+        "PastValue": "2016-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "January 12, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Monday January 12th, 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-12"
+        },
+        "FutureValue": "2016-01-12T00:00:00",
+        "PastValue": "2016-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 25,
+      "Text": "Monday January 12th, 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 02/22/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-02-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-02-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-02-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-02-22"
+        },
+        "FutureValue": "2016-02-22T00:00:00",
+        "PastValue": "2016-02-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "02/22/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 21/04/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 21/04/16",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 21-04-2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "21-04-2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back in 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back at 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on    4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back     4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 08/12,2015",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "08/12,2015",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 08/12,15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "08/12,15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 1st Jan",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "1st Jan",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Jan-1",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "Jan-1",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Wed, 22 of Jan",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-22"
+        },
+        "FutureValue": "2017-01-22T00:00:00",
+        "PastValue": "2016-01-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "Wed, 22 of Jan",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Jan first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "Jan first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty-first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "May twenty-first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty one",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "May twenty one",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back second of Aug.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-08-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-08-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-08-02"
+        },
+        "FutureValue": "2017-08-02T00:00:00",
+        "PastValue": "2016-08-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 13,
+      "Text": "second of Aug",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back twenty second of June",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-06-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-06-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-22"
+        },
+        "FutureValue": "2017-06-22T00:00:00",
+        "PastValue": "2016-06-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 21,
+      "Text": "twenty second of June",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 6,
+      "Text": "Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back |Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back today",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "today",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back yesterday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "yesterday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day before yesterday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "the day before yesterday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day after tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 22,
+      "Text": "the day after tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "The day after tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 22,
+      "Text": "The day after tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the next day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 12,
+      "Text": "the next day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "next day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 11,
+      "Text": "this Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 11,
+      "Text": "next Sunday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 11,
+      "Text": "last Sunday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this week Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "this week Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next week Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "next week Sunday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last week Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "last week Sunday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "last day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the last day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 12,
+      "Text": "the last day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "the day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 15 June 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-06-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-06-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-15"
+        },
+        "FutureValue": "2016-06-15T00:00:00",
+        "PastValue": "2016-06-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 12,
+      "Text": "15 June 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the first friday of july",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-07-WXX-5-#1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-07-WXX-5-#1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-07-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-07-01"
+        },
+        "FutureValue": "2017-07-07T00:00:00",
+        "PastValue": "2016-07-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "the first friday of july",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the first friday in this month",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-11-WXX-5-#1",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-11-WXX-5-#1",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-04"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-04T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 30,
+      "Text": "the first friday in this month",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next week on Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-18"
+        },
+        "FutureValue": "2016-11-18T00:00:00",
+        "PastValue": "2016-11-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 19,
+      "Text": "next week on Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Friday next week",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-18"
+        },
+        "FutureValue": "2016-11-18T00:00:00",
+        "PastValue": "2016-11-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 19,
+      "Text": "on Friday next week",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-15"
+        },
+        "FutureValue": "2016-11-15T00:00:00",
+        "PastValue": "2016-10-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct. 2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "Oct. 2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct/2",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "Oct/2",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back January 12, 2018",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2018-01-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2018-01-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2018-01-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2018-01-12"
+        },
+        "FutureValue": "2018-01-12T00:00:00",
+        "PastValue": "2018-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "January 12, 2018",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 21/04/2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 4.22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 4-22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on    4/22",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 22/04",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 21/04/16",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 9-18-15",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-09-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-09-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-09-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-09-18"
+        },
+        "FutureValue": "2015-09-18T00:00:00",
+        "PastValue": "2015-09-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "9-18-15",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 2015/08/12",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 08/12,2015",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 10,
+      "Text": "08/12,2015",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 1st Jan",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "1st Jan",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Wed, 22 of Jan",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-22"
+        },
+        "FutureValue": "2017-01-22T00:00:00",
+        "PastValue": "2016-01-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "Wed, 22 of Jan",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Jan first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "Jan first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty-first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 16,
+      "Text": "May twenty-first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty one",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 14,
+      "Text": "May twenty one",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back second of Aug.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-08-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-08-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-08-02"
+        },
+        "FutureValue": "2017-08-02T00:00:00",
+        "PastValue": "2016-08-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 13,
+      "Text": "second of Aug",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back twenty second of June",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-06-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-06-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-22"
+        },
+        "FutureValue": "2017-06-22T00:00:00",
+        "PastValue": "2016-06-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 21,
+      "Text": "twenty second of June",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 6,
+      "Text": "Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back |Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back today",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 5,
+      "Text": "today",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back yesterday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "yesterday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day before yesterday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 24,
+      "Text": "the day before yesterday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day after tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 22,
+      "Text": "the day after tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "The day after tomorrow",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 22,
+      "Text": "The day after tomorrow",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the next day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 12,
+      "Text": "the next day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "next day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 11,
+      "Text": "this Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next Sunday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 11,
+      "Text": "next Sunday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "the day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 15 June 2016",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-06-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-06-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-06-15"
+        },
+        "FutureValue": "2016-06-15T00:00:00",
+        "PastValue": "2016-06-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 12,
+      "Text": "15 June 2016",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back two days ago",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "two days ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back two years ago",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2014-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2014-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2014-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2014-11-07"
+        },
+        "FutureValue": "2014-11-07T00:00:00",
+        "PastValue": "2014-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 13,
+      "Text": "two years ago",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back two weeks from now",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-21"
+        },
+        "FutureValue": "2016-11-21T00:00:00",
+        "PastValue": "2016-11-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 18,
+      "Text": "two weeks from now",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next week on Friday",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-18"
+        },
+        "FutureValue": "2016-11-18T00:00:00",
+        "PastValue": "2016-11-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 19,
+      "Text": "next week on Friday",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Friday next week",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-18",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-18",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-18"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-18"
+        },
+        "FutureValue": "2016-11-18T00:00:00",
+        "PastValue": "2016-11-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 19,
+      "Text": "on Friday next week",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27th",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 27th",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27.",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27!",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27 .",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-27",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-27",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-27"
+        },
+        "FutureValue": "2016-11-27T00:00:00",
+        "PastValue": "2016-11-27T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 21st",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-21"
+        },
+        "FutureValue": "2016-11-21T00:00:00",
+        "PastValue": "2016-11-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 21st",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 22nd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-22"
+        },
+        "FutureValue": "2016-11-22T00:00:00",
+        "PastValue": "2016-11-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 22nd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-02",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-02",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-02"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-02"
+        },
+        "FutureValue": "2016-11-02T00:00:00",
+        "PastValue": "2016-11-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 14,
+      "Text": "for the second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the twenty second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-22"
+        },
+        "FutureValue": "2016-11-22T00:00:00",
+        "PastValue": "2016-11-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 21,
+      "Text": "for the twenty second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the thirty",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "XXXX-XX-30",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "XXXX-XX-30",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-30"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-30"
+        },
+        "FutureValue": "2016-11-30T00:00:00",
+        "PastValue": "2016-11-30T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 14,
+      "Text": "for the thirty",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back next day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "next day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back the day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "the day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back my day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 6,
+      "Text": "my day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back this day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "this day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back last day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "last day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back past day",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 8,
+      "Text": "past day",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Thursday the 21st",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-21"
+        },
+        "FutureValue": "2017-09-21T00:00:00",
+        "PastValue": "2017-09-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 17,
+      "Text": "Thursday the 21st",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the 22nd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-22"
+        },
+        "FutureValue": "2017-09-22T00:00:00",
+        "PastValue": "2017-09-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 15,
+      "Text": "Friday the 22nd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Saturday the 23rd",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-23",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-23",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-23"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-23"
+        },
+        "FutureValue": "2017-09-23T00:00:00",
+        "PastValue": "2017-09-23T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 17,
+      "Text": "Saturday the 23rd",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the 15th",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-15"
+        },
+        "FutureValue": "2017-09-15T00:00:00",
+        "PastValue": "2017-09-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 15,
+      "Text": "Friday the 15th",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Thursday the twenty first",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-21",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-21",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-21"
+        },
+        "FutureValue": "2017-09-21T00:00:00",
+        "PastValue": "2017-09-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 25,
+      "Text": "Thursday the twenty first",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the twenty second",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-22",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-22",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-22"
+        },
+        "FutureValue": "2017-09-22T00:00:00",
+        "PastValue": "2017-09-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 24,
+      "Text": "Friday the twenty second",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back Friday the fifteen",
+  "Results": [
+    {
+      "$id": "1",
+      "TimexStr": "2017-09-15",
+      "Value": {
+        "$id": "2",
+        "Success": true,
+        "Timex": "2017-09-15",
+        "IsLunar": false,
+        "Mod": null,
+        "Comment": null,
+        "FutureResolution": {
+          "$id": "3",
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "$id": "4",
+          "date": "2017-09-15"
+        },
+        "FutureValue": "2017-09-15T00:00:00",
+        "PastValue": "2017-09-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 18,
+      "Text": "Friday the fifteen",
+      "Type": "date",
+      "Data": null
+    }
+  ]
+}
+]
