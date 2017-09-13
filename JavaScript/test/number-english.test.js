@@ -5,7 +5,6 @@ var describe = require('ava-spec').describe;
 
 var EnglishCultureInfo = new CultureInfo(Culture.English);
 
-if(true){
 describe('Ordinal Model .', it => {
     let model = NumberRecognizer.instance.getOrdinalModel(Culture.English, false);
 
@@ -359,12 +358,6 @@ describe('Percent Model', it => {
     basicTest(it, model,
         "10 percent", "10%");
 });
-} else {
-    describe('Number Model .', it => {
-        let model = NumberRecognizer.instance.getNumberModel(EnglishCultureInfo.name, false);
-        basicTest(it, model, "a trillionth", "1E-12");
-    });
-}
 
 function basicTest(it, model, source, value) {
     it(source, t => {
