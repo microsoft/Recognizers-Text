@@ -85,6 +85,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back 28-Nov", 13, 6);
             BasicTest("I'll go back Wed, 22 of Jan", 13, 14);
 
+           
+
+            BasicTest("I'll go back the first friday of july", 13, 24);
+            BasicTest("I'll go back the first friday in this month", 13, 30);
+
+            BasicTest("I'll go back two weeks from now", 13, 18);
+
+            BasicTest("I'll go back next week on Friday", 13, 19);
+            BasicTest("I'll go back on Friday next week", 13, 19);
+
+            BasicTest("past Monday", 0, 11);
+        }
+
+        [TestMethod]
+        public void TestDateExtractDayOfWeek()
+        {
+            BasicTest("I'll go back on Tues", 16, 4);
             BasicTest("I'll go back on Friday", 16, 6);
             BasicTest("I'll go back Friday", 13, 6);
             BasicTest("I'll go back today", 13, 5);
@@ -105,16 +122,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back last week Sunday", 13, 16);
             BasicTest("I'll go back 15 June 2016", 13, 12);
             BasicTest("a baseball on may the eleventh", 14, 16);
-
-            BasicTest("I'll go back the first friday of july", 13, 24);
-            BasicTest("I'll go back the first friday in this month", 13, 30);
-
-            BasicTest("I'll go back two weeks from now", 13, 18);
-
-            BasicTest("I'll go back next week on Friday", 13, 19);
-            BasicTest("I'll go back on Friday next week", 13, 19);
-
-            BasicTest("past Monday", 0, 11);
         }
 
         [TestMethod]
