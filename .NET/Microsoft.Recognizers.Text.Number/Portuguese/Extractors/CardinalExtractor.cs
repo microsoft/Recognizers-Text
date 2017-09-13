@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
@@ -9,7 +10,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        public CardinalExtractor(string placeholder = @"\D|\b")
+        public CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
@@ -21,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             var douExtract = new DoubleExtractor(placeholder);
             builder.AddRange(douExtract.Regexes);
 
-            this.Regexes = builder.ToImmutable();
+            Regexes = builder.ToImmutable();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese
 {
@@ -10,53 +11,45 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
-        public static string AllPointRegex => $@"((\s+{IntegerExtractor.ZeroToNineIntegerRegex})+|(\s+{IntegerExtractor.AllIntRegex}))";
-
-        public static string AllFloatRegex => $@"{IntegerExtractor.AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}";
-
-        public DoubleExtractor(string placeholder = @"\D|\b")
+        public DoubleExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})",
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder),
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
-                    new Regex($@"(?<=\s|^)(?<!(\d+)),\d+(?!(,\d+))(?={placeholder})",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder),
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
-                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*(K|k|M|G|T)(?=\b)",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex,
                         RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
-                    new Regex($@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s+{IntegerExtractor.RoundNumberIntegerRegex}(?=\b)",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
-                },
-                {
-                    new Regex($@"((?<=\b){AllFloatRegex}(?=\b))",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePor"
-                },
-                {
-                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
-                },
-                {
-                    new Regex(@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)",
+                }, {
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
+                }, {
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder),
+                    "DoubleNum"
                 }
             };
 
-            regexes.Add(GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum");
-            this.Regexes = regexes.ToImmutableDictionary();
+            Regexes = regexes.ToImmutableDictionary();
         }
     }
 }
