@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var ers = extractor.Extract(trimedText);
                     foreach (var er in ers)
                     {
-                        if (er.Start <= match.Index)
+                        if (er.Start <= match.Index && (er.Start+er.Length) > match.Index)
                         {
                             ret.Add(new Token(er.Start ?? 0, (er.Start + match.Length + er.Length) ?? 0));
                         }

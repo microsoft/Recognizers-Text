@@ -108,6 +108,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParseWithTwoResults()
         {
+            BasicTestWithTwoResults("add yoga to personal calendar on monday and wednesday at 3pm", Constants.SYS_DATETIME_DATE,
+                Constants.SYS_DATETIME_DATETIME);
+
+            BasicTestWithTwoResults("schedule a meeting at 8 am every week ", Constants.SYS_DATETIME_TIME,
+                Constants.SYS_DATETIME_SET);
+
+            BasicTestWithTwoResults("schedule second saturday of each month", Constants.SYS_DATETIME_DATE,
+                Constants.SYS_DATETIME_SET);
+
             BasicTestWithTwoResults("Set an appointment for Easter Sunday", Constants.SYS_DATETIME_DATE,
                 Constants.SYS_DATETIME_DATE);
 

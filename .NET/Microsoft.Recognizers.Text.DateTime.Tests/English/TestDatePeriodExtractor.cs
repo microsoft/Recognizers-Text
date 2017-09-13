@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDatePeriodExtractMErgingTwoTimepoints()
+        public void TestDatePeriodExtractMergingTwoTimepoints()
         {
             // test merging two time points
             BasicTest("I'll be out Oct. 2 to October 22", 12, 20);

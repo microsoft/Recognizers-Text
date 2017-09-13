@@ -280,11 +280,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var tryStr = FormatUtil.LuisDate(year, month, day);
                 if (DateObject.TryParse(tryStr, out temp))
                 {
-                    futureDate = new DateObject(year, month, day);
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                 }
                 else
                 {
-                    futureDate = new DateObject(year, month + 1, day);
+                    futureDate = DateObject.MinValue.SafeCreateFromValue(year, month + 1, day);
                 }
 
                 ret.FutureValue = futureDate;
