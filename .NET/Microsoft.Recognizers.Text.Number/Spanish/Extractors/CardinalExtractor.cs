@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish
 {
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         private static readonly Dictionary<string, CardinalExtractor> Instances = new Dictionary<string, CardinalExtractor>();
 
-        public static CardinalExtractor GetInstance(string placeholder = @"\D|\b")
+        public static CardinalExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
 
             if (!Instances.ContainsKey(placeholder))
@@ -24,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             return Instances[placeholder];
         }
 
-        private CardinalExtractor(string placeholder = @"\D|\b")
+        private CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

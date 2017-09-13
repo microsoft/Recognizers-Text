@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -48,17 +49,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekDayAndDayOfMothRegex { get; }
 
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
-        public static readonly Regex RelativeDayRegex = new Regex(
-               "",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextPrefixRegexRegex = new Regex(
-                "",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PastPrefixRegexRegex = new Regex(
-                "",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
@@ -72,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            DateTokenPrefix = "en ";
+            DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
             OnRegex = SpanishDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = SpanishDateExtractorConfiguration.SpecialDayRegex;
@@ -143,17 +138,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            //TODO: Replace with a regex
-            //TODO: Add 'upcoming' key word
-            if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
 
-            //TODO: Replace with a regex
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
+            if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
@@ -164,11 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsCardinalLast(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-
-            //TODO: Replace with a regex
-            return (
-                trimedText.Equals("ultimo") || trimedText.Equals("último") ||
-                trimedText.Equals("ultima") || trimedText.Equals("última"));
+            return PastPrefixRegex.IsMatch(trimedText);
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Definitions.Spanish;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -12,32 +13,30 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
 
         public FractionExtractor()
         {
-            string specialFractionInteger = $@"((({IntegerExtractor.AllIntRegex})i?({IntegerExtractor.ZeroToNineIntegerRegex})|({IntegerExtractor.AllIntRegex}))a?v[oa]s?)";
-
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))",
+                    new Regex(NumbersDefinitions.FractionNotationRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
-                    new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))",
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
                 {
-                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+((y|con)\s+)?)?({IntegerExtractor.AllIntRegex})(\s+((y|con)\s)?)((({OrdinalExtractor.AllOrdinalRegex})s?|({specialFractionInteger})|({OrdinalExtractor.SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\b)",
+                    new Regex(NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracSpa"
                 },
                 {
-                    new Regex($@"(?<=\b)({IntegerExtractor.AllIntRegex}\s+(y\s+)?)?(un|un[oa])(\s+)(({OrdinalExtractor.AllOrdinalRegex})|({OrdinalExtractor.SufixRoundOrdinalRegex})|(y\s+)?medi[oa]s?)(?=\b)",
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracSpa"
                 },
                 {
-                    new Regex($@"(?<=\b)(({IntegerExtractor.AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(({IntegerExtractor.AllIntRegex})|((\d+)(?!\.)))(?=\b)",
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracSpa"
                 },

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish
 {
@@ -18,10 +19,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = CardinalExtractor.GetInstance(@"\b");
+                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
-                    builder.Add(new Regex(@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)", RegexOptions.Singleline),
+                    builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline),
                         "IntegerNum");
                     break;
                 case NumberMode.Default:
