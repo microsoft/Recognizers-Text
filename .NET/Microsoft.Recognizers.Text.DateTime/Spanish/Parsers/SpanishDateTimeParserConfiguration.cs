@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -50,18 +51,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = "el ";
-            TokenBeforeTime = "la ";
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(@"(?<am>(esta|(por|de|a|en)\s+la)\s+(mañana|madrugada))",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            //TODO: modify it according to the corresponding English regex
-            PMTimeRegex = new Regex(@"(?<pm>(esta|(por|de|a|en)\s+la)\s+(tarde|noche))",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -123,15 +121,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            //TODO: Replace with a regex
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
+            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                     trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima") ||
-                     trimedText.StartsWith("siguiente"))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }

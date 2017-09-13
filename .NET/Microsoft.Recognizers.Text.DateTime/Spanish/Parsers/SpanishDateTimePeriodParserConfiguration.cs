@@ -129,15 +129,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var swift = 0;
 
             //TODO: Replace with a regex
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última") ||
+            if (SpanishDatePeriodParserConfiguration.PastPrefixRegex.IsMatch(trimedText) ||
                 trimedText.Equals("anoche"))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                     trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima") ||
-                     trimedText.StartsWith("siguiente"))
+            else if (SpanishDatePeriodParserConfiguration.NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }

@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodExtractorConfiguration : IDateTimePeriodExtractorConfiguration
     {
-        public static readonly Regex NumberCombinedWithUnit =
-            new Regex($@"\b(?<num>\d+(\.\d*)?)\s*{SpanishTimePeriodExtractorConfiguration.UnitRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDateTimePeriodExtractorConfiguration()
         {
@@ -57,17 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this
         public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add this
-        public static readonly Regex PeriodTimeOfDayWithDateRegex = new Regex(@"\b(((y|a|en|por)\s+la|al)\s+)?(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PeriodTimeOfDayWithDateRegex = new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: add this according to English
-        public static readonly Regex RelativeTimeUnitRegex =
-            new Regex(
-                $@"({SpanishDatePeriodExtractorConfiguration.PastRegex}|{
-                    SpanishDatePeriodExtractorConfiguration.FutureRegex})\s+{
-                    SpanishTimePeriodExtractorConfiguration.UnitRegex
-                    }",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex RelativeTimeUnitRegex = new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
@@ -91,12 +83,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var beforeMatch = BeforeRegex.Match(text);
-            if (beforeMatch.Success)
+            var match = BetweenRegex.Match(text);
+            if (match.Success)
             {
-                index = beforeMatch.Index;
+                index = match.Index;
             }
-            return beforeMatch.Success;
+            return match.Success;
         }
 
         public bool HasConnectorToken(string text)

@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -6,44 +7,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
     {
-        public static readonly Regex PrepositionRegex = new Regex(@"(?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex NowRegex =
-            new Regex(@"\b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex SuffixRegex = new Regex(@"^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SuffixRegex = new Regex(DateTimeDefinitions.SuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: modify it according to the corresponding English regex
-        public static readonly Regex TimeOfDayRegex = new Regex(@"\b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex($@"\b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex TimeOfTodayAfterRegex =
-             new Regex($@"^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex TimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex SimpleTimeOfTodayAfterRegex =
-            new Regex($@"({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex SimpleTimeOfTodayBeforeRegex =
-            new Regex($@"{SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({SpanishTimeExtractorConfiguration.HourNumRegex}|{BaseTimeExtractor.HourRegex})",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
-        public static readonly Regex TheEndOfRegex = new Regex(@"((a|e)l\s+)?fin(alizar|al)?(\s+(el|de(l)?)(\s+d[ií]a)?(\s+de)?)?\s*$",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.TimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.TimeOfTodayBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleTimeOfTodayAfterRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleTimeOfTodayBeforeRegex = new Regex(DateTimeDefinitions.SimpleTimeOfTodayBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TheEndOfRegex = new Regex(DateTimeDefinitions.TheEndOfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO: add this for Spanish
-        public static readonly Regex UnitRegex = new Regex(@"",
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDateTimeExtractorConfiguration()
         {
@@ -81,10 +60,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool IsConnector(string text)
         {
-            return (string.IsNullOrEmpty(text) || text.Equals(",") ||
-                        PrepositionRegex.IsMatch(text) || text.Equals("t") ||
-                        text.Equals("para la") || text.Equals("para las") ||
-                        text.Equals("cerca de la") || text.Equals("cerca de las"));
+            text = text.Trim();
+            return (string.IsNullOrEmpty(text)
+                    || PrepositionRegex.IsMatch(text)
+                    || ConnectorRegex.IsMatch(text));
         }
     }
 }

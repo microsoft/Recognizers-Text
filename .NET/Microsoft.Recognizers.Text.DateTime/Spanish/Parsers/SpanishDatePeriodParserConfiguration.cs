@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
@@ -48,18 +49,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex InConnectorRegex { get; }
 
         //TODO: config this according to English
-        public static readonly Regex NextPrefixRegex =
-            new Regex(
-                @"(next|upcoming)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex PastPrefixRegex =
-            new Regex(
-                @"(last|past|previous)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex ThisPrefixRegex =
-            new Regex(
-                @"(this|current)\b",
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
@@ -84,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = "en ";
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
@@ -92,12 +84,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
             MonthFrontBetweenRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
-            BetweenRegex = SpanishDatePeriodExtractorConfiguration.BetweenRegex;
+            BetweenRegex = SpanishDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
             SimpleCasesRegex = SpanishDatePeriodExtractorConfiguration.SimpleCasesRegex;
             OneWordPeriodRegex = SpanishDatePeriodExtractorConfiguration.OneWordPeriodRegex;
-            MonthWithYear = SpanishDatePeriodExtractorConfiguration.MonthWithYear;
-            MonthNumWithYear = SpanishDatePeriodExtractorConfiguration.MonthNumWithYear;
+            MonthWithYear = SpanishDatePeriodExtractorConfiguration.MonthWithYearRegex;
+            MonthNumWithYear = SpanishDatePeriodExtractorConfiguration.MonthNumWithYearRegex;
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
@@ -123,17 +115,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
 
-            //TODO: Replace with a regex
-            //TODO: Add 'upcoming' key word
-            if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
 
-            //TODO: Replace with a regex
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
+            if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
@@ -144,18 +131,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"))
+            if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
 
-            if (trimedText.StartsWith("ultimo") || trimedText.StartsWith("último") ||
-                trimedText.StartsWith("ultima") || trimedText.StartsWith("última"))
+            if (PastPrefixRegex.IsMatch(trimedText))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("este") || trimedText.StartsWith("esta"))
+            else if (ThisPrefixRegex.IsMatch(trimedText))
             {
                 swift = 0;
             }
@@ -166,18 +151,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool IsFuture(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (
-                trimedText.StartsWith("este") ||
-                trimedText.StartsWith("proximo") || trimedText.StartsWith("próximo") ||
-                trimedText.StartsWith("proxima") || trimedText.StartsWith("próxima"));
+            return ThisPrefixRegex.IsMatch(trimedText) || NextPrefixRegex.IsMatch(trimedText);
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (
-                trimedText.Equals("ultimo") || trimedText.Equals("último") ||
-                trimedText.Equals("ultima") || trimedText.Equals("última"));
+            return PastPrefixRegex.IsMatch(trimedText);
         }
 
         public bool IsMonthOnly(string text)
