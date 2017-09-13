@@ -11,7 +11,7 @@ import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { EnglishTimeExtractorConfiguration } from "./TimeConfiguration"
+import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 
 export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
     readonly datePointExtractor: BaseDateExtractor
