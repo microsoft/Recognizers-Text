@@ -57,7 +57,7 @@ class NumberUtility {
     }).format(value);
     let toStringResult = value.toString().toUpperCase();
 
-    return (polyfillResult.length < toStringResult.length) ? polyfillResult : toStringResult;
+    return (polyfillResult.length <= toStringResult.length) ? polyfillResult : toStringResult;
   }
 
   private static decimalPlaces(n) {
