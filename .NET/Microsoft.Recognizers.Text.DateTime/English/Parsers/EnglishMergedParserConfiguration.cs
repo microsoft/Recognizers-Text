@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex AfterRegex { get; }
 
+        public Regex SinceRegex { get; }
+
         public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
@@ -17,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
+            SinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));

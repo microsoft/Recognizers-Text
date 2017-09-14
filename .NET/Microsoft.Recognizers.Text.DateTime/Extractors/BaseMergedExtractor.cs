@@ -151,6 +151,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Start -= modLengh;
                     er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
                 }
+
+                if (HasTokenIndex(beforeStr.TrimEnd(), config.SinceRegex, out tokenIndex))
+                {
+                    var modLengh = beforeStr.Length - tokenIndex;
+                    er.Length += modLengh;
+                    er.Start -= modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
             }
         }
 
