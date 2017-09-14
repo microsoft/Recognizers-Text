@@ -319,9 +319,11 @@ HolidayRegex3: !nestedRegex
   references: [ FullYearRegex ]
 # SpanishMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (antes(\s+de(\s+las?)?)?)
+  def: (antes(\s+del?(\s+las?)?)?)
 AfterRegex: !simpleRegex
-  def: (despues(\s*de(\s+las?)?)?)
+  def: (despues(\s*del?(\s+las?)?)?)
+SinceRegex: !simpleRegex
+  def: (desde(\s+(las?|el))?)
 # SpanishSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b

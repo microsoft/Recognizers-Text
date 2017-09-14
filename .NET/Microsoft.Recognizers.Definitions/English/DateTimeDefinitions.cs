@@ -154,7 +154,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
 		public const string BeforeRegex = @"\b(before)\b";
-		public const string AfterRegex = @"\b(after|since)\b";
+		public const string AfterRegex = @"\b(after)\b";
+		public const string SinceRegex = @"\b(since)\b";
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
