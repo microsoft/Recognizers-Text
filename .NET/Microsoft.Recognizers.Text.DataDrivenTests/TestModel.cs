@@ -1,10 +1,32 @@
-﻿namespace Microsoft.Recognizers.Text.DataDrivenTests
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
     public class TestModel
     {
         public string TestType { get; set; }
         public string Input { get; set; }
-        public int ResultsLength { get; set; }
-        public object Results { get; set; }
+        public IDictionary<string, object> Context { get; set; }
+        public bool Debug { get; set; }
+        public Platform NotSupported { get; set; }
+        public Platform NotSupportedByDesign { get; set; }
+        public IEnumerable<object> Results { get; set; }
+
+        public IEnumerable<T> CastResults<T>()
+        {
+            var results = JsonConvert.SerializeObject(this.Results);
+            return JsonConvert.DeserializeObject<IEnumerable<T>>(results);
+        }
+    }
+
+    [Flags]
+    public enum Platform
+    {
+        dotNet = 1,
+        javascript = 2,
+        python = 4
     }
 }

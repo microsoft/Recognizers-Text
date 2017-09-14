@@ -1,9 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.DataDrivenTests
+namespace Microsoft.Recognizers.Text.DataDrivenTests.Number
 {
     [TestClass]
     public class TestNumber_Fra : TestBase
@@ -14,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static void ClassInitialize(TestContext context)
         {
             TestResources = new TestResources();
-            TestResources.InitFromTextContext(context);
+            TestResources.InitFromTestContext(context);
         }
         
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Fra.csv", "NumberModel-Fra#csv", DataAccessMethod.Sequential)]
@@ -22,13 +21,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void NumberModel()
         {
             var testSpec = TestResources.GetSpecForContext(TestContext);
+            if (TestUtils.EvaluateSpec(testSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+            if (Debugger.IsAttached && testSpec.Debug)
+            {
+                Debugger.Break();
+            }
             var model = TestContext.GetModel();
 
             var result = model.Parse(testSpec.Input);
-            Assert.AreEqual(testSpec.ResultsLength, result.Count);
-            if (testSpec.Results != null)
+            Assert.AreEqual(testSpec.Results.Count(), result.Count);
+            if (testSpec.Results.Count() > 0)
             {
-                var expected = JsonConvert.DeserializeObject<IEnumerable<ModelResult>>(testSpec.Results.ToString()).FirstOrDefault();
+                var expected = testSpec.CastResults<ModelResult>().FirstOrDefault();
                 Assert.AreEqual(expected.TypeName, result.First().TypeName);
                 Assert.AreEqual(expected.Resolution["value"], result.First().Resolution["value"]);
             }
@@ -39,13 +46,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void OrdinalModel()
         {
             var testSpec = TestResources.GetSpecForContext(TestContext);
+            if (TestUtils.EvaluateSpec(testSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+            if (Debugger.IsAttached && testSpec.Debug)
+            {
+                Debugger.Break();
+            }
             var model = TestContext.GetModel();
 
             var result = model.Parse(testSpec.Input);
-            Assert.AreEqual(testSpec.ResultsLength, result.Count);
-            if (testSpec.Results != null)
+            Assert.AreEqual(testSpec.Results.Count(), result.Count);
+            if (testSpec.Results.Count() > 0)
             {
-                var expected = JsonConvert.DeserializeObject<IEnumerable<ModelResult>>(testSpec.Results.ToString()).FirstOrDefault();
+                var expected = testSpec.CastResults<ModelResult>().FirstOrDefault();
                 Assert.AreEqual(expected.TypeName, result.First().TypeName);
                 Assert.AreEqual(expected.Resolution["value"], result.First().Resolution["value"]);
             }
@@ -56,13 +71,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void PercentModel()
         {
             var testSpec = TestResources.GetSpecForContext(TestContext);
+            if (TestUtils.EvaluateSpec(testSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+            if (Debugger.IsAttached && testSpec.Debug)
+            {
+                Debugger.Break();
+            }
             var model = TestContext.GetModel();
 
             var result = model.Parse(testSpec.Input);
-            Assert.AreEqual(testSpec.ResultsLength, result.Count);
-            if (testSpec.Results != null)
+            Assert.AreEqual(testSpec.Results.Count(), result.Count);
+            if (testSpec.Results.Count() > 0)
             {
-                var expected = JsonConvert.DeserializeObject<IEnumerable<ModelResult>>(testSpec.Results.ToString()).FirstOrDefault();
+                var expected = testSpec.CastResults<ModelResult>().FirstOrDefault();
                 Assert.AreEqual(expected.TypeName, result.First().TypeName);
                 Assert.AreEqual(expected.Resolution["value"], result.First().Resolution["value"]);
             }

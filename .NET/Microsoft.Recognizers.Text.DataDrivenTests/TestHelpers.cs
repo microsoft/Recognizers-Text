@@ -1,4 +1,6 @@
 ﻿using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System;
@@ -14,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
     public static class TestResourcesExtensions
     {
-        public static void InitFromTextContext(this TestResources resources, TestContext context)
+        public static void InitFromTestContext(this TestResources resources, TestContext context)
         {
             var classNameIndex = context.FullyQualifiedTestClassName.LastIndexOf('.');
             var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
@@ -52,11 +54,44 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return NumberRecognizer.Instance.GetOrdinalModel(language);
                 case "PercentModel":
                     return NumberRecognizer.Instance.GetPercentageModel(language);
+                case "AgeModel":
+                    return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
+                case "CurrencyModel":
+                    return NumberWithUnitRecognizer.Instance.GetCurrencyModel(language);
+                case "DimensionModel":
+                    return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
+                case "TemperatureModel":
+                    return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
+                case "CustomNumberModel":
+                    return GetCustomModelFor(language);
+            }
+            return null;
+        }
+
+        private static IModel GetCustomModelFor(string language)
+        {
+            switch (language)
+            {
+                case "zh-cn":
+                    return new NumberModel(
+                        AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
+                        new NumberExtractor(ChineseNumberMode.ExtractAll));
             }
             return null;
         }
     }
 
+    public static class TestModelExtensions
+    {
+        public static bool IsNotSupported(this TestModel testSpec)
+        {
+            return testSpec.NotSupported.HasFlag(Platform.dotNet);
+        }
+        public static bool IsNotSupportedByDesign(this TestModel testSpec)
+        {
+            return testSpec.NotSupportedByDesign.HasFlag(Platform.dotNet);
+        }
+    }
     public static class TestUtils
     {
         public static string GetCulture(string source)
@@ -77,6 +112,22 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 default:
                     return Culture.English;
             }
+        }
+
+        public static bool EvaluateSpec(TestModel spec, out string message)
+        {
+            if (spec.IsNotSupported())
+            {
+                message = $"input '{spec.Input}' not supported";
+                return true;
+            }
+            if (spec.IsNotSupportedByDesign())
+            {
+                message = $"input '{spec.Input}' not supported by design";
+                return true;
+            }
+            message = string.Empty;
+            return false;
         }
 
         public static string GetModelName(string source)
