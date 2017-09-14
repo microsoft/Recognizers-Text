@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(2, results.Count);
             Assert.AreEqual(expectedOutput1, results[0].Text);
             Assert.AreEqual(expectedOutput2, results[1].Text);
-            TestWriter.Write("Eng", extractor, text, results, 2);
+            TestWriter.Write("Eng", extractor, text, results);
         }
 
         public void BasicTestNone(string text)

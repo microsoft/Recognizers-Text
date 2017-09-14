@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
 using System;
 using System.Linq;
+using DateObject = System.DateTime;
+using Newtonsoft.Json.Converters;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -14,16 +16,34 @@ namespace Microsoft.Recognizers.Text
         public string Model { get; set; }
         public string TestType { get; set; }
         public string Input { get; set; }
-        public int ResultsLength { get; set; }
-        public object Results { get; set; }
+        public IDictionary<string, object> Context { get; set; }
+        public IEnumerable<object> Results { get; set; }
+    }
+
+    [Flags]
+    public enum Platform
+    {
+        dotNet,
+        javascript,
+        python
     }
 
     public class SingleTestModel
     {
         public string TestType { get; set; }
         public string Input { get; set; }
-        public int ResultsLength { get; set; }
-        public object Results { get; set; }
+        public IDictionary<string, object> Context { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Platform NotSupported { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Platform NotSupportedByDesign { get; set; }
+        public IEnumerable<object> Results { get; set; }
+
+        public SingleTestModel()
+        {
+            this.NotSupported = Platform.javascript | Platform.python;
+            this.NotSupportedByDesign = Platform.python;
+        }
     }
     
     public class TestWriter
@@ -44,22 +64,7 @@ namespace Microsoft.Recognizers.Text
             {
                 Trace.Listeners.Add(new TestTextWriterTraceListener(testModel.Language, testModel.Recognizer, testModel.Model));
             }
-            Trace.WriteLine(getJson(testModel));
-        }
-
-        public static void Write(string[] values)
-        {
-            var testModel = new TestModel
-            {
-                Language = values[0],
-                Recognizer = values[1],
-                TestType = values[2],
-                Model = values[3],
-                Input = values[4],
-                ResultsLength = Int32.Parse(values[5]),
-                Results = JsonConvert.DeserializeObject(values[6])
-            };
-            Write(testModel);
+            Trace.WriteLine(GetJson(testModel));
         }
 
         private static string getProjectName(string path)
@@ -79,72 +84,102 @@ namespace Microsoft.Recognizers.Text
             return type.Name.Replace("Chs", "");
         }
 
-        private static string getJson<T>(T obj)
+        public static string GetJson<T>(T obj, Formatting formatting = Formatting.None)
         {
-            return JsonConvert.SerializeObject(obj, Formatting.None, 
+            return JsonConvert.SerializeObject(obj, formatting, 
                 new JsonSerializerSettings {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                    PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                    PreserveReferencesHandling = PreserveReferencesHandling.None,
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Formatting = formatting
                 });
         }
 
-        public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        private static void Write(string lang, string model, DateObject? datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var fileName = getProjectName(callerFilePath);
+            var recognizer = getProjectName(callerFilePath);
+            var context = new Dictionary<string, object>();
+            if (datetime != null)
+            {
+                context.Add("ReferenceDateTime", datetime);
+            }
+            Write(new TestModel
+            {
+                Language = lang,
+                Recognizer = recognizer,
+                Model = model,
+                TestType = callerMemberName,
+                Context = context.Count > 0 ? context : null,
+                Input = source,
+                Results = results
+            });
+        }
+
+        public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
             var modelStr = getName(model);
-            var resultStr = getJson(result);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, "1", resultStr });
+            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
         }
 
-        public static void Write(string lang, IModel model, string source, int count, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        public static void Write(string lang, string model, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var fileName = getProjectName(callerFilePath);
+            Write(lang, model, null, source, results, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
             var modelStr = getName(model);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, count.ToString(), "" });
+            Write(lang, modelStr, null, source, results, callerFilePath, callerMemberName);
         }
 
-        public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> result, int count, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        public static void Write(string lang, IModel model, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var fileName = getProjectName(callerFilePath);
-            var modelStr = getName(model);
-            var resultStr = getJson(result);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, count.ToString(), resultStr });
-        }
-
-        public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
-        {
-            var fileName = getProjectName(callerFilePath);
-            var modelStr = getName(extractor);
-            var resultStr = getJson(result);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, "1", resultStr });
-        }
-
-        public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> results, int count, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
-        {
-            var fileName = getProjectName(callerFilePath);
-            var modelStr = getName(extractor);
-            var resultStr = getJson(results);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, count.ToString(), resultStr });
-        }
-
-        public static void Write(string lang, IExtractor extractor, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
-        {
-            var fileName = getProjectName(callerFilePath);
-            var modelStr = getName(extractor);
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, "0", ""});
+            Write(lang, model, source, Enumerable.Empty<ModelResult>(), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var fileName = getProjectName(callerFilePath);
             var modelStr = getName(parser);
-            var resultStr = getJson(new ParseResult[] { result });
-            Write(new string[] { lang, fileName, callerMemberName, modelStr, source, "1", resultStr });
+            Write(lang, modelStr, null, source, new ParseResult[] { result }, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IParser parser, DateObject datetime, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            var modelStr = getName(parser);
+            Write(lang, modelStr, datetime, source, new ParseResult[] { result }, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IParser parser, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            Write(lang, parser, source, null, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            var modelStr = getName(extractor);
+            Write(lang, modelStr, null, source, results, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IExtractor extractor, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            Write(lang, extractor, source, Enumerable.Empty<ExtractResult>(), callerFilePath, callerMemberName);
         }
 
         public static void Close(string lang, Type type, [CallerFilePath] string callerFilePath = "")
         {
             var model = getName(type);
+            var recognizer = getProjectName(callerFilePath);
+
+            var trace = Trace.Listeners[string.Join("-", lang, recognizer, model)];
+            if (trace != null)
+            {
+                trace.Write("]");
+                trace.Flush();
+            }
+        }
+
+        public static void Close(string lang, string model, [CallerFilePath] string callerFilePath = "")
+        {
             var recognizer = getProjectName(callerFilePath);
 
             var trace = Trace.Listeners[string.Join("-", lang, recognizer, model)];

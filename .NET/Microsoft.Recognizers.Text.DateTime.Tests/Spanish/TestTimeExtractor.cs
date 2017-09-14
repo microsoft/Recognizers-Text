@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 
             if (expected < 1)
             {
+                TestWriter.Write("Spa", extractor, text);
                 return;
             }
 

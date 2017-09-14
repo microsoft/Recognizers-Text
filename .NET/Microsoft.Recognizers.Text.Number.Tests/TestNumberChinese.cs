@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestWriter.Close("Chs", typeof(NumberModel));
             TestWriter.Close("Chs", typeof(PercentModel));
             TestWriter.Close("Chs", typeof(OrdinalModel));
+            TestWriter.Close("Chs", "CustomNumberModel");
         }
 
         private void BasicTest(IModel model, string source, string value)
@@ -37,13 +38,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             TestWriter.Write("Chs", model, source, resultStr);
         }
 
-
-        private void MultiTest(IModel model, string source, int count)
+        private void MultiTest(IModel model, string source, int count, bool isCustomModel = false)
         {
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
-            TestWriter.Write("Chs", model, source, count);
+            if (isCustomModel) TestWriter.Write("Chs", "CustomNumberModel", source, resultStr);
+            else TestWriter.Write("Chs", model, source, resultStr);
         }
 
         private void MultiOneTest(IModel model, string source, int count, string first)
@@ -52,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
             Assert.AreEqual(resultJson[0].Resolution["value"], first);
-            TestWriter.Write("Chs", model, source, resultStr, count);
+            TestWriter.Write("Chs", model, source, resultStr);
         }
 
         [TestMethod]
@@ -2043,7 +2044,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "一看",
-                1);
+                1, true);
 
             MultiTest(model,
                 "一美元",
@@ -2051,7 +2052,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "一美元",
-                1);
+                1, true);
 
             MultiTest(model,
                 "两美刀",
@@ -2059,7 +2060,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "两美刀",
-                1);
+                1, true);
 
             MultiTest(model,
                 "四川",
@@ -2067,14 +2068,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "四川",
-                1);
+                1, true);
             MultiTest(model,
                 "陆地",
                 0);
 
             MultiTest(wmodel,
                 "陆地",
-                1);
+                1, true);
 
             MultiTest(model,
                 "十",
@@ -2082,7 +2083,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "十",
-                1);
+                1, true);
 
         }
 

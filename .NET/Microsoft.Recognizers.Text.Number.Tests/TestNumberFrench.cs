@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
-            TestWriter.Write("Fra", model, source, count);
+            TestWriter.Write("Fra", model, source, resultStr);
         }
        
         [TestMethod]

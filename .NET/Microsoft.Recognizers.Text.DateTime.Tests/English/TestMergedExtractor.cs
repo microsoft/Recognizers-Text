@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
             var results = extractorWithOptions.Extract(text);
             Assert.AreEqual(count, results.Count);
-            TestWriter.Write("Eng", extractor, text, results, count);
+            TestWriter.Write("Eng", extractor, text, results);
         }
 
         [TestMethod]

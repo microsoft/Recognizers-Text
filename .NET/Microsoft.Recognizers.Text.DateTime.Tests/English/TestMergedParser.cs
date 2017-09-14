@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type, pr.Type.Replace("datetimeV2.",""));
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write("Eng", parser, refrenceDate, text, pr);
         }
 
         public void BasicTestResolution(string text, string resolution)
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDate);
             var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>)pr.Value).First().Value);
             Assert.AreEqual(resolution, prValue.First()["value"]);
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write("Eng", parser, refrenceDate, text, pr);
         }
 
         public void BasicTestWithTwoResults(string text, string type1, string type2)
@@ -55,9 +55,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(2, er.Count);
             var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type1, pr.Type.Replace("datetimeV2.", ""));
-            pr = parser.Parse(er[1], referenceDate);
+            TestWriter.Write("Eng", parser, refrenceDate, text, pr);
+            pr = parser.Parse(er[1], refrenceDate);
             Assert.AreEqual(type2, pr.Type.Replace("datetimeV2.", ""));
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write("Eng", parser, refrenceDate, text, pr);
         }
 
         [TestMethod]

@@ -13,7 +13,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             TestWriter.Close("Spa", typeof(BaseDurationExtractor));
         }
 
-
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);

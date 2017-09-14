@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var result = model.Parse(source);
             Assert.AreEqual(count, result.Count);
-            TestWriter.Write("Por", model, source, count);
+            TestWriter.Write("Por", model, source, result);
         }
 
         [TestMethod]

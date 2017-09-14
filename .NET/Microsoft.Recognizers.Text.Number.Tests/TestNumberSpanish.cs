@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             var result = model.Parse(source);
             Assert.AreEqual(count, result.Count);
-            TestWriter.Write("Spa", model, source, count);
+            TestWriter.Write("Spa", model, source, result);
         }
 
         [TestMethod]

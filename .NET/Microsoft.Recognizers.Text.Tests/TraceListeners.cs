@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text
                     isAppend = true;
                 }
 
-                base.WriteLine(JsonConvert.SerializeObject(model, Formatting.Indented));
+                base.WriteLine(TestWriter.GetJson(model, Formatting.Indented));
                 //base.Flush();
             }
         }

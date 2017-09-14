@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(values.Length, results.Count);
             var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
             CollectionAssert.AreEqual(values, resultsValues);
-            TestWriter.Write("Spa", model, source, results, values.Length);
+            TestWriter.Write("Spa", model, source, results);
         }
 
         private string GetStringValue(ModelResult source)

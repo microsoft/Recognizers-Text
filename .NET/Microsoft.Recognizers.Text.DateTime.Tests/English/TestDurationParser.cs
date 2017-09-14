@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         readonly BaseDurationExtractor extractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         readonly IDateTimeParser parser = new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
+        readonly DateObject date = new DateObject(2016, 11, 7);
 
         [ClassCleanup]
         public static void ClassCleanup()
@@ -19,11 +20,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], new DateObject(2016, 11, 7));
+            var pr = parser.Parse(er[0], date);
             Assert.AreEqual(Constants.SYS_DATETIME_DURATION, pr.Type);
             Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write("Eng", parser, date, text, pr);
         }
 
         [TestMethod]
