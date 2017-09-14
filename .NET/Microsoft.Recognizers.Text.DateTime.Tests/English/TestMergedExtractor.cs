@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestAfterBefore()
+        public void TestAfterBeforeSince()
         {
             BasicTest("after 7/2 ", 0, 9);
             BasicTest("since 7/2 ", 0, 9);

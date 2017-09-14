@@ -114,6 +114,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(model, reference,
                 "I'll leave this SUMMER",
                 Constants.SYS_DATETIME_DATEPERIOD, "this summer", "2016-SU");
+
+            BasicTest(model, reference,
+                "I'll be out since tomorrow",
+                Constants.SYS_DATETIME_DATEPERIOD, "since tomorrow", "2016-11-08");
+
+            BasicTest(model, reference,
+                "I'll be out since August",
+                Constants.SYS_DATETIME_DATEPERIOD, "since august", "XXXX-08");
+
+            BasicTest(model, reference,
+                "I'll be out since this August",
+                Constants.SYS_DATETIME_DATEPERIOD, "since this august", "2016-08");
         }
 
         [TestMethod]
