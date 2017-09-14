@@ -35,6 +35,22 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         public static string AllOrdinalRegex => $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
 
+
+        // TEMPORARY - REFACTOR WITH NEW NUMBER DEFINITIONS
+        private static readonly Dictionary<string, OrdinalExtractor> Instances = new Dictionary<string, OrdinalExtractor>();
+        public static OrdinalExtractor GetInstance(string placeholder = "")
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new OrdinalExtractor();
+                Instances.Add(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+
         public OrdinalExtractor()
         {
             var regexes = new Dictionary<Regex, string>

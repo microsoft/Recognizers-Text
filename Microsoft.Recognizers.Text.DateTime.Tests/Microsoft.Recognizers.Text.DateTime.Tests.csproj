@@ -87,6 +87,10 @@
     <Compile Include="English\TestTimeParser.cs" />
     <Compile Include="English\TestTimePeriodExtractor.cs" />
     <Compile Include="English\TestTimePeriodParser.cs" />
+    <Compile Include="French\TestDateExtractor.cs" />
+    <Compile Include="French\TestDateParser.cs" />
+    <Compile Include="French\TestDatePeriodExtractor.cs" />
+    <Compile Include="French\TestDatePeriodParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spanish\TestDateExtractor.cs" />
     <Compile Include="Spanish\TestDateParser.cs" />

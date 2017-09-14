@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.Equals("r[eé]cemment") || trimedText.Equals("pr[eé]c[eé]demment")||trimedText.Equals("auparavant"))
+            else if (trimedText.Equals("récemment") || trimedText.Equals("précédemment")||trimedText.Equals("auparavant"))
             {
                 timex = "PAST_REF";
             }

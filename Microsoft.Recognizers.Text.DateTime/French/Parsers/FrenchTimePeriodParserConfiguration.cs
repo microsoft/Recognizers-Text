@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("afternoon"))
+            else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith(""))
             {
                 timex = "TAF";
                 beginHour = 12;
