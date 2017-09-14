@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "设置恒温器为85度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "85度",
       "Start": 6,
       "End": 8,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "85"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "把温度升高5度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5度",
       "Start": 5,
       "End": 6,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "5"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": "正常的温度是华氏温度98.6度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "华氏温度98.6度",
       "Start": 6,
       "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "98.6"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "华氏温度100度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "华氏温度100度",
       "Start": 0,
       "End": 7,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "100"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "20摄氏度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20摄氏度",
       "Start": 0,
       "End": 4,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "20"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "外面的温度是98度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "98度",
       "Start": 6,
       "End": 8,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "98"
       }
@@ -115,27 +115,25 @@
 {
   "TestType": "BasicTest",
   "Input": "你能把华氏温度51度转换为摄氏度吗",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "华氏温度51度",
       "Start": 3,
       "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "51"
       }
     },
     {
-      "$id": "3",
       "Text": "摄氏度",
       "Start": 13,
       "End": 15,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }

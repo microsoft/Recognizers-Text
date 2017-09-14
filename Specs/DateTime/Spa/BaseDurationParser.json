@@ -1,23 +1,22 @@
 [{
   "TestType": "BasicTest",
   "Input": "Me voy por 3h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "10800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "10800"
         },
         "FutureValue": 10800.0,
@@ -27,8 +26,7 @@
       "Start": 11,
       "Length": 2,
       "Text": "3h",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -36,23 +34,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3días",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "259200"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "259200"
         },
         "FutureValue": 259200.0,
@@ -62,8 +59,7 @@
       "Start": 11,
       "Length": 5,
       "Text": "3días",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -71,23 +67,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3,5 años",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3.5Y",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3.5Y",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "110376000"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "110376000"
         },
         "FutureValue": 110376000.0,
@@ -97,8 +92,7 @@
       "Start": 11,
       "Length": 8,
       "Text": "3,5 años",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -106,23 +100,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "10800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "10800"
         },
         "FutureValue": 10800.0,
@@ -132,8 +125,7 @@
       "Start": 11,
       "Length": 3,
       "Text": "3 h",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -141,23 +133,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 horas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "10800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "10800"
         },
         "FutureValue": 10800.0,
@@ -167,8 +158,7 @@
       "Start": 11,
       "Length": 7,
       "Text": "3 horas",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -176,23 +166,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 hrs",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "10800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "10800"
         },
         "FutureValue": 10800.0,
@@ -202,8 +191,7 @@
       "Start": 11,
       "Length": 5,
       "Text": "3 hrs",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -211,23 +199,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 hr",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "10800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "10800"
         },
         "FutureValue": 10800.0,
@@ -237,8 +224,7 @@
       "Start": 11,
       "Length": 4,
       "Text": "3 hr",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -246,23 +232,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3dias",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "259200"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "259200"
         },
         "FutureValue": 259200.0,
@@ -272,8 +257,7 @@
       "Start": 11,
       "Length": 5,
       "Text": "3dias",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -281,23 +265,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 dias",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "259200"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "259200"
         },
         "FutureValue": 259200.0,
@@ -307,8 +290,7 @@
       "Start": 11,
       "Length": 6,
       "Text": "3 dias",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -316,23 +298,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 meses",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "7776000"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "7776000"
         },
         "FutureValue": 7776000.0,
@@ -342,8 +323,7 @@
       "Start": 11,
       "Length": 7,
       "Text": "3 meses",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -351,23 +331,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 minutos",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "180"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "180"
         },
         "FutureValue": 180.0,
@@ -377,8 +356,7 @@
       "Start": 11,
       "Length": 9,
       "Text": "3 minutos",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -386,23 +364,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3 min",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "180"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "180"
         },
         "FutureValue": 180.0,
@@ -412,8 +389,7 @@
       "Start": 11,
       "Length": 5,
       "Text": "3 min",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -421,23 +397,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 3,5 segundos ",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT3.5S",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT3.5S",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "3.5"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "3.5"
         },
         "FutureValue": 3.5,
@@ -447,8 +422,7 @@
       "Start": 11,
       "Length": 12,
       "Text": "3,5 segundos",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -456,23 +430,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por 123,45 seg",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT123.45S",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT123.45S",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "123.45"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "123.45"
         },
         "FutureValue": 123.45,
@@ -482,8 +455,7 @@
       "Start": 11,
       "Length": 10,
       "Text": "123,45 seg",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -491,23 +463,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por dos semanas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P2W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P2W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "1209600"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "1209600"
         },
         "FutureValue": 1209600.0,
@@ -517,8 +488,7 @@
       "Start": 11,
       "Length": 11,
       "Text": "dos semanas",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -526,23 +496,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy 20 minutos",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT20M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT20M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "1200"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "1200"
         },
         "FutureValue": 1200.0,
@@ -552,8 +521,7 @@
       "Start": 7,
       "Length": 10,
       "Text": "20 minutos",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -561,23 +529,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por veinticuatro horas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT24H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT24H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "86400"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "86400"
         },
         "FutureValue": 86400.0,
@@ -587,8 +554,7 @@
       "Start": 11,
       "Length": 18,
       "Text": "veinticuatro horas",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -596,23 +562,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy todo el dia",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "86400"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "86400"
         },
         "FutureValue": 86400.0,
@@ -622,8 +587,7 @@
       "Start": 7,
       "Length": 11,
       "Text": "todo el dia",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -631,23 +595,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy toda la semana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "604800"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "604800"
         },
         "FutureValue": 604800.0,
@@ -657,8 +620,7 @@
       "Start": 7,
       "Length": 14,
       "Text": "toda la semana",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -666,23 +628,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por todo el mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "2592000"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "2592000"
         },
         "FutureValue": 2592000.0,
@@ -692,8 +653,7 @@
       "Start": 11,
       "Length": 11,
       "Text": "todo el mes",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -701,23 +661,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por todo el año",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1Y",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1Y",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "31536000"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "31536000"
         },
         "FutureValue": 31536000.0,
@@ -727,8 +686,7 @@
       "Start": 11,
       "Length": 11,
       "Text": "todo el año",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -736,23 +694,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por una hora",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT1H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT1H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "3600"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "3600"
         },
         "FutureValue": 3600.0,
@@ -762,8 +719,7 @@
       "Start": 11,
       "Length": 8,
       "Text": "una hora",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -771,23 +727,22 @@
 {
   "TestType": "BasicTest",
   "Input": "Me voy por un hora",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "PT1H",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "PT1H",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "duration": "3600"
         },
         "PastResolution": {
-          "$id": "4",
           "duration": "3600"
         },
         "FutureValue": 3600.0,
@@ -797,8 +752,7 @@
       "Start": 11,
       "Length": 7,
       "Text": "un hora",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }

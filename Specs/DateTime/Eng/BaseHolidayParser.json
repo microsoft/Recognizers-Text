@@ -1,23 +1,286 @@
 [{
   "TestType": "BasicTest",
-  "Input": "I'll go back on easter",
+  "Input": "I'll go back on christmas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
+      "TimexStr": "XXXX-12-25",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-12-25",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-12-25"
+        },
+        "PastResolution": {
+          "date": "2015-12-25"
+        },
+        "FutureValue": "2016-12-25T00:00:00",
+        "PastValue": "2015-12-25T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 9,
+      "Text": "christmas",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on christmas day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-12-25",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-12-25",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-12-25"
+        },
+        "PastResolution": {
+          "date": "2015-12-25"
+        },
+        "FutureValue": "2016-12-25T00:00:00",
+        "PastValue": "2015-12-25T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 13,
+      "Text": "christmas day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 7,
+      "Text": "Yuandan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on thanks giving day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-11-WXX-4-4",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-11-WXX-4-4",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-24"
+        },
+        "PastResolution": {
+          "date": "2015-11-26"
+        },
+        "FutureValue": "2016-11-24T00:00:00",
+        "PastValue": "2015-11-26T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 17,
+      "Text": "thanks giving day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on father's day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-06-WXX-6-3",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-06-WXX-6-3",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-06-18"
+        },
+        "PastResolution": {
+          "date": "2016-06-19"
+        },
+        "FutureValue": "2017-06-18T00:00:00",
+        "PastValue": "2016-06-19T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 12,
+      "Text": "father's day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Yuandan of next year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2017-01-01",
+      "Value": {
+        "Success": true,
+        "Timex": "2017-01-01",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2017-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2017-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 20,
+      "Text": "Yuandan of next year",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on thanks giving day 2010",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2010-11-WXX-4-4",
+      "Value": {
+        "Success": true,
+        "Timex": "2010-11-WXX-4-4",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2010-11-25"
+        },
+        "PastResolution": {
+          "date": "2010-11-25"
+        },
+        "FutureValue": "2010-11-25T00:00:00",
+        "PastValue": "2010-11-25T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 22,
+      "Text": "thanks giving day 2010",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on father's day of 2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-06-WXX-6-3",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-06-WXX-6-3",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2015-06-21"
+        },
+        "PastResolution": {
+          "date": "2015-06-21"
+        },
+        "FutureValue": "2015-06-21T00:00:00",
+        "PastValue": "2015-06-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 20,
+      "Text": "father's day of 2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on easter",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
       "TimexStr": "",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "0001-01-01"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "0001-01-01"
         },
         "FutureValue": "0001-01-01T00:00:00",
@@ -27,8 +290,7 @@
       "Start": 16,
       "Length": 6,
       "Text": "easter",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -36,23 +298,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on christmas day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-12-25",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-12-25",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-12-25"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-12-25"
         },
         "FutureValue": "2016-12-25T00:00:00",
@@ -62,8 +323,7 @@
       "Start": 16,
       "Length": 13,
       "Text": "christmas day",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -71,23 +331,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on new year eve",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-12-31",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-12-31",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-12-31"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-12-31"
         },
         "FutureValue": "2016-12-31T00:00:00",
@@ -97,8 +356,7 @@
       "Start": 16,
       "Length": 12,
       "Text": "new year eve",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -106,23 +364,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on new year's eve",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-12-31",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-12-31",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-12-31"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-12-31"
         },
         "FutureValue": "2016-12-31T00:00:00",
@@ -132,8 +389,7 @@
       "Start": 16,
       "Length": 14,
       "Text": "new year's eve",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -141,23 +397,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on christmas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-12-25",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-12-25",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-12-25"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-12-25"
         },
         "FutureValue": "2016-12-25T00:00:00",
@@ -167,8 +422,7 @@
       "Start": 16,
       "Length": 9,
       "Text": "christmas",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -176,23 +430,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-01-01",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-01-01",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2017-01-01"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2016-01-01"
         },
         "FutureValue": "2017-01-01T00:00:00",
@@ -202,8 +455,7 @@
       "Start": 16,
       "Length": 7,
       "Text": "Yuandan",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -211,23 +463,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on thanks giving day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-11-WXX-4-4",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-11-WXX-4-4",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-11-24"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-11-26"
         },
         "FutureValue": "2016-11-24T00:00:00",
@@ -237,8 +488,7 @@
       "Start": 16,
       "Length": 17,
       "Text": "thanks giving day",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -246,23 +496,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on thanksgiving",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-11-WXX-4-4",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-11-WXX-4-4",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2016-11-24"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-11-26"
         },
         "FutureValue": "2016-11-24T00:00:00",
@@ -272,8 +521,7 @@
       "Start": 16,
       "Length": 12,
       "Text": "thanksgiving",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -281,23 +529,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on father's day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-06-WXX-6-3",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-06-WXX-6-3",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2017-06-18"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2016-06-19"
         },
         "FutureValue": "2017-06-18T00:00:00",
@@ -307,8 +554,7 @@
       "Start": 16,
       "Length": 12,
       "Text": "father's day",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -316,23 +562,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan of next year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017-01-01",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017-01-01",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2017-01-01"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2017-01-01"
         },
         "FutureValue": "2017-01-01T00:00:00",
@@ -342,8 +587,7 @@
       "Start": 16,
       "Length": 20,
       "Text": "Yuandan of next year",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -351,23 +595,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on thanks giving day 2010",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2010-11-WXX-4-4",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2010-11-WXX-4-4",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2010-11-25"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2010-11-25"
         },
         "FutureValue": "2010-11-25T00:00:00",
@@ -377,8 +620,7 @@
       "Start": 16,
       "Length": 22,
       "Text": "thanks giving day 2010",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -386,23 +628,22 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back on father's day of 2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-06-WXX-6-3",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-06-WXX-6-3",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "date": "2015-06-21"
         },
         "PastResolution": {
-          "$id": "4",
           "date": "2015-06-21"
         },
         "FutureValue": "2015-06-21T00:00:00",
@@ -412,288 +653,7 @@
       "Start": 16,
       "Length": 20,
       "Text": "father's day of 2015",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on christmas",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2016-12-25"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 9,
-      "Text": "christmas",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on christmas day",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-12-25",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-12-25",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2016-12-25"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2015-12-25"
-        },
-        "FutureValue": "2016-12-25T00:00:00",
-        "PastValue": "2015-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 13,
-      "Text": "christmas day",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on Yuandan",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-01-01",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-01-01",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2016-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2016-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 7,
-      "Text": "Yuandan",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on thanks giving day",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-11-WXX-4-4",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2016-11-24"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2015-11-26"
-        },
-        "FutureValue": "2016-11-24T00:00:00",
-        "PastValue": "2015-11-26T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 17,
-      "Text": "thanks giving day",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on father's day",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-06-WXX-6-3",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-06-WXX-6-3",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2017-06-18"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2016-06-19"
-        },
-        "FutureValue": "2017-06-18T00:00:00",
-        "PastValue": "2016-06-19T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 12,
-      "Text": "father's day",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on Yuandan of next year",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2017-01-01",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2017-01-01",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2017-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "Yuandan of next year",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on thanks giving day 2010",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2010-11-WXX-4-4",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2010-11-WXX-4-4",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2010-11-25"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2010-11-25"
-        },
-        "FutureValue": "2010-11-25T00:00:00",
-        "PastValue": "2010-11-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 22,
-      "Text": "thanks giving day 2010",
-      "Type": "date",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on father's day of 2015",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-06-WXX-6-3",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-06-WXX-6-3",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "date": "2015-06-21"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "date": "2015-06-21"
-        },
-        "FutureValue": "2015-06-21T00:00:00",
-        "PastValue": "2015-06-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "father's day of 2015",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }

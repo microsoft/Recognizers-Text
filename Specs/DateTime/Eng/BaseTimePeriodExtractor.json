@@ -1,479 +1,14 @@
 [{
   "TestType": "BasicTest",
-  "Input": "let's meet in the early-mornings",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 21,
-      "Text": "in the early-mornings",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late-mornings",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 20,
-      "Text": "in the late-mornings",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the early-morning",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 20,
-      "Text": "in the early-morning",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late-morning",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 19,
-      "Text": "in the late-morning",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the early-afternoon",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 22,
-      "Text": "in the early-afternoon",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late-afternoon",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 21,
-      "Text": "in the late-afternoon",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the early-evening",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 20,
-      "Text": "in the early-evening",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late-evening",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 19,
-      "Text": "in the late-evening",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the early-night",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 18,
-      "Text": "in the early-night",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late-night",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 17,
-      "Text": "in the late-night",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the early night",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 18,
-      "Text": "in the early night",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the late night",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 11,
-      "Length": 17,
-      "Text": "in the late night",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4pm till 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 12,
-      "Text": "4pm till 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4 til 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 9,
-      "Text": "4 til 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4:00 till 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 13,
-      "Text": "4:00 till 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4:00 til 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 12,
-      "Text": "4:00 til 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4:00 to 7 oclock",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 16,
-      "Text": "4:00 to 7 oclock",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 3pm to half past seven",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 22,
-      "Text": "3pm to half past seven",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4pm-5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 7,
-      "Text": "4pm-5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4pm - 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 9,
-      "Text": "4pm - 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 20 minutes to three to eight in the evening",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 43,
-      "Text": "20 minutes to three to eight in the evening",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 4pm to 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 15,
-      "Text": "from 4pm to 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 4pm to half past five",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 26,
-      "Text": "from 4pm to half past five",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 3 in the morning until 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 31,
-      "Text": "from 3 in the morning until 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 3 in the morning until five in the afternoon",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 49,
-      "Text": "from 3 in the morning until five in the afternoon",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out between 4pm and half past five",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 30,
-      "Text": "between 4pm and half past five",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out between 3 in the morning and 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 12,
-      "Length": 32,
-      "Text": "between 3 in the morning and 5pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set up meeting from two to five pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 15,
-      "Length": 19,
-      "Text": "from two to five pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Party at Jean’s from 6 to 11 pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 16,
-      "Length": 15,
-      "Text": "from 6 to 11 pm",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set up meeting from 14:00 to 16:30",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 15,
-      "Length": 19,
-      "Text": "from 14:00 to 16:30",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set up meeting from two to five p m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 15,
-      "Length": 20,
-      "Text": "from two to five p m",
-      "Type": "timerange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "let's meet in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 14,
       "Text": "in the morning",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -481,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 16,
       "Text": "in the afternoon",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -496,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 12,
       "Text": "in the night",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -511,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 14,
       "Text": "in the evening",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -526,14 +61,194 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the evenings",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 15,
       "Text": "in the evenings",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-mornings",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 21,
+      "Text": "in the early-mornings",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-mornings",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 20,
+      "Text": "in the late-mornings",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 20,
+      "Text": "in the early-morning",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 19,
+      "Text": "in the late-morning",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 22,
+      "Text": "in the early-afternoon",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 21,
+      "Text": "in the late-afternoon",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 20,
+      "Text": "in the early-evening",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 19,
+      "Text": "in the late-evening",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early-night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 18,
+      "Text": "in the early-night",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late-night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 17,
+      "Text": "in the late-night",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the early night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 18,
+      "Text": "in the early night",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the late night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 17,
+      "Text": "in the late night",
+      "Type": "timerange"
     }
   ]
 }
@@ -541,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 5 to 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 8,
       "Text": "5 to 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -556,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 5 to 6 p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 11,
       "Text": "5 to 6 p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -571,14 +286,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 5 to 6 in the afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 23,
       "Text": "5 to 6 in the afternoon",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -586,14 +301,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 5 to seven in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 25,
       "Text": "5 to seven in the morning",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -601,14 +316,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 5 to 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 13,
       "Text": "from 5 to 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -616,14 +331,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 5 and 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 17,
       "Text": "between 5 and 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -631,14 +346,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 5pm and 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 19,
       "Text": "between 5pm and 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -646,14 +361,299 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 5 and 6 in the afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 32,
       "Text": "between 5 and 6 in the afternoon",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4pm till 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "4pm till 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4 til 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 9,
+      "Text": "4 til 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4:00 till 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 13,
+      "Text": "4:00 till 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4:00 til 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "4:00 til 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4:00 to 7 oclock",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 16,
+      "Text": "4:00 to 7 oclock",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 3pm to half past seven",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 22,
+      "Text": "3pm to half past seven",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4pm-5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 7,
+      "Text": "4pm-5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4pm - 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 9,
+      "Text": "4pm - 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 20 minutes to three to eight in the evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 43,
+      "Text": "20 minutes to three to eight in the evening",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 15,
+      "Text": "from 4pm to 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4pm to half past five",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 26,
+      "Text": "from 4pm to half past five",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 3 in the morning until 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 31,
+      "Text": "from 3 in the morning until 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 3 in the morning until five in the afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 49,
+      "Text": "from 3 in the morning until five in the afternoon",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 4pm and half past five",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 30,
+      "Text": "between 4pm and half past five",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 3 in the morning and 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 32,
+      "Text": "between 3 in the morning and 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set up meeting from two to five pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 15,
+      "Length": 19,
+      "Text": "from two to five pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Party at Jean’s from 6 to 11 pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 16,
+      "Length": 15,
+      "Text": "from 6 to 11 pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set up meeting from 14:00 to 16:30",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 15,
+      "Length": 19,
+      "Text": "from 14:00 to 16:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set up meeting from two to five p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 15,
+      "Length": 20,
+      "Text": "from two to five p m",
+      "Type": "timerange"
     }
   ]
 }

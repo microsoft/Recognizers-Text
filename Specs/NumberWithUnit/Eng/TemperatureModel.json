@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "the temperature outside is 40 deg celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "40 deg celsius",
       "Start": 27,
       "End": 40,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "40"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "its 90 fahrenheit in texas",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "90 fahrenheit",
       "Start": 4,
       "End": 16,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "90"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-5 degree fahrenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-5 degree fahrenheit",
       "Start": 0,
       "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "-5"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "6 deg c",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "6 deg c",
       "Start": 0,
       "End": 6,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "6"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "98.6 degrees f is normal temperature",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "98.6 degrees f",
       "Start": 0,
       "End": 13,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "98.6"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "set the temperature to 30 degrees celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "30 degrees celsius",
       "Start": 23,
       "End": 40,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "30"
       }
@@ -115,15 +115,15 @@
 {
   "TestType": "BasicTest",
   "Input": "normal temperature is 98.6 degrees fahrenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "98.6 degrees fahrenheit",
       "Start": 22,
       "End": 44,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "98.6"
       }
@@ -134,15 +134,15 @@
 {
   "TestType": "BasicTest",
   "Input": "100 degrees f",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100 degrees f",
       "Start": 0,
       "End": 12,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "100"
       }
@@ -153,15 +153,15 @@
 {
   "TestType": "BasicTest",
   "Input": "20 degrees c",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20 degrees c",
       "Start": 0,
       "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "20"
       }
@@ -172,15 +172,15 @@
 {
   "TestType": "BasicTest",
   "Input": "100.2 degrees farenheit is low",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100.2 degrees farenheit",
       "Start": 0,
       "End": 22,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "100.2"
       }
@@ -191,15 +191,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10.5 celcius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10.5 celcius",
       "Start": 0,
       "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "10.5"
       }
@@ -210,15 +210,15 @@
 {
   "TestType": "BasicTest",
   "Input": "20 degrees celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20 degrees celsius",
       "Start": 0,
       "End": 17,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "20"
       }
@@ -229,15 +229,15 @@
 {
   "TestType": "BasicTest",
   "Input": "20.3 celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20.3 celsius",
       "Start": 0,
       "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "20.3"
       }
@@ -248,15 +248,15 @@
 {
   "TestType": "BasicTest",
   "Input": "34.5 celcius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "34.5 celcius",
       "Start": 0,
       "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "34.5"
       }
@@ -267,15 +267,15 @@
 {
   "TestType": "BasicTest",
   "Input": "the temperature outside is 98 degrees",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "98 degrees",
       "Start": 27,
       "End": 36,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "98"
       }
@@ -286,15 +286,15 @@
 {
   "TestType": "BasicTest",
   "Input": "set the thermostat to 85°",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "85°",
       "Start": 22,
       "End": 24,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "85"
       }
@@ -305,15 +305,15 @@
 {
   "TestType": "BasicTest",
   "Input": "raise the temperature by 5 degrees",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5 degrees",
       "Start": 25,
       "End": 33,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "5"
       }
@@ -324,15 +324,15 @@
 {
   "TestType": "BasicTest",
   "Input": "set the temperature to 70 degrees f",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "70 degrees f",
       "Start": 23,
       "End": 34,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "70"
       }
@@ -343,15 +343,15 @@
 {
   "TestType": "BasicTest",
   "Input": "raise the temperature by 20 degrees",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20 degrees",
       "Start": 25,
       "End": 34,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "20"
       }
@@ -362,15 +362,15 @@
 {
   "TestType": "BasicTest",
   "Input": "set the temperature to 100 degrees",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100 degrees",
       "Start": 23,
       "End": 33,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "100"
       }
@@ -381,15 +381,15 @@
 {
   "TestType": "BasicTest",
   "Input": "keep the temperature at 75 degrees f",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "75 degrees f",
       "Start": 24,
       "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "75"
       }
@@ -400,15 +400,15 @@
 {
   "TestType": "BasicTest",
   "Input": "let the temperature be at 40 celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "40 celsius",
       "Start": 26,
       "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "40"
       }
@@ -419,15 +419,15 @@
 {
   "TestType": "BasicTest",
   "Input": "let the temperature be at 50 deg. ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "50 deg.",
       "Start": 26,
       "End": 32,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "Degree",
         "value": "50"
       }
@@ -438,27 +438,25 @@
 {
   "TestType": "BasicTest",
   "Input": "convert 10 celsius to fahrenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10 celsius",
       "Start": 8,
       "End": 17,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "10"
       }
     },
     {
-      "$id": "3",
       "Text": "fahrenheit",
       "Start": 22,
       "End": 31,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "F",
         "value": null
       }
@@ -469,27 +467,25 @@
 {
   "TestType": "BasicTest",
   "Input": "34.9 centigrate to farenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "34.9 centigrate",
       "Start": 0,
       "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "34.9"
       }
     },
     {
-      "$id": "3",
       "Text": "farenheit",
       "Start": 19,
       "End": 27,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "F",
         "value": null
       }
@@ -500,39 +496,35 @@
 {
   "TestType": "BasicTest",
   "Input": "convert 200 celsius celsius into fahrenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "200 celsius",
       "Start": 8,
       "End": 18,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "200"
       }
     },
     {
-      "$id": "3",
       "Text": "celsius",
       "Start": 20,
       "End": 26,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }
     },
     {
-      "$id": "5",
       "Text": "fahrenheit",
       "Start": 33,
       "End": 42,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "6",
         "unit": "F",
         "value": null
       }
@@ -543,51 +535,45 @@
 {
   "TestType": "BasicTest",
   "Input": "fahrenheit to celsius 101 fahrenheit is how much celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "101 fahrenheit",
       "Start": 22,
       "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "101"
       }
     },
     {
-      "$id": "3",
       "Text": "fahrenheit",
       "Start": 0,
       "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "F",
         "value": null
       }
     },
     {
-      "$id": "5",
       "Text": "celsius",
       "Start": 14,
       "End": 20,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "6",
         "unit": "C",
         "value": null
       }
     },
     {
-      "$id": "7",
       "Text": "celsius",
       "Start": 49,
       "End": 55,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "8",
         "unit": "C",
         "value": null
       }
@@ -598,39 +584,35 @@
 {
   "TestType": "BasicTest",
   "Input": "50 degrees celsius celsius to fahrenheit",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "50 degrees celsius",
       "Start": 0,
       "End": 17,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "C",
         "value": "50"
       }
     },
     {
-      "$id": "3",
       "Text": "celsius",
       "Start": 19,
       "End": 25,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }
     },
     {
-      "$id": "5",
       "Text": "fahrenheit",
       "Start": 30,
       "End": 39,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "6",
         "unit": "F",
         "value": null
       }
@@ -641,27 +623,25 @@
 {
   "TestType": "BasicTest",
   "Input": "could you convert 51 fahrenheit to degrees celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "51 fahrenheit",
       "Start": 18,
       "End": 30,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "51"
       }
     },
     {
-      "$id": "3",
       "Text": "degrees celsius",
       "Start": 35,
       "End": 49,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }
@@ -672,27 +652,25 @@
 {
   "TestType": "BasicTest",
   "Input": "convert 106 degree fahrenheit to degrees celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "106 degree fahrenheit",
       "Start": 8,
       "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "106"
       }
     },
     {
-      "$id": "3",
       "Text": "degrees celsius",
       "Start": 33,
       "End": 47,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }
@@ -703,27 +681,25 @@
 {
   "TestType": "BasicTest",
   "Input": "convert 45 degrees fahrenheit to celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "45 degrees fahrenheit",
       "Start": 8,
       "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "45"
       }
     },
     {
-      "$id": "3",
       "Text": "celsius",
       "Start": 33,
       "End": 39,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }
@@ -734,27 +710,25 @@
 {
   "TestType": "BasicTest",
   "Input": "how to convert - 20 degrees fahrenheit to celsius",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "- 20 degrees fahrenheit",
       "Start": 15,
       "End": 37,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "2",
         "unit": "F",
         "value": "-20"
       }
     },
     {
-      "$id": "3",
       "Text": "celsius",
       "Start": 42,
       "End": 48,
       "TypeName": "temperature",
       "Resolution": {
-        "$id": "4",
         "unit": "C",
         "value": null
       }

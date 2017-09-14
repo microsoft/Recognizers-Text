@@ -1,16 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "100%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100%",
       "Start": 0,
       "End": 3,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -20,16 +19,15 @@
 {
   "TestType": "BasicTest",
   "Input": " 100% ",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100%",
       "Start": 1,
       "End": 4,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -39,16 +37,15 @@
 {
   "TestType": "BasicTest",
   "Input": " 100 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100 por ciento",
       "Start": 1,
       "End": 14,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -58,16 +55,15 @@
 {
   "TestType": "BasicTest",
   "Input": " cien por cien",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cien por cien",
       "Start": 1,
       "End": 13,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -77,16 +73,15 @@
 {
   "TestType": "BasicTest",
   "Input": "cien por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cien por ciento",
       "Start": 0,
       "End": 14,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -96,16 +91,15 @@
 {
   "TestType": "BasicTest",
   "Input": "243 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "243 por ciento",
       "Start": 0,
       "End": 13,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "243%"
       }
     }
@@ -115,16 +109,15 @@
 {
   "TestType": "BasicTest",
   "Input": "veinte por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "veinte por ciento",
       "Start": 0,
       "End": 16,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "20%"
       }
     }
@@ -134,16 +127,15 @@
 {
   "TestType": "BasicTest",
   "Input": "treinta y cinco por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "treinta y cinco por ciento",
       "Start": 0,
       "End": 25,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "35%"
       }
     }
@@ -153,16 +145,15 @@
 {
   "TestType": "BasicTest",
   "Input": "quinientos treinta y cinco por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quinientos treinta y cinco por ciento",
       "Start": 0,
       "End": 36,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "535%"
       }
     }
@@ -172,16 +163,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10 por ciento",
       "Start": 0,
       "End": 12,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "10%"
       }
     }
@@ -191,16 +181,15 @@
 {
   "TestType": "BasicTest",
   "Input": "diez por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "diez por ciento",
       "Start": 0,
       "End": 14,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "10%"
       }
     }
@@ -210,16 +199,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres millones cincuenta y dos mil trescientos cuarenta y siete por ciento",
       "Start": 0,
       "End": 72,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "3052347%"
       }
     }
@@ -229,16 +217,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
       "Start": 0,
       "End": 86,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "3452347%"
       }
     }
@@ -248,16 +235,15 @@
 {
   "TestType": "BasicTest",
   "Input": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
       "Start": 0,
       "End": 87,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "13452347%"
       }
     }
@@ -267,16 +253,15 @@
 {
   "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete por ciento",
       "Start": 0,
       "End": 98,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "513452347%"
       }
     }
@@ -286,16 +271,15 @@
 {
   "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta por ciento",
       "Start": 0,
       "End": 90,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "513452340%"
       }
     }
@@ -305,16 +289,15 @@
 {
   "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos por ciento",
       "Start": 0,
       "End": 81,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "513452300%"
       }
     }
@@ -324,16 +307,15 @@
 {
   "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos mil por ciento",
       "Start": 0,
       "End": 69,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "513452000%"
       }
     }
@@ -343,16 +325,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos por ciento",
       "Start": 0,
       "End": 148,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "3455228556832%"
       }
     }
@@ -362,16 +343,15 @@
 {
   "TestType": "BasicTest",
   "Input": "algo asi como un 11%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "11%",
       "Start": 17,
       "End": 19,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "11%"
       }
     }
@@ -381,16 +361,15 @@
 {
   "TestType": "BasicTest",
   "Input": "claro, solamente un 15 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "15 por ciento",
       "Start": 20,
       "End": 32,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "15%"
       }
     }
@@ -400,16 +379,15 @@
 {
   "TestType": "BasicTest",
   "Input": "si, nada mas un veinticinco por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "veinticinco por ciento",
       "Start": 16,
       "End": 37,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "25%"
       }
     }
@@ -419,16 +397,15 @@
 {
   "TestType": "BasicTest",
   "Input": "todo, dejame el cien por cien del combustible",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cien por cien",
       "Start": 16,
       "End": 28,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "100%"
       }
     }
@@ -438,16 +415,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un porcentaje del 25%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "25%",
       "Start": 18,
       "End": 20,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "25%"
       }
     }
@@ -457,16 +433,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un porcentaje del treinta y seis por ciento del total",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "treinta y seis por ciento",
       "Start": 18,
       "End": 42,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "36%"
       }
     }
@@ -476,16 +451,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un porcentaje del ochenta y cuatro por cien solamente",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ochenta y cuatro por cien",
       "Start": 18,
       "End": 42,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "84%"
       }
     }
@@ -495,16 +469,15 @@
 {
   "TestType": "BasicTest",
   "Input": " 101231,2353%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "101231,2353%",
       "Start": 1,
       "End": 12,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "101231,2353%"
       }
     }
@@ -514,16 +487,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-101231,4323%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-101231,4323%",
       "Start": 0,
       "End": 12,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "-101231,4323%"
       }
     }
@@ -533,16 +505,15 @@
 {
   "TestType": "BasicTest",
   "Input": " -89101231,5127 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-89101231,5127 por ciento",
       "Start": 1,
       "End": 25,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "-89101231,5127%"
       }
     }
@@ -552,16 +523,15 @@
 {
   "TestType": "BasicTest",
   "Input": " -1,1234567 por cien",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-1,1234567 por cien",
       "Start": 1,
       "End": 19,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "-1,1234567%"
       }
     }
@@ -571,16 +541,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1.234.567,51274 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1.234.567,51274 por ciento",
       "Start": 0,
       "End": 25,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "1234567,51274%"
       }
     }
@@ -590,16 +559,15 @@
 {
   "TestType": "BasicTest",
   "Input": ",23456000%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": ",23456000%",
       "Start": 0,
       "End": 9,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,23456%"
       }
     }
@@ -609,16 +577,15 @@
 {
   "TestType": "BasicTest",
   "Input": "4,800%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "4,800%",
       "Start": 0,
       "End": 5,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "4,8%"
       }
     }
@@ -628,16 +595,15 @@
 {
   "TestType": "BasicTest",
   "Input": ",08 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": ",08 por ciento",
       "Start": 0,
       "End": 13,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,08%"
       }
     }
@@ -647,16 +613,15 @@
 {
   "TestType": "BasicTest",
   "Input": "9,2321312%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "9,2321312%",
       "Start": 0,
       "End": 9,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "9,2321312%"
       }
     }
@@ -666,16 +631,15 @@
 {
   "TestType": "BasicTest",
   "Input": " -9,2321312 por cien",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-9,2321312 por cien",
       "Start": 1,
       "End": 19,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "-9,2321312%"
       }
     }
@@ -685,16 +649,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1e10%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1e10%",
       "Start": 0,
       "End": 4,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "10000000000%"
       }
     }
@@ -704,16 +667,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1,1^23 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1,1^23 por ciento",
       "Start": 0,
       "End": 16,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "8,95430243255239%"
       }
     }
@@ -723,16 +685,15 @@
 {
   "TestType": "BasicTest",
   "Input": "siete con cincuenta por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "siete con cincuenta por ciento",
       "Start": 0,
       "End": 29,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "7,5%"
       }
     }
@@ -742,16 +703,15 @@
 {
   "TestType": "BasicTest",
   "Input": "cuarenta y siete coma veintiocho por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cuarenta y siete coma veintiocho por ciento",
       "Start": 0,
       "End": 42,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "47,28%"
       }
     }
@@ -761,16 +721,15 @@
 {
   "TestType": "BasicTest",
   "Input": "trescientos cuarenta y siete con quinientos doce por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "trescientos cuarenta y siete con quinientos doce por ciento",
       "Start": 0,
       "End": 58,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "347,512%"
       }
     }
@@ -780,16 +739,15 @@
 {
   "TestType": "BasicTest",
   "Input": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho por ciento",
       "Start": 0,
       "End": 81,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "2347,1578%"
       }
     }
@@ -799,16 +757,15 @@
 {
   "TestType": "BasicTest",
   "Input": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cincuenta y dos mil trescientos cuarenta y siete con doscientos por ciento",
       "Start": 0,
       "End": 73,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "52347,2%"
       }
     }
@@ -818,16 +775,15 @@
 {
   "TestType": "BasicTest",
   "Input": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos por ciento",
       "Start": 0,
       "End": 87,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "452347,22%"
       }
     }
@@ -837,16 +793,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres quintos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres quintos por ciento",
       "Start": 0,
       "End": 22,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,6%"
       }
     }
@@ -856,16 +811,15 @@
 {
   "TestType": "BasicTest",
   "Input": "dos coma cinco por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dos coma cinco por ciento",
       "Start": 0,
       "End": 24,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "2,5%"
       }
     }
@@ -875,16 +829,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un quinto por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "un quinto por ciento",
       "Start": 0,
       "End": 19,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,2%"
       }
     }
@@ -894,16 +847,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un billonesimo por cien",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "un billonesimo por cien",
       "Start": 0,
       "End": 22,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "1E-12%"
       }
     }
@@ -913,16 +865,15 @@
 {
   "TestType": "BasicTest",
   "Input": "un veintiunavo por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "un veintiunavo por ciento",
       "Start": 0,
       "End": 24,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,0476190476190476%"
       }
     }
@@ -932,16 +883,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta y tres veintiunavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta y tres veintiunavos por ciento",
       "Start": 0,
       "End": 44,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "6,33333333333333%"
       }
     }
@@ -951,16 +901,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta con tres veintiunavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta con tres veintiunavos por ciento",
       "Start": 0,
       "End": 46,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "130,142857142857%"
       }
     }
@@ -970,16 +919,15 @@
 {
   "TestType": "BasicTest",
   "Input": "veintidos treintavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "veintidos treintavos por ciento",
       "Start": 0,
       "End": 30,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,733333333333333%"
       }
     }
@@ -989,16 +937,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres dosmilesimos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres dosmilesimos por ciento",
       "Start": 0,
       "End": 27,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,0015%"
       }
     }
@@ -1008,16 +955,15 @@
 {
   "TestType": "BasicTest",
   "Input": "tres veintemilesimos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres veintemilesimos por ciento",
       "Start": 0,
       "End": 30,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,00015%"
       }
     }
@@ -1027,16 +973,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta quintos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta quintos por ciento",
       "Start": 0,
       "End": 32,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "26%"
       }
     }
@@ -1046,16 +991,15 @@
 {
   "TestType": "BasicTest",
   "Input": "cien treintaicincoavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cien treintaicincoavos por ciento",
       "Start": 0,
       "End": 32,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "2,85714285714286%"
       }
     }
@@ -1065,16 +1009,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta y dos cincoavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta y dos cincoavos por ciento",
       "Start": 0,
       "End": 40,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "26,4%"
       }
     }
@@ -1084,16 +1027,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta con dos cincoavos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta con dos cincoavos por ciento",
       "Start": 0,
       "End": 42,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "130,4%"
       }
     }
@@ -1103,16 +1045,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta y dos quintos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta y dos quintos por ciento",
       "Start": 0,
       "End": 38,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "26,4%"
       }
     }
@@ -1122,16 +1063,15 @@
 {
   "TestType": "BasicTest",
   "Input": "ciento treinta con dos quintos por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ciento treinta con dos quintos por ciento",
       "Start": 0,
       "End": 40,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "130,4%"
       }
     }
@@ -1141,16 +1081,15 @@
 {
   "TestType": "BasicTest",
   "Input": "uno sobre tres por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "uno sobre tres por ciento",
       "Start": 0,
       "End": 24,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,333333333333333%"
       }
     }
@@ -1160,16 +1099,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1 sobre 3 por ciento",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1 sobre 3 por ciento",
       "Start": 0,
       "End": 19,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,333333333333333%"
       }
     }
@@ -1179,16 +1117,15 @@
 {
   "TestType": "BasicTest",
   "Input": "3/4%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3/4%",
       "Start": 0,
       "End": 3,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,75%"
       }
     }
@@ -1198,16 +1135,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2/3%",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2/3%",
       "Start": 0,
       "End": 3,
       "TypeName": "percentage",
       "Resolution": {
-        "$id": "2",
         "value": "0,666666666666667%"
       }
     }

@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "明天元旦去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "元旦",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天元旦节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "元旦节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天教师节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "教师节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天青年节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "青年节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天儿童节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "儿童节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天妇女节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "妇女节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天植树节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "植树节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天情人节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "情人节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天圣诞节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "圣诞节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天新年去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "新年",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天愚人节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "愚人节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天五一去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "五一",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -181,14 +181,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天劳动节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "劳动节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -196,14 +196,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天万圣节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "万圣节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -211,14 +211,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天中秋节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "中秋节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -226,14 +226,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天中秋去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "中秋",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -241,14 +241,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天春节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "春节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -256,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天除夕去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "除夕",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -271,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天元宵节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "元宵节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -286,14 +286,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天清明节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "清明节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -301,14 +301,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天清明去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "清明",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -316,14 +316,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天端午节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "端午节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -331,14 +331,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天端午去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 2,
       "Text": "端午",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -346,14 +346,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天国庆节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "国庆节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -361,14 +361,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天建军节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "建军节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -376,14 +376,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天女生节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "女生节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -391,14 +391,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天光棍节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "光棍节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -406,14 +406,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天双十一去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "双十一",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -421,14 +421,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天重阳节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "重阳节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -436,14 +436,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天父亲节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "父亲节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -451,14 +451,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天母亲节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "母亲节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }
@@ -466,14 +466,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天感恩节去哪里",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 3,
       "Text": "感恩节",
-      "Type": "date",
-      "Data": null
+      "Type": "date"
     }
   ]
 }

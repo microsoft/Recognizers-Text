@@ -1,23 +1,22 @@
 [{
   "TestType": "BasicTest",
   "Input": "下午5:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T17:00",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T17:00",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "17:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "17:00:00"
         },
         "FutureValue": "2017-03-22T17:00:00",
@@ -29,7 +28,6 @@
       "Text": "下午5:00",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 17,
         "Minute": 0,
         "Second": -1,
@@ -42,23 +40,22 @@
 {
   "TestType": "BasicTest",
   "Input": "晚上9:30",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T21:30",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T21:30",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "21:30:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "21:30:00"
         },
         "FutureValue": "2017-03-22T21:30:00",
@@ -70,7 +67,6 @@
       "Text": "晚上9:30",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 21,
         "Minute": 30,
         "Second": -1,
@@ -83,23 +79,22 @@
 {
   "TestType": "BasicTest",
   "Input": "晚上19:30",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T19:30",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T19:30",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "19:30:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "19:30:00"
         },
         "FutureValue": "2017-03-22T19:30:00",
@@ -111,7 +106,6 @@
       "Text": "晚上19:30",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 19,
         "Minute": 30,
         "Second": -1,
@@ -124,23 +118,22 @@
 {
   "TestType": "BasicTest",
   "Input": "下午十一点半",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T23:30",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T23:30",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "23:30:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "23:30:00"
         },
         "FutureValue": "2017-03-22T23:30:00",
@@ -152,7 +145,6 @@
       "Text": "下午十一点半",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 23,
         "Minute": 30,
         "Second": -1,
@@ -165,23 +157,23 @@
 {
   "TestType": "BasicTest",
   "Input": "大约十点以后",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T10",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T10",
         "IsLunar": false,
-        "Mod": null,
         "Comment": "ampm",
         "FutureResolution": {
-          "$id": "3",
           "time": "10:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "10:00:00"
         },
         "FutureValue": "2017-03-22T10:00:00",
@@ -193,7 +185,6 @@
       "Text": "大约十点以后",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 10,
         "Minute": -1,
         "Second": -1,
@@ -206,23 +197,22 @@
 {
   "TestType": "BasicTest",
   "Input": "大约早上十点左右",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T10",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T10",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "10:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "10:00:00"
         },
         "FutureValue": "2017-03-22T10:00:00",
@@ -234,7 +224,6 @@
       "Text": "大约早上十点左右",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 10,
         "Minute": -1,
         "Second": -1,
@@ -247,23 +236,22 @@
 {
   "TestType": "BasicTest",
   "Input": "大约晚上十点以后",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T22",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T22",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "22:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "22:00:00"
         },
         "FutureValue": "2017-03-22T22:00:00",
@@ -275,7 +263,6 @@
       "Text": "大约晚上十点以后",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 22,
         "Minute": -1,
         "Second": -1,
@@ -288,23 +275,22 @@
 {
   "TestType": "BasicTest",
   "Input": "早上11点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T11",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T11",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "11:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "11:00:00"
         },
         "FutureValue": "2017-03-22T11:00:00",
@@ -316,7 +302,6 @@
       "Text": "早上11点",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 11,
         "Minute": -1,
         "Second": -1,
@@ -329,23 +314,22 @@
 {
   "TestType": "BasicTest",
   "Input": "凌晨2点半",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T02:30",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T02:30",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "time": "02:30:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "02:30:00"
         },
         "FutureValue": "2017-03-22T02:30:00",
@@ -357,7 +341,6 @@
       "Text": "凌晨2点半",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 2,
         "Minute": 30,
         "Second": -1,
@@ -370,23 +353,23 @@
 {
   "TestType": "BasicTest",
   "Input": "零点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T00",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T00",
         "IsLunar": false,
-        "Mod": null,
         "Comment": "ampm",
         "FutureResolution": {
-          "$id": "3",
           "time": "00:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "00:00:00"
         },
         "FutureValue": "2017-03-22T00:00:00",
@@ -398,7 +381,6 @@
       "Text": "零点",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 0,
         "Minute": -1,
         "Second": -1,
@@ -411,23 +393,23 @@
 {
   "TestType": "BasicTest",
   "Input": "零点整",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T00",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T00",
         "IsLunar": false,
-        "Mod": null,
         "Comment": "ampm",
         "FutureResolution": {
-          "$id": "3",
           "time": "00:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "time": "00:00:00"
         },
         "FutureValue": "2017-03-22T00:00:00",
@@ -439,7 +421,6 @@
       "Text": "零点整",
       "Type": "time",
       "Data": {
-        "$id": "5",
         "Hour": 0,
         "Minute": -1,
         "Second": -1,

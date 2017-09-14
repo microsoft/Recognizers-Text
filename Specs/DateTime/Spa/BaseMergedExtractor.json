@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "esto es 2 dias en p ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 8,
       "Length": 6,
       "Text": "2 dias",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "esto es antes de las 4pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 8,
       "Length": 16,
       "Text": "antes de las 4pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "esto es antes de las 4pm mañana",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 8,
       "Length": 23,
       "Text": "antes de las 4pm mañana",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "esto es antes de mañana a las 4pm ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 8,
       "Length": 25,
       "Text": "antes de mañana a las 4pm",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }

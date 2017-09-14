@@ -1,23 +1,19 @@
 [{
   "TestType": "BasicTest",
   "Input": "Saldré semanalmente",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1W"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1W"
         },
         "FutureValue": "Set: P1W",
@@ -27,8 +23,7 @@
       "Start": 7,
       "Length": 12,
       "Text": "semanalmente",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -36,23 +31,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré quincenalmente",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P2W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P2W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P2W"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P2W"
         },
         "FutureValue": "Set: P2W",
@@ -62,8 +53,7 @@
       "Start": 7,
       "Length": 14,
       "Text": "quincenalmente",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -71,23 +61,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré diariamente",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1D"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1D"
         },
         "FutureValue": "Set: P1D",
@@ -97,8 +83,7 @@
       "Start": 7,
       "Length": 11,
       "Text": "diariamente",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -106,23 +91,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré a diario",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1D"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1D"
         },
         "FutureValue": "Set: P1D",
@@ -132,8 +113,7 @@
       "Start": 7,
       "Length": 8,
       "Text": "a diario",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -141,23 +121,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré todos los dias",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1D"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1D"
         },
         "FutureValue": "Set: P1D",
@@ -167,8 +143,7 @@
       "Start": 7,
       "Length": 14,
       "Text": "todos los dias",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -176,23 +151,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré cada mes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1M"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1M"
         },
         "FutureValue": "Set: P1M",
@@ -202,8 +173,7 @@
       "Start": 7,
       "Length": 8,
       "Text": "cada mes",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -211,23 +181,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré todos los meses",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1M",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1M",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1M"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1M"
         },
         "FutureValue": "Set: P1M",
@@ -237,8 +203,7 @@
       "Start": 7,
       "Length": 15,
       "Text": "todos los meses",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -246,23 +211,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré todas las semanas",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1W"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1W"
         },
         "FutureValue": "Set: P1W",
@@ -272,8 +233,7 @@
       "Start": 7,
       "Length": 17,
       "Text": "todas las semanas",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -281,23 +241,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré anualmente",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1Y",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1Y",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1Y"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1Y"
         },
         "FutureValue": "Set: P1Y",
@@ -307,8 +263,7 @@
       "Start": 7,
       "Length": 10,
       "Text": "anualmente",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -316,23 +271,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré todos los años",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P1Y",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P1Y",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P1Y"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P1Y"
         },
         "FutureValue": "Set: P1Y",
@@ -342,8 +293,7 @@
       "Start": 7,
       "Length": 14,
       "Text": "todos los años",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -351,23 +301,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Me iré cada dos dias",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P2D",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P2D",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P2D"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P2D"
         },
         "FutureValue": "Set: P2D",
@@ -377,8 +323,7 @@
       "Start": 7,
       "Length": 13,
       "Text": "cada dos dias",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -386,23 +331,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Me iré cada tres semanas",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P3W"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P3W"
         },
         "FutureValue": "Set: P3W",
@@ -412,8 +353,7 @@
       "Start": 7,
       "Length": 17,
       "Text": "cada tres semanas",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -421,23 +361,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Me iré cada 3 semanas",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "P3W",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "P3W",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: P3W"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: P3W"
         },
         "FutureValue": "Set: P3W",
@@ -447,8 +383,7 @@
       "Start": 7,
       "Length": 14,
       "Text": "cada 3 semanas",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -456,23 +391,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Me iré a las 3pm todos los dias",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T15",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T15",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: T15"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: T15"
         },
         "FutureValue": "Set: T15",
@@ -482,8 +413,7 @@
       "Start": 13,
       "Length": 18,
       "Text": "3pm todos los dias",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -491,23 +421,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Me iré todos los dias a las 3pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "T15",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "T15",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: T15"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: T15"
         },
         "FutureValue": "Set: T15",
@@ -517,8 +443,7 @@
       "Start": 7,
       "Length": 24,
       "Text": "todos los dias a las 3pm",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -526,23 +451,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré cada 15/4",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-04-15",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-04-15",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: XXXX-04-15"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: XXXX-04-15"
         },
         "FutureValue": "Set: XXXX-04-15",
@@ -552,8 +473,7 @@
       "Start": 7,
       "Length": 9,
       "Text": "cada 15/4",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -561,23 +481,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré todos los lunes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-WXX-1",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-WXX-1",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: XXXX-WXX-1"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: XXXX-WXX-1"
         },
         "FutureValue": "Set: XXXX-WXX-1",
@@ -587,8 +503,7 @@
       "Start": 7,
       "Length": 15,
       "Text": "todos los lunes",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }
@@ -596,23 +511,19 @@
 {
   "TestType": "BasicTest",
   "Input": "Saldré cada lunes a las 4pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-WXX-1T16",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-WXX-1T16",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "set": "Set: XXXX-WXX-1T16"
         },
         "PastResolution": {
-          "$id": "4",
           "set": "Set: XXXX-WXX-1T16"
         },
         "FutureValue": "Set: XXXX-WXX-1T16",
@@ -622,8 +533,7 @@
       "Start": 7,
       "Length": 20,
       "Text": "cada lunes a las 4pm",
-      "Type": "set",
-      "Data": null
+      "Type": "set"
     }
   ]
 }

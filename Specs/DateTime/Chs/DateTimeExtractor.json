@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "2010-01-29早上七点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 14,
       "Text": "2010-01-29早上七点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "2010.01.29晚上六点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 14,
       "Text": "2010.01.29晚上六点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "2010/01/29中午十二点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 15,
       "Text": "2010/01/29中午十二点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "2010 01 29五点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 12,
       "Text": "2010 01 29五点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "1987年1月11日八点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 12,
       "Text": "1987年1月11日八点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "农历2015年十月初一早上九点二十",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 17,
       "Text": "农历2015年十月初一早上九点二十",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "1月19号下午5:00",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 11,
       "Text": "1月19号下午5:00",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明天下午5:00",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 8,
       "Text": "明天下午5:00",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "今晚6点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "今晚6点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "昨晚6点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "昨晚6点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "今晨5点",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "今晨5点",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "今早8点十五分",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 7,
       "Text": "今早8点十五分",
-      "Type": "datetime",
-      "Data": null
+      "Type": "datetime"
     }
   ]
 }

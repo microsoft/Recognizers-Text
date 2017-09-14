@@ -1,42 +1,40 @@
 [{
   "TestType": "BasicTest",
   "Input": "从五点半到六点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T05:30,T06,PT0H30M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T05:30,T06,PT0H30M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "05:30:00",
           "endTime": "06:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "05:30:00",
           "endTime": "06:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T05:30:00",
           "Item2": "2017-03-22T06:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T05:30:00",
+          "Item2": "2017-03-22T06:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 7,
       "Text": "从五点半到六点",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -44,42 +42,40 @@
 {
   "TestType": "BasicTest",
   "Input": "从下午五点一刻到六点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17:15,T18,PT0H45M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17:15,T18,PT0H45M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:15:00",
           "endTime": "18:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:15:00",
           "endTime": "18:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:15:00",
           "Item2": "2017-03-22T18:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:15:00",
+          "Item2": "2017-03-22T18:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 10,
       "Text": "从下午五点一刻到六点",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -87,42 +83,40 @@
 {
   "TestType": "BasicTest",
   "Input": "17:55:23-18:33:02",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17:55:23,T18:33:02,PT0H37M39S)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:55:23",
           "endTime": "18:33:02"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:55:23",
           "endTime": "18:33:02"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:55:23",
           "Item2": "2017-03-22T18:33:02"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:55:23",
+          "Item2": "2017-03-22T18:33:02"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 17,
       "Text": "17:55:23-18:33:02",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -130,42 +124,40 @@
 {
   "TestType": "BasicTest",
   "Input": "从17点55分23秒至18点33分02秒",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17:55:23,T18:33:02,PT0H37M39S)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:55:23",
           "endTime": "18:33:02"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:55:23",
           "endTime": "18:33:02"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:55:23",
           "Item2": "2017-03-22T18:33:02"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:55:23",
+          "Item2": "2017-03-22T18:33:02"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 20,
       "Text": "从17点55分23秒至18点33分02秒",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -173,42 +165,40 @@
 {
   "TestType": "BasicTest",
   "Input": "早上五到六点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T05,T06,PT1H)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T05,T06,PT1H)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "05:00:00",
           "endTime": "06:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "05:00:00",
           "endTime": "06:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T05:00:00",
           "Item2": "2017-03-22T06:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T05:00:00",
+          "Item2": "2017-03-22T06:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 6,
       "Text": "早上五到六点",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -216,42 +206,40 @@
 {
   "TestType": "BasicTest",
   "Input": "下午五点到晚上七点半",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17,T19:30,PT2H30M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17,T19:30,PT2H30M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:00:00",
           "endTime": "19:30:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:00:00",
           "endTime": "19:30:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:00:00",
           "Item2": "2017-03-22T19:30:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:00:00",
+          "Item2": "2017-03-22T19:30:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 10,
       "Text": "下午五点到晚上七点半",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -259,42 +247,40 @@
 {
   "TestType": "BasicTest",
   "Input": "下午5:00到凌晨3:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17:00,T03:00,PT10H)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17:00,T03:00,PT10H)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:00:00",
           "endTime": "03:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:00:00",
           "endTime": "03:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:00:00",
           "Item2": "2017-03-23T03:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:00:00",
+          "Item2": "2017-03-23T03:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 13,
       "Text": "下午5:00到凌晨3:00",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -302,42 +288,40 @@
 {
   "TestType": "BasicTest",
   "Input": "下午5:00到6:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T17:00,T18:00,PT1H)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T17:00,T18:00,PT1H)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "17:00:00",
           "endTime": "18:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "17:00:00",
           "endTime": "18:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T17:00:00",
           "Item2": "2017-03-22T18:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T17:00:00",
+          "Item2": "2017-03-22T18:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 11,
       "Text": "下午5:00到6:00",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -345,42 +329,40 @@
 {
   "TestType": "BasicTest",
   "Input": "5:00到6:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(T05:00,T06:00,PT1H)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(T05:00,T06:00,PT1H)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startTime": "05:00:00",
           "endTime": "06:00:00"
         },
         "PastResolution": {
-          "$id": "4",
           "startTime": "05:00:00",
           "endTime": "06:00:00"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-03-22T05:00:00",
           "Item2": "2017-03-22T06:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-03-22T05:00:00",
+          "Item2": "2017-03-22T06:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 0,
       "Length": 9,
       "Text": "5:00到6:00",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }

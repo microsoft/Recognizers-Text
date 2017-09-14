@@ -1,34 +1,31 @@
 [{
-  "TestType": "BasicTestFuture",
+  "TestType": "BasicTest",
   "Input": "Estare afuera desde el 4 hasta el 22 de este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-04,2016-11-22,P18D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-04,2016-11-22,P18D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-04",
           "endDate": "2016-11-22"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-04",
           "endDate": "2016-11-22"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-04T00:00:00",
           "Item2": "2016-11-22T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-11-04T00:00:00",
           "Item2": "2016-11-22T00:00:00"
         }
@@ -37,43 +34,39 @@
       "Start": 14,
       "Length": 34,
       "Text": "desde el 4 hasta el 22 de este mes",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestFuture",
+  "TestType": "BasicTest",
   "Input": "Estare afuera desde 4-23 del proximo mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-12-04,2016-12-23,P19D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-12-04,2016-12-23,P19D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-12-04",
           "endDate": "2016-12-23"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-12-04",
           "endDate": "2016-12-23"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-12-04T00:00:00",
           "Item2": "2016-12-23T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-12-04T00:00:00",
           "Item2": "2016-12-23T00:00:00"
         }
@@ -82,43 +75,39 @@
       "Start": 14,
       "Length": 26,
       "Text": "desde 4-23 del proximo mes",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestFuture",
+  "TestType": "BasicTest",
   "Input": "Estare afuera desde el 3 hasta el 12 de Sept jajaja",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-09-03,XXXX-09-12,P9D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-09-03",
           "endDate": "2017-09-12"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-09-03",
           "endDate": "2016-09-12"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-09-03T00:00:00",
           "Item2": "2017-09-12T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-09-03T00:00:00",
           "Item2": "2016-09-12T00:00:00"
         }
@@ -127,43 +116,39 @@
       "Start": 14,
       "Length": 30,
       "Text": "desde el 3 hasta el 12 de Sept",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestFuture",
+  "TestType": "BasicTest",
   "Input": "Estare afuera 4 hasta 23 del proximo mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-12-04,2016-12-23,P19D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-12-04,2016-12-23,P19D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-12-04",
           "endDate": "2016-12-23"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-12-04",
           "endDate": "2016-12-23"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-12-04T00:00:00",
           "Item2": "2016-12-23T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-12-04T00:00:00",
           "Item2": "2016-12-23T00:00:00"
         }
@@ -172,43 +157,39 @@
       "Start": 14,
       "Length": 26,
       "Text": "4 hasta 23 del proximo mes",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestFuture",
+  "TestType": "BasicTest",
   "Input": "Estare afuera desde el 4 hasta el 23 de este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-04,2016-11-23,P19D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-04,2016-11-23,P19D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-04",
           "endDate": "2016-11-23"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-04",
           "endDate": "2016-11-23"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-04T00:00:00",
           "Item2": "2016-11-23T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-11-04T00:00:00",
           "Item2": "2016-11-23T00:00:00"
         }
@@ -217,1303 +198,7 @@
       "Start": 14,
       "Length": 34,
       "Text": "desde el 4 hasta el 23 de este mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera entre 4 y 22 este mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-11-04,2016-11-22,P18D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-11-04,2016-11-22,P18D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 21,
-      "Text": "entre 4 y 22 este mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera entre el 3 y el 12 de Set jajaja",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-09-03,XXXX-09-12,P9D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-09-03",
-          "endDate": "2017-09-12"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-09-03",
-          "endDate": "2016-09-12"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-09-03T00:00:00",
-          "Item2": "2017-09-12T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-09-03T00:00:00",
-          "Item2": "2016-09-12T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 25,
-      "Text": "entre el 3 y el 12 de Set",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera del 4 al 22 de enero, 1995",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-01-04,XXXX-01-22,P18D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "1995-01-04T00:00:00",
-          "Item2": "1995-01-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "1995-01-04T00:00:00",
-          "Item2": "1995-01-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 26,
-      "Text": "del 4 al 22 de enero, 1995",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera entre 4-22 enero,  1995",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-01-04,XXXX-01-22,P18D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "1995-01-04",
-          "endDate": "1995-01-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "1995-01-04T00:00:00",
-          "Item2": "1995-01-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "1995-01-04T00:00:00",
-          "Item2": "1995-01-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 23,
-      "Text": "entre 4-22 enero,  1995",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera esta semana",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2016-W46",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2016-W46",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "$ref": "5"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 11,
-      "Text": "esta semana",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera en Febrero",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-02",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-02",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-02-01",
-          "endDate": "2017-03-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-02-01",
-          "endDate": "2016-03-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-02-01T00:00:00",
-          "Item2": "2017-03-01T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-02-01T00:00:00",
-          "Item2": "2016-03-01T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 10,
-      "Text": "en Febrero",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera este Septiembre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2016-09",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2016-09",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-09-01",
-          "endDate": "2016-10-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-09-01T00:00:00",
-          "Item2": "2016-10-01T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-09-01T00:00:00",
-          "Item2": "2016-10-01T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 15,
-      "Text": "este Septiembre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera el ultimo sept",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-09",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-09",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2015-09-01",
-          "endDate": "2015-10-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-09-01",
-          "endDate": "2015-10-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2015-09-01T00:00:00",
-          "Item2": "2015-10-01T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2015-09-01T00:00:00",
-          "Item2": "2015-10-01T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 11,
-      "Text": "ultimo sept",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera el proximo junio",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2017-06",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2017-06",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-06-01",
-          "endDate": "2017-07-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2017-06-01",
-          "endDate": "2017-07-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-06-01T00:00:00",
-          "Item2": "2017-07-01T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2017-06-01T00:00:00",
-          "Item2": "2017-07-01T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 13,
-      "Text": "proximo junio",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera la tercera semana de este mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2016-11-W03",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2016-11-W03",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-21",
-          "endDate": "2016-11-28"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-21",
-          "endDate": "2016-11-28"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-21T00:00:00",
-          "Item2": "2016-11-28T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-11-21T00:00:00",
-          "Item2": "2016-11-28T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 29,
-      "Text": "la tercera semana de este mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera la ultima semana de julio",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "XXXX-07-W04",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "XXXX-07-W04",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-07-24",
-          "endDate": "2017-07-31"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-07-25",
-          "endDate": "2016-08-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-07-24T00:00:00",
-          "Item2": "2017-07-31T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-07-25T00:00:00",
-          "Item2": "2016-08-01T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 25,
-      "Text": "la ultima semana de julio",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera el 2 de Oct hasta 22 de Octubre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-10-02T00:00:00",
-          "Item2": "2017-10-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-10-02T00:00:00",
-          "Item2": "2016-10-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 28,
-      "Text": "2 de Oct hasta 22 de Octubre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera el 12 de Enero, 2016 - 22/01/2016",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-01-12,2016-01-22,P10D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-01-12,2016-01-22,P10D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-01-12",
-          "endDate": "2016-01-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-01-12",
-          "endDate": "2016-01-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-01-12T00:00:00",
-          "Item2": "2016-01-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-01-12T00:00:00",
-          "Item2": "2016-01-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 30,
-      "Text": "12 de Enero, 2016 - 22/01/2016",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera el 1ro de Ene hasta Mi, 22 de Ene",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-01-01,XXXX-01-22,P21D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-01-01",
-          "endDate": "2017-01-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-01-01",
-          "endDate": "2016-01-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-01-01T00:00:00",
-          "Item2": "2017-01-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-01-01T00:00:00",
-          "Item2": "2016-01-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 30,
-      "Text": "1ro de Ene hasta Mi, 22 de Ene",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera hoy hasta mañana",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-11-07,2016-11-08,P1D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-11-07,2016-11-08,P1D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-08"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-08T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-08T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 16,
-      "Text": "hoy hasta mañana",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera desde 2 de Oct hasta 22 de Octubre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-10-02T00:00:00",
-          "Item2": "2017-10-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-10-02T00:00:00",
-          "Item2": "2016-10-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 34,
-      "Text": "desde 2 de Oct hasta 22 de Octubre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera entre 2 de Oct y 22 de Octubre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-10-02",
-          "endDate": "2017-10-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-10-02",
-          "endDate": "2016-10-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-10-02T00:00:00",
-          "Item2": "2017-10-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-10-02T00:00:00",
-          "Item2": "2016-10-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 30,
-      "Text": "entre 2 de Oct y 22 de Octubre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 19-20 de Noviembre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-19T00:00:00",
-          "Item2": "2016-11-20T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2015-11-19T00:00:00",
-          "Item2": "2015-11-20T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 18,
-      "Text": "19-20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 19 hasta 20 de Noviembre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-19T00:00:00",
-          "Item2": "2016-11-20T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2015-11-19T00:00:00",
-          "Item2": "2015-11-20T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 24,
-      "Text": "19 hasta 20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera entre 19 y 20 de Noviembre",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-19",
-          "endDate": "2016-11-20"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-11-19",
-          "endDate": "2015-11-20"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-19T00:00:00",
-          "Item2": "2016-11-20T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2015-11-19T00:00:00",
-          "Item2": "2015-11-20T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 26,
-      "Text": "entre 19 y 20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 2015.3",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-03",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-03",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2015-03-01T00:00:00",
-          "Item2": "2015-04-01T00:00:00"
-        },
-        "PastValue": {
-          "$ref": "5"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "2015.3",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 2015-3",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-03",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-03",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2015-03-01T00:00:00",
-          "Item2": "2015-04-01T00:00:00"
-        },
-        "PastValue": {
-          "$ref": "5"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "2015-3",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 2015/3",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-03",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-03",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2015-03-01T00:00:00",
-          "Item2": "2015-04-01T00:00:00"
-        },
-        "PastValue": {
-          "$ref": "5"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "2015/3",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "Estare afuera 3/2015",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "2015-03",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "2015-03",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2015-03-01",
-          "endDate": "2015-04-01"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2015-03-01T00:00:00",
-          "Item2": "2015-04-01T00:00:00"
-        },
-        "PastValue": {
-          "$ref": "5"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "3/2015",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estare afuera desde el 4 hasta el 22 de este mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-11-04,2016-11-22,P18D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-11-04,2016-11-22,P18D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-22"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 34,
-      "Text": "desde el 4 hasta el 22 de este mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estare afuera desde 4-23 del proximo mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-12-04,2016-12-23,P19D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-12-04,2016-12-23,P19D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-12-04T00:00:00",
-          "Item2": "2016-12-23T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-12-04T00:00:00",
-          "Item2": "2016-12-23T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 26,
-      "Text": "desde 4-23 del proximo mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estare afuera desde el 3 hasta el 12 de Sept jajaja",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(XXXX-09-03,XXXX-09-12,P9D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2017-09-03",
-          "endDate": "2017-09-12"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-09-03",
-          "endDate": "2016-09-12"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2017-09-03T00:00:00",
-          "Item2": "2017-09-12T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-09-03T00:00:00",
-          "Item2": "2016-09-12T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 30,
-      "Text": "desde el 3 hasta el 12 de Sept",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estare afuera 4 hasta 23 del proximo mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-12-04,2016-12-23,P19D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-12-04,2016-12-23,P19D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-12-04",
-          "endDate": "2016-12-23"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-12-04T00:00:00",
-          "Item2": "2016-12-23T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-12-04T00:00:00",
-          "Item2": "2016-12-23T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 26,
-      "Text": "4 hasta 23 del proximo mes",
-      "Type": "daterange",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estare afuera desde el 4 hasta el 23 de este mes",
-  "Results": [
-    {
-      "$id": "1",
-      "TimexStr": "(2016-11-04,2016-11-23,P19D)",
-      "Value": {
-        "$id": "2",
-        "Success": true,
-        "Timex": "(2016-11-04,2016-11-23,P19D)",
-        "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
-        },
-        "PastResolution": {
-          "$id": "4",
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-23"
-        },
-        "FutureValue": {
-          "$id": "5",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-23T00:00:00"
-        },
-        "PastValue": {
-          "$id": "6",
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-23T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 34,
-      "Text": "desde el 4 hasta el 23 de este mes",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1521,42 +206,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera esta semana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-W46",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-W46",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-07T00:00:00",
           "Item2": "2016-11-14T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 11,
       "Text": "esta semana",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1564,42 +247,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el fin de semana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-W46-WE",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-W46-WE",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-12T00:00:00",
           "Item2": "2016-11-14T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 17,
       "Length": 13,
       "Text": "fin de semana",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1607,42 +288,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera este fin de semana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-W46-WE",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-W46-WE",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-12T00:00:00",
           "Item2": "2016-11-14T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 18,
       "Text": "este fin de semana",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1650,34 +329,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera en Febrero",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-02",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-02",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-02-01",
           "endDate": "2017-03-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-02-01",
           "endDate": "2016-03-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-02-01T00:00:00",
           "Item2": "2017-03-01T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-02-01T00:00:00",
           "Item2": "2016-03-01T00:00:00"
         }
@@ -1686,8 +362,7 @@
       "Start": 14,
       "Length": 10,
       "Text": "en Febrero",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1695,34 +370,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera este Septiembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-09",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-09",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-09-01",
           "endDate": "2016-10-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-09-01",
           "endDate": "2016-10-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-09-01T00:00:00",
           "Item2": "2016-10-01T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-09-01T00:00:00",
           "Item2": "2016-10-01T00:00:00"
         }
@@ -1731,8 +403,7 @@
       "Start": 14,
       "Length": 15,
       "Text": "este Septiembre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1740,34 +411,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el ultimo sept",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-09",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-09",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2015-09-01",
           "endDate": "2015-10-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-09-01",
           "endDate": "2015-10-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2015-09-01T00:00:00",
           "Item2": "2015-10-01T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2015-09-01T00:00:00",
           "Item2": "2015-10-01T00:00:00"
         }
@@ -1776,8 +444,7 @@
       "Start": 17,
       "Length": 11,
       "Text": "ultimo sept",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1785,34 +452,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el proximo junio",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017-06",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017-06",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-06-01",
           "endDate": "2017-07-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2017-06-01",
           "endDate": "2017-07-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-06-01T00:00:00",
           "Item2": "2017-07-01T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2017-06-01T00:00:00",
           "Item2": "2017-07-01T00:00:00"
         }
@@ -1821,8 +485,7 @@
       "Start": 17,
       "Length": 13,
       "Text": "proximo junio",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1830,42 +493,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera en junio 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-06",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-06",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-06-01",
           "endDate": "2016-07-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-06-01",
           "endDate": "2016-07-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-06-01T00:00:00",
           "Item2": "2016-07-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-06-01T00:00:00",
+          "Item2": "2016-07-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 13,
       "Text": "en junio 2016",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1873,42 +534,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera en junio del proximo año",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017-06",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017-06",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-06-01",
           "endDate": "2017-07-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2017-06-01",
           "endDate": "2017-07-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-06-01T00:00:00",
           "Item2": "2017-07-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-06-01T00:00:00",
+          "Item2": "2017-07-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 24,
       "Text": "en junio del proximo año",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1916,42 +575,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el próximo año",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-01-01",
           "endDate": "2018-01-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2017-01-01",
           "endDate": "2018-01-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-01-01T00:00:00",
           "Item2": "2018-01-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2017-01-01T00:00:00",
+          "Item2": "2018-01-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 17,
       "Length": 11,
       "Text": "próximo año",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -1959,42 +616,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera los próximos 3 dias",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-08,2016-11-11,P3D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-08,2016-11-11,P3D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-08",
           "endDate": "2016-11-11"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-08",
           "endDate": "2016-11-11"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-08T00:00:00",
           "Item2": "2016-11-11T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-08T00:00:00",
+          "Item2": "2016-11-11T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 18,
       "Length": 15,
       "Text": "próximos 3 dias",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2002,42 +657,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera los proximos 3 meses",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-08,2017-02-08,P3M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-08,2017-02-08,P3M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-08",
           "endDate": "2017-02-08"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-08",
           "endDate": "2017-02-08"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-08T00:00:00",
           "Item2": "2017-02-08T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-08T00:00:00",
+          "Item2": "2017-02-08T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 18,
       "Length": 16,
       "Text": "proximos 3 meses",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2045,42 +698,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera en 3 años",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-08,2019-11-08,P3Y)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-08,2019-11-08,P3Y)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-08",
           "endDate": "2019-11-08"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-08",
           "endDate": "2019-11-08"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-08T00:00:00",
           "Item2": "2019-11-08T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-11-08T00:00:00",
+          "Item2": "2019-11-08T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 9,
       "Text": "en 3 años",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2088,42 +739,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estuve afuera las pasadas 3 semanas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-10-17,2016-11-07,P3W)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-10-17,2016-11-07,P3W)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-10-17",
           "endDate": "2016-11-07"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-10-17",
           "endDate": "2016-11-07"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-10-17T00:00:00",
           "Item2": "2016-11-07T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-10-17T00:00:00",
+          "Item2": "2016-11-07T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 18,
       "Length": 17,
       "Text": "pasadas 3 semanas",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2131,42 +780,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estuve afuera los ultimos 3años",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2013-11-07,2016-11-07,P3Y)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2013-11-07,2016-11-07,P3Y)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2013-11-07",
           "endDate": "2016-11-07"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2013-11-07",
           "endDate": "2016-11-07"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2013-11-07T00:00:00",
           "Item2": "2016-11-07T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2013-11-07T00:00:00",
+          "Item2": "2016-11-07T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 18,
       "Length": 13,
       "Text": "ultimos 3años",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2174,42 +821,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estuve afuera las anteriores 3 semanas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-10-17,2016-11-07,P3W)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-10-17,2016-11-07,P3W)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-10-17",
           "endDate": "2016-11-07"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-10-17",
           "endDate": "2016-11-07"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-10-17T00:00:00",
           "Item2": "2016-11-07T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-10-17T00:00:00",
+          "Item2": "2016-11-07T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 18,
       "Length": 20,
       "Text": "anteriores 3 semanas",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2217,34 +862,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el 2 de Oct hasta 22 de Octubre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-10-02",
           "endDate": "2017-10-22"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-10-02",
           "endDate": "2016-10-22"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-10-02T00:00:00",
           "Item2": "2017-10-22T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-10-02T00:00:00",
           "Item2": "2016-10-22T00:00:00"
         }
@@ -2253,8 +895,7 @@
       "Start": 17,
       "Length": 28,
       "Text": "2 de Oct hasta 22 de Octubre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2262,34 +903,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el 12 de Enero, 2016 - 22/01/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-01-12,2016-01-22,P10D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-01-12,2016-01-22,P10D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-01-12",
           "endDate": "2016-01-22"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-01-12",
           "endDate": "2016-01-22"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-01-12T00:00:00",
           "Item2": "2016-01-22T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-01-12T00:00:00",
           "Item2": "2016-01-22T00:00:00"
         }
@@ -2298,8 +936,7 @@
       "Start": 17,
       "Length": 30,
       "Text": "12 de Enero, 2016 - 22/01/2016",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2307,34 +944,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera hoy hasta mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-07,2016-11-08,P1D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-07,2016-11-08,P1D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-07",
           "endDate": "2016-11-08"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-07",
           "endDate": "2016-11-08"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-07T00:00:00",
           "Item2": "2016-11-08T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-11-07T00:00:00",
           "Item2": "2016-11-08T00:00:00"
         }
@@ -2343,8 +977,7 @@
       "Start": 14,
       "Length": 16,
       "Text": "hoy hasta mañana",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2352,34 +985,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera desde hoy hasta mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-11-07,2016-11-08,P1D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-11-07,2016-11-08,P1D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-07",
           "endDate": "2016-11-08"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-11-07",
           "endDate": "2016-11-08"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-07T00:00:00",
           "Item2": "2016-11-08T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-11-07T00:00:00",
           "Item2": "2016-11-08T00:00:00"
         }
@@ -2388,8 +1018,7 @@
       "Start": 14,
       "Length": 22,
       "Text": "desde hoy hasta mañana",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2397,34 +1026,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera desde 2 de Oct hasta 22 de Octubre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-10-02",
           "endDate": "2017-10-22"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-10-02",
           "endDate": "2016-10-22"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-10-02T00:00:00",
           "Item2": "2017-10-22T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-10-02T00:00:00",
           "Item2": "2016-10-22T00:00:00"
         }
@@ -2433,8 +1059,7 @@
       "Start": 14,
       "Length": 34,
       "Text": "desde 2 de Oct hasta 22 de Octubre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2442,34 +1067,31 @@
 {
   "TestType": "BasicTest",
   "Input": "la primer semana de Oct",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "XXXX-10-W01",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "XXXX-10-W01",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-10-02",
           "endDate": "2017-10-09"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-10-03",
           "endDate": "2016-10-10"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-10-02T00:00:00",
           "Item2": "2017-10-09T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2016-10-03T00:00:00",
           "Item2": "2016-10-10T00:00:00"
         }
@@ -2478,8 +1100,7 @@
       "Start": 0,
       "Length": 23,
       "Text": "la primer semana de Oct",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2487,34 +1108,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera la tercera semana del 2027",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2027-01-W03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2027-01-W03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2027-01-18",
           "endDate": "2027-01-25"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2027-01-18",
           "endDate": "2027-01-25"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2027-01-18T00:00:00",
           "Item2": "2027-01-25T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2027-01-18T00:00:00",
           "Item2": "2027-01-25T00:00:00"
         }
@@ -2523,8 +1141,7 @@
       "Start": 14,
       "Length": 26,
       "Text": "la tercera semana del 2027",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2532,34 +1149,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera la tercer semana del próximo año",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017-01-W03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017-01-W03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2017-01-16",
           "endDate": "2017-01-23"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2017-01-16",
           "endDate": "2017-01-23"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2017-01-16T00:00:00",
           "Item2": "2017-01-23T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2017-01-16T00:00:00",
           "Item2": "2017-01-23T00:00:00"
         }
@@ -2568,8 +1182,7 @@
       "Start": 14,
       "Length": 32,
       "Text": "la tercer semana del próximo año",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2577,34 +1190,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 19-20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-19",
           "endDate": "2016-11-20"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-11-19",
           "endDate": "2015-11-20"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-19T00:00:00",
           "Item2": "2016-11-20T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2015-11-19T00:00:00",
           "Item2": "2015-11-20T00:00:00"
         }
@@ -2613,8 +1223,7 @@
       "Start": 14,
       "Length": 18,
       "Text": "19-20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2622,34 +1231,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 19 hasta 20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-19",
           "endDate": "2016-11-20"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-11-19",
           "endDate": "2015-11-20"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-19T00:00:00",
           "Item2": "2016-11-20T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2015-11-19T00:00:00",
           "Item2": "2015-11-20T00:00:00"
         }
@@ -2658,8 +1264,7 @@
       "Start": 14,
       "Length": 24,
       "Text": "19 hasta 20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2667,34 +1272,31 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera entre 19 y 20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-11-19",
           "endDate": "2016-11-20"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-11-19",
           "endDate": "2015-11-20"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-11-19T00:00:00",
           "Item2": "2016-11-20T00:00:00"
         },
         "PastValue": {
-          "$id": "6",
           "Item1": "2015-11-19T00:00:00",
           "Item2": "2015-11-20T00:00:00"
         }
@@ -2703,8 +1305,7 @@
       "Start": 14,
       "Length": 26,
       "Text": "entre 19 y 20 de Noviembre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2712,42 +1313,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el tercer cuatrimestre de 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-07-01,2016-10-01,P3M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-07-01,2016-10-01,P3M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-07-01T00:00:00",
           "Item2": "2016-10-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-07-01T00:00:00",
+          "Item2": "2016-10-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 30,
       "Text": "el tercer cuatrimestre de 2016",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2755,42 +1354,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el tercer cuatrimestre de este año",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-07-01,2016-10-01,P3M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-07-01,2016-10-01,P3M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-07-01T00:00:00",
           "Item2": "2016-10-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-07-01T00:00:00",
+          "Item2": "2016-10-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 34,
       "Text": "el tercer cuatrimestre de este año",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2798,42 +1395,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 2016 el tercer cuatrimestre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "(2016-07-01,2016-10-01,P3M)",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "(2016-07-01,2016-10-01,P3M)",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2016-07-01",
           "endDate": "2016-10-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2016-07-01T00:00:00",
           "Item2": "2016-10-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2016-07-01T00:00:00",
+          "Item2": "2016-10-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 27,
       "Text": "2016 el tercer cuatrimestre",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2841,42 +1436,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 2015.3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2015-03-01T00:00:00",
           "Item2": "2015-04-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 6,
       "Text": "2015.3",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2884,42 +1477,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 2015-3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2015-03-01T00:00:00",
           "Item2": "2015-04-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 6,
       "Text": "2015-3",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2927,42 +1518,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 2015/3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2015-03-01T00:00:00",
           "Item2": "2015-04-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 6,
       "Text": "2015/3",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -2970,42 +1559,40 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera 3/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2015-03",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2015-03",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
         "FutureResolution": {
-          "$id": "3",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "PastResolution": {
-          "$id": "4",
           "startDate": "2015-03-01",
           "endDate": "2015-04-01"
         },
         "FutureValue": {
-          "$id": "5",
           "Item1": "2015-03-01T00:00:00",
           "Item2": "2015-04-01T00:00:00"
         },
         "PastValue": {
-          "$ref": "5"
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
         }
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 6,
       "Text": "3/2015",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3013,32 +1600,26 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera este verano",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-SU",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-SU",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 11,
       "Text": "este verano",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3046,32 +1627,26 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera la próxima primavera",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2017-SP",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2017-SP",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 17,
       "Length": 17,
       "Text": "próxima primavera",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3079,32 +1654,26 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera el verano",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "SU",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "SU",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 9,
       "Text": "el verano",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3112,32 +1681,26 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera verano",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "SU",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "SU",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 6,
       "Text": "verano",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3145,32 +1708,26 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera verano 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-SU",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-SU",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 11,
       "Text": "verano 2016",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -3178,32 +1735,1215 @@
 {
   "TestType": "BasicTest",
   "Input": "Estare afuera verano del 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "TimexStr": "2016-SU",
       "Value": {
-        "$id": "2",
         "Success": true,
         "Timex": "2016-SU",
         "IsLunar": false,
-        "Mod": null,
-        "Comment": null,
-        "FutureResolution": {
-          "$id": "3"
-        },
-        "PastResolution": {
-          "$ref": "3"
-        },
-        "FutureValue": null,
-        "PastValue": null
+        "FutureResolution": {},
+        "PastResolution": {}
       },
       "ResolutionStr": "",
       "Start": 14,
       "Length": 15,
       "Text": "verano del 2016",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera desde el 4 hasta el 22 de este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-04,2016-11-22,P18D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-04,2016-11-22,P18D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-22"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 34,
+      "Text": "desde el 4 hasta el 22 de este mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera desde 4-23 del proximo mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-12-04,2016-12-23,P19D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-12-04,2016-12-23,P19D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-12-04",
+          "endDate": "2016-12-23"
+        },
+        "PastResolution": {
+          "startDate": "2016-12-04",
+          "endDate": "2016-12-23"
+        },
+        "FutureValue": {
+          "Item1": "2016-12-04T00:00:00",
+          "Item2": "2016-12-23T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-12-04T00:00:00",
+          "Item2": "2016-12-23T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 26,
+      "Text": "desde 4-23 del proximo mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera desde el 3 hasta el 12 de Sept jajaja",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-09-03,XXXX-09-12,P9D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-09-03",
+          "endDate": "2017-09-12"
+        },
+        "PastResolution": {
+          "startDate": "2016-09-03",
+          "endDate": "2016-09-12"
+        },
+        "FutureValue": {
+          "Item1": "2017-09-03T00:00:00",
+          "Item2": "2017-09-12T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-09-03T00:00:00",
+          "Item2": "2016-09-12T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 30,
+      "Text": "desde el 3 hasta el 12 de Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 4 hasta 23 del proximo mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-12-04,2016-12-23,P19D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-12-04,2016-12-23,P19D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-12-04",
+          "endDate": "2016-12-23"
+        },
+        "PastResolution": {
+          "startDate": "2016-12-04",
+          "endDate": "2016-12-23"
+        },
+        "FutureValue": {
+          "Item1": "2016-12-04T00:00:00",
+          "Item2": "2016-12-23T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-12-04T00:00:00",
+          "Item2": "2016-12-23T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 26,
+      "Text": "4 hasta 23 del proximo mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera desde el 4 hasta el 23 de este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-04,2016-11-23,P19D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-04,2016-11-23,P19D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-23"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-23"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-23T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-23T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 34,
+      "Text": "desde el 4 hasta el 23 de este mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera entre 4 y 22 este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-04,2016-11-22,P18D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-04,2016-11-22,P18D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-22"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 21,
+      "Text": "entre 4 y 22 este mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera entre el 3 y el 12 de Set jajaja",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-09-03,XXXX-09-12,P9D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-09-03",
+          "endDate": "2017-09-12"
+        },
+        "PastResolution": {
+          "startDate": "2016-09-03",
+          "endDate": "2016-09-12"
+        },
+        "FutureValue": {
+          "Item1": "2017-09-03T00:00:00",
+          "Item2": "2017-09-12T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-09-03T00:00:00",
+          "Item2": "2016-09-12T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 25,
+      "Text": "entre el 3 y el 12 de Set",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera del 4 al 22 de enero, 1995",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-01-04,XXXX-01-22,P18D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "PastResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "FutureValue": {
+          "Item1": "1995-01-04T00:00:00",
+          "Item2": "1995-01-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "1995-01-04T00:00:00",
+          "Item2": "1995-01-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 26,
+      "Text": "del 4 al 22 de enero, 1995",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera entre 4-22 enero,  1995",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-01-04,XXXX-01-22,P18D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "PastResolution": {
+          "startDate": "1995-01-04",
+          "endDate": "1995-01-22"
+        },
+        "FutureValue": {
+          "Item1": "1995-01-04T00:00:00",
+          "Item2": "1995-01-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "1995-01-04T00:00:00",
+          "Item2": "1995-01-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 23,
+      "Text": "entre 4-22 enero,  1995",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera esta semana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 11,
+      "Text": "esta semana",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera en Febrero",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-02",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-02",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-02-01",
+          "endDate": "2017-03-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-02-01",
+          "endDate": "2016-03-01"
+        },
+        "FutureValue": {
+          "Item1": "2017-02-01T00:00:00",
+          "Item2": "2017-03-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-02-01T00:00:00",
+          "Item2": "2016-03-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 10,
+      "Text": "en Febrero",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera este Septiembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-09",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-09",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-09-01",
+          "endDate": "2016-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-09-01",
+          "endDate": "2016-10-01"
+        },
+        "FutureValue": {
+          "Item1": "2016-09-01T00:00:00",
+          "Item2": "2016-10-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-09-01T00:00:00",
+          "Item2": "2016-10-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 15,
+      "Text": "este Septiembre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera el ultimo sept",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-09",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-09",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2015-09-01",
+          "endDate": "2015-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-09-01",
+          "endDate": "2015-10-01"
+        },
+        "FutureValue": {
+          "Item1": "2015-09-01T00:00:00",
+          "Item2": "2015-10-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-09-01T00:00:00",
+          "Item2": "2015-10-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 11,
+      "Text": "ultimo sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera el proximo junio",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2017-06",
+      "Value": {
+        "Success": true,
+        "Timex": "2017-06",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-06-01",
+          "endDate": "2017-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-06-01",
+          "endDate": "2017-07-01"
+        },
+        "FutureValue": {
+          "Item1": "2017-06-01T00:00:00",
+          "Item2": "2017-07-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2017-06-01T00:00:00",
+          "Item2": "2017-07-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 13,
+      "Text": "proximo junio",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera la tercera semana de este mes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-W03",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-W03",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-21",
+          "endDate": "2016-11-28"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-21",
+          "endDate": "2016-11-28"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-21T00:00:00",
+          "Item2": "2016-11-28T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-21T00:00:00",
+          "Item2": "2016-11-28T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 29,
+      "Text": "la tercera semana de este mes",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera la ultima semana de julio",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-07-W04",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-07-W04",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-07-24",
+          "endDate": "2017-07-31"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-25",
+          "endDate": "2016-08-01"
+        },
+        "FutureValue": {
+          "Item1": "2017-07-24T00:00:00",
+          "Item2": "2017-07-31T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-07-25T00:00:00",
+          "Item2": "2016-08-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 25,
+      "Text": "la ultima semana de julio",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera el 2 de Oct hasta 22 de Octubre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-10-02",
+          "endDate": "2017-10-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-10-02",
+          "endDate": "2016-10-22"
+        },
+        "FutureValue": {
+          "Item1": "2017-10-02T00:00:00",
+          "Item2": "2017-10-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-10-02T00:00:00",
+          "Item2": "2016-10-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 28,
+      "Text": "2 de Oct hasta 22 de Octubre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera el 12 de Enero, 2016 - 22/01/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-01-12,2016-01-22,P10D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-01-12,2016-01-22,P10D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-01-12",
+          "endDate": "2016-01-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-12",
+          "endDate": "2016-01-22"
+        },
+        "FutureValue": {
+          "Item1": "2016-01-12T00:00:00",
+          "Item2": "2016-01-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-01-12T00:00:00",
+          "Item2": "2016-01-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 30,
+      "Text": "12 de Enero, 2016 - 22/01/2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera el 1ro de Ene hasta Mi, 22 de Ene",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-01-01,XXXX-01-22,P21D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-01-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2016-01-22"
+        },
+        "FutureValue": {
+          "Item1": "2017-01-01T00:00:00",
+          "Item2": "2017-01-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-01-01T00:00:00",
+          "Item2": "2016-01-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 30,
+      "Text": "1ro de Ene hasta Mi, 22 de Ene",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera hoy hasta mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-07,2016-11-08,P1D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-07,2016-11-08,P1D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-08"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-08"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-08T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-08T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 16,
+      "Text": "hoy hasta mañana",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera desde 2 de Oct hasta 22 de Octubre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-10-02",
+          "endDate": "2017-10-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-10-02",
+          "endDate": "2016-10-22"
+        },
+        "FutureValue": {
+          "Item1": "2017-10-02T00:00:00",
+          "Item2": "2017-10-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-10-02T00:00:00",
+          "Item2": "2016-10-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 34,
+      "Text": "desde 2 de Oct hasta 22 de Octubre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera entre 2 de Oct y 22 de Octubre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-10-02,XXXX-10-22,P20D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2017-10-02",
+          "endDate": "2017-10-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-10-02",
+          "endDate": "2016-10-22"
+        },
+        "FutureValue": {
+          "Item1": "2017-10-02T00:00:00",
+          "Item2": "2017-10-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-10-02T00:00:00",
+          "Item2": "2016-10-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 30,
+      "Text": "entre 2 de Oct y 22 de Octubre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 19-20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-19",
+          "endDate": "2016-11-20"
+        },
+        "PastResolution": {
+          "startDate": "2015-11-19",
+          "endDate": "2015-11-20"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-19T00:00:00",
+          "Item2": "2016-11-20T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-11-19T00:00:00",
+          "Item2": "2015-11-20T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 18,
+      "Text": "19-20 de Noviembre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 19 hasta 20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-19",
+          "endDate": "2016-11-20"
+        },
+        "PastResolution": {
+          "startDate": "2015-11-19",
+          "endDate": "2015-11-20"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-19T00:00:00",
+          "Item2": "2016-11-20T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-11-19T00:00:00",
+          "Item2": "2015-11-20T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 24,
+      "Text": "19 hasta 20 de Noviembre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera entre 19 y 20 de Noviembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(XXXX-11-19,XXXX-11-20,P1D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-19",
+          "endDate": "2016-11-20"
+        },
+        "PastResolution": {
+          "startDate": "2015-11-19",
+          "endDate": "2015-11-20"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-19T00:00:00",
+          "Item2": "2016-11-20T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-11-19T00:00:00",
+          "Item2": "2015-11-20T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 26,
+      "Text": "entre 19 y 20 de Noviembre",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 2015.3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-03",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-03",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "FutureValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "2015.3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 2015-3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-03",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-03",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "FutureValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "2015-3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 2015/3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-03",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-03",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "FutureValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "2015/3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "Estare afuera 3/2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-03",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-03",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2015-03-01",
+          "endDate": "2015-04-01"
+        },
+        "FutureValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2015-03-01T00:00:00",
+          "Item2": "2015-04-01T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 6,
+      "Text": "3/2015",
+      "Type": "daterange"
     }
   ]
 }

@@ -1,299 +1,30 @@
 [{
   "TestType": "BasicTest",
-  "Input": "I'll be back 7pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 3,
-      "Text": "7pm",
-      "Type": "time",
-      "Data": null
-    }
-  ]
+  "Input": "which emails have gotten p as subject",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll be back 7 p m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 5,
-      "Text": "7 p m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p. m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 6,
-      "Text": "7 p. m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p. m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 7,
-      "Text": "7 p. m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7p.m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 5,
-      "Text": "7p.m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p.m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 6,
-      "Text": "7 p.m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56 a m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 8,
-      "Text": "7:56 a m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 a. m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 12,
-      "Text": "7:56:35 a. m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 am",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 10,
-      "Text": "7:56:35 am",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 a. m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 13,
-      "Text": "7:56:35 a. m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 15,
-      "Text": "seven thirty pm",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p.m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 17,
-      "Text": "seven thirty p.m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 16,
-      "Text": "seven thirty p m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p. m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 17,
-      "Text": "seven thirty p. m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p. m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 18,
-      "Text": "seven thirty p. m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 340pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 5,
-      "Text": "340pm",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 340 pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 6,
-      "Text": "340 pm",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 1140 a.m.",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 9,
-      "Text": "1140 a.m.",
-      "Type": "time",
-      "Data": null
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 1140 a m",
-  "Results": [
-    {
-      "$id": "1",
-      "Start": 13,
-      "Length": 8,
-      "Text": "1140 a m",
-      "Type": "time",
-      "Data": null
-    }
-  ]
+  "Input": "which emails have gotten a reply",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "I'll be back at 7",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 16,
       "Length": 1,
       "Text": "7",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -301,14 +32,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back at seven",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 16,
       "Length": 5,
       "Text": "seven",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -316,14 +47,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 7pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 3,
       "Text": "7pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -331,14 +62,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 7p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 5,
       "Text": "7p.m.",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -346,14 +77,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 7:56pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 6,
       "Text": "7:56pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -361,14 +92,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 7:56:35pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "7:56:35pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -376,14 +107,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 7:56:35 pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 10,
       "Text": "7:56:35 pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -391,14 +122,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 12:34",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 5,
       "Text": "12:34",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -406,14 +137,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 12:34:20",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 8,
       "Text": "12:34:20",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -421,14 +152,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back T12:34:20",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "T12:34:20",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -436,14 +167,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 00:00",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 5,
       "Text": "00:00",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -451,14 +182,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 00:00:30",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 8,
       "Text": "00:00:30",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -466,14 +197,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 7 o'clock",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 9,
       "Text": "7 o'clock",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -481,14 +212,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's seven o'clock",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 13,
       "Text": "seven o'clock",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -496,14 +227,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 8 in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 16,
       "Text": "8 in the morning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -511,14 +242,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 8 in the night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 14,
       "Text": "8 in the night",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -526,14 +257,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past eight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 15,
       "Text": "half past eight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -541,14 +272,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past 8pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 13,
       "Text": "half past 8pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -556,14 +287,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 30 mins past eight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 18,
       "Text": "30 mins past eight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -571,14 +302,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's a quarter past eight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 20,
       "Text": "a quarter past eight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -586,14 +317,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's quarter past eight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 18,
       "Text": "quarter past eight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -601,14 +332,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's three quarters past 9pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 23,
       "Text": "three quarters past 9pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -616,14 +347,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's three minutes to eight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 22,
       "Text": "three minutes to eight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -631,14 +362,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past seven o'clock",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 23,
       "Text": "half past seven o'clock",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -646,14 +377,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past seven afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 25,
       "Text": "half past seven afternoon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -661,14 +392,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past seven in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 30,
       "Text": "half past seven in the morning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -676,14 +407,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's a quarter to 8 in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 29,
       "Text": "a quarter to 8 in the morning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -691,14 +422,14 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 20 min past eight in the evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 5,
       "Length": 32,
       "Text": "20 min past eight in the evening",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -706,14 +437,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back in the afternoon at 7",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 21,
       "Text": "in the afternoon at 7",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -721,14 +452,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back afternoon at 7",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 14,
       "Text": "afternoon at 7",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -736,14 +467,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back afternoon 7:00",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 14,
       "Text": "afternoon 7:00",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -751,14 +482,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back afternoon 7:00:14",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 17,
       "Text": "afternoon 7:00:14",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -766,14 +497,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back afternoon seven pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 18,
       "Text": "afternoon seven pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -781,14 +512,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back seven thirty pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 15,
       "Text": "seven thirty pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -796,14 +527,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back seven thirty five pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 20,
       "Text": "seven thirty five pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -811,14 +542,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back at eleven five",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 16,
       "Length": 11,
       "Text": "eleven five",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -826,14 +557,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back three mins to five thirty ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 25,
       "Text": "three mins to five thirty",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -841,14 +572,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back five thirty in the night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 24,
       "Text": "five thirty in the night",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -856,14 +587,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back in the night five thirty",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 24,
       "Text": "in the night five thirty",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -871,14 +602,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back noonish",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 7,
       "Text": "noonish",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -886,14 +617,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back noon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 4,
       "Text": "noon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -901,14 +632,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 12 noon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 7,
       "Text": "12 noon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -916,14 +647,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 11ish",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 5,
       "Text": "11ish",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -931,14 +662,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 11-ish",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 6,
       "Text": "11-ish",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -946,14 +677,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 340pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 5,
       "Text": "340pm",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -961,14 +692,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 1140 a.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "1140 a.m.",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -976,14 +707,14 @@
 {
   "TestType": "BasicTest",
   "Input": "midnight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 8,
       "Text": "midnight",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -991,14 +722,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid-night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 9,
       "Text": "mid-night",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1006,14 +737,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 9,
       "Text": "mid night",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1021,14 +752,14 @@
 {
   "TestType": "BasicTest",
   "Input": "midmorning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 10,
       "Text": "midmorning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1036,14 +767,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid-morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 11,
       "Text": "mid-morning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1051,14 +782,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 11,
       "Text": "mid morning",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1066,14 +797,14 @@
 {
   "TestType": "BasicTest",
   "Input": "midafternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 12,
       "Text": "midafternoon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1081,14 +812,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid-afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 13,
       "Text": "mid-afternoon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1096,14 +827,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 13,
       "Text": "mid afternoon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1111,14 +842,14 @@
 {
   "TestType": "BasicTest",
   "Input": "midday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 6,
       "Text": "midday",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1126,14 +857,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid-day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 7,
       "Text": "mid-day",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1141,14 +872,14 @@
 {
   "TestType": "BasicTest",
   "Input": "mid day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 7,
       "Text": "mid day",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
@@ -1156,27 +887,300 @@
 {
   "TestType": "BasicTest",
   "Input": "noon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "noon",
-      "Type": "time",
-      "Data": null
+      "Type": "time"
     }
   ]
 }
 ,
 {
   "TestType": "BasicTest",
-  "Input": "which emails have gotten p as subject",
-  "Results": null
+  "Input": "I'll be back 7pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 3,
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
-  "Input": "which emails have gotten a reply",
-  "Results": null
+  "Input": "I'll be back 7 p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "7 p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "7 p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 7,
+      "Text": "7 p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "7 p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56 a m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 8,
+      "Text": "7:56 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 a. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 12,
+      "Text": "7:56:35 a. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 am",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 10,
+      "Text": "7:56:35 am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 a. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 13,
+      "Text": "7:56:35 a. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 15,
+      "Text": "seven thirty pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 17,
+      "Text": "seven thirty p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 16,
+      "Text": "seven thirty p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 17,
+      "Text": "seven thirty p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 18,
+      "Text": "seven thirty p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 340pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 340 pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "340 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 9,
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 8,
+      "Text": "1140 a m",
+      "Type": "time"
+    }
+  ]
 }
 ]

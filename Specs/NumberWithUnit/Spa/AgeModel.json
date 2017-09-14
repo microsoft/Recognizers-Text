@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cinco años",
       "Start": 13,
       "End": 22,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "5"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Esta saga se remonta a casi diez años atrás.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "diez años",
       "Start": 28,
       "End": 36,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "10"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": "¡Mi pelo ya está gris y sólo tengo 29 años!",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "29 años",
       "Start": 35,
       "End": 41,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "29"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Ahora cuenta noventa y cinco años: tiene una perspectiva de las cosas y tiene memoria.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "noventa y cinco años",
       "Start": 13,
       "End": 32,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "95"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La Gran Muralla china tiene más de 500 años y se extiende más de 5,000 millas.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500 años",
       "Start": 35,
       "End": 42,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "500"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Ya tiene 60 años, pues en principio nació el 8 de mayo de 1945.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "60 años",
       "Start": 9,
       "End": 15,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "60"
       }
@@ -115,15 +115,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Y al 25% no se les diagnostica hasta que tienen casi tres años.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres años",
       "Start": 53,
       "End": 61,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "3"
       }
@@ -134,15 +134,15 @@
 {
   "TestType": "BasicTest",
   "Input": "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "un año",
       "Start": 90,
       "End": 95,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Año",
         "value": "1"
       }
@@ -153,15 +153,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La sublevación se produjo cuando yo era un bebé y tenía tan solo diez meses.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "diez meses",
       "Start": 65,
       "End": 74,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Mes",
         "value": "10"
       }
@@ -172,15 +172,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La propuesta de la Comisión tiene ya 8 meses.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "8 meses",
       "Start": 37,
       "End": 43,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Mes",
         "value": "8"
       }
@@ -191,15 +191,15 @@
 {
   "TestType": "BasicTest",
   "Input": "A alrededor del 50% de ellos no se les diagnostica hasta los dieciocho meses de edad.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dieciocho meses",
       "Start": 61,
       "End": 75,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Mes",
         "value": "18"
       }
@@ -210,15 +210,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Es posible, pero en 2006 mataron a 330 000 focas arpa y el 95% de ellas tenían menos de tres meses.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres meses",
       "Start": 88,
       "End": 97,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Mes",
         "value": "3"
       }
@@ -229,15 +229,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Si seguimos adelante con la resolución en el período parcial de sesiones de diciembre, tendrá para entonces tres semanas de antigüedad.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres semanas",
       "Start": 108,
       "End": 119,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Semana",
         "value": "3"
       }
@@ -248,15 +248,15 @@
 {
   "TestType": "BasicTest",
   "Input": "También pueden revocar su consentimiento hasta que el hijo haya cumplido 6 semanas de edad.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "6 semanas",
       "Start": 73,
       "End": 81,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Semana",
         "value": "6"
       }
@@ -267,15 +267,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Otras materias primas deberán utilizarse en un plazo de cinco días.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "cinco días",
       "Start": 56,
       "End": 65,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Día",
         "value": "5"
       }
@@ -286,15 +286,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Para clubes de los demás países, una cuenta vencida por 90 días se considera morosa.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "90 días",
       "Start": 56,
       "End": 62,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Día",
         "value": "90"
       }

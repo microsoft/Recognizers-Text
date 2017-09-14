@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "Estaré afuera de 5 a 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 10,
       "Text": "de 5 a 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera de las 5 a las 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 18,
       "Text": "de las 5 a las 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera desde las 5 a las 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 21,
       "Text": "desde las 5 a las 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera desde las 5 hasta las 6pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 25,
       "Text": "desde las 5 hasta las 6pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera de 5 a 6p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 12,
       "Text": "de 5 a 6p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera de 5 a 6 de la tarde",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 20,
       "Text": "de 5 a 6 de la tarde",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera desde las 5 hasta las 6p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 27,
       "Text": "desde las 5 hasta las 6p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 5 y las 6p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 23,
       "Text": "entre las 5 y las 6p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 5 y 6p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 19,
       "Text": "entre las 5 y 6p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 5 y las 6p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 23,
       "Text": "entre las 5 y las 6p.m.",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 5 y las 6 de la mañana",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 32,
       "Text": "entre las 5 y las 6 de la mañana",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 5 y las seis de la madrugada",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 38,
       "Text": "entre las 5 y las seis de la madrugada",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -181,14 +181,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 4pm hasta 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 23,
       "Text": "desde las 4pm hasta 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -196,14 +196,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 4:00 hasta 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 24,
       "Text": "desde las 4:00 hasta 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -211,14 +211,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 4:00 hasta las 7 en punto",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 35,
       "Text": "desde las 4:00 hasta las 7 en punto",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -226,14 +226,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de 3pm a siete y media",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 22,
       "Text": "de 3pm a siete y media",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -241,14 +241,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera 4pm-5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 7,
       "Text": "4pm-5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -256,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera 4pm - 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "4pm - 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -271,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de tres menos veinte a cinco de la tarde",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 40,
       "Text": "de tres menos veinte a cinco de la tarde",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -286,14 +286,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de 4pm a 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 12,
       "Text": "de 4pm a 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -301,14 +301,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de 4pm a cinco y media",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 22,
       "Text": "de 4pm a cinco y media",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -316,14 +316,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de 4pm a cinco treinta",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 22,
       "Text": "de 4pm a cinco treinta",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -331,14 +331,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera de 3 de la mañana hasta las 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 31,
       "Text": "de 3 de la mañana hasta las 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -346,14 +346,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 3 de la madrugada hasta las cinco de la tarde",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 55,
       "Text": "desde las 3 de la madrugada hasta las cinco de la tarde",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -361,14 +361,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera entre las 4pm y las cinco y media",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 33,
       "Text": "entre las 4pm y las cinco y media",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -376,14 +376,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Estaré fuera entre las 3 de la mañana y las 5pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 34,
       "Text": "entre las 3 de la mañana y las 5pm",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -391,14 +391,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Nos vemos en la mañana",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 16,
       "Length": 6,
       "Text": "mañana",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -406,14 +406,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Nos vemos por la tarde",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 17,
       "Length": 5,
       "Text": "tarde",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -421,14 +421,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Te veo a la noche",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 5,
       "Text": "noche",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -436,14 +436,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Nos vemos en la madrugada",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 16,
       "Length": 9,
       "Text": "madrugada",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }
@@ -451,14 +451,14 @@
 {
   "TestType": "BasicTest",
   "Input": "Nos vemos de madrugada",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "madrugada",
-      "Type": "timerange",
-      "Data": null
+      "Type": "timerange"
     }
   ]
 }

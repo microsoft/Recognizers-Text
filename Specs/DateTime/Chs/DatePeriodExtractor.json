@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "时间从一月十日到十二日",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 9,
       "Text": "从一月十日到十二日",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "时间从一月19到20日",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 9,
       "Text": "从一月19到20日",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "从一月十日到20日",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 9,
       "Text": "从一月十日到20日",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明年四月",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "明年四月",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "我们去年5月见过",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 2,
       "Length": 4,
       "Text": "去年5月",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "下周末",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "下周末",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "会议在下周",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 3,
       "Length": 2,
       "Text": "下周",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "下个月完工",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "下个月",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "下周如何",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 2,
       "Text": "下周",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "明年",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 2,
       "Text": "明年",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "奥运会在2008年",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 4,
       "Length": 5,
       "Text": "2008年",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "十月的第一周是国庆节",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 6,
       "Text": "十月的第一周",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -181,14 +181,14 @@
 {
   "TestType": "BasicTest",
   "Input": "三月二十八日到四月15日",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 12,
       "Text": "三月二十八日到四月15日",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -196,14 +196,14 @@
 {
   "TestType": "BasicTest",
   "Input": "前1周",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "前1周",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -211,14 +211,14 @@
 {
   "TestType": "BasicTest",
   "Input": "上1月",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "上1月",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -226,14 +226,14 @@
 {
   "TestType": "BasicTest",
   "Input": "下1年",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "下1年",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -241,14 +241,14 @@
 {
   "TestType": "BasicTest",
   "Input": "下1天",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 3,
       "Text": "下1天",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -256,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "今年夏天",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 4,
       "Text": "今年夏天",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }
@@ -271,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "今年第一季度",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 6,
       "Text": "今年第一季度",
-      "Type": "daterange",
-      "Data": null
+      "Type": "daterange"
     }
   ]
 }

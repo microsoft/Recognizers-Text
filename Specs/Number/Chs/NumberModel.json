@@ -1,34 +1,51 @@
 [{
   "TestType": "MultiTest",
   "Input": "两百点两",
-  "ResultsLength": 2,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两百",
+      "Start": 0,
+      "End": 1,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200"
+      }
+    },
+    {
+      "Text": "两",
+      "Start": 3,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiOneTest",
   "Input": "一点两小时的会议",
-  "ResultsLength": 2,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一",
       "Start": 0,
       "End": 0,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1"
       }
     },
     {
-      "$id": "3",
       "Text": "两",
       "Start": 2,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "4",
         "value": "2"
       }
     }
@@ -38,44 +55,86 @@
 {
   "TestType": "MultiTest",
   "Input": "一只",
-  "ResultsLength": 1,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "十斤",
-  "ResultsLength": 1,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "一切",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "九年八吨",
-  "ResultsLength": 2,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9"
+      }
+    },
+    {
+      "Text": "八",
+      "Start": 2,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "8"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "肆佰陸拾",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "肆佰陸拾",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "460"
       }
     }
@@ -85,16 +144,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十 余 万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十 余 万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100000"
       }
     }
@@ -104,16 +162,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百五十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百五十二",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "152"
       }
     }
@@ -123,16 +180,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹佰伍拾",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹佰伍拾",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "150"
       }
     }
@@ -142,16 +198,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千四百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千四百五",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2450"
       }
     }
@@ -161,16 +216,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负三十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负三十二",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-32"
       }
     }
@@ -180,30 +234,31 @@
 {
   "TestType": "MultiTest",
   "Input": "万",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "万万",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二",
       "Start": 0,
       "End": 0,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2"
       }
     }
@@ -213,16 +268,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10万万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10万万",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000000"
       }
     }
@@ -232,16 +286,15 @@
 {
   "TestType": "BasicTest",
   "Input": "4.78万亿",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "4.78万亿",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4780000000000"
       }
     }
@@ -251,16 +304,15 @@
 {
   "TestType": "BasicTest",
   "Input": "7 万5 千4 百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "7 万5 千4 百",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "75400"
       }
     }
@@ -270,16 +322,15 @@
 {
   "TestType": "BasicTest",
   "Input": "40k",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "40k",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40000"
       }
     }
@@ -289,16 +340,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二十 億",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二十 億",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2000000000"
       }
     }
@@ -308,16 +358,15 @@
 {
   "TestType": "BasicTest",
   "Input": "４，５６５",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "４，５６５",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4565"
       }
     }
@@ -327,16 +376,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百五十",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "450"
       }
     }
@@ -346,16 +394,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "450"
       }
     }
@@ -365,16 +412,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千零一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千零一",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1001"
       }
     }
@@ -384,16 +430,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百零一万一千",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百零一万一千",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1011000"
       }
     }
@@ -403,16 +448,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千两百三十四万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千两百三十四万",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12340000"
       }
     }
@@ -422,16 +466,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五亿零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五亿零六",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "500000006"
       }
     }
@@ -441,16 +484,15 @@
 {
   "TestType": "BasicTest",
   "Input": "七十八万五佰零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "七十八万五佰零六",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "780506"
       }
     }
@@ -460,16 +502,15 @@
 {
   "TestType": "BasicTest",
   "Input": "肆拾肆",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "肆拾肆",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "44"
       }
     }
@@ -479,16 +520,15 @@
 {
   "TestType": "BasicTest",
   "Input": "倆千两百贰拾二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "倆千两百贰拾二",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2222"
       }
     }
@@ -498,16 +538,15 @@
 {
   "TestType": "BasicTest",
   "Input": "5万4千6百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5万4千6百",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "54600"
       }
     }
@@ -517,16 +556,15 @@
 {
   "TestType": "BasicTest",
   "Input": "5亿1万4千6百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5亿1万4千6百",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "500014600"
       }
     }
@@ -536,16 +574,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-10000",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-10000",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-10000"
       }
     }
@@ -555,16 +592,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一打",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一打",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12"
       }
     }
@@ -574,16 +610,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾万零五十六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾万零五十六",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100056"
       }
     }
@@ -593,16 +628,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十",
       "Start": 0,
       "End": 0,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10"
       }
     }
@@ -612,16 +646,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十五",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "15"
       }
     }
@@ -631,16 +664,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100"
       }
     }
@@ -650,16 +682,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百九十九",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百九十九",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "999"
       }
     }
@@ -669,16 +700,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百九",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百九",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "990"
       }
     }
@@ -688,16 +718,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二百五十",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "250"
       }
     }
@@ -707,16 +736,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千零五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千零五十",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1050"
       }
     }
@@ -726,16 +754,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千零五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千零五",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1005"
       }
     }
@@ -745,16 +772,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千陆",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千陆",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1600"
       }
     }
@@ -764,16 +790,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一万三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一万三",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "13000"
       }
     }
@@ -783,16 +808,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一万二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一万二百五十",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10250"
       }
     }
@@ -802,16 +826,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一万零二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一万零二百五十",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10250"
       }
     }
@@ -821,16 +844,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九万四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九万四",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "94000"
       }
     }
@@ -840,16 +862,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九十二万四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九十二万四",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "924000"
       }
     }
@@ -859,16 +880,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九万零四百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九万零四百",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "90400"
       }
     }
@@ -878,16 +898,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百万零四百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百万零四百",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "9000400"
       }
     }
@@ -897,16 +916,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千零五万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千零五万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40050000"
       }
     }
@@ -916,16 +934,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千万",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40000000"
       }
     }
@@ -935,16 +952,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千万零六千",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千万零六千",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40006000"
       }
     }
@@ -954,16 +970,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四亿",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四亿",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000000"
       }
     }
@@ -973,16 +988,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四亿五千六百四十二万零一十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四亿五千六百四十二万零一十五",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "456420015"
       }
     }
@@ -992,16 +1006,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四万五千六百二十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四万五千六百二十二",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "45622"
       }
     }
@@ -1011,16 +1024,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五兆六十二亿四万五千二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五兆六十二亿四万五千二",
       "Start": 0,
       "End": 10,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5006200045200"
       }
     }
@@ -1030,16 +1042,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五十五兆一十二亿四万五千二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五十五兆一十二亿四万五千二",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "55001200045200"
       }
     }
@@ -1049,16 +1060,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十万柒仟捌佰伍拾肆",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十万柒仟捌佰伍拾肆",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "107854"
       }
     }
@@ -1068,16 +1078,15 @@
 {
   "TestType": "BasicTest",
   "Input": "半百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "半百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "50"
       }
     }
@@ -1087,16 +1096,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾万零五十六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾万零五十六",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100056"
       }
     }
@@ -1106,16 +1114,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾六万零五百零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾六万零五百零六",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "160506"
       }
     }
@@ -1125,16 +1132,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾亿零六万零五百零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾亿零六万零五百零六",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000060506"
       }
     }
@@ -1144,16 +1150,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百万零四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百万零四",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000004"
       }
     }
@@ -1163,16 +1168,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四十万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四十万",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000"
       }
     }
@@ -1182,16 +1186,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千零四万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千零四万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40040000"
       }
     }
@@ -1201,16 +1204,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四十五亿四千零四万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四十五亿四千零四万",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4540040000"
       }
     }
@@ -1220,16 +1222,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负四十五亿零四百零四万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负四十五亿零四百零四万",
       "Start": 0,
       "End": 10,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-4504040000"
       }
     }
@@ -1239,16 +1240,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负四百零五亿零四百零四万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负四百零五亿零四百零四万",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-40504040000"
       }
     }
@@ -1258,16 +1258,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四万万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四万万",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000000"
       }
     }
@@ -1277,16 +1276,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五十打",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五十打",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "600"
       }
     }
@@ -1296,16 +1294,15 @@
 {
   "TestType": "BasicTest",
   "Input": "百三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "百三",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "130"
       }
     }
@@ -1315,44 +1312,141 @@
 {
   "TestType": "MultiTest",
   "Input": "1, 234, 567",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567",
+      "Start": 8,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "二百五, 二百五, 还有二百五。",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百五",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 5,
+      "End": 7,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 12,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "1502222, 二百五, 还有二分之。",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1502222",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1502222"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 9,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二",
+      "Start": 16,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "199个",
-  "ResultsLength": 1,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "199",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "199"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "1,050,000,000",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1,050,000,000",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1050000000"
       }
     }
@@ -1362,16 +1456,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千三百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千三百五",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2350"
       }
     }
@@ -1381,16 +1474,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百 五 十 二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百 五 十 二",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "152"
       }
     }
@@ -1400,16 +1492,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千 四 百 五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千 四 百 五",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2450"
       }
     }
@@ -1419,16 +1510,15 @@
 {
   "TestType": "BasicTest",
   "Input": "7万 5千 4百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "7万 5千 4百",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "75400"
       }
     }
@@ -1438,16 +1528,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三千 八百 九十六 万 四千 九百 六十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三千 八百 九十六 万 四千 九百 六十五",
       "Start": 0,
       "End": 20,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "38964965"
       }
     }
@@ -1457,16 +1546,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三千 九百 六十五 ",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三千 九百 六十五",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3965"
       }
     }
@@ -1476,16 +1564,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五百 余万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五百 余万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5000000"
       }
     }
@@ -1495,16 +1582,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千多万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千多万",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10000000"
       }
     }
@@ -1514,16 +1600,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十多万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十多万",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100000"
       }
     }
@@ -1533,16 +1618,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二十几万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二十几万",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200000"
       }
     }
@@ -1552,16 +1636,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百零几万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百零几万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000"
       }
     }
@@ -1571,16 +1654,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一千五百零几万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一千五百零几万",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "15000000"
       }
     }
@@ -1590,16 +1672,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百 二 十 几亿",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百 二 十 几亿",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12000000000"
       }
     }
@@ -1609,16 +1690,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三双",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三双",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "6"
       }
     }
@@ -1628,16 +1708,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百对",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百对",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200"
       }
     }
@@ -1647,16 +1726,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十双",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十双",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "20"
       }
     }
@@ -1666,16 +1744,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百五十对",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百五十对",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "300"
       }
     }
@@ -1685,16 +1762,15 @@
 {
   "TestType": "MultiOneTest",
   "Input": "十打苹果",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十打",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "120"
       }
     }
@@ -1704,23 +1780,60 @@
 {
   "TestType": "MultiTest",
   "Input": "１９９１年１月１６日晚巴黎时间２０点：法国总统密特朗发表电视讲话，宣布和平解决海湾危机已经让位于战争，法国已经作好一切战斗准备。",
-  "ResultsLength": 4,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１９９１",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1991"
+      }
+    },
+    {
+      "Text": "１",
+      "Start": 5,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "１６",
+      "Start": 7,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "16"
+      }
+    },
+    {
+      "Text": "２０",
+      "Start": 15,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "500余万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500余万",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5000000"
       }
     }
@@ -1730,16 +1843,15 @@
 {
   "TestType": "BasicTest",
   "Input": "八千 三百 八十五 万 二千 三百 二十六 点三三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "八千 三百 八十五 万 二千 三百 二十六 点三三",
       "Start": 0,
       "End": 24,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "83852326.33"
       }
     }
@@ -1749,16 +1861,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2^5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2^5",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "32"
       }
     }
@@ -1768,16 +1879,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2e5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2e5",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200000"
       }
     }
@@ -1787,16 +1897,15 @@
 {
   "TestType": "MultiOneTest",
   "Input": "四百多",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400"
       }
     }
@@ -1806,16 +1915,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两双",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两双",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4"
       }
     }
@@ -1825,16 +1933,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百五     ",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "150"
       }
     }
@@ -1844,16 +1951,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十 余 萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十 余 萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100000"
       }
     }
@@ -1863,16 +1969,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百五十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百五十二",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "152"
       }
     }
@@ -1882,16 +1987,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹佰伍拾",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹佰伍拾",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "150"
       }
     }
@@ -1901,16 +2005,15 @@
 {
   "TestType": "BasicTest",
   "Input": "兩千四百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "兩千四百五",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2450"
       }
     }
@@ -1920,16 +2023,15 @@
 {
   "TestType": "BasicTest",
   "Input": "負三十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負三十二",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-32"
       }
     }
@@ -1939,30 +2041,31 @@
 {
   "TestType": "MultiTest",
   "Input": "萬",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "萬萬",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二",
       "Start": 0,
       "End": 0,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2"
       }
     }
@@ -1972,16 +2075,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10萬萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10萬萬",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000000"
       }
     }
@@ -1991,16 +2093,15 @@
 {
   "TestType": "BasicTest",
   "Input": "4.78萬億",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "4.78萬億",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4780000000000"
       }
     }
@@ -2010,16 +2111,15 @@
 {
   "TestType": "BasicTest",
   "Input": "7 萬5 千4 百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "7 萬5 千4 百",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "75400"
       }
     }
@@ -2029,16 +2129,15 @@
 {
   "TestType": "BasicTest",
   "Input": "40k",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "40k",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40000"
       }
     }
@@ -2048,16 +2147,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二十 億",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二十 億",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2000000000"
       }
     }
@@ -2067,16 +2165,15 @@
 {
   "TestType": "BasicTest",
   "Input": "４，５６５",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "４，５６５",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4565"
       }
     }
@@ -2086,16 +2183,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百五十",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "450"
       }
     }
@@ -2105,16 +2201,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "450"
       }
     }
@@ -2124,16 +2219,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千零壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千零壹",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1001"
       }
     }
@@ -2143,16 +2237,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百零壹萬壹千",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百零壹萬壹千",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1011000"
       }
     }
@@ -2162,16 +2255,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千兩百三十四萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千兩百三十四萬",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12340000"
       }
     }
@@ -2181,16 +2273,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五億零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五億零六",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "500000006"
       }
     }
@@ -2200,16 +2291,15 @@
 {
   "TestType": "BasicTest",
   "Input": "七十八萬五佰零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "七十八萬五佰零六",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "780506"
       }
     }
@@ -2219,16 +2309,15 @@
 {
   "TestType": "BasicTest",
   "Input": "肆拾肆",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "肆拾肆",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "44"
       }
     }
@@ -2238,16 +2327,15 @@
 {
   "TestType": "BasicTest",
   "Input": "兩千兩百貳拾二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "兩千兩百貳拾二",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2222"
       }
     }
@@ -2257,16 +2345,15 @@
 {
   "TestType": "BasicTest",
   "Input": "5萬4千6百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5萬4千6百",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "54600"
       }
     }
@@ -2276,16 +2363,15 @@
 {
   "TestType": "BasicTest",
   "Input": "5億1萬4千6百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5億1萬4千6百",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "500014600"
       }
     }
@@ -2295,16 +2381,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-10000",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-10000",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-10000"
       }
     }
@@ -2314,16 +2399,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹打",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹打",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12"
       }
     }
@@ -2333,16 +2417,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾萬零五十六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾萬零五十六",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100056"
       }
     }
@@ -2352,16 +2435,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十",
       "Start": 0,
       "End": 0,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10"
       }
     }
@@ -2371,16 +2453,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十五",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "15"
       }
     }
@@ -2390,16 +2471,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100"
       }
     }
@@ -2409,16 +2489,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百九十九",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百九十九",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "999"
       }
     }
@@ -2428,16 +2507,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百九",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百九",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "990"
       }
     }
@@ -2447,16 +2525,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二百五十",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "250"
       }
     }
@@ -2466,16 +2543,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千零五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千零五十",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1050"
       }
     }
@@ -2485,16 +2561,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千零五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千零五",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1005"
       }
     }
@@ -2504,16 +2579,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千六",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1600"
       }
     }
@@ -2523,16 +2597,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹萬三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹萬三",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "13000"
       }
     }
@@ -2542,16 +2615,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹萬二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹萬二百五十",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10250"
       }
     }
@@ -2561,16 +2633,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹萬零二百五十",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹萬零二百五十",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10250"
       }
     }
@@ -2580,16 +2651,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九萬四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九萬四",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "94000"
       }
     }
@@ -2599,16 +2669,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九十二萬四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九十二萬四",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "924000"
       }
     }
@@ -2618,16 +2687,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九萬零四百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九萬零四百",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "90400"
       }
     }
@@ -2637,16 +2705,15 @@
 {
   "TestType": "BasicTest",
   "Input": "九百萬零四百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "九百萬零四百",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "9000400"
       }
     }
@@ -2656,16 +2723,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千零五萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千零五萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40050000"
       }
     }
@@ -2675,16 +2741,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千萬",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40000000"
       }
     }
@@ -2694,16 +2759,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千萬零六千",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千萬零六千",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40006000"
       }
     }
@@ -2713,16 +2777,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四億",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四億",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000000"
       }
     }
@@ -2732,16 +2795,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四億五千六百四十二萬零壹十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四億五千六百四十二萬零壹十五",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "456420015"
       }
     }
@@ -2751,16 +2813,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四萬五千六百二十二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四萬五千六百二十二",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "45622"
       }
     }
@@ -2770,16 +2831,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五兆六十二億四萬五千二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五兆六十二億四萬五千二",
       "Start": 0,
       "End": 10,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5006200045200"
       }
     }
@@ -2789,16 +2849,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五十五兆壹十二億四萬五千二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五十五兆壹十二億四萬五千二",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "55001200045200"
       }
     }
@@ -2808,16 +2867,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十萬柒仟捌佰伍拾肆",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十萬柒仟捌佰伍拾肆",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "107854"
       }
     }
@@ -2827,16 +2885,15 @@
 {
   "TestType": "BasicTest",
   "Input": "半百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "半百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "50"
       }
     }
@@ -2846,16 +2903,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾萬零五十六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾萬零五十六",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100056"
       }
     }
@@ -2865,16 +2921,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾六萬零五百零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾六萬零五百零六",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "160506"
       }
     }
@@ -2884,16 +2939,15 @@
 {
   "TestType": "BasicTest",
   "Input": "拾億零六萬零五百零六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "拾億零六萬零五百零六",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000060506"
       }
     }
@@ -2903,16 +2957,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百萬零四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百萬零四",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000004"
       }
     }
@@ -2922,16 +2975,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四十萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四十萬",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000"
       }
     }
@@ -2941,16 +2993,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千零四萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千零四萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "40040000"
       }
     }
@@ -2960,16 +3011,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四十五億四千零四萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四十五億四千零四萬",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4540040000"
       }
     }
@@ -2979,16 +3029,15 @@
 {
   "TestType": "BasicTest",
   "Input": "負四十五億零四百零四萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負四十五億零四百零四萬",
       "Start": 0,
       "End": 10,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-4504040000"
       }
     }
@@ -2998,16 +3047,15 @@
 {
   "TestType": "BasicTest",
   "Input": "負四百零五億零四百零四萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負四百零五億零四百零四萬",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-40504040000"
       }
     }
@@ -3017,16 +3065,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四萬萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四萬萬",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400000000"
       }
     }
@@ -3036,16 +3083,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五十打",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五十打",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "600"
       }
     }
@@ -3055,16 +3101,15 @@
 {
   "TestType": "BasicTest",
   "Input": "百三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "百三",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "130"
       }
     }
@@ -3074,16 +3119,15 @@
 {
   "TestType": "BasicTest",
   "Input": "5,236",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5,236",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5236"
       }
     }
@@ -3093,44 +3137,141 @@
 {
   "TestType": "MultiTest",
   "Input": "1, 234, 567",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567",
+      "Start": 8,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "二百五, 二百五, 還有二百五。",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百五",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 5,
+      "End": 7,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 12,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "1502222, 二百五, 還有二分之。",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1502222",
+      "Start": 0,
+      "End": 6,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1502222"
+      }
+    },
+    {
+      "Text": "二百五",
+      "Start": 9,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二",
+      "Start": 16,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "199個",
-  "ResultsLength": 1,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "199",
+      "Start": 0,
+      "End": 2,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "199"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "1,050,000,000",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1,050,000,000",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1050000000"
       }
     }
@@ -3140,16 +3281,15 @@
 {
   "TestType": "BasicTest",
   "Input": "兩千三百五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "兩千三百五",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2350"
       }
     }
@@ -3159,16 +3299,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百 五 十 二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百 五 十 二",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "152"
       }
     }
@@ -3178,16 +3317,15 @@
 {
   "TestType": "BasicTest",
   "Input": "兩千 四 百 五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "兩千 四 百 五",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2450"
       }
     }
@@ -3197,16 +3335,15 @@
 {
   "TestType": "BasicTest",
   "Input": "7萬 5千 4百",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "7萬 5千 4百",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "75400"
       }
     }
@@ -3216,16 +3353,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三千 八百 九十六 萬 四千 九百 六十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三千 八百 九十六 萬 四千 九百 六十五",
       "Start": 0,
       "End": 20,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "38964965"
       }
     }
@@ -3235,16 +3371,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三千 九百 六十五 ",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三千 九百 六十五",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3965"
       }
     }
@@ -3254,16 +3389,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五百 余萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五百 余萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5000000"
       }
     }
@@ -3273,16 +3407,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千多萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千多萬",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10000000"
       }
     }
@@ -3292,16 +3425,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十多萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十多萬",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "100000"
       }
     }
@@ -3311,16 +3443,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二十幾萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二十幾萬",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200000"
       }
     }
@@ -3330,16 +3461,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百零幾萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百零幾萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000"
       }
     }
@@ -3349,16 +3479,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹千五百零幾萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹千五百零幾萬",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "15000000"
       }
     }
@@ -3368,16 +3497,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百 二 十 幾億",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百 二 十 幾億",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "12000000000"
       }
     }
@@ -3387,16 +3515,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三雙",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三雙",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "6"
       }
     }
@@ -3406,16 +3533,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百對",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百對",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200"
       }
     }
@@ -3425,16 +3551,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十雙",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十雙",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "20"
       }
     }
@@ -3444,16 +3569,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百五十對",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百五十對",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "300"
       }
     }
@@ -3463,16 +3587,15 @@
 {
   "TestType": "MultiOneTest",
   "Input": "十打蘋果",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十打",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "120"
       }
     }
@@ -3482,23 +3605,60 @@
 {
   "TestType": "MultiTest",
   "Input": "１９９１年１月１６日晚巴黎時間２０點：法國總統密特朗發表電視講話，宣布和平解抉海灣危機已經讓位於戰爭，法國已經作好壹切戰鬥準備。",
-  "ResultsLength": 4,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１９９１",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1991"
+      }
+    },
+    {
+      "Text": "１",
+      "Start": 5,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "１６",
+      "Start": 7,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "16"
+      }
+    },
+    {
+      "Text": "２０",
+      "Start": 15,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "500余萬",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500余萬",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "5000000"
       }
     }
@@ -3508,16 +3668,15 @@
 {
   "TestType": "BasicTest",
   "Input": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
       "Start": 0,
       "End": 24,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "83852326.33"
       }
     }
@@ -3527,16 +3686,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2^5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2^5",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "32"
       }
     }
@@ -3546,16 +3704,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2e5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2e5",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "200000"
       }
     }
@@ -3565,16 +3722,15 @@
 {
   "TestType": "MultiOneTest",
   "Input": "四百多",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400"
       }
     }
@@ -3584,16 +3740,15 @@
 {
   "TestType": "BasicTest",
   "Input": "兩雙",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "兩雙",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4"
       }
     }
@@ -3603,16 +3758,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百五     ",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "150"
       }
     }
@@ -3622,44 +3776,47 @@
 {
   "TestType": "MultiTest",
   "Input": "百分之五十五点五七九",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "百分之十万零六百五十一",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "六千零五十一个百分点",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "六百一十一点二五五个百分点",
-  "ResultsLength": 0,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "负六点六",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负六点六",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-6.6"
       }
     }
@@ -3669,16 +3826,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十五点七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十五点七",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "15.7"
       }
     }
@@ -3688,16 +3844,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１１.92亿",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１１.92亿",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1192000000"
       }
     }
@@ -3707,16 +3862,15 @@
 {
   "TestType": "BasicTest",
   "Input": "２．２",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "２．２",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2.2"
       }
     }
@@ -3726,16 +3880,15 @@
 {
   "TestType": "BasicTest",
   "Input": "２．２亿",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "２．２亿",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "220000000"
       }
     }
@@ -3745,16 +3898,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1000  万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1000  万",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10000000"
       }
     }
@@ -3764,16 +3916,15 @@
 {
   "TestType": "BasicTest",
   "Input": "21.2E0",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "21.2E0",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "21.2"
       }
     }
@@ -3783,16 +3934,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2^-1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2^-1",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -3802,16 +3952,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四百 点 五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四百 点 五",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "400.5"
       }
     }
@@ -3821,16 +3970,15 @@
 {
   "TestType": "BasicTest",
   "Input": "零点五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "零点五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -3840,16 +3988,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10.233",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10.233",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10.233"
       }
     }
@@ -3859,16 +4006,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-1e1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-1e1",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-10"
       }
     }
@@ -3878,16 +4024,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-2.5 M",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-2.5 M",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-2500000"
       }
     }
@@ -3897,16 +4042,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二点五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二点五",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2.5"
       }
     }
@@ -3916,16 +4060,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十点二三三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十点二三三",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10.233"
       }
     }
@@ -3935,16 +4078,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千万点五五四四",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千万点五五四四",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "20000000.5544"
       }
     }
@@ -3954,16 +4096,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千点零",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千点零",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2000"
       }
     }
@@ -3973,16 +4114,15 @@
 {
   "TestType": "BasicTest",
   "Input": "两千三点一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "两千三点一",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2300.1"
       }
     }
@@ -3992,16 +4132,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10.233",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10.233",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10.233"
       }
     }
@@ -4011,16 +4150,15 @@
 {
   "TestType": "BasicTest",
   "Input": "10,000.233",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10,000.233",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "10000.233"
       }
     }
@@ -4030,16 +4168,15 @@
 {
   "TestType": "BasicTest",
   "Input": ".23456000",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": ".23456000",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.23456"
       }
     }
@@ -4049,16 +4186,15 @@
 {
   "TestType": "BasicTest",
   "Input": "4.800",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "4.800",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4.8"
       }
     }
@@ -4068,16 +4204,15 @@
 {
   "TestType": "BasicTest",
   "Input": "２.７８９０",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "２.７８９０",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2.789"
       }
     }
@@ -4087,16 +4222,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2.3",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2.3",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "2.3"
       }
     }
@@ -4106,16 +4240,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2.3万",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2.3万",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "23000"
       }
     }
@@ -4125,16 +4258,15 @@
 {
   "TestType": "BasicTest",
   "Input": "２.７８９０e－１",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "２.７８９０e－１",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.2789"
       }
     }
@@ -4144,16 +4276,15 @@
 {
   "TestType": "BasicTest",
   "Input": ".5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": ".5",
       "Start": 0,
       "End": 1,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -4163,16 +4294,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-.5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-.5",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-0.5"
       }
     }
@@ -4182,44 +4312,177 @@
 {
   "TestType": "MultiTest",
   "Input": "1, 234, 567.3",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567.3",
+      "Start": 8,
+      "End": 12,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567.3"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "１, 2４4, ６６7.123 五点八",
-  "ResultsLength": 4,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "2４4",
+      "Start": 3,
+      "End": 5,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "244"
+      }
+    },
+    {
+      "Text": "６６7.123",
+      "Start": 8,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "667.123"
+      }
+    },
+    {
+      "Text": "五点八",
+      "Start": 16,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.8"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "二百三十三，五百七十七，一千六点五。",
-  "ResultsLength": 3,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百三十三",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "233"
+      }
+    },
+    {
+      "Text": "五百七十七",
+      "Start": 6,
+      "End": 10,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "577"
+      }
+    },
+    {
+      "Text": "一千六点五",
+      "Start": 12,
+      "End": 16,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1600.5"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "2222.2222.22222.222",
-  "ResultsLength": 4,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2222",
+      "Start": 0,
+      "End": 3,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "Start": 5,
+      "End": 8,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "22222",
+      "Start": 10,
+      "End": 14,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "22222"
+      }
+    },
+    {
+      "Text": "222",
+      "Start": 16,
+      "End": 18,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiOneTest",
   "Input": "...9",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "9",
       "Start": 3,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "9"
       }
     }
@@ -4229,16 +4492,15 @@
 {
   "TestType": "MultiOneTest",
   "Input": "－－9",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "9",
       "Start": 2,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "9"
       }
     }
@@ -4248,16 +4510,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1.1^+23",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1.1^+23",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "8.95430243255239"
       }
     }
@@ -4267,16 +4528,15 @@
 {
   "TestType": "BasicTest",
   "Input": "2.5^-1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2.5^-1",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.4"
       }
     }
@@ -4286,16 +4546,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-1.1^+23",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-1.1^+23",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-8.95430243255239"
       }
     }
@@ -4305,16 +4564,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-2.5^-1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-2.5^-1",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-0.4"
       }
     }
@@ -4324,16 +4582,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-1.1^--23",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-1.1^--23",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-8.95430243255239"
       }
     }
@@ -4343,16 +4600,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-127.32e13",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-127.32e13",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.2732E+15"
       }
     }
@@ -4362,16 +4618,15 @@
 {
   "TestType": "BasicTest",
   "Input": "12.32e+14",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "12.32e+14",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1.232E+15"
       }
     }
@@ -4381,16 +4636,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-12e-1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-12e-1",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.2"
       }
     }
@@ -4398,102 +4652,17 @@
 }
 ,
 {
-  "TestType": "MultiTest",
-  "Input": "一看",
-  "ResultsLength": 0,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "一看",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "一美元",
-  "ResultsLength": 0,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "一美元",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "两美刀",
-  "ResultsLength": 0,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "两美刀",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "四川",
-  "ResultsLength": 0,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "四川",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "陆地",
-  "ResultsLength": 0,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "陆地",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "十",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
-  "TestType": "MultiTest",
-  "Input": "十",
-  "ResultsLength": 1,
-  "Results": null
-}
-,
-{
   "TestType": "BasicTest",
   "Input": "五 分之 一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五 分之 一",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.2"
       }
     }
@@ -4503,16 +4672,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三 百 五 又 三 分之 一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三 百 五 又 三 分之 一",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -4522,16 +4690,15 @@
 {
   "TestType": "BasicTest",
   "Input": "４ ６／３",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "４ ６／３",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "6"
       }
     }
@@ -4541,16 +4708,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-3/2",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-3/2",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.5"
       }
     }
@@ -4560,16 +4726,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五分之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五分之一",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.2"
       }
     }
@@ -4579,16 +4744,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百万又五十万分之二十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百万又五十万分之二十五",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000.00005"
       }
     }
@@ -4598,16 +4762,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百分之二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百分之二",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.02"
       }
     }
@@ -4617,16 +4780,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千二分之三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千二分之三",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.000714285714285714"
       }
     }
@@ -4636,16 +4798,15 @@
 {
   "TestType": "BasicTest",
   "Input": "一百分之2",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "一百分之2",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.02"
       }
     }
@@ -4655,16 +4816,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五百分之2333",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五百分之2333",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4.666"
       }
     }
@@ -4674,16 +4834,15 @@
 {
   "TestType": "BasicTest",
   "Input": "3又一千分之23",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3又一千分之23",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3.023"
       }
     }
@@ -4693,16 +4852,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３／５",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３／５",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.6"
       }
     }
@@ -4712,16 +4870,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1 ３/5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1 ３/5",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1.6"
       }
     }
@@ -4731,16 +4888,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６/5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６/5",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3.2"
       }
     }
@@ -4750,16 +4906,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６分之5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６分之5",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.3125"
       }
     }
@@ -4769,16 +4924,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６分之2225",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６分之2225",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "139.0625"
       }
     }
@@ -4788,16 +4942,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负一又二分之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负一又二分之一",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.5"
       }
     }
@@ -4807,16 +4960,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二分之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二分之一",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -4826,16 +4978,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百 五又三分之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百 五又三分之一",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -4845,16 +4996,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百五十又3分之1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百五十又3分之1",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -4864,16 +5014,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３分之一百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３分之一百五十七",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -4883,16 +5032,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负３分之负一百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负３分之负一百五十七",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -4902,30 +5050,141 @@
 {
   "TestType": "MultiTest",
   "Input": "一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",
-  "ResultsLength": 10,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百四十四",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "144"
+      }
+    },
+    {
+      "Text": "一百五十万五千二百四十五",
+      "Start": 6,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1505245"
+      }
+    },
+    {
+      "Text": "二千零四十五",
+      "Start": 19,
+      "End": 24,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2045"
+      }
+    },
+    {
+      "Text": "三千零五",
+      "Start": 27,
+      "End": 30,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3005"
+      }
+    },
+    {
+      "Text": "四千万零五十",
+      "Start": 34,
+      "End": 39,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000050"
+      }
+    },
+    {
+      "Text": "一百五十四点零",
+      "Start": 41,
+      "End": 47,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "154"
+      }
+    },
+    {
+      "Text": "四百亿点零五零",
+      "Start": 49,
+      "End": 55,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000000.05"
+      }
+    },
+    {
+      "Text": "二十五分之一百四十四",
+      "Start": 57,
+      "End": 66,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.76"
+      }
+    },
+    {
+      "Text": "十一又十四分之一",
+      "Start": 68,
+      "End": 75,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "11.0714285714286"
+      }
+    },
+    {
+      "Text": "1",
+      "Start": 77,
+      "End": 77,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "1 4/3的美梦,1/2的努力",
-  "ResultsLength": 2,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 4/3",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.33333333333333"
+      }
+    },
+    {
+      "Text": "1/2",
+      "Start": 9,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "二分 之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二分 之一",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -4935,16 +5194,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百 五 又 三分  之一",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百 五 又 三分  之一",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -4954,16 +5212,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百五十 又 3分  之1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百五十 又 3分  之1",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -4973,16 +5230,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３ 分  之 一百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３ 分  之 一百五十七",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -4992,16 +5248,15 @@
 {
   "TestType": "BasicTest",
   "Input": "负３ 分  之 负一百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "负３ 分  之 负一百五十七",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -5011,16 +5266,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五 分之 壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五 分之 壹",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.2"
       }
     }
@@ -5030,16 +5284,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三 百 五 又 三 分之 壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三 百 五 又 三 分之 壹",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -5049,16 +5302,15 @@
 {
   "TestType": "BasicTest",
   "Input": "４ ６／３",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "４ ６／３",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "6"
       }
     }
@@ -5068,16 +5320,15 @@
 {
   "TestType": "BasicTest",
   "Input": "-3/2",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "-3/2",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.5"
       }
     }
@@ -5087,16 +5338,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五分之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五分之壹",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.2"
       }
     }
@@ -5106,16 +5356,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百萬又五十萬分之二十五",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百萬又五十萬分之二十五",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1000000.00005"
       }
     }
@@ -5125,16 +5374,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百分之二",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百分之二",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.02"
       }
     }
@@ -5144,16 +5392,15 @@
 {
   "TestType": "BasicTest",
   "Input": "四千二分之三",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "四千二分之三",
       "Start": 0,
       "End": 5,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.000714285714285714"
       }
     }
@@ -5163,16 +5410,15 @@
 {
   "TestType": "BasicTest",
   "Input": "壹百分之2",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "壹百分之2",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.02"
       }
     }
@@ -5182,16 +5428,15 @@
 {
   "TestType": "BasicTest",
   "Input": "五百分之2333",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五百分之2333",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "4.666"
       }
     }
@@ -5201,16 +5446,15 @@
 {
   "TestType": "BasicTest",
   "Input": "3又壹千分之23",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3又壹千分之23",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3.023"
       }
     }
@@ -5220,16 +5464,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３／５",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３／５",
       "Start": 0,
       "End": 2,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.6"
       }
     }
@@ -5239,16 +5482,15 @@
 {
   "TestType": "BasicTest",
   "Input": "1 ３/5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1 ３/5",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "1.6"
       }
     }
@@ -5258,16 +5500,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６/5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６/5",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "3.2"
       }
     }
@@ -5277,16 +5518,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６分之5",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６分之5",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.3125"
       }
     }
@@ -5296,16 +5536,15 @@
 {
   "TestType": "BasicTest",
   "Input": "１６分之2225",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "１６分之2225",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "139.0625"
       }
     }
@@ -5315,16 +5554,15 @@
 {
   "TestType": "BasicTest",
   "Input": "負壹又二分之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負壹又二分之壹",
       "Start": 0,
       "End": 6,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "-1.5"
       }
     }
@@ -5334,16 +5572,15 @@
 {
   "TestType": "BasicTest",
   "Input": "二分之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二分之壹",
       "Start": 0,
       "End": 3,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -5353,16 +5590,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百 五又三分之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百 五又三分之壹",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -5372,16 +5608,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百五十又3分之1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百五十又3分之1",
       "Start": 0,
       "End": 8,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -5391,16 +5626,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３分之壹百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３分之壹百五十七",
       "Start": 0,
       "End": 7,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -5410,16 +5644,15 @@
 {
   "TestType": "BasicTest",
   "Input": "負３分之負壹百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負３分之負壹百五十七",
       "Start": 0,
       "End": 9,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -5429,30 +5662,141 @@
 {
   "TestType": "MultiTest",
   "Input": "壹百四十四。壹百五十萬五千二百四十五,二千零四十五個,三千零五個,和四千萬零五十,壹百五十四點零,四百億點零五零,二十五分之壹百四十四,十壹又十四分之壹,1個",
-  "ResultsLength": 10,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百四十四",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "144"
+      }
+    },
+    {
+      "Text": "壹百五十萬五千二百四十五",
+      "Start": 6,
+      "End": 17,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1505245"
+      }
+    },
+    {
+      "Text": "二千零四十五",
+      "Start": 19,
+      "End": 24,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2045"
+      }
+    },
+    {
+      "Text": "三千零五",
+      "Start": 27,
+      "End": 30,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3005"
+      }
+    },
+    {
+      "Text": "四千萬零五十",
+      "Start": 34,
+      "End": 39,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000050"
+      }
+    },
+    {
+      "Text": "壹百五十四點零",
+      "Start": 41,
+      "End": 47,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "154"
+      }
+    },
+    {
+      "Text": "四百億點零五零",
+      "Start": 49,
+      "End": 55,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000000.05"
+      }
+    },
+    {
+      "Text": "二十五分之壹百四十四",
+      "Start": 57,
+      "End": 66,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.76"
+      }
+    },
+    {
+      "Text": "十壹又十四分之壹",
+      "Start": 68,
+      "End": 75,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "11.0714285714286"
+      }
+    },
+    {
+      "Text": "1",
+      "Start": 77,
+      "End": 77,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "MultiTest",
   "Input": "1 4/3的美夢,1/2的努力",
-  "ResultsLength": 2,
-  "Results": null
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 4/3",
+      "Start": 0,
+      "End": 4,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.33333333333333"
+      }
+    },
+    {
+      "Text": "1/2",
+      "Start": 9,
+      "End": 11,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
   "Input": "二分 之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "二分 之壹",
       "Start": 0,
       "End": 4,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "0.5"
       }
     }
@@ -5462,16 +5806,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百 五 又 三分  之壹",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百 五 又 三分  之壹",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -5481,16 +5824,15 @@
 {
   "TestType": "BasicTest",
   "Input": "三百五十 又 3分  之1",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三百五十 又 3分  之1",
       "Start": 0,
       "End": 12,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "350.333333333333"
       }
     }
@@ -5500,16 +5842,15 @@
 {
   "TestType": "BasicTest",
   "Input": "３ 分  之 壹百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "３ 分  之 壹百五十七",
       "Start": 0,
       "End": 11,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
       }
     }
@@ -5519,17 +5860,74 @@
 {
   "TestType": "BasicTest",
   "Input": "負３ 分  之 負壹百五十七",
-  "ResultsLength": 1,
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "負３ 分  之 負壹百五十七",
       "Start": 0,
       "End": 13,
       "TypeName": "number",
       "Resolution": {
-        "$id": "2",
         "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "一看",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "一美元",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "两美刀",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "四川",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "陆地",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "TestType": "MultiTest",
+  "Input": "十",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10"
       }
     }
   ]

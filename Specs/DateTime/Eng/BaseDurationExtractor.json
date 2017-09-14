@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "I'll leave for 3h",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 2,
       "Text": "3h",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 4,
       "Text": "3day",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3.5years",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 8,
       "Text": "3.5years",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 h",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 3,
       "Text": "3 h",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 hours",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 7,
       "Text": "3 hours",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 hrs",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 5,
       "Text": "3 hrs",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 hr",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 4,
       "Text": "3 hr",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 5,
       "Text": "3 day",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 months",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 8,
       "Text": "3 months",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 minutes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "3 minutes",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3 min",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 5,
       "Text": "3 min",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3.5 second ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 10,
       "Text": "3.5 second",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -181,14 +181,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 123.45 sec",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 10,
       "Text": "123.45 sec",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -196,14 +196,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for two weeks",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "two weeks",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -211,14 +211,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for twenty min",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 10,
       "Text": "twenty min",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -226,14 +226,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for twenty and four hours",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 21,
       "Text": "twenty and four hours",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -241,14 +241,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for all day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 7,
       "Text": "all day",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -256,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for all week",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 8,
       "Text": "all week",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -271,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for all month",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "all month",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -286,14 +286,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for all year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 8,
       "Text": "all year",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -301,14 +301,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for an hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 7,
       "Text": "an hour",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -316,14 +316,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for a year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 6,
       "Text": "a year",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -331,14 +331,14 @@
 {
   "TestType": "BasicTest",
   "Input": "half year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 9,
       "Text": "half year",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -346,14 +346,14 @@
 {
   "TestType": "BasicTest",
   "Input": "half an year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 0,
       "Length": 12,
       "Text": "half an year",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -361,14 +361,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 3-min",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 5,
       "Text": "3-min",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -376,14 +376,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for 30-minutes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 10,
       "Text": "30-minutes",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -391,14 +391,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for a half hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 11,
       "Text": "a half hour",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -406,14 +406,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for half an hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 12,
       "Text": "half an hour",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -421,14 +421,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for an hour and half",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 16,
       "Text": "an hour and half",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -436,14 +436,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for an hour and a half",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 18,
       "Text": "an hour and a half",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -451,14 +451,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for an hour and half",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 16,
       "Text": "an hour and half",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -466,14 +466,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for half hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "half hour",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -481,14 +481,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for two hours",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "two hours",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -496,14 +496,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for two and a half hours",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 20,
       "Text": "two and a half hours",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -511,14 +511,14 @@
 {
   "TestType": "BasicTest",
   "Input": "In a week",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 3,
       "Length": 6,
       "Text": "a week",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -526,14 +526,14 @@
 {
   "TestType": "BasicTest",
   "Input": "In a day",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 3,
       "Length": 5,
       "Text": "a day",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -541,14 +541,14 @@
 {
   "TestType": "BasicTest",
   "Input": "for an hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 4,
       "Length": 7,
       "Text": "an hour",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -556,14 +556,14 @@
 {
   "TestType": "BasicTest",
   "Input": "for a month",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 4,
       "Length": 7,
       "Text": "a month",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -571,14 +571,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for few hours",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "few hours",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -586,14 +586,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for a few minutes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 13,
       "Text": "a few minutes",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -601,14 +601,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for some days",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 9,
       "Text": "some days",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }
@@ -616,14 +616,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave for several days",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 15,
       "Length": 12,
       "Text": "several days",
-      "Type": "duration",
-      "Data": null
+      "Type": "duration"
     }
   ]
 }

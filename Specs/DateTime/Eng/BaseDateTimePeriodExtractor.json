@@ -1,14 +1,14 @@
 [{
   "TestType": "BasicTest",
   "Input": "let's meet in the early-morning Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 28,
       "Text": "in the early-morning Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -16,14 +16,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-morning Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 27,
       "Text": "in the late-morning Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -31,14 +31,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-afternoon Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 30,
       "Text": "in the early-afternoon Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -46,14 +46,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-afternoon Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 29,
       "Text": "in the late-afternoon Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -61,14 +61,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-evening Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 28,
       "Text": "in the early-evening Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -76,14 +76,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-evening Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 27,
       "Text": "in the late-evening Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -91,14 +91,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-night Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 26,
       "Text": "in the early-night Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -106,14 +106,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-night Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 25,
       "Text": "in the late-night Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -121,14 +121,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early night Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 26,
       "Text": "in the early night Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -136,14 +136,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late night Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 25,
       "Text": "in the late night Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -151,14 +151,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-morning on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 31,
       "Text": "in the early-morning on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -166,14 +166,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-morning on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 30,
       "Text": "in the late-morning on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -181,14 +181,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-afternoon on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 33,
       "Text": "in the early-afternoon on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -196,14 +196,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-afternoon on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 32,
       "Text": "in the late-afternoon on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -211,14 +211,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-evening on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 31,
       "Text": "in the early-evening on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -226,14 +226,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-evening on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 30,
       "Text": "in the late-evening on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -241,14 +241,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early-night on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 29,
       "Text": "in the early-night on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -256,14 +256,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late-night on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 28,
       "Text": "in the late-night on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -271,14 +271,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the early night on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 29,
       "Text": "in the early night on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -286,14 +286,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet in the late night on Tuesday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 11,
       "Length": 28,
       "Text": "in the late night on Tuesday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -301,14 +301,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday early-morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 21,
       "Text": "Tuesday early-morning",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -316,14 +316,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday late-morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 20,
       "Text": "Tuesday late-morning",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -331,14 +331,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday early-afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 23,
       "Text": "Tuesday early-afternoon",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -346,14 +346,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday late-afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 22,
       "Text": "Tuesday late-afternoon",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -361,14 +361,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday early-evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 21,
       "Text": "Tuesday early-evening",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -376,14 +376,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday late-evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 20,
       "Text": "Tuesday late-evening",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -391,14 +391,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday early-night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 19,
       "Text": "Tuesday early-night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -406,14 +406,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday late-night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 18,
       "Text": "Tuesday late-night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -421,14 +421,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday early night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 19,
       "Text": "Tuesday early night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -436,14 +436,14 @@
 {
   "TestType": "BasicTest",
   "Input": "let's meet on Tuesday late night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 14,
       "Length": 18,
       "Text": "Tuesday late night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -451,14 +451,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out five to seven today",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 19,
       "Text": "five to seven today",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -466,14 +466,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out five to seven of tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 25,
       "Text": "five to seven of tomorrow",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -481,14 +481,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 5 to 6 next sunday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 23,
       "Text": "from 5 to 6 next sunday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -496,14 +496,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 5 to 6pm next sunday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 25,
       "Text": "from 5 to 6pm next sunday",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -511,14 +511,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm to 5pm today",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 21,
       "Text": "from 4pm to 5pm today",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -526,14 +526,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm today to 5pm tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 30,
       "Text": "from 4pm today to 5pm tomorrow",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -541,14 +541,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm to 5pm of tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 27,
       "Text": "from 4pm to 5pm of tomorrow",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -556,14 +556,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm to 5pm of 2017-6-6",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 27,
       "Text": "from 4pm to 5pm of 2017-6-6",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -571,14 +571,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm to 5pm May 5, 2018",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 27,
       "Text": "from 4pm to 5pm May 5, 2018",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -586,14 +586,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4:00 to 5pm May 5, 2018",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 28,
       "Text": "from 4:00 to 5pm May 5, 2018",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -601,14 +601,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 4pm on Jan 1, 2016 to 5pm today",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 36,
       "Text": "from 4pm on Jan 1, 2016 to 5pm today",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -616,14 +616,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 42,
       "Text": "from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -631,14 +631,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from today at 4 to next Wedn at 5",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 33,
       "Text": "from today at 4 to next Wedn at 5",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -646,14 +646,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 4pm and 5pm today",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 25,
       "Text": "between 4pm and 5pm today",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -661,14 +661,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 4pm on Jan 1, 2016 and 5pm today",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 12,
       "Length": 40,
       "Text": "between 4pm on Jan 1, 2016 and 5pm today",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -676,14 +676,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tonight",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 7,
       "Text": "tonight",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -691,14 +691,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back this night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 10,
       "Text": "this night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -706,14 +706,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back this evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 12,
       "Text": "this evening",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -721,14 +721,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back this morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 12,
       "Text": "this morning",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -736,14 +736,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back this afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 14,
       "Text": "this afternoon",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -751,14 +751,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 10,
       "Text": "next night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -766,14 +766,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back last night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 10,
       "Text": "last night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -781,14 +781,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tomorrow night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 14,
       "Text": "tomorrow night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -796,14 +796,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next monday afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 21,
       "Text": "next monday afternoon",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -811,14 +811,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back May 5th night",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 13,
       "Text": "May 5th night",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -826,14 +826,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back last 3 minute",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 13,
       "Text": "last 3 minute",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -841,14 +841,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back past 3 minute",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 13,
       "Text": "past 3 minute",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -856,14 +856,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back previous 3 minute",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 17,
       "Text": "previous 3 minute",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -871,14 +871,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back previous 3mins",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 14,
       "Text": "previous 3mins",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -886,14 +886,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next 5 hrs",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 10,
       "Text": "next 5 hrs",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -901,14 +901,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back last minute",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 11,
       "Text": "last minute",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -916,14 +916,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next hour",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 9,
       "Text": "next hour",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -931,14 +931,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back last few minutes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 16,
       "Text": "last few minutes",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -946,14 +946,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back past several minutes",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 20,
       "Text": "past several minutes",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -961,14 +961,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tuesday in the morning",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 22,
       "Text": "tuesday in the morning",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -976,14 +976,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tuesday in the afternoon",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 24,
       "Text": "tuesday in the afternoon",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }
@@ -991,14 +991,14 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tuesday in the evening",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Start": 13,
       "Length": 22,
       "Text": "tuesday in the evening",
-      "Type": "datetimerange",
-      "Data": null
+      "Type": "datetimerange"
     }
   ]
 }

@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "When she was five years old, she learned to ride a bike.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "five years old",
       "Start": 13,
       "End": 26,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "5"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "This saga is ten years old.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ten years old",
       "Start": 13,
       "End": 25,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "10"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": "I'm only 29 years old!",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "29 years old",
       "Start": 9,
       "End": 20,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "29"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Now, after ninety five years of age, perspectives change.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ninety five years of age",
       "Start": 11,
       "End": 34,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "95"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500 years old",
       "Start": 37,
       "End": 49,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "500"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "She's 60 years old; she was born in May 8, 1945.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "60 years old",
       "Start": 6,
       "End": 17,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "60"
       }
@@ -115,15 +115,15 @@
 {
   "TestType": "BasicTest",
   "Input": "25% of cases are not diagnosed until around 3 years of age.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3 years of age",
       "Start": 44,
       "End": 57,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "3"
       }
@@ -134,15 +134,15 @@
 {
   "TestType": "BasicTest",
   "Input": "When will there be pressure to fulfil a promise that is one year old?",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "one year old",
       "Start": 56,
       "End": 67,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "1"
       }
@@ -153,15 +153,15 @@
 {
   "TestType": "BasicTest",
   "Input": "It happened when the baby was only ten months old.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "ten months old",
       "Start": 35,
       "End": 48,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Month",
         "value": "10"
       }
@@ -172,15 +172,15 @@
 {
   "TestType": "BasicTest",
   "Input": "The committee proposal is 8 months old.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "8 months old",
       "Start": 26,
       "End": 37,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Month",
         "value": "8"
       }
@@ -191,15 +191,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "eighteen months of age",
       "Start": 50,
       "End": 71,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Month",
         "value": "18"
       }
@@ -210,15 +210,15 @@
 {
   "TestType": "BasicTest",
   "Input": "It is possible, but in 2006 95% of them were younger than three months old.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "three months old",
       "Start": 58,
       "End": 73,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Month",
         "value": "3"
       }
@@ -229,15 +229,15 @@
 {
   "TestType": "BasicTest",
   "Input": "If we go ahead in December, it will be three weeks old.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "three weeks old",
       "Start": 39,
       "End": 53,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Week",
         "value": "3"
       }
@@ -248,15 +248,15 @@
 {
   "TestType": "BasicTest",
   "Input": "At 6 weeks of age, one can already celebrate Christmas.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "6 weeks of age",
       "Start": 3,
       "End": 16,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Week",
         "value": "6"
       }
@@ -267,15 +267,15 @@
 {
   "TestType": "BasicTest",
   "Input": "A 90 day old utilities bill is quite late.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "90 day old",
       "Start": 2,
       "End": 11,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Day",
         "value": "90"
       }

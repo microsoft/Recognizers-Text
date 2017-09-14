@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "são 180,25ml liquidos",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "180,25ml",
       "Start": 4,
       "End": 11,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Mililitro",
         "value": "180,25"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "sao 180ml líquidos",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "180ml",
       "Start": 4,
       "End": 8,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Mililitro",
         "value": "180"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": " 29km caminhando ",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "29km",
       "Start": 1,
       "End": 4,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Quilômetro",
         "value": "29"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "são ,25ml liquidos",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": ",25ml",
       "Start": 4,
       "End": 8,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Mililitro",
         "value": "0,25"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "75ml",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "75ml",
       "Start": 0,
       "End": 3,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Mililitro",
         "value": "75"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Su mayor inconveniente puede ser su espesor de 3 polegadas, lo suficientemente grande como para que un consultor lo describa como \"clunky\".",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3 polegadas",
       "Start": 47,
       "End": 57,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Polegada",
         "value": "3"
       }
@@ -115,15 +115,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Se necesita más de 10 1/2 milhas de cable y alambre para conectar todo y 23 equipos",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10 1/2 milhas",
       "Start": 19,
       "End": 31,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "10,5"
       }
@@ -134,15 +134,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Es lo que 1) explica por qué somos como nosotros mismos en lugar de Bo Jackson; 2) advierte que es posible ahogarse en un lago que promedia dois pés de profundidad; y 3) predice que 10.000 monos colocados ante 10.000 pianos producirían 1.118 melodías publicitables del rock'n'roll.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dois pés",
       "Start": 140,
       "End": 147,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "2"
       }
@@ -153,15 +153,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El sr. Hulings se regodea que vendió todas sus acciones una semana antes de que el mercado se desplomara 190 puntos en oct. 13, y está utilizando el dinero para ayudar a comprar una granja de caballos de 45 acres.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "45 acres",
       "Start": 204,
       "End": 211,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Acre",
         "value": "45"
       }
@@ -172,15 +172,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Bartlett había levantado paredes sin ventanas (ladrillo, enrejado, seto) de ocho a dez pés de altura, convirtiendo sus interiores en una sombra stygiana de un día.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dez pés",
       "Start": 83,
       "End": 89,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "10"
       }
@@ -191,15 +191,15 @@
 {
   "TestType": "BasicTest",
   "Input": "'La administración no quiere sorpresas', comenta Jack Zaves, quien, como director de servicios de combustible de American Airlines, compra unos 2.400 milhões de galoes de combustible para aviones ao ano.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2.400 milhões de galoes",
       "Start": 144,
       "End": 166,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Galão",
         "value": "2400000000"
       }
@@ -210,15 +210,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Un refrigerador de agua de 10 galoes había caído no solo, empapando la alfombra roja.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "10 galoes",
       "Start": 27,
       "End": 35,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Galão",
         "value": "10"
       }
@@ -229,15 +229,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Cerca, seis delfines se divertirán en un acuario de agua salada de 1,5 milhoes de galões.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1,5 milhoes de galões",
       "Start": 67,
       "End": 87,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Galão",
         "value": "1500000"
       }
@@ -248,15 +248,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Y este bebé tiene más de duas libras.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "duas libras",
       "Start": 25,
       "End": 35,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Libra",
         "value": "2"
       }
@@ -267,15 +267,15 @@
 {
   "TestType": "BasicTest",
   "Input": "No confío en las personas que no comen, dijo ms. Volokh, aunque ella misma dejó de comer el almuerzo hace unos años para bajar 25 libras.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "25 libras",
       "Start": 127,
       "End": 135,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Libra",
         "value": "25"
       }
@@ -286,15 +286,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Un tornado rugió através de un area de umas dez milhas de área, matando ao menos a catorce personas y convirtiendo decenas de hogares en escombros",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "dez milhas",
       "Start": 44,
       "End": 53,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "10"
       }
@@ -305,15 +305,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Shell, una subsidiaria del grupo real holandés, se le permitirá exportar 0,9 bilhões de pés cúbicos, y el Golfo, una unidad de olympia & york developments ltd. se permitirá exportar",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "0,9 bilhões de pés cúbicos",
       "Start": 73,
       "End": 98,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé cúbico",
         "value": "900000000"
       }
@@ -324,15 +324,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Ejércitos Tigrean ahora están 200 milhas ao norte de Addis Ababa, amenazando la ciudad de éstos, que cortaría la capital de Mengistu desde el puerto de Assab, a través del cual todos los combustibles y otros suministros llegan a Addis Ababa.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "200 milhas",
       "Start": 30,
       "End": 39,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "200"
       }
@@ -343,15 +343,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Dijo que una de las pc tomó un viaje de tres pes deslizándose por el suelo.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres pes",
       "Start": 40,
       "End": 47,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "3"
       }
@@ -362,15 +362,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El núcleo de sus propiedades es de 190.000 metros quadrados de propiedad increíblemente caras en el distrito de Marunouchi, el centro financiero y de negocios de Tokyo, a menudo en broma llamada 'pueblo Mitsubishi'",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "190.000 metros quadrados",
       "Start": 35,
       "End": 58,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Metro quadrado",
         "value": "190000"
       }
@@ -381,15 +381,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El satélite, construido por Hughes para la organización internacional de satélites de telecomunicaciones, forma parte de un contrato de 700 millones de dólares otorgado a Hughes en 1982 para desarrollar cinco satélites de tres toneladas.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tres toneladas",
       "Start": 222,
       "End": 235,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Tonelada",
         "value": "3"
       }
@@ -400,15 +400,15 @@
 {
   "TestType": "BasicTest",
   "Input": "En un informe de 1996 sobre armas biológicas, el centro de estudios estratégicos e internacionales, una institución de investigación de políticas públicas en Washington, advirtió que era fácil para los posibles terroristas montar armas biológicas utilizando equipo comercial con una capacidad de 130 galoes.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "130 galoes",
       "Start": 296,
       "End": 305,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Galão",
         "value": "130"
       }
@@ -419,15 +419,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La recopilación de datos del departamento de comercio del grupo de comercio mostró que las importaciones de Agosto, el segundo mayor mensual del año, subieron un 5% respecto de las 1.458.000 toneladas de julio, pero por debajo del máximo del año pasado en junio de 1988.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1.458.000 toneladas",
       "Start": 181,
       "End": 199,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Tonelada",
         "value": "1458000"
       }
@@ -438,15 +438,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El 1 de noviembre, Singh tiró a unos seis pés de la taza",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "seis pés",
       "Start": 37,
       "End": 44,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "6"
       }
@@ -457,15 +457,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Una t.métrica es igual a 2.204,62 libras.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2.204,62 libras",
       "Start": 25,
       "End": 39,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Libra",
         "value": "2204,62"
       }
@@ -476,15 +476,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Por lo que cuando el cultivo de psyllium del año que viene se coseche en marzo, puede ser menor que las 16.000 toneladas métricas de los últimos años, justo en la cresta del boom del psyllium.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "16.000 toneladas métricas",
       "Start": 104,
       "End": 128,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Tonelada métrica",
         "value": "16000"
       }
@@ -495,15 +495,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El 486 es el descendiente de una larga serie de chips Intel que comenzó a dominar el mercado desde que IBM eligió el chip de 16 bits 8088 para su primera computadora personal.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "16 bits",
       "Start": 125,
       "End": 131,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "bit",
         "value": "16"
       }
@@ -514,15 +514,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El ''jiotto caspita'' puede funcionar a más de 188 milhas por hora, dijo un portavoz de la compañía.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "188 milhas por hora",
       "Start": 47,
       "End": 65,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha por hora",
         "value": "188"
       }
@@ -533,15 +533,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La marina de guerra ha instalado una zona de aterrizaje para helicópteros de apenas 100 metros en una sala de operaciones móvil, apenas en las cercanías de Bagdad.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "100 metros",
       "Start": 84,
       "End": 93,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Metro",
         "value": "100"
       }
@@ -552,15 +552,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Caltrans planea añadir una segunda cubierta para autobuses y las flotas de autos por encima de la mediana de un tramo de 2,5 milhas de la autopista Harbor, ao sul de Los Ángeles, cerca del coliseo conmemorativo.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2,5 milhas",
       "Start": 121,
       "End": 130,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "2,5"
       }
@@ -571,15 +571,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Em minha viaje de quatro milhas a la sede de la granja cada mañana, conduje por otras quatro casas vacías.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "quatro milhas",
       "Start": 18,
       "End": 30,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "4"
       }
@@ -590,15 +590,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Fuimos insultados, dijo Langa desde el cuartel general católico griego, a unos 325 quilometro ao noroeste de Bucarest.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "325 quilometro",
       "Start": 79,
       "End": 92,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Quilômetro",
         "value": "325"
       }
@@ -609,15 +609,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Rotich es un pequeño (5 pés",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "5 pés",
       "Start": 22,
       "End": 26,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "5"
       }
@@ -628,15 +628,15 @@
 {
   "TestType": "BasicTest",
   "Input": "4 polegadas) de 28 años de edad que no comenzó a correr en serio hasta hace tres años y no había competido en el interior hasta este mes.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "4 polegadas",
       "Start": 0,
       "End": 10,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Polegada",
         "value": "4"
       }
@@ -647,15 +647,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Raceway park (Minnesota) en Shakopee es un óvalo pavimentado de 1/4 de milha.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1/4 de milha",
       "Start": 64,
       "End": 75,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "0,25"
       }
@@ -666,15 +666,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Castlecrag montaña está situado ao sul do lago Moat, 1,6 km ao oeste del monte Frink a lo largo de la misma línea de cresta.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1,6 km",
       "Start": 53,
       "End": 58,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Quilômetro",
         "value": "1,6"
       }
@@ -685,15 +685,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Las colinas de Javadi se encuentran a unos 17 km de Ambur.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "17 km",
       "Start": 43,
       "End": 47,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Quilômetro",
         "value": "17"
       }
@@ -704,15 +704,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Después de rodear el lago Michigan cerca de la exposición durante dos horas, el comandante Hugo Eckener aterrizó la aeronave de 776 pes en el cercano aeropuerto Curtiss-Wright en Glenview.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "776 pes",
       "Start": 128,
       "End": 134,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Pé",
         "value": "776"
       }
@@ -723,15 +723,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El intercambio con la carretera 35 y la carretera 115 a Lindsay y Peterborough (salida 436) se encuentra a 500 metros ao leste de la carretera Bennett.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500 metros",
       "Start": 107,
       "End": 116,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Metro",
         "value": "500"
       }
@@ -742,15 +742,15 @@
 {
   "TestType": "BasicTest",
   "Input": "En 1995 Cannon introdujo la primera lente SLR comercialmente disponible con estabilización de imagen interna, 75 - 300 mm f / 4 - 5. 6 es usm.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "- 300 mm",
       "Start": 113,
       "End": 120,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milímetro",
         "value": "-300"
       }
@@ -761,15 +761,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Los aspectos más destacados de los proyectos de ley son: -- una restricción de la cantidad de bienes raíces que una familia puede poseer, a 660 metros quadrados en las seis ciudades más grandes de la nación, pero más en ciudades pequeñas y áreas rurales.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "660 metros quadrados",
       "Start": 140,
       "End": 159,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Metro quadrado",
         "value": "660"
       }
@@ -780,15 +780,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El proyecto cuesta 46,8 millones de dólares, y está destinado a aumentar la capacidad de producción de la empresa en un 25% a 34.500 toneladas métricas de cátodos de cobre ao ano.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "34.500 toneladas métricas",
       "Start": 126,
       "End": 150,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Tonelada métrica",
         "value": "34500"
       }
@@ -799,15 +799,15 @@
 {
   "TestType": "BasicTest",
   "Input": "La producción canadiense de lingotes de acero totalizó 291.890 toneladas métricas en la semana terminada el oct. 7, un 14,8% más que el total de la semana anterior, informó Statistics Canada, una agencia federal.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "291.890 toneladas métricas",
       "Start": 55,
       "End": 80,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Tonelada métrica",
         "value": "291890"
       }
@@ -818,15 +818,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Las panteras floridas viven en el hogar que se extiende por 190 km2.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "190 km2",
       "Start": 60,
       "End": 66,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Quilômetro quadrado",
         "value": "190"
       }
@@ -837,15 +837,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Un asteroide de uma milha de ancho nos golpea, en promedio, sólo una vez cada trescientos mil años.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "uma milha",
       "Start": 16,
       "End": 24,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "1"
       }
@@ -856,15 +856,15 @@
 {
   "TestType": "BasicTest",
   "Input": "Sin embargo, Premier incorporó el tren de potencia Nissan A12 (1.171 cc y 52 bhp) en lugar del motor Fiat original junto con una caja de cambios manual de Nissan.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1.171 cc",
       "Start": 63,
       "End": 70,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Centímetro cúbico",
         "value": "1171"
       }
@@ -875,27 +875,25 @@
 {
   "TestType": "BasicTest",
   "Input": "En toda la industria, la producción de petróleo en este país se redujo en 500.000 barris diarios a [] barris nos primeiros oito meses deste año.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "500.000 barris",
       "Start": 74,
       "End": 87,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Barril",
         "value": "500000"
       }
     },
     {
-      "$id": "3",
       "Text": "barris",
       "Start": 102,
       "End": 107,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "4",
         "unit": "Barril",
         "value": null
       }
@@ -906,27 +904,25 @@
 {
   "TestType": "BasicTest",
   "Input": "Sterling Armaments de Dagenham, Essex produjo un kit de conversión que comprende un nuevo barril de 7,62 mm, una revista, un extractor y un eyector para la venta comercial.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "7,62 mm",
       "Start": 100,
       "End": 106,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milímetro",
         "value": "7,62"
       }
     },
     {
-      "$id": "3",
       "Text": "barril",
       "Start": 90,
       "End": 95,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "4",
         "unit": "Barril",
         "value": null
       }
@@ -937,15 +933,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El 19 de mayo, la FDA comenzó a detener las setas chinas en latas de 68 oncas después de que más de 100 personas en Mississippi, Nueva York y Pennsylvania se enfermaron a comer hongos contaminados.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "68 oncas",
       "Start": 69,
       "End": 76,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Onça",
         "value": "68"
       }
@@ -956,15 +952,15 @@
 {
   "TestType": "BasicTest",
   "Input": "El viaje de seis milhas de meu hotel ao aeropuerto que debería tardar 20 minutos, tardó más de tres horas.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "seis milhas",
       "Start": 12,
       "End": 22,
       "TypeName": "dimension",
       "Resolution": {
-        "$id": "2",
         "unit": "Milha",
         "value": "6"
       }

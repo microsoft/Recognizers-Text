@@ -1,15 +1,15 @@
 [{
   "TestType": "BasicTest",
   "Input": "当她五岁的时候，她学会了骑自行车",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "五岁",
       "Start": 2,
       "End": 3,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "5"
       }
@@ -20,15 +20,15 @@
 {
   "TestType": "BasicTest",
   "Input": "我只有29岁！",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "29岁",
       "Start": 3,
       "End": 5,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "29"
       }
@@ -39,15 +39,15 @@
 {
   "TestType": "BasicTest",
   "Input": "这件事发生在宝宝只有十个月大的时候.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "十个月大",
       "Start": 10,
       "End": 13,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Month",
         "value": "10"
       }
@@ -58,15 +58,15 @@
 {
   "TestType": "BasicTest",
   "Input": "十二月初出生的话已经三周大了",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "三周大",
       "Start": 10,
       "End": 12,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Week",
         "value": "3"
       }
@@ -77,15 +77,15 @@
 {
   "TestType": "BasicTest",
   "Input": "她出生于1945年5月8号，现在60岁了",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "60岁",
       "Start": 16,
       "End": 18,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "60"
       }
@@ -96,15 +96,15 @@
 {
   "TestType": "BasicTest",
   "Input": "她已经满七周岁了，可以上小学了",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "七周岁",
       "Start": 4,
       "End": 6,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Year",
         "value": "7"
       }
@@ -115,15 +115,15 @@
 {
   "TestType": "BasicTest",
   "Input": "90天大的小孩应该去医院做检查",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "90天大",
       "Start": 0,
       "End": 3,
       "TypeName": "age",
       "Resolution": {
-        "$id": "2",
         "unit": "Day",
         "value": "90"
       }

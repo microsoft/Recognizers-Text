@@ -1,975 +1,20 @@
 [{
   "TestType": "BasicTest",
-  "Input": "I'll be out 5 to 6pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "5 to 6pm",
-      "Start": 12,
-      "End": 19,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T17,T18,PT1H)",
-            "type": "timerange",
-            "start": "17:00:00",
-            "end": "18:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 5 to seven in the morning",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "5 to seven in the morning",
-      "Start": 12,
-      "End": 36,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T05,T07,PT2H)",
-            "type": "timerange",
-            "start": "05:00:00",
-            "end": "07:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out between 5 and 6 in the afternoon",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "between 5 and 6 in the afternoon",
-      "Start": 12,
-      "End": 43,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T17,T18,PT1H)",
-            "type": "timerange",
-            "start": "17:00:00",
-            "end": "18:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 4:00 to 7 oclock",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "4:00 to 7 oclock",
-      "Start": 12,
-      "End": 27,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T04:00,T07,PT3H)",
-            "type": "timerange",
-            "start": "04:00:00",
-            "end": "07:00:00"
-          },
-          {
-            "$id": "4",
-            "timex": "(T16:00,T19,PT3H)",
-            "type": "timerange",
-            "start": "16:00:00",
-            "end": "19:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 3 in the morning until 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "from 3 in the morning until 5pm",
-      "Start": 12,
-      "End": 42,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T03,T17,PT14H)",
-            "type": "timerange",
-            "start": "03:00:00",
-            "end": "17:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out between 4pm and 5pm",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "between 4pm and 5pm",
-      "Start": 12,
-      "End": 30,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "(T16,T17,PT1H)",
-            "type": "timerange",
-            "start": "16:00:00",
-            "end": "17:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the morning",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "in the morning",
-      "Start": 11,
-      "End": 24,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "TMO",
-            "type": "timerange",
-            "start": "08:00:00",
-            "end": "12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "let's meet in the evening",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "in the evening",
-      "Start": 11,
-      "End": 24,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "TEV",
-            "type": "timerange",
-            "start": "16:00:00",
-            "end": "20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for 3h",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "3h",
-      "Start": 15,
-      "End": 16,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT3H",
-            "type": "duration",
-            "value": "10800"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for 3.5years",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "3.5years",
-      "Start": 15,
-      "End": 22,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "P3.5Y",
-            "type": "duration",
-            "value": "110376000"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for 3 minutes",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "3 minutes",
-      "Start": 15,
-      "End": 23,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT3M",
-            "type": "duration",
-            "value": "180"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for 123.45 sec",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "123.45 sec",
-      "Start": 15,
-      "End": 24,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT123.45S",
-            "type": "duration",
-            "value": "123.45"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for all day",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "all day",
-      "Start": 15,
-      "End": 21,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "P1D",
-            "type": "duration",
-            "value": "86400"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for twenty and four hours",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "twenty and four hours",
-      "Start": 15,
-      "End": 35,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT24H",
-            "type": "duration",
-            "value": "86400"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for all month",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "all month",
-      "Start": 15,
-      "End": 23,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "P1M",
-            "type": "duration",
-            "value": "2592000"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for an hour",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "an hour",
-      "Start": 15,
-      "End": 21,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT1H",
-            "type": "duration",
-            "value": "3600"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for few hours",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "few hours",
-      "Start": 15,
-      "End": 23,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT3H",
-            "type": "duration",
-            "value": "10800"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for a few minutes",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "a few minutes",
-      "Start": 15,
-      "End": 27,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PT3M",
-            "type": "duration",
-            "value": "180"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for some days",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "some days",
-      "Start": 15,
-      "End": 23,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "P3D",
-            "type": "duration",
-            "value": "259200"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave for several weeks",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "several weeks",
-      "Start": 15,
-      "End": 27,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "P3W",
-            "type": "duration",
-            "value": "1814400"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back now",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "now",
-      "Start": 13,
-      "End": 15,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "PRESENT_REF",
-            "type": "datetime",
-            "value": "2016-11-07 00:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back October 14 for 8:00:31am",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "october 14 for 8:00:31am",
-      "Start": 13,
-      "End": 36,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-10-14T08:00:31",
-            "type": "datetime",
-            "value": "2016-10-14 08:00:31"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-10-14T08:00:31",
-            "type": "datetime",
-            "value": "2017-10-14 08:00:31"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back tomorrow 8:00am",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "tomorrow 8:00am",
-      "Start": 13,
-      "End": 27,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-08T08:00",
-            "type": "datetime",
-            "value": "2016-11-08 08:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 10, tonight",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "10, tonight",
-      "Start": 13,
-      "End": 23,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-07T22",
-            "type": "datetime",
-            "value": "2016-11-07 22:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8am this morning",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "8am this morning",
-      "Start": 13,
-      "End": 28,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-07T08",
-            "type": "datetime",
-            "value": "2016-11-07 08:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back end of tomorrow",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "end of tomorrow",
-      "Start": 13,
-      "End": 27,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-08T23:59",
-            "type": "datetime",
-            "value": "2016-11-08 23:59:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back end of the sunday",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "end of the sunday",
-      "Start": 13,
-      "End": 29,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-WXX-7T23:59",
-            "type": "datetime",
-            "value": "2016-11-06 23:59:00"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-WXX-7T23:59",
-            "type": "datetime",
-            "value": "2016-11-13 23:59:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back end of this sunday",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "end of this sunday",
-      "Start": 13,
-      "End": 30,
-      "TypeName": "datetimeV2.datetime",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-13T23:59",
-            "type": "datetime",
-            "value": "2016-11-13 23:59:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back Oct/2",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "oct/2",
-      "Start": 13,
-      "End": 17,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-10-02",
-            "type": "date",
-            "value": "2016-10-02"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-10-02",
-            "type": "date",
-            "value": "2017-10-02"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on 22/04",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "22/04",
-      "Start": 16,
-      "End": 20,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-04-22",
-            "type": "date",
-            "value": "2016-04-22"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-04-22",
-            "type": "date",
-            "value": "2017-04-22"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back May twenty nine",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "may twenty nine",
-      "Start": 13,
-      "End": 27,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-05-29",
-            "type": "date",
-            "value": "2016-05-29"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-05-29",
-            "type": "date",
-            "value": "2017-05-29"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back second of Aug.",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "second of aug",
-      "Start": 13,
-      "End": 25,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-08-02",
-            "type": "date",
-            "value": "2016-08-02"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-08-02",
-            "type": "date",
-            "value": "2017-08-02"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back today",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "today",
-      "Start": 13,
-      "End": 17,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-07",
-            "type": "date",
-            "value": "2016-11-07"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back tomorrow",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "tomorrow",
-      "Start": 13,
-      "End": 20,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-08",
-            "type": "date",
-            "value": "2016-11-08"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back yesterday",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "yesterday",
-      "Start": 13,
-      "End": 21,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "2016-11-06",
-            "type": "date",
-            "value": "2016-11-06"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back on Friday",
-  "Results": [
-    {
-      "$id": "1",
-      "Text": "friday",
-      "Start": 16,
-      "End": 21,
-      "TypeName": "datetimeV2.date",
-      "Resolution": {
-        "$id": "2",
-        "values": [
-          {
-            "$id": "3",
-            "timex": "XXXX-WXX-5",
-            "type": "date",
-            "value": "2016-11-04"
-          },
-          {
-            "$id": "4",
-            "timex": "XXXX-WXX-5",
-            "type": "date",
-            "value": "2016-11-11"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll leave weekly",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "weekly",
       "Start": 11,
       "End": 16,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "P1W",
             "type": "set",
             "value": "not resolved"
@@ -983,18 +28,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave every day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "every day",
       "Start": 11,
       "End": 19,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "P1D",
             "type": "set",
             "value": "not resolved"
@@ -1008,18 +55,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave annually",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "annually",
       "Start": 11,
       "End": 18,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "P1Y",
             "type": "set",
             "value": "not resolved"
@@ -1033,18 +82,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave each two days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "each two days",
       "Start": 11,
       "End": 23,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "P2D",
             "type": "set",
             "value": "not resolved"
@@ -1058,18 +109,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave every three week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "every three week",
       "Start": 11,
       "End": 26,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "P3W",
             "type": "set",
             "value": "not resolved"
@@ -1083,18 +136,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave 3pm each day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3pm each day",
       "Start": 11,
       "End": 22,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T15",
             "type": "set",
             "value": "not resolved"
@@ -1108,18 +163,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave every monday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "every monday",
       "Start": 11,
       "End": 22,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "XXXX-WXX-1",
             "type": "set",
             "value": "not resolved"
@@ -1133,18 +190,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave each monday at 4pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "each monday at 4pm",
       "Start": 11,
       "End": 28,
       "TypeName": "datetimeV2.set",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "XXXX-WXX-1T16",
             "type": "set",
             "value": "not resolved"
@@ -1157,19 +216,289 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:30 pm",
+  "Input": "I'll go back now",
+  "Context": {
+    "ReferenceDateTime": "2017-09-14T12:33:03.5378376-03:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
+      "Text": "now",
+      "Start": 13,
+      "End": 15,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PRESENT_REF",
+            "type": "datetime",
+            "value": "2017-09-14 12:33:03"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Oct/2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "oct/2",
+      "Start": 13,
+      "End": 17,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-10-02",
+            "type": "date",
+            "value": "2016-10-02"
+          },
+          {
+            "timex": "XXXX-10-02",
+            "type": "date",
+            "value": "2017-10-02"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on 22/04",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Start": 16,
+      "End": 20,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-04-22",
+            "type": "date",
+            "value": "2016-04-22"
+          },
+          {
+            "timex": "XXXX-04-22",
+            "type": "date",
+            "value": "2017-04-22"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty nine",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "may twenty nine",
+      "Start": 13,
+      "End": 27,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-05-29",
+            "type": "date",
+            "value": "2016-05-29"
+          },
+          {
+            "timex": "XXXX-05-29",
+            "type": "date",
+            "value": "2017-05-29"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back second of Aug.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second of aug",
+      "Start": 13,
+      "End": 25,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-08-02",
+            "type": "date",
+            "value": "2016-08-02"
+          },
+          {
+            "timex": "XXXX-08-02",
+            "type": "date",
+            "value": "2017-08-02"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back today",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today",
+      "Start": 13,
+      "End": 17,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07",
+            "type": "date",
+            "value": "2016-11-07"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "Start": 13,
+      "End": 20,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "type": "date",
+            "value": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back yesterday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "yesterday",
+      "Start": 13,
+      "End": 21,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-06",
+            "type": "date",
+            "value": "2016-11-06"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back on Friday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "friday",
+      "Start": 16,
+      "End": 21,
+      "TypeName": "datetimeV2.date",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-5",
+            "type": "date",
+            "value": "2016-11-04"
+          },
+          {
+            "timex": "XXXX-WXX-5",
+            "type": "date",
+            "value": "2016-11-11"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:30 pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
       "Text": "7:56:30 pm",
       "Start": 13,
       "End": 22,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T19:56:30",
             "type": "time",
             "value": "19:56:30"
@@ -1183,24 +512,25 @@
 {
   "TestType": "BasicTest",
   "Input": "It's half past seven o'clock",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "half past seven o'clock",
       "Start": 5,
       "End": 27,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T07:30",
             "type": "time",
             "value": "07:30:00"
           },
           {
-            "$id": "4",
             "timex": "T19:30",
             "type": "time",
             "value": "19:30:00"
@@ -1214,18 +544,20 @@
 {
   "TestType": "BasicTest",
   "Input": "It's 20 min past eight in the evening",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "20 min past eight in the evening",
       "Start": 5,
       "End": 36,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T20:20",
             "type": "time",
             "value": "20:20:00"
@@ -1239,18 +571,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back in the morning at 7",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "in the morning at 7",
       "Start": 13,
       "End": 31,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T07",
             "type": "time",
             "value": "07:00:00"
@@ -1264,18 +598,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back in the afternoon at 7",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "in the afternoon at 7",
       "Start": 13,
       "End": 33,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T19",
             "type": "time",
             "value": "19:00:00"
@@ -1289,18 +625,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back noonish",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "noonish",
       "Start": 13,
       "End": 19,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T12",
             "type": "time",
             "value": "12:00:00"
@@ -1314,18 +652,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 11ish",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "11ish",
       "Start": 13,
       "End": 17,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T11",
             "type": "time",
             "value": "11:00:00"
@@ -1339,18 +679,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be back 1140 a.m.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "1140 a.m.",
       "Start": 13,
       "End": 21,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T11:40",
             "type": "time",
             "value": "11:40:00"
@@ -1364,18 +706,20 @@
 {
   "TestType": "BasicTest",
   "Input": "12 noon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "12 noon",
       "Start": 0,
       "End": 6,
       "TypeName": "datetimeV2.time",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "T12",
             "type": "time",
             "value": "12:00:00"
@@ -1388,19 +732,571 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll be out from 4-23 in next month",
+  "Input": "I'll leave for 3h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
+      "Text": "3h",
+      "Start": 15,
+      "End": 16,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT3H",
+            "type": "duration",
+            "value": "10800"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3.5years",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3.5years",
+      "Start": 15,
+      "End": 22,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P3.5Y",
+            "type": "duration",
+            "value": "110376000"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 3 minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Start": 15,
+      "End": 23,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT3M",
+            "type": "duration",
+            "value": "180"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for 123.45 sec",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "123.45 sec",
+      "Start": 15,
+      "End": 24,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT123.45S",
+            "type": "duration",
+            "value": "123.45"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all day",
+      "Start": 15,
+      "End": 21,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1D",
+            "type": "duration",
+            "value": "86400"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for twenty and four hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty and four hours",
+      "Start": 15,
+      "End": 35,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT24H",
+            "type": "duration",
+            "value": "86400"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for all month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all month",
+      "Start": 15,
+      "End": 23,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1M",
+            "type": "duration",
+            "value": "2592000"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for an hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour",
+      "Start": 15,
+      "End": 21,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT1H",
+            "type": "duration",
+            "value": "3600"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for few hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "few hours",
+      "Start": 15,
+      "End": 23,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT3H",
+            "type": "duration",
+            "value": "10800"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for a few minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a few minutes",
+      "Start": 15,
+      "End": 27,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT3M",
+            "type": "duration",
+            "value": "180"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for some days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "some days",
+      "Start": 15,
+      "End": 23,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P3D",
+            "type": "duration",
+            "value": "259200"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave for several weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "several weeks",
+      "Start": 15,
+      "End": 27,
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P3W",
+            "type": "duration",
+            "value": "1814400"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back now",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "now",
+      "Start": 13,
+      "End": 15,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PRESENT_REF",
+            "type": "datetime",
+            "value": "2016-11-07 00:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back October 14 for 8:00:31am",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "october 14 for 8:00:31am",
+      "Start": 13,
+      "End": 36,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-10-14T08:00:31",
+            "type": "datetime",
+            "value": "2016-10-14 08:00:31"
+          },
+          {
+            "timex": "XXXX-10-14T08:00:31",
+            "type": "datetime",
+            "value": "2017-10-14 08:00:31"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back tomorrow 8:00am",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow 8:00am",
+      "Start": 13,
+      "End": 27,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08T08:00",
+            "type": "datetime",
+            "value": "2016-11-08 08:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 10, tonight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10, tonight",
+      "Start": 13,
+      "End": 23,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07T22",
+            "type": "datetime",
+            "value": "2016-11-07 22:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 8am this morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8am this morning",
+      "Start": 13,
+      "End": 28,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07T08",
+            "type": "datetime",
+            "value": "2016-11-07 08:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back end of tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of tomorrow",
+      "Start": 13,
+      "End": 27,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08T23:59",
+            "type": "datetime",
+            "value": "2016-11-08 23:59:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back end of the sunday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of the sunday",
+      "Start": 13,
+      "End": 29,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-7T23:59",
+            "type": "datetime",
+            "value": "2016-11-06 23:59:00"
+          },
+          {
+            "timex": "XXXX-WXX-7T23:59",
+            "type": "datetime",
+            "value": "2016-11-13 23:59:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back end of this sunday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "end of this sunday",
+      "Start": 13,
+      "End": 30,
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-13T23:59",
+            "type": "datetime",
+            "value": "2016-11-13 23:59:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 4-23 in next month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
       "Text": "from 4-23 in next month",
       "Start": 12,
       "End": 34,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-12-04,2016-12-23,P19D)",
             "type": "daterange",
             "start": "2016-12-04",
@@ -1415,25 +1311,26 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out between 3 and 12 of Sept hahaha",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "between 3 and 12 of sept",
       "Start": 12,
       "End": 35,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(XXXX-09-03,XXXX-09-12,P9D)",
             "type": "daterange",
             "start": "2016-09-03",
             "end": "2016-09-12"
           },
           {
-            "$id": "4",
             "timex": "(XXXX-09-03,XXXX-09-12,P9D)",
             "type": "daterange",
             "start": "2017-09-03",
@@ -1448,18 +1345,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out this September",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "this september",
       "Start": 12,
       "End": 25,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2016-09",
             "type": "daterange",
             "start": "2016-09-01",
@@ -1474,18 +1373,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out January 12, 2016 - 01/22/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "january 12, 2016 - 01/22/2016",
       "Start": 12,
       "End": 40,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-01-12,2016-01-22,P10D)",
             "type": "daterange",
             "start": "2016-01-12",
@@ -1500,18 +1401,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out next 3 days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "next 3 days",
       "Start": 12,
       "End": 22,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-11-08,2016-11-11,P3D)",
             "type": "daterange",
             "start": "2016-11-08",
@@ -1526,25 +1429,26 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out the last week of july",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "the last week of july",
       "Start": 12,
       "End": 32,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "XXXX-07-W04",
             "type": "daterange",
             "start": "2016-07-25",
             "end": "2016-08-01"
           },
           {
-            "$id": "4",
             "timex": "XXXX-07-W04",
             "type": "daterange",
             "start": "2017-07-24",
@@ -1559,18 +1463,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 2015-3",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "2015-3",
       "Start": 12,
       "End": 17,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2015-03",
             "type": "daterange",
             "start": "2015-03-01",
@@ -1585,18 +1491,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll leave this SUMMER",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "this summer",
       "Start": 11,
       "End": 21,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2016-SU",
             "type": "daterange",
             "value": "not resolved"
@@ -1610,25 +1518,26 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out five to seven today",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "five to seven today",
       "Start": 12,
       "End": 30,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
             "type": "datetimerange",
             "start": "2016-11-07 05:00:00",
             "end": "2016-11-07 07:00:00"
           },
           {
-            "$id": "4",
             "timex": "(2016-11-07T17,2016-11-07T19,PT2H)",
             "type": "datetimerange",
             "start": "2016-11-07 17:00:00",
@@ -1643,25 +1552,26 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out from 5 to 6pm of April 22",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "from 5 to 6pm of april 22",
       "Start": 12,
       "End": 36,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
             "type": "datetimerange",
             "start": "2016-04-22 17:00:00",
             "end": "2016-04-22 18:00:00"
           },
           {
-            "$id": "4",
             "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
             "type": "datetimerange",
             "start": "2017-04-22 17:00:00",
@@ -1676,25 +1586,26 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll be out 3:00 to 4:00 tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "3:00 to 4:00 tomorrow",
       "Start": 12,
       "End": 32,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
             "type": "datetimerange",
             "start": "2016-11-08 03:00:00",
             "end": "2016-11-08 04:00:00"
           },
           {
-            "$id": "4",
             "timex": "(2016-11-08T15:00,2016-11-08T16:00,PT1H)",
             "type": "datetimerange",
             "start": "2016-11-08 15:00:00",
@@ -1709,18 +1620,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back this evening",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "this evening",
       "Start": 13,
       "End": 24,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2016-11-07TEV",
             "type": "datetimerange",
             "start": "2016-11-07 16:00:00",
@@ -1735,18 +1648,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tomorrow night",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tomorrow night",
       "Start": 13,
       "End": 26,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2016-11-08TNI",
             "type": "datetimerange",
             "start": "2016-11-08 20:00:00",
@@ -1761,18 +1676,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next monday afternoon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "next monday afternoon",
       "Start": 13,
       "End": 33,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "2016-11-14TAF",
             "type": "datetimerange",
             "start": "2016-11-14 12:00:00",
@@ -1787,18 +1704,20 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back next hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "next hour",
       "Start": 13,
       "End": 21,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
             "type": "datetimerange",
             "start": "2016-11-07 16:12:00",
@@ -1813,29 +1732,260 @@
 {
   "TestType": "BasicTest",
   "Input": "I'll go back tuesday in the morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
-      "$id": "1",
       "Text": "tuesday in the morning",
       "Start": 13,
       "End": 34,
       "TypeName": "datetimeV2.datetimerange",
       "Resolution": {
-        "$id": "2",
         "values": [
           {
-            "$id": "3",
             "timex": "XXXX-WXX-2TMO",
             "type": "datetimerange",
             "start": "2016-11-01 08:00:00",
             "end": "2016-11-01 12:00:00"
           },
           {
-            "$id": "4",
             "timex": "XXXX-WXX-2TMO",
             "type": "datetimerange",
             "start": "2016-11-08 08:00:00",
             "end": "2016-11-08 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 5 to 6pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 to 6pm",
+      "Start": 12,
+      "End": 19,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17,T18,PT1H)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 5 to seven in the morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 to seven in the morning",
+      "Start": 12,
+      "End": 36,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T05,T07,PT2H)",
+            "type": "timerange",
+            "start": "05:00:00",
+            "end": "07:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 5 and 6 in the afternoon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 5 and 6 in the afternoon",
+      "Start": 12,
+      "End": 43,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17,T18,PT1H)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 4:00 to 7 oclock",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4:00 to 7 oclock",
+      "Start": 12,
+      "End": 27,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T04:00,T07,PT3H)",
+            "type": "timerange",
+            "start": "04:00:00",
+            "end": "07:00:00"
+          },
+          {
+            "timex": "(T16:00,T19,PT3H)",
+            "type": "timerange",
+            "start": "16:00:00",
+            "end": "19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 3 in the morning until 5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3 in the morning until 5pm",
+      "Start": 12,
+      "End": 42,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T03,T17,PT14H)",
+            "type": "timerange",
+            "start": "03:00:00",
+            "end": "17:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between 4pm and 5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 4pm and 5pm",
+      "Start": 12,
+      "End": 30,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T16,T17,PT1H)",
+            "type": "timerange",
+            "start": "16:00:00",
+            "end": "17:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the morning",
+      "Start": 11,
+      "End": 24,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "TMO",
+            "type": "timerange",
+            "start": "08:00:00",
+            "end": "12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "let's meet in the evening",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the evening",
+      "Start": 11,
+      "End": 24,
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "TEV",
+            "type": "timerange",
+            "start": "16:00:00",
+            "end": "20:00:00"
           }
         ]
       }
