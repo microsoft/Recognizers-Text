@@ -1,50 +1,5 @@
 [{
   "TestType": "BasicTest",
-  "Input": "最后一个周三",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 6,
-      "Text": "最后一个周三",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "最后一个的周三",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 7,
-      "Text": "最后一个的周三",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "上一个周三",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 5,
-      "Text": "上一个周三",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "2010-01-29",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -428,6 +383,51 @@
       "Start": 0,
       "Length": 4,
       "Text": "本月十日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "最后一个周三",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 6,
+      "Text": "最后一个周三",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "最后一个的周三",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 7,
+      "Text": "最后一个的周三",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "上一个周三",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 5,
+      "Text": "上一个周三",
       "Type": "date"
     }
   ]

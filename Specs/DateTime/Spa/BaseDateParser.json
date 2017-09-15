@@ -66,1161 +66,6 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "volvere el 2/Oct",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-02",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-02",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        },
-        "FutureValue": "2017-10-02T00:00:00",
-        "PastValue": "2016-10-02T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 5,
-      "Text": "2/Oct",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 12 de enero, 2018",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2018-01-12",
-      "Value": {
-        "Success": true,
-        "Timex": "2018-01-12",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2018-01-12"
-        },
-        "PastResolution": {
-          "date": "2018-01-12"
-        },
-        "FutureValue": "2018-01-12T00:00:00",
-        "PastValue": "2018-01-12T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 17,
-      "Text": "12 de enero, 2018",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 21/04/2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-04-21",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-04-21",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        },
-        "FutureValue": "2016-04-21T00:00:00",
-        "PastValue": "2016-04-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 10,
-      "Text": "21/04/2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 4.22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-04-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-04-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        },
-        "FutureValue": "2017-04-22T00:00:00",
-        "PastValue": "2016-04-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 4,
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 4-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-04-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-04-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        },
-        "FutureValue": "2017-04-22T00:00:00",
-        "PastValue": "2016-04-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 4,
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el     4/22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-04-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-04-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        },
-        "FutureValue": "2017-04-22T00:00:00",
-        "PastValue": "2016-04-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 4,
-      "Text": "4/22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 22/04",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-04-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-04-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-04-22"
-        },
-        "PastResolution": {
-          "date": "2016-04-22"
-        },
-        "FutureValue": "2017-04-22T00:00:00",
-        "PastValue": "2016-04-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 5,
-      "Text": "22/04",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 21/04/16",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-04-21",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-04-21",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-04-21"
-        },
-        "PastResolution": {
-          "date": "2016-04-21"
-        },
-        "FutureValue": "2016-04-21T00:00:00",
-        "PastValue": "2016-04-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 8,
-      "Text": "21/04/16",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 9-18-15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-09-18",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-09-18",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-09-18"
-        },
-        "PastResolution": {
-          "date": "2015-09-18"
-        },
-        "FutureValue": "2015-09-18T00:00:00",
-        "PastValue": "2015-09-18T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "9-18-15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 2015/08/12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-08-12",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-08-12",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        },
-        "FutureValue": "2015-08-12T00:00:00",
-        "PastValue": "2015-08-12T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 10,
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 2015/08/12",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-08-12",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-08-12",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        },
-        "FutureValue": "2015-08-12T00:00:00",
-        "PastValue": "2015-08-12T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 10,
-      "Text": "2015/08/12",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 08/12,2015",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2015-08-12",
-      "Value": {
-        "Success": true,
-        "Timex": "2015-08-12",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2015-08-12"
-        },
-        "PastResolution": {
-          "date": "2015-08-12"
-        },
-        "FutureValue": "2015-08-12T00:00:00",
-        "PastValue": "2015-08-12T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 10,
-      "Text": "08/12,2015",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 1ro de Ene",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2016-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 10,
-      "Text": "1ro de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el Mi, 22 de Ene",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-22"
-        },
-        "PastResolution": {
-          "date": "2016-01-22"
-        },
-        "FutureValue": "2017-01-22T00:00:00",
-        "PastValue": "2016-01-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 13,
-      "Text": "Mi, 22 de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el primero de Ene",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-01-01"
-        },
-        "PastResolution": {
-          "date": "2016-01-01"
-        },
-        "FutureValue": "2017-01-01T00:00:00",
-        "PastValue": "2016-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 14,
-      "Text": "primero de Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el veintiuno de Mayo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-05-21",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-05-21",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        },
-        "FutureValue": "2017-05-21T00:00:00",
-        "PastValue": "2016-05-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 17,
-      "Text": "veintiuno de Mayo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el Mayo veintiuno",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-05-21",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-05-21",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        },
-        "FutureValue": "2017-05-21T00:00:00",
-        "PastValue": "2016-05-21T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 14,
-      "Text": "Mayo veintiuno",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el segundo de Ago.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-08-02",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-08-02",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-08-02"
-        },
-        "PastResolution": {
-          "date": "2016-08-02"
-        },
-        "FutureValue": "2017-08-02T00:00:00",
-        "PastValue": "2016-08-02T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 14,
-      "Text": "segundo de Ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el vigesimo segundo de Junio",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-06-22",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-06-22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-06-22"
-        },
-        "PastResolution": {
-          "date": "2016-06-22"
-        },
-        "FutureValue": "2017-06-22T00:00:00",
-        "PastValue": "2016-06-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 25,
-      "Text": "vigesimo segundo de Junio",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el viernes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-WXX-5",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-WXX-5",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        },
-        "FutureValue": "2016-11-11T00:00:00",
-        "PastValue": "2016-11-04T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré en |viernes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-WXX-5",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-WXX-5",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        },
-        "FutureValue": "2016-11-11T00:00:00",
-        "PastValue": "2016-11-04T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 12,
-      "Length": 7,
-      "Text": "viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré hoy",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 3,
-      "Text": "hoy",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        },
-        "FutureValue": "2016-11-08T00:00:00",
-        "PastValue": "2016-11-08T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 6,
-      "Text": "mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volví ayer",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-06",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-06",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        },
-        "FutureValue": "2016-11-06T00:00:00",
-        "PastValue": "2016-11-06T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 6,
-      "Length": 4,
-      "Text": "ayer",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvi el dia antes de ayer",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-05",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-05",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-05"
-        },
-        "PastResolution": {
-          "date": "2016-11-05"
-        },
-        "FutureValue": "2016-11-05T00:00:00",
-        "PastValue": "2016-11-05T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 6,
-      "Length": 20,
-      "Text": "el dia antes de ayer",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré pasado mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-09",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-09",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        },
-        "FutureValue": "2016-11-09T00:00:00",
-        "PastValue": "2016-11-09T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "pasado mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "El día despues de mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-09",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-09",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        },
-        "FutureValue": "2016-11-09T00:00:00",
-        "PastValue": "2016-11-09T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 24,
-      "Text": "El día despues de mañana",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el día siguiente",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        },
-        "FutureValue": "2016-11-08T00:00:00",
-        "PastValue": "2016-11-08T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 16,
-      "Text": "el día siguiente",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el proximo día",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-08"
-        },
-        "PastResolution": {
-          "date": "2016-11-08"
-        },
-        "FutureValue": "2016-11-08T00:00:00",
-        "PastValue": "2016-11-08T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 14,
-      "Text": "el proximo día",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el este viernes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-11",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-11",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-11"
-        },
-        "FutureValue": "2016-11-11T00:00:00",
-        "PastValue": "2016-11-11T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 12,
-      "Text": "este viernes",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el próximo domingo",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-20",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-20"
-        },
-        "PastResolution": {
-          "date": "2016-11-20"
-        },
-        "FutureValue": "2016-11-20T00:00:00",
-        "PastValue": "2016-11-20T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 15,
-      "Text": "próximo domingo",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré en el día",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 6,
-      "Text": "el día",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el 15 Junio 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-06-15",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-06-15",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-06-15"
-        },
-        "PastResolution": {
-          "date": "2016-06-15"
-        },
-        "FutureValue": "2016-06-15T00:00:00",
-        "PastValue": "2016-06-15T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 13,
-      "Text": "15 Junio 2016",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere el 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-XX-15",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-XX-15",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-15"
-        },
-        "PastResolution": {
-          "date": "2016-10-15"
-        },
-        "FutureValue": "2016-11-15T00:00:00",
-        "PastValue": "2016-10-15T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 2,
-      "Text": "15",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volvere el 2 Oct",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-02",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-02",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2017-10-02"
-        },
-        "PastResolution": {
-          "date": "2016-10-02"
-        },
-        "FutureValue": "2017-10-02T00:00:00",
-        "PastValue": "2016-10-02T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 5,
-      "Text": "2 Oct",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "volvere el 2-Oct",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2930,6 +1775,1161 @@
       "Start": 8,
       "Length": 29,
       "Text": "el primer viernes de este mes",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvere el 15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-XX-15",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-XX-15",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "date": "2016-10-15"
+        },
+        "FutureValue": "2016-11-15T00:00:00",
+        "PastValue": "2016-10-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 2,
+      "Text": "15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2 Oct",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2 Oct",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volvere el 2/Oct",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-10-02",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-10-02",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        },
+        "FutureValue": "2017-10-02T00:00:00",
+        "PastValue": "2016-10-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "2/Oct",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 12 de enero, 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2018-01-12",
+      "Value": {
+        "Success": true,
+        "Timex": "2018-01-12",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2018-01-12"
+        },
+        "PastResolution": {
+          "date": "2018-01-12"
+        },
+        "FutureValue": "2018-01-12T00:00:00",
+        "PastValue": "2018-01-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "12 de enero, 2018",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "21/04/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4.22",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4.22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 4-22",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 4,
+      "Text": "4-22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el     4/22",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 4,
+      "Text": "4/22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 22/04",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-04-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-04-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        },
+        "FutureValue": "2017-04-22T00:00:00",
+        "PastValue": "2016-04-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 5,
+      "Text": "22/04",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 21/04/16",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-04-21",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-04-21",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "date": "2016-04-21"
+        },
+        "FutureValue": "2016-04-21T00:00:00",
+        "PastValue": "2016-04-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 8,
+      "Text": "21/04/16",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 9-18-15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-09-18",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-09-18",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2015-09-18"
+        },
+        "PastResolution": {
+          "date": "2015-09-18"
+        },
+        "FutureValue": "2015-09-18T00:00:00",
+        "PastValue": "2015-09-18T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "9-18-15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 2015/08/12",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 2015/08/12",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "2015/08/12",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 08/12,2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2015-08-12",
+      "Value": {
+        "Success": true,
+        "Timex": "2015-08-12",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        },
+        "FutureValue": "2015-08-12T00:00:00",
+        "PastValue": "2015-08-12T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "08/12,2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 1ro de Ene",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 10,
+      "Text": "1ro de Ene",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el Mi, 22 de Ene",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-01-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-01-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "date": "2016-01-22"
+        },
+        "FutureValue": "2017-01-22T00:00:00",
+        "PastValue": "2016-01-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "Mi, 22 de Ene",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el primero de Ene",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "primero de Ene",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el veintiuno de Mayo",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 17,
+      "Text": "veintiuno de Mayo",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el Mayo veintiuno",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-05-21",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-05-21",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "date": "2016-05-21"
+        },
+        "FutureValue": "2017-05-21T00:00:00",
+        "PastValue": "2016-05-21T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "Mayo veintiuno",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el segundo de Ago.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-08-02",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-08-02",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "date": "2016-08-02"
+        },
+        "FutureValue": "2017-08-02T00:00:00",
+        "PastValue": "2016-08-02T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 14,
+      "Text": "segundo de Ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el vigesimo segundo de Junio",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-06-22",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-06-22",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "date": "2016-06-22"
+        },
+        "FutureValue": "2017-06-22T00:00:00",
+        "PastValue": "2016-06-22T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 25,
+      "Text": "vigesimo segundo de Junio",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré el viernes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en |viernes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-WXX-5",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-WXX-5",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-04T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 12,
+      "Length": 7,
+      "Text": "viernes",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré hoy",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 3,
+      "Text": "hoy",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 6,
+      "Text": "mañana",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volví ayer",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-06",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-06",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "date": "2016-11-06"
+        },
+        "FutureValue": "2016-11-06T00:00:00",
+        "PastValue": "2016-11-06T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 4,
+      "Text": "ayer",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volvi el dia antes de ayer",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-05",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-05",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "date": "2016-11-05"
+        },
+        "FutureValue": "2016-11-05T00:00:00",
+        "PastValue": "2016-11-05T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 6,
+      "Length": 20,
+      "Text": "el dia antes de ayer",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré pasado mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 13,
+      "Text": "pasado mañana",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "El día despues de mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-09",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-09",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-09"
+        },
+        "PastResolution": {
+          "date": "2016-11-09"
+        },
+        "FutureValue": "2016-11-09T00:00:00",
+        "PastValue": "2016-11-09T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 24,
+      "Text": "El día despues de mañana",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el día siguiente",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 16,
+      "Text": "el día siguiente",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el proximo día",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-08",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-08",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        },
+        "FutureValue": "2016-11-08T00:00:00",
+        "PastValue": "2016-11-08T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 8,
+      "Length": 14,
+      "Text": "el proximo día",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el este viernes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-11",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-11",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-11"
+        },
+        "FutureValue": "2016-11-11T00:00:00",
+        "PastValue": "2016-11-11T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 12,
+      "Text": "este viernes",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el próximo domingo",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-20",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-20",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "date": "2016-11-20"
+        },
+        "FutureValue": "2016-11-20T00:00:00",
+        "PastValue": "2016-11-20T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 15,
+      "Text": "próximo domingo",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré en el día",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-11-07",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-11-07",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        },
+        "FutureValue": "2016-11-07T00:00:00",
+        "PastValue": "2016-11-07T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 6,
+      "Text": "el día",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "volveré el 15 Junio 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-06-15",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-06-15",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "date": "2016-06-15"
+        },
+        "FutureValue": "2016-06-15T00:00:00",
+        "PastValue": "2016-06-15T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 13,
+      "Text": "15 Junio 2016",
       "Type": "date"
     }
   ]

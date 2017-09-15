@@ -2171,375 +2171,6 @@
 ,
 {
   "TestType": "BasicTestFuture",
-  "Input": "scheduel a meeting in two weeks",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(2016-11-15,2016-11-22,P1W)",
-      "Value": {
-        "Success": true,
-        "Timex": "(2016-11-15,2016-11-22,P1W)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-15",
-          "endDate": "2016-11-22"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-15",
-          "endDate": "2016-11-22"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-15T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-15T00:00:00",
-          "Item2": "2016-11-22T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 12,
-      "Text": "in two weeks",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "next 2 days",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(2016-11-08,2016-11-10,P2D)",
-      "Value": {
-        "Success": true,
-        "Timex": "(2016-11-08,2016-11-10,P2D)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-08",
-          "endDate": "2016-11-10"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-08",
-          "endDate": "2016-11-10"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-08T00:00:00",
-          "Item2": "2016-11-10T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-08T00:00:00",
-          "Item2": "2016-11-10T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 11,
-      "Text": "next 2 days",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "past few days",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(2016-11-04,2016-11-07,P3D)",
-      "Value": {
-        "Success": true,
-        "Timex": "(2016-11-04,2016-11-07,P3D)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-07"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-04",
-          "endDate": "2016-11-07"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-07T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-04T00:00:00",
-          "Item2": "2016-11-07T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 13,
-      "Text": "past few days",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "the week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 8,
-      "Text": "the week",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "this week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "this week",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "my week",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-07",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 7,
-      "Text": "my week",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "the weekend",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46-WE",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46-WE",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 11,
-      "Text": "the weekend",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "this weekend",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46-WE",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46-WE",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 12,
-      "Text": "this weekend",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
-  "Input": "my weekend",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-W46-WE",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-W46-WE",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "PastResolution": {
-          "startDate": "2016-11-12",
-          "endDate": "2016-11-14"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-12T00:00:00",
-          "Item2": "2016-11-14T00:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 10,
-      "Text": "my weekend",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestFuture",
   "Input": "I'll be out from 4 to 22 this month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -3523,3 +3154,373 @@
     }
   ]
 }
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "scheduel a meeting in two weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-15,2016-11-22,P1W)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-15,2016-11-22,P1W)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-15",
+          "endDate": "2016-11-22"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-15",
+          "endDate": "2016-11-22"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-15T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-15T00:00:00",
+          "Item2": "2016-11-22T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 19,
+      "Length": 12,
+      "Text": "in two weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "next 2 days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-08,2016-11-10,P2D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-08,2016-11-10,P2D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-11-10"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-11-10"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-08T00:00:00",
+          "Item2": "2016-11-10T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-08T00:00:00",
+          "Item2": "2016-11-10T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "next 2 days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "past few days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(2016-11-04,2016-11-07,P3D)",
+      "Value": {
+        "Success": true,
+        "Timex": "(2016-11-04,2016-11-07,P3D)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-07"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-04",
+          "endDate": "2016-11-07"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-07T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-04T00:00:00",
+          "Item2": "2016-11-07T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 13,
+      "Text": "past few days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "the week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 8,
+      "Text": "the week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "this week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 9,
+      "Text": "this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "my week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-07",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 7,
+      "Text": "my week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "the weekend",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46-WE",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46-WE",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 11,
+      "Text": "the weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "this weekend",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46-WE",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46-WE",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 12,
+      "Text": "this weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestFuture",
+  "Input": "my weekend",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "2016-W46-WE",
+      "Value": {
+        "Success": true,
+        "Timex": "2016-W46-WE",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-12",
+          "endDate": "2016-11-14"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-12T00:00:00",
+          "Item2": "2016-11-14T00:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 0,
+      "Length": 10,
+      "Text": "my weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+]

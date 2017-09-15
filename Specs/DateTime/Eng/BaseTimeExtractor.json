@@ -1,17 +1,286 @@
 [{
   "TestType": "BasicTest",
-  "Input": "which emails have gotten p as subject",
+  "Input": "I'll be back 7pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
-  "Results": []
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 3,
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
 }
 ,
 {
   "TestType": "BasicTest",
-  "Input": "which emails have gotten a reply",
+  "Input": "I'll be back 7 p m",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
-  "Results": []
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "7 p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "7 p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 7,
+      "Text": "7 p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7 p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "7 p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56 a m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 8,
+      "Text": "7:56 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 a. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 12,
+      "Text": "7:56:35 a. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 am",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 10,
+      "Text": "7:56:35 am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 7:56:35 a. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 13,
+      "Text": "7:56:35 a. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 15,
+      "Text": "seven thirty pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 17,
+      "Text": "seven thirty p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 16,
+      "Text": "seven thirty p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p. m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 17,
+      "Text": "seven thirty p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back seven thirty p. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 18,
+      "Text": "seven thirty p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 340pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 5,
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 340 pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 6,
+      "Text": "340 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a.m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 9,
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be back 1140 a m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 8,
+      "Text": "1140 a m",
+      "Type": "time"
+    }
+  ]
 }
 ,
 {
@@ -901,286 +1170,17 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll be back 7pm",
+  "Input": "which emails have gotten p as subject",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 3,
-      "Text": "7pm",
-      "Type": "time"
-    }
-  ]
+  "Results": []
 }
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll be back 7 p m",
+  "Input": "which emails have gotten a reply",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 5,
-      "Text": "7 p m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p. m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 6,
-      "Text": "7 p. m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p. m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 7,
-      "Text": "7 p. m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7p.m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 5,
-      "Text": "7p.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7 p.m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 6,
-      "Text": "7 p.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56 a m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 8,
-      "Text": "7:56 a m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 a. m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 12,
-      "Text": "7:56:35 a. m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 am",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 10,
-      "Text": "7:56:35 am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 7:56:35 a. m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 13,
-      "Text": "7:56:35 a. m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 15,
-      "Text": "seven thirty pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p.m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 17,
-      "Text": "seven thirty p.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 16,
-      "Text": "seven thirty p m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p. m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 17,
-      "Text": "seven thirty p. m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back seven thirty p. m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 18,
-      "Text": "seven thirty p. m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 340pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 5,
-      "Text": "340pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 340 pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 6,
-      "Text": "340 pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 1140 a.m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 9,
-      "Text": "1140 a.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be back 1140 a m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 8,
-      "Text": "1140 a m",
-      "Type": "time"
-    }
-  ]
+  "Results": []
 }
 ]

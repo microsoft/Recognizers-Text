@@ -1,5 +1,50 @@
 [{
   "TestType": "BasicTest",
+  "Input": "I'll leave on Mondays",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Mondays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave on Sundays",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 10,
+      "Text": "on Sundays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave Sundays",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 7,
+      "Text": "Sundays",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
   "Input": "I'll leave every morning at 9am",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -338,51 +383,6 @@
       "Start": 14,
       "Length": 11,
       "Text": "9am Mondays",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave on Mondays",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 10,
-      "Text": "on Mondays",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave on Sundays",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 10,
-      "Text": "on Sundays",
-      "Type": "set"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave Sundays",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 7,
-      "Text": "Sundays",
       "Type": "set"
     }
   ]

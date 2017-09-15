@@ -1,5 +1,248 @@
 [{
   "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T08:40",
+      "Value": {
+        "Success": true,
+        "Timex": "T08:40",
+        "IsLunar": false,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "time": "08:40:00"
+        },
+        "PastResolution": {
+          "time": "08:40:00"
+        },
+        "FutureValue": "2017-09-14T08:40:00",
+        "PastValue": "2017-09-14T08:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 11,
+      "Text": "eight forty",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty am",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T08:40",
+      "Value": {
+        "Success": true,
+        "Timex": "T08:40",
+        "IsLunar": false,
+        "FutureResolution": {
+          "time": "08:40:00"
+        },
+        "PastResolution": {
+          "time": "08:40:00"
+        },
+        "FutureValue": "2017-09-14T08:40:00",
+        "PastValue": "2017-09-14T08:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "eight forty am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for eight forty pm",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T20:40",
+      "Value": {
+        "Success": true,
+        "Timex": "T20:40",
+        "IsLunar": false,
+        "FutureResolution": {
+          "time": "20:40:00"
+        },
+        "PastResolution": {
+          "time": "20:40:00"
+        },
+        "FutureValue": "2017-09-14T20:40:00",
+        "PastValue": "2017-09-14T20:40:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "eight forty pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten forty five",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T10:45",
+      "Value": {
+        "Success": true,
+        "Timex": "T10:45",
+        "IsLunar": false,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "time": "10:45:00"
+        },
+        "PastResolution": {
+          "time": "10:45:00"
+        },
+        "FutureValue": "2017-09-14T10:45:00",
+        "PastValue": "2017-09-14T10:45:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 14,
+      "Text": "ten forty five",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for fifteen fifteen p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T15:15",
+      "Value": {
+        "Success": true,
+        "Timex": "T15:15",
+        "IsLunar": false,
+        "FutureResolution": {
+          "time": "15:15:00"
+        },
+        "PastResolution": {
+          "time": "15:15:00"
+        },
+        "FutureValue": "2017-09-14T15:15:00",
+        "PastValue": "2017-09-14T15:15:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 19,
+      "Text": "fifteen fifteen p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for fifteen thirty p m",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T15:30",
+      "Value": {
+        "Success": true,
+        "Timex": "T15:30",
+        "IsLunar": false,
+        "FutureResolution": {
+          "time": "15:30:00"
+        },
+        "PastResolution": {
+          "time": "15:30:00"
+        },
+        "FutureValue": "2017-09-14T15:30:00",
+        "PastValue": "2017-09-14T15:30:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 18,
+      "Text": "fifteen thirty p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten ten",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T10:10",
+      "Value": {
+        "Success": true,
+        "Timex": "T10:10",
+        "IsLunar": false,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "time": "10:10:00"
+        },
+        "PastResolution": {
+          "time": "10:10:00"
+        },
+        "FutureValue": "2017-09-14T10:10:00",
+        "PastValue": "2017-09-14T10:10:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 7,
+      "Text": "ten ten",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "set an alarm for ten fifty five p. m.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "T22:55",
+      "Value": {
+        "Success": true,
+        "Timex": "T22:55",
+        "IsLunar": false,
+        "FutureResolution": {
+          "time": "22:55:00"
+        },
+        "PastResolution": {
+          "time": "22:55:00"
+        },
+        "FutureValue": "2017-09-14T22:55:00",
+        "PastValue": "2017-09-14T22:55:00"
+      },
+      "ResolutionStr": "",
+      "Start": 17,
+      "Length": 20,
+      "Text": "ten fifty five p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
   "Input": "I'll be back at 7ampm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1596,249 +1839,6 @@
       "Start": 0,
       "Length": 4,
       "Text": "noon",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for eight forty",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08:40",
-      "Value": {
-        "Success": true,
-        "Timex": "T08:40",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "08:40:00"
-        },
-        "PastResolution": {
-          "time": "08:40:00"
-        },
-        "FutureValue": "2017-09-14T08:40:00",
-        "PastValue": "2017-09-14T08:40:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 11,
-      "Text": "eight forty",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for eight forty am",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08:40",
-      "Value": {
-        "Success": true,
-        "Timex": "T08:40",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "08:40:00"
-        },
-        "PastResolution": {
-          "time": "08:40:00"
-        },
-        "FutureValue": "2017-09-14T08:40:00",
-        "PastValue": "2017-09-14T08:40:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 14,
-      "Text": "eight forty am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for eight forty pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T20:40",
-      "Value": {
-        "Success": true,
-        "Timex": "T20:40",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "20:40:00"
-        },
-        "PastResolution": {
-          "time": "20:40:00"
-        },
-        "FutureValue": "2017-09-14T20:40:00",
-        "PastValue": "2017-09-14T20:40:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 14,
-      "Text": "eight forty pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for ten forty five",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T10:45",
-      "Value": {
-        "Success": true,
-        "Timex": "T10:45",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "10:45:00"
-        },
-        "PastResolution": {
-          "time": "10:45:00"
-        },
-        "FutureValue": "2017-09-14T10:45:00",
-        "PastValue": "2017-09-14T10:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 14,
-      "Text": "ten forty five",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for fifteen fifteen p m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T15:15",
-      "Value": {
-        "Success": true,
-        "Timex": "T15:15",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "15:15:00"
-        },
-        "PastResolution": {
-          "time": "15:15:00"
-        },
-        "FutureValue": "2017-09-14T15:15:00",
-        "PastValue": "2017-09-14T15:15:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 19,
-      "Text": "fifteen fifteen p m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for fifteen thirty p m",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T15:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T15:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "15:30:00"
-        },
-        "PastResolution": {
-          "time": "15:30:00"
-        },
-        "FutureValue": "2017-09-14T15:30:00",
-        "PastValue": "2017-09-14T15:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 18,
-      "Text": "fifteen thirty p m",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for ten ten",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T10:10",
-      "Value": {
-        "Success": true,
-        "Timex": "T10:10",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "10:10:00"
-        },
-        "PastResolution": {
-          "time": "10:10:00"
-        },
-        "FutureValue": "2017-09-14T10:10:00",
-        "PastValue": "2017-09-14T10:10:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 7,
-      "Text": "ten ten",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "set an alarm for ten fifty five p. m.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T22:55",
-      "Value": {
-        "Success": true,
-        "Timex": "T22:55",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "22:55:00"
-        },
-        "PastResolution": {
-          "time": "22:55:00"
-        },
-        "FutureValue": "2017-09-14T22:55:00",
-        "PastValue": "2017-09-14T22:55:00"
-      },
-      "ResolutionStr": "",
-      "Start": 17,
-      "Length": 20,
-      "Text": "ten fifty five p. m.",
       "Type": "time"
     }
   ]

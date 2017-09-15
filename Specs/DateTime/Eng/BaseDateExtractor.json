@@ -1,148 +1,61 @@
 [{
-  "TestType": "BasicTest",
-  "Input": "I went back for the 27",
+  "TestType": "BasicTestTwoOutputs",
+  "Input": "What do I have on Sunday the second?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
-      "Text": "for the 27",
+      "Start": 18,
+      "Length": 6,
+      "Text": "Sunday",
+      "Type": "date"
+    },
+    {
+      "Start": 29,
+      "Length": 6,
+      "Text": "second",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I went back for the 27th",
+  "TestType": "BasicTestTwoOutputs",
+  "Input": "What do I have on Thursday the 27th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
-      "Text": "for the 27th",
+      "Start": 18,
+      "Length": 8,
+      "Text": "Thursday",
+      "Type": "date"
+    },
+    {
+      "Start": 31,
+      "Length": 4,
+      "Text": "27th",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I went back for the 27.",
+  "TestType": "BasicTestTwoOutputs",
+  "Input": "What do I have on Sunday the 21st",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
-      "Text": "for the 27",
+      "Start": 18,
+      "Length": 6,
+      "Text": "Sunday",
       "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the 27!",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
+    },
     {
-      "Start": 12,
-      "Length": 10,
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the 27 .",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 10,
-      "Text": "for the 27",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the 21st",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 12,
-      "Text": "for the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the 22nd",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 12,
-      "Text": "for the 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the second",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 14,
-      "Text": "for the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the twenty second",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 21,
-      "Text": "for the twenty second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back for the thirty first",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 20,
-      "Text": "for the thirty first",
+      "Start": 29,
+      "Length": 4,
+      "Text": "21st",
       "Type": "date"
     }
   ]
@@ -944,6 +857,306 @@
 }
 ,
 {
+  "TestType": "BasicTest",
+  "Input": "I went back two months ago",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 14,
+      "Text": "two months ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back two days later",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 14,
+      "Text": "two days later",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "who did i email a month ago",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 16,
+      "Length": 11,
+      "Text": "a month ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27th",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 27th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27.",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27!",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 27 .",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 21st",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 21st",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the 22nd",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "for the 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the second",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 14,
+      "Text": "for the second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the twenty second",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 21,
+      "Text": "for the twenty second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back for the thirty first",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 20,
+      "Text": "for the thirty first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back fourth of may",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 13,
+      "Text": "fourth of may",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back 4th of march",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 12,
+      "Text": "4th of march",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back Jan first",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 9,
+      "Text": "Jan first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty-first",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 16,
+      "Text": "May twenty-first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back May twenty one",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 14,
+      "Text": "May twenty one",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back second of Aug",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 13,
+      "Text": "second of Aug",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll go back twenty second of June",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 13,
+      "Length": 21,
+      "Text": "twenty second of June",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "TestType": "BasicTestNone",
   "Input": "the first prize",
   "NotSupported": "javascript, python",
@@ -973,81 +1186,6 @@
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back on the 27th",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 11,
-      "Text": "on the 27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back on the 21st",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 11,
-      "Text": "on the 21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back on 22nd",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 7,
-      "Text": "on 22nd",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back on the second!",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 13,
-      "Text": "on the second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I went back on twenty second?",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 16,
-      "Text": "on twenty second",
-      "Type": "date"
-    }
-  ]
 }
 ,
 {
@@ -1202,44 +1340,14 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I went back two months ago",
+  "Input": "I went back on the 27th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Start": 12,
-      "Length": 14,
-      "Text": "two months ago",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back two days later",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 14,
-      "Text": "two days later",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "who did i email a month ago",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 16,
       "Length": 11,
-      "Text": "a month ago",
+      "Text": "on the 27th",
       "Type": "date"
     }
   ]
@@ -1247,14 +1355,44 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll go back fourth of may",
+  "Input": "I went back on the 21st",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
+      "Start": 12,
+      "Length": 11,
+      "Text": "on the 21st",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back on 22nd",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 7,
+      "Text": "on 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I went back on the second!",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
       "Length": 13,
-      "Text": "fourth of may",
+      "Text": "on the second",
       "Type": "date"
     }
   ]
@@ -1262,152 +1400,14 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll go back 4th of march",
+  "Input": "I went back on twenty second?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 12,
-      "Text": "4th of march",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back Jan first",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 9,
-      "Text": "Jan first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back May twenty-first",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
+      "Start": 12,
       "Length": 16,
-      "Text": "May twenty-first",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back May twenty one",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 14,
-      "Text": "May twenty one",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back second of Aug",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 13,
-      "Text": "second of Aug",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back twenty second of June",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 13,
-      "Length": 21,
-      "Text": "twenty second of June",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestTwoOutputs",
-  "Input": "What do I have on Sunday the second?",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 18,
-      "Length": 6,
-      "Text": "Sunday",
-      "Type": "date"
-    },
-    {
-      "Start": 29,
-      "Length": 6,
-      "Text": "second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestTwoOutputs",
-  "Input": "What do I have on Thursday the 27th",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 18,
-      "Length": 8,
-      "Text": "Thursday",
-      "Type": "date"
-    },
-    {
-      "Start": 31,
-      "Length": 4,
-      "Text": "27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestTwoOutputs",
-  "Input": "What do I have on Sunday the 21st",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 18,
-      "Length": 6,
-      "Text": "Sunday",
-      "Type": "date"
-    },
-    {
-      "Start": 29,
-      "Length": 4,
-      "Text": "21st",
+      "Text": "on twenty second",
       "Type": "date"
     }
   ]

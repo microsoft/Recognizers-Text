@@ -123,581 +123,6 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Estaré afuera entre las 5 y 6pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T17,T18,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T17,T18,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "PastResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 17,
-      "Text": "entre las 5 y 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré fuera desde las 4pm hasta 5pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T16,T17,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T16,T17,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "PastResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 23,
-      "Text": "desde las 4pm hasta 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré fuera desde las 4:00 hasta las 7 en punto",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T04:00,T07,PT3H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T04:00,T07,PT3H)",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "startTime": "04:00:00",
-          "endTime": "07:00:00"
-        },
-        "PastResolution": {
-          "startTime": "04:00:00",
-          "endTime": "07:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T04:00:00",
-          "Item2": "2016-11-07T07:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T04:00:00",
-          "Item2": "2016-11-07T07:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 35,
-      "Text": "desde las 4:00 hasta las 7 en punto",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré fuera 4pm-5pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T16,T17,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T16,T17,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "PastResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 7,
-      "Text": "4pm-5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré fuera 4pm - 5pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T16,T17,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T16,T17,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "PastResolution": {
-          "startTime": "16:00:00",
-          "endTime": "17:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 9,
-      "Text": "4pm - 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré fuera desde las 3 de la mañana hasta las 5pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T03,T17,PT14H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T03,T17,PT14H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "03:00:00",
-          "endTime": "17:00:00"
-        },
-        "PastResolution": {
-          "startTime": "03:00:00",
-          "endTime": "17:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T03:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T03:00:00",
-          "Item2": "2016-11-07T17:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 38,
-      "Text": "desde las 3 de la mañana hasta las 5pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Nos vemos a la madrugada",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "TDA",
-      "Value": {
-        "Success": true,
-        "Timex": "TDA",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "04:00:00",
-          "endTime": "08:00:00"
-        },
-        "PastResolution": {
-          "startTime": "04:00:00",
-          "endTime": "08:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T04:00:00",
-          "Item2": "2016-11-07T08:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T04:00:00",
-          "Item2": "2016-11-07T08:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 9,
-      "Text": "madrugada",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Nos vemos a la mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "TMO",
-      "Value": {
-        "Success": true,
-        "Timex": "TMO",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "08:00:00",
-          "endTime": "12:00:00"
-        },
-        "PastResolution": {
-          "startTime": "08:00:00",
-          "endTime": "12:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T08:00:00",
-          "Item2": "2016-11-07T12:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T08:00:00",
-          "Item2": "2016-11-07T12:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 6,
-      "Text": "mañana",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Nos vemos pasado el mediodia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "TAF",
-      "Value": {
-        "Success": true,
-        "Timex": "TAF",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "12:00:00",
-          "endTime": "16:00:00"
-        },
-        "PastResolution": {
-          "startTime": "12:00:00",
-          "endTime": "16:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T12:00:00",
-          "Item2": "2016-11-07T16:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T12:00:00",
-          "Item2": "2016-11-07T16:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 10,
-      "Length": 18,
-      "Text": "pasado el mediodia",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Nos vemos en la noche",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "TNI",
-      "Value": {
-        "Success": true,
-        "Timex": "TNI",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "20:00:00",
-          "endTime": "23:59:59"
-        },
-        "PastResolution": {
-          "startTime": "20:00:00",
-          "endTime": "23:59:59"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T20:00:00",
-          "Item2": "2016-11-07T23:59:59"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T20:00:00",
-          "Item2": "2016-11-07T23:59:59"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 5,
-      "Text": "noche",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Nos vemos a la tarde",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "TEV",
-      "Value": {
-        "Success": true,
-        "Timex": "TEV",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "16:00:00",
-          "endTime": "20:00:00"
-        },
-        "PastResolution": {
-          "startTime": "16:00:00",
-          "endTime": "20:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T20:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T16:00:00",
-          "Item2": "2016-11-07T20:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 5,
-      "Text": "tarde",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré afuera de 5 a 6pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T17,T18,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T17,T18,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "PastResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 10,
-      "Text": "de 5 a 6pm",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré afuera de 5 a 6p.m.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T17,T18,PT1H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T17,T18,PT1H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "PastResolution": {
-          "startTime": "17:00:00",
-          "endTime": "18:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T17:00:00",
-          "Item2": "2016-11-07T18:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 12,
-      "Text": "de 5 a 6p.m.",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Estaré afuera de 5 a siete de la mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "(T05,T07,PT2H)",
-      "Value": {
-        "Success": true,
-        "Timex": "(T05,T07,PT2H)",
-        "IsLunar": false,
-        "FutureResolution": {
-          "startTime": "05:00:00",
-          "endTime": "07:00:00"
-        },
-        "PastResolution": {
-          "startTime": "05:00:00",
-          "endTime": "07:00:00"
-        },
-        "FutureValue": {
-          "Item1": "2016-11-07T05:00:00",
-          "Item2": "2016-11-07T07:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-11-07T05:00:00",
-          "Item2": "2016-11-07T07:00:00"
-        }
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 25,
-      "Text": "de 5 a siete de la mañana",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Estaré afuera desde las 5 hasta las 6 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1264,6 +689,581 @@
       },
       "ResolutionStr": "",
       "Start": 9,
+      "Length": 18,
+      "Text": "pasado el mediodia",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Nos vemos en la noche",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "TNI",
+      "Value": {
+        "Success": true,
+        "Timex": "TNI",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "20:00:00",
+          "endTime": "23:59:59"
+        },
+        "PastResolution": {
+          "startTime": "20:00:00",
+          "endTime": "23:59:59"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T20:00:00",
+          "Item2": "2016-11-07T23:59:59"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 16,
+      "Length": 5,
+      "Text": "noche",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Nos vemos a la tarde",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "TEV",
+      "Value": {
+        "Success": true,
+        "Timex": "TEV",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "16:00:00",
+          "endTime": "20:00:00"
+        },
+        "PastResolution": {
+          "startTime": "16:00:00",
+          "endTime": "20:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T20:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T20:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 5,
+      "Text": "tarde",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 5 a 6pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T17,T18,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T17,T18,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "PastResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 10,
+      "Text": "de 5 a 6pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 5 a 6p.m.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T17,T18,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T17,T18,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "PastResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 12,
+      "Text": "de 5 a 6p.m.",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera de 5 a siete de la mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T05,T07,PT2H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T05,T07,PT2H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "05:00:00",
+          "endTime": "07:00:00"
+        },
+        "PastResolution": {
+          "startTime": "05:00:00",
+          "endTime": "07:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T05:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 25,
+      "Text": "de 5 a siete de la mañana",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré afuera entre las 5 y 6pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T17,T18,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T17,T18,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "PastResolution": {
+          "startTime": "17:00:00",
+          "endTime": "18:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T17:00:00",
+          "Item2": "2016-11-07T18:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 14,
+      "Length": 17,
+      "Text": "entre las 5 y 6pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera desde las 4pm hasta 5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T16,T17,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T16,T17,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "PastResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 23,
+      "Text": "desde las 4pm hasta 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera desde las 4:00 hasta las 7 en punto",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T04:00,T07,PT3H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T04:00,T07,PT3H)",
+        "IsLunar": false,
+        "Comment": "ampm",
+        "FutureResolution": {
+          "startTime": "04:00:00",
+          "endTime": "07:00:00"
+        },
+        "PastResolution": {
+          "startTime": "04:00:00",
+          "endTime": "07:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T04:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T04:00:00",
+          "Item2": "2016-11-07T07:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 35,
+      "Text": "desde las 4:00 hasta las 7 en punto",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera 4pm-5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T16,T17,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T16,T17,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "PastResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 7,
+      "Text": "4pm-5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera 4pm - 5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T16,T17,PT1H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T16,T17,PT1H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "PastResolution": {
+          "startTime": "16:00:00",
+          "endTime": "17:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T16:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 9,
+      "Text": "4pm - 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Estaré fuera desde las 3 de la mañana hasta las 5pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "(T03,T17,PT14H)",
+      "Value": {
+        "Success": true,
+        "Timex": "(T03,T17,PT14H)",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "03:00:00",
+          "endTime": "17:00:00"
+        },
+        "PastResolution": {
+          "startTime": "03:00:00",
+          "endTime": "17:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T03:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T03:00:00",
+          "Item2": "2016-11-07T17:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 13,
+      "Length": 38,
+      "Text": "desde las 3 de la mañana hasta las 5pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Nos vemos a la madrugada",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "TDA",
+      "Value": {
+        "Success": true,
+        "Timex": "TDA",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "04:00:00",
+          "endTime": "08:00:00"
+        },
+        "PastResolution": {
+          "startTime": "04:00:00",
+          "endTime": "08:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T04:00:00",
+          "Item2": "2016-11-07T08:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T04:00:00",
+          "Item2": "2016-11-07T08:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 9,
+      "Text": "madrugada",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Nos vemos a la mañana",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "TMO",
+      "Value": {
+        "Success": true,
+        "Timex": "TMO",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "08:00:00",
+          "endTime": "12:00:00"
+        },
+        "PastResolution": {
+          "startTime": "08:00:00",
+          "endTime": "12:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T08:00:00",
+          "Item2": "2016-11-07T12:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T08:00:00",
+          "Item2": "2016-11-07T12:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 15,
+      "Length": 6,
+      "Text": "mañana",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "Nos vemos pasado el mediodia",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "TAF",
+      "Value": {
+        "Success": true,
+        "Timex": "TAF",
+        "IsLunar": false,
+        "FutureResolution": {
+          "startTime": "12:00:00",
+          "endTime": "16:00:00"
+        },
+        "PastResolution": {
+          "startTime": "12:00:00",
+          "endTime": "16:00:00"
+        },
+        "FutureValue": {
+          "Item1": "2016-11-07T12:00:00",
+          "Item2": "2016-11-07T16:00:00"
+        },
+        "PastValue": {
+          "Item1": "2016-11-07T12:00:00",
+          "Item2": "2016-11-07T16:00:00"
+        }
+      },
+      "ResolutionStr": "",
+      "Start": 10,
       "Length": 18,
       "Text": "pasado el mediodia",
       "Type": "timerange"

@@ -1,5 +1,305 @@
 [{
   "TestType": "BasicTest",
+  "Input": "I'll leave over the weekend",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 16,
+      "Length": 11,
+      "Text": "the weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out next 3 days",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 11,
+      "Text": "next 3 days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out next 3 months",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 13,
+      "Text": "next 3 months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out in 3 year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 9,
+      "Text": "in 3 year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out in 3 years",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "in 3 years",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out in 3 weeks",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "in 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out in 3 months",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 11,
+      "Text": "in 3 months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out past 3 weeks",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 12,
+      "Text": "past 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out last 3year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "last 3year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out last year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 9,
+      "Text": "last year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out past month",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 10,
+      "Text": "past month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out previous 3 weeks",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 16,
+      "Text": "previous 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "past few weeks",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 14,
+      "Text": "past few weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "past several days",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 17,
+      "Text": "past several days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave this summer",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 11,
+      "Text": "this summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave next spring",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 11,
+      "Text": "next spring",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave the summer",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 10,
+      "Text": "the summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave summer",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 6,
+      "Text": "summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave summer 2016",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 11,
+      "Text": "summer 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll leave summer of 2016",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 11,
+      "Length": 14,
+      "Text": "summer of 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
   "Input": "I'll be out in Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2265,14 +2565,404 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "I'll leave over the weekend",
+  "Input": "week of september.15th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 11,
-      "Text": "the weekend",
+      "Start": 0,
+      "Length": 22,
+      "Text": "week of september.15th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "month of september.15th",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 0,
+      "Length": 23,
+      "Text": "month of september.15th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out Oct. 2 to October 22",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 20,
+      "Text": "Oct. 2 to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out January 12, 2016 - 02/22/2016",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 29,
+      "Text": "January 12, 2016 - 02/22/2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 28,
+      "Text": "1st Jan until Wed, 22 of Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out today till tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 19,
+      "Text": "today till tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out today to October 22",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 19,
+      "Text": "today to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out Oct. 2 until the day after tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 35,
+      "Text": "Oct. 2 until the day after tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out today until next Sunday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 23,
+      "Text": "today until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out this Friday until next Sunday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 29,
+      "Text": "this Friday until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from Oct. 2 to October 22",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 25,
+      "Text": "from Oct. 2 to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from 2015/08/12 until October 22",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 32,
+      "Text": "from 2015/08/12 until October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from today till tomorrow",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 24,
+      "Text": "from today till tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out from this Friday until next Sunday",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 34,
+      "Text": "from this Friday until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out between Oct. 2 and October 22",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 29,
+      "Text": "between Oct. 2 and October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out November 19-20",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 14,
+      "Text": "November 19-20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out November 19 to 20",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 17,
+      "Text": "November 19 to 20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out November between 19 and 20",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 26,
+      "Text": "November between 19 and 20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out the third quarter of 2016",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 25,
+      "Text": "the third quarter of 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out the third quarter this year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 27,
+      "Text": "the third quarter this year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 2016 the third quarter",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 22,
+      "Text": "2016 the third quarter",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 2015.3",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 6,
+      "Text": "2015.3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 2015-3",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 6,
+      "Text": "2015-3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 2015/3",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 6,
+      "Text": "2015/3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out 3/2015",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 6,
+      "Text": "3/2015",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out the third week of 2027",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 22,
+      "Text": "the third week of 2027",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "I'll be out the third week next year",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 12,
+      "Length": 24,
+      "Text": "the third week next year",
       "Type": "daterange"
     }
   ]
@@ -2682,694 +3372,4 @@
     }
   ]
 }
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out next 3 days",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 11,
-      "Text": "next 3 days",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out next 3 months",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 13,
-      "Text": "next 3 months",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out in 3 year",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 9,
-      "Text": "in 3 year",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out in 3 years",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 10,
-      "Text": "in 3 years",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out in 3 weeks",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 10,
-      "Text": "in 3 weeks",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out in 3 months",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 11,
-      "Text": "in 3 months",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out past 3 weeks",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 12,
-      "Text": "past 3 weeks",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out last 3year",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 10,
-      "Text": "last 3year",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out last year",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 9,
-      "Text": "last year",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out past month",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 10,
-      "Text": "past month",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out previous 3 weeks",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 16,
-      "Text": "previous 3 weeks",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "past few weeks",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 14,
-      "Text": "past few weeks",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "past several days",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 17,
-      "Text": "past several days",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave this summer",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 11,
-      "Text": "this summer",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave next spring",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 11,
-      "Text": "next spring",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave the summer",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 10,
-      "Text": "the summer",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave summer",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 6,
-      "Text": "summer",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave summer 2016",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 11,
-      "Text": "summer 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll leave summer of 2016",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 14,
-      "Text": "summer of 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out Oct. 2 to October 22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 20,
-      "Text": "Oct. 2 to October 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out January 12, 2016 - 02/22/2016",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 29,
-      "Text": "January 12, 2016 - 02/22/2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 28,
-      "Text": "1st Jan until Wed, 22 of Jan",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out today till tomorrow",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 19,
-      "Text": "today till tomorrow",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out today to October 22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 19,
-      "Text": "today to October 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out Oct. 2 until the day after tomorrow",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 35,
-      "Text": "Oct. 2 until the day after tomorrow",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out today until next Sunday",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 23,
-      "Text": "today until next Sunday",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out this Friday until next Sunday",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 29,
-      "Text": "this Friday until next Sunday",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from Oct. 2 to October 22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 25,
-      "Text": "from Oct. 2 to October 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from 2015/08/12 until October 22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 32,
-      "Text": "from 2015/08/12 until October 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from today till tomorrow",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 24,
-      "Text": "from today till tomorrow",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out from this Friday until next Sunday",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 34,
-      "Text": "from this Friday until next Sunday",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out between Oct. 2 and October 22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 29,
-      "Text": "between Oct. 2 and October 22",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out November 19-20",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 14,
-      "Text": "November 19-20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out November 19 to 20",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 17,
-      "Text": "November 19 to 20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out November between 19 and 20",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 26,
-      "Text": "November between 19 and 20",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out the third quarter of 2016",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 25,
-      "Text": "the third quarter of 2016",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out the third quarter this year",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 27,
-      "Text": "the third quarter this year",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 2016 the third quarter",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 22,
-      "Text": "2016 the third quarter",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 2015.3",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 6,
-      "Text": "2015.3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 2015-3",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 6,
-      "Text": "2015-3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 2015/3",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 6,
-      "Text": "2015/3",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out 3/2015",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 6,
-      "Text": "3/2015",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out the third week of 2027",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 22,
-      "Text": "the third week of 2027",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out the third week next year",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 24,
-      "Text": "the third week next year",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "week of september.15th",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 22,
-      "Text": "week of september.15th",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "month of september.15th",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 23,
-      "Text": "month of september.15th",
-      "Type": "daterange"
-    }
-  ]
-}
-]]
+]

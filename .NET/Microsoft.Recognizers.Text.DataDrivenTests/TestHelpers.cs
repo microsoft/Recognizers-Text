@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizer_language[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
+                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
         }
@@ -274,6 +274,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static bool EvaluateSpec(TestModel spec, out string message)
         {
+            if (string.IsNullOrEmpty(spec.Input))
+            {
+                message = $"spec not found";
+                return true;
+            }
             if (spec.IsNotSupported())
             {
                 message = $"input '{spec.Input}' not supported";

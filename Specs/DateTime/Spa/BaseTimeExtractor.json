@@ -1,13 +1,5 @@
 [{
   "TestType": "BasicTest",
-  "Input": "no hay ninguna pm string despues de la hora",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": []
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -829,5 +821,13 @@
       "Type": "time"
     }
   ]
+}
+,
+{
+  "TestType": "BasicTest",
+  "Input": "no hay ninguna pm string despues de la hora",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": []
 }
 ]
