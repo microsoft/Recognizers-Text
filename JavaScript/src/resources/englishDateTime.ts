@@ -13,12 +13,12 @@ export namespace EnglishDateTime {
 	export const RelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current|the|my)`;
 	export const NextPrefixRegex = `(next|upcoming)\\b`;
 	export const PastPrefixRegex = `(last|past|previous)\\b`;
-	export const ThisPrefixRegex = `(this|current|over the)\\b`;
+	export const ThisPrefixRegex = `(this|current)\\b`;
 	export const DayRegex = `(the\\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
 	export const PeriodYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
-	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\\b`;
-	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
+	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\\b`;
+	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>${RelativeRegex}\\s+month)\\b`;
 	export const EngMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${EngMonthRegex}))`;
@@ -87,6 +87,7 @@ export namespace EnglishDateTime {
 	export const AtRegex = `\\b(((?<=\\bat\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
 	export const IshRegex = `\\b(${BaseDateTime.HourRegex}(-|——)?ish|noonish|noon)\\b`;
 	export const TimeUnitRegex = `(?<unit>hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
+	export const RestrictedTimeUnitRegex = `(?<unit>hour|minute)\\b`;
 	export const FivesRegex = `(?<tens>(fifteen|twenty(\\s*five)?|thirty(\\s*five)?|forty(\\s*five)?|fourty(\\s*five)?|fifty(\\s*five)?|ten|five))\\b`;
 	export const HourRegex = `(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)`;
 	export const PeriodHourNumRegex = `(?<hour>twenty one|twenty two|twenty three|twenty four|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nighteen|twenty)`;
@@ -155,7 +156,7 @@ export namespace EnglishDateTime {
 	export const NightStartEndRegex = `(^(overnight|tonight|night))|((overnight|tonight|night)$)`;
 	export const InExactNumberRegex = `\\b(a few|few|some|several)\\b`;
 	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
-	export const RelativeTimeUnitRegex = `(${RelativeRegex})\\s+(${TimeUnitRegex})`;
+	export const RelativeTimeUnitRegex = `(((${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+(${TimeUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(,|for|t|around)$`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
@@ -168,7 +169,7 @@ export namespace EnglishDateTime {
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);
 	export const SeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
 	export const CardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["first", 1],["1st", 1],["second", 2],["2nd", 2],["third", 3],["3rd", 3],["fourth", 4],["4th", 4],["fifth", 5],["5th", 5]]);
-	export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["monday", 1],["tuesday", 2],["wednesday", 3],["thursday", 4],["friday", 5],["saturday", 6],["sunday", 0],["mon", 1],["tue", 2],["wed", 3],["wedn", 3],["weds", 3],["thu", 4],["thur", 4],["thurs", 4],["fri", 5],["sat", 6],["sun", 0]]);
+	export const DayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["monday", 1],["tuesday", 2],["wednesday", 3],["thursday", 4],["friday", 5],["saturday", 6],["sunday", 0],["mon", 1],["tue", 2],["tues", 2],["wed", 3],["wedn", 3],["weds", 3],["thu", 4],["thur", 4],["thurs", 4],["fri", 5],["sat", 6],["sun", 0]]);
 	export const MonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["january", 1],["february", 2],["march", 3],["april", 4],["may", 5],["june", 6],["july", 7],["august", 8],["september", 9],["october", 10],["november", 11],["december", 12],["jan", 1],["feb", 2],["mar", 3],["apr", 4],["jun", 6],["jul", 7],["aug", 8],["sep", 9],["sept", 9],["oct", 10],["nov", 11],["dec", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9]]);
 	export const Numbers: ReadonlyMap<string, number> = new Map<string, number>([["zero", 0],["one", 1],["a", 1],["an", 1],["two", 2],["three", 3],["four", 4],["five", 5],["six", 6],["seven", 7],["eight", 8],["nine", 9],["ten", 10],["eleven", 11],["twelve", 12],["thirteen", 13],["fourteen", 14],["fifteen", 15],["sixteen", 16],["seventeen", 17],["eighteen", 18],["nineteen", 19],["twenty", 20],["twenty one", 21],["twenty two", 22],["twenty three", 23],["twenty four", 24],["twenty five", 25],["twenty six", 26],["twenty seven", 27],["twenty eight", 28],["twenty nine", 29],["thirty", 30],["thirty one", 31],["thirty two", 32],["thirty three", 33],["thirty four", 34],["thirty five", 35],["thirty six", 36],["thirty seven", 37],["thirty eight", 38],["thirty nine", 39],["forty", 40],["forty one", 41],["forty two", 42],["forty three", 43],["forty four", 44],["forty five", 45],["forty six", 46],["forty seven", 47],["forty eight", 48],["forty nine", 49],["fifty", 50],["fifty one", 51],["fifty two", 52],["fifty three", 53],["fifty four", 54],["fifty five", 55],["fifty six", 56],["fifty seven", 57],["fifty eight", 58],["fifty nine", 59],["sixty", 60],["sixty one", 61],["sixty two", 62],["sixty three", 63],["sixty four", 64],["sixty five", 65],["sixty six", 66],["sixty seven", 67],["sixty eight", 68],["sixty nine", 69],["seventy", 70],["seventy one", 71],["seventy two", 72],["seventy three", 73],["seventy four", 74],["seventy five", 75],["seventy six", 76],["seventy seven", 77],["seventy eight", 78],["seventy nine", 79],["eighty", 80],["eighty one", 81],["eighty two", 82],["eighty three", 83],["eighty four", 84],["eighty five", 85],["eighty six", 86],["eighty seven", 87],["eighty eight", 88],["eighty nine", 89],["ninety", 90],["ninety one", 91],["ninety two", 92],["ninety three", 93],["ninety four", 94],["ninety five", 95],["ninety six", 96],["ninety seven", 97],["ninety eight", 98],["ninety nine", 99],["one hundred", 100]]);
 	export const DayOfMonth: ReadonlyMap<string, number> = new Map<string, number>([["1st", 1],["2nd", 2],["3rd", 3],["4th", 4],["5th", 5],["6th", 6],["7th", 7],["8th", 8],["9th", 9],["10th", 10],["11th", 11],["11st", 11],["12th", 12],["12nd", 12],["13th", 13],["13rd", 13],["14th", 14],["15th", 15],["16th", 16],["17th", 17],["18th", 18],["19th", 19],["20th", 20],["21st", 21],["22nd", 22],["23rd", 23],["24th", 24],["25th", 25],["26th", 26],["27th", 27],["28th", 28],["29th", 29],["30th", 30],["31st", 31]]);

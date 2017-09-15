@@ -35,11 +35,11 @@ export class BaseDatePeriodExtractor implements IExtractor {
     }
 
     extract(source: string): Array<ExtractResult> {
-        let tokens: Array<Token> = new Array<Token>()
-        .concat(this.matchSimpleCases(source))
-        .concat(this.mergeTwoTimePoints(source))
-        .concat(this.matchDuration(source))
-        .concat(this.singleTimePointWithPatterns(source));
+        let tokens: Array<Token> = new Array<Token>();
+        tokens = tokens.concat(this.matchSimpleCases(source));
+        tokens = tokens.concat(this.mergeTwoTimePoints(source));
+        tokens = tokens.concat(this.matchDuration(source));
+        tokens = tokens.concat(this.singleTimePointWithPatterns(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -62,8 +62,8 @@ export class BaseDatePeriodExtractor implements IExtractor {
         }
         let idx = 0;
         while (idx < er.length - 1) {
-            let middleBegin = er[idx].start + er[idx].length;
-            let middleEnd = er[idx + 1].start;
+            let middleBegin = er[idx].start + (er[idx].length || 0);
+            let middleEnd = er[idx + 1].start || 0;
             if (middleBegin >= middleEnd) {
                 idx++;
                 continue;
@@ -71,8 +71,8 @@ export class BaseDatePeriodExtractor implements IExtractor {
             let middleStr = source.substr(middleBegin, middleEnd - middleBegin).trim().toLowerCase();
             let match = RegExpUtility.getMatches(this.config.tillRegex, middleStr);
             if (match && match.length > 0 && match[0].index === 0 && match[0].length === middleStr.length) {
-                let periodBegin = er[idx].start;
-                let periodEnd = er[idx + 1].start + er[idx + 1].length;
+                let periodBegin = er[idx].start || 0;
+                let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
 
                 let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
                 let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
@@ -85,17 +85,17 @@ export class BaseDatePeriodExtractor implements IExtractor {
                 continue;
             }
             if (this.config.hasConnectorToken(middleStr)) {
-                let periodBegin = er[idx].start;
-                let periodEnd = er[idx + 1].start + er[idx + 1].length;
+                let periodBegin = er[idx].start || 0;
+                let periodEnd = (er[idx + 1].start || 0) + (er[idx + 1].length || 0);
 
                 let beforeStr = source.substring(0, periodBegin).trim().toLowerCase();
                 let betweenTokenIndex = this.config.getBetweenTokenIndex(beforeStr);
                 if (betweenTokenIndex.matched) {
                     periodBegin = betweenTokenIndex.index;
+                    tokens.push(new Token(periodBegin, periodEnd));
+                    idx += 2;
+                    continue;
                 }
-                tokens.push(new Token(periodBegin, periodEnd));
-                idx += 2;
-                continue;
             }
             idx++;
         }

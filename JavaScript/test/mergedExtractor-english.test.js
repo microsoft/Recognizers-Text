@@ -76,9 +76,9 @@ describe('Merged Extractor Ambiguous Word', it => {
 describe('Merged Extractor Negative', it => {
     let extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
 
+    basicTestNone(it, extractor, "What are the hours of Palomino? ");
     basicTestNone(it, extractor, "in the sun");
-    basicTestNone(it, extractor, "may i help you");
-    basicTestNone(it, extractor, "the group proceeded with a march they knew would lead to bloodshed");
+
     basicTestNone(it, extractor, "which email have gotten a reply");
     basicTestNone(it, extractor, "He is often alone");
     basicTestNone(it, extractor, "often a bird");

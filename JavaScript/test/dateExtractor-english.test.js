@@ -3,7 +3,7 @@ var EnglishDateExtractorConfiguration = require('../compiled/dateTime/english/da
 var BaseDateExtractor = require('../compiled/dateTime/baseDate').BaseDateExtractor;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
-describe('Date Extractor', it => {
+describe('Date Extract', it => {
     let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
 
     basicTest(it, extractor, "I'll go back on 15", 16, 2);
@@ -34,12 +34,21 @@ describe('Date Extractor', it => {
     basicTest(it, extractor, "I'll go back 28-Nov", 13, 6);
     basicTest(it, extractor, "I'll go back Wed, 22 of Jan", 13, 14);
 
-    basicTest(it, extractor, "I'll go back Jan first", 13, 9);
-    basicTest(it, extractor, "I'll go back May twenty-first", 13, 16);
-    basicTest(it, extractor, "I'll go back May twenty one", 13, 14);
-    basicTest(it, extractor, "I'll go back second of Aug", 13, 13);
-    basicTest(it, extractor, "I'll go back twenty second of June", 13, 21);
+    basicTest(it, extractor, "I'll go back the first friday of july", 13, 24);
+    basicTest(it, extractor, "I'll go back the first friday in this month", 13, 30);
 
+    basicTest(it, extractor, "I'll go back two weeks from now", 13, 18);
+
+    basicTest(it, extractor, "I'll go back next week on Friday", 13, 19);
+    basicTest(it, extractor, "I'll go back on Friday next week", 13, 19);
+
+    basicTest(it, extractor, "past Monday", 0, 11);
+});
+
+describe('Date Extract Day Of Week', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
+    basicTest(it, extractor, "I'll go back on Tues", 16, 4);
     basicTest(it, extractor, "I'll go back on Friday", 16, 6);
     basicTest(it, extractor, "I'll go back Friday", 13, 6);
     basicTest(it, extractor, "I'll go back today", 13, 5);
@@ -60,23 +69,11 @@ describe('Date Extractor', it => {
     basicTest(it, extractor, "I'll go back last week Sunday", 13, 16);
     basicTest(it, extractor, "I'll go back 15 June 2016", 13, 12);
     basicTest(it, extractor, "a baseball on may the eleventh", 14, 16);
+});
 
-    basicTest(it, extractor, "I'll go back the first friday of july", 13, 24);
-    basicTest(it, extractor, "I'll go back the first friday in this month", 13, 30);
+describe('Date Extract Month Date', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
 
-    basicTest(it, extractor, "I'll go back two weeks from now", 13, 18);
-
-    basicTest(it, extractor, "I'll go back next week on Friday", 13, 19);
-    basicTest(it, extractor, "I'll go back on Friday next week", 13, 19);
-
-    basicTest(it, extractor, "past Monday", 0, 11);
-
-    // ExtractAgoLater
-    basicTest(it, extractor, "I went back two months ago", 12, 14);
-    basicTest(it, extractor, "I'll go back two days later", 13, 14);
-    basicTest(it, extractor, "who did i email a month ago", 16, 11);
-
-    // ExtractMonthDate
     basicTest(it, extractor, "I'll go back fourth of may", 13, 13);
     basicTest(it, extractor, "I'll go back 4th of march", 13, 12);
     basicTest(it, extractor, "I'll go back Jan first", 13, 9);
@@ -84,8 +81,19 @@ describe('Date Extractor', it => {
     basicTest(it, extractor, "I'll go back May twenty one", 13, 14);
     basicTest(it, extractor, "I'll go back second of Aug", 13, 13);
     basicTest(it, extractor, "I'll go back twenty second of June", 13, 21);
+});
 
-    // ExtractForThe
+describe('Date Extract Ago Later', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
+    basicTest(it, extractor, "I went back two months ago", 12, 14);
+    basicTest(it, extractor, "I'll go back two days later", 13, 14);
+    basicTest(it, extractor, "who did i email a month ago", 16, 11);
+});
+
+describe('Date Extract For The', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
     basicTest(it, extractor, "I went back for the 27", 12, 10);
     basicTest(it, extractor, "I went back for the 27th", 12, 12);
     basicTest(it, extractor, "I went back for the 27.", 12, 10);
@@ -96,21 +104,30 @@ describe('Date Extractor', it => {
     basicTest(it, extractor, "I went back for the second", 12, 14);
     basicTest(it, extractor, "I went back for the twenty second", 12, 21);
     basicTest(it, extractor, "I went back for the thirty first", 12, 20);
+});
 
-    // ExtractOn
+describe('Date Extract On', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
     basicTest(it, extractor, "I went back on the 27th", 12, 11);
     basicTest(it, extractor, "I went back on the 21st", 12, 11);
     basicTest(it, extractor, "I went back on 22nd", 12, 7);
     basicTest(it, extractor, "I went back on the second!", 12, 13);
     basicTest(it, extractor, "I went back on twenty second?", 12, 16);
+});
 
-    // ExtractForTheNegative
+describe('Date Extract For The Negative', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
     basicTestNone(it, extractor, "the first prize");
     basicTestNone(it, extractor, "I'll go to the 27th floor");
     basicTestNone(it, extractor, "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China");
     basicTestNone(it, extractor, "Get tickets for the 17th Door Haunted Experience");
+});
 
-    // ExtractWeekDayAndDayOfMonthMerge
+describe('Date Extract Week Day And Day Of Month Merge', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
     // Need to calculate the DayOfWeek by the date
     // Example: What do I have on Wednesday the second?
     basicTestOneOutput(it, extractor, "What do I have on " + getWeekDay(2) + " the second", getWeekDay(2) + " the second");

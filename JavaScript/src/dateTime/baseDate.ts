@@ -237,18 +237,29 @@ export class BaseDateParser implements IDateTimeParser {
             let year = referenceDate.getFullYear();
             let dayStr = match.groups('day').value;
             day = this.config.dayOfMonth.get(dayStr);
+
             result.timex = FormatUtil.luisDate(-1, -1, day);
-            let futureDate = new Date(year, month + 1, day);
-            let pastDate = new Date(year, month - 1, day);
-            let guessedDate = new Date(year, month, day);
-            if (guessedDate) {
-                if (guessedDate >= referenceDate) {
-                    futureDate = guessedDate;
+
+            let tryStr = FormatUtil.luisDate(year, month, day);
+            let tryDate = Date.parse(tryStr);
+            let futureDate: Date;
+            let pastDate: Date;
+
+            if (tryDate && !isNaN(tryDate)) {
+                futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+                if (futureDate < referenceDate) {
+                    futureDate.setMonth(futureDate.getMonth() + 1);
                 }
-                if (guessedDate < referenceDate) {
-                    pastDate = guessedDate;
+
+                if (pastDate >= referenceDate) {
+                    pastDate.setMonth(pastDate.getMonth() - 1);
                 }
+            } else {
+                futureDate = DateUtils.safeCreateFromMinValue(year, month + 1, day);
+                pastDate = DateUtils.safeCreateFromMinValue(year, month - 1, day);
             }
+
             result.futureValue = futureDate;
             result.pastValue = pastDate;
             result.success = true;
