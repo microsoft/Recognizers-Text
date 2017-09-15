@@ -8,18 +8,46 @@ using System.Linq;
 namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
 {
     [TestClass]
-    public class TestDateTime_Eng : TestBase
+    public class TestDateTime_Spa : TestBase
     {
         public static TestResources TestResources { get; private set; }
+        public static IDictionary<string, IExtractor> Extractors { get; private set; }
+        public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
+
+        public IExtractor Extractor { get; set; }
+        public IDateTimeParser Parser { get; set; }
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
             TestResources = new TestResources();
             TestResources.InitFromTestContext(context);
+            Extractors = new Dictionary<string, IExtractor>();
+            Parsers = new Dictionary<string, IDateTimeParser>();
         }
-        
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateExtractor-Eng.csv", "BaseDateExtractor-Eng#csv", DataAccessMethod.Sequential)]
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            var key = TestContext.TestName;
+            IExtractor extractor;
+            IDateTimeParser parser;
+            if (!Extractors.TryGetValue(key, out extractor))
+            {
+                extractor = TestContext.GetExtractor();
+                Extractors.Add(key, extractor);
+            }
+            Extractor = extractor;
+
+            if (!Parsers.TryGetValue(key, out parser))
+            {
+                parser = TestContext.GetDateTimeParser();
+                Parsers.Add(key, parser);
+            }
+            Parser = parser;
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateExtractor-Spa.csv", "BaseDateExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateExtractor()
         {
@@ -32,9 +60,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -45,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimeExtractor-Eng.csv", "BaseTimeExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimeExtractor-Spa.csv", "BaseTimeExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseTimeExtractor()
         {
@@ -58,9 +84,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -71,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDatePeriodExtractor-Eng.csv", "BaseDatePeriodExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDatePeriodExtractor-Spa.csv", "BaseDatePeriodExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDatePeriodExtractor()
         {
@@ -84,9 +108,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -97,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimePeriodExtractor-Eng.csv", "BaseTimePeriodExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimePeriodExtractor-Spa.csv", "BaseTimePeriodExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseTimePeriodExtractor()
         {
@@ -110,9 +132,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -123,7 +143,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimeExtractor-Eng.csv", "BaseDateTimeExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimeExtractor-Spa.csv", "BaseDateTimeExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateTimeExtractor()
         {
@@ -136,9 +156,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -149,7 +167,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimePeriodExtractor-Eng.csv", "BaseDateTimePeriodExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimePeriodExtractor-Spa.csv", "BaseDateTimePeriodExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateTimePeriodExtractor()
         {
@@ -162,9 +180,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -175,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseHolidayExtractor-Eng.csv", "BaseHolidayExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseHolidayExtractor-Spa.csv", "BaseHolidayExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseHolidayExtractor()
         {
@@ -188,9 +204,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -201,7 +215,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDurationExtractor-Eng.csv", "BaseDurationExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDurationExtractor-Spa.csv", "BaseDurationExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDurationExtractor()
         {
@@ -214,9 +228,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -227,7 +239,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseSetExtractor-Eng.csv", "BaseSetExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseSetExtractor-Spa.csv", "BaseSetExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseSetExtractor()
         {
@@ -240,9 +252,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count);
             if (testSpec.Results.Count() > 0)
             {
@@ -253,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseMergedExtractor-Eng.csv", "BaseMergedExtractor-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseMergedExtractor-Spa.csv", "BaseMergedExtractor-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseMergedExtractor()
         {
@@ -266,35 +276,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
-            Assert.AreEqual(testSpec.Results.Count(), results.Count, testSpec.Input);
-            if (testSpec.Results.Count() > 0)
-            {
-                var expected = testSpec.CastResults<ExtractResult>().FirstOrDefault();
-                Assert.AreEqual(expected.Type, results.First().Type);
-                Assert.AreEqual(expected.Start, results.First().Start);
-                Assert.AreEqual(expected.Length, results.First().Length);
-            }
-        }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseMergedExtractorSkipFromTo-Eng.csv", "BaseMergedExtractorSkipFromTo-Eng#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void BaseMergedExtractorSkipFromTo()
-        {
-            var testSpec = TestResources.GetSpecForContext(TestContext);
-            if (TestUtils.EvaluateSpec(testSpec, out string message))
-            {
-                Assert.Inconclusive(message);
-            }
-            if (Debugger.IsAttached && testSpec.Debug)
-            {
-                Debugger.Break();
-            }
-            var extractor = TestContext.GetExtractor();
-
-            var results = extractor.Extract(testSpec.Input);
+            var results = Extractor.Extract(testSpec.Input);
             Assert.AreEqual(testSpec.Results.Count(), results.Count, testSpec.Input);
             if (testSpec.Results.Count() > 0)
             {
@@ -305,7 +287,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
         
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateParser-Eng.csv", "BaseDateParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateParser-Spa.csv", "BaseDateParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateParser()
         {
@@ -318,12 +300,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -346,9 +326,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeParser-Eng.csv", "TimeParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimeParser-Spa.csv", "BaseTimeParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
-        public void TimeParser()
+        public void BaseTimeParser()
         {
             var testSpec = TestResources.GetSpecForContext(TestContext);
             if (TestUtils.EvaluateSpec(testSpec, out string message))
@@ -359,12 +339,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -387,7 +365,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDatePeriodParser-Eng.csv", "BaseDatePeriodParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDatePeriodParser-Spa.csv", "BaseDatePeriodParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDatePeriodParser()
         {
@@ -400,12 +378,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -428,7 +404,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimePeriodParser-Eng.csv", "BaseTimePeriodParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseTimePeriodParser-Spa.csv", "BaseTimePeriodParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseTimePeriodParser()
         {
@@ -441,12 +417,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -469,7 +443,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimeParser-Eng.csv", "BaseDateTimeParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimeParser-Spa.csv", "BaseDateTimeParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateTimeParser()
         {
@@ -482,12 +456,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -510,7 +482,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimePeriodParser-Eng.csv", "BaseDateTimePeriodParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateTimePeriodParser-Spa.csv", "BaseDateTimePeriodParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDateTimePeriodParser()
         {
@@ -523,12 +495,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -551,7 +521,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseHolidayParser-Eng.csv", "BaseHolidayParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseHolidayParser-Spa.csv", "BaseHolidayParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseHolidayParser()
         {
@@ -564,12 +534,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -592,7 +560,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDurationParser-Eng.csv", "BaseDurationParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDurationParser-Spa.csv", "BaseDurationParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseDurationParser()
         {
@@ -605,12 +573,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -633,7 +599,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseSetParser-Eng.csv", "BaseSetParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseSetParser-Spa.csv", "BaseSetParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseSetParser()
         {
@@ -646,12 +612,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 
@@ -674,7 +638,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             }
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseMergedParser-Eng.csv", "BaseMergedParser-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseMergedParser-Spa.csv", "BaseMergedParser-Spa#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void BaseMergedParser()
         {
@@ -687,12 +651,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             {
                 Debugger.Break();
             }
-            var extractor = TestContext.GetExtractor();
-            var parser = TestContext.GetDateTimeParser();
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = extractor.Extract(testSpec.Input);
-            var result = parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
+            var extractResults = Extractor.Extract(testSpec.Input);
+            var result = Parser.Parse(extractResults.FirstOrDefault(), referenceDateTime);
 
             var expected = testSpec.CastResults<DateTimeParseResult>().FirstOrDefault();
 

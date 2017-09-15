@@ -1,5 +1,6 @@
 ﻿using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
@@ -77,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 case Culture.English:
                     return GetEnglishExtractor(extractorName);
+                case Culture.Spanish:
+                    return GetSpanishExtractor(extractorName);
             }
             return null;
         }
@@ -89,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 case Culture.English:
                     return GetEnglishParser(parserName);
+                case Culture.Spanish:
+                    return GetSpanishParser(parserName);
             }
             return null;
         }
@@ -148,6 +153,63 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case "Merged":
                     return new BaseMergedParser(new EnglishMergedParserConfiguration());
+            }
+            return null;
+        }
+
+        public static IExtractor GetSpanishExtractor(string extractorName)
+        {
+            switch (extractorName)
+            {
+                case "Date":
+                    return new BaseDateExtractor(new SpanishDateExtractorConfiguration());
+                case "Time":
+                    return new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+                case "DatePeriod":
+                    return new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
+                case "TimePeriod":
+                    return new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
+                case "DateTime":
+                    return new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+                case "DateTimePeriod":
+                    return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
+                case "Duration":
+                    return new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+                case "Holiday":
+                    return new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
+                case "Set":
+                    return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
+                case "Merged":
+                    return new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), DateTimeOptions.None);
+            }
+            return null;
+        }
+
+        public static IDateTimeParser GetSpanishParser(string parserName)
+        {
+            var commonConfiguration = new SpanishCommonDateTimeParserConfiguration();
+            switch (parserName)
+            {
+                case "Date":
+                    return new BaseDateParser(new SpanishDateParserConfiguration(commonConfiguration));
+                case "Time":
+                    return new BaseTimeParser(new SpanishTimeParserConfiguration(commonConfiguration));
+                case "DatePeriod":
+                    return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(commonConfiguration));
+                case "TimePeriod":
+                    return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(commonConfiguration));
+                case "DateTime":
+                    return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(commonConfiguration));
+                case "DateTimePeriod":
+                    return new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
+                case "Duration":
+                    return new BaseDurationParser(new SpanishDurationParserConfiguration(commonConfiguration));
+                case "Holiday":
+                    return new BaseHolidayParser(new SpanishHolidayParserConfiguration());
+                case "Set":
+                    return new BaseSetParser(new SpanishSetParserConfiguration(commonConfiguration));
+                case "Merged":
+                    return new BaseMergedParser(new SpanishMergedParserConfiguration());
             }
             return null;
         }

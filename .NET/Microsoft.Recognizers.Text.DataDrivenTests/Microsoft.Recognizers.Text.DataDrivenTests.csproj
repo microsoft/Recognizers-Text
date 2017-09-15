@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTime\TestDateTime_Spa.cs" />
     <Compile Include="DateTime\TestDateTime_Eng.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Spa.cs" />
     <Compile Include="NumberWithUnit\TestNumberWithUnit_Por.cs" />
