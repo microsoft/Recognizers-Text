@@ -1,4 +1,6 @@
-﻿using Microsoft.Recognizers.Text.Number;
+﻿using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,8 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -68,11 +69,94 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             return null;
         }
 
+        public static IExtractor GetExtractor(this TestContext context)
+        {
+            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var extractorName = TestUtils.GetExtractorName(context.TestName);
+            switch (language)
+            {
+                case Culture.English:
+                    return GetEnglishExtractor(extractorName);
+            }
+            return null;
+        }
+
+        public static IDateTimeParser GetDateTimeParser(this TestContext context)
+        {
+            var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
+            var parserName = TestUtils.GetParserName(context.TestName);
+            switch (language)
+            {
+                case Culture.English:
+                    return GetEnglishParser(parserName);
+            }
+            return null;
+        }
+
+        public static IExtractor GetEnglishExtractor(string extractorName)
+        {
+            switch (extractorName)
+            {
+                case "Date":
+                    return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+                case "Time":
+                    return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
+                case "DatePeriod":
+                    return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
+                case "TimePeriod":
+                    return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
+                case "DateTime":
+                    return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
+                case "DateTimePeriod":
+                    return new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
+                case "Duration":
+                    return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+                case "Holiday":
+                    return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case "Set":
+                    return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+                case "Merged":
+                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
+                case "MergedSkipFromTo":
+                    return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.SkipFromToMerge);
+            }
+            return null;
+        }
+
+        public static IDateTimeParser GetEnglishParser(string parserName)
+        {
+            var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
+            switch (parserName)
+            {
+                case "Date":
+                    return new BaseDateParser(new EnglishDateParserConfiguration(commonConfiguration));
+                case "Time":
+                    return new TimeParser(new EnglishTimeParserConfiguration(commonConfiguration));
+                case "DatePeriod":
+                    return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(commonConfiguration));
+                case "TimePeriod":
+                    return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(commonConfiguration));
+                case "DateTime":
+                    return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(commonConfiguration));
+                case "DateTimePeriod":
+                    return new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(commonConfiguration));
+                case "Duration":
+                    return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
+                case "Holiday":
+                    return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case "Set":
+                    return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
+                case "Merged":
+                    return new BaseMergedParser(new EnglishMergedParserConfiguration());
+            }
+            return null;
+        }
+
         private static IModel GetCustomModelFor(string language)
         {
             switch (language)
             {
-                case "zh-cn":
+                case Culture.Chinese:
                     return new NumberModel(
                         AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
                         new NumberExtractor(ChineseNumberMode.ExtractAll));
@@ -87,11 +171,23 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             return testSpec.NotSupported.HasFlag(Platform.dotNet);
         }
+
         public static bool IsNotSupportedByDesign(this TestModel testSpec)
         {
             return testSpec.NotSupportedByDesign.HasFlag(Platform.dotNet);
         }
+
+        public static DateObject GetReferenceDateTime(this TestModel testSpec)
+        {
+            object dateTimeObject;
+            if (testSpec.Context.TryGetValue("ReferenceDateTime", out dateTimeObject))
+            {
+                return (DateObject)dateTimeObject;
+            }
+            return DateObject.Now;
+        }
     }
+
     public static class TestUtils
     {
         public static string GetCulture(string source)
@@ -133,6 +229,16 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static string GetModelName(string source)
         {
             return source;
+        }
+
+        public static string GetExtractorName(string source)
+        {
+            return source.Replace("Base", "").Replace("Extractor", "").Replace("Parser", "");
+        }
+
+        public static string GetParserName(string source)
+        {
+            return source.Replace("Base", "").Replace("Parser", "");
         }
     }
 }

@@ -1,0 +1,42 @@
+[{
+  "TestType": "BasicTestWithOptions",
+  "Input": "Change my meeting from 9am to 11am",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 23,
+      "Length": 3,
+      "Text": "9am",
+      "Type": "time"
+    },
+    {
+      "Start": 30,
+      "Length": 4,
+      "Text": "11am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "TestType": "BasicTestWithOptions",
+  "Input": "Change my meeting from Nov.19th to Nov.23th",
+  "NotSupported": "javascript, python",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Start": 23,
+      "Length": 8,
+      "Text": "Nov.19th",
+      "Type": "date"
+    },
+    {
+      "Start": 35,
+      "Length": 3,
+      "Text": "Nov",
+      "Type": "daterange"
+    }
+  ]
+}
+]

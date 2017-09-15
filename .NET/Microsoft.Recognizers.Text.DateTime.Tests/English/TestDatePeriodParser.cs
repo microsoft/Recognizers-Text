@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseDatePeriodExtractor));
+            TestWriter.Close("Eng", typeof(BaseDatePeriodParser));
         }
 
         public TestDatePeriodParser()

@@ -11,6 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         public static void ClassCleanup()
         {
             TestWriter.Close("Eng", typeof(BaseMergedExtractor));
+            TestWriter.Close("Eng", "BaseMergedExtractorSkipFromTo");
         }
 
         public void BasicTest(string text, int start, int length)
@@ -34,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
             var results = extractorWithOptions.Extract(text);
             Assert.AreEqual(count, results.Count);
-            TestWriter.Write("Eng", extractor, text, results);
+            if (options.Equals(DateTimeOptions.None)) TestWriter.Write("Eng", extractor, text, results);
+            else TestWriter.Write("Eng", "BaseMergedExtractorSkipFromTo", text, results);
         }
 
         [TestMethod]

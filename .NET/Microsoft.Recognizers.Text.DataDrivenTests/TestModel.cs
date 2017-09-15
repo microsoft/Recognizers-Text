@@ -20,6 +20,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var results = JsonConvert.SerializeObject(this.Results);
             return JsonConvert.DeserializeObject<IEnumerable<T>>(results);
         }
+
+        public TestModel()
+        {
+            Context = new Dictionary<string, object>();
+            Results = Enumerable.Empty<object>();
+            Debug = false;
+        }
     }
 
     [Flags]
