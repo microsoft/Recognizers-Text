@@ -1,245 +1,206 @@
 [{
-  "TestType": "BasicTest",
   "Input": "江苏彩民15元中大乐透1600万 奖池36.57亿",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15元",
-      "Start": 4,
-      "End": 6,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Chinese yuan",
-        "value": "15"
+        "value": "15",
+        "unit": "Chinese yuan"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "其中，四川彩友中得1注1000万元基本头奖；",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1000万元",
-      "Start": 11,
-      "End": 16,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Chinese yuan",
-        "value": "10000000"
+        "value": "10000000",
+        "unit": "Chinese yuan"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "本期开奖结束后，奖池金额攀升至36.57亿元。",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "36.57亿元",
-      "Start": 15,
-      "End": 21,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Chinese yuan",
-        "value": "3657000000"
+        "value": "3657000000",
+        "unit": "Chinese yuan"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１欧元可以",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1欧元",
-      "Start": 0,
-      "End": 2,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Euro",
-        "value": "1"
+        "value": "1",
+        "unit": "Euro"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "兑换１．０７５３美元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.0753美元",
-      "Start": 2,
-      "End": 9,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "United States dollar",
-        "value": "1.0753"
+        "value": "1.0753",
+        "unit": "United States dollar"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "兑换1.0092瑞士法郎",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.0092瑞士法郎",
-      "Start": 2,
-      "End": 11,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Swiss franc",
-        "value": "1.0092"
+        "value": "1.0092",
+        "unit": "Swiss franc"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2016年由于并购等直接投资，中国资金净流出1200亿美元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1200亿美元",
-      "Start": 22,
-      "End": 28,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "United States dollar",
-        "value": "120000000000"
+        "value": "120000000000",
+        "unit": "United States dollar"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "宝安科技公司与国际精密的15位股东签署收购协议，以每股1.95港元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1.95港元",
-      "Start": 27,
-      "End": 32,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Hong Kong dollar",
-        "value": "1.95"
+        "value": "1.95",
+        "unit": "Hong Kong dollar"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "央行到期定存单5306亿台币",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5306亿台币",
-      "Start": 7,
-      "End": 13,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "New Taiwan dollar",
-        "value": "530600000000"
+        "value": "530600000000",
+        "unit": "New Taiwan dollar"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "东芝重组另需1万亿日元 已向交易银行申请贷款",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1万亿日元",
-      "Start": 6,
-      "End": 10,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Japanese yen",
-        "value": "1000000000000"
+        "value": "1000000000000",
+        "unit": "Japanese yen"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "达到445奈拉兑换",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "445奈拉",
-      "Start": 2,
-      "End": 6,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "Nigerian naira",
-        "value": "445"
+        "value": "445",
+        "unit": "Nigerian naira"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十五美元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十五美元",
-      "Start": 0,
-      "End": 3,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "United States dollar",
-        "value": "15"
+        "value": "15",
+        "unit": "United States dollar"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十美元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十美元",
-      "Start": 0,
-      "End": 2,
       "TypeName": "currency",
       "Resolution": {
-        "unit": "United States dollar",
-        "value": "10"
+        "value": "10",
+        "unit": "United States dollar"
       }
     }
   ]

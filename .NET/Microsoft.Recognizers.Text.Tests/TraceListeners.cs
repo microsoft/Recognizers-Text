@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -29,7 +30,7 @@ namespace Microsoft.Recognizers.Text
                 {
                     isAppend = true;
                 }
-
+                
                 base.WriteLine(TestWriter.GetJson(model, Formatting.Indented));
                 //base.Flush();
             }

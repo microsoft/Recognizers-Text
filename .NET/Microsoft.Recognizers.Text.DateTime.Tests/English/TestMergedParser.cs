@@ -55,9 +55,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(2, er.Count);
             var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type1, pr.Type.Replace("datetimeV2.", ""));
-            TestWriter.Write("Eng", parser, refrenceDate, text, pr);
             pr = parser.Parse(er[1], refrenceDate);
             Assert.AreEqual(type2, pr.Type.Replace("datetimeV2.", ""));
+            var erArray = extractor.Extract(text);
+            TestWriter.Write("Eng", parser, refrenceDate, text, erArray.Select(o => parser.Parse(o, refrenceDate)));
             // TODO multiple dates
             // TestWriter.Write("Eng", parser, refrenceDate, text, pr);
         }

@@ -1,13 +1,10 @@
 [{
-  "TestType": "WrappedTest",
   "Input": "192,",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "192"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "192.168.1.2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "192",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "192"
@@ -33,8 +27,6 @@
     },
     {
       "Text": "168",
-      "Start": 4,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "168"
@@ -42,8 +34,6 @@
     },
     {
       "Text": "1",
-      "Start": 8,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "1"
@@ -51,8 +41,6 @@
     },
     {
       "Text": "2",
-      "Start": 10,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "2"
@@ -62,7 +50,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "le liquide de 180ml",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -70,7 +57,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "le liquide de .25ml",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -78,7 +64,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": " route de 29km ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -86,15 +71,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9,2321312",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9,2321312",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "9,2321312"
@@ -104,15 +86,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " -9,2321312",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-9,2321312",
-      "Start": 1,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "-9,2321312"
@@ -122,15 +101,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt",
-      "Start": 0,
-      "End": 4,
       "TypeName": "number",
       "Resolution": {
         "value": "20"
@@ -140,15 +116,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent",
-      "Start": 0,
-      "End": 3,
       "TypeName": "number",
       "Resolution": {
         "value": "100"
@@ -158,15 +131,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": ",08",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",08",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "0,08"
@@ -176,15 +146,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt quatre",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt quatre",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "24"
@@ -194,15 +161,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt-quatre",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt-quatre",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "24"
@@ -212,15 +176,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trente trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trente trois",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "33"
@@ -230,15 +191,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trente-trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trente-trois",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "33"
@@ -248,15 +206,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "dix-sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dix-sept",
-      "Start": 0,
-      "End": 7,
       "TypeName": "number",
       "Resolution": {
         "value": "17"
@@ -266,15 +221,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "dix sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dix sept",
-      "Start": 0,
-      "End": 7,
       "TypeName": "number",
       "Resolution": {
         "value": "17"
@@ -284,15 +236,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "nonante",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "nonante",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "90"
@@ -302,15 +251,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois million",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois million",
-      "Start": 0,
-      "End": 12,
       "TypeName": "number",
       "Resolution": {
         "value": "3000000"
@@ -320,15 +266,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois million sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois million sept",
-      "Start": 0,
-      "End": 17,
       "TypeName": "number",
       "Resolution": {
         "value": "3000007"
@@ -338,15 +281,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": ",23456000",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ",23456000",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "0,23456"
@@ -356,15 +296,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "4,800",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "4,800",
-      "Start": 0,
-      "End": 4,
       "TypeName": "number",
       "Resolution": {
         "value": "4,8"
@@ -374,15 +311,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent trois et deux tiers",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent trois et deux tiers",
-      "Start": 0,
-      "End": 23,
       "TypeName": "number",
       "Resolution": {
         "value": "103,666666666667"
@@ -392,15 +326,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "seize",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "seize",
-      "Start": 0,
-      "End": 4,
       "TypeName": "number",
       "Resolution": {
         "value": "16"
@@ -410,15 +341,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux tiers",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux tiers",
-      "Start": 0,
-      "End": 9,
       "TypeName": "number",
       "Resolution": {
         "value": "0,666666666666667"
@@ -428,15 +356,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent six",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent six",
-      "Start": 0,
-      "End": 7,
       "TypeName": "number",
       "Resolution": {
         "value": "106"
@@ -446,15 +371,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cinq cent trente cinq",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinq cent trente cinq",
-      "Start": 0,
-      "End": 20,
       "TypeName": "number",
       "Resolution": {
         "value": "535"
@@ -464,15 +386,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "soixante et un",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "soixante et un",
-      "Start": 0,
-      "End": 13,
       "TypeName": "number",
       "Resolution": {
         "value": "61"
@@ -482,15 +401,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 3 douzaines",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3 douzaines",
-      "Start": 1,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "36"
@@ -500,15 +416,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2 douzaine",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 douzaine",
-      "Start": 0,
-      "End": 9,
       "TypeName": "number",
       "Resolution": {
         "value": "24"
@@ -518,15 +431,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " trois cent douze",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cent douze",
-      "Start": 1,
-      "End": 16,
       "TypeName": "number",
       "Resolution": {
         "value": "312"
@@ -536,15 +446,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois cent vingt quatre",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cent vingt quatre",
-      "Start": 0,
-      "End": 22,
       "TypeName": "number",
       "Resolution": {
         "value": "324"
@@ -554,15 +461,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent seize",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent seize",
-      "Start": 0,
-      "End": 9,
       "TypeName": "number",
       "Resolution": {
         "value": "116"
@@ -572,15 +476,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 322 cent ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "322 cent",
-      "Start": 1,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "32200"
@@ -590,15 +491,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "1, 234, 567",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
-      "Start": 0,
-      "End": 0,
       "TypeName": "number",
       "Resolution": {
         "value": "1"
@@ -606,8 +504,6 @@
     },
     {
       "Text": "234",
-      "Start": 3,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "234"
@@ -615,8 +511,6 @@
     },
     {
       "Text": "567",
-      "Start": 8,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "567"
@@ -626,15 +520,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9,2321312",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9,2321312",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "9,2321312"
@@ -644,15 +535,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " -9,2321312",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-9,2321312",
-      "Start": 1,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "-9,2321312"
@@ -662,15 +550,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " -1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1",
-      "Start": 1,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "-1"
@@ -680,15 +565,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-4/5",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-4/5",
-      "Start": 0,
-      "End": 3,
       "TypeName": "number",
       "Resolution": {
         "value": "-0,8"
@@ -698,15 +580,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "- 1 4/5",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 1 4/5",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "-1,8"
@@ -716,15 +595,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois",
-      "Start": 0,
-      "End": 4,
       "TypeName": "number",
       "Resolution": {
         "value": "3"
@@ -734,15 +610,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 123456789101231",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "123456789101231",
-      "Start": 1,
-      "End": 15,
       "TypeName": "number",
       "Resolution": {
         "value": "123456789101231"
@@ -752,15 +625,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-123456789101231",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
-      "Start": 0,
-      "End": 15,
       "TypeName": "number",
       "Resolution": {
         "value": "-123456789101231"
@@ -770,15 +640,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " -123456789101231",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-123456789101231",
-      "Start": 1,
-      "End": 16,
       "TypeName": "number",
       "Resolution": {
         "value": "-123456789101231"
@@ -788,15 +655,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1",
-      "Start": 0,
-      "End": 0,
       "TypeName": "number",
       "Resolution": {
         "value": "1"
@@ -806,15 +670,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10k",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "10000"
@@ -824,15 +685,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10G",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10G",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "10000000000"
@@ -842,15 +700,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "- 10  k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 10  k",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "-10000"
@@ -860,15 +715,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2 million",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2 million",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "2000000"
@@ -878,15 +730,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1 billion",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 billion",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "1000000000000"
@@ -896,15 +745,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " trois ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois",
-      "Start": 1,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "3"
@@ -914,15 +760,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un billion",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un billion",
-      "Start": 0,
-      "End": 9,
       "TypeName": "number",
       "Resolution": {
         "value": "1000000000000"
@@ -932,15 +775,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un centieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un centieme",
-      "Start": 0,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "0,01"
@@ -950,15 +790,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1,1^+23",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^+23",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "8,95430243255239"
@@ -968,15 +805,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2,5^-1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,5^-1",
-      "Start": 0,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "0,4"
@@ -986,15 +820,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-1,1^+23",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^+23",
-      "Start": 0,
-      "End": 7,
       "TypeName": "number",
       "Resolution": {
         "value": "-8,95430243255239"
@@ -1004,15 +835,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-2,5^-1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-2,5^-1",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "-0,4"
@@ -1022,15 +850,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2  1/4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2  1/4",
-      "Start": 0,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "2,25"
@@ -1040,15 +865,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "3/4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "3/4",
-      "Start": 0,
-      "End": 2,
       "TypeName": "number",
       "Resolution": {
         "value": "0,75"
@@ -1058,15 +880,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-1,1^--23",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-1,1^--23",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "-8,95430243255239"
@@ -1076,15 +895,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-127,32e13",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-127,32e13",
-      "Start": 0,
-      "End": 9,
       "TypeName": "number",
       "Resolution": {
         "value": "-1,2732E+15"
@@ -1094,15 +910,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12,32e+14",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12,32e+14",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "1,232E+15"
@@ -1112,15 +925,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-12e-1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-12e-1",
-      "Start": 0,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "-1,2"
@@ -1130,15 +940,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1e10",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1e10",
-      "Start": 0,
-      "End": 3,
       "TypeName": "number",
       "Resolution": {
         "value": "10000000000"
@@ -1148,15 +955,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1,1^23",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,1^23",
-      "Start": 0,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "8,95430243255239"
@@ -1166,15 +970,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois",
-      "Start": 0,
-      "End": 4,
       "TypeName": "number",
       "Resolution": {
         "value": "3"
@@ -1184,15 +985,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent et trois quarts",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent et trois quarts",
-      "Start": 0,
-      "End": 19,
       "TypeName": "number",
       "Resolution": {
         "value": "100,75"
@@ -1202,15 +1000,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux cent deux mille",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux cent deux mille",
-      "Start": 0,
-      "End": 19,
       "TypeName": "number",
       "Resolution": {
         "value": "202000"
@@ -1220,15 +1015,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois cent trente et un",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cent trente et un",
-      "Start": 0,
-      "End": 22,
       "TypeName": "number",
       "Resolution": {
         "value": "331"
@@ -1238,15 +1030,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "soixante-dix",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "soixante-dix",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "70"
@@ -1256,15 +1045,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois quarts",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois quarts",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "0,75"
@@ -1274,15 +1060,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt et trois cinquiemes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt et trois cinquiemes",
-      "Start": 0,
-      "End": 24,
       "TypeName": "number",
       "Resolution": {
         "value": "20,6"
@@ -1292,15 +1075,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un huitieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un huitieme",
-      "Start": 0,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "0,125"
@@ -1310,15 +1090,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cinq huitieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinq huitieme",
-      "Start": 0,
-      "End": 12,
       "TypeName": "number",
       "Resolution": {
         "value": "0,625"
@@ -1328,15 +1105,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2,33 k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,33 k",
-      "Start": 0,
-      "End": 5,
       "TypeName": "number",
       "Resolution": {
         "value": "2330"
@@ -1346,15 +1120,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt-trois cinquiemes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt-trois cinquiemes",
-      "Start": 0,
-      "End": 21,
       "TypeName": "number",
       "Resolution": {
         "value": "4,6"
@@ -1364,15 +1135,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un demi",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un demi",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "0,5"
@@ -1382,15 +1150,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un et un demi",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un et un demi",
-      "Start": 0,
-      "End": 12,
       "TypeName": "number",
       "Resolution": {
         "value": "1,5"
@@ -1400,15 +1165,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un et un quatrieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un et un quatrieme",
-      "Start": 0,
-      "End": 17,
       "TypeName": "number",
       "Resolution": {
         "value": "1,25"
@@ -1418,15 +1180,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cinq et un quart",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinq et un quart",
-      "Start": 0,
-      "End": 15,
       "TypeName": "number",
       "Resolution": {
         "value": "5,25"
@@ -1436,15 +1195,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cinquante-deux",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquante-deux",
-      "Start": 0,
-      "End": 13,
       "TypeName": "number",
       "Resolution": {
         "value": "52"
@@ -1454,15 +1210,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cinquante  deux",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cinquante  deux",
-      "Start": 0,
-      "End": 14,
       "TypeName": "number",
       "Resolution": {
         "value": "52"
@@ -1472,15 +1225,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt et trois et trois cinquiemes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt et trois et trois cinquiemes",
-      "Start": 0,
-      "End": 33,
       "TypeName": "number",
       "Resolution": {
         "value": "23,6"
@@ -1490,15 +1240,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux  cent  deux  mille",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux  cent  deux  mille",
-      "Start": 0,
-      "End": 22,
       "TypeName": "number",
       "Resolution": {
         "value": "202000"
@@ -1508,15 +1255,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux cent virgule trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux cent virgule trois",
-      "Start": 0,
-      "End": 22,
       "TypeName": "number",
       "Resolution": {
         "value": "200,3"
@@ -1526,15 +1270,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux cent virgule cinquante deux",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux cent virgule cinquante deux",
-      "Start": 0,
-      "End": 31,
       "TypeName": "number",
       "Resolution": {
         "value": "200,52"
@@ -1544,15 +1285,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un cinquieme",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "0,2"
@@ -1562,15 +1300,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un demi",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un demi",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "0,5"
@@ -1580,15 +1315,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un billionieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un billionieme",
-      "Start": 0,
-      "End": 13,
       "TypeName": "number",
       "Resolution": {
         "value": "1E-12"
@@ -1598,15 +1330,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent mille billionieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent mille billionieme",
-      "Start": 0,
-      "End": 21,
       "TypeName": "number",
       "Resolution": {
         "value": "1E-07"
@@ -1616,15 +1345,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un cinquieme",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "0,2"
@@ -1634,15 +1360,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cinquieme",
-      "Start": 0,
-      "End": 14,
       "TypeName": "number",
       "Resolution": {
         "value": "0,6"
@@ -1652,15 +1375,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un vingt cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un vingt cinquieme",
-      "Start": 0,
-      "End": 17,
       "TypeName": "number",
       "Resolution": {
         "value": "0,04"
@@ -1670,15 +1390,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois et un cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois et un cinquieme",
-      "Start": 0,
-      "End": 20,
       "TypeName": "number",
       "Resolution": {
         "value": "3,2"
@@ -1688,15 +1405,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt et un cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt et un cinquieme",
-      "Start": 0,
-      "End": 20,
       "TypeName": "number",
       "Resolution": {
         "value": "20,2"
@@ -1706,15 +1420,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "une vingt et unieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "une vingt et unieme",
-      "Start": 0,
-      "End": 18,
       "TypeName": "number",
       "Resolution": {
         "value": "0,0476190476190476"
@@ -1724,15 +1435,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un vingt-cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un vingt-cinquieme",
-      "Start": 0,
-      "End": 17,
       "TypeName": "number",
       "Resolution": {
         "value": "0,04"
@@ -1742,15 +1450,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un sur trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un sur trois",
-      "Start": 0,
-      "End": 11,
       "TypeName": "number",
       "Resolution": {
         "value": "0,333333333333333"
@@ -1760,15 +1465,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1 sur vingt-un",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sur vingt-un",
-      "Start": 0,
-      "End": 13,
       "TypeName": "number",
       "Resolution": {
         "value": "0,0476190476190476"
@@ -1778,15 +1480,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1 sur cent vingt et un",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sur cent vingt et un",
-      "Start": 0,
-      "End": 21,
       "TypeName": "number",
       "Resolution": {
         "value": "0,00826446280991736"
@@ -1796,15 +1495,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1 sur trois",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sur trois",
-      "Start": 0,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "0,333333333333333"
@@ -1814,15 +1510,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1 sur 3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1 sur 3",
-      "Start": 0,
-      "End": 6,
       "TypeName": "number",
       "Resolution": {
         "value": "0,333333333333333"
@@ -1832,15 +1525,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un sur 3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un sur 3",
-      "Start": 0,
-      "End": 7,
       "TypeName": "number",
       "Resolution": {
         "value": "0,333333333333333"
@@ -1850,15 +1540,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un sur 20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un sur 20",
-      "Start": 0,
-      "End": 8,
       "TypeName": "number",
       "Resolution": {
         "value": "0,05"
@@ -1868,15 +1555,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un sur cent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un sur cent",
-      "Start": 0,
-      "End": 10,
       "TypeName": "number",
       "Resolution": {
         "value": "0,01"
@@ -1886,15 +1570,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "un sur cent vingt cinq",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "un sur cent vingt cinq",
-      "Start": 0,
-      "End": 21,
       "TypeName": "number",
       "Resolution": {
         "value": "0,008"
@@ -1904,15 +1585,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent trente cinquiemes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent trente cinquiemes",
-      "Start": 0,
-      "End": 21,
       "TypeName": "number",
       "Resolution": {
         "value": "26"

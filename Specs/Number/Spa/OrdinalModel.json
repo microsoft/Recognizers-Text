@@ -1,13 +1,10 @@
 [{
-  "TestType": "BasicTest",
   "Input": "tresmillonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo",
-      "Start": 0,
-      "End": 14,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "dos mil millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dos mil millonesimo",
-      "Start": 0,
-      "End": 18,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2000000000"
@@ -35,15 +29,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "septimo",
-      "Start": 0,
-      "End": 6,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "7"
@@ -53,15 +44,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuadragesimo septimo",
-      "Start": 0,
-      "End": 19,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "47"
@@ -71,15 +59,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 32,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "347"
@@ -89,15 +74,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "dosmilesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "dosmilesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 44,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2347"
@@ -107,15 +89,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 57,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "52347"
@@ -125,15 +104,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 71,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "452347"
@@ -143,15 +119,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tresmillonesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo septimo",
-      "Start": 0,
-      "End": 22,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000007"
@@ -161,15 +134,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tresmillonesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 35,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000047"
@@ -179,15 +149,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tresmillonesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresmillonesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 48,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000347"
@@ -197,15 +164,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 59,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3002347"
@@ -215,15 +179,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 71,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3052347"
@@ -233,15 +194,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 85,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3452347"
@@ -251,15 +209,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 86,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "13452347"
@@ -269,15 +224,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-      "Start": 0,
-      "End": 97,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513452347"
@@ -287,15 +239,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
-      "Start": 0,
-      "End": 89,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513452340"
@@ -305,15 +254,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
-      "Start": 0,
-      "End": 76,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513452300"
@@ -323,15 +269,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
-      "Start": 0,
-      "End": 63,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513452000"
@@ -341,15 +284,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos cincuenta milesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos cincuenta milesimo",
-      "Start": 0,
-      "End": 57,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513450000"
@@ -359,15 +299,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millones cuatrocientos milesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millones cuatrocientos milesimo",
-      "Start": 0,
-      "End": 47,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513400000"
@@ -377,15 +314,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos trece millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos trece millonesimo",
-      "Start": 0,
-      "End": 27,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "513000000"
@@ -395,15 +329,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientos diez millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientos diez millonesimo",
-      "Start": 0,
-      "End": 26,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "510000000"
@@ -413,15 +344,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quinientosmillonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quinientosmillonesimo",
-      "Start": 0,
-      "End": 20,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "500000000"
@@ -431,15 +359,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "milesimo quingentesimo vigesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "milesimo quingentesimo vigesimo tercero",
-      "Start": 0,
-      "End": 38,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "1523"
@@ -449,15 +374,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
-      "Start": 0,
-      "End": 149,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3455228556832"
@@ -467,15 +389,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
-      "Start": 0,
-      "End": 116,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3455228556000"
@@ -485,15 +404,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
-      "Start": 0,
-      "End": 82,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3455228000000"
@@ -503,15 +419,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
-      "Start": 0,
-      "End": 60,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3455000000000"
@@ -521,15 +434,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tresbillonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tresbillonesimo",
-      "Start": 0,
-      "End": 14,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000000"
@@ -539,15 +449,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vigesimo quinto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo quinto",
-      "Start": 0,
-      "End": 14,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "25"
@@ -557,15 +464,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vigesimo primero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo primero",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21"
@@ -575,15 +479,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "centesimo vigesimo quinto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo vigesimo quinto",
-      "Start": 0,
-      "End": 24,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "125"
@@ -593,15 +494,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "ducentesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "ducentesimo",
-      "Start": 0,
-      "End": 10,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "200"
@@ -611,15 +509,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-      "Start": 0,
-      "End": 112,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3524694673"
@@ -629,15 +524,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
-      "Start": 0,
-      "End": 104,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3524694670"
@@ -647,15 +539,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
-      "Start": 0,
-      "End": 91,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3524694600"
@@ -665,15 +554,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil quinientos veinticuatro millones seiscientos milesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil quinientos veinticuatro millones seiscientos milesimo",
-      "Start": 0,
-      "End": 61,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3524600000"
@@ -683,15 +569,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil millonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo",
-      "Start": 0,
-      "End": 19,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000"
@@ -701,15 +584,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil millonesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo tercero",
-      "Start": 0,
-      "End": 27,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000003"
@@ -719,15 +599,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil millonesimo septuagesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo septuagesimo tercero",
-      "Start": 0,
-      "End": 40,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000073"
@@ -737,15 +614,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil millonesimo sexcentesimo septuagesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millonesimo sexcentesimo septuagesimo tercero",
-      "Start": 0,
-      "End": 53,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000673"
@@ -755,15 +629,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
-      "Start": 0,
-      "End": 66,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000004673"
@@ -773,15 +644,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-      "Start": 0,
-      "End": 101,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3024694673"
@@ -791,15 +659,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "11mo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11mo",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -809,15 +674,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "11vo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11vo",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -827,15 +689,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12vo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12vo",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "12"
@@ -845,15 +704,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "111ro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "111ro",
-      "Start": 0,
-      "End": 4,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "111"
@@ -863,15 +719,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "111ro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "111ro",
-      "Start": 0,
-      "End": 4,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "111"
@@ -881,15 +734,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "21ro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21ro",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21"
@@ -899,15 +749,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "30ma",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30ma",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "30"
@@ -917,15 +764,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2da",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2da",
-      "Start": 0,
-      "End": 2,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2"
@@ -935,15 +779,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "undecimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "undecimo",
-      "Start": 0,
-      "End": 7,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -953,15 +794,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "veintidosmilesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "veintidosmilesimo",
-      "Start": 0,
-      "End": 16,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "22000"
@@ -971,15 +809,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
-      "Start": 0,
-      "End": 169,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "55555555555555"
@@ -989,15 +824,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vigesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vigesimo",
-      "Start": 0,
-      "End": 7,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "20"
@@ -1007,15 +839,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "centesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "centesimo",
-      "Start": 0,
-      "End": 8,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "100"
@@ -1025,15 +854,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billonesimo",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000000"
@@ -1043,15 +869,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "tres billonesima",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tres billonesima",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000000"
@@ -1061,15 +884,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cien billonesimo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cien billonesimo",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "100000000000000"

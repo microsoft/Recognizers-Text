@@ -1,141 +1,118 @@
 [{
-  "TestType": "BasicTest",
   "Input": "设置恒温器为85度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85度",
-      "Start": 6,
-      "End": 8,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Degree",
-        "value": "85"
+        "value": "85",
+        "unit": "Degree"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "把温度升高5度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5度",
-      "Start": 5,
-      "End": 6,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Degree",
-        "value": "5"
+        "value": "5",
+        "unit": "Degree"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "正常的温度是华氏温度98.6度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "华氏温度98.6度",
-      "Start": 6,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "F",
-        "value": "98.6"
+        "value": "98.6",
+        "unit": "F"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "华氏温度100度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "华氏温度100度",
-      "Start": 0,
-      "End": 7,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "F",
-        "value": "100"
+        "value": "100",
+        "unit": "F"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20摄氏度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20摄氏度",
-      "Start": 0,
-      "End": 4,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "C",
-        "value": "20"
+        "value": "20",
+        "unit": "C"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "外面的温度是98度",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98度",
-      "Start": 6,
-      "End": 8,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Degree",
-        "value": "98"
+        "value": "98",
+        "unit": "Degree"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "你能把华氏温度51度转换为摄氏度吗",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "华氏温度51度",
-      "Start": 3,
-      "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "F",
-        "value": "51"
+        "value": "51",
+        "unit": "F"
       }
     },
     {
       "Text": "摄氏度",
-      "Start": 13,
-      "End": 15,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "C",
-        "value": null
+        "value": null,
+        "unit": "C"
       }
     }
   ]

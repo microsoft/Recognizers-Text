@@ -1,13 +1,10 @@
 [{
-  "TestType": "BasicTest",
   "Input": "three trillionth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "three trillionth",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000000"
@@ -17,7 +14,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "a trillionth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -25,15 +21,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "a hundred trillionth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "a hundred trillionth",
-      "Start": 0,
-      "End": 19,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "100000000000000"
@@ -43,15 +36,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "11th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11th",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -61,15 +51,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "21st",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "21st",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21"
@@ -79,15 +66,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "30th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30th",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "30"
@@ -97,15 +81,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2nd",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2nd",
-      "Start": 0,
-      "End": 2,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2"
@@ -115,15 +96,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "eleventh",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "eleventh",
-      "Start": 0,
-      "End": 7,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -133,15 +111,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "twentieth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twentieth",
-      "Start": 0,
-      "End": 8,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "20"
@@ -151,15 +126,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "twenty-fifth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty-fifth",
-      "Start": 0,
-      "End": 11,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "25"
@@ -169,15 +141,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "twenty-first",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty-first",
-      "Start": 0,
-      "End": 11,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21"
@@ -187,15 +156,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "one hundred twenty fifth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "one hundred twenty fifth",
-      "Start": 0,
-      "End": 23,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "125"
@@ -205,15 +171,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "one hundred twenty-fifth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "one hundred twenty-fifth",
-      "Start": 0,
-      "End": 23,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "125"
@@ -223,15 +186,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trillionth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trillionth",
-      "Start": 0,
-      "End": 9,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "1000000000000"
@@ -241,15 +201,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "twenty-one trillion and three hundred twenty second",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty-one trillion and three hundred twenty second",
-      "Start": 0,
-      "End": 50,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21000000000322"
@@ -259,15 +216,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "two hundredth",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "two hundredth",
-      "Start": 0,
-      "End": 12,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "200"

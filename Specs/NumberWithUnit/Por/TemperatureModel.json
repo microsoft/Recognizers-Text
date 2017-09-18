@@ -1,860 +1,718 @@
 [{
-  "TestType": "BasicTest",
   "Input": "A temperatura externa é de 40 graus Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 graus Celsius",
-      "Start": 27,
-      "End": 42,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "40"
+        "value": "40",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Faz 90 fahrenheit no Texas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 fahrenheit",
-      "Start": 4,
-      "End": 16,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "90"
+        "value": "90",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Converter 10 celsius em fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 celsius",
-      "Start": 10,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "10"
+        "value": "10",
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 24,
-      "End": 33,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-5 graus Fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-5 graus Fahrenheit",
-      "Start": 0,
-      "End": 18,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "-5"
+        "value": "-5",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "6 graus centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 graus centígrados",
-      "Start": 0,
-      "End": 18,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "6"
+        "value": "6",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "98,6 graus f é uma temperatura normal",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 graus f",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "98,6"
+        "value": "98,6",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste a temperatura para 30 graus celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 graus celsius",
-      "Start": 26,
-      "End": 41,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "30"
+        "value": "30",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "A temperatura normal é 98,6 graus Fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 graus Fahrenheit",
-      "Start": 23,
-      "End": 43,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "98,6"
+        "value": "98,6",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100 graus f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 graus f",
-      "Start": 0,
-      "End": 10,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "100"
+        "value": "100",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 Graus c",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 Graus c",
-      "Start": 0,
-      "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100 °f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 °f",
-      "Start": 0,
-      "End": 5,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "100"
+        "value": "100",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 °c",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 °c",
-      "Start": 0,
-      "End": 4,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100,2 Graus Fahrenheit é baixo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100,2 Graus Fahrenheit",
-      "Start": 0,
-      "End": 21,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "100,2"
+        "value": "100,2",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "34,9 centígrado pra fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,9 centígrado",
-      "Start": 0,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "34,9"
+        "value": "34,9",
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 20,
-      "End": 29,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "converter 200 celsius em fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 celsius",
-      "Start": 10,
-      "End": 20,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "200"
+        "value": "200",
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 25,
-      "End": 34,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "convertir 200 K em fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 K",
-      "Start": 10,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "200"
+        "value": "200",
+        "unit": "Kelvin"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 19,
-      "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101 fahrenheit",
-      "Start": 44,
-      "End": 57,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "101"
+        "value": "101",
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 0,
-      "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "celsius",
-      "Start": 15,
-      "End": 21,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "celsius",
-      "Start": 32,
-      "End": 38,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "50 graus centígrados celsius em fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 graus centígrados",
-      "Start": 0,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "50"
+        "value": "50",
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "celsius",
-      "Start": 21,
-      "End": 27,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 32,
-      "End": 41,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Poderias converter 51 fahrenheit em graus celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "51 fahrenheit",
-      "Start": 19,
-      "End": 31,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "51"
+        "value": "51",
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "graus celsius",
-      "Start": 36,
-      "End": 48,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Converter 106 graus Fahrenheit em graus centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 graus Fahrenheit",
-      "Start": 10,
-      "End": 29,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "106"
+        "value": "106",
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "graus centígrados",
-      "Start": 34,
-      "End": 50,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Converter 106 K em graus centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 K",
-      "Start": 10,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "106"
+        "value": "106",
+        "unit": "Kelvin"
       }
     },
     {
       "Text": "graus centígrados",
-      "Start": 19,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Converter 45 graus Fahrenheit a Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "45 graus Fahrenheit",
-      "Start": 10,
-      "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "45"
+        "value": "45",
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "Celsius",
-      "Start": 32,
-      "End": 38,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Como convertir - 20 graus Fahrenheit para Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 20 graus Fahrenheit",
-      "Start": 15,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "-20"
+        "value": "-20",
+        "unit": "Grau Fahrenheit"
       }
     },
     {
       "Text": "Celsius",
-      "Start": 42,
-      "End": 48,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10,5 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10,5 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "10,5"
+        "value": "10,5",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 graus celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 graus celsius",
-      "Start": 0,
-      "End": 15,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20,3 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20,3 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "20,3"
+        "value": "20,3",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "34,5 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,5 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "34,5"
+        "value": "34,5",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "A temperatura exterior é de 98 graus",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98 graus",
-      "Start": 28,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "98"
+        "value": "98",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste o termostato em 85 °",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85 °",
-      "Start": 23,
-      "End": 26,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "85"
+        "value": "85",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste o termostato em 85°",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85°",
-      "Start": 23,
-      "End": 25,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "85"
+        "value": "85",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Aumente a temperatura em 5 graus",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 graus",
-      "Start": 25,
-      "End": 31,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "5"
+        "value": "5",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste a temperatura para 70 graus f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "70 graus f",
-      "Start": 26,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "70"
+        "value": "70",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Aumentar a temperatura em 20 grau",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 grau",
-      "Start": 26,
-      "End": 32,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "20"
+        "value": "20",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste a temperatura a 100 graus",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 graus",
-      "Start": 23,
-      "End": 31,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "100"
+        "value": "100",
+        "unit": "Grau"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste a temperatura a 100 Kelvin",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 Kelvin",
-      "Start": 23,
-      "End": 32,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "100"
+        "value": "100",
+        "unit": "Kelvin"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Mantenha a temperatura de 75 graus f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75 graus f",
-      "Start": 26,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Fahrenheit",
-        "value": "75"
+        "value": "75",
+        "unit": "Grau Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Deixe que a temperatura fique em 40 centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 centígrados",
-      "Start": 33,
-      "End": 46,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau Celsius",
-        "value": "40"
+        "value": "40",
+        "unit": "Grau Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Deixe a temperatura em 50 graus.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 graus",
-      "Start": 23,
-      "End": 30,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grau",
-        "value": "50"
+        "value": "50",
+        "unit": "Grau"
       }
     }
   ]

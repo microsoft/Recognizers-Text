@@ -1,131 +1,110 @@
 [{
-  "TestType": "BasicTest",
   "Input": "当她五岁的时候，她学会了骑自行车",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五岁",
-      "Start": 2,
-      "End": 3,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Year",
-        "value": "5"
+        "value": "5",
+        "unit": "Year"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "我只有29岁！",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "29岁",
-      "Start": 3,
-      "End": 5,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Year",
-        "value": "29"
+        "value": "29",
+        "unit": "Year"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "这件事发生在宝宝只有十个月大的时候.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十个月大",
-      "Start": 10,
-      "End": 13,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Month",
-        "value": "10"
+        "value": "10",
+        "unit": "Month"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十二月初出生的话已经三周大了",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三周大",
-      "Start": 10,
-      "End": 12,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Week",
-        "value": "3"
+        "value": "3",
+        "unit": "Week"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "她出生于1945年5月8号，现在60岁了",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "60岁",
-      "Start": 16,
-      "End": 18,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Year",
-        "value": "60"
+        "value": "60",
+        "unit": "Year"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "她已经满七周岁了，可以上小学了",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七周岁",
-      "Start": 4,
-      "End": 6,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Year",
-        "value": "7"
+        "value": "7",
+        "unit": "Year"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "90天大的小孩应该去医院做检查",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90天大",
-      "Start": 0,
-      "End": 3,
       "TypeName": "age",
       "Resolution": {
-        "unit": "Day",
-        "value": "90"
+        "value": "90",
+        "unit": "Day"
       }
     }
   ]

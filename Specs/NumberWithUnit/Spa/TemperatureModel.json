@@ -1,870 +1,726 @@
 [{
-  "TestType": "BasicTest",
   "Input": "La temperatura exterior es de 40 grados Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 grados Celsius",
-      "Start": 30,
-      "End": 46,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "40"
+        "value": "40",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Hace 90 fahrenheit en Texas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "90 fahrenheit",
-      "Start": 5,
-      "End": 17,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "90"
+        "value": "90",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Convertir 10 celsius a fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 celsius",
-      "Start": 10,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "10"
+        "value": "10",
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 23,
-      "End": 32,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-5 grados Fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-5 grados Fahrenheit",
-      "Start": 0,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "-5"
+        "value": "-5",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "6 grados centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "6 grados centígrados",
-      "Start": 0,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "6"
+        "value": "6",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "98,6 grados f es temperatura normal",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 grados f",
-      "Start": 0,
-      "End": 12,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "98,6"
+        "value": "98,6",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste la temperatura a 30 grados celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30 grados celsius",
-      "Start": 24,
-      "End": 40,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "30"
+        "value": "30",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "La temperatura normal es 98,6 grados Fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98,6 grados Fahrenheit",
-      "Start": 25,
-      "End": 46,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "98,6"
+        "value": "98,6",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100 grados f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 grados f",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "100"
+        "value": "100",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 Grados c",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 Grados c",
-      "Start": 0,
-      "End": 10,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100 °f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 °f",
-      "Start": 0,
-      "End": 5,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "100"
+        "value": "100",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 °c",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 °c",
-      "Start": 0,
-      "End": 4,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "100,2 Grados Fahrenheit es bajo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100,2 Grados Fahrenheit",
-      "Start": 0,
-      "End": 22,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "100,2"
+        "value": "100,2",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "34,9 centígrado a fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,9 centígrado",
-      "Start": 0,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "34,9"
+        "value": "34,9",
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 18,
-      "End": 27,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "convertir 200 celsius celsius en fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 celsius",
-      "Start": 10,
-      "End": 20,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "200"
+        "value": "200",
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "celsius",
-      "Start": 22,
-      "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 33,
-      "End": 42,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "convertir 200 K en fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "200 K",
-      "Start": 10,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "200"
+        "value": "200",
+        "unit": "Kelvin"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 19,
-      "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "fahrenheit a celsius, cuantos celsius son 101 fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "101 fahrenheit",
-      "Start": 42,
-      "End": 55,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "101"
+        "value": "101",
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 0,
-      "End": 9,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "celsius",
-      "Start": 13,
-      "End": 19,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "celsius",
-      "Start": 30,
-      "End": 36,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "50 grados centígrados celsius a fahrenheit",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 grados centígrados",
-      "Start": 0,
-      "End": 20,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "50"
+        "value": "50",
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "celsius",
-      "Start": 22,
-      "End": 28,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     },
     {
       "Text": "fahrenheit",
-      "Start": 32,
-      "End": 41,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": null
+        "value": null,
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Podría convertir 51 fahrenheit en grados celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "51 fahrenheit",
-      "Start": 17,
-      "End": 29,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "51"
+        "value": "51",
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "grados celsius",
-      "Start": 34,
-      "End": 47,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Convertir 106 grados Fahrenheit a grados centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 grados Fahrenheit",
-      "Start": 10,
-      "End": 30,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "106"
+        "value": "106",
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "grados centígrados",
-      "Start": 34,
-      "End": 51,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Convertir 106 K a grados centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "106 K",
-      "Start": 10,
-      "End": 14,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "106"
+        "value": "106",
+        "unit": "Kelvin"
       }
     },
     {
       "Text": "grados centígrados",
-      "Start": 18,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Convertir 45 grados Fahrenheit a Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "45 grados Fahrenheit",
-      "Start": 10,
-      "End": 29,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "45"
+        "value": "45",
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "Celsius",
-      "Start": 33,
-      "End": 39,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Cómo convertir - 20 grados Fahrenheit a Celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "- 20 grados Fahrenheit",
-      "Start": 15,
-      "End": 36,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "-20"
+        "value": "-20",
+        "unit": "Grado Fahrenheit"
       }
     },
     {
       "Text": "Celsius",
-      "Start": 40,
-      "End": 46,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": null
+        "value": null,
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10,5 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10,5 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "10,5"
+        "value": "10,5",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20 grados celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 grados celsius",
-      "Start": 0,
-      "End": 16,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "20"
+        "value": "20",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "20,3 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20,3 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "20,3"
+        "value": "20,3",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "34,5 celsius",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "34,5 celsius",
-      "Start": 0,
-      "End": 11,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "34,5"
+        "value": "34,5",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "La temperatura exterior es de 98 grados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "98 grados",
-      "Start": 30,
-      "End": 38,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "98"
+        "value": "98",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste el termostato a 85 °",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85 °",
-      "Start": 23,
-      "End": 26,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "85"
+        "value": "85",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste el termostato a 85°",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "85°",
-      "Start": 23,
-      "End": 25,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "85"
+        "value": "85",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Aumentar la temperatura en 5 grados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5 grados",
-      "Start": 27,
-      "End": 34,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "5"
+        "value": "5",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste la temperatura a 70 grados f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "70 grados f",
-      "Start": 24,
-      "End": 34,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "70"
+        "value": "70",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Aumentar la temperatura en 20 grados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 grados",
-      "Start": 27,
-      "End": 35,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "20"
+        "value": "20",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste la temperatura a 100 grados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 grados",
-      "Start": 24,
-      "End": 33,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "100"
+        "value": "100",
+        "unit": "Grado"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Ajuste la temperatura a 100 Kelvin",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 Kelvin",
-      "Start": 24,
-      "End": 33,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Kelvin",
-        "value": "100"
+        "value": "100",
+        "unit": "Kelvin"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Mantener la temperatura a 75 grados f",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75 grados f",
-      "Start": 26,
-      "End": 36,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Fahrenheit",
-        "value": "75"
+        "value": "75",
+        "unit": "Grado Fahrenheit"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Deje que la temperatura esté a 40 centígrados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "40 centígrados",
-      "Start": 31,
-      "End": 44,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado Celsius",
-        "value": "40"
+        "value": "40",
+        "unit": "Grado Celsius"
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Deje que la temperatura esté a 50 grados.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "50 grados",
-      "Start": 31,
-      "End": 39,
       "TypeName": "temperature",
       "Resolution": {
-        "unit": "Grado",
-        "value": "50"
+        "value": "50",
+        "unit": "Grado"
       }
     }
   ]

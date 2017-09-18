@@ -1,13 +1,10 @@
 [{
-  "TestType": "BasicTest",
   "Input": "第二百五十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第二百五十",
-      "Start": 0,
-      "End": 4,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "250"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "第２５０",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第２５０",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "250"
@@ -35,15 +29,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "第一名第二名第三名第四名",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第一",
-      "Start": 0,
-      "End": 1,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "1"
@@ -51,8 +42,6 @@
     },
     {
       "Text": "第二",
-      "Start": 3,
-      "End": 4,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2"
@@ -60,8 +49,6 @@
     },
     {
       "Text": "第三",
-      "Start": 6,
-      "End": 7,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3"
@@ -69,8 +56,6 @@
     },
     {
       "Text": "第四",
-      "Start": 9,
-      "End": 10,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "4"
@@ -80,15 +65,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "第十四",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第十四",
-      "Start": 0,
-      "End": 2,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "14"
@@ -98,15 +80,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "第三",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "第三",
-      "Start": 0,
-      "End": 1,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3"

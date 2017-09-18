@@ -1,13 +1,10 @@
 [{
-  "TestType": "MultiTest",
   "Input": "打对折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "对折",
-      "Start": 1,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "MultiOneTest",
   "Input": "打对折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "对折",
-      "Start": 1,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -35,7 +29,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "对折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -43,15 +36,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "陆 点 五 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "陆 点 五 折",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "65%"
@@ -61,15 +51,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "９成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "９成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -79,15 +66,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "七成 六",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七成 六",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "76%"
@@ -97,15 +81,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "7.２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7.２成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "72%"
@@ -115,15 +96,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "7 2 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7 2 折",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "72%"
@@ -133,15 +111,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六 点 五 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六 点 五 成",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "65%"
@@ -151,15 +126,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１０ 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１０ 成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -169,15 +141,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１0 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１0 成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -187,15 +156,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十 成",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -205,15 +171,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75折",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75%"
@@ -223,15 +186,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9.9折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.9折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "99%"
@@ -241,15 +201,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "九 九 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九 九 折",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "99%"
@@ -259,15 +216,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三点一折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三点一折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "31%"
@@ -277,15 +231,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "30%"
@@ -295,15 +246,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "半成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -313,15 +261,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "半折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -331,15 +276,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10成",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -349,15 +291,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -367,7 +306,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "十折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -375,15 +313,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9.5成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.5成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "95%"
@@ -393,15 +328,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "九成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -411,15 +343,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三成半",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成半",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "35%"
@@ -429,15 +358,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２.５成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２.５成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -447,15 +373,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -465,15 +388,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -483,15 +403,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "两折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "两折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -501,15 +418,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "两成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "两成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -519,15 +433,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三八折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三八折",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "38%"
@@ -537,15 +448,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三点一折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三点一折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "31%"
@@ -555,15 +463,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "2成,2.5成,２．１成，２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -571,8 +476,6 @@
     },
     {
       "Text": "2.5成",
-      "Start": 3,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -580,8 +483,6 @@
     },
     {
       "Text": "２．１成",
-      "Start": 8,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "21%"
@@ -589,8 +490,6 @@
     },
     {
       "Text": "２成",
-      "Start": 13,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -600,15 +499,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "九成,五成,八点五成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -616,8 +512,6 @@
     },
     {
       "Text": "五成",
-      "Start": 3,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -625,8 +519,6 @@
     },
     {
       "Text": "八点五成",
-      "Start": 6,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "85%"
@@ -636,15 +528,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -654,15 +543,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "2折,2.5折,２．１折，２折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -670,8 +556,6 @@
     },
     {
       "Text": "2.5折",
-      "Start": 3,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -679,8 +563,6 @@
     },
     {
       "Text": "２．１折",
-      "Start": 8,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "21%"
@@ -688,8 +570,6 @@
     },
     {
       "Text": "２折",
-      "Start": 13,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -699,15 +579,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "九折,五五折,八点五折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -715,8 +592,6 @@
     },
     {
       "Text": "五五折",
-      "Start": 3,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "55%"
@@ -724,8 +599,6 @@
     },
     {
       "Text": "八点五折",
-      "Start": 7,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "85%"
@@ -735,15 +608,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "五折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -753,15 +623,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之２．４",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之２．４",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -771,7 +638,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "二三十个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -779,7 +645,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "百分之二三十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -787,15 +652,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之２．４",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之２．４",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -805,15 +667,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -823,15 +682,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一百五十    个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十    个百分点",
-      "Start": 0,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -841,15 +697,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六个百分点",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "6%"
@@ -859,15 +712,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２．４个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４个百分点",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -877,15 +727,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-22.2%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-22.2%",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "-22.2%"
@@ -895,15 +742,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２２％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２２％",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "22%"
@@ -913,15 +757,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "－1２２％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "－1２２％",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "-122%"
@@ -931,15 +772,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之22",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "22%"
@@ -949,15 +787,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１２０",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２０",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120%"
@@ -967,15 +802,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之15Ｋ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之15Ｋ",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15000%"
@@ -985,15 +817,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之1,111",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,111",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1111%"
@@ -1003,15 +832,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之９，９９９",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之９，９９９",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "9999%"
@@ -1021,15 +847,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12个百分点",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12%"
@@ -1039,15 +862,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2,123个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,123个百分点",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2123%"
@@ -1057,15 +877,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "二十个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "二十个百分点",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -1075,15 +892,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "四点 五个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "四点 五个百分点",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "4.5%"
@@ -1093,15 +907,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之五 十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五 十",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -1111,15 +922,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一 点五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一 点五",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1.5%"
@@ -1129,15 +937,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之５６.２",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５６.２",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "56.2%"
@@ -1147,15 +952,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１２",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12%"
@@ -1165,15 +967,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3,000",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3,000",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3000%"
@@ -1183,15 +982,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１，１２３",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１，１２３",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1123%"
@@ -1201,15 +997,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3.2k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2k",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3200%"
@@ -1219,15 +1012,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3.2M",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2M",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3200000%"
@@ -1237,15 +1027,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12.56个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12.56个百分点",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12.56%"
@@ -1255,15 +1042,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "０.４个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "０.４个百分点",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "0.4%"
@@ -1273,15 +1057,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "15,123个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15,123个百分点",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15123%"
@@ -1291,15 +1072,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１１１，１１１个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１１１，１１１个百分点",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "111111%"
@@ -1309,15 +1087,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "25%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "25%",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -1327,15 +1102,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12k个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12k个百分点",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12000%"
@@ -1345,15 +1117,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１５k个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１５k个百分点",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15000%"
@@ -1363,15 +1132,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一百五十个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十个百分点",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -1381,15 +1147,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "七十五万个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七十五万个百分点",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "750000%"
@@ -1399,15 +1162,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "拾万零五十六点叁叁个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "拾万零五十六点叁叁个百分点",
-      "Start": 0,
-      "End": 12,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100056.33%"
@@ -1417,15 +1177,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75.2个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75.2个百分点",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75.2%"
@@ -1435,15 +1192,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75个百分点",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75%"
@@ -1453,15 +1207,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1,075个百分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,075个百分点",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1075%"
@@ -1471,15 +1222,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一百",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -1489,15 +1237,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之百",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之百",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -1507,15 +1252,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一百二十点五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百二十点五",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"
@@ -1525,15 +1267,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之2.4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.4",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -1543,15 +1282,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2%"
@@ -1561,15 +1297,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之1,669",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,669",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1669%"
@@ -1579,15 +1312,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之５２.５",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５２.５",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "52.5%"
@@ -1597,7 +1327,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "五百分之2.2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1605,15 +1334,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "上升了百分之2.2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.2",
-      "Start": 3,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.2%"
@@ -1623,15 +1349,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "5％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5％",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -1641,15 +1364,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "５．５％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "５．５％",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5.5%"
@@ -1659,15 +1379,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一 百 五 十 个 百 分 点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一 百 五 十 个 百 分 点",
-      "Start": 0,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -1677,15 +1394,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六   个 百 分点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六   个 百 分点",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "6%"
@@ -1695,15 +1409,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２．４   个百分 点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４   个百分 点",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -1713,15 +1424,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分之 一百二十点五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 一百二十点五",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"
@@ -1731,15 +1439,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分 之2.4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之2.4",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -1749,15 +1454,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分之 2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 2",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2%"
@@ -1767,15 +1469,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百  分 之 669",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百  分 之 669",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "669%"
@@ -1785,15 +1484,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分 之  ５２.５ k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之  ５２.５ k",
-      "Start": 0,
-      "End": 12,
       "TypeName": "percentage",
       "Resolution": {
         "value": "52500%"
@@ -1803,15 +1499,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分 之 一 百二 十点 五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之 一 百二 十点 五",
-      "Start": 0,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"
@@ -1821,15 +1514,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "打對折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "對折",
-      "Start": 1,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -1839,15 +1529,12 @@
 }
 ,
 {
-  "TestType": "MultiOneTest",
   "Input": "打對折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "對折",
-      "Start": 1,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -1857,7 +1544,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "對折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1865,15 +1551,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "陸 點 五 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "陸 點 五 折",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "65%"
@@ -1883,15 +1566,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "９成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "９成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -1901,15 +1581,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "七成 六",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七成 六",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "76%"
@@ -1919,15 +1596,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "7.２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7.２成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "72%"
@@ -1937,15 +1611,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "7 2 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "7 2 折",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "72%"
@@ -1955,15 +1626,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六 點 五 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六 點 五 成",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "65%"
@@ -1973,15 +1641,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１０ 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１０ 成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -1991,15 +1656,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１0 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１0 成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -2009,15 +1671,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十 成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十 成",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -2027,15 +1686,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75折",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75%"
@@ -2045,15 +1701,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9.9折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.9折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "99%"
@@ -2063,15 +1716,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "九 九 折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九 九 折",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "99%"
@@ -2081,15 +1731,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三點一折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三點一折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "31%"
@@ -2099,15 +1746,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "30%"
@@ -2117,15 +1761,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "半成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -2135,15 +1776,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "半折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "半折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -2153,15 +1791,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10成",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -2171,15 +1806,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "十成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -2189,7 +1821,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "十折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2197,15 +1828,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "9.5成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "9.5成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "95%"
@@ -2215,15 +1843,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "九成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -2233,15 +1858,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三成半",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三成半",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "35%"
@@ -2251,15 +1873,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２.５成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２.５成",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -2269,15 +1888,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2287,15 +1903,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2305,15 +1918,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "兩折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "兩折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2323,15 +1933,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "兩成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "兩成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2341,15 +1948,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三八折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三八折",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "38%"
@@ -2359,15 +1963,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三點一折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "三點一折",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "31%"
@@ -2377,15 +1978,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "2成,2.5成,２．１成，２成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2393,8 +1991,6 @@
     },
     {
       "Text": "2.5成",
-      "Start": 3,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -2402,8 +1998,6 @@
     },
     {
       "Text": "２．１成",
-      "Start": 8,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "21%"
@@ -2411,8 +2005,6 @@
     },
     {
       "Text": "２成",
-      "Start": 13,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2422,15 +2014,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "九成,五成,八點五成",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九成",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -2438,8 +2027,6 @@
     },
     {
       "Text": "五成",
-      "Start": 3,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -2447,8 +2034,6 @@
     },
     {
       "Text": "八點五成",
-      "Start": 6,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "85%"
@@ -2458,15 +2043,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2476,15 +2058,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "2折,2.5折,２．１折，２折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2492,8 +2071,6 @@
     },
     {
       "Text": "2.5折",
-      "Start": 3,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -2501,8 +2078,6 @@
     },
     {
       "Text": "２．１折",
-      "Start": 8,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "21%"
@@ -2510,8 +2085,6 @@
     },
     {
       "Text": "２折",
-      "Start": 13,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2521,15 +2094,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "九折,五五折,八點五折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "九折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "90%"
@@ -2537,8 +2107,6 @@
     },
     {
       "Text": "五五折",
-      "Start": 3,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "55%"
@@ -2546,8 +2114,6 @@
     },
     {
       "Text": "八點五折",
-      "Start": 7,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "85%"
@@ -2557,15 +2123,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "五折",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五折",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -2575,15 +2138,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之２．４",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之２．４",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -2593,7 +2153,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "二三十個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2601,7 +2160,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "百分之二三十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2609,15 +2167,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之２．４",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之２．４",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -2627,15 +2182,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -2645,15 +2197,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一百五十 個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十 個百分點",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -2663,15 +2212,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六個百分點",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "6%"
@@ -2681,15 +2227,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２．４個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４個百分點",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -2699,15 +2242,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "-22.2%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "-22.2%",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "-22.2%"
@@ -2717,15 +2257,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２２％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２２％",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "22%"
@@ -2735,15 +2272,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "－1２２％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "－1２２％",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "-122%"
@@ -2753,15 +2287,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之22",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "22%"
@@ -2771,15 +2302,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１２０",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２０",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120%"
@@ -2789,15 +2317,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之15Ｋ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之15Ｋ",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15000%"
@@ -2807,15 +2332,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之1,111",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,111",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1111%"
@@ -2825,15 +2347,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之９，９９９",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之９，９９９",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "9999%"
@@ -2843,15 +2362,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12個百分點",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12%"
@@ -2861,15 +2377,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2,123個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2,123個百分點",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2123%"
@@ -2879,15 +2392,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "二十個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "二十個百分點",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -2897,15 +2407,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "四點 五個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "四點 五個百分點",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "4.5%"
@@ -2915,15 +2422,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之五 十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之五 十",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "50%"
@@ -2933,15 +2437,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一 點五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一 點五",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1.5%"
@@ -2951,15 +2452,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之５６.２",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５６.２",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "56.2%"
@@ -2969,15 +2467,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１２",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１２",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12%"
@@ -2987,15 +2482,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3,000",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3,000",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3000%"
@@ -3005,15 +2497,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之１，１２３",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之１，１２３",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1123%"
@@ -3023,15 +2512,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3.2k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2k",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3200%"
@@ -3041,15 +2527,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之3.2M",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之3.2M",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "3200000%"
@@ -3059,15 +2542,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12.56個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12.56個百分點",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12.56%"
@@ -3077,15 +2557,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "０.４個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "０.４個百分點",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "0.4%"
@@ -3095,15 +2572,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "15,123個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "15,123個百分點",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15123%"
@@ -3113,15 +2587,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１１１，１１１個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１１１，１１１個百分點",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "111111%"
@@ -3131,15 +2602,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "25%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "25%",
-      "Start": 0,
-      "End": 2,
       "TypeName": "percentage",
       "Resolution": {
         "value": "25%"
@@ -3149,15 +2617,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12k個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "12k個百分點",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "12000%"
@@ -3167,15 +2632,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "１５k個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "１５k個百分點",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "15000%"
@@ -3185,15 +2647,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一百五十個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一百五十個百分點",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -3203,15 +2662,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "七十五萬個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "七十五萬個百分點",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "750000%"
@@ -3221,15 +2677,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "拾萬零五十六點叁叁個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "拾萬零五十六點叁叁個百分點",
-      "Start": 0,
-      "End": 12,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100056.33%"
@@ -3239,15 +2692,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75.2個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75.2個百分點",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75.2%"
@@ -3257,15 +2707,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "75個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "75個百分點",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "75%"
@@ -3275,15 +2722,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1,075個百分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1,075個百分點",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1075%"
@@ -3293,15 +2737,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一百",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百",
-      "Start": 0,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -3311,15 +2752,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之百",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之百",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -3329,15 +2767,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之一百二十點五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之一百二十點五",
-      "Start": 0,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"
@@ -3347,15 +2782,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之2.4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.4",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -3365,15 +2797,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2%"
@@ -3383,15 +2812,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之1,669",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之1,669",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "1669%"
@@ -3401,15 +2827,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百分之５２.５",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之５２.５",
-      "Start": 0,
-      "End": 6,
       "TypeName": "percentage",
       "Resolution": {
         "value": "52.5%"
@@ -3419,7 +2842,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "五百分之2.2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -3427,15 +2849,12 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "上升了百分之2.2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百分之2.2",
-      "Start": 3,
-      "End": 8,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.2%"
@@ -3445,15 +2864,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "5％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "5％",
-      "Start": 0,
-      "End": 1,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5%"
@@ -3463,15 +2879,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "５．５％",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "５．５％",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "5.5%"
@@ -3481,15 +2894,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "一 百 五 十 個 百 分 點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一 百 五 十 個 百 分 點",
-      "Start": 0,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "150%"
@@ -3499,15 +2909,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "六   個 百 分點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "六   個 百 分點",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "6%"
@@ -3517,15 +2924,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "２．４   個百分 點",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "２．４   個百分 點",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -3535,15 +2939,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分之 一百二十點五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 一百二十點五",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"
@@ -3553,15 +2954,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分 之2.4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之2.4",
-      "Start": 0,
-      "End": 7,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2.4%"
@@ -3571,15 +2969,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分之 2",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分之 2",
-      "Start": 0,
-      "End": 5,
       "TypeName": "percentage",
       "Resolution": {
         "value": "2%"
@@ -3589,15 +2984,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百  分 之 669",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百  分 之 669",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "669%"
@@ -3607,15 +2999,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "百 分 之  ５２.５ k",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "百 分 之  ５２.５ k",
-      "Start": 0,
-      "End": 12,
       "TypeName": "percentage",
       "Resolution": {
         "value": "52500%"
@@ -3625,15 +3014,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "佰 分 之 一 百二 十點 五",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "佰 分 之 一 百二 十點 五",
-      "Start": 0,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "120.5%"

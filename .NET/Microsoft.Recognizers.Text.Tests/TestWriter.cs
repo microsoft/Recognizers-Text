@@ -30,7 +30,6 @@ namespace Microsoft.Recognizers.Text
 
     public class SingleTestModel
     {
-        public string TestType { get; set; }
         public string Input { get; set; }
         public IDictionary<string, object> Context { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
@@ -45,7 +44,42 @@ namespace Microsoft.Recognizers.Text
             this.NotSupportedByDesign = Platform.python;
         }
     }
-    
+
+    public class TestModelResult
+    {
+        public string Text { get; set; }
+        public string TypeName { get; set; }
+        public IDictionary<string, object> Resolution { get; set; }
+
+        public TestModelResult(ModelResult result)
+        {
+            this.Text = result.Text;
+            this.TypeName = result.TypeName;
+            Resolution = new Dictionary<string, object>();
+            object value;
+            if (result.Resolution.TryGetValue("value", out value))
+            {
+                Resolution.Add("value", value);
+            }
+            if (result.Resolution.TryGetValue("unit", out value))
+            {
+                Resolution.Add("unit", value);
+            }
+        }
+    }
+
+    public class TestExtractorResult
+    {
+        public string Text { get; set; }
+        public string Type { get; set; }
+
+        public TestExtractorResult(ExtractResult result)
+        {
+            this.Text = result.Text;
+            this.Type = result.Type;
+        }
+    }
+
     public class TestWriter
     {
         private const string separator = "\t";
@@ -129,7 +163,7 @@ namespace Microsoft.Recognizers.Text
         public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(model);
-            Write(lang, modelStr, null, source, results, callerFilePath, callerMemberName);
+            Write(lang, modelStr, null, source, results.Select(o => new TestModelResult(o)), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IModel model, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
@@ -149,6 +183,12 @@ namespace Microsoft.Recognizers.Text
             Write(lang, modelStr, datetime, source, new ParseResult[] { result }, callerFilePath, callerMemberName);
         }
 
+        public static void Write(string lang, IParser parser, DateObject datetime, string source, IEnumerable<ParseResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            var modelStr = getName(parser);
+            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
+        }
+
         public static void Write(string lang, IParser parser, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             Write(lang, parser, source, null, callerFilePath, callerMemberName);
@@ -157,7 +197,7 @@ namespace Microsoft.Recognizers.Text
         public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(extractor);
-            Write(lang, modelStr, null, source, results, callerFilePath, callerMemberName);
+            Write(lang, modelStr, null, source, results.Select(o => new TestExtractorResult(o)), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IExtractor extractor, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")

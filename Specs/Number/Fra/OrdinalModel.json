@@ -1,13 +1,10 @@
 [{
-  "TestType": "BasicTest",
   "Input": "tierce",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "tierce",
-      "Start": 0,
-      "End": 5,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois billionieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois billionieme",
-      "Start": 0,
-      "End": 16,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000000000000"
@@ -35,7 +29,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "un trillion",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -43,15 +36,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "11eme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "11eme",
-      "Start": 0,
-      "End": 4,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -61,15 +51,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois millieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois millieme",
-      "Start": 0,
-      "End": 13,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "3000"
@@ -79,15 +66,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "neuf milliardieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "neuf milliardieme",
-      "Start": 0,
-      "End": 16,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "9000000000"
@@ -97,15 +81,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "22e",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "22e",
-      "Start": 0,
-      "End": 2,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "22"
@@ -115,15 +96,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "30e",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "30e",
-      "Start": 0,
-      "End": 2,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "30"
@@ -133,15 +111,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "155e",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "155e",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "155"
@@ -151,15 +126,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "255eme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "255eme",
-      "Start": 0,
-      "End": 5,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "255"
@@ -169,15 +141,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "500000eme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "500000eme",
-      "Start": 0,
-      "End": 8,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "500000"
@@ -187,15 +156,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2eme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "2eme",
-      "Start": 0,
-      "End": 3,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "2"
@@ -205,15 +171,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "onzieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "onzieme",
-      "Start": 0,
-      "End": 6,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
@@ -223,15 +186,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingtieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingtieme",
-      "Start": 0,
-      "End": 8,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "20"
@@ -241,15 +201,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "vingt-cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "vingt-cinquieme",
-      "Start": 0,
-      "End": 14,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "25"
@@ -259,15 +216,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "octantieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "octantieme",
-      "Start": 0,
-      "End": 9,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "80"
@@ -277,15 +231,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "deux centieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "deux centieme",
-      "Start": 0,
-      "End": 12,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "200"
@@ -295,15 +246,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent vingt cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent vingt cinquieme",
-      "Start": 0,
-      "End": 19,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "125"
@@ -313,15 +261,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "cent vingt-cinquieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "cent vingt-cinquieme",
-      "Start": 0,
-      "End": 19,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "125"
@@ -331,15 +276,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "soixante-dixieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "soixante-dixieme",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "70"
@@ -349,15 +291,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "quatre-vingtieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "quatre-vingtieme",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "80"
@@ -367,15 +306,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "septante-huitieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "septante-huitieme",
-      "Start": 0,
-      "End": 16,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "78"
@@ -385,15 +321,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "nonante-deuxieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "nonante-deuxieme",
-      "Start": 0,
-      "End": 15,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "92"
@@ -403,15 +336,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "trois cent vingt seconde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "trois cent vingt seconde",
-      "Start": 0,
-      "End": 23,
       "TypeName": "ordinal",
       "Resolution": {
         "value": "322"

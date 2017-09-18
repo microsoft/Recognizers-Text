@@ -1,13 +1,10 @@
 [{
-  "TestType": "BasicTest",
   "Input": "100%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100%",
-      "Start": 0,
-      "End": 3,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -17,15 +14,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 100% ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100%",
-      "Start": 1,
-      "End": 4,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -35,15 +29,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 100 percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 percent",
-      "Start": 1,
-      "End": 11,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -53,15 +44,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": " 100 percentage",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "100 percentage",
-      "Start": 1,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -71,15 +59,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "240 percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "240 percent",
-      "Start": 0,
-      "End": 10,
       "TypeName": "percentage",
       "Resolution": {
         "value": "240%"
@@ -89,15 +74,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "twenty percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "twenty percent",
-      "Start": 0,
-      "End": 13,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -107,15 +89,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "thirty percentage",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "thirty percentage",
-      "Start": 0,
-      "End": 16,
       "TypeName": "percentage",
       "Resolution": {
         "value": "30%"
@@ -125,15 +104,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "one hundred percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "one hundred percent",
-      "Start": 0,
-      "End": 18,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -143,15 +119,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "one hundred percents",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "one hundred percents",
-      "Start": 0,
-      "End": 19,
       "TypeName": "percentage",
       "Resolution": {
         "value": "100%"
@@ -161,15 +134,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "percents of twenty",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "percents of twenty",
-      "Start": 0,
-      "End": 17,
       "TypeName": "percentage",
       "Resolution": {
         "value": "20%"
@@ -179,15 +149,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "percent of 10",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "percent of 10",
-      "Start": 0,
-      "End": 12,
       "TypeName": "percentage",
       "Resolution": {
         "value": "10%"
@@ -197,15 +164,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "per cent of twenty-two",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "per cent of twenty-two",
-      "Start": 0,
-      "End": 21,
       "TypeName": "percentage",
       "Resolution": {
         "value": "22%"
@@ -215,15 +179,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "per cent of 210",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "per cent of 210",
-      "Start": 0,
-      "End": 14,
       "TypeName": "percentage",
       "Resolution": {
         "value": "210%"
@@ -233,15 +194,12 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "10 percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "10 percent",
-      "Start": 0,
-      "End": 9,
       "TypeName": "percentage",
       "Resolution": {
         "value": "10%"

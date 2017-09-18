@@ -1,5 +1,4 @@
 [{
-  "TestType": "MultiTest",
   "Input": "一看",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -17,7 +16,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "一美元",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -35,7 +33,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "两美刀",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -53,7 +50,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "四川",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -71,7 +67,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "陆地",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -89,7 +84,6 @@
 }
 ,
 {
-  "TestType": "MultiTest",
   "Input": "十",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
