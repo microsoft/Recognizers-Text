@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex AtRegex { get; }
 
+        public Regex MealTimeRegex { get; }
+
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -23,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
+            MealTimeRegex = EnglishTimeExtractorConfiguration.MealTimeRegex;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }

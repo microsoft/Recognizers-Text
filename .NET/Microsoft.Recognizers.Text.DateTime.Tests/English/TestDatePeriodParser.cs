@@ -176,6 +176,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDatePeriodRestOf()
+        {
+            int year = 2016, month = 11, day = 7;
+            BasicTestFuture("I'll be out rest of the week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest of week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest the week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest this week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest of my week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest of current week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest of the month", year, month, 7, year, month, 30);
+            BasicTestFuture("I'll be out rest of the year", year, month, 7, year, 12, 31);
+        }
+
+        [TestMethod]
         public void TestDatePeriodParseLuis()
         {
             // test basic cases
@@ -237,6 +251,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             //next and upcoming
             BasicTest("upcoming month holidays", "2016-12");
             BasicTest("next month holidays", "2016-12");
+        }
+
+        [TestMethod]
+        public void TestDatePeriodRestOfLuis()
+        {
+            BasicTest("I'll be out rest of the week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest of week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest the week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest this week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest of my week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest of current week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest of the month", "(2016-11-07,2016-11-30,P24D)");
+            BasicTest("I'll be out rest of the year", "(2016-11-07,2016-12-31,P55D)");
         }
     }
 }

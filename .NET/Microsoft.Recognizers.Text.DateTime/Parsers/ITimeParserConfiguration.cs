@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AtRegex { get; }
 
+        Regex MealTimeRegex { get; }
+
         IEnumerable<Regex> TimeRegexes { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

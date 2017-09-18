@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             //var date = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, num);
                             //var date2WeekdayStr = date.DayOfWeek.ToString().ToLowerInvariant();
                             //var extractedWeekDayStr = match.Groups["weekday"].Value.ToLowerInvariant();
-                            
+
                             //if (date.Equals(DateObject.MinValue)
                             //    || this.config.DayOfWeek[date2WeekdayStr] != this.config.DayOfWeek[extractedWeekDayStr])
                             //{
@@ -137,6 +137,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                             //    ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
                             //    continue;
                             //}
+                        }
+                    }
+
+                    // handling cases like '20th of next month'
+                    var suffixStr = text.Substring(result.Start + result.Length ?? 0);
+                    match = this.config.RelativeMonthRegex.Match(suffixStr.Trim());
+                    if (match.Success && match.Index == 0)
+                    {
+                        var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
+                        ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                    }
+
+                    // handling cases like 'second Sunday'
+                    suffixStr = text.Substring(result.Start + result.Length ?? 0);
+                    match = this.config.WeekDayRegex.Match(suffixStr.Trim());
+                    if (match.Success && match.Index == 0)
+                    {
+                        var weekDayStr = match.Groups["weekday"].Value.ToLower();
+                        if (this.config.DayOfWeek.ContainsKey(weekDayStr))
+                        {
+                            // check the validity of the extracted phrase
+                            var wantedWeekDay = this.config.DayOfWeek[weekDayStr];
+                            var year = DateObject.Now.Year;
+                            var month = DateObject.Now.Month;
+                            DateObject date = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+                            var firstWeekDay = (int)date.DayOfWeek;
+                            var firstWantedWeekDay = date.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                            if (firstWantedWeekDay.AddDays((num-1) * 7).Month == date.Month)
+                            {
+                                // valid
+                                var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
+                                ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                            }
                         }
                     }
                 }

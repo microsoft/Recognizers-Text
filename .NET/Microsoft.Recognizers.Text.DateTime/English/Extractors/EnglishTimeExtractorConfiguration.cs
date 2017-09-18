@@ -26,6 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex OclockRegex = new Regex(DateTimeDefinitions.OclockRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        // handle "... lunchtime", e.g. "12 o'clock lunchtime"
+        public static readonly Regex MealTimeRegex = new Regex(DateTimeDefinitions.MealTimeRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // handle "... afternoon"
         public static readonly Regex PmRegex =
             new Regex(DateTimeDefinitions.PmRegex,
@@ -143,6 +147,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
+
+        Regex ITimeExtractorConfiguration.MealTimeRegex => MealTimeRegex;
 
         public IExtractor DurationExtractor { get; }
 

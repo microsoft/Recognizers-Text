@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AtRegex { get; }
 
+        public Regex MealTimeRegex { get; }
+
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -23,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = SpanishTimeExtractorConfiguration.TimeRegexList;
+            MealTimeRegex = SpanishTimeExtractorConfiguration.MealTimeRegex;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }

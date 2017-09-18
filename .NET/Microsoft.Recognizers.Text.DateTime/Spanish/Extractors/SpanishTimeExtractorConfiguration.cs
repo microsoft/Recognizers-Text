@@ -20,6 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // handle "... en punto"
         public static readonly Regex OclockRegex = new Regex(DateTimeDefinitions.OclockRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this regex according to the related part of English
+        public static readonly Regex MealTimeRegex = new Regex(@"^[.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // handle "... tarde"
         public static readonly Regex PmRegex = new Regex(DateTimeDefinitions.PmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -92,7 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
- 
+
+        Regex ITimeExtractorConfiguration.MealTimeRegex => MealTimeRegex;
 
         public IExtractor DurationExtractor { get; }
 

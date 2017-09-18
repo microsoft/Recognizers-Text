@@ -88,9 +88,67 @@ namespace Microsoft.Recognizers.Text.DateTime
                 offset = 0;
                 match = regex.Match(trimedText);
 
+                var success = false;
+                var hasMeal = false;
+                var mealStr = string.Empty;
                 if (match.Success && match.Index == offset && match.Length == trimedText.Length)
                 {
-                    return Match2Time(match, referenceTime);
+                    success = true;
+                }
+
+                if (!success)
+                {
+                    var subStr = string.Empty;
+                    if (match.Index != 0)
+                    {
+                        subStr = text.Substring(0, match.Index).Trim();
+                    }
+                    else
+                    {
+                        subStr = text.Substring(match.Index+match.Length).Trim();
+                    }
+
+                    var mealMatch = this.config.MealTimeRegex.Match(subStr);
+                    if (mealMatch.Success && mealMatch.Length == subStr.Length)
+                    {
+                        success = true;
+                        hasMeal = true;
+                        mealStr = mealMatch.Groups["mealTime"].Value;
+                    }
+                }
+                if (success)
+                {
+                    var dtrResult =  Match2Time(match, referenceTime);
+                    if (hasMeal)
+                    {
+                        if (dtrResult.Comment.Contains("ampm"))
+                        {
+                            var comment = dtrResult.Comment;
+                            switch (mealStr)
+                            {
+                                case "dinner":
+                                    comment = "pm";
+                                    break;
+                                case "breakfast":
+                                    comment = "am";
+                                    break;
+                                case "lunch":
+                                case "lunchtime":
+                                    var date = (DateObject)dtrResult.FutureValue;
+                                    if (date.Hour < 12)
+                                    {
+                                        comment = "am";
+                                    }
+                                    else
+                                    {
+                                        comment = "pm";
+                                    }
+                                    break;
+                            }
+                            dtrResult.Comment = comment;
+                        }
+                    }
+                    return dtrResult;
                 }
             }
 

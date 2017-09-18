@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex WeekDayAndDayOfMothRegex { get; }
 
+        public Regex RelativeMonthRegex { get; }
+
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
         public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -80,6 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekDayOfMonthRegex = SpanishDateExtractorConfiguration.WeekDayOfMonthRegex;
             ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
+            RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

@@ -22,7 +22,7 @@ WeekDayRegex: !simpleRegex
 SingleWeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\s+(Sat|Sun)))\b
 RelativeMonthRegex: !nestedRegex
-  def: (?<relmonth>{RelativeRegex}\s+month)\b
+  def: (?<relmonth>(of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
 EngMonthRegex: !simpleRegex
   def: (((the\s+)?month of\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))
@@ -386,6 +386,12 @@ ForTheRegex: !nestedRegex
 WeekDayAndDayOfMothRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
+RestOfDateRegex: !simpleRegex
+  def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year)\b
+RestOfDateTimeRegex: !simpleRegex
+  def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
+MealTimeRegex: !simpleRegex
+  def: \b(at\s+)?(?<mealTime>breakfast|lunch|lunchtime|dinner)\b
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

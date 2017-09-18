@@ -34,6 +34,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex WeekDayAndDayOfMothRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: modify below regex according to the counterpart in English
+        public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (domingo,)? 5 de Abril
@@ -113,5 +117,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
 
         Regex IDateExtractorConfiguration.WeekDayAndDayOfMothRegex => WeekDayAndDayOfMothRegex;
+
+        Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
+
+        Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
     }
 }

@@ -527,6 +527,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseDuration(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
+            DateObject beginDate;
+            var endDate = beginDate = referenceDate;
+            string timex = string.Empty;
 
             var ers = config.DurationExtractor.Extract(text);
             if (ers.Count == 1)
@@ -541,9 +544,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         return ret;
                     }
-
-                    DateObject beginDate;
-                    var endDate = beginDate = referenceDate;
 
                     var prefixMatch = config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success)
@@ -573,20 +573,52 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginDate = GetSwiftDate(endDate, durationResult.Timex, false);
                     }
 
-                    if (beginDate.Equals(endDate))
-                    {
-                        return ret;
-                    }
-
-                    endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
-
-                    ret.Timex =
-                        $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},{durationResult.Timex})";
-                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
-                    ret.Success = true;
-                    return ret;
-
+                    timex = durationResult.Timex;
                 }
+            }
+            else
+            {
+                System.Text.RegularExpressions.Regex RestOfDateRegex =
+                   new System.Text.RegularExpressions.Regex(
+                       @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year)\b",
+                        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
+                var match = RestOfDateRegex.Match(text);
+                if (match.Success)
+                {
+                    var durationStr = match.Groups["duration"].Value;
+                    var durationUnit = this.config.UnitMap[durationStr];
+                    switch (durationUnit)
+                    {
+                        case "W":
+                            var diff = 6 - (int)beginDate.DayOfWeek;
+                            endDate = beginDate.AddDays(diff);
+                            timex = "P" + diff + "D";
+                            break;
+                        case "MON":
+                            endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
+                            endDate = endDate.AddMonths(1).AddDays(-1);
+                            diff = endDate.Day - beginDate.Day + 1;
+                            timex = "P" + diff + "D";
+                            break;
+                        case "Y":
+                            endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
+                            endDate = endDate.AddMonths(1).AddDays(-1);
+                            diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
+                            timex = "P" + diff + "D";
+                            break;
+                    }
+                }
+            }
+
+            if (!beginDate.Equals(endDate))
+            {
+                endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+
+                ret.Timex =
+                    $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},{timex})";
+                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                ret.Success = true;
+                return ret;
             }
 
             return ret;

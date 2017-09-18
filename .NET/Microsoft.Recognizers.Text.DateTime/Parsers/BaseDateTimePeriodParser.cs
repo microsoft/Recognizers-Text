@@ -516,6 +516,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var match = Config.RelativeTimeUnitRegex.Match(text);
+            
+            if (!match.Success)
+            {
+                System.Text.RegularExpressions.Regex RestOfRegex = new System.Text.RegularExpressions.Regex(
+                    @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b",
+                    System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
+                match = RestOfRegex.Match(text);
+            }
             if (match.Success)
             {
                 var srcUnit = match.Groups["unit"].Value.ToLower();
@@ -531,29 +539,37 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject beginTime;
                 var endTime = beginTime = referenceTime;
-
+                var ptTimex = string.Empty;
                 if (Config.UnitMap.ContainsKey(srcUnit))
                 {
                     switch (unitStr)
                     {
+                        case "D":
+                            endTime = DateObject.MinValue.SafeCreateFromValue(beginTime.Year, beginTime.Month, beginTime.Day);
+                            endTime = endTime.AddDays(1).AddSeconds(-1);
+                            ptTimex = "PT" + (endTime.Hour - beginTime.Hour) + "H";
+                            break;
                         case "H":
                             beginTime = swiftValue > 0 ? beginTime : referenceTime.AddHours(swiftValue);
                             endTime = swiftValue > 0 ? referenceTime.AddHours(swiftValue) : endTime;
+                            ptTimex = "PT1H";
                             break;
                         case "M":
                             beginTime = swiftValue > 0 ? beginTime : referenceTime.AddMinutes(swiftValue);
                             endTime = swiftValue > 0 ? referenceTime.AddMinutes(swiftValue) : endTime;
+                            ptTimex = "PT1M";
                             break;
                         case "S":
                             beginTime = swiftValue > 0 ? beginTime : referenceTime.AddSeconds(swiftValue);
                             endTime = swiftValue > 0 ? referenceTime.AddSeconds(swiftValue) : endTime;
+                            ptTimex = "PT1S";
                             break;
                         default:
                             return ret;
                     }
 
                     ret.Timex =
-                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)},{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},PT1{unitStr[0]})";
+                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)},{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},{ptTimex})";
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
                     ret.Success = true;
 

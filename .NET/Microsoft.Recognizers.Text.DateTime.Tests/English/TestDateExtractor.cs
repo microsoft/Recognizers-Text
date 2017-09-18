@@ -205,5 +205,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             //BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(24) + " the 21st", CalculateWeekOfDay(24),
             //    "21st");
         }
+
+        [TestMethod]
+        public void TestDateExtractRelativeDayOfWeek()
+        {
+            BasicTest("I'll go back second Sunday", 13, 13);
+            BasicTest("I'll go back first Sunday", 13, 12);
+            BasicTest("I'll go back third Tuesday", 13, 13);
+        }
+
+        [TestMethod]
+        public void TestDateExtractOdNumRelativeMonth()
+        {
+            BasicTest("I'll go back 20th of next month", 13, 18);
+        }
     }
 }

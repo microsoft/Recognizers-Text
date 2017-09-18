@@ -104,5 +104,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("let's meet on Tuesday late night", 14, 18);
 
         }
+
+        [TestMethod]
+        public void TestDateTimePeriodExtractRestOf()
+        {
+            BasicTest("I'll be out rest of the day", 12, 15);
+            BasicTest("I'll be out rest of this day", 12, 16);
+            BasicTest("I'll be out rest of current day", 12, 19);
+            BasicTest("I'll be out rest the day", 12, 12);
+        }
     }
 }
