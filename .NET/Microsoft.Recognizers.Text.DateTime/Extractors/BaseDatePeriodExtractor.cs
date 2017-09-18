@@ -92,11 +92,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.GetBetweenTokenIndex(beforeStr, out beforeIndex))
                     {
                         periodBegin = beforeIndex;
+                        ret.Add(new Token(periodBegin, periodEnd));
+                        idx += 2;
+                        continue;
                     }
-
-                    ret.Add(new Token(periodBegin, periodEnd));
-                    idx += 2;
-                    continue;
                 }
                 idx++;
             }

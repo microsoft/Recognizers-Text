@@ -101,7 +101,7 @@ export class BaseSetExtractor implements IExtractor {
         RegExpUtility.getMatches(this.config.setEachRegex, source).forEach(match => {
             let trimmedSource = source.substr(0, match.index) + source.substr(match.index + match.length);
             extractor.extract(trimmedSource).forEach(er => {
-                if (er.start <= match.index) {
+                if (er.start <= match.index && (er.start + er.length) > match.index) {
                     ret.push(new Token(er.start, er.start + match.length + er.length));
                 }
             });

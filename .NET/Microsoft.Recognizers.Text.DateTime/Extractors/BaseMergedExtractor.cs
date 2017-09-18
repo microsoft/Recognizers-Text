@@ -48,26 +48,43 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
-                if (FilterAmbiguousSingleWord(result, text))
-                {
-                    continue;
-                }
+                // comment this code for now
+                //if (FilterAmbiguousSingleWord(result, text))
+                //{
+                //    continue;
+                //}
 
                 var isFound = false;
                 List<int> overlapIndexes=new List<int>();
                 int firstIndex = -1;
                 for (var i = 0; i < dst.Count; i++)
                 {
+                    //if (dst[i].IsOverlap(result))
+                    //{
+                    //    if (firstIndex == -1)
+                    //    {
+                    //        firstIndex = i;
+                    //    }
+                    //    isFound = true;
+                    //    if (result.Length > dst[i].Length)
+                    //    {
+                    //        overlapIndexes.Add(i);
+                    //    }
+                    //}
                     if (dst[i].IsOverlap(result))
                     {
-                        if (firstIndex == -1)
-                        {
-                            firstIndex = i;
-                        }
                         isFound = true;
-                        if (result.Length > dst[i].Length)
+                        if (dst[i].IsCover(result))
                         {
+                            if (firstIndex == -1)
+                            {
+                                firstIndex = i;
+                            }
                             overlapIndexes.Add(i);
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                 }

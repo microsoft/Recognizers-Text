@@ -60,6 +60,15 @@ describe('DateTime Merged Parser with two results', it => {
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date(2016, 10, 7);
 
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "add yoga to personal calendar on monday and wednesday at 3pm",
+        Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATETIME);
+
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "schedule a meeting at 8 am every week ",
+        Constants.SYS_DATETIME_TIME, Constants.SYS_DATETIME_SET);
+
+    basicTestWithTwoResults(it, extractor, parser, referenceDate, "schedule second saturday of each month",
+        Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_SET);
+
     basicTestWithTwoResults(it, extractor, parser, referenceDate, "Set an appointment for Easter Sunday",
         Constants.SYS_DATETIME_DATE, Constants.SYS_DATETIME_DATE);
 

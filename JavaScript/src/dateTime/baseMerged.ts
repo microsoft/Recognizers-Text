@@ -63,18 +63,20 @@ export class BaseMergedExtractor implements IExtractor {
     private addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
         source.forEach(value => {
             if (this.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
-            if (this.filterAmbiguousSingleWord(value, text)) return;
+
             let isFound = false;
             let overlapIndexes = new Array<number>();
             let firstIndex = -1;
             destination.forEach((dest, index) => {
                 if (ExtractResult.isOverlap(dest, value)) {
-                    if (firstIndex === -1) {
-                        firstIndex = index;
-                    }
                     isFound = true;
-                    if (value.length > dest.length) {
+                    if (ExtractResult.isCover(dest, value)) {
+                        if (firstIndex === -1) {
+                            firstIndex = index;
+                        }
                         overlapIndexes.push(index);
+                    } else {
+                        return;
                     }
                 }
             });

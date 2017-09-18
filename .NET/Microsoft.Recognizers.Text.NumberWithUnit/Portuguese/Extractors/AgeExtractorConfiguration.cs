@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {
@@ -18,12 +19,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 
         public override string ExtractType => Constants.SYS_UNIT_AGE;
 
-        public static readonly ImmutableDictionary<string, string> AgeSuffixList = new Dictionary<string, string>
-        {
-            {"Ano", "anos|ano"},
-            {"Mês", "meses|mes|mês"},
-            {"Semana", "semanas|semana"},
-            {"Dia", "dias|dia"}
-        }.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> AgeSuffixList = NumbersWithUnitDefinitions.AgeSuffixList.ToImmutableDictionary();
     }
 }
