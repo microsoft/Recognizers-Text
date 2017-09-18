@@ -530,6 +530,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject beginDate;
             var endDate = beginDate = referenceDate;
             string timex = string.Empty;
+            bool restNowSunday = false;
 
             var ers = config.DurationExtractor.Extract(text);
             if (ers.Count == 1)
@@ -578,11 +579,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                System.Text.RegularExpressions.Regex RestOfDateRegex =
-                   new System.Text.RegularExpressions.Regex(
-                       @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year)\b",
-                        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
-                var match = RestOfDateRegex.Match(text);
+                var match = this.config.RestOfDateRegex.Match(text);
                 if (match.Success)
                 {
                     var durationStr = match.Groups["duration"].Value;
@@ -590,9 +587,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     switch (durationUnit)
                     {
                         case "W":
-                            var diff = 6 - (int)beginDate.DayOfWeek;
+                            var diff = 7 - (((int)beginDate.DayOfWeek) == 0? 7: (int)beginDate.DayOfWeek);
                             endDate = beginDate.AddDays(diff);
                             timex = "P" + diff + "D";
+                            if (diff == 0)
+                            {
+                                restNowSunday = true;
+                            }
                             break;
                         case "MON":
                             endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
@@ -610,7 +611,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!beginDate.Equals(endDate))
+            if (!beginDate.Equals(endDate) || restNowSunday)
             {
                 endDate = InclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
 

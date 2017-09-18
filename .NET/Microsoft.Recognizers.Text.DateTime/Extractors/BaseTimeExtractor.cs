@@ -39,36 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    var mealTimeMatches = this.config.MealTimeRegex.Matches(text);
-                    var hasMeal = false;
-                    foreach (Match mealTimeMatch in mealTimeMatches)
-                    {
-                        var matchEnd = match.Index + match.Length;
-                        var mealEnd = mealTimeMatch.Index + mealTimeMatch.Length;
-                        var middleText = string.Empty;
-                        int begin = 0, end = 0;
-                        if (mealEnd < match.Index)
-                        {
-                            begin = mealTimeMatch.Index;
-                            end = matchEnd;
-                            middleText = text.Substring(mealEnd, match.Index - mealEnd);
-                        }
-                        else
-                        {
-                            begin = match.Index;
-                            end = mealEnd;
-                            middleText = text.Substring(matchEnd, mealTimeMatch.Index - matchEnd);
-                        }
-                        if (!string.IsNullOrEmpty(middleText) && middleText.Trim() == "")
-                        {
-                            ret.Add(new Token(begin, end));
-                            hasMeal = true;
-                        }
-                    }
-                    if (!hasMeal)
-                    {
-                        ret.Add(new Token(match.Index, match.Index + match.Length));
-                    }
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
             return ret;

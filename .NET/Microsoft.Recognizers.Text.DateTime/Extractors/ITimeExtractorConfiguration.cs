@@ -10,7 +10,5 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex AtRegex { get; }
 
         Regex IshRegex { get; }
-
-        Regex MealTimeRegex { get; }
     }
 }

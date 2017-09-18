@@ -65,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex ThisPrefixRegex { get; }
 
+        Regex RestOfDateRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

@@ -34,11 +34,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
-            int endDay)
+            int endDay, string refStr = null)
         {
+            DateObject refDay = referenceDay;
+            if (!string.IsNullOrEmpty(refStr))
+            {
+                refDay = Convert.ToDateTime(refStr);
+            }
+
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], referenceDay);
+            var pr = parser.Parse(er[0], refDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(beginYear, beginMonth, beginDay);
             Assert.AreEqual(beginDate,
@@ -48,11 +54,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
-        public void BasicTest(string text, string luisValueStr)
+        public void BasicTest(string text, string luisValueStr, string refStr = null)
         {
+            DateObject refDay = referenceDay;
+            if (!string.IsNullOrEmpty(refStr))
+            {
+                refDay = Convert.ToDateTime(refStr);
+            }
+
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], referenceDay);
+            var pr = parser.Parse(er[0], refDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
@@ -176,17 +188,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestDatePeriodRestOf()
+        public void TestDatePeriodParseRestOf()
         {
             int year = 2016, month = 11, day = 7;
-            BasicTestFuture("I'll be out rest of the week", year, month, 7, year, month, 12);
-            BasicTestFuture("I'll be out rest of week", year, month, 7, year, month, 12);
-            BasicTestFuture("I'll be out rest the week", year, month, 7, year, month, 12);
-            BasicTestFuture("I'll be out rest this week", year, month, 7, year, month, 12);
-            BasicTestFuture("I'll be out rest of my week", year, month, 7, year, month, 12);
-            BasicTestFuture("I'll be out rest of current week", year, month, 7, year, month, 12);
+            BasicTestFuture("I'll be out rest of the week", year, month, 7, year, month, 13);
+            BasicTestFuture("I'll be out rest of week", year, month, 7, year, month, 13);
+            BasicTestFuture("I'll be out rest the week", year, month, 7, year, month, 13);
+            BasicTestFuture("I'll be out rest this week", year, month, 7, year, month, 13);
+            BasicTestFuture("I'll be out rest of my week", year, month, 7, year, month, 13);
+            BasicTestFuture("I'll be out rest of current week", year, month, 7, year, month, 13);
             BasicTestFuture("I'll be out rest of the month", year, month, 7, year, month, 30);
             BasicTestFuture("I'll be out rest of the year", year, month, 7, year, 12, 31);
+            BasicTestFuture("I'll be out rest of my week", year, month, 13, year, month, 13, "11/13/2016");
         }
 
         [TestMethod]
@@ -256,14 +269,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDatePeriodRestOfLuis()
         {
-            BasicTest("I'll be out rest of the week", "(2016-11-07,2016-11-12,P5D)");
-            BasicTest("I'll be out rest of week", "(2016-11-07,2016-11-12,P5D)");
-            BasicTest("I'll be out rest the week", "(2016-11-07,2016-11-12,P5D)");
-            BasicTest("I'll be out rest this week", "(2016-11-07,2016-11-12,P5D)");
-            BasicTest("I'll be out rest of my week", "(2016-11-07,2016-11-12,P5D)");
-            BasicTest("I'll be out rest of current week", "(2016-11-07,2016-11-12,P5D)");
+            BasicTest("I'll be out rest of the week", "(2016-11-07,2016-11-13,P6D)");
+            BasicTest("I'll be out rest of week", "(2016-11-07,2016-11-13,P6D)");
+            BasicTest("I'll be out rest the week", "(2016-11-07,2016-11-13,P6D)");
+            BasicTest("I'll be out rest this week", "(2016-11-07,2016-11-13,P6D)");
+            BasicTest("I'll be out rest of my week", "(2016-11-07,2016-11-13,P6D)");
+            BasicTest("I'll be out rest of current week", "(2016-11-07,2016-11-13,P6D)");
             BasicTest("I'll be out rest of the month", "(2016-11-07,2016-11-30,P24D)");
             BasicTest("I'll be out rest of the year", "(2016-11-07,2016-12-31,P55D)");
+            BasicTest("I'll be out rest of my week", "(2016-11-13,2016-11-13,P0D)", "11/13/2016");
         }
     }
 }

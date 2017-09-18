@@ -168,9 +168,9 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)
 PmRegex: !simpleRegex
-  def: (?<pm>(in the\s+)?afternoon|(in the\s+)?evening|(in the\s+)?night)
+  def: (?<pm>((in the\s+)?afternoon)|((in the\s+)?evening)|((in the\s+)?(night|dinner)))
 AmRegex: !simpleRegex
-  def: (?<am>(in the\s+)?morning)
+  def: (?<am>(in the\s+)?(morning|breakfast|lunchtime|lunch))
 LessThanOneHour: !nestedRegex
   def: (?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]

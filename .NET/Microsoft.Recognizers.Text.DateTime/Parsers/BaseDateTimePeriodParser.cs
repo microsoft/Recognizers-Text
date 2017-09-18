@@ -519,10 +519,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             
             if (!match.Success)
             {
-                System.Text.RegularExpressions.Regex RestOfRegex = new System.Text.RegularExpressions.Regex(
-                    @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b",
-                    System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Singleline);
-                match = RestOfRegex.Match(text);
+                match = this.Config.RestOfDateTimeRegex.Match(text);
             }
             if (match.Success)
             {
@@ -547,7 +544,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         case "D":
                             endTime = DateObject.MinValue.SafeCreateFromValue(beginTime.Year, beginTime.Month, beginTime.Day);
                             endTime = endTime.AddDays(1).AddSeconds(-1);
-                            ptTimex = "PT" + (endTime.Hour - beginTime.Hour) + "H";
+                            ptTimex = "PT" + (endTime - beginTime).TotalSeconds + "S";
                             break;
                         case "H":
                             beginTime = swiftValue > 0 ? beginTime : referenceTime.AddHours(swiftValue);

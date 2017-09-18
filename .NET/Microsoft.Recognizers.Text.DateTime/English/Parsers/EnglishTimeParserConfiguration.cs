@@ -25,7 +25,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = EnglishTimeExtractorConfiguration.TimeRegexList;
-            MealTimeRegex = EnglishTimeExtractorConfiguration.MealTimeRegex;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }
@@ -93,7 +92,22 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         {
                             deltaHour = -12;
                         }
-                        hasAm = true;
+                        if (amStr.Equals("lunch") || amStr.Equals("lunchtime"))
+                        {
+                            if (hour < 12)
+                            {
+                                hasAm = true;
+                            }
+                            else
+                            {
+                                deltaHour = 0;
+                                hasPm = true;
+                            }
+                        }
+                        else
+                        {
+                            hasAm = true;
+                        }
                     }
 
                     var pmStr = match.Groups["pm"].Value;

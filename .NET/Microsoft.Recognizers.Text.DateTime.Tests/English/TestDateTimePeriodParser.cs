@@ -325,11 +325,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             int year = 2016, month = 11, day = 7, hour = 16, min = 12, second = 0;
 
-            BasicTest("let's meet rest of the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT7H)");
-            BasicTest("let's meet rest of this day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT7H)");
-            BasicTest("let's meet rest of my day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT7H)");
-            BasicTest("let's meet rest of current day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT7H)");
-            BasicTest("let's meet rest the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT7H)");
+            BasicTest("let's meet rest of the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of this day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of my day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of current day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
         }
     }
 }

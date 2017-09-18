@@ -25,7 +25,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;
             TimeRegexes = SpanishTimeExtractorConfiguration.TimeRegexList;
-            MealTimeRegex = SpanishTimeExtractorConfiguration.MealTimeRegex;
             UtilityConfiguration = config.UtilityConfiguration;
             Numbers = config.Numbers;
         }

@@ -392,14 +392,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 match = this.config.WeekDayRegex.Match(trimedText);
                 if (match.Success)
                 {
-                    var wantedWeekDay = this.config.DayOfWeek[match.Groups["weekday"].Value];
                     month = referenceDate.Month;
                     // resolve the date of wanted week day
+                    var wantedWeekDay = this.config.DayOfWeek[match.Groups["weekday"].Value];
                     var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
                     var firstWeekDay = (int)firstDate.DayOfWeek;
                     var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
-                    var AnswerDate = firstWantedWeekDay.AddDays((num - 1) * 7);
-                    day = AnswerDate.Day;
+                    var AnswerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+                    day = AnswerDay;
                     ambiguous = false;
                 }
             }

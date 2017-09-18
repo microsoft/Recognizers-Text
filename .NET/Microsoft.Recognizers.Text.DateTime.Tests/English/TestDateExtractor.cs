@@ -219,12 +219,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back second Sunday", 13, 13);
             BasicTest("I'll go back first Sunday", 13, 12);
             BasicTest("I'll go back third Tuesday", 13, 13);
+            BasicTest("I'll go back fifth Sunday", 13, 12);
+            // Negative case
+            BasicTest("I'll go back sixth Sunday", 19, 6);
         }
 
         [TestMethod]
         public void TestDateExtractOdNumRelativeMonth()
         {
             BasicTest("I'll go back 20th of next month", 13, 18);
+            BasicTest("I'll go back 31st of this month", 13, 18);
         }
     }
 }

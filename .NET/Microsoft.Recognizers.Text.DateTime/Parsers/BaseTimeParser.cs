@@ -93,29 +93,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var mealStr = string.Empty;
                 if (match.Success && match.Index == offset && match.Length == trimedText.Length)
                 {
-                    success = true;
+                    /*success = true;
+                    if (match.Groups[])*/
+                    return Match2Time(match, referenceTime);
                 }
 
-                if (!success)
-                {
-                    var subStr = string.Empty;
-                    if (match.Index != 0)
-                    {
-                        subStr = text.Substring(0, match.Index).Trim();
-                    }
-                    else
-                    {
-                        subStr = text.Substring(match.Index+match.Length).Trim();
-                    }
-
-                    var mealMatch = this.config.MealTimeRegex.Match(subStr);
-                    if (mealMatch.Success && mealMatch.Length == subStr.Length)
-                    {
-                        success = true;
-                        hasMeal = true;
-                        mealStr = mealMatch.Groups["mealTime"].Value;
-                    }
-                }
                 if (success)
                 {
                     var dtrResult =  Match2Time(match, referenceTime);
