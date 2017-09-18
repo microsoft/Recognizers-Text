@@ -1,7 +1,11 @@
 var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 var Culture = require('../compiled/culture').Culture;
+var CultureInfo = require('../compiled/culture').CultureInfo;
 var describe = require('ava-spec').describe;
 
+var EnglishCultureInfo = new CultureInfo(Culture.English);
+
+if(true){
 describe('Ordinal Model .', it => {
     let model = NumberRecognizer.instance.getOrdinalModel(Culture.English, false);
 
@@ -71,12 +75,7 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "4.800", "4.8")
 
-    basicTest(
-        it,
-        model,
-        "one hundred and three and two thirds",
-        (103 + 2 / 3).toString()
-    )
+    basicTest(it, model, "one hundred and three and two thirds", EnglishCultureInfo.format(103 + 2 / 3));
 
     basicTest(it, model, '16.4 million', '16400000');
 
@@ -86,7 +85,7 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "sixteen", "16")
 
-    basicTest(it, model, "two thirds", (2 / 3).toString())
+    basicTest(it, model, "two thirds", EnglishCultureInfo.format(2 / 3))
 
     basicTest(it, model, "one hundred and sixteen", "116")
 
@@ -243,111 +242,76 @@ describe('Number Model .', it => {
 describe('Fraction Model', it => {
     var model = NumberRecognizer.instance.getNumberModel(Culture.English, false);
 
-    basicTest(it, model,
-        "a fifth", "0.2");
+    basicTest(it, model, "a fifth", "0.2");
 
-    basicTest(it, model,
-        "a trillionth", "1E-12");
+    basicTest(it, model, "a trillionth", "1E-12");
 
-    basicTest(it, model,
-        "a hundred thousand trillionths", "1E-7");
+    basicTest(it, model, "a hundred thousand trillionths", "1E-7");
 
-    basicTest(it, model,
-        "one fifth", "0.2");
+    basicTest(it, model, "one fifth", "0.2");
 
-    basicTest(it, model,
-        "three fifths", "0.6");
+    basicTest(it, model, "three fifths", "0.6");
 
-    basicTest(it, model,
-        "twenty fifths", "4");
+    basicTest(it, model, "twenty fifths", "4");
 
-    basicTest(it, model,
-        "twenty-three fifths", "4.6");
+    basicTest(it, model, "twenty-three fifths", "4.6");
 
-    basicTest(it, model,
-        "three and a fifth", "3.2");
+    basicTest(it, model, "three and a fifth", "3.2");
 
-    basicTest(it, model,
-        "twenty one fifths", "4.2");
+    basicTest(it, model, "twenty one fifths", "4.2");
 
-    basicTest(it, model,
-        "a twenty-first", (1 / 21).toString());
+    basicTest(it, model, "a twenty-first", EnglishCultureInfo.format(1 / 21));
 
-    basicTest(it, model,
-        "one twenty-fifth", (1 / 25).toString());
+    basicTest(it, model, "one twenty-fifth", EnglishCultureInfo.format(1 / 25));
 
-    basicTest(it, model,
-        "three twenty-firsts", (3 / 21).toString());
+    basicTest(it, model, "three twenty-firsts", EnglishCultureInfo.format(3 / 21));
 
-    basicTest(it, model,
-        "three twenty firsts", (3 / 21).toString());
+    basicTest(it, model, "three twenty firsts", EnglishCultureInfo.format(3 / 21));
 
-    basicTest(it, model,
-        "twenty twenty fifths", "0.8");
+    basicTest(it, model, "twenty twenty fifths", "0.8");
 
     // act like Google
-    basicTest(it, model,
-        "one hundred and thirty fifths", (130 / 5).toString());
+    basicTest(it, model, "one hundred and thirty fifths", EnglishCultureInfo.format(130 / 5));
 
-    basicTest(it, model,
-        "one hundred thirty fifths", (100 / 35).toString());
+    basicTest(it, model, "one hundred thirty fifths", EnglishCultureInfo.format(100 / 35));
 
-    basicTest(it, model,
-        "one hundred thirty two fifths", (132 / 5).toString());
+    basicTest(it, model, "one hundred thirty two fifths", EnglishCultureInfo.format(132 / 5));
 
-    basicTest(it, model,
-        "one hundred thirty-two fifths", (132 / 5).toString());
+    basicTest(it, model, "one hundred thirty-two fifths", EnglishCultureInfo.format(132 / 5));
 
-    basicTest(it, model,
-        "one hundred and thirty-two fifths", (132 / 5).toString());
+    basicTest(it, model, "one hundred and thirty-two fifths", EnglishCultureInfo.format(132 / 5));
 
-    basicTest(it, model,
-        "one hundred and thirty and two fifths", (130 + 2 / 5).toString());
+    basicTest(it, model, "one hundred and thirty and two fifths", EnglishCultureInfo.format(130 + 2 / 5));
 
-    basicTest(it, model,
-        "one hundred thirty-fifths", (100 / 35).toString());
+    basicTest(it, model, "one hundred thirty-fifths", EnglishCultureInfo.format(100 / 35));
 
-    basicTest(it, model,
-        "one one hundred fifth", (1 / 105).toString());
+    basicTest(it, model, "one one hundred fifth", EnglishCultureInfo.format(1 / 105));
 
-    basicTest(it, model,
-        "one one hundred and fifth", (1 / 105).toString());
+    basicTest(it, model, "one one hundred and fifth", EnglishCultureInfo.format(1 / 105));
 
-    basicTest(it, model,
-        "one hundred one thousand fifths", (100 / 1005).toString());
+    basicTest(it, model, "one hundred one thousand fifths", EnglishCultureInfo.format(100 / 1005));
 
-    basicTest(it, model,
-        "one over three", (1 / 3).toString());
+    basicTest(it, model, "one over three", EnglishCultureInfo.format(1 / 3));
 
-    basicTest(it, model,
-        "1 over twenty-one", (1 / 21).toString());
+    basicTest(it, model, "1 over twenty-one", EnglishCultureInfo.format(1 / 21));
 
-    basicTest(it, model,
-        "1 over one hundred and twenty one", (1 / 121).toString());
+    basicTest(it, model, "1 over one hundred and twenty one", EnglishCultureInfo.format(1 / 121));
 
-    basicTest(it, model,
-        "1 over three", (1 / 3).toString());
+    basicTest(it, model, "1 over three", EnglishCultureInfo.format(1 / 3));
 
-    basicTest(it, model,
-        "1 over 3", (1 / 3).toString());
+    basicTest(it, model, "1 over 3", EnglishCultureInfo.format(1 / 3));
 
-    basicTest(it, model,
-        "one over 3", (1 / 3).toString());
+    basicTest(it, model, "one over 3", EnglishCultureInfo.format(1 / 3));
 
-    basicTest(it, model,
-        "one over 20", (1 / 20).toString());
+    basicTest(it, model, "one over 20", EnglishCultureInfo.format(1 / 20));
 
-    basicTest(it, model,
-        "one over twenty", (1 / 20).toString());
+    basicTest(it, model, "one over twenty", EnglishCultureInfo.format(1 / 20));
 
-    basicTest(it, model,
-        "one over one hundred", (1 / 100).toString());
+    basicTest(it, model, "one over one hundred", EnglishCultureInfo.format(1 / 100));
 
-    basicTest(it, model,
-        "one over one hundred and twenty five", (1 / 125).toString());
+    basicTest(it, model, "one over one hundred and twenty five", EnglishCultureInfo.format(1 / 125));
 
-    basicTest(it, model,
-        "ninety - five hundred fifths", (9500 / 5).toString());
+    basicTest(it, model, "ninety - five hundred fifths", EnglishCultureInfo.format(9500 / 5));
 });
 
 describe('Percent Model', it => {
@@ -395,6 +359,12 @@ describe('Percent Model', it => {
     basicTest(it, model,
         "10 percent", "10%");
 });
+} else {
+    describe('Number Model .', it => {
+        let model = NumberRecognizer.instance.getNumberModel(EnglishCultureInfo.name, false);
+        basicTest(it, model, "a trillionth", "1E-12");
+    });
+}
 
 function basicTest(it, model, source, value) {
     it(source, t => {

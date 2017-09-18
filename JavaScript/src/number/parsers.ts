@@ -117,14 +117,9 @@ export class BaseNumberParser implements IParser {
         }
 
         if (ret && ret.value) {
-            let resolutionStr = ret.resolutionStr || ret.text;
-            if (resolutionStr.includes('.')) {
-                let precision = this.trimRight(resolutionStr.split('.')[1], '0').length;
-                precision = precision > 14 ? 14 : precision;
-                ret.resolutionStr = this.trimRight(this.trimRight(ret.value.toFixed(precision), '0'), '.');
-            } else {
-                ret.resolutionStr = ret.value.toString().toUpperCase();
-            }
+            ret.resolutionStr = this.config.cultureInfo 
+                ? this.config.cultureInfo.format(ret.value)
+                : ret.value.toString();
         }
 
         return ret;
