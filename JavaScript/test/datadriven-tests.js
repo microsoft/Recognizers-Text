@@ -1,5 +1,5 @@
 var specsPath = '../Specs';
-var supportedLanguages = ['Eng', 'Spa'];
+var supportedLanguages = ['Eng'];
 
 var fs = require('fs');
 var path = require('path');
@@ -7,6 +7,7 @@ var describe = require('ava-spec').describe;
 
 var NumberTestRunner = require('./runner-number');
 var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
+var DateTimeTestRunner = require('./runner-datetime');
 
 // get list of specs (.json)
 var specFiles = getSpecFilePaths(specsPath)
@@ -22,7 +23,7 @@ var specs = specFiles
 
 // run suites
 specs.forEach(suite => {
-    describe(`${suite.config.language} - ${suite.config.type} - ${suite.config.subType} - `, it => {
+    describe(`${suite.config.language} - ${suite.config.type} - ${suite.config.subType} -`, it => {
         suite.specs.forEach(testCase => {
             var caseName = `"${testCase.Input}"`;
 
@@ -72,6 +73,8 @@ function getTestRunner(config) {
             return NumberTestRunner(config);
         case 'NumberWithUnit':
             return NumberWithUnitTestRunner(config);
+        case 'DateTime':
+            return DateTimeTestRunner(config);
         default:
             return null;
     }
