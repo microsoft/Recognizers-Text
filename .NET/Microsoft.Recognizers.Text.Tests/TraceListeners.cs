@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text
                 }
                 
                 base.WriteLine(TestWriter.GetJson(model, Formatting.Indented));
-                //base.Flush();
+                base.Flush();
             }
         }
 

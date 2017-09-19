@@ -13,7 +13,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
         public static TestResources TestResources { get; private set; }
         public static IDictionary<string, IExtractor> Extractors { get; private set; }
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
-        
+        public static IDictionary<string, IModel> Models { get; private set; }
+
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
@@ -21,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             TestResources.InitFromTestContext(context);
             Extractors = new Dictionary<string, IExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
+            Models = new Dictionary<string, IModel>();
         }
 
         [TestInitialize]
@@ -29,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             base.TestSpecInitialize(TestResources);
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
+            base.ModelInitialize(Models);
         }
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "BaseDateExtractor-Eng.csv", "BaseDateExtractor-Eng#csv", DataAccessMethod.Sequential)]
@@ -176,6 +179,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
         public void BaseMergedParser()
         {
             base.TestDateTimeMergedParser();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-Eng.csv", "DateTimeModel-Eng#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModel()
+        {
+            base.TestDateTime();
         }
     }
 }

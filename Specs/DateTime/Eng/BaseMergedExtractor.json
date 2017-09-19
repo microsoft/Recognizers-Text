@@ -234,6 +234,17 @@
 }
 ,
 {
+  "Input": "past Monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past Monday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "schedule a meeting in 10 hours",
   "NotSupportedByDesign": "python",
   "Results": [

@@ -64,6 +64,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
                 case "TemperatureModel":
                     return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
+                case "DateTimeModel":
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
                 case "CustomNumberModel":
                     return GetCustomModelFor(language);
             }

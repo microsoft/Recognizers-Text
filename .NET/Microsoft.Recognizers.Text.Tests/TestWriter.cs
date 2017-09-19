@@ -66,6 +66,10 @@ namespace Microsoft.Recognizers.Text
             {
                 Resolution.Add("unit", value);
             }
+            if (result.Resolution.TryGetValue("values", out value))
+            {
+                Resolution.Add("values", value);
+            }
         }
     }
 
@@ -198,11 +202,11 @@ namespace Microsoft.Recognizers.Text
         {
             Write(lang, model, null, source, results, callerFilePath, callerMemberName);
         }
-
-        public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        
+        public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(model);
-            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
+            Write(lang, modelStr, datetime, source, results.Select(o => new TestModelResult(o)), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")

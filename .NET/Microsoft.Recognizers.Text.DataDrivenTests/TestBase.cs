@@ -121,6 +121,44 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
         }
 
+        public void TestDateTime()
+        {
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+            {
+                Assert.Inconclusive(message);
+            }
+
+            if (Debugger.IsAttached && TestSpec.Debug)
+            {
+                Debugger.Break();
+            }
+
+            var referenceDateTime = TestSpec.GetReferenceDateTime();
+
+            var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
+            var expectedResults = TestSpec.CastResults<ModelResult>();
+
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count);
+
+            foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
+            {
+                var expected = tuple.Item1;
+                var actual = tuple.Item2;
+
+                Assert.AreEqual(expected.TypeName, actual.TypeName);
+                Assert.AreEqual(expected.Text, actual.Text);
+                
+                var values = actual.Resolution as IDictionary<string, object>;
+                var listValues = values["values"] as IList<Dictionary<string, string>>;
+                var actualValues = listValues.FirstOrDefault();
+
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedValues = expectedObj.FirstOrDefault();
+
+                CollectionAssert.AreEqual(expectedValues, actualValues);
+            }
+        }
+
         public void TestDateTimeExtractor()
         {
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
