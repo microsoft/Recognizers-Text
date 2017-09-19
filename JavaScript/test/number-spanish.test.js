@@ -1,6 +1,7 @@
 var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 var Culture = require('../compiled/culture').Culture;
 var CultureInfo = require('../compiled/culture').CultureInfo;
+var BigNumber = require('bignumber.js');
 var describe = require('ava-spec').describe;
 
 var SpanishCultureInfo = new CultureInfo(Culture.Spanish);
@@ -284,9 +285,9 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "-1,1^--23", "-8,95430243255239");
 
-    basicTest(it, model, "-127,32e13", "-1273200000000000");
+    basicTest(it, model, "-127,32e13", "-1,2732E+15");
 
-    basicTest(it, model, "12,32e+14", "1232000000000000");
+    basicTest(it, model, "12,32e+14", "1,232E+15");
 
     basicTest(it, model, "-12e-1", "-1,2");
 
@@ -445,7 +446,7 @@ describe('Fraction Model', it => {
 
     basicTest(it, model, "un billonesimo", "1E-12");
 
-    basicTest(it, model, "cien mil billonesima", "1E-7");
+    basicTest(it, model, "cien mil billonesima", "1E-07");
 
     basicTest(it, model, "tres quintos", "0,6");
 
@@ -498,7 +499,7 @@ describe('Fraction Model', it => {
 
     basicTest(it, model, "ciento treinta con dos quintos", SpanishCultureInfo.format(130 + 2 / 5));
 
-    basicTest(it, model, "un cientocincoavos", SpanishCultureInfo.format(1 / 105));
+    basicTest(it, model, "un cientocincoavos", SpanishCultureInfo.format(new BigNumber(1).dividedBy(105)));
 
     basicTest(it, model, "cien milcincoavos", SpanishCultureInfo.format(100 / 1005));
 

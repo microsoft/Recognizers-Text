@@ -1,6 +1,7 @@
 var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 var Culture = require('../compiled/culture').Culture;
 var CultureInfo = require('../compiled/culture').CultureInfo;
+var BigNumber = require('bignumber.js');
 var describe = require('ava-spec').describe;
 
 var EnglishCultureInfo = new CultureInfo(Culture.English);
@@ -229,9 +230,9 @@ describe('Number Model .', it => {
 
     basicTest(it, model, "-1.1^--23", "-8.95430243255239")
 
-    basicTest(it, model, "-127.32e13", "-1273200000000000")
+    basicTest(it, model, "-127.32e13", "-1.2732E+15")
 
-    basicTest(it, model, "12.32e+14", "1232000000000000")
+    basicTest(it, model, "12.32e+14", "1.232E+15")
 
     basicTest(it, model, "-12e-1", "-1.2")
 
@@ -245,7 +246,7 @@ describe('Fraction Model', it => {
 
     basicTest(it, model, "a trillionth", "1E-12");
 
-    basicTest(it, model, "a hundred thousand trillionths", "1E-7");
+    basicTest(it, model, "a hundred thousand trillionths", "1E-07");
 
     basicTest(it, model, "one fifth", "0.2");
 
@@ -284,9 +285,9 @@ describe('Fraction Model', it => {
 
     basicTest(it, model, "one hundred thirty-fifths", EnglishCultureInfo.format(100 / 35));
 
-    basicTest(it, model, "one one hundred fifth", EnglishCultureInfo.format(1 / 105));
+    basicTest(it, model, "one one hundred fifth", EnglishCultureInfo.format(new BigNumber(1).dividedBy(105)));
 
-    basicTest(it, model, "one one hundred and fifth", EnglishCultureInfo.format(1 / 105));
+    basicTest(it, model, "one one hundred and fifth", EnglishCultureInfo.format(new BigNumber(1).dividedBy(105)));
 
     basicTest(it, model, "one hundred one thousand fifths", EnglishCultureInfo.format(100 / 1005));
 
