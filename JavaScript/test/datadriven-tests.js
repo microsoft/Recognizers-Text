@@ -1,5 +1,5 @@
 var specsPath = '../Specs';
-var supportedLanguages = ['Eng'];
+var supportedLanguages = ['Eng', 'Spa'];
 
 var fs = require('fs');
 var path = require('path');
@@ -35,12 +35,12 @@ specs.forEach(suite => {
             var testRunner = getTestRunner(suite.config);
             if (!testRunner || notSupported.includes('javascript')) {
                 // test case or type not supported
-                it.skip(caseName, t => { })
+                it.skip(caseName, t => { });
                 return;
             }
 
             it(caseName, t => testRunner(t, testCase));
-        })
+        });
     });
 });
 
@@ -68,17 +68,21 @@ function getTestRunner(config) {
     switch (config.type) {
         case 'Number':
             return getNumberTestRunner(config);
+        case 'NumberWithUnit':
+            return getNumberWithUnitTestRunner(config);
         default:
             return null;
     }
 }
 
-var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 var Culture = require('../compiled/culture').Culture;
 var Cultures = {
-    'Eng': Culture.English
+    'Eng': Culture.English,
+    'Spa': Culture.Spanish
 };
 
+// Number
+var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 function getNumberTestRunner(config) {
     return function (t, testCase) {
         var expected = testCase.Results;
@@ -93,20 +97,19 @@ function getNumberTestRunner(config) {
         t.is(result.length, expected.length, 'Result count');
         result.forEach((r, ix) => {
             var e = expected[ix];
-            t.is(r.text, e.Text, 'Text');
-            t.is(r.typeName, e.TypeName);
-            t.is(r.resolution.value, e.Resolution.value);
+            t.is(r.text, e.Text, 'Result.Text');
+            t.is(r.typeName, e.TypeName, 'Result.TypeName');
+            t.is(r.resolution.value, e.Resolution.value, 'Result.Resolution.value');
         });
-    }
+    };
 }
 
 function getNumberModel(config) {
-    var getModelFunc = getNumberModelFunc(config).bind(NumberRecognizer.instance)
+    var getModelFunc = getNumberModelFunc(config).bind(NumberRecognizer.instance);
     var culture = Cultures[config.language];
     if (!culture) {
-        throw new Error(`Number model ${config.subType} is not supported.`);
+        throw new Error(`Number model with culture ${config.language} is not supported.`);
     }
-
 
     return getModelFunc(culture, false);
 }
@@ -121,5 +124,54 @@ function getNumberModelFunc(config) {
             return NumberRecognizer.instance.getPercentageModel;
         default:
             throw new Error(`Number model ${config.subType} is not supported.`);
+    }
+}
+
+// NumberWithUnits
+var NumberWithUnitRecognizer = require('../compiled/numberWithUnit/numberWithUnitRecognizer').default;
+function getNumberWithUnitTestRunner(config) {
+    return function (t, testCase) {
+        var expected = testCase.Results;
+
+        if (testCase.Debug) {
+            debugger;
+        }
+
+        var model = getNumberWithUnitModel(config);
+        var result = model.parse(testCase.Input);
+
+        t.is(result.length, expected.length, 'Result count');
+        result.forEach((r, ix) => {
+            var e = expected[ix];
+            t.is(r.text, e.Text, 'Result.Text');
+            t.is(r.typeName, e.TypeName, 'Result.TypeName');
+            t.is(r.resolution.value, e.Resolution.value, 'Result.Resolution.value');
+            t.is(r.resolution.unit, e.Resolution.unit, 'Result.Resolution.unit');
+        });
+    };
+}
+
+function getNumberWithUnitModel(config) {
+    var getModelFunc = getNumberWithUnitModelFunc(config).bind(NumberWithUnitRecognizer.instance);
+    var culture = Cultures[config.language];
+    if (!culture) {
+        throw new Error(`NumberWithUnit model with culture ${config.language} is not supported.`);
+    }
+
+    return getModelFunc(culture, false);
+}
+
+function getNumberWithUnitModelFunc(config) {
+    switch (config.subType) {
+        case 'AgeModel':
+            return NumberWithUnitRecognizer.instance.getAgeModel;
+        case 'CurrencyModel':
+            return NumberWithUnitRecognizer.instance.getCurrencyModel;
+        case 'TemperatureModel':
+            return NumberWithUnitRecognizer.instance.getTemperatureModel;
+        case 'DimensionModel':
+            return NumberWithUnitRecognizer.instance.getDimensionModel;
+        default:
+            throw new Error(`NumberWithUnit model ${config.subType} is not supported.`);
     }
 }
