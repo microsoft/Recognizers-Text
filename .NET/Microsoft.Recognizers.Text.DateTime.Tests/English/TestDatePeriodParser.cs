@@ -34,17 +34,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
-            int endDay, string refStr = null)
+            int endDay)
         {
-            DateObject refDay = referenceDay;
-            if (!string.IsNullOrEmpty(refStr))
-            {
-                refDay = Convert.ToDateTime(refStr);
-            }
+            BasicTestFuture(text, beginYear, beginMonth, beginDay, endYear, endMonth, endDay, referenceDay);
+        }
 
+        public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
+            int endDay, DateObject refDateTime)
+        {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refDay);
+            var pr = parser.Parse(er[0], refDateTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(beginYear, beginMonth, beginDay);
             Assert.AreEqual(beginDate,
@@ -54,17 +54,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 ((Tuple<DateObject, DateObject>)((DateTimeResolutionResult)pr.Value).FutureValue).Item2);
         }
 
-        public void BasicTest(string text, string luisValueStr, string refStr = null)
+        public void BasicTest(string text, string luisValueStr)
         {
-            DateObject refDay = referenceDay;
-            if (!string.IsNullOrEmpty(refStr))
-            {
-                refDay = Convert.ToDateTime(refStr);
-            }
+            BasicTest(text, luisValueStr, referenceDay);
+        }
 
+        public void BasicTest(string text, string luisValueStr, DateObject refDateTime)
+        {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refDay);
+            var pr = parser.Parse(er[0], refDateTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult)pr.Value).Timex);
         }
@@ -199,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTestFuture("I'll be out rest of current week", year, month, 7, year, month, 13);
             BasicTestFuture("I'll be out rest of the month", year, month, 7, year, month, 30);
             BasicTestFuture("I'll be out rest of the year", year, month, 7, year, 12, 31);
-            BasicTestFuture("I'll be out rest of my week", year, month, 13, year, month, 13, "11/13/2016");
+            BasicTestFuture("I'll be out rest of my week", year, month, 13, year, month, 13, new DateObject(2016, 11, 13));
         }
 
         [TestMethod]
@@ -277,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be out rest of current week", "(2016-11-07,2016-11-13,P6D)");
             BasicTest("I'll be out rest of the month", "(2016-11-07,2016-11-30,P24D)");
             BasicTest("I'll be out rest of the year", "(2016-11-07,2016-12-31,P55D)");
-            BasicTest("I'll be out rest of my week", "(2016-11-13,2016-11-13,P0D)", "11/13/2016");
+            BasicTest("I'll be out rest of my week", "(2016-11-13,2016-11-13,P0D)", new DateObject(2016, 11, 13));
         }
     }
 }
