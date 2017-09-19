@@ -88,49 +88,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 offset = 0;
                 match = regex.Match(trimedText);
 
-                var success = false;
-                var hasMeal = false;
                 var mealStr = string.Empty;
                 if (match.Success && match.Index == offset && match.Length == trimedText.Length)
                 {
-                    /*success = true;
-                    if (match.Groups[])*/
                     return Match2Time(match, referenceTime);
-                }
-
-                if (success)
-                {
-                    var dtrResult =  Match2Time(match, referenceTime);
-                    if (hasMeal)
-                    {
-                        if (dtrResult.Comment.Contains("ampm"))
-                        {
-                            var comment = dtrResult.Comment;
-                            switch (mealStr)
-                            {
-                                case "dinner":
-                                    comment = "pm";
-                                    break;
-                                case "breakfast":
-                                    comment = "am";
-                                    break;
-                                case "lunch":
-                                case "lunchtime":
-                                    var date = (DateObject)dtrResult.FutureValue;
-                                    if (date.Hour < 12)
-                                    {
-                                        comment = "am";
-                                    }
-                                    else
-                                    {
-                                        comment = "pm";
-                                    }
-                                    break;
-                            }
-                            dtrResult.Comment = comment;
-                        }
-                    }
-                    return dtrResult;
                 }
             }
 
