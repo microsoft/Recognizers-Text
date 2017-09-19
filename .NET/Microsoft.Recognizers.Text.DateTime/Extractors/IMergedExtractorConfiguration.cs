@@ -26,6 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex BeforeRegex { get; }
 
+        Regex SinceRegex { get; }
+
         Regex FromToRegex { get; }
 
         Regex SingleAmbiguousMonthRegex { get; }

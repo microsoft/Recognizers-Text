@@ -106,22 +106,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
+
             var fromMatch = FromRegex.Match(text);
             if (fromMatch.Success)
             {
                 index = fromMatch.Index;
             }
+
             return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
+
             var match = BetweenRegex.Match(text);
             if (match.Success)
             {
                 index = match.Index;
             }
+
             return match.Success;
         }
 

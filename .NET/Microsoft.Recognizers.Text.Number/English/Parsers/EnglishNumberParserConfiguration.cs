@@ -1,9 +1,9 @@
-﻿using Microsoft.Recognizers.Definitions.English;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
 {
@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             var fracWords = new List<string>();
             var tokenList = tokens.ToList();
             var tokenLen = tokenList.Count;
+
             for (var i = 0; i < tokenLen; i++)
             {
                 if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
@@ -85,6 +86,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     fracWords.Add(tokenList[i]);
                 }
             }
+
             return fracWords;
         }
 
@@ -106,6 +108,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                         ret += CardinalNumberMap[number];
                     }
                 }
+
                 return ret;
             }
 

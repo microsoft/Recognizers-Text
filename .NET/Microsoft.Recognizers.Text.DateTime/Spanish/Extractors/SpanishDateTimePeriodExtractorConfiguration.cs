@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishDateTimePeriodExtractorConfiguration()
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
+
             SingleDateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
@@ -32,11 +32,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor DurationExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] 
-            {
-                SpanishTimePeriodExtractorConfiguration.PureNumFromTo,
-                SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd
-            };
+        public IEnumerable<Regex> SimpleCasesRegex => new[] 
+        {
+            SpanishTimePeriodExtractorConfiguration.PureNumFromTo,
+            SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd
+        };
 
         public Regex PrepositionRegex => SpanishDateTimeExtractorConfiguration.PrepositionRegex;
 
@@ -88,11 +88,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
+
             var match = BetweenRegex.Match(text);
             if (match.Success)
             {
                 index = match.Index;
             }
+
             return match.Success;
         }
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
@@ -168,6 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 index = text.LastIndexOf("from", StringComparison.Ordinal);
                 return true;
             }
+
             return false;
         }
 
@@ -179,6 +179,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 index = text.LastIndexOf("between", StringComparison.Ordinal);
                 return true;
             }
+
             return false;
         }
 

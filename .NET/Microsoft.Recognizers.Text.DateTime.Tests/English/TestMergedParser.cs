@@ -5,6 +5,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 {
+
     [TestClass]
     public class TestMergedParser
     {
@@ -88,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestMergedParseAfterBefore()
+        public void TestMergedParseAfterBeforeSince()
         {
             BasicTest("after 8pm", Constants.SYS_DATETIME_TIMEPERIOD);
             BasicTest("before 8pm", Constants.SYS_DATETIME_TIMEPERIOD);

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
+using DateObject = System.DateTime;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -30,6 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             config = configuration;
         }
+
         public ParseResult Parse(ExtractResult extResult)
         {
             return this.Parse(extResult, DateObject.Now);
@@ -66,8 +67,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];
-            dtParseResult.FutureValue = dtParseResult.PastValue = double.Parse(numStr)*UnitValueMap[unitStr];
+            dtParseResult.FutureValue = dtParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
             dtParseResult.Success = true;
+
             if (dtParseResult.Success)
             {
                 dtParseResult.FutureResolution = new Dictionary<string, string>

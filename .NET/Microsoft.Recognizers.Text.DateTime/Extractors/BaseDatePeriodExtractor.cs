@@ -192,13 +192,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private bool MatchRegexInPrefix(string beforeStr, Match match)
-        {
-            if (match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length)))
-            {
-                return true;
-            }
-            return false;
+        private bool MatchRegexInPrefix(string beforeStr, Match match) {
+            var result =  match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+            return result;
         }
 
     }

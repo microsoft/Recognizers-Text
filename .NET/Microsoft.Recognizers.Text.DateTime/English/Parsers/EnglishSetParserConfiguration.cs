@@ -102,6 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 timex = null;
                 return false;
             }
+
             return true;
         }
 

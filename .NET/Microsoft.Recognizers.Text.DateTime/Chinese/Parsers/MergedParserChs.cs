@@ -10,6 +10,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO implement SinceRegex
+        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
 
         public new ParseResult Parse(ExtractResult er)
@@ -23,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
-            bool hasBefore = false, hasAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false;
             var modStr = string.Empty;
             if (BeforeRegex.IsMatch(er.Text))
             {
@@ -32,6 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             else if (AfterRegex.IsMatch(er.Text))
             {
                 hasAfter = true;
+            }
+            else if (SinceRegex.IsMatch(er.Text))
+            {
+                hasSince = true;
             }
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
@@ -96,10 +103,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter);
+            if (hasSince)
+            {
+                var val = (DateTimeResolutionResult)pr.Value;
+                if (val != null)
+                {
+                    val.Mod = TimeTypeConstants.sinceMod;
+                }
+                pr.Value = val;
+            }
+
+            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
 
             //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter)}";
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
 
             return pr;
         }

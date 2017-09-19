@@ -128,8 +128,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|d[ií]a de acci[oó]n de gracias|halloween|noches de brujas)(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex3 = $@"\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
-		public const string BeforeRegex = @"(antes(\s+de(\s+las?)?)?)";
-		public const string AfterRegex = @"(despues(\s*de(\s+las?)?)?)";
+		public const string BeforeRegex = @"(antes(\s+del?(\s+las?)?)?)";
+		public const string AfterRegex = @"(despues(\s*del?(\s+las?)?)?)";
+		public const string SinceRegex = @"(desde(\s+(las?|el))?)";
 		public const string PeriodicRegex = @"\b(?<periodic>a\s*diario|diariamente|mensualmente|semanalmente|quincenalmente|anualmente)\b";
 		public const string EachExpression = @"cada|tod[oa]s\s*(l[oa]s)?";
 		public static readonly string EachUnitRegex = $@"(?<each>({EachExpression})\s*{UnitRegex})";

@@ -356,7 +356,9 @@ PMTimeRegex: !simpleRegex
 BeforeRegex: !simpleRegex
   def: \b(before)\b
 AfterRegex: !simpleRegex
-  def: \b(after|since)\b
+  def: \b(after)\b
+SinceRegex: !simpleRegex
+  def: \b(since)\b
 AgoRegex: !simpleRegex
   def: \b(ago)\b
 LaterRegex: !simpleRegex
