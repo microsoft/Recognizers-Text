@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             }
 
             var sentence = "I went back " + weekDay;
-            var dateStr = now.Year.ToString() + "-" + now.Month.ToString().PadLeft(2, '0') + "-" + dayOfMonth.ToString().PadLeft(2, '0');
+            var dateStr = $"{now.Year}-{now.Month.ToString().PadLeft(2, '0')}-{dayOfMonth.ToString().PadLeft(2, '0')}";
             return new System.Tuple<string, string>(sentence, dateStr);
         }
 
@@ -88,11 +88,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var firstDate = DateObject.MinValue.SafeCreateFromValue(refDate.Year, refDate.Month, 1);
             var firstWeekDay = (int)firstDate.DayOfWeek;
             var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
-            //var wantedDate = firstWantedWeekDay.AddDays((ordinalNum - 1) * 7);
             var wantedDate = firstWantedWeekDay.Day + ((ordinalNum - 1) * 7);
-            var AnswerDate = DateObject.MinValue.SafeCreateFromValue(refDate.Year, refDate.Month, wantedDate);
-            var AnswerDateStr = refDate.Year.ToString() + "-" + refDate.Month.ToString().PadLeft(2, '0') + "-" + wantedDate.ToString().PadLeft(2, '0');
-            return new System.Tuple<DateObject, string>(AnswerDate, AnswerDateStr);
+            var answerDate = DateObject.MinValue.SafeCreateFromValue(refDate.Year, refDate.Month, wantedDate);
+            var answerDateStr = $"{refDate.Year}-{refDate.Month.ToString().PadLeft(2, '0')}-{wantedDate.ToString().PadLeft(2, '0')}";
+            return new System.Tuple<DateObject, string>(answerDate, answerDateStr);
         }
 
         [TestMethod]

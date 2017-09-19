@@ -168,9 +168,15 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)
 PmRegex: !simpleRegex
-  def: (?<pm>((in the\s+)?afternoon)|((in the\s+)?evening)|((in the\s+)?(night|dinner)))
+  def: (?<pm>(((at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|dinner|lunchtime|lunch))|((at|in|around|on|for)\s+(the\s+)?night))
+PmRegexFull: !simpleRegex
+  def: (?<pm>((at|in|around|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|night|dinner|lunchtime|lunch))
 AmRegex: !simpleRegex
-  def: (?<am>(in the\s+)?(morning|breakfast|lunchtime|lunch))
+  def: (?<am>((at|in|around|on|for)\s+(the\s+)?)?(morning|breakfast))
+LunchRegex: !simpleRegex
+  def: \b(lunchtime|lunch)\b
+NightRegex: !simpleRegex
+  def: \b(midnight|night)\b
 LessThanOneHour: !nestedRegex
   def: (?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
@@ -183,6 +189,9 @@ TimePrefix: !nestedRegex
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
   references: [ AmRegex, PmRegex, OclockRegex ]
+TimeSuffixFull: !nestedRegex
+  def: (?<suffix>{AmRegex}|{PmRegexFull}|{OclockRegex})
+  references: [ AmRegex, PmRegexFull, OclockRegex ]
 BasicTime: !nestedRegex
   def: (?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
@@ -235,11 +244,11 @@ TimeRegex6: !nestedRegex
   def: '{BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b'
   references: [ BasicTime, DescRegex, TimeSuffix ]
 TimeRegex7: !nestedRegex
-  def: \b{TimeSuffix}\s+at\s+{BasicTime}((\s*{DescRegex})|\b)
-  references: [ TimeSuffix, BasicTime, DescRegex ]
+  def: \b{TimeSuffixFull}\s+at\s+{BasicTime}((\s*{DescRegex})|\b)
+  references: [ TimeSuffixFull, BasicTime, DescRegex ]
 TimeRegex8: !nestedRegex
-  def: \b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)
-  references: [ TimeSuffix, BasicTime, DescRegex ]
+  def: \b{TimeSuffixFull}\s+{BasicTime}((\s*{DescRegex})|\b)
+  references: [ TimeSuffixFull, BasicTime, DescRegex ]
 TimeRegex9: !nestedRegex
   def: \b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)
   references: [ PeriodHourNumRegex, FivesRegex, DescRegex ]

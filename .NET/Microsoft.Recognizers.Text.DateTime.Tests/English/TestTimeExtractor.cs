@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be back 12 o'clock lunch", 13, 16);
             BasicTest("I'll be back 12 o'clock lunchtime", 13, 20);
             BasicTest("I'll be back lunchtime 12 o'clock", 13, 20);
-            BasicTest("I'll be back at lunchtime 12 o'clock", 16, 20);
+            BasicTest("I'll be back at lunchtime 12 o'clock", 13, 23);
         }
     }
 }

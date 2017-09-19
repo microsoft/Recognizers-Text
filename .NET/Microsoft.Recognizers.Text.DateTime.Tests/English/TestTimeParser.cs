@@ -117,7 +117,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         {
             var today = DateObject.Today;
             int year = today.Year, month = today.Month, day = today.Day, min = 0, second = 0;
+            BasicTest("I'll be back 12 lunchtime", new DateObject(year, month, day, 12, 0, 0));
+            BasicTest("I'll be back 12 midnight", new DateObject(year, month, day, 0, 0, 0));
+            BasicTest("I'll be back 12 in the night", new DateObject(year, month, day, 0, 0, 0));
+            BasicTest("I'll be back 1 o'clock midnight", new DateObject(year, month, day, 1, 0, 0));
             BasicTest("I'll be back 12 o'clock lunchtime", new DateObject(year, month, day, 12, 0, 0));
+            BasicTest("I'll be back 11 o'clock lunchtime", new DateObject(year, month, day, 11, 0, 0));
+            BasicTest("I'll be back 1 o'clock lunchtime", new DateObject(year, month, day, 13, 0, 0));
             BasicTest("I'll be back 12 o'clock lunch", new DateObject(year, month, day, 12, 0, 0));
             BasicTest("I'll be back 8 o'clock dinner", new DateObject(year, month, day, 20, 0, 0));
             BasicTest("I'll be back 8 o'clock breakfast", new DateObject(year, month, day, 8, 0, 0));
