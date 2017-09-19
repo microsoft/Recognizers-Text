@@ -8,7 +8,7 @@ var describe = require('ava-spec').describe;
 // get list of specs (.json)
 var specFiles = getSpecFilePaths(specsPath)
     // Ignore non-supported languages
-    .filter(s => supportedLanguages.find(l => s.indexOf('/' + l + '/') !== -1))
+    .filter(s => supportedLanguages.find(l => s.indexOf(path.sep + l + path.sep) !== -1));
 
 // parse specs
 var specs = specFiles
@@ -55,7 +55,7 @@ function getSpecFilePaths(specsPath) {
 }
 
 function getSuiteConfig(jsonPath) {
-    var parts = jsonPath.split('/').slice(2);
+    var parts = jsonPath.split(path.sep).slice(2);
 
     return {
         type: parts[0],
