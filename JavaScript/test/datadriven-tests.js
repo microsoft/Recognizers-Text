@@ -5,6 +5,9 @@ var fs = require('fs');
 var path = require('path');
 var describe = require('ava-spec').describe;
 
+var NumberTestRunner = require('./runner-number');
+var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
+
 // get list of specs (.json)
 var specFiles = getSpecFilePaths(specsPath)
     // Ignore non-supported languages
@@ -17,21 +20,19 @@ var specs = specFiles
         specs: require(path.join('../', s))
     }));
 
-// console.log(specs)
 // run suites
 specs.forEach(suite => {
     describe(`${suite.config.language} - ${suite.config.type} - ${suite.config.subType} - `, it => {
         suite.specs.forEach(testCase => {
             var caseName = `"${testCase.Input}"`;
 
-            var notSupported = (testCase.NotSupported || '').split(',').map(s => s.trim());
+            // Not Supported by Design - right now we don't care about implementing it
             var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());
-
             if (notSupportedByDesign.includes('javascript')) {
-                // Not Supported by Design - right now we don't care about implementing it
                 return;
             }
 
+            var notSupported = (testCase.NotSupported || '').split(',').map(s => s.trim());
             var testRunner = getTestRunner(suite.config);
             if (!testRunner || notSupported.includes('javascript')) {
                 // test case or type not supported
@@ -39,6 +40,7 @@ specs.forEach(suite => {
                 return;
             }
 
+            // Run test
             it(caseName, t => testRunner(t, testCase));
         });
     });
@@ -67,111 +69,10 @@ function getSuiteConfig(jsonPath) {
 function getTestRunner(config) {
     switch (config.type) {
         case 'Number':
-            return getNumberTestRunner(config);
+            return NumberTestRunner(config);
         case 'NumberWithUnit':
-            return getNumberWithUnitTestRunner(config);
+            return NumberWithUnitTestRunner(config);
         default:
             return null;
-    }
-}
-
-var Culture = require('../compiled/culture').Culture;
-var Cultures = {
-    'Eng': Culture.English,
-    'Spa': Culture.Spanish
-};
-
-// Number
-var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
-function getNumberTestRunner(config) {
-    return function (t, testCase) {
-        var expected = testCase.Results;
-
-        if (testCase.Debug) {
-            debugger;
-        }
-
-        var model = getNumberModel(config);
-        var result = model.parse(testCase.Input);
-
-        t.is(result.length, expected.length, 'Result count');
-        result.forEach((r, ix) => {
-            var e = expected[ix];
-            t.is(r.text, e.Text, 'Result.Text');
-            t.is(r.typeName, e.TypeName, 'Result.TypeName');
-            t.is(r.resolution.value, e.Resolution.value, 'Result.Resolution.value');
-        });
-    };
-}
-
-function getNumberModel(config) {
-    var getModelFunc = getNumberModelFunc(config).bind(NumberRecognizer.instance);
-    var culture = Cultures[config.language];
-    if (!culture) {
-        throw new Error(`Number model with culture ${config.language} is not supported.`);
-    }
-
-    return getModelFunc(culture, false);
-}
-
-function getNumberModelFunc(config) {
-    switch (config.subType) {
-        case 'NumberModel':
-            return NumberRecognizer.instance.getNumberModel;
-        case 'OrdinalModel':
-            return NumberRecognizer.instance.getOrdinalModel;
-        case 'PercentModel':
-            return NumberRecognizer.instance.getPercentageModel;
-        default:
-            throw new Error(`Number model ${config.subType} is not supported.`);
-    }
-}
-
-// NumberWithUnits
-var NumberWithUnitRecognizer = require('../compiled/numberWithUnit/numberWithUnitRecognizer').default;
-function getNumberWithUnitTestRunner(config) {
-    return function (t, testCase) {
-        var expected = testCase.Results;
-
-        if (testCase.Debug) {
-            debugger;
-        }
-
-        var model = getNumberWithUnitModel(config);
-        var result = model.parse(testCase.Input);
-
-        t.is(result.length, expected.length, 'Result count');
-        result.forEach((r, ix) => {
-            var e = expected[ix];
-            t.is(r.text, e.Text, 'Result.Text');
-            t.is(r.typeName, e.TypeName, 'Result.TypeName');
-            t.is(r.resolution.value, e.Resolution.value, 'Result.Resolution.value');
-            t.is(r.resolution.unit, e.Resolution.unit, 'Result.Resolution.unit');
-        });
-    };
-}
-
-function getNumberWithUnitModel(config) {
-    var getModelFunc = getNumberWithUnitModelFunc(config).bind(NumberWithUnitRecognizer.instance);
-    var culture = Cultures[config.language];
-    if (!culture) {
-        throw new Error(`NumberWithUnit model with culture ${config.language} is not supported.`);
-    }
-
-    return getModelFunc(culture, false);
-}
-
-function getNumberWithUnitModelFunc(config) {
-    switch (config.subType) {
-        case 'AgeModel':
-            return NumberWithUnitRecognizer.instance.getAgeModel;
-        case 'CurrencyModel':
-            return NumberWithUnitRecognizer.instance.getCurrencyModel;
-        case 'TemperatureModel':
-            return NumberWithUnitRecognizer.instance.getTemperatureModel;
-        case 'DimensionModel':
-            return NumberWithUnitRecognizer.instance.getDimensionModel;
-        default:
-            throw new Error(`NumberWithUnit model ${config.subType} is not supported.`);
     }
 }
