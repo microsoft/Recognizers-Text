@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -87,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 return true;
             }
+
             return ChineseHolidayExtractorConfiguration.LunarHolidayRegex.IsMatch(trimedText);
         }
 
@@ -137,9 +138,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            var pr1 = this.config.DateParser.Parse(er1[0], referenceTime.Date);
             // TODO: Add reference time
+            var pr1 = this.config.DateParser.Parse(er1[0], referenceTime.Date);
             var pr2 = this.config.TimeParser.Parse(er2[0], referenceTime);
+
             if (pr1.Value == null || pr2.Value == null)
             {
                 return ret;

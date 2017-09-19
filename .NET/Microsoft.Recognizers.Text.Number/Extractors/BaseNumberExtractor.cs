@@ -3,7 +3,6 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
-using System;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -86,6 +85,7 @@ namespace Microsoft.Recognizers.Text.Number
             var regexDefinition = type.DecimalsMark.Equals('\0') ?
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
+
             return new Regex(regexDefinition, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         }
     }

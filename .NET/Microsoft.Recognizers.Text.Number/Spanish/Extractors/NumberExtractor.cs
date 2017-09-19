@@ -33,6 +33,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             {
                 cardExtract = CardinalExtractor.GetInstance();
             }
+
             builder.AddRange(cardExtract.Regexes);
 
             //Add Fraction

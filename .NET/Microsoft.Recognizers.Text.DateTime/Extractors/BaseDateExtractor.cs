@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -15,6 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             this.config = config;
         }
+
         public List<ExtractResult> Extract(string text)
         {
             var tokens = new List<Token>();
@@ -54,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 

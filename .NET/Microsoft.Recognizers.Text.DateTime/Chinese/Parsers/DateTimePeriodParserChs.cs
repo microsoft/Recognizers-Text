@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Text;
+using DateObject = System.DateTime;
+using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
-using DateObject = System.DateTime;
-using System.Text;
-using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -106,12 +106,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
         private DateTimeResolutionResult MergeDateAndTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+
             var er1 = SingleDateExtractor.Extract(text);
             var er2 = TimePeriodExtractor.Extract(text);
             if (er1.Count != 1 || er2.Count != 1)
@@ -261,8 +263,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             var leftResult = (DateTimeResolutionResult)pr1.Value;
             var rightResult = (DateTimeResolutionResult)pr2.Value;
-            var leftResultTime = (System.DateTime)leftResult.FutureValue;
-            var rightResultTime = (System.DateTime)rightResult.FutureValue;
+            var leftResultTime = (DateObject)leftResult.FutureValue;
+            var rightResultTime = (DateObject)rightResult.FutureValue;
 
             int day = referenceTime.Day,
                 month = referenceTime.Month,

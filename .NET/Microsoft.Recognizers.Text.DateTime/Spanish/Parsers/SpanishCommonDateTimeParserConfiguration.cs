@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.Number;
@@ -12,6 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishCommonDateTimeParserConfiguration()
         {
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
+
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
             UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
             SeasonMap = DateTimeDefinitions.SeasonMap.ToImmutableDictionary();
@@ -20,9 +20,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             IntegerExtractor = new IntegerExtractor();
             OrdinalExtractor = new OrdinalExtractor();
+
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());

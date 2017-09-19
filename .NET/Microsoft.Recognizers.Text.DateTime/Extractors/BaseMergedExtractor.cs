@@ -125,6 +125,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return true;
                 }
             }
+
             return false;
         }
 
