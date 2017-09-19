@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "Volvere el 15",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 2,
       "Text": "15",
       "Type": "date"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 22 de Abril",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "22 de Abril",
       "Type": "date"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 1-Ene",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 5,
       "Text": "1-Ene",
       "Type": "date"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 1/Ene",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 5,
       "Text": "1/Ene",
       "Type": "date"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 2. Octubre",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "2. Octubre",
       "Type": "date"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 12 de enero, 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 17,
       "Text": "12 de enero, 2016",
       "Type": "date"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 12 de Enero de 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 19,
       "Text": "12 de Enero de 2016",
       "Type": "date"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el Lunes 12 de enero, 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 23,
       "Text": "Lunes 12 de enero, 2016",
       "Type": "date"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 02/22/2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "02/22/2016",
       "Type": "date"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 21/04/2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "21/04/2016",
       "Type": "date"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 21/04/16",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 8,
       "Text": "21/04/16",
       "Type": "date"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 9-18-15",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 7,
       "Text": "9-18-15",
       "Type": "date"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 4.22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 4,
       "Text": "4.22",
       "Type": "date"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 4-22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 4,
       "Text": "4-22",
       "Type": "date"
     }
@@ -209,44 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Volvere el 4.22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 4,
-      "Text": "4.22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere el 4-22",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 4,
-      "Text": "4-22",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere el    4/22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 4,
       "Text": "4/22",
       "Type": "date"
     }
@@ -254,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 22/04",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 5,
       "Text": "22/04",
       "Type": "date"
     }
@@ -269,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere       4/22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 4,
       "Text": "4/22",
       "Type": "date"
     }
@@ -284,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere 22/04",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 5,
       "Text": "22/04",
       "Type": "date"
     }
@@ -299,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 2015/08/12",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "2015/08/12",
       "Type": "date"
     }
@@ -314,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 11/12,2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "11/12,2016",
       "Type": "date"
     }
@@ -329,14 +239,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 11/12,16",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 8,
       "Text": "11/12,16",
       "Type": "date"
     }
@@ -344,14 +251,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 1ro de Ene",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "1ro de Ene",
       "Type": "date"
     }
@@ -359,29 +263,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Volvere el 1-Ene",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 11,
-      "Length": 5,
-      "Text": "1-Ene",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere el 28-Nov",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "28-Nov",
       "Type": "date"
     }
@@ -389,14 +275,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el Mi, 22 de Ene",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 13,
       "Text": "Mi, 22 de Ene",
       "Type": "date"
     }
@@ -404,14 +287,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el primero de Ene",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 14,
       "Text": "primero de Ene",
       "Type": "date"
     }
@@ -419,14 +299,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el veintiuno de Mayo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 17,
       "Text": "veintiuno de Mayo",
       "Type": "date"
     }
@@ -434,14 +311,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere en Mayo veintiuno",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 14,
       "Text": "Mayo veintiuno",
       "Type": "date"
     }
@@ -449,14 +323,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el segundo de Ago",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 14,
       "Text": "segundo de Ago",
       "Type": "date"
     }
@@ -464,14 +335,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el vigesimo segundo de Junio",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 25,
       "Text": "vigesimo segundo de Junio",
       "Type": "date"
     }
@@ -479,14 +347,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el viernes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 7,
       "Text": "viernes",
       "Type": "date"
     }
@@ -494,14 +359,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere viernes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 7,
       "Text": "viernes",
       "Type": "date"
     }
@@ -509,14 +371,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere los viernes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 7,
       "Text": "viernes",
       "Type": "date"
     }
@@ -524,14 +383,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere los sabados",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 7,
       "Text": "sabados",
       "Type": "date"
     }
@@ -539,14 +395,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 3,
       "Text": "hoy",
       "Type": "date"
     }
@@ -554,14 +407,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 6,
       "Text": "mañana",
       "Type": "date"
     }
@@ -569,14 +419,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvi ayer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 6,
-      "Length": 4,
       "Text": "ayer",
       "Type": "date"
     }
@@ -584,14 +431,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvi el dia antes de ayer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 6,
-      "Length": 20,
       "Text": "el dia antes de ayer",
       "Type": "date"
     }
@@ -599,14 +443,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvi anteayer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 6,
-      "Length": 8,
       "Text": "anteayer",
       "Type": "date"
     }
@@ -614,14 +455,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el dia despues de mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 24,
       "Text": "el dia despues de mañana",
       "Type": "date"
     }
@@ -629,14 +467,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere pasado mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 13,
       "Text": "pasado mañana",
       "Type": "date"
     }
@@ -644,14 +479,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el dia siguiente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 16,
       "Text": "el dia siguiente",
       "Type": "date"
     }
@@ -659,14 +491,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el proximo dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 14,
       "Text": "el proximo dia",
       "Type": "date"
     }
@@ -674,29 +503,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Volvere el dia siguiente",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 8,
-      "Length": 16,
-      "Text": "el dia siguiente",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere este viernes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 12,
       "Text": "este viernes",
       "Type": "date"
     }
@@ -704,14 +515,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el proximo domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 15,
       "Text": "proximo domingo",
       "Type": "date"
     }
@@ -719,14 +527,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el siguiente domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 17,
       "Text": "siguiente domingo",
       "Type": "date"
     }
@@ -734,14 +539,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el ultimo domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 14,
       "Text": "ultimo domingo",
       "Type": "date"
     }
@@ -749,14 +551,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere ultimo dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 10,
       "Text": "ultimo dia",
       "Type": "date"
     }
@@ -764,14 +563,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el ultimo dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 13,
       "Text": "el ultimo dia",
       "Type": "date"
     }
@@ -779,14 +575,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 6,
       "Text": "el dia",
       "Type": "date"
     }
@@ -794,14 +587,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el viernes de esta semana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 22,
       "Text": "viernes de esta semana",
       "Type": "date"
     }
@@ -809,14 +599,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el domingo de la siguiente semana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 30,
       "Text": "domingo de la siguiente semana",
       "Type": "date"
     }
@@ -824,14 +611,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el domingo de la ultima semana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 27,
       "Text": "domingo de la ultima semana",
       "Type": "date"
     }
@@ -839,14 +623,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el 15 Junio 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 13,
       "Text": "15 Junio 2016",
       "Type": "date"
     }
@@ -854,14 +635,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el undecimo de mayo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 16,
       "Text": "undecimo de mayo",
       "Type": "date"
     }
@@ -869,14 +647,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el primer viernes de julio",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 26,
       "Text": "el primer viernes de julio",
       "Type": "date"
     }
@@ -884,14 +659,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere el primer viernes de este mes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 29,
       "Text": "el primer viernes de este mes",
       "Type": "date"
     }

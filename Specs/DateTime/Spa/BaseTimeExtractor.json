@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 1,
       "Text": "7",
       "Type": "time"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 5,
       "Text": "siete",
       "Type": "time"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 3,
       "Text": "7pm",
       "Type": "time"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7p.m.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 5,
       "Text": "7p.m.",
       "Type": "time"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 6,
       "Text": "7:56pm",
       "Type": "time"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56:35pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "7:56:35pm",
       "Type": "time"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56:35 pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "7:56:35 pm",
       "Type": "time"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 12:34",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 5,
       "Text": "12:34",
       "Type": "time"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 12:34:20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "12:34:20",
       "Type": "time"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las T12:34:20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "T12:34:20",
       "Type": "time"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 00:00",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 5,
       "Text": "00:00",
       "Type": "time"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 00:00:30",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "00:00:30",
       "Type": "time"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 7 en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 10,
       "Text": "7 en punto",
       "Type": "time"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las siete en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 14,
       "Text": "siete en punto",
       "Type": "time"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 14,
       "Text": "8 de la mañana",
       "Type": "time"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 13,
       "Text": "8 de la tarde",
       "Type": "time"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 13,
       "Text": "8 de la noche",
       "Type": "time"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las ocho y media",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 12,
       "Text": "ocho y media",
       "Type": "time"
     }
@@ -269,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8pm y media",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 11,
       "Text": "8pm y media",
       "Type": "time"
     }
@@ -284,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 30 mins pasadas las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 24,
       "Text": "30 mins pasadas las ocho",
       "Type": "time"
     }
@@ -299,14 +239,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las ocho y cuarto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 13,
       "Text": "ocho y cuarto",
       "Type": "time"
     }
@@ -314,14 +251,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son cuarto pasadas las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 23,
       "Text": "cuarto pasadas las ocho",
       "Type": "time"
     }
@@ -329,14 +263,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son cuarto pasadas de las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 26,
       "Text": "cuarto pasadas de las ocho",
       "Type": "time"
     }
@@ -344,14 +275,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 9pm menos cuarto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 16,
       "Text": "9pm menos cuarto",
       "Type": "time"
     }
@@ -359,14 +287,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Faltan 3 minutos para las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 23,
       "Text": "3 minutos para las ocho",
       "Type": "time"
     }
@@ -374,14 +299,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 22,
       "Text": "siete y media en punto",
       "Type": "time"
     }
@@ -389,14 +311,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 25,
       "Text": "siete y media de la tarde",
       "Type": "time"
     }
@@ -404,14 +323,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 26,
       "Text": "siete y media de la mañana",
       "Type": "time"
     }
@@ -419,14 +335,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos veinticinco de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 35,
       "Text": "ocho menos veinticinco de la mañana",
       "Type": "time"
     }
@@ -434,14 +347,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos veinte de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 30,
       "Text": "ocho menos veinte de la mañana",
       "Type": "time"
     }
@@ -449,14 +359,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos cuarto de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 30,
       "Text": "ocho menos cuarto de la mañana",
       "Type": "time"
     }
@@ -464,14 +371,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos diez de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 28,
       "Text": "ocho menos diez de la mañana",
       "Type": "time"
     }
@@ -479,14 +383,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos cinco de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 29,
       "Text": "ocho menos cinco de la mañana",
       "Type": "time"
     }
@@ -494,14 +395,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 20 min pasadas las ocho de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 4,
-      "Length": 35,
       "Text": "20 min pasadas las ocho de la tarde",
       "Type": "time"
     }
@@ -509,14 +407,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere por la tarde a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 20,
       "Text": "por la tarde a las 7",
       "Type": "time"
     }
@@ -524,14 +419,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 18,
       "Text": "a la tarde a las 7",
       "Type": "time"
     }
@@ -539,14 +431,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7:00",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 21,
       "Text": "a la tarde a las 7:00",
       "Type": "time"
     }
@@ -554,14 +443,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7:00:14",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 24,
       "Text": "a la tarde a las 7:00:14",
       "Type": "time"
     }
@@ -569,14 +455,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las siete pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 25,
       "Text": "a la tarde a las siete pm",
       "Type": "time"
     }
@@ -584,14 +467,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete treinta pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 16,
       "Text": "siete treinta pm",
       "Type": "time"
     }
@@ -599,14 +479,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete treinta y cinco pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 24,
       "Text": "siete treinta y cinco pm",
       "Type": "time"
     }
@@ -614,14 +491,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las once y cinco",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 12,
       "Text": "once y cinco",
       "Type": "time"
     }
@@ -629,14 +503,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere tres minutos para las cinco treinta",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 35,
       "Text": "tres minutos para las cinco treinta",
       "Type": "time"
     }
@@ -644,14 +515,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere tres minutos antes de las cinco treinta",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 39,
       "Text": "tres minutos antes de las cinco treinta",
       "Type": "time"
     }
@@ -659,14 +527,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las cinco treinta de la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 25,
       "Text": "cinco treinta de la noche",
       "Type": "time"
     }
@@ -674,14 +539,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las cinco treinta en la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 25,
       "Text": "cinco treinta en la noche",
       "Type": "time"
     }
@@ -689,14 +551,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las cinco treinta de la madrugada",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 29,
       "Text": "cinco treinta de la madrugada",
       "Type": "time"
     }
@@ -704,14 +563,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la madrugada",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 14,
       "Text": "a la madrugada",
       "Type": "time"
     }
@@ -719,14 +575,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 11,
       "Text": "a la mañana",
       "Type": "time"
     }
@@ -734,14 +587,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere al mediodia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 11,
       "Text": "al mediodia",
       "Type": "time"
     }
@@ -749,14 +599,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere al medio dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 12,
       "Text": "al medio dia",
       "Type": "time"
     }
@@ -764,14 +611,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 10,
       "Text": "a la tarde",
       "Type": "time"
     }
@@ -779,14 +623,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere al noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 8,
       "Text": "al noche",
       "Type": "time"
     }
@@ -794,14 +635,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere 340pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 5,
       "Text": "340pm",
       "Type": "time"
     }
@@ -809,14 +647,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere 1140 a.m.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 9,
       "Text": "1140 a.m.",
       "Type": "time"
     }
@@ -824,7 +659,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "no hay ninguna pm string despues de la hora",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",

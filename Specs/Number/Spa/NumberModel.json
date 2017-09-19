@@ -14,81 +14,6 @@
 }
 ,
 {
-  "Input": " 123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.234.567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1.234.567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "3 docenas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -704,201 +629,6 @@
 }
 ,
 {
-  "Input": " 101231,2353",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "101231,2353",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "101231,2353"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-101231,4323",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-101231,4323",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-101231,4323"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -89101231,5127",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-89101231,5127",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-89101231,5127"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1,1234567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1,1234567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,1234567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.234.567,51274",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1.234.567,51274",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567,51274"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192,",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",23456000",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ",23456000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,23456"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4,800",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4,800",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",08",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ",08",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,08"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1e10",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1e10",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,1^23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1,1^23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "siete con cincuenta",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -989,185 +719,6 @@
 }
 ,
 {
-  "Input": "1,1^+23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1,1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2,5^-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2,5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2500^-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-2500^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0,0004"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1,1^+23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1,1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2,5^-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-2,5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0,4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1,1^--23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1,1^--23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-127,32e13",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-127,32e13",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,2732E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "12,32e+14",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12,32e+14",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1,232E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-12e-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-12e-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192.168.1.2",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "192.168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192168"
-      }
-    },
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "2",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "son 180,25ml liquidos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1203,21 +754,6 @@
 }
 ,
 {
-  "Input": ",08",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ",08",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,08"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "uno",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1242,36 +778,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",23456000",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ",23456000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,23456"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4,800",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4,800",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4,8"
       }
     }
   ]
@@ -1428,21 +934,6 @@
 }
 ,
 {
-  "Input": "una docena",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "una docena",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "12"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " tres docenas ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1452,245 +943,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "36"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1.234.567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1.234.567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1234567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1. 234. 567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "234",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "234"
-      }
-    },
-    {
-      "Text": "567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-4/5",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 1 4/5",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "- 1 4/5",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1,8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10k",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10G",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10G",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 10  k",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "- 10  k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-10000"
       }
     }
   ]
@@ -1721,21 +973,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "1000000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " tres ",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
       }
     }
   ]
@@ -1847,21 +1084,6 @@
 }
 ,
 {
-  "Input": " 2,33 k",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2,33 k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2330"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " doscientos coma cero tres",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1892,36 +1114,6 @@
 }
 ,
 {
-  "Input": "1e10",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1e10",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1,1^23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1,1^23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8,95430243255239"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " 322 millones ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1937,21 +1129,6 @@
 }
 ,
 {
-  "Input": "setenta",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "setenta",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "70"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "cincuenta y dos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1961,36 +1138,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2  1/4",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2  1/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2,25"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "3/4",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/4",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,75"
       }
     }
   ]
@@ -2207,21 +1354,6 @@
 }
 ,
 {
-  "Input": "un billonesimo",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un billonesimo",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "cien mil billonesima",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2231,21 +1363,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres quintos",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres quintos",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,6"
       }
     }
   ]
@@ -2642,51 +1759,6 @@
 }
 ,
 {
-  "Input": "1 sobre 21",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sobre 21",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sobre tres",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sobre tres",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sobre 3",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sobre 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "uno sobre 3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -2786,36 +1858,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "2,5"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "tres cuartos",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres cuartos",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,75"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "dos tercios",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dos tercios",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,666666666666667"
       }
     }
   ]

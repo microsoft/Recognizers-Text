@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "元旦",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -8,31 +7,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01",
+      "Text": "元旦",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-01-01"
         },
         "PastResolution": {
           "date": "2017-01-01"
-        },
-        "FutureValue": "2018-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "元旦",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "元旦节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -41,31 +31,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01",
+      "Text": "元旦节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-01-01"
         },
         "PastResolution": {
           "date": "2017-01-01"
-        },
-        "FutureValue": "2018-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "元旦节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "教师节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -74,31 +55,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-09-10",
+      "Text": "教师节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-09-10",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-09-10"
         },
         "PastResolution": {
           "date": "2016-09-10"
-        },
-        "FutureValue": "2017-09-10T00:00:00",
-        "PastValue": "2016-09-10T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "教师节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "青年节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -107,31 +79,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-04",
+      "Text": "青年节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-04",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-05-04"
         },
         "PastResolution": {
           "date": "2016-05-04"
-        },
-        "FutureValue": "2017-05-04T00:00:00",
-        "PastValue": "2016-05-04T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "青年节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "儿童节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -140,31 +103,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-06-01",
+      "Text": "儿童节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-06-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-06-01"
         },
         "PastResolution": {
           "date": "2016-06-01"
-        },
-        "FutureValue": "2017-06-01T00:00:00",
-        "PastValue": "2016-06-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "儿童节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "妇女节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -173,31 +127,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-03-08",
+      "Text": "妇女节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-03-08",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-03-08"
         },
         "PastResolution": {
           "date": "2017-03-08"
-        },
-        "FutureValue": "2018-03-08T00:00:00",
-        "PastValue": "2017-03-08T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "妇女节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "植树节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -206,31 +151,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-03-12",
+      "Text": "植树节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-03-12",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-03-12"
         },
         "PastResolution": {
           "date": "2017-03-12"
-        },
-        "FutureValue": "2018-03-12T00:00:00",
-        "PastValue": "2017-03-12T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "植树节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "情人节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -239,31 +175,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-02-14",
+      "Text": "情人节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-02-14",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-02-14"
         },
         "PastResolution": {
           "date": "2017-02-14"
-        },
-        "FutureValue": "2018-02-14T00:00:00",
-        "PastValue": "2017-02-14T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "情人节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "圣诞节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -272,31 +199,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-12-25",
+      "Text": "圣诞节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-12-25",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-12-25"
         },
         "PastResolution": {
           "date": "2016-12-25"
-        },
-        "FutureValue": "2017-12-25T00:00:00",
-        "PastValue": "2016-12-25T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "圣诞节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "新年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -305,31 +223,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01",
+      "Text": "新年",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-01-01"
         },
         "PastResolution": {
           "date": "2017-01-01"
-        },
-        "FutureValue": "2018-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "新年",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "愚人节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -338,31 +247,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-04-01",
+      "Text": "愚人节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-04-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-04-01"
         },
         "PastResolution": {
           "date": "2016-04-01"
-        },
-        "FutureValue": "2017-04-01T00:00:00",
-        "PastValue": "2016-04-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "愚人节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "五一",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -371,31 +271,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-01",
+      "Text": "五一",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-05-01"
         },
         "PastResolution": {
           "date": "2016-05-01"
-        },
-        "FutureValue": "2017-05-01T00:00:00",
-        "PastValue": "2016-05-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "五一",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "劳动节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -404,31 +295,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-01",
+      "Text": "劳动节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-05-01"
         },
         "PastResolution": {
           "date": "2016-05-01"
-        },
-        "FutureValue": "2017-05-01T00:00:00",
-        "PastValue": "2016-05-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "劳动节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "万圣节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -437,31 +319,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-31",
+      "Text": "万圣节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-31",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-10-31"
         },
         "PastResolution": {
           "date": "2016-10-31"
-        },
-        "FutureValue": "2017-10-31T00:00:00",
-        "PastValue": "2016-10-31T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "万圣节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "中秋节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -470,31 +343,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-08-15",
+      "Text": "中秋节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-08-15",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-08-15"
         },
         "PastResolution": {
           "date": "2016-08-15"
-        },
-        "FutureValue": "2017-08-15T00:00:00",
-        "PastValue": "2016-08-15T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "中秋节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "中秋",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -503,31 +367,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-08-15",
+      "Text": "中秋",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-08-15",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-08-15"
         },
         "PastResolution": {
           "date": "2016-08-15"
-        },
-        "FutureValue": "2017-08-15T00:00:00",
-        "PastValue": "2016-08-15T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "中秋",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "春节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -536,31 +391,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01",
+      "Text": "春节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2018-01-01"
         },
         "PastResolution": {
           "date": "2017-01-01"
-        },
-        "FutureValue": "2018-01-01T00:00:00",
-        "PastValue": "2017-01-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "春节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "除夕",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -569,31 +415,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-12-31",
+      "Text": "除夕",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-12-31",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-12-31"
         },
         "PastResolution": {
           "date": "2016-12-31"
-        },
-        "FutureValue": "2017-12-31T00:00:00",
-        "PastValue": "2016-12-31T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "除夕",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "元宵节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -602,31 +439,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-15",
+      "Text": "元宵节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-15",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2018-01-15"
         },
         "PastResolution": {
           "date": "2017-01-15"
-        },
-        "FutureValue": "2018-01-15T00:00:00",
-        "PastValue": "2017-01-15T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "元宵节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "清明节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -635,31 +463,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-04-04",
+      "Text": "清明节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-04-04",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-04-04"
         },
         "PastResolution": {
           "date": "2016-04-04"
-        },
-        "FutureValue": "2017-04-04T00:00:00",
-        "PastValue": "2016-04-04T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "清明节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "清明",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -668,31 +487,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-04-04",
+      "Text": "清明",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-04-04",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-04-04"
         },
         "PastResolution": {
           "date": "2016-04-04"
-        },
-        "FutureValue": "2017-04-04T00:00:00",
-        "PastValue": "2016-04-04T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "清明",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "端午节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -701,31 +511,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-05",
+      "Text": "端午节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-05",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-05-05"
         },
         "PastResolution": {
           "date": "2016-05-05"
-        },
-        "FutureValue": "2017-05-05T00:00:00",
-        "PastValue": "2016-05-05T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "端午节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "端午",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -734,31 +535,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-05",
+      "Text": "端午",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-05",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-05-05"
         },
         "PastResolution": {
           "date": "2016-05-05"
-        },
-        "FutureValue": "2017-05-05T00:00:00",
-        "PastValue": "2016-05-05T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "端午",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "国庆节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -767,31 +559,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-01",
+      "Text": "国庆节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-10-01"
         },
         "PastResolution": {
           "date": "2016-10-01"
-        },
-        "FutureValue": "2017-10-01T00:00:00",
-        "PastValue": "2016-10-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "国庆节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "建军节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -800,31 +583,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-08-01",
+      "Text": "建军节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-08-01",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-08-01"
         },
         "PastResolution": {
           "date": "2016-08-01"
-        },
-        "FutureValue": "2017-08-01T00:00:00",
-        "PastValue": "2016-08-01T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "建军节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "女生节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -833,31 +607,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-03-07",
+      "Text": "女生节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-03-07",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2018-03-07"
         },
         "PastResolution": {
           "date": "2017-03-07"
-        },
-        "FutureValue": "2018-03-07T00:00:00",
-        "PastValue": "2017-03-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "女生节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "光棍节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -866,31 +631,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-11-11",
+      "Text": "光棍节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-11-11",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-11-11"
         },
         "PastResolution": {
           "date": "2016-11-11"
-        },
-        "FutureValue": "2017-11-11T00:00:00",
-        "PastValue": "2016-11-11T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "光棍节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "双十一",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -899,31 +655,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-11-11",
+      "Text": "双十一",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-11-11",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-11-11"
         },
         "PastResolution": {
           "date": "2016-11-11"
-        },
-        "FutureValue": "2017-11-11T00:00:00",
-        "PastValue": "2016-11-11T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "双十一",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "重阳节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -932,31 +679,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-09-09",
+      "Text": "重阳节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-09-09",
-        "IsLunar": true,
         "FutureResolution": {
           "date": "2017-09-09"
         },
         "PastResolution": {
           "date": "2016-09-09"
-        },
-        "FutureValue": "2017-09-09T00:00:00",
-        "PastValue": "2016-09-09T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "重阳节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "父亲节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -965,31 +703,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-06-WXX-6-3",
+      "Text": "父亲节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-06-WXX-6-3",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-06-18"
         },
         "PastResolution": {
           "date": "2016-06-19"
-        },
-        "FutureValue": "2017-06-18T00:00:00",
-        "PastValue": "2016-06-19T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "父亲节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "母亲节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -998,31 +727,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-05-WXX-7-2",
+      "Text": "母亲节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-05-WXX-7-2",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-05-14"
         },
         "PastResolution": {
           "date": "2016-05-08"
-        },
-        "FutureValue": "2017-05-14T00:00:00",
-        "PastValue": "2016-05-08T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "母亲节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "感恩节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -1031,25 +751,17 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-11-WXX-4-4",
+      "Text": "感恩节",
+      "Type": "date",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
         "FutureResolution": {
           "date": "2017-11-23"
         },
         "PastResolution": {
           "date": "2016-11-24"
-        },
-        "FutureValue": "2017-11-23T00:00:00",
-        "PastValue": "2016-11-24T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "感恩节",
-      "Type": "date"
+        }
+      }
     }
   ]
 }

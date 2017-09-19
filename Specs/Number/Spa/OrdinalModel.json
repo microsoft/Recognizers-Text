@@ -719,21 +719,6 @@
 }
 ,
 {
-  "Input": "111ro",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "111ro",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "111"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "21ro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",

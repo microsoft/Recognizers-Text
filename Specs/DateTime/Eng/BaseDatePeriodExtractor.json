@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll leave over the weekend",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 11,
       "Text": "the weekend",
       "Type": "daterange"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out next 3 days",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 11,
       "Text": "next 3 days",
       "Type": "daterange"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out next 3 months",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "next 3 months",
       "Type": "daterange"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in 3 year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "in 3 year",
       "Type": "daterange"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in 3 years",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "in 3 years",
       "Type": "daterange"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in 3 weeks",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "in 3 weeks",
       "Type": "daterange"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in 3 months",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 11,
       "Text": "in 3 months",
       "Type": "daterange"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out past 3 weeks",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "past 3 weeks",
       "Type": "daterange"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out last 3year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "last 3year",
       "Type": "daterange"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out last year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "last year",
       "Type": "daterange"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out past month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "past month",
       "Type": "daterange"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out previous 3 weeks",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "previous 3 weeks",
       "Type": "daterange"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "past few weeks",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 14,
       "Text": "past few weeks",
       "Type": "daterange"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "past several days",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 17,
       "Text": "past several days",
       "Type": "daterange"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave this summer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "this summer",
       "Type": "daterange"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave next spring",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "next spring",
       "Type": "daterange"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave the summer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "the summer",
       "Type": "daterange"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave summer",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "summer",
       "Type": "daterange"
     }
@@ -269,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave summer 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "summer 2016",
       "Type": "daterange"
     }
@@ -284,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave summer of 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 14,
       "Text": "summer of 2016",
       "Type": "daterange"
     }
@@ -299,14 +239,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Jan",
       "Type": "daterange"
     }
@@ -314,14 +251,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Jan",
       "Type": "daterange"
     }
@@ -329,14 +263,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Jan",
       "Type": "daterange"
     }
@@ -344,14 +275,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Jan",
       "Type": "daterange"
     }
@@ -359,14 +287,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jan 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Jan 2001",
       "Type": "daterange"
     }
@@ -374,14 +299,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jan, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Jan, 2001",
       "Type": "daterange"
     }
@@ -389,14 +311,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Feb",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Feb",
       "Type": "daterange"
     }
@@ -404,14 +323,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Feb",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Feb",
       "Type": "daterange"
     }
@@ -419,14 +335,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Feb",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Feb",
       "Type": "daterange"
     }
@@ -434,14 +347,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Feb",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Feb",
       "Type": "daterange"
     }
@@ -449,14 +359,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Feb 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Feb 2001",
       "Type": "daterange"
     }
@@ -464,14 +371,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Feb, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Feb, 2001",
       "Type": "daterange"
     }
@@ -479,14 +383,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Mar",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Mar",
       "Type": "daterange"
     }
@@ -494,14 +395,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Mar",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Mar",
       "Type": "daterange"
     }
@@ -509,14 +407,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Mar",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Mar",
       "Type": "daterange"
     }
@@ -524,14 +419,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Mar",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Mar",
       "Type": "daterange"
     }
@@ -539,14 +431,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Mar 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Mar 2001",
       "Type": "daterange"
     }
@@ -554,14 +443,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Mar, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Mar, 2001",
       "Type": "daterange"
     }
@@ -569,14 +455,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Apr",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Apr",
       "Type": "daterange"
     }
@@ -584,14 +467,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Apr",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Apr",
       "Type": "daterange"
     }
@@ -599,14 +479,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Apr",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Apr",
       "Type": "daterange"
     }
@@ -614,14 +491,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Apr",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Apr",
       "Type": "daterange"
     }
@@ -629,14 +503,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Apr 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Apr 2001",
       "Type": "daterange"
     }
@@ -644,14 +515,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Apr, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Apr, 2001",
       "Type": "daterange"
     }
@@ -659,14 +527,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in May",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "May",
       "Type": "daterange"
     }
@@ -674,14 +539,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this May",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this May",
       "Type": "daterange"
     }
@@ -689,14 +551,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of May",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of May",
       "Type": "daterange"
     }
@@ -704,14 +563,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of May",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of May",
       "Type": "daterange"
     }
@@ -719,14 +575,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing May 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "May 2001",
       "Type": "daterange"
     }
@@ -734,14 +587,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing May, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "May, 2001",
       "Type": "daterange"
     }
@@ -749,14 +599,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Jun",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Jun",
       "Type": "daterange"
     }
@@ -764,14 +611,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Jun",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Jun",
       "Type": "daterange"
     }
@@ -779,14 +623,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Jun",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Jun",
       "Type": "daterange"
     }
@@ -794,14 +635,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Jun",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Jun",
       "Type": "daterange"
     }
@@ -809,14 +647,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jun 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Jun 2001",
       "Type": "daterange"
     }
@@ -824,14 +659,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jun, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Jun, 2001",
       "Type": "daterange"
     }
@@ -839,14 +671,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Jul",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Jul",
       "Type": "daterange"
     }
@@ -854,14 +683,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Jul",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Jul",
       "Type": "daterange"
     }
@@ -869,14 +695,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Jul",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Jul",
       "Type": "daterange"
     }
@@ -884,14 +707,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Jul",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Jul",
       "Type": "daterange"
     }
@@ -899,14 +719,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jul 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Jul 2001",
       "Type": "daterange"
     }
@@ -914,14 +731,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Jul, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Jul, 2001",
       "Type": "daterange"
     }
@@ -929,14 +743,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Aug",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Aug",
       "Type": "daterange"
     }
@@ -944,14 +755,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Aug",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Aug",
       "Type": "daterange"
     }
@@ -959,14 +767,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Aug",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Aug",
       "Type": "daterange"
     }
@@ -974,14 +779,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Aug",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Aug",
       "Type": "daterange"
     }
@@ -989,14 +791,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Aug 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Aug 2001",
       "Type": "daterange"
     }
@@ -1004,14 +803,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Aug, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Aug, 2001",
       "Type": "daterange"
     }
@@ -1019,14 +815,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Sep",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Sep",
       "Type": "daterange"
     }
@@ -1034,14 +827,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Sep",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Sep",
       "Type": "daterange"
     }
@@ -1049,14 +839,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Sep",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Sep",
       "Type": "daterange"
     }
@@ -1064,14 +851,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Sep",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Sep",
       "Type": "daterange"
     }
@@ -1079,14 +863,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Sep 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Sep 2001",
       "Type": "daterange"
     }
@@ -1094,14 +875,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Sep, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Sep, 2001",
       "Type": "daterange"
     }
@@ -1109,14 +887,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 4,
       "Text": "Sept",
       "Type": "daterange"
     }
@@ -1124,14 +899,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "this Sept",
       "Type": "daterange"
     }
@@ -1139,14 +911,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "month of Sept",
       "Type": "daterange"
     }
@@ -1154,14 +923,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "the month of Sept",
       "Type": "daterange"
     }
@@ -1169,14 +935,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Sept 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Sept 2001",
       "Type": "daterange"
     }
@@ -1184,14 +947,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Sept, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "Sept, 2001",
       "Type": "daterange"
     }
@@ -1199,14 +959,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Oct",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Oct",
       "Type": "daterange"
     }
@@ -1214,14 +971,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Oct",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Oct",
       "Type": "daterange"
     }
@@ -1229,14 +983,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Oct",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Oct",
       "Type": "daterange"
     }
@@ -1244,14 +995,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Oct",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Oct",
       "Type": "daterange"
     }
@@ -1259,14 +1007,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Oct 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Oct 2001",
       "Type": "daterange"
     }
@@ -1274,14 +1019,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Oct, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Oct, 2001",
       "Type": "daterange"
     }
@@ -1289,14 +1031,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Nov",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Nov",
       "Type": "daterange"
     }
@@ -1304,14 +1043,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Nov",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Nov",
       "Type": "daterange"
     }
@@ -1319,14 +1055,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Nov",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Nov",
       "Type": "daterange"
     }
@@ -1334,14 +1067,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Nov",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Nov",
       "Type": "daterange"
     }
@@ -1349,14 +1079,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Nov 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Nov 2001",
       "Type": "daterange"
     }
@@ -1364,14 +1091,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Nov, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Nov, 2001",
       "Type": "daterange"
     }
@@ -1379,14 +1103,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in Dec",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 3,
       "Text": "Dec",
       "Type": "daterange"
     }
@@ -1394,14 +1115,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Dec",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 8,
       "Text": "this Dec",
       "Type": "daterange"
     }
@@ -1409,14 +1127,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of Dec",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "month of Dec",
       "Type": "daterange"
     }
@@ -1424,14 +1139,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of Dec",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "the month of Dec",
       "Type": "daterange"
     }
@@ -1439,14 +1151,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Dec 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 8,
       "Text": "Dec 2001",
       "Type": "daterange"
     }
@@ -1454,14 +1163,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing Dec, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "Dec, 2001",
       "Type": "daterange"
     }
@@ -1469,14 +1175,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in January",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 7,
       "Text": "January",
       "Type": "daterange"
     }
@@ -1484,14 +1187,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this January",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "this January",
       "Type": "daterange"
     }
@@ -1499,14 +1199,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of January",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "month of January",
       "Type": "daterange"
     }
@@ -1514,14 +1211,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of January",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 20,
       "Text": "the month of January",
       "Type": "daterange"
     }
@@ -1529,14 +1223,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing January 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 12,
       "Text": "January 2001",
       "Type": "daterange"
     }
@@ -1544,14 +1235,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing January, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 13,
       "Text": "January, 2001",
       "Type": "daterange"
     }
@@ -1559,14 +1247,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in February",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 8,
       "Text": "February",
       "Type": "daterange"
     }
@@ -1574,14 +1259,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this February",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "this February",
       "Type": "daterange"
     }
@@ -1589,14 +1271,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of February",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "month of February",
       "Type": "daterange"
     }
@@ -1604,14 +1283,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of February",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 21,
       "Text": "the month of February",
       "Type": "daterange"
     }
@@ -1619,14 +1295,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing February 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 13,
       "Text": "February 2001",
       "Type": "daterange"
     }
@@ -1634,14 +1307,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing February, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 14,
       "Text": "February, 2001",
       "Type": "daterange"
     }
@@ -1649,14 +1319,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 5,
       "Text": "March",
       "Type": "daterange"
     }
@@ -1664,14 +1331,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "this March",
       "Type": "daterange"
     }
@@ -1679,14 +1343,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 14,
       "Text": "month of March",
       "Type": "daterange"
     }
@@ -1694,14 +1355,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 18,
       "Text": "the month of March",
       "Type": "daterange"
     }
@@ -1709,14 +1367,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing March 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "March 2001",
       "Type": "daterange"
     }
@@ -1724,14 +1379,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing March, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 11,
       "Text": "March, 2001",
       "Type": "daterange"
     }
@@ -1739,14 +1391,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in April",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 5,
       "Text": "April",
       "Type": "daterange"
     }
@@ -1754,14 +1403,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this April",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": "this April",
       "Type": "daterange"
     }
@@ -1769,14 +1415,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of April",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 14,
       "Text": "month of April",
       "Type": "daterange"
     }
@@ -1784,14 +1427,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of April",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 18,
       "Text": "the month of April",
       "Type": "daterange"
     }
@@ -1799,14 +1439,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing April 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "April 2001",
       "Type": "daterange"
     }
@@ -1814,14 +1451,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing April, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 11,
       "Text": "April, 2001",
       "Type": "daterange"
     }
@@ -1829,104 +1463,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll be out in May",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 15,
-      "Length": 3,
-      "Text": "May",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out this May",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 8,
-      "Text": "this May",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out month of May",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 12,
-      "Text": "month of May",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll be out the month of May",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 16,
-      "Text": "the month of May",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I was missing May 2001",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 14,
-      "Length": 8,
-      "Text": "May 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I was missing May, 2001",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 14,
-      "Length": 9,
-      "Text": "May, 2001",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll be out in June",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 4,
       "Text": "June",
       "Type": "daterange"
     }
@@ -1934,14 +1475,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this June",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "this June",
       "Type": "daterange"
     }
@@ -1949,14 +1487,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of June",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "month of June",
       "Type": "daterange"
     }
@@ -1964,14 +1499,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of June",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "the month of June",
       "Type": "daterange"
     }
@@ -1979,14 +1511,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing June 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "June 2001",
       "Type": "daterange"
     }
@@ -1994,14 +1523,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing June, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "June, 2001",
       "Type": "daterange"
     }
@@ -2009,14 +1535,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in July",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 4,
       "Text": "July",
       "Type": "daterange"
     }
@@ -2024,14 +1547,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this July",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "this July",
       "Type": "daterange"
     }
@@ -2039,14 +1559,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of July",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "month of July",
       "Type": "daterange"
     }
@@ -2054,14 +1571,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of July",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "the month of July",
       "Type": "daterange"
     }
@@ -2069,14 +1583,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing July 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 9,
       "Text": "July 2001",
       "Type": "daterange"
     }
@@ -2084,14 +1595,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing July, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 10,
       "Text": "July, 2001",
       "Type": "daterange"
     }
@@ -2099,14 +1607,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in August",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 6,
       "Text": "August",
       "Type": "daterange"
     }
@@ -2114,14 +1619,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this August",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 11,
       "Text": "this August",
       "Type": "daterange"
     }
@@ -2129,14 +1631,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of August",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 15,
       "Text": "month of August",
       "Type": "daterange"
     }
@@ -2144,14 +1643,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of August",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 19,
       "Text": "the month of August",
       "Type": "daterange"
     }
@@ -2159,14 +1655,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing August 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 11,
       "Text": "August 2001",
       "Type": "daterange"
     }
@@ -2174,14 +1667,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing August, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 12,
       "Text": "August, 2001",
       "Type": "daterange"
     }
@@ -2189,14 +1679,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in September",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 9,
       "Text": "September",
       "Type": "daterange"
     }
@@ -2204,14 +1691,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this September",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 14,
       "Text": "this September",
       "Type": "daterange"
     }
@@ -2219,14 +1703,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of September",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 18,
       "Text": "month of September",
       "Type": "daterange"
     }
@@ -2234,14 +1715,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of September",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 22,
       "Text": "the month of September",
       "Type": "daterange"
     }
@@ -2249,14 +1727,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing September 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 14,
       "Text": "September 2001",
       "Type": "daterange"
     }
@@ -2264,14 +1739,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing September, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 15,
       "Text": "September, 2001",
       "Type": "daterange"
     }
@@ -2279,14 +1751,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in October",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 7,
       "Text": "October",
       "Type": "daterange"
     }
@@ -2294,14 +1763,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this October",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "this October",
       "Type": "daterange"
     }
@@ -2309,14 +1775,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of October",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 16,
       "Text": "month of October",
       "Type": "daterange"
     }
@@ -2324,14 +1787,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of October",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 20,
       "Text": "the month of October",
       "Type": "daterange"
     }
@@ -2339,14 +1799,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing October 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 12,
       "Text": "October 2001",
       "Type": "daterange"
     }
@@ -2354,14 +1811,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing October, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 13,
       "Text": "October, 2001",
       "Type": "daterange"
     }
@@ -2369,14 +1823,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in November",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 8,
       "Text": "November",
       "Type": "daterange"
     }
@@ -2384,14 +1835,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this November",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "this November",
       "Type": "daterange"
     }
@@ -2399,14 +1847,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of November",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "month of November",
       "Type": "daterange"
     }
@@ -2414,14 +1859,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of November",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 21,
       "Text": "the month of November",
       "Type": "daterange"
     }
@@ -2429,14 +1871,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing November 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 13,
       "Text": "November 2001",
       "Type": "daterange"
     }
@@ -2444,14 +1883,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing November, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 14,
       "Text": "November, 2001",
       "Type": "daterange"
     }
@@ -2459,14 +1895,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in December",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 8,
       "Text": "December",
       "Type": "daterange"
     }
@@ -2474,14 +1907,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this December",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 13,
       "Text": "this December",
       "Type": "daterange"
     }
@@ -2489,14 +1919,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out month of December",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "month of December",
       "Type": "daterange"
     }
@@ -2504,14 +1931,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the month of December",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 21,
       "Text": "the month of December",
       "Type": "daterange"
     }
@@ -2519,14 +1943,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing December 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 13,
       "Text": "December 2001",
       "Type": "daterange"
     }
@@ -2534,14 +1955,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I was missing December, 2001",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 14,
       "Text": "December, 2001",
       "Type": "daterange"
     }
@@ -2549,14 +1967,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Calendar for the month of September.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 22,
       "Text": "the month of September",
       "Type": "daterange"
     }
@@ -2564,14 +1979,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "week of september.15th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 22,
       "Text": "week of september.15th",
       "Type": "daterange"
     }
@@ -2579,14 +1991,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "month of september.15th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 23,
       "Text": "month of september.15th",
       "Type": "daterange"
     }
@@ -2594,14 +2003,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out Oct. 2 to October 22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 20,
       "Text": "Oct. 2 to October 22",
       "Type": "daterange"
     }
@@ -2609,14 +2015,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out January 12, 2016 - 02/22/2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 29,
       "Text": "January 12, 2016 - 02/22/2016",
       "Type": "daterange"
     }
@@ -2624,14 +2027,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 28,
       "Text": "1st Jan until Wed, 22 of Jan",
       "Type": "daterange"
     }
@@ -2639,14 +2039,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out today till tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 19,
       "Text": "today till tomorrow",
       "Type": "daterange"
     }
@@ -2654,14 +2051,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out today to October 22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 19,
       "Text": "today to October 22",
       "Type": "daterange"
     }
@@ -2669,14 +2063,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out Oct. 2 until the day after tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 35,
       "Text": "Oct. 2 until the day after tomorrow",
       "Type": "daterange"
     }
@@ -2684,14 +2075,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out today until next Sunday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 23,
       "Text": "today until next Sunday",
       "Type": "daterange"
     }
@@ -2699,14 +2087,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this Friday until next Sunday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 29,
       "Text": "this Friday until next Sunday",
       "Type": "daterange"
     }
@@ -2714,14 +2099,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from Oct. 2 to October 22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 25,
       "Text": "from Oct. 2 to October 22",
       "Type": "daterange"
     }
@@ -2729,14 +2111,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 2015/08/12 until October 22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 32,
       "Text": "from 2015/08/12 until October 22",
       "Type": "daterange"
     }
@@ -2744,14 +2123,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from today till tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 24,
       "Text": "from today till tomorrow",
       "Type": "daterange"
     }
@@ -2759,14 +2135,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from this Friday until next Sunday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 34,
       "Text": "from this Friday until next Sunday",
       "Type": "daterange"
     }
@@ -2774,14 +2147,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between Oct. 2 and October 22",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 29,
       "Text": "between Oct. 2 and October 22",
       "Type": "daterange"
     }
@@ -2789,14 +2159,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out November 19-20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 14,
       "Text": "November 19-20",
       "Type": "daterange"
     }
@@ -2804,14 +2171,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out November 19 to 20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 17,
       "Text": "November 19 to 20",
       "Type": "daterange"
     }
@@ -2819,14 +2183,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out November between 19 and 20",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 26,
       "Text": "November between 19 and 20",
       "Type": "daterange"
     }
@@ -2834,14 +2195,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the third quarter of 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 25,
       "Text": "the third quarter of 2016",
       "Type": "daterange"
     }
@@ -2849,14 +2207,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the third quarter this year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 27,
       "Text": "the third quarter this year",
       "Type": "daterange"
     }
@@ -2864,14 +2219,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 2016 the third quarter",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 22,
       "Text": "2016 the third quarter",
       "Type": "daterange"
     }
@@ -2879,14 +2231,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 2015.3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 6,
       "Text": "2015.3",
       "Type": "daterange"
     }
@@ -2894,14 +2243,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 2015-3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 6,
       "Text": "2015-3",
       "Type": "daterange"
     }
@@ -2909,14 +2255,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 2015/3",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 6,
       "Text": "2015/3",
       "Type": "daterange"
     }
@@ -2924,14 +2267,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 3/2015",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 6,
       "Text": "3/2015",
       "Type": "daterange"
     }
@@ -2939,14 +2279,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the third week of 2027",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 22,
       "Text": "the third week of 2027",
       "Type": "daterange"
     }
@@ -2954,14 +2291,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the third week next year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 24,
       "Text": "the third week next year",
       "Type": "daterange"
     }
@@ -2969,14 +2303,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "upcoming month holidays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 14,
       "Text": "upcoming month",
       "Type": "daterange"
     }
@@ -2984,14 +2315,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "next month holidays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 10,
       "Text": "next month",
       "Type": "daterange"
     }
@@ -2999,14 +2327,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 4 to 22 this month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 23,
       "Text": "from 4 to 22 this month",
       "Type": "daterange"
     }
@@ -3014,14 +2339,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 4-23 in next month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 23,
       "Text": "from 4-23 in next month",
       "Type": "daterange"
     }
@@ -3029,14 +2351,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 3 until 12 of Sept hahaha",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 23,
       "Text": "from 3 until 12 of Sept",
       "Type": "daterange"
     }
@@ -3044,14 +2363,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 4 to 23 next month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 18,
       "Text": "4 to 23 next month",
       "Type": "daterange"
     }
@@ -3059,14 +2375,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 4 till 23 of this month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 23,
       "Text": "4 till 23 of this month",
       "Type": "daterange"
     }
@@ -3074,14 +2387,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 4 and 22 this month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 27,
       "Text": "between 4 and 22 this month",
       "Type": "daterange"
     }
@@ -3089,14 +2399,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 3 and 12 of Sept hahaha",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 24,
       "Text": "between 3 and 12 of Sept",
       "Type": "daterange"
     }
@@ -3104,14 +2411,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between september 4th through september 8th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 43,
       "Text": "between september 4th through september 8th",
       "Type": "daterange"
     }
@@ -3119,14 +2423,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between November 15th through 19th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 34,
       "Text": "between November 15th through 19th",
       "Type": "daterange"
     }
@@ -3134,14 +2435,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between November 15th through the 19th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 38,
       "Text": "between November 15th through the 19th",
       "Type": "daterange"
     }
@@ -3149,14 +2447,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between November the 15th through 19th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 38,
       "Text": "between November the 15th through 19th",
       "Type": "daterange"
     }
@@ -3164,29 +2459,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll be out between 4 and 22 this month",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 27,
-      "Text": "between 4 and 22 this month",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll be out from 4 to 22 January, 2017",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 26,
       "Text": "from 4 to 22 January, 2017",
       "Type": "daterange"
     }
@@ -3194,14 +2471,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 4-22 January, 2017",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 26,
       "Text": "between 4-22 January, 2017",
       "Type": "daterange"
     }
@@ -3209,14 +2483,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out on this week",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 15,
-      "Length": 9,
       "Text": "this week",
       "Type": "daterange"
     }
@@ -3224,14 +2495,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out September",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "September",
       "Type": "daterange"
     }
@@ -3239,29 +2507,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll be out this September",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 12,
-      "Length": 14,
-      "Text": "this September",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll be out last sept",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "last sept",
       "Type": "daterange"
     }
@@ -3269,14 +2519,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out next june",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "next june",
       "Type": "daterange"
     }
@@ -3284,14 +2531,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out june 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 9,
       "Text": "june 2016",
       "Type": "daterange"
     }
@@ -3299,14 +2543,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out june next year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 14,
       "Text": "june next year",
       "Type": "daterange"
     }
@@ -3314,14 +2555,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this weekend",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 12,
       "Text": "this weekend",
       "Type": "daterange"
     }
@@ -3329,14 +2567,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the third week of this month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 28,
       "Text": "the third week of this month",
       "Type": "daterange"
     }
@@ -3344,14 +2579,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the last week of july",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 21,
       "Text": "the last week of july",
       "Type": "daterange"
     }
@@ -3359,14 +2591,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule camping for Friday through Sunday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 21,
-      "Length": 21,
       "Text": "Friday through Sunday",
       "Type": "daterange"
     }

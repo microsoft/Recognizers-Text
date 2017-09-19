@@ -1,34 +1,4 @@
 [{
-  "Input": "100%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " 100 percent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",

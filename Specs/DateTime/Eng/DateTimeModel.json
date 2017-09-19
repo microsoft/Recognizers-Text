@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll be out 5 to 6pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -27,7 +26,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 5 to seven in the morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -55,7 +53,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 5 and 6 in the afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -83,7 +80,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 4:00 to 7 oclock",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -117,7 +113,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 3 in the morning until 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -145,7 +140,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 4pm and 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -173,7 +167,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "let's meet in the morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -201,7 +194,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "let's meet in the evening",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -229,7 +221,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -256,7 +247,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3.5years",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -283,7 +273,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 minutes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -310,7 +299,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 123.45 sec",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -337,7 +325,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -364,7 +351,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for twenty and four hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -391,7 +377,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -418,7 +403,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for an hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -445,7 +429,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for few hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -472,7 +455,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for a few minutes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -499,7 +481,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for some days",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -526,7 +507,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for several weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -553,7 +533,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back now",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -580,7 +559,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 for 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -612,7 +590,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tomorrow 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -639,7 +616,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 10, tonight",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -666,7 +642,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8am this morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -693,7 +668,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back end of tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -720,7 +694,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back end of the sunday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -752,7 +725,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back end of this sunday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -779,7 +751,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back Oct/2",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -811,7 +782,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on 22/04",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -843,7 +813,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back May twenty nine",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -875,7 +844,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back second of Aug.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -907,7 +875,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back today",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -934,7 +901,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -961,7 +927,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back yesterday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -988,7 +953,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on Friday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1020,7 +984,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave weekly",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1047,7 +1010,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1074,7 +1036,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave annually",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1101,7 +1062,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each two days",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1128,7 +1088,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every three week",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1155,7 +1114,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave 3pm each day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1182,7 +1140,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every monday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1209,7 +1166,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each monday at 4pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1236,7 +1192,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back 7:56:30 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1263,7 +1218,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "It's half past seven o'clock",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1295,7 +1249,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "It's 20 min past eight in the evening",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1322,7 +1275,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back in the morning at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1349,7 +1301,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back in the afternoon at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1376,7 +1327,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back noonish",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1403,7 +1353,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back 11ish",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1430,7 +1379,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back 1140 a.m.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1457,7 +1405,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "12 noon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1484,7 +1431,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 4-23 in next month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1512,7 +1458,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out between 3 and 12 of Sept hahaha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1546,7 +1491,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out this September",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1574,7 +1518,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out January 12, 2016 - 01/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1602,7 +1545,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out next 3 days",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1630,7 +1572,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out the last week of july",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1664,7 +1605,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 2015-3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1692,7 +1632,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave this SUMMER",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1719,7 +1658,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out five to seven today",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1753,7 +1691,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out from 5 to 6pm of April 22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1787,7 +1724,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out 3:00 to 4:00 tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1821,7 +1757,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back this evening",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1849,7 +1784,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tomorrow night",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1877,7 +1811,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back next monday afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1905,7 +1838,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back next hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1933,7 +1865,6 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tuesday in the morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1967,10 +1898,9 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back now",
   "Context": {
-    "ReferenceDateTime": "2017-09-14T15:46:09.8271875-03:00"
+    "ReferenceDateTime": "2017-09-19T13:01:31.7636424-03:00"
   },
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1985,7 +1915,7 @@
           {
             "timex": "PRESENT_REF",
             "type": "datetime",
-            "value": "2017-09-14 15:46:09"
+            "value": "2017-09-19 13:01:31"
           }
         ]
       }

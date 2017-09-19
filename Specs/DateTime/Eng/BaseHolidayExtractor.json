@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll go back on christmas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 9,
       "Text": "christmas",
       "Type": "date"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on christmas day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 13,
       "Text": "christmas day",
       "Type": "date"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 7,
       "Text": "Yuandan",
       "Type": "date"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on thanks giving day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 17,
       "Text": "thanks giving day",
       "Type": "date"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on father's day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 12,
       "Text": "father's day",
       "Type": "date"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan of this year",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 20,
       "Text": "Yuandan of this year",
       "Type": "date"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan of 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 15,
       "Text": "Yuandan of 2016",
       "Type": "date"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on Yuandan 2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 12,
       "Text": "Yuandan 2016",
       "Type": "date"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on clean monday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 12,
       "Text": "clean monday",
       "Type": "date"
     }

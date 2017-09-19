@@ -1231,22 +1231,6 @@
 }
 ,
 {
-  "Input": "uefa charged ferguson for bringing the game into disrepute with his comments , and on 1 may that year he was fined 10,000 swiss francs  .",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10,000 swiss francs",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "10000",
-        "unit": "Swiss franc"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "malone sued 20th century - fox for $ 1.6 million for breach of contract ;",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1497,70 +1481,6 @@
       "Resolution": {
         "value": "100000000",
         "unit": "Dollar"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "in turn , francis leung pak - to has agreed to sell an 8 % stake in pccw to telefónica for 323 million euros .",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "323 million euros",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "323000000",
-        "unit": "Euro"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "malone sued 20th century - fox for $ 1.6 million for breach of contract ;",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "$ 1.6 million",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "1600000",
-        "unit": "Dollar"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "in 2003 , bayern munich loaned € 2 million to dortmund for a couple of months to pay their payroll .",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "€ 2 million",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "2000000",
-        "unit": "Euro"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "lockheed martin and the united states government intensively lobbied for india ' s us $ 10 billion contract for 126 fighter jets .",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "us $ 10 billion",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": "10000000000",
-        "unit": "United States dollar"
       }
     }
   ]

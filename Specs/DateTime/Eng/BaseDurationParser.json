@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -8,31 +7,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3H",
+      "Text": "3h",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "10800"
         },
         "PastResolution": {
           "duration": "10800"
-        },
-        "FutureValue": 10800.0,
-        "PastValue": 10800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 2,
-      "Text": "3h",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -41,31 +31,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3D",
+      "Text": "3day",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3D",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "259200"
         },
         "PastResolution": {
           "duration": "259200"
-        },
-        "FutureValue": 259200.0,
-        "PastValue": 259200.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 4,
-      "Text": "3day",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3.5years",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -74,31 +55,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3.5Y",
+      "Text": "3.5years",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3.5Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "110376000"
         },
         "PastResolution": {
           "duration": "110376000"
-        },
-        "FutureValue": 110376000.0,
-        "PastValue": 110376000.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 8,
-      "Text": "3.5years",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -107,31 +79,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3H",
+      "Text": "3 h",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "10800"
         },
         "PastResolution": {
           "duration": "10800"
-        },
-        "FutureValue": 10800.0,
-        "PastValue": 10800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 3,
-      "Text": "3 h",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -140,31 +103,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3H",
+      "Text": "3 hours",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "10800"
         },
         "PastResolution": {
           "duration": "10800"
-        },
-        "FutureValue": 10800.0,
-        "PastValue": 10800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 7,
-      "Text": "3 hours",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 hrs",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -173,31 +127,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3H",
+      "Text": "3 hrs",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "10800"
         },
         "PastResolution": {
           "duration": "10800"
-        },
-        "FutureValue": 10800.0,
-        "PastValue": 10800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 5,
-      "Text": "3 hrs",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 hr",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -206,31 +151,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3H",
+      "Text": "3 hr",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "10800"
         },
         "PastResolution": {
           "duration": "10800"
-        },
-        "FutureValue": 10800.0,
-        "PastValue": 10800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 4,
-      "Text": "3 hr",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -239,31 +175,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3D",
+      "Text": "3 day",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3D",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "259200"
         },
         "PastResolution": {
           "duration": "259200"
-        },
-        "FutureValue": 259200.0,
-        "PastValue": 259200.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 5,
-      "Text": "3 day",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 months",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -272,31 +199,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3M",
+      "Text": "3 months",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "7776000"
         },
         "PastResolution": {
           "duration": "7776000"
-        },
-        "FutureValue": 7776000.0,
-        "PastValue": 7776000.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 8,
-      "Text": "3 months",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 minutes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -305,31 +223,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3M",
+      "Text": "3 minutes",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "180"
         },
         "PastResolution": {
           "duration": "180"
-        },
-        "FutureValue": 180.0,
-        "PastValue": 180.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 9,
-      "Text": "3 minutes",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3 min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -338,31 +247,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3M",
+      "Text": "3 min",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "180"
         },
         "PastResolution": {
           "duration": "180"
-        },
-        "FutureValue": 180.0,
-        "PastValue": 180.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 5,
-      "Text": "3 min",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3.5 second ",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -371,31 +271,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3.5S",
+      "Text": "3.5 second",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3.5S",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "3.5"
         },
         "PastResolution": {
           "duration": "3.5"
-        },
-        "FutureValue": 3.5,
-        "PastValue": 3.5
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 10,
-      "Text": "3.5 second",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 123.45 sec",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -404,31 +295,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT123.45S",
+      "Text": "123.45 sec",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT123.45S",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "123.45"
         },
         "PastResolution": {
           "duration": "123.45"
-        },
-        "FutureValue": 123.45,
-        "PastValue": 123.45
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 10,
-      "Text": "123.45 sec",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for two weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -437,31 +319,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P2W",
+      "Text": "two weeks",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P2W",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "1209600"
         },
         "PastResolution": {
           "duration": "1209600"
-        },
-        "FutureValue": 1209600.0,
-        "PastValue": 1209600.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 9,
-      "Text": "two weeks",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for twenty min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -470,31 +343,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT20M",
+      "Text": "twenty min",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT20M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "1200"
         },
         "PastResolution": {
           "duration": "1200"
-        },
-        "FutureValue": 1200.0,
-        "PastValue": 1200.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 10,
-      "Text": "twenty min",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for twenty and four hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -503,31 +367,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT24H",
+      "Text": "twenty and four hours",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT24H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "86400"
         },
         "PastResolution": {
           "duration": "86400"
-        },
-        "FutureValue": 86400.0,
-        "PastValue": 86400.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 21,
-      "Text": "twenty and four hours",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -536,31 +391,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "all day",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "86400"
         },
         "PastResolution": {
           "duration": "86400"
-        },
-        "FutureValue": 86400.0,
-        "PastValue": 86400.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 7,
-      "Text": "all day",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all week",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -569,31 +415,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1W",
+      "Text": "all week",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P1W",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "604800"
         },
         "PastResolution": {
           "duration": "604800"
-        },
-        "FutureValue": 604800.0,
-        "PastValue": 604800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 8,
-      "Text": "all week",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -602,31 +439,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1M",
+      "Text": "all month",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P1M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "2592000"
         },
         "PastResolution": {
           "duration": "2592000"
-        },
-        "FutureValue": 2592000.0,
-        "PastValue": 2592000.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 9,
-      "Text": "all month",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for all year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -635,31 +463,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1Y",
+      "Text": "all year",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P1Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "31536000"
         },
         "PastResolution": {
           "duration": "31536000"
-        },
-        "FutureValue": 31536000.0,
-        "PastValue": 31536000.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 8,
-      "Text": "all year",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for an hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -668,31 +487,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT1H",
+      "Text": "an hour",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT1H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "3600"
         },
         "PastResolution": {
           "duration": "3600"
-        },
-        "FutureValue": 3600.0,
-        "PastValue": 3600.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 7,
-      "Text": "an hour",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "half year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -701,31 +511,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P0.5Y",
+      "Text": "half year",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P0.5Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "15768000"
         },
         "PastResolution": {
           "duration": "15768000"
-        },
-        "FutureValue": 15768000.0,
-        "PastValue": 15768000.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "half year",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "half an year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -734,31 +535,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P0.5Y",
+      "Text": "half an year",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P0.5Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "15768000"
         },
         "PastResolution": {
           "duration": "15768000"
-        },
-        "FutureValue": 15768000.0,
-        "PastValue": 15768000.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 12,
-      "Text": "half an year",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 3-min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -767,31 +559,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT3M",
+      "Text": "3-min",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT3M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "180"
         },
         "PastResolution": {
           "duration": "180"
-        },
-        "FutureValue": 180.0,
-        "PastValue": 180.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 5,
-      "Text": "3-min",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for 30-minutes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -800,31 +583,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT30M",
+      "Text": "30-minutes",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT30M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "1800"
         },
         "PastResolution": {
           "duration": "1800"
-        },
-        "FutureValue": 1800.0,
-        "PastValue": 1800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 10,
-      "Text": "30-minutes",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for an hour and a half",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -833,31 +607,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT1.5H",
+      "Text": "an hour and a half",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT1.5H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "5400"
         },
         "PastResolution": {
           "duration": "5400"
-        },
-        "FutureValue": 5400.0,
-        "PastValue": 5400.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 18,
-      "Text": "an hour and a half",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for an hour and half",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -866,31 +631,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT1.5H",
+      "Text": "an hour and half",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT1.5H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "5400"
         },
         "PastResolution": {
           "duration": "5400"
-        },
-        "FutureValue": 5400.0,
-        "PastValue": 5400.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 16,
-      "Text": "an hour and half",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for half hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -899,31 +655,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT0.5H",
+      "Text": "half hour",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT0.5H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "1800"
         },
         "PastResolution": {
           "duration": "1800"
-        },
-        "FutureValue": 1800.0,
-        "PastValue": 1800.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 9,
-      "Text": "half hour",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for two hour",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -932,31 +679,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT2H",
+      "Text": "two hour",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT2H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "7200"
         },
         "PastResolution": {
           "duration": "7200"
-        },
-        "FutureValue": 7200.0,
-        "PastValue": 7200.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 8,
-      "Text": "two hour",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave for two and a half hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -965,25 +703,17 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT2.5H",
+      "Text": "two and a half hours",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT2.5H",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "9000"
         },
         "PastResolution": {
           "duration": "9000"
-        },
-        "FutureValue": 9000.0,
-        "PastValue": 9000.0
-      },
-      "ResolutionStr": "",
-      "Start": 15,
-      "Length": 20,
-      "Text": "two and a half hours",
-      "Type": "duration"
+        }
+      }
     }
   ]
 }

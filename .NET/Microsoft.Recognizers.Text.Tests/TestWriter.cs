@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using DateObject = System.DateTime;
 using Newtonsoft.Json.Converters;
+using Microsoft.Recognizers.Text.DateTime;
 
 namespace Microsoft.Recognizers.Text
 {
@@ -80,9 +81,46 @@ namespace Microsoft.Recognizers.Text
         }
     }
 
+    public class TestParserResultValue
+    {
+        public string Timex { get; set; }
+        public bool? IsLunar { get; set; }
+        public IDictionary<string, string> FutureResolution { get; set; }
+        public IDictionary<string, string> PastResolution { get; set; }
+
+        public TestParserResultValue(DateTimeResolutionResult result)
+        {
+            this.Timex = result.Timex;
+            this.FutureResolution = result.FutureResolution;
+            this.PastResolution = result.PastResolution;
+        }
+    }
+
+    public class TestParseResult
+    {
+        public string Text { get; set; }
+        public string Type { get; set; }
+        public object Value { get; set; }
+
+        public TestParseResult(ParseResult result)
+        {
+            this.Text = result.Text;
+            this.Type = result.Type;
+            if (result.Value is DateTimeResolutionResult)
+            {
+                this.Value = new TestParserResultValue((DateTimeResolutionResult)result.Value);
+            }
+            else
+            {
+                this.Value = result.Value;
+            }
+        }
+    }
+
     public class TestWriter
     {
         private const string separator = "\t";
+        private static readonly IList<string> logList = new List<string>();
 
         public static readonly TestWriter Instance = new TestWriter();
 
@@ -90,10 +128,16 @@ namespace Microsoft.Recognizers.Text
         {
             Trace.Listeners.Clear();
             Trace.AutoFlush = true;
+            logList.Clear();
         }
 
         public static void Write(TestModel testModel)
         {
+            if (logList.Contains($"{testModel.Input}-{GetJson(testModel.Results)}"))
+            {
+                return;
+            }
+            logList.Add($"{testModel.Input}-{GetJson(testModel.Results)}");
             if (Trace.Listeners[string.Join("-", testModel.Language, testModel.Recognizer, testModel.Model)] == null)
             {
                 Trace.Listeners.Add(new TestTextWriterTraceListener(testModel.Language, testModel.Recognizer, testModel.Model));
@@ -149,15 +193,16 @@ namespace Microsoft.Recognizers.Text
             });
         }
 
-        public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
-        {
-            var modelStr = getName(model);
-            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
-        }
 
         public static void Write(string lang, string model, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             Write(lang, model, null, source, results, callerFilePath, callerMemberName);
+        }
+
+        public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            var modelStr = getName(model);
+            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
@@ -171,28 +216,30 @@ namespace Microsoft.Recognizers.Text
             Write(lang, model, source, Enumerable.Empty<ModelResult>(), callerFilePath, callerMemberName);
         }
 
+
         public static void Write(string lang, IParser parser, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(parser);
-            Write(lang, modelStr, null, source, new ParseResult[] { result }, callerFilePath, callerMemberName);
+            Write(lang, modelStr, null, source, new TestParseResult[] { new TestParseResult(result) }, callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, DateObject datetime, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(parser);
-            Write(lang, modelStr, datetime, source, new ParseResult[] { result }, callerFilePath, callerMemberName);
+            Write(lang, modelStr, datetime, source, new TestParseResult[] { new TestParseResult(result) }, callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, DateObject datetime, string source, IEnumerable<ParseResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             var modelStr = getName(parser);
-            Write(lang, modelStr, datetime, source, results, callerFilePath, callerMemberName);
+            Write(lang, modelStr, datetime, source, results.Select(o => new TestParseResult(o)), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, string source, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
             Write(lang, parser, source, null, callerFilePath, callerMemberName);
         }
+        
 
         public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {

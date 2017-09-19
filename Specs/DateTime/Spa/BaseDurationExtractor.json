@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "me voy por 3h",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 2,
       "Text": "3h",
       "Type": "duration"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "3 dias",
       "Type": "duration"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3,5 años",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 8,
       "Text": "3,5 años",
       "Type": "duration"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 h",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 3,
       "Text": "3 h",
       "Type": "duration"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 horas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 7,
       "Text": "3 horas",
       "Type": "duration"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy 3 dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 6,
       "Text": "3 dias",
       "Type": "duration"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 meses",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 7,
       "Text": "3 meses",
       "Type": "duration"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 minutos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 9,
       "Text": "3 minutos",
       "Type": "duration"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3 min",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 5,
       "Text": "3 min",
       "Type": "duration"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 3,5 segundos ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 12,
       "Text": "3,5 segundos",
       "Type": "duration"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por 123,45 seg",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "123,45 seg",
       "Type": "duration"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por dos semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "dos semanas",
       "Type": "duration"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy 20 minutos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 10,
       "Text": "20 minutos",
       "Type": "duration"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por veinticuatro horas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 18,
       "Text": "veinticuatro horas",
       "Type": "duration"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy todo el dia",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 11,
       "Text": "todo el dia",
       "Type": "duration"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy toda la semana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 14,
       "Text": "toda la semana",
       "Type": "duration"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por todo el mes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "todo el mes",
       "Type": "duration"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por todo el año",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 11,
       "Text": "todo el año",
       "Type": "duration"
     }
@@ -269,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por una hora",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 8,
       "Text": "una hora",
       "Type": "duration"
     }
@@ -284,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me voy por un año",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "un año",
       "Type": "duration"
     }

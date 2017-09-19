@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll leave on Mondays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "on Mondays",
       "Type": "set"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave on Sundays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "on Sundays",
       "Type": "set"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave Sundays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 7,
       "Text": "Sundays",
       "Type": "set"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every morning at 9am",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 20,
       "Text": "every morning at 9am",
       "Type": "set"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every afternoon at 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 22,
       "Text": "every afternoon at 4pm",
       "Type": "set"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every night at 9pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 18,
       "Text": "every night at 9pm",
       "Type": "set"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every night at 9",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 16,
       "Text": "every night at 9",
       "Type": "set"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave mornings at 9am",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 15,
       "Text": "mornings at 9am",
       "Type": "set"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave on mornings at 9",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 16,
       "Text": "on mornings at 9",
       "Type": "set"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave weekly",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "weekly",
       "Type": "set"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave daily",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 5,
       "Text": "daily",
       "Type": "set"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 9,
       "Text": "every day",
       "Type": "set"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each month",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 10,
       "Text": "each month",
       "Type": "set"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave annually",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 8,
       "Text": "annually",
       "Type": "set"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave annual",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 6,
       "Text": "annual",
       "Type": "set"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each two days",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 13,
       "Text": "each two days",
       "Type": "set"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every three week",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 16,
       "Text": "every three week",
       "Type": "set"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave 3pm every day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 13,
       "Text": "3pm every day",
       "Type": "set"
     }
@@ -269,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave 3pm each day",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 12,
       "Text": "3pm each day",
       "Type": "set"
     }
@@ -284,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each 4/15",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 9,
       "Text": "each 4/15",
       "Type": "set"
     }
@@ -299,14 +239,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every monday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 12,
       "Text": "every monday",
       "Type": "set"
     }
@@ -314,14 +251,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave each monday 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 15,
       "Text": "each monday 4pm",
       "Type": "set"
     }
@@ -329,14 +263,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave every morning",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 11,
-      "Length": 13,
       "Text": "every morning",
       "Type": "set"
     }
@@ -344,14 +275,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave at 9am every Sunday",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 16,
       "Text": "9am every Sunday",
       "Type": "set"
     }
@@ -359,14 +287,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave at 9am on Mondays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 14,
       "Text": "9am on Mondays",
       "Type": "set"
     }
@@ -374,14 +299,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll leave at 9am Mondays",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 11,
       "Text": "9am Mondays",
       "Type": "set"
     }

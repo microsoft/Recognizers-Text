@@ -1,34 +1,4 @@
 [{
-  "Input": "100%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " 100 pourcent",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -179,21 +149,6 @@
 }
 ,
 {
-  "Input": "4,800%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4,800%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "4,8%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "pourcent des trois cent cinq",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -203,21 +158,6 @@
       "TypeName": "percentage",
       "Resolution": {
         "value": "305%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9,2321312%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9,2321312%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "9,2321312%"
       }
     }
   ]

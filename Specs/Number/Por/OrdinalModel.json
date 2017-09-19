@@ -89,21 +89,6 @@
 }
 ,
 {
-  "Input": "vigesimo quinto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vigesimo quinto",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "25"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "vigesimo primeiro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -113,36 +98,6 @@
       "TypeName": "ordinal",
       "Resolution": {
         "value": "21"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "centesimo vigesimo quinto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "centesimo vigesimo quinto",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "125"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ducentesimo",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ducentesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "200"
       }
     }
   ]
@@ -194,21 +149,6 @@
 }
 ,
 {
-  "Input": "undecimo",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "undecimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "11"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "décimo primeiro",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -218,36 +158,6 @@
       "TypeName": "ordinal",
       "Resolution": {
         "value": "11"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vigesimo",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vigesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "20"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "centesimo",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "centesimo",
-      "TypeName": "ordinal",
-      "Resolution": {
-        "value": "100"
       }
     }
   ]

@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "after 7/2 ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 9,
       "Text": "after 7/2",
       "Type": "date"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "since 7/2 ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 9,
       "Text": "since 7/2",
       "Type": "date"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "before 7/2 ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 10,
       "Text": "before 7/2",
       "Type": "date"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's this day look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 8,
       "Text": "this day",
       "Type": "date"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's this week look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 9,
       "Text": "this week",
       "Type": "daterange"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's my week look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 7,
       "Text": "my week",
       "Type": "daterange"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's the week look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 8,
       "Text": "the week",
       "Type": "daterange"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's my day look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 6,
       "Text": "my day",
       "Type": "date"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "What's the day look like?",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 7,
       "Text": "the day",
       "Type": "date"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTestWithOptions",
   "Input": "Schedule a meeting from 9am to 11am",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 19,
-      "Length": 16,
       "Text": "from 9am to 11am",
       "Type": "timerange"
     }
@@ -149,29 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTestWithOptions",
-  "Input": "Schedule a meeting from 9am to 11am",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 19,
-      "Length": 16,
-      "Text": "from 9am to 11am",
-      "Type": "timerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTestWithOptions",
   "Input": "Schedule a meeting from 9am to 11am tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 19,
-      "Length": 25,
       "Text": "from 9am to 11am tomorrow",
       "Type": "datetimerange"
     }
@@ -179,20 +131,15 @@
 }
 ,
 {
-  "TestType": "BasicTestWithOptions",
   "Input": "Change July 22nd meeting in Bellevue to August 22nd",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 9,
       "Text": "July 22nd",
       "Type": "date"
     },
     {
-      "Start": 40,
-      "Length": 11,
       "Text": "August 22nd",
       "Type": "date"
     }
@@ -200,14 +147,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is 2 days",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 6,
       "Text": "2 days",
       "Type": "duration"
     }
@@ -215,14 +159,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is before 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 10,
       "Text": "before 4pm",
       "Type": "time"
     }
@@ -230,14 +171,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is before 4pm tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 19,
       "Text": "before 4pm tomorrow",
       "Type": "datetime"
     }
@@ -245,14 +183,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is before tomorrow 4pm ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 19,
       "Text": "before tomorrow 4pm",
       "Type": "datetime"
     }
@@ -260,14 +195,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is after 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 9,
       "Text": "after 4pm",
       "Type": "time"
     }
@@ -275,14 +207,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is after 4pm tomorrow",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 18,
       "Text": "after 4pm tomorrow",
       "Type": "datetime"
     }
@@ -290,14 +219,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "this is after tomorrow 4pm ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 18,
       "Text": "after tomorrow 4pm",
       "Type": "datetime"
     }
@@ -305,14 +231,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be back in 5 minutes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 12,
       "Text": "in 5 minutes",
       "Type": "datetime"
     }
@@ -320,14 +243,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "past week",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 9,
       "Text": "past week",
       "Type": "daterange"
     }
@@ -335,29 +255,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "past Monday",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 0,
-      "Length": 11,
-      "Text": "past Monday",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 10 hours",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 19,
-      "Length": 11,
       "Text": "in 10 hours",
       "Type": "datetime"
     }
@@ -365,14 +267,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "May 29th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 8,
       "Text": "May 29th",
       "Type": "date"
     }
@@ -380,14 +279,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "March 29th",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 10,
       "Text": "March 29th",
       "Type": "date"
     }
@@ -395,14 +291,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I born in March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 5,
       "Text": "March",
       "Type": "daterange"
     }
@@ -410,14 +303,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I born in the March",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 9,
       "Text": "the March",
       "Type": "daterange"
     }
@@ -425,14 +315,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "what happend at the May",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 16,
-      "Length": 7,
       "Text": "the May",
       "Type": "daterange"
     }
@@ -440,7 +327,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "in the sun",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -448,7 +334,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "may i help you",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -456,7 +341,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "the group proceeded with a march they knew would lead to bloodshed",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -464,7 +348,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "which email have gotten a reply",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -472,7 +355,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "He is often alone",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -480,7 +362,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "often a bird",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -488,7 +369,6 @@
 }
 ,
 {
-  "TestType": "BasicTestNone",
   "Input": "michigan hours",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -496,14 +376,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "06/06 12:15",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 11,
       "Text": "06/06 12:15",
       "Type": "datetime"
     }
@@ -511,14 +388,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "06/06/12 15:15",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 14,
       "Text": "06/06/12 15:15",
       "Type": "datetime"
     }
@@ -526,14 +400,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "06/06, 2015",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 11,
       "Text": "06/06, 2015",
       "Type": "date"
     }

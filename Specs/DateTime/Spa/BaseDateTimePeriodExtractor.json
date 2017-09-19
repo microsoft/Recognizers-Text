@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "Estaré fuera de cinco a siete hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 20,
       "Text": "de cinco a siete hoy",
       "Type": "datetimerange"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Hoy estaré fuera de cinco a siete",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 33,
       "Text": "Hoy estaré fuera de cinco a siete",
       "Type": "datetimerange"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré fuera hoy de cinco a siete",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 20,
       "Text": "hoy de cinco a siete",
       "Type": "datetimerange"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré fuera de cinco a siete mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 23,
       "Text": "de cinco a siete mañana",
       "Type": "datetimerange"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 5 hasta las 6 el próximo domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 42,
       "Text": "desde las 5 hasta las 6 el próximo domingo",
       "Type": "datetimerange"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 5 hasta las 6pm el próximo domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 44,
       "Text": "desde las 5 hasta las 6pm el próximo domingo",
       "Type": "datetimerange"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré fuera desde las 5 hasta las 6pm del próximo domingo",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 45,
       "Text": "desde las 5 hasta las 6pm del próximo domingo",
       "Type": "datetimerange"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm a 5pm hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 16,
       "Text": "de 4pm a 5pm hoy",
       "Type": "datetimerange"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm a 5pm de hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 19,
       "Text": "de 4pm a 5pm de hoy",
       "Type": "datetimerange"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm de hoy a 5pm de mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 29,
       "Text": "de 4pm de hoy a 5pm de mañana",
       "Type": "datetimerange"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm a 5pm de mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 22,
       "Text": "de 4pm a 5pm de mañana",
       "Type": "datetimerange"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm a 5pm del 2017-6-6",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 25,
       "Text": "de 4pm a 5pm del 2017-6-6",
       "Type": "datetimerange"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm a 5pm el 5 de Mayo del 2018",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 34,
       "Text": "de 4pm a 5pm el 5 de Mayo del 2018",
       "Type": "datetimerange"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4:00 a 5pm 5 de Mayo, 2018",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 29,
       "Text": "de 4:00 a 5pm 5 de Mayo, 2018",
       "Type": "datetimerange"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 4pm del 1 de Enero del 2016 a 5pm de hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 43,
       "Text": "de 4pm del 1 de Enero del 2016 a 5pm de hoy",
       "Type": "datetimerange"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 39,
       "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
       "Type": "datetimerange"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera desde hoy a las 4 hasta el miercoles siguiente a las 5",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 54,
       "Text": "desde hoy a las 4 hasta el miercoles siguiente a las 5",
       "Type": "datetimerange"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 4pm y 5pm de hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 26,
       "Text": "entre las 4pm y 5pm de hoy",
       "Type": "datetimerange"
     }
@@ -269,14 +215,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Estaré afuera entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 14,
-      "Length": 54,
       "Text": "entre las 4pm del 1 de enero del 2016 y las 5pm de hoy",
       "Type": "datetimerange"
     }
@@ -284,14 +227,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré a la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 10,
       "Text": "a la noche",
       "Type": "datetimerange"
     }
@@ -299,14 +239,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré a la madrugada",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 14,
       "Text": "a la madrugada",
       "Type": "datetimerange"
     }
@@ -314,14 +251,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré esta tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 10,
       "Text": "esta tarde",
       "Type": "datetimerange"
     }
@@ -329,14 +263,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré esta mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 11,
       "Text": "esta mañana",
       "Type": "datetimerange"
     }
@@ -344,14 +275,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré en la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 12,
-      "Length": 10,
       "Text": " la mañana",
       "Type": "datetimerange"
     }
@@ -359,14 +287,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré a la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 11,
       "Text": "a la mañana",
       "Type": "datetimerange"
     }
@@ -374,29 +299,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Regresaré esta tarde",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Start": 10,
-      "Length": 10,
-      "Text": "esta tarde",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Regresaré la próxima noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 13,
       "Text": "próxima noche",
       "Type": "datetimerange"
     }
@@ -404,14 +311,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresé anoche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 8,
-      "Length": 6,
       "Text": "anoche",
       "Type": "datetimerange"
     }
@@ -419,14 +323,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré mañana por la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 10,
-      "Length": 19,
       "Text": "mañana por la noche",
       "Type": "datetimerange"
     }
@@ -434,14 +335,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré el próximo lunes a la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 24,
       "Text": "próximo lunes a la tarde",
       "Type": "datetimerange"
     }
@@ -449,14 +347,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Regresaré el 5 de mayo en la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 21,
       "Text": "5 de mayo en la noche",
       "Type": "datetimerange"
     }
@@ -464,14 +359,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a retroceder los últimos 3 minutos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 21,
-      "Length": 17,
       "Text": "últimos 3 minutos",
       "Type": "datetimerange"
     }
@@ -479,14 +371,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a retroceder los pasados 3 minutos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 21,
-      "Length": 17,
       "Text": "pasados 3 minutos",
       "Type": "datetimerange"
     }
@@ -494,14 +383,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a retroceder los previos 3 minutos",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 21,
-      "Length": 17,
       "Text": "previos 3 minutos",
       "Type": "datetimerange"
     }
@@ -509,14 +395,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a retroceder los anteriores 3mins",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 21,
-      "Length": 16,
       "Text": "anteriores 3mins",
       "Type": "datetimerange"
     }
@@ -524,14 +407,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a volver en 3 horas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 10,
       "Text": "en 3 horas",
       "Type": "datetimerange"
     }
@@ -539,14 +419,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a volver en 5 h",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 6,
       "Text": "en 5 h",
       "Type": "datetimerange"
     }
@@ -554,14 +431,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a volver dentro de 5 horas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 17,
       "Text": "dentro de 5 horas",
       "Type": "datetimerange"
     }
@@ -569,14 +443,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a volver en el último minuto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 19,
-      "Length": 13,
       "Text": "último minuto",
       "Type": "datetimerange"
     }
@@ -584,14 +455,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Voy a volver en la próxima hora",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 19,
-      "Length": 12,
       "Text": "próxima hora",
       "Type": "datetimerange"
     }

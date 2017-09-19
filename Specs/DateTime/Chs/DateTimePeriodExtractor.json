@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "明天2点到4点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 7,
       "Text": "明天2点到4点",
       "Type": "datetimerange"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "从昨天下午两点到四点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 10,
       "Text": "从昨天下午两点到四点",
       "Type": "datetimerange"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "从昨天下午两点到明天四点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 12,
       "Text": "从昨天下午两点到明天四点",
       "Type": "datetimerange"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "从昨天5:00-6:00",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 12,
       "Text": "从昨天5:00-6:00",
       "Type": "datetimerange"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "1月15号4点和2月3号9点之间",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 16,
       "Text": "1月15号4点和2月3号9点之间",
       "Type": "datetimerange"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2点-明天4点",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 7,
       "Text": "2点-明天4点",
       "Type": "datetimerange"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "昨晚",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 2,
       "Text": "昨晚",
       "Type": "datetimerange"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "昨天晚上",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 4,
       "Text": "昨天晚上",
       "Type": "datetimerange"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "明天上午",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 4,
       "Text": "明天上午",
       "Type": "datetimerange"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "上个小时",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 4,
       "Text": "上个小时",
       "Type": "datetimerange"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "之后5分钟",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 5,
       "Text": "之后5分钟",
       "Type": "datetimerange"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "之前3小时",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 5,
       "Text": "之前3小时",
       "Type": "datetimerange"
     }

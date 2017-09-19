@@ -1,12 +1,9 @@
 [{
-  "TestType": "BasicTest",
   "Input": "saldré semanalmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 12,
       "Text": "semanalmente",
       "Type": "set"
     }
@@ -14,14 +11,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saltré diariamente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 11,
       "Text": "diariamente",
       "Type": "set"
     }
@@ -29,14 +23,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saltré a diario",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 8,
       "Text": "a diario",
       "Type": "set"
     }
@@ -44,14 +35,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré todos los dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 14,
       "Text": "todos los dias",
       "Type": "set"
     }
@@ -59,14 +47,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré cada mes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 8,
       "Text": "cada mes",
       "Type": "set"
     }
@@ -74,14 +59,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré todos los meses",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 15,
       "Text": "todos los meses",
       "Type": "set"
     }
@@ -89,14 +71,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré todos las semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 17,
       "Text": "todos las semanas",
       "Type": "set"
     }
@@ -104,14 +83,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré mensualmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 12,
       "Text": "mensualmente",
       "Type": "set"
     }
@@ -119,14 +95,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré anualmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 10,
       "Text": "anualmente",
       "Type": "set"
     }
@@ -134,14 +107,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré todos los años",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 14,
       "Text": "todos los años",
       "Type": "set"
     }
@@ -149,14 +119,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me iré cada dos dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 13,
       "Text": "cada dos dias",
       "Type": "set"
     }
@@ -164,14 +131,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me iré cada tres semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 17,
       "Text": "cada tres semanas",
       "Type": "set"
     }
@@ -179,14 +143,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me iré cada 3 semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 14,
       "Text": "cada 3 semanas",
       "Type": "set"
     }
@@ -194,14 +155,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me iré a las 3pm todos los dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 13,
-      "Length": 18,
       "Text": "3pm todos los dias",
       "Type": "set"
     }
@@ -209,14 +167,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "me iré todos los dias a las 3pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 24,
       "Text": "todos los dias a las 3pm",
       "Type": "set"
     }
@@ -224,14 +179,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré cada 15/4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 9,
       "Text": "cada 15/4",
       "Type": "set"
     }
@@ -239,14 +191,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré todos los lunes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 15,
       "Text": "todos los lunes",
       "Type": "set"
     }
@@ -254,14 +203,11 @@
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "saldré cada lunes a las 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 7,
-      "Length": 20,
       "Text": "cada lunes a las 4pm",
       "Type": "set"
     }

@@ -524,57 +524,6 @@
 }
 ,
 {
-  "Input": "192.",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "192.168.1.2",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "192",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "192"
-      }
-    },
-    {
-      "Text": "168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "168"
-      }
-    },
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "2",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "the 180.25ml liquid",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -636,36 +585,6 @@
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
-}
-,
-{
-  "Input": ".23456000",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ".23456000",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.23456"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4.800",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4.800",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.8"
-      }
-    }
-  ]
 }
 ,
 {
@@ -753,21 +672,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "161"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a trillionth",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a trillionth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
       }
     }
   ]
@@ -879,35 +783,6 @@
 }
 ,
 {
-  "Input": "1, 234, 567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "234",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "234"
-      }
-    },
-    {
-      "Text": "567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "567"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "9.2321312",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -932,21 +807,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "-9.2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1"
       }
     }
   ]
@@ -992,126 +852,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "3"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -123456789101231",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-123456789101231",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-123456789101231"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10k",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "10G",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "10G",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "- 10  k",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "- 10  k",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-10000"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2 million",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2 million",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2000000"
       }
     }
   ]
@@ -1328,21 +1068,6 @@
 }
 ,
 {
-  "Input": "1e10",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1e10",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "10000000000"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "1.1^23",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1367,21 +1092,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "32200"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
       }
     }
   ]
@@ -1523,21 +1233,6 @@
 }
 ,
 {
-  "Input": "twenty-three fifths",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty-three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.6"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "twenty and three and three fifths",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1643,36 +1338,6 @@
 }
 ,
 {
-  "Input": "1.1^+23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1.1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2.5^-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2.5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.4"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "-2500^-1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1682,96 +1347,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "-0.0004"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1.1^+23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1.1^+23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-2.5^-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-2.5^-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-0.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-1.1^--23",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-1.1^--23",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-8.95430243255239"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-127.32e13",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-127.32e13",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1.2732E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "12.32e+14",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12.32e+14",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1.232E+15"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-12e-1",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-12e-1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-1.2"
       }
     }
   ]

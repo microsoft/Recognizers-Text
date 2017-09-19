@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "I'll go back now",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -8,31 +7,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PRESENT_REF",
+      "Text": "now",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "PRESENT_REF",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 00:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 00:00:00"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 3,
-      "Text": "now",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back as soon as possible",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -41,31 +31,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "FUTURE_REF",
+      "Text": "as soon as possible",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "FUTURE_REF",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 00:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 00:00:00"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 19,
-      "Text": "as soon as possible",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on 15 at 8:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -74,32 +55,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T08:00",
+      "Text": "15 at 8:00",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T08:00",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2016-11-15 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 08:00:00"
-        },
-        "FutureValue": "2016-11-15T08:00:00",
-        "PastValue": "2016-10-15T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 10,
-      "Text": "15 at 8:00",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on 15 at 8:00:20",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -108,32 +79,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T08:00:20",
+      "Text": "15 at 8:00:20",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T08:00:20",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2016-11-15 08:00:20"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 08:00:20"
-        },
-        "FutureValue": "2016-11-15T08:00:20",
-        "PastValue": "2016-10-15T08:00:20"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 13,
-      "Text": "15 at 8:00:20",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back on 15, 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -142,31 +103,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T20",
+      "Text": "15, 8pm",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-15 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 20:00:00"
-        },
-        "FutureValue": "2016-11-15T20:00:00",
-        "PastValue": "2016-10-15T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 7,
-      "Text": "15, 8pm",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back at 5th at 4 a.m.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -175,31 +127,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-05T04",
+      "Text": "5th at 4 a.m.",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-05T04",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-12-05 04:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-05 04:00:00"
-        },
-        "FutureValue": "2016-12-05T04:00:00",
-        "PastValue": "2016-11-05T04:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 13,
-      "Text": "5th at 4 a.m.",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 04/21/2016, 8:00pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -208,31 +151,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-04-21T20:00",
+      "Text": "04/21/2016, 8:00pm",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-04-21T20:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-04-21 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-04-21 20:00:00"
-        },
-        "FutureValue": "2016-04-21T20:00:00",
-        "PastValue": "2016-04-21T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "04/21/2016, 8:00pm",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 04/21/2016, 8:00:20pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -241,31 +175,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-04-21T20:00:20",
+      "Text": "04/21/2016, 8:00:20pm",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-04-21T20:00:20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-04-21 20:00:20"
         },
         "PastResolution": {
           "dateTime": "2016-04-21 20:00:20"
-        },
-        "FutureValue": "2016-04-21T20:00:20",
-        "PastValue": "2016-04-21T20:00:20"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "04/21/2016, 8:00:20pm",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back Oct.23 at seven",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -274,32 +199,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-23T07",
+      "Text": "Oct.23 at seven",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-23T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2017-10-23 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-23 07:00:00"
-        },
-        "FutureValue": "2017-10-23T07:00:00",
-        "PastValue": "2016-10-23T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "Oct.23 at seven",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -308,31 +223,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00",
+      "Text": "October 14 8:00am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:00"
-        },
-        "FutureValue": "2017-10-14T08:00:00",
-        "PastValue": "2016-10-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "October 14 8:00am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -341,31 +247,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00:31",
+      "Text": "October 14 8:00:31am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00:31",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:31"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:31"
-        },
-        "FutureValue": "2017-10-14T08:00:31",
-        "PastValue": "2016-10-14T08:00:31"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 20,
-      "Text": "October 14 8:00:31am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 around 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -374,31 +271,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00",
+      "Text": "October 14 around 8:00am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:00"
-        },
-        "FutureValue": "2017-10-14T08:00:00",
-        "PastValue": "2016-10-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 24,
-      "Text": "October 14 around 8:00am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 for 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -407,31 +295,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00:31",
+      "Text": "October 14 for 8:00:31am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00:31",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:31"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:31"
-        },
-        "FutureValue": "2017-10-14T08:00:31",
-        "PastValue": "2016-10-14T08:00:31"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 24,
-      "Text": "October 14 for 8:00:31am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14, 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -440,31 +319,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00",
+      "Text": "October 14, 8:00am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:00"
-        },
-        "FutureValue": "2017-10-14T08:00:00",
-        "PastValue": "2016-10-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "October 14, 8:00am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14, 8:00:25am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -473,31 +343,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00:25",
+      "Text": "October 14, 8:00:25am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00:25",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:25"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:25"
-        },
-        "FutureValue": "2017-10-14T08:00:25",
-        "PastValue": "2016-10-14T08:00:25"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "October 14, 8:00:25am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back May 5, 2016, 20 min past eight in the evening",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -506,31 +367,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-05-05T20:20",
+      "Text": "May 5, 2016, 20 min past eight in the evening",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-05-05T20:20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-05-05 20:20:00"
         },
         "PastResolution": {
           "dateTime": "2016-05-05 20:20:00"
-        },
-        "FutureValue": "2016-05-05T20:20:00",
-        "PastValue": "2016-05-05T20:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 45,
-      "Text": "May 5, 2016, 20 min past eight in the evening",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm on 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -539,31 +391,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T20",
+      "Text": "8pm on 15",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-15 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 20:00:00"
-        },
-        "FutureValue": "2016-11-15T20:00:00",
-        "PastValue": "2016-10-15T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 9,
-      "Text": "8pm on 15",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm on the 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -572,31 +415,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T20",
+      "Text": "8pm on the 15",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-15 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 20:00:00"
-        },
-        "FutureValue": "2016-11-15T20:00:00",
-        "PastValue": "2016-10-15T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 13,
-      "Text": "8pm on the 15",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back at seven on 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -605,32 +439,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T07",
+      "Text": "seven on 15",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2016-11-15 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 07:00:00"
-        },
-        "FutureValue": "2016-11-15T07:00:00",
-        "PastValue": "2016-10-15T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 11,
-      "Text": "seven on 15",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm today",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -639,31 +463,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T20",
+      "Text": "8pm today",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 20:00:00"
-        },
-        "FutureValue": "2016-11-07T20:00:00",
-        "PastValue": "2016-11-07T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 9,
-      "Text": "8pm today",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back a quarter to seven tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -672,32 +487,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T06:45",
+      "Text": "a quarter to seven tomorrow",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-08T06:45",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2016-11-08 06:45:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-08 06:45:00"
-        },
-        "FutureValue": "2016-11-08T06:45:00",
-        "PastValue": "2016-11-08T06:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 27,
-      "Text": "a quarter to seven tomorrow",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 19:00, 2016-12-22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -706,31 +511,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-12-22T19:00",
+      "Text": "19:00, 2016-12-22",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-12-22T19:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-12-22 19:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-12-22 19:00:00"
-        },
-        "FutureValue": "2016-12-22T19:00:00",
-        "PastValue": "2016-12-22T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tomorrow 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -739,31 +535,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T08:00",
+      "Text": "tomorrow 8:00am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-08T08:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-08 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-08 08:00:00"
-        },
-        "FutureValue": "2016-11-08T08:00:00",
-        "PastValue": "2016-11-08T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "tomorrow 8:00am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tomorrow morning at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -772,31 +559,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T07",
+      "Text": "tomorrow morning at 7",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-08T07",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-08 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-08 07:00:00"
-        },
-        "FutureValue": "2016-11-08T07:00:00",
-        "PastValue": "2016-11-08T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "tomorrow morning at 7",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tonight around 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -805,31 +583,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T19",
+      "Text": "tonight around 7",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T19",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 19:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 19:00:00"
-        },
-        "FutureValue": "2016-11-07T19:00:00",
-        "PastValue": "2016-11-07T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 16,
-      "Text": "tonight around 7",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 7:00 on next Sunday afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -838,31 +607,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-20T19:00",
+      "Text": "7:00 on next Sunday afternoon",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-20T19:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-20 19:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-20 19:00:00"
-        },
-        "FutureValue": "2016-11-20T19:00:00",
-        "PastValue": "2016-11-20T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 29,
-      "Text": "7:00 on next Sunday afternoon",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back twenty minutes past five tomorrow morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -871,31 +631,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T05:20",
+      "Text": "twenty minutes past five tomorrow morning",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-08T05:20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-08 05:20:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-08 05:20:00"
-        },
-        "FutureValue": "2016-11-08T05:20:00",
-        "PastValue": "2016-11-08T05:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 41,
-      "Text": "twenty minutes past five tomorrow morning",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 7, this morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -904,31 +655,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T07",
+      "Text": "7, this morning",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T07",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 07:00:00"
-        },
-        "FutureValue": "2016-11-07T07:00:00",
-        "PastValue": "2016-11-07T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "7, this morning",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 10, tonight",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -937,31 +679,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T22",
+      "Text": "10, tonight",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T22",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 22:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 22:00:00"
-        },
-        "FutureValue": "2016-11-07T22:00:00",
-        "PastValue": "2016-11-07T22:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 11,
-      "Text": "10, tonight",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm in the evening, Sunday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -970,31 +703,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-7T20",
+      "Text": "8pm in the evening, Sunday",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-7T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-13 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-06 20:00:00"
-        },
-        "FutureValue": "2016-11-13T20:00:00",
-        "PastValue": "2016-11-06T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 26,
-      "Text": "8pm in the evening, Sunday",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm in the evening, 1st Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1003,31 +727,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01T20",
+      "Text": "8pm in the evening, 1st Jan",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-01-01 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-01-01 20:00:00"
-        },
-        "FutureValue": "2017-01-01T20:00:00",
-        "PastValue": "2016-01-01T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 27,
-      "Text": "8pm in the evening, 1st Jan",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm in the evening, 1 Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1036,31 +751,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-01-01T20",
+      "Text": "8pm in the evening, 1 Jan",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-01-01T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-01-01 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-01-01 20:00:00"
-        },
-        "FutureValue": "2017-01-01T20:00:00",
-        "PastValue": "2016-01-01T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 25,
-      "Text": "8pm in the evening, 1 Jan",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 10pm tonight",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1069,31 +775,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T22",
+      "Text": "10pm tonight",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T22",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 22:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 22:00:00"
-        },
-        "FutureValue": "2016-11-07T22:00:00",
-        "PastValue": "2016-11-07T22:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 12,
-      "Text": "10pm tonight",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8am this morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1102,31 +799,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T08",
+      "Text": "8am this morning",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T08",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 08:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 08:00:00"
-        },
-        "FutureValue": "2016-11-07T08:00:00",
-        "PastValue": "2016-11-07T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 16,
-      "Text": "8am this morning",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 8pm this evening",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1135,31 +823,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T20",
+      "Text": "8pm this evening",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T20",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 20:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 20:00:00"
-        },
-        "FutureValue": "2016-11-07T20:00:00",
-        "PastValue": "2016-11-07T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 16,
-      "Text": "8pm this evening",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back the end of the day",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1168,31 +847,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T23:59",
+      "Text": "the end of the day",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T23:59",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 23:59:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 23:59:00"
-        },
-        "FutureValue": "2016-11-07T23:59:00",
-        "PastValue": "2016-11-07T23:59:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "the end of the day",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back end of tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1201,31 +871,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T23:59",
+      "Text": "end of tomorrow",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-08T23:59",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-08 23:59:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-08 23:59:00"
-        },
-        "FutureValue": "2016-11-08T23:59:00",
-        "PastValue": "2016-11-08T23:59:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "end of tomorrow",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back end of the sunday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1234,31 +895,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-7T23:59",
+      "Text": "end of the sunday",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-7T23:59",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-13 23:59:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-06 23:59:00"
-        },
-        "FutureValue": "2016-11-13T23:59:00",
-        "PastValue": "2016-11-06T23:59:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "end of the sunday",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back in 5 hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1267,98 +919,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T05:00:00",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T05:00:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 05:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 05:00:00"
-        },
-        "FutureValue": "2016-11-07T05:00:00",
-        "PastValue": "2016-11-07T05:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 10,
       "Text": "in 5 hours",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back as soon as possible",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "FUTURE_REF",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
-        "Timex": "FUTURE_REF",
-        "IsLunar": false,
+        "Timex": "2016-11-07T05:00:00",
         "FutureResolution": {
-          "dateTime": "2016-11-07 00:00:00"
+          "dateTime": "2016-11-07 05:00:00"
         },
         "PastResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 19,
-      "Text": "as soon as possible",
-      "Type": "datetime"
+          "dateTime": "2016-11-07 05:00:00"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll go back on 15 at 8:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-XX-15T08:00",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-XX-15T08:00",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 08:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-15 08:00:00"
-        },
-        "FutureValue": "2016-11-15T08:00:00",
-        "PastValue": "2016-10-15T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 10,
-      "Text": "15 at 8:00",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll go back on 15 at 8:00:24",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1367,98 +943,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-XX-15T08:00:24",
+      "Text": "15 at 8:00:24",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-XX-15T08:00:24",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "dateTime": "2016-11-15 08:00:24"
         },
         "PastResolution": {
           "dateTime": "2016-10-15 08:00:24"
-        },
-        "FutureValue": "2016-11-15T08:00:24",
-        "PastValue": "2016-10-15T08:00:24"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 13,
-      "Text": "15 at 8:00:24",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll go back on 15, 8pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-XX-15T20",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-XX-15T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-15 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-15 20:00:00"
-        },
-        "FutureValue": "2016-11-15T20:00:00",
-        "PastValue": "2016-10-15T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 7,
-      "Text": "15, 8pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 04/21/2016, 8:00pm",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-04-21T20:00",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-04-21T20:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:00"
-        },
-        "FutureValue": "2016-04-21T20:00:00",
-        "PastValue": "2016-04-21T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "04/21/2016, 8:00pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll go back 04/21/2016, 8:00:24pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1467,98 +967,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-04-21T20:00:24",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-04-21T20:00:24",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-04-21 20:00:24"
-        },
-        "PastResolution": {
-          "dateTime": "2016-04-21 20:00:24"
-        },
-        "FutureValue": "2016-04-21T20:00:24",
-        "PastValue": "2016-04-21T20:00:24"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
       "Text": "04/21/2016, 8:00:24pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back Oct.23 at seven",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-23T07",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-23T07",
-        "IsLunar": false,
-        "Comment": "ampm",
+        "Timex": "2016-04-21T20:00:24",
         "FutureResolution": {
-          "dateTime": "2017-10-23 07:00:00"
+          "dateTime": "2016-04-21 20:00:24"
         },
         "PastResolution": {
-          "dateTime": "2016-10-23 07:00:00"
-        },
-        "FutureValue": "2017-10-23T07:00:00",
-        "PastValue": "2016-10-23T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "Oct.23 at seven",
-      "Type": "datetime"
+          "dateTime": "2016-04-21 20:00:24"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll go back October 14 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-14T08:00",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-14T08:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        },
-        "FutureValue": "2017-10-14T08:00:00",
-        "PastValue": "2016-10-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "October 14 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll go back October 14 8:00:13am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1567,660 +991,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-14T08:00:13",
+      "Text": "October 14 8:00:13am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-14T08:00:13",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2017-10-14 08:00:13"
         },
         "PastResolution": {
           "dateTime": "2016-10-14 08:00:13"
-        },
-        "FutureValue": "2017-10-14T08:00:13",
-        "PastValue": "2016-10-14T08:00:13"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 20,
-      "Text": "October 14 8:00:13am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "I'll go back October 14, 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-14T08:00",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-14T08:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:00"
-        },
-        "FutureValue": "2017-10-14T08:00:00",
-        "PastValue": "2016-10-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "October 14, 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back October 14, 8:00:25am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-10-14T08:00:25",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-10-14T08:00:25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2017-10-14 08:00:25"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-14 08:00:25"
-        },
-        "FutureValue": "2017-10-14T08:00:25",
-        "PastValue": "2016-10-14T08:00:25"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "October 14, 8:00:25am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back May 5, 2016, 20 min past eight in the evening",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-05-05T20:20",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-05-05T20:20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-05-05 20:20:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-05-05 20:20:00"
-        },
-        "FutureValue": "2016-05-05T20:20:00",
-        "PastValue": "2016-05-05T20:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 45,
-      "Text": "May 5, 2016, 20 min past eight in the evening",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm on 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-XX-15T20",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-XX-15T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-15 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-15 20:00:00"
-        },
-        "FutureValue": "2016-11-15T20:00:00",
-        "PastValue": "2016-10-15T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 9,
-      "Text": "8pm on 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back at seven on 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-XX-15T07",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-XX-15T07",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 07:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-15 07:00:00"
-        },
-        "FutureValue": "2016-11-15T07:00:00",
-        "PastValue": "2016-10-15T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 16,
-      "Length": 11,
-      "Text": "seven on 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm today",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07T20",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        },
-        "FutureValue": "2016-11-07T20:00:00",
-        "PastValue": "2016-11-07T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 9,
-      "Text": "8pm today",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back a quarter to seven tomorrow",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08T06:45",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08T06:45",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "dateTime": "2016-11-08 06:45:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-08 06:45:00"
-        },
-        "FutureValue": "2016-11-08T06:45:00",
-        "PastValue": "2016-11-08T06:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 27,
-      "Text": "a quarter to seven tomorrow",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 19:00, 2016-12-22",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-12-22T19:00",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-12-22T19:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-12-22 19:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-12-22 19:00:00"
-        },
-        "FutureValue": "2016-12-22T19:00:00",
-        "PastValue": "2016-12-22T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "19:00, 2016-12-22",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back now",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "PRESENT_REF",
-      "Value": {
-        "Success": true,
-        "Timex": "PRESENT_REF",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 00:00:00"
-        },
-        "FutureValue": "2016-11-07T00:00:00",
-        "PastValue": "2016-11-07T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 3,
-      "Text": "now",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back tomorrow 8:00am",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08T08:00",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08T08:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-08 08:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-08 08:00:00"
-        },
-        "FutureValue": "2016-11-08T08:00:00",
-        "PastValue": "2016-11-08T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "tomorrow 8:00am",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back tomorrow morning at 7",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08T07",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08T07",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-08 07:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-08 07:00:00"
-        },
-        "FutureValue": "2016-11-08T07:00:00",
-        "PastValue": "2016-11-08T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "tomorrow morning at 7",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 7:00 on next Sunday afternoon",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-20T19:00",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-20T19:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-20 19:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-20 19:00:00"
-        },
-        "FutureValue": "2016-11-20T19:00:00",
-        "PastValue": "2016-11-20T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 29,
-      "Text": "7:00 on next Sunday afternoon",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back twenty minutes past five tomorrow morning",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-08T05:20",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-08T05:20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-08 05:20:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-08 05:20:00"
-        },
-        "FutureValue": "2016-11-08T05:20:00",
-        "PastValue": "2016-11-08T05:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 41,
-      "Text": "twenty minutes past five tomorrow morning",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm in the evening, Sunday",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-WXX-7T20",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-WXX-7T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-13 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-06 20:00:00"
-        },
-        "FutureValue": "2016-11-13T20:00:00",
-        "PastValue": "2016-11-06T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 26,
-      "Text": "8pm in the evening, Sunday",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm in the evening, 1st Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01T20",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2017-01-01 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-01-01 20:00:00"
-        },
-        "FutureValue": "2017-01-01T20:00:00",
-        "PastValue": "2016-01-01T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 27,
-      "Text": "8pm in the evening, 1st Jan",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm in the evening, 1 Jan",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-01-01T20",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-01-01T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2017-01-01 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-01-01 20:00:00"
-        },
-        "FutureValue": "2017-01-01T20:00:00",
-        "PastValue": "2016-01-01T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 25,
-      "Text": "8pm in the evening, 1 Jan",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 10pm tonight",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07T22",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T22",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 22:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 22:00:00"
-        },
-        "FutureValue": "2016-11-07T22:00:00",
-        "PastValue": "2016-11-07T22:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 12,
-      "Text": "10pm tonight",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8am this morning",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07T08",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T08",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 08:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 08:00:00"
-        },
-        "FutureValue": "2016-11-07T08:00:00",
-        "PastValue": "2016-11-07T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 16,
-      "Text": "8am this morning",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back 8pm this evening",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07T20",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 20:00:00"
-        },
-        "FutureValue": "2016-11-07T20:00:00",
-        "PastValue": "2016-11-07T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 16,
-      "Text": "8pm this evening",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "I'll go back this morning at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2229,31 +1015,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T07",
+      "Text": "this morning at 7",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T07",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 07:00:00"
-        },
-        "FutureValue": "2016-11-07T07:00:00",
-        "PastValue": "2016-11-07T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 17,
-      "Text": "this morning at 7",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back this morning at 7am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2262,31 +1039,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T07",
+      "Text": "this morning at 7am",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T07",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 07:00:00"
-        },
-        "FutureValue": "2016-11-07T07:00:00",
-        "PastValue": "2016-11-07T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 19,
-      "Text": "this morning at 7am",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back this morning at seven",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2295,31 +1063,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T07",
+      "Text": "this morning at seven",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T07",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 07:00:00"
-        },
-        "FutureValue": "2016-11-07T07:00:00",
-        "PastValue": "2016-11-07T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 21,
-      "Text": "this morning at seven",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back this morning at 7:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2328,31 +1087,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T07:00",
+      "Text": "this morning at 7:00",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T07:00",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 07:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 07:00:00"
-        },
-        "FutureValue": "2016-11-07T07:00:00",
-        "PastValue": "2016-11-07T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 20,
-      "Text": "this morning at 7:00",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back this night at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2361,31 +1111,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T19",
+      "Text": "this night at 7",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T19",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 19:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 19:00:00"
-        },
-        "FutureValue": "2016-11-07T19:00:00",
-        "PastValue": "2016-11-07T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 15,
-      "Text": "this night at 7",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back tonight at 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2394,31 +1135,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T19",
+      "Text": "tonight at 7",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
         "Timex": "2016-11-07T19",
-        "IsLunar": false,
         "FutureResolution": {
           "dateTime": "2016-11-07 19:00:00"
         },
         "PastResolution": {
           "dateTime": "2016-11-07 19:00:00"
-        },
-        "FutureValue": "2016-11-07T19:00:00",
-        "PastValue": "2016-11-07T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 12,
-      "Text": "tonight at 7",
-      "Type": "datetime"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll go back 2016-12-16T12:23:59",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2427,59 +1159,17 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-12-16T12:23:59",
-      "Value": {
-        "Success": true,
-        "Timex": "2016-12-16T12:23:59",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "dateTime": "2016-12-16 12:23:59"
-        },
-        "PastResolution": {
-          "dateTime": "2016-12-16 12:23:59"
-        },
-        "FutureValue": "2016-12-16T12:23:59",
-        "PastValue": "2016-12-16T12:23:59"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 19,
       "Text": "2016-12-16T12:23:59",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "I'll go back in 5 hours",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "2016-11-07T05:00:00",
+      "Type": "datetime",
       "Value": {
-        "Success": true,
-        "Timex": "2016-11-07T05:00:00",
-        "IsLunar": false,
+        "Timex": "2016-12-16T12:23:59",
         "FutureResolution": {
-          "dateTime": "2016-11-07 05:00:00"
+          "dateTime": "2016-12-16 12:23:59"
         },
         "PastResolution": {
-          "dateTime": "2016-11-07 05:00:00"
-        },
-        "FutureValue": "2016-11-07T05:00:00",
-        "PastValue": "2016-11-07T05:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 10,
-      "Text": "in 5 hours",
-      "Type": "datetime"
+          "dateTime": "2016-12-16 12:23:59"
+        }
+      }
     }
   ]
 }

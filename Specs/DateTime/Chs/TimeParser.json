@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "下午5:00",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -8,37 +7,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T17:00",
+      "Text": "下午5:00",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T17:00",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "17:00:00"
         },
         "PastResolution": {
           "time": "17:00:00"
-        },
-        "FutureValue": "2017-03-22T17:00:00",
-        "PastValue": "2017-03-22T17:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "下午5:00",
-      "Type": "time",
-      "Data": {
-        "Hour": 17,
-        "Minute": 0,
-        "Second": -1,
-        "LowBound": 12
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "晚上9:30",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -47,37 +31,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T21:30",
+      "Text": "晚上9:30",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T21:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "21:30:00"
         },
         "PastResolution": {
           "time": "21:30:00"
-        },
-        "FutureValue": "2017-03-22T21:30:00",
-        "PastValue": "2017-03-22T21:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "晚上9:30",
-      "Type": "time",
-      "Data": {
-        "Hour": 21,
-        "Minute": 30,
-        "Second": -1,
-        "LowBound": 18
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "晚上19:30",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -86,37 +55,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:30",
+      "Text": "晚上19:30",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:30:00"
         },
         "PastResolution": {
           "time": "19:30:00"
-        },
-        "FutureValue": "2017-03-22T19:30:00",
-        "PastValue": "2017-03-22T19:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 7,
-      "Text": "晚上19:30",
-      "Type": "time",
-      "Data": {
-        "Hour": 19,
-        "Minute": 30,
-        "Second": -1,
-        "LowBound": 0
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "下午十一点半",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -125,37 +79,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T23:30",
+      "Text": "下午十一点半",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T23:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "23:30:00"
         },
         "PastResolution": {
           "time": "23:30:00"
-        },
-        "FutureValue": "2017-03-22T23:30:00",
-        "PastValue": "2017-03-22T23:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "下午十一点半",
-      "Type": "time",
-      "Data": {
-        "Hour": 23,
-        "Minute": 30,
-        "Second": -1,
-        "LowBound": 12
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "大约十点以后",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -164,38 +103,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T10",
+      "Text": "大约十点以后",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T10",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "10:00:00"
         },
         "PastResolution": {
           "time": "10:00:00"
-        },
-        "FutureValue": "2017-03-22T10:00:00",
-        "PastValue": "2017-03-22T10:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "大约十点以后",
-      "Type": "time",
-      "Data": {
-        "Hour": 10,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": -1
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "大约早上十点左右",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -204,37 +127,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T10",
+      "Text": "大约早上十点左右",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T10",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "10:00:00"
         },
         "PastResolution": {
           "time": "10:00:00"
-        },
-        "FutureValue": "2017-03-22T10:00:00",
-        "PastValue": "2017-03-22T10:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 8,
-      "Text": "大约早上十点左右",
-      "Type": "time",
-      "Data": {
-        "Hour": 10,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": 0
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "大约晚上十点以后",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -243,37 +151,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T22",
+      "Text": "大约晚上十点以后",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T22",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "22:00:00"
         },
         "PastResolution": {
           "time": "22:00:00"
-        },
-        "FutureValue": "2017-03-22T22:00:00",
-        "PastValue": "2017-03-22T22:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 8,
-      "Text": "大约晚上十点以后",
-      "Type": "time",
-      "Data": {
-        "Hour": 22,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": 18
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "早上11点",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -282,37 +175,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T11",
+      "Text": "早上11点",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T11",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "11:00:00"
         },
         "PastResolution": {
           "time": "11:00:00"
-        },
-        "FutureValue": "2017-03-22T11:00:00",
-        "PastValue": "2017-03-22T11:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 5,
-      "Text": "早上11点",
-      "Type": "time",
-      "Data": {
-        "Hour": 11,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": 0
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "凌晨2点半",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -321,37 +199,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T02:30",
+      "Text": "凌晨2点半",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T02:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "02:30:00"
         },
         "PastResolution": {
           "time": "02:30:00"
-        },
-        "FutureValue": "2017-03-22T02:30:00",
-        "PastValue": "2017-03-22T02:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 5,
-      "Text": "凌晨2点半",
-      "Type": "time",
-      "Data": {
-        "Hour": 2,
-        "Minute": 30,
-        "Second": -1,
-        "LowBound": 0
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "零点",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -360,38 +223,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T00",
+      "Text": "零点",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T00",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "00:00:00"
         },
         "PastResolution": {
           "time": "00:00:00"
-        },
-        "FutureValue": "2017-03-22T00:00:00",
-        "PastValue": "2017-03-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "零点",
-      "Type": "time",
-      "Data": {
-        "Hour": 0,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": -1
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "零点整",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -400,31 +247,16 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T00",
+      "Text": "零点整",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T00",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "00:00:00"
         },
         "PastResolution": {
           "time": "00:00:00"
-        },
-        "FutureValue": "2017-03-22T00:00:00",
-        "PastValue": "2017-03-22T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "零点整",
-      "Type": "time",
-      "Data": {
-        "Hour": 0,
-        "Minute": -1,
-        "Second": -1,
-        "LowBound": -1
+        }
       }
     }
   ]

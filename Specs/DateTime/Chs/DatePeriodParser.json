@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "时间从一月十日到十二日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -8,11 +7,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(XXXX-01-10,XXXX-01-12,P2D)",
+      "Text": "从一月十日到十二日",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(XXXX-01-10,XXXX-01-12,P2D)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2018-01-10",
           "endDate": "2018-01-12"
@@ -20,27 +18,13 @@
         "PastResolution": {
           "startDate": "2017-01-10",
           "endDate": "2017-01-12"
-        },
-        "FutureValue": {
-          "Item1": "2018-01-10T00:00:00",
-          "Item2": "2018-01-12T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-01-10T00:00:00",
-          "Item2": "2017-01-12T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 9,
-      "Text": "从一月十日到十二日",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "时间从2016年一月十日到十二日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -49,11 +33,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2016-01-10,2016-01-12,P2D)",
+      "Text": "从2016年一月十日到十二日",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(2016-01-10,2016-01-12,P2D)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2016-01-10",
           "endDate": "2016-01-12"
@@ -61,27 +44,13 @@
         "PastResolution": {
           "startDate": "2016-01-10",
           "endDate": "2016-01-12"
-        },
-        "FutureValue": {
-          "Item1": "2016-01-10T00:00:00",
-          "Item2": "2016-01-12T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-01-10T00:00:00",
-          "Item2": "2016-01-12T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 14,
-      "Text": "从2016年一月十日到十二日",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "时间从一月19日到20日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -90,11 +59,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(XXXX-01-19,XXXX-01-20,P1D)",
+      "Text": "从一月19日到20日",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(XXXX-01-19,XXXX-01-20,P1D)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2018-01-19",
           "endDate": "2018-01-20"
@@ -102,27 +70,13 @@
         "PastResolution": {
           "startDate": "2017-01-19",
           "endDate": "2017-01-20"
-        },
-        "FutureValue": {
-          "Item1": "2018-01-19T00:00:00",
-          "Item2": "2018-01-20T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-01-19T00:00:00",
-          "Item2": "2017-01-20T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 10,
-      "Text": "从一月19日到20日",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "从一月十日到20日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -131,11 +85,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(XXXX-01-10,XXXX-01-20,P10D)",
+      "Text": "从一月十日到20日",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(XXXX-01-10,XXXX-01-20,P10D)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2018-01-10",
           "endDate": "2018-01-20"
@@ -143,27 +96,13 @@
         "PastResolution": {
           "startDate": "2017-01-10",
           "endDate": "2017-01-20"
-        },
-        "FutureValue": {
-          "Item1": "2018-01-10T00:00:00",
-          "Item2": "2018-01-20T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-01-10T00:00:00",
-          "Item2": "2017-01-20T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "从一月十日到20日",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "明年四月",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -172,11 +111,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2018-04",
+      "Text": "明年四月",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2018-04",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2018-04-01",
           "endDate": "2018-05-01"
@@ -184,27 +122,13 @@
         "PastResolution": {
           "startDate": "2018-04-01",
           "endDate": "2018-05-01"
-        },
-        "FutureValue": {
-          "Item1": "2018-04-01T00:00:00",
-          "Item2": "2018-05-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2018-04-01T00:00:00",
-          "Item2": "2018-05-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 4,
-      "Text": "明年四月",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "我们去年5月见过",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -213,11 +137,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-05",
+      "Text": "去年5月",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2016-05",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2016-05-01",
           "endDate": "2016-06-01"
@@ -225,27 +148,13 @@
         "PastResolution": {
           "startDate": "2016-05-01",
           "endDate": "2016-06-01"
-        },
-        "FutureValue": {
-          "Item1": "2016-05-01T00:00:00",
-          "Item2": "2016-06-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-05-01T00:00:00",
-          "Item2": "2016-06-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 4,
-      "Text": "去年5月",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "下周末",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -254,11 +163,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017-W14-WE",
+      "Text": "下周末",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2017-W14-WE",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-04-01",
           "endDate": "2017-04-03"
@@ -266,27 +174,13 @@
         "PastResolution": {
           "startDate": "2017-04-01",
           "endDate": "2017-04-03"
-        },
-        "FutureValue": {
-          "Item1": "2017-04-01T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-04-01T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "下周末",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "会议在下周",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -295,11 +189,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017-W14",
+      "Text": "下周",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2017-W14",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-03-27",
           "endDate": "2017-04-03"
@@ -307,27 +200,13 @@
         "PastResolution": {
           "startDate": "2017-03-27",
           "endDate": "2017-04-03"
-        },
-        "FutureValue": {
-          "Item1": "2017-03-27T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-03-27T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 3,
-      "Length": 2,
-      "Text": "下周",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "下个月完工",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -336,11 +215,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017-04",
+      "Text": "下个月",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2017-04",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-04-01",
           "endDate": "2017-05-01"
@@ -348,27 +226,13 @@
         "PastResolution": {
           "startDate": "2017-04-01",
           "endDate": "2017-05-01"
-        },
-        "FutureValue": {
-          "Item1": "2017-04-01T00:00:00",
-          "Item2": "2017-05-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-04-01T00:00:00",
-          "Item2": "2017-05-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "下个月",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "下周如何",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -377,11 +241,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017-W14",
+      "Text": "下周",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2017-W14",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-03-27",
           "endDate": "2017-04-03"
@@ -389,27 +252,13 @@
         "PastResolution": {
           "startDate": "2017-03-27",
           "endDate": "2017-04-03"
-        },
-        "FutureValue": {
-          "Item1": "2017-03-27T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-03-27T00:00:00",
-          "Item2": "2017-04-03T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "下周",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "明年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -418,11 +267,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2018",
+      "Text": "明年",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2018",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2018-01-01",
           "endDate": "2019-01-01"
@@ -430,27 +278,13 @@
         "PastResolution": {
           "startDate": "2018-01-01",
           "endDate": "2019-01-01"
-        },
-        "FutureValue": {
-          "Item1": "2018-01-01T00:00:00",
-          "Item2": "2019-01-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2018-01-01T00:00:00",
-          "Item2": "2019-01-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "明年",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "奥运会在2008年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -459,11 +293,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2008",
+      "Text": "2008年",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2008",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2008-01-01",
           "endDate": "2009-01-01"
@@ -471,27 +304,13 @@
         "PastResolution": {
           "startDate": "2008-01-01",
           "endDate": "2009-01-01"
-        },
-        "FutureValue": {
-          "Item1": "2008-01-01T00:00:00",
-          "Item2": "2009-01-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2008-01-01T00:00:00",
-          "Item2": "2009-01-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 5,
-      "Text": "2008年",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "十月的第一周是国庆节",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -500,11 +319,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-10-W01",
+      "Text": "十月的第一周",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-10-W01",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-09-25",
           "endDate": "2017-10-02"
@@ -512,27 +330,13 @@
         "PastResolution": {
           "startDate": "2016-10-03",
           "endDate": "2016-10-10"
-        },
-        "FutureValue": {
-          "Item1": "2017-09-25T00:00:00",
-          "Item2": "2017-10-02T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-10-03T00:00:00",
-          "Item2": "2016-10-10T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "十月的第一周",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三月二十八日到四月15日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -541,11 +345,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(XXXX-03-28,XXXX-04-15,P18D)",
+      "Text": "三月二十八日到四月15日",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(XXXX-03-28,XXXX-04-15,P18D)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-03-28",
           "endDate": "2017-04-15"
@@ -553,27 +356,13 @@
         "PastResolution": {
           "startDate": "2016-03-28",
           "endDate": "2016-04-15"
-        },
-        "FutureValue": {
-          "Item1": "2017-03-28T00:00:00",
-          "Item2": "2017-04-15T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2016-03-28T00:00:00",
-          "Item2": "2016-04-15T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 12,
-      "Text": "三月二十八日到四月15日",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "前1周",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -582,11 +371,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2017-03-15,2017-03-22,P1W)",
+      "Text": "前1周",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(2017-03-15,2017-03-22,P1W)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-03-15",
           "endDate": "2017-03-22"
@@ -594,27 +382,13 @@
         "PastResolution": {
           "startDate": "2017-03-15",
           "endDate": "2017-03-22"
-        },
-        "FutureValue": {
-          "Item1": "2017-03-15T00:00:00",
-          "Item2": "2017-03-22T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-03-15T00:00:00",
-          "Item2": "2017-03-22T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "前1周",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "上2个月",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -623,11 +397,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2017-01-22,2017-03-22,P2M)",
+      "Text": "上2个月",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(2017-01-22,2017-03-22,P2M)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-01-22",
           "endDate": "2017-03-22"
@@ -635,27 +408,13 @@
         "PastResolution": {
           "startDate": "2017-01-22",
           "endDate": "2017-03-22"
-        },
-        "FutureValue": {
-          "Item1": "2017-01-22T00:00:00",
-          "Item2": "2017-03-22T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-01-22T00:00:00",
-          "Item2": "2017-03-22T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 4,
-      "Text": "上2个月",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "后1年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -664,11 +423,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2017-03-23,2018-03-23,P1Y)",
+      "Text": "后1年",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(2017-03-23,2018-03-23,P1Y)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-03-23",
           "endDate": "2018-03-23"
@@ -676,27 +434,13 @@
         "PastResolution": {
           "startDate": "2017-03-23",
           "endDate": "2018-03-23"
-        },
-        "FutureValue": {
-          "Item1": "2017-03-23T00:00:00",
-          "Item2": "2018-03-23T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-03-23T00:00:00",
-          "Item2": "2018-03-23T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "后1年",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "今年夏天",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -705,25 +449,18 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017-SU",
+      "Text": "今年夏天",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "2017-SU",
-        "IsLunar": false,
         "FutureResolution": {},
         "PastResolution": {}
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 4,
-      "Text": "今年夏天",
-      "Type": "daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "今年第一季度",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -732,11 +469,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2017-01-01,2017-04-01,P3M)",
+      "Text": "今年第一季度",
+      "Type": "daterange",
       "Value": {
-        "Success": true,
         "Timex": "(2017-01-01,2017-04-01,P3M)",
-        "IsLunar": false,
         "FutureResolution": {
           "startDate": "2017-01-01",
           "endDate": "2017-04-01"
@@ -744,21 +480,8 @@
         "PastResolution": {
           "startDate": "2017-01-01",
           "endDate": "2017-04-01"
-        },
-        "FutureValue": {
-          "Item1": "2017-01-01T00:00:00",
-          "Item2": "2017-04-01T00:00:00"
-        },
-        "PastValue": {
-          "Item1": "2017-01-01T00:00:00",
-          "Item2": "2017-04-01T00:00:00"
         }
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "今年第一季度",
-      "Type": "daterange"
+      }
     }
   ]
 }

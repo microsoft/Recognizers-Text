@@ -1,34 +1,4 @@
 [{
-  "Input": "100%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " 100% ",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "100%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "100%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " 100 por cento",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -269,36 +239,6 @@
 }
 ,
 {
-  "Input": " 101231,2353%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "101231,2353%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "101231,2353%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "-101231,4323%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-101231,4323%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "-101231,4323%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " -89101231,5127%",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -323,36 +263,6 @@
       "TypeName": "percentage",
       "Resolution": {
         "value": "-89101231,5127%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": ",23456000%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": ",23456000%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,23456%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "4,800%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "4,800%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "4,8%"
       }
     }
   ]
@@ -464,21 +374,6 @@
 }
 ,
 {
-  "Input": "9,2321312%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9,2321312%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "9,2321312%"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " -9,2321312 por cento",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -488,21 +383,6 @@
       "TypeName": "percentage",
       "Resolution": {
         "value": "-9,2321312%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1e10%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1e10%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "10000000000%"
       }
     }
   ]
@@ -713,36 +593,6 @@
       "TypeName": "percentage",
       "Resolution": {
         "value": "0,333333333333333%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "3/4%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3/4%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,75%"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "2/3%",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2/3%",
-      "TypeName": "percentage",
-      "Resolution": {
-        "value": "0,666666666666667%"
       }
     }
   ]

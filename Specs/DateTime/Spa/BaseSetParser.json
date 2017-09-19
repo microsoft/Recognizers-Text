@@ -1,539 +1,377 @@
 [{
-  "TestType": "BasicTest",
   "Input": "Saldré semanalmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1W",
+      "Text": "semanalmente",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1W"
         },
         "PastResolution": {
           "set": "Set: P1W"
-        },
-        "FutureValue": "Set: P1W",
-        "PastValue": "Set: P1W"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 12,
-      "Text": "semanalmente",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré quincenalmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P2W",
+      "Text": "quincenalmente",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P2W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P2W"
         },
         "PastResolution": {
           "set": "Set: P2W"
-        },
-        "FutureValue": "Set: P2W",
-        "PastValue": "Set: P2W"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 14,
-      "Text": "quincenalmente",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré diariamente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "diariamente",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1D"
         },
         "PastResolution": {
           "set": "Set: P1D"
-        },
-        "FutureValue": "Set: P1D",
-        "PastValue": "Set: P1D"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 11,
-      "Text": "diariamente",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré a diario",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "a diario",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1D"
         },
         "PastResolution": {
           "set": "Set: P1D"
-        },
-        "FutureValue": "Set: P1D",
-        "PastValue": "Set: P1D"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 8,
-      "Text": "a diario",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré todos los dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "todos los dias",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1D"
         },
         "PastResolution": {
           "set": "Set: P1D"
-        },
-        "FutureValue": "Set: P1D",
-        "PastValue": "Set: P1D"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 14,
-      "Text": "todos los dias",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré cada mes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1M",
+      "Text": "cada mes",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1M",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1M"
         },
         "PastResolution": {
           "set": "Set: P1M"
-        },
-        "FutureValue": "Set: P1M",
-        "PastValue": "Set: P1M"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 8,
-      "Text": "cada mes",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré todos los meses",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1M",
+      "Text": "todos los meses",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1M",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1M"
         },
         "PastResolution": {
           "set": "Set: P1M"
-        },
-        "FutureValue": "Set: P1M",
-        "PastValue": "Set: P1M"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 15,
-      "Text": "todos los meses",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré todas las semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1W",
+      "Text": "todas las semanas",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1W"
         },
         "PastResolution": {
           "set": "Set: P1W"
-        },
-        "FutureValue": "Set: P1W",
-        "PastValue": "Set: P1W"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 17,
-      "Text": "todas las semanas",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré anualmente",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1Y",
+      "Text": "anualmente",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1Y",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1Y"
         },
         "PastResolution": {
           "set": "Set: P1Y"
-        },
-        "FutureValue": "Set: P1Y",
-        "PastValue": "Set: P1Y"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 10,
-      "Text": "anualmente",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré todos los años",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1Y",
+      "Text": "todos los años",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1Y",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1Y"
         },
         "PastResolution": {
           "set": "Set: P1Y"
-        },
-        "FutureValue": "Set: P1Y",
-        "PastValue": "Set: P1Y"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 14,
-      "Text": "todos los años",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Me iré cada dos dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P2D",
+      "Text": "cada dos dias",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P2D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P2D"
         },
         "PastResolution": {
           "set": "Set: P2D"
-        },
-        "FutureValue": "Set: P2D",
-        "PastValue": "Set: P2D"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 13,
-      "Text": "cada dos dias",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Me iré cada tres semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3W",
+      "Text": "cada tres semanas",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P3W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P3W"
         },
         "PastResolution": {
           "set": "Set: P3W"
-        },
-        "FutureValue": "Set: P3W",
-        "PastValue": "Set: P3W"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 17,
-      "Text": "cada tres semanas",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Me iré cada 3 semanas",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3W",
+      "Text": "cada 3 semanas",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P3W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P3W"
         },
         "PastResolution": {
           "set": "Set: P3W"
-        },
-        "FutureValue": "Set: P3W",
-        "PastValue": "Set: P3W"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 14,
-      "Text": "cada 3 semanas",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Me iré a las 3pm todos los dias",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T15",
+      "Text": "3pm todos los dias",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "T15",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: T15"
         },
         "PastResolution": {
           "set": "Set: T15"
-        },
-        "FutureValue": "Set: T15",
-        "PastValue": "Set: T15"
-      },
-      "ResolutionStr": "",
-      "Start": 13,
-      "Length": 18,
-      "Text": "3pm todos los dias",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Me iré todos los dias a las 3pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T15",
+      "Text": "todos los dias a las 3pm",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "T15",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: T15"
         },
         "PastResolution": {
           "set": "Set: T15"
-        },
-        "FutureValue": "Set: T15",
-        "PastValue": "Set: T15"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 24,
-      "Text": "todos los dias a las 3pm",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré cada 15/4",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-04-15",
+      "Text": "cada 15/4",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-04-15",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: XXXX-04-15"
         },
         "PastResolution": {
           "set": "Set: XXXX-04-15"
-        },
-        "FutureValue": "Set: XXXX-04-15",
-        "PastValue": "Set: XXXX-04-15"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 9,
-      "Text": "cada 15/4",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré todos los lunes",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-1",
+      "Text": "todos los lunes",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-1",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: XXXX-WXX-1"
         },
         "PastResolution": {
           "set": "Set: XXXX-WXX-1"
-        },
-        "FutureValue": "Set: XXXX-WXX-1",
-        "PastValue": "Set: XXXX-WXX-1"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 15,
-      "Text": "todos los lunes",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Saldré cada lunes a las 4pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-1T16",
+      "Text": "cada lunes a las 4pm",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-1T16",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: XXXX-WXX-1T16"
         },
         "PastResolution": {
           "set": "Set: XXXX-WXX-1T16"
-        },
-        "FutureValue": "Set: XXXX-WXX-1T16",
-        "PastValue": "Set: XXXX-WXX-1T16"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 20,
-      "Text": "cada lunes a las 4pm",
-      "Type": "set"
+        }
+      }
     }
   ]
 }

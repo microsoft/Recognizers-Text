@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "两年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -8,38 +7,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P2Y",
+      "Text": "两年",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P2Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "63072000"
         },
         "PastResolution": {
           "duration": "63072000"
-        },
-        "FutureValue": 63072000.0,
-        "PastValue": 63072000.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "两年",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "两",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "5分钟",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -48,38 +31,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT5M",
+      "Text": "5分钟",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "PT5M",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "300"
         },
         "PastResolution": {
           "duration": "300"
-        },
-        "FutureValue": 300.0,
-        "PastValue": 300.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "5分钟",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "5",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "3天",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -88,38 +55,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3D",
+      "Text": "3天",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3D",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "259200"
         },
         "PastResolution": {
           "duration": "259200"
-        },
-        "FutureValue": 259200.0,
-        "PastValue": 259200.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "3天",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "3",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "15周",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -128,38 +79,22 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P15W",
+      "Text": "15周",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P15W",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "9072000"
         },
         "PastResolution": {
           "duration": "9072000"
-        },
-        "FutureValue": 9072000.0,
-        "PastValue": 9072000.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 3,
-      "Text": "15周",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 2,
-        "Text": "15",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
+        }
       }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三年半",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -168,31 +103,16 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P3.5Y",
+      "Text": "三年",
+      "Type": "duration",
       "Value": {
-        "Success": true,
         "Timex": "P3.5Y",
-        "IsLunar": false,
         "FutureResolution": {
           "duration": "110376000"
         },
         "PastResolution": {
           "duration": "110376000"
-        },
-        "FutureValue": 110376000.0,
-        "PastValue": 110376000.0
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 2,
-      "Text": "三年",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "三",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
+        }
       }
     }
   ]

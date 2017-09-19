@@ -1,239 +1,167 @@
 [{
-  "TestType": "BasicTest",
   "Input": "事件 每天都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "每天",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1D"
         },
         "PastResolution": {
           "set": "Set: P1D"
-        },
-        "FutureValue": "Set: P1D",
-        "PastValue": "Set: P1D"
-      },
-      "ResolutionStr": "",
-      "Start": 3,
-      "Length": 2,
-      "Text": "每天",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每日都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1D",
+      "Text": "每日",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1D",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1D"
         },
         "PastResolution": {
           "set": "Set: P1D"
-        },
-        "FutureValue": "Set: P1D",
-        "PastValue": "Set: P1D"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 2,
-      "Text": "每日",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每周都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1W",
+      "Text": "每周",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1W"
         },
         "PastResolution": {
           "set": "Set: P1W"
-        },
-        "FutureValue": "Set: P1W",
-        "PastValue": "Set: P1W"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 2,
-      "Text": "每周",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每个星期都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1W",
+      "Text": "每个星期",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1W",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1W"
         },
         "PastResolution": {
           "set": "Set: P1W"
-        },
-        "FutureValue": "Set: P1W",
-        "PastValue": "Set: P1W"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 4,
-      "Text": "每个星期",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每个月都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1M",
+      "Text": "每个月",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1M",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1M"
         },
         "PastResolution": {
           "set": "Set: P1M"
-        },
-        "FutureValue": "Set: P1M",
-        "PastValue": "Set: P1M"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 3,
-      "Text": "每个月",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每年都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "P1Y",
+      "Text": "每年",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "P1Y",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: P1Y"
         },
         "PastResolution": {
           "set": "Set: P1Y"
-        },
-        "FutureValue": "Set: P1Y",
-        "PastValue": "Set: P1Y"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 2,
-      "Text": "每年",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每周一都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-1",
+      "Text": "每周一",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-1",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: XXXX-WXX-1"
         },
         "PastResolution": {
           "set": "Set: XXXX-WXX-1"
-        },
-        "FutureValue": "Set: XXXX-WXX-1",
-        "PastValue": "Set: XXXX-WXX-1"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 3,
-      "Text": "每周一",
-      "Type": "set"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "事件每周一下午八点都发生",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-1T20",
+      "Text": "每周一下午八点",
+      "Type": "set",
       "Value": {
-        "Success": true,
         "Timex": "XXXX-WXX-1T20",
-        "IsLunar": false,
         "FutureResolution": {
           "set": "Set: XXXX-WXX-1T20"
         },
         "PastResolution": {
           "set": "Set: XXXX-WXX-1T20"
-        },
-        "FutureValue": "Set: XXXX-WXX-1T20",
-        "PastValue": "Set: XXXX-WXX-1T20"
-      },
-      "ResolutionStr": "",
-      "Start": 2,
-      "Length": 7,
-      "Text": "每周一下午八点",
-      "Type": "set"
+        }
+      }
     }
   ]
 }

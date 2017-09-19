@@ -1,153 +1,83 @@
 [{
-  "TestType": "BasicTest",
   "Input": "两年",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 2,
       "Text": "两年",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "两",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "6 天",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 3,
       "Text": "6 天",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "6",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "7 周",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 3,
       "Text": "7 周",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "7",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "5 小时",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 4,
       "Text": "5 小时",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "5",
-        "Type": "builtin.num",
-        "Data": "IntegerNum"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三年半",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 3,
       "Text": "三年半",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "三",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三天半",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 3,
       "Text": "三天半",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "三",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
-      }
+      "Type": "duration"
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "三个月半",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Start": 0,
-      "Length": 4,
       "Text": "三个月半",
-      "Type": "duration",
-      "Data": {
-        "Start": 0,
-        "Length": 1,
-        "Text": "三",
-        "Type": "builtin.num",
-        "Data": "IntegerChs"
-      }
+      "Type": "duration"
     }
   ]
 }

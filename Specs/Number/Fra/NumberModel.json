@@ -491,65 +491,6 @@
 }
 ,
 {
-  "Input": "1, 234, 567",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1"
-      }
-    },
-    {
-      "Text": "234",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "234"
-      }
-    },
-    {
-      "Text": "567",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "567"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "9,2321312"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": " -9,2321312",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "-9,2321312",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "-9,2321312"
-      }
-    }
-  ]
-}
-,
-{
   "Input": " -1",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -970,21 +911,6 @@
 }
 ,
 {
-  "Input": "trois",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "cent et trois quarts",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1300,21 +1226,6 @@
 }
 ,
 {
-  "Input": "un demi",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un demi",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,5"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "un billionieme",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
@@ -1339,21 +1250,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un cinquieme",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,2"
       }
     }
   ]

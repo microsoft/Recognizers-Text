@@ -1,5 +1,4 @@
 [{
-  "TestType": "BasicTest",
   "Input": "after 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -8,7 +7,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20",
+      "Text": "after 8pm",
+      "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
           {
@@ -17,18 +17,12 @@
             "start": "20:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "after 8pm",
-      "Type": "datetimeV2.timerange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "before 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -37,7 +31,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20",
+      "Text": "before 8pm",
+      "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
           {
@@ -46,18 +41,12 @@
             "end": "20:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 10,
-      "Text": "before 8pm",
-      "Type": "datetimeV2.timerange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "since 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -66,7 +55,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20",
+      "Text": "since 8pm",
+      "Type": "datetimeV2.timerange",
       "Value": {
         "values": [
           {
@@ -75,18 +65,12 @@
             "start": "20:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "since 8pm",
-      "Type": "datetimeV2.timerange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Set an appointment for Easter",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -95,7 +79,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "",
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -104,18 +89,12 @@
             "value": "not resolved"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 23,
-      "Length": 6,
-      "Text": "Easter",
-      "Type": "datetimeV2.date"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "day after tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -124,7 +103,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-09",
+      "Text": "day after tomorrow",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -133,18 +113,12 @@
             "value": "2016-11-09"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 18,
-      "Text": "day after tomorrow",
-      "Type": "datetimeV2.date"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "day after tomorrow at 8am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -153,7 +127,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-09T08",
+      "Text": "day after tomorrow at 8am",
+      "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
           {
@@ -162,18 +137,12 @@
             "value": "2016-11-09 08:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 25,
-      "Text": "day after tomorrow at 8am",
-      "Type": "datetimeV2.datetime"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "on Friday in the afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -182,7 +151,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-5TAF",
+      "Text": "Friday in the afternoon",
+      "Type": "datetimeV2.datetimerange",
       "Value": {
         "values": [
           {
@@ -198,18 +168,12 @@
             "end": "2016-11-11 16:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 3,
-      "Length": 23,
-      "Text": "Friday in the afternoon",
-      "Type": "datetimeV2.datetimerange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "on Friday for 3 in the afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -218,7 +182,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-5T15",
+      "Text": "Friday for 3 in the afternoon",
+      "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
           {
@@ -232,18 +197,12 @@
             "value": "2016-11-11 15:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 3,
-      "Length": 29,
-      "Text": "Friday for 3 in the afternoon",
-      "Type": "datetimeV2.datetime"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Set appointment for tomorrow morning at 9 o'clock.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -252,7 +211,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-08T09",
+      "Text": "tomorrow morning at 9 o'clock",
+      "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
           {
@@ -261,18 +221,12 @@
             "value": "2016-11-08 09:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 20,
-      "Length": 29,
-      "Text": "tomorrow morning at 9 o'clock",
-      "Type": "datetimeV2.datetime"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestWithTwoResults",
   "Input": "Set an appointment for Easter Sunday",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -281,7 +235,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "",
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -290,18 +245,30 @@
             "value": "not resolved"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 23,
-      "Length": 6,
-      "Text": "Easter",
-      "Type": "datetimeV2.date"
+      }
+    },
+    {
+      "Text": "Sunday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-06"
+          },
+          {
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-13"
+          }
+        ]
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestWithTwoResults",
   "Input": "block 1 hour on my calendar tomorrow morning",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -310,7 +277,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "PT1H",
+      "Text": "1 hour",
+      "Type": "datetimeV2.duration",
       "Value": {
         "values": [
           {
@@ -319,18 +287,26 @@
             "value": "3600"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 6,
-      "Length": 6,
-      "Text": "1 hour",
-      "Type": "datetimeV2.duration"
+      }
+    },
+    {
+      "Text": "tomorrow morning",
+      "Type": "datetimeV2.datetimerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08TMO",
+            "type": "datetimerange",
+            "start": "2016-11-08 08:00:00",
+            "end": "2016-11-08 12:00:00"
+          }
+        ]
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestWithTwoResults",
   "Input": "Change July 22nd meeting in Bellevue to August 22nd",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -339,7 +315,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-07-22",
+      "Text": "July 22nd",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -353,18 +330,30 @@
             "value": "2017-07-22"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 9,
-      "Text": "July 22nd",
-      "Type": "datetimeV2.date"
+      }
+    },
+    {
+      "Text": "August 22nd",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2016-08-22"
+          },
+          {
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2017-08-22"
+          }
+        ]
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestWithTwoResults",
   "Input": "on Friday for 3 in Bellevue in the afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -373,7 +362,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-WXX-5",
+      "Text": "Friday",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -387,18 +377,26 @@
             "value": "2016-11-11"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 3,
-      "Length": 6,
-      "Text": "Friday",
-      "Type": "datetimeV2.date"
+      }
+    },
+    {
+      "Text": "in the afternoon",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "TAF",
+            "type": "timerange",
+            "start": "12:00:00",
+            "end": "16:00:00"
+          }
+        ]
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 8 minutes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -407,7 +405,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T00:08:00",
+      "Text": "in 8 minutes",
+      "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
           {
@@ -416,18 +415,12 @@
             "value": "2016-11-07 00:08:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 12,
-      "Text": "in 8 minutes",
-      "Type": "datetimeV2.datetime"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 10 hours",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -436,7 +429,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-07T10:00:00",
+      "Text": "in 10 hours",
+      "Type": "datetimeV2.datetime",
       "Value": {
         "values": [
           {
@@ -445,18 +439,12 @@
             "value": "2016-11-07 10:00:00"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 11,
-      "Text": "in 10 hours",
-      "Type": "datetimeV2.datetime"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 10 days",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -465,7 +453,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-11-17",
+      "Text": "in 10 days",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -474,18 +463,12 @@
             "value": "2016-11-17"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 10,
-      "Text": "in 10 days",
-      "Type": "datetimeV2.date"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 3 weeks",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -494,7 +477,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2016-11-22,2016-11-29,P1W)",
+      "Text": "in 3 weeks",
+      "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
           {
@@ -504,18 +488,12 @@
             "end": "2016-11-29"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 10,
-      "Text": "in 3 weeks",
-      "Type": "datetimeV2.daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "schedule a meeting in 3 months",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -524,7 +502,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2017-01-08,2017-02-08,P1M)",
+      "Text": "in 3 months",
+      "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
           {
@@ -534,18 +513,12 @@
             "end": "2017-02-08"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 19,
-      "Length": 11,
-      "Text": "in 3 months",
-      "Type": "datetimeV2.daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "I'll be out in 3 year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -554,7 +527,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "(2018-11-08,2019-11-08,P1Y)",
+      "Text": "in 3 year",
+      "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
           {
@@ -564,47 +538,12 @@
             "end": "2019-11-08"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 12,
-      "Length": 9,
-      "Text": "in 3 year",
-      "Type": "datetimeV2.daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTestResolution",
-  "Input": "Set an appointment for Easter",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "",
-      "Value": {
-        "values": [
-          {
-            "timex": "",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
-      },
-      "ResolutionStr": "",
-      "Start": 23,
-      "Length": 6,
-      "Text": "Easter",
-      "Type": "datetimeV2.date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "2016-2-30",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -613,7 +552,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2016-02-30",
+      "Text": "2016-2-30",
+      "Type": "datetimeV2.date",
       "Value": {
         "values": [
           {
@@ -622,18 +562,12 @@
             "value": "not resolved"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 9,
-      "Text": "2016-2-30",
-      "Type": "datetimeV2.date"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2015-1-32",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -642,7 +576,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2015-01",
+      "Text": "2015-1",
+      "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
           {
@@ -652,18 +587,12 @@
             "end": "2015-02-01"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 6,
-      "Text": "2015-1",
-      "Type": "datetimeV2.daterange"
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "2017-13-12",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -672,7 +601,8 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2017",
+      "Text": "2017",
+      "Type": "datetimeV2.daterange",
       "Value": {
         "values": [
           {
@@ -682,12 +612,7 @@
             "end": "2018-01-01"
           }
         ]
-      },
-      "ResolutionStr": "",
-      "Start": 0,
-      "Length": 4,
-      "Text": "2017",
-      "Type": "datetimeV2.daterange"
+      }
     }
   ]
 }

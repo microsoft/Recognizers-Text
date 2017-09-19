@@ -1,2125 +1,923 @@
 [{
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07",
+      "Text": "7",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:00:00"
         },
         "PastResolution": {
           "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 1,
-      "Text": "7",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07",
+      "Text": "siete",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:00:00"
         },
         "PastResolution": {
           "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 5,
-      "Text": "siete",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19",
+      "Text": "7pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:00"
         },
         "PastResolution": {
           "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 3,
-      "Text": "7pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:56",
+      "Text": "7:56pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:56",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:56:00"
         },
         "PastResolution": {
           "time": "19:56:00"
-        },
-        "FutureValue": "2017-09-14T19:56:00",
-        "PastValue": "2017-09-14T19:56:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "7:56pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56:30pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:56:30",
+      "Text": "7:56:30pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:56:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:56:30"
         },
         "PastResolution": {
           "time": "19:56:30"
-        },
-        "FutureValue": "2017-09-14T19:56:30",
-        "PastValue": "2017-09-14T19:56:30"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 9,
-      "Text": "7:56:30pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56:30 pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:56:30",
+      "Text": "7:56:30 pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:56:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:56:30"
         },
         "PastResolution": {
           "time": "19:56:30"
-        },
-        "FutureValue": "2017-09-14T19:56:30",
-        "PastValue": "2017-09-14T19:56:30"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 10,
-      "Text": "7:56:30 pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 12:34",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T12:34",
+      "Text": "12:34",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T12:34",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "12:34:00"
         },
         "PastResolution": {
           "time": "12:34:00"
-        },
-        "FutureValue": "2017-09-14T12:34:00",
-        "PastValue": "2017-09-14T12:34:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 5,
-      "Text": "12:34",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 12:34:25 ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T12:34:25",
+      "Text": "12:34:25",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T12:34:25",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "12:34:25"
         },
         "PastResolution": {
           "time": "12:34:25"
-        },
-        "FutureValue": "2017-09-14T12:34:25",
-        "PastValue": "2017-09-14T12:34:25"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 8,
-      "Text": "12:34:25",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 7 en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07",
+      "Text": "7 en punto",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:00:00"
         },
         "PastResolution": {
           "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 10,
-      "Text": "7 en punto",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las siete en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07",
+      "Text": "siete en punto",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:00:00"
         },
         "PastResolution": {
           "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 14,
-      "Text": "siete en punto",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08",
+      "Text": "8 de la mañana",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "08:00:00"
         },
         "PastResolution": {
           "time": "08:00:00"
-        },
-        "FutureValue": "2017-09-14T08:00:00",
-        "PastValue": "2017-09-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 14,
-      "Text": "8 de la mañana",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20",
+      "Text": "8 de la tarde",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T20",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "20:00:00"
         },
         "PastResolution": {
           "time": "20:00:00"
-        },
-        "FutureValue": "2017-09-14T20:00:00",
-        "PastValue": "2017-09-14T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "8 de la tarde",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8 de la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20",
+      "Text": "8 de la noche",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T20",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "20:00:00"
         },
         "PastResolution": {
           "time": "20:00:00"
-        },
-        "FutureValue": "2017-09-14T20:00:00",
-        "PastValue": "2017-09-14T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "8 de la noche",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las ocho y media",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08:30",
+      "Text": "ocho y media",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08:30",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "08:30:00"
         },
         "PastResolution": {
           "time": "08:30:00"
-        },
-        "FutureValue": "2017-09-14T08:30:00",
-        "PastValue": "2017-09-14T08:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 12,
-      "Text": "ocho y media",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las 8pm y media",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20:30",
+      "Text": "8pm y media",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T20:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "20:30:00"
         },
         "PastResolution": {
           "time": "20:30:00"
-        },
-        "FutureValue": "2017-09-14T20:30:00",
-        "PastValue": "2017-09-14T20:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 11,
-      "Text": "8pm y media",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 30 mins pasadas las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08:30",
+      "Text": "30 mins pasadas las ocho",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08:30",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "08:30:00"
         },
         "PastResolution": {
           "time": "08:30:00"
-        },
-        "FutureValue": "2017-09-14T08:30:00",
-        "PastValue": "2017-09-14T08:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 24,
-      "Text": "30 mins pasadas las ocho",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son las ocho y cuarto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08:15",
+      "Text": "ocho y cuarto",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08:15",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "08:15:00"
         },
         "PastResolution": {
           "time": "08:15:00"
-        },
-        "FutureValue": "2017-09-14T08:15:00",
-        "PastValue": "2017-09-14T08:15:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "ocho y cuarto",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son cuarto pasadas las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08:15",
+      "Text": "cuarto pasadas las ocho",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08:15",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "08:15:00"
         },
         "PastResolution": {
           "time": "08:15:00"
-        },
-        "FutureValue": "2017-09-14T08:15:00",
-        "PastValue": "2017-09-14T08:15:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 23,
-      "Text": "cuarto pasadas las ocho",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son cuarto pasadas de las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T08:15",
+      "Text": "cuarto pasadas de las ocho",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T08:15",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "08:15:00"
         },
         "PastResolution": {
           "time": "08:15:00"
-        },
-        "FutureValue": "2017-09-14T08:15:00",
-        "PastValue": "2017-09-14T08:15:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 26,
-      "Text": "cuarto pasadas de las ocho",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 9pm menos cuarto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20:45",
+      "Text": "9pm menos cuarto",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T20:45",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "20:45:00"
         },
         "PastResolution": {
           "time": "20:45:00"
-        },
-        "FutureValue": "2017-09-14T20:45:00",
-        "PastValue": "2017-09-14T20:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 16,
-      "Text": "9pm menos cuarto",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Faltan 3 minutos para las ocho",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07:57",
+      "Text": "3 minutos para las ocho",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07:57",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:57:00"
         },
         "PastResolution": {
           "time": "07:57:00"
-        },
-        "FutureValue": "2017-09-14T07:57:00",
-        "PastValue": "2017-09-14T07:57:00"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 23,
-      "Text": "3 minutos para las ocho",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media en punto",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07:30",
+      "Text": "siete y media en punto",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07:30",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "07:30:00"
         },
         "PastResolution": {
           "time": "07:30:00"
-        },
-        "FutureValue": "2017-09-14T07:30:00",
-        "PastValue": "2017-09-14T07:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 22,
-      "Text": "siete y media en punto",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:30",
+      "Text": "siete y media de la tarde",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:30:00"
         },
         "PastResolution": {
           "time": "19:30:00"
-        },
-        "FutureValue": "2017-09-14T19:30:00",
-        "PastValue": "2017-09-14T19:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 25,
-      "Text": "siete y media de la tarde",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son siete y media de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07:30",
+      "Text": "siete y media de la mañana",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "07:30:00"
         },
         "PastResolution": {
           "time": "07:30:00"
-        },
-        "FutureValue": "2017-09-14T07:30:00",
-        "PastValue": "2017-09-14T07:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 26,
-      "Text": "siete y media de la mañana",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son ocho menos cuarto de la mañana",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07:45",
+      "Text": "ocho menos cuarto de la mañana",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T07:45",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "07:45:00"
         },
         "PastResolution": {
           "time": "07:45:00"
-        },
-        "FutureValue": "2017-09-14T07:45:00",
-        "PastValue": "2017-09-14T07:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 30,
-      "Text": "ocho menos cuarto de la mañana",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Son 20 min pasadas las ocho de la tarde",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T20:20",
+      "Text": "20 min pasadas las ocho de la tarde",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T20:20",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "20:20:00"
         },
         "PastResolution": {
           "time": "20:20:00"
-        },
-        "FutureValue": "2017-09-14T20:20:00",
-        "PastValue": "2017-09-14T20:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 35,
-      "Text": "20 min pasadas las ocho de la tarde",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere por la tarde a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19",
+      "Text": "por la tarde a las 7",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:00"
         },
         "PastResolution": {
           "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 20,
-      "Text": "por la tarde a las 7",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19",
+      "Text": "a la tarde a las 7",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:00"
         },
         "PastResolution": {
           "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 18,
-      "Text": "a la tarde a las 7",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7:00",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:00",
+      "Text": "a la tarde a las 7:00",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:00",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:00"
         },
         "PastResolution": {
           "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 21,
-      "Text": "a la tarde a las 7:00",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7:00:14",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:00:14",
+      "Text": "a la tarde a las 7:00:14",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:00:14",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:14"
         },
         "PastResolution": {
           "time": "19:00:14"
-        },
-        "FutureValue": "2017-09-14T19:00:14",
-        "PastValue": "2017-09-14T19:00:14"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 24,
-      "Text": "a la tarde a las 7:00:14",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las siete pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19",
+      "Text": "a la tarde a las siete pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:00:00"
         },
         "PastResolution": {
           "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 25,
-      "Text": "a la tarde a las siete pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete treinta pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:30",
+      "Text": "siete treinta pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:30:00"
         },
         "PastResolution": {
           "time": "19:30:00"
-        },
-        "FutureValue": "2017-09-14T19:30:00",
-        "PastValue": "2017-09-14T19:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 16,
-      "Text": "siete treinta pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete treinta y cinco pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:35",
+      "Text": "siete treinta y cinco pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T19:35",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "19:35:00"
         },
         "PastResolution": {
           "time": "19:35:00"
-        },
-        "FutureValue": "2017-09-14T19:35:00",
-        "PastValue": "2017-09-14T19:35:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 24,
-      "Text": "siete treinta y cinco pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las once y cinco pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T23:05",
+      "Text": "once y cinco pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T23:05",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "23:05:00"
         },
         "PastResolution": {
           "time": "23:05:00"
-        },
-        "FutureValue": "2017-09-14T23:05:00",
-        "PastValue": "2017-09-14T23:05:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 15,
-      "Text": "once y cinco pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere 340pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T15:40",
+      "Text": "340pm",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T15:40",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "15:40:00"
         },
         "PastResolution": {
           "time": "15:40:00"
-        },
-        "FutureValue": "2017-09-14T15:40:00",
-        "PastValue": "2017-09-14T15:40:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 5,
-      "Text": "340pm",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere 1140 a.m.",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T11:40",
-      "Value": {
-        "Success": true,
-        "Timex": "T11:40",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "11:40:00"
-        },
-        "PastResolution": {
-          "time": "11:40:00"
-        },
-        "FutureValue": "2017-09-14T11:40:00",
-        "PastValue": "2017-09-14T11:40:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 9,
       "Text": "1140 a.m.",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las 7",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07",
+      "Type": "time",
       "Value": {
-        "Success": true,
-        "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
+        "Timex": "T11:40",
         "FutureResolution": {
-          "time": "07:00:00"
+          "time": "11:40:00"
         },
         "PastResolution": {
-          "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 1,
-      "Text": "7",
-      "Type": "time"
+          "time": "11:40:00"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Volvere a las siete",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07",
-      "Value": {
-        "Success": true,
-        "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 5,
-      "Text": "siete",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las 7pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19",
-      "Value": {
-        "Success": true,
-        "Timex": "T19",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 3,
-      "Text": "7pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las 7:56pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19:56",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:56",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:56:00"
-        },
-        "PastResolution": {
-          "time": "19:56:00"
-        },
-        "FutureValue": "2017-09-14T19:56:00",
-        "PastValue": "2017-09-14T19:56:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 6,
-      "Text": "7:56pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las 7:56:30pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19:56:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:56:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:56:30"
-        },
-        "PastResolution": {
-          "time": "19:56:30"
-        },
-        "FutureValue": "2017-09-14T19:56:30",
-        "PastValue": "2017-09-14T19:56:30"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 9,
-      "Text": "7:56:30pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere a las 7:56:13 pm",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:56:13",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:56:13",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:56:13"
-        },
-        "PastResolution": {
-          "time": "19:56:13"
-        },
-        "FutureValue": "2017-09-14T19:56:13",
-        "PastValue": "2017-09-14T19:56:13"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 10,
       "Text": "7:56:13 pm",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las 12:34",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T12:34",
+      "Type": "time",
       "Value": {
-        "Success": true,
-        "Timex": "T12:34",
-        "IsLunar": false,
-        "Comment": "ampm",
+        "Timex": "T19:56:13",
         "FutureResolution": {
-          "time": "12:34:00"
+          "time": "19:56:13"
         },
         "PastResolution": {
-          "time": "12:34:00"
-        },
-        "FutureValue": "2017-09-14T12:34:00",
-        "PastValue": "2017-09-14T12:34:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 5,
-      "Text": "12:34",
-      "Type": "time"
+          "time": "19:56:13"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las 12:34:45 ",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T12:34:45",
-      "Value": {
-        "Success": true,
-        "Timex": "T12:34:45",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "12:34:45"
-        },
-        "PastResolution": {
-          "time": "12:34:45"
-        },
-        "FutureValue": "2017-09-14T12:34:45",
-        "PastValue": "2017-09-14T12:34:45"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 8,
       "Text": "12:34:45",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las 7 en punto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07",
+      "Type": "time",
       "Value": {
-        "Success": true,
-        "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
+        "Timex": "T12:34:45",
         "FutureResolution": {
-          "time": "07:00:00"
+          "time": "12:34:45"
         },
         "PastResolution": {
-          "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 10,
-      "Text": "7 en punto",
-      "Type": "time"
+          "time": "12:34:45"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
-  "Input": "Son las siete en punto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07",
-      "Value": {
-        "Success": true,
-        "Timex": "T07",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "07:00:00"
-        },
-        "PastResolution": {
-          "time": "07:00:00"
-        },
-        "FutureValue": "2017-09-14T07:00:00",
-        "PastValue": "2017-09-14T07:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 14,
-      "Text": "siete en punto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las 8 de la mañana",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08",
-      "Value": {
-        "Success": true,
-        "Timex": "T08",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "08:00:00"
-        },
-        "PastResolution": {
-          "time": "08:00:00"
-        },
-        "FutureValue": "2017-09-14T08:00:00",
-        "PastValue": "2017-09-14T08:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 14,
-      "Text": "8 de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las 8 de la noche",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T20",
-      "Value": {
-        "Success": true,
-        "Timex": "T20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "20:00:00"
-        },
-        "PastResolution": {
-          "time": "20:00:00"
-        },
-        "FutureValue": "2017-09-14T20:00:00",
-        "PastValue": "2017-09-14T20:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "8 de la noche",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las ocho y media",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T08:30",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "08:30:00"
-        },
-        "PastResolution": {
-          "time": "08:30:00"
-        },
-        "FutureValue": "2017-09-14T08:30:00",
-        "PastValue": "2017-09-14T08:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 12,
-      "Text": "ocho y media",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las 8pm y media",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T20:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T20:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "20:30:00"
-        },
-        "PastResolution": {
-          "time": "20:30:00"
-        },
-        "FutureValue": "2017-09-14T20:30:00",
-        "PastValue": "2017-09-14T20:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 11,
-      "Text": "8pm y media",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son 30 mins pasadas las ocho",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T08:30",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "08:30:00"
-        },
-        "PastResolution": {
-          "time": "08:30:00"
-        },
-        "FutureValue": "2017-09-14T08:30:00",
-        "PastValue": "2017-09-14T08:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 24,
-      "Text": "30 mins pasadas las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son las ocho y cuarto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T08:15",
-      "Value": {
-        "Success": true,
-        "Timex": "T08:15",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "08:15:00"
-        },
-        "PastResolution": {
-          "time": "08:15:00"
-        },
-        "FutureValue": "2017-09-14T08:15:00",
-        "PastValue": "2017-09-14T08:15:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 13,
-      "Text": "ocho y cuarto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son 9pm menos cuarto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T20:45",
-      "Value": {
-        "Success": true,
-        "Timex": "T20:45",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "20:45:00"
-        },
-        "PastResolution": {
-          "time": "20:45:00"
-        },
-        "FutureValue": "2017-09-14T20:45:00",
-        "PastValue": "2017-09-14T20:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 16,
-      "Text": "9pm menos cuarto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Faltan 3 minutos para las ocho",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07:57",
-      "Value": {
-        "Success": true,
-        "Timex": "T07:57",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "07:57:00"
-        },
-        "PastResolution": {
-          "time": "07:57:00"
-        },
-        "FutureValue": "2017-09-14T07:57:00",
-        "PastValue": "2017-09-14T07:57:00"
-      },
-      "ResolutionStr": "",
-      "Start": 7,
-      "Length": 23,
-      "Text": "3 minutos para las ocho",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son siete y media en punto",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T07:30",
-        "IsLunar": false,
-        "Comment": "ampm",
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        },
-        "FutureValue": "2017-09-14T07:30:00",
-        "PastValue": "2017-09-14T07:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 22,
-      "Text": "siete y media en punto",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son siete y media de la tarde",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:30:00"
-        },
-        "PastResolution": {
-          "time": "19:30:00"
-        },
-        "FutureValue": "2017-09-14T19:30:00",
-        "PastValue": "2017-09-14T19:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 25,
-      "Text": "siete y media de la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son siete y media de la mañana",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T07:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        },
-        "FutureValue": "2017-09-14T07:30:00",
-        "PastValue": "2017-09-14T07:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 26,
-      "Text": "siete y media de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son ocho menos cuarto de la mañana",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T07:45",
-      "Value": {
-        "Success": true,
-        "Timex": "T07:45",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "07:45:00"
-        },
-        "PastResolution": {
-          "time": "07:45:00"
-        },
-        "FutureValue": "2017-09-14T07:45:00",
-        "PastValue": "2017-09-14T07:45:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 30,
-      "Text": "ocho menos cuarto de la mañana",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Son 20 min pasadas las ocho de la tarde",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T20:20",
-      "Value": {
-        "Success": true,
-        "Timex": "T20:20",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "20:20:00"
-        },
-        "PastResolution": {
-          "time": "20:20:00"
-        },
-        "FutureValue": "2017-09-14T20:20:00",
-        "PastValue": "2017-09-14T20:20:00"
-      },
-      "ResolutionStr": "",
-      "Start": 4,
-      "Length": 35,
-      "Text": "20 min pasadas las ocho de la tarde",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere por la tarde a las 7",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19",
-      "Value": {
-        "Success": true,
-        "Timex": "T19",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 20,
-      "Text": "por la tarde a las 7",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a la tarde a las 7",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19",
-      "Value": {
-        "Success": true,
-        "Timex": "T19",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 18,
-      "Text": "a la tarde a las 7",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a la tarde a las 7:00",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19:00",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:00",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:00:00"
-        },
-        "PastResolution": {
-          "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 21,
-      "Text": "a la tarde a las 7:00",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
   "Input": "Volvere a la tarde a las 7:00:25",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T19:00:25",
-      "Value": {
-        "Success": true,
-        "Timex": "T19:00:25",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "19:00:25"
-        },
-        "PastResolution": {
-          "time": "19:00:25"
-        },
-        "FutureValue": "2017-09-14T19:00:25",
-        "PastValue": "2017-09-14T19:00:25"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 24,
       "Text": "a la tarde a las 7:00:25",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a la tarde a las siete pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19",
+      "Type": "time",
       "Value": {
-        "Success": true,
-        "Timex": "T19",
-        "IsLunar": false,
+        "Timex": "T19:00:25",
         "FutureResolution": {
-          "time": "19:00:00"
+          "time": "19:00:25"
         },
         "PastResolution": {
-          "time": "19:00:00"
-        },
-        "FutureValue": "2017-09-14T19:00:00",
-        "PastValue": "2017-09-14T19:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 25,
-      "Text": "a la tarde a las siete pm",
-      "Type": "time"
+          "time": "19:00:25"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las siete treinta am",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T07:30",
-      "Value": {
-        "Success": true,
-        "Timex": "T07:30",
-        "IsLunar": false,
-        "FutureResolution": {
-          "time": "07:30:00"
-        },
-        "PastResolution": {
-          "time": "07:30:00"
-        },
-        "FutureValue": "2017-09-14T07:30:00",
-        "PastValue": "2017-09-14T07:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 16,
       "Text": "siete treinta am",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volvere a las siete treinta y cinco pm",
-  "NotSupported": "javascript, python",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "T19:35",
+      "Type": "time",
       "Value": {
-        "Success": true,
-        "Timex": "T19:35",
-        "IsLunar": false,
+        "Timex": "T07:30",
         "FutureResolution": {
-          "time": "19:35:00"
+          "time": "07:30:00"
         },
         "PastResolution": {
-          "time": "19:35:00"
-        },
-        "FutureValue": "2017-09-14T19:35:00",
-        "PastValue": "2017-09-14T19:35:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 24,
-      "Text": "siete treinta y cinco pm",
-      "Type": "time"
+          "time": "07:30:00"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las once y cinco",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T11:05",
+      "Text": "once y cinco",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T11:05",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "11:05:00"
         },
         "PastResolution": {
           "time": "11:05:00"
-        },
-        "FutureValue": "2017-09-14T11:05:00",
-        "PastValue": "2017-09-14T11:05:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 12,
-      "Text": "once y cinco",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere en 3 min para las cinco treinta",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T05:27",
+      "Text": "3 min para las cinco treinta",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T05:27",
-        "IsLunar": false,
-        "Comment": "ampm",
         "FutureResolution": {
           "time": "05:27:00"
         },
         "PastResolution": {
           "time": "05:27:00"
-        },
-        "FutureValue": "2017-09-14T05:27:00",
-        "PastValue": "2017-09-14T05:27:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 28,
-      "Text": "3 min para las cinco treinta",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere a las cinco y media de la noche",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T17:30",
+      "Text": "cinco y media de la noche",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T17:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "17:30:00"
         },
         "PastResolution": {
           "time": "17:30:00"
-        },
-        "FutureValue": "2017-09-14T17:30:00",
-        "PastValue": "2017-09-14T17:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 14,
-      "Length": 25,
-      "Text": "cinco y media de la noche",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
 ,
 {
-  "TestType": "BasicTest",
   "Input": "Volvere en la tarde a las cinco treinta",
   "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "T17:30",
+      "Text": "en la tarde a las cinco treinta",
+      "Type": "time",
       "Value": {
-        "Success": true,
         "Timex": "T17:30",
-        "IsLunar": false,
         "FutureResolution": {
           "time": "17:30:00"
         },
         "PastResolution": {
           "time": "17:30:00"
-        },
-        "FutureValue": "2017-09-14T17:30:00",
-        "PastValue": "2017-09-14T17:30:00"
-      },
-      "ResolutionStr": "",
-      "Start": 8,
-      "Length": 31,
-      "Text": "en la tarde a las cinco treinta",
-      "Type": "time"
+        }
+      }
     }
   ]
 }
