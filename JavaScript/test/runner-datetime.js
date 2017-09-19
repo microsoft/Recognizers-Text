@@ -1,3 +1,4 @@
+var Recognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
 var SupportedCultures = require('./runner-cultures.js');
 var _ = require('lodash');
 
@@ -15,7 +16,7 @@ module.exports = function getDateTimeRunner(config) {
             return testError(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
         }
 
-        return getExtractorTestRunner(config, extractor);
+        return getExtractorTestRunner(extractor);
     }
 
     // Parser test
@@ -28,13 +29,22 @@ module.exports = function getDateTimeRunner(config) {
             return testError(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
         }
 
-        return getParserTestRunner(config, extractor, parser);
+        return getParserTestRunner(extractor, parser);
+    }
+
+    // Model test
+    if (config.subType.includes('Model')) {
+        if (!model) {
+            return testError(`Cannot found model for ${JSON.stringify(config)}.`);
+        }
+
+        return getModelTestRunner(model);
     }
 
     return ignoredTest;
 };
 
-function getExtractorTestRunner(config, extractor) {
+function getExtractorTestRunner(extractor) {
     return function (t, testCase) {
         var expected = testCase.Results;
 
@@ -54,17 +64,10 @@ function getExtractorTestRunner(config, extractor) {
     };
 }
 
-var timezoneOffset = new Date().getTimezoneOffset() * 60 * 1000;
-
-function getParserTestRunner(config, extractor, parser) {
+function getParserTestRunner(extractor, parser) {
     return function (t, testCase) {
         var expected = testCase.Results;
-
-        // referenceDate parameter
-        var referenceDateTime = null;
-        if(testCase.Context && testCase.Context.ReferenceDateTime) {
-            referenceDateTime = new Date(Date.parse(testCase.Context.ReferenceDateTime));
-        }
+        var referenceDateTime = getReferenceDate(testCase);
 
         if (testCase.Debug) {
             debugger;
@@ -80,7 +83,32 @@ function getParserTestRunner(config, extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if(actual.value) {
+            if (actual.value) {
+                t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
+            }
+            /// TODO: check for resolution values
+        });
+    };
+}
+
+function getModelTestRunner(model) {
+    return function(t, testCase) {
+        var expected = testCase.Results;
+        var referenceDateTime = getReferenceDate(testCase);
+
+        if (testCase.Debug) {
+            debugger;
+        }
+
+        var result = model.parse(testCase.Input, referenceDateTime);
+        t.is(result.length, expected.length, 'Result count');
+        _.zip(result, expected).forEach(o => {
+            var actual = o[0];
+            var expected = o[1];
+            t.is(actual.text, expected.Text, 'Result.Text');
+            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+
+            if (actual.value) {
                 t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
             }
             /// TODO: check for resolution values
@@ -103,7 +131,17 @@ function getParser(config) {
 
     return parser;
 }
-function getModel() { return null; }
+function getModel(config) {
+    return Recognizer.instance.getDateTimeModel(SupportedCultures[config.language]);
+}
+
+function getReferenceDate(testCase) {
+    if (testCase.Context && testCase.Context.ReferenceDateTime) {
+        return new Date(Date.parse(testCase.Context.ReferenceDateTime));
+    }
+
+    return null;
+}
 
 function ignoredTest(t, testCase) {
     t.skip.true(true, 'Test case not supported.');
