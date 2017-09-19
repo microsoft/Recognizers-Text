@@ -1,6 +1,5 @@
 [{
   "Input": "明天2点到4点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -12,7 +11,6 @@
 ,
 {
   "Input": "从昨天下午两点到四点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -24,7 +22,6 @@
 ,
 {
   "Input": "从昨天下午两点到明天四点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -36,7 +33,6 @@
 ,
 {
   "Input": "从昨天5:00-6:00",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "1月15号4点和2月3号9点之间",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +55,6 @@
 ,
 {
   "Input": "2点-明天4点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +66,6 @@
 ,
 {
   "Input": "昨晚",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +77,6 @@
 ,
 {
   "Input": "昨天晚上",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +88,6 @@
 ,
 {
   "Input": "明天上午",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -108,7 +99,6 @@
 ,
 {
   "Input": "上个小时",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +110,6 @@
 ,
 {
   "Input": "之后5分钟",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,7 +121,6 @@
 ,
 {
   "Input": "之前3小时",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

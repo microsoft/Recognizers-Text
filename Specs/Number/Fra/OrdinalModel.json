@@ -1,6 +1,5 @@
 [{
   "Input": "tierce",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "trois billionieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,14 +28,12 @@
 ,
 {
   "Input": "un trillion",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "11eme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -52,7 +48,6 @@
 ,
 {
   "Input": "trois millieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -67,7 +62,6 @@
 ,
 {
   "Input": "neuf milliardieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -82,7 +76,6 @@
 ,
 {
   "Input": "22e",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -97,7 +90,6 @@
 ,
 {
   "Input": "30e",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "155e",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -127,7 +118,6 @@
 ,
 {
   "Input": "255eme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -142,7 +132,6 @@
 ,
 {
   "Input": "500000eme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -157,7 +146,6 @@
 ,
 {
   "Input": "2eme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -172,7 +160,6 @@
 ,
 {
   "Input": "onzieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,7 +174,6 @@
 ,
 {
   "Input": "vingtieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -202,7 +188,6 @@
 ,
 {
   "Input": "vingt-cinquieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -217,7 +202,6 @@
 ,
 {
   "Input": "octantieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -232,7 +216,6 @@
 ,
 {
   "Input": "deux centieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -247,7 +230,6 @@
 ,
 {
   "Input": "cent vingt cinquieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -262,7 +244,6 @@
 ,
 {
   "Input": "cent vingt-cinquieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -277,7 +258,6 @@
 ,
 {
   "Input": "soixante-dixieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -292,7 +272,6 @@
 ,
 {
   "Input": "quatre-vingtieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -307,7 +286,6 @@
 ,
 {
   "Input": "septante-huitieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -322,7 +300,6 @@
 ,
 {
   "Input": "nonante-deuxieme",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -337,7 +314,6 @@
 ,
 {
   "Input": "trois cent vingt seconde",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

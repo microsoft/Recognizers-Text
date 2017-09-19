@@ -1,6 +1,5 @@
 [{
   "Input": "let's meet in the early-morning Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -12,7 +11,6 @@
 ,
 {
   "Input": "let's meet in the late-morning Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -24,7 +22,6 @@
 ,
 {
   "Input": "let's meet in the early-afternoon Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -36,7 +33,6 @@
 ,
 {
   "Input": "let's meet in the late-afternoon Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "let's meet in the early-evening Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +55,6 @@
 ,
 {
   "Input": "let's meet in the late-evening Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +66,6 @@
 ,
 {
   "Input": "let's meet in the early-night Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +77,6 @@
 ,
 {
   "Input": "let's meet in the late-night Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +88,6 @@
 ,
 {
   "Input": "let's meet in the early night Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -108,7 +99,6 @@
 ,
 {
   "Input": "let's meet in the late night Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +110,6 @@
 ,
 {
   "Input": "let's meet in the early-morning on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,7 +121,6 @@
 ,
 {
   "Input": "let's meet in the late-morning on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +132,6 @@
 ,
 {
   "Input": "let's meet in the early-afternoon on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -156,7 +143,6 @@
 ,
 {
   "Input": "let's meet in the late-afternoon on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -168,7 +154,6 @@
 ,
 {
   "Input": "let's meet in the early-evening on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +165,6 @@
 ,
 {
   "Input": "let's meet in the late-evening on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +176,6 @@
 ,
 {
   "Input": "let's meet in the early-night on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -204,7 +187,6 @@
 ,
 {
   "Input": "let's meet in the late-night on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -216,7 +198,6 @@
 ,
 {
   "Input": "let's meet in the early night on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -228,7 +209,6 @@
 ,
 {
   "Input": "let's meet in the late night on Tuesday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +220,6 @@
 ,
 {
   "Input": "let's meet on Tuesday early-morning",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,7 +231,6 @@
 ,
 {
   "Input": "let's meet on Tuesday late-morning",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,7 +242,6 @@
 ,
 {
   "Input": "let's meet on Tuesday early-afternoon",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -276,7 +253,6 @@
 ,
 {
   "Input": "let's meet on Tuesday late-afternoon",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -288,7 +264,6 @@
 ,
 {
   "Input": "let's meet on Tuesday early-evening",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +275,6 @@
 ,
 {
   "Input": "let's meet on Tuesday late-evening",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -312,7 +286,6 @@
 ,
 {
   "Input": "let's meet on Tuesday early-night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -324,7 +297,6 @@
 ,
 {
   "Input": "let's meet on Tuesday late-night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -336,7 +308,6 @@
 ,
 {
   "Input": "let's meet on Tuesday early night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -348,7 +319,6 @@
 ,
 {
   "Input": "let's meet on Tuesday late night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +330,6 @@
 ,
 {
   "Input": "I'll be out five to seven today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -372,7 +341,6 @@
 ,
 {
   "Input": "I'll be out five to seven of tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -384,7 +352,6 @@
 ,
 {
   "Input": "I'll be out from 5 to 6 next sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,7 +363,6 @@
 ,
 {
   "Input": "I'll be out from 5 to 6pm next sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -408,7 +374,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to 5pm today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +385,6 @@
 ,
 {
   "Input": "I'll be out from 4pm today to 5pm tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +396,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to 5pm of tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -444,7 +407,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to 5pm of 2017-6-6",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -456,7 +418,6 @@
 ,
 {
   "Input": "I'll be out from 4pm to 5pm May 5, 2018",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -468,7 +429,6 @@
 ,
 {
   "Input": "I'll be out from 4:00 to 5pm May 5, 2018",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +440,6 @@
 ,
 {
   "Input": "I'll be out from 4pm on Jan 1, 2016 to 5pm today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -492,7 +451,6 @@
 ,
 {
   "Input": "I'll be out from 2:00pm, 2016-2-21 to 3:32, 04/23/2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -504,7 +462,6 @@
 ,
 {
   "Input": "I'll be out from today at 4 to next Wedn at 5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -516,7 +473,6 @@
 ,
 {
   "Input": "I'll be out between 4pm and 5pm today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,7 +484,6 @@
 ,
 {
   "Input": "I'll be out between 4pm on Jan 1, 2016 and 5pm today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +495,6 @@
 ,
 {
   "Input": "I'll go back tonight",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -552,7 +506,6 @@
 ,
 {
   "Input": "I'll go back this night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -564,7 +517,6 @@
 ,
 {
   "Input": "I'll go back this evening",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -576,7 +528,6 @@
 ,
 {
   "Input": "I'll go back this morning",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -588,7 +539,6 @@
 ,
 {
   "Input": "I'll go back this afternoon",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,7 +550,6 @@
 ,
 {
   "Input": "I'll go back next night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -612,7 +561,6 @@
 ,
 {
   "Input": "I'll go back last night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +572,6 @@
 ,
 {
   "Input": "I'll go back tomorrow night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -636,7 +583,6 @@
 ,
 {
   "Input": "I'll go back next monday afternoon",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -648,7 +594,6 @@
 ,
 {
   "Input": "I'll go back May 5th night",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,7 +605,6 @@
 ,
 {
   "Input": "I'll go back last 3 minute",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +616,6 @@
 ,
 {
   "Input": "I'll go back past 3 minute",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -684,7 +627,6 @@
 ,
 {
   "Input": "I'll go back previous 3 minute",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -696,7 +638,6 @@
 ,
 {
   "Input": "I'll go back previous 3mins",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -708,7 +649,6 @@
 ,
 {
   "Input": "I'll go back next 5 hrs",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,7 +660,6 @@
 ,
 {
   "Input": "I'll go back last minute",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -732,7 +671,6 @@
 ,
 {
   "Input": "I'll go back next hour",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -744,7 +682,6 @@
 ,
 {
   "Input": "I'll go back last few minutes",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -756,7 +693,6 @@
 ,
 {
   "Input": "I'll go back past several minutes",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -768,7 +704,6 @@
 ,
 {
   "Input": "I'll go back tuesday in the morning",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -780,7 +715,6 @@
 ,
 {
   "Input": "I'll go back tuesday in the afternoon",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -792,7 +726,6 @@
 ,
 {
   "Input": "I'll go back tuesday in the evening",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

@@ -1,6 +1,5 @@
 [{
   "Input": "第二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "第２５０",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "第一名第二名第三名第四名",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -66,7 +63,6 @@
 ,
 {
   "Input": "第十四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -81,7 +77,6 @@
 ,
 {
   "Input": "第三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

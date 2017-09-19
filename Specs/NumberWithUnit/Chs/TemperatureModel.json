@@ -1,6 +1,5 @@
 [{
   "Input": "设置恒温器为85度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "把温度升高5度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "正常的温度是华氏温度98.6度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "华氏温度100度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +60,6 @@
 ,
 {
   "Input": "20摄氏度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +75,6 @@
 ,
 {
   "Input": "外面的温度是98度",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +90,6 @@
 ,
 {
   "Input": "你能把华氏温度51度转换为摄氏度吗",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

@@ -1,6 +1,5 @@
 [{
   "Input": "事件 每天都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -21,7 +20,6 @@
 ,
 {
   "Input": "事件每日都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -42,7 +40,6 @@
 ,
 {
   "Input": "事件每周都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -63,7 +60,6 @@
 ,
 {
   "Input": "事件每个星期都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +80,6 @@
 ,
 {
   "Input": "事件每个月都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -105,7 +100,6 @@
 ,
 {
   "Input": "事件每年都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -126,7 +120,6 @@
 ,
 {
   "Input": "事件每周一都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -147,7 +140,6 @@
 ,
 {
   "Input": "事件每周一下午八点都发生",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

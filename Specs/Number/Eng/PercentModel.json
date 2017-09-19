@@ -1,6 +1,33 @@
 [{
+  "Input": "100%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100% ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": " 100 percent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +42,6 @@
 ,
 {
   "Input": " 100 percentage",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +56,6 @@
 ,
 {
   "Input": "240 percent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -45,7 +70,6 @@
 ,
 {
   "Input": "twenty percent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +84,6 @@
 ,
 {
   "Input": "thirty percentage",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -75,7 +98,6 @@
 ,
 {
   "Input": "one hundred percent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -90,7 +112,6 @@
 ,
 {
   "Input": "one hundred percents",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -105,7 +126,6 @@
 ,
 {
   "Input": "percents of twenty",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +140,6 @@
 ,
 {
   "Input": "percent of 10",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -135,7 +154,6 @@
 ,
 {
   "Input": "per cent of twenty-two",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -150,7 +168,6 @@
 ,
 {
   "Input": "per cent of 210",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,7 +182,6 @@
 ,
 {
   "Input": "10 percent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

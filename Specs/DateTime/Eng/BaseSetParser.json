@@ -1,9 +1,8 @@
 [{
   "Input": "I'll leave every morning at 9am",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.2487794-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.8535959-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -25,9 +24,8 @@
 {
   "Input": "I'll leave every afternoon at 4pm",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.2782829-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.871075-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -49,9 +47,8 @@
 {
   "Input": "I'll leave every night at 9pm",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.3112807-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.8905942-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -73,9 +70,8 @@
 {
   "Input": "I'll leave every night at 9",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.33678-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.9065767-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -97,9 +93,8 @@
 {
   "Input": "I'll leave mornings at 9am",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.3602783-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.9190779-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -121,9 +116,8 @@
 {
   "Input": "I'll leave on mornings at 9",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:08.3872802-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:52.9300726-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -145,9 +139,8 @@
 {
   "Input": "I'll leave weekly",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5247803-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1125796-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -169,9 +162,8 @@
 {
   "Input": "I'll leave biweekly",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5257824-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1135779-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -193,9 +185,8 @@
 {
   "Input": "I'll leave daily",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5262825-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1190779-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -217,9 +208,8 @@
 {
   "Input": "I'll leave every day",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5332796-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1225759-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -241,9 +231,8 @@
 {
   "Input": "I'll leave each month",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5402794-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1260796-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -265,9 +254,8 @@
 {
   "Input": "I'll leave annually",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5417812-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1270808-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -289,9 +277,8 @@
 {
   "Input": "I'll leave annual",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5437794-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1280801-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -313,9 +300,8 @@
 {
   "Input": "I'll leave each two days",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5587788-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1335796-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -337,9 +323,8 @@
 {
   "Input": "I'll leave every three week",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5727823-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1405738-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -361,9 +346,8 @@
 {
   "Input": "I'll leave 3pm every day",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5772806-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.149074-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -385,9 +369,8 @@
 {
   "Input": "I'll leave 3pm each day",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.5912821-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1620786-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -409,9 +392,8 @@
 {
   "Input": "I'll leave each 4/15",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.6107804-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1945744-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -433,9 +415,8 @@
 {
   "Input": "I'll leave every monday",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.623282-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.1995729-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -457,9 +438,8 @@
 {
   "Input": "I'll leave each monday 4pm",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.6432823-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.2095744-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -481,9 +461,8 @@
 {
   "Input": "I'll leave every morning",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:10.6562808-03:00"
+    "ReferenceDateTime": "2017-09-19T15:39:54.214076-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -505,9 +484,8 @@
 {
   "Input": "I'll leave on Mondays",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:21.9793058-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:00.2435976-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -529,9 +507,8 @@
 {
   "Input": "I'll leave on Sundays",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:22.0038062-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:00.2510785-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -553,9 +530,8 @@
 {
   "Input": "I'll leave Sundays",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:22.0283057-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:00.2590781-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -577,9 +553,8 @@
 {
   "Input": "I'll leave at 9am every Sunday",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:28.9551389-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:03.8315812-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -601,9 +576,8 @@
 {
   "Input": "I'll leave at 9am on Sundays",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:28.9921405-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:03.8465769-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -625,9 +599,8 @@
 {
   "Input": "I'll leave at 9am Sundays",
   "Context": {
-    "ReferenceDateTime": "2017-09-19T13:01:29.0276404-03:00"
+    "ReferenceDateTime": "2017-09-19T15:40:03.8615801-03:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

@@ -1,6 +1,5 @@
 [{
   "Input": "I'll leave over the weekend",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -12,7 +11,6 @@
 ,
 {
   "Input": "I'll be out next 3 days",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -24,7 +22,6 @@
 ,
 {
   "Input": "I'll be out next 3 months",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -36,7 +33,6 @@
 ,
 {
   "Input": "I'll be out in 3 year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "I'll be out in 3 years",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +55,6 @@
 ,
 {
   "Input": "I'll be out in 3 weeks",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +66,6 @@
 ,
 {
   "Input": "I'll be out in 3 months",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +77,6 @@
 ,
 {
   "Input": "I'll be out past 3 weeks",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +88,6 @@
 ,
 {
   "Input": "I'll be out last 3year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -108,7 +99,6 @@
 ,
 {
   "Input": "I'll be out last year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +110,6 @@
 ,
 {
   "Input": "I'll be out past month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,7 +121,6 @@
 ,
 {
   "Input": "I'll be out previous 3 weeks",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +132,6 @@
 ,
 {
   "Input": "past few weeks",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -156,7 +143,6 @@
 ,
 {
   "Input": "past several days",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -168,7 +154,6 @@
 ,
 {
   "Input": "I'll leave this summer",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +165,6 @@
 ,
 {
   "Input": "I'll leave next spring",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +176,6 @@
 ,
 {
   "Input": "I'll leave the summer",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -204,7 +187,6 @@
 ,
 {
   "Input": "I'll leave summer",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -216,7 +198,6 @@
 ,
 {
   "Input": "I'll leave summer 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -228,7 +209,6 @@
 ,
 {
   "Input": "I'll leave summer of 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +220,6 @@
 ,
 {
   "Input": "I'll be out in Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,7 +231,6 @@
 ,
 {
   "Input": "I'll be out this Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,7 +242,6 @@
 ,
 {
   "Input": "I'll be out month of Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -276,7 +253,6 @@
 ,
 {
   "Input": "I'll be out the month of Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -288,7 +264,6 @@
 ,
 {
   "Input": "I was missing Jan 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +275,6 @@
 ,
 {
   "Input": "I was missing Jan, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -312,7 +286,6 @@
 ,
 {
   "Input": "I'll be out in Feb",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -324,7 +297,6 @@
 ,
 {
   "Input": "I'll be out this Feb",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -336,7 +308,6 @@
 ,
 {
   "Input": "I'll be out month of Feb",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -348,7 +319,6 @@
 ,
 {
   "Input": "I'll be out the month of Feb",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +330,6 @@
 ,
 {
   "Input": "I was missing Feb 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -372,7 +341,6 @@
 ,
 {
   "Input": "I was missing Feb, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -384,7 +352,6 @@
 ,
 {
   "Input": "I'll be out in Mar",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,7 +363,6 @@
 ,
 {
   "Input": "I'll be out this Mar",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -408,7 +374,6 @@
 ,
 {
   "Input": "I'll be out month of Mar",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +385,6 @@
 ,
 {
   "Input": "I'll be out the month of Mar",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +396,6 @@
 ,
 {
   "Input": "I was missing Mar 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -444,7 +407,6 @@
 ,
 {
   "Input": "I was missing Mar, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -456,7 +418,6 @@
 ,
 {
   "Input": "I'll be out in Apr",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -468,7 +429,6 @@
 ,
 {
   "Input": "I'll be out this Apr",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +440,6 @@
 ,
 {
   "Input": "I'll be out month of Apr",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -492,7 +451,6 @@
 ,
 {
   "Input": "I'll be out the month of Apr",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -504,7 +462,6 @@
 ,
 {
   "Input": "I was missing Apr 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -516,7 +473,6 @@
 ,
 {
   "Input": "I was missing Apr, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,7 +484,6 @@
 ,
 {
   "Input": "I'll be out in May",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +495,6 @@
 ,
 {
   "Input": "I'll be out this May",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -552,7 +506,6 @@
 ,
 {
   "Input": "I'll be out month of May",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -564,7 +517,6 @@
 ,
 {
   "Input": "I'll be out the month of May",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -576,7 +528,6 @@
 ,
 {
   "Input": "I was missing May 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -588,7 +539,6 @@
 ,
 {
   "Input": "I was missing May, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,7 +550,6 @@
 ,
 {
   "Input": "I'll be out in Jun",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -612,7 +561,6 @@
 ,
 {
   "Input": "I'll be out this Jun",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +572,6 @@
 ,
 {
   "Input": "I'll be out month of Jun",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -636,7 +583,6 @@
 ,
 {
   "Input": "I'll be out the month of Jun",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -648,7 +594,6 @@
 ,
 {
   "Input": "I was missing Jun 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,7 +605,6 @@
 ,
 {
   "Input": "I was missing Jun, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +616,6 @@
 ,
 {
   "Input": "I'll be out in Jul",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -684,7 +627,6 @@
 ,
 {
   "Input": "I'll be out this Jul",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -696,7 +638,6 @@
 ,
 {
   "Input": "I'll be out month of Jul",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -708,7 +649,6 @@
 ,
 {
   "Input": "I'll be out the month of Jul",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,7 +660,6 @@
 ,
 {
   "Input": "I was missing Jul 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -732,7 +671,6 @@
 ,
 {
   "Input": "I was missing Jul, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -744,7 +682,6 @@
 ,
 {
   "Input": "I'll be out in Aug",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -756,7 +693,6 @@
 ,
 {
   "Input": "I'll be out this Aug",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -768,7 +704,6 @@
 ,
 {
   "Input": "I'll be out month of Aug",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -780,7 +715,6 @@
 ,
 {
   "Input": "I'll be out the month of Aug",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -792,7 +726,6 @@
 ,
 {
   "Input": "I was missing Aug 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -804,7 +737,6 @@
 ,
 {
   "Input": "I was missing Aug, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -816,7 +748,6 @@
 ,
 {
   "Input": "I'll be out in Sep",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -828,7 +759,6 @@
 ,
 {
   "Input": "I'll be out this Sep",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -840,7 +770,6 @@
 ,
 {
   "Input": "I'll be out month of Sep",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -852,7 +781,6 @@
 ,
 {
   "Input": "I'll be out the month of Sep",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -864,7 +792,6 @@
 ,
 {
   "Input": "I was missing Sep 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -876,7 +803,6 @@
 ,
 {
   "Input": "I was missing Sep, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -888,7 +814,6 @@
 ,
 {
   "Input": "I'll be out in Sept",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -900,7 +825,6 @@
 ,
 {
   "Input": "I'll be out this Sept",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -912,7 +836,6 @@
 ,
 {
   "Input": "I'll be out month of Sept",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -924,7 +847,6 @@
 ,
 {
   "Input": "I'll be out the month of Sept",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -936,7 +858,6 @@
 ,
 {
   "Input": "I was missing Sept 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -948,7 +869,6 @@
 ,
 {
   "Input": "I was missing Sept, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -960,7 +880,6 @@
 ,
 {
   "Input": "I'll be out in Oct",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -972,7 +891,6 @@
 ,
 {
   "Input": "I'll be out this Oct",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -984,7 +902,6 @@
 ,
 {
   "Input": "I'll be out month of Oct",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -996,7 +913,6 @@
 ,
 {
   "Input": "I'll be out the month of Oct",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1008,7 +924,6 @@
 ,
 {
   "Input": "I was missing Oct 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1020,7 +935,6 @@
 ,
 {
   "Input": "I was missing Oct, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1032,7 +946,6 @@
 ,
 {
   "Input": "I'll be out in Nov",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1044,7 +957,6 @@
 ,
 {
   "Input": "I'll be out this Nov",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1056,7 +968,6 @@
 ,
 {
   "Input": "I'll be out month of Nov",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1068,7 +979,6 @@
 ,
 {
   "Input": "I'll be out the month of Nov",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1080,7 +990,6 @@
 ,
 {
   "Input": "I was missing Nov 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1092,7 +1001,6 @@
 ,
 {
   "Input": "I was missing Nov, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1104,7 +1012,6 @@
 ,
 {
   "Input": "I'll be out in Dec",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1116,7 +1023,6 @@
 ,
 {
   "Input": "I'll be out this Dec",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1128,7 +1034,6 @@
 ,
 {
   "Input": "I'll be out month of Dec",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1140,7 +1045,6 @@
 ,
 {
   "Input": "I'll be out the month of Dec",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1152,7 +1056,6 @@
 ,
 {
   "Input": "I was missing Dec 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1164,7 +1067,6 @@
 ,
 {
   "Input": "I was missing Dec, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1176,7 +1078,6 @@
 ,
 {
   "Input": "I'll be out in January",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1188,7 +1089,6 @@
 ,
 {
   "Input": "I'll be out this January",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1200,7 +1100,6 @@
 ,
 {
   "Input": "I'll be out month of January",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1212,7 +1111,6 @@
 ,
 {
   "Input": "I'll be out the month of January",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1224,7 +1122,6 @@
 ,
 {
   "Input": "I was missing January 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1236,7 +1133,6 @@
 ,
 {
   "Input": "I was missing January, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1248,7 +1144,6 @@
 ,
 {
   "Input": "I'll be out in February",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1260,7 +1155,6 @@
 ,
 {
   "Input": "I'll be out this February",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1272,7 +1166,6 @@
 ,
 {
   "Input": "I'll be out month of February",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1284,7 +1177,6 @@
 ,
 {
   "Input": "I'll be out the month of February",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1296,7 +1188,6 @@
 ,
 {
   "Input": "I was missing February 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1308,7 +1199,6 @@
 ,
 {
   "Input": "I was missing February, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1320,7 +1210,6 @@
 ,
 {
   "Input": "I'll be out in March",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1332,7 +1221,6 @@
 ,
 {
   "Input": "I'll be out this March",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1344,7 +1232,6 @@
 ,
 {
   "Input": "I'll be out month of March",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1356,7 +1243,6 @@
 ,
 {
   "Input": "I'll be out the month of March",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1368,7 +1254,6 @@
 ,
 {
   "Input": "I was missing March 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1380,7 +1265,6 @@
 ,
 {
   "Input": "I was missing March, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1392,7 +1276,6 @@
 ,
 {
   "Input": "I'll be out in April",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1404,7 +1287,6 @@
 ,
 {
   "Input": "I'll be out this April",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1416,7 +1298,6 @@
 ,
 {
   "Input": "I'll be out month of April",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1428,7 +1309,6 @@
 ,
 {
   "Input": "I'll be out the month of April",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1440,7 +1320,6 @@
 ,
 {
   "Input": "I was missing April 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1452,7 +1331,6 @@
 ,
 {
   "Input": "I was missing April, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1464,7 +1342,6 @@
 ,
 {
   "Input": "I'll be out in June",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1476,7 +1353,6 @@
 ,
 {
   "Input": "I'll be out this June",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1488,7 +1364,6 @@
 ,
 {
   "Input": "I'll be out month of June",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1500,7 +1375,6 @@
 ,
 {
   "Input": "I'll be out the month of June",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1512,7 +1386,6 @@
 ,
 {
   "Input": "I was missing June 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1524,7 +1397,6 @@
 ,
 {
   "Input": "I was missing June, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1536,7 +1408,6 @@
 ,
 {
   "Input": "I'll be out in July",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1548,7 +1419,6 @@
 ,
 {
   "Input": "I'll be out this July",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1560,7 +1430,6 @@
 ,
 {
   "Input": "I'll be out month of July",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1572,7 +1441,6 @@
 ,
 {
   "Input": "I'll be out the month of July",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1584,7 +1452,6 @@
 ,
 {
   "Input": "I was missing July 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1596,7 +1463,6 @@
 ,
 {
   "Input": "I was missing July, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1608,7 +1474,6 @@
 ,
 {
   "Input": "I'll be out in August",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1620,7 +1485,6 @@
 ,
 {
   "Input": "I'll be out this August",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1632,7 +1496,6 @@
 ,
 {
   "Input": "I'll be out month of August",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1644,7 +1507,6 @@
 ,
 {
   "Input": "I'll be out the month of August",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1656,7 +1518,6 @@
 ,
 {
   "Input": "I was missing August 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1668,7 +1529,6 @@
 ,
 {
   "Input": "I was missing August, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1680,7 +1540,6 @@
 ,
 {
   "Input": "I'll be out in September",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1692,7 +1551,6 @@
 ,
 {
   "Input": "I'll be out this September",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1704,7 +1562,6 @@
 ,
 {
   "Input": "I'll be out month of September",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1716,7 +1573,6 @@
 ,
 {
   "Input": "I'll be out the month of September",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1728,7 +1584,6 @@
 ,
 {
   "Input": "I was missing September 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1740,7 +1595,6 @@
 ,
 {
   "Input": "I was missing September, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1752,7 +1606,6 @@
 ,
 {
   "Input": "I'll be out in October",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1764,7 +1617,6 @@
 ,
 {
   "Input": "I'll be out this October",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1776,7 +1628,6 @@
 ,
 {
   "Input": "I'll be out month of October",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1788,7 +1639,6 @@
 ,
 {
   "Input": "I'll be out the month of October",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1800,7 +1650,6 @@
 ,
 {
   "Input": "I was missing October 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1812,7 +1661,6 @@
 ,
 {
   "Input": "I was missing October, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1824,7 +1672,6 @@
 ,
 {
   "Input": "I'll be out in November",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1836,7 +1683,6 @@
 ,
 {
   "Input": "I'll be out this November",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1848,7 +1694,6 @@
 ,
 {
   "Input": "I'll be out month of November",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1860,7 +1705,6 @@
 ,
 {
   "Input": "I'll be out the month of November",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1872,7 +1716,6 @@
 ,
 {
   "Input": "I was missing November 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1884,7 +1727,6 @@
 ,
 {
   "Input": "I was missing November, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1896,7 +1738,6 @@
 ,
 {
   "Input": "I'll be out in December",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1908,7 +1749,6 @@
 ,
 {
   "Input": "I'll be out this December",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1920,7 +1760,6 @@
 ,
 {
   "Input": "I'll be out month of December",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1932,7 +1771,6 @@
 ,
 {
   "Input": "I'll be out the month of December",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1944,7 +1782,6 @@
 ,
 {
   "Input": "I was missing December 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1956,7 +1793,6 @@
 ,
 {
   "Input": "I was missing December, 2001",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1968,7 +1804,6 @@
 ,
 {
   "Input": "Calendar for the month of September.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1980,7 +1815,6 @@
 ,
 {
   "Input": "week of september.15th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1992,7 +1826,6 @@
 ,
 {
   "Input": "month of september.15th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2004,7 +1837,6 @@
 ,
 {
   "Input": "I'll be out Oct. 2 to October 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2016,7 +1848,6 @@
 ,
 {
   "Input": "I'll be out January 12, 2016 - 02/22/2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2028,7 +1859,6 @@
 ,
 {
   "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2040,7 +1870,6 @@
 ,
 {
   "Input": "I'll be out today till tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2052,7 +1881,6 @@
 ,
 {
   "Input": "I'll be out today to October 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2064,7 +1892,6 @@
 ,
 {
   "Input": "I'll be out Oct. 2 until the day after tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2076,7 +1903,6 @@
 ,
 {
   "Input": "I'll be out today until next Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2088,7 +1914,6 @@
 ,
 {
   "Input": "I'll be out this Friday until next Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2100,7 +1925,6 @@
 ,
 {
   "Input": "I'll be out from Oct. 2 to October 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2112,7 +1936,6 @@
 ,
 {
   "Input": "I'll be out from 2015/08/12 until October 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2124,7 +1947,6 @@
 ,
 {
   "Input": "I'll be out from today till tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2136,7 +1958,6 @@
 ,
 {
   "Input": "I'll be out from this Friday until next Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2148,7 +1969,6 @@
 ,
 {
   "Input": "I'll be out between Oct. 2 and October 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2160,7 +1980,6 @@
 ,
 {
   "Input": "I'll be out November 19-20",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2172,7 +1991,6 @@
 ,
 {
   "Input": "I'll be out November 19 to 20",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2184,7 +2002,6 @@
 ,
 {
   "Input": "I'll be out November between 19 and 20",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2196,7 +2013,6 @@
 ,
 {
   "Input": "I'll be out the third quarter of 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2208,7 +2024,6 @@
 ,
 {
   "Input": "I'll be out the third quarter this year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2220,7 +2035,6 @@
 ,
 {
   "Input": "I'll be out 2016 the third quarter",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2232,7 +2046,6 @@
 ,
 {
   "Input": "I'll be out 2015.3",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2244,7 +2057,6 @@
 ,
 {
   "Input": "I'll be out 2015-3",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2256,7 +2068,6 @@
 ,
 {
   "Input": "I'll be out 2015/3",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2268,7 +2079,6 @@
 ,
 {
   "Input": "I'll be out 3/2015",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2280,7 +2090,6 @@
 ,
 {
   "Input": "I'll be out the third week of 2027",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2292,7 +2101,6 @@
 ,
 {
   "Input": "I'll be out the third week next year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2304,7 +2112,6 @@
 ,
 {
   "Input": "upcoming month holidays",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2316,7 +2123,6 @@
 ,
 {
   "Input": "next month holidays",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2328,7 +2134,6 @@
 ,
 {
   "Input": "I'll be out from 4 to 22 this month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2340,7 +2145,6 @@
 ,
 {
   "Input": "I'll be out from 4-23 in next month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2352,7 +2156,6 @@
 ,
 {
   "Input": "I'll be out from 3 until 12 of Sept hahaha",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2364,7 +2167,6 @@
 ,
 {
   "Input": "I'll be out 4 to 23 next month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2376,7 +2178,6 @@
 ,
 {
   "Input": "I'll be out 4 till 23 of this month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2388,7 +2189,6 @@
 ,
 {
   "Input": "I'll be out between 4 and 22 this month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2400,7 +2200,6 @@
 ,
 {
   "Input": "I'll be out between 3 and 12 of Sept hahaha",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2412,7 +2211,6 @@
 ,
 {
   "Input": "I'll be out between september 4th through september 8th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2424,7 +2222,6 @@
 ,
 {
   "Input": "I'll be out between November 15th through 19th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2436,7 +2233,6 @@
 ,
 {
   "Input": "I'll be out between November 15th through the 19th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2448,7 +2244,6 @@
 ,
 {
   "Input": "I'll be out between November the 15th through 19th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2460,7 +2255,6 @@
 ,
 {
   "Input": "I'll be out from 4 to 22 January, 2017",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2472,7 +2266,6 @@
 ,
 {
   "Input": "I'll be out between 4-22 January, 2017",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2484,7 +2277,6 @@
 ,
 {
   "Input": "I'll be out on this week",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2496,7 +2288,6 @@
 ,
 {
   "Input": "I'll be out September",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2508,7 +2299,6 @@
 ,
 {
   "Input": "I'll be out last sept",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2520,7 +2310,6 @@
 ,
 {
   "Input": "I'll be out next june",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2532,7 +2321,6 @@
 ,
 {
   "Input": "I'll be out june 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2544,7 +2332,6 @@
 ,
 {
   "Input": "I'll be out june next year",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2556,7 +2343,6 @@
 ,
 {
   "Input": "I'll be out this weekend",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2568,7 +2354,6 @@
 ,
 {
   "Input": "I'll be out the third week of this month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2580,7 +2365,6 @@
 ,
 {
   "Input": "I'll be out the last week of july",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2592,7 +2376,6 @@
 ,
 {
   "Input": "schedule camping for Friday through Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

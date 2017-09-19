@@ -1,6 +1,5 @@
 [{
   "Input": "江苏彩民15元中大乐透1600万 奖池36.57亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "其中，四川彩友中得1注1000万元基本头奖；",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "本期开奖结束后，奖池金额攀升至36.57亿元。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "１欧元可以",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +60,6 @@
 ,
 {
   "Input": "兑换１．０７５３美元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +75,6 @@
 ,
 {
   "Input": "兑换1.0092瑞士法郎",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +90,6 @@
 ,
 {
   "Input": "2016年由于并购等直接投资，中国资金净流出1200亿美元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +105,6 @@
 ,
 {
   "Input": "宝安科技公司与国际精密的15位股东签署收购协议，以每股1.95港元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -128,7 +120,6 @@
 ,
 {
   "Input": "央行到期定存单5306亿台币",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +135,6 @@
 ,
 {
   "Input": "东芝重组另需1万亿日元 已向交易银行申请贷款",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -160,7 +150,6 @@
 ,
 {
   "Input": "达到445奈拉兑换",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,7 +165,6 @@
 ,
 {
   "Input": "十五美元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +180,6 @@
 ,
 {
   "Input": "十美元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

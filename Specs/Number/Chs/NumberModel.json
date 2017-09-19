@@ -1,6 +1,5 @@
 [{
   "Input": "两百点两",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -22,7 +21,6 @@
 ,
 {
   "Input": "一点两小时的会议",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -44,7 +42,6 @@
 ,
 {
   "Input": "一只",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -59,7 +56,6 @@
 ,
 {
   "Input": "十斤",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -74,14 +70,12 @@
 ,
 {
   "Input": "一切",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "九年八吨",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -103,7 +97,6 @@
 ,
 {
   "Input": "肆佰陸拾",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -118,7 +111,6 @@
 ,
 {
   "Input": "十 余 万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -133,7 +125,6 @@
 ,
 {
   "Input": "一百五十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -148,7 +139,6 @@
 ,
 {
   "Input": "壹佰伍拾",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -163,7 +153,6 @@
 ,
 {
   "Input": "两千四百五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -178,7 +167,6 @@
 ,
 {
   "Input": "负三十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -193,21 +181,18 @@
 ,
 {
   "Input": "万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "万万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -222,7 +207,6 @@
 ,
 {
   "Input": "10万万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -237,7 +221,6 @@
 ,
 {
   "Input": "4.78万亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,7 +235,6 @@
 ,
 {
   "Input": "7 万5 千4 百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -267,7 +249,6 @@
 ,
 {
   "Input": "40k",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -282,7 +263,6 @@
 ,
 {
   "Input": "二十 億",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -297,7 +277,6 @@
 ,
 {
   "Input": "４，５６５",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -312,7 +291,6 @@
 ,
 {
   "Input": "四百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -327,7 +305,6 @@
 ,
 {
   "Input": "四百五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -342,7 +319,6 @@
 ,
 {
   "Input": "一千零一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -357,7 +333,6 @@
 ,
 {
   "Input": "一百零一万一千",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -372,7 +347,6 @@
 ,
 {
   "Input": "一千两百三十四万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -387,7 +361,6 @@
 ,
 {
   "Input": "五亿零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -402,7 +375,6 @@
 ,
 {
   "Input": "七十八万五佰零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -417,7 +389,6 @@
 ,
 {
   "Input": "肆拾肆",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +403,6 @@
 ,
 {
   "Input": "倆千两百贰拾二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -447,7 +417,6 @@
 ,
 {
   "Input": "5万4千6百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -462,7 +431,6 @@
 ,
 {
   "Input": "5亿1万4千6百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -477,7 +445,6 @@
 ,
 {
   "Input": "-10000",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -492,7 +459,6 @@
 ,
 {
   "Input": "一打",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -507,7 +473,6 @@
 ,
 {
   "Input": "拾万零五十六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -522,7 +487,6 @@
 ,
 {
   "Input": "十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -537,7 +501,6 @@
 ,
 {
   "Input": "十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -552,7 +515,6 @@
 ,
 {
   "Input": "一百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -567,7 +529,6 @@
 ,
 {
   "Input": "九百九十九",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -582,7 +543,6 @@
 ,
 {
   "Input": "九百九",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -597,7 +557,6 @@
 ,
 {
   "Input": "二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -612,7 +571,6 @@
 ,
 {
   "Input": "一千零五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -627,7 +585,6 @@
 ,
 {
   "Input": "一千零五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -642,7 +599,6 @@
 ,
 {
   "Input": "一千陆",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -657,7 +613,6 @@
 ,
 {
   "Input": "一万三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +627,6 @@
 ,
 {
   "Input": "一万二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -687,7 +641,6 @@
 ,
 {
   "Input": "一万零二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -702,7 +655,6 @@
 ,
 {
   "Input": "九万四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -717,7 +669,6 @@
 ,
 {
   "Input": "九十二万四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -732,7 +683,6 @@
 ,
 {
   "Input": "九万零四百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -747,7 +697,6 @@
 ,
 {
   "Input": "九百万零四百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -762,7 +711,6 @@
 ,
 {
   "Input": "四千零五万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -777,7 +725,6 @@
 ,
 {
   "Input": "四千万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -792,7 +739,6 @@
 ,
 {
   "Input": "四千万零六千",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -807,7 +753,6 @@
 ,
 {
   "Input": "四亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -822,7 +767,6 @@
 ,
 {
   "Input": "四亿五千六百四十二万零一十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -837,7 +781,6 @@
 ,
 {
   "Input": "四万五千六百二十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -852,7 +795,6 @@
 ,
 {
   "Input": "五兆六十二亿四万五千二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -867,7 +809,6 @@
 ,
 {
   "Input": "五十五兆一十二亿四万五千二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -882,7 +823,6 @@
 ,
 {
   "Input": "十万柒仟捌佰伍拾肆",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -897,7 +837,6 @@
 ,
 {
   "Input": "半百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -912,7 +851,6 @@
 ,
 {
   "Input": "拾六万零五百零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -927,7 +865,6 @@
 ,
 {
   "Input": "拾亿零六万零五百零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -942,7 +879,6 @@
 ,
 {
   "Input": "一百万零四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -957,7 +893,6 @@
 ,
 {
   "Input": "四十万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -972,7 +907,6 @@
 ,
 {
   "Input": "四千零四万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -987,7 +921,6 @@
 ,
 {
   "Input": "四十五亿四千零四万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1002,7 +935,6 @@
 ,
 {
   "Input": "负四十五亿零四百零四万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1017,7 +949,6 @@
 ,
 {
   "Input": "负四百零五亿零四百零四万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1032,7 +963,6 @@
 ,
 {
   "Input": "四万万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1047,7 +977,6 @@
 ,
 {
   "Input": "五十打",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1062,7 +991,6 @@
 ,
 {
   "Input": "百三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1077,7 +1005,6 @@
 ,
 {
   "Input": "1, 234, 567",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1106,7 +1033,6 @@
 ,
 {
   "Input": "二百五, 二百五, 还有二百五。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1135,7 +1061,6 @@
 ,
 {
   "Input": "1502222, 二百五, 还有二分之。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1164,7 +1089,6 @@
 ,
 {
   "Input": "199个",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1179,7 +1103,6 @@
 ,
 {
   "Input": "1,050,000,000",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1194,7 +1117,6 @@
 ,
 {
   "Input": "两千三百五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1209,7 +1131,6 @@
 ,
 {
   "Input": "一百 五 十 二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1224,7 +1145,6 @@
 ,
 {
   "Input": "两千 四 百 五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1239,7 +1159,6 @@
 ,
 {
   "Input": "7万 5千 4百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1254,7 +1173,6 @@
 ,
 {
   "Input": "三千 八百 九十六 万 四千 九百 六十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1269,7 +1187,6 @@
 ,
 {
   "Input": "三千 九百 六十五 ",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1284,7 +1201,6 @@
 ,
 {
   "Input": "五百 余万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1299,7 +1215,6 @@
 ,
 {
   "Input": "一千多万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1314,7 +1229,6 @@
 ,
 {
   "Input": "十多万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1329,7 +1243,6 @@
 ,
 {
   "Input": "二十几万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1344,7 +1257,6 @@
 ,
 {
   "Input": "一百零几万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1359,7 +1271,6 @@
 ,
 {
   "Input": "一千五百零几万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1374,7 +1285,6 @@
 ,
 {
   "Input": "一百 二 十 几亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1389,7 +1299,6 @@
 ,
 {
   "Input": "三双",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1404,7 +1313,6 @@
 ,
 {
   "Input": "一百对",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1419,7 +1327,6 @@
 ,
 {
   "Input": "十双",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1434,7 +1341,6 @@
 ,
 {
   "Input": "一百五十对",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1449,7 +1355,6 @@
 ,
 {
   "Input": "十打苹果",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1464,7 +1369,6 @@
 ,
 {
   "Input": "１９９１年１月１６日晚巴黎时间２０点：法国总统密特朗发表电视讲话，宣布和平解决海湾危机已经让位于战争，法国已经作好一切战斗准备。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1500,7 +1404,6 @@
 ,
 {
   "Input": "500余万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1515,7 +1418,6 @@
 ,
 {
   "Input": "八千 三百 八十五 万 二千 三百 二十六 点三三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1530,7 +1432,6 @@
 ,
 {
   "Input": "2^5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1545,7 +1446,6 @@
 ,
 {
   "Input": "2e5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1560,7 +1460,6 @@
 ,
 {
   "Input": "四百多",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1575,7 +1474,6 @@
 ,
 {
   "Input": "两双",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1590,7 +1488,6 @@
 ,
 {
   "Input": "一百五     ",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1605,7 +1502,6 @@
 ,
 {
   "Input": "十 余 萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1620,7 +1516,6 @@
 ,
 {
   "Input": "壹百五十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1635,7 +1530,6 @@
 ,
 {
   "Input": "兩千四百五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1650,7 +1544,6 @@
 ,
 {
   "Input": "負三十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1665,21 +1558,18 @@
 ,
 {
   "Input": "萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "萬萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "10萬萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1694,7 +1584,6 @@
 ,
 {
   "Input": "4.78萬億",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1709,7 +1598,6 @@
 ,
 {
   "Input": "7 萬5 千4 百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1724,7 +1612,6 @@
 ,
 {
   "Input": "壹千零壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1739,7 +1626,6 @@
 ,
 {
   "Input": "壹百零壹萬壹千",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1754,7 +1640,6 @@
 ,
 {
   "Input": "壹千兩百三十四萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1769,7 +1654,6 @@
 ,
 {
   "Input": "五億零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1784,7 +1668,6 @@
 ,
 {
   "Input": "七十八萬五佰零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1799,7 +1682,6 @@
 ,
 {
   "Input": "兩千兩百貳拾二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1814,7 +1696,6 @@
 ,
 {
   "Input": "5萬4千6百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1829,7 +1710,6 @@
 ,
 {
   "Input": "5億1萬4千6百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1844,7 +1724,6 @@
 ,
 {
   "Input": "壹打",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1859,7 +1738,6 @@
 ,
 {
   "Input": "拾萬零五十六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1874,7 +1752,6 @@
 ,
 {
   "Input": "壹百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1889,7 +1766,6 @@
 ,
 {
   "Input": "壹千零五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1904,7 +1780,6 @@
 ,
 {
   "Input": "壹千零五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1919,7 +1794,6 @@
 ,
 {
   "Input": "壹千六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1934,7 +1808,6 @@
 ,
 {
   "Input": "壹萬三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1949,7 +1822,6 @@
 ,
 {
   "Input": "壹萬二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1964,7 +1836,6 @@
 ,
 {
   "Input": "壹萬零二百五十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1979,7 +1850,6 @@
 ,
 {
   "Input": "九萬四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1994,7 +1864,6 @@
 ,
 {
   "Input": "九十二萬四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2009,7 +1878,6 @@
 ,
 {
   "Input": "九萬零四百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2024,7 +1892,6 @@
 ,
 {
   "Input": "九百萬零四百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2039,7 +1906,6 @@
 ,
 {
   "Input": "四千零五萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2054,7 +1920,6 @@
 ,
 {
   "Input": "四千萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2069,7 +1934,6 @@
 ,
 {
   "Input": "四千萬零六千",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2084,7 +1948,6 @@
 ,
 {
   "Input": "四億",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2099,7 +1962,6 @@
 ,
 {
   "Input": "四億五千六百四十二萬零壹十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2114,7 +1976,6 @@
 ,
 {
   "Input": "四萬五千六百二十二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2129,7 +1990,6 @@
 ,
 {
   "Input": "五兆六十二億四萬五千二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2144,7 +2004,6 @@
 ,
 {
   "Input": "五十五兆壹十二億四萬五千二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2159,7 +2018,6 @@
 ,
 {
   "Input": "十萬柒仟捌佰伍拾肆",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2174,7 +2032,6 @@
 ,
 {
   "Input": "拾六萬零五百零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2189,7 +2046,6 @@
 ,
 {
   "Input": "拾億零六萬零五百零六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2204,7 +2060,6 @@
 ,
 {
   "Input": "壹百萬零四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2219,7 +2074,6 @@
 ,
 {
   "Input": "四十萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2234,7 +2088,6 @@
 ,
 {
   "Input": "四千零四萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2249,7 +2102,6 @@
 ,
 {
   "Input": "四十五億四千零四萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2264,7 +2116,6 @@
 ,
 {
   "Input": "負四十五億零四百零四萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2279,7 +2130,6 @@
 ,
 {
   "Input": "負四百零五億零四百零四萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2294,7 +2144,6 @@
 ,
 {
   "Input": "四萬萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2309,7 +2158,6 @@
 ,
 {
   "Input": "5,236",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2324,7 +2172,6 @@
 ,
 {
   "Input": "二百五, 二百五, 還有二百五。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2353,7 +2200,6 @@
 ,
 {
   "Input": "1502222, 二百五, 還有二分之。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2382,7 +2228,6 @@
 ,
 {
   "Input": "199個",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2397,7 +2242,6 @@
 ,
 {
   "Input": "兩千三百五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2412,7 +2256,6 @@
 ,
 {
   "Input": "壹百 五 十 二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2427,7 +2270,6 @@
 ,
 {
   "Input": "兩千 四 百 五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2442,7 +2284,6 @@
 ,
 {
   "Input": "7萬 5千 4百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2457,7 +2298,6 @@
 ,
 {
   "Input": "三千 八百 九十六 萬 四千 九百 六十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2472,7 +2312,6 @@
 ,
 {
   "Input": "五百 余萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2487,7 +2326,6 @@
 ,
 {
   "Input": "壹千多萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2502,7 +2340,6 @@
 ,
 {
   "Input": "十多萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2517,7 +2354,6 @@
 ,
 {
   "Input": "二十幾萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2532,7 +2368,6 @@
 ,
 {
   "Input": "壹百零幾萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2547,7 +2382,6 @@
 ,
 {
   "Input": "壹千五百零幾萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2562,7 +2396,6 @@
 ,
 {
   "Input": "壹百 二 十 幾億",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2577,7 +2410,6 @@
 ,
 {
   "Input": "三雙",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2592,7 +2424,6 @@
 ,
 {
   "Input": "壹百對",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2607,7 +2438,6 @@
 ,
 {
   "Input": "十雙",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2622,7 +2452,6 @@
 ,
 {
   "Input": "壹百五十對",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2637,7 +2466,6 @@
 ,
 {
   "Input": "十打蘋果",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2652,7 +2480,6 @@
 ,
 {
   "Input": "１９９１年１月１６日晚巴黎時間２０點：法國總統密特朗發表電視講話，宣布和平解抉海灣危機已經讓位於戰爭，法國已經作好壹切戰鬥準備。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2688,7 +2515,6 @@
 ,
 {
   "Input": "500余萬",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2703,7 +2529,6 @@
 ,
 {
   "Input": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2718,7 +2543,6 @@
 ,
 {
   "Input": "兩雙",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2733,7 +2557,6 @@
 ,
 {
   "Input": "壹百五     ",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2748,35 +2571,30 @@
 ,
 {
   "Input": "百分之五十五点五七九",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "百分之十万零六百五十一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "六千零五十一个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "六百一十一点二五五个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "负六点六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2791,7 +2609,6 @@
 ,
 {
   "Input": "十五点七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2806,7 +2623,6 @@
 ,
 {
   "Input": "１１.92亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2821,7 +2637,6 @@
 ,
 {
   "Input": "２．２",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2836,7 +2651,6 @@
 ,
 {
   "Input": "２．２亿",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2851,7 +2665,6 @@
 ,
 {
   "Input": "1000  万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2866,7 +2679,6 @@
 ,
 {
   "Input": "21.2E0",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2881,7 +2693,6 @@
 ,
 {
   "Input": "2^-1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2896,7 +2707,6 @@
 ,
 {
   "Input": "四百 点 五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2911,7 +2721,6 @@
 ,
 {
   "Input": "零点五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2926,7 +2735,6 @@
 ,
 {
   "Input": "10.233",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2941,7 +2749,6 @@
 ,
 {
   "Input": "-1e1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2956,7 +2763,6 @@
 ,
 {
   "Input": "-2.5 M",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2971,7 +2777,6 @@
 ,
 {
   "Input": "二点五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2986,7 +2791,6 @@
 ,
 {
   "Input": "十点二三三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3001,7 +2805,6 @@
 ,
 {
   "Input": "两千万点五五四四",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3016,7 +2819,6 @@
 ,
 {
   "Input": "两千点零",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3031,7 +2833,6 @@
 ,
 {
   "Input": "两千三点一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3046,7 +2847,6 @@
 ,
 {
   "Input": "10,000.233",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3061,7 +2861,6 @@
 ,
 {
   "Input": ".23456000",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3076,7 +2875,6 @@
 ,
 {
   "Input": "4.800",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3091,7 +2889,6 @@
 ,
 {
   "Input": "２.７８９０",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3106,7 +2903,6 @@
 ,
 {
   "Input": "2.3",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3121,7 +2917,6 @@
 ,
 {
   "Input": "2.3万",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3136,7 +2931,6 @@
 ,
 {
   "Input": "２.７８９０e－１",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3151,7 +2945,6 @@
 ,
 {
   "Input": ".5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3166,7 +2959,6 @@
 ,
 {
   "Input": "-.5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3181,7 +2973,6 @@
 ,
 {
   "Input": "1, 234, 567.3",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3210,7 +3001,6 @@
 ,
 {
   "Input": "１, 2４4, ６６7.123 五点八",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3246,7 +3036,6 @@
 ,
 {
   "Input": "二百三十三，五百七十七，一千六点五。",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3275,7 +3064,6 @@
 ,
 {
   "Input": "2222.2222.22222.222",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3311,7 +3099,6 @@
 ,
 {
   "Input": "...9",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3326,7 +3113,6 @@
 ,
 {
   "Input": "－－9",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3341,7 +3127,6 @@
 ,
 {
   "Input": "1.1^+23",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3356,7 +3141,6 @@
 ,
 {
   "Input": "2.5^-1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3371,7 +3155,6 @@
 ,
 {
   "Input": "-1.1^+23",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3386,7 +3169,6 @@
 ,
 {
   "Input": "-2.5^-1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3401,7 +3183,6 @@
 ,
 {
   "Input": "-1.1^--23",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3416,7 +3197,6 @@
 ,
 {
   "Input": "-127.32e13",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3431,7 +3211,6 @@
 ,
 {
   "Input": "12.32e+14",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3446,7 +3225,6 @@
 ,
 {
   "Input": "-12e-1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3461,42 +3239,36 @@
 ,
 {
   "Input": "一看",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "一美元",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "两美刀",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "四川",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陆地",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "五 分之 一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3511,7 +3283,6 @@
 ,
 {
   "Input": "三 百 五 又 三 分之 一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3526,7 +3297,6 @@
 ,
 {
   "Input": "４ ６／３",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3541,7 +3311,6 @@
 ,
 {
   "Input": "-3/2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3556,7 +3325,6 @@
 ,
 {
   "Input": "五分之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3571,7 +3339,6 @@
 ,
 {
   "Input": "一百万又五十万分之二十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3586,7 +3353,6 @@
 ,
 {
   "Input": "一百分之二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3601,7 +3367,6 @@
 ,
 {
   "Input": "四千二分之三",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3616,7 +3381,6 @@
 ,
 {
   "Input": "一百分之2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3631,7 +3395,6 @@
 ,
 {
   "Input": "五百分之2333",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3646,7 +3409,6 @@
 ,
 {
   "Input": "3又一千分之23",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3661,7 +3423,6 @@
 ,
 {
   "Input": "３／５",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3676,7 +3437,6 @@
 ,
 {
   "Input": "1 ３/5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3691,7 +3451,6 @@
 ,
 {
   "Input": "１６/5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3706,7 +3465,6 @@
 ,
 {
   "Input": "１６分之5",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3721,7 +3479,6 @@
 ,
 {
   "Input": "１６分之2225",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3736,7 +3493,6 @@
 ,
 {
   "Input": "负一又二分之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3751,7 +3507,6 @@
 ,
 {
   "Input": "二分之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3766,7 +3521,6 @@
 ,
 {
   "Input": "三百 五又三分之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3781,7 +3535,6 @@
 ,
 {
   "Input": "三百五十又3分之1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3796,7 +3549,6 @@
 ,
 {
   "Input": "３分之一百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3811,7 +3563,6 @@
 ,
 {
   "Input": "负３分之负一百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3826,7 +3577,6 @@
 ,
 {
   "Input": "一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3904,7 +3654,6 @@
 ,
 {
   "Input": "1 4/3的美梦,1/2的努力",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3926,7 +3675,6 @@
 ,
 {
   "Input": "二分 之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3941,7 +3689,6 @@
 ,
 {
   "Input": "三百 五 又 三分  之一",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3956,7 +3703,6 @@
 ,
 {
   "Input": "三百五十 又 3分  之1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3971,7 +3717,6 @@
 ,
 {
   "Input": "３ 分  之 一百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -3986,7 +3731,6 @@
 ,
 {
   "Input": "负３ 分  之 负一百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4001,7 +3745,6 @@
 ,
 {
   "Input": "五 分之 壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4016,7 +3759,6 @@
 ,
 {
   "Input": "三 百 五 又 三 分之 壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4031,7 +3773,6 @@
 ,
 {
   "Input": "五分之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4046,7 +3787,6 @@
 ,
 {
   "Input": "壹百萬又五十萬分之二十五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4061,7 +3801,6 @@
 ,
 {
   "Input": "壹百分之二",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4076,7 +3815,6 @@
 ,
 {
   "Input": "壹百分之2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4091,7 +3829,6 @@
 ,
 {
   "Input": "3又壹千分之23",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4106,7 +3843,6 @@
 ,
 {
   "Input": "負壹又二分之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4121,7 +3857,6 @@
 ,
 {
   "Input": "二分之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4136,7 +3871,6 @@
 ,
 {
   "Input": "三百 五又三分之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4151,7 +3885,6 @@
 ,
 {
   "Input": "３分之壹百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4166,7 +3899,6 @@
 ,
 {
   "Input": "負３分之負壹百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4181,7 +3913,6 @@
 ,
 {
   "Input": "壹百四十四。壹百五十萬五千二百四十五,二千零四十五個,三千零五個,和四千萬零五十,壹百五十四點零,四百億點零五零,二十五分之壹百四十四,十壹又十四分之壹,1個",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4259,7 +3990,6 @@
 ,
 {
   "Input": "1 4/3的美夢,1/2的努力",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4281,7 +4011,6 @@
 ,
 {
   "Input": "二分 之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4296,7 +4025,6 @@
 ,
 {
   "Input": "三百 五 又 三分  之壹",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4311,7 +4039,6 @@
 ,
 {
   "Input": "３ 分  之 壹百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -4326,7 +4053,6 @@
 ,
 {
   "Input": "負３ 分  之 負壹百五十七",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

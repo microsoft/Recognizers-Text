@@ -34,14 +34,14 @@ namespace Microsoft.Recognizers.Text
         public string Input { get; set; }
         public IDictionary<string, object> Context { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
-        public Platform NotSupported { get; set; }
+        public Platform? NotSupported { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
-        public Platform NotSupportedByDesign { get; set; }
+        public Platform? NotSupportedByDesign { get; set; }
         public IEnumerable<object> Results { get; set; }
 
         public SingleTestModel()
         {
-            this.NotSupported = Platform.javascript | Platform.python;
+            this.NotSupported = null;
             this.NotSupportedByDesign = Platform.python;
         }
     }
@@ -133,11 +133,11 @@ namespace Microsoft.Recognizers.Text
 
         public static void Write(TestModel testModel)
         {
-            if (logList.Contains($"{testModel.Input}-{GetJson(testModel.Results)}"))
+            if (logList.Contains($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}"))
             {
                 return;
             }
-            logList.Add($"{testModel.Input}-{GetJson(testModel.Results)}");
+            logList.Add($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}");
             if (Trace.Listeners[string.Join("-", testModel.Language, testModel.Recognizer, testModel.Model)] == null)
             {
                 Trace.Listeners.Add(new TestTextWriterTraceListener(testModel.Language, testModel.Recognizer, testModel.Model));

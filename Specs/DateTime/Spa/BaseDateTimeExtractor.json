@@ -1,6 +1,5 @@
 [{
   "Input": "Voy a volver ahora",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -12,7 +11,6 @@
 ,
 {
   "Input": "Voy a volver tan pronto como sea posible",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -24,7 +22,6 @@
 ,
 {
   "Input": "Vamos a volver tan pronto como podamos",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -36,7 +33,6 @@
 ,
 {
   "Input": "Voy a volver lo mas pronto posible",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +44,6 @@
 ,
 {
   "Input": "Voy a volver ahora mismo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +55,6 @@
 ,
 {
   "Input": "Voy a volver justo ahora",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +66,6 @@
 ,
 {
   "Input": "Voy a volver en este momento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +77,6 @@
 ,
 {
   "Input": "Voy a volver el 15 a las 8:00",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +88,6 @@
 ,
 {
   "Input": "Voy a volver el 15 a las 8:00:30",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -108,7 +99,6 @@
 ,
 {
   "Input": "Voy a volver el 15, 8pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +110,6 @@
 ,
 {
   "Input": "Voy a volver el 04/21/2016, 8:00pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,7 +121,6 @@
 ,
 {
   "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +132,6 @@
 ,
 {
   "Input": "Voy a volver el 23 de Oct a las siete",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -156,7 +143,6 @@
 ,
 {
   "Input": "Voy a volver el 14 de Octubre 8:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -168,7 +154,6 @@
 ,
 {
   "Input": "Voy a volver el 14 de Octubre a las 8:00:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +165,6 @@
 ,
 {
   "Input": "Voy a volver el 14 de Octubre, 8:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +176,6 @@
 ,
 {
   "Input": "Voy a volver el 14 de Octubre, 8:00:01am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -204,7 +187,6 @@
 ,
 {
   "Input": "Voy a volver mañana 8:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -216,7 +198,6 @@
 ,
 {
   "Input": "Voy a volver mañana cerca de las 8:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -228,7 +209,6 @@
 ,
 {
   "Input": "Voy a volver mañana para las 8:00am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +220,6 @@
 ,
 {
   "Input": "Voy a volver mañana a las 8:00:05am",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,7 +231,6 @@
 ,
 {
   "Input": "Voy a volver el próximo viernes a las tres y media",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,7 +242,6 @@
 ,
 {
   "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -276,7 +253,6 @@
 ,
 {
   "Input": "Voy a volver 8pm del 15",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -288,7 +264,6 @@
 ,
 {
   "Input": "Voy a volver a las siete del 15",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +275,6 @@
 ,
 {
   "Input": "Voy a volver 8pm del próximo domingo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -312,7 +286,6 @@
 ,
 {
   "Input": "Voy a volver a las 8pm de hoy",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -324,7 +297,6 @@
 ,
 {
   "Input": "Voy a volver a las siete menos cuarto de mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -336,7 +308,6 @@
 ,
 {
   "Input": "Voy a volver 19:00, 2016-12-22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -348,7 +319,6 @@
 ,
 {
   "Input": "Voy a volver a las 7 en punto mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +330,6 @@
 ,
 {
   "Input": "Voy a volver mañana por la mañana a las 7",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -372,7 +341,6 @@
 ,
 {
   "Input": "Voy a volver 7:00 el domingo a la tarde",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -384,7 +352,6 @@
 ,
 {
   "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,7 +363,6 @@
 ,
 {
   "Input": "Voy a volver 14 de octubre 8:00, 14 de Octubre",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -408,7 +374,6 @@
 ,
 {
   "Input": "Voy a volver a las 7, esta mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +385,6 @@
 ,
 {
   "Input": "Voy a volver esta noche a las 8",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +396,6 @@
 ,
 {
   "Input": "Voy a volver a las 8pm de la tarde, Lunes",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -444,7 +407,6 @@
 ,
 {
   "Input": "Voy a volver 8pm de la tarde, 1ro de Enero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -456,7 +418,6 @@
 ,
 {
   "Input": "Voy a volver 8pm de la tarde, 1 de Enero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -468,7 +429,6 @@
 ,
 {
   "Input": "Voy a volver a las 10pm de esta noche",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +440,6 @@
 ,
 {
   "Input": "Voy a volver a las 10pm esta noche",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -492,7 +451,6 @@
 ,
 {
   "Input": "Voy a volver 8am de esta mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -504,7 +462,6 @@
 ,
 {
   "Input": "Voy a volver 8pm de esta tarde",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -516,7 +473,6 @@
 ,
 {
   "Input": "Volví esta mañana a las 7",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,7 +484,6 @@
 ,
 {
   "Input": "Volví esta mañana 7pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +495,6 @@
 ,
 {
   "Input": "Volví esta mañana a las siete",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -552,7 +506,6 @@
 ,
 {
   "Input": "Volví esta mañana a las 7:00",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -564,7 +517,6 @@
 ,
 {
   "Input": "Voy a volver esta noche a las 7",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -576,7 +528,6 @@
 ,
 {
   "Input": "Volví esta noche a las 7",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -588,7 +539,6 @@
 ,
 {
   "Input": "para dos personas esta noche a las 9:30 pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,7 +550,6 @@
 ,
 {
   "Input": "para dos personas esta noche a las 9:30:31 pm",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -612,7 +561,6 @@
 ,
 {
   "Input": "Volveré al final del día",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +572,6 @@
 ,
 {
   "Input": "Volveré al finalizar el día",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -636,7 +583,6 @@
 ,
 {
   "Input": "Volveré al finalizar el día de mañana",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -648,7 +594,6 @@
 ,
 {
   "Input": "Volveré mañana al finalizar el día",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,7 +605,6 @@
 ,
 {
   "Input": "Volveré al finalizar el domingo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +616,6 @@
 ,
 {
   "Input": "Voy a volver el 5 a las 4 a.m.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -684,7 +627,6 @@
 ,
 {
   "Input": "Voy a volver 2016-12-16T12:23:59",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

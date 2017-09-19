@@ -1,6 +1,5 @@
 [{
   "Input": "three trillionth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,14 +14,12 @@
 ,
 {
   "Input": "a trillionth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "a hundred trillionth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -37,7 +34,6 @@
 ,
 {
   "Input": "11th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -52,7 +48,6 @@
 ,
 {
   "Input": "21st",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -67,7 +62,6 @@
 ,
 {
   "Input": "30th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -82,7 +76,6 @@
 ,
 {
   "Input": "2nd",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -97,7 +90,6 @@
 ,
 {
   "Input": "eleventh",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "twentieth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -127,7 +118,6 @@
 ,
 {
   "Input": "twenty-fifth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -142,7 +132,6 @@
 ,
 {
   "Input": "twenty-first",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -157,7 +146,6 @@
 ,
 {
   "Input": "one hundred twenty fifth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -172,7 +160,6 @@
 ,
 {
   "Input": "one hundred twenty-fifth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,7 +174,6 @@
 ,
 {
   "Input": "trillionth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -202,7 +188,6 @@
 ,
 {
   "Input": "twenty-one trillion and three hundred twenty second",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -217,7 +202,6 @@
 ,
 {
   "Input": "two hundredth",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

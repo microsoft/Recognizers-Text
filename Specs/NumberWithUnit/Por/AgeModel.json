@@ -1,6 +1,5 @@
 [{
   "Input": "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "Esta saga remonta a quase dez anos atrás.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "Só tenho 29 anos!",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "Agora com noventa e cinco anos tens perspectiva das coisas.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +60,6 @@
 ,
 {
   "Input": "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +75,6 @@
 ,
 {
   "Input": "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +90,6 @@
 ,
 {
   "Input": "25% dos casos não são diagnosticados até por volta dos tres anos.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +105,6 @@
 ,
 {
   "Input": "Quando haverá pressão para comprir essa promessa feita há um ano?",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -128,7 +120,6 @@
 ,
 {
   "Input": "Aconteceu quando era um bebê e tinha apenas dez meses.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +135,6 @@
 ,
 {
   "Input": "A proposta da comissão já tem 8 meses de idade.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -160,7 +150,6 @@
 ,
 {
   "Input": "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,7 +165,6 @@
 ,
 {
   "Input": "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +180,6 @@
 ,
 {
   "Input": "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -208,7 +195,6 @@
 ,
 {
   "Input": "Às 6 semanas de idade já comemora o Natal.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -224,7 +210,6 @@
 ,
 {
   "Input": "Outras matérias primas devem ser usadas num prazo de cinco dias.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +225,6 @@
 ,
 {
   "Input": "Uma conta vencida a 90 dias está bem atrasada.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

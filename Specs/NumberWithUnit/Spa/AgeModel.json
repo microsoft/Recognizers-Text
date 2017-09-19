@@ -1,6 +1,5 @@
 [{
   "Input": "Cuando tenía cinco años, hacía meriendas de mentira con mis muñecas.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "Esta saga se remonta a casi diez años atrás.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "¡Mi pelo ya está gris y sólo tengo 29 años!",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "Ahora cuenta noventa y cinco años: tiene una perspectiva de las cosas y tiene memoria.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +60,6 @@
 ,
 {
   "Input": "La Gran Muralla china tiene más de 500 años y se extiende más de 5,000 millas.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +75,6 @@
 ,
 {
   "Input": "Ya tiene 60 años, pues en principio nació el 8 de mayo de 1945.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +90,6 @@
 ,
 {
   "Input": "Y al 25% no se les diagnostica hasta que tienen casi tres años.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +105,6 @@
 ,
 {
   "Input": "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -128,7 +120,6 @@
 ,
 {
   "Input": "La sublevación se produjo cuando yo era un bebé y tenía tan solo diez meses.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +135,6 @@
 ,
 {
   "Input": "La propuesta de la Comisión tiene ya 8 meses.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -160,7 +150,6 @@
 ,
 {
   "Input": "A alrededor del 50% de ellos no se les diagnostica hasta los dieciocho meses de edad.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,7 +165,6 @@
 ,
 {
   "Input": "Es posible, pero en 2006 mataron a 330 000 focas arpa y el 95% de ellas tenían menos de tres meses.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +180,6 @@
 ,
 {
   "Input": "Si seguimos adelante con la resolución en el período parcial de sesiones de diciembre, tendrá para entonces tres semanas de antigüedad.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -208,7 +195,6 @@
 ,
 {
   "Input": "También pueden revocar su consentimiento hasta que el hijo haya cumplido 6 semanas de edad.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -224,7 +210,6 @@
 ,
 {
   "Input": "Otras materias primas deberán utilizarse en un plazo de cinco días.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +225,6 @@
 ,
 {
   "Input": "Para clubes de los demás países, una cuenta vencida por 90 días se considera morosa.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

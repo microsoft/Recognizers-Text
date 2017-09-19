@@ -1,6 +1,33 @@
 [{
+  "Input": "100%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100% ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": " 100 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +42,6 @@
 ,
 {
   "Input": " cem por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +56,6 @@
 ,
 {
   "Input": "243 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -45,7 +70,6 @@
 ,
 {
   "Input": "vinte por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +84,6 @@
 ,
 {
   "Input": "trinta e cinco por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -75,7 +98,6 @@
 ,
 {
   "Input": "quinhentos e trinta e cinco por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -90,7 +112,6 @@
 ,
 {
   "Input": "10 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -105,7 +126,6 @@
 ,
 {
   "Input": "dez por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +140,6 @@
 ,
 {
   "Input": "tres milhoes cinquenta e dois mil trezentos e quarenta e sete por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -135,7 +154,6 @@
 ,
 {
   "Input": "algo como uns 11%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -150,7 +168,6 @@
 ,
 {
   "Input": "claro, somente uns 15 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,7 +182,6 @@
 ,
 {
   "Input": "sim, nada mais que vinte e cinco por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +196,6 @@
 ,
 {
   "Input": "derrame cem por cento do liquido",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -195,7 +210,6 @@
 ,
 {
   "Input": "um percentual de 25%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -210,7 +224,6 @@
 ,
 {
   "Input": "uma percentagem de trinta e seis por cento do total",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -225,7 +238,6 @@
 ,
 {
   "Input": "um percentual de oitenta e quatro por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -239,8 +251,35 @@
 }
 ,
 {
+  "Input": " 101231,2353%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "101231,2353%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "101231,2353%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-101231,4323%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-101231,4323%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-101231,4323%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": " -89101231,5127%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -255,7 +294,6 @@
 ,
 {
   "Input": " - 89101231,5127%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -269,8 +307,35 @@
 }
 ,
 {
+  "Input": ",23456000%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": ",23456000%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0,23456%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4,800%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4,800%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "4,8%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "4,8 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -285,7 +350,6 @@
 ,
 {
   "Input": " -89101231,5127 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +364,6 @@
 ,
 {
   "Input": "-89101231,5127 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -315,7 +378,6 @@
 ,
 {
   "Input": " - 89101231,5127 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -330,7 +392,6 @@
 ,
 {
   "Input": " -1,1234567 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -345,7 +406,6 @@
 ,
 {
   "Input": "1.234.567,51274 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +420,6 @@
 ,
 {
   "Input": ",08 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -374,8 +433,21 @@
 }
 ,
 {
+  "Input": "9,2321312%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9,2321312%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9,2321312%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": " -9,2321312 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -389,8 +461,21 @@
 }
 ,
 {
+  "Input": "1e10%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1e10%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "10000000000%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "1,1^23 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -405,7 +490,6 @@
 ,
 {
   "Input": "quarenta e sete virgula vinte e oito por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +504,6 @@
 ,
 {
   "Input": "tres quintos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -435,7 +518,6 @@
 ,
 {
   "Input": "dois virgula cinco por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -450,7 +532,6 @@
 ,
 {
   "Input": "um quinto por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -465,7 +546,6 @@
 ,
 {
   "Input": "um bilionesimo por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +560,6 @@
 ,
 {
   "Input": "um vinte e um avos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -495,7 +574,6 @@
 ,
 {
   "Input": "cento e trinta e tres vinte e um avos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -510,7 +588,6 @@
 ,
 {
   "Input": "vinte e dois trinta avos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -525,7 +602,6 @@
 ,
 {
   "Input": "tres dois milesimos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +616,6 @@
 ,
 {
   "Input": "cento e trinta quintos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -555,7 +630,6 @@
 ,
 {
   "Input": "cento e trinta e dois quintos por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -570,7 +644,6 @@
 ,
 {
   "Input": "um sobre tres por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -585,7 +658,6 @@
 ,
 {
   "Input": "1 sobre 3 por cento",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -593,6 +665,34 @@
       "TypeName": "percentage",
       "Resolution": {
         "value": "0,333333333333333%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3/4%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3/4%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0,75%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2/3%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2/3%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0,666666666666667%"
       }
     }
   ]

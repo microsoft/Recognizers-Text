@@ -1,6 +1,5 @@
 [{
   "Input": "When she was five years old, she learned to ride a bike.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "This saga is ten years old.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "I'm only 29 years old!",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "Now, after ninety five years of age, perspectives change.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -64,7 +60,6 @@
 ,
 {
   "Input": "The Great Wall of China is more than 500 years old and extends for more than 5,000 miles.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,7 +75,6 @@
 ,
 {
   "Input": "She's 60 years old; she was born in May 8, 1945.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +90,6 @@
 ,
 {
   "Input": "25% of cases are not diagnosed until around 3 years of age.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +105,6 @@
 ,
 {
   "Input": "When will there be pressure to fulfil a promise that is one year old?",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -128,7 +120,6 @@
 ,
 {
   "Input": "It happened when the baby was only ten months old.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +135,6 @@
 ,
 {
   "Input": "The committee proposal is 8 months old.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -160,7 +150,6 @@
 ,
 {
   "Input": "Aproximately 50% of cases are diagnosed at around eighteen months of age.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,7 +165,6 @@
 ,
 {
   "Input": "It is possible, but in 2006 95% of them were younger than three months old.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +180,6 @@
 ,
 {
   "Input": "If we go ahead in December, it will be three weeks old.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -208,7 +195,6 @@
 ,
 {
   "Input": "At 6 weeks of age, one can already celebrate Christmas.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -224,7 +210,6 @@
 ,
 {
   "Input": "A 90 day old utilities bill is quite late.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

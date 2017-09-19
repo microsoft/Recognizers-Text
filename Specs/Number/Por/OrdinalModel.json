@@ -1,6 +1,5 @@
 [{
   "Input": "setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "quadragesimo setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "tricentésimo quadragésima sétima",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "cinquenta e dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "milesimo quingentesimo vigesimo terceiro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -89,8 +83,21 @@
 }
 ,
 {
+  "Input": "vigesimo quinto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vigesimo quinto",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "vigesimo primeiro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -104,8 +111,35 @@
 }
 ,
 {
+  "Input": "centesimo vigesimo quinto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "centesimo vigesimo quinto",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ducentesimo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ducentesimo",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "21o",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +154,6 @@
 ,
 {
   "Input": "30a",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -135,7 +168,6 @@
 ,
 {
   "Input": "2a",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -149,8 +181,21 @@
 }
 ,
 {
+  "Input": "undecimo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "undecimo",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "décimo primeiro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -164,8 +209,35 @@
 }
 ,
 {
+  "Input": "vigesimo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vigesimo",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "centesimo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "centesimo",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "vinte e dois milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +252,6 @@
 ,
 {
   "Input": "quatrocentos e cinquenta e dois milesimo tricentesimo quadragesimo setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -195,7 +266,6 @@
 ,
 {
   "Input": "três milhões quatrocentos e cinquenta e dois milésimo tricentesimo quadragesimo setimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -210,7 +280,6 @@
 ,
 {
   "Input": "tres mil quinhentos e vinte e quatro milhoes seiscentos e noventa e quatro milesimo sexcentesimo septuagesimo terceiro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

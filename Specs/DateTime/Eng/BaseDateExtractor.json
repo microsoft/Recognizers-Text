@@ -1,6 +1,5 @@
 [{
   "Input": "What do I have on Sunday the second?",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "What do I have on Thursday the 27th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "What do I have on Sunday the 21st",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -48,7 +45,6 @@
 ,
 {
   "Input": "I'll go back on 15",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "I'll go back April 22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +67,6 @@
 ,
 {
   "Input": "I'll go back Jan-1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -84,7 +78,6 @@
 ,
 {
   "Input": "I'll go back Jan/1",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -96,7 +89,6 @@
 ,
 {
   "Input": "I'll go back October. 2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -108,7 +100,6 @@
 ,
 {
   "Input": "I'll go back January 12, 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +111,6 @@
 ,
 {
   "Input": "I'll go back January 12 of 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,7 +122,6 @@
 ,
 {
   "Input": "I'll go back Monday January 12th, 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -144,7 +133,6 @@
 ,
 {
   "Input": "I'll go back 02/22/2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -156,7 +144,6 @@
 ,
 {
   "Input": "I'll go back 21/04/2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -168,7 +155,6 @@
 ,
 {
   "Input": "I'll go back 21/04/16",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +166,6 @@
 ,
 {
   "Input": "I'll go back 9-18-15",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -192,7 +177,6 @@
 ,
 {
   "Input": "I'll go back on 4.22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -204,7 +188,6 @@
 ,
 {
   "Input": "I'll go back on 4-22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -216,7 +199,6 @@
 ,
 {
   "Input": "I'll go back at 4.22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -228,7 +210,6 @@
 ,
 {
   "Input": "I'll go back in 4-22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +221,6 @@
 ,
 {
   "Input": "I'll go back on    4/22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -252,7 +232,6 @@
 ,
 {
   "Input": "I'll go back on 22/04",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,7 +243,6 @@
 ,
 {
   "Input": "I'll go back       4/22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -276,7 +254,6 @@
 ,
 {
   "Input": "I'll go back 22/04",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -288,7 +265,6 @@
 ,
 {
   "Input": "I'll go back 2015/08/12",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +276,6 @@
 ,
 {
   "Input": "I'll go back 11/12,2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -312,7 +287,6 @@
 ,
 {
   "Input": "I'll go back 11/12,16",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -324,7 +298,6 @@
 ,
 {
   "Input": "I'll go back 1st Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -336,7 +309,6 @@
 ,
 {
   "Input": "I'll go back 1-Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -348,7 +320,6 @@
 ,
 {
   "Input": "I'll go back 28-Nov",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +331,6 @@
 ,
 {
   "Input": "I'll go back Wed, 22 of Jan",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -372,7 +342,6 @@
 ,
 {
   "Input": "I'll go back on Friday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -384,7 +353,6 @@
 ,
 {
   "Input": "I'll go back Friday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,7 +364,6 @@
 ,
 {
   "Input": "I'll go back today",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -408,7 +375,6 @@
 ,
 {
   "Input": "I'll go back tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +386,6 @@
 ,
 {
   "Input": "I'll go back yesterday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +397,6 @@
 ,
 {
   "Input": "I'll go back the day before yesterday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -444,7 +408,6 @@
 ,
 {
   "Input": "I'll go back the day after tomorrow",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -456,7 +419,6 @@
 ,
 {
   "Input": "I'll go back the next day",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -468,7 +430,6 @@
 ,
 {
   "Input": "I'll go back next day",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +441,6 @@
 ,
 {
   "Input": "I'll go back this Friday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -492,7 +452,6 @@
 ,
 {
   "Input": "I'll go back next Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -504,7 +463,6 @@
 ,
 {
   "Input": "I'll go back last Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -516,7 +474,6 @@
 ,
 {
   "Input": "I'll go back last day",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,7 +485,6 @@
 ,
 {
   "Input": "I'll go back the last day",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +496,6 @@
 ,
 {
   "Input": "I'll go back the day",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -552,7 +507,6 @@
 ,
 {
   "Input": "I'll go back this week Friday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -564,7 +518,6 @@
 ,
 {
   "Input": "I'll go back next week Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -576,7 +529,6 @@
 ,
 {
   "Input": "I'll go back last week Sunday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -588,7 +540,6 @@
 ,
 {
   "Input": "I'll go back 15 June 2016",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,7 +551,6 @@
 ,
 {
   "Input": "a baseball on may the eleventh",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -612,7 +562,6 @@
 ,
 {
   "Input": "I'll go back the first friday of july",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +573,6 @@
 ,
 {
   "Input": "I'll go back the first friday in this month",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -636,7 +584,6 @@
 ,
 {
   "Input": "I'll go back two weeks from now",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -648,7 +595,6 @@
 ,
 {
   "Input": "I'll go back next week on Friday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,7 +606,6 @@
 ,
 {
   "Input": "I'll go back on Friday next week",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +617,6 @@
 ,
 {
   "Input": "past Monday",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -684,7 +628,6 @@
 ,
 {
   "Input": "I went back two months ago",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -696,7 +639,6 @@
 ,
 {
   "Input": "I'll go back two days later",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -708,7 +650,6 @@
 ,
 {
   "Input": "who did i email a month ago",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,7 +661,6 @@
 ,
 {
   "Input": "I went back for the 27",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -732,7 +672,6 @@
 ,
 {
   "Input": "I went back for the 27th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -744,7 +683,6 @@
 ,
 {
   "Input": "I went back for the 27.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -756,7 +694,6 @@
 ,
 {
   "Input": "I went back for the 27!",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -768,7 +705,6 @@
 ,
 {
   "Input": "I went back for the 27 .",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -780,7 +716,6 @@
 ,
 {
   "Input": "I went back for the 21st",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -792,7 +727,6 @@
 ,
 {
   "Input": "I went back for the 22nd",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -804,7 +738,6 @@
 ,
 {
   "Input": "I went back for the second",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -816,7 +749,6 @@
 ,
 {
   "Input": "I went back for the twenty second",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -828,7 +760,6 @@
 ,
 {
   "Input": "I went back for the thirty first",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -840,7 +771,6 @@
 ,
 {
   "Input": "I'll go back fourth of may",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -852,7 +782,6 @@
 ,
 {
   "Input": "I'll go back 4th of march",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -864,7 +793,6 @@
 ,
 {
   "Input": "I'll go back Jan first",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -876,7 +804,6 @@
 ,
 {
   "Input": "I'll go back May twenty-first",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -888,7 +815,6 @@
 ,
 {
   "Input": "I'll go back May twenty one",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -900,7 +826,6 @@
 ,
 {
   "Input": "I'll go back second of Aug",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -912,7 +837,6 @@
 ,
 {
   "Input": "I'll go back twenty second of June",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -924,35 +848,30 @@
 ,
 {
   "Input": "the first prize",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "I'll go to the 27th floor",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "Get tickets for the 17th Door Haunted Experience",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "What do I have on Saturday the second",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -964,7 +883,6 @@
 ,
 {
   "Input": "A meeting for Wednesday the 27th with Joe Smith",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -976,7 +894,6 @@
 ,
 {
   "Input": "I'll go back Thursday the 21st",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -988,7 +905,6 @@
 ,
 {
   "Input": "I'll go back Friday the 22nd",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1000,7 +916,6 @@
 ,
 {
   "Input": "I'll go back Saturday the 23rd",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1012,7 +927,6 @@
 ,
 {
   "Input": "I'll go back Friday the 15th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1024,7 +938,6 @@
 ,
 {
   "Input": "I'll go back Thursday the twenty first",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1036,7 +949,6 @@
 ,
 {
   "Input": "I'll go back Friday the twenty second",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1048,7 +960,6 @@
 ,
 {
   "Input": "I'll go back Friday the fifteen",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1060,7 +971,6 @@
 ,
 {
   "Input": "I'll go back Thursday the seventh",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1072,7 +982,6 @@
 ,
 {
   "Input": "I went back on the 27th",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1084,7 +993,6 @@
 ,
 {
   "Input": "I went back on the 21st",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1096,7 +1004,6 @@
 ,
 {
   "Input": "I went back on 22nd",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1108,7 +1015,6 @@
 ,
 {
   "Input": "I went back on the second!",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1120,7 +1026,6 @@
 ,
 {
   "Input": "I went back on twenty second?",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

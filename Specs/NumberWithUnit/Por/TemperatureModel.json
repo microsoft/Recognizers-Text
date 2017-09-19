@@ -1,6 +1,5 @@
 [{
   "Input": "A temperatura externa é de 40 graus Celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -16,7 +15,6 @@
 ,
 {
   "Input": "Faz 90 fahrenheit no Texas",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -32,7 +30,6 @@
 ,
 {
   "Input": "Converter 10 celsius em fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -56,7 +53,6 @@
 ,
 {
   "Input": "-5 graus Fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,7 +68,6 @@
 ,
 {
   "Input": "6 graus centígrados",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -88,7 +83,6 @@
 ,
 {
   "Input": "98,6 graus f é uma temperatura normal",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -104,7 +98,6 @@
 ,
 {
   "Input": "Ajuste a temperatura para 30 graus celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +113,6 @@
 ,
 {
   "Input": "A temperatura normal é 98,6 graus Fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -136,7 +128,6 @@
 ,
 {
   "Input": "100 graus f",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -152,7 +143,6 @@
 ,
 {
   "Input": "20 Graus c",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -168,7 +158,6 @@
 ,
 {
   "Input": "100 °f",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -184,7 +173,6 @@
 ,
 {
   "Input": "20 °c",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -200,7 +188,6 @@
 ,
 {
   "Input": "100,2 Graus Fahrenheit é baixo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -216,7 +203,6 @@
 ,
 {
   "Input": "34,9 centígrado pra fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +226,6 @@
 ,
 {
   "Input": "converter 200 celsius em fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,7 +249,6 @@
 ,
 {
   "Input": "convertir 200 K em fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -288,7 +272,6 @@
 ,
 {
   "Input": "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -328,7 +311,6 @@
 ,
 {
   "Input": "50 graus centígrados celsius em fahrenheit",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +342,6 @@
 ,
 {
   "Input": "Poderias converter 51 fahrenheit em graus celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -384,7 +365,6 @@
 ,
 {
   "Input": "Converter 106 graus Fahrenheit em graus centígrados",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -408,7 +388,6 @@
 ,
 {
   "Input": "Converter 106 K em graus centígrados",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -432,7 +411,6 @@
 ,
 {
   "Input": "Converter 45 graus Fahrenheit a Celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -456,7 +434,6 @@
 ,
 {
   "Input": "Como convertir - 20 graus Fahrenheit para Celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +457,6 @@
 ,
 {
   "Input": "10,5 celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -496,7 +472,6 @@
 ,
 {
   "Input": "20 graus celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -512,7 +487,6 @@
 ,
 {
   "Input": "20,3 celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,7 +502,6 @@
 ,
 {
   "Input": "34,5 celsius",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -544,7 +517,6 @@
 ,
 {
   "Input": "A temperatura exterior é de 98 graus",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -560,7 +532,6 @@
 ,
 {
   "Input": "Ajuste o termostato em 85 °",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -576,7 +547,6 @@
 ,
 {
   "Input": "Ajuste o termostato em 85°",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -592,7 +562,6 @@
 ,
 {
   "Input": "Aumente a temperatura em 5 graus",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -608,7 +577,6 @@
 ,
 {
   "Input": "Ajuste a temperatura para 70 graus f",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +592,6 @@
 ,
 {
   "Input": "Aumentar a temperatura em 20 grau",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -640,7 +607,6 @@
 ,
 {
   "Input": "Ajuste a temperatura a 100 graus",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -656,7 +622,6 @@
 ,
 {
   "Input": "Ajuste a temperatura a 100 Kelvin",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -672,7 +637,6 @@
 ,
 {
   "Input": "Mantenha a temperatura de 75 graus f",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -688,7 +652,6 @@
 ,
 {
   "Input": "Deixe que a temperatura fique em 40 centígrados",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -704,7 +667,6 @@
 ,
 {
   "Input": "Deixe a temperatura em 50 graus.",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

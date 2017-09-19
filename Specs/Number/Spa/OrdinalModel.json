@@ -1,6 +1,5 @@
 [{
   "Input": "tresmillonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +14,6 @@
 ,
 {
   "Input": "dos mil millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +28,6 @@
 ,
 {
   "Input": "septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -45,7 +42,6 @@
 ,
 {
   "Input": "cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +56,6 @@
 ,
 {
   "Input": "tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -75,7 +70,6 @@
 ,
 {
   "Input": "dosmilesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -90,7 +84,6 @@
 ,
 {
   "Input": "cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -105,7 +98,6 @@
 ,
 {
   "Input": "cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +112,6 @@
 ,
 {
   "Input": "tresmillonesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -135,7 +126,6 @@
 ,
 {
   "Input": "tresmillonesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -150,7 +140,6 @@
 ,
 {
   "Input": "tresmillonesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,7 +154,6 @@
 ,
 {
   "Input": "tres millones dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +168,6 @@
 ,
 {
   "Input": "tres millones cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -195,7 +182,6 @@
 ,
 {
   "Input": "tres millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -210,7 +196,6 @@
 ,
 {
   "Input": "trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -225,7 +210,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo septimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,7 +224,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo cuadragesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -255,7 +238,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo tricentesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -270,7 +252,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta y dos milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -285,7 +266,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos cincuenta milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,7 +280,6 @@
 ,
 {
   "Input": "quinientos trece millones cuatrocientos milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -315,7 +294,6 @@
 ,
 {
   "Input": "quinientos trece millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -330,7 +308,6 @@
 ,
 {
   "Input": "quinientos diez millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -345,7 +322,6 @@
 ,
 {
   "Input": "quinientosmillonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,7 +336,6 @@
 ,
 {
   "Input": "milesimo quingentesimo vigesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -375,7 +350,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo octingentesimo trigesimo segundo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -390,7 +364,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -405,7 +378,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,7 +392,6 @@
 ,
 {
   "Input": "tres billones cuatrocientos cincuenta y cinco mil millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -435,7 +406,6 @@
 ,
 {
   "Input": "tresbillonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -450,7 +420,6 @@
 ,
 {
   "Input": "vigesimo quinto",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -465,7 +434,6 @@
 ,
 {
   "Input": "vigesimo primero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,7 +448,6 @@
 ,
 {
   "Input": "centesimo vigesimo quinto",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -495,7 +462,6 @@
 ,
 {
   "Input": "ducentesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -510,7 +476,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -525,7 +490,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,7 +504,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -555,7 +518,6 @@
 ,
 {
   "Input": "tres mil quinientos veinticuatro millones seiscientos milesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -570,7 +532,6 @@
 ,
 {
   "Input": "tres mil millonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -585,7 +546,6 @@
 ,
 {
   "Input": "tres mil millonesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,7 +560,6 @@
 ,
 {
   "Input": "tres mil millonesimo septuagesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -615,7 +574,6 @@
 ,
 {
   "Input": "tres mil millonesimo sexcentesimo septuagesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -630,7 +588,6 @@
 ,
 {
   "Input": "tres mil millones cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -645,7 +602,6 @@
 ,
 {
   "Input": "tres mil veinticuatro millones seiscientos noventa y cuatro milesimo sexcentesimo septuagesimo tercero",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,7 +616,6 @@
 ,
 {
   "Input": "11mo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -675,7 +630,6 @@
 ,
 {
   "Input": "11vo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -690,7 +644,6 @@
 ,
 {
   "Input": "12vo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -705,7 +658,6 @@
 ,
 {
   "Input": "111ro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,7 +672,6 @@
 ,
 {
   "Input": "21ro",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -735,7 +686,6 @@
 ,
 {
   "Input": "30ma",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -750,7 +700,6 @@
 ,
 {
   "Input": "2da",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -765,7 +714,6 @@
 ,
 {
   "Input": "undecimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -780,7 +728,6 @@
 ,
 {
   "Input": "veintidosmilesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -795,7 +742,6 @@
 ,
 {
   "Input": "cincuenta y cinco billones quinientos cincuenta y cinco mil quinientos cincuenta y cinco millones quinientos cincuenta y cinco milesimo quingentesimo quincuagesimo quinto",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -810,7 +756,6 @@
 ,
 {
   "Input": "vigesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -825,7 +770,6 @@
 ,
 {
   "Input": "centesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -840,7 +784,6 @@
 ,
 {
   "Input": "tres billonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -855,7 +798,6 @@
 ,
 {
   "Input": "tres billonesima",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -870,7 +812,6 @@
 ,
 {
   "Input": "cien billonesimo",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

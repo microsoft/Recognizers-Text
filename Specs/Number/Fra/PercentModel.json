@@ -1,6 +1,33 @@
 [{
+  "Input": "100%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100% ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": " 100 pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,7 +42,6 @@
 ,
 {
   "Input": "120 pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -30,7 +56,6 @@
 ,
 {
   "Input": "10 pourcents",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -45,7 +70,6 @@
 ,
 {
   "Input": " 100 pourcentage",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,7 +84,6 @@
 ,
 {
   "Input": "240 pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -75,7 +98,6 @@
 ,
 {
   "Input": "vingt pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -90,7 +112,6 @@
 ,
 {
   "Input": "trente pourcentage",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -105,7 +126,6 @@
 ,
 {
   "Input": "cent pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,7 +140,6 @@
 ,
 {
   "Input": "cent pourcentages",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -135,7 +154,6 @@
 ,
 {
   "Input": "pourcentage de vingt",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -149,8 +167,21 @@
 }
 ,
 {
+  "Input": "4,800%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4,800%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "4,8%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "pourcent des trois cent cinq",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -164,8 +195,21 @@
 }
 ,
 {
+  "Input": "9,2321312%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9,2321312%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9,2321312%"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "cinq cent trente cinq pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,7 +224,6 @@
 ,
 {
   "Input": "1,1^23 pourcent",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

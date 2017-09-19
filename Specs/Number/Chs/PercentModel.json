@@ -1,6 +1,5 @@
 [{
   "Input": "打对折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -15,14 +14,12 @@
 ,
 {
   "Input": "对折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陆 点 五 折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -37,7 +34,6 @@
 ,
 {
   "Input": "９成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -52,7 +48,6 @@
 ,
 {
   "Input": "七成 六",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -67,7 +62,6 @@
 ,
 {
   "Input": "7.２成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -82,7 +76,6 @@
 ,
 {
   "Input": "7 2 折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -97,7 +90,6 @@
 ,
 {
   "Input": "六 点 五 成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -112,7 +104,6 @@
 ,
 {
   "Input": "１０ 成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -127,7 +118,6 @@
 ,
 {
   "Input": "１0 成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -142,7 +132,6 @@
 ,
 {
   "Input": "十 成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -157,7 +146,6 @@
 ,
 {
   "Input": "75折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -172,7 +160,6 @@
 ,
 {
   "Input": "9.9折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,7 +174,6 @@
 ,
 {
   "Input": "九 九 折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -202,7 +188,6 @@
 ,
 {
   "Input": "三点一折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -217,7 +202,6 @@
 ,
 {
   "Input": "三成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -232,7 +216,6 @@
 ,
 {
   "Input": "半成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -247,7 +230,6 @@
 ,
 {
   "Input": "半折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -262,7 +244,6 @@
 ,
 {
   "Input": "10成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -277,7 +258,6 @@
 ,
 {
   "Input": "十成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -292,14 +272,12 @@
 ,
 {
   "Input": "十折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "9.5成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -314,7 +292,6 @@
 ,
 {
   "Input": "九成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -329,7 +306,6 @@
 ,
 {
   "Input": "三成半",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -344,7 +320,6 @@
 ,
 {
   "Input": "２.５成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -359,7 +334,6 @@
 ,
 {
   "Input": "２成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -374,7 +348,6 @@
 ,
 {
   "Input": "２折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -389,7 +362,6 @@
 ,
 {
   "Input": "两折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -404,7 +376,6 @@
 ,
 {
   "Input": "两成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -419,7 +390,6 @@
 ,
 {
   "Input": "三八折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -434,7 +404,6 @@
 ,
 {
   "Input": "2成,2.5成,２．１成，２成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -470,7 +439,6 @@
 ,
 {
   "Input": "九成,五成,八点五成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -499,7 +467,6 @@
 ,
 {
   "Input": "2折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -514,7 +481,6 @@
 ,
 {
   "Input": "2折,2.5折,２．１折，２折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -550,7 +516,6 @@
 ,
 {
   "Input": "九折,五五折,八点五折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -579,7 +544,6 @@
 ,
 {
   "Input": "五折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -594,7 +558,6 @@
 ,
 {
   "Input": "百分之２．４",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -609,21 +572,18 @@
 ,
 {
   "Input": "二三十个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "百分之二三十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "百分之五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -638,7 +598,6 @@
 ,
 {
   "Input": "一百五十    个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -653,7 +612,6 @@
 ,
 {
   "Input": "六个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -668,7 +626,6 @@
 ,
 {
   "Input": "２．４个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -683,7 +640,6 @@
 ,
 {
   "Input": "-22.2%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -698,7 +654,6 @@
 ,
 {
   "Input": "２２％",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -713,7 +668,6 @@
 ,
 {
   "Input": "－1２２％",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -728,7 +682,6 @@
 ,
 {
   "Input": "百分之22",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -743,7 +696,6 @@
 ,
 {
   "Input": "百分之１２０",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -758,7 +710,6 @@
 ,
 {
   "Input": "百分之15Ｋ",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -773,7 +724,6 @@
 ,
 {
   "Input": "百分之1,111",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -788,7 +738,6 @@
 ,
 {
   "Input": "百分之９，９９９",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -803,7 +752,6 @@
 ,
 {
   "Input": "12个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -818,7 +766,6 @@
 ,
 {
   "Input": "2,123个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -833,7 +780,6 @@
 ,
 {
   "Input": "二十个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -848,7 +794,6 @@
 ,
 {
   "Input": "四点 五个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -863,7 +808,6 @@
 ,
 {
   "Input": "百分之五 十",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -878,7 +822,6 @@
 ,
 {
   "Input": "百分之一 点五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -893,7 +836,6 @@
 ,
 {
   "Input": "百分之５６.２",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -908,7 +850,6 @@
 ,
 {
   "Input": "百分之１２",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -923,7 +864,6 @@
 ,
 {
   "Input": "百分之3,000",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -938,7 +878,6 @@
 ,
 {
   "Input": "百分之１，１２３",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -953,7 +892,6 @@
 ,
 {
   "Input": "百分之3.2k",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -968,7 +906,6 @@
 ,
 {
   "Input": "百分之3.2M",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -983,7 +920,6 @@
 ,
 {
   "Input": "12.56个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -998,7 +934,6 @@
 ,
 {
   "Input": "０.４个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1013,7 +948,6 @@
 ,
 {
   "Input": "15,123个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1028,7 +962,6 @@
 ,
 {
   "Input": "１１１，１１１个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1043,7 +976,6 @@
 ,
 {
   "Input": "25%",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1058,7 +990,6 @@
 ,
 {
   "Input": "12k个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1073,7 +1004,6 @@
 ,
 {
   "Input": "１５k个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1088,7 +1018,6 @@
 ,
 {
   "Input": "一百五十个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1103,7 +1032,6 @@
 ,
 {
   "Input": "七十五万个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1118,7 +1046,6 @@
 ,
 {
   "Input": "拾万零五十六点叁叁个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1133,7 +1060,6 @@
 ,
 {
   "Input": "75.2个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1148,7 +1074,6 @@
 ,
 {
   "Input": "75个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1163,7 +1088,6 @@
 ,
 {
   "Input": "1,075个百分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1178,7 +1102,6 @@
 ,
 {
   "Input": "百分之一百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1193,7 +1116,6 @@
 ,
 {
   "Input": "百分之百",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1208,7 +1130,6 @@
 ,
 {
   "Input": "百分之一百二十点五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1223,7 +1144,6 @@
 ,
 {
   "Input": "百分之2.4",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1238,7 +1158,6 @@
 ,
 {
   "Input": "百分之2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1253,7 +1172,6 @@
 ,
 {
   "Input": "百分之1,669",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1268,7 +1186,6 @@
 ,
 {
   "Input": "百分之５２.５",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1283,14 +1200,12 @@
 ,
 {
   "Input": "五百分之2.2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "上升了百分之2.2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1305,7 +1220,6 @@
 ,
 {
   "Input": "5％",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1320,7 +1234,6 @@
 ,
 {
   "Input": "５．５％",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1335,7 +1248,6 @@
 ,
 {
   "Input": "一 百 五 十 个 百 分 点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1350,7 +1262,6 @@
 ,
 {
   "Input": "六   个 百 分点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1365,7 +1276,6 @@
 ,
 {
   "Input": "２．４   个百分 点",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1380,7 +1290,6 @@
 ,
 {
   "Input": "百 分之 一百二十点五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1395,7 +1304,6 @@
 ,
 {
   "Input": "百 分 之2.4",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1410,7 +1318,6 @@
 ,
 {
   "Input": "百 分之 2",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1425,7 +1332,6 @@
 ,
 {
   "Input": "百  分 之 669",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1440,7 +1346,6 @@
 ,
 {
   "Input": "百 分 之  ５２.５ k",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1455,7 +1360,6 @@
 ,
 {
   "Input": "百 分 之 一 百二 十点 五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1470,7 +1374,6 @@
 ,
 {
   "Input": "打對折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1485,14 +1388,12 @@
 ,
 {
   "Input": "對折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "陸 點 五 折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1507,7 +1408,6 @@
 ,
 {
   "Input": "六 點 五 成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1522,7 +1422,6 @@
 ,
 {
   "Input": "三點一折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1537,7 +1436,6 @@
 ,
 {
   "Input": "兩折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1552,7 +1450,6 @@
 ,
 {
   "Input": "兩成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1567,7 +1464,6 @@
 ,
 {
   "Input": "九成,五成,八點五成",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1596,7 +1492,6 @@
 ,
 {
   "Input": "九折,五五折,八點五折",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1625,14 +1520,12 @@
 ,
 {
   "Input": "二三十個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": []
 }
 ,
 {
   "Input": "一百五十 個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1647,7 +1540,6 @@
 ,
 {
   "Input": "六個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1662,7 +1554,6 @@
 ,
 {
   "Input": "２．４個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1677,7 +1568,6 @@
 ,
 {
   "Input": "12個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1692,7 +1582,6 @@
 ,
 {
   "Input": "2,123個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1707,7 +1596,6 @@
 ,
 {
   "Input": "二十個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1722,7 +1610,6 @@
 ,
 {
   "Input": "四點 五個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1737,7 +1624,6 @@
 ,
 {
   "Input": "百分之一 點五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1752,7 +1638,6 @@
 ,
 {
   "Input": "12.56個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1767,7 +1652,6 @@
 ,
 {
   "Input": "０.４個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1782,7 +1666,6 @@
 ,
 {
   "Input": "15,123個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1797,7 +1680,6 @@
 ,
 {
   "Input": "１１１，１１１個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1812,7 +1694,6 @@
 ,
 {
   "Input": "12k個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1827,7 +1708,6 @@
 ,
 {
   "Input": "１５k個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1842,7 +1722,6 @@
 ,
 {
   "Input": "一百五十個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1857,7 +1736,6 @@
 ,
 {
   "Input": "七十五萬個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1872,7 +1750,6 @@
 ,
 {
   "Input": "拾萬零五十六點叁叁個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1887,7 +1764,6 @@
 ,
 {
   "Input": "75.2個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1902,7 +1778,6 @@
 ,
 {
   "Input": "75個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1917,7 +1792,6 @@
 ,
 {
   "Input": "1,075個百分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1932,7 +1806,6 @@
 ,
 {
   "Input": "百分之一百二十點五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1947,7 +1820,6 @@
 ,
 {
   "Input": "一 百 五 十 個 百 分 點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1962,7 +1834,6 @@
 ,
 {
   "Input": "六   個 百 分點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1977,7 +1848,6 @@
 ,
 {
   "Input": "２．４   個百分 點",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1992,7 +1862,6 @@
 ,
 {
   "Input": "百 分之 一百二十點五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2007,7 +1876,6 @@
 ,
 {
   "Input": "佰 分 之 一 百二 十點 五",
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
