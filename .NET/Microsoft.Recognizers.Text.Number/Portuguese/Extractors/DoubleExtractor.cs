@@ -16,32 +16,25 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(placeholder), RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder),
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(placeholder), RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex,
-                        RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleWithRoundNumber,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePor"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder),

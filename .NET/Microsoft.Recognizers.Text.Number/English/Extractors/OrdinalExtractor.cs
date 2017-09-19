@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        private static readonly Dictionary<string, OrdinalExtractor> Instances = new Dictionary<string, OrdinalExtractor>();
+        private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances = new ConcurrentDictionary<string, OrdinalExtractor>();
 
         public static OrdinalExtractor GetInstance(string placeholder = "")
         {
@@ -19,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             if (!Instances.ContainsKey(placeholder))
             {
                 var instance = new OrdinalExtractor();
-                Instances.Add(placeholder, instance);
+                Instances.TryAdd(placeholder, instance);
             }
 
             return Instances[placeholder];
@@ -30,24 +31,20 @@ namespace Microsoft.Recognizers.Text.Number.English
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(
-                        NumbersDefinitions.OrdinalSuffixRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "OrdinalNum"
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdinalNum"
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "OrdinalNum"
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdEng"
+                    new Regex(NumbersDefinitions.OrdinalEnglishRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "OrdEng"
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex,
-                        RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OrdEng"
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    "OrdEng"
                 }
             };
 

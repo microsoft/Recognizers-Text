@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-
-using Microsoft.Recognizers.Definitions.English;
+﻿using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English
 {
@@ -12,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM; // "Number";
 
-        private static readonly Dictionary<string, NumberExtractor> Instances = new Dictionary<string, NumberExtractor>();
+        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
 
         public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default) {
 
@@ -21,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             if (!Instances.ContainsKey(placeholder))
             {
                 var instance = new NumberExtractor(mode);
-                Instances.Add(placeholder, instance);
+                Instances.TryAdd(placeholder, instance);
             }
 
             return Instances[placeholder];

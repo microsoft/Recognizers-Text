@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_DOUBLE; // "Double";
 
-        private static readonly Dictionary<string, DoubleExtractor> Instances = new Dictionary<string, DoubleExtractor>();
+        private static readonly ConcurrentDictionary<string, DoubleExtractor> Instances = new ConcurrentDictionary<string, DoubleExtractor>();
 
         public static DoubleExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
@@ -19,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             if (!Instances.ContainsKey(placeholder))
             {
                 var instance = new DoubleExtractor(placeholder);
-                Instances.Add(placeholder, instance);
+                Instances.TryAdd(placeholder, instance);
             }
 
             return Instances[placeholder];
@@ -37,12 +38,10 @@ namespace Microsoft.Recognizers.Text.Number.English
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex,
-                              RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
-                    new Regex(NumbersDefinitions.DoubleWithRoundNumber,
-                              RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoubleNum"
                 }, {
                     new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),

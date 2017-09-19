@@ -53,20 +53,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+
             NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, 
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
+
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
@@ -111,12 +114,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 timex = null;
                 return false;
             }
+
             return true;
         }
 
         public int GetSwiftDay(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
+
             var swift = 0;
             if (trimedText.StartsWith("next"))
             {
@@ -126,6 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -1;
             }
+
             return swift;
         }
 

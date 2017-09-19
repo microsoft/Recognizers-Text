@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 index = text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal) + match.Value.Length;
                 return true;
             }
+
             return false;
         }
 
@@ -28,6 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 index = text.Length - text.ToLower().LastIndexOf(match.Value, StringComparison.Ordinal);
                 return true;
             }
+
             return false;
         }
 

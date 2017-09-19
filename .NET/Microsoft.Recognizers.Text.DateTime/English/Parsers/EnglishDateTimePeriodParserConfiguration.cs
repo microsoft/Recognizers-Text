@@ -62,6 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeParser = config.TimeParser;
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
+
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = EnglishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
@@ -72,22 +73,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             UnitRegex = EnglishTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
+
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
 
-        public static readonly Regex MorningStartEndRegex = new Regex(DateTimeDefinitions.MorningStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex AfternoonStartEndRegex = new Regex(DateTimeDefinitions.AfternoonStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex EveningStartEndRegex = new Regex(DateTimeDefinitions.EveningStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex NightStartEndRegex = new Regex(DateTimeDefinitions.NightStartEndRegex,
-            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex MorningStartEndRegex = 
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex AfternoonStartEndRegex = 
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex EveningStartEndRegex = 
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex NightStartEndRegex = 
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
             var trimedText = text.Trim().ToLowerInvariant();
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -121,12 +127,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 timeStr = null;
                 return false;
             }
+
             return true;
         }
 
         public int GetSwiftPrefix(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
+
             var swift = 0;
             if (trimedText.StartsWith("next"))
             {
@@ -136,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 swift = -1;
             }
+
             return swift;
         }
     }

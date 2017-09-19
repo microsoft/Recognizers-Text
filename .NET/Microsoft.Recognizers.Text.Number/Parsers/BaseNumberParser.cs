@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.Number
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|"
                                 + GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|"
                                 + GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
+
             TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
             LongFormatRegex = new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -413,12 +414,8 @@ namespace Microsoft.Recognizers.Text.Number
         {
             var baseNumber = small > 10 ? 100 : 10;
 
-            if (big % baseNumber == 0 && big / baseNumber >= 1)
-            {
-                return true;
-            }
+            return big % baseNumber == 0 && big / baseNumber >= 1;
 
-            return false;
         }
 
         private double GetIntValue(List<string> matchStrs)
