@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
 var SupportedCultures = require('./runner-cultures.js');
 
@@ -13,11 +14,12 @@ module.exports = function getNumberTestRunner(config) {
         var result = model.parse(testCase.Input);
 
         t.is(result.length, expected.length, 'Result count');
-        result.forEach((r, ix) => {
-            var e = expected[ix];
-            t.is(r.text, e.Text, 'Result.Text');
-            t.is(r.typeName, e.TypeName, 'Result.TypeName');
-            t.is(r.resolution.value, e.Resolution.value, 'Result.Resolution.value');
+        _.zip(result, expected).forEach(o => {
+            var actual = o[0];
+            var expected = o[1];
+            t.is(actual.text, expected.Text, 'Result.Text');
+            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+            t.is(actual.resolution.value, expected.Resolution.value, 'Result.Resolution.value');
         });
     };
 }

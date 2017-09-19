@@ -33,6 +33,7 @@ function getExtractorTestRunner(extractor, config) {
         }
 
         var result = extractor.extract(testCase.Input);
+
         t.is(result.length, expected.length, 'Result count');
         _.zip(result, expected).forEach(o => {
             var actual = o[0];
