@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
-        public void TestMergedParseAfterBefore()
+        public void TestMergedParseAfterBeforeSince()
         {
             BasicTest("after 8pm", Constants.SYS_DATETIME_TIMEPERIOD);
             BasicTest("before 8pm", Constants.SYS_DATETIME_TIMEPERIOD);

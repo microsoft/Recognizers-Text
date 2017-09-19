@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        Regex SinceRegex { get; }
+
         IDateTimeParser GetParser { get; }
 
         IDateTimeParser HolidayParser { get; }

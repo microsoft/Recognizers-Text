@@ -29,10 +29,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save teh MOD string
-            bool hasBefore = false, hasAfter = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false;
             var modStr = string.Empty;
-            var beforeMatch= Config.BeforeRegex.Match(er.Text);
-            var afterMatch= Config.AfterRegex.Match(er.Text);
+            var beforeMatch = Config.BeforeRegex.Match(er.Text);
+            var afterMatch = Config.AfterRegex.Match(er.Text);
+            var sinceMatch = Config.SinceRegex.Match(er.Text); 
             if (beforeMatch.Success && beforeMatch.Index==0)
             {
                 hasBefore = true;
@@ -48,6 +49,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length -= afterMatch.Length;
                 er.Text = er.Text.Substring(afterMatch.Length);
                 modStr = afterMatch.Value;
+            }
+            else if (sinceMatch.Success && sinceMatch.Index == 0)
+            {
+                hasSince = true;
+                er.Start += sinceMatch.Length;
+                er.Length -= sinceMatch.Length;
+                er.Text = er.Text.Substring(sinceMatch.Length);
+                modStr = sinceMatch.Value;
             }
 
             if (er.Type.Equals(Constants.SYS_DATETIME_DATE))
@@ -112,17 +121,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter);
+            if (hasSince && pr.Value != null)
+            {
+                pr.Length += modStr.Length;
+                pr.Start -= modStr.Length;
+                pr.Text = modStr + pr.Text;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = TimeTypeConstants.sinceMod;
+                pr.Value = val;
+            }
+
+            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
 
             //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter)}";
+            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
 
             return pr;
         }
 
-        public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter)
+        public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            if (hasBefore || hasAfter)
+            if (hasBefore || hasAfter || hasSince)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATE))
                 {
@@ -143,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return type;
         }
 
-        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter)
+        public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             if (slot == null)
             {
@@ -153,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var res = new Dictionary<string, object>();
 
             var type = slot.Type;
-            var typeOutput = DetermineDateTimeType(slot.Type, hasBefore, hasAfter);
+            var typeOutput = DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince);
             var timex = slot.TimexStr;
 
             var val = (DateTimeResolutionResult) slot.Value;
@@ -404,6 +423,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                         res.Add(TimeTypeConstants.START, resolutionDic[type]);
                         return;
                     }
+
+                    if (mod.Equals(TimeTypeConstants.sinceMod))
+                    {
+                        res.Add(TimeTypeConstants.START, resolutionDic[type]);
+                        return;
+                    }
                 }
 
                 res.Add(TimeTypeConstants.VALUE, resolutionDic[type]);
@@ -439,6 +464,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (mod.Equals(TimeTypeConstants.afterMod))
                 {
                     res.Add(TimeTypeConstants.START, end);
+                    return;
+                }
+
+                //For since mode, the start of the period should be the start the new period, no end 
+                if (mod.Equals(TimeTypeConstants.sinceMod))
+                {
+                    res.Add(TimeTypeConstants.START, start);
                     return;
                 }
             }

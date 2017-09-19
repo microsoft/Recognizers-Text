@@ -24,5 +24,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             BasicTest("esto es antes de las 4pm mañana", 8, 23);
             BasicTest("esto es antes de mañana a las 4pm ", 8, 25);
         }
+        
+        [TestMethod]
+        public void TestAfterBeforeSince()
+        {
+            BasicTest("despues del 7/2 ", 0, 15);
+            BasicTest("desde el 7/2 ", 0, 12);
+            BasicTest("antes del  7/2 ", 0, 14);
+        }
     }
 }
