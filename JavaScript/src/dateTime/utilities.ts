@@ -345,7 +345,11 @@ export class DateUtils {
     }
 
     static totalHours(from: Date, to: Date): number {
-        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneHour);
+        // Fix to mimic .NET's Convert.ToInt32()
+        // C#: Math.Round(4.5) == 4
+        // C#: Convert.ToInt32(4.5) == 4
+        // JS: Math.round(4.5) == 5 !!
+        return Math.round(Math.abs(from.getTime() - to.getTime() - 0.00001) / this.oneHour);
     }
 
     static totalSeconds(from: Date, to: Date): number {
