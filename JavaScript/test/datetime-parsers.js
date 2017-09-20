@@ -24,7 +24,7 @@ function createParser(lang, parser, commonConfig) {
         throw new Error(`Parser Type ${parserTypeName} was not found in module ${parserModuleName}`);
     }
 
-    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + parser + 'Configuration';
+    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + 'Configuration';
     var configTypeName = lang + parser + 'ParserConfiguration';
     var ConfigType = require(configModuleName)[configTypeName];
     if (!ConfigType) {
@@ -36,4 +36,8 @@ function createParser(lang, parser, commonConfig) {
         : new ConfigType();
 
     return new ParserType(config);
+}
+
+function toCamelCase(name) {
+    return name.substring(0, 1).toLowerCase() + name.substring(1);
 }

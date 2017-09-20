@@ -23,7 +23,7 @@ function createExtractor(lang, extractor, options) {
         throw new Error(`Extractor Type ${extractorTypeName} was not found in module ${extractorModuleName}`);
     }
 
-    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + extractor + 'Configuration';
+    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + 'Configuration';
     var configTypeName = lang + extractor + 'ExtractorConfiguration';
     var ConfigType = require(configModuleName)[configTypeName];
     if (!ConfigType) {
@@ -31,4 +31,9 @@ function createExtractor(lang, extractor, options) {
     }
 
     return new ExtractorType(new ConfigType(), options);
+}
+
+
+function toCamelCase(name) {
+    return name.substring(0, 1).toLowerCase() + name.substring(1);
 }
