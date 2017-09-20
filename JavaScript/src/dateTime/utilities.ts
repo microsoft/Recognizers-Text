@@ -246,8 +246,7 @@ export class FormatUtil {
         let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
-            if (lastPos !== match.index)
-            { split.push(timeStr.substring(lastPos, match.index)); }
+            if (lastPos !== match.index) split.push(timeStr.substring(lastPos, match.index));
             split.push(timeStr.substring(match.index, match.length));
             lastPos = match.index + match.length;
         });
@@ -366,11 +365,9 @@ export class DateUtils {
     }
 
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
-        let date = new Date(Date.UTC(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate()));
-        date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
-        let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-        let weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-        return { weekNo: weekNo, year: date.getUTCFullYear() }
+        let onejan = new Date(referenceDate.getFullYear(), 0, 1);
+        let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+        return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
     static minValue(): Date { 
