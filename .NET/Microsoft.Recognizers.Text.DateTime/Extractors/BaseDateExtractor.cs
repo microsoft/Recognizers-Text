@@ -118,26 +118,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
                             continue;
-                            //var referenceDate = DateObject.Now;
-                            //var date = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, num);
-                            //var date2WeekdayStr = date.DayOfWeek.ToString().ToLowerInvariant();
-                            //var extractedWeekDayStr = match.Groups["weekday"].Value.ToLowerInvariant();
-                            
-                            //if (date.Equals(DateObject.MinValue)
-                            //    || this.config.DayOfWeek[date2WeekdayStr] != this.config.DayOfWeek[extractedWeekDayStr])
-                            //{
-                            //    //separate to two date points
-                            //    ret.Add(new Token(match.Groups["weekday"].Index,
-                            //        match.Groups["weekday"].Index + match.Groups["weekday"].Length));
-                            //    ret.Add(new Token(match.Groups["DayOfMonth"].Index,
-                            //        match.Groups["DayOfMonth"].Index + match.Groups["DayOfMonth"].Length));
-                            //    continue;
-                            //}
-                            //else
-                            //{
-                            //    ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
-                            //    continue;
-                            //}
+                        }
+                    }
+
+                    // handling cases like '20th of next month'
+                    var suffixStr = text.Substring(result.Start + result.Length ?? 0);
+                    match = this.config.RelativeMonthRegex.Match(suffixStr.Trim());
+                    if (match.Success && match.Index == 0)
+                    {
+                        var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
+                        ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                    }
+
+                    // handling cases like 'second Sunday'
+                    suffixStr = text.Substring(result.Start + result.Length ?? 0);
+                    match = this.config.WeekDayRegex.Match(suffixStr.Trim());
+                    if (match.Success && match.Index == 0 && num >= 1 && num <= 5)
+                    {
+                        var weekDayStr = match.Groups["weekday"].Value.ToLower();
+                        if (this.config.DayOfWeek.ContainsKey(weekDayStr))
+                        {
+                            var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
+                            ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
                         }
                     }
                 }

@@ -343,20 +343,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // handle cases like "January first", "twenty-two of August"
+        // handle cases like "20th of next month"
         private DateTimeResolutionResult ParseNumberWithMonth(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
 
             var trimedText = text.Trim().ToLower();
             int month = 0, day = 0, year = referenceDate.Year;
-
-            var match = this.config.MonthRegex.Match(trimedText);
-            if (!match.Success)
-            {
-                return ret;
-            }
-
-            month = this.config.MonthOfYear[match.Value.Trim()];
+            bool ambiguous = true;
 
             var er = this.config.OrdinalExtractor.Extract(trimedText);
             if (er.Count == 0)
@@ -369,21 +363,72 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            day = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+            var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+
+            var match = this.config.MonthRegex.Match(trimedText);
+            if (match.Success)
+            {
+                month = this.config.MonthOfYear[match.Value.Trim()];
+                day = num;
+            }
+
+            // handling relatived month
+            if (!match.Success)
+            {
+                match = this.config.RelativeMonthRegex.Match(trimedText);
+                if (match.Success)
+                {
+                    var monthStr = match.Groups["order"].Value;
+                    var swift = this.config.GetSwiftMonth(monthStr);
+                    month = referenceDate.AddMonths(swift).Month;
+                    day = num;
+                    ambiguous = false;
+                }
+            }
+
+            // handling casesd like 'second Sunday'
+            if (!match.Success)
+            {
+                match = this.config.WeekDayRegex.Match(trimedText);
+                if (match.Success)
+                {
+                    month = referenceDate.Month;
+                    // resolve the date of wanted week day
+                    var wantedWeekDay = this.config.DayOfWeek[match.Groups["weekday"].Value];
+                    var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
+                    var firstWeekDay = (int)firstDate.DayOfWeek;
+                    var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                    var AnswerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+                    day = AnswerDay;
+                    ambiguous = false;
+                }
+            }
+
+            if (!match.Success)
+            {
+                return ret;
+            }
 
             // for LUIS format value string
-            ret.Timex = FormatUtil.LuisDate(-1, month, day);
             var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
             var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
 
-            if (futureDate < referenceDate)
+            if (ambiguous)
             {
-                futureDate = futureDate.AddYears(+1);
-            }
+                ret.Timex = FormatUtil.LuisDate(-1, month, day);
+                if (futureDate < referenceDate)
+                {
+                    futureDate = futureDate.AddYears(+1);
+                }
 
-            if (pastDate >= referenceDate)
+                if (pastDate >= referenceDate)
+                {
+                    pastDate = pastDate.AddYears(-1);
+                }
+            }
+            else
             {
-                pastDate = pastDate.AddYears(-1);
+                ret.Timex = FormatUtil.LuisDate(year, month, day);
             }
 
             ret.FutureValue = futureDate;

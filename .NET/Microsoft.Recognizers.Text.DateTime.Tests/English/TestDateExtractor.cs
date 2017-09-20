@@ -85,8 +85,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll go back 28-Nov", 13, 6);
             BasicTest("I'll go back Wed, 22 of Jan", 13, 14);
 
-           
-
             BasicTest("I'll go back the first friday of july", 13, 24);
             BasicTest("I'll go back the first friday in this month", 13, 30);
 
@@ -101,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateExtractDayOfWeek()
         {
+            BasicTest("I'll go back on Tues.", 16, 4);
+            BasicTest("I'll go back on Tues. good news.", 16, 4);
             BasicTest("I'll go back on Tues", 16, 4);
             BasicTest("I'll go back on Friday", 16, 6);
             BasicTest("I'll go back Friday", 13, 6);
@@ -211,6 +211,30 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             //    "27th");
             //BasicTestTwoOutputs("What do I have on " + CalculateWeekOfDay(24) + " the 21st", CalculateWeekOfDay(24),
             //    "21st");
+        }
+
+        [TestMethod]
+        public void TestDateExtractRelativeDayOfWeek()
+        {
+            BasicTest("I'll go back second Sunday", 13, 13);
+            BasicTest("I'll go back first Sunday", 13, 12);
+            BasicTest("I'll go back third Tuesday", 13, 13);
+            BasicTest("I'll go back fifth Sunday", 13, 12);
+        }
+
+        [TestMethod]
+        public void TestDateExtractRelativeDayOfWeekSingle()
+        {
+            // For ordinary number>5, only the DayOfWeek should be extracted
+            BasicTest("I'll go back sixth Sunday", 19, 6);
+            BasicTest("I'll go back tenth Monday", 19, 6);
+        }
+
+        [TestMethod]
+        public void TestDateExtractOdNumRelativeMonth()
+        {
+            BasicTest("I'll go back 20th of next month", 13, 18);
+            BasicTest("I'll go back 31st of this month", 13, 18);
         }
     }
 }

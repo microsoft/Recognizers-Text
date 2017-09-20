@@ -263,6 +263,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
 
             var matches = config.RelativeTimeUnitRegex.Matches(text);
+            if (matches.Count == 0)
+            {
+                matches = this.config.RestOfDateTimeRegex.Matches(text);
+            }
             foreach(Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));

@@ -102,6 +102,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex InConnectorRegex =
             new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RestOfDateRegex =
+            new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -117,7 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             QuarterRegex,
             QuarterRegexYearFront,
             SeasonRegex,
-            WhichWeekRegex
+            WhichWeekRegex,
+            RestOfDateRegex
         };
 
         public EnglishDatePeriodExtractorConfiguration()

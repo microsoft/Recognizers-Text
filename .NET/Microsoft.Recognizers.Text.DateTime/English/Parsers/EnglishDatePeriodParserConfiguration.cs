@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WeekOfRegex { get; }
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
+        public Regex RestOfDateRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -107,6 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WhichWeekRegex = EnglishDatePeriodExtractorConfiguration.WhichWeekRegex;
             WeekOfRegex= EnglishDatePeriodExtractorConfiguration.WeekOfRegex;
             MonthOfRegex = EnglishDatePeriodExtractorConfiguration.MonthOfRegex;
+            RestOfDateRegex = EnglishDatePeriodExtractorConfiguration.RestOfDateRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

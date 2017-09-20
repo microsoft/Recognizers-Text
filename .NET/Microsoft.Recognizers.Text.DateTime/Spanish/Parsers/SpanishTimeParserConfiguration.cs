@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex AtRegex { get; }
 
+        public Regex MealTimeRegex { get; }
+
         public IEnumerable<Regex> TimeRegexes { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }

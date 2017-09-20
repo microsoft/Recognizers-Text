@@ -46,6 +46,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: add this regex, let it correspond to the one in English
+        public static readonly Regex RestOfDateRegex =
+            new Regex(@"^[.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -60,7 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
-            SeasonRegex
+            SeasonRegex,
+            RestOfDateRegex
         };
 
         public SpanishDatePeriodExtractorConfiguration()

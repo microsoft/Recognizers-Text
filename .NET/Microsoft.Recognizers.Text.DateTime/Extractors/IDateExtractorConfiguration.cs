@@ -21,6 +21,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayAndDayOfMothRegex { get; }
 
+        Regex RelativeMonthRegex { get; }
+
+        Regex WeekDayRegex { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IExtractor OrdinalExtractor { get; }

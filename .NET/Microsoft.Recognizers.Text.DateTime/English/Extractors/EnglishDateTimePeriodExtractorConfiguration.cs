@@ -53,6 +53,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RelativeTimeUnitRegex = 
             new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RestOfDateTimeRegex =
+            new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -60,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateTimePeriodExtractorConfiguration.TimeUnitRegex => TimeUnitRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex => RestOfDateTimeRegex;
 
         public Regex PastPrefixRegex => EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
 

@@ -88,6 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 offset = 0;
                 match = regex.Match(trimedText);
 
+                var mealStr = string.Empty;
                 if (match.Success && match.Index == offset && match.Length == trimedText.Length)
                 {
                     return Match2Time(match, referenceTime);

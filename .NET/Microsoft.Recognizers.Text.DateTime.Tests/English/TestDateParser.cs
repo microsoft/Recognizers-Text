@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(date, ((DateTimeResolutionResult)pr.Value).PastValue);
         }
 
-        // use to generate the test cases sentences inside TestDateExtractWeekDayAndDayOfMonth function
+        // use to generate the test cases sentences inside TestDateParserWeekDayAndDayOfMonth function
         // return a day of current week which the parameter refer to
         public System.Tuple<string, string> GenWeekDaynDayMonthTest(int dayOfMonth)
         {
@@ -78,8 +78,20 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             }
 
             var sentence = "I went back " + weekDay;
-            var dateStr = now.Year.ToString().PadLeft(2, '0') + "-" + now.Month.ToString().PadLeft(2, '0') + "-" + dayOfMonth.ToString().PadLeft(2, '0');
+            var dateStr = $"{now.Year}-{now.Month.ToString().PadLeft(2, '0')}-{dayOfMonth.ToString().PadLeft(2, '0')}";
             return new System.Tuple<string, string>(sentence, dateStr);
+        }
+
+        // use to generate the answers to the test cases in TestDateParseRelativeDayOfWeek function
+        public System.Tuple<DateObject, string> GenRelativeWeekDayAnswer(int ordinalNum, int wantedWeekDay, DateObject refDate)
+        {
+            var firstDate = DateObject.MinValue.SafeCreateFromValue(refDate.Year, refDate.Month, 1);
+            var firstWeekDay = (int)firstDate.DayOfWeek;
+            var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+            var wantedDate = firstWantedWeekDay.Day + ((ordinalNum - 1) * 7);
+            var answerDate = DateObject.MinValue.SafeCreateFromValue(refDate.Year, refDate.Month, wantedDate);
+            var answerDateStr = $"{refDate.Year}-{refDate.Month.ToString().PadLeft(2, '0')}-{wantedDate.ToString().PadLeft(2, '0')}";
+            return new System.Tuple<DateObject, string>(answerDate, answerDateStr);
         }
 
         [TestMethod]
@@ -199,6 +211,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateParseRelativeDayOfWeek()
+        {
+            BasicTest("I'll go back second Sunday", GenRelativeWeekDayAnswer(2, 0, DateObject.Now).Item1, true);
+            BasicTest("I'll go back first Sunday", GenRelativeWeekDayAnswer(1, 0, DateObject.Now).Item1, true);
+            BasicTest("I'll go back third Tuesday", GenRelativeWeekDayAnswer(3, 2, DateObject.Now).Item1, true);
+            BasicTest("I'll go back third Tuesday", GenRelativeWeekDayAnswer(3, 2, DateObject.Now).Item1, true);
+            // Negative case
+            BasicTest("I'll go back fifth Sunday", GenRelativeWeekDayAnswer(5, 0, DateObject.Now).Item1, true);
+        }
+
+        [TestMethod]
+        public void TestDateParseOdNumRelativeMonth()
+        {
+            BasicTest("I went back 20th of next month", new DateObject(2016, 12, 20));
+            // Negative cases
+            BasicTest("I went back 31st of this month", new DateObject(0001, 1, 1));
+        }
+
+        [TestMethod]
         public void TestDateParseLuis()
         {
             BasicTest("I'll go back on 15", "XXXX-XX-15");
@@ -275,6 +306,24 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest(GenWeekDaynDayMonthTest(21).Item1 + " the twenty first", GenWeekDaynDayMonthTest(21).Item2, true);
             BasicTest(GenWeekDaynDayMonthTest(22).Item1 + " the twenty second", GenWeekDaynDayMonthTest(22).Item2, true);
             BasicTest(GenWeekDaynDayMonthTest(15).Item1 + " the fifteen", GenWeekDaynDayMonthTest(15).Item2, true);
+        }
+
+        [TestMethod]
+        public void TestDateParseRelativeDayOfWeekLuis()
+        {
+            BasicTest("I'll go back second Sunday", GenRelativeWeekDayAnswer(2, 0, DateObject.Now).Item2, true);
+            BasicTest("I'll go back first Sunday", GenRelativeWeekDayAnswer(1, 0, DateObject.Now).Item2, true);
+            BasicTest("I'll go back third Tuesday", GenRelativeWeekDayAnswer(3, 2, DateObject.Now).Item2, true);
+            // Negative case
+            BasicTest("I'll go back fifth Sunday", GenRelativeWeekDayAnswer(5, 0, DateObject.Now).Item2, true);
+        }
+
+        [TestMethod]
+        public void TestDateParseOdNumRelativeMonthLuis()
+        {
+            BasicTest("I went back 20th of next month", "2016-12-20");
+            // Negative cases
+            BasicTest("I went back 31st of this month", "2016-11-31");
         }
     }
 }

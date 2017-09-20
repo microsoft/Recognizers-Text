@@ -45,6 +45,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeTimeUnitRegex { get; }
 
+        Regex RestOfDateTimeRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

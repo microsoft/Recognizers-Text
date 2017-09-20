@@ -238,6 +238,28 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         }
 
         [TestMethod]
+        public void TestDateTimePeriodParseRestOf()
+        {
+            int year = 2016, month = 11, day = 7, hour = 16, min = 12, second = 0;
+
+            BasicTestFuture("let's meet rest of the day",
+                new DateObject(year, month, day, hour, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+            BasicTestFuture("let's meet rest of current day",
+                new DateObject(year, month, day, hour, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+            BasicTestFuture("let's meet rest of my day",
+                new DateObject(year, month, day, hour, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+            BasicTestFuture("let's meet rest of this day",
+                new DateObject(year, month, day, hour, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+            BasicTestFuture("let's meet rest the day",
+                new DateObject(year, month, day, hour, min, second),
+                new DateObject(year, month, day, 23, 59, 59));
+        }
+
+        [TestMethod]
         public void TestDateTimePeriodParseLuis()
         {
             // basic match
@@ -296,6 +318,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("let's meet on Tuesday late-night", "XXXX-WXX-2TNI");
             BasicTest("let's meet on Tuesday early night", "XXXX-WXX-2TNI");
             BasicTest("let's meet on Tuesday late night", "XXXX-WXX-2TNI");
+        }
+
+        [TestMethod]
+        public void TestDateTimePeriodParseRestOfLuis()
+        {
+            int year = 2016, month = 11, day = 7, hour = 16, min = 12, second = 0;
+
+            BasicTest("let's meet rest of the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of this day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of my day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest of current day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+            BasicTest("let's meet rest the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
         }
     }
 }

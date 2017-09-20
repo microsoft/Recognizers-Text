@@ -1,4 +1,5 @@
-﻿using Microsoft.Recognizers.Definitions.English;
+﻿using System;
+using Microsoft.Recognizers.Definitions.English;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -11,6 +12,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public string TimeTokenPrefix { get; }
 
         public Regex AtRegex { get; }
+
+        public Regex MealTimeRegex { get; }
+
+        private static readonly Regex TimeSuffixFull =
+            new Regex(
+                DateTimeDefinitions.TimeSuffixFull,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex LunchRegex =
+            new Regex(
+                DateTimeDefinitions.LunchRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex NightRegex =
+            new Regex(
+                DateTimeDefinitions.NightRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IEnumerable<Regex> TimeRegexes { get; }
 
@@ -77,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedSuffix = suffix.Trim().ToLowerInvariant();
             var deltaHour = 0;
-            var match = EnglishTimeExtractorConfiguration.TimeSuffix.Match(trimedSuffix);
+            var match = TimeSuffixFull.Match(trimedSuffix);
             if (match.Success && match.Index == 0 && match.Length == trimedSuffix.Length)
             {
                 var oclockStr = match.Groups["oclock"].Value;
@@ -90,7 +108,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         {
                             deltaHour = -12;
                         }
-                        hasAm = true;
+                        else
+                        {
+                            hasAm = true;
+                        }
                     }
 
                     var pmStr = match.Groups["pm"].Value;
@@ -100,7 +121,49 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                         {
                             deltaHour = 12;
                         }
-                        hasPm = true;
+
+                        if (LunchRegex.IsMatch(pmStr))
+                        {
+                            // for hour>=10, <12
+                            if (hour >=10 && hour <=12)
+                            {
+                                deltaHour = 0;
+                                if (hour == 12)
+                                {
+                                    hasPm = true;
+                                }
+                                else
+                                {
+                                    hasAm = true;
+                                }
+                            }
+                            else
+                            {
+                                hasPm = true;
+                            }
+                        }
+                        else if (NightRegex.IsMatch(pmStr))
+                        {
+                            //For hour <=3 or ==12, we treat it as am, for example 1 in the night (midnight) == 1am
+                            if (hour <= 3 || hour == 12)
+                            {
+                                if (hour == 12)
+                                {
+                                    hour = 0;
+                                }
+                                deltaHour = 0;
+                                hasAm = true;
+                            }
+                            else
+                            {
+                                hasPm = true;
+                            }
+                        }
+                        else
+                        {
+                            hasPm = true;
+                        }
+                        
                     }
                 }
             }

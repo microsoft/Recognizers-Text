@@ -92,7 +92,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
- 
 
         public IExtractor DurationExtractor { get; }
 

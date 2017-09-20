@@ -183,6 +183,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll leave over the weekend", 16, 11);
         }
 
+        [TestMethod]
+        public void TestDatePeriodExtractRestOf()
+        {
+            BasicTest("I'll leave rest of the week", 11, 16);
+            BasicTest("I'll leave rest of my week", 11, 15);
+            BasicTest("I'll leave rest of week", 11, 12);
+            BasicTest("I'll leave rest the week", 11, 13);
+            BasicTest("I'll leave rest of this week", 11, 17);
+            BasicTest("I'll leave rest current week", 11, 17);
+            BasicTest("I'll leave rest of the month", 11, 17);
+            BasicTest("I'll leave rest of the year", 11, 16);
+        }
     }
 
 }

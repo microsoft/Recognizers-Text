@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeTimeUnitRegex { get; }
 
+        Regex RestOfDateTimeRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IExtractor SingleDateExtractor { get; }
