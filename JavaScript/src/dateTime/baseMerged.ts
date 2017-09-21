@@ -29,6 +29,7 @@ export interface IMergedExtractorConfiguration {
     setExtractor: BaseSetExtractor
     afterRegex: RegExp
     beforeRegex: RegExp
+    sinceRegex: RegExp
     fromToRegex: RegExp
     singleAmbiguousMonthRegex: RegExp
     prepositionSuffixRegex: RegExp
@@ -132,6 +133,13 @@ export class BaseMergedExtractor implements IExtractor {
                 er.start -= modLength;
                 er.text = source.substr(er.start, er.length);
             }
+            let since = this.hasTokenIndex(beforeStr.trim(), this.config.sinceRegex);
+            if (since.matched) {
+                let modLength = beforeStr.length - since.index;
+                er.length += modLength;
+                er.start -= modLength;
+                er.text = source.substr(er.start, er.length);
+            }
         });
     }
 
@@ -149,6 +157,7 @@ export class BaseMergedExtractor implements IExtractor {
 export interface IMergedParserConfiguration {
     beforeRegex: RegExp
     afterRegex: RegExp
+    sinceRegex: RegExp
     dateParser: BaseDateParser
     holidayParser: BaseHolidayParser
     timeParser: BaseTimeParser
@@ -179,9 +188,11 @@ export class BaseMergedParser implements IDateTimeParser {
         // push, save teh MOD string
         let hasBefore = false;
         let hasAfter = false;
+        let hasSince = false;
         let modStr = "";
         let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).shift();
         let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).shift();
+        let sinceMatch = RegExpUtility.getMatches(this.config.sinceRegex, er.text).shift();
         if (beforeMatch && beforeMatch.index === 0) {
             hasBefore = true;
             er.start += beforeMatch.length;
@@ -195,6 +206,13 @@ export class BaseMergedParser implements IDateTimeParser {
             er.length -= afterMatch.length;
             er.text = er.text.substring(afterMatch.length);
             modStr = afterMatch.value;
+        }
+        else if (sinceMatch && sinceMatch.index === 0) {
+            hasSince = true;
+            er.start += sinceMatch.length;
+            er.length -= sinceMatch.length;
+            er.text = er.text.substring(sinceMatch.length);
+            modStr = sinceMatch.value;
         }
 
         if (er.type === Constants.SYS_DATETIME_DATE) {
@@ -247,10 +265,19 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.value = val;
         }
 
-        pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter);
+        if (hasSince && pr.value !== null) {
+            pr.length += modStr.length;
+            pr.start -= modStr.length;
+            pr.text = modStr + pr.text;
+            let val = pr.value;
+            val.mod = TimeTypeConstants.sinceMod;
+            pr.value = val;
+        }
+
+        pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter, hasSince);
 
         // change the type at last for the after or before mode
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter)}`;
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter, hasSince)}`;
 
         return pr;
     }
@@ -286,8 +313,8 @@ export class BaseMergedParser implements IDateTimeParser {
         return null;
     }
 
-    private determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean): string {
-        if (hasBefore || hasAfter) {
+    private determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): string {
+        if (hasBefore || hasAfter || hasSince) {
             if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
             if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
             if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
@@ -295,14 +322,14 @@ export class BaseMergedParser implements IDateTimeParser {
         return type;
     }
 
-    private dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean): Map<string, any> {
+    private dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): Map<string, any> {
         if (!slot) return null;
 
         let result = new Map<string, any>();
         let resolutions = new Array<Map<string, string>>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, hasBefore, hasAfter);
+        let outputType = this.determineDateTimeType(type, hasBefore, hasAfter, hasSince);
         let timex = slot.timexStr;
 
         let value: DateTimeResolutionResult = slot.value;
@@ -315,7 +342,7 @@ export class BaseMergedParser implements IDateTimeParser {
         if (!StringUtility.isNullOrEmpty(timex)) result.set('timex', timex);
         if (!StringUtility.isNullOrEmpty(comment)) result.set('Comment', comment);
         if (!StringUtility.isNullOrEmpty(mod)) result.set('Mod', mod);
-        if (!StringUtility.isNullOrEmpty(type)) result.set('type', type);
+        if (!StringUtility.isNullOrEmpty(type)) result.set('type', outputType);
 
         let futureResolution = value.futureResolution;
         let pastResolution = value.pastResolution;
@@ -347,7 +374,7 @@ export class BaseMergedParser implements IDateTimeParser {
             if (value instanceof Map) {
                 let newValues = new Map<string, string>();
                 if (!StringUtility.isNullOrEmpty(timex)) newValues.set('timex', timex);
-                if (!StringUtility.isNullOrEmpty(type)) newValues.set('type', type);
+                if (!StringUtility.isNullOrEmpty(type)) newValues.set('type', outputType);
                 value.forEach((innerValue, innerKey) => {
                     newValues.set(innerKey, innerValue);
                 });
@@ -400,8 +427,13 @@ export class BaseMergedParser implements IDateTimeParser {
         if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) return;
 
         if (!StringUtility.isNullOrEmpty(mod)) {
-            if (mod === TimeTypeConstants.beforeMod) key = TimeTypeConstants.END;
-            else if (mod === TimeTypeConstants.afterMod) key = TimeTypeConstants.START;
+            if (mod === TimeTypeConstants.beforeMod){
+                key = TimeTypeConstants.END;
+            } else if (mod === TimeTypeConstants.afterMod) {
+                key = TimeTypeConstants.START;
+            } else if (mod === TimeTypeConstants.sinceMod) {
+                key = TimeTypeConstants.START;
+            }
         }
         result.set(key, value);
     }
@@ -416,6 +448,10 @@ export class BaseMergedParser implements IDateTimeParser {
             }
             if (mod === TimeTypeConstants.afterMod) {
                 result.set(TimeTypeConstants.START, end);
+                return;
+            }
+            if (mod === TimeTypeConstants.sinceMod) {
+                result.set(TimeTypeConstants.START, start);
                 return;
             }
         }

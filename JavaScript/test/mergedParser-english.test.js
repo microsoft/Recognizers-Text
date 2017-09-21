@@ -33,7 +33,7 @@ describe('DateTime Merged Parser In', it => {
     basicTest(it, extractor, parser, referenceDate, "I'll be out in 3 year", Constants.SYS_DATETIME_DATEPERIOD);
 });
 
-describe('DateTime Merged Parser After-Before', it => {
+describe('DateTime Merged Parser After-Before-Since', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date(2016, 10, 7);
