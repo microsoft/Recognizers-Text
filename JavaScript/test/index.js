@@ -31,3 +31,5 @@ require('./singleCultureDateTimeRecognizer-english.test');
 
 // Spanish
 require('./number-spanish.test');
+
+require('./numberWithUnit-spanish.test');

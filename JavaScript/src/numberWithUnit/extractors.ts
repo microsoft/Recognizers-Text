@@ -1,7 +1,7 @@
 import { Culture, CultureInfo } from "../culture";
 import { IExtractor, ExtractResult } from "../number/extractors";
 import * as _ from "lodash";
-import { RegExpUtility, Match } from "../utilities";
+import { RegExpUtility, Match, StringUtility } from "../utilities";
 
 export interface INumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
@@ -103,9 +103,9 @@ export class NumberWithUnitExtractor implements IExtractor {
             });
         }
 
-        numbers.forEach(num => {
+        for (let num of numbers) {
             if (num.start === undefined || num.length === undefined) {
-                return;
+                continue;
             }
 
             let start = num.start
@@ -121,17 +121,17 @@ export class NumberWithUnitExtractor implements IExtractor {
 
                 let maxlen = 0;
                 for (let i = 0; i < unitMatch.length; i++) {
-                    unitMatch[i].forEach(m => {
+                    for (let m of unitMatch[i]) {
                         if (m.length > 0) {
                             let endpos = m.index + m.length;
                             if (m.index >= 0) {
                                 let midStr = rightSub.substring(0, Math.min(m.index, rightSub.length));
-                                if (maxlen < endpos && (!midStr || midStr.length === 0 || midStr.trim() === this.config.connectorToken)) {
+                                if (maxlen < endpos && (StringUtility.isNullOrWhitespace(midStr) || midStr.trim() === this.config.connectorToken)) {
                                     maxlen = endpos;
                                 }
                             }
                         }
-                    });
+                    }
                 }
 
                 if (maxlen !== 0) {
@@ -157,7 +157,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                     er.data = num;
 
                     result.push(er);
-                    return;
+                    continue;
                 }
             }
 
@@ -174,7 +174,7 @@ export class NumberWithUnitExtractor implements IExtractor {
                 er.data = num;
                 result.push(er);
             }
-        });
+        }
 
         // extract Separate unit
         if (this.separateRegex !== null) {
