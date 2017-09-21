@@ -1,20 +1,23 @@
 var _ = require('lodash');
 var NumberWithUnitRecognizer = require('../compiled/numberWithUnit/numberWithUnitRecognizer').default;
-var SupportedCultures = require('./runner-cultures.js');
+var SupportedCultures = require('./cultures.js');
+
+var modelGetters = {
+    'AgeModel': NumberWithUnitRecognizer.instance.getAgeModel,
+    'CurrencyModel': NumberWithUnitRecognizer.instance.getCurrencyModel,
+    'TemperatureModel': NumberWithUnitRecognizer.instance.getTemperatureModel,
+    'DimensionModel': NumberWithUnitRecognizer.instance.getDimensionModel
+};
 
 module.exports = function getNumberWithUnitTestRunner(config) {
+    var model = getNumberWithUnitModel(config);
     return function (t, testCase) {
-        var expected = testCase.Results;
 
-        if (testCase.Debug) {
-            debugger;
-        }
-
-        var model = getNumberWithUnitModel(config);
+        if (testCase.Debug) debugger;
         var result = model.parse(testCase.Input);
 
-        t.is(result.length, expected.length, 'Result count');
-        _.zip(result, expected).forEach(o => {
+        t.is(result.length, testCase.Results.length, 'Result count');
+        _.zip(result, testCase.Results).forEach(o => {
             var actual = o[0];
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
@@ -26,26 +29,15 @@ module.exports = function getNumberWithUnitTestRunner(config) {
 }
 
 function getNumberWithUnitModel(config) {
-    var getModelFunc = getNumberWithUnitModelFunc(config).bind(NumberWithUnitRecognizer.instance);
+    var getModel = modelGetters[config.subType];
+    if(!getModel) {
+        throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
+    }
+
     var culture = SupportedCultures[config.language];
     if (!culture) {
-        throw new Error(`NumberWithUnit model with culture ${config.language} is not supported.`);
+        throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModelFunc(culture, false);
-}
-
-function getNumberWithUnitModelFunc(config) {
-    switch (config.subType) {
-        case 'AgeModel':
-            return NumberWithUnitRecognizer.instance.getAgeModel;
-        case 'CurrencyModel':
-            return NumberWithUnitRecognizer.instance.getCurrencyModel;
-        case 'TemperatureModel':
-            return NumberWithUnitRecognizer.instance.getTemperatureModel;
-        case 'DimensionModel':
-            return NumberWithUnitRecognizer.instance.getDimensionModel;
-        default:
-            throw new Error(`NumberWithUnit model ${config.subType} is not supported.`);
-    }
+    return getModel.bind(NumberWithUnitRecognizer.instance)(culture, false);
 }

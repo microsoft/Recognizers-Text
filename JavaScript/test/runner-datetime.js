@@ -1,5 +1,5 @@
 var Recognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
-var SupportedCultures = require('./runner-cultures.js');
+var SupportedCultures = require('./cultures.js');
 var _ = require('lodash');
 
 var Extractors = require('./datetime-extractors');
@@ -13,7 +13,7 @@ module.exports = function getDateTimeRunner(config) {
     // Extractor only test
     if (config.subType.includes('Extractor')) {
         if (!extractor) {
-            return testError(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
+            throw new Error(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
         }
 
         return getExtractorTestRunner(extractor);
@@ -22,11 +22,11 @@ module.exports = function getDateTimeRunner(config) {
     // Parser test
     if (config.subType.includes('Parser')) {
         if (!extractor) {
-            return testError(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
+            throw new Error(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
         }
 
         if (!parser) {
-            return testError(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
+            throw new Error(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
         }
 
         return getParserTestRunner(extractor, parser);
@@ -35,7 +35,7 @@ module.exports = function getDateTimeRunner(config) {
     // Model test
     if (config.subType.includes('Model')) {
         if (!model) {
-            return testError(`Cannot found model for ${JSON.stringify(config)}.`);
+            throw new Error(`Cannot found model for ${JSON.stringify(config)}.`);
         }
 
         return getModelTestRunner(model);
@@ -155,12 +155,6 @@ function getReferenceDate(testCase) {
 
 function ignoredTest(t, testCase) {
     t.skip.true(true, 'Test case not supported.');
-}
-
-function testError(message) {
-    return (t, testCase) => {
-        t.fail(message);
-    };
 }
 
 function toObject(map) {

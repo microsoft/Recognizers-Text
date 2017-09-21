@@ -3,7 +3,7 @@ var path = require('path');
 var _ = require('lodash');
 var describe = require('ava-spec').describe;
 
-var SupportedCultures = require('./runner-cultures');
+var SupportedCultures = require('./cultures');
 var NumberTestRunner = require('./runner-number');
 var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
 var DateTimeTestRunner = require('./runner-datetime');
