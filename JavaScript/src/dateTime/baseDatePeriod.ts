@@ -267,11 +267,11 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
                     innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue.item1)
-                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue.item2);
+                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue[0])
+                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue[1]);
                     innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue.item1)
-                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue.item2);
+                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue[0])
+                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue[1]);
                 } else {
                     innerResult.futureResolution = new Map<string, string>();
                     innerResult.pastResolution = new Map<string, string>();
