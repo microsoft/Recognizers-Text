@@ -201,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
             var extractResults = Extractor.Extract(TestSpec.Input);
-            var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime));
+            var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime)).ToArray();
 
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
 
