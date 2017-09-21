@@ -84,9 +84,19 @@ function getParserTestRunner(extractor, parser) {
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
             if (actual.value) {
+                // timex
                 t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
+
+                // resolutions
+                var actualValue = {
+                    timex: actual.value.timex,
+                    futureResolution: toObject(actual.value.futureResolution),
+                    pastResolution: toObject(actual.value.pastResolution),
+                }
+
+                t.deepEqual(actualValue.futureResolution, expected.Value.FutureResolution);
+                t.deepEqual(actualValue.pastResolution, expected.Value.PastResolution);
             }
-            /// TODO: check for resolution values
         });
     };
 }
@@ -151,4 +161,27 @@ function testError(message) {
     return (t, testCase) => {
         t.fail(message);
     };
+}
+
+function toObject(map) {
+    if(!map) return undefined;
+    var keys = Array.from(map.keys());
+    var values = Array.from(map.values()).map(asString);
+    return _.zipObject(keys, values);
+}
+
+function asString(o) {
+    if(!o) return o;
+
+    if(_.isNumber(o)) {
+        return o.toString();
+    }
+
+    if(_.isDate(o)) {
+        var isoDate = new Date(o.getTime() - o.getTimezoneOffset() * 60000).toISOString();
+        var parts = isoDate.split('T');
+        return [parts[0], parts[1].split('.')[0]].join(' ');
+    }
+
+    return o;
 }
