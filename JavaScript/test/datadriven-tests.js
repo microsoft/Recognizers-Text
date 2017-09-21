@@ -21,11 +21,12 @@ var specs = specFiles
     .map(s => ({
         config: getSuiteConfig(s),
         specs: require(path.join('../', s))
-    }));
+    }))
+    .reverse();
 
 // run suites
 specs.forEach(suite => {
-    describe(`${suite.config.language} - ${suite.config.type} - ${suite.config.subType} -`, it => {
+    describe(`${suite.config.type} - ${suite.config.language} - ${suite.config.subType} -`, it => {
         suite.specs.forEach(testCase => {
             var caseName = `"${testCase.Input}"`;
 
