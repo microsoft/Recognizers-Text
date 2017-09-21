@@ -180,7 +180,8 @@ function asString(o) {
     if(_.isDate(o)) {
         var isoDate = new Date(o.getTime() - o.getTimezoneOffset() * 60000).toISOString();
         var parts = isoDate.split('T');
-        return [parts[0], parts[1].split('.')[0]].join(' ');
+        var time = parts[1].split('.')[0].replace('00:00:00', '');
+        return [parts[0], time].join(' ').trim();
     }
 
     return o;
