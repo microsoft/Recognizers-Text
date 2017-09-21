@@ -156,313 +156,313 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             #region Integer numbers
 
-            //BasicTest(model, "2 mil millones", "2000000000");
+            BasicTest(model, "2 mil millones", "2000000000");
 
-            //BasicTest(model, " 123456789101231", "123456789101231");
+            BasicTest(model, " 123456789101231", "123456789101231");
 
-            //BasicTest(model, "-123456789101231", "-123456789101231");
+            BasicTest(model, "-123456789101231", "-123456789101231");
 
-            //BasicTest(model, " -123456789101231", "-123456789101231");
+            BasicTest(model, " -123456789101231", "-123456789101231");
 
-            //BasicTest(model, " -1", "-1");
+            BasicTest(model, " -1", "-1");
 
-            //BasicTest(model, "1.234.567", "1234567");
+            BasicTest(model, "1.234.567", "1234567");
 
-            //BasicTest(model, "3 docenas", "36");
+            BasicTest(model, "3 docenas", "36");
 
-            //BasicTest(model, "dos mil millones", "2000000000");
+            BasicTest(model, "dos mil millones", "2000000000");
 
-            //BasicTest(model, "una docena", "12");
+            BasicTest(model, "una docena", "12");
 
-            //BasicTest(model, "quince docenas", "180");
+            BasicTest(model, "quince docenas", "180");
 
-            //BasicTest(model, "dos mil y cuatro docenas", "2048");
+            BasicTest(model, "dos mil y cuatro docenas", "2048");
 
-            //BasicTest(model, "siete", "7");
+            BasicTest(model, "siete", "7");
 
-            //BasicTest(model, "cuarenta y siete", "47");
+            BasicTest(model, "cuarenta y siete", "47");
 
-            //BasicTest(model, "trescientos cuarenta y siete", "347");
+            BasicTest(model, "trescientos cuarenta y siete", "347");
 
-            //BasicTest(model, "dos mil trescientos cuarenta y siete", "2347");
+            BasicTest(model, "dos mil trescientos cuarenta y siete", "2347");
 
-            //BasicTest(model, "cincuenta y dos mil trescientos cuarenta y siete", "52347");
+            BasicTest(model, "cincuenta y dos mil trescientos cuarenta y siete", "52347");
 
-            //BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "452347");
+            BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "452347");
 
-            //BasicTest(model, "tres millones", "3000000");
+            BasicTest(model, "tres millones", "3000000");
 
-            //BasicTest(model, "tres millones siete", "3000007");
+            BasicTest(model, "tres millones siete", "3000007");
 
-            //BasicTest(model, "tres millones cuarenta y siete", "3000047");
+            BasicTest(model, "tres millones cuarenta y siete", "3000047");
 
-            //BasicTest(model, "tres millones trescientos cuarenta y siete", "3000347");
+            BasicTest(model, "tres millones trescientos cuarenta y siete", "3000347");
 
-            //BasicTest(model, "tres millones dos mil trescientos cuarenta y siete", "3002347");
+            BasicTest(model, "tres millones dos mil trescientos cuarenta y siete", "3002347");
 
-            //BasicTest(model, "tres millones cincuenta y dos mil trescientos cuarenta y siete", "3052347");
+            BasicTest(model, "tres millones cincuenta y dos mil trescientos cuarenta y siete", "3052347");
 
-            //BasicTest(model, "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "3452347");
+            BasicTest(model, "tres millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "3452347");
 
-            //BasicTest(model, "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "13452347");
+            BasicTest(model, "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "13452347");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "513452347");
+            BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete", "513452347");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta", "513452340");
+            BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta", "513452340");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos", "513452300");
+            BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil trescientos", "513452300");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil", "513452000");
+            BasicTest(model, "quinientos trece millones cuatrocientos cincuenta y dos mil", "513452000");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos cincuenta mil", "513450000");
+            BasicTest(model, "quinientos trece millones cuatrocientos cincuenta mil", "513450000");
 
-            //BasicTest(model, "quinientos trece millones cuatrocientos mil", "513400000");
+            BasicTest(model, "quinientos trece millones cuatrocientos mil", "513400000");
 
-            //BasicTest(model, "quinientos trece millones", "513000000");
+            BasicTest(model, "quinientos trece millones", "513000000");
 
-            //BasicTest(model, "quinientos diez millones", "510000000");
+            BasicTest(model, "quinientos diez millones", "510000000");
 
-            //BasicTest(model, "quinientos millones", "500000000");
+            BasicTest(model, "quinientos millones", "500000000");
 
-            //BasicTest(model, "mil quinientos veintitres", "1523");
+            BasicTest(model, "mil quinientos veintitres", "1523");
 
-            //// a little number :p
-            //BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos", "3455228556832");
+            // a little number :p
+            BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil ochocientos treinta y dos", "3455228556832");
 
-            //BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil", "3455228556000");
+            BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones quinientos cincuenta y seis mil", "3455228556000");
 
-            //BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones", "3455228000000");
+            BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil doscientos veintiocho millones", "3455228000000");
 
-            //BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil millones", "3455000000000");
+            BasicTest(model, "tres billones cuatrocientos cincuenta y cinco mil millones", "3455000000000");
 
-            //BasicTest(model, "tres billones", "3000000000000");
+            BasicTest(model, "tres billones", "3000000000000");
 
             // super number :p - supported by extractor but not by parser
             //BasicTest(GetOrdinalModel(), "ciento sesenta y tres septillones quinientos ochenta y dos mil ochocientos setenta y un sextillones ciento dieciocho mil novecientos trece quintillones quinientos ochenta y cinco mil trescientos cuarenta y seis cuatrillones novecientos noventa y siete mil doscientos setenta y tres trillones cuatrocientos treinta y cuatro mil trescientos veinticinco billones quinientos cincuenta y cinco mil ochocientos veintiún millones novecientos cincuenta y tres mil seiscientos setenta y cinco", "163582871118913585346997273434325555821953675");
 
             // numbers within sentences
-            //BasicTest(model, "dame un mil", "1000", "un mil");
+            BasicTest(model, "dame un mil", "1000", "un mil");
 
-            //BasicTest(model, "tirate un paso", "1", "un");
+            BasicTest(model, "tirate un paso", "1", "un");
 
-            //BasicTest(model, "voy a comprar solo una vaca", "1", "una");
+            BasicTest(model, "voy a comprar solo una vaca", "1", "una");
 
-            //BasicTest(model, "voy a comprar doscientas vacas", "200", "doscientas");
+            BasicTest(model, "voy a comprar doscientas vacas", "200", "doscientas");
 
-            //BasicTest(model, "tengo solamente mil cien pesos", "1100", "mil cien");
+            BasicTest(model, "tengo solamente mil cien pesos", "1100", "mil cien");
 
-            //BasicTest(model, "tengo solamente siete mil doscientos treinta y cinco pesos", "7235", "siete mil doscientos treinta y cinco");
+            BasicTest(model, "tengo solamente siete mil doscientos treinta y cinco pesos", "7235", "siete mil doscientos treinta y cinco");
 
-            //BasicTest(model, "no mucho, creo que voy a gastar algo asi como trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete bolivares en todo el proyecto", "13452347", "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete");
+            BasicTest(model, "no mucho, creo que voy a gastar algo asi como trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete bolivares en todo el proyecto", "13452347", "trece millones cuatrocientos cincuenta y dos mil trescientos cuarenta y siete");
 
-            //#endregion
+            #endregion
 
-            //#region Double numbers
+            #region Double numbers
 
             BasicTest(model, " 101231,2353", "101231,2353");
 
-            //BasicTest(model, "-101231,4323", "-101231,4323");
+            BasicTest(model, "-101231,4323", "-101231,4323");
 
-            //BasicTest(model, " -89101231,5127", "-89101231,5127");
+            BasicTest(model, " -89101231,5127", "-89101231,5127");
 
-            //BasicTest(model, " -1,1234567", "-1,1234567");
+            BasicTest(model, " -1,1234567", "-1,1234567");
 
-            //BasicTest(model, "1.234.567,51274", "1234567,51274");
+            BasicTest(model, "1.234.567,51274", "1234567,51274");
 
-            //BasicTest(model, "192,", "192", "192");
+            BasicTest(model, "192,", "192", "192");
 
-            //BasicTest(model, ",23456000", "0,23456");
+            BasicTest(model, ",23456000", "0,23456");
 
-            //BasicTest(model, "4,800", "4,8");
+            BasicTest(model, "4,800", "4,8");
 
-            //BasicTest(model, ",08", "0,08");
+            BasicTest(model, ",08", "0,08");
 
-            //BasicTest(model, "9,2321312", "9,2321312");
+            BasicTest(model, "9,2321312", "9,2321312");
 
-            //BasicTest(model, " -9,2321312", "-9,2321312");
+            BasicTest(model, " -9,2321312", "-9,2321312");
 
-            //BasicTest(model, "1e10", "10000000000");
+            BasicTest(model, "1e10", "10000000000");
 
-            //BasicTest(model, "1,1^23", "8,95430243255239");
+            BasicTest(model, "1,1^23", "8,95430243255239");
 
-            //BasicTest(model, "siete con cincuenta", "7,5");
+            BasicTest(model, "siete con cincuenta", "7,5");
 
-            //BasicTest(model, "cuarenta y siete coma veintiocho", "47,28");
+            BasicTest(model, "cuarenta y siete coma veintiocho", "47,28");
 
-            //BasicTest(model, "trescientos cuarenta y siete con quinientos doce", "347,512");
+            BasicTest(model, "trescientos cuarenta y siete con quinientos doce", "347,512");
 
-            //BasicTest(model, "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho", "2347,1578");
+            BasicTest(model, "dos mil trescientos cuarenta y siete coma mil quinientos setenta y ocho", "2347,1578");
 
-            //BasicTest(model, "cincuenta y dos mil trescientos cuarenta y siete con doscientos", "52347,2");
+            BasicTest(model, "cincuenta y dos mil trescientos cuarenta y siete con doscientos", "52347,2");
 
-            //BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos", "452347,22");
+            BasicTest(model, "cuatrocientos cincuenta y dos mil trescientos cuarenta y siete coma veintidos", "452347,22");
 
-            //BasicTest(model, "1,1^+23", "8,95430243255239");
+            BasicTest(model, "1,1^+23", "8,95430243255239");
 
-            //BasicTest(model, "2,5^-1", "0,4");
+            BasicTest(model, "2,5^-1", "0,4");
 
-            //BasicTest(model, "-2500^-1", "-0,0004");
+            BasicTest(model, "-2500^-1", "-0,0004");
 
-            //BasicTest(model, "-1,1^+23", "-8,95430243255239");
+            BasicTest(model, "-1,1^+23", "-8,95430243255239");
 
-            //BasicTest(model, "-2,5^-1", "-0,4");
+            BasicTest(model, "-2,5^-1", "-0,4");
 
-            //BasicTest(model, "-1,1^--23", "-8,95430243255239");
+            BasicTest(model, "-1,1^--23", "-8,95430243255239");
 
-            //BasicTest(model, "-127,32e13", "-1,2732E+15");
+            BasicTest(model, "-127,32e13", "-1,2732E+15");
 
-            //BasicTest(model, "12,32e+14", "1,232E+15");
+            BasicTest(model, "12,32e+14", "1,232E+15");
 
-            //BasicTest(model, "-12e-1", "-1,2");
+            BasicTest(model, "-12e-1", "-1,2");
 
-            //#endregion
+            #endregion
 
-            //#region Translated numbers from english
+            #region Translated numbers from english
 
-            //BasicTest(model, "192.", "192", "192");
+            BasicTest(model, "192.", "192", "192");
 
-            //// '.' is group separator in spanish - so not understood as IP
-            //MultiTest(model, "192.168.1.2", 3);
-            ////this will be supported for the NumberWithUnitModel
-            //MultiTest(model, "son 180,25ml liquidos", 0);
+            // '.' is group separator in spanish - so not understood as IP
+            MultiTest(model, "192.168.1.2", 3);
+            //this will be supported for the NumberWithUnitModel
+            MultiTest(model, "son 180,25ml liquidos", 0);
 
-            //MultiTest(model, "son 180ml liquidos", 0);
+            MultiTest(model, "son 180ml liquidos", 0);
 
-            //MultiTest(model, " 29km caminando ", 0);
+            MultiTest(model, " 29km caminando ", 0);
 
-            //MultiTest(model, " subamos al 4to piso ", 0);
+            MultiTest(model, " subamos al 4to piso ", 0);
 
-            //MultiTest(model, "son ,25ml liquidos", 0);
+            MultiTest(model, "son ,25ml liquidos", 0);
 
-            //BasicTest(model, ",08", "0,08");
+            BasicTest(model, ",08", "0,08");
 
-            //MultiTest(model, "uno", 1);
+            MultiTest(model, "uno", 1);
 
-            //MultiTest(model, "un", 1);
+            MultiTest(model, "un", 1);
 
-            //BasicTest(model, ",23456000", "0,23456");
+            BasicTest(model, ",23456000", "0,23456");
 
-            //BasicTest(model, "4,800", "4,8");
+            BasicTest(model, "4,800", "4,8");
 
-            //BasicTest(model, "ciento tres con dos tercios", (103 + (double)2 / 3).ToString(ci));
+            BasicTest(model, "ciento tres con dos tercios", (103 + (double)2 / 3).ToString(ci));
 
-            //BasicTest(model, "dieciseis", "16");
+            BasicTest(model, "dieciseis", "16");
 
-            //BasicTest(model, "dos tercios", ((double)2 / 3).ToString(ci));
+            BasicTest(model, "dos tercios", ((double)2 / 3).ToString(ci));
 
-            //BasicTest(model, "ciento dieciseis", "116");
+            BasicTest(model, "ciento dieciseis", "116");
 
-            //BasicTest(model, "ciento seis", "106");
+            BasicTest(model, "ciento seis", "106");
 
-            //BasicTest(model, "ciento sesenta y un", "161");
+            BasicTest(model, "ciento sesenta y un", "161");
 
-            //BasicTest(model, "un billonesimo", "1E-12");
+            BasicTest(model, "un billonesimo", "1E-12");
 
-            //BasicTest(model, "cien billonesimos", "1E-10");
+            BasicTest(model, "cien billonesimos", "1E-10");
 
-            //BasicTest(model, " media   docena ", "6");
+            BasicTest(model, " media   docena ", "6");
 
-            //BasicTest(model, " 3 docenas", "36");
+            BasicTest(model, " 3 docenas", "36");
 
-            //BasicTest(model, "una docena", "12");
+            BasicTest(model, "una docena", "12");
 
-            //BasicTest(model, " tres docenas ", "36");
+            BasicTest(model, " tres docenas ", "36");
 
-            //BasicTest(model, "1.234.567", "1234567");
+            BasicTest(model, "1.234.567", "1234567");
 
-            //MultiTest(model, "1. 234. 567", 3);
+            MultiTest(model, "1. 234. 567", 3);
 
-            //BasicTest(model, "9,2321312", "9,2321312");
+            BasicTest(model, "9,2321312", "9,2321312");
 
-            //BasicTest(model, " -9,2321312", "-9,2321312");
+            BasicTest(model, " -9,2321312", "-9,2321312");
 
-            //BasicTest(model, " -1", "-1");
+            BasicTest(model, " -1", "-1");
 
-            //BasicTest(model, "-4/5", "-0,8");
+            BasicTest(model, "-4/5", "-0,8");
 
-            //BasicTest(model, "- 1 4/5", "-1,8");
+            BasicTest(model, "- 1 4/5", "-1,8");
 
-            //BasicTest(model, "tres", "3");
+            BasicTest(model, "tres", "3");
 
-            //BasicTest(model, " 123456789101231", "123456789101231");
+            BasicTest(model, " 123456789101231", "123456789101231");
 
-            //BasicTest(model, "-123456789101231", "-123456789101231");
+            BasicTest(model, "-123456789101231", "-123456789101231");
 
-            //BasicTest(model, " -123456789101231", "-123456789101231");
+            BasicTest(model, " -123456789101231", "-123456789101231");
 
-            //BasicTest(model, "1", "1");
+            BasicTest(model, "1", "1");
 
-            //BasicTest(model, "10k", "10000");
+            BasicTest(model, "10k", "10000");
 
-            //BasicTest(model, "10G", "10000000000");
+            BasicTest(model, "10G", "10000000000");
 
-            //BasicTest(model, "- 10  k", "-10000");
+            BasicTest(model, "- 10  k", "-10000");
 
-            //BasicTest(model, "2 millones", "2000000");
+            BasicTest(model, "2 millones", "2000000");
 
-            //BasicTest(model, "1 billon", "1000000000000");
+            BasicTest(model, "1 billon", "1000000000000");
 
-            //BasicTest(model, " tres ", "3");
+            BasicTest(model, " tres ", "3");
 
-            //BasicTest(model, "un billon", "1000000000000");
+            BasicTest(model, "un billon", "1000000000000");
 
-            //BasicTest(model, "veintiun billones", "21000000000000");
+            BasicTest(model, "veintiun billones", "21000000000000");
 
-            //BasicTest(model, "veintiun billones trescientos", "21000000000300");
+            BasicTest(model, "veintiun billones trescientos", "21000000000300");
 
-            //BasicTest(model, "cincuenta   y   dos", "52");
+            BasicTest(model, "cincuenta   y   dos", "52");
 
-            //BasicTest(model, "trescientos   treinta  y   uno", "331");
+            BasicTest(model, "trescientos   treinta  y   uno", "331");
 
-            //BasicTest(model, "doscientos dos mil", "202000");
+            BasicTest(model, "doscientos dos mil", "202000");
 
-            //BasicTest(model, "dos mil doscientos", "2200");
+            BasicTest(model, "dos mil doscientos", "2200");
 
-            //BasicTest(model, " 2,33 k", "2330");
+            BasicTest(model, " 2,33 k", "2330");
 
-            //BasicTest(model, " doscientos coma cero tres", "200,03");
+            BasicTest(model, " doscientos coma cero tres", "200,03");
 
-            //BasicTest(model, " doscientos con setenta y uno", "200,71");
+            BasicTest(model, " doscientos con setenta y uno", "200,71");
 
-            //BasicTest(model, "1e10", "10000000000");
+            BasicTest(model, "1e10", "10000000000");
 
-            //BasicTest(model, "1,1^23", "8,95430243255239");
+            BasicTest(model, "1,1^23", "8,95430243255239");
 
-            //BasicTest(model, " 322 millones ", "322000000");
+            BasicTest(model, " 322 millones ", "322000000");
 
-            //BasicTest(model, "setenta", "70");
+            BasicTest(model, "setenta", "70");
 
-            //BasicTest(model, "cincuenta y dos", "52");
+            BasicTest(model, "cincuenta y dos", "52");
 
-            //BasicTest(model, "2  1/4", "2,25");
+            BasicTest(model, "2  1/4", "2,25");
 
-            //BasicTest(model, "3/4", "0,75");
+            BasicTest(model, "3/4", "0,75");
 
-            //BasicTest(model, "un octavo", "0,125");
+            BasicTest(model, "un octavo", "0,125");
 
-            //BasicTest(model, "cinco octavos", "0,625");
+            BasicTest(model, "cinco octavos", "0,625");
 
-            //BasicTest(model, "un medio", "0,5");
+            BasicTest(model, "un medio", "0,5");
 
-            //BasicTest(model, "tres cuartos", "0,75");
+            BasicTest(model, "tres cuartos", "0,75");
 
-            //BasicTest(model, "veinte con tres quintos", "20,6");
+            BasicTest(model, "veinte con tres quintos", "20,6");
 
-            //BasicTest(model, "veintitres quintos", "4,6");
+            BasicTest(model, "veintitres quintos", "4,6");
 
-            //BasicTest(model, "veintitres con tres quintos", "23,6");
+            BasicTest(model, "veintitres con tres quintos", "23,6");
 
-            //BasicTest(model, "un millon dos mil doscientos tres quintos", "200440,6");
+            BasicTest(model, "un millon dos mil doscientos tres quintos", "200440,6");
 
-            //BasicTest(model, "uno con un medio", "1,5");
+            BasicTest(model, "uno con un medio", "1,5");
 
-            //BasicTest(model, "uno con un cuarto", "1,25");
+            BasicTest(model, "uno con un cuarto", "1,25");
 
-            //BasicTest(model, "cinco con un cuarto", "5,25");
+            BasicTest(model, "cinco con un cuarto", "5,25");
 
-            //BasicTest(model, "cien con tres cuartos", "100,75");
+            BasicTest(model, "cien con tres cuartos", "100,75");
 
-            //BasicTest(model, "un centesimo", "0,01");
+            BasicTest(model, "un centesimo", "0,01");
 
             #endregion
         }
