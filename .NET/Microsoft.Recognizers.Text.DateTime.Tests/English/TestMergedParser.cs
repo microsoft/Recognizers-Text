@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDate);
             var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>)pr.Value).First().Value);
             Assert.AreEqual(resolution, prValue.First()["value"]);
-            TestWriter.Write("Eng", parser, referenceDate, text, pr);
+            TestWriter.Write("Eng", parser, refDate, text, pr);
         }
 
         public void BasicTestWithTwoResults(string text, string type1, string type2)

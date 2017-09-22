@@ -79,16 +79,16 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var actualResults = Model.Parse(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count);
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.TypeName, actual.TypeName);
-                Assert.AreEqual(expected.Text, actual.Text);
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"]);
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
             }
         }
 
@@ -107,17 +107,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var actualResults = Model.Parse(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count);
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.TypeName, actual.TypeName);
-                Assert.AreEqual(expected.Text, actual.Text);
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"]);
-                Assert.AreEqual(expected.Resolution["unit"], actual.Resolution["unit"]);
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+                Assert.AreEqual(expected.Resolution["unit"], actual.Resolution["unit"], GetMessage(TestSpec));
             }
         }
 
@@ -138,15 +138,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
             var expectedResults = TestSpec.CastResults<ModelResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count);
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.TypeName, actual.TypeName);
-                Assert.AreEqual(expected.Text, actual.Text);
+                Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
                 
                 var values = actual.Resolution as IDictionary<string, object>;
                 var listValues = values["values"] as IList<Dictionary<string, string>>;
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
                 var expectedValues = expectedObj.FirstOrDefault();
 
-                CollectionAssert.AreEqual(expectedValues, actualValues);
+                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
             }
         }
 
@@ -174,15 +174,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var actualResults = Extractor.Extract(TestSpec.Input);
             var expectedResults = TestSpec.CastResults<ExtractResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count);
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
 
-                Assert.AreEqual(expected.Type, actual.Type);
-                Assert.AreEqual(expected.Text, actual.Text);
+                Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
             }
         }
 
@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
-                Assert.Inconclusive(message);
+                Assert.Inconclusive(message, GetMessage(TestSpec));
             }
 
             if (Debugger.IsAttached && TestSpec.Debug)
@@ -205,21 +205,22 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count());
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count(), GetMessage(TestSpec));
 
             foreach(var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
                 var actual = tuple.Item2;
-                Assert.AreEqual(expected.Type, actual.Type);
-                Assert.AreEqual(expected.Text, actual.Text);
+                Assert.AreEqual(expected.Type, actual.Type, GetMessage(TestSpec));
+                Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
 
                 var actualValue = actual.Value as DateTimeResolutionResult;
                 var expectedValue = JsonConvert.DeserializeObject<DateTimeResolutionResult>(expected.Value.ToString());
 
-                Assert.AreEqual(expectedValue.Timex, actualValue.Timex);
-                CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution);
-                CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution);
+                Assert.IsNotNull(actualValue, GetMessage(TestSpec));
+                Assert.AreEqual(expectedValue.Timex, actualValue.Timex, GetMessage(TestSpec));
+                CollectionAssert.AreEqual(expectedValue.FutureResolution, actualValue.FutureResolution, GetMessage(TestSpec));
+                CollectionAssert.AreEqual(expectedValue.PastResolution, actualValue.PastResolution, GetMessage(TestSpec));
             }
         }
 
@@ -242,7 +243,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
 
-            Assert.AreEqual(expectedResults.Count(), actualResults.Count(), $"Input: {TestSpec.Input}");
+            Assert.AreEqual(expectedResults.Count(), actualResults.Count(), GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
@@ -256,8 +257,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
                 var expectedValues = expectedObj["values"].FirstOrDefault();
 
-                CollectionAssert.AreEqual(expectedValues, actualValues);
+                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
             }
+        }
+
+        private static string GetMessage(TestModel spec)
+        {
+            return $"Input: \"{spec.Input}\"";
         }
     }
 }
