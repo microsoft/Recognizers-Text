@@ -3,7 +3,6 @@ import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
 import * as _ from 'lodash';
 import { RegExpUtility } from "../utilities";
-import { NumberUtility } from "./utilities";
 import { BigNumber } from 'bignumber.js';
 
 // Disable BigNumber errors when passing number with more than 15 significant digits
