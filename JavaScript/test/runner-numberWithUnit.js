@@ -10,7 +10,12 @@ var modelGetters = {
 };
 
 module.exports = function getNumberWithUnitTestRunner(config) {
-    var model = getNumberWithUnitModel(config);
+    try {
+        var model = getNumberWithUnitModel(config);
+    } catch (err) {
+        return null;
+    }
+
     return function (t, testCase) {
 
         if (testCase.Debug) debugger;
@@ -30,7 +35,7 @@ module.exports = function getNumberWithUnitTestRunner(config) {
 
 function getNumberWithUnitModel(config) {
     var getModel = modelGetters[config.subType];
-    if(!getModel) {
+    if (!getModel) {
         throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
