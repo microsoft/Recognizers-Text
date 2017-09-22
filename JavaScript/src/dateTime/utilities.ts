@@ -309,6 +309,7 @@ export enum DayOfWeek {
 export class DateUtils {
     private static readonly oneDay = 24 * 60 * 60 * 1000;
     private static readonly oneHour = 60 * 60 * 1000;
+    private static readonly oneSecond = 1000;
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
@@ -348,6 +349,10 @@ export class DateUtils {
         return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneHour);
     }
 
+    static totalSeconds(from: Date, to: Date): number {
+        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
+    }
+
     static addDays(seedDate: Date, daysToAdd: number): Date {
         let date = new Date(seedDate);
         date.setDate(seedDate.getDate() + daysToAdd);
@@ -368,7 +373,11 @@ export class DateUtils {
         return { weekNo: weekNo, year: date.getUTCFullYear() }
     }
 
-    static minValue(): Date { return new Date(1, 0, 1, 0, 0, 0, 0); }
+    static minValue(): Date { 
+        let date = new Date(1, 0, 1, 0, 0, 0, 0);
+        date.setFullYear(1);
+        return date;
+    }
 
     static safeCreateFromValue(seedDate: Date, year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
         let result = new Date(seedDate);
@@ -384,6 +393,12 @@ export class DateUtils {
 
     static isLeapYear(year: number): boolean {
         return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
+
+    static dayOfYear(date: Date): number {
+        let start = new Date(date.getFullYear(), 0, 1);
+        let diffDays = date.valueOf() - start.valueOf();
+        return Math.floor(diffDays / DateUtils.oneDay);
     }
 
     private static validDays(year: number) { return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }

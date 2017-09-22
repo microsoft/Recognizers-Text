@@ -124,6 +124,16 @@ describe('Date Period Extractor', it => {
 
     // the weekend = this weekend
     basicTest(it, extractor, "I'll leave over the weekend", 16, 11);
+
+    // Rest of
+    basicTest(it, extractor, "I'll leave rest of the week", 11, 16);
+    basicTest(it, extractor, "I'll leave rest of my week", 11, 15);
+    basicTest(it, extractor, "I'll leave rest of week", 11, 12);
+    basicTest(it, extractor, "I'll leave rest the week", 11, 13);
+    basicTest(it, extractor, "I'll leave rest of this week", 11, 17);
+    basicTest(it, extractor, "I'll leave rest current week", 11, 17);
+    basicTest(it, extractor, "I'll leave rest of the month", 11, 17);
+    basicTest(it, extractor, "I'll leave rest of the year", 11, 16);
 });
 
 function basicTest(it, extractor, text, start, length, expected = 1) {

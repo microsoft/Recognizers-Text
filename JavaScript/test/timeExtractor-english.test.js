@@ -100,6 +100,14 @@ describe('Time Extractor', it => {
     // negative case
     basicNegativeTest(it, extractor, "which emails have gotten p as subject");
     basicNegativeTest(it, extractor, "which emails have gotten a reply");
+
+    //Meal time
+    basicTest(it, extractor, "I'll be back 12 o'clock breakfast", 13, 20);
+    basicTest(it, extractor, "I'll be back 12 o'clock dinner", 13, 17);
+    basicTest(it, extractor, "I'll be back 12 o'clock lunch", 13, 16);
+    basicTest(it, extractor, "I'll be back 12 o'clock lunchtime", 13, 20);
+    basicTest(it, extractor, "I'll be back lunchtime 12 o'clock", 13, 20);
+    basicTest(it, extractor, "I'll be back at lunchtime 12 o'clock", 13, 23);
 });
 
 function basicTest(it, extractor, text, start, length, expected = 1) {

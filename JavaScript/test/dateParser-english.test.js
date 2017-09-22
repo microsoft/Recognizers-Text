@@ -5,6 +5,7 @@ var CommonParserConfig = require("../compiled/dateTime/english/baseConfiguration
 var ParserConfig = require("../compiled/dateTime/english/dateConfiguration").EnglishDateParserConfiguration;
 var Parser = require("../compiled/dateTime/baseDate").BaseDateParser;
 var Constants = require('../compiled/dateTime/constants').Constants;
+var DateUtils = require('../compiled/dateTime/utilities').DateUtils;
 
 describe('Date Parser', it => {
     let extractor = new Extractor(new ExtractorConfig());
@@ -116,7 +117,7 @@ describe('Date Parser For The', it => {
     basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back for the thirty", new Date(2016, 10, 30));
 });
 
-describe('Date Parser For The', it => {
+describe('Date Parser Weekday And Day of Month', it => {
     let extractor = new Extractor(new ExtractorConfig());
     let parser = new Parser(new ParserConfig(new CommonParserConfig()));
     let referenceDate = new Date();
@@ -130,6 +131,29 @@ describe('Date Parser For The', it => {
     basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(21) + " the twenty first", new Date(year, month, 21));
     basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(22) + " the twenty second", new Date(year, month, 22));
     basicTestWithOneDate(it, extractor, parser, referenceDate, getIWentBack(15) + " the fifteen", new Date(year, month, 15));
+});
+
+describe('Date Parser Relative Day of Week', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date();
+
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back second Sunday", getRelativeWeekDay(2, 0, referenceDate));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back first Sunday", getRelativeWeekDay(1, 0, referenceDate));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back third Tuesday", getRelativeWeekDay(3, 2, referenceDate));
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back third Tuesday", getRelativeWeekDay(3, 2, referenceDate));
+    // Negative case
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I'll go back fifth Sunday", getRelativeWeekDay(5, 0, referenceDate));
+});
+
+describe('Date Parser OdNum Relative Month', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back 20th of next month", new Date(2016, 12 - 1, 20));
+    // Negative cases
+    basicTestWithOneDate(it, extractor, parser, referenceDate, "I went back 31st of this month", DateUtils.minValue());
 });
 
 describe('Date Parser LUIS', it => {
@@ -216,6 +240,29 @@ describe('Date Parser LUIS weekday', it => {
     basicTestWithLuis(it, extractor, parser, referenceDate, getIWentBack(15) + " the fifteen", getLuisDateFor(15));
 });
 
+describe('Date Parser Relative Day of Week LUIS', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date();
+
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back second Sunday", getRelativeLUISWeekDay(2, 0, referenceDate));
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back first Sunday", getRelativeLUISWeekDay(1, 0, referenceDate));
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back third Tuesday", getRelativeLUISWeekDay(3, 2, referenceDate));
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back third Tuesday", getRelativeLUISWeekDay(3, 2, referenceDate));
+    // Negative case
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I'll go back fifth Sunday", getRelativeLUISWeekDay(5, 0, referenceDate));
+});
+
+describe('Date Parser OdNum Relative Month LUIS', it => {
+    let extractor = new Extractor(new ExtractorConfig());
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let referenceDate = new Date(2016, 10, 7);
+
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back 20th of next month", "2016-12-20");
+    // Negative cases
+    basicTestWithLuis(it, extractor, parser, referenceDate, "I went back 31st of this month", "2016-11-31");
+});
+
 function getWeekDay(dayOfMonth) {
     let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let weekDay = 'None';
@@ -236,6 +283,28 @@ function getLuisDateFor(dayOfMonth) {
     let yearStr = '0000' + referenceDate.getFullYear();
     let monthStr = '00' + (referenceDate.getMonth() + 1);
     let dayOfMonthStr = '00' + dayOfMonth;
+    return `${yearStr.substr(yearStr.length - 4)}-${monthStr.substr(monthStr.length - 2)}-${dayOfMonthStr.substr(dayOfMonthStr.length - 2)}`;
+}
+
+function getRelativeWeekDay(ordinalNum, wantedWeekDay, refDate) {
+    let firstDate = new Date(refDate.getFullYear(), refDate.getMonth(), 1);
+    let firstWeekDay = firstDate.getDay();
+    let firstWantedWeekDate = new Date(firstDate);
+    firstWantedWeekDate.setDate(firstDate.getDate() + ((wantedWeekDay > firstWeekDay) ? wantedWeekDay - firstWeekDay : wantedWeekDay- firstWeekDay + 7));
+    let wantedDay = firstWantedWeekDate.getDate() + ((ordinalNum - 1) * 7);
+    let answerDate = DateUtils.safeCreateFromMinValue(refDate.getFullYear(), refDate.getMonth(), wantedDay);
+    return answerDate;
+}
+
+function getRelativeLUISWeekDay(ordinalNum, wantedWeekDay, refDate) {
+    let firstDate = new Date(refDate.getFullYear(), refDate.getMonth(), 1);
+    let firstWeekDay = firstDate.getDay();
+    let firstWantedWeekDate = new Date(firstDate);
+    firstWantedWeekDate.setDate(firstDate.getDate() + ((wantedWeekDay > firstWeekDay) ? wantedWeekDay - firstWeekDay : wantedWeekDay- firstWeekDay + 7));
+    let wantedDay = firstWantedWeekDate.getDate() + ((ordinalNum - 1) * 7);
+    let yearStr = '0000' + refDate.getFullYear();
+    let monthStr = '00' + (refDate.getMonth() + 1);
+    let dayOfMonthStr = '00' + wantedDay;
     return `${yearStr.substr(yearStr.length - 4)}-${monthStr.substr(monthStr.length - 2)}-${dayOfMonthStr.substr(dayOfMonthStr.length - 2)}`;
 }
 

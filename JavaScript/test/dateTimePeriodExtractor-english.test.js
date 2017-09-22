@@ -83,6 +83,12 @@ describe('DateTimePeriod Extractor', it => {
     basicTest(it, extractor, "let's meet on Tuesday late-night", 14, 18);
     basicTest(it, extractor, "let's meet on Tuesday early night", 14, 19);
     basicTest(it, extractor, "let's meet on Tuesday late night", 14, 18);
+
+    // rest of
+    basicTest(it, extractor, "I'll be out rest of the day", 12, 15);
+    basicTest(it, extractor, "I'll be out rest of this day", 12, 16);
+    basicTest(it, extractor, "I'll be out rest of current day", 12, 19);
+    basicTest(it, extractor, "I'll be out rest the day", 12, 12);
 });
 
 function basicTest(it, extractor, text, start, length) {
