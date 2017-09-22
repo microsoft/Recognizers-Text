@@ -1,7 +1,7 @@
-// English
-require('./number-english.test');
+// New Data-Drive test based on Specs (../Specs)
+require('./datadriven-tests');
 
-require('./numberWithUnit-english.test');
+// Deprecated tests
 
 require('./dateExtractor-english.test');
 require('./timeExtractor-english.test');
@@ -28,6 +28,3 @@ require('./mergedParser-english.test');
 require('./dateTime-english.test');
 
 require('./singleCultureDateTimeRecognizer-english.test');
-
-// Spanish
-require('./number-spanish.test');

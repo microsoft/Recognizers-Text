@@ -92,7 +92,7 @@ describe('Date Period Parser', it => {
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "the weekend", 12, 14, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "this weekend", 12, 14, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "my weekend", 12, 14, month, year);
-        
+
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What is my schedule for the week?", 7, 14, month, year);
         basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "Show me my calendar for the week", 7, 14, month, year);
         // basicTestFutureOnlyDay(it, extractor, parser, referenceDate, "What's my day looking like?", 7, 8, month, year);
@@ -136,9 +136,9 @@ describe('Date Period Parser Luis', it => {
     basicTestLuis(it, extractor, parser, referenceDate, "I'll be out 4 to 23 next month", "(2016-12-04,2016-12-23,P19D)");
     basicTestLuis(it, extractor, parser, referenceDate, "I'll be out 4 till 23 of this month", "(2016-11-04,2016-11-23,P19D)");
 
-    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on this week", "2016-W45");
-    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on weekend", "2016-W45-WE");
-    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on this weekend", "2016-W45-WE");
+    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on this week", "2016-W46");
+    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on weekend", "2016-W46-WE");
+    basicTestLuis(it, extractor, parser, referenceDate, "I'll be out on this weekend", "2016-W46-WE");
     basicTestLuis(it, extractor, parser, referenceDate, "I'll be out February", "XXXX-02");
     basicTestLuis(it, extractor, parser, referenceDate, "I'll be out this September", "2016-09");
     basicTestLuis(it, extractor, parser, referenceDate, "I'll be out last sept", "2015-09");
