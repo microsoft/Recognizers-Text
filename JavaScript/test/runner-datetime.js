@@ -119,19 +119,10 @@ function getModelTestRunner(model) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (actual.value) {
-                // timex
-                t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
-
-                // resolutions
-                var actualValue = {
-                    timex: actual.value.timex,
-                    futureResolution: toObject(actual.value.futureResolution),
-                    pastResolution: toObject(actual.value.pastResolution),
-                }
-
-                t.deepEqual(actualValue.futureResolution, expected.Value.FutureResolution);
-                t.deepEqual(actualValue.pastResolution, expected.Value.PastResolution);
+            if (actual.resolution) {
+                var values = actual.resolution.get('values').map(toObject);
+                t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
+                t.deepEqual(values, expected.Resolution.values, 'Resource.Value');
             }
         });
     };
