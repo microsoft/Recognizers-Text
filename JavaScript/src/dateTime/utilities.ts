@@ -189,7 +189,7 @@ export class MatchingUtil {
 }
 
 export class FormatUtil {
-    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp("(?<nlb>P)T\d{2}", "gis");
+    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp(String.raw`(?<!P)T\d{2}`, "gis");
 
     // Emulates .NET ToString("D{size}")
     public static toString(num: number, size: number): string {
@@ -247,7 +247,7 @@ export class FormatUtil {
         let lastPos = 0;
         matches.forEach(match => {
             if (lastPos !== match.index) split.push(timeStr.substring(lastPos, match.index));
-            split.push(timeStr.substring(match.index, match.length));
+            split.push(timeStr.substring(match.index, match.index + match.length));
             lastPos = match.index + match.length;
         });
 
@@ -261,7 +261,7 @@ export class FormatUtil {
             }
         }
 
-        return split.join();
+        return split.join('');
     }
 
     public static toPm(timeStr: string): string {
