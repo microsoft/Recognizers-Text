@@ -2,7 +2,6 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
 
-
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
@@ -67,8 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = FrenchDatePeriodExtractorConfiguration.PastSuffixRegex;
-            FutureRegex = FrenchDatePeriodExtractorConfiguration.NextSuffixRegex;
+            PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnitRegex = FrenchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = FrenchTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = FrenchDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
@@ -129,16 +128,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.EndsWith("prochain"))
+            if (trimedText.StartsWith("next"))
             {
                 swift = 1;
             }
-            else if (trimedText.EndsWith("dernier"))
+            else if (trimedText.StartsWith("last"))
             {
                 swift = -1;
             }
             return swift;
         }
-
     }
 }

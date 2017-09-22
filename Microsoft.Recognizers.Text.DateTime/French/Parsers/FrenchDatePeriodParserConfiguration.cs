@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    class FrenchDatePeriodParserConfiguration : IDatePeriodParserConfiguration
+    public class FrenchDatePeriodParserConfiguration : IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -79,9 +79,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, string> SeasonMap { get; }
 
         #endregion
+
+        public IImmutableList<string> InStringList { get; }
+
         public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TokenBeforeDate = "en ";
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
@@ -96,8 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MonthWithYear = FrenchDatePeriodExtractorConfiguration.MonthWithYear;
             MonthNumWithYear = FrenchDatePeriodExtractorConfiguration.MonthNumWithYear;
             YearRegex = FrenchDatePeriodExtractorConfiguration.YearRegex;
-            PastRegex = FrenchDatePeriodExtractorConfiguration.PastSuffixRegex;
-            FutureRegex = FrenchDatePeriodExtractorConfiguration.NextSuffixRegex;
+            PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
+            FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = FrenchDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = FrenchDatePeriodExtractorConfiguration.WeekOfYearRegex;
@@ -149,7 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             }
 
             if (trimedText.EndsWith("dernières") || trimedText.EndsWith("dernière") ||
-                trimedText.EndsWith("dernieres") || trimedText.EndsWith("derniere"))
+                trimedText.EndsWith("dernieres") || trimedText.EndsWith("derniere") || trimedText.EndsWith("dernier"))
             {
                 swift = -1;
             }
@@ -174,7 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var trimedText = text.Trim().ToLowerInvariant();
             return (
                 trimedText.Equals("dernières") || trimedText.Equals("dernière") ||
-                trimedText.Equals("dernieres") || trimedText.Equals("derniere"));
+                trimedText.Equals("dernieres") || trimedText.Equals("derniere")||trimedText.Equals("dernier"));
         }
 
         public bool IsMonthOnly(string text)
@@ -204,7 +207,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("années") || trimedText.EndsWith("ans"));
+            return (trimedText.EndsWith("années") || trimedText.EndsWith("ans")
+                || (trimedText.EndsWith("l'annees") || trimedText.EndsWith("l'annee"))
+                );
         }
 
         public bool IsYearToDate(string text)

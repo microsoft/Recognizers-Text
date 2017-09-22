@@ -132,6 +132,7 @@
     <Compile Include="French\Parsers\FrenchSetParserConfiguration.cs" />
     <Compile Include="French\Parsers\FrenchTimeParserConfiguration.cs" />
     <Compile Include="French\Parsers\FrenchTimePeriodParserConfiguration.cs" />
+    <Compile Include="French\Parsers\TimeParser.cs" />
     <Compile Include="French\Utilities\FrenchDatetimeUtilityConfiguration.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
     <Compile Include="Parsers\BaseDateParser.cs" />

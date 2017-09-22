@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             return (string.IsNullOrEmpty(text) || text.Equals(",") ||
                         PrepositionRegex.IsMatch(text) || text.Equals("t") || text.Equals("pour") ||
-                        text.Equals("around"));
+                        text.Equals("vers"));
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
-            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; // TODO: When definitions is complete
+            TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
             AtRegex = FrenchTimeExtractorConfiguration.AtRegex;
             TimeRegexes = FrenchTimeExtractorConfiguration.TimeRegexList;
             UtilityConfiguration = config.UtilityConfiguration;

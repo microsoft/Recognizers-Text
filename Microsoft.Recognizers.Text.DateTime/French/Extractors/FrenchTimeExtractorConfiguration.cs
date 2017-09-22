@@ -85,6 +85,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.MidnightRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex MidmorningRegex =
+            new Regex(
+                DateTimeDefinitions.MidmorningRegex, 
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex MidafternoonRegex =
             new Regex(
                 DateTimeDefinitions.MidafternoonRegex,
@@ -106,6 +111,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex AtRegex =
             new Regex(
                 DateTimeDefinitions.AtRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex IshRegex = 
+            new Regex(DateTimeDefinitions.IshRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
@@ -164,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             // 340pm
             ConnectNumRegex
         };
-        Regex ITimeExtractorConfiguration.IshRegex => null;
+        Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 

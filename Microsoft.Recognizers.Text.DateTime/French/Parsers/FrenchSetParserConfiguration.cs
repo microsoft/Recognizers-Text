@@ -71,7 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.Equals("quotidien") || trimedText.Equals("quotidienne"))  // daily
+            if (trimedText.Equals("quotidien") || trimedText.Equals("quotidienne") || 
+                trimedText.Equals("jours") || trimedText.Equals("journellement")) // daily
             {
                 timex = "P1D";
             }
