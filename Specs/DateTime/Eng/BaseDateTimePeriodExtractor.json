@@ -1,334 +1,4 @@
 [{
-  "Input": "let's meet in the early-morning Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-morning Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-morning Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-morning Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-afternoon Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-afternoon Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-afternoon Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-afternoon Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-evening Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-evening Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-evening Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-evening Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-night Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-night Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-night Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-night Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early night Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early night Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late night Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late night Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-morning on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-morning on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-morning on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-morning on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-afternoon on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-afternoon on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-afternoon on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-afternoon on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-evening on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-evening on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-evening on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-evening on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early-night on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early-night on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late-night on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late-night on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the early night on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the early night on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet in the late night on Tuesday",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "in the late night on Tuesday",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday early-morning",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday early-morning",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late-morning",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late-morning",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday early-afternoon",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday early-afternoon",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late-afternoon",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late-afternoon",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday early-evening",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday early-evening",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late-evening",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late-evening",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday early-night",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday early-night",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late-night",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late-night",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday early night",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday early night",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
-  "Input": "let's meet on Tuesday late night",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Tuesday late night",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
   "Input": "I'll be out five to seven today",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -730,6 +400,380 @@
   "Results": [
     {
       "Text": "tuesday in the evening",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-morning Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-morning Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-morning Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-morning Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-afternoon Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-afternoon Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-afternoon Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-afternoon Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-evening Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-evening Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-evening Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-evening Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-night Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-night Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-night Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-night Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early night Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early night Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late night Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late night Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-morning on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-morning on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-morning on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-morning on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-afternoon on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-afternoon on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-afternoon on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-afternoon on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-evening on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-evening on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-evening on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-evening on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early-night on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early-night on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late-night on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late-night on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the early night on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the early night on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet in the late night on Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the late night on Tuesday",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday early-morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday early-morning",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday late-morning",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday late-morning",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday early-afternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday early-afternoon",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday late-afternoon",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday late-afternoon",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday early-evening",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday early-evening",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday late-evening",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday late-evening",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday early-night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday early-night",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday late-night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday late-night",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday early night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday early night",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "let's meet on Tuesday late night",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday late night",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out rest of the day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of the day",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out rest of this day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of this day",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out rest of current day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of current day",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out rest the day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest the day",
       "Type": "datetimerange"
     }
   ]

@@ -1,412 +1,4 @@
 [{
-  "Input": "从下午五点一刻到六点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从下午五点一刻到六点",
-      "Start": 0,
-      "End": 9,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17:15,T18,PT0H45M)",
-            "type": "timerange",
-            "start": "17:15:00",
-            "end": "18:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "17:55:23-18:33:02",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "17:55:23-18:33:02",
-      "Start": 0,
-      "End": 16,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
-            "type": "timerange",
-            "start": "17:55:23",
-            "end": "18:33:02"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "从17点55分23秒至18点33分02秒",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从17点55分23秒至18点33分02秒",
-      "Start": 0,
-      "End": 19,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
-            "type": "timerange",
-            "start": "17:55:23",
-            "end": "18:33:02"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "早上五到六点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "早上五到六点",
-      "Start": 0,
-      "End": 5,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T05,T06,PT1H)",
-            "type": "timerange",
-            "start": "05:00:00",
-            "end": "06:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "下午五点到晚上七点半",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午五点到晚上七点半",
-      "Start": 0,
-      "End": 9,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17,T19:30,PT2H30M)",
-            "type": "timerange",
-            "start": "17:00:00",
-            "end": "19:30:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "下午5:00到凌晨3:00",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午5:00到凌晨3:00",
-      "Start": 0,
-      "End": 12,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17:00,T03:00,PT10H)",
-            "type": "timerange",
-            "start": "17:00:00",
-            "end": "03:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "下午5:00到6:00",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午5:00到6:00",
-      "Start": 0,
-      "End": 10,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T17:00,T18:00,PT1H)",
-            "type": "timerange",
-            "start": "17:00:00",
-            "end": "18:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "5:00到6:00",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5:00到6:00",
-      "Start": 0,
-      "End": 8,
-      "TypeName": "datetimeV2.timerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(T05:00,T06:00,PT1H)",
-            "type": "timerange",
-            "start": "05:00:00",
-            "end": "06:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件 每天都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每天",
-      "Start": 3,
-      "End": 4,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1D",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每日都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每日",
-      "Start": 2,
-      "End": 3,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1D",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周",
-      "Start": 2,
-      "End": 3,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1W",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个星期都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个星期",
-      "Start": 2,
-      "End": 5,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1W",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每个月都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每个月",
-      "Start": 2,
-      "End": 4,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1M",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每年都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每年",
-      "Start": 2,
-      "End": 3,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P1Y",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一",
-      "Start": 2,
-      "End": 4,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-1",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "事件每周一下午八点都发生",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "每周一下午八点",
-      "Start": 2,
-      "End": 8,
-      "TypeName": "datetimeV2.set",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-1T20",
-            "type": "set",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
   "Input": "2010/01/29",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -415,8 +7,6 @@
   "Results": [
     {
       "Text": "2010/01/29",
-      "Start": 0,
-      "End": 9,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -440,8 +30,6 @@
   "Results": [
     {
       "Text": "农历2015年十月初一",
-      "Start": 0,
-      "End": 10,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -465,8 +53,6 @@
   "Results": [
     {
       "Text": "正月三十",
-      "Start": 0,
-      "End": 3,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -495,8 +81,6 @@
   "Results": [
     {
       "Text": "10月12号,星期一",
-      "Start": 0,
-      "End": 9,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -525,8 +109,6 @@
   "Results": [
     {
       "Text": "最近",
-      "Start": 0,
-      "End": 1,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -550,8 +132,6 @@
   "Results": [
     {
       "Text": "12号",
-      "Start": 0,
-      "End": 2,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -580,8 +160,6 @@
   "Results": [
     {
       "Text": "二零零四年八月十五",
-      "Start": 0,
-      "End": 8,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -605,8 +183,6 @@
   "Results": [
     {
       "Text": "本月十日",
-      "Start": 0,
-      "End": 3,
       "TypeName": "datetimeV2.date",
       "Resolution": {
         "values": [
@@ -627,429 +203,6 @@
 }
 ,
 {
-  "Input": "下午5:00",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "下午5:00",
-      "Start": 0,
-      "End": 5,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T17:00",
-            "type": "time",
-            "value": "17:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "晚上9:30",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "晚上9:30",
-      "Start": 0,
-      "End": 5,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T21:30",
-            "type": "time",
-            "value": "21:30:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "晚上19:30",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "晚上19:30",
-      "Start": 0,
-      "End": 6,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T19:30",
-            "type": "time",
-            "value": "19:30:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "大约十点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "大约十点",
-      "Start": 0,
-      "End": 3,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T10",
-            "type": "time",
-            "value": "10:00:00"
-          },
-          {
-            "timex": "T22",
-            "type": "time",
-            "value": "22:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "大约晚上十点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "大约晚上十点",
-      "Start": 0,
-      "End": 5,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T22",
-            "type": "time",
-            "value": "22:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "凌晨2点半",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "凌晨2点半",
-      "Start": 0,
-      "End": 4,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T02:30",
-            "type": "time",
-            "value": "02:30:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "零点",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "零点",
-      "Start": 0,
-      "End": 1,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T00",
-            "type": "time",
-            "value": "00:00:00"
-          },
-          {
-            "timex": "T12",
-            "type": "time",
-            "value": "12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "零点整",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "零点整",
-      "Start": 0,
-      "End": 2,
-      "TypeName": "datetimeV2.time",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "T00",
-            "type": "time",
-            "value": "00:00:00"
-          },
-          {
-            "timex": "T12",
-            "type": "time",
-            "value": "12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "从昨天下午两点到明天四点",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从昨天下午两点到明天四点",
-      "Start": 0,
-      "End": 11,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
-            "type": "datetimerange",
-            "start": "2016-11-06 14:00:00",
-            "end": "2016-11-08 04:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "从昨天5:00-6:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "从昨天5:00-6:00",
-      "Start": 0,
-      "End": 11,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
-            "type": "datetimerange",
-            "start": "2016-11-06 05:00:00",
-            "end": "2016-11-06 06:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1月15号4点和2月3号9点之间",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1月15号4点和2月3号9点之间",
-      "Start": 0,
-      "End": 15,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
-            "type": "datetimerange",
-            "start": "2017-01-15 04:00:00",
-            "end": "2017-02-03 09:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "昨晚",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "昨晚",
-      "Start": 0,
-      "End": 1,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2016-11-06TEV",
-            "type": "datetimerange",
-            "start": "2016-11-06 16:00:00",
-            "end": "2016-11-06 20:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "明天上午",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "明天上午",
-      "Start": 0,
-      "End": 3,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "2016-11-08TMO",
-            "type": "datetimerange",
-            "start": "2016-11-08 08:00:00",
-            "end": "2016-11-08 12:00:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "上个小时",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上个小时",
-      "Start": 0,
-      "End": 3,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
-            "type": "datetimerange",
-            "start": "2016-11-07 15:12:00",
-            "end": "2016-11-07 16:12:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "之后5分钟",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "之后5分钟",
-      "Start": 0,
-      "End": 4,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
-            "type": "datetimerange",
-            "start": "2016-11-07 16:12:00",
-            "end": "2016-11-07 16:17:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "之前3小时",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "之前3小时",
-      "Start": 0,
-      "End": 4,
-      "TypeName": "datetimeV2.datetimerange",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
-            "type": "datetimerange",
-            "start": "2016-11-07 13:12:00",
-            "end": "2016-11-07 16:12:00"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
   "Input": "时间从一月十日到十二日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -1058,8 +211,6 @@
   "Results": [
     {
       "Text": "从一月十日到十二日",
-      "Start": 2,
-      "End": 10,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1090,8 +241,6 @@
   "Results": [
     {
       "Text": "从2016年一月十日到十二日",
-      "Start": 2,
-      "End": 15,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1116,8 +265,6 @@
   "Results": [
     {
       "Text": "从一月十日到20日",
-      "Start": 0,
-      "End": 8,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1148,8 +295,6 @@
   "Results": [
     {
       "Text": "明年",
-      "Start": 0,
-      "End": 1,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1174,8 +319,6 @@
   "Results": [
     {
       "Text": "十月的第一周",
-      "Start": 0,
-      "End": 5,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1206,8 +349,6 @@
   "Results": [
     {
       "Text": "前1周",
-      "Start": 0,
-      "End": 2,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1232,8 +373,6 @@
   "Results": [
     {
       "Text": "后1年",
-      "Start": 0,
-      "End": 2,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1258,8 +397,6 @@
   "Results": [
     {
       "Text": "今年夏天",
-      "Start": 0,
-      "End": 3,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -1267,106 +404,6 @@
             "timex": "2017-SU",
             "type": "daterange",
             "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "两年",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "两年",
-      "Start": 0,
-      "End": 1,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P2Y",
-            "type": "duration",
-            "value": "63072000"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "6 天",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "6 天",
-      "Start": 0,
-      "End": 2,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P6D",
-            "type": "duration",
-            "value": "518400"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "7 周",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "7 周",
-      "Start": 0,
-      "End": 2,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "P7W",
-            "type": "duration",
-            "value": "4233600"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "5 小时",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "5 小时",
-      "Start": 0,
-      "End": 3,
-      "TypeName": "datetimeV2.duration",
-      "Resolution": {
-        "values": [
-          {
-            "timex": "PT5H",
-            "type": "duration",
-            "value": "18000"
           }
         ]
       }
@@ -1383,8 +420,6 @@
   "Results": [
     {
       "Text": "2010.01.29晚上六点",
-      "Start": 0,
-      "End": 13,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1408,8 +443,6 @@
   "Results": [
     {
       "Text": "1987年1月11日八点",
-      "Start": 0,
-      "End": 11,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1438,8 +471,6 @@
   "Results": [
     {
       "Text": "2015年十月初一早上九点二十",
-      "Start": 0,
-      "End": 14,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1463,8 +494,6 @@
   "Results": [
     {
       "Text": "1月19号下午5:00",
-      "Start": 0,
-      "End": 10,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1493,8 +522,6 @@
   "Results": [
     {
       "Text": "明天下午5:00",
-      "Start": 0,
-      "End": 7,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1518,8 +545,6 @@
   "Results": [
     {
       "Text": "今晚6点",
-      "Start": 0,
-      "End": 3,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1543,8 +568,6 @@
   "Results": [
     {
       "Text": "今晨5点",
-      "Start": 0,
-      "End": 3,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1568,8 +591,6 @@
   "Results": [
     {
       "Text": "今早8点十五分",
-      "Start": 0,
-      "End": 6,
       "TypeName": "datetimeV2.datetime",
       "Resolution": {
         "values": [
@@ -1577,6 +598,865 @@
             "timex": "2016-11-07T08:15",
             "type": "datetime",
             "value": "2016-11-07 08:15:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "从昨天下午两点到明天四点",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从昨天下午两点到明天四点",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+            "type": "datetimerange",
+            "start": "2016-11-06 14:00:00",
+            "end": "2016-11-08 04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "从昨天5:00-6:00",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从昨天5:00-6:00",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-06T05:00,2016-11-06T06:00,PT1H)",
+            "type": "datetimerange",
+            "start": "2016-11-06 05:00:00",
+            "end": "2016-11-06 06:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1月15号4点和2月3号9点之间",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1月15号4点和2月3号9点之间",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(XXXX-01-15T04,XXXX-02-03T09,PT461H)",
+            "type": "datetimerange",
+            "start": "2017-01-15 04:00:00",
+            "end": "2017-02-03 09:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "昨晚",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "昨晚",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-06TEV",
+            "type": "datetimerange",
+            "start": "2016-11-06 16:00:00",
+            "end": "2016-11-06 20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "明天上午",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明天上午",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08TMO",
+            "type": "datetimerange",
+            "start": "2016-11-08 08:00:00",
+            "end": "2016-11-08 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "上个小时",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上个小时",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-07T15:12:00,2016-11-07T16:12:00,PT1H)",
+            "type": "datetimerange",
+            "start": "2016-11-07 15:12:00",
+            "end": "2016-11-07 16:12:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "之后5分钟",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "之后5分钟",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+            "type": "datetimerange",
+            "start": "2016-11-07 16:12:00",
+            "end": "2016-11-07 16:17:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "之前3小时",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "之前3小时",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-07T13:12:00,2016-11-07T16:12:00,PT3H)",
+            "type": "datetimerange",
+            "start": "2016-11-07 13:12:00",
+            "end": "2016-11-07 16:12:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两年",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P2Y",
+            "type": "duration",
+            "value": "63072000"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "6 天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 天",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P6D",
+            "type": "duration",
+            "value": "518400"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7 周",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 周",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P7W",
+            "type": "duration",
+            "value": "4233600"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5 小时",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 小时",
+      "TypeName": "datetimeV2.duration",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "PT5H",
+            "type": "duration",
+            "value": "18000"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件 每天都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每天",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1D",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每日都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每日",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1D",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每周都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每周",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1W",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每个星期都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每个星期",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1W",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每个月都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每个月",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1M",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每年都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每年",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "P1Y",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每周一都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每周一",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-1",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "事件每周一下午八点都发生",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "每周一下午八点",
+      "TypeName": "datetimeV2.set",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-1T20",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下午5:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下午5:00",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T17:00",
+            "type": "time",
+            "value": "17:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "晚上9:30",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "晚上9:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T21:30",
+            "type": "time",
+            "value": "21:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "晚上19:30",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "晚上19:30",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T19:30",
+            "type": "time",
+            "value": "19:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "大约十点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大约十点",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T10",
+            "type": "time",
+            "value": "10:00:00"
+          },
+          {
+            "timex": "T22",
+            "type": "time",
+            "value": "22:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "大约晚上十点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大约晚上十点",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T22",
+            "type": "time",
+            "value": "22:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "凌晨2点半",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "凌晨2点半",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T02:30",
+            "type": "time",
+            "value": "02:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "零点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "零点",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T00",
+            "type": "time",
+            "value": "00:00:00"
+          },
+          {
+            "timex": "T12",
+            "type": "time",
+            "value": "12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "零点整",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "零点整",
+      "TypeName": "datetimeV2.time",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T00",
+            "type": "time",
+            "value": "00:00:00"
+          },
+          {
+            "timex": "T12",
+            "type": "time",
+            "value": "12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "从下午五点一刻到六点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从下午五点一刻到六点",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17:15,T18,PT0H45M)",
+            "type": "timerange",
+            "start": "17:15:00",
+            "end": "18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "17:55:23-18:33:02",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "17:55:23-18:33:02",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+            "type": "timerange",
+            "start": "17:55:23",
+            "end": "18:33:02"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "从17点55分23秒至18点33分02秒",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从17点55分23秒至18点33分02秒",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+            "type": "timerange",
+            "start": "17:55:23",
+            "end": "18:33:02"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "早上五到六点",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "早上五到六点",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T05,T06,PT1H)",
+            "type": "timerange",
+            "start": "05:00:00",
+            "end": "06:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下午五点到晚上七点半",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下午五点到晚上七点半",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17,T19:30,PT2H30M)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "19:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下午5:00到凌晨3:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下午5:00到凌晨3:00",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17:00,T03:00,PT10H)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "03:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下午5:00到6:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下午5:00到6:00",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T17:00,T18:00,PT1H)",
+            "type": "timerange",
+            "start": "17:00:00",
+            "end": "18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5:00到6:00",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5:00到6:00",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(T05:00,T06:00,PT1H)",
+            "type": "timerange",
+            "start": "05:00:00",
+            "end": "06:00:00"
           }
         ]
       }

@@ -1,81 +1,4 @@
 [{
-  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow morning at 9 o'clock",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tomorrow morning at 9 o'clock",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow morning at 9 o'clock",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tomorrow morning at 9 oclock",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow morning at 9 oclock",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tomorrow at 9 o'clock",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow at 9 o'clock",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back tomorrow at 9 oclock",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow at 9 oclock",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "this friday at one o'clock pm",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "this friday at one o'clock pm",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "see if I am available for 3pm on Sun",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3pm on Sun",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
   "Input": "I'll go back now",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -642,6 +565,83 @@
   "Results": [
     {
       "Text": "in 5 hours",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "see if I am available for 3pm on Sun",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm on Sun",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow morning at 9 o'clock",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tomorrow morning at 9 o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow morning at 9 o'clock",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tomorrow morning at 9 oclock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow morning at 9 oclock",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tomorrow at 9 o'clock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow at 9 o'clock",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tomorrow at 9 oclock",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow at 9 oclock",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "this friday at one o'clock pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this friday at one o'clock pm",
       "Type": "datetime"
     }
   ]

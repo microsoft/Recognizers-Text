@@ -4,7 +4,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -37,7 +37,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -70,7 +70,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -103,7 +103,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -136,7 +136,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -169,7 +169,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -202,7 +202,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -231,11 +230,11 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en Yuandan delpróximo año",
+  "Input": "Volveré en Yuandan del próximo año",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -268,7 +267,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -301,7 +300,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -334,7 +332,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -367,7 +365,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -400,7 +398,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -433,7 +431,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -466,7 +464,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -499,7 +496,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -532,7 +529,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
+  "NotSupported": "dotNet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -565,7 +562,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet, javascript, python",
   "NotSupportedByDesign": "python",
   "Results": [
     {

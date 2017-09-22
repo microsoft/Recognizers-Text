@@ -1,487 +1,4 @@
 [{
-  "Input": "I'll go back two weeks from now",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "two weeks from now",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-21",
-        "FutureResolution": {
-          "date": "2016-11-21"
-        },
-        "PastResolution": {
-          "date": "2016-11-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "who did I email a month ago",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a month ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-10-07",
-        "FutureResolution": {
-          "date": "2016-10-07"
-        },
-        "PastResolution": {
-          "date": "2016-10-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "who did I email few month ago",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "few month ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-08-07",
-        "FutureResolution": {
-          "date": "2016-08-07"
-        },
-        "PastResolution": {
-          "date": "2016-08-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "who did I email a few day ago",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a few day ago",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-04",
-        "FutureResolution": {
-          "date": "2016-11-04"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27th",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 27th",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27!",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 27 .",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 27",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-27",
-        "FutureResolution": {
-          "date": "2016-11-27"
-        },
-        "PastResolution": {
-          "date": "2016-11-27"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 21st",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 21st",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-21",
-        "FutureResolution": {
-          "date": "2016-11-21"
-        },
-        "PastResolution": {
-          "date": "2016-11-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the 22nd",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the 22nd",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-22",
-        "FutureResolution": {
-          "date": "2016-11-22"
-        },
-        "PastResolution": {
-          "date": "2016-11-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the second",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the second",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-02",
-        "FutureResolution": {
-          "date": "2016-11-02"
-        },
-        "PastResolution": {
-          "date": "2016-11-02"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the twenty second",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the twenty second",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-22",
-        "FutureResolution": {
-          "date": "2016-11-22"
-        },
-        "PastResolution": {
-          "date": "2016-11-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back for the thirty",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "for the thirty",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-XX-30",
-        "FutureResolution": {
-          "date": "2016-11-30"
-        },
-        "PastResolution": {
-          "date": "2016-11-30"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Thursday the 21st",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4330741-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Thursday the 21st",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-21",
-        "FutureResolution": {
-          "date": "2017-09-21"
-        },
-        "PastResolution": {
-          "date": "2017-09-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Friday the 22nd",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4370746-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Friday the 22nd",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-22",
-        "FutureResolution": {
-          "date": "2017-09-22"
-        },
-        "PastResolution": {
-          "date": "2017-09-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Saturday the 23rd",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.438575-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Saturday the 23rd",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-23",
-        "FutureResolution": {
-          "date": "2017-09-23"
-        },
-        "PastResolution": {
-          "date": "2017-09-23"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Friday the 15th",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4400735-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Friday the 15th",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-15",
-        "FutureResolution": {
-          "date": "2017-09-15"
-        },
-        "PastResolution": {
-          "date": "2017-09-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Thursday the twenty first",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4415729-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Thursday the twenty first",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-21",
-        "FutureResolution": {
-          "date": "2017-09-21"
-        },
-        "PastResolution": {
-          "date": "2017-09-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Friday the twenty second",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4430733-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Friday the twenty second",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-22",
-        "FutureResolution": {
-          "date": "2017-09-22"
-        },
-        "PastResolution": {
-          "date": "2017-09-22"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I went back Friday the fifteen",
-  "Context": {
-    "ReferenceDateTime": "2017-09-19T15:39:51.4450775-03:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Friday the fifteen",
-      "Type": "date",
-      "Value": {
-        "Timex": "2017-09-15",
-        "FutureResolution": {
-          "date": "2017-09-15"
-        },
-        "PastResolution": {
-          "date": "2017-09-15"
-        }
-      }
-    }
-  ]
-}
-,
-{
   "Input": "I'll go back on 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1724,6 +1241,696 @@
 }
 ,
 {
+  "Input": "I'll go back my day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "my day",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-07",
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back this day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this day",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-07",
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back past day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past day",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-06",
+        "FutureResolution": {
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "date": "2016-11-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back two weeks from now",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two weeks from now",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-21",
+        "FutureResolution": {
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "date": "2016-11-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "who did I email a month ago",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a month ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-10-07",
+        "FutureResolution": {
+          "date": "2016-10-07"
+        },
+        "PastResolution": {
+          "date": "2016-10-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "who did I email few month ago",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "few month ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-08-07",
+        "FutureResolution": {
+          "date": "2016-08-07"
+        },
+        "PastResolution": {
+          "date": "2016-08-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "who did I email a few day ago",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a few day ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-04",
+        "FutureResolution": {
+          "date": "2016-11-04"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-27",
+        "FutureResolution": {
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "date": "2016-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27th",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-27",
+        "FutureResolution": {
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "date": "2016-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-27",
+        "FutureResolution": {
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "date": "2016-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27!",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-27",
+        "FutureResolution": {
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "date": "2016-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27 .",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-27",
+        "FutureResolution": {
+          "date": "2016-11-27"
+        },
+        "PastResolution": {
+          "date": "2016-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 21st",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 21st",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-21",
+        "FutureResolution": {
+          "date": "2016-11-21"
+        },
+        "PastResolution": {
+          "date": "2016-11-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 22nd",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 22nd",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-22",
+        "FutureResolution": {
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "date": "2016-11-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the second",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the second",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-02",
+        "FutureResolution": {
+          "date": "2016-11-02"
+        },
+        "PastResolution": {
+          "date": "2016-11-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the twenty second",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the twenty second",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-22",
+        "FutureResolution": {
+          "date": "2016-11-22"
+        },
+        "PastResolution": {
+          "date": "2016-11-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the thirty",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the thirty",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-30",
+        "FutureResolution": {
+          "date": "2016-11-30"
+        },
+        "PastResolution": {
+          "date": "2016-11-30"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Thursday the 21st",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.012906-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Thursday the 21st",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-21",
+        "FutureResolution": {
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "date": "2017-09-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Friday the 22nd",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0304821-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the 22nd",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-22",
+        "FutureResolution": {
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "date": "2017-09-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Saturday the 23rd",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0324794-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Saturday the 23rd",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-23",
+        "FutureResolution": {
+          "date": "2017-09-23"
+        },
+        "PastResolution": {
+          "date": "2017-09-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Friday the 15th",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.033994-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the 15th",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-15",
+        "FutureResolution": {
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "date": "2017-09-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Thursday the twenty first",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0374338-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Thursday the twenty first",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-21",
+        "FutureResolution": {
+          "date": "2017-09-21"
+        },
+        "PastResolution": {
+          "date": "2017-09-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Friday the twenty second",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0393095-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the twenty second",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-22",
+        "FutureResolution": {
+          "date": "2017-09-22"
+        },
+        "PastResolution": {
+          "date": "2017-09-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back Friday the fifteen",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0412111-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the fifteen",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-15",
+        "FutureResolution": {
+          "date": "2017-09-15"
+        },
+        "PastResolution": {
+          "date": "2017-09-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back second Sunday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0480135-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second Sunday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-10",
+        "FutureResolution": {
+          "date": "2017-09-10"
+        },
+        "PastResolution": {
+          "date": "2017-09-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back first Sunday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0512263-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "first Sunday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-03",
+        "FutureResolution": {
+          "date": "2017-09-03"
+        },
+        "PastResolution": {
+          "date": "2017-09-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back third Tuesday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0542018-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "third Tuesday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-19",
+        "FutureResolution": {
+          "date": "2017-09-19"
+        },
+        "PastResolution": {
+          "date": "2017-09-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back fifth Sunday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-22T13:11:06.0561022-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "fifth Sunday",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-09-31",
+        "FutureResolution": {
+          "date": "0001-01-01"
+        },
+        "PastResolution": {
+          "date": "0001-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back 20th of next month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20th of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-12-20",
+        "FutureResolution": {
+          "date": "2016-12-20"
+        },
+        "PastResolution": {
+          "date": "2016-12-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I went back 31st of this month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "31st of this month",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-31",
+        "FutureResolution": {
+          "date": "0001-01-01"
+        },
+        "PastResolution": {
+          "date": "0001-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll go back January 12, 2018",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1809,75 +2016,6 @@
         },
         "PastResolution": {
           "date": "2014-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back my day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "my day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back this day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "this day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back past day",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "past day",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
         }
       }
     }

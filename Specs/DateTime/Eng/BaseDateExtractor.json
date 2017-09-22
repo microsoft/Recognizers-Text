@@ -1,49 +1,4 @@
 [{
-  "Input": "What do I have on Sunday the second?",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sunday",
-      "Type": "date"
-    },
-    {
-      "Text": "second",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "What do I have on Thursday the 27th",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Thursday",
-      "Type": "date"
-    },
-    {
-      "Text": "27th",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "What do I have on Sunday the 21st",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Sunday",
-      "Type": "date"
-    },
-    {
-      "Text": "21st",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
   "Input": "I'll go back on 15",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -341,6 +296,105 @@
 }
 ,
 {
+  "Input": "I'll go back the first friday of july",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first friday of july",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the first friday in this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first friday in this month",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back two weeks from now",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two weeks from now",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back next week on Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week on Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Friday next week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Friday next week",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "past Monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past Monday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues. good news.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "I'll go back on Friday",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -561,66 +615,77 @@
 }
 ,
 {
-  "Input": "I'll go back the first friday of july",
+  "Input": "I'll go back fourth of may",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday of july",
+      "Text": "fourth of may",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back the first friday in this month",
+  "Input": "I'll go back 4th of march",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the first friday in this month",
+      "Text": "4th of march",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back two weeks from now",
+  "Input": "I'll go back Jan first",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "two weeks from now",
+      "Text": "Jan first",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back next week on Friday",
+  "Input": "I'll go back May twenty-first",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "next week on Friday",
+      "Text": "May twenty-first",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back on Friday next week",
+  "Input": "I'll go back May twenty one",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on Friday next week",
+      "Text": "May twenty one",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "past Monday",
+  "Input": "I'll go back second of Aug",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "past Monday",
+      "Text": "second of Aug",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back twenty second of June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty second of June",
       "Type": "date"
     }
   ]
@@ -770,77 +835,55 @@
 }
 ,
 {
-  "Input": "I'll go back fourth of may",
+  "Input": "I went back on the 27th",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fourth of may",
+      "Text": "on the 27th",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back 4th of march",
+  "Input": "I went back on the 21st",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4th of march",
+      "Text": "on the 21st",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back Jan first",
+  "Input": "I went back on 22nd",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Jan first",
+      "Text": "on 22nd",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May twenty-first",
+  "Input": "I went back on the second!",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May twenty-first",
+      "Text": "on the second",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I'll go back May twenty one",
+  "Input": "I went back on twenty second?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "May twenty one",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back second of Aug",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "second of Aug",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll go back twenty second of June",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty second of June",
+      "Text": "on twenty second",
       "Type": "date"
     }
   ]
@@ -981,55 +1024,88 @@
 }
 ,
 {
-  "Input": "I went back on the 27th",
+  "Input": "I'll go back second Sunday",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on the 27th",
+      "Text": "second Sunday",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back on the 21st",
+  "Input": "I'll go back first Sunday",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on the 21st",
+      "Text": "first Sunday",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back on 22nd",
+  "Input": "I'll go back third Tuesday",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on 22nd",
+      "Text": "third Tuesday",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back on the second!",
+  "Input": "I'll go back fifth Sunday",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on the second",
+      "Text": "fifth Sunday",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "I went back on twenty second?",
+  "Input": "I'll go back sixth Sunday",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "on twenty second",
+      "Text": "Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tenth Monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 20th of next month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20th of next month",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 31st of this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "31st of this month",
       "Type": "date"
     }
   ]

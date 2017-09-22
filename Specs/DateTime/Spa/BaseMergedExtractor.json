@@ -41,4 +41,37 @@
     }
   ]
 }
+,
+{
+  "Input": "despues del 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "despues del 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "desde el 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "desde el 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "antes del  7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "antes del  7/2",
+      "Type": "date"
+    }
+  ]
+}
 ]

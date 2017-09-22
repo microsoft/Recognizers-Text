@@ -1,494 +1,4 @@
 [{
-  "Input": "a fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a trillionth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a trillionth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a hundred thousand trillionths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a hundred thousand trillionths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty-three fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty-three fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three and a fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three and a fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty one fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty one fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "4.2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "a twenty-first",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "a twenty-first",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one twenty-fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one twenty-fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three twenty-firsts",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three twenty-firsts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.142857142857143"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "three twenty firsts",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "three twenty firsts",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.142857142857143"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "twenty twenty fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "twenty twenty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.8"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred and thirty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred thirty fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2.85714285714286"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty two fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred thirty two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty-two fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred thirty-two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty-two fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred and thirty-two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred and thirty and two fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred and thirty and two fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "130.4"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred thirty-fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred thirty-fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "2.85714285714286"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one one hundred fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one one hundred fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00952380952380952"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one one hundred and fifth",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one one hundred and fifth",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00952380952380952"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one hundred one thousand fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one hundred one thousand fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0995024875621891"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over three",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over twenty-one",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 over twenty-one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over one hundred and twenty one",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 over one hundred and twenty one",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.00826446280991736"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over three",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 over three",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 over 3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 over 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over 3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over 20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over 20",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over twenty",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over twenty",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over one hundred",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over one hundred",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "one over one hundred and twenty five",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "one over one hundred and twenty five",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0.008"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "ninety - five hundred fifths",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "ninety - five hundred fifths",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1900"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "192.",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -700,6 +210,20 @@
       "TypeName": "number",
       "Resolution": {
         "value": "161"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "a trillionth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a trillionth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-12"
       }
     }
   ]
@@ -1392,6 +916,20 @@
 }
 ,
 {
+  "Input": "twenty-three fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty-three fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.6"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "twenty and three and three fifths",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1624,6 +1162,468 @@
       "TypeName": "number",
       "Resolution": {
         "value": "1200000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "a fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "a hundred thousand trillionths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a hundred thousand trillionths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-07"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "three fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "three and a fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three and a fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty one fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty one fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "a twenty-first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a twenty-first",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one twenty-fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one twenty-fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.04"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "three twenty-firsts",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three twenty-firsts",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.142857142857143"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "three twenty firsts",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three twenty firsts",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.142857142857143"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty twenty fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty twenty fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred and thirty fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred and thirty fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred thirty fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred thirty fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred thirty two fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred thirty two fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred thirty-two fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred thirty-two fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred and thirty-two fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred and thirty-two fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred and thirty and two fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred and thirty and two fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "130.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred thirty-fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred thirty-fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.85714285714286"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one one hundred fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one one hundred fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00952380952380952"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one one hundred and fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one one hundred and fifth",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00952380952380952"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred one thousand fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred one thousand fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0995024875621891"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over three",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over three",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 over twenty-one",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 over twenty-one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 over one hundred and twenty one",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 over one hundred and twenty one",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.00826446280991736"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 over three",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 over three",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 over 3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 over 3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over 3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over 3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over 20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over 20",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over twenty",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over twenty",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over one hundred",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over one hundred",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.01"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one over one hundred and twenty five",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one over one hundred and twenty five",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.008"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "ninety - five hundred fifths",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ninety - five hundred fifths",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1900"
       }
     }
   ]
