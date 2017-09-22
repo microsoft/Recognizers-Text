@@ -292,7 +292,7 @@ export class BaseTimeExtractor implements IExtractor {
                         ret.timex += ":" + FormatUtil.toString(second, 2);
                     }
 
-                    if (hour <= 12 && !hasPm && !hasAm) {
+                    if (hour <= 12 && !hasPm && !hasAm && !hasMid) {
                         ret.comment = "ampm";
                     }
 
