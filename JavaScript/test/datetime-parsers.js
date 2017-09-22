@@ -13,7 +13,19 @@ module.exports = {
     'Eng-Duration':         createParser('English', 'Duration', englishCommonConfig),
     'Eng-Holiday':          createParser('English', 'Holiday'),
     'Eng-Set':              createParser('English', 'Set', englishCommonConfig),
-    'Eng-Merged':           createParser('English', 'Merged', englishCommonConfig)
+    'Eng-Merged':           createParser('English', 'Merged', englishCommonConfig),
+
+    // Spanish
+    // 'Spa-Date':             createParser('Spanish', 'Date', SpanishCommonConfig),
+    // 'Spa-Time':             createParser('Spanish', 'Time', SpanishCommonConfig),
+    // 'Spa-DatePeriod':       createParser('Spanish', 'DatePeriod', SpanishCommonConfig),
+    // 'Spa-TimePeriod':       createParser('Spanish', 'TimePeriod', SpanishCommonConfig),
+    // 'Spa-DateTime':         createParser('Spanish', 'DateTime', SpanishCommonConfig),
+    // 'Spa-DateTimePeriod':   createParser('Spanish', 'DateTimePeriod', SpanishCommonConfig),
+    // 'Spa-Duration':         createParser('Spanish', 'Duration', SpanishCommonConfig),
+    // 'Spa-Holiday':          createParser('Spanish', 'Holiday'),
+    // 'Spa-Set':              createParser('Spanish', 'Set', SpanishCommonConfig),
+    // 'Spa-Merged':           createParser('Spanish', 'Merged', SpanishCommonConfig)
 };
 
 function createParser(lang, parser, commonConfig) {
