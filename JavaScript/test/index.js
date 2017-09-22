@@ -1,3 +1,4 @@
+// English
 require('./number-english.test');
 
 require('./numberWithUnit-english.test');
@@ -27,3 +28,6 @@ require('./mergedParser-english.test');
 require('./dateTime-english.test');
 
 require('./singleCultureDateTimeRecognizer-english.test');
+
+// Spanish
+require('./number-spanish.test');
