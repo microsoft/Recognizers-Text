@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor DurationExtractor { get; }
 
-        public IParser DurationParser { get; }
+        public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 

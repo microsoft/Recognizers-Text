@@ -131,10 +131,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-
-            //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+            if (((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
+            {
+                pr.Value = DateTimeResolutionForSplit(pr);
+            }
+            else
+            {
+                pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
+                //change the type at last for the after or before mode
+                pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+            }
 
             return pr;
         }
@@ -162,6 +168,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return type;
         }
 
+        public List<DateTimeParseResult> DateTimeResolutionForSplit(DateTimeParseResult slot)
+        {
+            var results = new List<DateTimeParseResult>();
+            if (((DateTimeResolutionResult) slot.Value).SubDateTimeEntities != null)
+            {
+                var subEntities = ((DateTimeResolutionResult) slot.Value).SubDateTimeEntities;
+                foreach (var subEntity in subEntities)
+                {
+                    var result = (DateTimeParseResult) subEntity;
+                    results.AddRange(DateTimeResolutionForSplit(result));
+                }
+            }
+            else
+            {
+                slot.Value = DateTimeResolution(slot, false, false, false);
+                results.Add(slot);
+            }
+            return results;
+        }
+
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             if (slot == null)
@@ -184,26 +210,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var islunar = val.IsLunar;
             var mod = val.Mod;
             var comment = val.Comment;
-
-            if (!string.IsNullOrEmpty(timex))
-            {
-                res.Add("timex", timex);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                res.Add("Comment", comment);
-            }
-
-            if (!string.IsNullOrEmpty(mod))
-            {
-                res.Add("Mod", mod);
-            }
-
-            if (!string.IsNullOrEmpty(type))
-            {
-                res.Add("type", typeOutput);
-            }
 
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
@@ -247,11 +253,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (islunar)
-            {
-                res.Add("isLunar", islunar);
-            }
-
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -261,6 +262,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (!string.IsNullOrEmpty(timex))
                     {
                         value.Add("timex", timex);
+                    }
+
+                    if (!string.IsNullOrEmpty(mod))
+                    {
+                        value.Add("mod", mod);
+                    }
+
+                    if (!string.IsNullOrEmpty(comment))
+                    {
+                        value.Add("comment", comment);
+                    }
+
+                    // lunar is only for Chinese
+                    if (islunar)
+                    {
+                        value.Add("islunar", islunar.ToString());
                     }
 
                     if (!string.IsNullOrEmpty(type))
@@ -289,9 +306,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var notResolved = new Dictionary<string, string> {
                     {
                         "timex", timex
-                    }, {
+                    },
+                    {
                         "type", typeOutput
-                    }, {
+                    },
+                    {
                         "value", "not resolved"
                     }
                 };

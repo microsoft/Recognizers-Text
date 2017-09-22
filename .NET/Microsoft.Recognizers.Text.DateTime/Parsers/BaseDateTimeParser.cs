@@ -189,12 +189,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hour <= 12 && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
                 !string.IsNullOrEmpty(val.Comment))
             {
-                //ret.Timex += "ampm";
                 ret.Comment = "ampm";
             }
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;
+
+            //change the value of time object
+            pr2.TimexStr = timeStr;
+            if (!string.IsNullOrEmpty(ret.Comment))
+            {
+                ((DateTimeResolutionResult) pr2.Value).Comment = ret.Comment.Equals("ampm") ? "ampm" : "";
+            }
+            
+            //add the date and time object in case we want to split them
+            ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
             return ret;
         }
@@ -209,7 +218,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var wholeMatch = this.config.SimpleTimeOfTodayAfterRegex.Match(trimedText);
             if (!(wholeMatch.Success && wholeMatch.Length == trimedText.Length))
+            {
                 wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.Match(trimedText);
+            }
             if (wholeMatch.Success && wholeMatch.Length == trimedText.Length)
             {
                 var hourStr = wholeMatch.Groups["hour"].Value;

@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor DurationExtractor { get; }
 
-        IParser DurationParser { get; }
+        IDateTimeParser DurationParser { get; }
 
         Regex NowRegex { get; }
 

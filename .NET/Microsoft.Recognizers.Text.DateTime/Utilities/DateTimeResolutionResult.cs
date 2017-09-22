@@ -26,5 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public object FutureValue { get; set; }
 
         public object PastValue { get; set; }
+
+        public List<object> SubDateTimeEntities { get; set; }
     }
 }

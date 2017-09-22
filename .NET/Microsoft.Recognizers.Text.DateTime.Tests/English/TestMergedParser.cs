@@ -54,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("3 hours later", Constants.SYS_DATETIME_DATE);
             BasicTest("Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);

@@ -31,7 +31,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var parseDateTimes = new List<DateTimeParseResult>();
             foreach (var result in extractResults)
             {
-                parseDateTimes.Add(Parser.Parse(result, refTime));
+                var parseResult = Parser.Parse(result, refTime);
+                if (parseResult.Value is List<DateTimeParseResult>)
+                {
+                    parseDateTimes.AddRange((List<DateTimeParseResult>)parseResult.Value);
+                }
+                else
+                {
+                    parseDateTimes.Add(parseResult);
+                }
             }
 
             return parseDateTimes.Select(o => new ModelResult
