@@ -10,6 +10,8 @@ describe('Set Parser', it => {
     let extractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
     let parser = new BaseSetParser(new EnglishSetParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 
+    basicTest(it, extractor, parser, "I'll leave every night at 9", "Set: T21", "T21");
+
     basicTest(it, extractor, parser, "I'll leave weekly", "Set: P1W", "P1W");
     basicTest(it, extractor, parser, "I'll leave biweekly", "Set: P2W", "P2W");
     basicTest(it, extractor, parser, "I'll leave daily", "Set: P1D", "P1D");

@@ -42,6 +42,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex, "gis"),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex, "gis"),
         ];
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit, "gis");
@@ -110,11 +111,13 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly nextPrefixRegex: RegExp
     readonly pastPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
+    readonly restOfDateRegex : RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
+    readonly unitMap: ReadonlyMap<string, string>
 
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.dateExtractor = config.dateExtractor;
@@ -143,11 +146,13 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
+        this.restOfDateRegex  = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex );
         this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         this.dayOfMonth = config.dayOfMonth;
         this.monthOfYear = config.monthOfYear;
         this.cardinalMap = config.cardinalMap;
         this.seasonMap = config.seasonMap;
+        this.unitMap = config.unitMap;
     }
 
     getSwiftDayOrMonth(source: string): number {

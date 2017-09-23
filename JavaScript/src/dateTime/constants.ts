@@ -28,4 +28,5 @@ export class TimeTypeConstants {
 
     static readonly beforeMod: string = "before";
     static readonly afterMod: string = "after";
+    static readonly sinceMod: string = "since";
 }

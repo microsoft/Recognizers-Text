@@ -13,6 +13,7 @@ describe('DateTime Period Parser', it => {
     let year = referenceDate.getFullYear();
     let month = referenceDate.getMonth();
     let day = referenceDate.getDate();
+    let hour = referenceDate.getHours();
     let min = 0;
     let second = 0;
 
@@ -192,6 +193,23 @@ describe('DateTime Period Parser', it => {
     basicTestFuture(it, extractor, parser, referenceDate, "let's meet on Tuesday late night",
         new Date(year, month, day + 1, 22, 0, 0),
         new Date(year, month, day + 1, 23, 59, 59));
+
+    // Rest of
+    basicTestFuture(it, extractor, parser, referenceDate, "let's meet rest of the day",
+        new Date(year, month, day, hour, 12, second),
+        new Date(year, month, day, 23, 59, 59));
+    basicTestFuture(it, extractor, parser, referenceDate, "let's meet rest of current day",
+        new Date(year, month, day, hour, 12, second),
+        new Date(year, month, day, 23, 59, 59));
+    basicTestFuture(it, extractor, parser, referenceDate, "let's meet rest of my day",
+        new Date(year, month, day, hour, 12, second),
+        new Date(year, month, day, 23, 59, 59));
+    basicTestFuture(it, extractor, parser, referenceDate, "let's meet rest of this day",
+        new Date(year, month, day, hour, 12, second),
+        new Date(year, month, day, 23, 59, 59));
+    basicTestFuture(it, extractor, parser, referenceDate, "let's meet rest the day",
+        new Date(year, month, day, hour, 12, second),
+        new Date(year, month, day, 23, 59, 59));
 });
 
 describe('DateTime Period Parser Luis', it => {
@@ -254,6 +272,13 @@ describe('DateTime Period Parser Luis', it => {
     basicTestLuis(it, extractor, parser, referenceDate, "let's meet on Tuesday late-night", "XXXX-WXX-2TNI");
     basicTestLuis(it, extractor, parser, referenceDate, "let's meet on Tuesday early night", "XXXX-WXX-2TNI");
     basicTestLuis(it, extractor, parser, referenceDate, "let's meet on Tuesday late night", "XXXX-WXX-2TNI");
+
+    // Rest of
+    basicTestLuis(it, extractor, parser, referenceDate, "let's meet rest of the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+    basicTestLuis(it, extractor, parser, referenceDate, "let's meet rest of this day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+    basicTestLuis(it, extractor, parser, referenceDate, "let's meet rest of my day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+    basicTestLuis(it, extractor, parser, referenceDate, "let's meet rest of current day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
+    basicTestLuis(it, extractor, parser, referenceDate, "let's meet rest the day", "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)");
 });
 
 function basicTestFuture(it, extractor, parser, referenceDate, text, beginDate, endDate) {

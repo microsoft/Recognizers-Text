@@ -26,6 +26,7 @@ export interface IDateTimePeriodExtractorConfiguration {
     pastPrefixRegex: RegExp
     nextPrefixRegex: RegExp
     relativeTimeUnitRegex: RegExp
+    restOfDateTimeRegex: RegExp
     getFromTokenIndex(source: string): { matched: boolean, index: number };
     getBetweenTokenIndex(source: string): { matched: boolean, index: number };
     hasConnectorToken(source: string): boolean;
@@ -195,7 +196,11 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
 
     private matchRelativeUnit(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        RegExpUtility.getMatches(this.config.relativeTimeUnitRegex, source).forEach(match => {
+        let matches = RegExpUtility.getMatches(this.config.relativeTimeUnitRegex, source);
+        if (matches.length === 0) {
+            matches = RegExpUtility.getMatches(this.config.restOfDateTimeRegex, source);
+        }
+        matches.forEach(match => {
             tokens.push(new Token(match.index, match.index + match.length));
         });
         return tokens;
@@ -210,6 +215,7 @@ export interface IDateTimePeriodParserConfiguration {
     pastRegex: RegExp
     futureRegex: RegExp
     relativeTimeUnitRegex: RegExp
+    restOfDateTimeRegex: RegExp
     numbers: ReadonlyMap<string, number>
     unitMap: ReadonlyMap<string, string>
     dateExtractor: BaseDateExtractor
@@ -518,6 +524,9 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
     private parseRelativeUnit(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.relativeTimeUnitRegex, source).pop();
+        if (!match) {
+            match = RegExpUtility.getMatches(this.config.restOfDateTimeRegex, source).pop();
+        }
         if (!match) return result;
 
         let srcUnit = match.groups('unit').value;
@@ -530,19 +539,29 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
 
         let beginTime = new Date(referenceDate);
         let endTime = new Date(referenceDate);
+        let ptTimex = '';
 
         switch (unitStr) {
+            case 'D':
+                endTime = DateUtils.safeCreateFromMinValue(beginTime.getFullYear(), beginTime.getMonth(),beginTime.getDate());
+                endTime.setDate(endTime.getDate() + 1);
+                endTime.setSeconds(endTime.getSeconds() - 1);
+                ptTimex = `PT${DateUtils.totalSeconds(endTime, beginTime)}S`;
+            break;
             case 'H':
-            beginTime.setHours(beginTime.getHours() + (swift > 0 ? 0 : swift));
-            endTime.setHours(endTime.getHours() + (swift > 0 ? swift : 0));
+                beginTime.setHours(beginTime.getHours() + (swift > 0 ? 0 : swift));
+                endTime.setHours(endTime.getHours() + (swift > 0 ? swift : 0));
+                ptTimex = `PT1H`;
             break;
             case 'M':
-            beginTime.setMinutes(beginTime.getMinutes() + (swift > 0 ? 0 : swift));
-            endTime.setMinutes(endTime.getMinutes() + (swift > 0 ? swift : 0));
+                beginTime.setMinutes(beginTime.getMinutes() + (swift > 0 ? 0 : swift));
+                endTime.setMinutes(endTime.getMinutes() + (swift > 0 ? swift : 0));
+                ptTimex = `PT1M`;
             break;
             case 'S':
-            beginTime.setSeconds(beginTime.getSeconds() + (swift > 0 ? 0 : swift));
-            endTime.setSeconds(endTime.getSeconds() + (swift > 0 ? swift : 0));
+                beginTime.setSeconds(beginTime.getSeconds() + (swift > 0 ? 0 : swift));
+                endTime.setSeconds(endTime.getSeconds() + (swift > 0 ? swift : 0));
+                ptTimex = `PT1S`;
             break;
             default: return result;
         }
@@ -552,7 +571,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         let luisDateEnd = FormatUtil.luisDateFromDate(endTime);
         let luisTimeEnd = FormatUtil.luisTimeFromDate(endTime);
 
-        result.timex = `(${luisDateBegin}T${luisTimeBegin},${luisDateEnd}T${luisTimeEnd},PT1${unitStr[0]})`;
+        result.timex = `(${luisDateBegin}T${luisTimeBegin},${luisDateEnd}T${luisTimeEnd},${ptTimex})`;
         result.futureValue = [beginTime, endTime];
         result.pastValue = [beginTime, endTime];
         result.success = true;

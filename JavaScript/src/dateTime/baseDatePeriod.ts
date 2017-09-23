@@ -191,11 +191,13 @@ export interface IDatePeriodParserConfiguration {
     weekOfRegex: RegExp
     monthOfRegex: RegExp
     whichWeekRegex: RegExp
+    restOfDateRegex: RegExp
     tokenBeforeDate: string
     dayOfMonth: ReadonlyMap<string, number>
     monthOfYear: ReadonlyMap<string, number>
     cardinalMap: ReadonlyMap<string, number>
     seasonMap: ReadonlyMap<string, string>
+    unitMap: ReadonlyMap<string, string>
     getSwiftDayOrMonth(source: string): number
     getSwiftYear(source: string): number
     isFuture(source: string): boolean
@@ -520,44 +522,76 @@ export class BaseDatePeriodParser implements IDateTimeParser {
     private parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.config.durationExtractor.extract(source);
-        if (!ers || ers.length !== 1) return result;
-
-        let pr = this.config.durationParser.parse(ers[0]);
-        if (pr === null) return result;
-
-        let beforeStr = source.substr(0, pr.start).trim();
-        let durationResult: DateTimeResolutionResult = pr.value;
-        if (StringUtility.isNullOrEmpty(durationResult.timex)) return result;
-
         let beginDate = new Date(referenceDate);
         let endDate = new Date(referenceDate);
-        let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
-        if (prefixMatch) {
-            beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
-        }
-        prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
-        if (prefixMatch && prefixMatch.length === beforeStr.length) {
-            beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
-            endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
-        }
-        prefixMatch = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
-        if (prefixMatch && prefixMatch.length === beforeStr.length) {
-            beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
-            endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
+        let restNowSunday = false;
+        let durationTimex = '';
 
-            let unit = durationResult.timex.substr(durationResult.timex.length - 1);
-            durationResult.timex = `P1${unit}`;
-            beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
-        }
-        if (beginDate === endDate) return result;
-        if (this.inclusiveEndPeriod) {
-            endDate.setDate(endDate.getDate() - 1);
+        if (ers.length === 1) {
+            let pr = this.config.durationParser.parse(ers[0]);
+            if (pr === null) return result;
+
+            let beforeStr = source.substr(0, pr.start).trim();
+            let durationResult: DateTimeResolutionResult = pr.value;
+            if (StringUtility.isNullOrEmpty(durationResult.timex)) return result;
+
+            let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
+            if (prefixMatch) {
+                beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
+            }
+            prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
+            if (prefixMatch && prefixMatch.length === beforeStr.length) {
+                beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
+                endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
+            }
+            prefixMatch = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
+            if (prefixMatch && prefixMatch.length === beforeStr.length) {
+                beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
+                endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
+    
+                let unit = durationResult.timex.substr(durationResult.timex.length - 1);
+                durationResult.timex = `P1${unit}`;
+                beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
+            }
+
+            durationTimex = durationResult.timex;
+        } else {
+            let match = RegExpUtility.getMatches(this.config.restOfDateRegex, source).pop();
+            if (!match) return result;
+
+            let diffDays = 0;
+            let durationStr = match.groups('duration').value;
+            let durationUnit = this.config.unitMap.get(durationStr);
+            switch (durationUnit) {
+                case 'W':
+                    diffDays = 7 - ((beginDate.getDay() === 0) ? 7 : beginDate.getDay());
+                    endDate = DateUtils.addDays(referenceDate, diffDays);
+                    restNowSunday = (diffDays === 0);
+                break;
+                case 'MON':
+                    endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), beginDate.getMonth(), 1);
+                    endDate.setMonth(beginDate.getMonth() + 1);
+                    endDate.setDate(endDate.getDate() - 1);
+                    diffDays = endDate.getDate() - beginDate.getDate() + 1;
+                break;
+                case 'Y':
+                    endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), 11, 1);
+                    endDate.setMonth(endDate.getMonth() + 1);
+                    endDate.setDate(endDate.getDate() - 1);
+                    diffDays = DateUtils.dayOfYear(endDate) - DateUtils.dayOfYear(beginDate) + 1;
+                    break;
+                }
+                durationTimex = `P${diffDays}D`;
         }
 
-        result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},${durationResult.timex})`;
-        result.futureValue = [beginDate, endDate];
-        result.pastValue = [beginDate, endDate];
-        result.success = true;
+        if (beginDate !== endDate || restNowSunday) {
+            endDate = DateUtils.addDays(endDate, this.inclusiveEndPeriod ? -1 : 0);
+            result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},${durationTimex})`;
+            result.futureValue = [beginDate, endDate];
+            result.pastValue = [beginDate, endDate];
+            result.success = true;
+        }
+
         return result;
     }
 

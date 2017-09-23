@@ -48,6 +48,8 @@ describe('Date Extract', it => {
 describe('Date Extract Day Of Week', it => {
     let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
 
+    basicTest(it, extractor, "I'll go back on Tues.", 16, 4);
+    basicTest(it, extractor, "I'll go back on Tues. good news.", 16, 4);
     basicTest(it, extractor, "I'll go back on Tues", 16, 4);
     basicTest(it, extractor, "I'll go back on Friday", 16, 6);
     basicTest(it, extractor, "I'll go back Friday", 13, 6);
@@ -140,6 +142,30 @@ describe('Date Extract Week Day And Day Of Month Merge', it => {
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(22) + " the twenty second", getWeekDay(22) + " the twenty second");
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(15) + " the fifteen", getWeekDay(15) + " the fifteen");
     basicTestOneOutput(it, extractor, "I'll go back " + getWeekDay(7) + " the seventh", getWeekDay(7) + " the seventh");
+});
+
+describe('Date Extract Relative Day of week', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
+    basicTest(it, extractor, "I'll go back second Sunday", 13, 13);
+    basicTest(it, extractor, "I'll go back first Sunday", 13, 12);
+    basicTest(it, extractor, "I'll go back third Tuesday", 13, 13);
+    basicTest(it, extractor, "I'll go back fifth Sunday", 13, 12);
+});
+
+describe('Date Extract Relative Day of week Single', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
+    // For ordinary number>5, only the DayOfWeek should be extracted
+    basicTest(it, extractor, "I'll go back sixth Sunday", 19, 6);
+    basicTest(it, extractor, "I'll go back tenth Monday", 19, 6);
+});
+
+describe('Date Extract OdNum Relative month', it => {
+    let extractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
+
+    basicTest(it, extractor, "I'll go back 20th of next month", 13, 18);
+    basicTest(it, extractor, "I'll go back 31st of this month", 13, 18);
 });
 
 function getWeekDay(dayOfMonth) {

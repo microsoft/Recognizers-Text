@@ -100,6 +100,20 @@ describe('Time Parse', it => {
     basicTestFuture(it, extractor, parser, "set an alarm for fifteen thirty p m", new Date(year, month, day, 15, 30, second));
     basicTestFuture(it, extractor, parser, "set an alarm for ten ten", new Date(year, month, day, 10, 10, second));
     basicTestFuture(it, extractor, parser, "set an alarm for ten fifty five p. m.", new Date(year, month, day, 22, 55, second));
+
+    // Meal time
+    basicTestFuture(it, extractor, parser, "I'll be back 12 lunchtime", new Date(year, month, day, 12, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 12 midnight", new Date(year, month, day, 0, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 12 in the night", new Date(year, month, day, 0, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 1 o'clock midnight", new Date(year, month, day, 1, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 12 o'clock lunchtime", new Date(year, month, day, 12, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 11 o'clock lunchtime", new Date(year, month, day, 11, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 1 o'clock lunchtime", new Date(year, month, day, 13, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 12 o'clock lunch", new Date(year, month, day, 12, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 8 o'clock dinner", new Date(year, month, day, 20, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back 8 o'clock breakfast", new Date(year, month, day, 8, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back at lunch 12 o'clock", new Date(year, month, day, 12, 0, 0));
+    basicTestFuture(it, extractor, parser, "I'll be back at lunchtime 11 o'clock", new Date(year, month, day, 11, 0, 0));
 });
 
 describe('Time Parse Luis', it => {
@@ -173,6 +187,14 @@ describe('Time Parse Luis', it => {
     basicTest_Luis(it, extractor, parser, "mid-day", "T12");
     basicTest_Luis(it, extractor, parser, "mid day", "T12");
     basicTest_Luis(it, extractor, parser, "noon", "T12");
+
+    //Meal time
+    basicTest_Luis(it, extractor, parser, "I'll be back 12 o'clock lunchtime", "T12");
+    basicTest_Luis(it, extractor, parser, "I'll be back 12 o'clock lunch", "T12");
+    basicTest_Luis(it, extractor, parser, "I'll be back 8 o'clock dinner", "T20");
+    basicTest_Luis(it, extractor, parser, "I'll be back 8 o'clock breakfast", "T08");
+    basicTest_Luis(it, extractor, parser, "I'll be back at lunch 12 o'clock", "T12");
+    basicTest_Luis(it, extractor, parser, "I'll be back at lunchtime 12 o'clock", "T12");
 });
 
 function basicTestFuture(it, extractor, parser, text, date) {

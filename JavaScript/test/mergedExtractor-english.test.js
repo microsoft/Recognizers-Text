@@ -45,7 +45,7 @@ describe('Merged Extractor Skip From-To', it => {
     basicTestWithOptions(it, "Change July 22nd meeting in Bellevue to August 22nd", 2); // No merge.
 });
 
-describe('Merged Extractor After Before', it => {
+describe('Merged Extractor After Before Since', it => {
     let extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration());
 
     // after before

@@ -28,6 +28,7 @@ export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfigur
     public static atRegex: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.AtRegex, "gis");
     public static lessThanOneHour: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.LessThanOneHour, "gis");
     public static timeSuffix: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffix, "gis");
+    public static timeSuffixFull: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull, "gis");
     public static ishRegex: RegExp = RegExpUtility.getSafeRegExp(EnglishDateTime.IshRegex, "gis");
 
     readonly timeRegexList: RegExp[];
@@ -46,12 +47,18 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
     readonly atRegex: RegExp
     readonly timeRegexes: RegExp[];
     readonly numbers: ReadonlyMap<string, number>;
+    readonly lunchRegex: RegExp;
+    readonly timeSuffixFull: RegExp;
+    readonly nightRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeTokenPrefix = EnglishDateTime.TimeTokenPrefix;
         this.atRegex = EnglishTimeExtractorConfiguration.atRegex;
         this.timeRegexes = EnglishTimeExtractorConfiguration.timeRegexList;
         this.numbers = config.numbers;
+        this.lunchRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LunchRegex);
+        this.timeSuffixFull = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull);
+        this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex);
     }
 
     public adjustByPrefix(prefix: string, adjust: { hour: number, min: number, hasMin: boolean }) {
@@ -94,7 +101,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
     public adjustBySuffix(suffix: string, adjust: { hour: number, min: number, hasMin: boolean, hasAm: boolean, hasPm: boolean }) {
         let trimmedSuffix = suffix.trim().toLowerCase();
         let deltaHour = 0;
-        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.timeSuffix, trimmedSuffix);
+        let matches = RegExpUtility.getMatches(EnglishTimeExtractorConfiguration.timeSuffixFull, trimmedSuffix);
         if (matches.length > 0 && matches[0].index === 0 && matches[0].length === trimmedSuffix.length) {
             let oclockStr = matches[0].groups("oclock").value;
             if (!oclockStr) {
@@ -102,8 +109,9 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                 if (amStr) {
                     if (adjust.hour >= 12) {
                         deltaHour = -12;
+                    } else {
+                        adjust.hasAm = true;
                     }
-                    adjust.hasAm = true;
                 }
 
                 let pmStr = matches[0].groups("pm").value;
@@ -111,7 +119,33 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
                     if (adjust.hour < 12) {
                         deltaHour = 12;
                     }
-                    adjust.hasPm = true;
+
+                    if (RegExpUtility.getMatches(this.lunchRegex, pmStr).length > 0) {
+                        // for hour>=10, <12
+                        if (adjust.hour >= 10 && adjust.hour <= 12) {
+                            deltaHour = 0;
+                            if (adjust.hour === 12) {
+                                adjust.hasPm = true;
+                            } else {
+                                adjust.hasAm = true;
+                            }
+                        } else {
+                            adjust.hasPm = true;
+                        }
+                    } else if (RegExpUtility.getMatches(this.nightRegex, pmStr).length > 0) {
+                        // for hour <=3 or == 12, we treat it as am, for example 1 in the night (midnight) == 1am
+                        if (adjust.hour <= 3 || adjust.hour === 12) {
+                            if (adjust.hour === 12) {
+                                adjust.hour = 0;
+                            }
+                            deltaHour = 0;
+                            adjust.hasAm = true;
+                        } else {
+                            adjust.hasPm = true;
+                        }
+                    } else {
+                        adjust.hasPm = true;
+                    }
                 }
             }
         }
