@@ -93,6 +93,8 @@
     <Compile Include="French\TestDatePeriodParser.cs" />
     <Compile Include="French\TestDateTimeExtractor.cs" />
     <Compile Include="French\TestDateTimeParser.cs" />
+    <Compile Include="French\TestDateTimePeriodExtractor.cs" />
+    <Compile Include="French\TestDateTimePeriodParser.cs" />
     <Compile Include="French\TestDurationExtractor.cs" />
     <Compile Include="French\TestDurationParser.cs" />
     <Compile Include="French\TestSetExtractor.cs" />
@@ -100,6 +102,8 @@
     <Compile Include="French\TestSingleCultureDateTimeRecognizer.cs" />
     <Compile Include="French\TestTimeExtractor.cs" />
     <Compile Include="French\TestTimeParser.cs" />
+    <Compile Include="French\TestTimePeriodExtractor.cs" />
+    <Compile Include="French\TestTimePeriodParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spanish\TestDateExtractor.cs" />
     <Compile Include="Spanish\TestDateParser.cs" />

@@ -67,6 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
+           
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnitRegex = FrenchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = FrenchTimePeriodExtractorConfiguration.TimeUnitRegex;
@@ -124,15 +125,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             return true;
         }
 
+        // **NOTE: for certain cases, prochain/dernier (next, last) are suffix OR prefix
         public int GetSwiftPrefix(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
+                trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("derniere")|| trimedText.StartsWith("dernier")||
+                     trimedText.EndsWith("derniere") || trimedText.EndsWith("dernier"))
             {
                 swift = -1;
             }

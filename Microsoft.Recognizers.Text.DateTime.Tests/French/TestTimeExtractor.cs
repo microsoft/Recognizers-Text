@@ -99,8 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("milieu d'après-midi", 0, 19);
             BasicTest("milieu d'après midi", 0, 19);
 
-            BasicTest("milieu midi", 0, 11);
-            BasicTest("milieu-midi", 0, 11);
+            BasicTest("milieu du jour", 0, 14);
+            BasicTest("milieu de midi", 0, 14);
 
             BasicTest("après midi", 0, 10);
         }

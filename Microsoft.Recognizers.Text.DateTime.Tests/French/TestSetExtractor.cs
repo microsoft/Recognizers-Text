@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("Je vais partir chaque lundi", 15, 12);
             BasicTest("Je vais partir chaque lundi 4pm", 15, 16);
 
-            BasicTest("Je vais partir tous les matins", 15, 15); // I will leave every morning -Eachprefixregex
+            BasicTest("Je vais partir tous les matins", 15, 14); // I will leave every morning -Eachprefixregex
         }
     }
 }

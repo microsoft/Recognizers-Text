@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             int year = 2016, month = 11;
 
             // test merging two time points
-            BasicTestFuture("Je serais dehors depuis 2 Oct au 22 Octobre", 2, 22, 10, year + 1);
+            BasicTestFuture("Je serais dehors depuis 2 Oct a 22 Octobre", 2, 22, 10, year + 1);
             BasicTestFuture("Je serais dehors 12 Janvier, 2016 - 22/01/2016", 12, 22, 1, year);
             BasicTestFuture("Je serais dehors 1er Jan jusqu'a Mer, 22 Janv", 1, 22, 1, year + 1);
             BasicTestFuture("Je serais dehors depuis aujourd'hui jusqu'a demain", 7, 8, month, year);
@@ -186,11 +186,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             //BasicTest("I'll be out previous 3 weeks", "(2016-10-17,2016-11-07,P3W)");
 
             // test merging two time points
-            BasicTest("Je serais dehors Oct. 2 au Octobre 22", "(XXXX-10-02,XXXX-10-22,P20D)");
+            BasicTest("Je serais dehors Oct. 2 a Octobre 22", "(XXXX-10-02,XXXX-10-22,P20D)");
             BasicTest("Je serais dehors 12 Janvier, 2016 - 22/01/2016", "(2016-01-12,2016-01-22,P10D)");
             BasicTest("Je serais dehors aujourd'hui jusqu'a lendemain", "(2016-11-07,2016-11-08,P1D)"); // I will be out today until tomorrow
 
-            BasicTest("Je serais dehors depuis Oct. 2 au Octobre 22", "(XXXX-10-02,XXXX-10-22,P20D)");
+            BasicTest("Je serais dehors depuis Oct. 2 a Octobre 22", "(XXXX-10-02,XXXX-10-22,P20D)");
 
             //BasicTest("le premier semaine octobre", "XXXX-10-W01"); // first week of october, fix
             BasicTest("Je serais dehors le troisieme semaine de 2027", "2027-01-W03");

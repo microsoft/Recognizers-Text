@@ -20,7 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static readonly Regex[] SimpleCases =
         {
             FrenchTimePeriodExtractorConfiguration.PureNumFromTo,
-            FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd
+            FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd,
+            FrenchTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex
         };
 
         private static readonly Regex FromRegex = new Regex(@"((depuis|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);

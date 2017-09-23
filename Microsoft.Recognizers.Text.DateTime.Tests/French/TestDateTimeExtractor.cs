@@ -57,15 +57,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("Je reviendrai 8pm dans la nuit, Lundi", 14, 23);
             BasicTest("je reviendrai 8pm dans la soiree, 1er Jan", 14, 27);
             BasicTest("Je reviendrai 8pm dans la soirée, 1 Jan", 14, 25);
-            BasicTest("Je reviendrai 10pm ce soir", 14, 12);
+            BasicTest("Je reviendrai 10 ce soir", 14, 10);
             // BasicTest("Je reviendrai 8pm dans la soirée", 14, 18); // unsure why this doesn't work but above does
-            BasicTest("Je reviendrai 8pm ce soir", 14, 11);
+            BasicTest("Je reviendrai 8 ce soir", 14, 9);
             BasicTest("Je reviendrai ce soir vers 7", 14, 14);
 
             BasicTest("Je reviendrai cette matin a 7", 14, 15);
-            BasicTest("Je reviendrai cette matinee a 7pm", 14, 19);  // datetimeofdayregex
+            BasicTest("Je reviendrai cette matinee a 7", 14, 17);  // datetimeofdayregex
             BasicTest("Je reviendrai cette matinée a sept", 14, 20);
-            BasicTest("Je reviendrai cette matin à 7:00", 14, 18);
+            BasicTest("Je reviendrai cette matin à 7", 14, 15);
+            BasicTest("Je reviendrai à 7:00", 14, 6);
             BasicTest("Je reviendrai cette nuit a 7", 14, 14);
             BasicTest("Je reviendrai ce soir à 7", 14, 11);
             BasicTest("pour 2 personnes ce soir a 9:30 pm", 17, 17);

@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -81,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor SingleTimeExtractor { get; }
 
-        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
+        public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd, PmRegex, AmRegex };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => FrenchDatePeriodExtractorConfiguration.TillRegex;
 
@@ -90,28 +91,28 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            var fromMatch = FromRegex.Match(text);
-            if (fromMatch.Success)
+            if (text.EndsWith("de"))  // de = "from" 
             {
-                index = fromMatch.Index;
+                index = text.LastIndexOf("de", StringComparison.Ordinal);
+                return true;
             }
-            return fromMatch.Success;
+            return false;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            var beforeMatch = BeforeRegex.Match(text);
-            if (beforeMatch.Success)
+            if (text.EndsWith("entre")) // between
             {
-                index = beforeMatch.Index;
+                index = text.LastIndexOf("entre", StringComparison.Ordinal);
+                return true;
             }
-            return beforeMatch.Success;
+            return false;
         }
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return text.Equals("et");
         }
 
     }

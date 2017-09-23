@@ -116,7 +116,7 @@
     <Compile Include="French\Extractors\FrenchDateTimeExtractorConfiguration.cs" />
     <Compile Include="French\Extractors\FrenchDateTimePeriodExtractorConfiguration.cs" />
     <Compile Include="French\Extractors\FrenchDuractionExtractorConfiguration.cs" />
-    <Compile Include="French\Extractors\FrenchDurationParserConfiguration.cs" />
+    <Compile Include="French\Parsers\FrenchDurationParserConfiguration.cs" />
     <Compile Include="French\Extractors\FrenchHolidayExtractorConfiguration.cs" />
     <Compile Include="French\Extractors\FrenchMergedExtractorConfiguration.cs" />
     <Compile Include="French\Extractors\FrenchSetExtractorConfiguration.cs" />

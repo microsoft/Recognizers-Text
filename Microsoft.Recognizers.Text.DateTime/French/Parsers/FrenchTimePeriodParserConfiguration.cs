@@ -41,31 +41,32 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (trimedText.EndsWith("matinee") || trimedText.EndsWith("matin"))
+            if (trimedText.EndsWith("matinee") || trimedText.EndsWith("matin") || trimedText.EndsWith("matinée"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith(""))
+            else if (trimedText.EndsWith("apres-midi")||trimedText.EndsWith("apres midi") 
+                || trimedText.EndsWith("après midi") || trimedText.EndsWith("après-midi"))
             {
                 timex = "TAF";
                 beginHour = 12;
                 endHour = 16;
-            }
-            else if (trimedText.EndsWith("evening"))
+            } 
+            else if (trimedText.EndsWith("soir") || trimedText.EndsWith("soiree") || trimedText.EndsWith("soirée"))
             {
                 timex = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.Equals("daytime"))
+            else if (trimedText.Equals("jour") || trimedText.EndsWith("journee") || trimedText.EndsWith("journée"))
             {
                 timex = "TDT";
                 beginHour = 8;
                 endHour = 18;
             }
-            else if (trimedText.EndsWith("night"))
+            else if (trimedText.EndsWith("nuit"))
             {
                 timex = "TNI";
                 beginHour = 20;

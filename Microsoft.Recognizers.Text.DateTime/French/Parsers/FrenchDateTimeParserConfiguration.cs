@@ -117,11 +117,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (trimedText.StartsWith("prochain"))
+            if (trimedText.StartsWith("prochain") || trimedText.EndsWith("prochain") ||
+                trimedText.StartsWith("prochaine") || trimedText.EndsWith("prochaine"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("dernier"))
+            else if (trimedText.StartsWith("dernier") || trimedText.StartsWith("dernière") ||
+                      trimedText.EndsWith("dernier") || trimedText.EndsWith("dernière"))
             {
                 swift = -1;
             }
