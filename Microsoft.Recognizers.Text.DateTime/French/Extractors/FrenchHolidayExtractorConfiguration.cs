@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    class FrenchHolidayExtractorConfiguration : IHolidayExtractorConfiguration
+    public class FrenchHolidayExtractorConfiguration : IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex = 
             new Regex(
@@ -26,11 +26,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.HolidayRegex3,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        // added to include more options, "fete des meres" mothers day, etc
+        public static readonly Regex H4 =
+            new Regex(
+                DateTimeDefinitions.HolidayRegex4,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] HolidayRegexList =
         {
             H1,
             H2,
-            H3
+            H3,
+            H4
         };
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;

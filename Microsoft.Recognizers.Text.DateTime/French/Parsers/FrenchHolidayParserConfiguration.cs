@@ -18,16 +18,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             return new Dictionary<string, IEnumerable<string>>
             {
+                // Note: " ' " single quote characters are sanitized
                 { "fathers", new string[]{ "fêtedespères", "fetedesperes" } },
                 { "mothers", new string[]{ "fêtedesmères", "fetedesmeres" } },
-                { "thanksgiving", new string[]{ "d'actiondegrâce", "jourdethanksgiving" } },
+                { "thanksgiving", new string[]{ "lactiondegrace", "lactiondegrâce", "jourdethanksgiving", "thanksgiving" } },
                 { "martinlutherking", new string[]{ "journeemartinlutherking", "martinlutherkingjr" } },
                 { "washingtonsbirthday", new string[]{ "washingtonsbirthday", "washingtonbirthday" } },
                 { "canberra", new string[]{ "canberraday" } },
-                { "labour", new string[]{ "labourday", "laborday" } },
+                { "labour", new string[]{ "fetedetravail", "travail", "fetedutravail" } },
                 { "columbus", new string[]{ "columbusday" } },
-                { "memorial", new string[]{ "memorialday" } },
-                { "yuandan", new string[]{ "yuandan" } },
+                { "memorial", new string[]{ "jourcommémoratif", "jourcommemoratif" } },
+                { "yuandan", new string[]{ "yuandan", "nouvelanchinois" } },
                 { "maosbirthday", new string[]{ "maosbirthday" } },
                 { "teachersday", new string[]{ "teachersday", "teacherday" } },
                 { "singleday", new string[]{ "singleday" } },
@@ -40,30 +41,30 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 { "girlsday", new string[]{ "girlsday" } },
                 { "whiteloverday", new string[]{ "whiteloverday" } },
                 { "loverday", new string[]{ "loverday" } },
-                { "christmas", new string[]{ "christmas" } },
+                { "christmas", new string[]{ "noel", "noël" } },
                 { "xmas", new string[]{ "xmas" } },
-                { "newyear", new string[]{ "newyear" } },
-                { "newyearday", new string[]{ "newyearday" } },
-                { "newyearsday", new string[]{ "newyearsday" } },
-                { "inaugurationday", new string[]{ "inaugurationday" } },
-                { "groundhougday", new string[]{ "groundhougday" } },
-                { "valentinesday", new string[]{ "valentinesday" } },
+                { "newyear", new string[]{ "nouvellesannees", "nouvelan" } },
+                { "newyearday", new string[]{ "jourdunouvelan" } },
+                { "newyearsday", new string[]{ "jourdel'an", "jourpremierdelannee", "jourpremierdelannée" } },
+                { "inaugurationday", new string[]{ "jourd'inaugueration", "inaugueration" } },
+                { "groundhougday", new string[]{ "marmotte" } },
+                { "valentinesday", new string[]{ "lasaint-valentin", "lasaintvalentin" } },
                 { "stpatrickday", new string[]{ "stpatrickday" } },
-                { "aprilfools", new string[]{ "aprilfools" } },
+                { "aprilfools", new string[]{ "poissond'avril" } },
                 { "stgeorgeday", new string[]{ "stgeorgeday" } },
-                { "mayday", new string[]{ "mayday" } },
-                { "cincodemayoday", new string[]{ "cincodemayoday" } },
-                { "baptisteday", new string[]{ "baptisteday" } },
-                { "usindependenceday", new string[]{ "usindependenceday" } },
-                { "independenceday", new string[]{ "independenceday" } },
-                { "bastilleday", new string[]{ "bastilleday" } },
-                { "halloweenday", new string[]{ "halloweenday" } },
+                { "mayday", new string[]{ "premier-mai", "ler-mai", "1-mai" } },
+                { "cincodemayoday", new string[]{ "cincodemayo" } },
+                { "baptisteday", new string[]{ "bapteme", "baptême" } },
+                { "usindependenceday", new string[]{ "l'independanceamericaine", "lindépendanceaméricaine" } },
+                { "independenceday", new string[]{ "l'indépendance", "lindependance" } },
+                { "bastilleday", new string[]{ "laprisedelabastille", "bastille" } },
+                { "halloweenday", new string[]{ "halloween" } },
                 { "allhallowday", new string[]{ "allhallowday" } },
                 { "allsoulsday", new string[]{ "allsoulsday" } },
                 { "guyfawkesday", new string[]{ "guyfawkesday" } },
                 { "veteransday", new string[]{ "veteransday" } },
-                { "christmaseve", new string[]{ "christmaseve" } },
-                { "newyeareve", new string[]{ "newyearseve","newyeareve" } },
+                { "christmaseve", new string[]{ "reveillondenoel", "réveillondenoël", "veilledenoel", "veilledenoël" } },
+                { "newyeareve", new string[]{ "réveillondenouvelan", "reveillondenouvelan", "lasaint-sylvestre", "lasaintsylvestre" } },
             };
         }
 
@@ -108,6 +109,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 {"veteransday", Veteransday},
                 {"christmaseve", ChristmasEve},
                 {"newyeareve", NewYearEve},
+                {"fathersday", FathersDay },
+                {"mothersday", MothersDay},
+                {"labourday", LabourDay }
             };
         }
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
@@ -139,6 +143,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject FathersDay(int year) => new DateObject(year, 6, 17);
+        private static DateObject MothersDay(int year) => new DateObject(year, 5, 27);
+        private static DateObject LabourDay(int year) => new DateObject(year, 5, 1);
 
         public override int GetSwiftYear(string text)
         {

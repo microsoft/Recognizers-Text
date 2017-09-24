@@ -67,10 +67,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
 
             //AMRegex
             BasicTest("Je retournerai a 7ampm", new DateObject(year, month, day, 7, min, second));
+            BasicTest("Je retournerai a 7h", new DateObject(year, month, day, 7, min, second));
             BasicTest("Je retournerai a 7", new DateObject(year, month, day, 7, min, second));
             BasicTest("Je retournerai a sept", new DateObject(year, month, day, 7, min, second));
             BasicTest("Je retournerai 7pm", new DateObject(year, month, day, 19, min, second));
             BasicTest("Je retournerai a 19", new DateObject(year, month, day, 19, 0, second));
+
+            //**NOTE: consider removing AM/PM, and +/- 12 hour adjustment from French implementation
+            //BasicTest("Je retournerai a 19h", new DateObject(year, month, day, 19, 0, second));
+
             BasicTest("Je retournerai à 19", new DateObject(year, month, day, 19, 0, second));
             BasicTest("Je retournerai 7:56pm", new DateObject(year, month, day, 19, 56, second));
             BasicTest("Je retournerai 7:56:30pm", new DateObject(year, month, day, 19, 56, 30));

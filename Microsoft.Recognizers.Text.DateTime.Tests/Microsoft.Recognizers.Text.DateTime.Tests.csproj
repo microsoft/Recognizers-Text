@@ -97,6 +97,10 @@
     <Compile Include="French\TestDateTimePeriodParser.cs" />
     <Compile Include="French\TestDurationExtractor.cs" />
     <Compile Include="French\TestDurationParser.cs" />
+    <Compile Include="French\TestHolidayExtractor.cs" />
+    <Compile Include="French\TestHolidayParser.cs" />
+    <Compile Include="French\TestMergedExtractor.cs" />
+    <Compile Include="French\TestMergedParser.cs" />
     <Compile Include="French\TestSetExtractor.cs" />
     <Compile Include="French\TestSetParsercs.cs" />
     <Compile Include="French\TestSingleCultureDateTimeRecognizer.cs" />
