@@ -10,8 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseMergedExtractor));
-            TestWriter.Close("Eng", "BaseMergedExtractorSkipFromTo");
+            TestWriter.Close(TestCulture.English, typeof(BaseMergedExtractor));
+            TestWriter.Close(TestCulture.English, "BaseMergedExtractorSkipFromTo");
         }
 
         public void BasicTest(string text, int start, int length)
@@ -20,14 +20,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
-            TestWriter.Write("Eng", extractor, text, results);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicTestNone(string text)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(0, results.Count);
-            TestWriter.Write("Eng", extractor, text);
+            TestWriter.Write(TestCulture.English, extractor, text);
         }
 
         public void BasicTestWithOptions(string text, int count, DateTimeOptions options = DateTimeOptions.None)
@@ -35,8 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             IExtractor extractorWithOptions = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options);
             var results = extractorWithOptions.Extract(text);
             Assert.AreEqual(count, results.Count);
-            if (options.Equals(DateTimeOptions.None)) TestWriter.Write("Eng", extractor, text, results);
-            else TestWriter.Write("Eng", "BaseMergedExtractorSkipFromTo", text, results);
+            if (options.Equals(DateTimeOptions.None)) TestWriter.Write(TestCulture.English, extractor, text, results);
+            else TestWriter.Write(TestCulture.English, "BaseMergedExtractorSkipFromTo", text, results);
         }
 
         [TestMethod]

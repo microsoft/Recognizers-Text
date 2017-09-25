@@ -111,6 +111,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
             }
+
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
         }
 
@@ -125,6 +126,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Culture.Spanish:
                     return GetSpanishExtractor(extractorName);
             }
+
             throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
         }
 
@@ -139,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Culture.Spanish:
                     return GetSpanishParser(parserName);
             }
+
             throw new Exception($"Parser '{parserName}' for '{language}' not supported");
         }
 
@@ -169,6 +172,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.MergedSkipFromTo:
                     return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.SkipFromToMerge);
             }
+
             throw new Exception($"Extractor '{extractorName}' for English not supported");
         }
 
@@ -198,6 +202,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Merged:
                     return new BaseMergedParser(new EnglishMergedParserConfiguration());
             }
+
             throw new Exception($"Parser '{parserName}' for English not supported");
         }
 
@@ -226,6 +231,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeExtractors.Merged:
                     return new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), DateTimeOptions.None);
             }
+
             throw new Exception($"Extractor '{extractorName}' for Spanish not supported");
         }
 
@@ -255,6 +261,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Merged:
                     return new BaseMergedParser(new SpanishMergedParserConfiguration());
             }
+
             throw new Exception($"Parser '{parserName}' for Spanish not supported");
         }
 
@@ -267,6 +274,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
                         new NumberExtractor(ChineseNumberMode.ExtractAll));
             }
+
             throw new Exception($"Custom Model for '{language}' not supported");
         }
     }
@@ -285,11 +293,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static DateObject GetReferenceDateTime(this TestModel testSpec)
         {
-            object dateTimeObject;
-            if (testSpec.Context.TryGetValue("ReferenceDateTime", out dateTimeObject))
+            if (testSpec.Context.TryGetValue("ReferenceDateTime", out object dateTimeObject))
             {
                 return (DateObject)dateTimeObject;
             }
+
             return DateObject.Now;
         }
     }
@@ -309,16 +317,19 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 message = $"spec not found";
                 return true;
             }
+
             if (spec.IsNotSupported())
             {
                 message = $"input '{spec.Input}' not supported";
                 return true;
             }
+
             if (spec.IsNotSupportedByDesign())
             {
                 message = $"input '{spec.Input}' not supported by design";
                 return true;
             }
+
             message = string.Empty;
             return false;
         }
@@ -336,6 +347,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 return modelEnum;
             }
+
             throw new Exception($"Model '{model}' not supported");
         }
 
@@ -347,6 +359,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 return parserEnum;
             }
+
             throw new Exception($"Parser '{parser}' not supported");
         }
 
@@ -358,6 +371,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             {
                 return extractorEnum;
             }
+
             throw new Exception($"Extractor '{extractor}' not supported");
         }
     }

@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Chs", typeof(TimePeriodExtractorChs));
+            TestWriter.Close(TestCulture.Chinese, typeof(TimePeriodExtractorChs));
         }
 
         public void BasicTest(string text)
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(results[0].Text, text);
             Assert.AreEqual(Constants.SYS_DATETIME_TIMEPERIOD, results[0].Type);
-            TestWriter.Write("Chs", extractor, text, results);
+            TestWriter.Write(TestCulture.Chinese, extractor, text, results);
         }
 
         [TestMethod]

@@ -10,9 +10,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(NumberModel));
-            TestWriter.Close("Spa", typeof(PercentModel));
-            TestWriter.Close("Spa", typeof(OrdinalModel));
+            TestWriter.Close(TestCulture.Spanish, typeof(NumberModel));
+            TestWriter.Close(TestCulture.Spanish, typeof(PercentModel));
+            TestWriter.Close(TestCulture.Spanish, typeof(OrdinalModel));
         }
 
         private void BasicTest(IModel model, string source, string value, string text = null)
@@ -21,14 +21,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
             Assert.AreEqual(value, result[0].Resolution["value"]);
-            TestWriter.Write("Spa", model, source, result);
+            TestWriter.Write(TestCulture.Spanish, model, source, result);
         }
 
         private void MultiTest(IModel model, string source, int count)
         {
             var result = model.Parse(source);
             Assert.AreEqual(count, result.Count);
-            TestWriter.Write("Spa", model, source, result);
+            TestWriter.Write(TestCulture.Spanish, model, source, result);
         }
 
         [TestMethod]

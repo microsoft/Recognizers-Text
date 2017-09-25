@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseDateExtractor));
+            TestWriter.Close(TestCulture.English, typeof(BaseDateExtractor));
         }
 
         public void BasicTest(string text, int start, int length)
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
-            TestWriter.Write("Eng", extractor, text, results);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicTest(string text, string expectedOutput)
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var results = extractor.Extract(text);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(expectedOutput, results[0].Text);
-            TestWriter.Write("Eng", extractor, text, results);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicTestTwoOutputs(string text, string expectedOutput1, string expectedOutput2)
@@ -39,14 +39,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(2, results.Count);
             Assert.AreEqual(expectedOutput1, results[0].Text);
             Assert.AreEqual(expectedOutput2, results[1].Text);
-            TestWriter.Write("Eng", extractor, text, results);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicTestNone(string text)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(0, results.Count);
-            TestWriter.Write("Eng", extractor, text);
+            TestWriter.Write(TestCulture.English, extractor, text);
         }
 
         // use to generate the test cases sentences inside TestDateExtractWeekDayAndDayOfMonth function

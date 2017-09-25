@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 model = TestContext.GetModel();
                 models.Add(key, model);
             }
+
             Model = model;
         }
 
@@ -49,6 +50,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 extractor = TestContext.GetExtractor();
                 extractors.Add(key, extractor);
             }
+
             Extractor = extractor;
         }
 
@@ -61,6 +63,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 parser = TestContext.GetDateTimeParser();
                 parsers.Add(key, parser);
             }
+
             DateTimeParser = parser;
         }
 

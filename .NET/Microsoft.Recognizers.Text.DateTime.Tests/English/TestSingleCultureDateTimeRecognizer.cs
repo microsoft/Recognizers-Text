@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             
             var values = pr[0].Resolution["values"] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, values.First()["type"]);
-            TestWriter.Write("Eng", model, System.DateTime.Now, text, pr);
+            TestWriter.Write(TestCulture.English, model, System.DateTime.Now, text, pr);
         }
 
         [TestMethod]

@@ -10,9 +10,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(NumberModel));
-            TestWriter.Close("Eng", typeof(PercentModel));
-            TestWriter.Close("Eng", typeof(OrdinalModel));
+            TestWriter.Close(TestCulture.English, typeof(NumberModel));
+            TestWriter.Close(TestCulture.English, typeof(PercentModel));
+            TestWriter.Close(TestCulture.English, typeof(OrdinalModel));
         }
 
         private void BasicTest(IModel model, string source, string value)
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(source.Trim(), resultJson[0].Text);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
-            TestWriter.Write("Eng", model, source, resultStr);
+            TestWriter.Write(TestCulture.English, model, source, resultStr);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(extractSrc, resultJson[0].Text);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
-            TestWriter.Write("Eng", model, source, resultStr);
+            TestWriter.Write(TestCulture.English, model, source, resultStr);
         }
 
 
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
-            TestWriter.Write("Eng", model, source, resultStr);
+            TestWriter.Write(TestCulture.English, model, source, resultStr);
         }
 
 

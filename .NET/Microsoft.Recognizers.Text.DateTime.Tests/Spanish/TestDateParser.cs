@@ -6,14 +6,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     [TestClass]
     public class TestDateParser
     {
-        readonly DateObject refrenceDay;
+        readonly DateObject refrenceDate;
         readonly IDateTimeParser parser;
         readonly BaseDateExtractor extractor;
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseDateParser));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseDateParser));
         }
 
 
@@ -21,37 +21,37 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDay);
+            var pr = parser.Parse(er[0], refrenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(futureDate, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(pastDate, ((DateTimeResolutionResult) pr.Value).PastValue);
-            TestWriter.Write("Spa", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, refrenceDate, text, pr);
         }
 
         public void BasicTest(string text, DateObject date)
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDay);
+            var pr = parser.Parse(er[0], refrenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).PastValue);
-            TestWriter.Write("Spa", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, refrenceDate, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], refrenceDay);
+            var pr = parser.Parse(er[0], refrenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Spa", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, refrenceDate, text, pr);
         }
 
         public TestDateParser()
         {
-            refrenceDay = new DateObject(2016, 11, 7);
+            refrenceDate = new DateObject(2016, 11, 7);
             parser = new BaseDateParser(new SpanishDateParserConfiguration(new SpanishCommonDateTimeParserConfiguration()));
             extractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
         }

@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseMergedParser));
+            TestWriter.Close(TestCulture.English, typeof(BaseMergedParser));
         }
 
         public TestMergedParser()
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type, pr.Type.Replace("datetimeV2.",""));
-            TestWriter.Write("Eng", parser, referenceDate, text, pr);
+            TestWriter.Write(TestCulture.English, parser, referenceDate, text, pr);
         }
 
         public void BasicTestResolution(string text, string resolution)
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDate);
             var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>)pr.Value).First().Value);
             Assert.AreEqual(resolution, prValue.First()["value"]);
-            TestWriter.Write("Eng", parser, refDate, text, pr);
+            TestWriter.Write(TestCulture.English, parser, refDate, text, pr);
         }
 
         public void BasicTestWithTwoResults(string text, string type1, string type2)
@@ -58,9 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             pr = parser.Parse(er[1], referenceDate);
             Assert.AreEqual(type2, pr.Type.Replace("datetimeV2.", ""));
             var erArray = extractor.Extract(text);
-            TestWriter.Write("Eng", parser, referenceDate, text, erArray.Select(o => parser.Parse(o, referenceDate)));
+            TestWriter.Write(TestCulture.English, parser, referenceDate, text, erArray.Select(o => parser.Parse(o, referenceDate)));
             // TODO multiple dates
-            // TestWriter.Write("Eng", parser, refrenceDate, text, pr);
+            // TestWriter.Write(TestCulture.English, parser, refrenceDate, text, pr);
         }
 
         [TestMethod]

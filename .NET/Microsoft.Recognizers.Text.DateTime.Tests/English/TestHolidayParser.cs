@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseHolidayParser));
+            TestWriter.Close(TestCulture.English, typeof(BaseHolidayParser));
         }
 
         public void BasicTest(string text, DateObject futureDate, DateObject pastDate)
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(futureDate, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(pastDate, ((DateTimeResolutionResult) pr.Value).PastValue);
-            TestWriter.Write("Eng", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.English, parser, refrenceDay, text, pr);
         }
 
         public void BasicTest(string text, DateObject date)
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).PastValue);
-            TestWriter.Write("Eng", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.English, parser, refrenceDay, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refrenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Eng", parser, refrenceDay, text, pr);
+            TestWriter.Write(TestCulture.English, parser, refrenceDay, text, pr);
         }
 
         public TestHolidayParser()

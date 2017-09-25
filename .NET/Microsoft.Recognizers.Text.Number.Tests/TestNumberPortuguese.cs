@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Por", typeof(NumberModel));
-            TestWriter.Close("Por", typeof(PercentModel));
-            TestWriter.Close("Por", typeof(OrdinalModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(NumberModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(PercentModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(OrdinalModel));
         }
 
         private void BasicTest(IModel model, string source, string value, string text = null)
@@ -24,14 +24,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, result.Count);
             Assert.AreEqual(text ?? source.Trim(), result[0].Text);
             Assert.AreEqual(value, result[0].Resolution["value"]);
-            TestWriter.Write("Por", model, source, result);
+            TestWriter.Write(TestCulture.Portuguese, model, source, result);
         }
 
         private void MultiTest(IModel model, string source, int count)
         {
             var result = model.Parse(source);
             Assert.AreEqual(count, result.Count);
-            TestWriter.Write("Por", model, source, result);
+            TestWriter.Write(TestCulture.Portuguese, model, source, result);
         }
 
         [TestMethod]

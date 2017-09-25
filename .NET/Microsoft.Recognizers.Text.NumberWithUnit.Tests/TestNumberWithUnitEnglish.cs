@@ -9,10 +9,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(AgeModel));
-            TestWriter.Close("Eng", typeof(CurrencyModel));
-            TestWriter.Close("Eng", typeof(DimensionModel));
-            TestWriter.Close("Eng", typeof(TemperatureModel));
+            TestWriter.Close(TestCulture.English, typeof(AgeModel));
+            TestWriter.Close(TestCulture.English, typeof(CurrencyModel));
+            TestWriter.Close(TestCulture.English, typeof(DimensionModel));
+            TestWriter.Close(TestCulture.English, typeof(TemperatureModel));
         }
 
         private void BasicTest(IModel model, string source, string value)
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
-            TestWriter.Write("Eng", model, source, resultStr);
+            TestWriter.Write(TestCulture.English, model, source, resultStr);
         }
 
         private void BasicTest(IModel model, string source, string[] values)
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(values.Length, results.Count);
             var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
             CollectionAssert.AreEqual(values, resultsValues);
-            TestWriter.Write("Eng", model, source, results);
+            TestWriter.Write(TestCulture.English, model, source, results);
         }
 
         private string GetStringValue(ModelResult source)

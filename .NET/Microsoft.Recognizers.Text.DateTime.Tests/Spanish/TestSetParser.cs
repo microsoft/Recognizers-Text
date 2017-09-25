@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseSetParser));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseSetParser));
         }
 
 
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_SET, pr.Type);
             Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, pr.TimexStr);
-            TestWriter.Write("Spa", parser, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, text, pr);
         }
 
         [TestMethod]

@@ -9,18 +9,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     {
         readonly BaseDatePeriodParser parser;
         readonly BaseDatePeriodExtractor extractor;
-        readonly DateObject referenceDay;
+        readonly DateObject referenceDate;
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseDatePeriodParser));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseDatePeriodParser));
         }
 
 
         public TestDatePeriodParser()
         {
-            referenceDay = new DateObject(2016, 11, 7);
+            referenceDate = new DateObject(2016, 11, 7);
             extractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
             parser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(new SpanishCommonDateTimeParserConfiguration()));
         }
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], referenceDay);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(year, month, beginDay);
             Assert.AreEqual(beginDate,
@@ -37,7 +37,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             var endDate = new DateObject(year, month, endDay);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item2);
-            TestWriter.Write("Spa", parser, referenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceDate, text, pr);
         }
 
         public void BasicTestFuture(string text, int beginYear, int beginMonth, int beginDay, int endYear, int endMonth,
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], referenceDay);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             var beginDate = new DateObject(beginYear, beginMonth, beginDay);
             Assert.AreEqual(beginDate,
@@ -53,17 +53,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             var endDate = new DateObject(endYear, endMonth, endDay);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item2);
-            TestWriter.Write("Spa", parser, referenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceDate, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], referenceDay);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Spa", parser, referenceDay, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceDate, text, pr);
         }
 
         [TestMethod]

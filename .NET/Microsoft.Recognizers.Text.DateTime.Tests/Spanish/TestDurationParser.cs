@@ -7,12 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     {
         readonly BaseDurationExtractor extractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         readonly IDateTimeParser parser = new BaseDurationParser(new SpanishDurationParserConfiguration(new SpanishCommonDateTimeParserConfiguration()));
-        readonly System.DateTime date = new System.DateTime(2016, 11, 7).Date;
+        readonly System.DateTime referenceDay = new System.DateTime(2016, 11, 7).Date;
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseDurationParser));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseDurationParser));
         }
 
 
@@ -20,11 +20,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], date);
+            var pr = parser.Parse(er[0], referenceDay);
             Assert.AreEqual(Constants.SYS_DATETIME_DURATION, pr.Type);
             Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Spa", parser, date, text, pr);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceDay, text, pr);
         }
 
         [TestMethod]

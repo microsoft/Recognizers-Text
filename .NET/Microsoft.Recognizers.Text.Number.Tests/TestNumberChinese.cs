@@ -10,10 +10,10 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Chs", typeof(NumberModel));
-            TestWriter.Close("Chs", typeof(PercentModel));
-            TestWriter.Close("Chs", typeof(OrdinalModel));
-            TestWriter.Close("Chs", "CustomNumberModel");
+            TestWriter.Close(TestCulture.Chinese, typeof(NumberModel));
+            TestWriter.Close(TestCulture.Chinese, typeof(PercentModel));
+            TestWriter.Close(TestCulture.Chinese, typeof(OrdinalModel));
+            TestWriter.Close(TestCulture.Chinese, "CustomNumberModel");
         }
 
         private void BasicTest(IModel model, string source, string value)
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
-            TestWriter.Write("Chs", model, source, resultStr);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
-            TestWriter.Write("Chs", model, source, resultStr);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         private void MultiTest(IModel model, string source, int count, bool isCustomModel = false)
@@ -43,8 +43,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
-            if (isCustomModel) TestWriter.Write("Chs", "CustomNumberModel", source, resultStr);
-            else TestWriter.Write("Chs", model, source, resultStr);
+            if (isCustomModel) TestWriter.Write(TestCulture.Chinese, "CustomNumberModel", source, resultStr);
+            else TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         private void MultiOneTest(IModel model, string source, int count, string first)
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
             Assert.AreEqual(resultJson[0].Resolution["value"], first);
-            TestWriter.Write("Chs", model, source, resultStr);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         [TestMethod]

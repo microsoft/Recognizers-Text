@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(TimeParser));
+            TestWriter.Close(TestCulture.English, typeof(TimeParser));
         }
 
         public void BasicTest(string text, DateObject date)
@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write(TestCulture.English, parser, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Eng", parser, text, pr);
+            TestWriter.Write(TestCulture.English, parser, text, pr);
         }
 
         [TestMethod]

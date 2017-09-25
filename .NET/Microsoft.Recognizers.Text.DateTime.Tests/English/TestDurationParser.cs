@@ -8,23 +8,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         readonly BaseDurationExtractor extractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         readonly IDateTimeParser parser = new BaseDurationParser(new EnglishDurationParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
-        readonly DateObject date = new DateObject(2016, 11, 7);
+        readonly DateObject referenceDate = new DateObject(2016, 11, 7);
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseDurationParser));
+            TestWriter.Close(TestCulture.English, typeof(BaseDurationParser));
         }
 
         public void BasicTest(string text, double value, string luisValue)
         {
             var er = extractor.Extract(text);
             Assert.AreEqual(1, er.Count);
-            var pr = parser.Parse(er[0], date);
+            var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(Constants.SYS_DATETIME_DURATION, pr.Type);
             Assert.AreEqual(value, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(luisValue, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Eng", parser, date, text, pr);
+            TestWriter.Write(TestCulture.English, parser, referenceDate, text, pr);
         }
 
         [TestMethod]

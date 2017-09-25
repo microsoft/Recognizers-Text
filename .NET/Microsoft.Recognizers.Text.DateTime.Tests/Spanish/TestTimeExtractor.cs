@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseTimeExtractor));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseTimeExtractor));
         }
 
 
@@ -21,14 +21,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 
             if (expected < 1)
             {
-                TestWriter.Write("Spa", extractor, text);
+                TestWriter.Write(TestCulture.Spanish, extractor, text);
                 return;
             }
 
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
-            TestWriter.Write("Spa", extractor, text, results);
+            TestWriter.Write(TestCulture.Spanish, extractor, text, results);
         }
 
         public void BasicNegativeTest(string text)

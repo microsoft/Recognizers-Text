@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Chs", typeof(SetParserChs));
+            TestWriter.Close(TestCulture.Chinese, typeof(SetParserChs));
         }
 
         public void BasicTest(string text, string timex)
@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_SET, pr.Type);
             Assert.AreEqual(timex, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Chs", parser, text, pr);
+            TestWriter.Write(TestCulture.Chinese, parser, text, pr);
         }
 
         [TestMethod]

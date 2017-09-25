@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseTimeExtractor));
+            TestWriter.Close(TestCulture.English, typeof(BaseTimeExtractor));
         }
 
         public void BasicTest(string text, int start, int length, int expected = 1)
@@ -20,14 +20,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
             if (expected < 1)
             {
-                TestWriter.Write("Eng", extractor, text);
+                TestWriter.Write(TestCulture.English, extractor, text);
                 return;
             }
 
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
-            TestWriter.Write("Eng", extractor, text, results);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicNegativeTest(string text)

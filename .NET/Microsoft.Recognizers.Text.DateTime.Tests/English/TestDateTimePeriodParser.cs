@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Eng", typeof(BaseDateTimePeriodParser));
+            TestWriter.Close(TestCulture.English, typeof(BaseDateTimePeriodParser));
         }
 
         public TestDateTimePeriodParser()
@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item1);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item2);
-            TestWriter.Write("Eng", parser, referenceTime, text, pr);
+            TestWriter.Write(TestCulture.English, parser, referenceTime, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIMEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
-            TestWriter.Write("Eng", parser, referenceTime, text, pr);
+            TestWriter.Write(TestCulture.English, parser, referenceTime, text, pr);
         }
 
         [TestMethod]

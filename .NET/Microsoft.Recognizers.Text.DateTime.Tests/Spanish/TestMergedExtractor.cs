@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            TestWriter.Close("Spa", typeof(BaseMergedExtractor));
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseMergedExtractor));
         }
 
 
@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
-            TestWriter.Write("Spa", extractor, text, results);
+            TestWriter.Write(TestCulture.Spanish, extractor, text, results);
         }
 
         [TestMethod]

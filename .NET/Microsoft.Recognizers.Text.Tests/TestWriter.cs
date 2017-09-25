@@ -58,14 +58,17 @@ namespace Microsoft.Recognizers.Text
             this.TypeName = result.TypeName;
             Resolution = new Dictionary<string, object>();
             object value;
+
             if (result.Resolution.TryGetValue("value", out value))
             {
                 Resolution.Add("value", value);
             }
+
             if (result.Resolution.TryGetValue("unit", out value))
             {
                 Resolution.Add("unit", value);
             }
+
             if (result.Resolution.TryGetValue("values", out value))
             {
                 Resolution.Add("values", value);
@@ -137,84 +140,31 @@ namespace Microsoft.Recognizers.Text
 
         public static void Write(TestModel testModel)
         {
-            if (logList.Contains($"{getLanguage(testModel.Language)}-{testModel.Input}-{GetJson(testModel.Results)}"))
+            if (logList.Contains($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}"))
             {
                 return;
             }
-            logList.Add($"{getLanguage(testModel.Language)}-{testModel.Input}-{GetJson(testModel.Results)}");
-            if (Trace.Listeners[string.Join("-", getLanguage(testModel.Language), testModel.Recognizer, testModel.Model)] == null)
+
+            logList.Add($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}");
+            if (Trace.Listeners[string.Join("-", testModel.Language, testModel.Recognizer, testModel.Model)] == null)
             {
-                Trace.Listeners.Add(new TestTextWriterTraceListener(getLanguage(testModel.Language), testModel.Recognizer, testModel.Model));
+                Trace.Listeners.Add(new TestTextWriterTraceListener(testModel.Language, testModel.Recognizer, testModel.Model));
             }
+
             Trace.WriteLine(GetJson(testModel));
-        }
-
-        private static string getProjectName(string path)
-        {
-            var start = path.IndexOf("Microsoft.Recognizers.Text.") + 27;
-            var end = path.IndexOf('.', start);
-            return path.Substring(start, end - start);
-        }
-
-        private static string getName(object obj)
-        {
-            return getName(obj.GetType());
-        }
-
-        private static string getName(Type type)
-        {
-            return getName(type.Name);
-        }
-
-        private static string getName(string typeName)
-        {
-            return typeName.Replace("Chs", "").Replace("Base", "");
-        }
-
-        private static string getLanguage(string language)
-        {
-            switch (language)
-            {
-                case "Chs": return "Chinese";
-                case "Eng": return "English";
-                case "Spa": return "Spanish";
-                case "Fra": return "French";
-                case "Por": return "Portuguese";
-            }
-            return language;
         }
 
         public static string GetJson<T>(T obj, Formatting formatting = Formatting.None)
         {
-            return JsonConvert.SerializeObject(obj, formatting, 
-                new JsonSerializerSettings {
+            return JsonConvert.SerializeObject(obj, formatting,
+                new JsonSerializerSettings
+                {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                     PreserveReferencesHandling = PreserveReferencesHandling.None,
                     NullValueHandling = NullValueHandling.Ignore,
                     Formatting = formatting
                 });
         }
-
-        private static void Write(string lang, string model, DateObject? datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
-        {
-            var recognizer = getProjectName(callerFilePath);
-            var context = new Dictionary<string, object>();
-            if (datetime != null)
-            {
-                context.Add("ReferenceDateTime", datetime);
-            }
-            Write(new TestModel
-            {
-                Language = getLanguage(lang),
-                Recognizer = recognizer,
-                Model = getName(model),
-                TestType = callerMemberName,
-                Context = context.Count > 0 ? context : null,
-                Input = source,
-                Results = results
-            });
-        }
-
 
         public static void Write(string lang, string model, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
@@ -223,13 +173,13 @@ namespace Microsoft.Recognizers.Text
         
         public static void Write(string lang, IModel model, DateObject datetime, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(model);
+            var modelStr = GetName(model);
             Write(lang, modelStr, datetime, source, results.Select(o => new TestModelResult(o)), callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IModel model, string source, IEnumerable<ModelResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(model);
+            var modelStr = GetName(model);
             Write(lang, modelStr, null, source, results.Select(o => new TestModelResult(o)), callerFilePath, callerMemberName);
         }
 
@@ -241,19 +191,19 @@ namespace Microsoft.Recognizers.Text
 
         public static void Write(string lang, IParser parser, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(parser);
+            var modelStr = GetName(parser);
             Write(lang, modelStr, null, source, new TestParseResult[] { new TestParseResult(result) }, callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, DateObject datetime, string source, ParseResult result, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(parser);
+            var modelStr = GetName(parser);
             Write(lang, modelStr, datetime, source, new TestParseResult[] { new TestParseResult(result) }, callerFilePath, callerMemberName);
         }
 
         public static void Write(string lang, IParser parser, DateObject datetime, string source, IEnumerable<ParseResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(parser);
+            var modelStr = GetName(parser);
             Write(lang, modelStr, datetime, source, results.Select(o => new TestParseResult(o)), callerFilePath, callerMemberName);
         }
 
@@ -265,7 +215,7 @@ namespace Microsoft.Recognizers.Text
 
         public static void Write(string lang, IExtractor extractor, string source, IEnumerable<ExtractResult> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
         {
-            var modelStr = getName(extractor);
+            var modelStr = GetName(extractor);
             Write(lang, modelStr, null, source, results.Select(o => new TestExtractorResult(o)), callerFilePath, callerMemberName);
         }
 
@@ -276,10 +226,10 @@ namespace Microsoft.Recognizers.Text
 
         public static void Close(string lang, Type type, [CallerFilePath] string callerFilePath = "")
         {
-            var model = getName(type);
-            var recognizer = getProjectName(callerFilePath);
+            var model = GetName(type);
+            var recognizer = GetProjectName(callerFilePath);
 
-            var trace = Trace.Listeners[string.Join("-", getLanguage(lang), recognizer, model)];
+            var trace = Trace.Listeners[string.Join("-", lang, recognizer, model)];
             if (trace != null)
             {
                 trace.Write("]");
@@ -289,14 +239,57 @@ namespace Microsoft.Recognizers.Text
 
         public static void Close(string lang, string model, [CallerFilePath] string callerFilePath = "")
         {
-            var recognizer = getProjectName(callerFilePath);
+            var recognizer = GetProjectName(callerFilePath);
 
-            var trace = Trace.Listeners[string.Join("-", getLanguage(lang), recognizer, getName(model))];
+            var trace = Trace.Listeners[string.Join("-", lang, recognizer, GetName(model))];
             if (trace != null)
             {
                 trace.Write("]");
                 trace.Flush();
             }
+        }
+
+        private static string GetProjectName(string path)
+        {
+            var start = path.IndexOf("Microsoft.Recognizers.Text.") + 27;
+            var end = path.IndexOf('.', start);
+            return path.Substring(start, end - start);
+        }
+
+        private static string GetName(object obj)
+        {
+            return GetName(obj.GetType());
+        }
+
+        private static string GetName(Type type)
+        {
+            return GetName(type.Name);
+        }
+
+        private static string GetName(string typeName)
+        {
+            return typeName.Replace("Chs", "").Replace("Base", "");
+        }
+
+        private static void Write(string lang, string model, DateObject? datetime, string source, IEnumerable<object> results, [CallerFilePath] string callerFilePath = "", [CallerMemberName] string callerMemberName = "")
+        {
+            var recognizer = GetProjectName(callerFilePath);
+            var context = new Dictionary<string, object>();
+            if (datetime != null)
+            {
+                context.Add("ReferenceDateTime", datetime);
+            }
+
+            Write(new TestModel
+            {
+                Language = lang,
+                Recognizer = recognizer,
+                Model = GetName(model),
+                TestType = callerMemberName,
+                Context = context.Count > 0 ? context : null,
+                Input = source,
+                Results = results
+            });
         }
     }
 }
