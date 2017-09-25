@@ -53,20 +53,20 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTime\TestDateTime_Spa.cs" />
-    <Compile Include="DateTime\TestDateTime_Eng.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Spa.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Por.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Chs.cs" />
-    <Compile Include="NumberWithUnit\TestNumberWithUnit_Eng.cs" />
-    <Compile Include="Number\TestNumber_Fra.cs" />
-    <Compile Include="Number\TestNumber_Por.cs" />
-    <Compile Include="Number\TestNumber_Chs.cs" />
-    <Compile Include="Number\TestNumber_Spa.cs" />
+    <Compile Include="DateTime\TestDateTime_Spanish.cs" />
+    <Compile Include="DateTime\TestDateTime_English.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Spanish.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Portuguese.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_Chinese.cs" />
+    <Compile Include="NumberWithUnit\TestNumberWithUnit_English.cs" />
+    <Compile Include="Number\TestNumber_French.cs" />
+    <Compile Include="Number\TestNumber_Portuguese.cs" />
+    <Compile Include="Number\TestNumber_Chinese.cs" />
+    <Compile Include="Number\TestNumber_Spanish.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="TestHelpers.cs" />
     <Compile Include="TestModel.cs" />
-    <Compile Include="Number\TestNumber_Eng.cs" />
+    <Compile Include="Number\TestNumber_English.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

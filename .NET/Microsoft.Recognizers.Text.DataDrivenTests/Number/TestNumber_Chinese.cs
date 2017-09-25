@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Microsoft.Recognizers.Text.DataDrivenTests.Number
 {
     [TestClass]
-    public class TestNumber_Por : TestBase
+    public class TestNumber_Chinese : TestBase
     {
         public static TestResources TestResources { get; protected set; }
         public static IDictionary<string, IModel> Models { get; protected set; }
@@ -24,21 +24,28 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Number
             base.ModelInitialize(Models);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Por.csv", "NumberModel-Por#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Chinese.csv", "NumberModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Por.csv", "OrdinalModel-Por#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CustomNumberModel-Chinese.csv", "CustomNumberModel-Chinese#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void CustomNumberModel()
+        {
+            base.TestNumber();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Chinese.csv", "OrdinalModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Por.csv", "PercentModel-Por#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Chinese.csv", "PercentModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {

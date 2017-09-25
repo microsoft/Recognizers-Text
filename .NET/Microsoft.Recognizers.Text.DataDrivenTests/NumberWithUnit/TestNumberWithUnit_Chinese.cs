@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Microsoft.Recognizers.Text.DataDrivenTests.NumberWithUnit
 {
     [TestClass]
-    public class TestNumberWithUnit_Chs : TestBase
+    public class TestNumberWithUnit_Chinese : TestBase
     {
         public static TestResources TestResources { get; protected set; }
         public static IDictionary<string, IModel> Models { get; protected set; }
@@ -24,28 +24,28 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.NumberWithUnit
             base.ModelInitialize(Models);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-Chs.csv", "AgeModel-Chs#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-Chinese.csv", "AgeModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void AgeModel()
         {
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Chs.csv", "CurrencyModel-Chs#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-Chinese.csv", "CurrencyModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void CurrencyModel()
         {
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Chs.csv", "DimensionModel-Chs#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-Chinese.csv", "DimensionModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DimensionModel()
         {
             base.TestNumberWithUnit();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-Chs.csv", "TemperatureModel-Chs#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-Chinese.csv", "TemperatureModel-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TemperatureModel()
         {

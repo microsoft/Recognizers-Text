@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Microsoft.Recognizers.Text.DataDrivenTests.Number
 {
     [TestClass]
-    public class TestNumber_Eng : TestBase
+    public class TestNumber_French : TestBase
     {
         public static TestResources TestResources { get; protected set; }
         public static IDictionary<string, IModel> Models { get; protected set; }
@@ -24,21 +24,21 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Number
             base.ModelInitialize(Models);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-Eng.csv", "NumberModel-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "NumberModel-French.csv", "NumberModel-French#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void NumberModel()
         {
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-Eng.csv", "OrdinalModel-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "OrdinalModel-French.csv", "OrdinalModel-French#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void OrdinalModel()
         {
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-Eng.csv", "PercentModel-Eng#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-French.csv", "PercentModel-French#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void PercentModel()
         {
