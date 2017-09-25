@@ -1,8 +1,9 @@
 var Recognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
-var SupportedCultures = require('./cultures.js');
 var DateUtils = require('../compiled/dateTime/utilities').DateUtils;
 var _ = require('lodash');
 
+var Constants = require('./constants');
+var SupportedCultures = require('./cultures.js');
 var Extractors = require('./datetime-extractors');
 var Parsers = require('./datetime-parsers');
 
@@ -12,7 +13,7 @@ module.exports = function getDateTimeRunner(config) {
     var model = getModel(config);
 
     // Extractor only test
-    if (config.subType.includes('Extractor')) {
+    if (config.subType.includes(Constants.Extractor)) {
         if (!extractor) {
             return ignoredTest;
             // throw new Error(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
@@ -22,7 +23,7 @@ module.exports = function getDateTimeRunner(config) {
     }
 
     // Parser test
-    if (config.subType.includes('Parser')) {
+    if (config.subType.includes(Constants.Parser)) {
         if (!extractor) {
             return ignoredTest;
             // throw new Error(`Cannot found extractor for ${JSON.stringify(config)}. Please verify datetime-extractors.js is properly defined.`);
@@ -37,7 +38,7 @@ module.exports = function getDateTimeRunner(config) {
     }
 
     // Model test
-    if (config.subType.includes('Model')) {
+    if (config.subType.includes(Constants.Model)) {
         if (!model) {
             return ignoredTest;
             // throw new Error(`Cannot found model for ${JSON.stringify(config)}.`);
@@ -133,7 +134,7 @@ function getModelTestRunner(model) {
 }
 
 function getExtractor(config) {
-    var extractorName = config.subType.replace('Extractor', '').replace('Parser', '').replace('Base', '');
+    var extractorName = config.subType.replace(Constants.Extractor, '').replace(Constants.Parser, '').replace(Constants.Base, '');
     var key = [config.language, extractorName].join('-');
     var extractor = Extractors[key];
 
@@ -141,14 +142,14 @@ function getExtractor(config) {
 }
 
 function getParser(config) {
-    var parserName = config.subType.replace('Parser', '').replace('Base', '');
+    var parserName = config.subType.replace(Constants.Parser, '').replace(Constants.Base, '');
     var key = [config.language, parserName].join('-');
     var parser = Parsers[key];
 
     return parser;
 }
 function getModel(config) {
-    return Recognizer.instance.getDateTimeModel(SupportedCultures[config.language]);
+    return Recognizer.instance.getDateTimeModel(SupportedCultures[config.language].cultureCode);
 }
 
 function getReferenceDate(testCase) {

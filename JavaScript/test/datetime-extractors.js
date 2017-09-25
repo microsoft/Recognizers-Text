@@ -1,43 +1,48 @@
+var _ = require('lodash');
+var Constants = require('./constants');
+var SupportedCultures = require('./cultures');
 var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
 
-module.exports = {
-    // English
-    'Eng-Date':             createExtractor('English', 'Date'),
-    'Eng-Time':             createExtractor('English', 'Time'),
-    'Eng-DatePeriod':       createExtractor('English', 'DatePeriod'),
-    'Eng-TimePeriod':       createExtractor('English', 'TimePeriod'),
-    'Eng-DateTime':         createExtractor('English', 'DateTime'),
-    'Eng-DateTimePeriod':   createExtractor('English', 'DateTimePeriod'),
-    'Eng-Duration':         createExtractor('English', 'Duration'),
-    'Eng-Holiday':          createExtractor('English', 'Holiday'),
-    'Eng-Set':              createExtractor('English', 'Set'),
-    'Eng-Merged':           createExtractor('English', 'Merged', DateTimeOptions.None),
-    'Eng-MergedSkipFromTo': createExtractor('English', 'Merged', DateTimeOptions.SkipFromToMerge),
+var LanguagesConfig = [
+    'English'
+    // 'Spanish'
+];
 
-    // Spanish
-    // 'Spa-Date':             createExtractor('Spanish', 'Date'),
-    // 'Spa-Time':             createExtractor('Spanish', 'Time'),
-    // 'Spa-DatePeriod':       createExtractor('Spanish', 'DatePeriod'),
-    // 'Spa-TimePeriod':       createExtractor('Spanish', 'TimePeriod'),
-    // 'Spa-DateTime':         createExtractor('Spanish', 'DateTime'),
-    // 'Spa-DateTimePeriod':   createExtractor('Spanish', 'DateTimePeriod'),
-    // 'Spa-Duration':         createExtractor('Spanish', 'Duration'),
-    // 'Spa-Holiday':          createExtractor('Spanish', 'Holiday'),
-    // 'Spa-Set':              createExtractor('Spanish', 'Set'),
-    // 'Spa-Merged':           createExtractor('Spanish', 'Merged', DateTimeOptions.None),
-    // 'Spa-MergedSkipFromTo': createExtractor('Spanish', 'Merged', DateTimeOptions.SkipFromToMerge)
+var ExtractorTypes = {
+    'Date':             ['Date'],
+    'Time':             ['Time'],
+    'DatePeriod':       ['DatePeriod'],
+    'TimePeriod':       ['TimePeriod'],
+    'DateTime':         ['DateTime'],
+    'DateTimePeriod':   ['DateTimePeriod'],
+    'Duration':         ['Duration'],
+    'Holiday':          ['Holiday'],
+    'Set':              ['Set'],
+    'Merged':           ['Merged', DateTimeOptions.None],
+    'MergedSkipFromTo': ['Merged', DateTimeOptions.SkipFromToMerge],
 };
+
+var extractorConfigs = LanguagesConfig
+    .map(c => _.values(ExtractorTypes).map(cfg => ({ lang: c, cfg: cfg })))
+    .reduce((a, b) => a.concat(b), []);                      // flatten
+
+// [Eng-Date, Eng-Set, Eng-Merged, Eng-MergedSkipFromTo, ... ]
+var extractorKeys = extractorConfigs.map(cfg => _.findKey(SupportedCultures, (c) => c.cultureName === cfg.lang) + '-' + _.findKey(ExtractorTypes, o => o === cfg.cfg))
+var extractorObjects = extractorConfigs.map(cfg => createExtractor(cfg.lang, cfg.cfg[0], cfg.cfg[1]));
+
+// { 'Eng-Date': {extractor}, 'Eng-Set': {extractor}, 'Eng-Merged': {extractor}, 'Eng-MergedSkipFromTo': ... }
+module.exports =  _.zipObject(extractorKeys, extractorObjects);
 
 function createExtractor(lang, extractor, options) {
     var extractorModuleName = '../compiled/dateTime/base' + extractor;
-    var extractorTypeName = 'Base' + extractor + 'Extractor';
+    var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');
     var ExtractorType = require(extractorModuleName)[extractorTypeName];
     if (!ExtractorType) {
         throw new Error(`Extractor Type ${extractorTypeName} was not found in module ${extractorModuleName}`);
     }
 
-    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + 'Configuration';
-    var configTypeName = lang + extractor + 'ExtractorConfiguration';
+    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + Constants.Configuration;
+    var configTypeName = lang + extractor + Constants.ExtractorConfiguration;
     var ConfigType = require(configModuleName)[configTypeName];
     if (!ConfigType) {
         throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);

@@ -39,7 +39,7 @@ function getNumberWithUnitModel(config) {
         throw new Error(`NumberWithUnit model of ${config.subType} not supported.`);
     }
 
-    var culture = SupportedCultures[config.language];
+    var culture = SupportedCultures[config.language].cultureCode;
     if (!culture) {
         throw new Error(`NumberWithUnit model of ${config.subType} with culture ${config.language} not supported.`);
     }

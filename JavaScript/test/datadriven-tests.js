@@ -14,7 +14,7 @@ var supportedLanguages = _.keys(SupportedCultures);
 // get list of specs (.json)
 var specFiles = getSpecFilePaths(specsPath)
     // Ignore non-supported languages
-    .filter(s => supportedLanguages.find(l => s.indexOf(path.sep + l + path.sep) !== -1));
+    .filter(s => supportedLanguages.find(lang => s.indexOf(path.sep + lang + path.sep) !== -1));
 
 // parse specs
 var specs = specFiles
@@ -51,6 +51,9 @@ specs.forEach(suite => {
 });
 
 function getSpecFilePaths(specsPath) {
+    if(!fs.existsSync(specsPath)) {
+        throw new Error(`Specs directory not found at ${path.resolve(specsPath)}`);
+    }
     return fs
         .readdirSync(specsPath).map(s => path.join(specsPath, s))
         .map(s1 => fs.readdirSync(s1).map(s2 => path.join(s1, s2)))
@@ -79,6 +82,6 @@ function getTestRunner(config) {
         case 'DateTime':
             return DateTimeTestRunner(config);
         default:
-            return null;
+            throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
     }
 }

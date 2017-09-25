@@ -1,43 +1,49 @@
+var _ = require('lodash');
+var Constants = require('./constants');
+var SupportedCultures = require('./cultures');
+
+// Configs
 var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/baseConfiguration').EnglishCommonDateTimeParserConfiguration;
 
-var englishCommonConfig = new EnglishCommonDateTimeParserConfiguration();
-
-module.exports = {
-    // English
-    'Eng-Date':             createParser('English', 'Date', englishCommonConfig),
-    'Eng-Time':             createParser('English', 'Time', englishCommonConfig),
-    'Eng-DatePeriod':       createParser('English', 'DatePeriod', englishCommonConfig),
-    'Eng-TimePeriod':       createParser('English', 'TimePeriod', englishCommonConfig),
-    'Eng-DateTime':         createParser('English', 'DateTime', englishCommonConfig),
-    'Eng-DateTimePeriod':   createParser('English', 'DateTimePeriod', englishCommonConfig),
-    'Eng-Duration':         createParser('English', 'Duration', englishCommonConfig),
-    'Eng-Holiday':          createParser('English', 'Holiday'),
-    'Eng-Set':              createParser('English', 'Set', englishCommonConfig),
-    'Eng-Merged':           createParser('English', 'Merged', englishCommonConfig),
-
-    // Spanish
-    // 'Spa-Date':             createParser('Spanish', 'Date', SpanishCommonConfig),
-    // 'Spa-Time':             createParser('Spanish', 'Time', SpanishCommonConfig),
-    // 'Spa-DatePeriod':       createParser('Spanish', 'DatePeriod', SpanishCommonConfig),
-    // 'Spa-TimePeriod':       createParser('Spanish', 'TimePeriod', SpanishCommonConfig),
-    // 'Spa-DateTime':         createParser('Spanish', 'DateTime', SpanishCommonConfig),
-    // 'Spa-DateTimePeriod':   createParser('Spanish', 'DateTimePeriod', SpanishCommonConfig),
-    // 'Spa-Duration':         createParser('Spanish', 'Duration', SpanishCommonConfig),
-    // 'Spa-Holiday':          createParser('Spanish', 'Holiday'),
-    // 'Spa-Set':              createParser('Spanish', 'Set', SpanishCommonConfig),
-    // 'Spa-Merged':           createParser('Spanish', 'Merged', SpanishCommonConfig)
+var LanguagesConfig = {
+    'English': new EnglishCommonDateTimeParserConfiguration()
+    // 'Spanish': new SpanishCommonDateTimeParserConfiguration()
 };
+
+var ParserTypes = [
+    'Date',
+    'Time',
+    'DatePeriod',
+    'TimePeriod',
+    'DateTime',
+    'DateTimePeriod',
+    'Duration',
+    'Holiday',
+    'Set',
+    'Merged'
+];
+
+var parserConfigs = _.keys(LanguagesConfig)
+    .map(c => ParserTypes.map(p => ({ lang: c, parserType: p, config: LanguagesConfig[c] })))
+    .reduce((a, b) => a.concat(b), []);                      // flatten
+
+// [Eng-Date, Eng-Time, ... ]
+var parserKeys = parserConfigs.map(cfg => _.findKey(SupportedCultures, (c) => c.cultureName === cfg.lang) + '-' + cfg.parserType)
+var parserObjects = parserConfigs.map(cfg => createParser(cfg.lang, cfg.parserType, cfg.config));
+
+// { 'Eng-Date': {parser}, 'Eng-Time': {parser}, ... }
+module.exports =  _.zipObject(parserKeys, parserObjects);
 
 function createParser(lang, parser, commonConfig) {
     var parserModuleName = '../compiled/dateTime/base' + parser;
-    var parserTypeName = 'Base' + parser + 'Parser';
+    var parserTypeName = [Constants.Base, parser, Constants.Parser].join('');
     var ParserType = require(parserModuleName)[parserTypeName];
     if (!ParserType) {
         throw new Error(`Parser Type ${parserTypeName} was not found in module ${parserModuleName}`);
     }
 
-    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + 'Configuration';
-    var configTypeName = lang + parser + 'ParserConfiguration';
+    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
+    var configTypeName = lang + parser + Constants.ParserConfiguration;
     var ConfigType = require(configModuleName)[configTypeName];
     if (!ConfigType) {
         throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
