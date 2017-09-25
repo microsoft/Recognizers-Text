@@ -137,14 +137,14 @@ namespace Microsoft.Recognizers.Text
 
         public static void Write(TestModel testModel)
         {
-            if (logList.Contains($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}"))
+            if (logList.Contains($"{getLanguage(testModel.Language)}-{testModel.Input}-{GetJson(testModel.Results)}"))
             {
                 return;
             }
-            logList.Add($"{testModel.Language}-{testModel.Input}-{GetJson(testModel.Results)}");
-            if (Trace.Listeners[string.Join("-", testModel.Language, testModel.Recognizer, testModel.Model)] == null)
+            logList.Add($"{getLanguage(testModel.Language)}-{testModel.Input}-{GetJson(testModel.Results)}");
+            if (Trace.Listeners[string.Join("-", getLanguage(testModel.Language), testModel.Recognizer, testModel.Model)] == null)
             {
-                Trace.Listeners.Add(new TestTextWriterTraceListener(testModel.Language, testModel.Recognizer, testModel.Model));
+                Trace.Listeners.Add(new TestTextWriterTraceListener(getLanguage(testModel.Language), testModel.Recognizer, testModel.Model));
             }
             Trace.WriteLine(GetJson(testModel));
         }
@@ -163,7 +163,25 @@ namespace Microsoft.Recognizers.Text
 
         private static string getName(Type type)
         {
-            return type.Name.Replace("Chs", "");
+            return getName(type.Name);
+        }
+
+        private static string getName(string typeName)
+        {
+            return typeName.Replace("Chs", "").Replace("Base", "");
+        }
+
+        private static string getLanguage(string language)
+        {
+            switch (language)
+            {
+                case "Chs": return "Chinese";
+                case "Eng": return "English";
+                case "Spa": return "Spanish";
+                case "Fra": return "French";
+                case "Por": return "Portuguese";
+            }
+            return language;
         }
 
         public static string GetJson<T>(T obj, Formatting formatting = Formatting.None)
@@ -187,9 +205,9 @@ namespace Microsoft.Recognizers.Text
             }
             Write(new TestModel
             {
-                Language = lang,
+                Language = getLanguage(lang),
                 Recognizer = recognizer,
-                Model = model,
+                Model = getName(model),
                 TestType = callerMemberName,
                 Context = context.Count > 0 ? context : null,
                 Input = source,
@@ -261,7 +279,7 @@ namespace Microsoft.Recognizers.Text
             var model = getName(type);
             var recognizer = getProjectName(callerFilePath);
 
-            var trace = Trace.Listeners[string.Join("-", lang, recognizer, model)];
+            var trace = Trace.Listeners[string.Join("-", getLanguage(lang), recognizer, model)];
             if (trace != null)
             {
                 trace.Write("]");
@@ -273,7 +291,7 @@ namespace Microsoft.Recognizers.Text
         {
             var recognizer = getProjectName(callerFilePath);
 
-            var trace = Trace.Listeners[string.Join("-", lang, recognizer, model)];
+            var trace = Trace.Listeners[string.Join("-", getLanguage(lang), recognizer, getName(model))];
             if (trace != null)
             {
                 trace.Write("]");

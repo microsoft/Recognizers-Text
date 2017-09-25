@@ -42,40 +42,82 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
     }
 
+    public enum Models
+    {
+        Number,
+        Ordinal,
+        Percent,
+        Age,
+        Currency,
+        Dimension,
+        Temperature,
+        DateTime,
+        CustomNumber
+    }
+
+    public enum DateTimeExtractors
+    {
+        Date,
+        Time,
+        DatePeriod,
+        TimePeriod,
+        DateTime,
+        DateTimePeriod,
+        Duration,
+        Holiday,
+        Set,
+        Merged,
+        MergedSkipFromTo
+    }
+
+    public enum DateTimeParsers
+    {
+        Date,
+        Time,
+        DatePeriod,
+        TimePeriod,
+        DateTime,
+        DateTimePeriod,
+        Duration,
+        Holiday,
+        Set,
+        Merged
+    }
+
     public static class TestContextExtensions
     {
         public static IModel GetModel(this TestContext context)
         {
             var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
-            var modelName = TestUtils.GetModelName(context.TestName);
+            var modelName = TestUtils.GetModel(context.TestName);
             switch (modelName)
             {
-                case "NumberModel":
+                case Models.Number:
                     return NumberRecognizer.Instance.GetNumberModel(language);
-                case "OrdinalModel":
+                case Models.Ordinal:
                     return NumberRecognizer.Instance.GetOrdinalModel(language);
-                case "PercentModel":
+                case Models.Percent:
                     return NumberRecognizer.Instance.GetPercentageModel(language);
-                case "AgeModel":
+                case Models.Age:
                     return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
-                case "CurrencyModel":
+                case Models.Currency:
                     return NumberWithUnitRecognizer.Instance.GetCurrencyModel(language);
-                case "DimensionModel":
+                case Models.Dimension:
                     return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
-                case "TemperatureModel":
+                case Models.Temperature:
                     return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
-                case "DateTimeModel":
+                case Models.DateTime:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
-                case "CustomNumberModel":
+                case Models.CustomNumber:
                     return GetCustomModelFor(language);
             }
-            return null;
+            throw new Exception($"Model '{modelName}' for '{language}' not supported");
         }
 
         public static IExtractor GetExtractor(this TestContext context)
         {
             var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
-            var extractorName = TestUtils.GetExtractorName(context.TestName);
+            var extractorName = TestUtils.GetExtractor(context.TestName);
             switch (language)
             {
                 case Culture.English:
@@ -83,13 +125,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Culture.Spanish:
                     return GetSpanishExtractor(extractorName);
             }
-            return null;
+            throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
         }
 
         public static IDateTimeParser GetDateTimeParser(this TestContext context)
         {
             var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
-            var parserName = TestUtils.GetParserName(context.TestName);
+            var parserName = TestUtils.GetParser(context.TestName);
             switch (language)
             {
                 case Culture.English:
@@ -97,123 +139,123 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case Culture.Spanish:
                     return GetSpanishParser(parserName);
             }
-            return null;
+            throw new Exception($"Parser '{parserName}' for '{language}' not supported");
         }
 
-        public static IExtractor GetEnglishExtractor(string extractorName)
+        public static IExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {
-                case "Date":
+                case DateTimeExtractors.Date:
                     return new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-                case "Time":
+                case DateTimeExtractors.Time:
                     return new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-                case "DatePeriod":
+                case DateTimeExtractors.DatePeriod:
                     return new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
-                case "TimePeriod":
+                case DateTimeExtractors.TimePeriod:
                     return new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
-                case "DateTime":
+                case DateTimeExtractors.DateTime:
                     return new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());
-                case "DateTimePeriod":
+                case DateTimeExtractors.DateTimePeriod:
                     return new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
-                case "Duration":
+                case DateTimeExtractors.Duration:
                     return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-                case "Holiday":
+                case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
-                case "Set":
+                case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
-                case "Merged":
+                case DateTimeExtractors.Merged:
                     return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
-                case "MergedSkipFromTo":
+                case DateTimeExtractors.MergedSkipFromTo:
                     return new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.SkipFromToMerge);
             }
-            return null;
+            throw new Exception($"Extractor '{extractorName}' for English not supported");
         }
 
-        public static IDateTimeParser GetEnglishParser(string parserName)
+        public static IDateTimeParser GetEnglishParser(DateTimeParsers parserName)
         {
             var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
             switch (parserName)
             {
-                case "Date":
+                case DateTimeParsers.Date:
                     return new BaseDateParser(new EnglishDateParserConfiguration(commonConfiguration));
-                case "Time":
+                case DateTimeParsers.Time:
                     return new TimeParser(new EnglishTimeParserConfiguration(commonConfiguration));
-                case "DatePeriod":
+                case DateTimeParsers.DatePeriod:
                     return new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(commonConfiguration));
-                case "TimePeriod":
+                case DateTimeParsers.TimePeriod:
                     return new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(commonConfiguration));
-                case "DateTime":
+                case DateTimeParsers.DateTime:
                     return new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(commonConfiguration));
-                case "DateTimePeriod":
+                case DateTimeParsers.DateTimePeriod:
                     return new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(commonConfiguration));
-                case "Duration":
+                case DateTimeParsers.Duration:
                     return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
-                case "Holiday":
+                case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
-                case "Set":
+                case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
-                case "Merged":
+                case DateTimeParsers.Merged:
                     return new BaseMergedParser(new EnglishMergedParserConfiguration());
             }
-            return null;
+            throw new Exception($"Parser '{parserName}' for English not supported");
         }
 
-        public static IExtractor GetSpanishExtractor(string extractorName)
+        public static IExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {
-                case "Date":
+                case DateTimeExtractors.Date:
                     return new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-                case "Time":
+                case DateTimeExtractors.Time:
                     return new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-                case "DatePeriod":
+                case DateTimeExtractors.DatePeriod:
                     return new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
-                case "TimePeriod":
+                case DateTimeExtractors.TimePeriod:
                     return new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
-                case "DateTime":
+                case DateTimeExtractors.DateTime:
                     return new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
-                case "DateTimePeriod":
+                case DateTimeExtractors.DateTimePeriod:
                     return new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
-                case "Duration":
+                case DateTimeExtractors.Duration:
                     return new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-                case "Holiday":
+                case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
-                case "Set":
+                case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new SpanishSetExtractorConfiguration());
-                case "Merged":
+                case DateTimeExtractors.Merged:
                     return new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), DateTimeOptions.None);
             }
-            return null;
+            throw new Exception($"Extractor '{extractorName}' for Spanish not supported");
         }
 
-        public static IDateTimeParser GetSpanishParser(string parserName)
+        public static IDateTimeParser GetSpanishParser(DateTimeParsers parserName)
         {
             var commonConfiguration = new SpanishCommonDateTimeParserConfiguration();
             switch (parserName)
             {
-                case "Date":
+                case DateTimeParsers.Date:
                     return new BaseDateParser(new SpanishDateParserConfiguration(commonConfiguration));
-                case "Time":
+                case DateTimeParsers.Time:
                     return new BaseTimeParser(new SpanishTimeParserConfiguration(commonConfiguration));
-                case "DatePeriod":
+                case DateTimeParsers.DatePeriod:
                     return new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(commonConfiguration));
-                case "TimePeriod":
+                case DateTimeParsers.TimePeriod:
                     return new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(commonConfiguration));
-                case "DateTime":
+                case DateTimeParsers.DateTime:
                     return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(commonConfiguration));
-                case "DateTimePeriod":
+                case DateTimeParsers.DateTimePeriod:
                     return new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
-                case "Duration":
+                case DateTimeParsers.Duration:
                     return new BaseDurationParser(new SpanishDurationParserConfiguration(commonConfiguration));
-                case "Holiday":
+                case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new SpanishHolidayParserConfiguration());
-                case "Set":
+                case DateTimeParsers.Set:
                     return new BaseSetParser(new SpanishSetParserConfiguration(commonConfiguration));
-                case "Merged":
+                case DateTimeParsers.Merged:
                     return new BaseMergedParser(new SpanishMergedParserConfiguration());
             }
-            return null;
+            throw new Exception($"Parser '{parserName}' for Spanish not supported");
         }
 
         private static IModel GetCustomModelFor(string language)
@@ -225,7 +267,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                         AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
                         new NumberExtractor(ChineseNumberMode.ExtractAll));
             }
-            return null;
+            throw new Exception($"Custom Model for '{language}' not supported");
         }
     }
 
@@ -257,21 +299,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public static string GetCulture(string source)
         {
             var langStr = source.Substring(source.LastIndexOf('_') + 1);
-            switch (langStr)
-            {
-                case "Chs":
-                    return Culture.Chinese;
-                case "Spa":
-                    return Culture.Spanish;
-                case "Eng":
-                    return Culture.English;
-                case "Por":
-                    return Culture.Portuguese;
-                case "Fra":
-                    return Culture.French;
-                default:
-                    return Culture.English;
-            }
+            return Culture.SupportedCultures.First(c => c.CultureName == langStr).CultureCode;
         }
 
         public static bool EvaluateSpec(TestModel spec, out string message)
@@ -295,19 +323,42 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             return false;
         }
 
-        public static string GetModelName(string source)
+        public static string SanitizeSourceName(string source)
         {
-            return source;
+            return source.Replace("Model", "").Replace("Extractor", "").Replace("Parser", "");
         }
 
-        public static string GetExtractorName(string source)
+        public static Models GetModel(string source)
         {
-            return source.Replace("Base", "").Replace("Extractor", "").Replace("Parser", "");
+            var model = SanitizeSourceName(source);
+            Models modelEnum = Models.Number;
+            if (Enum.TryParse(model, out modelEnum))
+            {
+                return modelEnum;
+            }
+            throw new Exception($"Model '{model}' not supported");
         }
 
-        public static string GetParserName(string source)
+        public static DateTimeParsers GetParser(string source)
         {
-            return source.Replace("Base", "").Replace("Parser", "");
+            var parser = SanitizeSourceName(source);
+            DateTimeParsers parserEnum = DateTimeParsers.Date;
+            if (Enum.TryParse(parser, out parserEnum))
+            {
+                return parserEnum;
+            }
+            throw new Exception($"Parser '{parser}' not supported");
+        }
+
+        public static DateTimeExtractors GetExtractor(string source)
+        {
+            var extractor = SanitizeSourceName(source);
+            DateTimeExtractors extractorEnum = DateTimeExtractors.Date;
+            if (Enum.TryParse(extractor, out extractorEnum))
+            {
+                return extractorEnum;
+            }
+            throw new Exception($"Extractor '{extractor}' not supported");
         }
     }
 }
