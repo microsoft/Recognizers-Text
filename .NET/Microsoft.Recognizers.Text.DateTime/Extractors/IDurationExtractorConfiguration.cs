@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex InExactNumberUnitRegex { get; }
 
+        Regex RelativeDurationUnitRegex { get; }
+
         IExtractor CardinalExtractor { get; }
     }
 }

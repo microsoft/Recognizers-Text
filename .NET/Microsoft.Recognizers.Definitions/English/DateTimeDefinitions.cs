@@ -171,6 +171,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string InExactNumberRegex = @"\b(a few|few|some|several)\b";
 		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
 		public static readonly string RelativeTimeUnitRegex = $@"((({NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
+		public static readonly string RelativeDurationUnitRegex = $@"(((?<={NextPrefixRegex}|{PastPrefixRegex}|{ThisPrefixRegex})\s+({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
 		public const string ConnectorRegex = @"^(,|for|t|around)$";
 		public const string FromToRegex = @"\b(from).+(to)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";

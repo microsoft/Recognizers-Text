@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor DurationExtractor { get; }
 
-        public IParser DurationParser { get; }
+        public IDateTimeParser DurationParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         //TODO implement SinceRegex
         private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public MergedParserChs(IMergedParserConfiguration configuration) : base(configuration) { }
+        public MergedParserChs(IMergedParserConfiguration configuration, DateTimeOptions options) : base(configuration, options) { }
 
         public new ParseResult Parse(ExtractResult er)
         {

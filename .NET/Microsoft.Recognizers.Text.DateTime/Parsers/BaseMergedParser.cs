@@ -9,13 +9,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ParserTypeName = "datetimeV2";
 
         protected readonly IMergedParserConfiguration Config;
+        private readonly DateTimeOptions options;
 
         public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
 
-        public BaseMergedParser(IMergedParserConfiguration configuration)
+        public BaseMergedParser(IMergedParserConfiguration configuration, DateTimeOptions options)
         {
             Config = configuration;
+            this.options = options;
         }
 
         public ParseResult Parse(ExtractResult er)
@@ -131,35 +133,79 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-
-            //change the type at last for the after or before mode
-            pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+            if ((options & DateTimeOptions.SplitDateAndTime) != 0
+                 && ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
+            {
+                pr.Value = DateTimeResolutionForSplit(pr);
+            }
+            else
+            {
+                pr = SetParseResult(pr, hasBefore, hasAfter, hasSince);
+            }
 
             return pr;
         }
 
+        public DateTimeParseResult SetParseResult(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
+        {
+            slot.Value = DateTimeResolution(slot, hasBefore, hasAfter, hasSince);
+            //change the type at last for the after or before mode
+            slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince)}";
+            return slot;
+        }
+
         public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            if (hasBefore || hasAfter || hasSince)
+            if ((options & DateTimeOptions.SplitDateAndTime) != 0)
             {
-                if (type.Equals(Constants.SYS_DATETIME_DATE))
-                {
-                    return Constants.SYS_DATETIME_DATEPERIOD;
-                }
-
-                if (type.Equals(Constants.SYS_DATETIME_TIME))
-                {
-                    return Constants.SYS_DATETIME_TIMEPERIOD;
-                }
-
                 if (type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {
-                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                    return Constants.SYS_DATETIME_TIME;
+                }
+            }
+            else
+            {
+                if (hasBefore || hasAfter || hasSince)
+                {
+                    if (type.Equals(Constants.SYS_DATETIME_DATE))
+                    {
+                        return Constants.SYS_DATETIME_DATEPERIOD;
+                    }
+
+                    if (type.Equals(Constants.SYS_DATETIME_TIME))
+                    {
+                        return Constants.SYS_DATETIME_TIMEPERIOD;
+                    }
+
+                    if (type.Equals(Constants.SYS_DATETIME_DATETIME))
+                    {
+                        return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                    }
                 }
             }
 
             return type;
+        }
+
+        public List<DateTimeParseResult> DateTimeResolutionForSplit(DateTimeParseResult slot)
+        {
+            var results = new List<DateTimeParseResult>();
+            if (((DateTimeResolutionResult) slot.Value).SubDateTimeEntities != null)
+            {
+                var subEntities = ((DateTimeResolutionResult) slot.Value).SubDateTimeEntities;
+                foreach (var subEntity in subEntities)
+                {
+                    var result = (DateTimeParseResult) subEntity;
+                    results.AddRange(DateTimeResolutionForSplit(result));
+                }
+            }
+            else
+            {
+                slot.Value = DateTimeResolution(slot, false, false, false);
+                slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, false, false, false)}";
+                results.Add(slot);
+            }
+            return results;
         }
 
         public SortedDictionary<string, object> DateTimeResolution(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
@@ -184,26 +230,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var islunar = val.IsLunar;
             var mod = val.Mod;
             var comment = val.Comment;
-
-            if (!string.IsNullOrEmpty(timex))
-            {
-                res.Add("timex", timex);
-            }
-
-            if (!string.IsNullOrEmpty(comment))
-            {
-                res.Add("Comment", comment);
-            }
-
-            if (!string.IsNullOrEmpty(mod))
-            {
-                res.Add("Mod", mod);
-            }
-
-            if (!string.IsNullOrEmpty(type))
-            {
-                res.Add("type", typeOutput);
-            }
 
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
@@ -247,11 +273,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (islunar)
-            {
-                res.Add("isLunar", islunar);
-            }
-
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -261,6 +282,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (!string.IsNullOrEmpty(timex))
                     {
                         value.Add("timex", timex);
+                    }
+
+                    if (!string.IsNullOrEmpty(mod))
+                    {
+                        value.Add("mod", mod);
+                    }
+
+                    if (!string.IsNullOrEmpty(comment))
+                    {
+                        value.Add("comment", comment);
+                    }
+
+                    // lunar is only for Chinese
+                    if (islunar)
+                    {
+                        value.Add("islunar", islunar.ToString());
                     }
 
                     if (!string.IsNullOrEmpty(type))
@@ -289,9 +326,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var notResolved = new Dictionary<string, string> {
                     {
                         "timex", timex
-                    }, {
+                    },
+                    {
                         "type", typeOutput
-                    }, {
+                    },
+                    {
                         "value", "not resolved"
                     }
                 };

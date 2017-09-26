@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor DurationExtractor { get; }
 
-        IParser DurationParser { get; }
+        IDateTimeParser DurationParser { get; }
 
         #endregion
 

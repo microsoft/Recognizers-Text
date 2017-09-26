@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     public class TestMergedParser
     {
         private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
-        private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration());
+        private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration(), DateTimeOptions.None);
 
         readonly DateObject referenceDate;
 

@@ -276,6 +276,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = result;
             }
 
+            // handle single duration unit, it is filtered in the extraction that there is a relative word in advance
+            if (TryGetResultFromRegex(config.FollowedUnit, text, "1", out result))
+            {
+                ret = result;
+            }
+
             return ret;
         }
 
