@@ -372,6 +372,7 @@
         "values": [
           {
             "timex": "T20",
+            "mod": "after",
             "type": "timerange",
             "start": "20:00:00"
           }
@@ -395,6 +396,7 @@
         "values": [
           {
             "timex": "T20",
+            "mod": "before",
             "type": "timerange",
             "end": "20:00:00"
           }
@@ -418,6 +420,7 @@
         "values": [
           {
             "timex": "T20",
+            "mod": "since",
             "type": "timerange",
             "start": "20:00:00"
           }

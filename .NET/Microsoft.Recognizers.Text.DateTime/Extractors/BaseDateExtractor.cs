@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
+
             return ret;
         }
 
@@ -62,8 +63,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> NumberWithMonth(string text)
         {
             var ret = new List<Token>();
+
             var er = this.config.OrdinalExtractor.Extract(text);
             er.AddRange(this.config.IntegerExtractor.Extract(text));
+
             foreach (var result in er)
             {
                 var num = 0;
@@ -156,6 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
 
@@ -170,9 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     ret = AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text,
-                        er,
-                        ret,
-                        config.UtilityConfiguration);
+                        er, ret, config.UtilityConfiguration);
                 }
             }
 

@@ -200,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new EnglishMergedParserConfiguration());
+                    return new BaseMergedParser(new EnglishMergedParserConfiguration(), DateTimeOptions.None);
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new SpanishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
-                    return new BaseMergedParser(new SpanishMergedParserConfiguration());
+                    return new BaseMergedParser(new SpanishMergedParserConfiguration(), DateTimeOptions.None);
             }
 
             throw new Exception($"Parser '{parserName}' for Spanish not supported");

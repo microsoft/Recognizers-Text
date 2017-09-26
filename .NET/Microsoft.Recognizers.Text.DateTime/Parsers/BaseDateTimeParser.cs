@@ -221,6 +221,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 wholeMatch = this.config.SimpleTimeOfTodayBeforeRegex.Match(trimedText);
             }
+
             if (wholeMatch.Success && wholeMatch.Length == trimedText.Length)
             {
                 var hourStr = wholeMatch.Groups["hour"].Value;
@@ -264,8 +265,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 sec = time.Second;
                 timeStr = pr.TimexStr;
             }
-
-
+            
             var match = this.config.SpecificTimeOfDayRegex.Match(trimedText);
 
             if (match.Success)
@@ -304,6 +304,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
+
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
             if (this.config.TheEndOfRegex.IsMatch(beforeStr))
             {
