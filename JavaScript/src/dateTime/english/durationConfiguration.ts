@@ -14,16 +14,18 @@ export class EnglishDurationExtractorConfiguration implements IDurationExtractor
     readonly anUnitRegex: RegExp
     readonly inExactNumberUnitRegex: RegExp
     readonly suffixAndRegex: RegExp
+    readonly relativeDurationUnitRegex: RegExp
     readonly cardinalExtractor: EnglishCardinalExtractor
 
     constructor() {
-        this.allRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex, "gis");
-        this.halfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit, "gis");
-        this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex, "gis");
-        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex, "gis");
-        this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex, "gis");
+        this.allRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AllRegex);
+        this.halfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.HalfRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.DurationFollowedUnit);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDurationUnit);
+        this.anUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AnUnitRegex);
+        this.inExactNumberUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InExactNumberUnitRegex);
+        this.suffixAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SuffixAndRegex);
+        this.relativeDurationUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeDurationUnitRegex)
         this.cardinalExtractor = new EnglishCardinalExtractor();
     }
 }
