@@ -8,6 +8,15 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumberFrench
     {
+
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.French, typeof(NumberModel));
+            TestWriter.Close(TestCulture.French, typeof(PercentModel));
+            TestWriter.Close(TestCulture.French, typeof(OrdinalModel));
+        }
+
         private void BasicTest(IModel model, string source, string value)
         {
             var resultStr = model.Parse(source);
@@ -15,6 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(source.Trim(), resultJson[0].Text);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write(TestCulture.French, model, source, resultStr);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -24,6 +34,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(extractSrc, resultJson[0].Text);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write(TestCulture.French, model, source, resultStr);
         }
 
         private void MultiTest(IModel model, string source, int count)
@@ -31,6 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
+            TestWriter.Write(TestCulture.French, model, source, resultStr);
         }
        
         [TestMethod]

@@ -7,6 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         private readonly BaseHolidayExtractor extractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.English, typeof(BaseHolidayExtractor));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -14,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         [TestMethod]

@@ -1,0 +1,77 @@
+[{
+  "Input": "两年",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两年",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "6 天",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 天",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "7 周",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 周",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "5 小时",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 小时",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "三年半",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三年半",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "三天半",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三天半",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "三个月半",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三个月半",
+      "Type": "duration"
+    }
+  ]
+}
+]

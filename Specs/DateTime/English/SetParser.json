@@ -1,0 +1,621 @@
+[{
+  "Input": "I'll leave weekly",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.7590459-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "weekly",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "set": "Set: P1W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave biweekly",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8137152-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "biweekly",
+      "Type": "set",
+      "Value": {
+        "Timex": "P2W",
+        "FutureResolution": {
+          "set": "Set: P2W"
+        },
+        "PastResolution": {
+          "set": "Set: P2W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave daily",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8147468-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "daily",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "set": "Set: P1D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every day",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8177267-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every day",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "set": "Set: P1D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each month",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8207441-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each month",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "set": "Set: P1M"
+        },
+        "PastResolution": {
+          "set": "Set: P1M"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave annually",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8228249-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "annually",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "set": "Set: P1Y"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave annual",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8237836-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "annual",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "set": "Set: P1Y"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each two days",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8293623-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each two days",
+      "Type": "set",
+      "Value": {
+        "Timex": "P2D",
+        "FutureResolution": {
+          "set": "Set: P2D"
+        },
+        "PastResolution": {
+          "set": "Set: P2D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every three week",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8867567-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every three week",
+      "Type": "set",
+      "Value": {
+        "Timex": "P3W",
+        "FutureResolution": {
+          "set": "Set: P3W"
+        },
+        "PastResolution": {
+          "set": "Set: P3W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave 3pm every day",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.8927373-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm every day",
+      "Type": "set",
+      "Value": {
+        "Timex": "T15",
+        "FutureResolution": {
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "set": "Set: T15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave 3pm each day",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.9053423-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm each day",
+      "Type": "set",
+      "Value": {
+        "Timex": "T15",
+        "FutureResolution": {
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "set": "Set: T15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each 4/15",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.9283068-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each 4/15",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-04-15",
+        "FutureResolution": {
+          "set": "Set: XXXX-04-15"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-04-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every monday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.9702136-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every monday",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave each monday 4pm",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.9858688-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "each monday 4pm",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1T16",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1T16"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1T16"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every morning",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:21.9909568-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every morning",
+      "Type": "set",
+      "Value": {
+        "Timex": "TMO",
+        "FutureResolution": {
+          "set": "Set: TMO"
+        },
+        "PastResolution": {
+          "set": "Set: TMO"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every morning at 9am",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.022063-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every morning at 9am",
+      "Type": "set",
+      "Value": {
+        "Timex": "T09",
+        "FutureResolution": {
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "set": "Set: T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every afternoon at 4pm",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.0414038-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every afternoon at 4pm",
+      "Type": "set",
+      "Value": {
+        "Timex": "T16",
+        "FutureResolution": {
+          "set": "Set: T16"
+        },
+        "PastResolution": {
+          "set": "Set: T16"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every night at 9pm",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.059061-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every night at 9pm",
+      "Type": "set",
+      "Value": {
+        "Timex": "T21",
+        "FutureResolution": {
+          "set": "Set: T21"
+        },
+        "PastResolution": {
+          "set": "Set: T21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave every night at 9",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.0757138-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "every night at 9",
+      "Type": "set",
+      "Value": {
+        "Timex": "T21",
+        "FutureResolution": {
+          "set": "Set: T21"
+        },
+        "PastResolution": {
+          "set": "Set: T21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave mornings at 9am",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.0920304-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mornings at 9am",
+      "Type": "set",
+      "Value": {
+        "Timex": "T09",
+        "FutureResolution": {
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "set": "Set: T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on mornings at 9",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.103922-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on mornings at 9",
+      "Type": "set",
+      "Value": {
+        "Timex": "T09",
+        "FutureResolution": {
+          "set": "Set: T09"
+        },
+        "PastResolution": {
+          "set": "Set: T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am every Sunday",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.1556946-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am every Sunday",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-7T09",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am on Sundays",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.1703924-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am on Sundays",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-7T09",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave at 9am Sundays",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.2238849-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9am Sundays",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-7T09",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-7T09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on Mondays",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.2384411-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Mondays",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave on Sundays",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.2465644-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Sundays",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-7",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-7"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-7"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave Sundays",
+  "Context": {
+    "ReferenceDateTime": "2017-09-25T17:45:22.286558-03:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sundays",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-7",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-7"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-7"
+        }
+      }
+    }
+  ]
+}
+]

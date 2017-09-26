@@ -1,0 +1,690 @@
+[{
+  "Input": "I'll leave for 3h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3h",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3D",
+        "FutureResolution": {
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "duration": "259200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3.5years",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3.5years",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3.5Y",
+        "FutureResolution": {
+          "duration": "110376000"
+        },
+        "PastResolution": {
+          "duration": "110376000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 h",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hours",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hrs",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hrs",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hr",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hr",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3D",
+        "FutureResolution": {
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "duration": "259200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 months",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 months",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3M",
+        "FutureResolution": {
+          "duration": "7776000"
+        },
+        "PastResolution": {
+          "duration": "7776000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3M",
+        "FutureResolution": {
+          "duration": "180"
+        },
+        "PastResolution": {
+          "duration": "180"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 min",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 min",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3M",
+        "FutureResolution": {
+          "duration": "180"
+        },
+        "PastResolution": {
+          "duration": "180"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3.5 second ",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3.5 second",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3.5S",
+        "FutureResolution": {
+          "duration": "3.5"
+        },
+        "PastResolution": {
+          "duration": "3.5"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 123.45 sec",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "123.45 sec",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT123.45S",
+        "FutureResolution": {
+          "duration": "123.45"
+        },
+        "PastResolution": {
+          "duration": "123.45"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two weeks",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P2W",
+        "FutureResolution": {
+          "duration": "1209600"
+        },
+        "PastResolution": {
+          "duration": "1209600"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for twenty min",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty min",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT20M",
+        "FutureResolution": {
+          "duration": "1200"
+        },
+        "PastResolution": {
+          "duration": "1200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for twenty and four hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty and four hours",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT24H",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all week",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "duration": "604800"
+        },
+        "PastResolution": {
+          "duration": "604800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "duration": "2592000"
+        },
+        "PastResolution": {
+          "duration": "2592000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "duration": "31536000"
+        },
+        "PastResolution": {
+          "duration": "31536000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT1H",
+        "FutureResolution": {
+          "duration": "3600"
+        },
+        "PastResolution": {
+          "duration": "3600"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "half year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P0.5Y",
+        "FutureResolution": {
+          "duration": "15768000"
+        },
+        "PastResolution": {
+          "duration": "15768000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "half an year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half an year",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P0.5Y",
+        "FutureResolution": {
+          "duration": "15768000"
+        },
+        "PastResolution": {
+          "duration": "15768000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3-min",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-min",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3M",
+        "FutureResolution": {
+          "duration": "180"
+        },
+        "PastResolution": {
+          "duration": "180"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 30-minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30-minutes",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT30M",
+        "FutureResolution": {
+          "duration": "1800"
+        },
+        "PastResolution": {
+          "duration": "1800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour and a half",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour and a half",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT1.5H",
+        "FutureResolution": {
+          "duration": "5400"
+        },
+        "PastResolution": {
+          "duration": "5400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour and half",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour and half",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT1.5H",
+        "FutureResolution": {
+          "duration": "5400"
+        },
+        "PastResolution": {
+          "duration": "5400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for half hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half hour",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT0.5H",
+        "FutureResolution": {
+          "duration": "1800"
+        },
+        "PastResolution": {
+          "duration": "1800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two hour",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two hour",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT2H",
+        "FutureResolution": {
+          "duration": "7200"
+        },
+        "PastResolution": {
+          "duration": "7200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two and a half hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two and a half hours",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT2.5H",
+        "FutureResolution": {
+          "duration": "9000"
+        },
+        "PastResolution": {
+          "duration": "9000"
+        }
+      }
+    }
+  ]
+}
+]

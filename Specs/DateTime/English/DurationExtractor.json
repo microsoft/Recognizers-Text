@@ -1,0 +1,451 @@
+[{
+  "Input": "I'll leave for 3h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3.5years",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3.5years",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hrs",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hrs",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 hr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hr",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 months",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 months",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3 min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3.5 second ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3.5 second",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 123.45 sec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "123.45 sec",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two weeks",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two weeks",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for twenty min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for twenty and four hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty and four hours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all month",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for a year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "half year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "half an year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half an year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 3-min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 30-minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30-minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for a half hour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a half hour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for half an hour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half an hour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour and half",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour and half",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for an hour and a half",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour and a half",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for half hour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "half hour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two hours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for two and a half hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two and a half hours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "In a week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "In a day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "for an hour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "an hour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "for a month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a month",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for few hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "few hours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for a few minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a few minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for some days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "some days",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for several days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "several days",
+      "Type": "duration"
+    }
+  ]
+}
+]

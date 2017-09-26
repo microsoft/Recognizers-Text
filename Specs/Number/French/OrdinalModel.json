@@ -1,0 +1,328 @@
+[{
+  "Input": "tierce",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tierce",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trois billionieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois billionieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un trillion",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "11eme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11eme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trois millieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois millieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "neuf milliardieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "neuf milliardieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "9000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "22e",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22e",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "22"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "30e",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30e",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "155e",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "155e",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "155"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "255eme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "255eme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "255"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "500000eme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500000eme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "500000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2eme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2eme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "onzieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "onzieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "vingtieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingtieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "vingt-cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingt-cinquieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "octantieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "octantieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "80"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "deux centieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "deux centieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent vingt cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent vingt cinquieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent vingt-cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent vingt-cinquieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "soixante-dixieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "soixante-dixieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "70"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "quatre-vingtieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quatre-vingtieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "80"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "septante-huitieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "septante-huitieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "78"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "nonante-deuxieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nonante-deuxieme",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "92"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trois cent vingt seconde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois cent vingt seconde",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "322"
+      }
+    }
+  ]
+}
+]

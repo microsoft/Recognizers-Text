@@ -1,0 +1,469 @@
+[{
+  "Input": "时间从一月十日到十二日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月十日到十二日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-01-10,XXXX-01-12,P2D)",
+        "FutureResolution": {
+          "startDate": "2018-01-10",
+          "endDate": "2018-01-12"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-10",
+          "endDate": "2017-01-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从2016年一月十日到十二日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从2016年一月十日到十二日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-01-10,2016-01-12,P2D)",
+        "FutureResolution": {
+          "startDate": "2016-01-10",
+          "endDate": "2016-01-12"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-10",
+          "endDate": "2016-01-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从一月19日到20日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月19日到20日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-01-19,XXXX-01-20,P1D)",
+        "FutureResolution": {
+          "startDate": "2018-01-19",
+          "endDate": "2018-01-20"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-19",
+          "endDate": "2017-01-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "从一月十日到20日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月十日到20日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-01-10,XXXX-01-20,P10D)",
+        "FutureResolution": {
+          "startDate": "2018-01-10",
+          "endDate": "2018-01-20"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-10",
+          "endDate": "2017-01-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "明年四月",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明年四月",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018-04",
+        "FutureResolution": {
+          "startDate": "2018-04-01",
+          "endDate": "2018-05-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-04-01",
+          "endDate": "2018-05-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "我们去年5月见过",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "去年5月",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-05",
+        "FutureResolution": {
+          "startDate": "2016-05-01",
+          "endDate": "2016-06-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-05-01",
+          "endDate": "2016-06-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下周末",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周末",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W14-WE",
+        "FutureResolution": {
+          "startDate": "2017-04-01",
+          "endDate": "2017-04-03"
+        },
+        "PastResolution": {
+          "startDate": "2017-04-01",
+          "endDate": "2017-04-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "会议在下周",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W14",
+        "FutureResolution": {
+          "startDate": "2017-03-27",
+          "endDate": "2017-04-03"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-27",
+          "endDate": "2017-04-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下个月完工",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下个月",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-04",
+        "FutureResolution": {
+          "startDate": "2017-04-01",
+          "endDate": "2017-05-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-04-01",
+          "endDate": "2017-05-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "下周如何",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W14",
+        "FutureResolution": {
+          "startDate": "2017-03-27",
+          "endDate": "2017-04-03"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-27",
+          "endDate": "2017-04-03"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "明年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "奥运会在2008年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2008年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2008",
+        "FutureResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2008-01-01",
+          "endDate": "2009-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十月的第一周是国庆节",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十月的第一周",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "XXXX-10-W01",
+        "FutureResolution": {
+          "startDate": "2017-09-25",
+          "endDate": "2017-10-02"
+        },
+        "PastResolution": {
+          "startDate": "2016-10-03",
+          "endDate": "2016-10-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三月二十八日到四月15日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三月二十八日到四月15日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XXXX-03-28,XXXX-04-15,P18D)",
+        "FutureResolution": {
+          "startDate": "2017-03-28",
+          "endDate": "2017-04-15"
+        },
+        "PastResolution": {
+          "startDate": "2016-03-28",
+          "endDate": "2016-04-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "前1周",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "前1周",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-03-15,2017-03-22,P1W)",
+        "FutureResolution": {
+          "startDate": "2017-03-15",
+          "endDate": "2017-03-22"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-15",
+          "endDate": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "上2个月",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上2个月",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-01-22,2017-03-22,P2M)",
+        "FutureResolution": {
+          "startDate": "2017-01-22",
+          "endDate": "2017-03-22"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-22",
+          "endDate": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "后1年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "后1年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-03-23,2018-03-23,P1Y)",
+        "FutureResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2018-03-23"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2018-03-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今年夏天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "今年夏天",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-SU",
+        "FutureResolution": {},
+        "PastResolution": {}
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "今年第一季度",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "今年第一季度",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-01-01,2017-04-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-04-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-04-01"
+        }
+      }
+    }
+  ]
+}
+]

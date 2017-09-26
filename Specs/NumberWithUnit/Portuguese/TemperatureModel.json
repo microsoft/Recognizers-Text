@@ -1,0 +1,682 @@
+[{
+  "Input": "A temperatura externa é de 40 graus Celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40 graus Celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "40",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Faz 90 fahrenheit no Texas",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "90",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Converter 10 celsius em fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "10",
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-5 graus Fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-5 graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "-5",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "6 graus centígrados",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 graus centígrados",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "6",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "98,6 graus f é uma temperatura normal",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98,6 graus f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98,6",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste a temperatura para 30 graus celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30 graus celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "30",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "A temperatura normal é 98,6 graus Fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98,6 graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98,6",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "100 graus f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 graus f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20 Graus c",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 Graus c",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "100 °f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 °f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20 °c",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 °c",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "100,2 Graus Fahrenheit é baixo",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100,2 Graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100,2",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "34,9 centígrado pra fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "34,9 centígrado",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "34,9",
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "converter 200 celsius em fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "200 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "200",
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "convertir 200 K em fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "200 K",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "200",
+        "unit": "Kelvin"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "fahrenheit pra celsius, quantos celsius são 101 fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "101 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "101",
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "50 graus centígrados celsius em fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50 graus centígrados",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "50",
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Poderias converter 51 fahrenheit em graus celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "51 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "51",
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "graus celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Converter 106 graus Fahrenheit em graus centígrados",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "106 graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "106",
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "graus centígrados",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Converter 106 K em graus centígrados",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "106 K",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "106",
+        "unit": "Kelvin"
+      }
+    },
+    {
+      "Text": "graus centígrados",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Converter 45 graus Fahrenheit a Celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "45 graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "45",
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "Celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Como convertir - 20 graus Fahrenheit para Celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "- 20 graus Fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "-20",
+        "unit": "Grau Fahrenheit"
+      }
+    },
+    {
+      "Text": "Celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10,5 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10,5 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "10,5",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20 graus celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 graus celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20,3 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20,3 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20,3",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "34,5 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "34,5 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "34,5",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "A temperatura exterior é de 98 graus",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98 graus",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste o termostato em 85 °",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "85 °",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "85",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste o termostato em 85°",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "85°",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "85",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Aumente a temperatura em 5 graus",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 graus",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "5",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste a temperatura para 70 graus f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70 graus f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "70",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Aumentar a temperatura em 20 grau",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 grau",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste a temperatura a 100 graus",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 graus",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ajuste a temperatura a 100 Kelvin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 Kelvin",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "Kelvin"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Mantenha a temperatura de 75 graus f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75 graus f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "75",
+        "unit": "Grau Fahrenheit"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Deixe que a temperatura fique em 40 centígrados",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40 centígrados",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "40",
+        "unit": "Grau Celsius"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Deixe a temperatura em 50 graus.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50 graus",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "50",
+        "unit": "Grau"
+      }
+    }
+  ]
+}
+]

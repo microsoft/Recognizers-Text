@@ -115,12 +115,17 @@
       <Project>{61205449-bdba-4bf3-8b24-ae059e0b1b61}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Recognizers.Text.Tests\Microsoft.Recognizers.Text.Tests.csproj">
+      <Project>{c163b036-b18d-460e-a66c-bd58890cd246}</Project>
+      <Name>Microsoft.Recognizers.Text.Tests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
       <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
       <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

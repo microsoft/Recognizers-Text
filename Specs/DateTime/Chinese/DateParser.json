@@ -1,0 +1,598 @@
+[{
+  "Input": "2010-01-29",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010-01-29",
+      "Type": "date",
+      "Value": {
+        "Timex": "2010-01-29",
+        "FutureResolution": {
+          "date": "2010-01-29"
+        },
+        "PastResolution": {
+          "date": "2010-01-29"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2010.01.29",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010.01.29",
+      "Type": "date",
+      "Value": {
+        "Timex": "2010-01-29",
+        "FutureResolution": {
+          "date": "2010-01-29"
+        },
+        "PastResolution": {
+          "date": "2010-01-29"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2010/01/29",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010/01/29",
+      "Type": "date",
+      "Value": {
+        "Timex": "2010-01-29",
+        "FutureResolution": {
+          "date": "2010-01-29"
+        },
+        "PastResolution": {
+          "date": "2010-01-29"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2010 01 29",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010 01 29",
+      "Type": "date",
+      "Value": {
+        "Timex": "2010-01-29",
+        "FutureResolution": {
+          "date": "2010-01-29"
+        },
+        "PastResolution": {
+          "date": "2010-01-29"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1987年1月11日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1987年1月11日",
+      "Type": "date",
+      "Value": {
+        "Timex": "1987-01-11",
+        "FutureResolution": {
+          "date": "1987-01-11"
+        },
+        "PastResolution": {
+          "date": "1987-01-11"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "农历2015年十月初一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "农历2015年十月初一",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-10-01",
+        "FutureResolution": {
+          "date": "2015-10-01"
+        },
+        "PastResolution": {
+          "date": "2015-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2015年农历正月初一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015年农历正月初一",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-01-01",
+        "FutureResolution": {
+          "date": "2015-01-01"
+        },
+        "PastResolution": {
+          "date": "2015-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三月初一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三月初一",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-03-01",
+        "FutureResolution": {
+          "date": "2018-03-01"
+        },
+        "PastResolution": {
+          "date": "2017-03-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "正月三十",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "正月三十",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-30",
+        "FutureResolution": {
+          "date": "2018-01-30"
+        },
+        "PastResolution": {
+          "date": "2017-01-30"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "大年初一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大年初一",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2018-01-01"
+        },
+        "PastResolution": {
+          "date": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "大年三十",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大年三十",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-30",
+        "FutureResolution": {
+          "date": "2018-01-30"
+        },
+        "PastResolution": {
+          "date": "2017-01-30"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1月19日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1月19日",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-19",
+        "FutureResolution": {
+          "date": "2018-01-19"
+        },
+        "PastResolution": {
+          "date": "2017-01-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1月19号",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1月19号",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-19",
+        "FutureResolution": {
+          "date": "2018-01-19"
+        },
+        "PastResolution": {
+          "date": "2017-01-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10月12号，星期一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10月12号，星期一",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-10-12",
+        "FutureResolution": {
+          "date": "2017-10-12"
+        },
+        "PastResolution": {
+          "date": "2016-10-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2009年10月12号，星期一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年10月12号，星期一",
+      "Type": "date",
+      "Value": {
+        "Timex": "2009-10-12",
+        "FutureResolution": {
+          "date": "2009-10-12"
+        },
+        "PastResolution": {
+          "date": "2009-10-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "明天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明天",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-23",
+        "FutureResolution": {
+          "date": "2017-03-23"
+        },
+        "PastResolution": {
+          "date": "2017-03-23"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "最近",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "最近",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-22",
+        "FutureResolution": {
+          "date": "2017-03-22"
+        },
+        "PastResolution": {
+          "date": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "星期一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "星期一",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-1",
+        "FutureResolution": {
+          "date": "2017-03-27"
+        },
+        "PastResolution": {
+          "date": "2017-03-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "上周一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上周一",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-13",
+        "FutureResolution": {
+          "date": "2017-03-13"
+        },
+        "PastResolution": {
+          "date": "2017-03-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12号",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12号",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-12",
+        "FutureResolution": {
+          "date": "2017-04-12"
+        },
+        "PastResolution": {
+          "date": "2017-03-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这个星期一",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "这个星期一",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-20",
+        "FutureResolution": {
+          "date": "2017-03-20"
+        },
+        "PastResolution": {
+          "date": "2017-03-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千零四年八月十五",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千零四年八月十五",
+      "Type": "date",
+      "Value": {
+        "Timex": "2004-08-15",
+        "FutureResolution": {
+          "date": "2004-08-15"
+        },
+        "PastResolution": {
+          "date": "2004-08-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千年八月十五",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千年八月十五",
+      "Type": "date",
+      "Value": {
+        "Timex": "2000-08-15",
+        "FutureResolution": {
+          "date": "2000-08-15"
+        },
+        "PastResolution": {
+          "date": "2000-08-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二零零四年八月十五",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二零零四年八月十五",
+      "Type": "date",
+      "Value": {
+        "Timex": "2004-08-15",
+        "FutureResolution": {
+          "date": "2004-08-15"
+        },
+        "PastResolution": {
+          "date": "2004-08-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "去年本月十日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "去年本月十日",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-03-10",
+        "FutureResolution": {
+          "date": "2016-03-10"
+        },
+        "PastResolution": {
+          "date": "2016-03-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "本月十日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "本月十日",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-03-10",
+        "FutureResolution": {
+          "date": "2018-03-10"
+        },
+        "PastResolution": {
+          "date": "2017-03-10"
+        }
+      }
+    }
+  ]
+}
+]

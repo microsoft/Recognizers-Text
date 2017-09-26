@@ -1,0 +1,1890 @@
+[{
+  "Input": "打对折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "对折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "对折",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "陆 点 五 折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "陆 点 五 折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "９成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "９成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "七成 六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "七成 六",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "76%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7.２成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7.２成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7 2 折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 2 折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "72%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六 点 五 成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六 点 五 成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１０ 成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１０ 成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１0 成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１0 成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十 成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十 成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "75折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "9.9折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9.9折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九 九 折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九 九 折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "99%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三点一折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三点一折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "半成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "半成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "半折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "半折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十折",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "9.5成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9.5成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "95%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三成半",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三成半",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "35%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２.５成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２.５成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三八折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三八折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "38%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2成,2.5成,２．１成，２成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    },
+    {
+      "Text": "2.5成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    },
+    {
+      "Text": "２．１成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "21%"
+      }
+    },
+    {
+      "Text": "２成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九成,五成,八点五成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    },
+    {
+      "Text": "五成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    },
+    {
+      "Text": "八点五成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "85%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2折,2.5折,２．１折，２折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    },
+    {
+      "Text": "2.5折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    },
+    {
+      "Text": "２．１折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "21%"
+      }
+    },
+    {
+      "Text": "２折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九折,五五折,八点五折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    },
+    {
+      "Text": "五五折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "55%"
+      }
+    },
+    {
+      "Text": "八点五折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "85%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之２．４",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之２．４",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二三十个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "百分之二三十",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "百分之五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五十    个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十    个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．４个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-22.2%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-22.2%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-22.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２２％",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２２％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "－1２２％",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "－1２２％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "-122%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之22",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "22%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之１２０",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之１２０",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之15Ｋ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之15Ｋ",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之1,111",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之1,111",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1111%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之９，９９９",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之９，９９９",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9999%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2,123个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,123个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二十个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二十个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四点 五个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四点 五个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "4.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之五 十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之五 十",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之一 点五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之一 点五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之５６.２",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之５６.２",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "56.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之１２",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之１２",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之3,000",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之3,000",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之１，１２３",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之１，１２３",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之3.2k",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之3.2k",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3200%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之3.2M",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之3.2M",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "3200000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.56个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12.56个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12.56%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "０.４个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "０.４个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "15,123个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15,123个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１１１，１１１个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１１１，１１１个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "111111%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "25%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "25%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "25%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12k个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12k个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１５k个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１５k个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五十个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "七十五万个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "七十五万个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "750000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾万零五十六点叁叁个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾万零五十六点叁叁个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100056.33%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "75.2个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75.2个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "75个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,075个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,075个百分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1075%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之一百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之一百",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之百",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之一百二十点五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之一百二十点五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之2.4",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之2.4",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之2",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之1,669",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之1,669",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1669%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之５２.５",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之５２.５",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "52.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五百分之2.2",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "上升了百分之2.2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之2.2",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5％",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "５．５％",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "５．５％",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "5.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一 百 五 十 个 百 分 点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一 百 五 十 个 百 分 点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六   个 百 分点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六   个 百 分点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４   个百分 点",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．４   个百分 点",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分之 一百二十点五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分之 一百二十点五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分 之2.4",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分 之2.4",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分之 2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分之 2",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百  分 之 669",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百  分 之 669",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "669%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分 之  ５２.５ k",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分 之  ５２.５ k",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "52500%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分 之 一 百二 十点 五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分 之 一 百二 十点 五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "打對折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "對折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "對折",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "陸 點 五 折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "陸 點 五 折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六 點 五 成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六 點 五 成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "65%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三點一折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三點一折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "31%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九成,五成,八點五成",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    },
+    {
+      "Text": "五成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "50%"
+      }
+    },
+    {
+      "Text": "八點五成",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "85%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九折,五五折,八點五折",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "90%"
+      }
+    },
+    {
+      "Text": "五五折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "55%"
+      }
+    },
+    {
+      "Text": "八點五折",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "85%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二三十個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "一百五十 個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十 個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．４個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2,123個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,123個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二十個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二十個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四點 五個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四點 五個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "4.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之一 點五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之一 點五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.56個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12.56個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12.56%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "０.４個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "０.４個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "0.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "15,123個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15,123個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15123%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１１１，１１１個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１１１，１１１個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "111111%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12k個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12k個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "12000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１５k個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１５k個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "15000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五十個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "七十五萬個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "七十五萬個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "750000%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾萬零五十六點叁叁個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾萬零五十六點叁叁個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100056.33%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "75.2個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75.2個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75.2%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "75個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "75%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,075個百分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,075個百分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "1075%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之一百二十點五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百分之一百二十點五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一 百 五 十 個 百 分 點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一 百 五 十 個 百 分 點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "150%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "六   個 百 分點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "六   個 百 分點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "6%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．４   個百分 點",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．４   個百分 點",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "2.4%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百 分之 一百二十點五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百 分之 一百二十點五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "佰 分 之 一 百二 十點 五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "佰 分 之 一 百二 十點 五",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120.5%"
+      }
+    }
+  ]
+}
+]

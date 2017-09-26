@@ -1,0 +1,1113 @@
+[{
+  "Input": "I'll go back on 15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back April 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "April 22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Jan-1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan-1",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Jan/1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan/1",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back October. 2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "October. 2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back January 12, 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January 12, 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back January 12 of 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January 12 of 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Monday January 12th, 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday January 12th, 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 02/22/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "02/22/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 21/04/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 21/04/16",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/16",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 9-18-15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9-18-15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on 4.22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on 4-22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4-22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back at 4.22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back in 4-22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4-22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on    4/22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4/22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on 22/04",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back       4/22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4/22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 22/04",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 2015/08/12",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015/08/12",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 11/12,2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/12,2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 11/12,16",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/12,16",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 1st Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1st Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 1-Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1-Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 28-Nov",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "28-Nov",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Wed, 22 of Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Wed, 22 of Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the first friday of july",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first friday of july",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the first friday in this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first friday in this month",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back two weeks from now",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two weeks from now",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back next week on Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week on Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Friday next week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on Friday next week",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "past Monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past Monday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues. good news.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Tues",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tues",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back on Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back today",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back yesterday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "yesterday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the day before yesterday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the day before yesterday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the day after tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the day after tomorrow",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the next day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the next day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back next day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back this Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back next Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back last Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back last day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the last day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the last day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back the day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back this week Friday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week Friday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back next week Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back last week Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 15 June 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15 June 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "a baseball on may the eleventh",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "may the eleventh",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back fourth of may",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "fourth of may",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 4th of march",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4th of march",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Jan first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back May twenty-first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May twenty-first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back May twenty one",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May twenty one",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back second of Aug",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second of Aug",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back twenty second of June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty second of June",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back two months ago",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two months ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back two days later",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two days later",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "who did i email a month ago",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a month ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 27 .",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 27",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 21st",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 21st",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the 22nd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the second",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the twenty second",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the twenty second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back for the thirty first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "for the thirty first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back on the 27th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on the 27th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back on the 21st",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on the 21st",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back on 22nd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back on the second!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on the second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I went back on twenty second?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "on twenty second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "the first prize",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "I'll go to the 27th floor",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "Get tickets for the 17th Door Haunted Experience",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "What do I have on Saturday the second",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Saturday the second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "A meeting for Wednesday the 27th with Joe Smith",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Wednesday the 27th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Thursday the 21st",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Thursday the 21st",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Friday the 22nd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Saturday the 23rd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Saturday the 23rd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Friday the 15th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the 15th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Thursday the twenty first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Thursday the twenty first",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Friday the twenty second",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the twenty second",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Friday the fifteen",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday the fifteen",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back Thursday the seventh",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Thursday the seventh",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back second Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back first Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "first Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back third Tuesday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "third Tuesday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back fifth Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "fifth Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back sixth Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sunday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tenth Monday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 20th of next month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20th of next month",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back 31st of this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "31st of this month",
+      "Type": "date"
+    }
+  ]
+}
+]

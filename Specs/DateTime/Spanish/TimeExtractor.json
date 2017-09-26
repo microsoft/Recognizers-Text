@@ -1,0 +1,611 @@
+[{
+  "Input": "Volvere a las 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las siete",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 7pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 7p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 7:56pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 7:56:35pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 7:56:35 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 12:34",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las T12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "T12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 00:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las 00:00:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00:30",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las 7 en punto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 en punto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las siete en punto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete en punto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las 8 de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las 8 de la tarde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 de la tarde",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las 8 de la noche",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 de la noche",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las ocho y media",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho y media",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las 8pm y media",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm y media",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son 30 mins pasadas las ocho",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30 mins pasadas las ocho",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son las ocho y cuarto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho y cuarto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son cuarto pasadas las ocho",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cuarto pasadas las ocho",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son cuarto pasadas de las ocho",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cuarto pasadas de las ocho",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son 9pm menos cuarto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9pm menos cuarto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Faltan 3 minutos para las ocho",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutos para las ocho",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son siete y media en punto",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete y media en punto",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son siete y media de la tarde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete y media de la tarde",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son siete y media de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete y media de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son ocho menos veinticinco de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho menos veinticinco de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son ocho menos veinte de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho menos veinte de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son ocho menos cuarto de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho menos cuarto de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son ocho menos diez de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho menos diez de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son ocho menos cinco de la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ocho menos cinco de la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Son 20 min pasadas las ocho de la tarde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 min pasadas las ocho de la tarde",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere por la tarde a las 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "por la tarde a las 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la tarde a las 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la tarde a las 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la tarde a las 7:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la tarde a las 7:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la tarde a las 7:00:14",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la tarde a las 7:00:14",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la tarde a las siete pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la tarde a las siete pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las siete treinta pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete treinta pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las siete treinta y cinco pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete treinta y cinco pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las once y cinco",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "once y cinco",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere tres minutos para las cinco treinta",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres minutos para las cinco treinta",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere tres minutos antes de las cinco treinta",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres minutos antes de las cinco treinta",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las cinco treinta de la noche",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco treinta de la noche",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las cinco treinta en la noche",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco treinta en la noche",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a las cinco treinta de la madrugada",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco treinta de la madrugada",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la madrugada",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la madrugada",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la mañana",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la mañana",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere al mediodia",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al mediodia",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere al medio dia",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al medio dia",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere a la tarde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a la tarde",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere al noche",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al noche",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere 340pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Volvere 1140 a.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "no hay ninguna pm string despues de la hora",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+]
