@@ -28,13 +28,13 @@
   },
   "ava": {
     "files": [
-      "test/*.test.js"
+      "test/index.js"
     ]
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
     "@types/node": "^8.0.20",
-    "ava": "^0.20.0",
+    "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
     "colors": "^1.1.2",
     "js-yaml": "^3.9.1",

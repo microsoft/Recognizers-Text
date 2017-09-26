@@ -564,7 +564,7 @@ export class BaseDateParser implements IDateTimeParser {
             pastDate = this.computeDate(cardinal, weekday, month, year - 1);
             if (pastDate.getMonth() !== month) pastDate.setDate(pastDate.getDate() - 7);
         }
-        result.timex = '';
+        result.timex = ['XXXX', FormatUtil.toString(month + 1, 2), 'WXX', weekday, '#' + cardinal].join('-');
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;

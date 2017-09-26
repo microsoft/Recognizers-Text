@@ -1,6 +1,9 @@
-import * as IntlPolyfill from 'intl';
+import * as _ from "lodash";
+import { BigNumber } from 'bignumber.js';
+import { LongFormatType } from "./number/models";
 
 export class Culture {
+
   static readonly English: string = "en-us"
   static readonly Chinese: string = "zh-cn"
   static readonly Spanish: string = "es-es"
@@ -8,19 +11,21 @@ export class Culture {
   static readonly French: string = "fr-fr"
 
   static readonly supportedCultures: Array<Culture> = [
-    new Culture("English", Culture.English),
-    new Culture("Chinese", Culture.Chinese),
-    new Culture("Spanish", Culture.Spanish),
-    new Culture("Portuguese", Culture.Portuguese),
-    new Culture("French", Culture.French)
+    new Culture("English", Culture.English, new LongFormatType(',', '.')),
+    new Culture("Chinese", Culture.Chinese, null),
+    new Culture("Spanish", Culture.Spanish, new LongFormatType('.', ',')),
+    new Culture("Portuguese", Culture.Portuguese, null),
+    new Culture("French", Culture.French, null)
   ]
 
   readonly cultureName: string
   readonly cultureCode: string
+  readonly longFormat: LongFormatType
 
-  private constructor(cultureName: string, cultureCode: string) {
+  private constructor(cultureName: string, cultureCode: string, longFormat: LongFormatType) {
     this.cultureName = cultureName
     this.cultureCode = cultureCode
+    this.longFormat = longFormat;
   }
 
   static getSupportedCultureCodes(): Array<string> {
@@ -29,52 +34,47 @@ export class Culture {
 }
 
 export class CultureInfo {
-  readonly name: string;
+  readonly code: string;
 
-  static getCultureInfo(cultureName: string): CultureInfo {
-    return new CultureInfo(cultureName);
+  static getCultureInfo(cultureCode: string): CultureInfo {
+    return new CultureInfo(cultureCode);
   }
 
   constructor(cultureName: string) {
-    this.name = cultureName;
+    this.code = cultureName;
   }
 
-  format(value: number): string {
-    return NumberUtility.format(value, this);
-  }
-}
+  format(value: number | BigNumber): string {
 
-class NumberUtility {
-  static format(value: number, culture: CultureInfo): string {
-    // Default option settings to mimic NET SDK locale behavior
-    let dotNetDefaultFractionDigits = 14;
-    let dotNetDefaultUseGrouping = false;
+    let bigNumber = new BigNumber(value);
+    let s: string;
+    if (bigNumber.decimalPlaces()) {
+      s = bigNumber.toDigits(15, BigNumber.ROUND_HALF_UP).toString();
+    } else {
+      s = bigNumber.toString().toUpperCase();
+    }
 
-    let decimalPlaces = Math.min(NumberUtility.decimalPlaces(value), dotNetDefaultFractionDigits);
-    let polyfillResult = IntlPolyfill.NumberFormat(culture.name, {
-      useGrouping: dotNetDefaultUseGrouping,
-      maximumFractionDigits: decimalPlaces
-    }).format(value);
-    let toStringResult = value.toString().toUpperCase();
+    if (s.indexOf('.') > -1) {
+      // trim leading 0 from decimal places
+      s = _.trimEnd(s, '0');
+    }
 
-    return (polyfillResult.length <= toStringResult.length) ? polyfillResult : toStringResult;
-  }
+    if (s.indexOf('e-') > -1) {
+      // mimic .NET behavior by adding leading 0 to exponential. E.g.: 1E-07
+      let p = s.split('e-');
+      p[1] = p[1].length === 1 ? ('0' + p[1]) : p[1];
+      s = p.join('E-')
+    }
 
-  private static decimalPlaces(n) {
-    // Make sure it is a number and use the builtin number -> string.
-    let s = "" + (+n);
-    // Pull out the fraction and the exponent.
-    let match = /(?:\.(\d+))?(?:[eE]([+\-]?\d+))?$/.exec(s);
-    // NaN or Infinity or integer.
-    // We arbitrarily decide that Infinity is integral.
-    if (!match) { return 0; }
-    // Count the number of digits in the fraction and subtract the
-    // exponent to simulate moving the decimal point left by exponent places.
-    // 1.234e+2 has 1 fraction digit and '234'.length -  2 == 1
-    // 1.234e-2 has 5 fraction digit and '234'.length - -2 == 5
-    return Math.max(
-      0,  // lower limit.
-      (match[1] == '0' ? 0 : (match[1] || '').length)  // fraction length
-      - (+match[2] || 0));  // exponent
+    // TODO: Use BigNumber.toFormat instead
+    let culture = Culture.supportedCultures.find(c => c.cultureCode === this.code);
+    if(culture && culture.longFormat) {
+      return s
+        .split(',')
+        .map(t => t.split('.').join(culture.longFormat.decimalsMark))
+        .join(culture.longFormat.thousandsMark);
+    }
+
+    return s;
   }
 }
