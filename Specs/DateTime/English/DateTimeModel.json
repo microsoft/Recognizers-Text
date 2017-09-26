@@ -424,6 +424,7 @@
         "values": [
           {
             "timex": "2016-11-08",
+            "mod": "since",
             "type": "daterange",
             "start": "2016-11-08"
           }
@@ -447,11 +448,13 @@
         "values": [
           {
             "timex": "XXXX-08",
+            "mod": "since",
             "type": "daterange",
             "start": "2016-08-01"
           },
           {
             "timex": "XXXX-08",
+            "mod": "since",
             "type": "daterange",
             "start": "2017-08-01"
           }
@@ -475,6 +478,7 @@
         "values": [
           {
             "timex": "2016-08",
+            "mod": "since",
             "type": "daterange",
             "start": "2016-08-01"
           }
@@ -692,15 +696,10 @@
         "values": [
           {
             "timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+            "comment": "ampm",
             "type": "datetimerange",
             "start": "2016-11-07 05:00:00",
             "end": "2016-11-07 07:00:00"
-          },
-          {
-            "timex": "(2016-11-07T17,2016-11-07T19,PT2H)",
-            "type": "datetimerange",
-            "start": "2016-11-07 17:00:00",
-            "end": "2016-11-07 19:00:00"
           }
         ]
       }
@@ -752,15 +751,10 @@
         "values": [
           {
             "timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+            "comment": "ampm",
             "type": "datetimerange",
             "start": "2016-11-08 03:00:00",
             "end": "2016-11-08 04:00:00"
-          },
-          {
-            "timex": "(2016-11-08T15:00,2016-11-08T16:00,PT1H)",
-            "type": "datetimerange",
-            "start": "2016-11-08 15:00:00",
-            "end": "2016-11-08 16:00:00"
           }
         ]
       }
@@ -1391,13 +1385,9 @@
         "values": [
           {
             "timex": "T07:30",
+            "comment": "ampm",
             "type": "time",
             "value": "07:30:00"
-          },
-          {
-            "timex": "T19:30",
-            "type": "time",
-            "value": "19:30:00"
           }
         ]
       }
@@ -1652,15 +1642,10 @@
         "values": [
           {
             "timex": "(T04:00,T07,PT3H)",
+            "comment": "ampm",
             "type": "timerange",
             "start": "04:00:00",
             "end": "07:00:00"
-          },
-          {
-            "timex": "(T16:00,T19,PT3H)",
-            "type": "timerange",
-            "start": "16:00:00",
-            "end": "19:00:00"
           }
         ]
       }
@@ -1767,7 +1752,7 @@
 {
   "Input": "I'll go back now",
   "Context": {
-    "ReferenceDateTime": "2017-09-25T17:45:22.3060136-03:00"
+    "ReferenceDateTime": "2017-09-26T19:37:54.4097576+08:00"
   },
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1779,7 +1764,7 @@
           {
             "timex": "PRESENT_REF",
             "type": "datetime",
-            "value": "2017-09-25 17:45:22"
+            "value": "2017-09-26 19:37:54"
           }
         ]
       }

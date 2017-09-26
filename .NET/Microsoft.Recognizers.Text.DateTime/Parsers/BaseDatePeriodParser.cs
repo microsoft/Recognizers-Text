@@ -1,8 +1,6 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -624,7 +622,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         break;
                 }
             }
-            
 
             if (!beginDate.Equals(endDate) || restNowSunday)
             {
