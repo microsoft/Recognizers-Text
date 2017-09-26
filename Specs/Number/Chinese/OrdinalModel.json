@@ -1,0 +1,91 @@
+[{
+  "Input": "第二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "第二百五十",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第２５０",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "第２５０",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第一名第二名第三名第四名",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "第一",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "第二",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "Text": "第三",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    },
+    {
+      "Text": "第四",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第十四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "第十四",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "14"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "第三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "第三",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3"
+      }
+    }
+  ]
+}
+]

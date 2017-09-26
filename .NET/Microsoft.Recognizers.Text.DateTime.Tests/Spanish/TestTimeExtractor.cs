@@ -7,6 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     {
         private readonly BaseTimeExtractor extractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseTimeExtractor));
+        }
+
+
         public void BasicTest(string text, int start, int length, int expected = 1)
         {
             var results = extractor.Extract(text);
@@ -14,12 +21,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
 
             if (expected < 1)
             {
+                TestWriter.Write(TestCulture.Spanish, extractor, text);
                 return;
             }
 
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, results[0].Type);
+            TestWriter.Write(TestCulture.Spanish, extractor, text, results);
         }
 
         public void BasicNegativeTest(string text)

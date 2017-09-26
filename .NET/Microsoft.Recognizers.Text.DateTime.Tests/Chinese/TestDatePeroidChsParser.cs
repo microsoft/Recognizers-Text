@@ -13,6 +13,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly DatePeriodExtractorChs extractor = new DatePeriodExtractorChs();
         private readonly DatePeriodParserChs parser = new DatePeriodParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(DatePeriodParserChs));
+        }
+
         public TestDatePeriodChsParser()
         {
             refTime = new DateObject(2017, 3, 22);
@@ -25,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var pr = parser.Parse(er[0], refTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, pr.Type);
             Assert.AreEqual(timex, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.Chinese, parser, refTime, text, pr);
         }
 
         [TestMethod]

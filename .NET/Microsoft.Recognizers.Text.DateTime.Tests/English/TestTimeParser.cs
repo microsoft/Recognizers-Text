@@ -10,6 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         readonly BaseTimeExtractor extractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
         readonly IDateTimeParser parser = new TimeParser(new EnglishTimeParserConfiguration(new EnglishCommonDateTimeParserConfiguration()));
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.English, typeof(TimeParser));
+        }
+
         public void BasicTest(string text, DateObject date)
         {
             var er = extractor.Extract(text);
@@ -17,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
+            TestWriter.Write(TestCulture.English, parser, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -26,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_TIME, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.English, parser, text, pr);
         }
 
         [TestMethod]

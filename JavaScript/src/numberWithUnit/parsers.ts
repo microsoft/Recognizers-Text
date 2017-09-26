@@ -23,7 +23,7 @@ export class NumberWithUnitParser implements IParser {
         }
         else // if there is no unitResult, means there is just unit
         {
-            numberResult = { start: -1, length: 0, text: '', type: '' };
+            numberResult = { start: -1, length: 0, text: null, type: null };
         }
         // key contains units
         let key = extResult.text;
@@ -64,7 +64,7 @@ export class NumberWithUnitParser implements IParser {
                 ? this.config.internalNumberParser.parse(numberResult)
                 : null;
 
-            let resolutionStr = numValue ? numValue.resolutionStr : '';
+            let resolutionStr = numValue ? numValue.resolutionStr : null;
 
             ret.value =
                 {

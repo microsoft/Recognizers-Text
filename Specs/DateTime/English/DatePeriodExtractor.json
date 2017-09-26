@@ -1,0 +1,2475 @@
+[{
+  "Input": "I'll be out in Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jan 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jan, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Feb",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Feb",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Feb",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Feb",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Feb",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Feb",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Feb",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Feb 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Feb, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Mar",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mar",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Mar",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Mar",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Mar",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Mar",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Mar",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Mar",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Mar 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mar 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Mar, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mar, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Apr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Apr",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Apr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Apr",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Apr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Apr",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Apr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Apr",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Apr 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Apr 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Apr, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Apr, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in May",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this May",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of May",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of May",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing May 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing May, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Jun",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jun",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Jun",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Jun",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Jun",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Jun",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Jun",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Jun",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jun 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jun 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jun, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jun, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Jul",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jul",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Jul",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Jul",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Jul",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Jul",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Jul",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Jul",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jul 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jul 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Jul, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jul, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Aug",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Aug",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Aug",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Aug",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Aug",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Aug",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Aug",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Aug",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Aug 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Aug 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Aug, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Aug, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Sep",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sep",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Sep",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Sep",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Sep",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Sep",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Sep",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Sep",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Sep 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sep 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Sep, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sep, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Sept 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sept 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Sept, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sept, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Oct",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Oct",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Oct",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Oct",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Oct",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Oct",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Oct",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Oct 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Oct, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Nov",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Nov",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Nov",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Nov",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Nov",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Nov 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Nov 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Nov, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Nov, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in Dec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Dec",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Dec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Dec",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of Dec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of Dec",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of Dec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of Dec",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Dec 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Dec 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing Dec, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Dec, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in January",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this January",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this January",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of January",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of January",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of January",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of January",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing January 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing January, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in February",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "February",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this February",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this February",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of February",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of February",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of February",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of February",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing February 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "February 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing February, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "February, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing March 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing March, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in April",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "April",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this April",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this April",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of April",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of April",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of April",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of April",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing April 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "April 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing April, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "April, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this June",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of June",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of June",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of June",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing June 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing June, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in July",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "July",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this July",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this July",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of July",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of July",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of July",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of July",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing July 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "July 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing July, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "July, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in August",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "August",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this August",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this August",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of August",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of August",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of August",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of August",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing August 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "August 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing August, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "August, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in September",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this September",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of September",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of September",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing September 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing September, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in October",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "October",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this October",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this October",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of October",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of October",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of October",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of October",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing October 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "October 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing October, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "October, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in November",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this November",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of November",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of November",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of November",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing November 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing November, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in December",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "December",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this December",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this December",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out month of December",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of December",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the month of December",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of December",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing December 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "December 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I was missing December, 2001",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "December, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Calendar for the month of September.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month of September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 4 to 22 this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 4 to 22 this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 4-23 in next month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 4-23 in next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 3 until 12 of Sept hahaha",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3 until 12 of Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 4 to 23 next month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 to 23 next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 4 till 23 of this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 till 23 of this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 4 and 22 this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 4 and 22 this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 3 and 12 of Sept hahaha",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 3 and 12 of Sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between september 4th through september 8th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between september 4th through september 8th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between November 15th through 19th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between November 15th through 19th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between November 15th through the 19th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between November 15th through the 19th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between November the 15th through 19th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between November the 15th through 19th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 4 to 22 January, 2017",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 4 to 22 January, 2017",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 4-22 January, 2017",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 4-22 January, 2017",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out on this week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out September",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out last sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last sept",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out next june",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next june",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out june 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "june 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out june next year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "june next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this weekend",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third week of this month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third week of this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the last week of july",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the last week of july",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "schedule camping for Friday through Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday through Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out next 3 days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next 3 days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out next 3 months",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next 3 months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in 3 year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in 3 years",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 years",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in 3 weeks",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in 3 months",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 months",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out past 3 weeks",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out last 3year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last 3year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out last year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out past month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out previous 3 weeks",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "previous 3 weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "past few weeks",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past few weeks",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "past several days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past several days",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out Oct. 2 to October 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct. 2 to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out January 12, 2016 - 02/22/2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "January 12, 2016 - 02/22/2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 1st Jan until Wed, 22 of Jan",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1st Jan until Wed, 22 of Jan",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out today till tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today till tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out today to October 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out Oct. 2 until the day after tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct. 2 until the day after tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out today until next Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "today until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out this Friday until next Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Friday until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from Oct. 2 to October 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Oct. 2 to October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 2015/08/12 until October 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2015/08/12 until October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from today till tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from today till tomorrow",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from this Friday until next Sunday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from this Friday until next Sunday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between Oct. 2 and October 22",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between Oct. 2 and October 22",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November 19-20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November 19-20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November 19 to 20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November 19 to 20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out November between 19 and 20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "November between 19 and 20",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third quarter of 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third quarter of 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third quarter this year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third quarter this year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2016 the third quarter",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016 the third quarter",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2015.3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015.3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2015-3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015-3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 2015/3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015/3",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out 3/2015",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3/2015",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third week of 2027",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third week of 2027",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third week next year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third week next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave this summer",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave next spring",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next spring",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave the summer",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave summer",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "summer",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave summer 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "summer 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave summer of 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "summer of 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "upcoming month holidays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "upcoming month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "next month holidays",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "week of september.15th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "week of september.15th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "month of september.15th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "month of september.15th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave over the weekend",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the weekend",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of the week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of the week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of my week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of my week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest the week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest the week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of this week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest current week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest current week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of the month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of the month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave rest of the year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "rest of the year",
+      "Type": "daterange"
+    }
+  ]
+}
+]

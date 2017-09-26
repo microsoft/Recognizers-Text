@@ -6,12 +6,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
     [TestClass]
     public class TestNumberWithUnitPortuguese
     {
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Portuguese, typeof(AgeModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(CurrencyModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(DimensionModel));
+            TestWriter.Close(TestCulture.Portuguese, typeof(TemperatureModel));
+        }
+
         private void BasicTest(IModel model, string source, string value)
         {
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(1, resultJson.Count);
             Assert.AreEqual(value, resultJson.First().Resolution["value"] + " " + resultJson.First().Resolution["unit"]);
+            TestWriter.Write(TestCulture.Portuguese, model, source, resultStr);
         }
 
         private void BasicTest(IModel model, string source, string[] values)
@@ -20,6 +30,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             Assert.AreEqual(values.Length, results.Count);
             var resultsValues = results.Select(x => GetStringValue(x)).ToArray();
             CollectionAssert.AreEqual(values, resultsValues);
+            TestWriter.Write(TestCulture.Portuguese, model, source, results);
         }
 
         private string GetStringValue(ModelResult source)

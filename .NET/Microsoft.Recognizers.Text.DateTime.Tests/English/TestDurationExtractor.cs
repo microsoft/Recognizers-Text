@@ -7,6 +7,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     {
         private readonly BaseDurationExtractor extractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.English, typeof(BaseDurationExtractor));
+        }
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
@@ -14,6 +20,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DURATION, results[0].Type);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         [TestMethod]

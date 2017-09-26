@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -42,9 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public static DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, 
-            System.DateTime referenceTime, 
+            DateObject referenceTime, 
             IExtractor durationExtractor,
-            IParser durationParser, 
+            IDateTimeParser durationParser, 
             IImmutableDictionary<string, string> unitMap,
             Regex unitRegex,
             IDateTimeUtilityConfiguration utilityConfiguration,
@@ -54,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationRes = durationExtractor.Extract(text);
             if (durationRes.Count > 0)
             {
-                var pr = durationParser.Parse(durationRes[0]);
+                var pr = durationParser.Parse(durationRes[0], referenceTime);
                 var match = unitRegex.Match(text);
                 if (match.Success)
                 {
@@ -78,7 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         double number = 0;
                         if (double.TryParse(numStr, out number))
                         {
-                            return GetAgoLaterResult(number,
+                            return GetAgoLaterResult(
+                                pr,
+                                number,
                                 unitMap,
                                 srcUnit,
                                 afterStr,
@@ -93,7 +96,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private static DateTimeResolutionResult GetAgoLaterResult(double number,
+        private static DateTimeResolutionResult GetAgoLaterResult(
+            DateTimeParseResult durationParseResult, 
+            double number,
             IImmutableDictionary<string, string> unitMap,
             string srcUnit,
             string afterStr,
@@ -108,17 +113,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var unitStr = unitMap[srcUnit];
                 var numStr = number.ToString(CultureInfo.InvariantCulture);
+                var result = new DateTimeResolutionResult(); 
+
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.AgoRegex))
                 {
                     if (mode.Equals(AgoLaterMode.Date))
                     {
-                        return GetDateResult(unitStr, numStr, referenceTime, false);
+                        result = GetDateResult(unitStr, numStr, referenceTime, false);
+                    }
+                    else if (mode.Equals(AgoLaterMode.DateTime))
+                    {
+                        result = GetDateTimeResult(unitStr, numStr, referenceTime, false);
                     }
 
-                    if (mode.Equals(AgoLaterMode.DateTime))
-                    {
-                        return GetDateTimeResult(unitStr, numStr, referenceTime, false);
-                    }
+                    ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.beforeMod;
+                    result.SubDateTimeEntities = new List<object> { durationParseResult };
+                    return result;
                 }
 
                 if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)
@@ -126,13 +136,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (mode.Equals(AgoLaterMode.Date))
                     {
-                        return GetDateResult(unitStr, numStr, referenceTime, true);
+                        result = GetDateResult(unitStr, numStr, referenceTime, true);
+                    }
+                    else if (mode.Equals(AgoLaterMode.DateTime))
+                    {
+                        result = GetDateTimeResult(unitStr, numStr, referenceTime, true);
                     }
 
-                    if (mode.Equals(AgoLaterMode.DateTime))
-                    {
-                        return GetDateTimeResult(unitStr, numStr, referenceTime, true);
-                    }
+                    ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.afterMod;
+                    result.SubDateTimeEntities = new List<object> { durationParseResult };
+                    return result;
                 }
             }
             return ret;

@@ -267,11 +267,11 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
                     innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue.item1)
-                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue.item2);
+                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue[0])
+                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue[1]);
                     innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue.item1)
-                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue.item2);
+                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue[0])
+                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue[1]);
                 } else {
                     innerResult.futureResolution = new Map<string, string>();
                     innerResult.pastResolution = new Map<string, string>();
@@ -790,7 +790,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
         if (weekday === 0) weekday = 7;
-        if (weekday < firstDay.getDay()) firstWeekday = DateUtils.next(firstDay, weekday);
+        let firstDayOfWeek = firstDay.getDay() !== 0 ? firstDay.getDay() : 7;
+        if (weekday < firstDayOfWeek) firstWeekday = DateUtils.next(firstDay, weekday);
         firstWeekday.setDate(firstWeekday.getDate() + (7 * (cardinal - 1)));
         return firstWeekday;
     }

@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor DateTimeExtractor { get; }
 
+        IExtractor TimePeriodExtractor { get; }
+
         IExtractor DurationExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
@@ -22,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeParser { get; }
 
         IDateTimeParser DateTimeParser { get; }
+
+        IDateTimeParser TimePeriodParser { get; }
 
         IDateTimeParser DurationParser { get; }
 

@@ -11,6 +11,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly SetExtractorChs extractor = new SetExtractorChs();
         private readonly SetParserChs parser = new SetParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(SetParserChs));
+        }
+
         public void BasicTest(string text, string timex)
         {
             var er = extractor.Extract(text);
@@ -18,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var pr = parser.Parse(er[0]);
             Assert.AreEqual(Constants.SYS_DATETIME_SET, pr.Type);
             Assert.AreEqual(timex, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.Chinese, parser, text, pr);
         }
 
         [TestMethod]

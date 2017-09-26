@@ -189,7 +189,7 @@ export class MatchingUtil {
 }
 
 export class FormatUtil {
-    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp("(?<nlb>P)T\d{2}", "gis");
+    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp(String.raw`(?<!P)T\d{2}`, "gis");
 
     // Emulates .NET ToString("D{size}")
     public static toString(num: number, size: number): string {
@@ -246,9 +246,8 @@ export class FormatUtil {
         let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
-            if (lastPos !== match.index)
-            { split.push(timeStr.substring(lastPos, match.index)); }
-            split.push(timeStr.substring(match.index, match.length));
+            if (lastPos !== match.index) split.push(timeStr.substring(lastPos, match.index));
+            split.push(timeStr.substring(match.index, match.index + match.length));
             lastPos = match.index + match.length;
         });
 
@@ -262,7 +261,7 @@ export class FormatUtil {
             }
         }
 
-        return split.join();
+        return split.join('');
     }
 
     public static toPm(timeStr: string): string {
@@ -346,7 +345,11 @@ export class DateUtils {
     }
 
     static totalHours(from: Date, to: Date): number {
-        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneHour);
+        // Fix to mimic .NET's Convert.ToInt32()
+        // C#: Math.Round(4.5) == 4
+        // C#: Convert.ToInt32(4.5) == 4
+        // JS: Math.round(4.5) == 5 !!
+        return Math.round(Math.abs(from.getTime() - to.getTime() - 0.00001) / this.oneHour);
     }
 
     static totalSeconds(from: Date, to: Date): number {
@@ -366,11 +369,9 @@ export class DateUtils {
     }
 
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
-        let date = new Date(Date.UTC(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate()));
-        date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
-        let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-        let weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-        return { weekNo: weekNo, year: date.getUTCFullYear() }
+        let onejan = new Date(referenceDate.getFullYear(), 0, 1);
+        let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+        return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
     static minValue(): Date { 

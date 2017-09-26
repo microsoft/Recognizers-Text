@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -128,35 +127,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // The "ampm" only occurs in time, don't have to consider it here
                 if (string.IsNullOrEmpty(leftDesc))
                 {
+
                     bool rightAmValid = !string.IsNullOrEmpty(rightDesc) &&
                                             config.UtilityConfiguration.AmDescRegex.Match(rightDesc.ToLower()).Success;
                     bool rightPmValid = !string.IsNullOrEmpty(rightDesc) &&
                                     config.UtilityConfiguration.PmDescRegex.Match(rightDesc.ToLower()).Success;
+
                     if (!string.IsNullOrEmpty(amStr) || rightAmValid)
-                {
+                    {
                         
-                    if (beginHour >= 12)
-                    {
-                        beginHour -= 12;
+                        if (beginHour >= 12)
+                        {
+                            beginHour -= 12;
+                        }
+                        if (endHour >= 12)
+                        {
+                            endHour -= 12;
+                        }
+
+                        isValid = true;
+
                     }
-                    if (endHour >= 12)
-                    {
-                        endHour -= 12;
-                    }
-                    isValid = true;
-                }
                     else if (!string.IsNullOrEmpty(pmStr) || rightPmValid)
-                {
-                    if (beginHour < 12)
                     {
-                        beginHour += 12;
+
+                        if (beginHour < 12)
+                        {
+                            beginHour += 12;
+                        }
+                        if (endHour < 12)
+                        {
+                            endHour += 12;
+                        }
+
+                        isValid = true;
+
                     }
-                    if (endHour < 12)
-                    {
-                        endHour += 12;
-                    }
-                    isValid = true;
-                }
                 }
 
                 if (isValid)
@@ -175,6 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
             }
+
             return ret;
         }
 
@@ -182,6 +189,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
+
             var ers = this.config.TimeExtractor.Extract(text);
             if (ers.Count != 2)
             {
@@ -196,19 +204,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
+            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
+            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
+
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm") 
+                && endTime <= beginTime && endTime.Hour<12)
+            {
+                endTime = endTime.AddHours(12);
+                ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
+            }
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
 
-            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
-            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
+            
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm"))
             {
                 ret.Comment = "ampm";
             }
+
+            ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
             return ret;
         }
@@ -235,6 +254,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hasEarly = true;
                     ret.Comment = "early";
                 }
+
                 if (!hasEarly && !string.IsNullOrEmpty(match.Groups["late"].Value))
                 {
                     var late = match.Groups["late"].Value;

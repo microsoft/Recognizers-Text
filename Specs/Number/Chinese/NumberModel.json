@@ -1,0 +1,4067 @@
+[{
+  "Input": "两百点两",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200"
+      }
+    },
+    {
+      "Text": "两",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一点两小时的会议",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "两",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一只",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十斤",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一切",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "九年八吨",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9"
+      }
+    },
+    {
+      "Text": "八",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "肆佰陸拾",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "肆佰陸拾",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "460"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十 余 万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十 余 万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "152"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹佰伍拾",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹佰伍拾",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "150"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千四百五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千四百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负三十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负三十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-32"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "万",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "万万",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10万万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10万万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4.78万亿",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.78万亿",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4780000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7 万5 千4 百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 万5 千4 百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "75400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "40k",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40k",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二十 億",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二十 億",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "４，５６５",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "４，５６５",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4565"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四百五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千零一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千零一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1001"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百零一万一千",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百零一万一千",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1011000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千两百三十四万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千两百三十四万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12340000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五亿零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五亿零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "500000006"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "七十八万五佰零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "七十八万五佰零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "780506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "肆拾肆",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "肆拾肆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "44"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "倆千两百贰拾二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "倆千两百贰拾二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5万4千6百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5万4千6百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "54600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5亿1万4千6百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5亿1万4千6百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "500014600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-10000",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-10000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一打",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一打",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾万零五十六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾万零五十六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100056"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九百九十九",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九百九十九",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "999"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九百九",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九百九",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "990"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千零五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千零五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1050"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千零五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千零五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1005"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千陆",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千陆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一万三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一万三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "13000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一万二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一万二百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一万零二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一万零二百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九万四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九万四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "94000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九十二万四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九十二万四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "924000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九万零四百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九万零四百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "90400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九百万零四百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九百万零四百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9000400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千零五万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千零五万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40050000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千万零六千",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千万零六千",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40006000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四亿",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四亿",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四亿五千六百四十二万零一十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四亿五千六百四十二万零一十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "456420015"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四万五千六百二十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四万五千六百二十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "45622"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五兆六十二亿四万五千二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五兆六十二亿四万五千二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5006200045200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五十五兆一十二亿四万五千二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五十五兆一十二亿四万五千二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "55001200045200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十万柒仟捌佰伍拾肆",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十万柒仟捌佰伍拾肆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "107854"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "半百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "半百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "50"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾六万零五百零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾六万零五百零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "160506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾亿零六万零五百零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾亿零六万零五百零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000060506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百万零四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百万零四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000004"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四十万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四十万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千零四万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千零四万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四十五亿四千零四万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四十五亿四千零四万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4540040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负四十五亿零四百零四万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负四十五亿零四百零四万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-4504040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负四百零五亿零四百零四万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负四百零五亿零四百零四万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-40504040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四万万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四万万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五十打",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五十打",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "百三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "130"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1, 234, 567",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二百五, 二百五, 还有二百五。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1502222, 二百五, 还有二分之。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1502222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1502222"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "199个",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "199",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "199"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,050,000,000",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,050,000,000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1050000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千三百五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千三百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2350"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百 五 十 二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百 五 十 二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "152"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千 四 百 五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千 四 百 五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7万 5千 4百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7万 5千 4百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "75400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三千 八百 九十六 万 四千 九百 六十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三千 八百 九十六 万 四千 九百 六十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "38964965"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三千 九百 六十五 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三千 九百 六十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3965"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五百 余万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百 余万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千多万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千多万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十多万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十多万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二十几万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二十几万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百零几万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百零几万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一千五百零几万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千五百零几万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "15000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百 二 十 几亿",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百 二 十 几亿",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三双",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三双",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百对",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百对",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十双",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十双",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五十对",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五十对",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "300"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十打苹果",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十打",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "120"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１９９１年１月１６日晚巴黎时间２０点：法国总统密特朗发表电视讲话，宣布和平解决海湾危机已经让位于战争，法国已经作好一切战斗准备。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１９９１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1991"
+      }
+    },
+    {
+      "Text": "１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "１６",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "16"
+      }
+    },
+    {
+      "Text": "２０",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "500余万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500余万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "八千 三百 八十五 万 二千 三百 二十六 点三三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "八千 三百 八十五 万 二千 三百 二十六 点三三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "83852326.33"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2^5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2^5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "32"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2e5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2e5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四百多",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两双",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两双",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百五     ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "150"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十 余 萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十 余 萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百五十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百五十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "152"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩千四百五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩千四百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負三十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負三十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-32"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "萬",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "萬萬",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "10萬萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10萬萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4.78萬億",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.78萬億",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4780000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7 萬5 千4 百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 萬5 千4 百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "75400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千零壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千零壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1001"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百零壹萬壹千",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百零壹萬壹千",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1011000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千兩百三十四萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千兩百三十四萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12340000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五億零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五億零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "500000006"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "七十八萬五佰零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "七十八萬五佰零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "780506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩千兩百貳拾二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩千兩百貳拾二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5萬4千6百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5萬4千6百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "54600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5億1萬4千6百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5億1萬4千6百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "500014600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹打",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹打",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾萬零五十六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾萬零五十六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100056"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千零五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千零五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1050"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千零五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千零五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1005"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1600"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹萬三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹萬三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "13000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹萬二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹萬二百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹萬零二百五十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹萬零二百五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九萬四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九萬四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "94000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九十二萬四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九十二萬四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "924000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九萬零四百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九萬零四百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "90400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九百萬零四百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九百萬零四百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9000400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千零五萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千零五萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40050000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千萬零六千",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千萬零六千",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40006000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四億",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四億",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四億五千六百四十二萬零壹十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四億五千六百四十二萬零壹十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "456420015"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四萬五千六百二十二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四萬五千六百二十二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "45622"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五兆六十二億四萬五千二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五兆六十二億四萬五千二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5006200045200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五十五兆壹十二億四萬五千二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五十五兆壹十二億四萬五千二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "55001200045200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十萬柒仟捌佰伍拾肆",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十萬柒仟捌佰伍拾肆",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "107854"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾六萬零五百零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾六萬零五百零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "160506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "拾億零六萬零五百零六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "拾億零六萬零五百零六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000060506"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百萬零四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百萬零四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000004"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四十萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四十萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千零四萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千零四萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四十五億四千零四萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四十五億四千零四萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4540040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負四十五億零四百零四萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負四十五億零四百零四萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-4504040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負四百零五億零四百零四萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負四百零五億零四百零四萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-40504040000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四萬萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四萬萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "5,236",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5,236",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5236"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二百五, 二百五, 還有二百五。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1502222, 二百五, 還有二分之。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1502222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1502222"
+      }
+    },
+    {
+      "Text": "二百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "250"
+      }
+    },
+    {
+      "Text": "二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "199個",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "199",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "199"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩千三百五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩千三百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2350"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百 五 十 二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百 五 十 二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "152"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩千 四 百 五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩千 四 百 五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2450"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "7萬 5千 4百",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7萬 5千 4百",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "75400"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三千 八百 九十六 萬 四千 九百 六十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三千 八百 九十六 萬 四千 九百 六十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "38964965"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五百 余萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百 余萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千多萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千多萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十多萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十多萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "100000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二十幾萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二十幾萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百零幾萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百零幾萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹千五百零幾萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹千五百零幾萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "15000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百 二 十 幾億",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百 二 十 幾億",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "12000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三雙",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三雙",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百對",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百對",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十雙",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十雙",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百五十對",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百五十對",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "300"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十打蘋果",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十打",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "120"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１９９１年１月１６日晚巴黎時間２０點：法國總統密特朗發表電視講話，宣布和平解抉海灣危機已經讓位於戰爭，法國已經作好壹切戰鬥準備。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１９９１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1991"
+      }
+    },
+    {
+      "Text": "１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "１６",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "16"
+      }
+    },
+    {
+      "Text": "２０",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "500余萬",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500余萬",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "八千 三百 八十五 萬 二千 三百 二十六 點三三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "83852326.33"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "兩雙",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "兩雙",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百五     ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "150"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "百分之五十五点五七九",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "百分之十万零六百五十一",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "六千零五十一个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "六百一十一点二五五个百分点",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "负六点六",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负六点六",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-6.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十五点七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十五点七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "15.7"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１１.92亿",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１１.92亿",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1192000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．２",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．２",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２．２亿",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２．２亿",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "220000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1000  万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1000  万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "21.2E0",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21.2E0",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "21.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2^-1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四百 点 五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四百 点 五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "400.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "零点五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "零点五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10.233",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10.233",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10.233"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1e1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-1e1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-10"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2.5 M",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-2.5 M",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-2500000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二点五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二点五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十点二三三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十点二三三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10.233"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千万点五五四四",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千万点五五四四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20000000.5544"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千点零",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千点零",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两千三点一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千三点一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2300.1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10,000.233",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10,000.233",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10000.233"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": ".23456000",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": ".23456000",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.23456"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4.800",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.800",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２.７８９０",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２.７８９０",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.789"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2.3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2.3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2.3万",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2.3万",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "23000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "２.７８９０e－１",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "２.７８９０e－１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2789"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": ".5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": ".5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-.5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-.5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1, 234, 567.3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "234",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "234"
+      }
+    },
+    {
+      "Text": "567.3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "567.3"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１, 2４4, ６６7.123 五点八",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    },
+    {
+      "Text": "2４4",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "244"
+      }
+    },
+    {
+      "Text": "６６7.123",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "667.123"
+      }
+    },
+    {
+      "Text": "五点八",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.8"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二百三十三，五百七十七，一千六点五。",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二百三十三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "233"
+      }
+    },
+    {
+      "Text": "五百七十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "577"
+      }
+    },
+    {
+      "Text": "一千六点五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1600.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2222.2222.22222.222",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "2222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2222"
+      }
+    },
+    {
+      "Text": "22222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "22222"
+      }
+    },
+    {
+      "Text": "222",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "222"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "...9",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "－－9",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "9"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1.1^+23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1.1^+23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2.5^-1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^+23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-1.1^+23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-2.5^-1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-2.5^-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-0.4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-1.1^--23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-1.1^--23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-8.95430243255239"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-127.32e13",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-127.32e13",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.2732E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "12.32e+14",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12.32e+14",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.232E+15"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-12e-1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-12e-1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五 分之 一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五 分之 一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三 百 五 又 三 分之 一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三 百 五 又 三 分之 一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "４ ６／３",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "４ ６／３",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-3/2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-3/2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五分之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百万又五十万分之二十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百万又五十万分之二十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000.00005"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百分之二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百分之二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.02"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四千二分之三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四千二分之三",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.000714285714285714"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百分之2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百分之2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.02"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五百分之2333",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百分之2333",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4.666"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3又一千分之23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3又一千分之23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3.023"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "３／５",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "３／５",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 ３/5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 ３/5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1.6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１６/5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１６/5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１６分之5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１６分之5",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.3125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "１６分之2225",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "１６分之2225",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "139.0625"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负一又二分之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负一又二分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二分之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百 五又三分之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百 五又三分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百五十又3分之1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百五十又3分之1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "３分之一百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "３分之一百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负３分之负一百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负３分之负一百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一百四十四。一百五十万五千二百四十五,二千零四十五个,三千零五个,和四千万零五十,一百五十四点零,四百亿点零五零,二十五分之一百四十四,十一又十四分之一,1个",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一百四十四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "144"
+      }
+    },
+    {
+      "Text": "一百五十万五千二百四十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1505245"
+      }
+    },
+    {
+      "Text": "二千零四十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2045"
+      }
+    },
+    {
+      "Text": "三千零五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3005"
+      }
+    },
+    {
+      "Text": "四千万零五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000050"
+      }
+    },
+    {
+      "Text": "一百五十四点零",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "154"
+      }
+    },
+    {
+      "Text": "四百亿点零五零",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000000.05"
+      }
+    },
+    {
+      "Text": "二十五分之一百四十四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.76"
+      }
+    },
+    {
+      "Text": "十一又十四分之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "11.0714285714286"
+      }
+    },
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 4/3的美梦,1/2的努力",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 4/3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.33333333333333"
+      }
+    },
+    {
+      "Text": "1/2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二分 之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二分 之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百 五 又 三分  之一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百 五 又 三分  之一",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百五十 又 3分  之1",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百五十 又 3分  之1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "３ 分  之 一百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "３ 分  之 一百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "负３ 分  之 负一百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "负３ 分  之 负一百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五 分之 壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五 分之 壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三 百 五 又 三 分之 壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三 百 五 又 三 分之 壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "五分之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五分之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百萬又五十萬分之二十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百萬又五十萬分之二十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000.00005"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百分之二",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百分之二",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.02"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百分之2",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百分之2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.02"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "3又壹千分之23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3又壹千分之23",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3.023"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負壹又二分之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負壹又二分之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "-1.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二分之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二分之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百 五又三分之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百 五又三分之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "３分之壹百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "３分之壹百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負３分之負壹百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負３分之負壹百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "壹百四十四。壹百五十萬五千二百四十五,二千零四十五個,三千零五個,和四千萬零五十,壹百五十四點零,四百億點零五零,二十五分之壹百四十四,十壹又十四分之壹,1個",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "壹百四十四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "144"
+      }
+    },
+    {
+      "Text": "壹百五十萬五千二百四十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1505245"
+      }
+    },
+    {
+      "Text": "二千零四十五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2045"
+      }
+    },
+    {
+      "Text": "三千零五",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3005"
+      }
+    },
+    {
+      "Text": "四千萬零五十",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000050"
+      }
+    },
+    {
+      "Text": "壹百五十四點零",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "154"
+      }
+    },
+    {
+      "Text": "四百億點零五零",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "40000000000.05"
+      }
+    },
+    {
+      "Text": "二十五分之壹百四十四",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "5.76"
+      }
+    },
+    {
+      "Text": "十壹又十四分之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "11.0714285714286"
+      }
+    },
+    {
+      "Text": "1",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 4/3的美夢,1/2的努力",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 4/3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2.33333333333333"
+      }
+    },
+    {
+      "Text": "1/2",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "二分 之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二分 之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0.5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三百 五 又 三分  之壹",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三百 五 又 三分  之壹",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "350.333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "３ 分  之 壹百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "３ 分  之 壹百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "負３ 分  之 負壹百五十七",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "負３ 分  之 負壹百五十七",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "52.3333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一看",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "一美元",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "两美刀",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "四川",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "陆地",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+]
