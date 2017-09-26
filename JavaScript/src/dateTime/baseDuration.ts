@@ -13,6 +13,7 @@ export interface IDurationExtractorConfiguration {
     anUnitRegex: RegExp,
     inExactNumberUnitRegex: RegExp,
     suffixAndRegex: RegExp,
+    relativeDurationUnitRegex: RegExp,
     cardinalExtractor: BaseNumberExtractor
 }
 
@@ -59,8 +60,12 @@ export class BaseDurationExtractor implements IExtractor {
     }
     
     private implicitDuration(source: string): Array<Token> {
+        // handle "all day", "all year"
         return this.getTokensFromRegex(this.config.allRegex, source)
-        .concat(this.getTokensFromRegex(this.config.halfRegex, source));
+            // handle "half day", "half year"
+            .concat(this.getTokensFromRegex(this.config.halfRegex, source))
+            // handle "next day", "last year"
+            .concat(this.getTokensFromRegex(this.config.relativeDurationUnitRegex, source));
     }
     
     private getTokensFromRegex(regexp: RegExp, source: string): Array<Token> {
@@ -134,9 +139,15 @@ export class BaseDurationParser implements IDateTimeParser {
     
     private parseImplicitDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
+        // handle "all day" "all year"
         let result = this.getResultFromRegex(this.config.allDateUnitRegex, trimmedSource, 1);
+        // handle "half day", "half year"
         if (!result.success) {
             result = this.getResultFromRegex(this.config.halfDateUnitRegex, trimmedSource, 0.5);
+        }
+        // handle single duration unit, it is filtered in the extraction that there is a relative word in advance
+        if (!result.success) {
+            result = this.getResultFromRegex(this.config.followedUnit, trimmedSource, 1)
         }
         return result;
     }

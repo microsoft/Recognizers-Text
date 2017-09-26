@@ -162,6 +162,7 @@ export namespace EnglishDateTime {
 	export const InExactNumberRegex = `\\b(a few|few|some|several)\\b`;
 	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
 	export const RelativeTimeUnitRegex = `(((${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex})\\s+(${TimeUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const RelativeDurationUnitRegex = `(((?<=${NextPrefixRegex}|${PastPrefixRegex}|${ThisPrefixRegex}\\s+)(${DurationUnitRegex}))|((the|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(,|for|t|around)$`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;

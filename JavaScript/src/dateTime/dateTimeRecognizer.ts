@@ -7,14 +7,14 @@ import { EnglishCommonDateTimeParserConfiguration } from "./english/baseConfigur
 import { EnglishMergedExtractorConfiguration, EnglishMergedParserConfiguration } from "./english/mergedConfiguration";
 
 export default class DateTimeRecognizer extends Recognizer {
-    static readonly instance: DateTimeRecognizer = new DateTimeRecognizer();
+    static readonly instance: DateTimeRecognizer = new DateTimeRecognizer(DateTimeOptions.None);
 
-    private constructor() {
+    private constructor(options: DateTimeOptions) {
         super();
 
         // English models
         this.registerModel("DateTimeModel", Culture.English, new DateTimeModel(
-            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration())),
+            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), options),
             new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None)
         ));
     }
@@ -24,6 +24,6 @@ export default class DateTimeRecognizer extends Recognizer {
     }
 
     public static getSingleCultureInstance(cultureCode: string, options: DateTimeOptions = DateTimeOptions.None): DateTimeRecognizer {
-        return new DateTimeRecognizer();
+        return new DateTimeRecognizer(options);
     }
 }

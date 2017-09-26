@@ -157,7 +157,7 @@ export interface IDateParserConfiguration {
     integerExtractor: BaseNumberExtractor
     cardinalExtractor: BaseNumberExtractor
     durationExtractor: BaseDurationExtractor
-    durationParser: BaseDurationParser
+    durationParser: IDateTimeParser
     numberParser: BaseNumberParser
     monthOfYear: ReadonlyMap<string, number>
     dayOfMonth: ReadonlyMap<string, number>

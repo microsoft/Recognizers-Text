@@ -1,6 +1,7 @@
 import { IExtractor, ExtractResult } from "../number/extractors"
-import { IParser } from "../number/parsers"
+import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
 import { RegExpUtility } from "../utilities"
+import { TimeTypeConstants } from "../dateTime/constants"
 
 export class Token {
     constructor(start: number, end: number) {
@@ -95,11 +96,11 @@ export class AgoLaterUtil {
         return ret;
     }
 
-    static parseDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, durationParser: IParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
+    static parseDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let duration = durationExtractor.extract(source).pop();
         if (!duration) return result;
-        let pr = durationParser.parse(duration);
+        let pr = durationParser.parse(duration, referenceDate);
         if (!pr) return result;
         let match = RegExpUtility.getMatches(unitRegex, source).pop();
         if (!match) return result;
@@ -112,10 +113,10 @@ export class AgoLaterUtil {
             .replace('T', '');
         let num = Number.parseInt(numStr, 10);
         if (!num) return result;
-        return AgoLaterUtil.getAgoLaterResult(num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
+        return AgoLaterUtil.getAgoLaterResult(pr, num, unitMap, srcUnit, afterStr, beforeStr, referenceDate, utilityConfiguration, mode);
     }
 
-    static getAgoLaterResult(num: number, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
+    static getAgoLaterResult(durationParseResult: DateTimeParseResult, num: number, unitMap: ReadonlyMap<string, string>, srcUnit: string, afterStr: string, beforeStr: string, referenceDate: Date, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode) {
         let result = new DateTimeResolutionResult();
         let unitStr = unitMap.get(srcUnit);
         if (!unitStr) return result;
@@ -123,10 +124,16 @@ export class AgoLaterUtil {
         let containsAgo = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.agoRegex);
         let containsLaterOrIn = MatchingUtil.containsAgoLaterIndex(afterStr, utilityConfiguration.laterRegex) || MatchingUtil.containsInIndex(beforeStr, utilityConfiguration.inConnectorRegex);
         if (containsAgo) {
-            return AgoLaterUtil.getDateResult(unitStr, num, referenceDate, false, mode);
+            result = AgoLaterUtil.getDateResult(unitStr, num, referenceDate, false, mode);
+            durationParseResult.value.mod = TimeTypeConstants.beforeMod;
+            result.subDateTimeEntities = [durationParseResult];
+            return result;
         }
         if (containsLaterOrIn) {
-            return AgoLaterUtil.getDateResult(unitStr, num, referenceDate, true, mode);
+            result = AgoLaterUtil.getDateResult(unitStr, num, referenceDate, true, mode);
+            durationParseResult.value.mod = TimeTypeConstants.afterMod;
+            result.subDateTimeEntities = [durationParseResult];
+            return result;
         }
         return result;
     }
@@ -289,6 +296,7 @@ export class DateTimeResolutionResult {
     pastResolution: Map<string, string>;
     futureValue: any;
     pastValue: any;
+    subDateTimeEntities: Array<any>;
 
     constructor() {
         this.success = false;
