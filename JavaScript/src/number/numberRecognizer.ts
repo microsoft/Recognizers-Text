@@ -4,7 +4,9 @@ import { Culture } from "../culture";
 import { NumberMode, NumberModel, OrdinalModel, PercentModel } from "./models";
 import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./parsers";
 import { EnglishNumberParserConfiguration } from "./english/parserConfiguration";
+import { SpanishNumberParserConfiguration } from "./spanish/parserConfiguration";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
+import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
 
 export default class NumberRecognizer extends Recognizer {
     static readonly instance: NumberRecognizer = new NumberRecognizer();
@@ -23,8 +25,18 @@ export default class NumberRecognizer extends Recognizer {
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
             new EnglishPercentageExtractor()));
 
-        // TODO: register Chinese models
-        // TODO: Register Spanish models
+        // Spanish models
+        this.registerModel("NumberModel", Culture.Spanish, new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration()),
+            new SpanishNumberExtractor(NumberMode.PureNumber)));
+        this.registerModel("OrdinalModel", Culture.Spanish, new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration()),
+            new SpanishOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.Spanish, new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
+            new SpanishPercentageExtractor()));
+                
+        // TODO: register Chinese models        
         // TODO: Register Portuguese models
         // TODO: Register French models
     }

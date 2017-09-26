@@ -76,6 +76,18 @@ describe('DatePeriod Model .', it => {
     basicTest(it, model, reference,
         "I'll leave this SUMMER",
         Constants.SYS_DATETIME_DATEPERIOD, "this summer", "2016-SU");
+
+    basicTest(it, model, reference,
+        "I'll be out since tomorrow",
+        Constants.SYS_DATETIME_DATEPERIOD, "since tomorrow", "2016-11-08");
+
+    basicTest(it, model, reference,
+        "I'll be out since August",
+        Constants.SYS_DATETIME_DATEPERIOD, "since august", "XXXX-08");
+
+    basicTest(it, model, reference,
+        "I'll be out since this August",
+        Constants.SYS_DATETIME_DATEPERIOD, "since this august", "2016-08");
 });
 
 describe('DateTime Model .', it => {

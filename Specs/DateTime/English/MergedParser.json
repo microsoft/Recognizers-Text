@@ -1,0 +1,784 @@
+[{
+  "Input": "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tonight around 8 pm",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-07T20",
+            "type": "datetime",
+            "value": "2016-11-07 20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Set an appointment for Easter",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "day after tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "day after tomorrow",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-09",
+            "type": "date",
+            "value": "2016-11-09"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "day after tomorrow at 8am",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "day after tomorrow at 8am",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-09T08",
+            "type": "datetime",
+            "value": "2016-11-09 08:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on Friday in the afternoon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday in the afternoon",
+      "Type": "datetimeV2.datetimerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-5TAF",
+            "type": "datetimerange",
+            "start": "2016-11-04 12:00:00",
+            "end": "2016-11-04 16:00:00"
+          },
+          {
+            "timex": "XXXX-WXX-5TAF",
+            "type": "datetimerange",
+            "start": "2016-11-11 12:00:00",
+            "end": "2016-11-11 16:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on Friday for 3 in the afternoon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday for 3 in the afternoon",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-5T15",
+            "type": "datetime",
+            "value": "2016-11-04 15:00:00"
+          },
+          {
+            "timex": "XXXX-WXX-5T15",
+            "type": "datetime",
+            "value": "2016-11-11 15:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow morning at 9 o'clock",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08T09",
+            "type": "datetime",
+            "value": "2016-11-08 09:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "put make cable's wedding in my calendar for wednesday the thirty first",
+  "Context": {
+    "ReferenceDateTime": "2017-09-15T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "wednesday the thirty first",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-3,XXXX-XX-31",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "put make cable's wedding in my calendar for tuesday the thirty first",
+  "Context": {
+    "ReferenceDateTime": "2017-10-15T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday the thirty first",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "2017-10-31",
+            "type": "date",
+            "value": "2017-10-31"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 8 minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 8 minutes",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-07T00:08:00",
+            "type": "datetime",
+            "value": "2016-11-07 00:08:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 10 hours",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 10 hours",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-07T10:00:00",
+            "type": "datetime",
+            "value": "2016-11-07 10:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 10 days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 10 days",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-17",
+            "type": "date",
+            "value": "2016-11-17"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 3 weeks",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 weeks",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "(2016-11-22,2016-11-29,P1W)",
+            "type": "daterange",
+            "start": "2016-11-22",
+            "end": "2016-11-29"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 3 months",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 months",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "(2017-01-08,2017-02-08,P1M)",
+            "type": "daterange",
+            "start": "2017-01-08",
+            "end": "2017-02-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out in 3 year",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 3 year",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "(2018-11-08,2019-11-08,P1Y)",
+            "type": "daterange",
+            "start": "2018-11-08",
+            "end": "2019-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "after 8pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 8pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T20",
+            "type": "timerange",
+            "start": "20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "before 8pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 8pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T20",
+            "type": "timerange",
+            "end": "20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "since 8pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "since 8pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T20",
+            "type": "timerange",
+            "start": "20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2016-2-30",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-2-30",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-02-30",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2015-1-32",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015-1",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2015-01",
+            "type": "daterange",
+            "start": "2015-01-01",
+            "end": "2015-02-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2017-13-12",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2017",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2017",
+            "type": "daterange",
+            "start": "2017-01-01",
+            "end": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "add yoga to personal calendar on monday and wednesday at 3pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "monday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-1",
+            "type": "date",
+            "value": "2016-10-31"
+          },
+          {
+            "timex": "XXXX-WXX-1",
+            "type": "date",
+            "value": "2016-11-07"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "wednesday at 3pm",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-3T15",
+            "type": "datetime",
+            "value": "2016-11-02 15:00:00"
+          },
+          {
+            "timex": "XXXX-WXX-3T15",
+            "type": "datetime",
+            "value": "2016-11-09 15:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting at 8 am every week ",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+          {
+            "timex": "T08",
+            "type": "time",
+            "value": "08:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "every week",
+      "Type": "datetimeV2.set",
+      "Value": {
+        "values": [
+          {
+            "timex": "P1W",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "schedule second saturday of each month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second saturday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-12",
+            "type": "date",
+            "value": "2016-11-12"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "each month",
+      "Type": "datetimeV2.set",
+      "Value": {
+        "values": [
+          {
+            "timex": "P1M",
+            "type": "set",
+            "value": "not resolved"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Set an appointment for Easter Sunday",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Easter",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "",
+            "type": "date",
+            "value": "not resolved"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "Sunday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-06"
+          },
+          {
+            "timex": "XXXX-WXX-7",
+            "type": "date",
+            "value": "2016-11-13"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "block 1 hour on my calendar tomorrow morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 hour",
+      "Type": "datetimeV2.duration",
+      "Value": {
+        "values": [
+          {
+            "timex": "PT1H",
+            "type": "duration",
+            "value": "3600"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "tomorrow morning",
+      "Type": "datetimeV2.datetimerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08TMO",
+            "type": "datetimerange",
+            "start": "2016-11-08 08:00:00",
+            "end": "2016-11-08 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "July 22nd",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-07-22",
+            "type": "date",
+            "value": "2016-07-22"
+          },
+          {
+            "timex": "XXXX-07-22",
+            "type": "date",
+            "value": "2017-07-22"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "August 22nd",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2016-08-22"
+          },
+          {
+            "timex": "XXXX-08-22",
+            "type": "date",
+            "value": "2017-08-22"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on Friday for 3 in Bellevue in the afternoon",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-5",
+            "type": "date",
+            "value": "2016-11-04"
+          },
+          {
+            "timex": "XXXX-WXX-5",
+            "type": "date",
+            "value": "2016-11-11"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "in the afternoon",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "TAF",
+            "type": "timerange",
+            "start": "12:00:00",
+            "end": "16:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+]

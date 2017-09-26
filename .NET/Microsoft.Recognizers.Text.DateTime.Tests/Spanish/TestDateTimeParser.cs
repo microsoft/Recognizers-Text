@@ -10,6 +10,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
         readonly IDateTimeParser parser;
         readonly DateObject referenceTime;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseDateTimeParser));
+        }
+
+
         public TestDateTimeParser()
         {
             referenceTime = new DateObject(2016, 11, 7, 0, 0, 0);
@@ -25,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(date, ((DateTimeResolutionResult) pr.Value).PastValue);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceTime, text, pr);
         }
 
         public void BasicTest(string text, DateObject futreTime, DateObject pastTime)
@@ -35,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
             Assert.AreEqual(futreTime, ((DateTimeResolutionResult) pr.Value).FutureValue);
             Assert.AreEqual(pastTime, ((DateTimeResolutionResult) pr.Value).PastValue);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceTime, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -44,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.Spanish, parser, referenceTime, text, pr);
         }
 
         [TestMethod]

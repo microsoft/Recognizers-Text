@@ -7,12 +7,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish.Tests
     {
         private readonly IExtractor extractor = new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), DateTimeOptions.None);
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Spanish, typeof(BaseMergedExtractor));
+        }
+
+
         public void BasicTest(string text, int start, int length)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(1, results.Count);
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
+            TestWriter.Write(TestCulture.Spanish, extractor, text, results);
         }
 
         [TestMethod]

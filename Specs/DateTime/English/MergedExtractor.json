@@ -1,0 +1,370 @@
+[{
+  "Input": "this is 2 days",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "this is before 4pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "this is before 4pm tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4pm tomorrow",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "this is before tomorrow 4pm ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before tomorrow 4pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "this is after 4pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 4pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "this is after 4pm tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 4pm tomorrow",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "this is after tomorrow 4pm ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after tomorrow 4pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be back in 5 minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 5 minutes",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "past week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "past week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "schedule a meeting in 10 hours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 10 hours",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "What's this day look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "What's this week look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "What's my week look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "my week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "What's the week look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "What's my day look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "my day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "What's the day look like?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the day",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Schedule a meeting from 9am to 11am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 9am to 11am",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Schedule a meeting from 9am to 11am tomorrow",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 9am to 11am tomorrow",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "July 22nd",
+      "Type": "date"
+    },
+    {
+      "Text": "August 22nd",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "after 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "since 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "since 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "before 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "06/06 12:15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06 12:15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "06/06/12 15:15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06/12 15:15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "06/06, 2015",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06, 2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "May 29th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "May 29th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "March 29th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March 29th",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I born in March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I born in the March",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the March",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "what happend at the May",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the May",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "What are the hours of Palomino? ",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "in the sun",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "which email have gotten a reply",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "He is often alone",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "often a bird",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "michigan hours",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+]

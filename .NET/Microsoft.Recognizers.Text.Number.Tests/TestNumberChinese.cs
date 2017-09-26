@@ -6,6 +6,16 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     [TestClass]
     public class TestNumberChinese
     {
+
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(NumberModel));
+            TestWriter.Close(TestCulture.Chinese, typeof(PercentModel));
+            TestWriter.Close(TestCulture.Chinese, typeof(OrdinalModel));
+            TestWriter.Close(TestCulture.Chinese, "CustomNumberModel");
+        }
+
         private void BasicTest(IModel model, string source, string value)
         {
             var resultStr = model.Parse(source);
@@ -14,6 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         private void WrappedTest(IModel model, string source, string extractSrc, string value)
@@ -24,14 +35,16 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             Assert.AreEqual(source.Trim().Length - 1, resultJson[0].End);
             Assert.AreEqual(0, resultJson[0].Start);
             Assert.AreEqual(value, resultJson[0].Resolution["value"]);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
-
-        private void MultiTest(IModel model, string source, int count)
+        private void MultiTest(IModel model, string source, int count, bool isCustomModel = false)
         {
             var resultStr = model.Parse(source);
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
+            if (isCustomModel) TestWriter.Write(TestCulture.Chinese, "CustomNumberModel", source, resultStr);
+            else TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         private void MultiOneTest(IModel model, string source, int count, string first)
@@ -40,6 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             var resultJson = resultStr;
             Assert.AreEqual(count, resultJson.Count);
             Assert.AreEqual(resultJson[0].Resolution["value"], first);
+            TestWriter.Write(TestCulture.Chinese, model, source, resultStr);
         }
 
         [TestMethod]
@@ -2030,7 +2044,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "一看",
-                1);
+                1, true);
 
             MultiTest(model,
                 "一美元",
@@ -2038,7 +2052,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "一美元",
-                1);
+                1, true);
 
             MultiTest(model,
                 "两美刀",
@@ -2046,7 +2060,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "两美刀",
-                1);
+                1, true);
 
             MultiTest(model,
                 "四川",
@@ -2054,14 +2068,14 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "四川",
-                1);
+                1, true);
             MultiTest(model,
                 "陆地",
                 0);
 
             MultiTest(wmodel,
                 "陆地",
-                1);
+                1, true);
 
             MultiTest(model,
                 "十",
@@ -2069,7 +2083,7 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
             MultiTest(wmodel,
                 "十",
-                1);
+                1, true);
 
         }
 

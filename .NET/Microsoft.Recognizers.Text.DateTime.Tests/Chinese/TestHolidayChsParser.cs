@@ -13,6 +13,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
         private readonly BaseHolidayExtractor extractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         private readonly HolidayParserChs parser = new HolidayParserChs(new ChineseDateTimeParserConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(HolidayParserChs));
+        }
+
         public TestHolidayChsParser()
         {
             refTime = new DateObject(2017, 3, 22);
@@ -25,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var pr = parser.Parse(er[0], refTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, pr.Type);
             Assert.AreEqual(timex, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.Chinese, parser, refTime, text, pr);
         }
 
         [TestMethod]

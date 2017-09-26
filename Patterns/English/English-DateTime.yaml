@@ -284,7 +284,7 @@ TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
   references: [ DateTimeSpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|for))?\s*$'
+  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|in|on))?\s*$'
   references: [ DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
   def: ({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}

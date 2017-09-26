@@ -17,6 +17,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
+            TestWriter.Write(TestCulture.Chinese, extractor, text, results);
+        }
+        
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(BaseHolidayExtractor));
         }
 
         [TestMethod]

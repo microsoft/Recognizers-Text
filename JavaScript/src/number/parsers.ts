@@ -5,6 +5,11 @@ import * as _ from 'lodash';
 import { RegExpUtility } from "../utilities";
 import { BigNumber } from 'bignumber.js';
 
+// Disable BigNumber errors when passing number with more than 15 significant digits
+BigNumber.config({ ERRORS: false });
+// The exponent value(s) at which toString returns exponential notation.
+BigNumber.config({ EXPONENTIAL_AT: [-5, 15] });
+
 export enum AgnosticNumberParserType {
     Cardinal,
     Double,
@@ -117,25 +122,12 @@ export class BaseNumberParser implements IParser {
         }
 
         if (ret && ret.value) {
-            let resolutionStr = ret.resolutionStr || ret.text;
-            if (resolutionStr.includes('.')) {
-                let precision = this.trimRight(resolutionStr.split('.')[1], '0').length;
-                precision = precision > 14 ? 14 : precision;
-                ret.resolutionStr = this.trimRight(this.trimRight(ret.value.toFixed(precision), '0'), '.');
-            } else {
-                ret.resolutionStr = ret.value.toString().toUpperCase();
-            }
+            ret.resolutionStr = this.config.cultureInfo
+                ? this.config.cultureInfo.format(ret.value)
+                : ret.value.toString();
         }
 
         return ret;
-    }
-
-    private trimRight(s: string, charlist: string | undefined): string {
-        if (charlist === undefined) {
-            charlist = "\s";
-        }
-
-        return s.replace(new RegExp("[" + charlist + "]+$"), "");
     }
 
     protected getKeyRegex(regexMap: ReadonlyMap<string, number>): string {
@@ -313,10 +305,12 @@ export class BaseNumberParser implements IParser {
 
             // Find mixed number
             if (mixedIndex !== fracWords.length && numerValue < denomiValue) {
-                result.value = intValue + numerValue / denomiValue;
+                // intValue + numerValue / denomiValue
+                result.value = new BigNumber(intValue).plus(new BigNumber(numerValue).dividedBy(denomiValue));
             }
             else {
-                result.value = (intValue + numerValue) / denomiValue;
+                // (intValue + numerValue) / denomiValue
+                result.value = new BigNumber(intValue + numerValue).dividedBy(denomiValue)
             }
         }
 
@@ -699,7 +693,7 @@ export class BasePercentageParser extends BaseNumberParser {
 export class AgnosticNumberParserFactory {
     static getParser(type: AgnosticNumberParserType, languageConfiguration: INumberParserConfiguration): BaseNumberParser {
 
-        let isChinese = languageConfiguration.cultureInfo.name.toLowerCase() === Culture.Chinese;
+        let isChinese = languageConfiguration.cultureInfo.code.toLowerCase() === Culture.Chinese;
 
         let parser: BaseNumberParser;
 

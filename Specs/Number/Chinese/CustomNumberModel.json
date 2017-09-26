@@ -1,0 +1,96 @@
+[{
+  "Input": "一看",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "一美元",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "两美刀",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "四川",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "四",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "4"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "陆地",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "陆",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十",
+      "Start": 0,
+      "End": 0,
+      "TypeName": "number",
+      "Resolution": {
+        "value": "10"
+      }
+    }
+  ]
+}
+]

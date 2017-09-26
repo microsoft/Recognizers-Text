@@ -1,0 +1,238 @@
+[{
+  "Input": "100%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100% ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100 pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "120 pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "120 pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "120%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10 pourcents",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 pourcents",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "10%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": " 100 pourcentage",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 pourcentage",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "240 pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "240 pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "240%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "vingt pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingt pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trente pourcentage",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trente pourcentage",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "30%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent pourcentages",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent pourcentages",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "100%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "pourcentage de vingt",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "pourcentage de vingt",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "20%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "4,800%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4,800%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "4,8%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "pourcent des trois cent cinq",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "pourcent des trois cent cinq",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "305%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "9,2321312%",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9,2321312%",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "9,2321312%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cinq cent trente cinq pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinq cent trente cinq pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "535%"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1,1^23 pourcent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,1^23 pourcent",
+      "TypeName": "percentage",
+      "Resolution": {
+        "value": "8,95430243255239%"
+      }
+    }
+  ]
+}
+]

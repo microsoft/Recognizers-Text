@@ -15,6 +15,8 @@ export interface IDateExtractorConfiguration {
     dateUnitRegex: RegExp,
     forTheRegex: RegExp,
     weekDayAndDayOfMothRegex: RegExp,
+    relativeMonthRegex: RegExp,
+    weekDayRegex: RegExp,
     dayOfWeek: ReadonlyMap<string, number>;
     ordinalExtractor: BaseNumberExtractor,
     integerExtractor: BaseNumberExtractor,
@@ -107,6 +109,24 @@ export class BaseDateExtractor implements IExtractor {
                         return;
                     }
                 }
+
+                // handling cases like '20th of next month'
+                let suffixStr = source.substr(result.start + result.length).toLowerCase();
+                match = RegExpUtility.getMatches(this.config.relativeMonthRegex, suffixStr.trim()).pop();
+                if (match && match.index === 0) {
+                    let spaceLen = suffixStr.length - suffixStr.trim().length;
+                    ret.push(new Token(result.start, result.start + result.length + spaceLen + match.length));
+                }
+
+                // handling cases like 'second Sunday'
+                match = RegExpUtility.getMatches(this.config.weekDayRegex, suffixStr.trim()).pop();
+                if (match && match.index === 0 && num >= 1 && num <= 5) {
+                    let weekDayStr = match.groups('weekday').value;
+                    if (this.config.dayOfWeek.has(weekDayStr)) {
+                        let spaceLen = suffixStr.length - suffixStr.trim().length;
+                        ret.push(new Token(result.start, result.start + result.length + spaceLen + match.length));
+                    }
+                }
             }
             if (result.start + result.length < source.length) {
                 let afterString = source.substring(result.start + result.length);
@@ -156,6 +176,7 @@ export interface IDateParserConfiguration {
     weekDayOfMonthRegex: RegExp
     forTheRegex: RegExp
     weekDayAndDayOfMothRegex: RegExp
+    relativeMonthRegex: RegExp
     utilityConfiguration: IDateTimeUtilityConfiguration
     dateTokenPrefix: string
     getSwiftDay(source: string): number
@@ -379,7 +400,7 @@ export class BaseDateParser implements IDateTimeParser {
                 return result;
             }
             else {
-                //the resolution should have no value
+                // the resolution should have no value
                 let weekDay = this.config.dayOfWeek[weekdayStr];
                 let timexDayOfWeek = "XXXX-WXX-" + weekDay;
                 let timexDay = FormatUtil.luisDate(-1, -1, day);
@@ -395,24 +416,68 @@ export class BaseDateParser implements IDateTimeParser {
 
     private parseNumberWithMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
+        let ambiguous = true;
         let result = new DateTimeResolutionResult();
-        let match = RegExpUtility.getMatches(this.config.monthRegex, trimmedSource).pop();
-        if (!match) return result;
-        let er = this.config.ordinalExtractor.extract(trimmedSource);
-        if (!er || er.length === 0) {
-            er = this.config.integerExtractor.extract(trimmedSource);
+        
+        let ers = this.config.ordinalExtractor.extract(trimmedSource);
+        if (!ers || ers.length === 0) {
+            ers = this.config.integerExtractor.extract(trimmedSource);
         }
-        if (!er || er.length === 0) return result;
+        if (!ers || ers.length === 0) return result;
 
+        let num = Number.parseInt(this.config.numberParser.parse(ers[0]).value);
+        let day = 1;
+        let month = 0;
+        
+        let match = RegExpUtility.getMatches(this.config.monthRegex, trimmedSource).pop();
+        if (match) {
+            month = this.config.monthOfYear.get(match.value) - 1;
+            day = num;
+        } else {
+            // handling relative month
+            match = RegExpUtility.getMatches(this.config.relativeMonthRegex, trimmedSource).pop();
+            if (match) {
+                let monthStr = match.groups('order').value;
+                let swift = this.config.getSwiftMonth(monthStr);
+                let date = new Date(referenceDate);
+                date.setMonth(referenceDate.getMonth() + swift);
+                month = date.getMonth();
+                day = num;
+                ambiguous = false;
+            }
+        }
+
+        // handling casesd like 'second Sunday'
+        if (!match) {
+            match = RegExpUtility.getMatches(this.config.weekDayRegex, trimmedSource).pop();
+            if (match) {
+                month = referenceDate.getMonth();
+                // resolve the date of wanted week day
+                let wantedWeekDay = this.config.dayOfWeek.get(match.groups('weekday').value);
+                let firstDate = DateUtils.safeCreateFromMinValue(referenceDate.getFullYear(), referenceDate.getMonth(), 1);
+                let firstWeekday = firstDate.getDay();
+                let firstWantedWeekDay = new Date(firstDate);
+                firstWantedWeekDay.setDate(firstDate.getDate() + ((wantedWeekDay > firstWeekday) ? wantedWeekDay - firstWeekday : wantedWeekDay - firstWeekday + 7));
+                day = firstWantedWeekDay.getDate() + ((num - 1) * 7);
+                ambiguous = false;
+            }
+        }
+
+        if (!match) return result;
+        
         let year = referenceDate.getFullYear();
-        let month = this.config.monthOfYear.get(match.value.trim()) - 1;
-        let day = Number.parseInt(this.config.numberParser.parse(er[0]).value, 10);
 
-        result.timex = FormatUtil.luisDate(-1, month, day);
-        let futureDate = new Date(year, month, day);
-        let pastDate = new Date(year, month, day);
-        if (futureDate < referenceDate) futureDate.setFullYear(year + 1);
-        if (pastDate >= referenceDate) pastDate.setFullYear(year - 1);
+        // for LUIS format value string
+        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
+
+        if (ambiguous) {
+            result.timex = FormatUtil.luisDate(-1, month, day);
+            if (futureDate < referenceDate) futureDate.setFullYear(year + 1);
+            if (pastDate >= referenceDate) pastDate.setFullYear(year - 1);
+        } else {
+            result.timex = FormatUtil.luisDate(year, month, day);
+        }
 
         result.futureValue = futureDate;
         result.pastValue = pastDate;
@@ -499,7 +564,7 @@ export class BaseDateParser implements IDateTimeParser {
             pastDate = this.computeDate(cardinal, weekday, month, year - 1);
             if (pastDate.getMonth() !== month) pastDate.setDate(pastDate.getDate() - 7);
         }
-        result.timex = '';
+        result.timex = ['XXXX', FormatUtil.toString(month + 1, 2), 'WXX', weekday, '#' + cardinal].join('-');
         result.futureValue = futureDate;
         result.pastValue = pastDate;
         result.success = true;

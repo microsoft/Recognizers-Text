@@ -142,7 +142,7 @@ export class BaseHolidayParser implements IDateTimeParser {
                 return ret;
             }
 
-            if (value === DateUtils.minValue()) {
+            if (value.getTime() === DateUtils.minValue().getTime()) {
                 ret.timex = '';
                 ret.futureValue = DateUtils.minValue();
                 ret.pastValue = DateUtils.minValue();

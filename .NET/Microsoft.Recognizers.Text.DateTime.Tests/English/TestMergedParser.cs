@@ -14,6 +14,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
 
         readonly DateObject referenceDate;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.English, typeof(BaseMergedParser));
+        }
+
         public TestMergedParser()
         {
             referenceDate = new DateObject(2016, 11, 7);
@@ -25,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(1, er.Count);
             var pr = parser.Parse(er[0], referenceDate);
             Assert.AreEqual(type, pr.Type.Replace("datetimeV2.",""));
+            TestWriter.Write(TestCulture.English, parser, referenceDate, text, pr);
         }
 
         public void BasicTestResolution(string text, string resolution)
@@ -39,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             var pr = parser.Parse(er[0], refDate);
             var prValue = (List<Dictionary<string, string>>)(((SortedDictionary<string, object>)pr.Value).First().Value);
             Assert.AreEqual(resolution, prValue.First()["value"]);
+            TestWriter.Write(TestCulture.English, parser, refDate, text, pr);
         }
 
         public void BasicTestWithTwoResults(string text, string type1, string type2)
@@ -49,11 +57,16 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             Assert.AreEqual(type1, pr.Type.Replace("datetimeV2.", ""));
             pr = parser.Parse(er[1], referenceDate);
             Assert.AreEqual(type2, pr.Type.Replace("datetimeV2.", ""));
+            var erArray = extractor.Extract(text);
+            TestWriter.Write(TestCulture.English, parser, referenceDate, text, erArray.Select(o => parser.Parse(o, referenceDate)));
+            // TODO multiple dates
+            // TestWriter.Write(TestCulture.English, parser, refrenceDate, text, pr);
         }
 
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm", Constants.SYS_DATETIME_DATETIME);
             BasicTest("Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);

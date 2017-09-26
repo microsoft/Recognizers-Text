@@ -1,0 +1,113 @@
+[{
+  "Input": "设置恒温器为85度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "85度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "85",
+        "unit": "Degree"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "把温度升高5度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "5",
+        "unit": "Degree"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "正常的温度是华氏温度98.6度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "华氏温度98.6度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98.6",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "华氏温度100度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "华氏温度100度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20摄氏度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20摄氏度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "外面的温度是98度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98",
+        "unit": "Degree"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "你能把华氏温度51度转换为摄氏度吗",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "华氏温度51度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "51",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "摄氏度",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+]

@@ -1,0 +1,209 @@
+[{
+  "Input": "时间从一月十日到十二日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月十日到十二日",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "时间从一月19到20日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月19到20日",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "从一月十日到20日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从一月十日到20日",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "明年四月",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明年四月",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "我们去年5月见过",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "去年5月",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "下周末",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周末",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "会议在下周",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "下个月完工",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下个月",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "下周如何",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下周",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "明年",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "奥运会在2008年",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2008年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "十月的第一周是国庆节",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十月的第一周",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "三月二十八日到四月15日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三月二十八日到四月15日",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "前1周",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "前1周",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "上1月",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上1月",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "下1年",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下1年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "下1天",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "下1天",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "今年夏天",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "今年夏天",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "今年第一季度",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "今年第一季度",
+      "Type": "daterange"
+    }
+  ]
+}
+]

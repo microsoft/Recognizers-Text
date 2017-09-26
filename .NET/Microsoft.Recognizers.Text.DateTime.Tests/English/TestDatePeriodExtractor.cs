@@ -9,18 +9,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         private readonly BaseDatePeriodExtractor extractor =
             new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.English, typeof(BaseDatePeriodExtractor));
+        }
+
         public void BasicTest(string text, int start, int length, int expected = 1)
         {
             var results = extractor.Extract(text);
             Assert.AreEqual(expected, results.Count);
 
-            if (expected < 1) {
+            if (expected < 1)
+            {
+                TestWriter.Write(TestCulture.English, extractor, text);
                 return;
             }
 
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATEPERIOD, results[0].Type);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
         }
 
         public void BasicNegativeTest(string text)

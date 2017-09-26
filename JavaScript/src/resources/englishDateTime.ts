@@ -19,7 +19,7 @@ export namespace EnglishDateTime {
 	export const PeriodYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
 	export const WeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\\b`;
 	export const SingleWeekDayRegex = `\\b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tue|Tues|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|((?<=on)\\s+(Sat|Sun)))\\b`;
-	export const RelativeMonthRegex = `(?<relmonth>${RelativeRegex}\\s+month)\\b`;
+	export const RelativeMonthRegex = `(?<relmonth>(of\\s+)?${RelativeRegex}\\s+month)\\b`;
 	export const EngMonthRegex = `(((the\\s+)?month of\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sept|Sep))`;
 	export const MonthSuffixRegex = `(?<msuf>(in\\s+|of\\s+|on\\s+)?(${RelativeMonthRegex}|${EngMonthRegex}))`;
 	export const DateUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day)\\b`;
@@ -72,12 +72,16 @@ export namespace EnglishDateTime {
 	export const HourNumRegex = `\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b`;
 	export const MinuteNumRegex = `(?<minnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)`;
 	export const DeltaMinuteNumRegex = `(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)`;
-	export const PmRegex = `(?<pm>(in the\\s+)?afternoon|(in the\\s+)?evening|(in the\\s+)?night)`;
-	export const AmRegex = `(?<am>(in the\\s+)?morning)`;
+	export const PmRegex = `(?<pm>(((at|in|around|on|for)\\s+(the\\s+)?)?(afternoon|evening|midnight|dinner|lunchtime|lunch))|((at|in|around|on|for)\\s+(the\\s+)?night))`;
+	export const PmRegexFull = `(?<pm>((at|in|around|on|for)\\s+(the\\s+)?)?(afternoon|evening|midnight|night|dinner|lunchtime|lunch))`;
+	export const AmRegex = `(?<am>((at|in|around|on|for)\\s+(the\\s+)?)?(morning|breakfast))`;
+	export const LunchRegex = `\\b(lunchtime|lunch)\\b`;
+	export const NightRegex = `\\b(midnight|night)\\b`;
 	export const LessThanOneHour = `(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|${BaseDateTime.DeltaMinuteRegex}(\\s+(minute|minutes|min|mins))|${DeltaMinuteNumRegex}(\\s+(minute|minutes|min|mins)))`;
 	export const EngTimeRegex = `(?<engtime>${HourNumRegex}\\s+(${MinuteNumRegex}|(?<tens>twenty|thirty|forty|fourty|fifty)\\s+${MinuteNumRegex}))`;
 	export const TimePrefix = `(?<prefix>(${LessThanOneHour} past|${LessThanOneHour} to))`;
 	export const TimeSuffix = `(?<suffix>${AmRegex}|${PmRegex}|${OclockRegex})`;
+	export const TimeSuffixFull = `(?<suffix>${AmRegex}|${PmRegexFull}|${OclockRegex})`;
 	export const BasicTime = `(?<basictime>${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}:${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
 	export const MidnightRegex = `(?<midnight>midnight|mid-night|mid night)`;
 	export const MidmorningRegex = `(?<midmorning>midmorning|mid-morning|mid morning)`;
@@ -98,8 +102,8 @@ export namespace EnglishDateTime {
 	export const TimeRegex4 = `\\b${TimePrefix}\\s+${BasicTime}(\\s*${DescRegex})?\\s+${TimeSuffix}\\b`;
 	export const TimeRegex5 = `\\b${TimePrefix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex6 = `${BasicTime}(\\s*${DescRegex})?\\s+${TimeSuffix}\\b`;
-	export const TimeRegex7 = `\\b${TimeSuffix}\\s+at\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
-	export const TimeRegex8 = `\\b${TimeSuffix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
+	export const TimeRegex7 = `\\b${TimeSuffixFull}\\s+at\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
+	export const TimeRegex8 = `\\b${TimeSuffixFull}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex9 = `\\b${PeriodHourNumRegex}\\s+${FivesRegex}((\\s*${DescRegex})|\\b)`;
 	export const PureNumFromTo = `((from|between)\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
 	export const PureNumBetweenAnd = `(between\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
@@ -113,7 +117,7 @@ export namespace EnglishDateTime {
 	export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>morning|afternoon|night|evening)\\b`;
 	export const DateTimeSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${DateTimeTimeOfDayRegex})\\b|\\btonight)\\b`;
 	export const TimeOfTodayAfterRegex = `^\\s*(,\\s*)?(in\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
-	export const TimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|for))?\\s*$`;
+	export const TimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around|in|on))?\\s*$`;
 	export const SimpleTimeOfTodayAfterRegex = `(${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(,\\s*)?(in\\s+)?${DateTimeSpecificTimeOfDayRegex}`;
 	export const SimpleTimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})`;
 	export const TheEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
@@ -145,7 +149,8 @@ export namespace EnglishDateTime {
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
 	export const BeforeRegex = `\\b(before)\\b`;
-	export const AfterRegex = `\\b(after|since)\\b`;
+	export const AfterRegex = `\\b(after)\\b`;
+	export const SinceRegex = `\\b(since)\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;
 	export const LaterRegex = `\\b(later|from now)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
@@ -164,6 +169,9 @@ export namespace EnglishDateTime {
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((for the ${FlexibleDayRegex})|(on (the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
 	export const WeekDayAndDayOfMothRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
+	export const RestOfDateRegex = `\\bRest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year)\\b`;
+	export const RestOfDateTimeRegex = `\\bRest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b`;
+	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>breakfast|lunch|lunchtime|dinner)\\b`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);

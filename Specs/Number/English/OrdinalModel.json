@@ -1,0 +1,216 @@
+[{
+  "Input": "three trillionth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three trillionth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "3000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "a trillionth",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "a hundred trillionth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a hundred trillionth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "100000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "11th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11th",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "21st",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21st",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "30th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30th",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "30"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2nd",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2nd",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "eleventh",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "eleventh",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "11"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twentieth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twentieth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "20"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty-fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty-fifth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "25"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty-first",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty-first",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred twenty fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred twenty fifth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "one hundred twenty-fifth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one hundred twenty-fifth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "125"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trillionth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trillionth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "twenty-one trillion and three hundred twenty second",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "twenty-one trillion and three hundred twenty second",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "21000000000322"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "two hundredth",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "two hundredth",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "200"
+      }
+    }
+  ]
+}
+]

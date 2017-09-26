@@ -12,6 +12,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
 
         readonly DateObject referenceTime;
 
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(DateTimePeriodParserChs));
+        }
+
         public TestDateTimePeriodChsParser()
         {
             referenceTime = new DateObject(2016, 11, 7, 16, 12, 0);
@@ -29,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item1);
             Assert.AreEqual(endDate,
                 ((Tuple<DateObject, DateObject>) ((DateTimeResolutionResult) pr.Value).FutureValue).Item2);
+            TestWriter.Write(TestCulture.Chinese, parser, referenceTime, text, pr);
         }
 
         public void BasicTest(string text, string luisValueStr)
@@ -38,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var pr = parser.Parse(er[0], referenceTime);
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIMEPERIOD, pr.Type);
             Assert.AreEqual(luisValueStr, ((DateTimeResolutionResult) pr.Value).Timex);
+            TestWriter.Write(TestCulture.Chinese, parser, referenceTime, text, pr);
         }
 
         [TestMethod]

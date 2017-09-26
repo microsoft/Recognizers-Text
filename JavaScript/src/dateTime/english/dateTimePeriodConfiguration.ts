@@ -31,6 +31,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly nextPrefixRegex: RegExp
     readonly rangeConnectorRegex: RegExp
     readonly relativeTimeUnitRegex: RegExp
+    readonly restOfDateTimeRegex: RegExp
 
     constructor() {
         this.cardinalExtractor = new EnglishCardinalExtractor();
@@ -54,6 +55,7 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex, "gis");
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex, "gis");
     }
 
     getFromTokenIndex(source: string) {
@@ -101,6 +103,7 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly afternoonStartEndRegex: RegExp
     readonly eveningStartEndRegex: RegExp
     readonly nightStartEndRegex: RegExp
+    readonly restOfDateTimeRegex: RegExp
 
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo);
@@ -124,6 +127,7 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex);
         this.eveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex);
         this.nightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex);
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex);
     }
 
     getMatchedTimeRange(source: string): { timeStr: string, beginHour: number, endHour: number, endMin: number, success: boolean } {

@@ -8,6 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
     [TestClass]
     public class TestChineseModel
     {
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.Chinese, typeof(DateTimeModel));
+        }
+
         public void BasicTest(DateTimeModel model, DateObject baseDateTime, string text, string expectedType, string expectedString, string expectedTimex)
         {
             var results = model.Parse(text, baseDateTime);
@@ -18,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             var values = result.Resolution["values"] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(expectedType, values.First()["type"]);
             Assert.AreEqual(expectedTimex, values.First()["timex"]);
+            TestWriter.Write(TestCulture.Chinese, model, baseDateTime, text, results);
         }
 
         public void BasicTest(DateTimeModel model, DateObject baseDateTime, string text, string expectedType, string expectedString, string expectedTimex, string expectedFuture, string expectedPast)
@@ -35,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese.Tests
             Assert.AreEqual(expectedFuture ?? values.Last()["value"], values.Last()["value"]);
 
             Assert.AreEqual(expectedPast ?? values.First()["value"], values.First()["value"]);
+            TestWriter.Write(TestCulture.Chinese, model, baseDateTime, text, results);
         }
 
         [TestMethod]

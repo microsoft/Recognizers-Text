@@ -189,7 +189,7 @@ export class MatchingUtil {
 }
 
 export class FormatUtil {
-    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp("(?<nlb>P)T\d{2}", "gis");
+    public static readonly HourTimexRegex = RegExpUtility.getSafeRegExp(String.raw`(?<!P)T\d{2}`, "gis");
 
     // Emulates .NET ToString("D{size}")
     public static toString(num: number, size: number): string {
@@ -246,9 +246,8 @@ export class FormatUtil {
         let split = Array<string>();
         let lastPos = 0;
         matches.forEach(match => {
-            if (lastPos !== match.index)
-            { split.push(timeStr.substring(lastPos, match.index)); }
-            split.push(timeStr.substring(match.index, match.length));
+            if (lastPos !== match.index) split.push(timeStr.substring(lastPos, match.index));
+            split.push(timeStr.substring(match.index, match.index + match.length));
             lastPos = match.index + match.length;
         });
 
@@ -262,7 +261,7 @@ export class FormatUtil {
             }
         }
 
-        return split.join();
+        return split.join('');
     }
 
     public static toPm(timeStr: string): string {
@@ -309,6 +308,7 @@ export enum DayOfWeek {
 export class DateUtils {
     private static readonly oneDay = 24 * 60 * 60 * 1000;
     private static readonly oneHour = 60 * 60 * 1000;
+    private static readonly oneSecond = 1000;
 
     static next(from: Date, dayOfWeek: DayOfWeek): Date {
         let start = from.getDay();
@@ -345,7 +345,15 @@ export class DateUtils {
     }
 
     static totalHours(from: Date, to: Date): number {
-        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneHour);
+        // Fix to mimic .NET's Convert.ToInt32()
+        // C#: Math.Round(4.5) == 4
+        // C#: Convert.ToInt32(4.5) == 4
+        // JS: Math.round(4.5) == 5 !!
+        return Math.round(Math.abs(from.getTime() - to.getTime() - 0.00001) / this.oneHour);
+    }
+
+    static totalSeconds(from: Date, to: Date): number {
+        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
     }
 
     static addDays(seedDate: Date, daysToAdd: number): Date {
@@ -361,14 +369,16 @@ export class DateUtils {
     }
 
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
-        let date = new Date(Date.UTC(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate()));
-        date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
-        let yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-        let weekNo = Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-        return { weekNo: weekNo, year: date.getUTCFullYear() }
+        let onejan = new Date(referenceDate.getFullYear(), 0, 1);
+        let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+        return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
-    static minValue(): Date { return new Date(1, 0, 1, 0, 0, 0, 0); }
+    static minValue(): Date { 
+        let date = new Date(1, 0, 1, 0, 0, 0, 0);
+        date.setFullYear(1);
+        return date;
+    }
 
     static safeCreateFromValue(seedDate: Date, year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
         let result = new Date(seedDate);
@@ -384,6 +394,12 @@ export class DateUtils {
 
     static isLeapYear(year: number): boolean {
         return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
+
+    static dayOfYear(date: Date): number {
+        let start = new Date(date.getFullYear(), 0, 1);
+        let diffDays = date.valueOf() - start.valueOf();
+        return Math.floor(diffDays / DateUtils.oneDay);
     }
 
     private static validDays(year: number) { return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] }

@@ -28,13 +28,13 @@
   },
   "ava": {
     "files": [
-      "test/*.test.js"
+      "test/index.js"
     ]
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
     "@types/node": "^8.0.20",
-    "ava": "^0.20.0",
+    "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
     "colors": "^1.1.2",
     "js-yaml": "^3.9.1",
@@ -55,6 +55,7 @@
     "@types/lodash": "^4.14.74",
     "@types/xregexp": "^3.0.29",
     "bignumber.js": "^4.0.3",
+    "intl": "^1.2.5",
     "lodash": "^4.17.4",
     "typedoc": "^0.8.0",
     "typescript": "^2.5.1",

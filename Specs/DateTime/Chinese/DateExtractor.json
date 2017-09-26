@@ -1,0 +1,319 @@
+[{
+  "Input": "2010-01-29",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010-01-29",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2010.01.29",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010.01.29",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2010/01/29",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010/01/29",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2010 01 29",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2010 01 29",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "1987年1月11日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1987年1月11日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "农历2015年十月初一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "农历2015年十月初一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2015年农历正月初一是春节",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015年农历正月初一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "我们定在三月初一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三月初一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "微软在正月三十有活动",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "正月三十",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "大年初一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大年初一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "大年三十",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大年三十",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "快到1月19日了",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1月19日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "1月19号",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1月19号",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "10月12号，星期一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10月12号，星期一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "2009年10月12号，星期一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年10月12号，星期一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "明天可以吗",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "明天",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "最近还好吗",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "最近",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "星期一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "星期一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "上周一有考试",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上周一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "下次的12号",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12号",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "会议在这个星期一",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "这个星期一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "两千零四年八月十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千零四年八月十五",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "两千年八月十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "两千年八月十五",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "二零零四年八月十五",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "二零零四年八月十五",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "去年本月十日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "去年本月十日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "本月十日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "本月十日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "最后一个周三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "最后一个周三",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "最后一个的周三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "最后一个的周三",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "上一个周三",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上一个周三",
+      "Type": "date"
+    }
+  ]
+}
+]

@@ -1,0 +1,240 @@
+[{
+  "Input": "Quando tinha cinco anos, aprendeu a andar de bicicleta.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "5",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Esta saga remonta a quase dez anos atrás.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dez anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Só tenho 29 anos!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "29 anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "29",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Agora com noventa e cinco anos tens perspectiva das coisas.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "noventa e cinco anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "95",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "A Grande Muralha da China tem mais de 500 anos e se extende por mais de 5,000 milhas.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500 anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "500",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Já tem 60 anos, pois nasceu em 8 de maio de 1945.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "60 anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "60",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "25% dos casos não são diagnosticados até por volta dos tres anos.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres anos",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Quando haverá pressão para comprir essa promessa feita há um ano?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "um ano",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "1",
+        "unit": "Ano"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Aconteceu quando era um bebê e tinha apenas dez meses.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dez meses",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Mês"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "A proposta da comissão já tem 8 meses de idade.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 meses",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "8",
+        "unit": "Mês"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Aproximadamente 50% dos casos são diagnosticados aos dezoito meses de idade.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dezoito meses",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "18",
+        "unit": "Mês"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "É possível, mas em 2006 95% delas tinham menos de tres meses de vida.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres meses",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Mês"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Se seguirmos adiante no período de dezembro, terão tres semanas de existência.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tres semanas",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Semana"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Às 6 semanas de idade já comemora o Natal.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 semanas",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "6",
+        "unit": "Semana"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Outras matérias primas devem ser usadas num prazo de cinco dias.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco dias",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "5",
+        "unit": "Dia"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Uma conta vencida a 90 dias está bem atrasada.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 dias",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "90",
+        "unit": "Dia"
+      }
+    }
+  ]
+}
+]

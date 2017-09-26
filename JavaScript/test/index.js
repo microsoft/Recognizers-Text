@@ -1,6 +1,7 @@
-require('./number-english.test');
+// New Data-Drive test based on Specs (../Specs)
+require('./datadriven-tests');
 
-require('./numberWithUnit-english.test');
+// Deprecated tests
 
 require('./dateExtractor-english.test');
 require('./timeExtractor-english.test');

@@ -44,6 +44,33 @@ export namespace EnglishNumericWithUnit {`,
         `import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {`,
         footer: `}`
+    },
+    // SPANISH NUMERIC
+    {
+        yaml: `${resourcesPath}/Spanish/Spanish-Numbers.yaml`,
+        output: `${outputPath}spanishNumeric.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace SpanishNumeric {`,
+        footer: `}`
+    },
+    // SPANISH NUMERIC WITH UNIT
+    {
+        yaml: `${resourcesPath}/Spanish/Spanish-NumbersWithUnit.yaml`,
+        output: `${outputPath}spanishNumericWithUnit.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace SpanishNumericWithUnit {`,
+        footer: `}`
+    },
+    // SPANISH DATE TIME WITH UNIT
+    {
+        yaml: `${resourcesPath}/Spanish/Spanish-DateTime.yaml`,
+        output: `${outputPath}spanishDateTime.ts`,
+        header:
+        `import { BaseDateTime } from "./baseDateTime";
+export namespace SpanishDateTime {`,
+        footer: `}`
     }
 ];
 
