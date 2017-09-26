@@ -845,7 +845,7 @@ function basicTest(it, model, source, value) {
         t.not(model, null);
         let result = model.parse(source);
         t.is(result.length, 1);
-        t.is(result[0].resolution["value"] + " " + result[0].resolution["unit"], value);
+        t.is(getValue(result[0].resolution["value"]) + " " + result[0].resolution["unit"], value);
     });
 }
 
@@ -854,6 +854,11 @@ function multiTest(it, model, source, values) {
         t.not(model, null);
         let result = model.parse(source);
         t.is(result.length, values.length);
-        t.deepEqual(result.map(r => (r.resolution["value"] + " " + r.resolution["unit"]).trim()), values);
+        t.deepEqual(result.map(r => (getValue(r.resolution["value"]) + " " + r.resolution["unit"]).trim()), values);
     });
+}
+
+function getValue(v) {
+    if(v === undefined || v === null) return '';
+    return v;
 }
