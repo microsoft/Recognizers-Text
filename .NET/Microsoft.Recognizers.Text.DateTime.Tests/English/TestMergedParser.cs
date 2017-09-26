@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
     public class TestMergedParser
     {
         private readonly IExtractor extractor = new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None);
-        private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration());
+        private readonly IDateTimeParser parser = new BaseMergedParser(new EnglishMergedParserConfiguration(), DateTimeOptions.None);
 
         readonly DateObject referenceDate;
 
@@ -54,7 +54,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParse()
         {
-            BasicTest("3 hours later", Constants.SYS_DATETIME_DATE);
             BasicTest("Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow", Constants.SYS_DATETIME_DATE);
             BasicTest("day after tomorrow at 8am", Constants.SYS_DATETIME_DATETIME);

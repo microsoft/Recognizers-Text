@@ -23,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex InExactNumberRegex = new Regex(DateTimeDefinitions.InExactNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex InExactNumberUnitRegex = new Regex(DateTimeDefinitions.InExactNumberUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        //TODO: change to Spanish according to corresponding Regex
+        public static readonly Regex RelativeDurationUnitRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDurationExtractorConfiguration()
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
@@ -47,5 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.InExactNumberRegex => InExactNumberRegex;
 
         Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
+
+        Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
     }
 }

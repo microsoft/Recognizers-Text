@@ -195,20 +195,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
+            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
+            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
 
             var beginTime = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
             var endTime = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+
+            if (!string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm") 
+                && endTime <= beginTime && endTime.Hour<12)
+            {
+                endTime = endTime.AddHours(12);
+                ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
+            }
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
 
-            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
-            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
+            
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith("ampm") && !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith("ampm"))
             {
                 ret.Comment = "ampm";
             }
+
+            ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
             return ret;
         }

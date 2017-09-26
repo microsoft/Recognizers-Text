@@ -24,17 +24,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             var type = typeof(DateTimeModel);
 
             RegisterModel(Culture.English, type, new DateTimeModel(
-                    new BaseMergedParser(new EnglishMergedParserConfiguration()),
+                    new BaseMergedParser(new EnglishMergedParserConfiguration(), options),
                     new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
                     ));
 
             RegisterModel(Culture.Chinese, type, new DateTimeModel(
-                    new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
+                    new FullDateTimeParser(new ChineseDateTimeParserConfiguration(), options),
                     new MergedExtractorChs(options)
                     ));
 
             RegisterModel(Culture.Spanish, type, new DateTimeModel(
-                    new BaseMergedParser(new SpanishMergedParserConfiguration()),
+                    new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
                     new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
                     ));
         }
@@ -47,19 +47,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (cultureCode) {
                 case Culture.English:
                     RegisterModel(cultureCode, type, new DateTimeModel(
-                                      new BaseMergedParser(new EnglishMergedParserConfiguration()),
+                                      new BaseMergedParser(new EnglishMergedParserConfiguration(), options),
                                       new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
                                   ));
                     break;
                 case Culture.Chinese:
                     RegisterModel(cultureCode, type, new DateTimeModel(
-                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration()),
+                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration(), options),
                                       new MergedExtractorChs(options)
                                   ));
                     break;
                 case Culture.Spanish:
                     RegisterModel(Culture.Spanish, type, new DateTimeModel(
-                                      new BaseMergedParser(new SpanishMergedParserConfiguration()),
+                                      new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
                                       new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
                                   ));
                     break;

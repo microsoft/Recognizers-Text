@@ -9,13 +9,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ParserTypeName = "datetimeV2";
 
         protected readonly IMergedParserConfiguration Config;
+        private readonly DateTimeOptions options;
 
         public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
 
-        public BaseMergedParser(IMergedParserConfiguration configuration)
+        public BaseMergedParser(IMergedParserConfiguration configuration, DateTimeOptions options)
         {
             Config = configuration;
+            this.options = options;
         }
 
         public ParseResult Parse(ExtractResult er)
@@ -131,37 +133,54 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if (((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
+            if ((options & DateTimeOptions.SplitDateAndTime) != 0
+                 && ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
             {
                 pr.Value = DateTimeResolutionForSplit(pr);
             }
             else
             {
-                pr.Value = DateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-                //change the type at last for the after or before mode
-                pr.Type = $"{ParserTypeName}.{DetermineDateTimeType(er.Type, hasBefore, hasAfter, hasSince)}";
+                pr = SetParseResult(pr, hasBefore, hasAfter, hasSince);
             }
 
             return pr;
         }
 
+        public DateTimeParseResult SetParseResult(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
+        {
+            slot.Value = DateTimeResolution(slot, hasBefore, hasAfter, hasSince);
+            //change the type at last for the after or before mode
+            slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince)}";
+            return slot;
+        }
+
         public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            if (hasBefore || hasAfter || hasSince)
+            if ((options & DateTimeOptions.SplitDateAndTime) != 0)
             {
-                if (type.Equals(Constants.SYS_DATETIME_DATE))
-                {
-                    return Constants.SYS_DATETIME_DATEPERIOD;
-                }
-
-                if (type.Equals(Constants.SYS_DATETIME_TIME))
-                {
-                    return Constants.SYS_DATETIME_TIMEPERIOD;
-                }
-
                 if (type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {
-                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                    return Constants.SYS_DATETIME_TIME;
+                }
+            }
+            else
+            {
+                if (hasBefore || hasAfter || hasSince)
+                {
+                    if (type.Equals(Constants.SYS_DATETIME_DATE))
+                    {
+                        return Constants.SYS_DATETIME_DATEPERIOD;
+                    }
+
+                    if (type.Equals(Constants.SYS_DATETIME_TIME))
+                    {
+                        return Constants.SYS_DATETIME_TIMEPERIOD;
+                    }
+
+                    if (type.Equals(Constants.SYS_DATETIME_DATETIME))
+                    {
+                        return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                    }
                 }
             }
 
@@ -183,6 +202,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 slot.Value = DateTimeResolution(slot, false, false, false);
+                slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, false, false, false)}";
                 results.Add(slot);
             }
             return results;

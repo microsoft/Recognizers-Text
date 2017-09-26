@@ -79,6 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle "half day", "half year"
             ret.AddRange(GetTokenFromRegex(config.HalfRegex, text));
 
+            // handle "next day", "last year"
+            ret.AddRange(GetTokenFromRegex(config.RelativeDurationUnitRegex, text));
+
             return ret;
         }
 
