@@ -415,6 +415,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -439,6 +440,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -469,6 +471,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -687,6 +690,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -742,6 +746,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1376,6 +1381,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1633,6 +1639,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1752,8 +1759,9 @@
 {
   "Input": "I'll go back now",
   "Context": {
-    "ReferenceDateTime": "2017-09-27T17:25:54.4830729+08:00"
+    "ReferenceDateTime": "2017-09-26T19:37:54.4097576+08:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1764,7 +1772,7 @@
           {
             "timex": "PRESENT_REF",
             "type": "datetime",
-            "value": "2017-09-27 17:25:54"
+            "value": "2017-09-26 19:37:54"
           }
         ]
       }
