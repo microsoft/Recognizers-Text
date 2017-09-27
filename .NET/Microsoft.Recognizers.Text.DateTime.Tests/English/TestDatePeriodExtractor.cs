@@ -181,6 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         public void TestDatePeriodExtractWeekOf()
         {
             //test week of and month of
+            BasicTest("the week of september.15th", 0, 26);
             BasicTest("week of september.15th", 0, 22);
             BasicTest("month of september.15th", 0, 23);
         }

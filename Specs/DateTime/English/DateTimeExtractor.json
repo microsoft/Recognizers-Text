@@ -648,6 +648,28 @@
 }
 ,
 {
+  "Input": "ADD LUNCH AT 12:30 PM ON FRI",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:30 PM ON FRI",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Add 649 midnight tonight",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midnight tonight",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
   "Input": "I'll go back August 1st 11 AM",
   "NotSupportedByDesign": "python",
   "Results": [
