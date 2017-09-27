@@ -124,7 +124,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pmStr = match.Groups["pm"].Value;
                 var amStr = match.Groups["am"].Value;
                 var descStr = match.Groups["desc"].Value;
-                // The "ampm" only occurs in time, don't have to consider it here
+
+                // The "ampm" only occurs in time, we don't have to consider it here
                 if (string.IsNullOrEmpty(leftDesc))
                 {
 
@@ -140,6 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             beginHour -= 12;
                         }
+
                         if (endHour >= 12)
                         {
                             endHour -= 12;
@@ -155,6 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             beginHour += 12;
                         }
+
                         if (endHour < 12)
                         {
                             endHour += 12;
