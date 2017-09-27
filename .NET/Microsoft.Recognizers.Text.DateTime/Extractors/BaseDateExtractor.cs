@@ -136,7 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // handling cases like 'second Sunday'
                     suffixStr = text.Substring(result.Start + result.Length ?? 0);
                     match = this.config.WeekDayRegex.Match(suffixStr.Trim());
-                    if (match.Success && match.Index == 0 && num >= 1 && num <= 5)
+                    if (match.Success && match.Index == 0 && num >= 1 && num <= 5 
+                        && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
                         var weekDayStr = match.Groups["weekday"].Value.ToLower();
                         if (this.config.DayOfWeek.ContainsKey(weekDayStr))

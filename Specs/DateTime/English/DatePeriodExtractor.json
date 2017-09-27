@@ -2353,6 +2353,17 @@
 }
 ,
 {
+  "Input": "the week of september.15th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week of september.15th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "week of september.15th",
   "NotSupportedByDesign": "python",
   "Results": [

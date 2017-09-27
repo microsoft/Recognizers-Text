@@ -1,4 +1,115 @@
 [{
+  "Input": "ADD LUNCH AT 12:30 PM ON FRI ",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:30 PM ON FRI",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-5T12:30",
+            "type": "datetime",
+            "value": "2016-11-04 12:30:00"
+          },
+          {
+            "timex": "XXXX-WXX-5T12:30",
+            "type": "datetime",
+            "value": "2016-11-11 12:30:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "What do I have the week of November 30th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week of November 30th",
+      "Type": "datetimeV2.daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-11-30",
+            "comment": "WeekOf",
+            "type": "daterange",
+            "start": "2015-11-30",
+            "end": "2015-12-07"
+          },
+          {
+            "timex": "XXXX-11-30",
+            "comment": "WeekOf",
+            "type": "daterange",
+            "start": "2016-11-28",
+            "end": "2016-12-05"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "For four Monday at noon ",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday at noon",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-1T12",
+            "type": "datetime",
+            "value": "2016-10-31 12:00:00"
+          },
+          {
+            "timex": "XXXX-WXX-1T12",
+            "type": "datetime",
+            "value": "2016-11-07 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Add 649 midnight tonight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "midnight tonight",
+      "Type": "datetimeV2.datetime",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-07T12",
+            "type": "datetime",
+            "value": "2016-11-07 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

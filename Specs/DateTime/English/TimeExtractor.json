@@ -814,39 +814,6 @@
 }
 ,
 {
-  "Input": "I'll be back 12 o'clock breakfast",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 o'clock breakfast",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 12 o'clock dinner",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 o'clock dinner",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "I'll be back 12 o'clock lunch",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "12 o'clock lunch",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
   "Input": "I'll be back 12 o'clock lunchtime",
   "NotSupportedByDesign": "python",
   "Results": [

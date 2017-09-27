@@ -115,6 +115,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestDateTimeExtractDateWithTime()
         {
+            BasicTest("ADD LUNCH AT 12:30 PM ON FRI", 13, 15);
+            BasicTest("Add 649 midnight tonight", 8, 16);
             BasicTest("I'll go back August 1st 11 AM", 13, 16);
             BasicTest("I'll go back August 1st 11 pm", 13, 16);
             BasicTest("I'll go back August 1st 11 p.m.", 13, 18);

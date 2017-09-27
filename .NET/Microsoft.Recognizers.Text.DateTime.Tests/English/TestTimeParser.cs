@@ -132,11 +132,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
             BasicTest("I'll be back 12 o'clock lunchtime", new DateObject(year, month, day, 12, 0, 0));
             BasicTest("I'll be back 11 o'clock lunchtime", new DateObject(year, month, day, 11, 0, 0));
             BasicTest("I'll be back 1 o'clock lunchtime", new DateObject(year, month, day, 13, 0, 0));
-            BasicTest("I'll be back 12 o'clock lunch", new DateObject(year, month, day, 12, 0, 0));
-            BasicTest("I'll be back 8 o'clock dinner", new DateObject(year, month, day, 20, 0, 0));
-            BasicTest("I'll be back 8 o'clock breakfast", new DateObject(year, month, day, 8, 0, 0));
-            BasicTest("I'll be back at lunch 12 o'clock", new DateObject(year, month, day, 12, 0, 0));
             BasicTest("I'll be back at lunchtime 11 o'clock", new DateObject(year, month, day, 11, 0, 0));
+            //We only support lunchtime now
+            //BasicTest("I'll be back 12 o'clock lunch", new DateObject(year, month, day, 12, 0, 0));
+            //BasicTest("I'll be back 8 o'clock dinner", new DateObject(year, month, day, 20, 0, 0));
+            //BasicTest("I'll be back 8 o'clock breakfast", new DateObject(year, month, day, 8, 0, 0));
+            //BasicTest("I'll be back at lunch 12 o'clock", new DateObject(year, month, day, 12, 0, 0));
         }
 
         [TestMethod]
@@ -214,12 +215,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestTimeParseMealTimeLuis()
         {
-            BasicTest("I'll be back 12 o'clock lunchtime", "T12");
-            BasicTest("I'll be back 12 o'clock lunch", "T12");
-            BasicTest("I'll be back 8 o'clock dinner", "T20");
-            BasicTest("I'll be back 8 o'clock breakfast", "T08");
-            BasicTest("I'll be back at lunch 12 o'clock", "T12");
+            //We only support lunchtime now
+            //BasicTest("I'll be back 12 o'clock lunch", "T12");
+            //BasicTest("I'll be back 8 o'clock dinner", "T20");
+            //BasicTest("I'll be back 8 o'clock breakfast", "T08");
+            //BasicTest("I'll be back at lunch 12 o'clock", "T12");
             BasicTest("I'll be back at lunchtime 12 o'clock", "T12");
+            BasicTest("I'll be back 12 o'clock lunchtime", "T12");
+
         }
     }
 }

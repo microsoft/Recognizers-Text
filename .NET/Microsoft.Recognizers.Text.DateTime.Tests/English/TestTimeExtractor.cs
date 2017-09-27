@@ -148,9 +148,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestTimeExtractMealTime()
         {
-            BasicTest("I'll be back 12 o'clock breakfast", 13, 20);
-            BasicTest("I'll be back 12 o'clock dinner", 13, 17);
-            BasicTest("I'll be back 12 o'clock lunch", 13, 16);
+            //We only support lunchtime now
+            //BasicTest("I'll be back 12 o'clock breakfast", 13, 20);
+            //BasicTest("I'll be back 12 o'clock dinner", 13, 17);
+            //BasicTest("I'll be back 12 o'clock lunch", 13, 16);
             BasicTest("I'll be back 12 o'clock lunchtime", 13, 20);
             BasicTest("I'll be back lunchtime 12 o'clock", 13, 20);
             BasicTest("I'll be back at lunchtime 12 o'clock", 13, 23);
