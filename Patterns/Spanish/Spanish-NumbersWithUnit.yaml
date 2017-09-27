@@ -755,9 +755,9 @@ AmbiguousLengthUnitList: !list
     - áreas
 #SpanishNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
-  def: (?=(\s|\W|$))
+  def: (?=(\s|\P{L}|$))
 ConnectorToken: de
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary

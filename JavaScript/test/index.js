@@ -28,3 +28,6 @@ require('./mergedParser-english.test');
 require('./dateTime-english.test');
 
 require('./singleCultureDateTimeRecognizer-english.test');
+
+
+require('./numberWithUnit-spanish.test');
