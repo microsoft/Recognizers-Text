@@ -69,7 +69,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestNumber()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message);
             }
@@ -97,7 +98,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestNumberWithUnit()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message);
             }
@@ -126,7 +129,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTime()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message);
             }
@@ -164,7 +169,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeExtractor()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message);
             }
@@ -191,7 +198,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeParser()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message, GetMessage(TestSpec));
             }
@@ -229,7 +238,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestDateTimeMergedParser()
         {
-            if (TestUtils.EvaluateSpec(TestSpec, out string message))
+
+            string message;
+            if (TestUtils.EvaluateSpec(TestSpec, out message))
             {
                 Assert.Inconclusive(message);
             }
