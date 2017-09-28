@@ -54,10 +54,13 @@ function getSpecFilePaths(specsPath) {
     if(!fs.existsSync(specsPath)) {
         throw new Error(`Specs directory not found at ${path.resolve(specsPath)}`);
     }
+
     return fs
         .readdirSync(specsPath).map(s => path.join(specsPath, s))
+        .filter(p => fs.lstatSync(p).isDirectory())
         .map(s1 => fs.readdirSync(s1).map(s2 => path.join(s1, s2)))
         .reduce((a, b) => a.concat(b), [])                      // flatten
+        .filter(p => fs.lstatSync(p).isDirectory())
         .map(s1 => fs.readdirSync(s1).map(s2 => path.join(s1, s2)))
         .reduce((a, b) => a.concat(b), [])                      // flatten
         .filter(s => s.indexOf('.json') !== -1);
