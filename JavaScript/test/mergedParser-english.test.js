@@ -4,13 +4,18 @@ var Extractor = require("../compiled/dateTime/baseMerged").BaseMergedExtractor;
 var CommonParserConfig = require("../compiled/dateTime/english/baseConfiguration").EnglishCommonDateTimeParserConfiguration;
 var ParserConfig = require("../compiled/dateTime/english/mergedConfiguration").EnglishMergedParserConfiguration;
 var Parser = require("../compiled/dateTime/baseMerged").BaseMergedParser;
+var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('DateTime Merged Parser', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
+    basicTest(it, extractor, parser, referenceDate, "ADD LUNCH AT 12:30 PM ON FRI ", Constants.SYS_DATETIME_DATETIME);
+    basicTest(it, extractor, parser, referenceDate, "What do I have the week of November 30th", Constants.SYS_DATETIME_DATEPERIOD);
+    basicTest(it, extractor, parser, referenceDate, "For four Monday at noon ", Constants.SYS_DATETIME_DATETIME);
+    basicTest(it, extractor, parser, referenceDate, "Add 649 midnight tonight", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow", Constants.SYS_DATETIME_DATE);
@@ -23,7 +28,7 @@ describe('DateTime Merged Parser', it => {
 
 describe('DateTime Merged Parser In', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
     basicTest(it, extractor, parser, referenceDate, "schedule a meeting in 8 minutes", Constants.SYS_DATETIME_DATETIME);
@@ -36,7 +41,7 @@ describe('DateTime Merged Parser In', it => {
 
 describe('DateTime Merged Parser After-Before-Since', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
     basicTest(it, extractor, parser, referenceDate, "after 8pm", Constants.SYS_DATETIME_TIMEPERIOD);
@@ -46,7 +51,7 @@ describe('DateTime Merged Parser After-Before-Since', it => {
 
 describe('DateTime Merged Parser Invalid Datetime', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
     basicTest(it, extractor, parser, referenceDate, "2016-2-30", Constants.SYS_DATETIME_DATE);
@@ -58,7 +63,7 @@ describe('DateTime Merged Parser Invalid Datetime', it => {
 
 describe('DateTime Merged Parser with two results', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
     basicTestWithTwoResults(it, extractor, parser, referenceDate, "add yoga to personal calendar on monday and wednesday at 3pm",
@@ -85,7 +90,7 @@ describe('DateTime Merged Parser with two results', it => {
 
 describe('DateTime Merged Parse resolution weekday and ordinary', it => {
     let extractor = new Extractor(new ExtractorConfig());
-    let parser = new Parser(new ParserConfig(new CommonParserConfig()));
+    let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
     basicTestResolution(it, extractor, parser, "put make cable's wedding in my calendar for wednesday the thirty first", "not resolved", new Date(2017, 8, 15));

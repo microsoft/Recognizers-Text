@@ -6,7 +6,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { RegExpUtility, StringUtility } from "../../utilities";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { BaseNumberParser } from "../../number/parsers"
-import { ICommonDateTimeParserConfiguration } from "../parsers"
+import { ICommonDateTimeParserConfiguration, IDateTimeParser } from "../parsers"
 import { EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
@@ -67,7 +67,7 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     cardinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
     durationExtractor: BaseDurationExtractor;
-    durationParser: BaseDurationParser;
+    durationParser: IDateTimeParser;
     nowRegex: RegExp;
     amTimeRegex: RegExp;
     pmTimeRegex: RegExp;

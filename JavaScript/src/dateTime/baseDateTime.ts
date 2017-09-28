@@ -183,7 +183,7 @@ export interface IDateTimeParserConfiguration {
     cardinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
     durationExtractor: BaseDurationExtractor;
-    durationParser: BaseDurationParser;
+    durationParser: IDateTimeParser;
     nowRegex: RegExp;
     amTimeRegex: RegExp;
     pmTimeRegex: RegExp;
@@ -348,18 +348,25 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 
                 let val = pr2.value;
                 if (hour <= 12 && !RegExpUtility.getMatches(this.config.pmTimeRegex, text).length
-                    && !RegExpUtility.getMatches(this.config.amTimeRegex, text).length &&
-                val.comment) {
-                    // ret.Timex += "ampm";
+                    && !RegExpUtility.getMatches(this.config.amTimeRegex, text).length && val.comment) {
                     ret.comment = "ampm";
                 }
                 ret.futureValue = new Date(futureDate.getFullYear(), futureDate.getMonth(), futureDate.getDate(), hour, min, sec);
                 ret.pastValue = new Date(pastDate.getFullYear(), pastDate.getMonth(), pastDate.getDate(), hour, min, sec);
                 ret.success = true;
-                
+
+                //change the value of time object
+                pr2.timexStr = timeStr;
+                if (!StringUtility.isNullOrEmpty(ret.comment)) {
+                    pr2.value.comment = ret.comment === "ampm" ? "ampm" : "";
+                }
+
+                //add the date and time object in case we want to split them
+                ret.subDateTimeEntities = [pr1, pr2];
+
                 return ret;
             }
-            
+
             private parseTimeOfToday(text: string, referenceTime: Date): DateTimeResolutionResult {
                 let ret = new DateTimeResolutionResult();
                 let trimmedText = text.toLowerCase().trim();
@@ -370,8 +377,10 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 let timeStr: string;
                 
                 let wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayAfterRegex, trimmedText);
-                if (!(wholeMatches.length && wholeMatches[0].length === trimmedText.length))
-                    { wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, trimmedText); }
+                if (!(wholeMatches.length && wholeMatches[0].length === trimmedText.length)) {
+                    wholeMatches = RegExpUtility.getMatches(this.config.simpleTimeOfTodayBeforeRegex, trimmedText);
+                }
+
                 if (wholeMatches.length && wholeMatches[0].length === trimmedText.length) {
                     let hourStr = wholeMatches[0].groups("hour").value;
                     if (!hourStr) {

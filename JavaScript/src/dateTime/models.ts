@@ -27,8 +27,13 @@ export class DateTimeModel implements IDateTimeModel {
         query = FormatUtility.preProcess(query);
 
         let extractResults = this.extractor.extract(query);
-        let parseDates = extractResults
-            .map(r => this.parser.parse(r, referenceDate));
+        let parseDates = new Array<DateTimeParseResult>();
+        for (let result of extractResults) {
+            let parseResult = this.parser.parse(result, referenceDate);
+            if (Array.isArray(parseResult.value)) {
+                parseDates.push(...parseResult.value);
+            } else { parseDates.push(parseResult); }
+        }
 
         return parseDates
             .map(o => ({

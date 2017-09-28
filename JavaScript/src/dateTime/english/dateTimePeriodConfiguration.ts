@@ -11,6 +11,8 @@ import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { EnglishDateTimeExtractorConfiguration } from "./dateTimeConfiguration"
 import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
+import { IExtractor } from "../../number/extractors"
+import { IDateTimeParser } from "../parsers"
 
 export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: EnglishCardinalExtractor
@@ -61,24 +63,24 @@ export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePer
     getFromTokenIndex(source: string) {
         let result = { matched: false, index: -1 };
         if (source.endsWith("from")) {
-                    result.index = source.lastIndexOf("from");
-                    result.matched = true;
-                }
-                return result;
+            result.index = source.lastIndexOf("from");
+            result.matched = true;
+        }
+        return result;
     };
 
     getBetweenTokenIndex(source: string) {
-                let result = { matched: false, index: -1 };
+        let result = { matched: false, index: -1 };
         if (source.endsWith("between")) {
-                    result.index = source.lastIndexOf("between");
-                    result.matched = true;
-                }
-                return result;
+            result.index = source.lastIndexOf("between");
+            result.matched = true;
+        }
+        return result;
     };
 
     hasConnectorToken(source: string): boolean {
-                return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
-            };
+        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+    };
 }
 
 export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriodParserConfiguration {
@@ -92,12 +94,14 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly numbers: ReadonlyMap<string, number>
     readonly unitMap: ReadonlyMap<string, string>
     readonly dateExtractor: BaseDateExtractor
+    readonly timePeriodExtractor: IExtractor
     readonly timeExtractor: BaseTimeExtractor
     readonly dateTimeExtractor: BaseDateTimeExtractor
     readonly durationExtractor: BaseDurationExtractor
     readonly dateParser: BaseDateParser
     readonly timeParser: BaseTimeParser
     readonly dateTimeParser: BaseDateTimeParser
+    readonly timePeriodParser: IDateTimeParser
     readonly durationParser: BaseDurationParser
     readonly morningStartEndRegex: RegExp
     readonly afternoonStartEndRegex: RegExp
@@ -116,12 +120,14 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.numbers = config.numbers;
         this.unitMap = config.unitMap;
         this.dateExtractor = config.dateExtractor;
+        this.timePeriodExtractor = config.timePeriodExtractor;
         this.timeExtractor = config.timeExtractor;
         this.dateTimeExtractor = config.dateTimeExtractor;
         this.durationExtractor = config.durationExtractor;
         this.dateParser = config.dateParser;
         this.timeParser = config.timeParser;
         this.dateTimeParser = config.dateTimeParser;
+        this.timePeriodParser = config.timePeriodParser;
         this.durationParser = config.durationParser;
         this.morningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex);
         this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex);
