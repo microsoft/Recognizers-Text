@@ -159,9 +159,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var futureDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).FutureValue;
-            var pastDate = (DateObject) ((DateTimeResolutionResult) pr1.Value).PastValue;
-            var time = (DateObject) ((DateTimeResolutionResult) pr2.Value).FutureValue;
+            var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
+            var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
+            var time = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
             var hour = time.Hour;
             var min = time.Minute;
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
-                ((DateTimeResolutionResult) pr2.Value).Comment = ret.Comment.Equals("ampm") ? "ampm" : "";
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals("ampm") ? "ampm" : "";
             }
             
             //add the date and time object in case we want to split them
@@ -309,8 +309,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.config.TheEndOfRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DateParser.Parse(ers[0], refeDateTime);
-                var futureDate = (DateObject) ((DateTimeResolutionResult) pr.Value).FutureValue;
-                var pastDate = (DateObject) ((DateTimeResolutionResult) pr.Value).PastValue;
+                var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + "T23:59";
                 ret.FutureValue = futureDate.AddDays(1).AddMinutes(-1);
                 ret.PastValue = pastDate.AddDays(1).AddMinutes(-1);
