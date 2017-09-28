@@ -4,21 +4,21 @@ var SupportedCultures = require('./cultures');
 var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
 
 var LanguagesConfig = [
-    'English'
-    // 'Spanish'
+    'English',
+    'Spanish'
 ];
 
 var ExtractorTypes = {
-    'Date':             ['Date'],
-    'Time':             ['Time'],
-    'DatePeriod':       ['DatePeriod'],
-    'TimePeriod':       ['TimePeriod'],
-    'DateTime':         ['DateTime'],
-    'DateTimePeriod':   ['DateTimePeriod'],
-    'Duration':         ['Duration'],
-    'Holiday':          ['Holiday'],
-    'Set':              ['Set'],
-    'Merged':           ['Merged', DateTimeOptions.None],
+    'Date': ['Date'],
+    'Time': ['Time'],
+    'DatePeriod': ['DatePeriod'],
+    'TimePeriod': ['TimePeriod'],
+    'DateTime': ['DateTime'],
+    'DateTimePeriod': ['DateTimePeriod'],
+    'Duration': ['Duration'],
+    'Holiday': ['Holiday'],
+    'Set': ['Set'],
+    'Merged': ['Merged', DateTimeOptions.None],
     'MergedSkipFromTo': ['Merged', DateTimeOptions.SkipFromToMerge],
 };
 
@@ -31,24 +31,28 @@ var extractorKeys = extractorConfigs.map(cfg => _.findKey(SupportedCultures, (c)
 var extractorObjects = extractorConfigs.map(cfg => createExtractor(cfg.lang, cfg.cfg[0], cfg.cfg[1]));
 
 // { 'Eng-Date': {extractor}, 'Eng-Set': {extractor}, 'Eng-Merged': {extractor}, 'Eng-MergedSkipFromTo': ... }
-module.exports =  _.zipObject(extractorKeys, extractorObjects);
+module.exports = _.zipObject(extractorKeys, extractorObjects);
 
 function createExtractor(lang, extractor, options) {
-    var extractorModuleName = '../compiled/dateTime/base' + extractor;
-    var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');
-    var ExtractorType = require(extractorModuleName)[extractorTypeName];
-    if (!ExtractorType) {
-        throw new Error(`Extractor Type ${extractorTypeName} was not found in module ${extractorModuleName}`);
-    }
+    try {
+        var extractorModuleName = '../compiled/dateTime/base' + extractor;
+        var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');
+        var ExtractorType = require(extractorModuleName)[extractorTypeName];
+        if (!ExtractorType) {
+            throw new Error(`Extractor Type ${extractorTypeName} was not found in module ${extractorModuleName}`);
+        }
 
-    var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + Constants.Configuration;
-    var configTypeName = lang + extractor + Constants.ExtractorConfiguration;
-    var ConfigType = require(configModuleName)[configTypeName];
-    if (!ConfigType) {
-        throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
-    }
+        var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + Constants.Configuration;
+        var configTypeName = lang + extractor + Constants.ExtractorConfiguration;
+        var ConfigType = require(configModuleName)[configTypeName];
+        if (!ConfigType) {
+            throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
+        }
 
-    return new ExtractorType(new ConfigType(), options);
+        return new ExtractorType(new ConfigType(), options);
+    } catch (err) {
+        console.error('Error while creating Extractor for DateTime', err.toString());
+    }
 }
 
 
