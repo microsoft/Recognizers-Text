@@ -99,6 +99,12 @@ NextDateRegex: !nestedRegex
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b((el\s+)?(d[ií]a\s+antes\s+de\s+ayer|anteayer)|((el\s+)?d[ií]a\s+(despu[eé]s\s+)?de\s+mañana|pasado\s+mañana)|(el\s)?d[ií]a siguiente|(el\s)?pr[oó]ximo\s+d[ií]a|(el\s+)?[uú]ltimo d[ií]a|(d)?el d[ií]a|ayer|mañana|hoy)\b
+ForTheRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+WeekDayAndDayOfMothRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -603,4 +609,11 @@ PastPrefixRegex: !simpleRegex
   def: ([uú]ltim[oa])\b
 ThisPrefixRegex: !simpleRegex
   def: (est[ea])\b
+RelativeDayRegex: !simpleRegex
+  # TODO: implement the relative day regex if needed. If yes, they should be abstracted
+  def: ''
+RestOfDateRegex: !simpleRegex
+  # TODO: add this regex, let it correspond to the one in English
+  def: ^[.]
+
 ...
