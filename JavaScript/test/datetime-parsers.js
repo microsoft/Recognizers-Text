@@ -4,10 +4,11 @@ var SupportedCultures = require('./cultures');
 
 // Configs
 var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/baseConfiguration').EnglishCommonDateTimeParserConfiguration;
+var SpanishCommonDateTimeParserConfiguration = require('../compiled/dateTime/spanish/baseConfiguration').SpanishCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {
-    'English': new EnglishCommonDateTimeParserConfiguration()
-    // 'Spanish': new SpanishCommonDateTimeParserConfiguration()
+    'English': new EnglishCommonDateTimeParserConfiguration(),
+    'Spanish': new SpanishCommonDateTimeParserConfiguration()
 };
 
 var ParserTypes = [

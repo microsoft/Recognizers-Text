@@ -234,7 +234,7 @@ export interface IDateTimePeriodParserConfiguration {
 
 export class BaseDateTimePeriodParser implements IDateTimeParser {
     private readonly parserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
-    private readonly config: IDateTimePeriodParserConfiguration;
+    protected readonly config: IDateTimePeriodParserConfiguration;
 
     constructor(config: IDateTimePeriodParserConfiguration) {
         this.config = config;
@@ -493,7 +493,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return { begin: beginPr, end: endPr };
     }
 
-    private parseSpecificTimeOfDay(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseSpecificTimeOfDay(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let timeText = source;
         let hasEarly = false;

@@ -633,4 +633,6 @@ RestOfDateTimeRegex: !simpleRegex
 SetWeekDayRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]
+NightRegex: !simpleRegex
+  def: \b(medionoche|noche)\b
 ...
