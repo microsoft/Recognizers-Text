@@ -2353,6 +2353,17 @@
 }
 ,
 {
+  "Input": "What do I have the week of November 30th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week of November 30th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "the week of september.15th",
   "NotSupportedByDesign": "python",
   "Results": [

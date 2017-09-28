@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
-using System.Linq;
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text
 {
     public class TestTextWriterTraceListener : TextWriterTraceListener
     {
         private bool isAppend = false;
+
         public TestTextWriterTraceListener(string language, string recognizer, string model) : base(string.Join("-", "results", language, recognizer, model) + ".json", string.Join("-", language, recognizer, model))
         {
             var path = Path.Combine("..", "..", "..", "..", "Specs", recognizer, language);
@@ -56,7 +56,8 @@ namespace Microsoft.Recognizers.Text
             this.model = model;
         }
 
-        public override bool ShouldTrace(TraceEventCache cache, string source, TraceEventType eventType, int id, string formatOrMessage, object[] args, object data1, object[] data)
+        public override bool ShouldTrace(TraceEventCache cache, string source, TraceEventType eventType, int id, 
+                                         string formatOrMessage, object[] args, object data1, object[] data)
         {
             var testCase = JsonConvert.DeserializeObject<TestModel>(formatOrMessage);
             return testCase.Language.Equals(language) && testCase.Recognizer.Equals(recognizer) && testCase.Model.Equals(model);

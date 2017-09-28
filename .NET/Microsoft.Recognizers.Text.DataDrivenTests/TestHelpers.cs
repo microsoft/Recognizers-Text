@@ -1,16 +1,16 @@
-﻿using Microsoft.Recognizers.Text.DateTime;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using DateObject = System.DateTime;
+using Newtonsoft.Json;
+using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
@@ -22,15 +22,18 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             var classNameIndex = context.FullyQualifiedTestClassName.LastIndexOf('.');
             var className = context.FullyQualifiedTestClassName.Substring(classNameIndex + 1).Replace("Test", "");
-            var recognizer_language = className.Split('_');
-            var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizer_language[0], recognizer_language[1]);
+            var recognizerLanguage = className.Split('_');
+
+            var directorySpecs = Path.Combine("..", "..", "..", "..", "Specs", recognizerLanguage[0], recognizerLanguage[1]);
+
             var specsFiles = Directory.GetFiles(directorySpecs);
             foreach (var specsFile in specsFiles)
             {
-                var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizer_language[1];
+                var fileName = Path.GetFileNameWithoutExtension(specsFile) + "-" + recognizerLanguage[1];
                 var rawData = File.ReadAllText(specsFile);
                 var specs = JsonConvert.DeserializeObject<IList<TestModel>>(rawData);
-                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
+                File.WriteAllText(fileName + ".csv", "Index" + Environment.NewLine + 
+                                  string.Join(Environment.NewLine, Enumerable.Range(0, specs.Count).Select(o => o.ToString())));
                 resources.Add(Path.GetFileNameWithoutExtension(specsFile), specs);
             }
         }
@@ -293,7 +296,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static DateObject GetReferenceDateTime(this TestModel testSpec)
         {
-            if (testSpec.Context.TryGetValue("ReferenceDateTime", out object dateTimeObject))
+
+            object dateTimeObject;
+            if (testSpec.Context.TryGetValue("ReferenceDateTime", out dateTimeObject))
             {
                 return (DateObject)dateTimeObject;
             }
@@ -331,6 +336,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             message = string.Empty;
+
             return false;
         }
 
