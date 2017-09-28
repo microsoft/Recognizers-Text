@@ -1,4 +1,5 @@
-import { Constants, TimeTypeConstants } from "./constants";
+import { Constants, TimeTypeConstants } from "./constants"
+import { Constants as NumberConstants } from "../number/constants"
 import { IExtractor, ExtractResult, BaseNumberExtractor } from "../number/extractors"
 import { BaseNumberParser } from "../number/parsers"
 import { RegExpUtility, Match, StringUtility } from "../utilities";
@@ -120,7 +121,8 @@ export class BaseDateExtractor implements IExtractor {
 
                 // handling cases like 'second Sunday'
                 match = RegExpUtility.getMatches(this.config.weekDayRegex, suffixStr.trim()).pop();
-                if (match && match.index === 0 && num >= 1 && num <= 5) {
+                if (match && match.index === 0 && num >= 1 && num <= 5
+                    && result.type === NumberConstants.SYS_NUM_ORDINAL) {
                     let weekDayStr = match.groups('weekday').value;
                     if (this.config.dayOfWeek.has(weekDayStr)) {
                         let spaceLen = suffixStr.length - suffixStr.trim().length;

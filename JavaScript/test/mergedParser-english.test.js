@@ -12,6 +12,10 @@ describe('DateTime Merged Parser', it => {
     let parser = new Parser(new ParserConfig(new CommonParserConfig()), DateTimeOptions.None);
     let referenceDate = new Date(2016, 10, 7);
 
+    basicTest(it, extractor, parser, referenceDate, "ADD LUNCH AT 12:30 PM ON FRI ", Constants.SYS_DATETIME_DATETIME);
+    basicTest(it, extractor, parser, referenceDate, "What do I have the week of November 30th", Constants.SYS_DATETIME_DATEPERIOD);
+    basicTest(it, extractor, parser, referenceDate, "For four Monday at noon ", Constants.SYS_DATETIME_DATETIME);
+    basicTest(it, extractor, parser, referenceDate, "Add 649 midnight tonight", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm", Constants.SYS_DATETIME_DATETIME);
     basicTest(it, extractor, parser, referenceDate, "Set an appointment for Easter", Constants.SYS_DATETIME_DATE);
     basicTest(it, extractor, parser, referenceDate, "day after tomorrow", Constants.SYS_DATETIME_DATE);
