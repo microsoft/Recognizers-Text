@@ -66,6 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English.Tests
         [TestMethod]
         public void TestMergedParse()
         {
+            BasicTest("at 715ampm", Constants.SYS_DATETIME_TIME);
             BasicTest("ADD LUNCH AT 12:30 PM ON FRI ", Constants.SYS_DATETIME_DATETIME);
             BasicTest("What do I have the week of November 30th", Constants.SYS_DATETIME_DATEPERIOD);
             BasicTest("For four Monday at noon ", Constants.SYS_DATETIME_DATETIME);

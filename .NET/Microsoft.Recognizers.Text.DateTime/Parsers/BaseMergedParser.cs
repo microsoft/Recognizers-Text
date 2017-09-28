@@ -231,6 +231,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var mod = val.Mod;
             var comment = val.Comment;
 
+            //the following should added to res first since the ResolveAmPm is using these fields
+            AddResolutionFields(res, Constants.TimexKey, timex);
+            AddResolutionFields(res, Constants.CommentKey, comment);
+            AddResolutionFields(res, Constants.ModKey, mod);
+            AddResolutionFields(res, Constants.TypeKey, typeOutput);
+            AddResolutionFields(res, Constants.IsLunarKey, islunar? islunar.ToString():string.Empty);
+
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
 
@@ -243,19 +250,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (resolutionPast.Count > 0)
                 {
-                    res.Add("resolve", resolutionPast);
+                    AddResolutionFields(res, Constants.ResolveKey, resolutionPast);
                 }
             }
             else
             {
                 if (resolutionPast.Count > 0)
                 {
-                    res.Add("resolveToPast", resolutionPast);
+                    AddResolutionFields(res, Constants.ResolveToPastKey, resolutionPast);
                 }
 
                 if (resolutionFuture.Count > 0)
                 {
-                    res.Add("resolveToFuture", resolutionFuture);
+                    AddResolutionFields(res, Constants.ResolveToFutureKey, resolutionFuture);
                 }
             }
 
@@ -279,31 +286,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var value = new Dictionary<string, string>();
 
-                    if (!string.IsNullOrEmpty(timex))
-                    {
-                        value.Add("timex", timex);
-                    }
-
-                    if (!string.IsNullOrEmpty(mod))
-                    {
-                        value.Add("mod", mod);
-                    }
-
-                    if (!string.IsNullOrEmpty(comment))
-                    {
-                        value.Add("comment", comment);
-                    }
-
-                    // lunar is only for Chinese
-                    if (islunar)
-                    {
-                        value.Add("islunar", islunar.ToString());
-                    }
-
-                    if (!string.IsNullOrEmpty(type))
-                    {
-                        value.Add("type", typeOutput);
-                    }
+                    AddResolutionFields(value, Constants.TimexKey, timex);
+                    AddResolutionFields(value, Constants.ModKey, mod);
+                    AddResolutionFields(value, Constants.TypeKey, typeOutput);
+                    AddResolutionFields(value, Constants.IsLunarKey, islunar ? islunar.ToString() : string.Empty);
 
                     foreach (var q in (Dictionary<string, string>) p.Value)
                     {
@@ -339,6 +325,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return new SortedDictionary<string, object> { { "values", resolutions } };
+        }
+
+        internal void AddResolutionFields(Dictionary<string, object> dic, string key, object value)
+        {
+            if (value is string)
+            {
+                if (!string.IsNullOrEmpty((string)value))
+                {
+                    dic.Add(key, value);
+                }
+            }
+            else
+            {
+                dic.Add(key, value);
+            }
+        }
+
+        internal void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                dic.Add(key, value);
+            }
         }
 
         internal void ResolveAmpm(Dictionary<string, object> resolutionDic, string keyName)
