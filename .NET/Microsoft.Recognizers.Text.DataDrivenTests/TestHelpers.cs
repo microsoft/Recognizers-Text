@@ -296,7 +296,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static DateObject GetReferenceDateTime(this TestModel testSpec)
         {
-            if (testSpec.Context.TryGetValue("ReferenceDateTime", out object dateTimeObject))
+
+            object dateTimeObject;
+            if (testSpec.Context.TryGetValue("ReferenceDateTime", out dateTimeObject))
             {
                 return (DateObject)dateTimeObject;
             }
