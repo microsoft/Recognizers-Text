@@ -51,7 +51,7 @@ export class StringUtility {
 }
 
 export class Match {
-    constructor (index: number, length: number, value: string, groups) {
+    constructor(index: number, length: number, value: string, groups) {
         this.index = index;
         this.length = length;
         this.value = value;
@@ -70,12 +70,12 @@ export class Match {
 
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
-        let rawRegex:string = (regex as any).xregexp.source;
+        let rawRegex: string = (regex as any).xregexp.source;
         if (!rawRegex.includes('(?<nlb__')) {
             return this.getMatchesSimple(regex, source);
         }
         let realMatches = new Array<Match>();
-        
+
         let negativeLookbehindRegexes = new Array<RegExp>();
 
         let closePos = 0;
@@ -86,7 +86,7 @@ export class RegExpUtility {
             rawRegex = rawRegex.substr(0, startPos) + rawRegex.substr(closePos + 1);
             startPos = rawRegex.indexOf('(?<nlb__', 0);
         }
-        
+
         let tempRegex = XRegExp(rawRegex, 'gis');
         RegExpUtility.getMatchesSimple(tempRegex, source).forEach(match => {
             let clean = true;
@@ -114,7 +114,7 @@ export class RegExpUtility {
         let matches = new Array<Match>();
         XRegExp.forEach(source, regex, match => {
             let positiveLookbehinds = [];
-            let groups: { [id: string]: { value: string, index: number, length: number, captures: string[] } } = { };
+            let groups: { [id: string]: { value: string, index: number, length: number, captures: string[] } } = {};
             let lastGroup = '';
 
             Object.keys(match).forEach(key => {
@@ -123,7 +123,7 @@ export class RegExpUtility {
                     if (match[0].indexOf(match[key]) !== 0 && !StringUtility.isNullOrEmpty(lastGroup)) {
                         groups[lastGroup].value = groups[lastGroup].value + match[key];
                     }
-                    positiveLookbehinds.push({key:key, value:match[key]});
+                    positiveLookbehinds.push({ key: key, value: match[key] });
                     return;
                 }
                 if (key.startsWith('nlb')) {
@@ -142,12 +142,12 @@ export class RegExpUtility {
                     groups[groupKey].captures.push(match[key]);
                 }
             });
-            
+
             let value = match[0];
             let index = match.index;
             let length = value.length;
 
-            if (positiveLookbehinds && positiveLookbehinds.length > 0 && value.indexOf(positiveLookbehinds[0].value) ===  0) {
+            if (positiveLookbehinds && positiveLookbehinds.length > 0 && value.indexOf(positiveLookbehinds[0].value) === 0) {
                 value = value.substr(positiveLookbehinds[0].value.length)
                 index += positiveLookbehinds[0].value.length
                 length -= positiveLookbehinds[0].value.length
@@ -155,6 +155,23 @@ export class RegExpUtility {
             matches.push(new Match(index, length, value, groups));
         });
         return matches;
+    }
+
+    static getSafeRegExp(source: string, flags?: string): RegExp {
+        let sanitizedSource = this.sanitizeGroups(source);
+        return XRegExp(sanitizedSource, flags || 'gis');
+    }
+
+    static getFirstMatchIndex(regex: RegExp, source: string): { matched: boolean; index: number; } {
+        let matches = RegExpUtility.getMatches(regex, source);
+        if (matches.length) {
+            return {
+                matched: true,
+                index: matches[0].index
+            };
+        }
+
+        return { matched: false, index: -1 };
     }
 
     private static matchGroup = XRegExp(String.raw`\?<(?<name>\w+)>`, 'gis');
@@ -182,8 +199,4 @@ export class RegExpUtility {
         return closePos;
     }
 
-    static getSafeRegExp(source: string, flags?: string): RegExp {
-        let sanitizedSource = this.sanitizeGroups(source);
-        return XRegExp(sanitizedSource, flags || 'gis');
-    }
 }
