@@ -1,4 +1,32 @@
 [{
+  "Input": "at 715ampm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "715ampm",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+          {
+            "timex": "T07:15",
+            "type": "time",
+            "value": "07:15:00"
+          },
+          {
+            "timex": "T19:15",
+            "type": "time",
+            "value": "19:15:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "ADD LUNCH AT 12:30 PM ON FRI ",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -40,14 +68,12 @@
         "values": [
           {
             "timex": "XXXX-11-30",
-            "comment": "WeekOf",
             "type": "daterange",
             "start": "2015-11-30",
             "end": "2015-12-07"
           },
           {
             "timex": "XXXX-11-30",
-            "comment": "WeekOf",
             "type": "daterange",
             "start": "2016-11-28",
             "end": "2016-12-05"
@@ -483,7 +509,7 @@
         "values": [
           {
             "timex": "T20",
-            "mod": "after",
+            "Mod": "after",
             "type": "timerange",
             "start": "20:00:00"
           }
@@ -507,7 +533,7 @@
         "values": [
           {
             "timex": "T20",
-            "mod": "before",
+            "Mod": "before",
             "type": "timerange",
             "end": "20:00:00"
           }
@@ -531,7 +557,7 @@
         "values": [
           {
             "timex": "T20",
-            "mod": "since",
+            "Mod": "since",
             "type": "timerange",
             "start": "20:00:00"
           }
