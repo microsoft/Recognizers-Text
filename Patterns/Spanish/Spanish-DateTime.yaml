@@ -615,5 +615,22 @@ RelativeDayRegex: !simpleRegex
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
   def: ^[.]
-
+RelativeDurationUnitRegex: !simpleRegex
+  # TODO: change to Spanish according to corresponding Regex
+  def: ^[\.]
+FromToRegex: !simpleRegex
+  # TODO: change to Spanish according to corresponding Regex
+  def: \b(from).+(to)\b.+
+SingleAmbiguousMonthRegex: !simpleRegex
+  # TODO: change to Spanish according to corresponding Regex
+  def: ^(the\s+)?(may|march)$
+PrepositionSuffixRegex: !simpleRegex
+  # TODO: change to Spanish according to corresponding Regex
+  def: \b(on|in|at|around|from|to)$
+RestOfDateTimeRegex: !simpleRegex
+  # TODO: add this according to the related part in English
+  def: ^[\.]
+SetWeekDayRegex: !simpleRegex
+  # TODO: add this according to the related part in English
+  def: ^[\.]
 ...
