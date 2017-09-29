@@ -1,19 +1,28 @@
 {
-  "name": "recognizers-text",
+  "name": "recognizers-text-number",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "main": "dist/recognizers-text-number.umd.js",
+  "module": "dist/recognizers-text-number.es5.js",
+  "typings": "dist/types/recognizers-text-number.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "Microsoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/recognizers-text"
+    "url": "https://github.com/microsoft/recognizers-text-number"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
-    "build": "tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
+    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
     "start": "tsc-watch --onSuccess \"ava --watch\"",
     "test": "tsc && ava"
   },
@@ -43,12 +52,14 @@
     "tslint-config-standard": "^6.0.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.74",
+    "@types/lodash": "^4.14.76",
     "@types/xregexp": "^3.0.29",
-    "bignumber.js": "^4.0.3",
-    "lodash": "^4.17.4",
+    "bignumber.js": "^4.1.0",
+    "lodash.escaperegexp": "^4.1.2",
+    "lodash.sortby": "^4.7.0",
+    "lodash.trimend": "^4.5.1",
     "typedoc": "^0.8.0",
-    "typescript": "^2.5.1",
+    "typescript": "^2.5.3",
     "xregexp": "^3.2.0"
   }
 }
