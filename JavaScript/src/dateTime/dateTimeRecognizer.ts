@@ -15,7 +15,7 @@ export default class DateTimeRecognizer extends Recognizer {
         // English models
         this.registerModel("DateTimeModel", Culture.English, new DateTimeModel(
             new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), options),
-            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), DateTimeOptions.None)
+            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
         ));
     }
 
