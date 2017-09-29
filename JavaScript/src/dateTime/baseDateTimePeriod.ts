@@ -328,19 +328,17 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
 
                     ret.timex = `(${beginStr},${endStr},${timePeriodTimexArray[2]})`;
 
-                    ret.futureValue = {
-                        item1: DateUtils.safeCreateFromMinValue(futureTime.getFullYear(), futureTime.getMonth(), futureTime.getDate(),
+                    ret.futureValue = [
+                        DateUtils.safeCreateFromMinValue(futureTime.getFullYear(), futureTime.getMonth(), futureTime.getDate(),
                             beginTime.getHours(), beginTime.getMinutes(), beginTime.getSeconds()),
-                        item2: DateUtils.safeCreateFromMinValue(futureTime.getFullYear(), futureTime.getMonth(), futureTime.getDate(),
-                            endTime.getHours(), endTime.getMinutes(), endTime.getSeconds())
-                    };
+                        DateUtils.safeCreateFromMinValue(futureTime.getFullYear(), futureTime.getMonth(), futureTime.getDate(),
+                            endTime.getHours(), endTime.getMinutes(), endTime.getSeconds())];
 
-                    ret.pastValue = {
-                        item1: DateUtils.safeCreateFromMinValue(pastTime.getFullYear(), pastTime.getMonth(), pastTime.getDate(),
+                    ret.pastValue = [
+                        DateUtils.safeCreateFromMinValue(pastTime.getFullYear(), pastTime.getMonth(), pastTime.getDate(),
                             beginTime.getHours(), beginTime.getMinutes(), beginTime.getSeconds()),
-                        item2: DateUtils.safeCreateFromMinValue(pastTime.getFullYear(), pastTime.getMonth(), pastTime.getDate(),
-                            endTime.getHours(), endTime.getMinutes(), endTime.getSeconds())
-                    };
+                        DateUtils.safeCreateFromMinValue(pastTime.getFullYear(), pastTime.getMonth(), pastTime.getDate(),
+                            endTime.getHours(), endTime.getMinutes(), endTime.getSeconds())];
 
                     if (!StringUtility.isNullOrEmpty(timePeriodResolutionResult.comment)
                         && timePeriodResolutionResult.comment === "ampm") {
