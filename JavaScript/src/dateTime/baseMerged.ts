@@ -378,6 +378,13 @@ export class BaseMergedParser implements IDateTimeParser {
         let mod = value.mod;
         let comment = value.comment;
 
+        //the following should added to res first since the ResolveAmPm is using these fields
+        this.addResolutionFieldsAny(result, Constants.TimexKey, timex);
+        this.addResolutionFieldsAny(result, Constants.CommentKey, comment);
+        this.addResolutionFieldsAny(result, Constants.ModKey, mod);
+        this.addResolutionFieldsAny(result, Constants.TypeKey, outputType);
+        this.addResolutionFieldsAny(result, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
+
         let futureResolution = value.futureResolution;
         let pastResolution = value.pastResolution;
 
@@ -387,10 +394,10 @@ export class BaseMergedParser implements IDateTimeParser {
         let futureValues = Array.from(future.values()).sort();
         let pastValues = Array.from(past.values()).sort();
         if (isEqual(futureValues, pastValues)) {
-            if (past.size > 0) result.set('resolve', past);
+            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
         } else {
-            if (past.size > 0) result.set('resolveToPast', past);
-            if (future.size > 0) result.set('resolveToFuture', future);
+            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            if (future.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
         }
 
         if (comment && comment === 'ampm') {
@@ -412,6 +419,11 @@ export class BaseMergedParser implements IDateTimeParser {
                 if (isLunar) newValues.set('isLunar', String(isLunar));
                 
                 if (!StringUtility.isNullOrEmpty(type)) newValues.set('type', outputType);
+                this.addResolutionFields(newValues, Constants.TimexKey, timex);
+                this.addResolutionFields(newValues, Constants.ModKey, mod);
+                this.addResolutionFields(newValues, Constants.TypeKey, outputType);
+                this.addResolutionFields(newValues, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
+
                 value.forEach((innerValue, innerKey) => {
                     newValues.set(innerKey, innerValue);
                 });
@@ -426,6 +438,29 @@ export class BaseMergedParser implements IDateTimeParser {
                 .set('value', 'not resolved'));
         }
         return new Map<string, any>().set('values', resolutions);
+    }
+
+    private addResolutionFieldsAny( dic:Map<string, any>,  key:string,  value:any)
+    {
+        if (value instanceof String)
+        {
+            if (!StringUtility.isNullOrEmpty(<string>value))
+            {
+                dic.set(key, value);
+            }
+        }
+        else
+        {
+            dic.set(key, value);
+        }
+    }
+
+    private addResolutionFields(dic:Map<string, string> ,  key:string,  value:string)
+    {
+        if (!StringUtility.isNullOrEmpty(value))
+        {
+            dic.set(key, value);
+        }
     }
 
     private generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {
