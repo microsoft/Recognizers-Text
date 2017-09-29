@@ -40,11 +40,11 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
     }
 
     hasConnectorToken(text: string): boolean {
-        return RegExpUtility.getFirstMatchIndex(this.betweenRegex, text).matched;
+        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, text).matched;
     }
 
     getBetweenTokenIndex(text: string): { matched: boolean; index: number; } {
-        return RegExpUtility.getFirstMatchIndex(this.connectorAndRegex, text);
+        return RegExpUtility.getFirstMatchIndex(this.betweenRegex, text);
     }
 }
 
