@@ -573,31 +573,32 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
         //parse rest of
         let match = RegExpUtility.getMatches(this.config.restOfDateRegex, source).pop();
-        if (!match) return result;
+        if (match) {
 
-        let diffDays = 0;
-        let durationStr = match.groups('duration').value;
-        let durationUnit = this.config.unitMap.get(durationStr);
-        switch (durationUnit) {
-            case 'W':
-                diffDays = 7 - ((beginDate.getDay() === 0) ? 7 : beginDate.getDay());
-                endDate = DateUtils.addDays(referenceDate, diffDays);
-                restNowSunday = (diffDays === 0);
-                break;
-            case 'MON':
-                endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), beginDate.getMonth(), 1);
-                endDate.setMonth(beginDate.getMonth() + 1);
-                endDate.setDate(endDate.getDate() - 1);
-                diffDays = endDate.getDate() - beginDate.getDate() + 1;
-                break;
-            case 'Y':
-                endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), 11, 1);
-                endDate.setMonth(endDate.getMonth() + 1);
-                endDate.setDate(endDate.getDate() - 1);
-                diffDays = DateUtils.dayOfYear(endDate) - DateUtils.dayOfYear(beginDate) + 1;
-                break;
+            let diffDays = 0;
+            let durationStr = match.groups('duration').value;
+            let durationUnit = this.config.unitMap.get(durationStr);
+            switch (durationUnit) {
+                case 'W':
+                    diffDays = 7 - ((beginDate.getDay() === 0) ? 7 : beginDate.getDay());
+                    endDate = DateUtils.addDays(referenceDate, diffDays);
+                    restNowSunday = (diffDays === 0);
+                    break;
+                case 'MON':
+                    endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), beginDate.getMonth(), 1);
+                    endDate.setMonth(beginDate.getMonth() + 1);
+                    endDate.setDate(endDate.getDate() - 1);
+                    diffDays = endDate.getDate() - beginDate.getDate() + 1;
+                    break;
+                case 'Y':
+                    endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), 11, 1);
+                    endDate.setMonth(endDate.getMonth() + 1);
+                    endDate.setDate(endDate.getDate() - 1);
+                    diffDays = DateUtils.dayOfYear(endDate) - DateUtils.dayOfYear(beginDate) + 1;
+                    break;
+            }
+            durationTimex = `P${diffDays}D`;
         }
-        durationTimex = `P${diffDays}D`;
 
         if (beginDate !== endDate || restNowSunday) {
             endDate = DateUtils.addDays(endDate, this.inclusiveEndPeriod ? -1 : 0);

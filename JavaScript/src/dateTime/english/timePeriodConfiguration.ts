@@ -11,7 +11,6 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
     readonly singleTimeExtractor: BaseTimeExtractor;
-    readonly rangeConnectorRegex: RegExp;
 
     constructor() {
         this.simpleCasesRegex = [
@@ -21,7 +20,6 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeOfDayRegex, "gis");
         this.singleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }
 
     public getFromTokenIndex(source: string): { matched: boolean, index: number } {
@@ -43,7 +41,7 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
     }
 
     public hasConnectorToken(source: string): boolean {
-        return RegExpUtility.getMatches(this.rangeConnectorRegex, source).length > 0;
+        return source === "and";
     }
 }
 

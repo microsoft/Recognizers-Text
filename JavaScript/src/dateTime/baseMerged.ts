@@ -412,13 +412,7 @@ export class BaseMergedParser implements IDateTimeParser {
         result.forEach((value, key) => {
             if (value instanceof Map) {
                 let newValues = new Map<string, string>();
-                if (!StringUtility.isNullOrEmpty(timex)) newValues.set('timex', timex);
-
-                if (!StringUtility.isNullOrEmpty(mod)) newValues.set('mod', mod);
-                if (!StringUtility.isNullOrEmpty(comment)) newValues.set('comment', comment);
-                if (isLunar) newValues.set('isLunar', String(isLunar));
                 
-                if (!StringUtility.isNullOrEmpty(type)) newValues.set('type', outputType);
                 this.addResolutionFields(newValues, Constants.TimexKey, timex);
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
