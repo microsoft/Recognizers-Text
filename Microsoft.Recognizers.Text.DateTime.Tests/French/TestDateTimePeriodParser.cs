@@ -133,11 +133,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day + 1, 16, min, second),
                 new DateObject(year, month, day + 1, 20, 00, 00));
 
-            //BasicTestFuture("Je reviendrai lundi prochain semaine",
-            //    new DateObject(year, month, 14, 12, min, second),
-            //    new DateObject(year, month, 14, 16, min, second));
-
-
             // needs to support '3 derniere minutes'
             BasicTestFuture("Je reviendrai dernier 3 minutes",
                 new DateObject(year, month, day, 16, 9, second),
@@ -196,14 +191,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day + 1, 14, 0, 0),
                 new DateObject(year, month, day + 1, 16, 0, 0));
 
-            //BasicTestFuture("rencontrons-nous dans fin de soiree mardi",
-            //    new DateObject(year, month, day + 1, 16, 0, 0),
-            //    new DateObject(year, month, day + 1, 18, 0, 0));
-
-            //BasicTestFuture("rencontrons-nous dans fin de soirée mardi",
-            //    new DateObject(year, month, day + 1, 18, 0, 0),
-            //    new DateObject(year, month, day + 1, 20, 0, 0));
-
             BasicTestFuture("rencontrons-nous dans tot le nuit mardi",
                 new DateObject(year, month, day + 1, 20, 0, 0),
                 new DateObject(year, month, day + 1, 22, 0, 0));
@@ -228,14 +215,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day + 1, 10, 0, 0),
                 new DateObject(year, month, day + 1, 12, 0, 0));
 
-            //BasicTestFuture("rencontrons-nous dans tot d'après-midi Mardi",
-            //    new DateObject(year, month, day + 1, 12, 0, 0),
-            //    new DateObject(year, month, day + 1, 14, 0, 0));
-
-            //BasicTestFuture("rencontrons-nous dans le tard d'apres-midi Mardi",
-            //    new DateObject(year, month, day + 1, 14, 0, 0),
-            //    new DateObject(year, month, day + 1, 16, 0, 0));
-
             BasicTestFuture("rencontrons-nous dans tôt le soir mardi",
                 new DateObject(year, month, day + 1, 16, 0, 0),
                 new DateObject(year, month, day + 1, 18, 0, 0));
@@ -257,6 +236,26 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTestFuture("rencontrons-nous dans le tard nuit Mardi",
                 new DateObject(year, month, day + 1, 22, 0, 0),
                 new DateObject(year, month, day + 1, 23, 59, 59));
+
+            //BasicTestFuture("rencontrons-nous dans tot d'après-midi Mardi",
+            //    new DateObject(year, month, day + 1, 12, 0, 0),
+            //    new DateObject(year, month, day + 1, 14, 0, 0));
+
+            //BasicTestFuture("rencontrons-nous dans le tard d'apres-midi Mardi",
+            //    new DateObject(year, month, day + 1, 14, 0, 0),
+            //    new DateObject(year, month, day + 1, 16, 0, 0));
+
+            //BasicTestFuture("rencontrons-nous dans fin de soiree mardi",
+            //    new DateObject(year, month, day + 1, 16, 0, 0),
+            //    new DateObject(year, month, day + 1, 18, 0, 0));
+
+            //BasicTestFuture("rencontrons-nous dans fin de soirée mardi",
+            //    new DateObject(year, month, day + 1, 18, 0, 0),
+            //    new DateObject(year, month, day + 1, 20, 0, 0));
+
+            //BasicTestFuture("Je reviendrai lundi prochain semaine",
+            //    new DateObject(year, month, 14, 12, min, second),
+            //    new DateObject(year, month, 14, 16, min, second));
 
         }
 

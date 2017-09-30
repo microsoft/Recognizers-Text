@@ -104,25 +104,21 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("C'est 10 dans le soirée", new DateObject(year, month, day, 22, min, second));
             BasicTest("C'est 10 dans la soiree", new DateObject(year, month, day, 22, min, second));
 
-            // TODO: Handle '3 in the afternoon', conflicts with 'afternoonRegex'
-            //BasicTest("C'est 3 l'après-midi", new DateObject(year, month, day, 15, min, second));
-
-            // TODO: Handle 'it's half past 8' - Il est 8 heures et demie
-            // TODO: Handle military time - 24:00, possibly remove AM/PM from French files?
+            // TODO: Better handling for 'half past 8', etc. Should be "8 heueres et demie",
+            // currently 'heures' conflicts with unit/oclock
             
-            //BasicTest("C'est 8 heures et demie", new DateObject(year, month, day, 8, 30, second));
-            //BasicTest("Il est 20 heures et emi", new DateObject(year, month, day, 20, 30, second));
-            //BasicTest("It's 30 mins past eight", new DateObject(year, month, day, 8, 30, second));
-            //BasicTest("It's a quarter past eight", new DateObject(year, month, day, 8, 15, second));
-            //BasicTest("It's quarter past eight", new DateObject(year, month, day, 8, 15, second));
-            //BasicTest("It's three quarters past 9pm", new DateObject(year, month, day, 21, 45, second));
-            //BasicTest("It's three minutes to eight", new DateObject(year, month, day, 7, 57, second));
+            BasicTest("C'est 8 et demie", new DateObject(year, month, day, 8, 30, second));
+            BasicTest("Il est 20 et demie", new DateObject(year, month, day, 20, 30, second));
+            BasicTest("C'est huit et demie", new DateObject(year, month, day, 8, 30, second));
+            BasicTest("C'est huit et quart", new DateObject(year, month, day, 8, 15, second));
+            BasicTest("C'est 8 et quart", new DateObject(year, month, day, 8, 15, second));
+            BasicTest("C'est 9pm et trois quarts", new DateObject(year, month, day, 21, 45, second));
+            //BasicTest("C'est trois minute jusqu'a huit", new DateObject(year, month, day, 7, 57, second));
 
-            //BasicTest("It's half past seven o'clock", new DateObject(year, month, day, 7, 30, second));
-            //BasicTest("It's half past seven afternoon", new DateObject(year, month, day, 19, 30, second));
-            //BasicTest("It's half past seven in the morning", new DateObject(year, month, day, 7, 30, second));
-            //BasicTest("It's a quarter to 8 in the morning", new DateObject(year, month, day, 7, 45, second));
-            //BasicTest("It's 20 min past eight in the evening", new DateObject(year, month, day, 20, 20, second));
+            BasicTest("C'est sept et demie heures", new DateObject(year, month, day, 7, 30, second));
+            BasicTest("C'est sept et demie apres-midi", new DateObject(year, month, day, 19, 30, second));
+            BasicTest("C'est sept et demie du matin", new DateObject(year, month, day, 7, 30, second));
+            // BasicTest("C'est 8 h et vingt miniute dans la soiree", new DateObject(year, month, day, 20, 20, second)); - returns AM, should be PM
 
             //PMRegex
             BasicTest("Je retournerai apres-midi a 7", new DateObject(year, month, day, 19, 0, second));
@@ -189,20 +185,21 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("C'est 8 dans la soiree", "T20");
             BasicTest("C'est 8 ce soir", "T20");
             BasicTest("C'est 8 dans l'apres midi", "T20");
-            // **TODO - 
-            // in french - 'c'est 8 heures et demies' 
-            //BasicTest("It's half past eight", "T08:30");
-            //BasicTest("It's half past 8pm", "T20:30");
-            //BasicTest("It's 30 mins past eight", "T08:30");
-            //BasicTest("It's a quarter past eight", "T08:15");
-            //BasicTest("It's three quarters past 9pm", "T21:45");
-            //BasicTest("It's three minutes to eight", "T07:57");
 
-            //BasicTest("It's half past seven o'clock", "T07:30");
-            //BasicTest("It's half past seven afternoon", "T19:30");
-            //BasicTest("It's half past seven in the morning", "T07:30");
-            //BasicTest("It's a quarter to 8 in the morning", "T07:45");
-            //BasicTest("It's 20 min past eight in the evening", "T20:20");
+            BasicTest("C'est 8 et demie", "T08:30");
+            BasicTest("C'est 8 et quart", "T08:15");
+            BasicTest("C'est 21 et trois quarts", "T21:45");
+            //BasicTest("C'est trois minute jusqu'a 8", "T07:57");
+            //TODO : fix to allow '8 heures et demie'
+            //BasicTest("C'est 8 heures et demie", "T08:30"); // It's half past 8 
+            //BasicTest("C'est 8 heures et quart", "T08:15"); // it's a quarter past 8
+            //BasicTest("C'est 21 herues et quart", "T21:45");
+
+            BasicTest("C'est sept et demie heures", "T07:30");
+            //BasicTest("C'est sept et demie d'apres-midi", "T19:30"); // assert.areequal returns 2...
+            BasicTest("C'est sept et demie du matin", "T07:30");
+            //BasicTest("C'est un quart avant huit du matin", "T07:45"); // assert.AreEqual returns 2...
+            BasicTest("C'est 8 h et vingt minute dans la soiree", "T20:20");
 
             BasicTest("Je retournerai dans l'apres midi a 7", "T19");
             BasicTest("Je retournerai apres-midi a 7", "T19");

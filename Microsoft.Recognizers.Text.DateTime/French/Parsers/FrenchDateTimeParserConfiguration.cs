@@ -76,6 +76,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             UtilityConfiguration = config.UtilityConfiguration;
         }
 
+        // Note: French typically uses 24:00 time, consider removing 12:00 am/pm 
+
         public int GetHour(string text, int hour)
         {
             var trimedText = text.Trim().ToLowerInvariant();

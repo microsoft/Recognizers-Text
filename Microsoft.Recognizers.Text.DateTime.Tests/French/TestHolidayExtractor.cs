@@ -21,8 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
         {
             BasicTest("Je reviendrai sur Yuandan", 18, 7);
             BasicTest("Je reviendrai sur jour de thanks giving", 18, 21);
-            BasicTest("Je reviendrai sur jour du pere", 18, 12);
-            BasicTest("Je reviendrai sur jour des mères", 18, 13);
+            BasicTest("Je reviendrai sur fete de pere", 18, 12);
             BasicTest("Je reviendrai sur noel", 18, 4); // I will return on christmas
             BasicTest("Je reviendrai sur jour de noël", 26, 4);
             BasicTest("Je reviendrai sur fete des meres", 18, 14);

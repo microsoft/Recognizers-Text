@@ -49,45 +49,47 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("C'est 8 dans le matin", 6, 15);
             BasicTest("C'est 8 dans la nuit", 6, 14);
 
-            // BasicTest("C'est 20 heures du soir", 6, 17); // better way to say half past 8pm
-            // BasicTest("C'est 20h30", 6, 5); // add another time extractor... for H/M
+             BasicTest("C'est 20 heures du soir", 6, 17); 
 
-            // TODO: These REGEX needs to be re-done for these...
+            //TODO - 
             // eng) it is quarter past 4 pm 
             // fr) C'est seize heures quinze - use 'quinze' rather than 'et quart' past noon
 
-            //BasicTest("C'est half past 8pm", 5, 13);
-            //BasicTest("C'est 30 mins past eight", 5, 18);
-            //BasicTest("C'est a quarter past eight", 5, 20);
-            //BasicTest("C'est quarter past eight", 5, 18);
-            //BasicTest("C'est three quarters past 9pm", 5, 23);
-            //BasicTest("C'est three minutes to eight", 5, 22);
+            BasicTest("C'est 8pm et demie", 6, 12);
+            BasicTest("C'est huit et demie", 6, 13);
+            BasicTest("C'est huit et quart", 6, 13);
+            BasicTest("C'est 9pm et trois quarts", 6, 19);
 
-            //BasicTest("C'est half past seven o'clock", 5, 23);
-            //BasicTest("C'est half past seven afternoon", 5, 25);
-            //BasicTest("C'est half past seven in the morning", 5, 30);
-            //BasicTest("C'est a quarter to 8 in the morning", 5, 29);
-            //BasicTest("C'est 20 min past eight in the evening", 5, 32);
+            //TODO: Add support for 'X heures et quart/demie' - "half/quarter past X", currently only supports 'X et quart/demie',
+            //'heueres' conflicts with unit/duration
+            //BasicTest("C'est huit heures et quart", 6, 20);
+            //BasicTest("C'est trois minutes jusqu'a huit", 6, 26); - resolves to 2 matches
+
+            BasicTest("C'est sept et demie heures", 6, 20);
+            BasicTest("C'est sept et demie h", 6, 15);
+            BasicTest("C'est sept heures et demie du soir", 6, 28); // half past 7 afternoon
+            BasicTest("C'est sept heures et demie du matin", 6, 29);
+            BasicTest("C'est a 8 heures et quart du matin", 8, 26);
+            BasicTest("C'est 8 h et vingt minute dans la soiree", 6, 34);
 
 
-            //BasicTest("je retournerai a 7 l'apres-midi", 17, 15);
-            //BasicTest("je retournerai l'apres midi a 7", 15, 16);
-
+            BasicTest("je retournerai a 7 dans l'apres-midi", 17, 19);
+            BasicTest("je retournerai l'apres midi a 7", 17, 14);
             BasicTest("je retournerai apres-midi 7:00", 15, 15);
             BasicTest("je retournerai apres-midi 7:00:14", 15, 18);
             BasicTest("je retournerai apres-midi sept", 15, 15);
 
             //BasicTest("je retournerai sept heures du soir", 15, 19);   // need to get ' heures + du soir' 'in the evening' 
-            BasicTest("Je retournerai sept trente cinq du soir", 15, 24); // this one works - need to make sure it registers pm
+            BasicTest("Je retournerai sept trente cinq du soir", 15, 24); // this one works 
             BasicTest("Je retournerai a onze cinq", 17, 9);
-            //BasicTest("Je retournerai trois mins a cinq trente", 15, 24);
+            //BasicTest("Je retournerai trois mins a cinq trente", 15, 24); // finds 2 matches
             BasicTest("Je retournerai cinq trente dans la nuit", 15, 24);
 
             //BasicTest("je retournerai peu pres a midi", 15, 15);
             BasicTest("je retournerai peu pres a 5", 15, 12);
             BasicTest("je retournerai peu près à 11 ", 15, 13); // i'll return close to 11 
 
-            //BasicTest("je retournerai 1540", 15, 4);  //fix to recognize military time
+            //BasicTest("je retournerai 15 40", 15, 4);  
             BasicTest("je retournerai 1140 a.m.", 15, 9);
             //BasicTest("je retournerai 1140 du matin", 15, 13); // needs to recognize du matin
 
@@ -108,10 +110,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
         [TestMethod]
         public void TestTimeDescExtract()
         {
+            // Note: formally no pm/am in french, only 24:00 time
             BasicTest("je retournerai 7pm", 15, 3);
             BasicTest("je retournerai 7 du soir", 15, 9);
             BasicTest("je retournerai 7 dans la nuit", 15, 14);
             BasicTest("je retournerai 7 p m", 15, 5);
+            BasicTest("je retournerai 7", 15, 1);
+            BasicTest("je retournerai 23", 15, 2);
             BasicTest("je retournerai 7 p. m", 15, 6);
             BasicTest("je retournerai 7 p. m.", 15, 7);
             BasicTest("je retournerai 7p.m.", 15, 5);

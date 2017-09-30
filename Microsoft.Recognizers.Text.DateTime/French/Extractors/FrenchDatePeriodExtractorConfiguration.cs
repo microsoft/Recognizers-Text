@@ -66,6 +66,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.NextSuffixRegex, // next, in
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex ThisPrefexRegex =
+            new Regex(
+                DateTimeDefinitions.ThisPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(
@@ -182,7 +187,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
-            SeasonRegex
+            SeasonRegex,
+            PastPrefixRegex,
+            NextPrefixRegex,
+            ThisPrefexRegex,
         };
 
         public FrenchDatePeriodExtractorConfiguration()

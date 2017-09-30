@@ -58,9 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // TODO - will have change below
-
         // handle "six heures et demie" (six thirty), "six heures et vingt-et-un" (six twenty one) 
-
         public static readonly Regex TimePrefix =
             new Regex(
                 DateTimeDefinitions.TimePrefix,

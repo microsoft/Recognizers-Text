@@ -47,18 +47,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex MonthOfRegex { get; }
         public Regex InConnectorRegex { get; }
 
-        //TODO: config this according to English
+
         public static readonly Regex NextPrefixRegex =
             new Regex(
-                @"(next|upcoming)\b",
+                @"(prochain|prochaine)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex =
             new Regex(
-                @"(last|past|previous)\b",
+                @"(dernier)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex =
             new Regex(
-                @"(this|current)\b",
+                @"(ce|cette)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;

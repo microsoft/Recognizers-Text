@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("Je reviendrai ce matin", 14, 8);
             BasicTest("Je reviendrai cette d'apres-midi", 14, 18);
 
-            // **TODO: Needs handling for Relative 'Suffix' 
+            // **TODO: Needs better handling for Relative 'Suffix' 
             //- prochain(next) and dernier(last) go AFTER date, aren't prefixes
             //BasicTest("Je reviendrai le nuit prochain", 14, 13);
             //BasicTest("Je reviendrai nuit dernier", 14, 12);

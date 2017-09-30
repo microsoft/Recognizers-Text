@@ -32,15 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("demi"))
+            if (trimedPrefix.EndsWith("demie"))   // c'este 8 heures et demie, - "it's half past 8"
             {
                 deltaMin = 30;
             }
-            else if (trimedPrefix.StartsWith("un quart") || trimedPrefix.StartsWith("quart"))
+            else if (trimedPrefix.EndsWith("un quart") || trimedPrefix.EndsWith("quart"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("trois quarts"))
+            else if (trimedPrefix.EndsWith("trois quarts"))
             {
                 deltaMin = 45;
             }
