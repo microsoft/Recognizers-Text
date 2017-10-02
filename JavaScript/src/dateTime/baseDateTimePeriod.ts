@@ -121,7 +121,8 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
                 let periodBegin = currentMark.start;
                 let periodEnd = nextMark.start + nextMark.length;
                 let beforeStr = source.substr(0, periodBegin).trim().toLowerCase();
-                let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
+                let matchFrom = this.config.getFromTokenIndex(beforeStr);
+                let fromTokenIndex = matchFrom.matched ? matchFrom : this.config.getBetweenTokenIndex(beforeStr);
                 if (fromTokenIndex.matched) {
                     periodBegin = fromTokenIndex.index;
                 }
