@@ -154,6 +154,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             base.TestDateTimeParser();
         }
 
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodParser-Spanish.csv", "DateTimePeriodParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimePeriodParser()
+        {
+            base.ExtractorInitialize(Extractors);
+            base.ParserInitialize(Parsers);
+            base.TestDateTimeParser();
+        }
+
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayParser-Spanish.csv", "HolidayParser-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void HolidayParser()
@@ -172,7 +181,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetParser-Spanishnish.csv", "SetParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetParser-Spanish.csv", "SetParser-Spanish#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void SetParser()
         {
