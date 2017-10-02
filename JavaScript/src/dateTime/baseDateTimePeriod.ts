@@ -449,7 +449,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 beginHasDate = true;
             }
         }
-        if (!prs || !prs.begin || !prs.end) return result;
+        if (!prs || !prs.begin.value || !prs.end.value) return result;
 
         let begin: DateTimeResolutionResult = prs.begin.value;
         let end: DateTimeResolutionResult = prs.end.value;
