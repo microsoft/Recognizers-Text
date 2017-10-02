@@ -82,7 +82,10 @@ export class RegExpUtility {
         let startPos = rawRegex.indexOf('(?<nlb__', 0);
         while (startPos >= 0) {
             closePos = this.getClosePos(rawRegex, startPos);
-            negativeLookbehindRegexes.push(XRegExp(rawRegex.substring(startPos, closePos + 1), 'gis'));
+            let nlbRegex = XRegExp(rawRegex.substring(startPos, closePos + 1), 'gis');
+            let nextRegex = RegExpUtility.getNextRegex(rawRegex, startPos);
+            (nlbRegex as any).nextRegex = nextRegex ? XRegExp(nextRegex, 'gis') : null;
+            negativeLookbehindRegexes.push(nlbRegex);
             rawRegex = rawRegex.substr(0, startPos) + rawRegex.substr(closePos + 1);
             startPos = rawRegex.indexOf('(?<nlb__', 0);
         }
@@ -93,9 +96,18 @@ export class RegExpUtility {
             negativeLookbehindRegexes.forEach(regex => {
                 RegExpUtility.getMatchesSimple(regex, source).forEach(negativeLookbehindMatch => {
                     let negativeLookbehindEnd = negativeLookbehindMatch.index + negativeLookbehindMatch.length;
+                    let nextRegex = (regex as any).nextRegex;
                     if (match.index === negativeLookbehindEnd) {
-                        clean = false;
-                        return;
+                        if (!nextRegex) {
+                            clean = false;
+                            return;
+                        } else {
+                            let nextMatch = RegExpUtility.getFirstMatchIndex(nextRegex, source.substring(negativeLookbehindMatch.index));
+                            if (nextMatch.matched && nextMatch.index === negativeLookbehindMatch.length) {
+                                clean = false;
+                                return;
+                            }
+                        }
                     }
                 });
                 if (!clean) {
@@ -186,6 +198,20 @@ export class RegExpUtility {
         index = 0;
         result = XRegExp.replace(result, this.matchNegativeLookbehind, () => `(?<nlb__${index++}>`);
         return result;
+    }
+
+    private static getNextRegex(source: string, startPos: number) {
+        startPos = RegExpUtility.getClosePos(source, startPos) + 1;
+        let closePos = RegExpUtility.getClosePos(source, startPos);
+        if (source[startPos] !== '(') {
+            closePos--;
+        }
+
+        let next = (startPos === closePos)
+            ? null
+            : source.substring(startPos, closePos + 1);
+
+        return next;
     }
 
     private static getClosePos(source: string, startPos: number): number {
