@@ -37,13 +37,28 @@ module.exports = _.zipObject(parserKeys, parserObjects);
 
 function createParser(lang, parser, commonConfig) {
     try {
-        var parserModuleName = '../compiled/dateTime/base' + parser;
-        var parserTypeName = [Constants.Base, parser, Constants.Parser].join('');
-        var ParserType = require(parserModuleName)[parserTypeName];
-        if (!ParserType) {
-            throw new Error(`Parser Type ${parserTypeName} was not found in module ${parserModuleName}`);
+        // try with a language specific parser
+        parserModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Parser;
+        parserTypeName = [lang, parser, Constants.Parser].join('');
+
+        try {
+            ParserType = require(parserModuleName)[parserTypeName];
+        } catch(err) {
+            // specific parser not found... continue to default
+            ParserType = null;
         }
 
+        // fallback to base parser
+        if (!ParserType) {
+            var parserModuleName = '../compiled/dateTime/base' + parser;
+            var parserTypeName = [Constants.Base, parser, Constants.Parser].join('');
+            var ParserType = require(parserModuleName)[parserTypeName];
+            if (!ParserType) {
+                throw new Error(`Parser Type ${parserTypeName} was not found in module ${parserModuleName}`);
+            }
+        }
+
+        // resolve config
         var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
         var configTypeName = lang + parser + Constants.ParserConfiguration;
         var ConfigType = require(configModuleName)[configTypeName];
