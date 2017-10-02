@@ -18,8 +18,9 @@ import { SpanishHolidayExtractorConfiguration, SpanishHolidayParserConfiguration
 import { SpanishCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 import { SpanishTimePeriodExtractorConfiguration, SpanishTimePeriodParserConfiguration } from "./timePeriodConfiguration";
-import { SpanishDateTimePeriodExtractorConfiguration, SpanishDateTimePeriodParserConfiguration, SpanishDateTimePeriodParser } from "./dateTimePeriodConfiguration";
+import { SpanishDateTimePeriodExtractorConfiguration, SpanishDateTimePeriodParserConfiguration } from "./dateTimePeriodConfiguration";
 import { SpanishSetExtractorConfiguration, SpanishSetParserConfiguration } from "./setConfiguration";
+import { SpanishDateTimePeriodParser } from "./dateTimePeriodParser";
 
 export class SpanishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: BaseDateExtractor;
