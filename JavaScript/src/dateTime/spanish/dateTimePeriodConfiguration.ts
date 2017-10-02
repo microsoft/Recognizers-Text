@@ -209,7 +209,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         let swift = 0;
 
         // TODO: Replace with a regex
-        if (RegExpUtility.getFirstMatchIndex(this.pastRegex, trimedText).matched ||
+        if (RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched ||
             trimedText === "anoche") {
             swift = -1;
         }
