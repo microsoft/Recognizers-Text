@@ -7,7 +7,7 @@ const camelCase = require('lodash.camelcase')
 const libraryName = 'recognizers-text'
 
 export default {
-  entry: `compiled/src/${libraryName}.js`,
+  entry: `compiled/${libraryName}.js`,
   targets: [
 	  { dest: pkg.main, moduleName: camelCase(libraryName), format: 'umd' },
 	  { dest: pkg.module, format: 'es' }

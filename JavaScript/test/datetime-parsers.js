@@ -1,9 +1,10 @@
 var _ = require('lodash');
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
+var Recognizers = require('recognizers-text-datetime');
 
 // Configs
-var EnglishCommonDateTimeParserConfiguration = require('../compiled/dateTime/english/baseConfiguration').EnglishCommonDateTimeParserConfiguration;
+var EnglishCommonDateTimeParserConfiguration = Recognizers.EnglishCommonDateTimeParserConfiguration;
 var SpanishCommonDateTimeParserConfiguration = require('../compiled/dateTime/spanish/baseConfiguration').SpanishCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {

@@ -1,9 +1,9 @@
-var Recognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
-var DateUtils = require('../compiled/dateTime/utilities').DateUtils;
+var Recognizer = require('recognizers-text-datetime').DateTimeRecognizer;
+var DateUtils = require('recognizers-text-datetime').DateUtils;
 var _ = require('lodash');
 
 var Constants = require('./constants');
-var SupportedCultures = require('./cultures.js');
+var SupportedCultures = require('./cultures');
 var Extractors = require('./datetime-extractors');
 var Parsers = require('./datetime-parsers');
 
