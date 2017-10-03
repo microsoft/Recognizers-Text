@@ -261,11 +261,11 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>()
-                .set(TimeTypeConstants.START_DATETIME, innerResult.futureValue[0])
-                .set(TimeTypeConstants.END_DATETIME, innerResult.futureValue[1]);
+                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[0]))
+                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[1]));
                 innerResult.pastResolution = new Map<string, string>()
-                .set(TimeTypeConstants.START_DATETIME, innerResult.pastValue[0])
-                .set(TimeTypeConstants.END_DATETIME, innerResult.pastValue[1]);
+                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[0]))
+                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[1]));
                 resultValue = innerResult;
             }
         }
@@ -305,7 +305,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             let dateStr = "";
             let futureTime:Date;
             let pastTime: Date;
-            if (dateResult.length == 1 && trimedText.replace(er[0].text, "").trim() === dateResult[0].text) {
+            if (dateResult.length === 1 && trimedText.replace(er[0].text, "").trim() === dateResult[0].text) {
                 let pr = this.config.dateParser.parse(dateResult[0], referenceTime);
                 if (pr.value) {
                     futureTime = pr.value.futureValue;
@@ -323,7 +323,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 let beginTime = timePeriodFutureValue.item1;
                 let endTime = timePeriodFutureValue.item2;
 
-                if (timePeriodTimexArray.length == 3) {
+                if (timePeriodTimexArray.length === 3) {
                     let beginStr = dateStr + timePeriodTimexArray[0];
                     let endStr = dateStr + timePeriodTimexArray[1];
 

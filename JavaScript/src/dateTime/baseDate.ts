@@ -293,7 +293,7 @@ export class BaseDateParser implements IDateTimeParser {
         match = RegExpUtility.getMatches(this.config.specialDayRegex, trimmedSource).pop();
         if (match && match.index === 0 && match.length === trimmedSource.length) {
             let swift = this.config.getSwiftDay(match.value);
-            let value = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + swift);
+            let value = DateUtils.addDays(referenceDate, swift);
             result.timex = FormatUtil.luisDateFromDate(value);
             result.futureValue = value;
             result.pastValue = value;
@@ -420,7 +420,7 @@ export class BaseDateParser implements IDateTimeParser {
         let trimmedSource = source.trim();
         let ambiguous = true;
         let result = new DateTimeResolutionResult();
-        
+
         let ers = this.config.ordinalExtractor.extract(trimmedSource);
         if (!ers || ers.length === 0) {
             ers = this.config.integerExtractor.extract(trimmedSource);
@@ -430,7 +430,7 @@ export class BaseDateParser implements IDateTimeParser {
         let num = Number.parseInt(this.config.numberParser.parse(ers[0]).value);
         let day = 1;
         let month = 0;
-        
+
         let match = RegExpUtility.getMatches(this.config.monthRegex, trimmedSource).pop();
         if (match) {
             month = this.config.monthOfYear.get(match.value) - 1;
@@ -466,7 +466,7 @@ export class BaseDateParser implements IDateTimeParser {
         }
 
         if (!match) return result;
-        
+
         let year = referenceDate.getFullYear();
 
         // for LUIS format value string

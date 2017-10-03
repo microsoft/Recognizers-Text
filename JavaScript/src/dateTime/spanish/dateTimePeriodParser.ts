@@ -14,12 +14,11 @@ export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {
         let trimedText = source.trim().toLowerCase();
 
         // handle morning, afternoon..
-        let beginHour = 0;
-        let endHour = 0;
-        let endMin = 0;
-        let timeStr = "";
-
         let match = this.config.getMatchedTimeRange(trimedText);
+        let beginHour = match.beginHour;
+        let endHour = match.endHour;
+        let endMin = match.endMin;
+        let timeStr = match.timeStr;
         if (!match.success) {
             return ret;
         }
@@ -28,14 +27,13 @@ export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {
         if (matches.length && matches[0].index === 0 && matches[0].length === trimedText.length) {
             let swift = this.config.getSwiftPrefix(trimedText);
 
-            let date = DateUtils.addDays(referenceDate, swift);
+            let date = DateUtils.addDays(referenceDate, swift)
+            date.setHours(0, 0, 0, 0);
             let day = date.getDate();
             let month = date.getMonth();
             let year = date.getFullYear();;
 
-            ret.timex = FormatUtil.toString(year, 4) + timeStr;
-
-            ;
+            ret.timex = FormatUtil.formatDate(date) + timeStr;
 
             ret.pastValue = ret.futureValue = [
                 DateUtils.safeCreateFromValue(DateUtils.minValue(), year, month, day, beginHour, 0, 0),
@@ -69,13 +67,13 @@ export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {
             ret.timex = pr.timexStr + timeStr;
 
             ret.futureValue = [
-                DateUtils.safeCreateFromValue(DateUtils.minValue(), futureDate.Year, futureDate.Month, futureDate.Day, beginHour, 0, 0),
-                DateUtils.safeCreateFromValue(DateUtils.minValue(), futureDate.Year, futureDate.Month, futureDate.Day, endHour, endMin, endMin)
+                DateUtils.safeCreateFromValue(DateUtils.minValue(), futureDate.getFullYear(), futureDate.getMonth(), futureDate.getDate(), beginHour, 0, 0),
+                DateUtils.safeCreateFromValue(DateUtils.minValue(), futureDate.getFullYear(), futureDate.getMonth(), futureDate.getDate(), endHour, endMin, endMin)
             ];
 
             ret.pastValue = [
-                DateUtils.safeCreateFromValue(DateUtils.minValue(), pastDate.Year, pastDate.Month, pastDate.Day, beginHour, 0, 0),
-                DateUtils.safeCreateFromValue(DateUtils.minValue(), pastDate.Year, pastDate.Month, pastDate.Day, endHour, endMin, endMin)
+                DateUtils.safeCreateFromValue(DateUtils.minValue(), pastDate.getFullYear(), pastDate.getMonth(), pastDate.getDate(), beginHour, 0, 0),
+                DateUtils.safeCreateFromValue(DateUtils.minValue(), pastDate.getFullYear(), pastDate.getMonth(), pastDate.getDate(), endHour, endMin, endMin)
             ];
 
             ret.success = true;
@@ -84,6 +82,5 @@ export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {
         }
 
         return ret;
-
     }
 }
