@@ -1,0 +1,25 @@
+{
+  "name": "console-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "recognizers-text-datetime": "file:../JavaScript/dateTimeRecognizers",
+    "recognizers-text-number": "file:../JavaScript/numberRecognizers",
+    "recognizers-text-number-with-unit": "file:../JavaScript/numberWithUnitRecognizers",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "ts-node": "^3.3.0",
+    "@types/node": "^8.0.31"
+  }
+}
