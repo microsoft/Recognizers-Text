@@ -1,4 +1,4 @@
-import { trimEnd } from "lodash.trimend";
+import trimEnd = require("lodash.trimend");
 import { BigNumber } from 'bignumber.js';
 import { LongFormatType } from "./number/models";
 

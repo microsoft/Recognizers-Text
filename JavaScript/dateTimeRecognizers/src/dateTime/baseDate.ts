@@ -4,7 +4,7 @@ import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegEx
 import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { toNumber } from "lodash.tonumber";
+import toNumber = require("lodash.tonumber");
 
 export interface IDateExtractorConfiguration {
     dateRegexList: RegExp[],

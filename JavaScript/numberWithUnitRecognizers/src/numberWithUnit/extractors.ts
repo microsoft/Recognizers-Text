@@ -1,6 +1,6 @@
 import { Culture, CultureInfo, IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-number";
-import { max } from "lodash.max";
-import { escapeRegExp } from "lodash.escaperegexp"
+import max = require("lodash.max");
+import escapeRegExp = require("lodash.escaperegexp");
 
 export interface INumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;

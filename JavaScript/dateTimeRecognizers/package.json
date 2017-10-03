@@ -33,6 +33,8 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
+    "@types/lodash.isequal": "^4.5.2",
+    "@types/lodash.tonumber": "^4.0.3",
     "@types/node": "^8.0.20",
     "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
@@ -49,19 +51,13 @@
     "tsc-watch": "^1.0.8",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.4.0",
-    "tslint-config-standard": "^6.0.0"
+    "tslint-config-standard": "^6.0.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.3"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.76",
-    "@types/xregexp": "^3.0.29",
-    "bignumber.js": "^4.1.0",
-    "intl": "^1.2.5",
     "lodash.isequal": "^4.5.0",
     "lodash.tonumber": "^4.0.3",
-    "recognizers-text-number": "file:..\\numberRecognizers",
-    "recognizers-text-number-with-unit": "file:..\\numberWithUnitRecognizers",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.5.3",
-    "xregexp": "^3.2.0"
+    "recognizers-text-number": "file:..\\numberRecognizers"
   }
 }

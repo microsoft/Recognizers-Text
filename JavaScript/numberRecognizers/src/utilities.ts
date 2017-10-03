@@ -1,4 +1,4 @@
-import { XRegExp } from "xregexp";
+import * as XRegExp from "xregexp";
 
 export class FormatUtility {
     static preProcess(query: string, toLower: boolean = true): string {

@@ -1,3 +1,4 @@
+export { default as DateTimeRecognizer } from "./dateTime/dateTimeRecognizer";
 export * from "./dateTime/baseDate";
 export * from "./dateTime/baseTime";
 export * from "./dateTime/baseDatePeriod";
@@ -9,7 +10,6 @@ export * from "./dateTime/baseSet";
 export * from "./dateTime/baseHoliday";
 export * from "./dateTime/baseMerged";
 export * from "./dateTime/constants";
-export * from "./dateTime/dateTimeRecognizer";
 export * from "./dateTime/models";
 export * from "./dateTime/parsers";
 export * from "./dateTime/utilities";

@@ -1,8 +1,8 @@
 import { ExtractResult } from "./extractors";
 import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
-import { trimEnd } from 'lodash.trimend';
-import { sortBy } from 'lodash.sortby';
+import trimEnd = require("lodash.trimend");
+import sortBy = require("lodash.sortby");
 import { RegExpUtility } from "../utilities";
 import { BigNumber } from 'bignumber.js';
 

@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "main": "dist/recognizers-text.umd.js",
+  "module": "dist/recognizers-text.es5.js",
+  "typings": "dist/types/src/recognizers-text.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "Microsoft",
   "repository": {
     "type": "git",
     "url": "https://github.com/microsoft/recognizers-text"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
@@ -39,16 +48,14 @@
     "ts-node": "^3.3.0",
     "tsc-watch": "^1.0.8",
     "tslint": "^5.7.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.3",
     "tslint-config-prettier": "^1.4.0",
     "tslint-config-standard": "^6.0.0"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.74",
-    "@types/xregexp": "^3.0.29",
-    "bignumber.js": "^4.0.3",
-    "lodash": "^4.17.4",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.5.1",
-    "xregexp": "^3.2.0"
+    "recognizers-text-datetime": "file:dateTimeRecognizers",
+    "recognizers-text-number": "file:numberRecognizers",
+    "recognizers-text-number-with-unit": "file:numberWithUnitRecognizers"
   }
 }

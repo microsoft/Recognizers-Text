@@ -1,9 +1,9 @@
+export { default as NumberWithUnitRecognizer } from "./numberWithUnit/numberWithUnitRecognizer";
 export * from "./resources/englishNumericWithUnit";
 export * from "./resources/spanishNumericWithUnit";
 export * from "./numberWithUnit/constants";
 export * from "./numberWithUnit/extractors";
 export * from "./numberWithUnit/models";
-export * from "./numberWithUnit/numberWithUnitRecognizer";
 export * from "./numberWithUnit/parsers";
 export * from "./numberWithUnit/english/age";
 export * from "./numberWithUnit/english/base";

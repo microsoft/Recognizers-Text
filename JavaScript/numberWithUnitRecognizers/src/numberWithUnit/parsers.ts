@@ -1,5 +1,5 @@
 import { CultureInfo, IParser, ParseResult, IExtractor, ExtractResult } from "recognizers-text-number";
-import { last } from "lodash.last";
+import last = require("lodash.last");
 
 export class UnitValue {
     public number: string = "";

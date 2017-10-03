@@ -11,7 +11,7 @@ import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./baseDat
 import { BaseSetExtractor, BaseSetParser } from "./baseSet"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { BaseHolidayExtractor, BaseHolidayParser } from "./baseHoliday"
-import { isEqual } from 'lodash.isequal';
+import isEqual = require('lodash.isequal');
 
 export enum DateTimeOptions {
     None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2
