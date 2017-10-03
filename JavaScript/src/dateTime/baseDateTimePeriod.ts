@@ -7,6 +7,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { FormatUtil, DateUtils, Token, DateTimeResolutionResult } from "./utilities";
 import { RegExpUtility, StringUtility } from "./../utilities";
+import { StringUtilities } from "./spanish/utilities";
 
 export interface IDateTimePeriodExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
@@ -41,12 +42,13 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
     }
 
     extract(source: string): Array<ExtractResult> {
+        let normalized: string = StringUtilities.normalize(source);
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.matchSimpleCases(source))
-        .concat(this.mergeTwoTimePoints(source))
-        .concat(this.matchDuration(source))
-        .concat(this.matchNight(source))
-        .concat(this.matchRelativeUnit(source));
+        .concat(this.matchSimpleCases(normalized))
+        .concat(this.mergeTwoTimePoints(normalized))
+        .concat(this.matchDuration(normalized))
+        .concat(this.matchNight(normalized))
+        .concat(this.matchRelativeUnit(normalized));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
