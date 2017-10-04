@@ -1,6 +1,6 @@
 export class StringUtilities {
     static normalize(source: string): string {
-        return source.trim().toLowerCase()
+        return source
             .replace(/á/g, "a")
             .replace(/é/g, "e")
             .replace(/í/g, "i")

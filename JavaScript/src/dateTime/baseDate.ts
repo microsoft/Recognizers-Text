@@ -7,6 +7,7 @@ import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfigurat
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { toNumber } from "lodash";
+import { StringUtilities } from "./spanish/utilities";
 
 export interface IDateExtractorConfiguration {
     dateRegexList: RegExp[],
@@ -35,11 +36,12 @@ export class BaseDateExtractor implements IExtractor {
     }
 
     extract(source: string): Array<ExtractResult> {
+        let normalized: string = StringUtilities.normalize(source);
         let tokens: Array<Token> = new Array<Token>()
-            .concat(this.basicRegexMatch(source))
-            .concat(this.implicitDate(source))
-            .concat(this.numberWithMonth(source))
-            .concat(this.durationWithBeforeAndAfter(source));
+            .concat(this.basicRegexMatch(normalized))
+            .concat(this.implicitDate(normalized))
+            .concat(this.numberWithMonth(normalized))
+            .concat(this.durationWithBeforeAndAfter(normalized));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }

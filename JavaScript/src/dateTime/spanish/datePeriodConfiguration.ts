@@ -9,6 +9,7 @@ import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IParser } from "../../number/parsers";
+import { StringUtilities } from "./utilities";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -52,8 +53,8 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit, "gis");
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberCombinedWithDateUnit, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex, "gis");
+        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
+        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
         this.weekOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfRegex, "gis");
         this.monthOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthOfRegex, "gis");
         this.dateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex, "gis");
@@ -165,7 +166,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     getSwiftDayOrMonth(source: string): number {
-        let trimedText = source.trim().toLowerCase();
+        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
         let swift = 0;
 
         if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {
@@ -180,7 +181,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     getSwiftYear(source: string): number {
-        let trimedText = source.trim().toLowerCase();
+        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
         let swift = -10;
         if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {
             swift = 1;
@@ -197,7 +198,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     isFuture(source: string): boolean {
-        let trimedText = source.trim().toLowerCase();
+        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
         return RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched
             || RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched;
     }
@@ -238,7 +239,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     isLastCardinal(source: string): boolean {
-        let trimedText = source.trim().toLowerCase();
+        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
         return RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched;
     }
 }

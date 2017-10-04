@@ -586,6 +586,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         if (!pr) return result;
 
         let beforeStr = source.substr(0, pr.start).trim();
+        let beforeStrNormalized = StringUtilities.normalize(beforeStr);
         let durationResult: DateTimeResolutionResult = pr.value;
         let swiftSecond = 0;
         let mod: string;
@@ -594,12 +595,12 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         }
         let beginTime = new Date(referenceDate);
         let endTime = new Date(referenceDate);
-        let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
+        let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStrNormalized).pop();
         if (prefixMatch && prefixMatch.length === beforeStr.length) {
             mod = TimeTypeConstants.beforeMod;
             beginTime.setSeconds(referenceDate.getSeconds() - swiftSecond);
         }
-        prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
+        prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStrNormalized).pop();
         if (prefixMatch && prefixMatch.length === beforeStr.length) {
             mod = TimeTypeConstants.afterMod;
             endTime = new Date(beginTime);

@@ -555,11 +555,11 @@ export class BaseMergedParser implements IDateTimeParser {
                 break;
             case Constants.SYS_DATETIME_DATETIMEPERIOD:
                 if (resolution.has(TimeTypeConstants.START)) {
-                    let splitValue = FormatUtil.formatDateTime(resolution.get(TimeTypeConstants.START)).split(' ');
+                    let splitValue = resolution.get(TimeTypeConstants.START).split(' ');
                     resolutionPm.set(TimeTypeConstants.START, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
                 }
                 if (resolution.has(TimeTypeConstants.END)) {
-                    let splitValue = FormatUtil.formatDateTime(resolution.get(TimeTypeConstants.END)).split(' ');
+                    let splitValue = resolution.get(TimeTypeConstants.END).split(' ');
                     resolutionPm.set(TimeTypeConstants.END, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
                 }
                 resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
