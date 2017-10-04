@@ -292,7 +292,7 @@ export class BaseMergedParser implements IDateTimeParser {
 
     public setParseResult(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): DateTimeParseResult {
         slot.value = this.dateTimeResolution(slot, hasBefore, hasAfter, hasSince);
-        //change the type at last for the after or before mode
+        // change the type at last for the after or before mode
         slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, hasBefore, hasAfter, hasSince)}`;
         return slot;
     }
@@ -347,9 +347,9 @@ export class BaseMergedParser implements IDateTimeParser {
     public dateTimeResolutionForSplit(slot: DateTimeParseResult): Array<DateTimeParseResult> {
         let results = new Array<DateTimeParseResult>();
         if (slot.value.subDateTimeEntities != null) {
-            var subEntities = slot.value.subDateTimeEntities;
+            let subEntities = slot.value.subDateTimeEntities;
             for (let subEntity of subEntities) {
-                var result = subEntity;
+                let result = subEntity;
                 results.push(...this.dateTimeResolutionForSplit(result));
             }
         }
@@ -378,7 +378,7 @@ export class BaseMergedParser implements IDateTimeParser {
         let mod = value.mod;
         let comment = value.comment;
 
-        //the following should added to res first since the ResolveAmPm is using these fields
+        // the following should added to res first since the ResolveAmPm is using these fields
         this.addResolutionFieldsAny(result, Constants.TimexKey, timex);
         this.addResolutionFieldsAny(result, Constants.CommentKey, comment);
         this.addResolutionFieldsAny(result, Constants.ModKey, mod);
@@ -412,7 +412,7 @@ export class BaseMergedParser implements IDateTimeParser {
         result.forEach((value, key) => {
             if (value instanceof Map) {
                 let newValues = new Map<string, string>();
-                
+
                 this.addResolutionFields(newValues, Constants.TimexKey, timex);
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
@@ -438,7 +438,7 @@ export class BaseMergedParser implements IDateTimeParser {
     {
         if (value instanceof String)
         {
-            if (!StringUtility.isNullOrEmpty(<string>value))
+            if (!StringUtility.isNullOrEmpty(value as string))
             {
                 dic.set(key, value);
             }

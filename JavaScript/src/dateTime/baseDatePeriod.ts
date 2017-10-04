@@ -548,7 +548,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
             if (prefixMatch && prefixMatch.length === beforeStr.length) {
                 mod = TimeTypeConstants.afterMod;
-                //for future the beginDate should add 1 first
+                // for future the beginDate should add 1 first
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
             }
@@ -557,7 +557,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 mod = TimeTypeConstants.afterMod
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
-    
+
                 let unit = durationResult.timex.substr(durationResult.timex.length - 1);
                 durationResult.timex = `P1${unit}`;
                 beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
@@ -571,7 +571,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             result.subDateTimeEntities = [pr];
         }
 
-        //parse rest of
+        // parse rest of
         let match = RegExpUtility.getMatches(this.config.restOfDateRegex, source).pop();
         if (match) {
 

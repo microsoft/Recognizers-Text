@@ -282,7 +282,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         let trimedText = text.trim().toLowerCase();
 
         let er = this.config.timePeriodExtractor.extract(trimedText);
-        if (er.length != 1)
+        if (er.length !== 1)
         {
             return this.parseSimpleCases(text, referenceTime);
         }
@@ -304,7 +304,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             let dateStr = "";
             let futureTime:Date;
             let pastTime: Date;
-            if (dateResult.length == 1 && trimedText.replace(er[0].text, "").trim() === dateResult[0].text) {
+            if (dateResult.length === 1 && trimedText.replace(er[0].text, "").trim() === dateResult[0].text) {
                 let pr = this.config.dateParser.parse(dateResult[0], referenceTime);
                 if (pr.value) {
                     futureTime = pr.value.futureValue;
@@ -322,7 +322,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 let beginTime = timePeriodFutureValue.item1;
                 let endTime = timePeriodFutureValue.item2;
 
-                if (timePeriodTimexArray.length == 3) {
+                if (timePeriodTimexArray.length === 3) {
                     let beginStr = dateStr + timePeriodTimexArray[0];
                     let endStr = dateStr + timePeriodTimexArray[1];
 
@@ -569,7 +569,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
     private parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
 
-        //for rest of datetime, it will be handled in next function
+        // for rest of datetime, it will be handled in next function
         let restOfDateTimeMatch = RegExpUtility.getMatches(this.config.restOfDateTimeRegex, source);
         if (restOfDateTimeMatch.length)
         {

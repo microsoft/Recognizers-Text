@@ -110,7 +110,7 @@ export class SpanishNumberParserConfiguration implements INumberParserConfigurat
                 lastGoodChar = i;
                 value = this.cardinalNumberMap.get(strBuilder);
             }
-            if ((i + 1) == numberStr.length) {
+            if ((i + 1) === numberStr.length) {
                 finalValue += value;
                 strBuilder = "";
                 i = lastGoodChar++;
