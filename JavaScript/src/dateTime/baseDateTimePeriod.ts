@@ -7,7 +7,6 @@ import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { FormatUtil, DateUtils, Token, DateTimeResolutionResult } from "./utilities";
 import { RegExpUtility, StringUtility } from "./../utilities";
-import { StringUtilities } from "./spanish/utilities";
 
 export interface IDateTimePeriodExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
@@ -42,13 +41,12 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
     }
 
     extract(source: string): Array<ExtractResult> {
-        let normalized: string = StringUtilities.normalize(source);
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.matchSimpleCases(normalized))
-        .concat(this.mergeTwoTimePoints(normalized))
-        .concat(this.matchDuration(normalized))
-        .concat(this.matchNight(normalized))
-        .concat(this.matchRelativeUnit(normalized));
+        .concat(this.matchSimpleCases(source))
+        .concat(this.mergeTwoTimePoints(source))
+        .concat(this.matchDuration(source))
+        .concat(this.matchNight(source))
+        .concat(this.matchRelativeUnit(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -586,7 +584,6 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         if (!pr) return result;
 
         let beforeStr = source.substr(0, pr.start).trim();
-        let beforeStrNormalized = StringUtilities.normalize(beforeStr);
         let durationResult: DateTimeResolutionResult = pr.value;
         let swiftSecond = 0;
         let mod: string;
@@ -595,12 +592,12 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         }
         let beginTime = new Date(referenceDate);
         let endTime = new Date(referenceDate);
-        let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStrNormalized).pop();
+        let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
         if (prefixMatch && prefixMatch.length === beforeStr.length) {
             mod = TimeTypeConstants.beforeMod;
             beginTime.setSeconds(referenceDate.getSeconds() - swiftSecond);
         }
-        prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStrNormalized).pop();
+        prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
         if (prefixMatch && prefixMatch.length === beforeStr.length) {
             mod = TimeTypeConstants.afterMod;
             endTime = new Date(beginTime);

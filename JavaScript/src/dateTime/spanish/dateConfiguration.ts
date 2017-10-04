@@ -9,7 +9,6 @@ import { SpanishOrdinalExtractor, SpanishIntegerExtractor } from "../../number/s
 import { SpanishNumberParserConfiguration } from "../../number/spanish/parserConfiguration";
 import { SpanishDateTimeUtilityConfiguration, SpanishCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
-import { StringUtilities } from "./utilities";
 
 export class SpanishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -144,7 +143,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
 
     getSwiftDay(source: string): number {
 
-        let trimedText = StringUtilities.normalize(source);
+        let trimedText = SpanishDateParserConfiguration.normalize(source.trim().toLowerCase());
         let swift = 0;
 
         // TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
@@ -171,7 +170,7 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     }
 
     getSwiftMonth(source: string): number {
-        let trimedText = StringUtilities.normalize(source);
+        let trimedText = source.trim().toLowerCase();
         let swift = 0;
         if (RegExpUtility.getMatches(SpanishDateParserConfiguration.nextPrefixRegex, trimedText).length) {
             swift = 1;
@@ -185,7 +184,16 @@ export class SpanishDateParserConfiguration implements IDateParserConfiguration 
     }
 
     isCardinalLast(source: string): boolean {
-        let trimedText = StringUtilities.normalize(source);
+        let trimedText = source.trim().toLowerCase();
         return RegExpUtility.getMatches(SpanishDateParserConfiguration.pastPrefixRegex, trimedText).length > 0;
+    }
+
+    private static normalize(source: string): string {
+        return source
+            .replace(/á/g, "a")
+            .replace(/é/g, "e")
+            .replace(/í/g, "i")
+            .replace(/ó/g, "o")
+            .replace(/ú/g, "u");
     }
 }

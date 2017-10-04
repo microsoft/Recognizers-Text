@@ -9,7 +9,6 @@ import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IParser } from "../../number/parsers";
-import { StringUtilities } from "./utilities";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -166,7 +165,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     getSwiftDayOrMonth(source: string): number {
-        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
+        let trimedText = source.trim().toLowerCase();
         let swift = 0;
 
         if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {
@@ -181,7 +180,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     getSwiftYear(source: string): number {
-        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
+        let trimedText = source.trim().toLowerCase();
         let swift = -10;
         if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {
             swift = 1;
@@ -198,7 +197,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     isFuture(source: string): boolean {
-        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
+        let trimedText = source.trim().toLowerCase();
         return RegExpUtility.getFirstMatchIndex(this.thisPrefixRegex, trimedText).matched
             || RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched;
     }
@@ -239,7 +238,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     }
 
     isLastCardinal(source: string): boolean {
-        let trimedText = StringUtilities.normalize(source.trim().toLowerCase());
+        let trimedText = source.trim().toLowerCase();
         return RegExpUtility.getFirstMatchIndex(this.pastPrefixRegex, trimedText).matched;
     }
 }

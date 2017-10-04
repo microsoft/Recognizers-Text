@@ -1,7 +1,6 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
 import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
-import { StringUtilities } from "./utilities";
 
 export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
     readonly holidayRegexes: RegExp[];
@@ -56,7 +55,6 @@ export class SpanishHolidayParserConfiguration extends BaseHolidayParserConfigur
     }
 
     sanitizeHolidayToken(holiday: string): string {
-        return StringUtilities.normalize(holiday)
-            .replace(/ /g, "");
+        return holiday.replace(/ /g, "");
     }
 }

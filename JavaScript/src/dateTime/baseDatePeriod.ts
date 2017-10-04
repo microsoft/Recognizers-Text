@@ -5,7 +5,6 @@ import { Token, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek } fro
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateExtractor, BaseDateParser } from "./baseDate"
-import { StringUtilities } from "./spanish/utilities";
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
@@ -36,12 +35,11 @@ export class BaseDatePeriodExtractor implements IExtractor {
     }
 
     extract(source: string): Array<ExtractResult> {
-        let normalized: string = StringUtilities.normalize(source);
         let tokens: Array<Token> = new Array<Token>();
-        tokens = tokens.concat(this.matchSimpleCases(normalized));
-        tokens = tokens.concat(this.mergeTwoTimePoints(normalized));
-        tokens = tokens.concat(this.matchDuration(normalized));
-        tokens = tokens.concat(this.singleTimePointWithPatterns(normalized));
+        tokens = tokens.concat(this.matchSimpleCases(source));
+        tokens = tokens.concat(this.mergeTwoTimePoints(source));
+        tokens = tokens.concat(this.matchDuration(source));
+        tokens = tokens.concat(this.singleTimePointWithPatterns(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
