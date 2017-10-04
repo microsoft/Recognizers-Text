@@ -19,6 +19,10 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "prebuild-number": "cd ./recognizers-number/ && npm install && npm run build && cd ../",
+    "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
+    "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",
+    "prebuild-all": "npm run prebuild-number && npm run prebuild-number-with-unit && npm run prebuild-date-time",
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
@@ -34,12 +38,13 @@
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
     "@types/node": "^8.0.20",
+    "@types/npm": "^2.0.29",
     "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
     "colors": "^1.1.2",
     "js-yaml": "^3.9.1",
-    "lodash": "^4.17.4",
     "lodash.camelcase": "^4.3.0",
+    "lodash.keys": "^4.2.0",
     "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
     "rollup": "^0.43.1",
@@ -55,8 +60,8 @@
     "typescript": "^2.5.3"
   },
   "dependencies": {
-    "recognizers-text-datetime": "file:dateTimeRecognizers",
-    "recognizers-text-number": "file:numberRecognizers",
-    "recognizers-text-number-with-unit": "file:numberWithUnitRecognizers"
+    "recognizers-text-date-time": "file:recognizers-date-time",
+    "recognizers-text-number": "file:recognizers-number",
+    "recognizers-text-number-with-unit": "file:recognizers-number-with-unit"
   }
 }

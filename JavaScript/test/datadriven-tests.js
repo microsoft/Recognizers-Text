@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var _ = require('lodash');
+var keys = require('lodash.keys');
 var describe = require('ava-spec').describe;
 
 var SupportedCultures = require('./cultures');
@@ -9,7 +9,7 @@ var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
 var DateTimeTestRunner = require('./runner-datetime');
 
 var specsPath = '../Specs';
-var supportedLanguages = _.keys(SupportedCultures);
+var supportedLanguages = keys(SupportedCultures);
 
 // get list of specs (.json)
 var specFiles = getSpecFilePaths(specsPath)

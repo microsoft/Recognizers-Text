@@ -22,14 +22,7 @@
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
-    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
-    "start": "tsc-watch --onSuccess \"ava --watch\"",
-    "test": "tsc && ava"
-  },
-  "ava": {
-    "files": [
-      "test/index.js"
-    ]
+    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
   },
   "devDependencies": {
     "@types/bignumber.js": "^4.0.3",
@@ -39,12 +32,8 @@
     "@types/lodash.trimend": "^4.5.1",
     "@types/node": "^8.0.20",
     "@types/xregexp": "^3.0.29",
-    "ava": "^0.22.0",
-    "ava-spec": "^1.1.0",
-    "colors": "^1.1.2",
     "js-yaml": "^3.9.1",
     "lodash.camelcase": "^4.3.0",
-    "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
     "rollup": "^0.43.1",
     "rollup-plugin-commonjs": "^8.2.0",

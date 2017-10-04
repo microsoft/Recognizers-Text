@@ -1,5 +1,5 @@
-var Recognizer = require('recognizers-text-datetime').DateTimeRecognizer;
-var DateUtils = require('recognizers-text-datetime').DateUtils;
+var Recognizer = require('recognizers-text-date-time').DateTimeRecognizer;
+var DateUtils = require('recognizers-text-date-time').DateUtils;
 var _ = require('lodash');
 
 var Constants = require('./constants');
