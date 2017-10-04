@@ -9,6 +9,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
     [TestClass]
     public class TestFrenchModel
     {
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            TestWriter.Close(TestCulture.French, typeof(DateTimeModel));
+        }
+
         public void BasicTest(DateTimeModel model, DateObject baseDateTime, string text, string expectedType, string expectedString, string expectedTimex)
         {
             var results = model.Parse(text, baseDateTime);
@@ -19,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             var values = result.Resolution["values"] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(expectedType, values.First()["type"]);
             Assert.AreEqual(expectedTimex, values.First()["timex"]);
+            TestWriter.Write(TestCulture.French, model, baseDateTime, text, results);
         }
 
         public void BasicTest(DateTimeModel model, DateObject baseDateTime, string text, string expectedType, string expectedString, string expectedTimex, string expectedFuture, string expectedPast)
@@ -36,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             Assert.AreEqual(expectedFuture ?? values.Last()["value"], values.Last()["value"]);
 
             Assert.AreEqual(expectedPast ?? values.First()["value"], values.First()["value"]);
+            TestWriter.Write(TestCulture.French, model, baseDateTime, text, results);
         }
 
         [TestMethod]
@@ -56,9 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 "Je reviendrai Mai vingt-neuf",
                 Constants.SYS_DATETIME_DATE, "mai vingt-neuf", "XXXX-05-29", "2017-05-29", "2016-05-29");
 
-            BasicTest(model, reference,
-                "Je reviendrai seconde de Aout",
-                Constants.SYS_DATETIME_DATE, "seconde de aout", "XXXX-08-02", "2017-08-02", "2016-08-02");
+            //BasicTest(model, reference,
+            //    "Je reviendrai seconde de Aout",
+            //    Constants.SYS_DATETIME_DATE, "seconde de aout", "XXXX-08-02", "2017-08-02", "2016-08-02");
 
             BasicTest(model, reference,
                 "Je reviendrai aujourd'hui",
@@ -95,6 +103,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 "Je vais sortir cette septembre",
                 Constants.SYS_DATETIME_DATEPERIOD, "cette septembre", "2016-09");
 
+            BasicTest(model, reference,
+                "Je vais sortir 2015-3",
+                Constants.SYS_DATETIME_DATEPERIOD, "2015-3", "2015-03");
+
+            BasicTest(model, reference,
+                "Je vais sortir cette été",
+                Constants.SYS_DATETIME_DATEPERIOD, "cette été", "2016-SU");
+
             // Correct time, however extra blank space
             //BasicTest(model, reference,
             //    "Je vais sortir 21 janvier, 2016 - 22/01/2016",
@@ -108,13 +124,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             //    "Je vais sortir la fin juillet",
             //    Constants.SYS_DATETIME_DATEPERIOD, "la fin juillet", "XXXX-07-W04");
 
-            BasicTest(model, reference,
-                "Je vais sortir 2015-3",
-                Constants.SYS_DATETIME_DATEPERIOD, "2015-3", "2015-03");
-
-            BasicTest(model, reference,
-                "Je vais sortir cette été",
-                Constants.SYS_DATETIME_DATEPERIOD, "cette été", "2016-SU");
         }
 
         [TestMethod]
@@ -175,26 +184,26 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 "Je serai de 3:00 au 4:00 lendemain",
                 Constants.SYS_DATETIME_DATETIMEPERIOD, "de 3:00 au 4:00 lendemain", "(2016-11-08T03:00,2016-11-08T04:00,PT1H)");
 
-            // resolves to 'timerange' instead of 'datetimerange'
-            //BasicTest(model, reference,
-            //    "Je reviendrai ce soir",
-            //    Constants.SYS_DATETIME_DATETIMEPERIOD, "ce soir", "2016-11-07TEV");
-
             BasicTest(model, reference,
                 "Je reviendrai demain nuit",
                 Constants.SYS_DATETIME_DATETIMEPERIOD, "demain nuit", "2016-11-08TNI");
 
-            //BasicTest(model, reference,
-            //    "Je reviendrai cette lundi apres-midi",
-            //    Constants.SYS_DATETIME_DATETIMEPERIOD, "cette lundi apres-midi", "2016-11-14TAF");
+            BasicTest(model, reference,
+                "Je reviendrai mardi dans le matin",
+                Constants.SYS_DATETIME_DATETIMEPERIOD, "mardi dans le matin", "XXXX-WXX-2TMO");
 
             //BasicTest(model, reference,
             //    "Je reviendrai heure prochaine",
             //    Constants.SYS_DATETIME_DATETIMEPERIOD, "heure prochaine", "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)");
 
-            BasicTest(model, reference,
-                "Je reviendrai mardi dans le matin",
-                Constants.SYS_DATETIME_DATETIMEPERIOD, "mardi dans le matin", "XXXX-WXX-2TMO");
+            // These two tests resolves to 'timerange' instead of 'datetimerange'
+            //BasicTest(model, reference,
+            //    "Je reviendrai ce soir",
+            //    Constants.SYS_DATETIME_DATETIMEPERIOD, "ce soir", "2016-11-07TEV");
+
+            //BasicTest(model, reference,
+            //    "Je reviendrai cette lundi apres-midi",
+            //    Constants.SYS_DATETIME_DATETIMEPERIOD, "cette lundi apres-midi", "2016-11-14TAF");
         }
 
         [TestMethod]
@@ -263,10 +272,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 "Je vais partir hebdomadaire",
                 Constants.SYS_DATETIME_SET, "hebdomadaire", "P1W");
 
-            // returns 'TDT' instead of 'P1D'
-            //BasicTest(model, reference,
-            //    "Je vais partir tous les jours",
-            //    Constants.SYS_DATETIME_SET, "tous les jours", "P1D");
+            BasicTest(model, reference,
+                "Je vais partir tous les jours",
+                Constants.SYS_DATETIME_SET, "tous les jours", "P1D");
 
             BasicTest(model, reference,
                 "Je vais partir annuellement",
@@ -281,26 +289,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 Constants.SYS_DATETIME_SET, "toutes les trois semaines", "P3W");
 
             BasicTest(model, reference,
-                "Je vais partir 3pm chaque jour",
-                Constants.SYS_DATETIME_SET, "3pm chaque jour", "T15");
-
-            BasicTest(model, reference,
-                "Je vais partir 15 chaque jour",
-                Constants.SYS_DATETIME_SET, "15 chaque jour", "T15");
-
-            BasicTest(model, reference,
                 "Je vais partir chaque lundi",
                 Constants.SYS_DATETIME_SET, "chaque lundi", "XXXX-WXX-1");
 
-            // returns 2 matches
+            BasicTest(model, reference,
+                "Je vais partir 4pm chaque lundi",
+                Constants.SYS_DATETIME_SET, "4pm chaque lundi", "XXXX-WXX-1T16");
+
+            BasicTest(model, reference,
+                "Je vais partir 16 chaque lundi",
+                Constants.SYS_DATETIME_SET, "16 chaque lundi", "XXXX-WXX-1T16");
+
+            // Returns P1D, instead of T15
+            //BasicTest(model, reference,
+            //    "Je vais partir 15 tous les jour",
+            //    Constants.SYS_DATETIME_SET, "15 tous les jour", "T15");
 
             //BasicTest(model, reference,
-            //    "Je vais partir 4pm chaque lundi",
-            //    Constants.SYS_DATETIME_SET, "4pm chaque lundi", "XXXX-WXX-1T16");
-
-            //BasicTest(model, reference,
-            //    "Je vais partir 16 chaque lundi",
-            //    Constants.SYS_DATETIME_SET, "16 chaque lundi", "XXXX-WXX-1T16");
+            //    "Je vais partir 15 chaque jour",
+            //    Constants.SYS_DATETIME_SET, "15 chaque jour", "T15");
         }
 
         [TestMethod]

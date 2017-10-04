@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("Je partirai pour deux heures", 17, 11);
             BasicTest("Je partirai pour deux et demi heures", 17, 19);
 
-            BasicTest("dans une semaine", 5, 11);
+            BasicTest("en un semaine", 3, 10);
             BasicTest("en un jour", 3, 7);
             BasicTest("pour un heure", 5, 8);
             BasicTest("pour un mois", 5, 7);

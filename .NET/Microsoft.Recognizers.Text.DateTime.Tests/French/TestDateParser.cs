@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             // cases below change with reference day
             BasicTest("Je reviendrai Vendredi", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
             BasicTest("Je reviendrai |ven", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
-            BasicTest("Je reviendrai |Vendredis", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
+            BasicTest("Je reviendrai |Vendredi", new DateObject(2016, 11, 11), new DateObject(2016, 11, 4));
             BasicTest("Je reviendrai aujourd'hui", new DateObject(2016, 11, 7));
             BasicTest("Je reviendrai lendemain", new DateObject(2016, 11, 8));
             BasicTest("Je reviens hier", new DateObject(2016, 11, 6));

@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
+using Microsoft.Recognizers.Text.DateTime.French;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -37,6 +38,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
                     new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
                     ));
+
+            RegisterModel(Culture.French, type, new DateTimeModel(
+                    new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
+                    new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
+                    ));
         }
 
         private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
@@ -61,6 +67,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     RegisterModel(Culture.Spanish, type, new DateTimeModel(
                                       new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
                                       new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
+                                  ));
+                    break;
+                case Culture.French:
+                    RegisterModel(Culture.French, type, new DateTimeModel(
+                                      new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
+                                      new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
                                   ));
                     break;
                 default:

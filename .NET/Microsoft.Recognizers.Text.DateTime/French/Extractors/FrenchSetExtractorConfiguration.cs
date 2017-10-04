@@ -7,6 +7,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
+        public static readonly Regex SetUnitRegex =
+            new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex PeriodicRegex = 
             new Regex(
                 DateTimeDefinitions.PeriodicRegex, // TODO: Decide between adjective and adverb, i.e monthly - 'mensuel' vs 'mensuellement' 
@@ -59,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor DateTimePeriodExtractor { get; }
 
-        Regex ISetExtractorConfiguration.LastRegex => FrenchDateExtractorConfiguration.LastRegex;
+        Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 
         Regex ISetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 

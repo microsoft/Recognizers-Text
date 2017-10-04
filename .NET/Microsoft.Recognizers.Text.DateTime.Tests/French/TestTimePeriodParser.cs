@@ -43,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
         {
             int year = 2016, month = 11, day = 7, min = 0, second = 0;
 
+            // TODO: fix support for 'tard' - 'late'
+
             // basic match
             BasicTest("Je vais dehors 5 au 6pm",
                 new DateObject(year, month, day, 17, min, second),
@@ -140,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day, 10, min, second),
                 new DateObject(year, month, day, 12, min, second));
 
-            BasicTest("recontrons nous tard matinee",
+            BasicTest("recontrons nous fin matinee",
                 new DateObject(year, month, day, 10, min, second),
                 new DateObject(year, month, day, 12, min, second));
 
@@ -160,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day, 12, min, second),
                 new DateObject(year, month, day, 14, min, second));
 
-            BasicTest("recontrons nous le tard d'apres midi",
+            BasicTest("recontrons nous le fin d'apres midi",
                 new DateObject(year, month, day, 14, min, second),
                 new DateObject(year, month, day, 16, min, second));
 
@@ -168,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day, 16, min, second),
                 new DateObject(year, month, day, 18, min, second));
 
-            BasicTest("recontrons nous le tard soiree",
+            BasicTest("recontrons nous le fin soiree",
                 new DateObject(year, month, day, 18, min, second),
                 new DateObject(year, month, day, 20, min, second));
 
@@ -176,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
                 new DateObject(year, month, day, 20, min, second),
                 new DateObject(year, month, day, 22, min, second));
 
-            BasicTest("recontrons nous le tard nuit",
+            BasicTest("recontrons nous le fin nuit",
                 new DateObject(year, month, day, 22, min, second),
                 new DateObject(year, month, day, 23, 59, 59));
 
@@ -192,6 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
         [TestMethod]
         public void TestTimePeriodParseLuis()
         {
+            // Note: French typically use 24:00 h, no am/pm 
 
             // basic match
             BasicTest("Je vais dehors 5 au 6pm", "(T17,T18,PT1H)");
@@ -202,11 +205,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
 
             // merge two time points
             BasicTest("Je reviendrai 4pm jusqu'a 5pm", "(T16,T17,PT1H)");
-
+            BasicTest("Je reviendrai 16 jusqu'a 17", "(T16,T17,PT1H)");
             BasicTest("Je vais retourner 4:00 au 7 heures", "(T04:00,T07,PT3H)");
 
             BasicTest("Je vais retourner 4pm-5pm", "(T16,T17,PT1H)");
-
+            BasicTest("Je vais retourner 16-17", "(T16,T17,PT1H)");
+            BasicTest("Je vais retourner 16 - 17", "(T16,T17,PT1H)");
             BasicTest("Je vais retourner 4pm - 5pm", "(T16,T17,PT1H)");
 
             BasicTest("Je suis sorti 3 du matin au 5pm", "(T03,T17,PT14H)");

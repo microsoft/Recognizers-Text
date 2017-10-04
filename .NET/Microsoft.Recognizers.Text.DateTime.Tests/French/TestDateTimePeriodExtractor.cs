@@ -110,5 +110,47 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("rencontrons-nous Mardi ce soir", 17, 13);
 
         }
+
+        [TestMethod]
+        public void TestDateTimePeriodEarlyLateExtract()
+        {
+
+            // early/late date time
+            BasicTest("Retrouvons-nous dans le matin Mardi", 16, 19);
+            BasicTest("Retrouvons-nous l'apres-midi Mardi", 16, 18);
+            BasicTest("Retrouvons-nous debut d'apres-midi Mardi", 16, 24);
+            BasicTest("Retrouvons-nous dans le fin d'apres-midi mardi", 16, 30);
+            BasicTest("Retrouvons-nous en debut soiree Mardi", 19, 18);
+            BasicTest("Retrouvons-nous dans le fin de soiree mardi", 16, 27);
+            BasicTest("Retrouvons-nous dans le debut nuit mardi", 16, 24);
+            BasicTest("Retrouvons-nous dans le fin nuit mardi", 16, 22);
+            BasicTest("retrouvons-nouse dans le fin de nuit mardi", 17, 25);
+
+            //BasicTest("retrouvons-nous dans le debut de la matin a mardi", 11, 31);
+            BasicTest("retrouvons-nous dans le fin nuit au mardi", 21, 11);
+            //BasicTest("retrouvons-nous dans le tard dans la nuit mardi", 24, 18);
+            BasicTest("retrouvons-nous dans le debut soiree au mardi", 21, 15);
+            BasicTest("retrouvons-nous dans le fin matin au mardi", 21, 12);
+            BasicTest("retrouvons-nous dans le debut d'apres-midi au mardi", 21, 21);                      
+            BasicTest("retrouvons-nous dans le début nuit mardi", 16, 24);           
+
+            BasicTest("retrouvons-nous mardi début matin", 16, 17);
+            BasicTest("retrouvons-nous mardi fin de matin", 16, 18);
+            BasicTest("retrouvons-nous mardi début d'après-midi", 16, 24);
+            //BasicTest("retrouvons-nous mardi fin d'apres-midi", 16, 22);
+            BasicTest("retrouvons-nous mardi debut soiree", 16, 18);
+            BasicTest("retrouvons-nous mardi fin de nuit", 16, 17);
+            BasicTest("retrouvons-nous mardi fin nuit", 16, 14);
+            BasicTest("retrouvons-nous mardi debut nuit", 16, 16);
+
+        }
+
+        [TestMethod]
+        public void TestDateTimePeriodExtractRestOf()
+        {
+            BasicTest("Je serai sorti le reste du jour", 18, 13);
+            BasicTest("Je serai sorti le reste du ce jour", 18, 16);
+            BasicTest("Je serai sorti le fin du jour", 18, 11);
+        }
     }
 }

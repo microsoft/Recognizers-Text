@@ -54,8 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 {"guyfawkesday", GuyFawkesDay},
                 {"veteransday", Veteransday},
                 {"christmaseve", ChristmasEve},
-                {"newyeareve", NewYearEve},
-                {"easterday", EasterDay}
+                {"newyeareve", NewYearEve}
             };
         }
 
@@ -88,7 +87,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
-        private static DateObject EasterDay(int year) => DateObject.MinValue;
 
         public override int GetSwiftYear(string text)
         {

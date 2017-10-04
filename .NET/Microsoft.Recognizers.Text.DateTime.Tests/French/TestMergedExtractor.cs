@@ -43,16 +43,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
 
             BasicTest("Je reviendrai dans 5 minutes", 14, 14);
             BasicTest("derniere semaine", 0, 16);
-            //BasicTest("dernier lundi", 0, 13);
-            BasicTest("planifier un réunion dans 10 heures", 21, 14);
+            BasicTest("lundi dernier", 0, 13); // past monday
+          
+            //BasicTest("planifier un réunion dans 10 h", 21, 8);
         }
 
         [TestMethod]
         public void TestMergedSkipFromTo()
         {
             BasicTestWithOptions("changer la reunion du 9am au 11am", 2, DateTimeOptions.SkipFromToMerge);
-            BasicTestWithOptions("changer la reunion du Nov.19 au Nov.23th", 2, DateTimeOptions.SkipFromToMerge);
-
+            BasicTestWithOptions("changer la reunion du 19 Nov au 23 Nov", 2, DateTimeOptions.SkipFromToMerge);
+            BasicTestWithOptions("changer la reunion du 19 Nov à 23 Nov", 2, DateTimeOptions.SkipFromToMerge);
+            BasicTestWithOptions("changer la reunion du 19 Nov a 23 Nov", 2, DateTimeOptions.SkipFromToMerge);
             BasicTestWithOptions("organiser une réunion du 9am à 11am", 1, DateTimeOptions.None); // Testing None.
             BasicTestWithOptions("organiser une reunion des 9 à 11", 1);
             BasicTestWithOptions("organiser une reunion des 9am a 11am demain", 1);
@@ -76,16 +78,18 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("06/06, 2015", 0, 11);
         }
 
+
+
         [TestMethod]
         public void TestNegativeExtract()
         {
             //Unit tests for text should not extract datetime
 
-            //test cases provided may want to use words closer to date/time extracts
             BasicTestNone("quel courriel a reçu une réponse");
             BasicTestNone("il est souvent seul");
-            BasicTestNone("souvent un oiseau");
-            BasicTestNone("michigan heures");
+
+            //BasicTestNone("souvent un oiseau");
+            //BasicTestNone("michigan heures");
         }
     }
 }

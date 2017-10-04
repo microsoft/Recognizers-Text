@@ -99,7 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
         [TestMethod]
         public void TestDatePeriodExtractDuration()
         {
-            //Note: This one has more issues due to Suffix/Prefix with 'Next' (prochain) and 'Last' (dernier)
+            //Note: Issues due to Suffix/Prefix with 'Next' (prochain) and 'Last' (dernier)
+            // Suggestion - BasePeriodExtractor should support suffix + prefix for 'Relative' 
 
             //BasicTest("je serai dehors les 3 jours prochain", 28, 22); // I wil be out next 3 days
             //BasicTest("Je serai dehors cette 3 mois", 16, 12);
@@ -114,7 +115,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             // Assert.AreEqual finds 2...
             //BasicTest("Je serai dehors mois derniere", 16, 10);
             //BasicTest("Je serai dehors 3 mois dernier", 16, 16);
-
             //BasicTest("quelques semaines derniere", 0, 18);
             //BasicTest("quelques jours dernier", 0, 17);
         }

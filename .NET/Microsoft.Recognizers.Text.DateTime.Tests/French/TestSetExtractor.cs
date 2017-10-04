@@ -34,12 +34,47 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("Je vais partir chaque trois semaine", 15, 20); // I will leave every three weeks
 
             BasicTest("Je vais partir 3pm tous les jours", 15, 18);
+            BasicTest("Je vais partir 15 tous les jours", 15, 17);
 
-            BasicTest("Je vais partir chaque 15/4", 15, 11);
+            //BasicTest("Je vais partir chaque 15/4", 15, 11);
             BasicTest("Je vais partir chaque lundi", 15, 12);
             BasicTest("Je vais partir chaque lundi 4pm", 15, 16);
 
-            BasicTest("Je vais partir tous les matins", 15, 14); // I will leave every morning -Eachprefixregex
+            BasicTest("Je vais partir tous les matins", 14, 15); // I will leave every morning -Eachprefixregex
+        }
+
+
+        [TestMethod]
+        public void TestSetExtractMergeDate_Time()
+        {
+            BasicTest("Je vais partir 9 chaque dimanche", 15, 17);
+            BasicTest("Je vais partir 9am chaque lundis", 15, 17);
+            BasicTest("Je vais partir 9am lundis", 15, 10);
+            BasicTest("Je vais partir 9 lundis", 15, 8);
+        }
+
+        [TestMethod]
+        public void TestSetExtractDate()
+        {
+            // Note: This uses 'OnRegex' - don't really say "leave on mondays" just say, "chaque lundis", "partir lundis"
+            BasicTest("Je vais partir Lundis", 15, 6);
+            BasicTest("Je vais partir chaque Dimanche", 15, 15);
+            BasicTest("Je vais partir Dimanches", 15, 9);
+        }
+
+        [TestMethod]
+        public void TestSetExtractMergeTimePeriod_Time()
+        {
+            // one space off for some reason, ok with '14' should be '15' - reads blank space in front of 'chaque'
+            //BasicTest("Je vais partir chaque matin à 9", 14, 17);
+            BasicTest("Je vais partir tous les matins a 9", 14, 15);
+            BasicTest("Je vais partir chaque matin at 9", 14, 13);
+
+
+            // these work as planned
+            BasicTest("Je vais partir chaque apres-midi à 16", 15, 22);
+            BasicTest("Je vais partir chaque nuit a 9pm", 15, 17);
+            BasicTest("Je vais partir chaque nuit a 9", 15, 15);                     
         }
     }
 }

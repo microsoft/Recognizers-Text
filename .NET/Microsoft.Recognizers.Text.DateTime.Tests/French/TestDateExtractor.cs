@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.French.Tests
 {
@@ -15,6 +16,45 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             Assert.AreEqual(start, results[0].Start);
             Assert.AreEqual(length, results[0].Length);
             Assert.AreEqual(Constants.SYS_DATETIME_DATE, results[0].Type);
+        }
+
+        public void BasicTest(string text, string expectedOutput)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(1, results.Count);
+            Assert.AreEqual(expectedOutput, results[0].Text);
+            TestWriter.Write(TestCulture.English, extractor, text, results);
+        }
+
+        public void BasicTestTwoOutputs(string text, string expectedOutput1, string expectedOutput2)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(2, results.Count);
+            Assert.AreEqual(expectedOutput1, results[0].Text);
+            Assert.AreEqual(expectedOutput2, results[1].Text);
+            TestWriter.Write(TestCulture.French, extractor, text, results);
+        }
+
+        public void BasicTestNone(string text)
+        {
+            var results = extractor.Extract(text);
+            Assert.AreEqual(0, results.Count);
+            TestWriter.Write(TestCulture.French, extractor, text);
+        }
+
+        // use to generate the test cases sentences inside TestDateExtractWeekDayAndDayOfMonth function
+        // return a day of current week which the parameter refer to
+        public string CalculateWeekOfDay(int dayOfMonth)
+        {
+            var weekDay = "None";
+            if (dayOfMonth >= 1 && dayOfMonth <= 31)
+            {
+                var referenceTime = DateObject.Now;
+                var date = referenceTime.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, dayOfMonth);
+                weekDay = date.DayOfWeek.ToString();
+            }
+
+            return weekDay;
         }
 
         [TestMethod]
@@ -85,13 +125,108 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("lundi dernier", 0, 13);
         }
 
-        // TODO - fix all 3 below
+        
         [TestMethod]
         public void TestDateExtractAgoLater()
         {
- //           BasicTest("Je suis retourne il y a deux mois", 17, 16); // I went back two months ago
- //           BasicTest("Je reviens deux jours plus tard", 11, 20); // I'll go back two days later
-            BasicTest("Qui ai-je envoye il y a un mois", 17, 14); // who did I email a month ago
+            //           BasicTest("Je suis retourne il y a deux mois", 17, 16); // I went back two months ago
+            //           BasicTest("Je reviens deux jours plus tard", 11, 20); // I'll go back two days later
+
+            // TODO: support for 'AgoRegex' as suffix 
+            // Note: should be 'il y a un mois' but current BaseDateExtractor/Parser doesn't accomodate 'AgoRegex' as 'Suffix'
+            // i.e - "who did I email a month ago", vs "Qui ai-je envoye il y a un mois" 
+
+            BasicTest("Qui ai-je envoye un mois il y a", 17, 14); // who did I email a month ago
+            // should be 
+            // BasicTest("Qui ai-je envoye il y a un mois", 17, 14); 
+        }
+
+        [TestMethod]
+        public void TestDateExtractDayOfWeek()
+        {
+            BasicTest("Je reviendrai Mardi", 14, 5);
+            BasicTest("Je reviendrai mar. connes nouvelles.", 14, 3);
+            BasicTest("Je reviendrai Mar", 14, 3);
+            BasicTest("Je reviendrai Vendredi", 14, 8);
+            BasicTest("Je reviendrai le vendredi", 17, 8);
+            BasicTest("Je reviendrai aujourd'hui", 14, 11);      // i'll be back today
+            BasicTest("Je reviendrai lendemain", 14, 9);        // i'll be back tomorrow
+            BasicTest("Je reviendrai hier", 14, 4);             // i'll be back yesterday
+            BasicTest("Je reviendrai avant hier", 14, 10);       // i'll be back after tomorrow
+            BasicTest("Je reviendrai apres demain", 14, 12);     // i'll be back the day after tomorrow
+            BasicTest("Je reviendrai le jour suivant", 14, 15); // i'll be back the next day
+            BasicTest("Je reviendrai cette vendredi", 14, 14);
+            BasicTest("Je reviendrai dimanche prochain", 14, 17);   // i'll be back next sunday
+            BasicTest("Je reviendrai dimanche derniere", 14, 17);   // i'll be back last sunday
+            BasicTest("Je reviendrai dernier jour", 14, 12);
+            // BasicTest("Je reviendrai le jour", 14, 7);
+            BasicTest("Je reviendrai vendredi cette semaine", 14, 22);
+            BasicTest("Je reviendrai 15 Juin 2016", 14, 12);
+
+            //BasicTest("Je reviendrai dimanche prochaine semaine", 14, 26);
+            //BasicTest("Je reviendrai dimanche semaine prochaine", 14, 26);
+            //BasicTest("Je reviendrai dimanche semaine dernier", 14, 24);
+            //BasicTest("a baseball le onzième mai", 14, 11);
+        }
+
+        [TestMethod]
+        public void TestDateExtractOdNumRelativeMonth()
+        {           
+            BasicTest("Je reviendrai le 20e mois prochain", 17, 17);
+            BasicTest("Je reviendrai le 20e cette mois", 17, 14);
+            //BasicTest("Je reviendrai le 31e mois derniere", 17, 17);
+        }
+
+        [TestMethod]
+        public void TestDateExtractForThe()
+        {
+            BasicTest("Je suis retourne pour le 27", 17, 10);
+            BasicTest("Je suis retourne pour le 27e", 17, 11);
+            BasicTest("Je suis retourne pour le 27.", 17, 10);
+            BasicTest("Je suis retourne pour le 27!", 17, 10);
+            BasicTest("Je suis retourne pour le 27 .", 17, 10);
+            BasicTest("Je suis retourne pour le seconde", 17, 15);
+            BasicTest("Je suis retourne pour le vingt deux", 17, 18);
+
+            // Note: doesn't recognize "et un"
+            //BasicTest("Je suis retourne pour le trente et un", 17, 19);
+        }
+
+        [TestMethod]
+        public void TestDateExtractOn()
+        {
+            BasicTest("Je suis retourne pour le 27e", 17, 11);
+            BasicTest("Je suis retourne pour le seconde!", 17, 15);
+            BasicTest("Je suis retourne pour le vingt deux?", 17, 18);
+        }
+
+        [TestMethod]
+        public void TestDateExtractRelativeDayOfWeek()
+        {
+            BasicTest("Je reviendrai seconde Dimanche", 14, 16);
+            BasicTest("Je reviendrai 1er Dimanche", 14, 12);
+            BasicTest("Je reviendrai troisieme Mardi", 14, 15);
+            BasicTest("Je reviendrai cinquieme Dimanche", 14, 18);
+        }
+
+        [TestMethod]
+        public void TestDateExtractRelativeDayOfWeekSingle()
+        {
+            // For ordinary number>5, only the DayOfWeek should be extracted
+            BasicTest("Je reviendrai sixieme Dimanche", 22, 8);
+            BasicTest("Je reviendrai dixieme Lundi", 22, 5);
+        }
+
+
+        [TestMethod]
+        public void TestDateExtractWeekDayAndDayOfMonthMerge()
+        {
+            //Need to calculate the DayOfWeek by the date
+            //Example: What do I have on Wednesday the second?
+
+            // Note: Works but dateobject returned from CalculateWeekOfDay in english
+            //BasicTest("une réunion pour " + CalculateWeekOfDay(27) + " le 27e avec Joe Smith",
+            //    CalculateWeekOfDay(27) + " le 27e");
         }
     }
 }

@@ -67,14 +67,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = config.NumberParser;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
+
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = FrenchDateTimeExtractorConfiguration.TimeOfDayRegex;
-            PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;
-           
+            PastRegex = FrenchDatePeriodExtractorConfiguration.PastPrefixRegex;          
             FutureRegex = FrenchDatePeriodExtractorConfiguration.NextPrefixRegex;
             NumberCombinedWithUnitRegex = FrenchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = FrenchTimePeriodExtractorConfiguration.TimeUnitRegex;

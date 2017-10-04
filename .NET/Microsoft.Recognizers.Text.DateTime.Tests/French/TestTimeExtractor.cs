@@ -49,8 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
             BasicTest("C'est 8 dans le matin", 6, 15);
             BasicTest("C'est 8 dans la nuit", 6, 14);
 
-             BasicTest("C'est 20 heures du soir", 6, 17); 
-
+            BasicTest("C'est 20 du soir", 6, 10);
+            BasicTest("C'est 20h du soir", 6, 11);
             //TODO - 
             // eng) it is quarter past 4 pm 
             // fr) C'est seize heures quinze - use 'quinze' rather than 'et quart' past noon
@@ -151,7 +151,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Tests
 
             sentence = "quel emails ont recu une response?";
             BasicNegativeTest(sentence);
+        }
 
+        [TestMethod]
+        public void TestTimeExtractMealTime()
+        {
+            //We only support lunchtime now
+            
+            //only reads 'lunchtime'
+            BasicTest("Je retournerai 12 heures déjeuner", 15, 9);
+
+            // only reads '12 oclock'
+            //BasicTest("Je retournerai dejeuner 12 heures", 15, 20);
+            //BasicTest("Je retournerai a dejeuner 12h", 13, 23);
         }
     }
 }
