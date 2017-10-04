@@ -112,12 +112,12 @@ export namespace SpanishDateTime {
 	export const TimeUnitRegex = `(?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\\b`;
 	export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
 	export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)\\s*${TimeUnitRegex}`;
-	export const DateTimePeriod_NumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)\\s*${TimeUnitRegex}`;
+	export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)\\s*${TimeUnitRegex}`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b(((y|a|en|por)\\s+la|al)\\s+)?(?<timeOfDay>mañana|madrugada|(pasado\\s+(el\\s+)?)?medio\\s?d[ií]a|tarde|noche|anoche)\\b`;
 	export const RelativeTimeUnitRegex = `(${PastRegex}|${FutureRegex})\\s+${UnitRegex}`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(y)\\s+((un|uno|una)\\s+)?(?<suffix_num>media|cuarto))`;
 	export const FollowedUnit = `^\\s*${UnitRegex}`;
-	export const Duration_NumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;
+	export const DurationNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)${UnitRegex}`;
 	export const AnUnitRegex = `\\b(un(a)?)\\s+${UnitRegex}`;
 	export const AllRegex = `\\b(?<all>tod[oa]?\\s+(el|la)\\s+(?<unit>año|mes|semana|d[ií]a))\\b`;
 	export const HalfRegex = `\\b(?<half>medi[oa]\\s+(?<unit>ano|mes|semana|d[íi]a|hora))\\b`;
