@@ -1,18 +1,18 @@
 {
-  "name": "recognizers-text-number-with-unit",
+  "name": "recognizers-text-date-time",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/recognizers-text-number-with-unit.umd.js",
-  "module": "dist/recognizers-text-number-with-unit.es5.js",
-  "typings": "dist/types/recognizers-text-number-with-unit.d.ts",
+  "main": "dist/recognizers-text-date-time.umd.js",
+  "module": "dist/recognizers-text-date-time.es5.js",
+  "typings": "dist/types/recognizers-text-date-time.d.ts",
   "files": [
     "dist"
   ],
   "author": "Microsoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/recognizers-text-number-with-unit"
+    "url": "https://github.com/microsoft/recognizers-text"
   },
   "license": "MIT",
   "engines": {
@@ -33,9 +33,8 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
-    "@types/lodash.escaperegexp": "^4.1.3",
-    "@types/lodash.last": "^3.0.3",
-    "@types/lodash.max": "^4.0.3",
+    "@types/lodash.isequal": "^4.5.2",
+    "@types/lodash.tonumber": "^4.0.3",
     "@types/node": "^8.0.20",
     "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
@@ -57,9 +56,8 @@
     "typescript": "^2.5.3"
   },
   "dependencies": {
-    "lodash.escaperegexp": "^4.1.2",
-    "lodash.last": "^3.0.0",
-    "lodash.max": "^4.0.1",
-    "recognizers-text-number": "file:..\\numberRecognizers"
+    "lodash.isequal": "^4.5.0",
+    "lodash.tonumber": "^4.0.3",
+    "recognizers-text-number": "file:../recognizers-number"
   }
 }

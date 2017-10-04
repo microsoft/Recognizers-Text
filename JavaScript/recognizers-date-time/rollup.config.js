@@ -4,7 +4,7 @@ import sourceMaps from 'rollup-plugin-sourcemaps'
 const pkg = require('./package.json')
 const camelCase = require('lodash.camelcase')
 
-const libraryName = 'recognizers-text-datetime'
+const libraryName = 'recognizers-text-date-time'
 
 export default {
   entry: `compiled/${libraryName}.js`,
