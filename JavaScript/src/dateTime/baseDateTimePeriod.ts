@@ -285,7 +285,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         let trimedText = text.trim().toLowerCase();
 
         let er = this.config.timePeriodExtractor.extract(trimedText);
-        if (er.length != 1)
+        if (er.length !== 1)
         {
             return this.parseSimpleCases(text, referenceTime);
         }
@@ -572,7 +572,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
     private parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
 
-        //for rest of datetime, it will be handled in next function
+        // for rest of datetime, it will be handled in next function
         let restOfDateTimeMatch = RegExpUtility.getMatches(this.config.restOfDateTimeRegex, source);
         if (restOfDateTimeMatch.length)
         {

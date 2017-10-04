@@ -301,7 +301,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 # SpanishDateTimePeriodExtractorConfiguration
-DateTimePeriod_NumberCombinedWithUnit: !nestedRegex
+DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 PeriodTimeOfDayWithDateRegex: !simpleRegex
@@ -315,7 +315,7 @@ SuffixAndRegex: !simpleRegex
 FollowedUnit: !nestedRegex
   def: ^\s*{UnitRegex}
   references: [ UnitRegex ]
-Duration_NumberCombinedWithUnit: !nestedRegex
+DurationNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\,\d*)?){UnitRegex}
   references: [ UnitRegex ]
 AnUnitRegex: !nestedRegex
