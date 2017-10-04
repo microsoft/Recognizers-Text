@@ -19,20 +19,19 @@
     "node": ">=6.0.0"
   },
   "scripts": {
+    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts' './**/src/**/*.ts'",
     "prebuild-number": "cd ./recognizers-number/ && npm install && npm run build && cd ../",
     "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
     "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",
     "prebuild-all": "npm run prebuild-number && npm run prebuild-number-with-unit && npm run prebuild-date-time",
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
     "build": "tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
-    "start": "tsc-watch --onSuccess \"ava --watch\"",
+    "test-watch": "tsc-watch --onSuccess \"ava --watch\"",
     "test": "tsc && ava"
   },
   "ava": {
     "files": [
-      "test/index.js"
+      "test/datadriven-tests.js"
     ]
   },
   "devDependencies": {
@@ -51,7 +50,6 @@
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "ts-node": "^3.3.0",
     "tsc-watch": "^1.0.8",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.4.0",
