@@ -1,11 +1,9 @@
-﻿using Microsoft.Recognizers.Text.DateTime;
+﻿using System.Collections.Generic;
+using Microsoft.Recognizers.Text.DataDrivenTests;
+using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 
-namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
+namespace Microsoft.Recognizers.Text.DataTime.Tests
 {
     [TestClass]
     public class TestDateTime_Spanish : TestBase
