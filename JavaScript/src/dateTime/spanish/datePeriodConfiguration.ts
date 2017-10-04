@@ -142,7 +142,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.yearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
         this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.Duration_NumberCombinedWithUnit);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DurationNumberCombinedWithUnit);
         this.weekOfMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfMonthRegex);
         this.weekOfYearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfYearRegex);
         this.quarterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegex);

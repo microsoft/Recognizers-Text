@@ -55,7 +55,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.timeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex, "gis");
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriod_NumberCombinedWithUnit, "gis");
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit, "gis");
         this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex, "gis");
         this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex, "gis");
@@ -144,7 +144,7 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
         this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
         this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
-        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriod_NumberCombinedWithUnit, "gis");
+        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex, "gis");
         this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex, "gis");
