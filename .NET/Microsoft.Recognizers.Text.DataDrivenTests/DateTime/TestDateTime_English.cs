@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestSpecInitialize(TestResources);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-Englishlish.csv", "DateExtractor-English#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-English.csv", "DateExtractor-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateExtractor()
         {
