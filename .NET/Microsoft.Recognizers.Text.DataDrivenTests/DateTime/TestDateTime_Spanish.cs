@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.DataDrivenTests;
-using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Recognizers.Text.DataTime.Tests
+namespace Microsoft.Recognizers.Text.DateTime.Tests
 {
     [TestClass]
     public class TestDateTime_Spanish : TestBase
