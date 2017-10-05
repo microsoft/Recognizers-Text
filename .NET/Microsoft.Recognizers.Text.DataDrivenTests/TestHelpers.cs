@@ -131,6 +131,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetEnglishExtractor(extractorName);
                 case Culture.Spanish:
                     return GetSpanishExtractor(extractorName);
+                case Culture.Chinese:
+                    return GetChineseExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");
@@ -146,6 +148,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetEnglishParser(parserName);
                 case Culture.Spanish:
                     return GetSpanishParser(parserName);
+                case Culture.Chinese:
+                    return GetChineseParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{language}' not supported");
@@ -207,6 +211,67 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
                     return new BaseMergedParser(new EnglishMergedParserConfiguration(), DateTimeOptions.None);
+            }
+
+            throw new Exception($"Parser '{parserName}' for English not supported");
+        }
+
+        public static IExtractor GetChineseExtractor(DateTimeExtractors extractorName)
+        {
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new DateTime.Chinese.DateExtractorChs();
+                case DateTimeExtractors.Time:
+                    return new DateTime.Chinese.TimeExtractorChs();
+                case DateTimeExtractors.DatePeriod:
+                    return new DateTime.Chinese.DatePeriodExtractorChs();
+                case DateTimeExtractors.TimePeriod:
+                    return new DateTime.Chinese.TimePeriodExtractorChs();
+                case DateTimeExtractors.DateTime:
+                    return new DateTime.Chinese.DateTimeExtractorChs();
+                case DateTimeExtractors.DateTimePeriod:
+                    return new DateTime.Chinese.DateTimePeriodExtractorChs();
+                case DateTimeExtractors.Duration:
+                    return new DateTime.Chinese.DurationExtractorChs();
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new DateTime.Chinese.ChineseHolidayExtractorConfiguration());
+                case DateTimeExtractors.Set:
+                    return new DateTime.Chinese.SetExtractorChs();
+                case DateTimeExtractors.Merged:
+                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.None);
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new DateTime.Chinese.MergedExtractorChs(DateTimeOptions.SkipFromToMerge);
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for English not supported");
+        }
+
+        public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
+        {
+            //var commonConfiguration = new EnglishCommonDateTimeParserConfiguration();
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new DateTime.Chinese.DateParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.Time:
+                    return new DateTime.Chinese.TimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.DatePeriod:
+                    return new DateTime.Chinese.DatePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.TimePeriod:
+                    return new DateTime.Chinese.TimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.DateTime:
+                    return new DateTime.Chinese.DateTimeParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.DateTimePeriod:
+                    return new DateTime.Chinese.DateTimePeriodParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.Duration:
+                    return new DateTime.Chinese.DurationParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.Holiday:
+                    return new DateTime.Chinese.HolidayParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.Set:
+                    return new DateTime.Chinese.SetParserChs(new DateTime.Chinese.ChineseDateTimeParserConfiguration());
+                case DateTimeParsers.Merged:
+                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration(), DateTimeOptions.None);
             }
 
             throw new Exception($"Parser '{parserName}' for English not supported");
