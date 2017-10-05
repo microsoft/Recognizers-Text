@@ -1,3 +1,4 @@
+import { RegExpUtility } from "recognizers-text-number";
 import { ISetExtractorConfiguration, ISetParserConfiguration } from "../baseSet";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -6,7 +7,6 @@ import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { SpanishDateExtractorConfiguration } from "./dateConfiguration";

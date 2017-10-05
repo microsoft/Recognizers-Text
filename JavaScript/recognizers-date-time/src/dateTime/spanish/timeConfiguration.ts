@@ -1,7 +1,6 @@
+import { RegExpUtility, IExtractor } from "recognizers-text-number";
 import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
-import { IExtractor } from "../../number/extractors";
 import { BaseDurationExtractor } from "../baseDuration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { ICommonDateTimeParserConfiguration } from "../parsers";

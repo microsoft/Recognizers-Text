@@ -1,9 +1,9 @@
+import { RegExpUtility } from "recognizers-text-number";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 import { SpanishDateTimeUtilityConfiguration } from "./baseConfiguration";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 

@@ -1,6 +1,6 @@
+import { RegExpUtility } from "recognizers-text-number";
 import { BaseDateTimePeriodParser, IDateTimePeriodParserConfiguration } from "../baseDateTimePeriod";
 import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 
 export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {

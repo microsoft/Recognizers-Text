@@ -1,3 +1,4 @@
+import { RegExpUtility } from "recognizers-text-number";
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -8,7 +9,6 @@ import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDa
 import { BaseHolidayExtractor, BaseHolidayParser } from "../baseHoliday";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseSetExtractor, BaseSetParser } from "../baseSet";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { SpanishDateExtractorConfiguration } from "./dateConfiguration";
 import { SpanishDateTimeExtractorConfiguration } from "./dateTimeConfiguration";

@@ -1,12 +1,8 @@
+import { BaseNumberExtractor, BaseNumberParser, RegExpUtility, SpanishOrdinalExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "recognizers-text-number";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { IDateExtractorConfiguration, IDateParserConfiguration } from "../baseDate";
-import { BaseNumberExtractor } from "../../number/extractors";
-import { BaseNumberParser } from "../../number/parsers";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { IDateTimeUtilityConfiguration } from "../utilities";
-import { RegExpUtility } from "../../utilities";
-import { SpanishOrdinalExtractor, SpanishIntegerExtractor } from "../../number/spanish/extractors";
-import { SpanishNumberParserConfiguration } from "../../number/spanish/parserConfiguration";
 import { SpanishDateTimeUtilityConfiguration, SpanishCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 

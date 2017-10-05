@@ -1,14 +1,11 @@
+import { BaseNumberExtractor, IExtractor, SpanishCardinalExtractor, RegExpUtility, IParser } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
-import { BaseNumberExtractor, IExtractor } from "../../number/extractors";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
-import { SpanishCardinalExtractor } from "../../number/spanish/extractors";
 import { SpanishDateExtractorConfiguration } from "./dateConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
-import { IParser } from "../../number/parsers";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];

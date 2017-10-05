@@ -1,5 +1,5 @@
+import { RegExpUtility } from "recognizers-text-number";
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
-import { RegExpUtility } from "../../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 
 export class SpanishHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
