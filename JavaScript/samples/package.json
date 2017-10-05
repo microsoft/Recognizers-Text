@@ -1,0 +1,17 @@
+{
+  "name": "simpleconsole",
+  "version": "1.0.0",
+  "description": "Recognizer's Sample Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "recognizers-text-date-time": "file:../recognizers-date-time",
+    "recognizers-text-number": "file:../recognizers-number",
+    "recognizers-text-number-with-unit": "file:../recognizers-number-with-unit"
+  }
+}
