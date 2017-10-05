@@ -213,5 +213,13 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.DateTime
             base.ModelInitialize(Models);
             base.TestDateTime();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelSplitDateAndTime-English.csv", "DateTimeModelSplitDateAndTime-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModelSplitDateAndTime()
+        {
+            base.ModelInitialize(Models);
+            base.TestDateTime();
+        }
     }
 }
