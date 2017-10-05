@@ -10,7 +10,7 @@ import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { EnglishDateTimeExtractorConfiguration } from "./dateTimeConfiguration"
 import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { IExtractor } from "../../number/extractors"
+import { IExtractor } from "recognizers-text-number"
 import { IDateTimeParser } from "../parsers"
 
 export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {

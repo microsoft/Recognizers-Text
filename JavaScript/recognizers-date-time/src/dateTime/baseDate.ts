@@ -1,5 +1,5 @@
 import { Constants, TimeTypeConstants } from "./constants"
-import { Constants as NumberConstants } from "../number/constants"
+import { Constants as NumberConstants } from "recognizers-text-number"
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
 import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"

@@ -25,6 +25,17 @@ export { EnglishDurationExtractorConfiguration, EnglishDurationParserConfigurati
 export { EnglishHolidayExtractorConfiguration, EnglishHolidayParserConfiguration } from "./dateTime/english/holidayConfiguration";
 export { EnglishMergedExtractorConfiguration, EnglishMergedParserConfiguration } from "./dateTime/english/mergedConfiguration";
 export { EnglishTimeParser } from "./dateTime/english/parsers";
+export { SpanishCommonDateTimeParserConfiguration, SpanishDateTimeUtilityConfiguration } from "./dateTime/spanish/baseConfiguration";
+export { SpanishDateExtractorConfiguration, SpanishDateParserConfiguration } from "./dateTime/spanish/dateConfiguration";
+export { SpanishTimeExtractorConfiguration, SpanishTimeParserConfiguration } from "./dateTime/spanish/timeConfiguration";
+export { SpanishDatePeriodExtractorConfiguration, SpanishDatePeriodParserConfiguration } from "./dateTime/spanish/datePeriodConfiguration";
+export { SpanishTimePeriodExtractorConfiguration, SpanishTimePeriodParserConfiguration } from "./dateTime/spanish/timePeriodConfiguration";
+export { SpanishDateTimeExtractorConfiguration, SpanishDateTimeParserConfiguration } from "./dateTime/spanish/dateTimeConfiguration";
+export { SpanishDateTimePeriodExtractorConfiguration, SpanishDateTimePeriodParserConfiguration } from "./dateTime/spanish/dateTimePeriodConfiguration";
+export { SpanishSetExtractorConfiguration, SpanishSetParserConfiguration } from "./dateTime/spanish/setConfiguration";
+export { SpanishDurationExtractorConfiguration, SpanishDurationParserConfiguration } from "./dateTime/spanish/durationConfiguration";
+export { SpanishHolidayExtractorConfiguration, SpanishHolidayParserConfiguration } from "./dateTime/spanish/holidayConfiguration";
+export { SpanishMergedExtractorConfiguration, SpanishMergedParserConfiguration } from "./dateTime/spanish/mergedConfiguration";
 export { BaseDateTime } from "./resources/baseDateTime";
 export { EnglishDateTime } from "./resources/englishDateTime";
 export { SpanishDateTime } from "./resources/spanishDateTime";

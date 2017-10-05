@@ -1,6 +1,5 @@
-import { IExtractor, ExtractResult } from "../number/extractors"
+import { IExtractor, ExtractResult, RegExpUtility } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
-import { RegExpUtility } from "../utilities"
 import { TimeTypeConstants } from "../dateTime/constants"
 
 export class Token {

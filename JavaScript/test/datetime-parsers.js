@@ -5,7 +5,7 @@ var Recognizers = require('recognizers-text-date-time');
 
 // Configs
 var EnglishCommonDateTimeParserConfiguration = Recognizers.EnglishCommonDateTimeParserConfiguration;
-var SpanishCommonDateTimeParserConfiguration = require('../compiled/dateTime/spanish/baseConfiguration').SpanishCommonDateTimeParserConfiguration;
+var SpanishCommonDateTimeParserConfiguration = Recognizers.SpanishCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {
     'English': new EnglishCommonDateTimeParserConfiguration(),
@@ -39,11 +39,10 @@ module.exports = _.zipObject(parserKeys, parserObjects);
 function createParser(lang, parser, commonConfig) {
     try {
         // try with a language specific parser
-        parserModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Parser;
         parserTypeName = [lang, parser, Constants.Parser].join('');
 
         try {
-            ParserType = require(parserModuleName)[parserTypeName];
+            ParserType = Recognizers[parserTypeName];
         } catch(err) {
             // specific parser not found... continue to default
             ParserType = null;
@@ -53,7 +52,7 @@ function createParser(lang, parser, commonConfig) {
         if (!ParserType) {
             var parserModuleName = '../compiled/dateTime/base' + parser;
             var parserTypeName = [Constants.Base, parser, Constants.Parser].join('');
-            var ParserType = require(parserModuleName)[parserTypeName];
+            var ParserType = Recognizers[parserTypeName];
             if (!ParserType) {
                 throw new Error(`Parser Type ${parserTypeName} was not found in module ${parserModuleName}`);
             }
@@ -62,7 +61,7 @@ function createParser(lang, parser, commonConfig) {
         // resolve config
         var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
         var configTypeName = lang + parser + Constants.ParserConfiguration;
-        var ConfigType = require(configModuleName)[configTypeName];
+        var ConfigType = Recognizers[configTypeName];
         if (!ConfigType) {
             throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
         }
