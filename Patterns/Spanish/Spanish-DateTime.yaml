@@ -338,7 +338,7 @@ HolidayRegex2: !nestedRegex
   def: \b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b
   references: [ FullYearRegex ]
 HolidayRegex3: !nestedRegex
-  def: \b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b
+  def: \b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b
   references: [ FullYearRegex ]
 # SpanishMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
@@ -595,8 +595,8 @@ HolidayNames: !dictionary
     pascuas: [ diadepascuas, pascuas ]
     navidad: [ navidad , diadenavidad ]
     nochebuena: [ diadenochebuena, nochebuena]
-    añonuevo: [ añonuevo ]
-    nochevieja: [ nochevieja ]
+    añonuevo: [ añonuevo, diadeañonuevo ]
+    nochevieja: [ nochevieja, diadenochevieja ]
     yuandan: [ yuandan ]
     maestro: [ diadelmaestro ]
     todoslossantos: [ todoslossantos ]
