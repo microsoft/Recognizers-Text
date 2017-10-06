@@ -14,6 +14,7 @@ IF ERRORLEVEL 1 (
 
 IF NOT EXIST "node_modules" (
 	ECHO # Installing dependencies - npm install
+    CALL npm run prebuild-all
 	CALL npm i
 )
 
