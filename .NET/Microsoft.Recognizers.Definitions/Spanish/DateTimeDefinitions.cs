@@ -132,7 +132,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string HalfRegex = @"\b(?<half>medi[oa]\s+(?<unit>ano|mes|semana|d[íi]a|hora))\b";
 		public const string InExactNumberRegex = @"\b(pocos|poco|algo|varios)\b";
 		public static readonly string InExactNumberUnitRegex = $@"\b(pocos|poco|algo|varios)\s+{UnitRegex}";
-		public static readonly string HolidayRegex1 = $@"\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|d[ií]a de acci[oó]n de gracias|halloween|noches de brujas)(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
+		public static readonly string HolidayRegex1 = $@"\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public static readonly string HolidayRegex3 = $@"\b(?<holiday>(d[ií]a( del?( las?)?)? )(trabajador|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota))(\s+(del?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\s+año))?\b";
 		public const string BeforeRegex = @"(antes(\s+del?(\s+las?)?)?)";
@@ -358,14 +358,31 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
-			{ "fathers", new string[] { "diadelpadre" } },
-			{ "mothers", new string[] { "diadelamadre" } },
-			{ "thanksgiving", new string[] { "diadegracias", "diadeacciondegracias" } },
-			{ "martinlutherking", new string[] { "diademartinlutherking" } },
-			{ "washingtonsbirthday", new string[] { "diadelpresidente" } },
-			{ "labour", new string[] { "diadeltrabajadorusa" } },
-			{ "columbus", new string[] { "diadelaraza", "diadeladiversidadcultural" } },
-			{ "memorial", new string[] { "diadelamemoria" } }
+			{ "padres", new string[] { "diadelpadre" } },
+			{ "madres", new string[] { "diadelamadre" } },
+			{ "acciondegracias", new string[] { "diadegracias", "diadeacciondegracias", "acciondegracias" } },
+			{ "trabajador", new string[] { "diadeltrabajador" } },
+			{ "delaraza", new string[] { "diadelaraza", "diadeladiversidadcultural" } },
+			{ "memoria", new string[] { "diadelamemoria" } },
+			{ "pascuas", new string[] { "diadepascuas", "pascuas" } },
+			{ "navidad", new string[] { "navidad", "diadenavidad" } },
+			{ "nochebuena", new string[] { "diadenochebuena", "nochebuena" } },
+			{ "añonuevo", new string[] { "añonuevo" } },
+			{ "nochevieja", new string[] { "nochevieja" } },
+			{ "yuandan", new string[] { "yuandan" } },
+			{ "maestro", new string[] { "diadelmaestro" } },
+			{ "todoslossantos", new string[] { "todoslossantos" } },
+			{ "niño", new string[] { "diadelniño" } },
+			{ "mujer", new string[] { "diadelamujer" } }
+		};
+		public static readonly Dictionary<string, string> VariableHolidaysTimexDictionary = new Dictionary<string, string>
+		{
+			{ "padres", "-06-WXX-7-3" },
+			{ "madres", "-05-WXX-7-2" },
+			{ "acciondegracias", "-11-WXX-4-4" },
+			{ "trabajador", "-05-WXX-1-1" },
+			{ "delaraza", "-10-WXX-1-2" },
+			{ "memoria", "-03-WXX-2-4" }
 		};
 		public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
 		{
