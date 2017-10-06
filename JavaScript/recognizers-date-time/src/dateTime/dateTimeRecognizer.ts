@@ -1,9 +1,13 @@
 import { IModel, Recognizer, Culture } from "recognizers-text-number";
 import { IDateTimeModel, DateTimeModel } from "./models";
-import { BaseMergedParser, BaseMergedExtractor, DateTimeOptions } from "./baseMerged";
+import { BaseMergedParser, BaseMergedExtractor } from "./baseMerged";
 import { EnglishCommonDateTimeParserConfiguration } from "./english/baseConfiguration";
 import { EnglishMergedExtractorConfiguration, EnglishMergedParserConfiguration } from "./english/mergedConfiguration";
 import { SpanishMergedParserConfiguration, SpanishMergedExtractorConfiguration } from "./spanish/mergedConfiguration";
+
+export enum DateTimeOptions {
+    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2
+}
 
 export default class DateTimeRecognizer extends Recognizer {
     static readonly instance: DateTimeRecognizer = new DateTimeRecognizer(DateTimeOptions.None);

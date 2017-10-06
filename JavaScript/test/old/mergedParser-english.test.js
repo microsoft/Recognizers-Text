@@ -4,7 +4,7 @@ var Extractor = require("../compiled/dateTime/baseMerged").BaseMergedExtractor;
 var CommonParserConfig = require("../compiled/dateTime/english/baseConfiguration").EnglishCommonDateTimeParserConfiguration;
 var ParserConfig = require("../compiled/dateTime/english/mergedConfiguration").EnglishMergedParserConfiguration;
 var Parser = require("../compiled/dateTime/baseMerged").BaseMergedParser;
-var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
+var DateTimeOptions = require('../compiled/dateTime/dateTimeRecognizer').DateTimeOptions;
 var Constants = require('../compiled/dateTime/constants').Constants;
 
 describe('DateTime Merged Parser', it => {

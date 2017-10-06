@@ -1,4 +1,4 @@
-export { default as DateTimeRecognizer } from "./dateTime/dateTimeRecognizer";
+export { default as DateTimeRecognizer, DateTimeOptions } from "./dateTime/dateTimeRecognizer";
 export { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "./dateTime/baseDate";
 export { ITimeExtractorConfiguration, ITimeParserConfiguration, BaseTimeExtractor, BaseTimeParser } from "./dateTime/baseTime";
 export { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration, BaseDatePeriodExtractor, BaseDatePeriodParser } from "./dateTime/baseDatePeriod";
@@ -8,7 +8,7 @@ export { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfigurati
 export { IDurationExtractorConfiguration, IDurationParserConfiguration, BaseDurationExtractor, BaseDurationParser } from "./dateTime/baseDuration";
 export { ISetExtractorConfiguration, ISetParserConfiguration, BaseSetExtractor, BaseSetParser } from "./dateTime/baseSet";
 export { IHolidayExtractorConfiguration, IHolidayParserConfiguration, BaseHolidayExtractor, BaseHolidayParser, BaseHolidayParserConfiguration } from "./dateTime/baseHoliday";
-export { IMergedExtractorConfiguration, IMergedParserConfiguration, BaseMergedExtractor, BaseMergedParser, DateTimeOptions } from "./dateTime/baseMerged";
+export { IMergedExtractorConfiguration, IMergedParserConfiguration, BaseMergedExtractor, BaseMergedParser } from "./dateTime/baseMerged";
 export { Constants, TimeTypeConstants } from "./dateTime/constants";
 export { IDateTimeModel, DateTimeModelResult, DateTimeModel } from "./dateTime/models";
 export { DateTimeParseResult, ICommonDateTimeParserConfiguration, IDateTimeParser, BaseDateParserConfiguration } from "./dateTime/parsers";

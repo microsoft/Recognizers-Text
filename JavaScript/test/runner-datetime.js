@@ -1,5 +1,6 @@
 var Recognizer = require('recognizers-text-date-time').DateTimeRecognizer;
 var DateUtils = require('recognizers-text-date-time').DateUtils;
+var DateTimeOptions = require('recognizers-text-date-time').DateTimeOptions;
 var _ = require('lodash');
 
 var Constants = require('./constants');
@@ -149,7 +150,8 @@ function getParser(config) {
     return parser;
 }
 function getModel(config) {
-    return Recognizer.instance.getDateTimeModel(SupportedCultures[config.language].cultureCode);
+    let options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
+    return Recognizer.getSingleCultureInstance(SupportedCultures[config.language].cultureCode, options).getDateTimeModel();
 }
 
 function getReferenceDate(testCase) {

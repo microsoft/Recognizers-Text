@@ -2,7 +2,7 @@
 var describe = require('ava-spec').describe;
 var Culture = require('../compiled/culture').Culture;
 var Constants = require('../compiled/dateTime/constants').Constants;
-var DateTimeOptions = require("../compiled/dateTime/baseMerged").DateTimeOptions;
+var DateTimeOptions = require("../compiled/dateTime/dateTimeRecognizer").DateTimeOptions;
 var DateTimeRecognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
 
 describe('Split Date And Time Count .', it => {
@@ -38,7 +38,7 @@ describe('Split Date And Time Count .', it => {
 describe('Split Date And Time Type Name .', it => {
     let model = DateTimeRecognizer.getSingleCultureInstance(Culture.English, DateTimeOptions.SplitDateAndTime).getDateTimeModel();
     let referenceDate = new Date(2016, 10, 7);
-    
+
     basicTestType(it, model, referenceDate,"I'll be out next hour", Constants.SYS_DATETIME_DURATION);
     basicTestType(it, model, referenceDate,"I'll be out next 5 minutes", Constants.SYS_DATETIME_DURATION);
     basicTestType(it, model, referenceDate,"I'll be out next 3 days", Constants.SYS_DATETIME_DURATION);
