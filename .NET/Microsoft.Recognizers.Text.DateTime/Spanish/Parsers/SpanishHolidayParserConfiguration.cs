@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
         private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
-        private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
+        private static DateObject TeacherDay(int year) => new DateObject(year, 9, 11);
         private static DateObject Pascuas(int year) => DateObject.MinValue;
 
         public override int GetSwiftYear(string text)
