@@ -4,7 +4,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -37,7 +37,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -70,7 +70,39 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "TimexStr": "XXXX-01-01",
+      "Value": {
+        "Success": true,
+        "Timex": "XXXX-01-01",
+        "IsLunar": false,
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        },
+        "FutureValue": "2017-01-01T00:00:00",
+        "PastValue": "2016-01-01T00:00:00"
+      },
+      "ResolutionStr": "",
+      "Start": 11,
+      "Length": 9,
+      "Text": "año nuevo",
+      "Type": "date"
+    }
+  ]
+},
+{
+  "TestType": "BasicTest",
+  "Input": "Volveré en noche vieja",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -90,8 +122,8 @@
       },
       "ResolutionStr": "",
       "Start": 11,
-      "Length": 9,
-      "Text": "año nuevo",
+      "Length": 11,
+      "Text": "noche vieja",
       "Type": "date"
     }
   ]
@@ -103,7 +135,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -136,7 +168,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -169,7 +201,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -205,10 +237,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-06-WXX-6-3",
+      "TimexStr": "XXXX-06-WXX-7-3",
       "Value": {
         "Success": true,
-        "Timex": "XXXX-06-WXX-6-3",
+        "Timex": "XXXX-06-WXX-7-3",
         "IsLunar": false,
         "FutureResolution": {
           "date": "2017-06-18"
@@ -234,7 +266,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -255,7 +287,7 @@
       "ResolutionStr": "",
       "Start": 16,
       "Length": 20,
-      "Text": "Yuandan delpróximo año",
+      "Text": "Yuandan del próximo año",
       "Type": "date"
     }
   ]
@@ -267,7 +299,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -303,10 +335,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2015-06-WXX-6-3",
+      "TimexStr": "2015-06-WXX-7-3",
       "Value": {
         "Success": true,
-        "Timex": "2015-06-WXX-6-3",
+        "Timex": "2015-06-WXX-7-3",
         "IsLunar": false,
         "FutureResolution": {
           "date": "2015-06-21"
@@ -332,7 +364,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -365,7 +397,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -398,7 +430,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -431,7 +463,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -467,10 +499,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "XXXX-06-WXX-6-3",
+      "TimexStr": "XXXX-06-WXX-7-3",
       "Value": {
         "Success": true,
-        "Timex": "XXXX-06-WXX-6-3",
+        "Timex": "XXXX-06-WXX-7-3",
         "IsLunar": false,
         "FutureResolution": {
           "date": "2017-06-18"
@@ -496,7 +528,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -529,7 +561,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotNet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -565,10 +597,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "TimexStr": "2015-06-WXX-6-3",
+      "TimexStr": "2015-06-WXX-7-3",
       "Value": {
         "Success": true,
-        "Timex": "2015-06-WXX-6-3",
+        "Timex": "2015-06-WXX-7-3",
         "IsLunar": false,
         "FutureResolution": {
           "date": "2015-06-21"
