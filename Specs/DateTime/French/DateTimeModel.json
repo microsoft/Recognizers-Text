@@ -1,0 +1,144 @@
+[{
+  "Input": "Je serai de 5 a 7 aujourd'hui",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "de 5 a 7 aujourd'hui",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+            "type": "datetimerange",
+            "start": "2016-11-07 05:00:00",
+            "end": "2016-11-07 07:00:00"
+          },
+          {
+            "timex": "(2016-11-07T17,2016-11-07T19,PT2H)",
+            "type": "datetimerange",
+            "start": "2016-11-07 17:00:00",
+            "end": "2016-11-07 19:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai de 5 a 6pm 22 Avril",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "de 5 a 6pm 22 avril",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+            "type": "datetimerange",
+            "start": "2016-04-22 17:00:00",
+            "end": "2016-04-22 18:00:00"
+          },
+          {
+            "timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+            "type": "datetimerange",
+            "start": "2017-04-22 17:00:00",
+            "end": "2017-04-22 18:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai de 3:00 au 4:00 lendemain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "de 3:00 au 4:00 lendemain",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+            "type": "datetimerange",
+            "start": "2016-11-08 03:00:00",
+            "end": "2016-11-08 04:00:00"
+          },
+          {
+            "timex": "(2016-11-08T15:00,2016-11-08T16:00,PT1H)",
+            "type": "datetimerange",
+            "start": "2016-11-08 15:00:00",
+            "end": "2016-11-08 16:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai demain nuit",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demain nuit",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-08TNI",
+            "type": "datetimerange",
+            "start": "2016-11-08 20:00:00",
+            "end": "2016-11-08 23:59:59"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai mardi dans le matin",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mardi dans le matin",
+      "TypeName": "datetimeV2.datetimerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-2TMO",
+            "type": "datetimerange",
+            "start": "2016-11-01 08:00:00",
+            "end": "2016-11-01 12:00:00"
+          },
+          {
+            "timex": "XXXX-WXX-2TMO",
+            "type": "datetimerange",
+            "start": "2016-11-08 08:00:00",
+            "end": "2016-11-08 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+]
