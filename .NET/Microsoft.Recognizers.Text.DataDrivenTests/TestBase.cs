@@ -265,13 +265,16 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 var actual = tuple.Item2;
 
                 var values = actual.Value as IDictionary<string, object>;
-                var listValues = values["values"] as IList<Dictionary<string, string>>;
-                var actualValues = listValues.FirstOrDefault();
+                if (values != null)
+                {
+                    var listValues = values["values"] as IList<Dictionary<string, string>>;
+                    var actualValues = listValues.FirstOrDefault();
 
-                var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
-                var expectedValues = expectedObj["values"].FirstOrDefault();
+                    var expectedObj = JsonConvert.DeserializeObject<IDictionary<string, IList<Dictionary<string, string>>>>(expected.Value.ToString());
+                    var expectedValues = expectedObj["values"].FirstOrDefault();
 
-                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
+                    CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
+                }
             }
         }
 
