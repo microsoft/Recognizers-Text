@@ -7,6 +7,16 @@ export class Constants {
     static readonly SYS_DATETIME_DATETIMEPERIOD: string = "datetimerange";
     static readonly SYS_DATETIME_DURATION: string = "duration";
     static readonly SYS_DATETIME_SET: string = "set";
+
+    // key
+    static readonly TimexKey: string = "timex";
+    static readonly CommentKey: string = "Comment";
+    static readonly ModKey: string = "Mod";
+    static readonly TypeKey: string = "type";
+    static readonly IsLunarKey: string = "isLunar";
+    static readonly ResolveKey: string = "resolve";
+    static readonly ResolveToPastKey: string = "resolveToPast";
+    static readonly ResolveToFutureKey: string = "resolveToFuture";
 }
 
 export class TimeTypeConstants {

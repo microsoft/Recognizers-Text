@@ -241,9 +241,6 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 innerResult = this.parseYear(source, referenceDate);
             }
             if (!innerResult.success) {
-                innerResult = this.parseDuration(source, referenceDate);
-            }
-            if (!innerResult.success) {
                 innerResult = this.parseWeekOfMonth(source, referenceDate);
             }
             if (!innerResult.success) {
@@ -264,6 +261,12 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (!innerResult.success) {
                 innerResult = this.parseMonthOfDate(source, referenceDate);
             }
+
+            // parse duration should be at the end since it will extract "the last week" from "the last week of July"
+            if (!innerResult.success) {
+                innerResult = this.parseDuration(source, referenceDate);
+            }
+
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
                     innerResult.futureResolution = new Map<string, string>()
@@ -496,6 +499,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let pastBegin = prBegin.value.pastValue;
         let pastEnd = prEnd.value.pastValue;
 
+        result.subDateTimeEntities = prs;
         result.timex = `(${prBegin.timexStr},${prEnd.timexStr},P${DateUtils.diffDays(futureEnd, futureBegin)}D)`;
         result.futureValue = [futureBegin, futureEnd];
         result.pastValue = [pastBegin, pastEnd];
@@ -532,32 +536,44 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (pr === null) return result;
 
             let beforeStr = source.substr(0, pr.start).trim();
+            let mod: string;
             let durationResult: DateTimeResolutionResult = pr.value;
             if (StringUtility.isNullOrEmpty(durationResult.timex)) return result;
 
             let prefixMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
             if (prefixMatch) {
+                mod = TimeTypeConstants.beforeMod;
                 beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
             }
             prefixMatch = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
             if (prefixMatch && prefixMatch.length === beforeStr.length) {
+                mod = TimeTypeConstants.afterMod;
+                // for future the beginDate should add 1 first
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
             }
             prefixMatch = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
             if (prefixMatch && prefixMatch.length === beforeStr.length) {
+                mod = TimeTypeConstants.afterMod
                 beginDate = new Date(referenceDate.getFullYear(), referenceDate.getMonth(), referenceDate.getDate() + 1);
                 endDate = this.getSwiftDate(beginDate, durationResult.timex, true);
-    
+
                 let unit = durationResult.timex.substr(durationResult.timex.length - 1);
                 durationResult.timex = `P1${unit}`;
                 beginDate = this.getSwiftDate(endDate, durationResult.timex, false);
             }
 
+            if (mod) {
+                pr.value.mod = mod;
+            }
+
             durationTimex = durationResult.timex;
-        } else {
-            let match = RegExpUtility.getMatches(this.config.restOfDateRegex, source).pop();
-            if (!match) return result;
+            result.subDateTimeEntities = [pr];
+        }
+
+        // parse rest of
+        let match = RegExpUtility.getMatches(this.config.restOfDateRegex, source).pop();
+        if (match) {
 
             let diffDays = 0;
             let durationStr = match.groups('duration').value;
@@ -567,21 +583,21 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                     diffDays = 7 - ((beginDate.getDay() === 0) ? 7 : beginDate.getDay());
                     endDate = DateUtils.addDays(referenceDate, diffDays);
                     restNowSunday = (diffDays === 0);
-                break;
+                    break;
                 case 'MON':
                     endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), beginDate.getMonth(), 1);
                     endDate.setMonth(beginDate.getMonth() + 1);
                     endDate.setDate(endDate.getDate() - 1);
                     diffDays = endDate.getDate() - beginDate.getDate() + 1;
-                break;
+                    break;
                 case 'Y':
                     endDate = DateUtils.safeCreateFromMinValue(beginDate.getFullYear(), 11, 1);
                     endDate.setMonth(endDate.getMonth() + 1);
                     endDate.setDate(endDate.getDate() - 1);
                     diffDays = DateUtils.dayOfYear(endDate) - DateUtils.dayOfYear(beginDate) + 1;
                     break;
-                }
-                durationTimex = `P${diffDays}D`;
+            }
+            durationTimex = `P${diffDays}D`;
         }
 
         if (beginDate !== endDate || restNowSunday) {

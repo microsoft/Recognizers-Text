@@ -1,7 +1,7 @@
 var _ = require('lodash');
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
-var DateTimeOptions = require('../compiled/dateTime/baseMerged').DateTimeOptions;
+var DateTimeOptions = require('../compiled/dateTime/dateTimeRecognizer').DateTimeOptions;
 
 var LanguagesConfig = [
     'English'

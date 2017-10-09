@@ -278,19 +278,25 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             return ret;
         }
 
+        let ampmStr1 = pr1.value.comment;
+        let ampmStr2 = pr2.value.comment;
         let beginTime: Date = pr1.value.futureValue;
         let endTime: Date = pr2.value.futureValue;
+        if (!StringUtility.isNullOrEmpty(ampmStr2) && ampmStr2.endsWith("ampm")
+            && endTime <= beginTime && endTime.getHours() < 12) {
+            endTime.setHours(endTime.getHours() + 12);
+            pr2.value.futureValue = endTime;
+        }
 
         ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getUTCHours()}H)`;
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
         ret.success = true;
 
-        let ampmStr1 = pr1.value.comment;
-        let ampmStr2 = pr2.value.comment;
         if (ampmStr1 && ampmStr1.endsWith("ampm") && ampmStr2 && ampmStr2.endsWith("ampm")) {
             ret.comment = "ampm";
         }
 
+        ret.subDateTimeEntities = [pr1, pr2];
         return ret;
     }
 

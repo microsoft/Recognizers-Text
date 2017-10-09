@@ -13,10 +13,7 @@ import { BaseSetExtractor, BaseSetParser } from "./baseSet"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { BaseHolidayExtractor, BaseHolidayParser } from "./baseHoliday"
 import { isEqual } from 'lodash';
-
-export enum DateTimeOptions {
-    None, SkipFromToMerge
-}
+import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {
     dateExtractor: BaseDateExtractor
@@ -174,12 +171,14 @@ export class BaseMergedParser implements IDateTimeParser {
     readonly parserTypeName = 'datetimeV2';
 
     private readonly config: IMergedParserConfiguration;
+    private readonly options: DateTimeOptions;
 
     private readonly dateMinValue = FormatUtil.formatDate(DateUtils.minValue());
     private readonly dateTimeMinValue = FormatUtil.formatDateTime(DateUtils.minValue());
 
-    constructor(config: IMergedParserConfiguration) {
+    constructor(config: IMergedParserConfiguration, options: DateTimeOptions) {
         this.config = config;
+        this.options = options;
     }
 
     parse(er: ExtractResult, refTime?: Date): DateTimeParseResult | null {
@@ -275,12 +274,24 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.value = val;
         }
 
-        pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter, hasSince);
-
-        // change the type at last for the after or before mode
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore, hasAfter, hasSince)}`;
+        if ((this.options & DateTimeOptions.SplitDateAndTime)===DateTimeOptions.SplitDateAndTime
+             && pr.value && pr.value.subDateTimeEntities != null)
+        {
+            pr.value = this.dateTimeResolutionForSplit(pr);
+        }
+        else
+        {
+            pr = this.setParseResult(pr, hasBefore, hasAfter, hasSince);
+        }
 
         return pr;
+    }
+
+    public setParseResult(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): DateTimeParseResult {
+        slot.value = this.dateTimeResolution(slot, hasBefore, hasAfter, hasSince);
+        // change the type at last for the after or before mode
+        slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, hasBefore, hasAfter, hasSince)}`;
+        return slot;
     }
 
     protected getParseResult(extractorResult: ExtractResult, referenceDate: Date): DateTimeParseResult | null {
@@ -315,12 +326,36 @@ export class BaseMergedParser implements IDateTimeParser {
     }
 
     private determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): string {
-        if (hasBefore || hasAfter || hasSince) {
-            if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
-            if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
-            if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
+        if ((this.options & DateTimeOptions.SplitDateAndTime) === DateTimeOptions.SplitDateAndTime) {
+            if (type === Constants.SYS_DATETIME_DATETIME) {
+                return Constants.SYS_DATETIME_TIME;
+            }
+        }
+        else {
+            if (hasBefore || hasAfter || hasSince) {
+                if (type === Constants.SYS_DATETIME_DATE) return Constants.SYS_DATETIME_DATEPERIOD;
+                if (type === Constants.SYS_DATETIME_TIME) return Constants.SYS_DATETIME_TIMEPERIOD;
+                if (type === Constants.SYS_DATETIME_DATETIME) return Constants.SYS_DATETIME_DATETIMEPERIOD;
+            }
         }
         return type;
+    }
+
+    public dateTimeResolutionForSplit(slot: DateTimeParseResult): Array<DateTimeParseResult> {
+        let results = new Array<DateTimeParseResult>();
+        if (slot.value.subDateTimeEntities != null) {
+            let subEntities = slot.value.subDateTimeEntities;
+            for (let subEntity of subEntities) {
+                let result = subEntity;
+                results.push(...this.dateTimeResolutionForSplit(result));
+            }
+        }
+        else {
+            slot.value = this.dateTimeResolution(slot, false, false, false);
+            slot.type = `${this.parserTypeName}.${this.determineDateTimeType(slot.type, false, false, false)}`;
+            results.push(slot);
+        }
+        return results;
     }
 
     private dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): Map<string, any> {
@@ -340,10 +375,12 @@ export class BaseMergedParser implements IDateTimeParser {
         let mod = value.mod;
         let comment = value.comment;
 
-        if (!StringUtility.isNullOrEmpty(timex)) result.set('timex', timex);
-        if (!StringUtility.isNullOrEmpty(comment)) result.set('Comment', comment);
-        if (!StringUtility.isNullOrEmpty(mod)) result.set('Mod', mod);
-        if (!StringUtility.isNullOrEmpty(type)) result.set('type', outputType);
+        // the following should added to res first since the ResolveAmPm is using these fields
+        this.addResolutionFieldsAny(result, Constants.TimexKey, timex);
+        this.addResolutionFieldsAny(result, Constants.CommentKey, comment);
+        this.addResolutionFieldsAny(result, Constants.ModKey, mod);
+        this.addResolutionFieldsAny(result, Constants.TypeKey, outputType);
+        this.addResolutionFieldsAny(result, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
 
         let futureResolution = value.futureResolution;
         let pastResolution = value.pastResolution;
@@ -354,10 +391,10 @@ export class BaseMergedParser implements IDateTimeParser {
         let futureValues = Array.from(future.values()).sort();
         let pastValues = Array.from(past.values()).sort();
         if (isEqual(futureValues, pastValues)) {
-            if (past.size > 0) result.set('resolve', past);
+            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
         } else {
-            if (past.size > 0) result.set('resolveToPast', past);
-            if (future.size > 0) result.set('resolveToFuture', future);
+            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            if (future.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
         }
 
         if (comment && comment === 'ampm') {
@@ -369,13 +406,15 @@ export class BaseMergedParser implements IDateTimeParser {
             }
         }
 
-        if (isLunar) result.set('isLunar', isLunar);
-
         result.forEach((value, key) => {
             if (value instanceof Map) {
                 let newValues = new Map<string, string>();
-                if (!StringUtility.isNullOrEmpty(timex)) newValues.set('timex', timex);
-                if (!StringUtility.isNullOrEmpty(type)) newValues.set('type', outputType);
+
+                this.addResolutionFields(newValues, Constants.TimexKey, timex);
+                this.addResolutionFields(newValues, Constants.ModKey, mod);
+                this.addResolutionFields(newValues, Constants.TypeKey, outputType);
+                this.addResolutionFields(newValues, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
+
                 value.forEach((innerValue, innerKey) => {
                     newValues.set(innerKey, innerValue);
                 });
@@ -390,6 +429,29 @@ export class BaseMergedParser implements IDateTimeParser {
                 .set('value', 'not resolved'));
         }
         return new Map<string, any>().set('values', resolutions);
+    }
+
+    private addResolutionFieldsAny( dic:Map<string, any>,  key:string,  value:any)
+    {
+        if (value instanceof String)
+        {
+            if (!StringUtility.isNullOrEmpty(value as string))
+            {
+                dic.set(key, value);
+            }
+        }
+        else
+        {
+            dic.set(key, value);
+        }
+    }
+
+    private addResolutionFields(dic:Map<string, string> ,  key:string,  value:string)
+    {
+        if (!StringUtility.isNullOrEmpty(value))
+        {
+            dic.set(key, value);
+        }
     }
 
     private generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {

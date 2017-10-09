@@ -119,6 +119,8 @@ describe('Date Period Extractor', it => {
     basicTest(it, extractor, "next month holidays", 0, 10);
 
     // Week of and month of
+    basicTest(it, extractor, "What do I have the week of November 30th", 15, 25);
+    basicTest(it, extractor, "the week of september.15th", 0, 26);
     basicTest(it, extractor, "week of september.15th", 0, 22);
     basicTest(it, extractor, "month of september.15th", 0, 23);
 
