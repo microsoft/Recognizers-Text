@@ -193,7 +193,7 @@
       "Text": "father's day",
       "Type": "date",
       "Value": {
-        "Timex": "XXXX-06-WXX-6-3",
+        "Timex": "XXXX-06-WXX-7-3",
         "FutureResolution": {
           "date": "2017-06-18"
         },
@@ -262,7 +262,7 @@
       "Text": "father's day of 2015",
       "Type": "date",
       "Value": {
-        "Timex": "2015-06-WXX-6-3",
+        "Timex": "2015-06-WXX-7-3",
         "FutureResolution": {
           "date": "2015-06-21"
         },
