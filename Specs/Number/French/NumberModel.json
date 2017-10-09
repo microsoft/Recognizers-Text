@@ -1,4 +1,284 @@
 [{
+  "Input": "un cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un demi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un demi",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,5"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un billionieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un billionieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-12"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent mille billionieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent mille billionieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1E-07"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trois cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,6"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un vingt cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un vingt cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,04"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "trois et un cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois et un cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "3,2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "vingt et un cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingt et un cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "20,2"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "une vingt et unieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "une vingt et unieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un vingt-cinquieme",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un vingt-cinquieme",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,04"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un sur trois",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un sur trois",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 sur vingt-un",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 sur vingt-un",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,0476190476190476"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 sur cent vingt et un",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 sur cent vingt et un",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,00826446280991736"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 sur trois",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 sur trois",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 sur 3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 sur 3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un sur 3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un sur 3",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,333333333333333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un sur 20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un sur 20",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,05"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un sur cent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un sur cent",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,01"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "un sur cent vingt cinq",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un sur cent vingt cinq",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "0,008"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "cent trente cinquiemes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cent trente cinquiemes",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "26"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "192,",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1018,20 +1298,6 @@
 }
 ,
 {
-  "Input": "un demi",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un demi",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,5"
-      }
-    }
-  ]
-}
-,
-{
   "Input": "un et un demi",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1152,272 +1418,6 @@
       "TypeName": "number",
       "Resolution": {
         "value": "200,52"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un billionieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un billionieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-12"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent mille billionieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cent mille billionieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "1E-07"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "trois cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,6"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un vingt cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un vingt cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "trois et un cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "trois et un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "3,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "vingt et un cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "vingt et un cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "20,2"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "une vingt et unieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "une vingt et unieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un vingt-cinquieme",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un vingt-cinquieme",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,04"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur trois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un sur trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur vingt-un",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sur vingt-un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,0476190476190476"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur cent vingt et un",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sur cent vingt et un",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,00826446280991736"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur trois",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sur trois",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "1 sur 3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "1 sur 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur 3",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un sur 3",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,333333333333333"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur 20",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un sur 20",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,05"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur cent",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un sur cent",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,01"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "un sur cent vingt cinq",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "un sur cent vingt cinq",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "0,008"
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "cent trente cinquiemes",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "cent trente cinquiemes",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "26"
       }
     }
   ]

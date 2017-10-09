@@ -80,6 +80,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="French\DateTimeDefinitions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Include="French\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -144,6 +149,10 @@
     <Content Include="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseNumbers.cs</LastGenOutput>
+    </Content>
+    <Content Include="French\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </Content>
     <Content Include="French\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
