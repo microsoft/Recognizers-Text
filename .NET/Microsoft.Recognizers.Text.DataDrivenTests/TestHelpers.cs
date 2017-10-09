@@ -257,7 +257,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.DateTime:
                     return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(commonConfiguration));
                 case DateTimeParsers.DateTimePeriod:
-                    return new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
+                    return new Microsoft.Recognizers.Text.DateTime.Spanish.DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Duration:
                     return new BaseDurationParser(new SpanishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:

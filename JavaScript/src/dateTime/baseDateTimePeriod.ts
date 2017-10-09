@@ -121,7 +121,8 @@ export class BaseDateTimePeriodExtractor implements IExtractor {
                 let periodBegin = currentMark.start;
                 let periodEnd = nextMark.start + nextMark.length;
                 let beforeStr = source.substr(0, periodBegin).trim().toLowerCase();
-                let fromTokenIndex = this.config.getFromTokenIndex(beforeStr);
+                let matchFrom = this.config.getFromTokenIndex(beforeStr);
+                let fromTokenIndex = matchFrom.matched ? matchFrom : this.config.getBetweenTokenIndex(beforeStr);
                 if (fromTokenIndex.matched) {
                     periodBegin = fromTokenIndex.index;
                 }
@@ -234,7 +235,7 @@ export interface IDateTimePeriodParserConfiguration {
 
 export class BaseDateTimePeriodParser implements IDateTimeParser {
     private readonly parserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
-    private readonly config: IDateTimePeriodParserConfiguration;
+    protected readonly config: IDateTimePeriodParserConfiguration;
 
     constructor(config: IDateTimePeriodParserConfiguration) {
         this.config = config;
@@ -260,11 +261,11 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             }
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>()
-                .set(TimeTypeConstants.START_DATETIME, innerResult.futureValue[0])
-                .set(TimeTypeConstants.END_DATETIME, innerResult.futureValue[1]);
+                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[0]))
+                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[1]));
                 innerResult.pastResolution = new Map<string, string>()
-                .set(TimeTypeConstants.START_DATETIME, innerResult.pastValue[0])
-                .set(TimeTypeConstants.END_DATETIME, innerResult.pastValue[1]);
+                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[0]))
+                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[1]));
                 resultValue = innerResult;
             }
         }
@@ -448,7 +449,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 beginHasDate = true;
             }
         }
-        if (!prs || !prs.begin || !prs.end) return result;
+        if (!prs || !prs.begin.value || !prs.end.value) return result;
 
         let begin: DateTimeResolutionResult = prs.begin.value;
         let end: DateTimeResolutionResult = prs.end.value;
@@ -491,7 +492,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return { begin: beginPr, end: endPr };
     }
 
-    private parseSpecificTimeOfDay(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseSpecificTimeOfDay(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let timeText = source;
         let hasEarly = false;

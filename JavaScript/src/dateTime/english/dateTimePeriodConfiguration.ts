@@ -110,13 +110,13 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly restOfDateTimeRegex: RegExp
 
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
-        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo);
-        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd);
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex);
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex);
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
-        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
-        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex);
+        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumFromTo, "gis");
+        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PureNumBetweenAnd, "gis");
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SpecificTimeOfDayRegex, "gis");
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
+        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RelativeTimeUnitRegex, "gis");
         this.numbers = config.numbers;
         this.unitMap = config.unitMap;
         this.dateExtractor = config.dateExtractor;
@@ -129,11 +129,11 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.dateTimeParser = config.dateTimeParser;
         this.timePeriodParser = config.timePeriodParser;
         this.durationParser = config.durationParser;
-        this.morningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex);
-        this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex);
-        this.eveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex);
-        this.nightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex);
-        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex);
+        this.morningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MorningStartEndRegex, "gis");
+        this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfternoonStartEndRegex, "gis");
+        this.eveningStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.EveningStartEndRegex, "gis");
+        this.nightStartEndRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightStartEndRegex, "gis");
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateTimeRegex, "gis");
     }
 
     getMatchedTimeRange(source: string): { timeStr: string, beginHour: number, endHour: number, endMin: number, success: boolean } {
