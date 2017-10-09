@@ -220,9 +220,9 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
 
     // All months are zero-based (-1)
     // TODO auto-generate from YAML
-    private static MothersDay(year: number): Date { return new Date(year, 5 - 1, BaseHolidayParserConfiguration.getDay(year, 5 - 1, 1, DayOfWeek.Sunday)); }
+    protected static MothersDay(year: number): Date { return new Date(year, 5 - 1, BaseHolidayParserConfiguration.getDay(year, 5 - 1, 1, DayOfWeek.Sunday)); }
 
-    private static FathersDay(year: number): Date { return new Date(year, 6 - 1, BaseHolidayParserConfiguration.getDay(year, 6 - 1, 2, DayOfWeek.Sunday)); }
+    protected static FathersDay(year: number): Date { return new Date(year, 6 - 1, BaseHolidayParserConfiguration.getDay(year, 6 - 1, 2, DayOfWeek.Sunday)); }
 
     private static MartinLutherKingDay(year: number): Date { return new Date(year, 1 - 1, BaseHolidayParserConfiguration.getDay(year, 1 - 1, 2, DayOfWeek.Monday)); }
 
@@ -230,13 +230,13 @@ export abstract class BaseHolidayParserConfiguration implements IHolidayParserCo
 
     private static CanberraDay(year: number): Date { return new Date(year, 3 - 1, BaseHolidayParserConfiguration.getDay(year, 3 - 1, 0, DayOfWeek.Monday)); }
 
-    private static MemorialDay(year: number): Date { return new Date(year, 5 - 1, BaseHolidayParserConfiguration.getLastDay(year, 5 - 1, DayOfWeek.Monday)); }
+    protected static MemorialDay(year: number): Date { return new Date(year, 5 - 1, BaseHolidayParserConfiguration.getLastDay(year, 5 - 1, DayOfWeek.Monday)); }
 
-    private static LabourDay(year: number): Date { return new Date(year, 9 - 1, BaseHolidayParserConfiguration.getDay(year, 9 - 1, 0, DayOfWeek.Monday)); }
+    protected static LabourDay(year: number): Date { return new Date(year, 9 - 1, BaseHolidayParserConfiguration.getDay(year, 9 - 1, 0, DayOfWeek.Monday)); }
 
-    private static ColumbusDay(year: number): Date { return new Date(year, 10 - 1, BaseHolidayParserConfiguration.getDay(year, 10 - 1, 1, DayOfWeek.Monday)); }
+    protected static ColumbusDay(year: number): Date { return new Date(year, 10 - 1, BaseHolidayParserConfiguration.getDay(year, 10 - 1, 1, DayOfWeek.Monday)); }
 
-    private static ThanksgivingDay(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Thursday)); }
+    protected static ThanksgivingDay(year: number): Date { return new Date(year, 11 - 1, BaseHolidayParserConfiguration.getDay(year, 11 - 1, 3, DayOfWeek.Thursday)); }
 
     protected static getDay(year: number, month: number, week: number, dayOfWeek: DayOfWeek): number {
         let days = Array.apply(null, new Array(new Date(year, month, 0).getDate())).map(function (x, i) { return i + 1 });
