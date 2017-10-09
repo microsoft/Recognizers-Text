@@ -1,21 +1,18 @@
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import sourceMaps from 'rollup-plugin-sourcemaps'
-const pkg = require('./package.json')
-const camelCase = require('lodash.camelcase')
-
-const libraryName = 'recognizers-text'
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import sourceMaps from 'rollup-plugin-sourcemaps';
+import pkg from './package.json';
+import camelCase from 'lodash.camelcase';
 
 export default {
-  entry: `compiled/${libraryName}.js`,
-  targets: [
-	  { dest: pkg.main, moduleName: camelCase(libraryName), format: 'umd' },
-	  { dest: pkg.module, format: 'es' }
+  input: `compiled/${pkg.name}.js`,
+  output: [
+    { file: pkg.module, format: 'es' },
+    { file: pkg.main, name: camelCase(pkg.name), format: 'umd', exports: 'named'  },
+    { file: pkg.browser, format: 'iife', name: 'Recognizers', exports: 'named' }
   ],
   exports: 'named',
-  sourceMap: true,
-  // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
-  external: [],
+  sourcemap: true,
   plugins: [
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
@@ -27,4 +24,4 @@ export default {
     // Resolve source maps to the original source
     sourceMaps()
   ]
-}
+};
