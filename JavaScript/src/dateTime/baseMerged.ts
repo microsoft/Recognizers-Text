@@ -13,10 +13,7 @@ import { BaseSetExtractor, BaseSetParser } from "./baseSet"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { BaseHolidayExtractor, BaseHolidayParser } from "./baseHoliday"
 import { isEqual } from 'lodash';
-
-export enum DateTimeOptions {
-    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2
-}
+import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {
     dateExtractor: BaseDateExtractor

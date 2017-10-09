@@ -55,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Dimension,
         Temperature,
         DateTime,
+        DateTimeSplitDateAndTime,
         CustomNumber
     }
 
@@ -111,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
                 case Models.DateTime:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
+                case Models.DateTimeSplitDateAndTime:
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
             }
