@@ -920,5 +920,103 @@
       }
     }
   ]
+},
+{
+  "Input": "pick up jordan's medicine at the costco pharmacy on havana sometime before next tuesday at 12:00",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before next tuesday at 12:00",
+      "Type": "datetimeV2.datetimerange",
+      "Value": {
+        "values": [
+		  {
+			"timex": "2016-11-15T12:00",
+			"Mod": "before",
+			"type": "datetimerange",
+			"end": "2016-11-15 12:00:00"
+		  },
+		  {
+			"timex": "2016-11-15T24:00",
+			"Mod": "before",
+			"type": "datetimerange",
+			"end": "2016-11-15 24:00:00"
+		  }
+		]
+      }
+    }
+  ]
+},
+{
+  "Input": "schedule a meeting in advance of 2pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in advance of 2pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+		  {
+			"timex": "T14",
+			"Mod": "before",
+			"type": "timerange",
+			"end": "14:00:00"
+		  }
+		]
+      }
+    }
+  ]
+},
+{
+  "Input": "schedule a meeting in advance of 2pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in advance of 2pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+		  {
+			"timex": "T14",
+			"Mod": "before",
+			"type": "timerange",
+			"end": "14:00:00"
+		  }
+		]
+      }
+    }
+  ]
+},
+{
+  "Input": "schedule a meeting prior to 2pm",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "prior to 2pm",
+      "Type": "datetimeV2.timerange",
+      "Value": {
+        "values": [
+		  {
+			"timex": "T14",
+			"Mod": "before",
+			"type": "timerange",
+			"end": "14:00:00"
+		  }
+		]
+      }
+    }
+  ]
 }
 ]

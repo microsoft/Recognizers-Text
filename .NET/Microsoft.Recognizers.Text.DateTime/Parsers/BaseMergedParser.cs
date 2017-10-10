@@ -391,17 +391,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                        splited = resolution[TimeTypeConstants.START].Split(' ');
                         if (resolution.ContainsKey(TimeTypeConstants.START))
                         {
-                            resolutionPm[TimeTypeConstants.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            splited = resolution[TimeTypeConstants.START].Split(' ');
+                            if (resolution.ContainsKey(TimeTypeConstants.START))
+                            {
+                                resolutionPm[TimeTypeConstants.START] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            }
                         }
-
-                        splited = resolution[TimeTypeConstants.END].Split(' ');
 
                         if (resolution.ContainsKey(TimeTypeConstants.END))
                         {
-                            resolutionPm[TimeTypeConstants.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            splited = resolution[TimeTypeConstants.END].Split(' ');
+
+                            if (resolution.ContainsKey(TimeTypeConstants.END))
+                            {
+                                resolutionPm[TimeTypeConstants.END] = splited[0] + " " + FormatUtil.ToPm(splited[1]);
+                            }
                         }
 
                         resolutionPm["timex"] = FormatUtil.AllStringToPm(timex);
