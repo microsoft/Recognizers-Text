@@ -58,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         {TimeTypeConstants.DATETIME, FormatUtil.FormatDateTime((DateObject) innerResult.PastValue)}
                     };
+
                     value = innerResult;
                 }
             }
@@ -73,6 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult) value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
