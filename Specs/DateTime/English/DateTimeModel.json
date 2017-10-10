@@ -1771,7 +1771,7 @@
 {
   "Input": "I'll go back now",
   "Context": {
-    "ReferenceDateTime": "2017-09-28T14:11:10.9626841-03:00"
+    "ReferenceDateTime": "2017-09-28T14:11:10.9626841"
   },
   "NotSupportedByDesign": "python",
   "Results": [
