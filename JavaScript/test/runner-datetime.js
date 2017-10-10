@@ -34,7 +34,9 @@ module.exports = function getDateTimeRunner(config) {
             return ignoredTest;
             // throw new Error(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
         }
-
+        if (config.subType.includes("Merged")) {
+            return getMergedParserTestRunner(extractor, parser);
+        }
         return getParserTestRunner(extractor, parser);
     }
 
@@ -103,6 +105,39 @@ function getParserTestRunner(extractor, parser) {
 
                 t.deepEqual(actualValue.futureResolution, expected.Value.FutureResolution);
                 t.deepEqual(actualValue.pastResolution, expected.Value.PastResolution);
+            }
+        });
+    };
+}
+
+function getMergedParserTestRunner(extractor, parser) {
+    return function (t, testCase) {
+        var expected = testCase.Results;
+        var referenceDateTime = getReferenceDate(testCase);
+
+        if (testCase.Debug) {
+            debugger;
+        }
+
+        var extractResults = extractor.extract(testCase.Input);
+        var result = extractResults.map(o => parser.parse(o, referenceDateTime));
+
+        t.is(result.length, expected.length, 'Result count');
+        _.zip(result, expected).forEach(o => {
+            var actual = o[0];
+            var expected = o[1];
+            t.is(actual.text, expected.Text, 'Result.Text');
+            t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+
+            if (actual.value) {
+                var actualObj = toObject(actual.value);
+                var actualValues = actualObj.values.map(o => toObject(o));
+                _.zip(actualValues, expected.Value.values).forEach(o => {
+                    var actual = o[0];
+                    var expected = o[1];
+
+                    t.deepEqual(actual, expected);
+                });
             }
         });
     };
