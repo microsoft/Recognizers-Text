@@ -159,8 +159,8 @@ export namespace SpanishDateTime {
 	export const NextPrefixRegex = `(pr[oó]xim[oa]|siguiente)\\b`;
 	export const PastPrefixRegex = `([uú]ltim[oa])\\b`;
 	export const ThisPrefixRegex = `(est[ea])\\b`;
-	export const RelativeDayRegex = ``;
-	export const RestOfDateRegex = `^[.]`;
+	export const RelativeDayRegex = `^[\\.]`;
+	export const RestOfDateRegex = `^[\\.]`;
 	export const RelativeDurationUnitRegex = `^[\\.]`;
 	export const FromToRegex = `\\b(from).+(to)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
