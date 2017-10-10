@@ -98,7 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var splited = timeStr.Split(':');
             var hour = int.Parse(splited[0]);
-            splited[0] = (hour + 12).ToString("D2");
+            hour = (hour == 12 ? 0 : hour + 12);
+            splited[0] = hour.ToString("D2");
 
             return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
         }

@@ -354,7 +354,7 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before)\b
+  def: \b(before|in advance of|prior to)\b
 AfterRegex: !simpleRegex
   def: \b(after)\b
 SinceRegex: !simpleRegex
