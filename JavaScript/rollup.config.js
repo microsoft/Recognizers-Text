@@ -12,6 +12,7 @@ export default {
 	  { dest: pkg.main, moduleName: camelCase(libraryName), format: 'umd' },
 	  { dest: pkg.module, format: 'es' }
   ],
+  exports: 'named',
   sourceMap: true,
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: [],

@@ -1,36 +1,90 @@
-// New Data-Drive test based on Specs (../Specs)
-require('./datadriven-tests');
+var fs = require('fs');
+var path = require('path');
+var keys = require('lodash.keys');
+var describe = require('ava-spec').describe;
 
-// Deprecated tests
+var SupportedCultures = require('./cultures');
+var NumberTestRunner = require('./runner-number');
+var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
+var DateTimeTestRunner = require('./runner-datetime');
 
-require('./dateExtractor-english.test');
-require('./timeExtractor-english.test');
-require('./datePeriodExtractor-english.test');
-require('./timePeriodExtractor-english.test');
-require('./dateTimeExtractor-english.test');
-require('./dateTimePeriodExtractor-english.test');
-require('./durationExtractor-english.test');
-require('./setExtractor-english.test');
-require('./holidayExtractor-english.test');
-require('./mergedExtractor-english.test');
+var specsPath = '../Specs';
+var supportedLanguages = keys(SupportedCultures);
 
-require('./dateParser-english.test');
-require('./timeParser-english.test');
-require('./datePeriodParser-english.test');
-require('./timePeriodParser-english.test');
-require('./dateTimeParser-english.test');
-require('./dateTimePeriodParser-english.test');
-require('./durationParser-english.test')
-require('./setParser-english.test');
-require('./holidayParser-english.test');
-require('./mergedParser-english.test');
+// get list of specs (.json)
+var specFiles = getSpecFilePaths(specsPath)
+    // Ignore non-supported languages
+    .filter(s => supportedLanguages.find(lang => s.indexOf(path.sep + lang + path.sep) !== -1));
 
-require('./dateTime-english.test');
+// parse specs
+var specs = specFiles
+    .map(s => ({
+        config: getSuiteConfig(s),
+        specs: require(path.join('../', s))
+    }))
+    .reverse();
 
-require('./singleCultureDateTimeRecognizer-english.test');
-require('./splitDateAndTime-english.test');
+// run suites
+specs.forEach(suite => {
+    describe(`${suite.config.type} - ${suite.config.language} - ${suite.config.subType} -`, it => {
+        suite.specs.forEach(testCase => {
+            var caseName = `"${testCase.Input}"`;
 
+            // Not Supported by Design - right now we don't care about implementing it
+            var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());
+            if (notSupportedByDesign.includes('javascript')) {
+                return;
+            }
 
-require('./numberWithUnit-spanish.test');
+            var notSupported = (testCase.NotSupported || '').split(',').map(s => s.trim());
+            var testRunner = getTestRunner(suite.config);
+            if (!testRunner || notSupported.includes('javascript')) {
+                // test case or type not supported
+                it.skip(caseName, t => { });
+                return;
+            }
 
-require('./numberWithUnit-spanish.test');
+            // Run test
+            it(caseName, t => testRunner(t, testCase));
+        });
+    });
+});
+
+function getSpecFilePaths(specsPath) {
+    if(!fs.existsSync(specsPath)) {
+        throw new Error(`Specs directory not found at ${path.resolve(specsPath)}`);
+    }
+
+    return fs
+        .readdirSync(specsPath).map(s => path.join(specsPath, s))
+        .filter(p => fs.lstatSync(p).isDirectory())
+        .map(s1 => fs.readdirSync(s1).map(s2 => path.join(s1, s2)))
+        .reduce((a, b) => a.concat(b), [])                      // flatten
+        .filter(p => fs.lstatSync(p).isDirectory())
+        .map(s1 => fs.readdirSync(s1).map(s2 => path.join(s1, s2)))
+        .reduce((a, b) => a.concat(b), [])                      // flatten
+        .filter(s => s.indexOf('.json') !== -1);
+}
+
+function getSuiteConfig(jsonPath) {
+    var parts = jsonPath.split(path.sep).slice(2);
+
+    return {
+        type: parts[0],
+        subType: parts[2].split('.json')[0],
+        language: parts[1]
+    };
+}
+
+function getTestRunner(config) {
+    switch (config.type) {
+        case 'Number':
+            return NumberTestRunner(config);
+        case 'NumberWithUnit':
+            return NumberWithUnitTestRunner(config);
+        case 'DateTime':
+            return DateTimeTestRunner(config);
+        default:
+            throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
+    }
+}

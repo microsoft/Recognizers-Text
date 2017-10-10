@@ -1,7 +1,8 @@
 var _ = require('lodash');
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
-var DateTimeOptions = require('../compiled/dateTime/dateTimeRecognizer').DateTimeOptions;
+var Recognizers = require('recognizers-text-date-time');
+var DateTimeOptions = Recognizers.DateTimeOptions;
 
 var LanguagesConfig = [
     'English',
@@ -35,16 +36,16 @@ module.exports = _.zipObject(extractorKeys, extractorObjects);
 
 function createExtractor(lang, extractor, options) {
     try {
-        var extractorModuleName = '../compiled/dateTime/base' + extractor;
+        var extractorModuleName = 'Base' + extractor;
         var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');
-        var ExtractorType = require(extractorModuleName)[extractorTypeName];
+        var ExtractorType = Recognizers[extractorTypeName];
         if (!ExtractorType) {
             throw new Error(`Extractor Type ${extractorTypeName} was not found in module ${extractorModuleName}`);
         }
 
-        var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(extractor) + Constants.Configuration;
+        var configModuleName = lang.toLowerCase() + '/' + toCamelCase(extractor) + Constants.Configuration;
         var configTypeName = lang + extractor + Constants.ExtractorConfiguration;
-        var ConfigType = require(configModuleName)[configTypeName];
+        var ConfigType = Recognizers[configTypeName];
         if (!ConfigType) {
             throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
         }

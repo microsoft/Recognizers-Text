@@ -12,6 +12,21 @@ IF ERRORLEVEL 1 (
     EXIT /B
 )
 
+IF NOT EXIST "recognizers-number/node_modules" (
+    ECHO # Building recognizers number module
+    CALL npm run prebuild-number
+)
+
+IF NOT EXIST "recognizers-number-with-unit/node_modules" (
+    ECHO # Building recognizers number-with-unit module
+    CALL npm run prebuild-number-with-unit
+)
+
+IF NOT EXIST "recognizers-date-time/node_modules" (
+    ECHO # Building recognizers date-time module
+    CALL npm run prebuild-date-time
+)
+
 IF NOT EXIST "node_modules" (
 	ECHO # Installing dependencies - npm install
 	CALL npm i

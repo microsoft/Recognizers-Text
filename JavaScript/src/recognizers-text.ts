@@ -1,3 +1,3 @@
-export { default as NumberRecognizer } from "./number/numberRecognizer";
-export { default as NumberWithUnitRecognizer} from './numberWithUnit/numberWithUnitRecognizer';
-export { default as DateTimeRecognizer } from "./dateTime/dateTimeRecognizer"
+export { NumberRecognizer, Culture } from "recognizers-text-number";
+export { NumberWithUnitRecognizer } from "recognizers-text-number-with-unit";
+export { DateTimeRecognizer } from "recognizers-text-date-time";

@@ -1,0 +1,17 @@
+export { default as NumberWithUnitRecognizer } from "./numberWithUnit/numberWithUnitRecognizer";
+export { Constants } from "./numberWithUnit/constants";
+export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult } from "./numberWithUnit/extractors";
+export { CompositeEntityType, AbstractNumberWithUnitModel, AgeModel, CurrencyModel, DimensionModel, TemperatureModel } from "./numberWithUnit/models";
+export { UnitValue, NumberWithUnitParser, INumberWithUnitParserConfiguration, BaseNumberWithUnitParserConfiguration } from "./numberWithUnit/parsers";
+export { EnglishAgeExtractorConfiguration, EnglishAgeParserConfiguration } from "./numberWithUnit/english/age";
+export { EnglishNumberWithUnitExtractorConfiguration, EnglishNumberWithUnitParserConfiguration } from "./numberWithUnit/english/base";
+export { EnglishCurrencyExtractorConfiguration, EnglishCurrencyParserConfiguration } from "./numberWithUnit/english/currency";
+export { EnglishDimensionExtractorConfiguration, EnglishDimensionParserConfiguration } from "./numberWithUnit/english/dimension";
+export { EnglishTemperatureExtractorConfiguration, EnglishTemperatureParserConfiguration } from "./numberWithUnit/english/temperature";
+export { SpanishAgeExtractorConfiguration, SpanishAgeParserConfiguration } from "./numberWithUnit/spanish/age";
+export { SpanishNumberWithUnitExtractorConfiguration, SpanishNumberWithUnitParserConfiguration } from "./numberWithUnit/spanish/base";
+export { SpanishCurrencyExtractorConfiguration, SpanishCurrencyParserConfiguration } from "./numberWithUnit/spanish/currency";
+export { SpanishDimensionExtractorConfiguration, SpanishDimensionParserConfiguration } from "./numberWithUnit/spanish/dimension";
+export { SpanishTemperatureExtractorConfiguration, SpanishTemperatureParserConfiguration } from "./numberWithUnit/spanish/temperature";
+export { EnglishNumericWithUnit } from "./resources/englishNumericWithUnit";
+export { SpanishNumericWithUnit } from "./resources/spanishNumericWithUnit";

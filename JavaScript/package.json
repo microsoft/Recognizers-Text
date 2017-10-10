@@ -19,11 +19,14 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "tslint -t codeFrame -e './**/node_modules/**/*.ts' -e './**/src/resources/*.ts' 'src/**/*.ts' 'test/**/*.ts' './**/src/**/*.ts'",
+    "prebuild-number": "cd ./recognizers-number/ && npm install && npm run build && cd ../",
+    "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
+    "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",
+    "prebuild-all": "npm run prebuild-number && npm run prebuild-number-with-unit && npm run prebuild-date-time",
     "prebuild": "rimraf dist",
-    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
-    "build": "ts-node --project tools/resource-generator/ tools/resource-generator/ && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
-    "start": "tsc-watch --onSuccess \"ava --watch\"",
+    "build": "tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
+    "test-watch": "tsc-watch --onSuccess \"ava --watch\"",
     "test": "tsc && ava"
   },
   "ava": {
@@ -34,30 +37,29 @@
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
     "@types/node": "^8.0.20",
+    "@types/npm": "^2.0.29",
     "ava": "^0.22.0",
     "ava-spec": "^1.1.0",
     "colors": "^1.1.2",
     "js-yaml": "^3.9.1",
     "lodash.camelcase": "^4.3.0",
+    "lodash.keys": "^4.2.0",
     "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
     "rollup": "^0.43.1",
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
-    "ts-node": "^3.3.0",
     "tsc-watch": "^1.0.8",
     "tslint": "^5.7.0",
     "tslint-config-prettier": "^1.4.0",
-    "tslint-config-standard": "^6.0.0"
+    "tslint-config-standard": "^6.0.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.3"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.74",
-    "@types/xregexp": "^3.0.29",
-    "bignumber.js": "^4.0.3",
-    "lodash": "^4.17.4",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.5.1",
-    "xregexp": "^3.2.0"
+    "recognizers-text-date-time": "file:recognizers-date-time",
+    "recognizers-text-number": "file:recognizers-number",
+    "recognizers-text-number-with-unit": "file:recognizers-number-with-unit"
   }
 }
