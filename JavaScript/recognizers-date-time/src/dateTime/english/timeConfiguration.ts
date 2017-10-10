@@ -2,6 +2,7 @@ import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTi
 import { RegExpUtility } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
+import { IDateTimeUtilityConfiguration } from "../utilities";
 
 export class EnglishTimeExtractorConfiguration implements ITimeExtractorConfiguration {
     public static timeRegexList: RegExp[] = [
@@ -50,6 +51,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
     readonly lunchRegex: RegExp;
     readonly timeSuffixFull: RegExp;
     readonly nightRegex: RegExp;
+    readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.timeTokenPrefix = EnglishDateTime.TimeTokenPrefix;
@@ -59,6 +61,7 @@ export class EnglishTimeParserConfiguration implements ITimeParserConfiguration 
         this.lunchRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LunchRegex);
         this.timeSuffixFull = RegExpUtility.getSafeRegExp(EnglishDateTime.TimeSuffixFull);
         this.nightRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NightRegex);
+        this.utilityConfiguration = config.utilityConfiguration;
     }
 
     public adjustByPrefix(prefix: string, adjust: { hour: number, min: number, hasMin: boolean }) {
