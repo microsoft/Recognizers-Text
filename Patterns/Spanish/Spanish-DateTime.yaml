@@ -630,10 +630,10 @@ ThisPrefixRegex: !simpleRegex
   def: (est[ea])\b
 RelativeDayRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
-  def: ''
+  def: ^[\.]
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
-  def: ^[.]
+  def: ^[\.]
 RelativeDurationUnitRegex: !simpleRegex
   # TODO: change to Spanish according to corresponding Regex
   def: ^[\.]
