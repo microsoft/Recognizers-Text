@@ -1,0 +1,47 @@
+{
+  "name": "recognizers-text-date-time",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "dist/recognizers-text-date-time.umd.js",
+  "module": "dist/recognizers-text-date-time.es5.js",
+  "typings": "dist/types/recognizers-text-date-time.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Microsoft",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/recognizers-text"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
+    "build": "npm run build-resources && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^3.9.0",
+    "@types/lodash.isequal": "^4.5.2",
+    "@types/lodash.tonumber": "^4.0.3",
+    "@types/node": "^8.0.20",
+    "js-yaml": "^3.9.1",
+    "lodash.camelcase": "^4.3.0",
+    "rimraf": "^2.6.1",
+    "rollup": "^0.43.1",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "typescript": "^2.5.3",
+    "ts-node": "^3.3.0",
+    "typedoc": "^0.8.0"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "lodash.tonumber": "^4.0.3",
+    "recognizers-text-number": "file:../recognizers-number"
+  }
+}

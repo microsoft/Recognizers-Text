@@ -8,7 +8,7 @@
             "program": "${workspaceRoot}/node_modules/ava/profile.js",
             "preLaunchTask": "tsc",
             "args": [
-                "test/datadriven-tests.js"
+                "test/index.js"
             ],
             "console": "internalConsole"
         }

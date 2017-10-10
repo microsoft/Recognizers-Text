@@ -1,4 +1,4 @@
-var Culture = require('../compiled/culture').Culture;
+var Culture = require('recognizers-text-number').Culture;
 
 // List of supported cultures
 module.exports = {

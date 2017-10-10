@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var NumberRecognizer = require('../compiled/number/numberRecognizer').default;
+var NumberRecognizer = require('recognizers-text-number').NumberRecognizer;
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {

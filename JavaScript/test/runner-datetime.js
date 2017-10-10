@@ -1,10 +1,10 @@
-var Recognizer = require('../compiled/dateTime/dateTimeRecognizer').default;
-var DateTimeOptions = require('../compiled/dateTime/dateTimeRecognizer').DateTimeOptions;
-var DateUtils = require('../compiled/dateTime/utilities').DateUtils;
+var Recognizer = require('recognizers-text-date-time').DateTimeRecognizer;
+var DateUtils = require('recognizers-text-date-time').DateUtils;
+var DateTimeOptions = require('recognizers-text-date-time').DateTimeOptions;
 var _ = require('lodash');
 
 var Constants = require('./constants');
-var SupportedCultures = require('./cultures.js');
+var SupportedCultures = require('./cultures');
 var Extractors = require('./datetime-extractors');
 var Parsers = require('./datetime-parsers');
 
@@ -149,9 +149,30 @@ function getParser(config) {
 
     return parser;
 }
+
+const models = [];
+
+function findModel(options, culture) {
+    let modelObj = models.find(function(m) {
+        if ((m.options === options) && (m.culture === culture)) {
+            return m;
+        }
+    });
+    if (!modelObj) {
+        modelObj = {
+            model: Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(),
+            options: options,
+            culture: culture,
+        };
+        models.push(modelObj);
+    }
+    return modelObj.model;
+}
+
 function getModel(config) {
     let options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
-    return Recognizer.getSingleCultureInstance(SupportedCultures[config.language].cultureCode, options).getDateTimeModel();
+    let cultureCode = SupportedCultures[config.language].cultureCode;
+    return findModel(options, cultureCode);
 }
 
 function getReferenceDate(testCase) {
