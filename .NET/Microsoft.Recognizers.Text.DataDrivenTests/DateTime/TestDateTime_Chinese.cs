@@ -5,11 +5,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Microsoft.Recognizers.Text.DateTime.Tests
 {
     [TestClass]
-    public class TestDateTime_Spanish : TestBase
+    public class TestDateTime_Chinese : TestBase
     {
         public static TestResources TestResources { get; private set; }
         public static IDictionary<string, IExtractor> Extractors { get; private set; }
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
+        public static IDictionary<string, IModel> Models { get; private set; }
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
@@ -18,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             TestResources.InitFromTestContext(context);
             Extractors = new Dictionary<string, IExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
+            Models = new Dictionary<string, IModel>();
         }
 
         [TestInitialize]
@@ -26,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestSpecInitialize(TestResources);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-Spanish.csv", "DateExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateExtractor-Chinese.csv", "DateExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateExtractor()
         {
@@ -34,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeExtractor-Spanish.csv", "TimeExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeExtractor-Chinese.csv", "TimeExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TimeExtractor()
         {
@@ -42,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodExtractor-Spanish.csv", "DatePeriodExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodExtractor-Chinese.csv", "DatePeriodExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DatePeriodExtractor()
         {
@@ -50,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodExtractor-Spanish.csv", "TimePeriodExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodExtractor-Chinese.csv", "TimePeriodExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TimePeriodExtractor()
         {
@@ -58,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeExtractor-Spanish.csv", "DateTimeExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeExtractor-Chinese.csv", "DateTimeExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimeExtractor()
         {
@@ -66,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodExtractor-Spanish.csv", "DateTimePeriodExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodExtractor-Chinese.csv", "DateTimePeriodExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimePeriodExtractor()
         {
@@ -74,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayExtractor-Spanish.csv", "HolidayExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayExtractor-Chinese.csv", "HolidayExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void HolidayExtractor()
         {
@@ -82,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-Spanish.csv", "DurationExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationExtractor-Chinese.csv", "DurationExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationExtractor()
         {
@@ -90,23 +92,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeExtractor();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetExtractor-Spanish.csv", "SetExtractor-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetExtractor-Chinese.csv", "SetExtractor-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void SetExtractor()
         {
             base.ExtractorInitialize(Extractors);
             base.TestDateTimeExtractor();
         }
-
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "MergedExtractor-Spanish.csv", "MergedExtractor-Spanish#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void MergedExtractor()
-        {
-            base.ExtractorInitialize(Extractors);
-            base.TestDateTimeExtractor();
-        }
         
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-Spanish.csv", "DateParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateParser-Chinese.csv", "DateParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateParser()
         {
@@ -115,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeParser-Spanish.csv", "TimeParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimeParser-Chinese.csv", "TimeParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TimeParser()
         {
@@ -124,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodParser-Spanish.csv", "DatePeriodParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DatePeriodParser-Chinese.csv", "DatePeriodParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DatePeriodParser()
         {
@@ -133,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodParser-Spanish.csv", "TimePeriodParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TimePeriodParser-Chinese.csv", "TimePeriodParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void TimePeriodParser()
         {
@@ -142,7 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeParser-Spanish.csv", "DateTimeParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeParser-Chinese.csv", "DateTimeParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimeParser()
         {
@@ -151,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodParser-Spanish.csv", "DateTimePeriodParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimePeriodParser-Chinese.csv", "DateTimePeriodParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DateTimePeriodParser()
         {
@@ -160,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayParser-Spanish.csv", "HolidayParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "HolidayParser-Chinese.csv", "HolidayParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void HolidayParser()
         {
@@ -169,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-Spanish.csv", "DurationParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DurationParser-Chinese.csv", "DurationParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void DurationParser()
         {
@@ -178,13 +172,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.TestDateTimeParser();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetParser-Spanish.csv", "SetParser-Spanish#csv", DataAccessMethod.Sequential)]
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "SetParser-Chinese.csv", "SetParser-Chinese#csv", DataAccessMethod.Sequential)]
         [TestMethod]
         public void SetParser()
         {
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
             base.TestDateTimeParser();
+        }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModel-Chinese.csv", "DateTimeModel-Chinese#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModel()
+        {
+            base.ModelInitialize(Models);
+            base.TestDateTime();
         }
     }
 }

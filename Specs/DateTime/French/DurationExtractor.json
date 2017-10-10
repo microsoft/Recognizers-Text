@@ -1,0 +1,462 @@
+[{
+  "Input": "je partirai pour 3h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3jour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3jour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3,5ans",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3,5ans",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 hrs",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hrs",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 hr",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hr",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 jour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 jour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 mois",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 mois",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3 min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 3,5 seconde",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3,5 seconde",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour 123,45 sec",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "123,45 sec",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour deux semaines",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "deux semaines",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour vingt min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingt min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "je partirai pour vingt quatre heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vingt quatre heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour toute la journee",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toute la journee",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour toute la semaine",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toute la semaine",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour toute le mois",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toute le mois",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour toute l'année",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toute l'année",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour toute l'annee",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toute l'annee",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour une heure",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "une heure",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pendant un ans",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un ans",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "demi année",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demi année",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "demi-annee",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demi-annee",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour 3-min",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3-min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour 30-minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30-minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour demi heure",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demi heure",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour une heure et demi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "une heure et demi",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour un heure et demi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un heure et demi",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour une demi-heure",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "une demi-heure",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour deux heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "deux heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour deux et demi heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "deux et demi heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "en un semaine",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un semaine",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "en un jour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un jour",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "pour un heure",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un heure",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "pour un mois",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un mois",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour quel qués heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quel qués heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour quelques heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quelques heures",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour quelqués minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quelqués minutes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour quelque jours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quelque jours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "Je partirai pour plusieurs jours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "plusieurs jours",
+      "Type": "duration"
+    }
+  ]
+}
+]

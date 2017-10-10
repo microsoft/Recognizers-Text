@@ -1,0 +1,1219 @@
+[{
+  "Input": "Je reviendrai en 15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-XX-15",
+        "FutureResolution": {
+          "date": "2016-11-15"
+        },
+        "PastResolution": {
+          "date": "2016-10-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Oct. 2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct. 2",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Oct-2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct-2",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Oct/2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Oct/2",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Octobre. 2",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Octobre. 2",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2016-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Lundi 12 Janvier, 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Lundi 12 Janvier, 2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-01-12",
+        "FutureResolution": {
+          "date": "2016-01-12"
+        },
+        "PastResolution": {
+          "date": "2016-01-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 02/22/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "02/22/2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-02-22",
+        "FutureResolution": {
+          "date": "2016-02-22"
+        },
+        "PastResolution": {
+          "date": "2016-02-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 21/04/2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-04-21",
+        "FutureResolution": {
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "date": "2016-04-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 21/04/16",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/16",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-04-21",
+        "FutureResolution": {
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "date": "2016-04-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 21-04-2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21-04-2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-04-21",
+        "FutureResolution": {
+          "date": "2016-04-21"
+        },
+        "PastResolution": {
+          "date": "2016-04-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 22/04",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-22",
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai     22/4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/4",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-22",
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 2015/08/12",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015/08/12",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-08-12",
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 12/08,2015",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12/08,2015",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-08-12",
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 12/08,15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12/08,15",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-08-12",
+        "FutureResolution": {
+          "date": "2015-08-12"
+        },
+        "PastResolution": {
+          "date": "2015-08-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 1 Jan",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 Jan",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Jan-1",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Jan-1",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Mer, 22 Janv.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mer, 22 Janv",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-22",
+        "FutureResolution": {
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "date": "2016-01-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Mai vingt et un",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mai vingt et un",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-05-21",
+        "FutureResolution": {
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "date": "2016-05-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai seconde de Aout",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seconde de Aout",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-08-02",
+        "FutureResolution": {
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "date": "2016-08-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 22 Juin",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22 Juin",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-06-22",
+        "FutureResolution": {
+          "date": "2017-06-22"
+        },
+        "PastResolution": {
+          "date": "2016-06-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Vendredi",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Vendredi",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-5",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai |ven",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ven",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-5",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai |Vendredi",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Vendredi",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-5",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai aujourd'hui",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "aujourd'hui",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-07",
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai lendemain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "lendemain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-08",
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviens hier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "hier",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-06",
+        "FutureResolution": {
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "date": "2016-11-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "je reviendrai avant hier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant hier",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-05",
+        "FutureResolution": {
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "date": "2016-11-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "le apres-demain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres-demain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-07",
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai cette vendredi",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cette vendredi",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-11",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-11"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai dimanche prochain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dimanche prochain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-20",
+        "FutureResolution": {
+          "date": "2016-11-20"
+        },
+        "PastResolution": {
+          "date": "2016-11-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai dimanche dernier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dimanche dernier",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-06",
+        "FutureResolution": {
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "date": "2016-11-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai vendredi cette semaine",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vendredi cette semaine",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-11",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-11"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai dimanche la semaine dernier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dimanche la semaine dernier",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-06",
+        "FutureResolution": {
+          "date": "2016-11-06"
+        },
+        "PastResolution": {
+          "date": "2016-11-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 15 Juin 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15 Juin 2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-06-15",
+        "FutureResolution": {
+          "date": "2016-06-15"
+        },
+        "PastResolution": {
+          "date": "2016-06-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai premier vendredi de juillet",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "premier vendredi de juillet",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-07-WXX-5-#1",
+        "FutureResolution": {
+          "date": "2017-07-07"
+        },
+        "PastResolution": {
+          "date": "2016-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai premier vendredi de ce mois",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "premier vendredi de ce mois",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-11-WXX-5-#1",
+        "FutureResolution": {
+          "date": "2016-11-04"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai vendredi la semaine prochain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vendredi la semaine prochain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-18",
+        "FutureResolution": {
+          "date": "2016-11-18"
+        },
+        "PastResolution": {
+          "date": "2016-11-18"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 12 Janvier, 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 Janvier, 2018",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-01-12",
+        "FutureResolution": {
+          "date": "2018-01-12"
+        },
+        "PastResolution": {
+          "date": "2018-01-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai sur le    22/4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/4",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-04-22",
+        "FutureResolution": {
+          "date": "2017-04-22"
+        },
+        "PastResolution": {
+          "date": "2016-04-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 9-18-15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9-18-15",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-09-18",
+        "FutureResolution": {
+          "date": "2015-09-18"
+        },
+        "PastResolution": {
+          "date": "2015-09-18"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 1 Janv",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 Janv",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai mardi 22 janvier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mardi 22 janvier",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-22",
+        "FutureResolution": {
+          "date": "2017-01-22"
+        },
+        "PastResolution": {
+          "date": "2016-01-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 1 Janv.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 Janv",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-01-01",
+        "FutureResolution": {
+          "date": "2017-01-01"
+        },
+        "PastResolution": {
+          "date": "2016-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 21 Mai",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21 Mai",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-05-21",
+        "FutureResolution": {
+          "date": "2017-05-21"
+        },
+        "PastResolution": {
+          "date": "2016-05-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai Aout seconde",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Aout seconde",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-08-02",
+        "FutureResolution": {
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "date": "2016-08-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai aout deuxieme",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "aout deuxieme",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-08-02",
+        "FutureResolution": {
+          "date": "2017-08-02"
+        },
+        "PastResolution": {
+          "date": "2016-08-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviens vendredi",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vendredi",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-5",
+        "FutureResolution": {
+          "date": "2016-11-11"
+        },
+        "PastResolution": {
+          "date": "2016-11-04"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviens aujourd'hui",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "aujourd'hui",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-07",
+        "FutureResolution": {
+          "date": "2016-11-07"
+        },
+        "PastResolution": {
+          "date": "2016-11-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviens demain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-08",
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je vais revenier avant-hier",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant-hier",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-05",
+        "FutureResolution": {
+          "date": "2016-11-05"
+        },
+        "PastResolution": {
+          "date": "2016-11-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai demain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "demain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-08",
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai le lendemain",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "lendemain",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-08",
+        "FutureResolution": {
+          "date": "2016-11-08"
+        },
+        "PastResolution": {
+          "date": "2016-11-08"
+        }
+      }
+    }
+  ]
+}
+]

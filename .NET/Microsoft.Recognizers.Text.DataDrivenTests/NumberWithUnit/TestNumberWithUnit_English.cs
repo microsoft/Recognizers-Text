@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Recognizers.Text.DataDrivenTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Recognizers.Text.DataDrivenTests.NumberWithUnit
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
 {
     [TestClass]
     public class TestNumberWithUnit_English : TestBase

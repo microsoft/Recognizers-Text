@@ -1,0 +1,770 @@
+[{
+  "Input": "Je retournerai 12 heures déjeuner",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 heures",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai à 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai a sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Je retournerai 15:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56:35pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56:35 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 12:34",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai T12:34:20",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "T12:34:20",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 00:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 00:00:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "00:00:30",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 7 heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 heures",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est sept heure",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept heure",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 8 dans le matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 dans le matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 8 dans la nuit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 dans la nuit",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 20 du soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 du soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 20h du soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20h du soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 8pm et demie",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm et demie",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est huit et demie",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "huit et demie",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est huit et quart",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "huit et quart",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 9pm et trois quarts",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9pm et trois quarts",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est sept et demie heures",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept et demie heures",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est sept et demie h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept et demie h",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est sept heures et demie du soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept heures et demie du soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est sept heures et demie du matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept heures et demie du matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est a 8 heures et quart du matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 heures et quart du matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 8 h et vingt minute dans la soiree",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 h et vingt minute dans la soiree",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai a 7 dans l'apres-midi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 dans l'apres-midi",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai l'apres midi a 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres midi a 7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai apres-midi 7:00",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres-midi 7:00",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai apres-midi 7:00:14",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres-midi 7:00:14",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai apres-midi sept",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres-midi sept",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Je retournerai sept trente cinq du soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente cinq du soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Je retournerai a onze cinq",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "onze cinq",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "Je retournerai cinq trente dans la nuit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinq trente dans la nuit",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai peu pres a 5",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "peu pres a 5",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai peu près à 11 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "peu près à 11",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 1140 a.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "minuit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "minuit",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu de matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu de matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu de matinée",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu de matinée",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu d'après-midi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu d'après-midi",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu d'après midi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu d'après midi",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu du jour",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu du jour",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "milieu de midi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "milieu de midi",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "après midi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "après midi",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 du soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 du soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 dans la nuit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 dans la nuit",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 p m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 23",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "23",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7 p.m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 p.m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56 a m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56:35 a. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56:35 am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 7:56:35 a. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:56:35 a. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente ce matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente ce matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente du matin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente du matin",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente de soir",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente de soir",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente dans la soiree",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente dans la soiree",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente p. m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente p. m",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai sept trente p. m.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sept trente p. m.",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 340pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 340 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "340 pm",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "je retournerai 1140 a m",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1140 a m",
+      "Type": "time"
+    }
+  ]
+}
+]
