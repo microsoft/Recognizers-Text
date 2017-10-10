@@ -1,0 +1,236 @@
+[{
+  "Input": "06/06 12:15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06 12:15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "06/06/12 15:15",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06/12 15:15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "06/06, 2015",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "06/06, 2015",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 2 jours",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 jours",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est avant 16h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant 16h",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est avant 16h demain",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant 16h demain",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est avant lendemain 16h ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant lendemain 16h",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est apres 16h",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres 16h",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est apres 16h lendemain",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres 16h lendemain",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "C'est apres lendemain 16h ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres lendemain 16h",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai dans 5 minutes",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dans 5 minutes",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "derniere semaine",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "derniere semaine",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "lundi dernier",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "lundi dernier",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "quel courriel a reçu une réponse",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "il est souvent seul",
+  "NotSupportedByDesign": "python",
+  "Results": []
+}
+,
+{
+  "Input": "apres 2/7 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "apres 2/7",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "depuis 2/7 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "depuis 2/7",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "avant 2/7 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "avant 2/7",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "organiser une réunion du 9am à 11am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "du 9am à 11am",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "organiser une reunion des 9 à 11",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9 à 11",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "organiser une reunion des 9am a 11am demain",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "des 9am a 11am demain",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Changer 22 Juillet rencontre Bellevue a 22 Aout",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22 Juillet",
+      "Type": "date"
+    },
+    {
+      "Text": "22 Aout",
+      "Type": "date"
+    }
+  ]
+}
+]
