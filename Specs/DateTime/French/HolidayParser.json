@@ -78,7 +78,7 @@
       "Text": "fete des peres",
       "Type": "date",
       "Value": {
-        "Timex": "XXXX-06-WXX-6-3",
+        "Timex": "XXXX-06-WXX-7-3",
         "FutureResolution": {
           "date": "2017-06-18"
         },
@@ -239,7 +239,7 @@
       "Text": "fete des peres de 2015",
       "Type": "date",
       "Value": {
-        "Timex": "2015-06-WXX-6-3",
+        "Timex": "2015-06-WXX-7-3",
         "FutureResolution": {
           "date": "2015-06-21"
         },
@@ -446,7 +446,7 @@
       "Text": "fete des peres",
       "Type": "date",
       "Value": {
-        "Timex": "XXXX-06-WXX-6-3",
+        "Timex": "XXXX-06-WXX-7-3",
         "FutureResolution": {
           "date": "2017-06-18"
         },
@@ -538,7 +538,7 @@
       "Text": "fete des peres 2015",
       "Type": "date",
       "Value": {
-        "Timex": "2015-06-WXX-6-3",
+        "Timex": "2015-06-WXX-7-3",
         "FutureResolution": {
           "date": "2015-06-21"
         },
