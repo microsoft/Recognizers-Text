@@ -602,7 +602,7 @@ export class BaseDateParser implements IDateTimeParser {
             futureDate = new Date(year + 1, month, day);
         }
         if (noYear && pastDate >= referenceDate) {
-            futureDate = new Date(year - 1, month, day);
+            pastDate = new Date(year - 1, month, day);
         }
         result.futureValue = futureDate;
         result.pastValue = pastDate;
