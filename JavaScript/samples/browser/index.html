@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recognizers-Text | Browser Sandbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- IE11 Polyfill to support ES2015 features -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/shim.min.js"><\/script>');
+    </script>
+    <!-- The Recognizers-Text Bundle for the browser -->
     <script src="scripts/recognizers-text.browser.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
 </head>
 
 <body>
@@ -43,7 +48,7 @@
     <form id="parse">
         <label>
             Input:
-            <input type="text" id="input" value="I have twenty apples" />
+            <input type="text" id="input" value="I have twenty apples" size="40" />
             <input type="submit" id="submit" value="Parse" />
         </label>
     </form>
@@ -53,6 +58,7 @@
         ...
     </pre>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
 
