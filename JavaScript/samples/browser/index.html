@@ -79,28 +79,28 @@
                 try {
                     switch (selectedRecognizer) {
                         case "Number":
-                            model = Recognizers.NumberRecognizer.instance.getNumberModel(culture, false);
+                            model = RecognizersText.NumberRecognizer.instance.getNumberModel(culture, false);
                             break;
                         case "NumberOrdinal":
-                            model = Recognizers.NumberRecognizer.instance.getOrdinalModel(culture, false);
+                            model = RecognizersText.NumberRecognizer.instance.getOrdinalModel(culture, false);
                             break;
                         case "NumberPercentage":
-                            model = Recognizers.NumberRecognizer.instance.getPercentageModel(culture, false);
+                            model = RecognizersText.NumberRecognizer.instance.getPercentageModel(culture, false);
                             break;
                         case "NumberWithUnitCurrency":
-                            model = Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(culture, false);
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getCurrencyModel(culture, false);
                             break;
                         case "NumberWithUnitTemperature":
-                            model = Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(culture, false);
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getTemperatureModel(culture, false);
                             break;
                         case "NumberWithUnitDimension":
-                            model = Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(culture, false);
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getDimensionModel(culture, false);
                             break;
                         case "NumberWithUnitAge":
-                            model = Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(culture, false);
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getAgeModel(culture, false);
                             break;
                         case "DateTime":
-                            model = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(culture, false);
+                            model = RecognizersText.DateTimeRecognizer.instance.getDateTimeModel(culture, false);
                             break;
                     }
                 } catch(err) {
