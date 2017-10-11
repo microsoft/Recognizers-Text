@@ -73,8 +73,9 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
                 let origTempWord = tempWord;
                 let newLength = origTempWord.length;
                 tempWord = origTempWord.substring(0, newLength - 3);
-                if (!tempWord)
+                if (!tempWord){
                     return;
+                }
                 else if (this.cardinalNumberMap.has(tempWord)) {
                     result.push(tempWord);
                     return;
