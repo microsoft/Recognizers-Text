@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 
 export interface ITimeExtractorConfiguration {
@@ -70,6 +70,7 @@ export class BaseTimeExtractor implements IExtractor {
         atRegex: RegExp
         timeRegexes: RegExp[];
         numbers: ReadonlyMap<string, number>;
+        utilityConfiguration: IDateTimeUtilityConfiguration;
         adjustByPrefix(prefix: string, adjust: { hour: number, min: number, hasMin: boolean });
         adjustBySuffix(suffix: string, adjust: { hour: number, min: number, hasMin: boolean, hasAm: boolean, hasPm: boolean });
     }
@@ -248,13 +249,16 @@ export class BaseTimeExtractor implements IExtractor {
                     // adjust by desc string
                     let descStr = match.groups('desc').value.toLowerCase();
                     if (!StringUtility.isNullOrWhitespace(descStr)) {
-                        if (descStr.startsWith("a")) {
+                        if (RegExpUtility.getMatches(this.config.utilityConfiguration.amDescRegex, descStr).length > 0
+                         || RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length > 0) {
                             if (hour >= 12) {
                                 hour -= 12;
                             }
-                            hasAm = true;
-                        }
-                        else if (descStr.startsWith("p")) {
+                            if (RegExpUtility.getMatches(this.config.utilityConfiguration.amPmDescRegex, descStr).length === 0) {
+                                hasAm = true;
+                            }
+                         }
+                        else if (RegExpUtility.getMatches(this.config.utilityConfiguration.pmDescRegex, descStr).length > 0) {
                             if (hour < 12) {
                                 hour += 12;
                             }

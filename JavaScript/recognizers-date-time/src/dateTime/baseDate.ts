@@ -401,7 +401,7 @@ export class BaseDateParser implements IDateTimeParser {
             }
             else {
                 // the resolution should have no value
-                let weekDay = this.config.dayOfWeek[weekdayStr];
+                let weekDay = this.config.dayOfWeek.get(weekdayStr);
                 let timexDayOfWeek = "XXXX-WXX-" + weekDay;
                 let timexDay = FormatUtil.luisDate(-1, -1, day);
                 result.timex = timexDayOfWeek + "," + timexDay;
@@ -596,13 +596,13 @@ export class BaseDateParser implements IDateTimeParser {
         } else {
             result.timex = FormatUtil.luisDate(year, month, day);
         }
-        let futureDate = new Date(year, month, day);
-        let pastDate = new Date(year, month, day);
+        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
+        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
         if (noYear && futureDate < referenceDate) {
-            futureDate = new Date(year + 1, month, day);
+            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
         }
         if (noYear && pastDate >= referenceDate) {
-            futureDate = new Date(year - 1, month, day);
+            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
         }
         result.futureValue = futureDate;
         result.pastValue = pastDate;

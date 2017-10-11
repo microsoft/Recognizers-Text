@@ -148,7 +148,7 @@ export namespace EnglishDateTime {
 	export const TokenBeforeTime = 'at ';
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
-	export const BeforeRegex = `\\b(before)\\b`;
+	export const BeforeRegex = `\\b(before|in advance of|prior to)\\b`;
 	export const AfterRegex = `\\b(after)\\b`;
 	export const SinceRegex = `\\b(since)\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;

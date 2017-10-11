@@ -279,7 +279,8 @@ export class FormatUtil {
 
         let split = timeStr.split(':');
         let hour = parseInt(split[0], 10);
-        split[0] = FormatUtil.toString(hour + 12, 2);
+        hour = (hour === 12) ? 0 : hour + 12;
+        split[0] = FormatUtil.toString(hour, 2);
 
         return (hasT ? "T" : "") + split.join(":");
     }
