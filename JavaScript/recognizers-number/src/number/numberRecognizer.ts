@@ -5,8 +5,10 @@ import { NumberMode, NumberModel, OrdinalModel, PercentModel } from "./models";
 import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./parsers";
 import { EnglishNumberParserConfiguration } from "./english/parserConfiguration";
 import { SpanishNumberParserConfiguration } from "./spanish/parserConfiguration";
+import { PortugueseNumberParserConfiguration } from "./portuguese/parserConfiguration";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
 import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
+import { PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./portuguese/extractors";
 
 export default class NumberRecognizer extends Recognizer {
     static readonly instance: NumberRecognizer = new NumberRecognizer();
@@ -36,8 +38,18 @@ export default class NumberRecognizer extends Recognizer {
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration()),
             new SpanishPercentageExtractor()));
                 
+        // Portuguese models
+        this.registerModel("NumberModel", Culture.Portuguese, new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new PortugueseNumberParserConfiguration()),
+            new PortugueseNumberExtractor(NumberMode.PureNumber)));
+        this.registerModel("OrdinalModel", Culture.Portuguese, new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new PortugueseNumberParserConfiguration()),
+            new PortugueseOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.Portuguese, new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
+            new PortuguesePercentageExtractor()));
+
         // TODO: register Chinese models        
-        // TODO: Register Portuguese models
         // TODO: Register French models
     }
 
