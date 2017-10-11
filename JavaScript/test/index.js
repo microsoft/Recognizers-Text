@@ -3,4 +3,4 @@ var SpecRunner = require('./runner');
 var specs = require('./specs');
 
 // run
-SpecRunner(describe, specs);
+SpecRunner(describe, specs.readAll());

@@ -1,0 +1,31 @@
+{
+  "name": "recognizers-text-browser-specs",
+  "version": "1.0.0",
+  "main": "runner-browser.js",
+  "scripts": {
+    "test": "ava",
+    "browserify": "browserify -d . -o browser-specs/index.js",
+    "browser-specs": "npm run browserify && node browser-specs/server.js"
+  },
+  "license": "MIT",
+  "browserify-shim": {
+    "recognizers-text-number": "global:recognizersTextNumber",
+    "recognizers-text-number-with-unit": "global:recognizersTextNumberWithUnit",
+    "recognizers-text-date-time": "global:recognizersTextDateTime"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "ava": {
+    "files": [
+      "index.js"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
+    "express": "^4.16.1"
+  }
+}

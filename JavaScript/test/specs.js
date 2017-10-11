@@ -5,20 +5,21 @@ var SupportedCultures = require('./cultures');
 var supportedLanguages = keys(SupportedCultures);
 var specsPath = '../../Specs';
 
-// get list of specs (.json)
-var specFiles = getSpecFilePaths(path.join(__dirname, specsPath))
-    // Ignore non-supported languages
-    .filter(s => supportedLanguages.find(lang => s.indexOf(path.sep + lang + path.sep) !== -1));
+module.exports.readAll = function() {
 
-// parse specs
-var specs = specFiles
-    .map(s => ({
-        config: getSuiteConfig(s),
-        specs: require(s)
-    }))
-    .reverse();
+    // get list of specs (.json)
+    var specFiles = getSpecFilePaths(path.join(__dirname, specsPath))
+        // Ignore non-supported languages
+        .filter(s => supportedLanguages.find(lang => s.indexOf(path.sep + lang + path.sep) !== -1));
 
-module.exports = specs;
+    // parse specs
+    return specFiles
+        .map(s => ({
+            config: getSuiteConfig(s),
+            specs: require(s)
+        }))
+        .reverse();
+};
 
 // helpers
 function getSpecFilePaths(specsPath) {
