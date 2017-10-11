@@ -1,5 +1,8 @@
 @ECHO off
 
+ECHO.
+ECHO # Building Javacript platform
+
 REM Check Node/NPM installation
 WHERE /q node
 IF ERRORLEVEL 1 (
@@ -10,6 +13,11 @@ WHERE /q npm
 IF ERRORLEVEL 1 (
     ECHO NPM executable not found. Please install it from https://nodejs.org/
     EXIT /B
+)
+
+IF NOT EXIST "node_modules" (
+	ECHO # Installing dependencies - npm install
+	CALL npm i
 )
 
 IF NOT EXIST "recognizers-number/node_modules" (
@@ -27,13 +35,10 @@ IF NOT EXIST "recognizers-date-time/node_modules" (
     CALL npm run prebuild-date-time
 )
 
-IF NOT EXIST "node_modules" (
-	ECHO # Installing dependencies - npm install
-	CALL npm i
-)
-
+ECHO.
 ECHO # Building - npm run build
 CALL npm run build
 
+ECHO.
 ECHO # Running test - npm run test
 CALL npm run test

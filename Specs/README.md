@@ -58,7 +58,8 @@ Each test case can also have another set of optional attributes:
 
 - **NotSupported**
 
-  Indicates that the test case is not (currently) supported on the specified platforms. It can be used when a feature is being implemented on certain platform and, in the meantime, ignore temporary the backing test case on other platforms. This test case will either be skipped (.NET Test Runner) or ignored (AVA JS Test Runner), but a warning will be generated.
+  Indicates that the test case is not (currently) supported on the specified platforms. It can be used when a feature is being implemented on certain platform and, in the meantime, 
+  ignore temporary the backing test case on other platforms. This test case will either be skipped (.NET Test Runner) or ignored (AVA JS Test Runner), but a warning will be generated.
 
   Possible values include a list of platforms: dotNet, javascript, python. Each separated by a comma (,).
 
@@ -92,7 +93,8 @@ Each test case can also have another set of optional attributes:
 
 - **Context**
 
-  Used to provide contextual arguments to the extractor or model. This attribute is used mostly on the DateTime recognizers to provide the [`reference` date object](https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Parsers/BaseDateParser.cs#L26) (the relative date).
+  Used to provide contextual arguments to the extractor or model. This attribute is used mostly on the DateTime recognizers to provide the 
+  [`reference` date object](https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Parsers/BaseDateParser.cs#L26) (the relative date).
 
   Sample usage:
 
@@ -127,15 +129,19 @@ The Spec files containing the Test Suites and Test Cases are based on convention
 
 ### .NET
 
-In the .NET solution, the Test Suites are defined as Test Classes (using the `[TestClass]` attribute) and each may have several Test Methods (using the `[TestMethod]` attribute) to sub-group the test cases. Each Test Method should map to a single Spec file (JSON).
+In the .NET solution, the Test Suites are defined as Test Classes (using the `[TestClass]` attribute) and each may have several Test Methods (using the `[TestMethod]` attribute) to sub-group the test cases. 
+Each Test Method should map to a single Spec file (JSON).
 
 This is a sample structure of Test Classes:
 
 ````
 Microsoft.Recognizers.Text.DataDrivenTests
 │   Microsoft.Recognizers.Text.DataDrivenTests.csproj
+│
 ├───DateTime
+│       TestDateTime_Chinese.cs
 │       TestDateTime_English.cs
+│       TestDateTime_French.cs
 │       TestDateTime_Spanish.cs
 │
 ├───Number
@@ -152,7 +158,7 @@ Microsoft.Recognizers.Text.DataDrivenTests
         TestNumberWithUnit_Spanish.cs
 ````
 
-The Test Classes names uses a convention to determine the Spec to run. THe convention is:
+The Test Classes names uses a convention to determine the Spec to run. The convention is:
 
 `Test{Model}_{Language}`
 
@@ -192,7 +198,6 @@ E.g:
 
     Maps to the [BaseDateTimeExtractor](../JavaScript/src/dateTime/baseDateTime.ts#L28) and uses the [EnglishDateTimeExtractorConfiguration](../JavaScript/src/dateTime/english/dateTimeConfiguration.ts#L16)
 
-
  - [Specs/DateTime/English/DateTimeParser.json](../Specs/DateTime/English/DateTimeParser.json)
 
     Maps to the [BaseDateTimeParser](../JavaScript/src/dateTime/baseDateTime.ts#L204) and uses the [EnglishDateTimeParserConfiguration](../JavaScript/src/dateTime/english/dateTimeConfiguration.ts#L60)
@@ -227,7 +232,8 @@ When launching the Test Runner with the Debugg attached, the test case will trig
 
 ### .NET
 
-By running the tests from Visual Studio with the Debug option (Test menu \ Debug \ All Tests), the debugger will break just before calling the extractor or parser. From there it should be straighforward to step-into the parser or extractor execution.
+By running the tests from Visual Studio with the Debug option (Test menu \ Debug \ All Tests), the debugger will break just before calling the extractor or parser. 
+From there it should be straighforward to step-into the parser or extractor execution.
 
 Using the Test Explorer it is possible to just trigger and debug a Test Suite.
 
@@ -235,4 +241,18 @@ Using the Test Explorer it is possible to just trigger and debug a Test Suite.
 
 JavaScript tests can be debugged from within Visual Studio Code.
 
-The project is already configured with a *Debug Tests* launch task, just press F5 (Start Debugging) and Visual Studio Code will run and attach to the AVA Test Runner. Once the test case with the `Debug` attribute is reached, it should be straighforward to step-into the parser or extractor execution.
+The project is already configured with a *Debug Tests* launch task, just press F5 (Start Debugging) and Visual Studio Code will run and attach to the AVA Test Runner. 
+Once the test case with the `Debug` attribute is reached, it should be straighforward to step-into the parser or extractor execution.
+
+## Troubleshooting
+
+## Javascript build - Python version not supported by gyp
+
+If you get an error like:
+
+gyp ERR! configure error
+gyp ERR! stack Error: Python executable "D:\Apps\Python\Python3\python.EXE" is v3.4.1, which is not supported by gyp.
+gyp ERR! stack You can pass the --python switch to point to Python >= v2.5.0 & < 3.0.0.
+
+Please make sure you have node v6.9.1+ and python 3.4.4+, this combination should work.
+Remove the node_modules directories under Javacript and the sub-projects and build again.

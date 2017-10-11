@@ -1,6 +1,9 @@
 @ECHO off
 SETLOCAL EnableDelayedExpansion
 
+ECHO.
+ECHO # Building .NET platform
+
 SET "Vs2017SubDir=\Microsoft Visual Studio\2017\Enterprise"
 SET MsBuildSubDir=\MSBuild\15.0\bin
 SET VsCommonSubDir=\Common7\IDE
@@ -26,13 +29,15 @@ IF NOT EXIST "%MsTestDir%\MSTest.exe" (
     EXIT /B
 )
 
+ECHO.
 ECHO # Restoring NuGet dependencies
 CALL "buildtools\nuget" restore
 
+ECHO.
 ECHO # Building .NET solution (debug)
 CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Debug
 
-
+ECHO.
 ECHO # Running .NET Tests
 SET testcontainer=
 FOR /R %%f IN (*.Tests.dll) DO (
