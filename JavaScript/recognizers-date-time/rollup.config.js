@@ -10,7 +10,7 @@ export default {
   output: [
     { file: pkg.module, format: 'es' },
     { file: pkg.main, name: camelCase(pkg.name), format: 'umd', exports: 'named'  },
-    { file: pkg.browser, format: 'iife', name: camelCase(pkg.name) + '.browser.js', exports: 'named' }
+    { file: pkg.browser, format: 'iife', name: camelCase(pkg.name), exports: 'named' }
   ],
   exports: 'named',
   sourcemap: true,
