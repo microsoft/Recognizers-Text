@@ -28,6 +28,15 @@ export namespace EnglishNumericWithUnit {`,
         `import { BaseNumbers } from "./baseNumbers";
 export namespace SpanishNumericWithUnit {`,
         footer: `}`
+    },
+    // PORTUGUESE NUMERIC WITH UNIT
+    {
+        yaml: `${resourcesPath}/Portuguese/Portuguese-NumbersWithUnit.yaml`,
+        output: `${outputPath}portugueseNumericWithUnit.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace PortugueseNumericWithUnit {`,
+        footer: `}`
     }
 ];
 
