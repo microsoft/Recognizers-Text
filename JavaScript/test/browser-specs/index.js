@@ -17733,8 +17733,7 @@ window.onload = function () {
     runner(runnerDescribe, specs);
 
     // run specs
-    mocha.setup({ timeout: 0 });
-    mocha.checkLeaks();
+    mocha.setup({ timeout: 5000 });
     mocha.run();
 };
 
