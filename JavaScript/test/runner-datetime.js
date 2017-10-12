@@ -184,29 +184,19 @@ function getParser(config) {
     return parser;
 }
 
-const models = [];
-
-function findModel(options, culture) {
-    let modelObj = models.find(function (m) {
-        if ((m.options === options) && (m.culture === culture)) {
-            return m;
-        }
-    });
-    if (!modelObj) {
-        modelObj = {
-            model: Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(),
-            options: options,
-            culture: culture,
-        };
-        models.push(modelObj);
-    }
-    return modelObj.model;
-}
-
+var models = {};
 function getModel(config) {
-    let options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
-    let cultureCode = SupportedCultures[config.language].cultureCode;
-    return findModel(options, cultureCode);
+    var options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
+    var culture = SupportedCultures[config.language].cultureCode;
+
+    var key = [culture, options.toString()].join('-');
+    var model = models[key];
+    if (!model) {
+        model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel();
+        models[key] = model;
+    }
+
+    return model;
 }
 
 function parseISOLocal(s) {
