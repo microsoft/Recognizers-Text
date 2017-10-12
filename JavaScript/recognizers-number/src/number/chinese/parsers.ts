@@ -74,7 +74,7 @@ export class ChineseNumberParser extends BaseNumberParser {
 
         let result = '';
         for(let index = 0; index < value.length; index++) {
-            result = result.concat(this.config.tratoSimMapChs.get(value.charAt(index) || value.charAt(index)));
+            result = result.concat(this.config.tratoSimMapChs.get(value.charAt(index)) || value.charAt(index));
         }
         return result;
     }
@@ -86,7 +86,7 @@ export class ChineseNumberParser extends BaseNumberParser {
 
         let result = '';
         for(let index = 0; index < value.length; index++) {
-            result = result.concat(this.config.fullToHalfMapChs.get(value.charAt(index) || value.charAt(index)));
+            result = result.concat(this.config.fullToHalfMapChs.get(value.charAt(index)) || value.charAt(index));
         }
         return result;
     }
