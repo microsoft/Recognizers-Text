@@ -73,7 +73,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
                 let origTempWord = tempWord;
                 let newLength = origTempWord.length;
                 tempWord = origTempWord.substring(0, newLength - 3);
-                if (!tempWord){
+                if (!tempWord) {
                     return;
                 }
                 else if (this.cardinalNumberMap.has(tempWord)) {
@@ -114,6 +114,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
                 lastGoodChar = i;
                 value = this.cardinalNumberMap.get(strBuilder);
             }
+
             if ((i + 1) === numberStr.length) {
                 finalValue += value;
                 strBuilder = "";
@@ -121,6 +122,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
                 value = 0;
             }
         }
+        
         return finalValue;
     }
 }
