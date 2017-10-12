@@ -7,6 +7,8 @@ var SupportedCultures = require('./cultures');
 var Extractors = require('./datetime-extractors');
 var Parsers = require('./datetime-parsers');
 
+var ignoredTest = null;
+
 module.exports = function getDateTimeRunner(config) {
     var extractor = getExtractor(config);
     var parser = getParser(config);
@@ -33,9 +35,11 @@ module.exports = function getDateTimeRunner(config) {
             return ignoredTest;
             // throw new Error(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
         }
+
         if (config.subType.includes("Merged")) {
             return getMergedParserTestRunner(extractor, parser);
         }
+
         return getParserTestRunner(extractor, parser);
     }
 
@@ -192,9 +196,17 @@ function getModel(config) {
 
     var key = [culture, options.toString()].join('-');
     var model = models[key];
-    if (!model) {
-        model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel();
-        models[key] = model;
+    if (model === undefined) {
+        try {
+            model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(culture, false),
+			models[key] = model;
+        } catch (err) {
+            // not yet supported - save null model, tests will then be ignored
+            models[key] = null;
+
+            return null;
+        }
+
     }
 
     return model;
@@ -213,14 +225,11 @@ function getReferenceDate(testCase) {
     return null;
 }
 
-function ignoredTest(t, testCase) {
-    t.skip.true(true, 'Test case not supported.');
-}
-
 function toObject(map) {
     if (!map) return undefined;
     var keys = Array.from(map.keys());
     var values = Array.from(map.values()).map(asString);
+
     return _.zipObject(keys, values);
 }
 
