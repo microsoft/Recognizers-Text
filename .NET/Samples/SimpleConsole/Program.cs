@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Recognizers.Text;
-using Microsoft.Recognizers.Text.Number;
-using Newtonsoft.Json;
-using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.NumberWithUnit;
+using Newtonsoft.Json;
 
 namespace SimpleConsole
 {
@@ -50,26 +50,6 @@ namespace SimpleConsole
         }
         
         /// <summary>
-        /// Introduction
-        /// </summary>
-        private static void ShowIntro()
-        {
-            Console.WriteLine("Welcome to the Recognizer's Sample console application!");
-            Console.WriteLine("To try the recognizers enter a phrase and let us show you the different outputs for each recognizer or just type 'exit' to leave the application.");
-            Console.WriteLine();
-            Console.WriteLine("Here are some examples you could try:");
-            Console.WriteLine();
-            Console.WriteLine("\" I want twenty meters of cable for tomorrow \"");
-            Console.WriteLine("\" I'll be available tomorrow from 11am to 2pm to receive up to 5kg of sugar\"");
-            Console.WriteLine("\" I'll be out between 4 and 22 this month \"");
-            Console.WriteLine("\" I was the fifth person to finish the 10 km race \"");
-            Console.WriteLine("\" The temperature this night will be of 40 deg celsius \"");
-            Console.WriteLine("\" The american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday \"");
-            Console.WriteLine("\" It happened when the baby was only ten months old \"");
-            Console.WriteLine();
-        }
-        
-        /// <summary>
         /// Get all recognizers model instances.
         /// </summary>
         /// <returns>A list of all the existing recognizer's models</returns>
@@ -109,6 +89,26 @@ namespace SimpleConsole
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
                 DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture)
             };
+        }
+
+        /// <summary>
+        /// Introduction
+        /// </summary>
+        private static void ShowIntro()
+        {
+            Console.WriteLine("Welcome to the Recognizer's Sample console application!");
+            Console.WriteLine("To try the recognizers enter a phrase and let us show you the different outputs for each recognizer or just type 'exit' to leave the application.");
+            Console.WriteLine();
+            Console.WriteLine("Here are some examples you could try:");
+            Console.WriteLine();
+            Console.WriteLine("\" I want twenty meters of cable for tomorrow\"");
+            Console.WriteLine("\" I'll be available tomorrow from 11am to 2pm to receive up to 5kg of sugar\"");
+            Console.WriteLine("\" I'll be out between 4 and 22 this month\"");
+            Console.WriteLine("\" I was the fifth person to finish the 10 km race\"");
+            Console.WriteLine("\" The temperature this night will be of 40 deg celsius\"");
+            Console.WriteLine("\" The american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday\"");
+            Console.WriteLine("\" It happened when the baby was only ten months old\"");
+            Console.WriteLine();
         }
     }
 }
