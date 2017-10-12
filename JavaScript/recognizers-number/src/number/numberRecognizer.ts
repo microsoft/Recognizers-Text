@@ -2,13 +2,15 @@ import { IModel } from "../models";
 import { Recognizer } from "../recognizer";
 import { Culture } from "../culture";
 import { NumberMode, NumberModel, OrdinalModel, PercentModel } from "./models";
-import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./parsers";
+import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./agnosticNumberParser";
 import { EnglishNumberParserConfiguration } from "./english/parserConfiguration";
 import { SpanishNumberParserConfiguration } from "./spanish/parserConfiguration";
 import { PortugueseNumberParserConfiguration } from "./portuguese/parserConfiguration";
+import { ChineseNumberParserConfiguration } from "./chinese/parserConfiguration";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
 import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
 import { PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./portuguese/extractors";
+import { ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor } from "./chinese/extractors";
 
 export default class NumberRecognizer extends Recognizer {
     static readonly instance: NumberRecognizer = new NumberRecognizer();
@@ -49,7 +51,17 @@ export default class NumberRecognizer extends Recognizer {
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new PortugueseNumberParserConfiguration()),
             new PortuguesePercentageExtractor()));
 
-        // TODO: register Chinese models        
+        // Chinese models
+        this.registerModel("NumberModel", Culture.Chinese, new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration()),
+            new ChineseNumberExtractor()));
+        this.registerModel("OrdinalModel", Culture.Chinese, new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new ChineseNumberParserConfiguration()),
+            new ChineseOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.Chinese, new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
+            new ChinesePercentageExtractor()));
+
         // TODO: Register French models
     }
 

@@ -186,6 +186,15 @@ export class RegExpUtility {
         return { matched: false, index: -1 };
     }
 
+    static split(regex: RegExp, source: string): string[] {
+        return XRegExp.split(source, regex);
+    }
+
+    static isMatch(regex: RegExp, source: string): boolean {
+        return !StringUtility.isNullOrEmpty(source)
+            && this.getMatches(regex, source).length > 0;
+    }
+
     private static matchGroup = XRegExp(String.raw`\?<(?<name>\w+)>`, 'gis');
     private static matchPositiveLookbehind = XRegExp(String.raw`\(\?<=`, 'gis');
     private static matchNegativeLookbehind = XRegExp(String.raw`\(\?<!`, 'gis');
