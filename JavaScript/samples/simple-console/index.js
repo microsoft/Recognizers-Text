@@ -1,10 +1,8 @@
-var RecognizersDateTime = require('recognizers-text-date-time');
-var RecognizersNumberWithUnit = require('recognizers-text-number-with-unit');
-var RecognizersNumber = require('recognizers-text-number');
+var Recognizers = require('recognizers-text');
 var helpers = require('./helpers');
 
 // Use English for the Recognizers culture
-const defaultCulture = RecognizersNumber.Culture.English;
+const defaultCulture = Recognizers.Culture.English;
 
 // Start Sample
 showIntro();
@@ -38,15 +36,16 @@ function runRecognition() {
                         return result;
                     });
 
+                results = [].concat.apply([], results);
+
                 // Write results on console
                 write();
                 write(results.length > 0 ? "I found the following entities (" + results.length + "):" : "I found no entities.");
                 write();
-                [].concat.apply([], results).forEach(function (result) {
+                results.forEach(function (result) {
                     write(JSON.stringify(result, null, "\t"));
                     write();
                 });
-                write();
             }
 
         }
@@ -66,35 +65,35 @@ function getModels() {
     return [
         // Add Number recognizer - This recognizer will find any number from the input
         // E.g "I have two apples" will return "2".
-        RecognizersNumber.NumberRecognizer.instance.getNumberModel(defaultCulture),
+        Recognizers.NumberRecognizer.instance.getNumberModel(defaultCulture),
 
         // Add Ordinal number recognizer - This recognizer will find any ordinal number
         // E.g "eleventh" will return "11".
-        RecognizersNumber.NumberRecognizer.instance.getOrdinalModel(defaultCulture),
+        Recognizers.NumberRecognizer.instance.getOrdinalModel(defaultCulture),
 
         // Add Percentage recognizer - This recognizer will find any number presented as percentage
         // E.g "one hundred percents" will return "100%"
-        RecognizersNumber.NumberRecognizer.instance.getPercentageModel(defaultCulture),
+        Recognizers.NumberRecognizer.instance.getPercentageModel(defaultCulture),
 
         // Add Age recognizer - This recognizer will find any age number presented
         // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-        RecognizersNumberWithUnit.NumberWithUnitRecognizer.instance.getAgeModel(defaultCulture),
+        Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(defaultCulture),
 
         // Add Currency recognizer - This recognizer will find any currency presented
         // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-        RecognizersNumberWithUnit.NumberWithUnitRecognizer.instance.getCurrencyModel(defaultCulture),
+        Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(defaultCulture),
 
         // Add Dimension recognizer - This recognizer will find any dimension presented
         // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-        RecognizersNumberWithUnit.NumberWithUnitRecognizer.instance.getDimensionModel(defaultCulture),
+        Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(defaultCulture),
 
         // Add Temperature recognizer - This recognizer will find any temperature presented
         // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-        RecognizersNumberWithUnit.NumberWithUnitRecognizer.instance.getTemperatureModel(defaultCulture),
+        Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(defaultCulture),
 
         // Add Datetime recognizer - This model will find any Date even if its write in coloquial language -
         // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-        RecognizersDateTime.DateTimeRecognizer.instance.getDateTimeModel(defaultCulture)
+        Recognizers.DateTimeRecognizer.instance.getDateTimeModel(defaultCulture)
     ];
 }
 

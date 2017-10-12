@@ -8,8 +8,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "recognizers-text-date-time": "file:../../recognizers-date-time",
-    "recognizers-text-number": "file:../../recognizers-number",
-    "recognizers-text-number-with-unit": "file:../../recognizers-number-with-unit"
+    "recognizers-text": "file:../../"
   }
 }
