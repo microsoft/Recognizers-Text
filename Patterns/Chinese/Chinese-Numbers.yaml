@@ -78,20 +78,6 @@ ZeroToNineMapChs: !dictionary
     俩: 2
     倆: 2
     仨: 3
-RoundNumberMapChs: !dictionary
-  types: [char, long]
-  entries:
-    十: 10
-    百: 100
-    千: 1000
-    万: 10000
-    亿: 100000000
-    兆: 1000000000000
-    拾: 10
-    佰: 100
-    仟: 1000
-    萬: 10000
-    億: 100000000
 FullToHalfMapChs: !dictionary
   types: [char, char]
   entries:
