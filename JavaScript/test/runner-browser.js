@@ -1,23 +1,23 @@
 var runner = require('./runner');
 
-window.onload = function() {
+window.onload = function () {
     mocha.setup('bdd');
 
     // wrap expepect.js describe/it API with the same API as AVA
-    // http://chaijs.com/api/bdd/
+    // https://github.com/Automattic/expect.js/#api
     var wrapIt = {
-        is: function(actual, expected, message) {
+        is: function (actual, expected, message) {
             expect(actual).to.eql(expected, message);
         },
-        deepEqual: function(actual, expected, message) {
+        deepEqual: function (actual, expected, message) {
             expect(actual).to.eql(expected, message);
         }
     };
 
-    var runnerDescribe = function(name, run) {
-        describe(name, function() {
-            run(function(name, run) {
-                it(name, function() {
+    var runnerDescribe = function (name, run) {
+        describe(name, function () {
+            run(function (name, run) {
+                it(name, function () {
                     run(wrapIt);
                 });
             });

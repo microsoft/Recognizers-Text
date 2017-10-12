@@ -5,7 +5,7 @@ var SupportedCultures = require('./cultures');
 var supportedLanguages = keys(SupportedCultures);
 var specsPath = '../../Specs';
 
-module.exports.readAll = function() {
+module.exports.readAll = function () {
     // get list of specs (.json)
     var specFiles = getSpecFilePaths(path.join(__dirname, specsPath))
         // Ignore non-supported languages

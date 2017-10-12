@@ -187,7 +187,7 @@ function getParser(config) {
 const models = [];
 
 function findModel(options, culture) {
-    let modelObj = models.find(function(m) {
+    let modelObj = models.find(function (m) {
         if ((m.options === options) && (m.culture === culture)) {
             return m;
         }
@@ -211,7 +211,7 @@ function getModel(config) {
 
 function parseISOLocal(s) {
     var b = s.split(/\D/);
-    return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+    return new Date(b[0], b[1] - 1, b[2], b[3], b[4], b[5]);
 }
 
 function getReferenceDate(testCase) {
@@ -245,12 +245,6 @@ function asString(o) {
         var parts = isoDate.split('T');
         var time = parts[1].split('.')[0].replace('00:00:00', '');
         return [parts[0], time].join(' ').trim();
-    }
-
-
-    // JS min Date is 1901, while .NET is 0001
-    if (o === '1901-01-01') {
-        return '0001-01-01';
     }
 
     return o;
