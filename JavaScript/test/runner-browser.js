@@ -3,7 +3,7 @@ var runner = require('./runner');
 window.onload = function() {
     mocha.setup('bdd');
 
-    // wrap chais's describe/it API with the same api as AVA
+    // wrap expepect.js describe/it API with the same API as AVA
     // http://chaijs.com/api/bdd/
     var wrapIt = {
         is: function(actual, expected, message) {
@@ -24,6 +24,7 @@ window.onload = function() {
         });
     };
 
+    // register suites
     runner(runnerDescribe, specs);
 
     // run specs
