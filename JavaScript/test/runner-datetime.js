@@ -210,9 +210,14 @@ function getModel(config) {
     return findModel(options, cultureCode);
 }
 
+function parseISOLocal(s) {
+    var b = s.split(/\D/);
+    return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+}
+
 function getReferenceDate(testCase) {
     if (testCase.Context && testCase.Context.ReferenceDateTime) {
-        return new Date(Date.parse(testCase.Context.ReferenceDateTime));
+        return parseISOLocal(testCase.Context.ReferenceDateTime);
     }
 
     return null;
