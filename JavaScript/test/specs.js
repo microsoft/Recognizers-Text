@@ -6,11 +6,13 @@ var supportedLanguages = keys(SupportedCultures);
 var specsPath = '../../Specs';
 
 module.exports.readAll = function() {
-
     // get list of specs (.json)
     var specFiles = getSpecFilePaths(path.join(__dirname, specsPath))
         // Ignore non-supported languages
         .filter(s => supportedLanguages.find(lang => s.indexOf(path.sep + lang + path.sep) !== -1));
+
+    // invalidate require cache
+    specFiles.forEach(s => delete require.cache[s]);
 
     // parse specs
     return specFiles
