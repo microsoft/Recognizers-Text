@@ -135,7 +135,7 @@ function getMergedParserTestRunner(extractor, parser) {
                     var actual = o[0];
                     var expected = o[1];
 
-                    t.deepEqual(actual, expected);
+                    t.deepEqual(actual, expected, 'Values');
                 });
             }
         });
@@ -162,7 +162,7 @@ function getModelTestRunner(model) {
             if (actual.resolution) {
                 var values = actual.resolution.get('values').map(toObject);
                 t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
-                t.deepEqual(values, expected.Resolution.values, 'Resource.Value');
+                t.deepEqual(values, expected.Resolution.values, 'Resolution.Values');
             }
         });
     };
