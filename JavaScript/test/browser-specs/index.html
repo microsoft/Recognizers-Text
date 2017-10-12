@@ -7,16 +7,16 @@
     <title>Recognizers-Text | Browser Specs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+    <!-- IE11 Polyfill to support ES2015 features -->
     <script type="text/javascript">
         if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
-            document.write('<script src="scripts/es5-polyfills/dist/es5-polyfills.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/shim.min.js"><\/script>');
     </script>
 </head>
 
 <body>
-        <div id="mocha"></div>
+    <div id="mocha"></div>
 
-    <!-- <script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script> -->
     <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
     <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
 

@@ -15,7 +15,8 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      "browserify-shim",
+      "babelify"
     ]
   },
   "ava": {
@@ -24,6 +25,9 @@
     ]
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "browserify-shim": "^3.8.14",
     "express": "^4.16.1"
