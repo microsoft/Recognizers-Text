@@ -6,6 +6,7 @@ export { FormatUtility, StringUtility, Match, RegExpUtility } from "./utilities"
 export { BaseNumbers } from "./resources/baseNumbers";
 export { EnglishNumeric } from "./resources/englishNumeric";
 export { SpanishNumeric } from "./resources/spanishNumeric";
+export { FrenchNumeric } from "./resources/frenchNumeric";
 export { ChineseNumeric } from "./resources/chineseNumeric";
 export { Constants } from "./number/constants";
 export { IExtractor, ExtractResult, RegExpValue, BaseNumberExtractor, BasePercentageExtractor } from "./number/extractors";
@@ -18,6 +19,8 @@ export { SpanishCardinalExtractor, SpanishDoubleExtractor, SpanishFractionExtrac
 export { SpanishNumberParserConfiguration } from "./number/spanish/parserConfiguration";
 export { PortugueseCardinalExtractor, PortugueseDoubleExtractor, PortugueseFractionExtractor, PortugueseIntegerExtractor, PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./number/portuguese/extractors";
 export { PortugueseNumberParserConfiguration } from "./number/portuguese/parserConfiguration";
+export { FrenchCardinalExtractor, FrenchDoubleExtractor, FrenchFractionExtractor, FrenchIntegerExtractor, FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor } from "./number/french/extractors";
+export { FrenchNumberParserConfiguration } from "./number/french/parserConfiguration";
 export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor, ChineseNumberMode } from "./number/chinese/extractors";
 export { ChineseNumberParserConfiguration } from "./number/chinese/parserConfiguration";
 export { ChineseNumberParser } from "./number/chinese/parsers";

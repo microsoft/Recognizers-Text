@@ -146,7 +146,7 @@ HalfADozenText: six
 WordSeparatorToken: et
 WrittenDecimalSeparatorTexts: [virgule]
 WrittenGroupSeparatorTexts: [point, points]
-WrittenIntegerSeparatorTexts: [et, -]
+WrittenIntegerSeparatorTexts: [et, '-']
 WrittenFractionSeparatorTexts: [et, sur]
 HalfADozenRegex: !simpleRegex
   def: (?<=\b)+demi\s+douzaine
