@@ -33,8 +33,11 @@ function UpdateAssemblyInfo()
 
 function AddCodeSign()
 {
-	$fileContent = $fileContent + "`r`n[assembly: AssemblyKeyFileAttribute(@`"..\\buildtools\\35MSSharedLib1024.snk`")] `r`n [assembly: AssemblyDelaySignAttribute(true)]"
-	return $fileContent
+
+    $csAppend = "`r`n[assembly: AssemblyKeyFileAttribute(@`"" + ($PSScriptRoot + "\35MSSharedLib1024.snk") + "`")] `r`n [assembly: AssemblyDelaySignAttribute(true)]"
+    #Write-Host ("CSAppend:" + $csAppend)
+    $fileContent = $fileContent + $csAppend
+    return $fileContent
 }
 
 function TryRemove($attributeName)
