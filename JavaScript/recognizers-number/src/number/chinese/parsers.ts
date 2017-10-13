@@ -94,8 +94,8 @@ export class ChineseNumberParser extends BaseNumberParser {
     private replaceUnit(value: string): string {
         if (StringUtility.isNullOrEmpty(value)) return value;
         let result = value;
-        this.config.unitMapChs.forEach((value, key) => {
-            result = result.replace(key, value);
+        this.config.unitMapChs.forEach((value: string, key: string) => {
+            result = result.replace(new RegExp(key, 'g'), value);
         });
         return result;
     }
@@ -255,7 +255,7 @@ export class ChineseNumberParser extends BaseNumberParser {
                 splitResult[0] = "零";
             }
 
-            if (RegExpUtility.getMatches(this.config.symbolRegex, splitResult[0])) {
+            if (RegExpUtility.isMatch(this.config.symbolRegex, splitResult[0])) {
                 result.value = this.getIntValueChs(splitResult[0]) - this.getPointValueChs(splitResult[1]);
             } else {
                 result.value = this.getIntValueChs(splitResult[0]) + this.getPointValueChs(splitResult[1]);
@@ -338,7 +338,7 @@ export class ChineseNumberParser extends BaseNumberParser {
             if (this.config.roundNumberMapChs.has(resultChar)) {
                 let roundRecent = this.config.roundNumberMapChs.get(resultChar);
                 if (roundBefore !== -1 && roundRecent > roundBefore) {
-                    if (roundBefore) {
+                    if (isRoundBefore) {
                         intValue += partValue * roundRecent;
                         isRoundBefore = false;
                     } else {
@@ -406,201 +406,5 @@ export class ChineseNumberParser extends BaseNumberParser {
     private isDigitChs(value: string): boolean {
         return !StringUtility.isNullOrEmpty(value) 
             && RegExpUtility.isMatch(this.config.digitNumRegex, value);
-    }
-
-    protected getDigitalValue(digitStr: string, power: number): number {
-        let tmp = new BigNumber(0);
-        let scale = new BigNumber(10);
-        let dot = false;
-        let isLessZero = false;
-        let isFrac = false;
-
-        let calStack = new Array<BigNumber>();
-
-        for (let i = 0; i < digitStr.length; i++) {
-            let ch = digitStr[i];
-            if (ch === '/') {
-                isFrac = true;
-            }
-
-            if (ch === ' ' || ch === '/') {
-                calStack.push(tmp);
-                tmp = new BigNumber(0);
-            }
-            else if (ch >= '0' && ch <= '9') {
-                if (dot) {
-                    // tmp = tmp + scale * (ch.charCodeAt(0) - 48);
-                    // scale *= 0.1;
-                    tmp = tmp.plus(scale.times(ch.charCodeAt(0) - 48));
-                    scale = scale.times(0.1);
-                }
-                else {
-                    // tmp = tmp * scale + (ch.charCodeAt(0) - 48);
-                    tmp = tmp.times(scale).plus(ch.charCodeAt(0) - 48);
-                }
-            }
-            else if (ch === this.config.decimalSeparatorChar) {
-                dot = true;
-                scale = new BigNumber(0.1);
-            }
-            else if (ch === '-') {
-                isLessZero = true;
-            }
-        }
-        calStack.push(tmp);
-
-        // is the number is a fraction.
-        let calResult = new BigNumber(0);
-        if (isFrac) {
-            let deno = calStack.pop();
-            let mole = calStack.pop();
-            // calResult += mole / deno;
-            calResult = calResult.plus(mole.dividedBy(deno));
-        }
-
-        while (calStack.length > 0) {
-            calResult = calResult.plus(calStack.pop());
-        }
-
-        // calResult *= power;
-        calResult = calResult.times(power);
-
-        if (isLessZero) {
-            return calResult.negated().toNumber();
-        }
-
-
-        return calResult.toNumber();
-    }
-
-    
-    protected digitNumberParse(extResult: ExtractResult): ParseResult {
-        let result: ParseResult = {
-            start: extResult.start,
-            length: extResult.length,
-            text: extResult.text,
-            type: extResult.type
-        };
-
-        // [1] 24
-        // [2] 12 32/33
-        // [3] 1,000,000
-        // [4] 234.567
-        // [5] 44/55
-        // [6] 2 hundred
-        // dot occured.
-
-        let power: number = 1;
-        let tmpIndex: number = -1;
-        let startIndex: number = 0;
-        let handle = extResult.text.toLowerCase();
-
-        let matches = RegExpUtility.getMatches(this.config.digitalNumberRegex, handle);
-        if (matches) {
-            matches.forEach(match => {
-                // HACK: Matching regex may be buggy, may include a digit before the unit
-                match.value = match.value.replace(/\d/g, '');
-                match.length = match.value.length;
-
-                let rep: number = this.config.roundNumberMap.get(match.value) as number;
-                // \\s+ for filter the spaces.
-                power *= rep;
-
-                // tslint:disable-next-line:no-conditional-assignment
-                while ((tmpIndex = handle.indexOf(match.value, startIndex)) >= 0) {
-                    let front = trimEnd(handle.substring(0, tmpIndex));
-                    startIndex = front.length;
-                    handle = front + handle.substring(tmpIndex + match.length);
-                }
-            });
-        }
-
-        // scale used in the calculate of double
-        result.value = this.getDigitalValue(handle, power);
-
-        return result;
-    }
-
-    
-    protected powerNumberParse(extResult: ExtractResult): ParseResult {
-        let result =
-            {
-                start: extResult.start,
-                length: extResult.length,
-                text: extResult.text,
-                type: extResult.type
-            } as ParseResult;
-
-        let handle = extResult.text.toUpperCase();
-        let isE = !extResult.text.includes("^");
-
-        // [1] 1e10
-        // [2] 1.1^-23
-        let calStack = new Array<BigNumber>();
-
-        let scale = new BigNumber(10);
-        let dot = false;
-        let isLessZero = false;
-        let tmp = new BigNumber(0);
-        for (let i = 0; i < handle.length; i++) {
-            let ch = handle[i];
-            if (ch === '^' || ch === 'E') {
-                if (isLessZero) {
-                    calStack.push(tmp.negated());
-                }
-                else {
-                    calStack.push(tmp);
-                }
-                tmp = new BigNumber(0);
-                scale = new BigNumber(10);
-                dot = false;
-                isLessZero = false;
-            }
-            else if (ch.charCodeAt(0) - 48 >= 0 && ch.charCodeAt(0) - 48 <= 9) {
-                if (dot) {
-                    // tmp = tmp + scale * (ch.charCodeAt(0) - 48);
-                    // scale *= 0.1;
-                    tmp = tmp.plus(scale.times(ch.charCodeAt(0) - 48));
-                    scale = scale.times(0.1);
-                }
-                else {
-                    // tmp = tmp * scale + (ch.charCodeAt(0) - 48);
-                    tmp = tmp.times(scale).plus(ch.charCodeAt(0) - 48);
-                }
-            }
-            else if (ch === this.config.decimalSeparatorChar) {
-                dot = true;
-                scale = new BigNumber(0.1);
-            }
-            else if (ch === '-') {
-                isLessZero = !isLessZero;
-            }
-            else if (ch === '+') {
-                continue;
-            }
-
-            if (i === handle.length - 1) {
-                if (isLessZero) {
-                    calStack.push(tmp.negated());
-                }
-                else {
-                    calStack.push(tmp);
-                }
-            }
-        }
-
-        let ret = 0;
-        if (isE) {
-            // ret = calStack.shift() * Math.pow(10, calStack.shift());
-            ret = calStack.shift().times(Math.pow(10, calStack.shift().toNumber())).toNumber();
-        }
-        else {
-            ret = Math.pow(calStack.shift().toNumber(), calStack.shift().toNumber());
-        }
-
-        result.value = ret;
-        result.resolutionStr = ret.toString(); // @TODO Possible Culture bug.
-
-        return result;
     }
 }
