@@ -325,7 +325,7 @@ export class ChineseNumberParser extends BaseNumberParser {
         let beforeValue = 1;
         let isRoundBefore = false;
         let roundBefore = -1;
-        let roundDefault = -1;
+        let roundDefault = 1;
         let isLessZero = false;
 
         if (RegExpUtility.isMatch(this.config.symbolRegex, resultStr)) {
