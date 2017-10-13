@@ -1,0 +1,89 @@
+﻿---
+#AgeExtractorConfiguration
+AgeSuffixList: !dictionary
+  types: [string, string]
+  entries:
+  Year: ans
+  Month: mois
+  Week: semaines
+  Day: jours
+#AreaExtractorConfiguration
+AreaSuffixList: !dictionary
+  types: [string, string ]
+  entries:
+    Kilomètre carré: km2|km^2|km²|kilomètres carrés|kilomètre carré
+	Hectomètre carré: hm2|hm^2|hm²|hectomètre carré|hectomètres carrés
+	Décamètre carré: dam2|dam^2|dam²|décamètre carré|décamètres carrés
+	Mètre carré: m2|m^2|m²|mètre carré|mètres carrés
+	Décimètre carré: dm2|dm^2|dm²|décimètre carré|décimètres carrés
+	Centimètre carré: cm2|cm^2|cm²|centimètre carré|centimètres carrés
+	Millimètre carré: mm2|mm^2|mm²|millimètre carré|millimètres carrés
+	Pouce carré: pouces2|po2|pouce carré|pouces carrés|in^2|in²|in2
+	Pied carré: pied carré|pieds carrés|pi2|pi^2|pi²
+	Mile carré: mile carré|miles carrés|mi2|mi^2|mi²
+    Acre: acre|acres
+#CurrencyExtractorConfiguration
+CurrencySuffixList: !dictionary
+#Reference Source: https://fr.wikipedia.org/wiki/Liste_des_monnaies_en_circulation
+  types: [ string, string ]
+  entries:
+#Abkhazian apsar
+    Abkhazie apsar: abkhazie apsar|apsars
+#Afghan afghani
+    Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
+    Pul: pul
+#Euro
+    Euro: euros|euro|€|eur
+    Cent: cents|cent|-cents|-cent|sen
+#Albanian lek
+#No use of "ALL" "L"
+    lek Albanais: lek albanais|leks|lek
+    Qindarkë: qindarkë|qindarkës|qindarke|qindarkes
+#Angolan kwanza
+    Kwanza angolais: kwanza angolais|kz|aoa|kwanza|kwanzas
+#Armenian
+#No use of "AMD"
+    Dram arménien: dram arménien|drams arméniens
+#Aruban florin // d'Aruba, add later, messes with txt visibility while working 
+    Florins d'Aruba: florins aruba|ƒ|awg
+#Bangladeshi taka
+    Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
+    Paisa: poisha|paisa
+#Bhutanese ngultrum
+    Ngultrum bhoutanais: ngultrum bhoutanais|nu.|btn
+    Chetrum: chetrums|chetrum
+#Bolivian boliviano
+    Boliviano bolivien: boliviano bolivien|bolivianos bolivien|bolivianos bolivie|boliviano bolivie|bob|bs.
+#Bosnia and Herzegovina convertible mark
+    Bosnie-Herzégovine mark convertible: bosnie-herzégovine mark convertible|bosnie-et-herzégovine mark convertible|bam
+    Fening: fening|fenings
+#Botswana
+    Pula: pula|bwp
+    Thebe: thebe
+#Brazilian real
+    Réal brésilien: réal brésilien|réals brésilien|r$|brl|real bresil|reals bresilien
+#Bulgarian lev
+    Lev bulgare: lev bulgare|levs bulgare|lv|bgn
+    Stotinki búlgaro: stotinki bulgare
+#Cambodian riel
+    Riel cambodgien: riel cambodgien|khr|៛
+#Cape Verdean escudo
+#No use of "esc" and "$"
+	Escudo du cap-vert: escudo cap-verdien|cve
+#Costa Rican colón
+    Colon du costa rica: colon du costa rica|colons du costa rica|crc|₡
+#Salvadoran colón
+    Colon du salvador: colon du salvador|colons du salvador|svc
+#Croatian kuna
+    Kuna croate: kuna croate|kunas croate|kn|hrk
+    Lipa: lipa
+#Czech koruna
+    Couronne tchèque: couronne tchèque|couronnes tchèque|czk|Kč
+    Haléř: haléř
+#Eritrean nakfa
+    Nakfas érythréens: nakfas érythréens|nfk|ern|nakfa érythréens
+#Ethiopian birr
+    Birr éthiopien: birr éthiopien|birrs éthiopien|etb
+#Gambian dalasi
+    Dalasi gambienne: gmd
+    Butut: bututs|butut
