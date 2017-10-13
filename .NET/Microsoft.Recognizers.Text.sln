@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.Number", "Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj", "{61205449-BDBA-4BF3-8B24-AE059E0B1B61}"
 EndProject
@@ -37,6 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
 		..\Patterns\English\English-Numbers.yaml = ..\Patterns\English\English-Numbers.yaml
 		..\Patterns\English\English-NumbersWithUnit.yaml = ..\Patterns\English\English-NumbersWithUnit.yaml
+		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml = ..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml
