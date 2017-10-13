@@ -421,8 +421,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			"milha",
 			"milhas"
 		};
-		public const string BuildPrefix = @"(?<=(\s|^|\W))";
-		public const string BuildSuffix = @"(?=(\s|\W|$))";
+		public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
+		public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
 		public const string ConnectorToken = "de";
 		public static readonly Dictionary<string, string> LenghtSuffixList = new Dictionary<string, string>
 		{

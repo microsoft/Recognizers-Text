@@ -582,9 +582,9 @@ AmbiguousDimensionUnitList: !list
     - milhas
 #PortugueseNumberWithUnitExtractorConfiguration
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
-  def: (?=(\s|\W|$))
+  def: (?=(\s|\P{L}|$))
 ConnectorToken: 'de'
 #LengthExtractorConfiguration
 LenghtSuffixList: !dictionary
