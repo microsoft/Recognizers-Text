@@ -389,11 +389,10 @@ export class DateUtils {
     }
 
     static safeCreateFromValue(seedDate: Date, year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
-        let result = new Date(seedDate);
         if (this.isValidDate(year, month, day) && this.isValidTime(hour, minute, second)) {
-            result = new Date(year, month, day, hour, minute, second, 0);
+            return new Date(year, month, day, hour, minute, second, 0);
         }
-        return result;
+        return seedDate;
     }
 
     static safeCreateFromMinValue(year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {

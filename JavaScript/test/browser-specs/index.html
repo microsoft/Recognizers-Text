@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recognizers-Text | Browser Specs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+    <!-- IE11 Polyfill to support ES2015 features -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/shim.min.js"><\/script>');
+    </script>
+</head>
+
+<body>
+    <div id="mocha"></div>
+
+    <script src="https://cdn.rawgit.com/Automattic/expect.js/0.3.1/index.js"></script>
+    <script src="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.js"></script>
+
+    <script src="/scripts/recognizers-number/dist/recognizers-text-number.browser.js"></script>
+    <script src="/scripts/recognizers-number-with-unit/dist/recognizers-text-number-with-unit.browser.js"></script>
+    <script src="/scripts/recognizers-date-time/dist/recognizers-text-date-time.browser.js"></script>
+
+    <script src="/specs.js"></script>
+    <script src="/index.js"></script>
+
+</body>
+
+</html>
