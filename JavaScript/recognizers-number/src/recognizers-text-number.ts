@@ -14,3 +14,5 @@ export { EnglishCardinalExtractor, EnglishDoubleExtractor, EnglishFractionExtrac
 export { EnglishNumberParserConfiguration } from "./number/english/parserConfiguration";
 export { SpanishCardinalExtractor, SpanishDoubleExtractor, SpanishFractionExtractor, SpanishIntegerExtractor, SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./number/spanish/extractors";
 export { SpanishNumberParserConfiguration } from "./number/spanish/parserConfiguration";
+export { PortugueseCardinalExtractor, PortugueseDoubleExtractor, PortugueseFractionExtractor, PortugueseIntegerExtractor, PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./number/portuguese/extractors";
+export { PortugueseNumberParserConfiguration } from "./number/portuguese/parserConfiguration";
