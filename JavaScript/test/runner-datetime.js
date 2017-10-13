@@ -1,5 +1,4 @@
 var Recognizer = require('recognizers-text-date-time').DateTimeRecognizer;
-var DateUtils = require('recognizers-text-date-time').DateUtils;
 var DateTimeOptions = require('recognizers-text-date-time').DateTimeOptions;
 var _ = require('lodash');
 
@@ -136,7 +135,7 @@ function getMergedParserTestRunner(extractor, parser) {
                     var actual = o[0];
                     var expected = o[1];
 
-                    t.deepEqual(actual, expected);
+                    t.deepEqual(actual, expected, 'Values');
                 });
             }
         });
@@ -163,7 +162,7 @@ function getModelTestRunner(model) {
             if (actual.resolution) {
                 var values = actual.resolution.get('values').map(toObject);
                 t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
-                t.deepEqual(values, expected.Resolution.values, 'Resource.Value');
+                t.deepEqual(values, expected.Resolution.values, 'Resolution.Values');
             }
         });
     };
@@ -185,34 +184,24 @@ function getParser(config) {
     return parser;
 }
 
-const models = [];
-
-function findModel(options, culture) {
-    let modelObj = models.find(function(m) {
-        if ((m.options === options) && (m.culture === culture)) {
-            return m;
-        }
-    });
-    if (!modelObj) {
-        modelObj = {
-            model: Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(),
-            options: options,
-            culture: culture,
-        };
-        models.push(modelObj);
-    }
-    return modelObj.model;
-}
-
+var models = {};
 function getModel(config) {
-    let options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
-    let cultureCode = SupportedCultures[config.language].cultureCode;
-    return findModel(options, cultureCode);
+    var options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
+    var culture = SupportedCultures[config.language].cultureCode;
+
+    var key = [culture, options.toString()].join('-');
+    var model = models[key];
+    if (!model) {
+        model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel();
+        models[key] = model;
+    }
+
+    return model;
 }
 
 function parseISOLocal(s) {
     var b = s.split(/\D/);
-    return new Date(b[0], b[1]-1, b[2], b[3], b[4], b[5]);
+    return new Date(b[0], b[1] - 1, b[2], b[3], b[4], b[5]);
 }
 
 function getReferenceDate(testCase) {
@@ -246,12 +235,6 @@ function asString(o) {
         var parts = isoDate.split('T');
         var time = parts[1].split('.')[0].replace('00:00:00', '');
         return [parts[0], time].join(' ').trim();
-    }
-
-
-    // JS min Date is 1901, while .NET is 0001
-    if (o === '1901-01-01') {
-        return '0001-01-01';
     }
 
     return o;
