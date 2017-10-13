@@ -117,7 +117,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor9, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor10, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractorA, "gis"),
         ];
         this.onRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.OnRegex, "gis");
         this.specialDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecialDayRegex, "gis");
