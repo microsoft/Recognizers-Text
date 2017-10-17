@@ -73,10 +73,12 @@ export class RegExpUtility {
         }
 
         let tempRegex = XRegExp(rawRegex, 'gis');
-        RegExpUtility.getMatchesSimple(tempRegex, source).forEach(match => {
+        let tempMatches = RegExpUtility.getMatchesSimple(tempRegex, source);
+        tempMatches.forEach(match => {
             let clean = true;
             negativeLookbehindRegexes.forEach(regex => {
-                RegExpUtility.getMatchesSimple(regex, source).forEach(negativeLookbehindMatch => {
+                let negativeLookbehindMatches = RegExpUtility.getMatchesSimple(regex, source);
+                negativeLookbehindMatches.forEach(negativeLookbehindMatch => {
                     let negativeLookbehindEnd = negativeLookbehindMatch.index + negativeLookbehindMatch.length;
                     let nextRegex = (regex as any).nextRegex;
                     if (match.index === negativeLookbehindEnd) {
@@ -85,11 +87,20 @@ export class RegExpUtility {
                             return;
                         } else {
                             let nextMatch = RegExpUtility.getFirstMatchIndex(nextRegex, source.substring(negativeLookbehindMatch.index));
-                            if (nextMatch.matched && nextMatch.index === negativeLookbehindMatch.length) {
+                            if (nextMatch.matched && ((nextMatch.index === negativeLookbehindMatch.length) || (source.includes(nextMatch.value + match.value)))) {
                                 clean = false;
                                 return;
                             }
                         }
+                    }
+                    if (negativeLookbehindMatch.value.includes(match.value)) {
+                        let preMatches = RegExpUtility.getMatchesSimple(regex, source.substring(0, match.index));
+                        preMatches.forEach(preMatch => {
+                            if (source.includes(preMatch.value + match.value)) {
+                                clean = false;
+                                return;
+                            }
+                        });
                     }
                 });
                 if (!clean) {
@@ -174,16 +185,17 @@ export class RegExpUtility {
         return XRegExp(sanitizedSource, flags || 'gis');
     }
 
-    static getFirstMatchIndex(regex: RegExp, source: string): { matched: boolean; index: number; } {
+    static getFirstMatchIndex(regex: RegExp, source: string): { matched: boolean; index: number; value: string; } {
         let matches = RegExpUtility.getMatches(regex, source);
         if (matches.length) {
             return {
                 matched: true,
-                index: matches[0].index
+                index: matches[0].index,
+                value: matches[0].value
             };
         }
 
-        return { matched: false, index: -1 };
+        return { matched: false, index: -1, value: null };
     }
 
     static split(regex: RegExp, source: string): string[] {

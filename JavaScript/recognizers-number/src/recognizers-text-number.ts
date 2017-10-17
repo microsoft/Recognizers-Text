@@ -6,6 +6,7 @@ export { FormatUtility, StringUtility, Match, RegExpUtility } from "./utilities"
 export { BaseNumbers } from "./resources/baseNumbers";
 export { EnglishNumeric } from "./resources/englishNumeric";
 export { SpanishNumeric } from "./resources/spanishNumeric";
+export { ChineseNumeric } from "./resources/chineseNumeric";
 export { Constants } from "./number/constants";
 export { IExtractor, ExtractResult, RegExpValue, BaseNumberExtractor, BasePercentageExtractor } from "./number/extractors";
 export { NumberMode, LongFormatType, AbstractNumberModel, NumberModel, OrdinalModel, PercentModel } from "./number/models";

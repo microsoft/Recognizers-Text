@@ -199,7 +199,7 @@ export class ChinesePercentageExtractor extends BaseNumberExtractor {
                 value: "PerChs"
             },
             { // 百分之五十  百分之一点五
-                regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.PercentagePointRegex, "gi"),
+                regExp: RegExpUtility.getSafeRegExp(ChineseNumeric.SimplePercentageRegex, "gi"),
                 value: "PerChs"
             },
             { // 百分之５６.２　百分之１２
