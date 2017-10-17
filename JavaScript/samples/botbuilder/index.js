@@ -38,7 +38,7 @@ var bot = new builder.UniversalBot(connector, [
 
         session.send(new builder.Message(session).addAttachment(welcomeCard));
 
-        // Prompt for amout of roses
+        // Prompt for amount of roses
         var promptMessage = [
             'How many roses do you want to send?',
             'Some valid options are:',
@@ -58,7 +58,7 @@ var bot = new builder.UniversalBot(connector, [
         session.dialogData.amount = amount;
         // Prompt for delivery date
         var promptMessage = [
-            'When do you want the delivery to be sent?',
+            `When do you want to receive the ${session.ngettext('rose', 'roses', amount)}?`,
             'Some valid options are:',
             ' - Tomorrow morning',
             ' - 12/30/2017',
@@ -74,7 +74,7 @@ var bot = new builder.UniversalBot(connector, [
         var nRoses = session.ngettext(`just one rose`, `${amount} roses`, amount);
         session.send(`Thank you! I'll deliver ${nRoses} ${momentOrRangeToString(momentOrRange)}.`);
 
-        // TODO: Continue to checkout
+        // TODO: It should continue to a checkout dialog or page
         session.send('Have a nice day!');
     }
 ]);
@@ -83,9 +83,12 @@ var bot = new builder.UniversalBot(connector, [
 // Ask for amount of roses and validate input
 bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) => {
     var input = context.message.text || '';
+
+    // Parse user input as is
     var results = numberModel.parse(input);
     console.log('numberModel parse results: ', results);
 
+    // Care for the first result only
     if (results.length && results[0].typeName === 'number') {
         var first = results[0];
         var resolution = parseFloat(first.resolution.value);
@@ -114,12 +117,13 @@ bot.dialog('ask-date', new builder.Prompt().onRecognize((context, callback) => {
     console.log('ask-date-result:', result);
 
     if (result.valid) {
+        // return value to calling dialog
         return callback(null, 1, result.value);
     }
 
     // Set error message and re-prompt;
     var errorTemplate = DateValidationErros[result.error] || DateValidationErros.default;
-    context.dialogData.options.prompt = errorTemplate.replace('$moment$', momentOrRangeToString(result.value));
+    context.dialogData.options.prompt = errorTemplate.replace('$moment$', momentOrRangeToString(result.value, ''));
     callback(null, 0);
 }));
 
@@ -143,7 +147,7 @@ bot.on('error', function (e) {
 function validateAndExtract(input) {
     var results = dateModel.parse(input);
 
-    // Log de results
+    // Log the results
     results.forEach((r, ix) => {
         console.log(`DateModel.result[${ix}]:`, r);
         if (r.resolution && r.resolution.get) {
@@ -161,7 +165,7 @@ function validateAndExtract(input) {
         var subType = first.typeName.split('.')[1];
         var resolutionValues = first.resolution && first.resolution.get("values");
 
-        if(!resolutionValues) {
+        if (!resolutionValues) {
             // no resolution values
             return {
                 valid: false
@@ -169,31 +173,29 @@ function validateAndExtract(input) {
         }
 
         if (subType.includes('date') && !subType.includes('range')) {
-            // a single date (or date & time)
-            var moment = new Date(resolutionValues[0].get("value"));
-            if (!isNaN(moment.getTime())) {
-                // a valid date
-                if (isFutureMoment(moment)) {
-                    // a future moment, valid!
-                    return {
-                        valid: true,
-                        value: moment
-                    };
-                }
-
-                // a past moment
+            // a date (or date & time) or multiple
+            var moments = resolutionValues.map(m => new Date(m.get('value')));
+            var moment = moments.find(isFuture) || moments[0];              // Look for the first future moment; default to first resolution
+            if (isFuture(moment)) {
+                // a future moment, valid!
                 return {
-                    valid: false,
-                    error: 'past_value',
-                    value: moment,
-                }
+                    valid: true,
+                    value: moment
+                };
+            }
+
+            // a past moment
+            return {
+                valid: false,
+                error: 'past_value',
+                value: moment,
             }
         } else if (subType.includes('date') && subType.includes('range')) {
             // range
             var from = new Date(resolutionValues[0].get('start'));
             var to = new Date(resolutionValues[0].get('end'));
             if (!isNaN(from.getTime()) && !isNaN(to.getTime())) {
-                if (isFutureMoment(from) && isFutureMoment(to)) {
+                if (isFuture(from) && isFuture(to)) {
                     // future
                     return {
                         valid: true,
@@ -216,16 +218,16 @@ function validateAndExtract(input) {
     };
 }
 
-function isFutureMoment(date) {
+function isFuture(date) {
     // at least one hour
     var anHour = 1000 * 60 * 60;
     return date.getTime() > (Date.now() + anHour);
 }
 
-function momentOrRangeToString(moment, prefix) {
-    prefix = prefix !== undefined ? prefix : 'on ';
+function momentOrRangeToString(moment, momentPrefix) {
+    momentPrefix = momentPrefix !== undefined ? momentPrefix : 'on ';
     if (_.isDate(moment)) {
-        return prefix + moment.toLocaleString('en-US');
+        return momentPrefix + moment.toLocaleString('en-US');
     } else if (_.isArray(moment)) {
         return 'from ' + moment.map(m => momentOrRangeToString(m, '')).join(' to ');
     }
