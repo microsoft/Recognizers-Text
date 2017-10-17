@@ -50,12 +50,14 @@ var bot = new builder.UniversalBot(connector, [
     },
 
     function (session, results) {
+        // results.response contains the prompt returned value
         var amount = results.response;
         var amountMsg = session.ngettext(`I'll send just one rose.`, `I'll send ${amount} roses.`, amount);
         session.send(`Great! ${amountMsg}`);
 
         // store amount
         session.dialogData.amount = amount;
+
         // Prompt for delivery date
         var promptMessage = [
             `When do you want to receive the ${session.ngettext('rose', 'roses', amount)}?`,
@@ -69,13 +71,16 @@ var bot = new builder.UniversalBot(connector, [
     },
 
     function (session, results) {
+        // results.response contains the date (or array of dates) returned from the prompt
         var momentOrRange = results.response;
+
         var amount = session.dialogData.amount;
         var nRoses = session.ngettext(`just one rose`, `${amount} roses`, amount);
         session.send(`Thank you! I'll deliver ${nRoses} ${momentOrRangeToString(momentOrRange)}.`);
 
         // TODO: It should continue to a checkout dialog or page
         session.send('Have a nice day!');
+        session.endDialog();
     }
 ]);
 
@@ -103,6 +108,7 @@ bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) =>
         context.dialogData.options.prompt = 'I\'m sorry, that doesn\'t seem to be a valid quantity';
     }
 
+    // return with score 0 to re-prompt
     callback(null, 0);
 }));
 
@@ -145,6 +151,7 @@ bot.on('error', function (e) {
 
 // Date Helpers
 function validateAndExtract(input) {
+
     var results = dateModel.parse(input);
 
     // Log the results
