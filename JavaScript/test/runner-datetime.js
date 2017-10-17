@@ -128,7 +128,8 @@ function getMergedParserTestRunner(extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (actual.value) {
+            if (expected.Value) {
+                t.is(!!actual.value, true, "Result.value is defined");
                 var actualObj = toObject(actual.value);
                 var actualValues = actualObj.values.map(o => toObject(o));
                 _.zip(actualValues, expected.Value.values).forEach(o => {
