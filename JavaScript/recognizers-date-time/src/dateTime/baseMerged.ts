@@ -216,7 +216,7 @@ export class BaseMergedParser implements IDateTimeParser {
 
         if (er.type === Constants.SYS_DATETIME_DATE) {
             pr = this.config.dateParser.parse(er, referenceTime);
-            if (pr.value === null) {
+            if (pr.value === null || pr.value === undefined) {
                 pr = this.config.holidayParser.parse(er, referenceTime);
             }
         }

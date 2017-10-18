@@ -1,7 +1,7 @@
 import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../extractors";
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
-import { PortugueseNumeric } from "../../resources/PortugueseNumeric";
+import { PortugueseNumeric } from "../../resources/portugueseNumeric";
 import { RegExpUtility } from "../../utilities"
 
 export class PortugueseNumberExtractor extends BaseNumberExtractor {
