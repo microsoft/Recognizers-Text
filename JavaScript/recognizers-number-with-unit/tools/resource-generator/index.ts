@@ -37,6 +37,15 @@ export namespace SpanishNumericWithUnit {`,
         `import { BaseNumbers } from "./baseNumbers";
 export namespace PortugueseNumericWithUnit {`,
         footer: `}`
+    },
+    // CHINESE NUMERIC WITH UNIT
+    {
+        yaml: `${resourcesPath}/Chinese/Chinese-NumbersWithUnit.yaml`,
+        output: `${outputPath}chineseNumericWithUnit.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace ChineseNumericWithUnit {`,
+        footer: `}`
     }
 ];
 
