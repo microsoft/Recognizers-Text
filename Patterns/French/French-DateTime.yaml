@@ -69,7 +69,7 @@ QuarterRegex: !nestedRegex
   references: [ PeriodYearRegex, RelativeRegex ]
 QuarterRegexYearFront: !nestedRegex
   def: ({PeriodYearRegex}|l'année\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+ann[eé]e)\s+(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quarts
-  references: [ PeriodYearRegex, RelativeRegex ]
+  references: [ PeriodYearRegex, RelativeRegex, PastSuffixRegex, NextSuffixRegex ]
 SeasonRegex: !nestedRegex
   def: \b((<seas>printemps|été|automne|hiver)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\s+de|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+l'ann[eé]e))?)\b
   references: [ PeriodYearRegex, RelativeRegex, NextSuffixRegex, PastSuffixRegex ]
@@ -257,7 +257,7 @@ TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>d[eé]but(\s+|-)|t[oô]t(\s+|-)(l[ea]\s*)?)|(?<late>fin\s*|fin de(\s+(la)?)|tard\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\s*]midi|nuit|soir|soir[eé]e)))|(((\s+(l[ea])?\s+)?)(jour|journ[eé]e)))s?)\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{TimeOfDayRegex})|({TimeOfDayRegex}\s*({NextSuffixRegex}))\b|\bsoir|\bdu soir)s?\b
-  references: [ TimeOfDayRegex, RelativeRegex, PastSuffixRegex, NextSuffixRegex ]
+  references: [ TimeOfDayRegex, RelativeRegex, NextSuffixRegex ]
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -331,16 +331,16 @@ YearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 HolidayRegex1: !nestedRegex
   def: \b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\s+((d[ue]\s+|d'))?({YearRegex}|({ThisPrefixRegex}\s+)ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b
-  references: [ YearRegex, RelativeRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
+  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
 HolidayRegex2: !nestedRegex
   def: \b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b
-  references: [ YearRegex, RelativeRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
+  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
 HolidayRegex3: !nestedRegex
   def: (?<holiday>(jour\s*(d[eu]|des)\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?
-  references: [ YearRegex, RelativeRegex ]
+  references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
 HolidayRegex4: !nestedRegex
   def: (?<holiday>(F[eê]te\s*(d[eu]|des)\s*)(travail|m[eè]re|m[eè]res|p[eè]re|p[eè]res))(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b
-  references: [YearRegex, RelativeRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex]
+  references: [YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex]
 DateTokenPrefix: 'le '
 TimeTokenPrefix: 'à '
 TokenBeforeDate: 'le '
@@ -351,6 +351,8 @@ PMTimeRegex: !simpleRegex
   def: \b(?<pm>(d'|l')?apr[eè]s-midi|soir|nuit|\s*ce soir|du soir)\b
 BeforeRegex: !simpleRegex
   def: \b(avant)\b
+BeforeRegex2: !simpleRegex
+  def: \b(entre\s*(le|la(s)?)?)\b
 AfterRegex: !simpleRegex
   def: \b(apres)\b
 SinceRegex: !simpleRegex
@@ -388,6 +390,12 @@ RelativeDurationUnitRegex: !nestedRegex
   references: [NextSuffixRegex, PastSuffixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ConnectorRegex: !simpleRegex
   def: ^(,|pour|t|vers)$
+ConnectorAndRegex: !simpleRegex
+  def: \b(et\s*(le|la(s)?)?)\b.+
+FromRegex: !simpleRegex
+  def: ((de|du)?)$
+FromRegex2: !simpleRegex
+  def: ((depuis|de)(\s*la(s)?)?)$
 FromToRegex: !simpleRegex
   def: \b(du|de|des|depuis).+(à|a|au)\b.+
 SingleAmbiguousMonthRegex: !simpleRegex
@@ -823,4 +831,6 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve]
+NightRegex: !simpleRegex
+  def: \b(minuit|nuit)\b
 ...
