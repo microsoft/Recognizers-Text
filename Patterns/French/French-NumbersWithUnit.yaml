@@ -1,7 +1,7 @@
 ﻿---
 #AgeExtractorConfiguration
 AgeSuffixList: !dictionary
-  types: [string, string]
+  types: [ string, string ]
   entries:
     Ans: ans
     Mois: mois
@@ -437,6 +437,11 @@ AmbiguousDimensionUnitList: !list
    types: [ string, string ]
    entries:
      - mi
+#FrenchNumberWithUnitExtractorConfiguration
+BuildPrefix: !simpleRegex
+  def: (?<=(\s|^|\W))
+BuildSuffix: !simpleRegex
+  def: (?=(\s|\W|$))
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]

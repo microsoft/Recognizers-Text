@@ -1,4 +1,5 @@
 ﻿using System.Collections.Immutable;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
 
@@ -10,7 +11,23 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
-        public NumberExtractor(NumberMode mode = NumberMode.Default)
+        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
+
+        public static NumberExtractor GetInstance(NumberMode mode = NumberMode.Default)
+        {
+
+            var placeholder = mode.ToString();
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new NumberExtractor(mode);
+                Instances.TryAdd(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private NumberExtractor(NumberMode mode = NumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

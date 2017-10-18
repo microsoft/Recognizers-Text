@@ -351,6 +351,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		{
 			"mi"
 		};
+		public const string BuildPrefix = @"(?<=(\s|^|\W))";
+		public const string BuildSuffix = @"(?=(\s|\W|$))";
 		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
 			{ "Kilomètres", "km|kilomètres|kilometres|kilometre|kilometres" },
