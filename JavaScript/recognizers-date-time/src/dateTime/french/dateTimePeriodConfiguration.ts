@@ -59,9 +59,9 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
         this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex, "gis");
         this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex, "gis");
 
-        this.fromRegex = RegExpUtility.getSafeRegExp("((depuis|de)(\s*la(s)?)?)$", "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp("(y\s*(et\s)?)$", "gis");
-        this.beforeRegex = RegExpUtility.getSafeRegExp("(avant\s*(la(s)?)?)", "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2, "gis");
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex, "gis");
 
         this.cardinalExtractor = new FrenchCardinalExtractor();
 

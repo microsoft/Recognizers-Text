@@ -35,7 +35,7 @@ export namespace FrenchDateTime {
 	export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
 	export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
 	export const QuarterRegex = `(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+(${PeriodYearRegex}|${RelativeRegex}\\s+l'ann[eé]e)`;
-	export const QuarterRegexYearFront = `(${PeriodYearRegex}|l'année\\s+({PastSuffixRegex}|{NextSuffixRegex})|${RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts`;
+	export const QuarterRegexYearFront = `(${PeriodYearRegex}|l'année\\s+(${PastSuffixRegex}|${NextSuffixRegex})|${RelativeRegex}\\s+ann[eé]e)\\s+(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quarts`;
 	export const SeasonRegex = `\\b((<seas>printemps|été|automne|hiver)+\\s*(${NextSuffixRegex}|${PastSuffixRegex}))|(?<season>(${RelativeRegex}\\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\\s+de|\\s*,\\s*)?\\s+(${PeriodYearRegex}|${RelativeRegex}\\s+l'ann[eé]e))?)\\b`;
 	export const WhichWeekRegex = `(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semaine)(\\s*)(de)`;
@@ -89,6 +89,8 @@ export namespace FrenchDateTime {
 	export const TimeUnitRegex = `(?<unit>heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec)\\b`;
 	export const RestrictedTimeUnitRegex = `(?<unit>huere|minute)\\b`;
 	export const ConnectNumRegex = `${BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\\s*${DescRegex}`;
+	export const FivesRegex = `(?<tens>(quinze|vingt(\\s*|-*(cinq))?|trente(\\s*|-*(cinq))?|quarante(\\s*|-*(cinq))??|cinquante(\\s*|-*(cinq))?|dix|cinq))\\b`;
+	export const PeriodHourNumRegex = `(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)`;
 	export const TimeRegex1 = `\\b(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*${DescRegex}(\\s+${TimePrefix})?`;
 	export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(T)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex3 = `\\b${BaseDateTime.HourRegex}\\.${BaseDateTime.MinuteRegex}(\\s*${DescRegex})(\\s+${TimePrefix})?`;
@@ -98,9 +100,7 @@ export namespace FrenchDateTime {
 	export const TimeRegex7 = `\\b${TimeSuffix}\\s+[àa]\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex8 = `\\b${TimeSuffix}\\s+${BasicTime}((\\s*${DescRegex})|\\b)`;
 	export const TimeRegex9 = `\\b${PeriodHourNumRegex}\\s+${FivesRegex}((\\s*${DescRegex})|\\b)`;
-	export const FivesRegex = `(?<tens>(quinze|vingt(\\s*|-*(cinq))?|trente(\\s*|-*(cinq))?|quarante(\\s*|-*(cinq))??|cinquante(\\s*|-*(cinq))?|dix|cinq))\\b`;
 	export const HourRegex = `(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)`;
-	export const PeriodHourNumRegex = `(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)`;
 	export const PeriodDescRegex = `(?<desc>pm|am|p\\.m\\.|a\\.m\\.|p)`;
 	export const PeriodPmRegex = `(?<pm>dans l'apr[eè]s-midi|ce soir|d[eu] soir|dans l[ea] soir[eé]e|dans la nuit|d[eu] soir[ée]e)s?`;
 	export const PeriodAmRegex = `(?<am>matin|d[eu] matin|matin[ée]e)s?`;
@@ -140,7 +140,7 @@ export namespace FrenchDateTime {
 	export const YearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
 	export const HolidayRegex1 = `\\b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\\s+((d[ue]\\s+|d'))?(${YearRegex}|(${ThisPrefixRegex}\\s+)ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
 	export const HolidayRegex2 = `\\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
-	export const HolidayRegex3 = `(?<holiday>(jour\\s*(d[eu]|des)\\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\\s+(de\\s+)?(${YearRegex}|{ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+({PastSuffixRegex}|{NextSuffixRegex})))?`;
+	export const HolidayRegex3 = `(?<holiday>(jour\\s*(d[eu]|des)\\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?`;
 	export const HolidayRegex4 = `(?<holiday>(F[eê]te\\s*(d[eu]|des)\\s*)(travail|m[eè]re|m[eè]res|p[eè]re|p[eè]res))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
 	export const DateTokenPrefix = 'le ';
 	export const TimeTokenPrefix = 'à ';
@@ -149,6 +149,7 @@ export namespace FrenchDateTime {
 	export const AMTimeRegex = `(?<am>matin|matin[ée]e)`;
 	export const PMTimeRegex = `\\b(?<pm>(d'|l')?apr[eè]s-midi|soir|nuit|\\s*ce soir|du soir)\\b`;
 	export const BeforeRegex = `\\b(avant)\\b`;
+	export const BeforeRegex2 = `\\b(entre\\s*(le|la(s)?)?)\\b`;
 	export const AfterRegex = `\\b(apres)\\b`;
 	export const SinceRegex = `\\b(depuis)\\b`;
 	export const AgoPrefixRegex = `\\b(y a)\\b`;
@@ -163,9 +164,12 @@ export namespace FrenchDateTime {
 	export const NightStartEndRegex = `(^(nuit))|((nuit)$)`;
 	export const InExactNumberRegex = `\\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\\b`;
 	export const InExactNumberUnitRegex = `(${InExactNumberRegex})\\s+(${DurationUnitRegex})`;
-	export const RelativeTimeUnitRegex = `(((${ThisPrefixRegex}?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
-	export const RelativeDurationUnitRegex = `(((?<=({ThisPrefixRegex})\\s+)?(${DurationUnitRegex})(\\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const RelativeTimeUnitRegex = `((((${ThisPrefixRegex})?)\\s+(${TimeUnitRegex}(\\s*${NextSuffixRegex}|${PastSuffixRegex})?))|((le))\\s+(${RestrictedTimeUnitRegex}))`;
+	export const RelativeDurationUnitRegex = `(((?<=(${ThisPrefixRegex})\\s+)?(${DurationUnitRegex})(\\s+${NextSuffixRegex}|${PastSuffixRegex})?)|((le|my))\\s+(${RestrictedTimeUnitRegex}))`;
 	export const ConnectorRegex = `^(,|pour|t|vers)$`;
+	export const ConnectorAndRegex = `\\b(et\\s*(le|la(s)?)?)\\b.+`;
+	export const FromRegex = `((de|du)?)$`;
+	export const FromRegex2 = `((depuis|de)(\\s*la(s)?)?)$`;
 	export const FromToRegex = `\\b(du|de|des|depuis).+(à|a|au)\\b.+`;
 	export const SingleAmbiguousMonthRegex = `^(le\\s+)?(may|march)$`;
 	export const PrepositionSuffixRegex = `\\b(du|de|[àa]|vers|dans)$`;
@@ -185,4 +189,5 @@ export namespace FrenchDateTime {
 	export const DayOfMonth: ReadonlyMap<string, number> = new Map<string, number>([["1er", 1],["2e", 2],["3e", 3],["4e", 4],["5e", 5],["6e", 6],["7e", 7],["8e", 8],["9e", 9],["10e", 10],["11e", 11],["12e", 12],["13e", 13],["14e", 14],["15e", 15],["16e", 16],["17e", 17],["18e", 18],["19e", 19],["20e", 20],["21e", 21],["22e", 22],["23e", 23],["24e", 24],["25e", 25],["26e", 26],["27e", 27],["28e", 28],["29e", 29],["30e", 30],["31e", 31]]);
 	export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["demi", 0.5],["quart", 0.25]]);
 	export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["peres", ["fatherday","fathersday"]],["pères", ["fatherday","fathersday"]],["meres", ["motherday","mothersday"]],["mères", ["motherday","mothersday"]],["thanksgiving", ["thanksgivingday","thanksgiving"]],["martinlutherking", ["martinlutherkingday","martinlutherkingjrday"]],["canberra", ["canberraday"]],["travail", ["labourday","laborday"]],["colomb", ["columbusday"]],["commémoratif", ["memorialday"]],["commemoratif", ["memorialday"]],["yuandan", ["yuandan"]],["toussaint", ["allsaintsday"]],["femme", ["femaleday"]],["noel", ["christmas"]],["noël", ["christmas"]],["newyear", ["newyear"]],["newyearday", ["newyearday"]],["newyearsday", ["newyearsday"]],["inaugurationday", ["inaugurationday"]],["groundhougday", ["groundhougday"]],["valentinesday", ["valentinesday"]],["stpatrickday", ["stpatrickday"]],["aprilfools", ["aprilfools"]],["stgeorgeday", ["stgeorgeday"]],["mayday", ["mayday"]],["cincodemayoday", ["cincodemayoday"]],["baptisteday", ["baptisteday"]],["usindependenceday", ["usindependenceday"]],["independenceday", ["independenceday"]],["bastilleday", ["bastilleday"]],["halloween", ["halloweenday"]],["guyfawkesday", ["guyfawkesday"]],["veteransday", ["veteransday"]],["christmaseve", ["christmaseve"]],["newyeareve", ["newyearseve","newyeareve"]]]);
+	export const NightRegex = `\\b(minuit|nuit)\\b`;
 }

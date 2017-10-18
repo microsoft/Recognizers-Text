@@ -60,9 +60,9 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeUnitRegex, "gis");
         this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex, "gis");
 
-        this.fromRegex = RegExpUtility.getSafeRegExp("((de|du)?)$", "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp("(et\s*(le|la(s)?)?)$", "gis");
-        this.beforeRegex = RegExpUtility.getSafeRegExp("(entre\s*(le|la(s)?)?)", "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex, "gis");
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2, "gis");
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
         this.cardinalExtractor = new FrenchCardinalExtractor();

@@ -45,6 +45,7 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
         this.theEndOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TheEndOfRegex, "gis");
         this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex, "gis");
         this.connectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorRegex, "gis");
+        this.nightRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NightRegex, "gis");
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
         this.timePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());

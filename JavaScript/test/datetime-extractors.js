@@ -6,7 +6,8 @@ var DateTimeOptions = Recognizers.DateTimeOptions;
 
 var LanguagesConfig = [
     'English',
-    'Spanish'
+    'Spanish',
+    'French'
 ];
 
 var ExtractorTypes = {
