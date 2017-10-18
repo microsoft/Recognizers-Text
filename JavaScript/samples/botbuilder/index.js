@@ -84,7 +84,6 @@ var bot = new builder.UniversalBot(connector, [
     }
 ]);
 
-
 // Ask for amount of roses and validate input
 bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) => {
     var input = context.message.text || '';
