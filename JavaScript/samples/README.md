@@ -86,7 +86,7 @@ var result = model.parse("I have twenty apples");
 
 ## Browser Sample ([source](./browser))
 
-The Recognizers package can also be used in the browser. So far, all mayor browsers are supported and IE11 can be supported using a Polyfill.
+The Recognizers package can also be used in a browser. So far, all major browsers are supported and IE11 can be supported using a Polyfill.
 
 The Browser sample parses the user input and prints the results.
 It allows to select the Recognizer type and also the culture.
@@ -137,4 +137,245 @@ var result = model.parse("I need to leave ASAP");
     if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
         document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/shim.min.js"><\/script>');
 </script>
+````
+
+## BotBuilder Sample ([source](./botbuilder))
+
+This sample demonstrate how the Recognizers can be used with a BotBuilder Bot to parse user input. The bot provides a basic experience for ordering roses, it starts by asking the amount of roses and then asks for a delivery date and time.
+
+First, install its dependencies:
+
+````npm install````
+
+Start the sample:
+
+````npm start````
+
+Then, launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3978/**.
+
+Once connected, the bot will display a welcome message and ask for how many roses to deliver.
+
+In order to validate user input, [Custom prompts](https://github.com/Microsoft/BotBuilder/issues/3129#issuecomment-315849557) are used, which can run custom validation logic using the [`onRecognizer` handler](https://docs.botframework.com/en-us/node/builder/chat-reference/classes/_botbuilder_d_.prompt.html#onrecognize). The following code creates a bot dialog that prompts the user for an integer number:
+
+````JavaScript
+// NumberModel
+var Recognizers = require('recognizers-text');
+var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
+
+// Ask for amount of roses and validate input
+bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) => {
+    var input = context.message.text || '';
+    var results = numberModel.parse(input);
+    console.log('numberModel parse results: ', results);
+
+    // Care for the first result only
+    if (results.length && results[0].typeName === 'number') {
+        var first = results[0];
+        var resolution = parseFloat(first.resolution.value);
+        if (resolution % 1 === 0) {
+            // no decimal part detected, good!
+            return callback(null, 1, resolution);
+        } else {
+            // decimal part detected
+            context.dialogData.options.prompt = 'I need to send whole roses, not fractions of them. How many would you like to send?';
+        }
+    } else {
+        context.dialogData.options.prompt = 'I\'m sorry, that doesn\'t seem to be a valid quantity';
+    }
+
+    // return with score 0 to re-prompt
+    callback(null, 0);
+}));
+````
+
+Now, to call this dialog and later obtain its value, we need to invoke it throught a waterfall dialog, call the prompt in the first function and obtain the value in the next function:
+
+````JavaScript
+var bot = new builder.UniversalBot(connector, [
+    function (session) {
+        // Welcome message
+        // ...
+
+        // Prompt for amount of roses
+        var promptMessage = [
+            'How many roses do you want to send?',
+            'Some valid options are:',
+            ' - A dozen',
+            ' - 22',
+            ' - Just one rose'];
+
+        session.beginDialog('ask-amount', { prompt: promptMessage.join('\n\n') });
+    },
+
+    function (session, results) {
+        // results.response contains the prompt returned value
+        var amount = results.response;
+
+        var amountMsg = session.ngettext(`I'll send just one rose.`, `I'll send ${amount} roses.`, amount);
+        session.send(`Great! ${amountMsg}`);
+
+        // ...
+        session.endDialog();
+    }
+]);
+````
+
+Asking the user for a specific delivery time may require special parsing, like extracting both date and time from the user input, or even obtain a range of dates and times.
+
+The [`ask-date` dialog](./botbuilder/index.js#L121-L134) does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these avaliable return values using the DateTime Recognizer:
+
+ - date
+ - daterange
+ - datetime
+ - datetimerange
+
+(These are the DateTime Recognizer types that contains *date* information)
+
+> NOTE: The DateTime Recognizer uses LUIS datetimeV2 subtypes. For a full list, please visit [LUIS prebuilt entities - Subtypes of datetimeV2](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/pre-builtentities#subtypes-of-datetimev2).
+
+This dialog uses a helper method to call the DateTime Recognizer, to validate the subtype and check the selected delivery moment is at least one hour from now:
+
+````JavaScript
+// Our Number and DateTime Recognizer models
+var Recognizers = require('recognizers-text');
+var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
+
+// Date Helpers
+function validateAndExtract(input) {
+
+    var results = dateModel.parse(input);
+
+    // Check there are valid results
+    if (results.length && results[0].typeName.startsWith('datetimeV2')) {
+        // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/JavaScript/recognizers-date-time/src/dateTime/constants.ts#L2-L9)
+        // We only care for those with a date, date and time, or date time period:
+        // date, daterange, datetime, datetimerange
+
+        var first = results[0];
+        var subType = first.typeName.split('.')[1];
+        var resolutionValues = first.resolution && first.resolution.get("values");
+
+        if (!resolutionValues) {
+            // no resolution values
+            return {
+                valid: false
+            }
+        }
+
+        if (subType.includes('date') && !subType.includes('range')) {
+            // a date (or date & time) or multiple
+            var moments = resolutionValues.map(m => new Date(m.get('value')));
+            var moment = moments.find(isFuture) || moments[0];              // Look for the first future moment; default to first resolution
+            if (isFuture(moment)) {
+                // a future moment, valid!
+                return {
+                    valid: true,
+                    value: moment
+                };
+            }
+
+            // a past moment
+            return {
+                valid: false,
+                error: 'past_value',
+                value: moment,
+            }
+        } else if (subType.includes('date') && subType.includes('range')) {
+            // range
+            var from = new Date(resolutionValues[0].get('start'));
+            var to = new Date(resolutionValues[0].get('end'));
+            if (!isNaN(from.getTime()) && !isNaN(to.getTime())) {
+                if (isFuture(from) && isFuture(to)) {
+                    // future
+                    return {
+                        valid: true,
+                        value: [from, to]
+                    };
+                }
+
+                // past
+                return {
+                    valid: false,
+                    error: 'past_value',
+                    value: [from, to]
+                };
+            }
+        }
+    }
+
+    return {
+        valid: false
+    };
+}
+
+function isFuture(date) {
+    // at least one hour
+    var anHour = 1000 * 60 * 60;
+    return date.getTime() > (Date.now() + anHour);
+}
+````
+
+We use the helper function from the [`ask-date` custom prompt dialog](./botbuilder/index.js#L120-L134):
+
+````JavaScript
+var DateValidationErros = {
+    'past_value': 'I\'m sorry, but I need at least an hour to deliver.\n\n $moment$ is no good for me.\n\nWhat other moment suits you best?',
+    'default': 'I\'m sorry, that doesn\'t seem to be a valid delivery date and time'
+};
+
+// Ask for delivery date and validate input
+bot.dialog('ask-date', new builder.Prompt().onRecognize((context, callback) => {
+
+    var result = validateAndExtract(context.message.text || '');
+    if (result.valid) {
+        // return value to calling dialog
+        return callback(null, 1, result.value);
+    }
+
+    // Set error message and re-prompt;
+    var errorTemplate = DateValidationErros[result.error] || DateValidationErros.default;
+    context.dialogData.options.prompt = errorTemplate.replace('$moment$', momentOrRangeToString(result.value, ''));
+    callback(null, 0);
+}));
+
+function momentOrRangeToString(moment, momentPrefix) {
+    momentPrefix = momentPrefix !== undefined ? momentPrefix : 'on ';
+    if (_.isDate(moment)) {
+        return momentPrefix + moment.toLocaleString('en-US');
+    } else if (_.isArray(moment)) {
+        return 'from ' + moment.map(m => momentOrRangeToString(m, '')).join(' to ');
+    }
+
+    return 'not supported';
+}
+````
+
+Finally, this is how you call the dialog and obtain the date (or dates) back:
+
+````JavaScript
+var bot = new builder.UniversalBot(connector, [
+    function (session) {
+        // Prompt for delivery date
+        var promptMessage = [
+            'When do you want to receive the delivery?',
+            'Some valid options are:',
+            ' - Tomorrow morning',
+            ' - 12/30/2017',
+            ' - 9PM Tomorrow',
+            ' - Five hours from now',
+            ' - From 9AM to 10AM tomorrow'];
+        session.beginDialog('ask-date', { prompt: promptMessage.join('\n\n') });
+    },
+
+    function (session, results) {
+        // results.response contains the date (or array of dates) returned from the prompt
+        var momentOrRange = results.response;
+
+        session.send(`Thank you! I'll deliver ${momentOrRangeToString(momentOrRange)}.`);
+
+        // TODO: It should continue to a checkout dialog or page
+        session.send('Have a nice day!');
+        session.endDialog();
+    }
+]);
 ````
