@@ -1,6 +1,6 @@
 import { INumberParserConfiguration, ParseResult } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
-import { PortugueseNumeric } from "../../resources/PortugueseNumeric";
+import { PortugueseNumeric } from "../../resources/portugueseNumeric";
 import { RegExpUtility } from "../../utilities"
 
 export class PortugueseNumberParserConfiguration implements INumberParserConfiguration {
@@ -42,7 +42,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
         this.writtenFractionSeparatorTexts = PortugueseNumeric.WrittenFractionSeparatorTexts;
 
         let ordinalNumberMap = new Map<string, number>(PortugueseNumeric.OrdinalNumberMap);
-        
+
         PortugueseNumeric.PrefixCardinalMap.forEach((prefixValue: number, prefixKey: string) => {
             PortugueseNumeric.SuffixOrdinalMap.forEach((suffixValue: number, suffixKey: string) => {
                 if (!ordinalNumberMap.has(prefixKey + suffixKey)) {
@@ -122,7 +122,7 @@ export class PortugueseNumberParserConfiguration implements INumberParserConfigu
                 value = 0;
             }
         }
-        
+
         return finalValue;
     }
 }
