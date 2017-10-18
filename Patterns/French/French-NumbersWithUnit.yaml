@@ -3,10 +3,10 @@
 AgeSuffixList: !dictionary
   types: [string, string]
   entries:
-  Year: ans
-  Month: mois
-  Week: semaines
-  Day: jours
+    Ans: ans
+    Mois: mois
+    Semaines: semaine|semaines
+    Jour: jours|jour
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [string, string ]
@@ -114,15 +114,15 @@ CurrencySuffixList: !dictionary
     Shilling kényan: shilling kényan|sh|kes|shillings kényans
 #Korean won (North/South)
     Won coréen: won coréen|won coréens|₩
-	Won sud-coréen: won sud-coréen|won sud coréen|won sud-coréens|krw
-	Corée du nord won: corée du nord won|corée nord won|kpw
+    Won sud-coréen: won sud-coréen|won sud coréen|won sud-coréens|krw
+    Corée du nord won: corée du nord won|corée nord won|kpw
 #Kyrgyzstani som
     Som Kirghizie: som kirghizie|kgs
 #Uzbekistan som
     Sum Ouzbékistan: sum ouzbékistan|sum ouzbeks|sum ouzbéks|uzs
 #Loatian kip
     Kip laotien: kip laotien|lak|₭n|₭
-	Att: att
+    Att: att
 #Lesotho loti
     Loti: loti|maloti|lsl
     Sente: sente|lisente
@@ -133,13 +133,13 @@ CurrencySuffixList: !dictionary
     Avo: avos|avo
 #Macedonian denar
     Dinar macédonien: dinar macédonien|mkd|ден
-	Deni: deni
+    Deni: deni
 #Malagasy ariary (Madagascar)
     Ariary malagache: ariary malagache|mga
-	Iraimbilanja: Iraimbilanja
+    Iraimbilanja: Iraimbilanja
 #Malawian kwacha
     Kwacha malawien: kwacha malawien|mk|mwk
-	Tambala: Tambala
+    Tambala: Tambala
 #Malaysian ringgit
     Ringitt malaisien: ringitt malaisien|rm|myr|ringitts malaisien
 #Mauritanian ouguiya
@@ -172,7 +172,7 @@ CurrencySuffixList: !dictionary
     Sol péruvien: nuevo sol péruvien|soles|sol|sol péruvien
 #Polish zloty
     Złoty polonais: złoty polonais|złoty|zł|pln|zloty|zloty polonais
-	Groxz: groszy|grosz|grosze
+    Groxz: groszy|grosz|grosze
 #Qatari riyal
     Riyal qatari: riyal qatari|qar|riyals qatari
     Riayl saudi: riyal saudi|sar|riyals saudi
@@ -214,44 +214,44 @@ CurrencySuffixList: !dictionary
 #Manat
     Manat azerbaïdjanais: manat azerbaïdjanais|manat azerbaidjanais|azn
     Manat turkmène: manat turkmène|tmt|manat turkmene
-	Manat: manats|manat
+    Manat: manats|manat
     Qəpik: qəpik
 #Shilling
     Shilling somalien: shilling somalien|shillings somalien|sos
-	Shilling tanzanien: shilling tanzanien|shillings tanzanien|tzs|tsh|shilling tanzanienne|shillings tanzanienne
-	Shilling ougandais: shilling ougandais|shillings ougandais|sh|ugx
+    Shilling tanzanien: shilling tanzanien|shillings tanzanien|tzs|tsh|shilling tanzanienne|shillings tanzanienne
+    Shilling ougandais: shilling ougandais|shillings ougandais|sh|ugx
 #Leu
     Leu roumain: leu roumain|lei|leu roumaine|ron
-	Leu moldave: leu meoldave|mdl
-	Leu: leu
-	Ban: bani|-ban|ban
+    Leu moldave: leu meoldave|mdl
+    Leu: leu
+    Ban: bani|-ban|ban
 #Rupee
     Roupie népalaise: roupie népalaise|roupie nepalaise|npr
     Roupie pakistanaise: roupie pakistanaise|pkr
-	Roupie indienne: roupie indienne|inr|roupie indien|inr|₹
+    Roupie indienne: roupie indienne|inr|roupie indien|inr|₹
     Roupie seychelloise: roupie seychelloise|scr|sr|sre
-	Roupie mauricienne: roupie mauricienne|mur
-	Rufiyaa maldives: rufiyaa maldives|mvr|.ރ|rf
+    Roupie mauricienne: roupie mauricienne|mur
+    Rufiyaa maldives: rufiyaa maldives|mvr|.ރ|rf
     Roupie srilankaise: roupie srilankaise|lrk|රු|ரூ
-	Rupiah Indonésie: rupia indonésie|rupia indonesie|rupiah|rp|idr
-	Roupie: roupie
+    Rupiah Indonésie: rupia indonésie|rupia indonesie|rupiah|rp|idr
+    Roupie: roupie
 #Krone
     Couronne danoise: couronne danoise|dkk|couronnes danoise|couronne danemark|couronnes danemark
     Couronne norvégienne: couronne norvégienne|couronne norvegienne|couronnes norvégienne|couronnes norvegienne|nok
     Couronne féroïenne: couronne féroïenne|couronne feroienne
-	Couronne suédoise: couronne suédoise|couronne suéde|sek|couronnes suédoise|couronne suedoise
-	Couronne: couronne|couronnes
+    Couronne suédoise: couronne suédoise|couronne suéde|sek|couronnes suédoise|couronne suedoise
+    Couronne: couronne|couronnes
     Øre: Øre|oyra|eyrir
 #Franc
     Franc CFA de l'Afrique de l'Ouest: franc cfa de l''afrique de l''ouest|franc cfa ouest africain|franc cfa|francs cfa|fcfa|frs cfa|cfa francs|xof
-	Franc CFA d'Afrique centrale: franc cfa d''afrique centrale|franc cfa centrale|frs cfa centrale|xaf
+    Franc CFA d'Afrique centrale: franc cfa d''afrique centrale|franc cfa centrale|frs cfa centrale|xaf
     Franc comorien: franc comorien|kmf
     Franc congolais: franc congolais|cdf
     Franc burundais: franc burundais|bif
-	Franc djiboutienne: franc djiboutienne|djf
+    Franc djiboutienne: franc djiboutienne|djf
     Franc CFP: franc cfp|xpf
     Franc guinéen: franc guinéen|gnf
-	Franc suisse: franc suisse|chf|sfr.|francs suisse
+    Franc suisse: franc suisse|chf|sfr.|francs suisse
     Franc rwandais: franc rwandais|rwf|rw|r₣|frw
     Franc belge: franc belge|bi.|b.fr.|bef
     Rappen: rappen|-rappen
@@ -259,23 +259,23 @@ CurrencySuffixList: !dictionary
     Centime: centimes|centime|santim
 #Ruble
     Rouble russe: rouble russe|rub|₽|₽ russe|roubles russe|roubles russes|₽ russes
-	Nouveau rouble biélorusse: nouveau rouble biélorusse|byn|nouveau roubles biélorusse|nouveau rouble bielorusse|nouveau roubles biélorusse
-	Rouble transnistriens: rouble transnistriens|prb
-	Rouble biélorusses: rouble biélorusses|roubles biélorusses|rouble bielorusses|roubles bielorusses
+    Nouveau rouble biélorusse: nouveau rouble biélorusse|byn|nouveau roubles biélorusse|nouveau rouble bielorusse|nouveau roubles biélorusse
+    Rouble transnistriens: rouble transnistriens|prb
+    Rouble biélorusses: rouble biélorusses|roubles biélorusses|rouble bielorusses|roubles bielorusses
     Kopek: kopek|kopeks
     Kapyeyka: kapyeyka
     Rouble: roubles|rouble|br
 #Dinar
     Dinar algérien: dinar algérien|د.ج|dzd|dinars algérien|dinar algerien|dinars algerien
-	Dinar de bahreïn: dinar de bahreïn|bhd|.د.ب|dinar de bahrein
+    Dinar de bahreïn: dinar de bahreïn|bhd|.د.ب|dinar de bahrein
     Santeem: santeem|santeems
     Dinar iraquien: dinar iraquien|dinars iraquien|iqd|ع.د|dinar iraquienne|dinars iraquienne
     Dinar jordanien: dinar jordanien|dinars jordanien|د.ا|jod
-	Dinar koweïtien: dinar koweïtien|dinar koweitien|dinars koweïtien|kwd|د.ك
+    Dinar koweïtien: dinar koweïtien|dinar koweitien|dinars koweïtien|kwd|د.ك
     Dinar libyen: dinar libyen|dinars libyen|lyd
     Dinar serbe: dinar serbe|dinars serbe|rsd|дин.
     Dinar tunisien: dinar tunisien|dinars tunisien|tnd
-	Dinar yougoslave: dinar yougoslave|dinars yougoslave|yun
+    Dinar yougoslave: dinar yougoslave|dinars yougoslave|yun
     Dinar: dinars|dinar|denar|-dinars|-dinar
     Fils: fils|fulūs|-fils|-fil
     Para: para|napa
@@ -285,16 +285,16 @@ CurrencySuffixList: !dictionary
     Peso chilien: peso chilien|pesos chilien|clp
     Peso colombien: peso colombien|pesos colombien|cop|peso colombie|pesos colombien
     Peso cubains convertibles: peso cubains convertibles|pesos cubains convertibles|cuc
-	Peso cubains: peso cubaines|pesos cubaines|peso cubaine|pesos cubaines|cup
+    Peso cubains: peso cubaines|pesos cubaines|peso cubaine|pesos cubaines|cup
     Peso dominicain: peso dominicain|pesos dominicain|dop|peso dominicaine|pesos dominicaine
     Peso philippin: peso philippin|pesos philippin|piso|₱|php
     Peso uruguayen: peso uruguayen|pesos uruguayen|uyu
-	Peso: pesos|Peso
-	Centavo: centavos|Centavo
+    Peso: pesos|Peso
+    Centavo: centavos|Centavo
 #Pound (livre in french)
     Livre britannique: livre britannique|livres britannique|gbp|£ britannique
     Livre guernesey: livre guernesey|£ guernesey|ggp
-	Livre ascension: livre ascension|livres ascension|£ ascension
+    Livre ascension: livre ascension|livres ascension|£ ascension
     Livre sainte-hélène: livre de sainte-hélène|livre sainte-hélène|livre sainte-helene|livre de sainte hélène|shp
     Livre égyptienne: livre égyptienne|livre egyptienne|egp|ج.م
     Livre des îles falkland: livre des îles falkland|livre des iles falkland|fkp|£ iles falkland
@@ -304,85 +304,85 @@ CurrencySuffixList: !dictionary
     Livre libanaise: livre libanaise|£ libanaise|livres libanaise|lbp|ل.ل
     Livre des îles malouines: livre des îles malouines|livre des iles malouines|£ iles malouines
     Livre sud-soudanaise: livre sud-soudanaise|livre sud soudanaise|livre du soudan du sud|livres sud-soudanaises|livre sud soudan|livre soudan sud
-	Livre soudanaise: livre soudanaise|livres soudanaise|sdg|£ soudan|ج.س.|livre soudan|livres soudan
+    Livre soudanaise: livre soudanaise|livres soudanaise|sdg|£ soudan|ج.س.|livre soudan|livres soudan
     Livre syrienne: livre syrienne|ل.س|syp|livre syrie|livres syrie|£ syrie
     Livre: livre|livres|-livre|-livres|£
-	Pence: pence
-	Shilling: shilling|shillings
-	Penny: penny|sou|centime
+    Pence: pence
+    Shilling: shilling|shillings
+    Penny: penny|sou|centime
 #Dollar
     Dollar américain: dollar américain|$ américain|$ americain|usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis
     Dollar des Caraïbes orientales: dollar des caraïbes orientales|dollar des caraibes orientales|xcd|$ caraibes orientales|$ caraïbes orientales
-	Dollar australien: dollar australien|$ australien|aud|$australien|australien $|$ australie|dollar australie
+    Dollar australien: dollar australien|$ australien|aud|$australien|australien $|$ australie|dollar australie
     Dollar des bahamas: dollar des bahamas|dollar bahamas|$ bahamas|bsd|bahama $|dollar bahama|$ bahamas
-	Dollar bermudes: dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd
-	Dollar belize: dollar de Belize|dollar belizien|bzd|$ belize
-	Dollar îles Vierges britanniques: dollar îles vierges britanniques|dollar iles vierges britanniques|$ iles vierges britanniques
-	Dollar brunei: dollar de brunei|$ brunei|bnd|dollar brunei
-	Sen: sen
-	Dollar singapour: dollar de singapour|dollar singapour|$ sinapour|sgd|$s
-	Dollar canadien: dollar canadien|$ canadien|cad|$can|$c|dollar canada|dollar canadienne|$ canada|$cad|cad$
-	Dollar iles caimanes: dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci
-	Dollar néo-zélandais: dollar néo-zélandais|dollar néo zélandais|dollar neo-zelandais|dollar neo zelandais|$nz|$ néo-zélandais|$ neo zelandais
-	Dollar îles cook: dollar îles cook|dollar iles cook|$ iles cook
-	Dollar des fidji: dollar des fidji|$ fidji|dollar fidji|dollar de fidji|dollars des fidji|dollars de fidji
-	Dollar guyanien: dollar guyanien|dollar du guyana|dollar dre guyana|$ guayana|gyd|$gy
-	Dollar de hong kong: dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|hkd|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong
-	Dollar jamaïcain: dollar jamaïcain|dollars jamaïcain|dollar jamaicain|dollars jamaicain|$j|$ jamaïque|dollar jamaïque|jmd
-	Dollar libérien: dollar libérien|dollars libérien|dollar liberien|dollars liberien|lrd|$ libérien|$ liberia|$ liberien
-	Dollar namibien: dollar namibien|dollars namibien|$ namibien|nad|$n|dollar namibie|dollars namibie|$ namibie
+    Dollar bermudes: dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd
+    Dollar belize: dollar de Belize|dollar belizien|bzd|$ belize
+    Dollar îles Vierges britanniques: dollar îles vierges britanniques|dollar iles vierges britanniques|$ iles vierges britanniques
+    Dollar brunei: dollar de brunei|$ brunei|bnd|dollar brunei
+    Sen: sen
+    Dollar singapour: dollar de singapour|dollar singapour|$ sinapour|sgd|$s
+    Dollar canadien: dollar canadien|$ canadien|cad|$can|$c|dollar canada|dollar canadienne|$ canada|$cad|cad$
+    Dollar iles caimanes: dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci
+    Dollar néo-zélandais: dollar néo-zélandais|dollar néo zélandais|dollar neo-zelandais|dollar neo zelandais|$nz|$ néo-zélandais|$ neo zelandais
+    Dollar îles cook: dollar îles cook|dollar iles cook|$ iles cook
+    Dollar des fidji: dollar des fidji|$ fidji|dollar fidji|dollar de fidji|dollars des fidji|dollars de fidji
+    Dollar guyanien: dollar guyanien|dollar du guyana|dollar dre guyana|$ guayana|gyd|$gy
+    Dollar de hong kong: dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|hkd|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong
+    Dollar jamaïcain: dollar jamaïcain|dollars jamaïcain|dollar jamaicain|dollars jamaicain|$j|$ jamaïque|dollar jamaïque|jmd
+    Dollar libérien: dollar libérien|dollars libérien|dollar liberien|dollars liberien|lrd|$ libérien|$ liberia|$ liberien
+    Dollar namibien: dollar namibien|dollars namibien|$ namibien|nad|$n|dollar namibie|dollars namibie|$ namibie
     #Nauru - Australian dollar
     #Micronesia - american dollar
     #kiribati - american dollar
     #niue - new zealand 
-	#palau - american dollar
-	#pitcairn islands - new zealand dollar
-	#tuvalu - australien dollar
-	Dollar des îles salomon: dollar des îles Salomon|dollar des iles salomon|$si|sbd|$ iles salomon|$ îles salomon
-	Dollar du suriname: dollar du suriname|srd|$ du suriname|$ suriname|dollar suriname|dollars suriname|dollars du suriname
+    #palau - american dollar
+    #pitcairn islands - new zealand dollar
+    #tuvalu - australien dollar
+    Dollar des îles salomon: dollar des îles Salomon|dollar des iles salomon|$si|sbd|$ iles salomon|$ îles salomon
+    Dollar du suriname: dollar du suriname|srd|$ du suriname|$ suriname|dollar suriname|dollars suriname|dollars du suriname
     Nouveau dollar de Taïwan: nouveau dollar de taïwan|nouveau dollar de taiwan|twd|ntd|$nt
     Dollar trinidadien: dollar trinidadien|dollars trinidadien|ttd|$ trinidadien
     Dollar: dollar|$|dollars
 #Chinese yuan
-   Yuan chinois: yuan|yuan chinois|renminbi|cny|rmb|￥
-   Fen: fen
-   Jiao: jiano
+    Yuan chinois: yuan|yuan chinois|renminbi|cny|rmb|￥
+    Fen: fen
+    Jiao: jiao
 #Additional
-   Mark finlandais: marks finlandais|mark finlandais|fim|mark
+    Mark finlandais: marks finlandais|mark finlandais|fim|mark
 CurrencyPrefixList: !dictionary
-   types: [ string, string ]
-   entries:
+  types: [ string, string ]
+  entries:
 #Dollar Prefix
-   Dollar: $
-   Dollar États-Unis: $us|usd|us$
-   Dollar Caraïbes orientales: xcd|$ec
-   Dollar australien: a$|$a|aud
-   Dollar bahamas: bsd|b$
-   Dollar barbadien: bbd|bds$
-   Dollar de belize: bz$|bzd
-   Dollar des bermudes: bd$|bmd
-   Dollar de brunei: brunei $|bnd
-   Dollar de Singapour: s$|sgd
-   Dollar canadien: cad|$ ca|$ca
-   Dollar des îles Caïmans: ci$|kyd
-   Dollar néo-zélandais: nz$|nzd
-   Dollar de Fidji: $fj|fjd
-   Dolar guyanien: g$|gyd
-   Dollar de Hong Kong: hkd|hk$
-   Dollar jamaïcain: j$|jmd
-   Dollar libérien: lrd|l$
-   Dollar namibien: nad|n$
-   Dollar des îles Salomon: $ si|$si|sbd
-   Nouveau dollar de Taïwan: nt$|twd
-   Réal brésilien: r$|brl|reais
-   Guaraní paraguayen: ₲|gs.|pyg
-   Dollar trinidadien: ttd|titis
-   Yuan renminbi: cny|rmb|¥|元
-   Yen: ¥|jpy
-   Euro: €|eur
-   Pound: £
-   Florín: ƒ
-   Livre: £|gbp
+     Dollar: $
+     Dollar États-Unis: $us|usd|us$
+     Dollar Caraïbes orientales: xcd|$ec
+     Dollar australien: a$|$a|aud
+     Dollar bahamas: bsd|b$
+     Dollar barbadien: bbd|bds$
+     Dollar de belize: bz$|bzd
+     Dollar des bermudes: bd$|bmd
+     Dollar de brunei: brunei $|bnd
+     Dollar de Singapour: s$|sgd
+     Dollar canadien: cad|$ ca|$ca
+     Dollar des îles Caïmans: ci$|kyd
+     Dollar néo-zélandais: nz$|nzd
+     Dollar de Fidji: $fj|fjd
+     Dolar guyanien: g$|gyd
+     Dollar de Hong Kong: hkd|hk$
+     Dollar jamaïcain: j$|jmd
+     Dollar libérien: lrd|l$
+     Dollar namibien: nad|n$
+     Dollar des îles Salomon: $ si|$si|sbd
+     Nouveau dollar de Taïwan: nt$|twd
+     Réal brésilien: r$|brl|reais
+     Guaraní paraguayen: ₲|gs.|pyg
+     Dollar trinidadien: ttd|titis
+     Yuan renminbi: cny|rmb|¥|元
+     Yen: ¥|jpy
+     Euro: €|eur
+     Pound: £
+     Florín: ƒ
+     Livre: £|gbp
 AmbiguousCurrencyUnitList: !list
    types: [ string ]
    entries:
@@ -417,22 +417,22 @@ AmbiguousCurrencyUnitList: !list
     - yer
 #DimensionExtractorConfiguration
 InformationSuffixList: !dictionary
-   types: [ string, string ]
-   entries:
+  types: [ string, string ]
+  entries:
 #Information
 #Reference source: https://fr.wikipedia.org/wiki/Octet
-   Bit: -bit|bit|bits
-   Kilobit: kilobit|kilobits|kb|kbit|kbits
-   Megabit: megabit|megabits|Mb|Mbit|mégabit|mégabits
-   Gigabit: gigabit|gigabits|Gb|Gbit
-   Terabit: terabit|terabits|Tb|Tbit|térabit|térabits
-   Petabit: petabit|petabits|Pb|Pbit|pétabit|pétabits
-   octet: octet|octets|-octet
-   Kilooctet: kilo-octet|kilo-octets|kilooctet|kilooctets|ko|kio|kB|KiB|kilobyte|kilobytes
-   Mégaoctet: mégaoctet|mégaoctets|méga-octet|méga-octets|Mo|Mio|MB|mégabyte|mégabytes
-   Gigaoctet: gigaoctet|gigaoctets|Go|Gio|GB|GiB|gigabyte|gigabytes
-   Téraoctet: téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes
-   Pétaoctet: pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes
+    Bit: -bit|bit|bits
+    Kilobit: kilobit|kilobits|kb|kbit|kbits
+    Megabit: megabit|megabits|Mb|Mbit|mégabit|mégabits
+    Gigabit: gigabit|gigabits|Gb|Gbit
+    Terabit: terabit|terabits|Tb|Tbit|térabit|térabits
+    Petabit: petabit|petabits|Pb|Pbit|pétabit|pétabits
+    octet: octet|octets|-octet
+    Kilooctet: kilo-octet|kilo-octets|kilooctet|kilooctets|ko|kio|kB|KiB|kilobyte|kilobytes
+    Mégaoctet: mégaoctet|mégaoctets|méga-octet|méga-octets|Mo|Mio|MB|mégabyte|mégabytes
+    Gigaoctet: gigaoctet|gigaoctets|Go|Gio|GB|GiB|gigabyte|gigabytes
+    Téraoctet: téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes
+    Pétaoctet: pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes
 AmbiguousDimensionUnitList: !list 
    types: [ string, string ]
    entries:
@@ -442,80 +442,80 @@ LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Kilomètres: km|kilomètres|kilometres|kilometre|kilometres
-	Hectomètre: hm|hectomètre|hectomètres|hectometre|hectometres
-	Décamètre: dam|décamètre|décamètres|decametre|decametres
-	Mètres: m|mètres|mètre|metres|metre|m. 
-	Décimètres: dm|décimètres|décimètre|decimetres|decimetre
-	Centimètres: cm|centimètres|centimètre|centimetres|centimetre
-	Millimètres: mm|millimètres|millimètre|millimetre|millimetres
-	Micromètres: µm|um|micromètres|micromètre|micrometres|micrometre
-	Nanomètres: nm|nanometre|nanometres|nanomètres|nanomètre
-	Picomètres: pm|picomètre|picomètres|picometres|picometre
-	Mile: mi|mile|mille
-	Pied: pied
-	Yard: yards|yard|yd
-	Pouce: pouce|pouces
+    Hectomètre: hm|hectomètre|hectomètres|hectometre|hectometres
+    Décamètre: dam|décamètre|décamètres|decametre|decametres
+    Mètres: m|mètres|mètre|metres|metre|m. 
+    Décimètres: dm|décimètres|décimètre|decimetres|decimetre
+    Centimètres: cm|centimètres|centimètre|centimetres|centimetre
+    Millimètres: mm|millimètres|millimètre|millimetre|millimetres
+    Micromètres: µm|um|micromètres|micromètre|micrometres|micrometre
+    Nanomètres: nm|nanometre|nanometres|nanomètres|nanomètre
+    Picomètres: pm|picomètre|picomètres|picometres|picometre
+    Mile: mi|mile|mille
+    Pied: pied
+    Yard: yards|yard|yd
+    Pouce: pouce|pouces
 AmbuguousLengthUnitList: !list 
   types: [ string ]
   entries:
     - m
-	- pouce
-	- pm
+    - pouce
+    - pm
 #SpeecExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Mètre par seconde: m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes
-	Kilomètre par heure: km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure
-	Kilomètre par minute: km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes
-	Kilomètre par seconde: km/s|km à la seconde|km a la seconde|kilomètre par seconde|kilomètres par seconde|kilometre par seconde|kilometres par seconde
-	Miles par heure: mph|miles par heure|milles à l'heure|milles a l'heure
-	Noeuds: noeud|noeuds|nuds
-	Pied par seconde: ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s
-	Pied par minute: pieds/minute|pied/minute|ft/minute|ft/min|pied/min
+    Kilomètre par heure: km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure
+    Kilomètre par minute: km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes
+    Kilomètre par seconde: km/s|km à la seconde|km a la seconde|kilomètre par seconde|kilomètres par seconde|kilometre par seconde|kilometres par seconde
+    Miles par heure: mph|miles par heure|milles à l'heure|milles a l'heure
+    Noeuds: noeud|noeuds|nuds
+    Pied par seconde: ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s
+    Pied par minute: pieds/minute|pied/minute|ft/minute|ft/min|pied/min
 #TemperatureExtractionConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
     F: °f|degrés fahrenheit|degres f|degres fahrenheit|fahrenheit
-	K: k|kelvin
-	R: rankine|°r
-	C: °c|c|degrés celsius|degres celcius|celcius|deg celcius|degs celcius
-	Degree: degrés|degres|deg|deg.|°
+    K: k|kelvin
+    R: rankine|°r
+    C: °c|c|degrés celsius|degres celcius|celcius|deg celcius|degs celcius
+    Degree: degrés|degres|deg|deg.|°
 AmbiguousTemperatureUnitList: !list
   types: [ string ]
   entries:
     - c
-	- f
-	- k
+    - f
+    - k
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
   types: [ string, string ]
   entries: 
     Mètre cube: m3|m^3|m³|mètre cube|mètres cube|metre cube|metres cube
-	Centimètre cube: cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube
-	Millimètre cube: mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube
-	Kilomètre cube: km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube
-	Litre: litre|litres|lts|l
+    Centimètre cube: cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube
+    Millimètre cube: mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube
+    Kilomètre cube: km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube
+    Litre: litre|litres|lts|l
     Millilitre: ml|millilitre|millilitres
-	Gallon: gallon
-	Pintes: pintes
-	Onces: onces|once|oz
-	Décilitre: dl|décilitre|decilitre|décilitres|decilitres
-	Centilitre: cl|centilitres|centilitre
-	Onces liquides: onces liquides|once liquide|once liquides
+    Gallon: gallon
+    Pintes: pintes
+    Onces: onces|once|oz
+    Décilitre: dl|décilitre|decilitre|décilitres|decilitres
+    Centilitre: cl|centilitres|centilitre
+    Onces liquides: onces liquides|once liquide|once liquides
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries: 
     Kilogramme: kg|kilogramme|kilogrammes|kilo|kilos
     Gram: g|gramme|grammes
-	Milligramme: mg|milligramme|milligrammes
-	Tonne métrique: tonne métrique|tonnes métrique|tonne metrique|tonnes metrique|tonne|tonnes
-	Onces: oz|onces|once
+    Milligramme: mg|milligramme|milligrammes
+    Tonne métrique: tonne métrique|tonnes métrique|tonne metrique|tonnes metrique|tonne|tonnes
+    Onces: oz|onces|once
 AmbiguousWeightunitList: !list
   types: [ string ]
   entries:
     - g
-	- oz
+    - oz
 ...
