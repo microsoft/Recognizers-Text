@@ -18,7 +18,6 @@ export { SpanishCardinalExtractor, SpanishDoubleExtractor, SpanishFractionExtrac
 export { SpanishNumberParserConfiguration } from "./number/spanish/parserConfiguration";
 export { PortugueseCardinalExtractor, PortugueseDoubleExtractor, PortugueseFractionExtractor, PortugueseIntegerExtractor, PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./number/portuguese/extractors";
 export { PortugueseNumberParserConfiguration } from "./number/portuguese/parserConfiguration";
-
-export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor } from "./number/chinese/extractors";
+export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtractor, ChineseIntegerExtractor, ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor, ChineseNumberMode } from "./number/chinese/extractors";
 export { ChineseNumberParserConfiguration } from "./number/chinese/parserConfiguration";
 export { ChineseNumberParser } from "./number/chinese/parsers";

@@ -18,6 +18,12 @@ export { PortugueseNumberWithUnitExtractorConfiguration, PortugueseNumberWithUni
 export { PortugueseCurrencyExtractorConfiguration, PortugueseCurrencyParserConfiguration } from "./numberWithUnit/portuguese/currency";
 export { PortugueseDimensionExtractorConfiguration, PortugueseDimensionParserConfiguration } from "./numberWithUnit/portuguese/dimension";
 export { PortugueseTemperatureExtractorConfiguration, PortugueseTemperatureParserConfiguration } from "./numberWithUnit/portuguese/temperature";
+export { ChineseAgeExtractorConfiguration, ChineseAgeParserConfiguration } from "./numberWithUnit/chinese/age";
+export { ChineseNumberWithUnitExtractorConfiguration, ChineseNumberWithUnitParserConfiguration } from "./numberWithUnit/chinese/base";
+export { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./numberWithUnit/chinese/currency";
+export { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./numberWithUnit/chinese/dimension";
+export { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./numberWithUnit/chinese/temperature";
 export { EnglishNumericWithUnit } from "./resources/englishNumericWithUnit";
 export { SpanishNumericWithUnit } from "./resources/spanishNumericWithUnit";
 export { PortugueseNumericWithUnit } from "./resources/portugueseNumericWithUnit";
+export { ChineseNumericWithUnit } from "./resources/chineseNumericWithUnit";
