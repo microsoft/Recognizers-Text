@@ -86,7 +86,7 @@ var result = model.parse("I have twenty apples");
 
 ## Browser Sample ([source](./browser))
 
-The Recognizers package can also be used in a browser. So far, all mayor browsers are supported and IE11 can be supported using a Polyfill.
+The Recognizers package can also be used in a browser. So far, all major browsers are supported and IE11 can be supported using a Polyfill.
 
 The Browser sample parses the user input and prints the results.
 It allows to select the Recognizer type and also the culture.
