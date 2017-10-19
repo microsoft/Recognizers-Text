@@ -102,7 +102,7 @@ SpecialDayRegex: !simpleRegex
 StrictWeekDay: !simpleRegex
   def: \b(?<weekday>Dimanche|Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\b
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>le\s+)?(?<weekday>matin|matin[ée]e|apres-midi|soir|soir[ée]e|Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi)s\b
+  def: \b(?<prefix>le\s+)?(?<weekday>matin|matin[ée]e|apres-midi|soir[ée]e|soir|Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi)s\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -160,7 +160,7 @@ OclockRegex: !simpleRegex
 PmRegex: !simpleRegex
   def: (?<pm>(dans l'\s*)?apr[eè]s(\s*|-)midi|(du|ce|de|le)\s*(soir[ée]e|soir)|(dans l[ea]\s+)?(nuit|soir[eé]e))
 AmRegex: !simpleRegex
-  def: (?<am>(du|de|ce|dans l[ea]|le)?\s*matin|(du|de|ce|(du|de|dans)\s*l[ea]|le)?\s*matin[ée]e)
+  def: (?<am>(du|de|ce|(du|de|dans)\s*l[ea]|le)?\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\s*matin)
 LessThanOneHour: !nestedRegex
   def: (?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
@@ -179,7 +179,7 @@ BasicTime: !nestedRegex
 MidnightRegex: !simpleRegex
   def: (?<midnight>minuit)
 MorningRegex: !simpleRegex
-  def: (?<morning>matin|matin[ée]e)
+  def: (?<morning>matin[ée]e|matin)
 AfternoonRegex: !simpleRegex
   def: (?<afternoon>(d'|l')?apr[eè]s(-|\s*)midi)
 MidmorningRegex: !nestedRegex
@@ -254,7 +254,7 @@ PureNumBetweenAnd: !nestedRegex
 PrepositionRegex: !simpleRegex
   def: (?<prep>^([aà] la|en|sur\s*l[ea]|sur|de)$)
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>d[eé]but(\s+|-)|t[oô]t(\s+|-)(l[ea]\s*)?)|(?<late>fin\s*|fin de(\s+(la)?)|tard\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\s*]midi|nuit|soir|soir[eé]e)))|(((\s+(l[ea])?\s+)?)(jour|journ[eé]e)))s?)\b
+  def: \b(?<timeOfDay>((((dans\s+(l[ea])?\s+)?((?<early>d[eé]but(\s+|-)|t[oô]t(\s+|-)(l[ea]\s*)?)|(?<late>fin\s*|fin de(\s+(la)?)|tard\s*))?(matin[ée]e|matin|((d|l)?'?)apr[eè]s[-|\s*]midi|nuit|soir[eé]e|soir)))|(((\s+(l[ea])?\s+)?)(jour|journ[eé]e)))s?)\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{TimeOfDayRegex})|({TimeOfDayRegex}\s*({NextSuffixRegex}))\b|\bsoir|\bdu soir)s?\b
   references: [ TimeOfDayRegex, RelativeRegex, NextSuffixRegex ]
@@ -269,7 +269,7 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: ^\s*(dans\s+l[ea]\s+)|(en\s+)|(du)?(matin|matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit)\b
 DateTimeTimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>matin|matin[ée]e|apr[eè]s-midi|nuit|soir)\b
+  def: \b(?<timeOfDay>matin[ée]e|matin|apr[eè]s-midi|nuit|soir)\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\b(ce|cette\s+)(soir|nuit))\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
@@ -288,7 +288,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
 TheEndOfRegex: !simpleRegex
   def: (la\s+)?fin(\s+de\s*|\s*de*l[ea])?\s*$
 PeriodTimeOfDayRegex: !simpleRegex
-  def: \b((dans\s+(le)?\s+)?((?<early>d[eé]but(\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\s*|fin(\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir|soir[eé]e))\b
+  def: \b((dans\s+(le)?\s+)?((?<early>d[eé]but(\s+|-|d[ue]|de la)|t[oô]t)|(?<late>tard\s*|fin(\s+|-|d[eu])?))?(?<timeOfDay>matin|((d|l)?'?)apr[eè]s-midi|nuit|soir[eé]e|soir))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(ce|cette\s+)(soir|nuit))\b
   references: [ PeriodTimeOfDayRegex, RelativeRegex ]
@@ -346,7 +346,7 @@ TimeTokenPrefix: 'à '
 TokenBeforeDate: 'le '
 TokenBeforeTime: 'à '
 AMTimeRegex: !simpleRegex
-  def: (?<am>matin|matin[ée]e)
+  def: (?<am>matin[ée]e|matin)
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>(d'|l')?apr[eè]s-midi|soir|nuit|\s*ce soir|du soir)\b
 BeforeRegex: !simpleRegex
@@ -374,7 +374,7 @@ MorningStartEndRegex: !simpleRegex
 AfternoonStartEndRegex: !simpleRegex
   def: (^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)
 EveningStartEndRegex: !simpleRegex
-  def: (^(soir|soir[ée]e))|((soir|soir[ée]e)$)
+  def: (^(soir[ée]e|soir))|((soir[ée]e|soir)$)
 NightStartEndRegex: !simpleRegex
   def: (^(nuit))|((nuit)$)
 InExactNumberRegex: !simpleRegex

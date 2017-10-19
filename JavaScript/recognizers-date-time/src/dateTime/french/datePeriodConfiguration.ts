@@ -37,7 +37,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
             RegExpUtility.getSafeRegExp(FrenchDateTime.MonthWithYear, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumWithYear, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfMonthRegex, "gis"),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfYearRegex, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontBetweenRegex, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex, "gis"),
