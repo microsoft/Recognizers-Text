@@ -37,6 +37,15 @@ export namespace SpanishNumeric {`,
         `import { BaseNumbers } from "./baseNumbers";
 export namespace PortugueseNumeric {`,
         footer: `}`
+    },
+    // CHINESE NUMERIC
+    {
+        yaml: `${resourcesPath}/Chinese/Chinese-Numbers.yaml`,
+        output: `${outputPath}chineseNumeric.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace ChineseNumeric {`,
+        footer: `}`
     }
 ];
 

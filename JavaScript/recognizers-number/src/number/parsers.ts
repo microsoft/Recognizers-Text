@@ -11,16 +11,6 @@ BigNumber.config({ ERRORS: false });
 // The exponent value(s) at which toString returns exponential notation.
 BigNumber.config({ EXPONENTIAL_AT: [-5, 15] });
 
-export enum AgnosticNumberParserType {
-    Cardinal,
-    Double,
-    Fraction,
-    Integer,
-    Number,
-    Ordinal,
-    Percentage
-}
-
 export interface IParser {
     parse(extResult: ExtractResult): ParseResult | null
 }
@@ -688,48 +678,5 @@ export class BasePercentageParser extends BaseNumberParser {
         ret.text = originText;
 
         return ret;
-    }
-}
-
-export class AgnosticNumberParserFactory {
-    static getParser(type: AgnosticNumberParserType, languageConfiguration: INumberParserConfiguration): BaseNumberParser {
-
-        let isChinese = languageConfiguration.cultureInfo.code.toLowerCase() === Culture.Chinese;
-
-        let parser: BaseNumberParser;
-
-        if (isChinese) {
-            // TODO:
-            // parser = new ChineseNumberParser(languageConfiguration as ChineseNumberParserConfiguration);
-            throw new Error('Not yet implemented!')
-        }
-        else {
-            parser = new BaseNumberParser(languageConfiguration);
-        }
-
-        switch (type) {
-            case AgnosticNumberParserType.Cardinal:
-                parser.supportedTypes = [Constants.SYS_NUM_CARDINAL, Constants.SYS_NUM_INTEGER, Constants.SYS_NUM_DOUBLE];
-                break;
-            case AgnosticNumberParserType.Double:
-                parser.supportedTypes = [Constants.SYS_NUM_DOUBLE];
-                break;
-            case AgnosticNumberParserType.Fraction:
-                parser.supportedTypes = [Constants.SYS_NUM_FRACTION];
-                break;
-            case AgnosticNumberParserType.Integer:
-                parser.supportedTypes = [Constants.SYS_NUM_INTEGER];
-                break;
-            case AgnosticNumberParserType.Ordinal:
-                parser.supportedTypes = [Constants.SYS_NUM_ORDINAL];
-                break;
-            case AgnosticNumberParserType.Percentage:
-                if (!isChinese) {
-                    parser = new BasePercentageParser(languageConfiguration);
-                }
-                break;
-        }
-
-        return parser;
     }
 }

@@ -4,5 +4,6 @@ var Culture = require('recognizers-text-number').Culture;
 module.exports = {
     'English': Culture.supportedCultures.find(c => c.cultureCode === Culture.English),
     'Spanish': Culture.supportedCultures.find(c => c.cultureCode === Culture.Spanish),
+    'Chinese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Chinese),
     'Portuguese': Culture.supportedCultures.find(c => c.cultureCode === Culture.Portuguese)
 };
