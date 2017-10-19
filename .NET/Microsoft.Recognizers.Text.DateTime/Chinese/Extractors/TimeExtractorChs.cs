@@ -11,63 +11,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIME; // "Fraction";
 
-        public static readonly string HourNumRegex = DateTimeDefinitions.Time_HourNumRegex;
+        public static readonly string HourNumRegex = DateTimeDefinitions.TimeHourNumRegex;
 
-        public static readonly string MinuteNumRegex = DateTimeDefinitions.Time_MinuteNumRegex;
+        public static readonly string MinuteNumRegex = DateTimeDefinitions.TimeMinuteNumRegex;
 
-        public static readonly string SecondNumRegex = DateTimeDefinitions.Time_SecondNumRegex;
+        public static readonly string SecondNumRegex = DateTimeDefinitions.TimeSecondNumRegex;
 
-        public static readonly string HourChsRegex = DateTimeDefinitions.Time_HourChsRegex;
+        public static readonly string HourChsRegex = DateTimeDefinitions.TimeHourChsRegex;
 
-        public static readonly string MinuteChsRegex = DateTimeDefinitions.Time_MinuteChsRegex;
+        public static readonly string MinuteChsRegex = DateTimeDefinitions.TimeMinuteChsRegex;
 
-        public static readonly string SecondChsRegex = DateTimeDefinitions.Time_SecondChsRegex;
+        public static readonly string SecondChsRegex = DateTimeDefinitions.TimeSecondChsRegex;
 
-        public static readonly string ClockDescRegex = DateTimeDefinitions.Time_ClockDescRegex;
+        public static readonly string ClockDescRegex = DateTimeDefinitions.TimeClockDescRegex;
 
-        public static readonly string MinuteDescRegex = DateTimeDefinitions.Time_MinuteDescRegex;
+        public static readonly string MinuteDescRegex = DateTimeDefinitions.TimeMinuteDescRegex;
 
-        public static readonly string SecondDescRegex = DateTimeDefinitions.Time_SecondDescRegex;
+        public static readonly string SecondDescRegex = DateTimeDefinitions.TimeSecondDescRegex;
 
-        public static readonly string BanHourPrefixRegex = DateTimeDefinitions.Time_BanHourPrefixRegex;
+        public static readonly string BanHourPrefixRegex = DateTimeDefinitions.TimeBanHourPrefixRegex;
         //e.g: 12点, 十二点, 十二点整
-        public static readonly string HourRegex = DateTimeDefinitions.Time_HourRegex;
+        public static readonly string HourRegex = DateTimeDefinitions.TimeHourRegex;
 
-        public static readonly string MinuteRegex = DateTimeDefinitions.Time_MinuteRegex;
+        public static readonly string MinuteRegex = DateTimeDefinitions.TimeMinuteRegex;
 
-        public static readonly string SecondRegex = DateTimeDefinitions.Time_SecondRegex;
+        public static readonly string SecondRegex = DateTimeDefinitions.TimeSecondRegex;
 
-        public static readonly string HalfRegex = DateTimeDefinitions.Time_HalfRegex;
+        public static readonly string HalfRegex = DateTimeDefinitions.TimeHalfRegex;
 
-        public static readonly string QuarterRegex = DateTimeDefinitions.Time_QuarterRegex;
+        public static readonly string QuarterRegex = DateTimeDefinitions.TimeQuarterRegex;
 
         //e.g: 十二点五十八分|半|一刻
-        public static readonly string ChineseTimeRegex = DateTimeDefinitions.Time_ChineseTimeRegex;
+        public static readonly string ChineseTimeRegex = DateTimeDefinitions.TimeChineseTimeRegex;
 
         //e.g: 12:23
-        public static readonly string DigitTimeRegex = DateTimeDefinitions.Time_DigitTimeRegex;
+        public static readonly string DigitTimeRegex = DateTimeDefinitions.TimeDigitTimeRegex;
 
         //e.g: 早上九点
-        public static readonly string DayDescRegex = DateTimeDefinitions.Time_DayDescRegex;
+        public static readonly string DayDescRegex = DateTimeDefinitions.TimeDayDescRegex;
 
-        public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.Time_ApproximateDescPreffixRegex;
+        public static readonly string ApproximateDescPreffixRegex = DateTimeDefinitions.TimeApproximateDescPreffixRegex;
 
-        public static readonly string ApproximateDescSuffixRegex = DateTimeDefinitions.Time_ApproximateDescSuffixRegex;
+        public static readonly string ApproximateDescSuffixRegex = DateTimeDefinitions.TimeApproximateDescSuffixRegex;
 
         public TimeExtractorChs()
         {
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.Time_Regexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.ChineseTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.Time_Regexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.Time_Regexes3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     TimeType.LessTime
                 }
             };
