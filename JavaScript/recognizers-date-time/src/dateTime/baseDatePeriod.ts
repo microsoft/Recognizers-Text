@@ -18,7 +18,7 @@ export interface IDatePeriodExtractorConfiguration {
     inConnectorRegex: RegExp
     rangeUnitRegex: RegExp
     datePointExtractor: BaseDateExtractor
-    cardinalExtractor: BaseNumberExtractor
+    integerExtractor: BaseNumberExtractor
     durationExtractor: BaseDurationExtractor
     getFromTokenIndex(source: string): { matched: boolean, index: number };
     getBetweenTokenIndex(source: string): { matched: boolean, index: number };
@@ -26,8 +26,8 @@ export interface IDatePeriodExtractorConfiguration {
 }
 
 export class BaseDatePeriodExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD;
-    private readonly config: IDatePeriodExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD;
+    protected readonly config: IDatePeriodExtractorConfiguration;
 
     constructor(config: IDatePeriodExtractorConfiguration) {
         this.config = config;
@@ -43,7 +43,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         return result;
     }
 
-    private matchSimpleCases(source: string): Array<Token> {
+    protected matchSimpleCases(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         this.config.simpleCasesRegexes.forEach(regexp => {
             RegExpUtility.getMatches(regexp, source).forEach(match => {
@@ -53,7 +53,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         return tokens;
     }
 
-    private mergeTwoTimePoints(source: string): Array<Token> {
+    protected mergeTwoTimePoints(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         let er = this.config.datePointExtractor.extract(source);
         if (er.length <= 1) {

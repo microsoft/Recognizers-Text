@@ -25,8 +25,8 @@ export interface IDateExtractorConfiguration {
 }
 
 export class BaseDateExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_DATE;
-    private readonly config: IDateExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_DATE;
+    protected readonly config: IDateExtractorConfiguration;
 
     constructor(config: IDateExtractorConfiguration) {
         this.config = config;
@@ -42,7 +42,7 @@ export class BaseDateExtractor implements IExtractor {
         return result;
     }
 
-    private basicRegexMatch(source: string): Array<Token> {
+    protected basicRegexMatch(source: string): Array<Token> {
         let ret = [];
         this.config.dateRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, source);
@@ -53,7 +53,7 @@ export class BaseDateExtractor implements IExtractor {
         return ret;
     }
 
-    private implicitDate(source: string): Array<Token> {
+    protected implicitDate(source: string): Array<Token> {
         let ret = [];
         this.config.implicitDateList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, source);
@@ -140,7 +140,7 @@ export class BaseDateExtractor implements IExtractor {
         return ret;
     }
 
-    private durationWithBeforeAndAfter(source: string): Array<Token> {
+    protected durationWithBeforeAndAfter(source: string): Array<Token> {
         let ret = [];
         let durEx = this.config.durationExtractor.extract(source);
         durEx.forEach(er => {
