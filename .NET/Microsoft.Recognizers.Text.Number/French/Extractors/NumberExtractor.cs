@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.Number.French
             return Instances[placeholder];
         }
 
-        private NumberExtractor(NumberMode mode = NumberMode.Default)
+        public NumberExtractor(NumberMode mode = NumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 

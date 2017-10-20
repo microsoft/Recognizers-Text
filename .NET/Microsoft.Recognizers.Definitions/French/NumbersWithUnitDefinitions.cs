@@ -20,8 +20,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
 		{
 			{ "Ans", "ans" },
-			{ "Mois", "mois" },
-			{ "Semaines", "semaine|semaines" },
+			{ "Mois", "mois|mois d'âge|mois d'age" },
+			{ "Semaines", "semaine|semaines|semaines d'âge|semaines d'age" },
 			{ "Jour", "jours|jour" }
 		};
 		public static readonly Dictionary<string, string> AreaSuffixList = new Dictionary<string, string>
