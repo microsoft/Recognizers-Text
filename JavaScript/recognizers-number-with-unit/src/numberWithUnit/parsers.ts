@@ -77,7 +77,7 @@ export class NumberWithUnitParser implements IParser {
     }
 
     private addIfNotContained(keys: Array<string>, newKey: string): void {
-        if(keys.indexOf(newKey) === -1) {
+        if (!keys.some(key => key.includes(newKey))) {
             keys.push(newKey);
         }
     }
