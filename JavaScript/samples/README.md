@@ -151,7 +151,7 @@ Start the sample:
 
 ````npm start````
 
-Then, launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3978/**.
+Then, launch the [BotFramework Emulator](https://github.com/Microsoft/BotFramework-Emulator/releases) and connect it to **http://127.0.0.1:3978/api/messages**.
 
 Once connected, the bot will display a welcome message and ask for how many roses to deliver.
 
