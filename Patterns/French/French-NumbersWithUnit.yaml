@@ -4,8 +4,8 @@ AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Ans: ans
-    Mois: mois
-    Semaines: semaine|semaines
+    Mois: mois|mois d'âge|mois d'age
+    Semaines: semaine|semaines|semaines d'âge|semaines d'age
     Jour: jours|jour
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
