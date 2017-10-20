@@ -42,7 +42,7 @@ function createExtractor(lang, extractor, options) {
         var extractorLanguageTypeName = [lang, extractor, Constants.Extractor].join('');
         var ExtractorLanguageType = Recognizers[extractorLanguageTypeName];
         if (ExtractorLanguageType) {
-            return new ExtractorLanguageType();
+            return new ExtractorLanguageType(options);
         }
 
         var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');

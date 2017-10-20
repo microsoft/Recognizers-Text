@@ -5,7 +5,7 @@ import { ChineseDurationExtractor } from "./durationConfiguration";
 import { Token, IDateTimeUtilityConfiguration } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
-export class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
+class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
     readonly implicitDateList: RegExp[];
     readonly monthEnd: RegExp;

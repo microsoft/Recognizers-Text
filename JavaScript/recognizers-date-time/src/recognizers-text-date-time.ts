@@ -56,6 +56,8 @@ export { ChineseDatePeriodExtractor } from "./dateTime/chinese/datePeriodConfigu
 export { ChineseDateTimeExtractor } from "./dateTime/chinese/dateTimeConfiguration";
 export { ChineseDateTimePeriodExtractor } from "./dateTime/chinese/dateTimePeriodConfiguration";
 export { ChineseSetExtractor } from "./dateTime/chinese/setConfiguration";
+export { ChineseHolidayExtractorConfiguration } from "./dateTime/chinese/holidayConfiguration";
+export { ChineseMergedExtractor } from "./dateTime/chinese/mergedConfiguration";
 
 export { BaseDateTime } from "./resources/baseDateTime";
 export { EnglishDateTime } from "./resources/englishDateTime";

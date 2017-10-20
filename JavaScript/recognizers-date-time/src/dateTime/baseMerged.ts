@@ -16,13 +16,13 @@ import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {
     dateExtractor: BaseDateExtractor
-    timeExtractor: BaseTimeExtractor
+    timeExtractor: IExtractor
     dateTimeExtractor: BaseDateTimeExtractor
     datePeriodExtractor: BaseDatePeriodExtractor
-    timePeriodExtractor: BaseTimePeriodExtractor
+    timePeriodExtractor: IExtractor
     dateTimePeriodExtractor: BaseDateTimePeriodExtractor
     holidayExtractor: BaseHolidayExtractor
-    durationExtractor: BaseDurationExtractor
+    durationExtractor: IExtractor
     setExtractor: BaseSetExtractor
     afterRegex: RegExp
     beforeRegex: RegExp
@@ -33,8 +33,8 @@ export interface IMergedExtractorConfiguration {
 }
 
 export class BaseMergedExtractor implements IExtractor {
-    private readonly config: IMergedExtractorConfiguration;
-    private readonly options: DateTimeOptions;
+    protected readonly config: IMergedExtractorConfiguration;
+    protected readonly options: DateTimeOptions;
 
     constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
         this.config = config;
@@ -58,7 +58,7 @@ export class BaseMergedExtractor implements IExtractor {
         return result;
     }
 
-    private addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
+    protected addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
         source.forEach(value => {
             if (this.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
 
@@ -112,7 +112,7 @@ export class BaseMergedExtractor implements IExtractor {
         return false;
     }
 
-    private addMod(ers: ExtractResult[], source: string) {
+    protected addMod(ers: ExtractResult[], source: string) {
         let lastEnd = 0;
         ers.forEach(er => {
             let beforeStr = source.substr(lastEnd, er.start).toLowerCase();

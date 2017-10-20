@@ -14,7 +14,7 @@ import { ChineseDateTimeExtractor } from "./dateTimeConfiguration";
 import { Token, IDateTimeUtilityConfiguration } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
-export class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
+class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
     readonly lastRegex: RegExp;
     readonly eachPrefixRegex: RegExp;
     readonly periodicRegex: RegExp;

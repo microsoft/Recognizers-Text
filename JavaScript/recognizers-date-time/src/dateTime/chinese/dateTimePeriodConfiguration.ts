@@ -13,7 +13,7 @@ import { ChineseDateTimeExtractor } from "./dateTimeConfiguration";
 import { Token, IDateTimeUtilityConfiguration } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
-export class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
+class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: ChineseCardinalExtractor
     readonly singleDateExtractor: BaseDateExtractor
     readonly singleTimeExtractor: ChineseTimeExtractor
