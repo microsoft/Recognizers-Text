@@ -45,6 +45,7 @@
 
         public static Extraction ValidateAndExtract(string input, string culture)
         {
+            // Get DateTime model for the specified culture
             var model = DateTimeRecognizer.GetSingleCultureInstance(culture).GetDateTimeModel();
             var results = model.Parse(input);
 
