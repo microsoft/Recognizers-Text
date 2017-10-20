@@ -19,8 +19,8 @@ export interface ISetExtractorConfiguration {
     beforeEachDayRegex: RegExp;
     setWeekDayRegex: RegExp;
     setEachRegex: RegExp;
-    durationExtractor: BaseDurationExtractor;
-    timeExtractor: BaseTimeExtractor;
+    durationExtractor: IExtractor;
+    timeExtractor: IExtractor;
     dateExtractor: BaseDateExtractor;
     dateTimeExtractor: BaseDateTimeExtractor;
     datePeriodExtractor: BaseDatePeriodExtractor;
@@ -29,8 +29,8 @@ export interface ISetExtractorConfiguration {
 }
 
 export class BaseSetExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_SET
-    private readonly config: ISetExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_SET
+    protected readonly config: ISetExtractorConfiguration;
     
     constructor(config: ISetExtractorConfiguration) {
         this.config = config;
@@ -39,6 +39,7 @@ export class BaseSetExtractor implements IExtractor {
     extract(source: string): Array<ExtractResult> {
         let tokens: Array<Token> = new Array<Token>()
         .concat(this.matchEachUnit(source))
+        .concat(this.matchPeriodic(source))
         .concat(this.matchEachDuration(source))
         .concat(this.timeEveryday(source))
         .concat(this.matchEach(this.config.dateExtractor, source))
@@ -51,18 +52,23 @@ export class BaseSetExtractor implements IExtractor {
         return result;
     }
     
-    private matchEachUnit(source: string): Array<Token> {
+    protected matchEachUnit(source: string): Array<Token> {
         let ret = [];
-        RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
-            ret.push(new Token(match.index, match.index + match.length))
-        });
         RegExpUtility.getMatches(this.config.eachUnitRegex, source).forEach(match => {
             ret.push(new Token(match.index, match.index + match.length))
         });
         return ret;
     }
     
-    private matchEachDuration(source: string): Array<Token> {
+    protected matchPeriodic(source: string): Array<Token> {
+        let ret = [];
+        RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
+            ret.push(new Token(match.index, match.index + match.length))
+        });
+        return ret;
+    }
+    
+    protected matchEachDuration(source: string): Array<Token> {
         let ret = [];
         this.config.durationExtractor.extract(source).forEach(er => {
             if (RegExpUtility.getMatches(this.config.lastRegex, er.text).length > 0) return;
@@ -75,7 +81,7 @@ export class BaseSetExtractor implements IExtractor {
         return ret;
     }
     
-    private timeEveryday(source: string): Array<Token> {
+    protected timeEveryday(source: string): Array<Token> {
         let ret = [];
         this.config.timeExtractor.extract(source).forEach(er => {
             let afterStr = source.substr(er.start + er.length);

@@ -8,7 +8,7 @@ import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLate
 
 export interface IDateTimeExtractorConfiguration {
     datePointExtractor: BaseDateExtractor
-    timePointExtractor: BaseTimeExtractor
+    timePointExtractor: IExtractor
     durationExtractor: BaseDurationExtractor
     suffixRegex: RegExp
     nowRegex: RegExp
@@ -24,8 +24,8 @@ export interface IDateTimeExtractorConfiguration {
 }
 
 export class BaseDateTimeExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_DATETIME;
-    private readonly config: IDateTimeExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_DATETIME;
+    protected readonly config: IDateTimeExtractorConfiguration;
 
     constructor(config: IDateTimeExtractorConfiguration) {
         this.config = config;
@@ -43,7 +43,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         return result;
     }
 
-    private mergeDateAndTime(source: string): Array<Token> {
+    protected mergeDateAndTime(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         let ers = this.config.datePointExtractor.extract(source);
         if (ers.length < 1) return tokens;
@@ -87,7 +87,7 @@ export class BaseDateTimeExtractor implements IExtractor {
         return tokens;
     }
 
-    private basicRegexMatch(source: string): Array<Token> {
+    protected basicRegexMatch(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         RegExpUtility.getMatches(this.config.nowRegex, source)
         .forEach(match => {
