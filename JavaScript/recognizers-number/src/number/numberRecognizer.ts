@@ -6,10 +6,12 @@ import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./agnosti
 import { EnglishNumberParserConfiguration } from "./english/parserConfiguration";
 import { SpanishNumberParserConfiguration } from "./spanish/parserConfiguration";
 import { PortugueseNumberParserConfiguration } from "./portuguese/parserConfiguration";
+import { FrenchNumberParserConfiguration } from "./french/parserConfiguration";
 import { ChineseNumberParserConfiguration } from "./chinese/parserConfiguration";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
 import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
 import { PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./portuguese/extractors";
+import { FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor } from "./french/extractors";
 import { ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor } from "./chinese/extractors";
 
 export default class NumberRecognizer extends Recognizer {
@@ -62,7 +64,16 @@ export default class NumberRecognizer extends Recognizer {
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
             new ChinesePercentageExtractor()));
 
-        // TODO: Register French models
+        // French models
+        this.registerModel("NumberModel", Culture.French, new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration()),
+            new FrenchNumberExtractor(NumberMode.PureNumber)));
+        this.registerModel("OrdinalModel", Culture.French, new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new FrenchNumberParserConfiguration()),
+            new FrenchOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.French, new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
+            new FrenchPercentageExtractor()));
     }
 
     getNumberModel(culture: string, fallbackToDefaultCulture: boolean = true): IModel {
