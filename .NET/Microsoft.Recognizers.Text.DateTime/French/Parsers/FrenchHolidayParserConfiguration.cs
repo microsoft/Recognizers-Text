@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using Microsoft.Recognizers.Definitions.French;
 using DateObject = System.DateTime;
 
 // TODO: Finish translating Dictionary below 
@@ -12,60 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public FrenchHolidayParserConfiguration() : base()
         {
             this.HolidayRegexList = FrenchHolidayExtractorConfiguration.HolidayRegexList;
-            this.HolidayNames = InitHolidayNames().ToImmutableDictionary();
-        }
-        private static IDictionary<string, IEnumerable<string>> InitHolidayNames()
-        {
-            return new Dictionary<string, IEnumerable<string>>
-            {
-                // Note: " ' " single quote characters are sanitized
-                { "fathers", new string[]{ "fêtedespères", "fetedesperes" } },
-                { "mothers", new string[]{ "fêtedesmères", "fetedesmeres" } },
-                { "thanksgiving", new string[]{ "lactiondegrace", "lactiondegrâce", "jourdethanksgiving", "thanksgiving" } },
-                { "martinlutherking", new string[]{ "journeemartinlutherking", "martinlutherkingjr" } },
-                { "washingtonsbirthday", new string[]{ "washingtonsbirthday", "washingtonbirthday" } },
-                { "canberra", new string[]{ "canberraday" } },
-                { "labour", new string[]{ "fetedetravail", "travail", "fetedutravail" } },
-                { "columbus", new string[]{ "columbusday" } },
-                { "memorial", new string[]{ "jourcommémoratif", "jourcommemoratif" } },
-                { "yuandan", new string[]{ "yuandan", "nouvelanchinois" } },
-                { "maosbirthday", new string[]{ "maosbirthday" } },
-                { "teachersday", new string[]{ "teachersday", "teacherday" } },
-                { "singleday", new string[]{ "singleday" } },
-                { "allsaintsday", new string[]{ "allsaintsday" } },
-                { "youthday", new string[]{ "youthday" } },
-                { "childrenday", new string[]{ "childrenday, childday" } },
-                { "femaleday", new string[]{ "femaleday" } },
-                { "treeplantingday", new string[]{ "treeplantingday" } },
-                { "arborday", new string[]{ "arborday" } },
-                { "girlsday", new string[]{ "girlsday" } },
-                { "whiteloverday", new string[]{ "whiteloverday" } },
-                { "loverday", new string[]{ "loverday" } },
-                { "christmas", new string[]{ "noel", "noël" } },
-                { "xmas", new string[]{ "xmas" } },
-                { "newyear", new string[]{ "nouvellesannees", "nouvelan" } },
-                { "newyearday", new string[]{ "jourdunouvelan" } },
-                { "newyearsday", new string[]{ "jourdel'an", "jourpremierdelannee", "jourpremierdelannée" } },
-                { "inaugurationday", new string[]{ "jourd'inaugueration", "inaugueration" } },
-                { "groundhougday", new string[]{ "marmotte" } },
-                { "valentinesday", new string[]{ "lasaint-valentin", "lasaintvalentin" } },
-                { "stpatrickday", new string[]{ "stpatrickday" } },
-                { "aprilfools", new string[]{ "poissond'avril" } },
-                { "stgeorgeday", new string[]{ "stgeorgeday" } },
-                { "mayday", new string[]{ "premier-mai", "ler-mai", "1-mai" } },
-                { "cincodemayoday", new string[]{ "cincodemayo" } },
-                { "baptisteday", new string[]{ "bapteme", "baptême" } },
-                { "usindependenceday", new string[]{ "l'independanceamericaine", "lindépendanceaméricaine" } },
-                { "independenceday", new string[]{ "l'indépendance", "lindependance" } },
-                { "bastilleday", new string[]{ "laprisedelabastille", "bastille" } },
-                { "halloweenday", new string[]{ "halloween" } },
-                { "allhallowday", new string[]{ "allhallowday" } },
-                { "allsoulsday", new string[]{ "allsoulsday" } },
-                { "guyfawkesday", new string[]{ "guyfawkesday" } },
-                { "veteransday", new string[]{ "veteransday" } },
-                { "christmaseve", new string[]{ "reveillondenoel", "réveillondenoël", "veilledenoel", "veilledenoël" } },
-                { "newyeareve", new string[]{ "réveillondenouvelan", "reveillondenouvelan", "lasaint-sylvestre", "lasaintsylvestre" } },
-            };
+            this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
 
         protected override IDictionary<string, Func<int, DateObject>> InitHolidayFuncs()

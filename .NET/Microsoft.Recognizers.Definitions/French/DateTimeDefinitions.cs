@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
 		public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
 		public static readonly string QuarterRegex = $@"(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quart(\s+de|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+l'ann[eé]e)";
-		public static readonly string QuarterRegexYearFront = $@"({PeriodYearRegex}|l'année\s+({{PastSuffixRegex}}|{{NextSuffixRegex}})|{RelativeRegex}\s+ann[eé]e)\s+(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quarts";
+		public static readonly string QuarterRegexYearFront = $@"({PeriodYearRegex}|l'année\s+({PastSuffixRegex}|{NextSuffixRegex})|{RelativeRegex}\s+ann[eé]e)\s+(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\s+quarts";
 		public static readonly string SeasonRegex = $@"\b((<seas>printemps|été|automne|hiver)+\s*({NextSuffixRegex}|{PastSuffixRegex}))|(?<season>({RelativeRegex}\s+)?(?<seas>printemps|[ée]t[ée]|automne|hiver)((\s+de|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+l'ann[eé]e))?)\b";
 		public const string WhichWeekRegex = @"(semaine)(\s*)(?<number>\d\d|\d|0\d)";
 		public const string WeekOfRegex = @"(semaine)(\s*)(de)";
@@ -98,6 +98,8 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string TimeUnitRegex = @"(?<unit>heures|heure|hrs|hr|h|minutes|minute|mins|min|secondes|seconde|secs|sec)\b";
 		public const string RestrictedTimeUnitRegex = @"(?<unit>huere|minute)\b";
 		public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
+		public const string FivesRegex = @"(?<tens>(quinze|vingt(\s*|-*(cinq))?|trente(\s*|-*(cinq))?|quarante(\s*|-*(cinq))??|cinquante(\s*|-*(cinq))?|dix|cinq))\b";
+		public const string PeriodHourNumRegex = @"(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)";
 		public static readonly string TimeRegex1 = $@"\b({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*{DescRegex}(\s+{TimePrefix})?";
 		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex3 = $@"\b{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})(\s+{TimePrefix})?";
@@ -107,9 +109,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string TimeRegex7 = $@"\b{TimeSuffix}\s+[àa]\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex9 = $@"\b{PeriodHourNumRegex}\s+{FivesRegex}((\s*{DescRegex})|\b)";
-		public const string FivesRegex = @"(?<tens>(quinze|vingt(\s*|-*(cinq))?|trente(\s*|-*(cinq))?|quarante(\s*|-*(cinq))??|cinquante(\s*|-*(cinq))?|dix|cinq))\b";
 		public const string HourRegex = @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
-		public const string PeriodHourNumRegex = @"(?<hour>vingt-et-un|vingt-deux|vingt-trois|vingt-quatre|zero|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt)";
 		public const string PeriodDescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p)";
 		public const string PeriodPmRegex = @"(?<pm>dans l'apr[eè]s-midi|ce soir|d[eu] soir|dans l[ea] soir[eé]e|dans la nuit|d[eu] soir[ée]e)s?";
 		public const string PeriodAmRegex = @"(?<am>matin|d[eu] matin|matin[ée]e)s?";
@@ -149,7 +149,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string YearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\s+((d[ue]\s+|d'))?({YearRegex}|({ThisPrefixRegex}\s+)ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b";
-		public static readonly string HolidayRegex3 = $@"(?<holiday>(jour\s*(d[eu]|des)\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\s+(de\s+)?({YearRegex}|{{ThisPrefixRegex}}\s+ann[eé]e|ann[eé]e\s+({{PastSuffixRegex}}|{{NextSuffixRegex}})))?";
+		public static readonly string HolidayRegex3 = $@"(?<holiday>(jour\s*(d[eu]|des)\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?";
 		public static readonly string HolidayRegex4 = $@"(?<holiday>(F[eê]te\s*(d[eu]|des)\s*)(travail|m[eè]re|m[eè]res|p[eè]re|p[eè]res))(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b";
 		public const string DateTokenPrefix = "le ";
 		public const string TimeTokenPrefix = "à ";
@@ -158,6 +158,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string AMTimeRegex = @"(?<am>matin|matin[ée]e)";
 		public const string PMTimeRegex = @"\b(?<pm>(d'|l')?apr[eè]s-midi|soir|nuit|\s*ce soir|du soir)\b";
 		public const string BeforeRegex = @"\b(avant)\b";
+		public const string BeforeRegex2 = @"\b(entre\s*(le|la(s)?)?)\b";
 		public const string AfterRegex = @"\b(apres)\b";
 		public const string SinceRegex = @"\b(depuis)\b";
 		public const string AgoPrefixRegex = @"\b(y a)\b";
@@ -172,9 +173,12 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string NightStartEndRegex = @"(^(nuit))|((nuit)$)";
 		public const string InExactNumberRegex = @"\b(quelque|quel qu[ée]s|quelqu[ée]s|plusieur|plusieurs|divers)\b";
 		public static readonly string InExactNumberUnitRegex = $@"({InExactNumberRegex})\s+({DurationUnitRegex})";
-		public static readonly string RelativeTimeUnitRegex = $@"((({ThisPrefixRegex}?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
-		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({{ThisPrefixRegex}})\s+)?({DurationUnitRegex})(\s+{{NextSuffixRegex}}|{{PastSuffixRegex}})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
+		public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
+		public static readonly string RelativeDurationUnitRegex = $@"(((?<=({ThisPrefixRegex})\s+)?({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
 		public const string ConnectorRegex = @"^(,|pour|t|vers)$";
+		public const string ConnectorAndRegex = @"\b(et\s*(le|la(s)?)?)\b.+";
+		public const string FromRegex = @"((de|du)?)$";
+		public const string FromRegex2 = @"((depuis|de)(\s*la(s)?)?)$";
 		public const string FromToRegex = @"\b(du|de|des|depuis).+(à|a|au)\b.+";
 		public const string SingleAmbiguousMonthRegex = @"^(le\s+)?(may|march)$";
 		public const string PrepositionSuffixRegex = @"\b(du|de|[àa]|vers|dans)$";
@@ -399,9 +403,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "trente-six", 36 },
 			{ "trente sept", 37 },
 			{ "trente-sept", 37 },
-			{ "thirty eight", 38 },
+			{ "trente huit", 38 },
 			{ "trente-huit", 38 },
-			{ "thirty nine", 39 },
+			{ "trente neuf", 39 },
 			{ "trente-neuf", 39 },
 			{ "quarante", 40 },
 			{ "quarante et un", 41 },
@@ -469,7 +473,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "soixante treize", 73 },
 			{ "soixante-treize", 73 },
 			{ "soixante quatorze", 74 },
-			{ "soixante-quatore", 74 },
+			{ "soixante-quatorze", 74 },
 			{ "soixante quinze", 75 },
 			{ "soixante-quinze", 75 },
 			{ "soixante seize", 76 },
@@ -482,28 +486,44 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "soixante-dix-neuf", 79 },
 			{ "quatre vingt", 80 },
 			{ "quatre-vingt", 80 },
-			{ "quatre vingt un", 91 },
-			{ "quatre-vingt-un", 91 },
-			{ "quatre vingt deux", 92 },
+			{ "quatre vingt un", 81 },
+			{ "quatre-vingt-un", 81 },
+			{ "quatre vingt deux", 82 },
 			{ "quatre-vingt-duex", 82 },
-			{ "quatre vingt trois", 93 },
-			{ "quatre-vingt-trois", 93 },
-			{ "quatre vingt quatre", 94 },
-			{ "quatre-vingt-quatre", 94 },
-			{ "quatre vingt cinq", 95 },
-			{ "quatre-vingt-cinq", 95 },
+			{ "quatre vingt trois", 83 },
+			{ "quatre-vingt-trois", 83 },
+			{ "quatre vingt quatre", 84 },
+			{ "quatre-vingt-quatre", 84 },
+			{ "quatre vingt cinq", 85 },
+			{ "quatre-vingt-cinq", 85 },
 			{ "quatre vingt six", 86 },
-			{ "quatre-vingt-six", 96 },
-			{ "quatre vingt sept", 97 },
-			{ "quatre-vingt-sept", 97 },
-			{ "quatre vingt huit", 98 },
-			{ "quatre-vingt-huit", 98 },
-			{ "quatre vingt neuf", 99 },
-			{ "quatre-vingt-neuf", 99 },
+			{ "quatre-vingt-six", 86 },
+			{ "quatre vingt sept", 87 },
+			{ "quatre-vingt-sept", 87 },
+			{ "quatre vingt huit", 88 },
+			{ "quatre-vingt-huit", 88 },
+			{ "quatre vingt neuf", 89 },
+			{ "quatre-vingt-neuf", 89 },
 			{ "quatre vingt dix", 90 },
 			{ "quatre-vingt-dix", 90 },
-			{ "quatre-vingt-deux", 92 },
-			{ "quantre vingt six", 96 },
+			{ "quatre vingt onze", 91 },
+			{ "quatre-vingt-onze", 91 },
+			{ "quatre vingt douze", 92 },
+			{ "quatre-vingt-douze", 92 },
+			{ "quatre vingt treize", 93 },
+			{ "quatre-vingt-treize", 93 },
+			{ "quatre vingt quatorze", 94 },
+			{ "quatre-vingt-quatorze", 94 },
+			{ "quatre vingt quinze", 95 },
+			{ "quatre-vingt-quinze", 95 },
+			{ "quatre vingt seize", 96 },
+			{ "quatre-vingt-seize", 96 },
+			{ "quatre vingt dix sept", 97 },
+			{ "quatre-vingt-dix-sept", 97 },
+			{ "quatre vingt dix huit", 98 },
+			{ "quatre-vingt-dix-huit", 98 },
+			{ "quatre vingt dix neuf", 99 },
+			{ "quatre-vingt-dix-neuf", 99 },
 			{ "cent", 100 }
 		};
 		public static readonly Dictionary<string, int> DayOfMonth = new Dictionary<string, int>
@@ -547,42 +567,53 @@ namespace Microsoft.Recognizers.Definitions.French
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
-			{ "peres", new string[] { "fatherday", "fathersday" } },
-			{ "pères", new string[] { "fatherday", "fathersday" } },
-			{ "meres", new string[] { "motherday", "mothersday" } },
-			{ "mères", new string[] { "motherday", "mothersday" } },
-			{ "thanksgiving", new string[] { "thanksgivingday", "thanksgiving" } },
-			{ "martinlutherking", new string[] { "martinlutherkingday", "martinlutherkingjrday" } },
+			{ "fathers", new string[] { "peres", "pères", "fêtedespères", "fetedesperes" } },
+			{ "mothers", new string[] { "fêtedesmères", "fetedesmeres" } },
+			{ "thanksgiving", new string[] { "lactiondegrace", "lactiondegrâce", "jourdethanksgiving", "thanksgiving" } },
+			{ "martinlutherking", new string[] { "journeemartinlutherking", "martinlutherkingjr" } },
+			{ "washingtonsbirthday", new string[] { "washingtonsbirthday", "washingtonbirthday" } },
 			{ "canberra", new string[] { "canberraday" } },
-			{ "travail", new string[] { "labourday", "laborday" } },
-			{ "colomb", new string[] { "columbusday" } },
-			{ "commémoratif", new string[] { "memorialday" } },
-			{ "commemoratif", new string[] { "memorialday" } },
-			{ "yuandan", new string[] { "yuandan" } },
-			{ "toussaint", new string[] { "allsaintsday" } },
-			{ "femme", new string[] { "femaleday" } },
-			{ "noel", new string[] { "christmas" } },
-			{ "noël", new string[] { "christmas" } },
-			{ "newyear", new string[] { "newyear" } },
-			{ "newyearday", new string[] { "newyearday" } },
-			{ "newyearsday", new string[] { "newyearsday" } },
-			{ "inaugurationday", new string[] { "inaugurationday" } },
-			{ "groundhougday", new string[] { "groundhougday" } },
-			{ "valentinesday", new string[] { "valentinesday" } },
+			{ "labour", new string[] { "fetedetravail", "travail", "fetedutravail" } },
+			{ "columbus", new string[] { "columbusday" } },
+			{ "memorial", new string[] { "jourcommémoratif", "jourcommemoratif" } },
+			{ "yuandan", new string[] { "yuandan", "nouvelanchinois" } },
+			{ "maosbirthday", new string[] { "maosbirthday" } },
+			{ "teachersday", new string[] { "teachersday", "teacherday" } },
+			{ "singleday", new string[] { "singleday" } },
+			{ "allsaintsday", new string[] { "allsaintsday" } },
+			{ "youthday", new string[] { "youthday" } },
+			{ "childrenday", new string[] { "childrenday", "childday" } },
+			{ "femaleday", new string[] { "femaleday" } },
+			{ "treeplantingday", new string[] { "treeplantingday" } },
+			{ "arborday", new string[] { "arborday" } },
+			{ "girlsday", new string[] { "girlsday" } },
+			{ "whiteloverday", new string[] { "whiteloverday" } },
+			{ "loverday", new string[] { "loverday" } },
+			{ "christmas", new string[] { "noel", "noël" } },
+			{ "xmas", new string[] { "xmas" } },
+			{ "newyear", new string[] { "nouvellesannees", "nouvelan" } },
+			{ "newyearday", new string[] { "jourdunouvelan" } },
+			{ "newyearsday", new string[] { "jourdel'an", "jourpremierdelannee", "jourpremierdelannée" } },
+			{ "inaugurationday", new string[] { "jourd'inaugueration", "inaugueration" } },
+			{ "groundhougday", new string[] { "marmotte" } },
+			{ "valentinesday", new string[] { "lasaint-valentin", "lasaintvalentin" } },
 			{ "stpatrickday", new string[] { "stpatrickday" } },
-			{ "aprilfools", new string[] { "aprilfools" } },
+			{ "aprilfools", new string[] { "poissond'avril" } },
 			{ "stgeorgeday", new string[] { "stgeorgeday" } },
-			{ "mayday", new string[] { "mayday" } },
-			{ "cincodemayoday", new string[] { "cincodemayoday" } },
-			{ "baptisteday", new string[] { "baptisteday" } },
-			{ "usindependenceday", new string[] { "usindependenceday" } },
-			{ "independenceday", new string[] { "independenceday" } },
-			{ "bastilleday", new string[] { "bastilleday" } },
-			{ "halloween", new string[] { "halloweenday" } },
+			{ "mayday", new string[] { "premier-mai", "ler-mai", "1-mai" } },
+			{ "cincodemayoday", new string[] { "cincodemayo" } },
+			{ "baptisteday", new string[] { "bapteme", "baptême" } },
+			{ "usindependenceday", new string[] { "l'independanceamericaine", "lindépendanceaméricaine" } },
+			{ "independenceday", new string[] { "l'indépendance", "lindependance" } },
+			{ "bastilleday", new string[] { "laprisedelabastille", "bastille" } },
+			{ "halloweenday", new string[] { "halloween" } },
+			{ "allhallowday", new string[] { "allhallowday" } },
+			{ "allsoulsday", new string[] { "allsoulsday" } },
 			{ "guyfawkesday", new string[] { "guyfawkesday" } },
 			{ "veteransday", new string[] { "veteransday" } },
-			{ "christmaseve", new string[] { "christmaseve" } },
-			{ "newyeareve", new string[] { "newyearseve", "newyeareve" } }
+			{ "christmaseve", new string[] { "reveillondenoel", "réveillondenoël", "veilledenoel", "veilledenoël" } },
+			{ "newyeareve", new string[] { "réveillondenouvelan", "reveillondenouvelan", "lasaint-sylvestre", "lasaintsylvestre" } }
 		};
+		public const string NightRegex = @"\b(minuit|nuit)\b";
 	}
 }

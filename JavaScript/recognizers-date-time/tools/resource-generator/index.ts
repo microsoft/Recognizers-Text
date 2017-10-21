@@ -28,6 +28,15 @@ export namespace EnglishDateTime {`,
         `import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {`,
         footer: `}`
+    },
+    // FRENCH DATE TIME WITH UNIT
+    {
+        yaml: `${resourcesPath}/French/French-DateTime.yaml`,
+        output: `${outputPath}frenchDateTime.ts`,
+        header:
+        `import { BaseDateTime } from "./baseDateTime";
+export namespace FrenchDateTime {`,
+        footer: `}`
     }
 ];
 
