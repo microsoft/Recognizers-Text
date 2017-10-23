@@ -123,7 +123,6 @@
     <Compile Include="Dialogs\DeliveryPrompt.cs" />
     <Compile Include="Dialogs\QuantityPrompt.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
-    <Compile Include="RootDialog.old.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
