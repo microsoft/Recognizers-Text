@@ -376,6 +376,12 @@ export class DateUtils {
         return date;
     }
 
+    static addYears(seedDate: Date, yearsToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setFullYear(seedDate.getFullYear() + yearsToAdd);
+        return date;
+    }
+
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
         let onejan = new Date(referenceDate.getFullYear(), 0, 1);
         let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);

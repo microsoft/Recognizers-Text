@@ -185,8 +185,8 @@ export interface IDateParserConfiguration {
 }
 
 export class BaseDateParser implements IDateTimeParser {
-    private readonly parserName = Constants.SYS_DATETIME_DATE;
-    private readonly config: IDateParserConfiguration;
+    protected readonly parserName = Constants.SYS_DATETIME_DATE;
+    protected readonly config: IDateParserConfiguration;
 
     constructor(config: IDateParserConfiguration) {
         this.config = config;
@@ -229,7 +229,7 @@ export class BaseDateParser implements IDateTimeParser {
         return result;
     }
 
-    private parseBasicRegexMatch(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseBasicRegexMatch(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         this.config.dateRegex.some(regex => {
@@ -247,7 +247,7 @@ export class BaseDateParser implements IDateTimeParser {
         return result;
     }
 
-    private parseImplicitDate(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseImplicitDate(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         // handle "on 12"
@@ -513,7 +513,7 @@ export class BaseDateParser implements IDateTimeParser {
         return result;
     }
 
-    private parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         return AgoLaterUtil.parseDurationWithAgoAndLater(
             source,
             referenceDate,
@@ -526,7 +526,7 @@ export class BaseDateParser implements IDateTimeParser {
         );
     }
 
-    private parseWeekdayOfMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseWeekdayOfMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekDayOfMonthRegex, trimmedSource).pop();
@@ -571,7 +571,7 @@ export class BaseDateParser implements IDateTimeParser {
         return result;
     }
 
-    private matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
+    protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
         let monthStr = match.groups('month').value;
