@@ -458,5 +458,15 @@
       "Type": "duration"
     }
   ]
+},
+{
+  "Input": "cette coursdu semaines prochaine",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "semaines prochaine",
+      "Type": "duration"
+    }
+  ]
 }
 ]

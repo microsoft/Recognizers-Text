@@ -6,10 +6,12 @@ var Recognizers = require('recognizers-text-date-time');
 // Configs
 var EnglishCommonDateTimeParserConfiguration = Recognizers.EnglishCommonDateTimeParserConfiguration;
 var SpanishCommonDateTimeParserConfiguration = Recognizers.SpanishCommonDateTimeParserConfiguration;
+var FrenchCommonDateTimeParserConfiguration = Recognizers.FrenchCommonDateTimeParserConfiguration;
 
 var LanguagesConfig = {
     'English': new EnglishCommonDateTimeParserConfiguration(),
-    'Spanish': new SpanishCommonDateTimeParserConfiguration()
+    'Spanish': new SpanishCommonDateTimeParserConfiguration(),
+    'French': new FrenchCommonDateTimeParserConfiguration()
 };
 
 var ParserTypes = [

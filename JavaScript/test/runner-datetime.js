@@ -95,7 +95,7 @@ function getParserTestRunner(extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (actual.value) {
+            if (actual.value && expected.Value) {
                 // timex
                 t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
 
@@ -132,7 +132,7 @@ function getMergedParserTestRunner(extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (expected.Value) {
+            if (actual.value && expected.Value) {
                 t.is(!!actual.value, true, "Result.value is defined");
                 var actualObj = toObject(actual.value);
                 var actualValues = actualObj.values.map(o => toObject(o));

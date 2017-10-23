@@ -69,9 +69,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = new Regex(@"((desde|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public FrenchTimePeriodExtractorConfiguration()
         {
@@ -91,28 +91,28 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("de"))  // de = "from" 
+            var fromMatch = FromRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("de", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("entre")) // between
+            var beforeMatch = BeforeRegex.Match(text);
+            if (beforeMatch.Success)
             {
-                index = text.LastIndexOf("entre", StringComparison.Ordinal);
-                return true;
+                index = beforeMatch.Index;
             }
-            return false;
+            return beforeMatch.Success;
         }
 
         public bool HasConnectorToken(string text)
         {
-            return text.Equals("et");
+            return ConnectorAndRegex.IsMatch(text);
         }
 
     }

@@ -171,9 +171,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex RestOfDateRegex =
             new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = new Regex(@"((de|du)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(@"(et\s*(le|la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(@"(entre\s*(le|la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
         private static readonly Regex[] SimpleCasesRegexes =

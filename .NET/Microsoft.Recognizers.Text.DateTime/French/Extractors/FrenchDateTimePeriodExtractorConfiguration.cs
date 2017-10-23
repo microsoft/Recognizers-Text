@@ -24,9 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             FrenchTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex
         };
 
-        private static readonly Regex FromRegex = new Regex(@"((depuis|de)(\s*la(s)?)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(@"(y\s*(et\s)?)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(@"(avant\s*(la(s)?)?)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
 

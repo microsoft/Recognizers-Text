@@ -599,7 +599,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             durationTimex = `P${diffDays}D`;
         }
 
-        if (beginDate !== endDate || restNowSunday) {
+        if (beginDate.getTime() !== endDate.getTime() || restNowSunday) {
             endDate = DateUtils.addDays(endDate, this.inclusiveEndPeriod ? -1 : 0);
             result.timex = `(${FormatUtil.luisDateFromDate(beginDate)},${FormatUtil.luisDateFromDate(endDate)},${durationTimex})`;
             result.futureValue = [beginDate, endDate];
