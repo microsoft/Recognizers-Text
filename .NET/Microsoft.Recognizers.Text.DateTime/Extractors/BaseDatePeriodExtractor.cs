@@ -69,8 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // handle "desde"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    int fromIndex;
-                    if (this.config.GetFromTokenIndex(beforeStr, out fromIndex)
+                    if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex)
                         || this.config.GetBetweenTokenIndex(beforeStr, out fromIndex))
                     {
                         periodBegin = fromIndex;
@@ -88,8 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // handle "entre"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
-                    int beforeIndex;
-                    if (this.config.GetBetweenTokenIndex(beforeStr, out beforeIndex))
+                    if (this.config.GetBetweenTokenIndex(beforeStr, out int beforeIndex))
                     {
                         periodBegin = beforeIndex;
                         ret.Add(new Token(periodBegin, periodEnd));

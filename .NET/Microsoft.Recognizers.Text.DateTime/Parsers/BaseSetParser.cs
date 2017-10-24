@@ -128,8 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.PeriodicRegex.Match(text);
             if (match.Success)
             {
-                string timex;
-                if (!this.config.GetMatchedDailyTimex(text, out timex))
+                if (!this.config.GetMatchedDailyTimex(text, out string timex))
                 {
                     return ret;
                 }
@@ -148,8 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var sourceUnit = match.Groups["unit"].Value;
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))
                 {
-                    string timex;
-                    if (!this.config.GetMatchedUnitTimex(sourceUnit, out timex))
+                    if (!this.config.GetMatchedUnitTimex(sourceUnit, out string timex))
                     {
                         return ret;
                     }

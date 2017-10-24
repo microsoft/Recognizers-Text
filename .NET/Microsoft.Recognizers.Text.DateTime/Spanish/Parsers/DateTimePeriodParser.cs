@@ -16,9 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant();
 
             // handle morning, afternoon..
-            int beginHour, endHour, endMin = 0;
-            string timeStr;
-            if (!this.Config.GetMatchedTimeRange(trimedText, out timeStr, out beginHour, out endHour, out endMin))
+            if (!this.Config.GetMatchedTimeRange(trimedText, out string timeStr, out int beginHour, out int endHour, out int endMin))
             {
                 return ret;
             }
