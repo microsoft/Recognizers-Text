@@ -69,9 +69,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var result in er)
             {
-                var num = 0;
 
-                Int32.TryParse((this.config.NumberParser.Parse(result).Value ?? 0).ToString(), out num);
+                Int32.TryParse((this.config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (num < 1 || num > 31)
                 {

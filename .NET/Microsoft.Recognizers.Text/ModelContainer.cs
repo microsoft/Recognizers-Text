@@ -13,8 +13,7 @@ namespace Microsoft.Recognizers.Text
 
         public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
-            IModel model;
-            if (!TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture))
+            if (!TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture))
             {
                 throw new ArgumentException($"ERROR: No IModel instance for {culture}-{typeof(TModel)}");
             }
@@ -53,8 +52,7 @@ namespace Microsoft.Recognizers.Text
 
         public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
         {
-            IModel model;
-            return TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture);
+            return TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture);
         }
 
         private static KeyValuePair<string, Type> GenerateKey(string culture, Type type)

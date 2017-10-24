@@ -87,8 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.NowRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
-                var timex = "";
-                this.config.GetMatchedNowTimex(trimedText, out timex);
+                this.config.GetMatchedNowTimex(trimedText, out string timex);
                 ret.Timex = timex;
                 ret.FutureValue = ret.PastValue = referenceTime;
                 ret.Success = true;
