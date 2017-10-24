@@ -2,14 +2,9 @@ import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "
 import { Constants, TimeTypeConstants } from "../constants"
 import { Token } from "../utilities";
 
-export class DateTimeExtra<T> {
+export interface DateTimeExtra<T> {
     dataType: T;
-    namedEntity: any;
-
-    constructor(dataType: T, namedEntity) {
-        this.dataType = dataType;
-        this.namedEntity = namedEntity;
-    }
+    namedEntity(key: string): { value: string, index: number, length: number, captures: string[] }
 }
 
 export abstract class BaseDateTimeExtractor<T> implements IExtractor {
@@ -66,7 +61,7 @@ export abstract class BaseDateTimeExtractor<T> implements IExtractor {
                             text: substr,
                             type: this.extractorName,
                             data: matchSource.has(srcMatch)
-                                ? new DateTimeExtra<T>(matchSource.get(srcMatch), srcMatch.groups)
+                                ? { dataType: matchSource.get(srcMatch), namedEntity: (key: string) => srcMatch.groups(key) } as DateTimeExtra<T>
                                 : null
                         });
                     }
