@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Recognizers.Text.NumberWithUnit</RootNamespace>
     <AssemblyName>Microsoft.Recognizers.Text.NumberWithUnit</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -131,7 +131,9 @@
   <ItemGroup>
     <None Include="CreatePackage.cmd" />
     <None Include="Microsoft.Recognizers.Text.NumberWithUnit.nuspec" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj">

@@ -25,7 +25,7 @@
             }
             else
             {
-                this.HandleSystemMessage(activity);
+                await this.HandleSystemMessage(activity);
             }
 
             var response = Request.CreateResponse(HttpStatusCode.OK);

@@ -1,4 +1,6 @@
-﻿namespace BotBuilderRecognizerSample
+﻿#pragma warning disable 1998
+
+namespace BotBuilderRecognizerSample
 {
     using System;
     using System.Collections.Generic;

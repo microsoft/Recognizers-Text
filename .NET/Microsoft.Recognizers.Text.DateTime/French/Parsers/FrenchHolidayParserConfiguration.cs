@@ -91,9 +91,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
         private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
-        private static DateObject FathersDay(int year) => new DateObject(year, 6, 17);
-        private static DateObject MothersDay(int year) => new DateObject(year, 5, 27);
-        private static DateObject LabourDay(int year) => new DateObject(year, 5, 1);
+        private new static DateObject FathersDay(int year) => new DateObject(year, 6, 17);
+        private new static DateObject MothersDay(int year) => new DateObject(year, 5, 27);
+        private new static DateObject LabourDay(int year) => new DateObject(year, 5, 1);
 
         public override int GetSwiftYear(string text)
         {

@@ -154,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
 
         [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeParser-English.csv", "DateTimeParser-English#csv", DataAccessMethod.Sequential)]
         [TestMethod]
-        public void DateTimeParser()
+        public new void DateTimeParser()
         {
             base.ExtractorInitialize(Extractors);
             base.ParserInitialize(Parsers);
