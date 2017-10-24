@@ -4,8 +4,8 @@ version: 1.0.{build}
 image: Visual Studio 2017
 environment:
   nodejs_version: "Stable"
-platform:
-  - x64
+platform: Any CPU
+configuration: Release
 
 init:
 - tzutil /s "UTC"
@@ -21,9 +21,16 @@ branches:
   - master
   - feature/*
 
+build:
+  parallel: true
+
 build_script:
 - cmd: >-
-    cd JavaScript\
+    cd .NET\
+
+    build.ci.cmd
+
+    cd ..\JavaScript\
 
     build.cmd
 
