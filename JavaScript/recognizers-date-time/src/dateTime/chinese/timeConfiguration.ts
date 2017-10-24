@@ -1,6 +1,6 @@
 import { ExtractResult, RegExpUtility, CultureInfo, Culture, StringUtility } from "recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } from "recognizers-text-number-with-unit";
-import { BaseDateTimeExtractor, DateTimeExtra } from "./baseDateTime";
+import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { BaseTimeParser } from "../baseTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
@@ -11,20 +11,6 @@ export enum TimeType {
     ChineseTime,
     LessTime,
     DigitTime
-}
-
-class TimeResult {
-    hour: number;
-    minute: number;
-    second: number;
-    lowBound: number;
-
-    constructor(hour: number, minute: number, second: number, lowBound?: number) {
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
-        this.lowBound = lowBound ? lowBound : -1;
-    }
 }
 
 export class ChineseTimeExtractor extends BaseDateTimeExtractor<TimeType> {
@@ -40,10 +26,11 @@ export class ChineseTimeExtractor extends BaseDateTimeExtractor<TimeType> {
 }
 
 export class ChineseTimeParser extends BaseTimeParser {
+    private readonly onlyDigitMatch: RegExp;
     private readonly numbersMap: ReadonlyMap<string, number>;
     private readonly lowBoundMap: ReadonlyMap<string, number>;
     private readonly functionMap: ReadonlyMap<TimeType, (extra: DateTimeExtra<TimeType>) => TimeResult>;
-    private readonly onlyDigitMatch: RegExp;
+    private readonly innerExtractor: ChineseTimeExtractor;
 
     constructor() {
         super(null);
@@ -55,6 +42,7 @@ export class ChineseTimeParser extends BaseTimeParser {
         this.onlyDigitMatch = RegExpUtility.getSafeRegExp('\\d+');
         this.numbersMap = ChineseDateTime.TimeNumberDictionary;
         this.lowBoundMap = ChineseDateTime.TimeLowBoundDesc;
+        this.innerExtractor = new ChineseTimeExtractor();
     }
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
@@ -62,7 +50,8 @@ export class ChineseTimeParser extends BaseTimeParser {
         
         let extra: DateTimeExtra<TimeType> = er.data;
         if (!extra) {
-            return null;
+            let innerResult = this.innerExtractor.extract(er.text).pop();
+            extra = innerResult.data;
         }
 
         let timeResult = this.functionMap.get(extra.dataType)(extra);
@@ -108,7 +97,7 @@ export class ChineseTimeParser extends BaseTimeParser {
         let quarter = this.matchToValue(extra.namedEntity('quarter').value);
         let minute = !StringUtility.isNullOrEmpty(extra.namedEntity('half').value)
             ? 30
-            : quarter !== -1 ? quarter
+            : quarter !== -1 ? quarter * 15
             : this.matchToValue(extra.namedEntity('min').value);
         let second = this.matchToValue(extra.namedEntity('sec').value);
 
@@ -162,40 +151,11 @@ export class ChineseTimeParser extends BaseTimeParser {
         return result;
     }
 
-    private addDescription(timeResult: TimeResult, description: string) {
-        if (this.lowBoundMap.has(description) && timeResult.hour < this.lowBoundMap.get(description)) {
-            timeResult.hour += 12;
-            timeResult.lowBound = this.lowBoundMap.get(description);
-        } else {
-            timeResult.lowBound = 0;
-        }
+    private matchToValue(source: string): number {
+        return TimeResolutionUtils.matchToValue(this.onlyDigitMatch, this.numbersMap, source);
     }
 
-    private matchToValue(source: string): number {
-        if (StringUtility.isNullOrEmpty(source)) {
-            return -1;
-        }
-
-        if (RegExpUtility.isMatch(this.onlyDigitMatch, source)) {
-            return Number.parseInt(source);
-        }
-
-        if (source.length === 1) {
-            return this.numbersMap.get(source);
-        }
-
-        let value = 1;
-        for (let index = 0; index < source.length; index++) {
-            let char = source.charAt(index);
-            if (char === '十') {
-                value *= 10;
-            } else if (index === 0) {
-                value *= this.numbersMap.get(char);
-            } else {
-                value += this.numbersMap.get(char);
-            }
-        }
-
-        return value;
+    private addDescription(timeResult: TimeResult, description: string) {
+        TimeResolutionUtils.addDescription(this.lowBoundMap, timeResult, description);
     }
 }

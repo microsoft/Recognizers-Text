@@ -50,7 +50,7 @@ export { FrenchMergedExtractorConfiguration, FrenchMergedParserConfiguration } f
 
 export { ChineseDurationExtractor, ChineseDurationParser } from "./dateTime/chinese/durationConfiguration";
 export { ChineseTimeExtractor, ChineseTimeParser } from "./dateTime/chinese/timeConfiguration";
-export { ChineseTimePeriodExtractor } from "./dateTime/chinese/timePeriodConfiguration";
+export { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./dateTime/chinese/timePeriodConfiguration";
 export { ChineseDateExtractor, ChineseDateParser } from "./dateTime/chinese/dateConfiguration";
 export { ChineseDatePeriodExtractor } from "./dateTime/chinese/datePeriodConfiguration";
 export { ChineseDateTimeExtractor } from "./dateTime/chinese/dateTimeConfiguration";

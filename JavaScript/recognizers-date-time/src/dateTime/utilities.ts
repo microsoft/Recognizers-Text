@@ -364,6 +364,12 @@ export class DateUtils {
         return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
     }
 
+    static addHours(seedDate: Date, hoursToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setHours(seedDate.getHours() + hoursToAdd);
+        return date;
+    }
+
     static addDays(seedDate: Date, daysToAdd: number): Date {
         let date = new Date(seedDate);
         date.setDate(seedDate.getDate() + daysToAdd);

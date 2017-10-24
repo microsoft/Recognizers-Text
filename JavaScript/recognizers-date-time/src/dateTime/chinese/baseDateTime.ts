@@ -7,6 +7,20 @@ export interface DateTimeExtra<T> {
     namedEntity(key: string): { value: string, index: number, length: number, captures: string[] }
 }
 
+export class TimeResult {
+    hour: number;
+    minute: number;
+    second: number;
+    lowBound: number;
+
+    constructor(hour: number, minute: number, second: number, lowBound?: number) {
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
+        this.lowBound = lowBound ? lowBound : -1;
+    }
+}
+
 export abstract class BaseDateTimeExtractor<T> implements IExtractor {
     protected abstract readonly extractorName: string;
     private readonly regexesDictionary: Map<RegExp, T>;
@@ -73,5 +87,44 @@ export abstract class BaseDateTimeExtractor<T> implements IExtractor {
         }
 
         return results;
+    }
+}
+
+export class TimeResolutionUtils {
+    static addDescription(lowBoundMap: ReadonlyMap<string, number>, timeResult: TimeResult, description: string) {
+        if (lowBoundMap.has(description) && timeResult.hour < lowBoundMap.get(description)) {
+            timeResult.hour += 12;
+            timeResult.lowBound = lowBoundMap.get(description);
+        } else {
+            timeResult.lowBound = 0;
+        }
+    }
+
+    static matchToValue(onlyDigitMatch: RegExp, numbersMap: ReadonlyMap<string, number>, source: string): number {
+        if (StringUtility.isNullOrEmpty(source)) {
+            return -1;
+        }
+
+        if (RegExpUtility.isMatch(onlyDigitMatch, source)) {
+            return Number.parseInt(source);
+        }
+
+        if (source.length === 1) {
+            return numbersMap.get(source);
+        }
+
+        let value = 1;
+        for (let index = 0; index < source.length; index++) {
+            let char = source.charAt(index);
+            if (char === '十') {
+                value *= 10;
+            } else if (index === 0) {
+                value *= numbersMap.get(char);
+            } else {
+                value += numbersMap.get(char);
+            }
+        }
+
+        return value;
     }
 }
