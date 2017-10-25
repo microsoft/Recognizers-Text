@@ -391,6 +391,10 @@ export class DateUtils {
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
         let onejan = new Date(referenceDate.getFullYear(), 0, 1);
         let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+        // if the first day is Sunday, add a week to mimic calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday) behavior
+        if (onejan.getDay() === 0) {
+            weekNo++;
+        }
         return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
