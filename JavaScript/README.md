@@ -1,25 +1,27 @@
+# Microsoft.Recognizers.Text for JavaScript
+
 ## Getting Started
 
 Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples clone our GitHub repository using Git.
 
     git clone https://github.com/southworkscom/Recognizers-Text.git
     cd Recognizers-Text
-	
-### Setup
+
+## Setup
 
 You can choose between build the solution manually or through an automatized build.cmd file.
 
-#### Manual Build
+### Manual Build
 Open terminal and launch
 
     npm run prebuild-all
     npm run build
-    npm run test   
-	
-#### Automatized Build
+    npm run test
+
+### Automatized Build
 Launch `Build.cmd` file.
 
-### Installation
+## Installation
 
 Install Recognizer's by launching the following commands:
 
@@ -32,55 +34,71 @@ Install Recognizer's by launching the following commands:
 * Get datetime Recognizer's features:
 `npm install recognizers-text-date-time`
 
-### API Documentation
+## API Documentation
 
-#### Microsoft.Recognizers.Text.Number
+### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](/recognizers-number/src/number/numberRecognizer.ts) -- This recognizer will find any number from the input. E.g "I have two apples" will return "2".
+* [NumberModel](/recognizers-number/src/number/numberRecognizer.ts)
 
-`Recognizers.NumberRecognizer.instance.getNumberModel(Culture.English)`
+    This recognizer will find any number from the input. E.g. "I have two apples" will return "2".
 
-* [OrdinalModel](/recognizers-number/src/number/numberRecognizer.ts) -- This recognizer will find any ordinal number. E.g "eleventh" will return "11".
+    `Recognizers.NumberRecognizer.instance.getNumberModel(Culture.English)`
 
-`Recognizers.NumberRecognizer.instance.getOrdinalModel(Culture.English)`
+* [OrdinalModel](/recognizers-number/src/number/numberRecognizer.ts)
 
-* [PercentageModel](/recognizers-number/src/number/numberRecognizer.ts) -- This recognizer will find any number presented as percentage. E.g "one hundred percents" will return "100%".
+    This recognizer will find any ordinal number. E.g. "eleventh" will return "11".
 
-`Recognizers.NumberRecognizer.instance.getPercentageModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Culture.English)`
 
-#### Microsoft.Recognizers.Text.NumberWithUnit
+* [PercentageModel](/recognizers-number/src/number/numberRecognizer.ts)
 
-* [AgeModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts): This recognizer will find any age number presented. E.g "After ninety five years of age, perspectives change" will return "95 Year".
+    This recognizer will find any number presented as percentage. E.g. "one hundred percents" will return "100%".
 
-`Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getPercentageModel(Culture.English)`
 
-* [CurrencyModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts): This recognizer will find any currency presented. E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
+### Microsoft.Recognizers.Text.NumberWithUnit
 
-`Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Culture.English)`
+* [AgeModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
-* [DimensionModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts): This recognizer will find any dimension presented. E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
+    This recognizer will find any age number presented. E.g. "After ninety five years of age, perspectives change" will return "95 Year".
 
-`Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Culture.English)`
 
-* [TemperatureModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts): This recognizer will find any temperature presented. E.g "Set the temperature to 30 degrees celsius" will return "30 C".
+* [CurrencyModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
-`Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Culture.English)`
+    This recognizer will find any currency presented. E.g. "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
-#### Microsoft.Recognizers.Text.DateTime
+    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Culture.English)`
 
-* [DateTimeModel](/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts): This model will find any Date even if its write in coloquial language. E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00".
+* [DimensionModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
-`Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Culture.English)`
+    This recognizer will find any dimension presented. E.g. "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
-### Samples
+    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Culture.English)`
 
-[Start using recognizers!](/samples) - Or find more samples on Luis documentation. [Click here to see more samples](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/pre-builtentities)
+* [TemperatureModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+
+    This recognizer will find any temperature presented. E.g. "Set the temperature to 30 degrees celsius" will return "30 C".
+
+    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Culture.English)`
+
+### Microsoft.Recognizers.Text.DateTime
+
+* [DateTimeModel](/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts)
+
+    This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
+
+    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Culture.English)`
+
+## Samples
+
+[Start using recognizers!](/samples)
 
 ## Integration tips
 
-The recognizers were designed to disjoint language's logic from the recognizer's core in order to grow without the obligation of change the supported platforms. 
+The recognizers were designed to disjoint language's logic from the recognizer's core in order to grow without the obligation of change the supported platforms.
 
 To achieve this, the recognizers contains the following folders:
 
-* [Specs](..\Specs) - Contains all the necessary tests that should be run on any improve to the recognizer. It's divided by recognizer and supported language.
-* [Patterns](..\Patterns)  - Contains all the regular expresions that fullfil the recognizers logic. It's divided by supported language.
+* [Specs](..\Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
+* [Patterns](..\Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
