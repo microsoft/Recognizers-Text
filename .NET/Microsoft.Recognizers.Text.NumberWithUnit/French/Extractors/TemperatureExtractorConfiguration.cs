@@ -16,8 +16,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public override ImmutableList<string> AmbiguousUnitList => null;
 
-        public override string ConnectorToken => null;
-
         public override string ExtractType => Constants.SYS_UNIT_TEMPERATURE;
 
         public static readonly ImmutableDictionary<string, string> TemperatureSuffixList = NumbersWithUnitDefinitions.TemperatureSuffixList.ToImmutableDictionary();

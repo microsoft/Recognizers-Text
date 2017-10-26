@@ -1,32 +1,4 @@
-[{
-  "Input": "750 l lait dans la soiree",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "750 l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": "750",
-        "unit": "Litre"
-      }
-    }
-  ]
-},
-  {
-    "Input": "le voyage de six hectometre à mon hôtel de l'aéroport qui avait l'pris 20 minutes plus tôt dans la journée a pris plus de trois heures.",
-    "NotSupportedByDesign": "python",
-    "Results": [
-      {
-        "Text": "six hectometre",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": "6",
-          "unit": "Hectomètre"
-        }
-      }
-    ]
-  }
-  ,
+[
 {
   "Input": "75 litre",
   "NotSupportedByDesign": "python",
@@ -117,7 +89,29 @@
   ]
 }
 ,
-
+{
+  "Input": "le voyage de six hectometre à mon hôtel de l'aéroport qui avait pris 20 minutes plus tôt dans la journée a pris plus de trois heures.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "six hectometre",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": "6",
+        "unit": "Hectomètre"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
+    }
+  ]
+}
+,
 {
   "Input": "Dans l'ensemble de l'industrie, la production de pétrole dans ce pays a chuté de 500000 barils par jour en barils au cours des huit premiers mois de cette année.",
   "NotSupportedByDesign": "python",
@@ -128,6 +122,22 @@
       "Resolution": {
         "value": "500000",
         "unit": "Baril"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
       }
     }
   ]
@@ -174,7 +184,15 @@
           "value": "45",
           "unit": "Acre"
         }
+      },
+      {
+        "Text": "l",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Litre"
       }
+    }
   ]
 }
 ,
@@ -354,6 +372,14 @@
         "value": "3",
         "unit": "Tonne"
       }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
     }
   ]
 }
@@ -368,6 +394,22 @@
       "Resolution": {
         "value": "130",
         "unit": "Gallon"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
       }
     }
   ]
@@ -413,6 +455,14 @@
       "Resolution": {
         "value": "16000",
         "unit": "Tonne métrique"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
       }
     }
   ]
@@ -474,6 +524,14 @@
         "value": "2,5",
         "unit": "Kilomètres"
       }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
     }
   ]
 }
@@ -534,6 +592,22 @@
         "value": "40",
         "unit": "Centimètres"
       }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
+      }
     }
   ]
 }
@@ -563,6 +637,14 @@
       "Resolution": {
         "value": "1,6",
         "unit": "Kilomètres"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
       }
     }
   ]
@@ -661,6 +743,14 @@
       "Resolution": {
         "value": "34500",
         "unit": "Tonne métrique"
+      }
+    },
+    {
+      "Text": "l",
+      "TypeName": "dimension",
+      "Resolution": {
+        "value": null,
+        "unit": "Litre"
       }
     }
   ]
