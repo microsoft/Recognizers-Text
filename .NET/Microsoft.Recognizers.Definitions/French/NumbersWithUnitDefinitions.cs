@@ -351,6 +351,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		{
 			"mi",
 			"barils",
+			"l",
 			"grain",
 			"pierre",
 			"fps",
@@ -382,14 +383,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			"yard",
 			"yards",
 			"pm",
+			"l",
 			"pt",
 			"pts"
-		};
-		public static readonly IList<string> AmbuguousLengthUnitList = new List<string>
-		{
-			"m",
-			"pouce",
-			"pm"
 		};
 		public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
 		{
@@ -407,7 +403,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Kelvin", "k|K|kelvin" },
 			{ "F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit" },
 			{ "R", "rankine|°r|° r" },
-			{ "C", "°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade" },
+			{ "C", "°c|deg c|degrés celsius|degrés c|degres celsius|g celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade" },
 			{ "Degré", "degrés|degres|deg.|°| °|degré|degre|deg" }
 		};
 		public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
@@ -417,7 +413,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Millimètre cube", "mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube" },
 			{ "Kilomètre cube", "km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube" },
 			{ "Pieds cube", "pieds cubes|pieds cube|pied cube|pied cubes" },
-			{ "Litre", "litre|litres|lts|l" },
+			{ "Litre", "litre|litres|lts|l|lt" },
 			{ "Millilitre", "ml|millilitre|millilitres" },
 			{ "Gallon", "gallon|gallons" },
 			{ "Pintes", "pintes" },

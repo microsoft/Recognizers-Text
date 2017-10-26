@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public string BuildSuffix { get; }
 
-        public string ConnectorToken { get; }
+        public virtual string ConnectorToken { get; }
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

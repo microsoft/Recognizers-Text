@@ -22,10 +22,10 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.HalfADozenText = NumbersDefinitions.HalfADozenText;
             this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
 
-            this.WrittenDecimalSeparatorTexts = NumbersDefinitions.WrittenDecimalSeparatorTexts;
-            this.WrittenGroupSeparatorTexts = NumbersDefinitions.WrittenGroupSeparatorTexts;
-            this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts;
-            this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
+            this.WrittenDecimalSeparatorTexts = NumbersDefinitions.WrittenDecimalSeparatorTexts.ToImmutableList();
+            this.WrittenGroupSeparatorTexts = NumbersDefinitions.WrittenGroupSeparatorTexts.ToImmutableList();
+            this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts.ToImmutableList();
+            this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts.ToImmutableList();
 
             foreach (var sufix in NumbersDefinitions.SufixOrdinalDictionary)
             {

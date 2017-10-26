@@ -24,14 +24,6 @@
         "value": "90",
         "unit": "F"
       }
-    },
-    {
-      "Text": "C",
-      "TypeName": "temperature",
-      "Resolution": {
-        "value": null,
-        "unit": "C"
-      }
     }
   ]
 }

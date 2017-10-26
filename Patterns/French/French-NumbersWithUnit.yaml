@@ -438,6 +438,7 @@ AmbiguousDimensionUnitList: !list
    entries:
      - mi
      - barils
+     - l
      - grain
      - pierre
      - fps
@@ -473,14 +474,10 @@ AmbiguousLengthUnitList: !list
     - yard
     - yards
     - pm
+    - l
     - pt
     - pts
-AmbuguousLengthUnitList: !list 
-  types: [ string ]
-  entries:
-    - m
-    - pouce
-    - pm
+
 #SpeecExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
@@ -500,7 +497,7 @@ TemperatureSuffixList: !dictionary
     Kelvin: k|K|kelvin   
     F: °f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit
     R: rankine|°r|° r
-    C: °c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
+    C: °c|deg c|degrés celsius|degrés c|degres celsius|g celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
     Degré: degrés|degres|deg.|°| °|degré|degre|deg
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
@@ -511,7 +508,7 @@ VolumeSuffixList: !dictionary
     Millimètre cube: mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube
     Kilomètre cube: km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube
     Pieds cube: pieds cubes|pieds cube|pied cube|pied cubes
-    Litre: litre|litres|lts|l
+    Litre: litre|litres|lts|l|lt
     Millilitre: ml|millilitre|millilitres
     Gallon: gallon|gallons
     Pintes: pintes
