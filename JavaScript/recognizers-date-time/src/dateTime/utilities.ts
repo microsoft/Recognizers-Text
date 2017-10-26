@@ -364,6 +364,26 @@ export class DateUtils {
         return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
     }
 
+    static addTime(seedDate: Date, timeToAdd: Date): Date {
+        let date = new Date(seedDate);
+        date.setHours(seedDate.getHours() + timeToAdd.getHours());
+        date.setMinutes(seedDate.getMinutes() + timeToAdd.getMinutes());
+        date.setSeconds(seedDate.getSeconds() + timeToAdd.getSeconds());
+        return date;
+    }
+
+    static addSeconds(seedDate: Date, secondsToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setSeconds(seedDate.getSeconds() + secondsToAdd);
+        return date;
+    }
+
+    static addMinutes(seedDate: Date, minutesToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setMinutes(seedDate.getMinutes() + minutesToAdd);
+        return date;
+    }
+
     static addHours(seedDate: Date, hoursToAdd: number): Date {
         let date = new Date(seedDate);
         date.setHours(seedDate.getHours() + hoursToAdd);
@@ -413,6 +433,13 @@ export class DateUtils {
 
     static safeCreateFromMinValue(year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
         return this.safeCreateFromValue(this.minValue(), year, month, day, hour, minute, second);
+    }
+
+    static safeCreateFromMinValueWithDateAndTime(date: Date, time?: Date): Date {
+        return this.safeCreateFromMinValue(
+            date.getFullYear(), date.getMonth(), date.getDate(),
+            time ? time.getHours() : 0, time ? time.getMinutes() : 0, time ? time.getSeconds() : 0
+        );
     }
 
     static isLeapYear(year: number): boolean {

@@ -219,7 +219,7 @@ export interface IDateTimePeriodParserConfiguration {
     numbers: ReadonlyMap<string, number>
     unitMap: ReadonlyMap<string, string>
     dateExtractor: BaseDateExtractor
-    timeExtractor: BaseTimeExtractor
+    timeExtractor: IExtractor
     dateTimeExtractor: BaseDateTimeExtractor
     timePeriodExtractor: IExtractor
     durationExtractor: BaseDurationExtractor
@@ -233,7 +233,7 @@ export interface IDateTimePeriodParserConfiguration {
 }
 
 export class BaseDateTimePeriodParser implements IDateTimeParser {
-    private readonly parserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
+    protected readonly parserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
     protected readonly config: IDateTimePeriodParserConfiguration;
 
     constructor(config: IDateTimePeriodParserConfiguration) {
@@ -276,7 +276,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private mergeDateAndTimePeriods( text:string, referenceTime:Date):DateTimeResolutionResult
+    protected mergeDateAndTimePeriods( text:string, referenceTime:Date):DateTimeResolutionResult
     {
         let ret = new DateTimeResolutionResult();
         let trimedText = text.trim().toLowerCase();
@@ -419,7 +419,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private mergeTwoTimePoints(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected mergeTwoTimePoints(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let prs: { begin: DateTimeParseResult, end: DateTimeParseResult };
         let timeErs = this.config.timeExtractor.extract(source);
@@ -484,7 +484,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private getTwoPoints(beginEr: ExtractResult, endEr: ExtractResult, beginParser: IDateTimeParser, endParser: IDateTimeParser, referenceDate: Date)
+    protected getTwoPoints(beginEr: ExtractResult, endEr: ExtractResult, beginParser: IDateTimeParser, endParser: IDateTimeParser, referenceDate: Date)
     : { begin: DateTimeParseResult, end: DateTimeParseResult } {
         let beginPr = beginParser.parse(beginEr, referenceDate);
         let endPr = endParser.parse(endEr, referenceDate);
@@ -566,7 +566,7 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
 
         // for rest of datetime, it will be handled in next function
