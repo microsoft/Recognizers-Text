@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public LengthParserConfiguration(CultureInfo ci) : base(ci)
         {
-            this.BindDictionary(LengthExtractorConfiguration.LenghtSuffixList);
+            this.BindDictionary(LengthExtractorConfiguration.LengthSuffixList);
         }
     }
 }

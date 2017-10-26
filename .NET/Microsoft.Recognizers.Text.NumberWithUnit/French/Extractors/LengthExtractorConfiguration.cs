@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
         public override string ExtractType => Constants.SYS_UNIT_LENGTH;
 
-        public static readonly ImmutableDictionary<string, string> LenghtSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
+        public static readonly ImmutableDictionary<string, string> LengthSuffixList = NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
 
         private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
     }

@@ -4,7 +4,7 @@ AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
     Ans: ans
-    Mois: mois|mois d'âge|mois d'age
+    Mois: mois d'âge|mois d'age|mois
     Semaines: semaine|semaines|semaines d'âge|semaines d'age
     Jour: jours|jour
 #AreaExtractorConfiguration
@@ -33,7 +33,7 @@ CurrencySuffixList: !dictionary
     Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
     Pul: pul
 #Euro
-    Euro: euros|euro|€|eur
+    Euro: euros|euro|€|eur|d'euros
     Cent: cents|cent|-cents|-cent|sen
 #Albanian lek
 #No use of "ALL" "L"
@@ -107,7 +107,7 @@ CurrencySuffixList: !dictionary
 #Lithuanian litas
     Litas lituanien: litas lituanien|ltl|lit lithuanien|litas lithuanie
 #Japanese yen
-    Yen japonais: yen japonais|yen japon|jpy|yen|¥|-yen
+    Yen Japonais: yen japonais|yen japon|yens|jpy|yen|¥|-yen
 #Kazakhstani tenge
     Tenge kazakh: tenge kazakh|kzt
 #Kenyan shilling
@@ -185,7 +185,7 @@ CurrencySuffixList: !dictionary
 #São Tomé and Príncipe dobra
     Dobra: dobra|db|std
 #Sierra Leon leone
-    Leone: leone|le|sll
+    Leone: leone|sll
 #Netherlands guilder
     florins néerlandais: florins néerlandais|florins|ang|ƒ|florin|fl 
 #Swazi lilangeni
@@ -251,12 +251,12 @@ CurrencySuffixList: !dictionary
     Franc djiboutienne: franc djiboutienne|djf
     Franc CFP: franc cfp|xpf
     Franc guinéen: franc guinéen|gnf
-    Franc suisse: franc suisse|chf|sfr.|francs suisse
+    Franc Suisse: franc suisse|chf|sfr.|francs suisses
     Franc rwandais: franc rwandais|rwf|rw|r₣|frw
     Franc belge: franc belge|bi.|b.fr.|bef
     Rappen: rappen|-rappen
     Franc: francs|franc|fr.|fs
-    Centime: centimes|centime|santim
+    Centimes: centimes|centime|santim
 #Ruble
     Rouble russe: rouble russe|rub|₽|₽ russe|roubles russe|roubles russes|₽ russes
     Nouveau rouble biélorusse: nouveau rouble biélorusse|byn|nouveau roubles biélorusse|nouveau rouble bielorusse|nouveau roubles biélorusse
@@ -311,9 +311,9 @@ CurrencySuffixList: !dictionary
     Shilling: shilling|shillings
     Penny: penny|sou|centime
 #Dollar
-    Dollar américain: dollar américain|$ américain|$ americain|usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis
+    Dollar Américain: dollar américain|$ américain|$ americain|usd|$usd|$ usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis
     Dollar des Caraïbes orientales: dollar des caraïbes orientales|dollar des caraibes orientales|xcd|$ caraibes orientales|$ caraïbes orientales
-    Dollar australien: dollar australien|$ australien|aud|$australien|australien $|$ australie|dollar australie
+    Dollar Australien: dollar australien|dollars australiens|$ australien|aud|$australien|australien $|$ australie|dollar australie
     Dollar des bahamas: dollar des bahamas|dollar bahamas|$ bahamas|bsd|bahama $|dollar bahama|$ bahamas
     Dollar bermudes: dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd
     Dollar belize: dollar de Belize|dollar belizien|bzd|$ belize
@@ -321,13 +321,13 @@ CurrencySuffixList: !dictionary
     Dollar brunei: dollar de brunei|$ brunei|bnd|dollar brunei
     Sen: sen
     Dollar singapour: dollar de singapour|dollar singapour|$ sinapour|sgd|$s
-    Dollar canadien: dollar canadien|$ canadien|cad|$can|$c|dollar canada|dollar canadienne|$ canada|$cad|cad$
+    Dollar Canadien: dollar canadien|dollars canadien|$ canadien|cad|$can|$c|$ c|dollar canada|dollar canadienne|$ canada|$cad|cad$
     Dollar iles caimanes: dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci
     Dollar néo-zélandais: dollar néo-zélandais|dollar néo zélandais|dollar neo-zelandais|dollar neo zelandais|$nz|$ néo-zélandais|$ neo zelandais
     Dollar îles cook: dollar îles cook|dollar iles cook|$ iles cook
     Dollar des fidji: dollar des fidji|$ fidji|dollar fidji|dollar de fidji|dollars des fidji|dollars de fidji
     Dollar guyanien: dollar guyanien|dollar du guyana|dollar dre guyana|$ guayana|gyd|$gy
-    Dollar de hong kong: dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|hkd|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong
+    Dollar de Hong Kong: dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|$ hk|hkd|hk $|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong
     Dollar jamaïcain: dollar jamaïcain|dollars jamaïcain|dollar jamaicain|dollars jamaicain|$j|$ jamaïque|dollar jamaïque|jmd
     Dollar libérien: dollar libérien|dollars libérien|dollar liberien|dollars liberien|lrd|$ libérien|$ liberia|$ liberien
     Dollar namibien: dollar namibien|dollars namibien|$ namibien|nad|$n|dollar namibie|dollars namibie|$ namibie
@@ -344,11 +344,11 @@ CurrencySuffixList: !dictionary
     Dollar trinidadien: dollar trinidadien|dollars trinidadien|ttd|$ trinidadien
     Dollar: dollar|$|dollars
 #Chinese yuan
-    Yuan chinois: yuan|yuan chinois|renminbi|cny|rmb|￥
+    Yuan Chinois: yuan|yuan chinois|renminbi|cny|rmb|￥
     Fen: fen
     Jiao: jiao
 #Additional
-    Mark finlandais: marks finlandais|mark finlandais|fim|mark
+    Mark Finlandais: marks finlandais|mark finlandais|fim|mark
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -363,7 +363,7 @@ CurrencyPrefixList: !dictionary
      Dollar des bermudes: bd$|bmd
      Dollar de brunei: brunei $|bnd
      Dollar de Singapour: s$|sgd
-     Dollar canadien: cad|$ ca|$ca
+     Dollar Canadien: cad|$ ca|$ca|$ c
      Dollar des îles Caïmans: ci$|kyd
      Dollar néo-zélandais: nz$|nzd
      Dollar de Fidji: $fj|fjd
@@ -437,29 +437,44 @@ AmbiguousDimensionUnitList: !list
    types: [ string, string ]
    entries:
      - mi
-#FrenchNumberWithUnitExtractorConfiguration
+     - barils
+     - grain
+     - pierre
+     - fps
+     - pts
+#FrenchNumberWithUnitExtractorConfigurationf
 BuildPrefix: !simpleRegex
-  def: (?<=(\s|^|\W))
+  def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
-  def: (?=(\s|\W|$))
+  def: (?=(\s|\P{L}|$))
+ConnectorToken: de
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kilomètres: km|kilomètres|kilometres|kilometre|kilometres
-    Hectomètre: hm|hectomètre|hectomètres|hectometre|hectometres
-    Décamètre: dam|décamètre|décamètres|decametre|decametres
-    Mètres: m|mètres|mètre|metres|metre|m. 
+    Kilomètres: km|kilomètres|kilomètre|kilometres|kilometre|-km
+    Hectomètre: hm|hectomètre|hectomètres|hectometre|hectometres|-hm
+    Décamètre: dam|décamètre|décamètres|decametre|decametres|-dm
+    Mètres: m|mètres|mètre|metres|metre|m.|-m 
     Décimètres: dm|décimètres|décimètre|decimetres|decimetre
     Centimètres: cm|centimètres|centimètre|centimetres|centimetre
     Millimètres: mm|millimètres|millimètre|millimetre|millimetres
     Micromètres: µm|um|micromètres|micromètre|micrometres|micrometre
     Nanomètres: nm|nanometre|nanometres|nanomètres|nanomètre
     Picomètres: pm|picomètre|picomètres|picometres|picometre
-    Mile: mi|mile|mille
-    Pied: pied
+    Mile: mi|mile|miles
+    Pied: pied|pieds
     Yard: yards|yard|yd
     Pouce: pouce|pouces
+AmbiguousLengthUnitList: !list
+  types: [ string ]
+  entries:
+    - m
+    - yard
+    - yards
+    - pm
+    - pt
+    - pts
 AmbuguousLengthUnitList: !list 
   types: [ string ]
   entries:
@@ -474,7 +489,7 @@ SpeedSuffixList: !dictionary
     Kilomètre par heure: km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure
     Kilomètre par minute: km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes
     Kilomètre par seconde: km/s|km à la seconde|km a la seconde|kilomètre par seconde|kilomètres par seconde|kilometre par seconde|kilometres par seconde
-    Miles par heure: mph|miles par heure|milles à l'heure|milles a l'heure
+    Miles par heure: mph|miles par heure|miles à l'heure|miles a l'heure|miles un heure
     Noeuds: noeud|noeuds|nuds
     Pied par seconde: ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s
     Pied par minute: pieds/minute|pied/minute|ft/minute|ft/min|pied/min
@@ -482,17 +497,11 @@ SpeedSuffixList: !dictionary
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    F: °f|degrés fahrenheit|degres f|degres fahrenheit|fahrenheit
-    K: k|kelvin
-    R: rankine|°r
-    C: °c|c|degrés celsius|degres celcius|celcius|deg celcius|degs celcius
-    Degree: degrés|degres|deg|deg.|°
-AmbiguousTemperatureUnitList: !list
-  types: [ string ]
-  entries:
-    - c
-    - f
-    - k
+    Kelvin: k|K|kelvin   
+    F: °f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit
+    R: rankine|°r|° r
+    C: °c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
+    Degré: degrés|degres|deg.|°| °|degré|degre|deg
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
   types: [ string, string ]
@@ -501,14 +510,26 @@ VolumeSuffixList: !dictionary
     Centimètre cube: cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube
     Millimètre cube: mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube
     Kilomètre cube: km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube
+    Pieds cube: pieds cubes|pieds cube|pied cube|pied cubes
     Litre: litre|litres|lts|l
     Millilitre: ml|millilitre|millilitres
-    Gallon: gallon
+    Gallon: gallon|gallons
     Pintes: pintes
     Onces: onces|once|oz
     Décilitre: dl|décilitre|decilitre|décilitres|decilitres
     Centilitre: cl|centilitres|centilitre
     Onces liquides: onces liquides|once liquide|once liquides
+    Baril: baril|barils|bbl
+AmbiguousVolumeUnitList: !list
+  types: [ string ]
+  entries:
+    - ounce
+    - oz
+    - l
+    - cup
+    - peck
+    - cord
+    - gill
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
@@ -516,11 +537,14 @@ WeightSuffixList: !dictionary
     Kilogramme: kg|kilogramme|kilogrammes|kilo|kilos
     Gram: g|gramme|grammes
     Milligramme: mg|milligramme|milligrammes
-    Tonne métrique: tonne métrique|tonnes métrique|tonne metrique|tonnes metrique|tonne|tonnes
-    Onces: oz|onces|once
-AmbiguousWeightunitList: !list
+    Tonne métrique: tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique
+    Tonne: tonne|tonnes|-tonnes|-tonne
+    Livre: livre|livres
+AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
     - g
     - oz
+    - stone
+    - dram
 ...

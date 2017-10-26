@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
@@ -10,7 +11,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         {
             this.InternalNumberExtractor = NumberExtractor.GetInstance();
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration());
-            this.ConnectorToken = string.Empty;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 
         public override IParser InternalNumberParser { get; }

@@ -10,10 +10,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = NumberExtractor.GetInstance();
+            this.UnitNumExtractor = new NumberExtractor();
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
-            this.ConnectorToken = string.Empty;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
         }
 
         public abstract string ExtractType { get; }

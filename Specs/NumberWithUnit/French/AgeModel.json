@@ -3,11 +3,11 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cing ans",
+      "Text": "cinq ans",
       "TypeName": "age",
       "Resolution": {
         "value": "5",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
@@ -22,7 +22,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "10",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
@@ -37,22 +37,22 @@
       "TypeName": "age",
       "Resolution": {
         "value": "29",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
 }
 ,
 {
-  "Input": "Maintenant, après quatre-vingt-quinze ans, mes perspectives changent",
+  "Input": "Maintenant, après trente cinq ans, mes perspectives changent",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "quatre-vingt-quinze ans",
+      "Text": "trente cinq ans",
       "TypeName": "age",
       "Resolution": {
-        "value": "95",
-        "unit": "An"
+        "value": "35",
+        "unit": "Ans"
       }
     }
   ]
@@ -67,7 +67,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "500",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
@@ -82,7 +82,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "60",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
@@ -97,22 +97,22 @@
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
 }
 ,
 {
-  "Input": "Quand sera là la pression pour accomplir une promesse qui est un an?",
+  "Input": "Quand sera là la pression pour accomplir une promesse qui est un ans?",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "un an",
+      "Text": "un ans",
       "TypeName": "age",
       "Resolution": {
         "value": "1",
-        "unit": "An"
+        "unit": "Ans"
       }
     }
   ]
@@ -149,7 +149,7 @@
 }
 ,
 {
-  "Input": "50% of cases are diagnosed a peus peu près dix-huit mois d'âge",
+  "Input": "50 % de cas sont diagnostiqués a peus peu près dix-huit mois d'âge",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -172,7 +172,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "mois"
+        "unit": "Mois"
       }
     }
   ]
@@ -187,7 +187,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "3",
-        "unit": "Semaine"
+        "unit": "Semaines"
       }
     }
   ]
@@ -202,7 +202,7 @@
       "TypeName": "age",
       "Resolution": {
         "value": "6",
-        "unit": "Semaine"
+        "unit": "Semaines"
       }
     }
   ]

@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
 		{
 			{ "Ans", "ans" },
-			{ "Mois", "mois|mois d'âge|mois d'age" },
+			{ "Mois", "mois d'âge|mois d'age|mois" },
 			{ "Semaines", "semaine|semaines|semaines d'âge|semaines d'age" },
 			{ "Jour", "jours|jour" }
 		};
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Abkhazie apsar", "abkhazie apsar|apsars" },
 			{ "Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani" },
 			{ "Pul", "pul" },
-			{ "Euro", "euros|euro|€|eur" },
+			{ "Euro", "euros|euro|€|eur|d'euros" },
 			{ "Cent", "cents|cent|-cents|-cent|sen" },
 			{ "lek Albanais", "lek albanais|leks|lek" },
 			{ "Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes" },
@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Fillér", "fillér" },
 			{ "Rial iranien", "rial iranien|irr|rials iranien|rials iraniens" },
 			{ "Litas lituanien", "litas lituanien|ltl|lit lithuanien|litas lithuanie" },
-			{ "Yen japonais", "yen japonais|yen japon|jpy|yen|¥|-yen" },
+			{ "Yen Japonais", "yen japonais|yen japon|yens|jpy|yen|¥|-yen" },
 			{ "Tenge kazakh", "tenge kazakh|kzt" },
 			{ "Shilling kényan", "shilling kényan|sh|kes|shillings kényans" },
 			{ "Won coréen", "won coréen|won coréens|₩" },
@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Tala", "tala|tālā|ws$|sat|wst" },
 			{ "Sene", "sene" },
 			{ "Dobra", "dobra|db|std" },
-			{ "Leone", "leone|le|sll" },
+			{ "Leone", "leone|sll" },
 			{ "florins néerlandais", "florins néerlandais|florins|ang|ƒ|florin|fl" },
 			{ "Lilangeni", "lilangeni|szl" },
 			{ "Somoni tadjikistan", "somoni tadjikistan|tjs|somoni" },
@@ -182,12 +182,12 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Franc djiboutienne", "franc djiboutienne|djf" },
 			{ "Franc CFP", "franc cfp|xpf" },
 			{ "Franc guinéen", "franc guinéen|gnf" },
-			{ "Franc suisse", "franc suisse|chf|sfr.|francs suisse" },
+			{ "Franc Suisse", "franc suisse|chf|sfr.|francs suisses" },
 			{ "Franc rwandais", "franc rwandais|rwf|rw|r₣|frw" },
 			{ "Franc belge", "franc belge|bi.|b.fr.|bef" },
 			{ "Rappen", "rappen|-rappen" },
 			{ "Franc", "francs|franc|fr.|fs" },
-			{ "Centime", "centimes|centime|santim" },
+			{ "Centimes", "centimes|centime|santim" },
 			{ "Rouble russe", "rouble russe|rub|₽|₽ russe|roubles russe|roubles russes|₽ russes" },
 			{ "Nouveau rouble biélorusse", "nouveau rouble biélorusse|byn|nouveau roubles biélorusse|nouveau rouble bielorusse|nouveau roubles biélorusse" },
 			{ "Rouble transnistriens", "rouble transnistriens|prb" },
@@ -237,9 +237,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Pence", "pence" },
 			{ "Shilling", "shilling|shillings" },
 			{ "Penny", "penny|sou|centime" },
-			{ "Dollar américain", "dollar américain|$ américain|$ americain|usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis" },
+			{ "Dollar Américain", "dollar américain|$ américain|$ americain|usd|$usd|$ usd|dollar americain|dollar États-Unis|dollar des États-Unis|dollar États Unis|dollar etats unis|dollar etats-unis|$ etats-unis|$ États-Unis" },
 			{ "Dollar des Caraïbes orientales", "dollar des caraïbes orientales|dollar des caraibes orientales|xcd|$ caraibes orientales|$ caraïbes orientales" },
-			{ "Dollar australien", "dollar australien|$ australien|aud|$australien|australien $|$ australie|dollar australie" },
+			{ "Dollar Australien", "dollar australien|dollars australiens|$ australien|aud|$australien|australien $|$ australie|dollar australie" },
 			{ "Dollar des bahamas", "dollar des bahamas|dollar bahamas|$ bahamas|bsd|bahama $|dollar bahama|$ bahamas" },
 			{ "Dollar bermudes", "dollar des bermudes|dollar bermude|dollar bermudes|$ bermudes|bmd" },
 			{ "Dollar belize", "dollar de Belize|dollar belizien|bzd|$ belize" },
@@ -247,13 +247,13 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Dollar brunei", "dollar de brunei|$ brunei|bnd|dollar brunei" },
 			{ "Sen", "sen" },
 			{ "Dollar singapour", "dollar de singapour|dollar singapour|$ sinapour|sgd|$s" },
-			{ "Dollar canadien", "dollar canadien|$ canadien|cad|$can|$c|dollar canada|dollar canadienne|$ canada|$cad|cad$" },
+			{ "Dollar Canadien", "dollar canadien|dollars canadien|$ canadien|cad|$can|$c|$ c|dollar canada|dollar canadienne|$ canada|$cad|cad$" },
 			{ "Dollar iles caimanes", "dollars des îles caïmanes|dollar des îles caïmanes|dollars des iles caimanes|dollar iles caimanes|kyd|$ci" },
 			{ "Dollar néo-zélandais", "dollar néo-zélandais|dollar néo zélandais|dollar neo-zelandais|dollar neo zelandais|$nz|$ néo-zélandais|$ neo zelandais" },
 			{ "Dollar îles cook", "dollar îles cook|dollar iles cook|$ iles cook" },
 			{ "Dollar des fidji", "dollar des fidji|$ fidji|dollar fidji|dollar de fidji|dollars des fidji|dollars de fidji" },
 			{ "Dollar guyanien", "dollar guyanien|dollar du guyana|dollar dre guyana|$ guayana|gyd|$gy" },
-			{ "Dollar de hong kong", "dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|hkd|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong" },
+			{ "Dollar de Hong Kong", "dollar hong kong|dollar hongkong|dollar de hong kong|dollar de hongkong|$hk|$ hk|hkd|hk $|hk$|dollar hk|$hongkong|dollars hongkong|dollars hong kong" },
 			{ "Dollar jamaïcain", "dollar jamaïcain|dollars jamaïcain|dollar jamaicain|dollars jamaicain|$j|$ jamaïque|dollar jamaïque|jmd" },
 			{ "Dollar libérien", "dollar libérien|dollars libérien|dollar liberien|dollars liberien|lrd|$ libérien|$ liberia|$ liberien" },
 			{ "Dollar namibien", "dollar namibien|dollars namibien|$ namibien|nad|$n|dollar namibie|dollars namibie|$ namibie" },
@@ -262,10 +262,10 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Nouveau dollar de Taïwan", "nouveau dollar de taïwan|nouveau dollar de taiwan|twd|ntd|$nt" },
 			{ "Dollar trinidadien", "dollar trinidadien|dollars trinidadien|ttd|$ trinidadien" },
 			{ "Dollar", "dollar|$|dollars" },
-			{ "Yuan chinois", "yuan|yuan chinois|renminbi|cny|rmb|￥" },
+			{ "Yuan Chinois", "yuan|yuan chinois|renminbi|cny|rmb|￥" },
 			{ "Fen", "fen" },
 			{ "Jiao", "jiao" },
-			{ "Mark finlandais", "marks finlandais|mark finlandais|fim|mark" }
+			{ "Mark Finlandais", "marks finlandais|mark finlandais|fim|mark" }
 		};
 		public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
 		{
@@ -279,7 +279,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Dollar des bermudes", "bd$|bmd" },
 			{ "Dollar de brunei", "brunei $|bnd" },
 			{ "Dollar de Singapour", "s$|sgd" },
-			{ "Dollar canadien", "cad|$ ca|$ca" },
+			{ "Dollar Canadien", "cad|$ ca|$ca|$ c" },
 			{ "Dollar des îles Caïmans", "ci$|kyd" },
 			{ "Dollar néo-zélandais", "nz$|nzd" },
 			{ "Dollar de Fidji", "$fj|fjd" },
@@ -349,26 +349,41 @@ namespace Microsoft.Recognizers.Definitions.French
 		};
 		public static readonly IList<string> AmbiguousDimensionUnitList = new List<string>
 		{
-			"mi"
+			"mi",
+			"barils",
+			"grain",
+			"pierre",
+			"fps",
+			"pts"
 		};
-		public const string BuildPrefix = @"(?<=(\s|^|\W))";
-		public const string BuildSuffix = @"(?=(\s|\W|$))";
+		public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
+		public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
+		public const string ConnectorToken = "de";
 		public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
 		{
-			{ "Kilomètres", "km|kilomètres|kilometres|kilometre|kilometres" },
-			{ "Hectomètre", "hm|hectomètre|hectomètres|hectometre|hectometres" },
-			{ "Décamètre", "dam|décamètre|décamètres|decametre|decametres" },
-			{ "Mètres", "m|mètres|mètre|metres|metre|m." },
+			{ "Kilomètres", "km|kilomètres|kilomètre|kilometres|kilometre|-km" },
+			{ "Hectomètre", "hm|hectomètre|hectomètres|hectometre|hectometres|-hm" },
+			{ "Décamètre", "dam|décamètre|décamètres|decametre|decametres|-dm" },
+			{ "Mètres", "m|mètres|mètre|metres|metre|m.|-m" },
 			{ "Décimètres", "dm|décimètres|décimètre|decimetres|decimetre" },
 			{ "Centimètres", "cm|centimètres|centimètre|centimetres|centimetre" },
 			{ "Millimètres", "mm|millimètres|millimètre|millimetre|millimetres" },
 			{ "Micromètres", "µm|um|micromètres|micromètre|micrometres|micrometre" },
 			{ "Nanomètres", "nm|nanometre|nanometres|nanomètres|nanomètre" },
 			{ "Picomètres", "pm|picomètre|picomètres|picometres|picometre" },
-			{ "Mile", "mi|mile|mille" },
-			{ "Pied", "pied" },
+			{ "Mile", "mi|mile|miles" },
+			{ "Pied", "pied|pieds" },
 			{ "Yard", "yards|yard|yd" },
 			{ "Pouce", "pouce|pouces" }
+		};
+		public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
+		{
+			"m",
+			"yard",
+			"yards",
+			"pm",
+			"pt",
+			"pts"
 		};
 		public static readonly IList<string> AmbuguousLengthUnitList = new List<string>
 		{
@@ -382,24 +397,18 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Kilomètre par heure", "km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure" },
 			{ "Kilomètre par minute", "km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes" },
 			{ "Kilomètre par seconde", "km/s|km à la seconde|km a la seconde|kilomètre par seconde|kilomètres par seconde|kilometre par seconde|kilometres par seconde" },
-			{ "Miles par heure", "mph|miles par heure|milles à l'heure|milles a l'heure" },
+			{ "Miles par heure", "mph|miles par heure|miles à l'heure|miles a l'heure|miles un heure" },
 			{ "Noeuds", "noeud|noeuds|nuds" },
 			{ "Pied par seconde", "ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s" },
 			{ "Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min" }
 		};
 		public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
 		{
-			{ "F", "°f|degrés fahrenheit|degres f|degres fahrenheit|fahrenheit" },
-			{ "K", "k|kelvin" },
-			{ "R", "rankine|°r" },
-			{ "C", "°c|c|degrés celsius|degres celcius|celcius|deg celcius|degs celcius" },
-			{ "Degree", "degrés|degres|deg|deg.|°" }
-		};
-		public static readonly IList<string> AmbiguousTemperatureUnitList = new List<string>
-		{
-			"c",
-			"f",
-			"k"
+			{ "Kelvin", "k|K|kelvin" },
+			{ "F", "°f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit" },
+			{ "R", "rankine|°r|° r" },
+			{ "C", "°c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade" },
+			{ "Degré", "degrés|degres|deg.|°| °|degré|degre|deg" }
 		};
 		public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>
 		{
@@ -407,27 +416,42 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "Centimètre cube", "cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube" },
 			{ "Millimètre cube", "mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube" },
 			{ "Kilomètre cube", "km3|km^3|km³|kilomètre cube|kilomètres cube|kilometre cube|kilometres cube" },
+			{ "Pieds cube", "pieds cubes|pieds cube|pied cube|pied cubes" },
 			{ "Litre", "litre|litres|lts|l" },
 			{ "Millilitre", "ml|millilitre|millilitres" },
-			{ "Gallon", "gallon" },
+			{ "Gallon", "gallon|gallons" },
 			{ "Pintes", "pintes" },
 			{ "Onces", "onces|once|oz" },
 			{ "Décilitre", "dl|décilitre|decilitre|décilitres|decilitres" },
 			{ "Centilitre", "cl|centilitres|centilitre" },
-			{ "Onces liquides", "onces liquides|once liquide|once liquides" }
+			{ "Onces liquides", "onces liquides|once liquide|once liquides" },
+			{ "Baril", "baril|barils|bbl" }
+		};
+		public static readonly IList<string> AmbiguousVolumeUnitList = new List<string>
+		{
+			"ounce",
+			"oz",
+			"l",
+			"cup",
+			"peck",
+			"cord",
+			"gill"
 		};
 		public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
 		{
 			{ "Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos" },
 			{ "Gram", "g|gramme|grammes" },
 			{ "Milligramme", "mg|milligramme|milligrammes" },
-			{ "Tonne métrique", "tonne métrique|tonnes métrique|tonne metrique|tonnes metrique|tonne|tonnes" },
-			{ "Onces", "oz|onces|once" }
+			{ "Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique" },
+			{ "Tonne", "tonne|tonnes|-tonnes|-tonne" },
+			{ "Livre", "livre|livres" }
 		};
-		public static readonly IList<string> AmbiguousWeightunitList = new List<string>
+		public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
 		{
 			"g",
-			"oz"
+			"oz",
+			"stone",
+			"dram"
 		};
 	}
 }
