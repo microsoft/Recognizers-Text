@@ -122,8 +122,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(holidayKey))
             {
                 var value = referenceDate;
-                Func<int, DateObject> function;
-                if (this.config.HolidayFuncDictionary.TryGetValue(holidayKey, out function))
+                if (this.config.HolidayFuncDictionary.TryGetValue(holidayKey, out Func<int, DateObject> function))
                 {
                     value = function(year);
                     this.config.VariableHolidaysTimexDictionary.TryGetValue(holidayKey, out timexStr);
@@ -169,8 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (value < referenceDate)
             {
-                Func<int, DateObject> function;
-                if (this.config.HolidayFuncDictionary.TryGetValue(holiday, out function))
+                if (this.config.HolidayFuncDictionary.TryGetValue(holiday, out Func<int, DateObject> function))
                 {
                     return function(value.Year + 1);
                 }
@@ -183,8 +181,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (value >= referenceDate)
             {
-                Func<int, DateObject> function;
-                if (this.config.HolidayFuncDictionary.TryGetValue(holiday, out function))
+                if (this.config.HolidayFuncDictionary.TryGetValue(holiday, out Func<int, DateObject> function))
                 {
                     return function(value.Year - 1);
                 }

@@ -132,9 +132,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate, pastDate, temp;
+                DateObject futureDate, pastDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out temp))
+                if (DateObject.TryParse(tryStr, out DateObject temp))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
@@ -276,9 +276,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 ret.Timex = FormatUtil.LuisDate(-1, -1, day);
 
-                DateObject futureDate, temp;
+                DateObject futureDate;
                 var tryStr = FormatUtil.LuisDate(year, month, day);
-                if (DateObject.TryParse(tryStr, out temp))
+                if (DateObject.TryParse(tryStr, out DateObject temp))
                 {
                     futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
                 }
