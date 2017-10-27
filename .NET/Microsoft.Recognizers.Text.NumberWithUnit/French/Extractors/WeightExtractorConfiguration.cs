@@ -1,0 +1,26 @@
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Globalization;
+using Microsoft.Recognizers.Definitions.French;
+
+namespace Microsoft.Recognizers.Text.NumberWithUnit.French
+{
+    public class WeightExtractorConfiguration : FrenchNumberWithUnitExtractorConfiguration
+    {
+        public WeightExtractorConfiguration() : this(new CultureInfo(Culture.French)) { }
+
+        public WeightExtractorConfiguration(CultureInfo ci) : base(ci) { }
+
+        public override ImmutableDictionary<string, string> SuffixList => WeightSuffixList;
+
+        public override ImmutableDictionary<string, string> PrefixList => null;
+
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
+
+        public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
+
+        public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
+
+        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
+    }
+}
