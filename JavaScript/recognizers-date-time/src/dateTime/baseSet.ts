@@ -304,25 +304,25 @@ export class BaseSetParser implements IDateTimeParser {
     protected parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let success = false;
-        let er: ExtractResult;
+        let er: ExtractResult[];
         let match = RegExpUtility.getMatches(this.config.setEachRegex, text).pop();
         if (match) {
             let trimmedText = text.substr(0, match.index) + text.substr(match.index + match.length);
-            let ers = extractor.extract(trimmedText);
-            if (ers.length === 1 && ers[0].length === trimmedText.length) {
-                er = ers[0];
+            er = extractor.extract(trimmedText);
+            if (er.length === 1 && er[0].length === trimmedText.length) {
+                success = true;
             }
         }
         match = RegExpUtility.getMatches(this.config.setWeekDayRegex, text).pop();
         if (match) {
             let trimmedText = text.substr(0, match.index) + match.groups('weekday').value + text.substr(match.index + match.length);
-            let ers = extractor.extract(trimmedText);
-            if (ers.length === 1 && ers[0].length === trimmedText.length) {
-                er = ers[0];
+            er = extractor.extract(trimmedText);
+            if (er.length === 1 && er[0].length === trimmedText.length) {
+                success = true;
             }
         }
-        if (er) {
-            let pr = parser.parse(er);
+        if (success) {
+            let pr = parser.parse(er[0]);
             ret.timex = pr.timexStr;
             ret.futureValue = `Set: ${pr.timexStr}`;
             ret.pastValue = `Set: ${pr.timexStr}`;

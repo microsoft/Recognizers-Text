@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, IExtractor, FrenchCardinalExtractor, RegExpUtility, IParser } from "recognizers-text-number";
+import { BaseNumberExtractor, IExtractor, FrenchIntegerExtractor, RegExpUtility, IParser } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -20,7 +20,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
     readonly inConnectorRegex: RegExp;
     readonly rangeUnitRegex: RegExp;
     readonly datePointExtractor: BaseDateExtractor;
-    readonly cardinalExtractor: BaseNumberExtractor;
+    readonly integerExtractor: BaseNumberExtractor;
     readonly durationExtractor: BaseDurationExtractor;
 
     readonly fromRegex: RegExp;
@@ -65,7 +65,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
         this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2, "gis");
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
-        this.cardinalExtractor = new FrenchCardinalExtractor();
+        this.integerExtractor = new FrenchIntegerExtractor();
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
     }
 
