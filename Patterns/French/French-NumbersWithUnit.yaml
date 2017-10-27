@@ -439,6 +439,7 @@ AmbiguousDimensionUnitList: !list
      - mi
      - barils
      - grain
+     - l
      - pierre
      - fps
      - pts

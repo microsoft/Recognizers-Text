@@ -352,6 +352,7 @@ namespace Microsoft.Recognizers.Definitions.French
 			"mi",
 			"barils",
 			"grain",
+			"l",
 			"pierre",
 			"fps",
 			"pts"

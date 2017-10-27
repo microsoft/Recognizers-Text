@@ -100,14 +100,6 @@
         "value": "6",
         "unit": "Hectomètre"
       }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
     }
   ]
 }
@@ -122,22 +114,6 @@
       "Resolution": {
         "value": "500000",
         "unit": "Baril"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
       }
     }
   ]
@@ -184,15 +160,7 @@
           "value": "45",
           "unit": "Acre"
         }
-      },
-      {
-        "Text": "l",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": null,
-          "unit": "Litre"
       }
-    }
   ]
 }
 ,
@@ -372,14 +340,6 @@
         "value": "3",
         "unit": "Tonne"
       }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
     }
   ]
 }
@@ -394,22 +354,6 @@
       "Resolution": {
         "value": "130",
         "unit": "Gallon"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
       }
     }
   ]
@@ -455,14 +399,6 @@
       "Resolution": {
         "value": "16000",
         "unit": "Tonne métrique"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
       }
     }
   ]
@@ -524,14 +460,6 @@
         "value": "2,5",
         "unit": "Kilomètres"
       }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
     }
   ]
 }
@@ -592,22 +520,6 @@
         "value": "40",
         "unit": "Centimètres"
       }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
-      }
     }
   ]
 }
@@ -637,14 +549,6 @@
       "Resolution": {
         "value": "1,6",
         "unit": "Kilomètres"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
       }
     }
   ]
@@ -743,14 +647,6 @@
       "Resolution": {
         "value": "34500",
         "unit": "Tonne métrique"
-      }
-    },
-    {
-      "Text": "l",
-      "TypeName": "dimension",
-      "Resolution": {
-        "value": null,
-        "unit": "Litre"
       }
     }
   ]
