@@ -92,7 +92,7 @@ CurrencySuffixList: !dictionary
     Tetri géorgien: tetri géorgie|tetris géorgiens
 #Ghanaian cedi
     Cedi: cedi|ghs|cedi ghanéen|gh₵
-    Pesewa: pesewa
+    Pesewa: pesewa|pesewas
 #Guatemalan quetzal
     Quetzal guatémaltèque: quetzal guatémaltèque|gtq|quetzal|quetzales
 #Hatian gourde
@@ -187,7 +187,7 @@ CurrencySuffixList: !dictionary
 #Sierra Leon leone
     Leone: leone|sll
 #Netherlands guilder
-    florins néerlandais: florins néerlandais|florins|ang|ƒ|florin|fl 
+    Florins Néerlandais: florins hollandais|florins néerlandais|florins|ang|ƒ|florin|fl |
 #Swazi lilangeni
     Lilangeni: lilangeni|szl
 #Tajikstani somoni
@@ -344,7 +344,7 @@ CurrencySuffixList: !dictionary
     Dollar trinidadien: dollar trinidadien|dollars trinidadien|ttd|$ trinidadien
     Dollar: dollar|$|dollars
 #Chinese yuan
-    Yuan Chinois: yuan|yuan chinois|renminbi|cny|rmb|￥
+    Yuan Chinois: yuan|yuans|yuan chinois|renminbi|cny|rmb|￥
     Fen: fen
     Jiao: jiao
 #Additional

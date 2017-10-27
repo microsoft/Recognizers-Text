@@ -1,9 +1,9 @@
 [{
-  "Input": "Comté de montgomery, md. - - 75 millions de $ d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
+  "Input": "Comté de montgomery, md. - - $ 75 millions d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "75 millions de $",
+      "Text": "$ 75 millions",
       "TypeName": "currency",
       "Resolution": {
         "value": "75000000",
@@ -29,11 +29,11 @@
 }
 ,
 {
-  "Input": "Siegel payé national et 94.000 $ shuster pour laisser tomber toutes les réclamations.",
+  "Input": "Siegel payé national et 94000 $ shuster pour laisser tomber toutes les réclamations.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "94.000 $",
+      "Text": "94000 $",
       "TypeName": "currency",
       "Resolution": {
         "value": "94000",
@@ -93,7 +93,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "$ 280 millions de $",
+      "Text": "280 millions de $",
       "TypeName": "currency",
       "Resolution": {
         "value": "280000000",
@@ -209,11 +209,11 @@
 }
 ,
 {
-  "Input": "le parc et sa famille a économisé pendant quatre ans pour acheter un appartement minuscule ici, mais a constaté que plus près ils sont arrivés à sauver 40,000 $ dont ils ont à l'origine eu besoin, plus du prix est monté.",
+  "Input": "le parc et sa famille a économisé pendant quatre ans pour acheter un appartement minuscule ici, mais a constaté que plus près ils sont arrivés à sauver 40000 $ dont ils ont à l'origine eu besoin, plus du prix est monté.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "40,000 $",
+      "Text": "40000 $",
       "TypeName": "currency",
       "Resolution": {
         "value": "40000",
@@ -224,11 +224,11 @@
 }
 ,
 {
-  "Input": "e. Robert wallach a été condamné par un u. s. le juge à New York à six ans en prison et condamné à une amende 250,000 $ pour sa conviction(condamnation) de racket dans le scandale wedtech.",
+  "Input": "e. Robert wallach a été condamné par un u. s. le juge à New York à six ans en prison et condamné à une amende 250000 $ pour sa conviction(condamnation) de racket dans le scandale wedtech.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "250,000 $",
+      "Text": "250000 $",
       "TypeName": "currency",
       "Resolution": {
         "value": "250000",
@@ -434,11 +434,11 @@
 }
 ,
 {
-  "Input": "La Bourse américaine a dit qu'une place(un siège) a été vendue à en baisse de 5.000 $ de la vente précédente vendredi dernier.",
+  "Input": "La Bourse américaine a dit qu'une place(un siège) a été vendue à en baisse de 5000 $ de la vente précédente vendredi dernier.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5.000 $",
+      "Text": "5000 $",
       "TypeName": "currency",
       "Resolution": {
         "value": "5000",
@@ -524,14 +524,14 @@
 }
 ,
 {
-  "Input": "On a demandé au New Jersey, par exemple, accepter 300.000 $, mais a refusé.",
+  "Input": "On a demandé au New Jersey, par exemple, accepter 300000 $, mais a refusé.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "300.000 $",
+      "Text": "300000 $",
       "TypeName": "currency",
       "Resolution": {
-        "value": "300.000",
+        "value": "300000",
         "unit": "Dollar"
       }
     }
@@ -623,6 +623,14 @@
       "Resolution": {
         "value": "63,45",
         "unit": "Dollar"
+      }
+    },
+    {
+      "Text": "cent",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": null,
+        "unit": "Cent"
       }
     }
   ]
@@ -734,7 +742,7 @@
 }
 ,
 {
-  "Input": "Le pacte bellsouth précédent a été estimé à environ 98 $ une part.",
+  "Input": "Le pacte bellsouth précédent a été estimé à environ 98 $ par action.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -764,11 +772,11 @@
 }
 ,
 {
-  "Input": "Pour le troisième trimestre, dessèche a dit que son revenu total est monté 4. 8 % à 13.18 milliards de $ une année plus tôt.",
+  "Input": "Pour le troisième trimestre, dessèche a dit que son revenu total est monté 4. 8 % à 13,18 milliards de $ plus tôt l'année dernière.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "13.18 milliards de $",
+      "Text": "13,18 milliards de $",
       "TypeName": "currency",
       "Resolution": {
         "value": "13180000000",
@@ -779,7 +787,7 @@
 }
 ,
 {
-  "Input": "Pendant les neuf mois, éthyle a dit que le réseau(filet) est tombé 2 % ou 1,40 $ une part(action)",
+  "Input": "Pendant les neuf mois, éthyle a dit que le réseau(filet) est tombé 2 % ou 1,40 $ par action",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -839,11 +847,11 @@
 }
 ,
 {
-  "Input": "Inclusion de 450,000 yens par Premier ministre toshiki kaifu.",
+  "Input": "Inclusion de 450000 yens par Premier ministre toshiki kaifu.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "450,000 yens",
+      "Text": "450000 yens",
       "TypeName": "currency",
       "Resolution": {
         "value": "450000",
@@ -869,14 +877,14 @@
 }
 ,
 {
-  "Input": "Août ajusté dépensant(passant) par le salaire - des familles gagnantes était en bas 0. 6 % à 309,381 yens d'une année plus tôt.",
+  "Input": "Août ajusté dépensant(passant) par le salaire - des familles gagnantes était en bas 0. 6 % à 309.381,25 yens d'une année plus tôt.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "309,381 yens",
+      "Text": "309.381,25 yens",
       "TypeName": "currency",
       "Resolution": {
-        "value": "309381",
+        "value": "309381,25",
         "unit": "Yen Japonais"
       }
     }
@@ -888,7 +896,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12-cent",
+      "Text": "12 cents",
       "TypeName": "currency",
       "Resolution": {
         "value": "12",
@@ -959,15 +967,15 @@
 }
 ,
 {
-  "Input": "La transaction a appelé à M. Murdoch ' s des nouvelles plc international, une unité de l'Australie - la corporation de nouvelles basée, souscrire à une question(publication) de droits par zeta estimé à 6,65 milliards de pesetas.",
+  "Input": "La transaction a appelé à M. Murdoch ' s des nouvelles plc international, une unité de l'Australie - la corporation de nouvelles basée, souscrire à une question(publication) de droits par zeta estimé à 6,65 milliards de pesewas.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "6,65 milliards de pesetas",
+      "Text": "6,65 milliards de pesewas",
       "TypeName": "currency",
       "Resolution": {
         "value": "6650000000",
-        "unit": "Peseta"
+        "unit": "Pesewa"
       }
     }
   ]
@@ -989,26 +997,26 @@
 }
 ,
 {
-  "Input": "250 million dutch guilders of 7 3 / 4 % bonds due nov . 15 , 1999 , priced at 101 1 / 4 to yield 7 . 57 % at issue price and 7 . 86 % less full fees , via amro bank .",
+  "Input": "250 millions de florins hollandais de 7 3 / des liens(obligations) de 4 % dus(censés) le 15 novembre 1999, évalué à 101 1 / 4 pour céder 7. 57 % évaluent en question et 7. Honoraires moins pleins(complets) de 86 %, via banque(rive) amro.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "250 million dutch guilders",
+      "Text": "250 millions de florins hollandais",
       "TypeName": "currency",
       "Resolution": {
         "value": "250000000",
-        "unit": "Netherlands guilder"
+        "unit": "Florins Néerlandais"
       }
     }
   ]
 }
 ,
 {
-  "Input": "De plus, la banque(rive) a une option pour acheter des 30. Intérêt(pieu) de 84 % dans bip de Société Générale après le 1 janvier 1990 à 1.015 francs une part(action).",
+  "Input": "De plus, la banque(rive) a une option pour acheter des 30. Intérêt(pieu) de 84 % dans bip de Société Générale après le 1 janvier 1990 à 1015 francs une part(action).",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1.015 francs",
+      "Text": "1015 francs",
       "TypeName": "currency",
       "Resolution": {
         "value": "1015",
@@ -1109,11 +1117,11 @@
 }
 ,
 {
-  "Input": "Uefa a facturé ferguson pour apporter le jeu dans la mauvaise réputation avec ses commentaires et sur 1 peut cette année il a été condamné à une amende 10,000 francs suisses  .",
+  "Input": "Uefa a facturé ferguson pour apporter le jeu dans la mauvaise réputation avec ses commentaires et sur 1 peut cette année il a été condamné à une amende 10000 francs suisses  .",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "10,000 francs suisses",
+      "Text": "10000 francs suisses",
       "TypeName": "currency",
       "Resolution": {
         "value": "10000",
@@ -1244,11 +1252,11 @@
 }
 ,
 {
-  "Input": "Le stand est (worcester l'avenue) le stand a été fini en 1934 et cette capacité accrue à autour de 80, 000 spectateurs, mais coût 60,000 £.",
+  "Input": "Le stand est (worcester l'avenue) le stand a été fini en 1934 et cette capacité accrue à autour de 80, 000 spectateurs, mais coût 60000 £.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "60,000 £",
+      "Text": "60000 £",
       "TypeName": "currency",
       "Resolution": {
         "value": "60000",
@@ -1372,14 +1380,14 @@
 }
 ,
 {
-  "Input": "Aerosmith signé avec la Colombie à milieu de - 1972 pour 125.000 $ rapportés et publié leur album de début, aerosmith.",
+  "Input": "Aerosmith signé avec la Colombie à milieu de - 1972 pour 125.000,50 $ rapportés et publié leur album de début, aerosmith.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "125.000 $",
+      "Text": "125.000,50 $",
       "TypeName": "currency",
       "Resolution": {
-        "value": "125.000",
+        "value": "125000,5",
         "unit": "Dollar"
       }
     }
@@ -1417,14 +1425,14 @@
 }
 ,
 {
-  "Input": "Le cerf - le classement de Scott est alors passé en revue et n'importe quelles préoccupations(entreprises) antitrust d'habitude respectées. Typiquement, le cerf - Scott est utilisé maintenant pour donner aux directeurs(managers) de sociétés cibles les premières nouvelles d'une offre et une chance d'utiliser examen(la revue) réglementaire(régulateur) comme une tactique s'attardant. impôt(la taxe) de 20,000 $ serait un petit coût dans un multimilliard - accord de dollar, mais une traînée sérieuse sur des milliers d'accords petits, amicaux.",
+  "Input": "Le cerf - le classement de Scott est alors passé en revue et n'importe quelles préoccupations(entreprises) antitrust d'habitude respectées. Typiquement, le cerf - Scott est utilisé maintenant pour donner aux directeurs(managers) de sociétés cibles les premières nouvelles d'une offre et une chance d'utiliser examen(la revue) réglementaire(régulateur) comme une tactique s'attardant. impôt(la taxe) de 20000,15 $ serait un petit coût dans un multimilliard - accord de dollar, mais une traînée sérieuse sur des milliers d'accords petits, amicaux.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20,000 $",
+      "Text": "20000,15 $",
       "TypeName": "currency",
       "Resolution": {
-        "value": "20000",
+        "value": "20000,15",
         "unit": "Dollar"
       }
     },
