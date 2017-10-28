@@ -18,14 +18,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DurationParser = new DurationParserChs(this);
             GetParser = new SetParserChs(this);
             HolidayParser = new HolidayParserChs(this);
-            UnitMap = DateTimeDefinitions.ParserConfiguration_UnitMap.ToImmutableDictionary();
-            UnitValueMap = DateTimeDefinitions.ParserConfiguration_UnitValueMap.ToImmutableDictionary();
-            SeasonMap = DateTimeDefinitions.ParserConfiguration_SeasonMap.ToImmutableDictionary();
-            SeasonValueMap = DateTimeDefinitions.ParserConfiguration_SeasonValueMap.ToImmutableDictionary();
-            CardinalMap = DateTimeDefinitions.ParserConfiguration_CardinalMap.ToImmutableDictionary();
-            DayOfMonth = DateTimeDefinitions.ParserConfiguration_DayOfMonth.ToImmutableDictionary();
-            DayOfWeek = DateTimeDefinitions.ParserConfiguration_DayOfWeek.ToImmutableDictionary();
-            MonthOfYear = DateTimeDefinitions.ParserConfiguration_MonthOfYear.ToImmutableDictionary();
+            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
+            UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
+            SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
+            SeasonValueMap = DateTimeDefinitions.ParserConfigurationSeasonValueMap.ToImmutableDictionary();
+            CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
+            DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
+            DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
+            MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
             Numbers = InitNumbers();
             DateRegexList = DateExtractorChs.DateRegexList;
             NextRegex = DateExtractorChs.NextRegex;
@@ -34,17 +34,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             StrictWeekDayRegex = DateExtractorChs.WeekDayRegex;
             WeekDayOfMonthRegex = DateExtractorChs.WeekDayOfMonthRegex;
         }
-        public string Before => DateTimeDefinitions.ParserConfiguration_Before;
+        public string Before => DateTimeDefinitions.ParserConfigurationBefore;
 
-        public string After => DateTimeDefinitions.ParserConfiguration_After;
+        public string After => DateTimeDefinitions.ParserConfigurationAfter;
 
-        public string LastWeekDayToken => DateTimeDefinitions.ParserConfiguration_LastWeekDayToken;
+        public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
 
-        public string NextMonthToken => DateTimeDefinitions.ParserConfiguration_NextMonthToken;
+        public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
 
-        public string LastMonthToken => DateTimeDefinitions.ParserConfiguration_LastMonthToken;
+        public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
 
-        public string DatePrefix => DateTimeDefinitions.ParserConfiguration_DatePrefix;
+        public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
 
         #region internalParsers
 

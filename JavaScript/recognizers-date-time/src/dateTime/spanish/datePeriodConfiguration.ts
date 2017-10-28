@@ -1,4 +1,4 @@
-import { BaseNumberExtractor, IExtractor, SpanishCardinalExtractor, RegExpUtility, IParser } from "recognizers-text-number";
+import { BaseNumberExtractor, IExtractor, SpanishIntegerExtractor, RegExpUtility, IParser } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -20,7 +20,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly inConnectorRegex: RegExp;
     readonly rangeUnitRegex: RegExp;
     readonly datePointExtractor: BaseDateExtractor;
-    readonly cardinalExtractor: BaseNumberExtractor;
+    readonly integerExtractor: BaseNumberExtractor;
     readonly durationExtractor: BaseDurationExtractor;
 
     readonly fromRegex: RegExp;
@@ -62,7 +62,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex, "gis");
 
         this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-        this.cardinalExtractor = new SpanishCardinalExtractor();
+        this.integerExtractor = new SpanishIntegerExtractor();
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
     }
 

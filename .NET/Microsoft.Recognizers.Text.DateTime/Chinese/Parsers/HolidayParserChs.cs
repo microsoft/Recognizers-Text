@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         };
 
-        public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.Holiday_NoFixedTimex;
+        public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
 
         private readonly IFullDateTimeParserConfiguration config;
 

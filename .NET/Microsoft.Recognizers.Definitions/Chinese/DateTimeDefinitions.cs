@@ -19,80 +19,80 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 	{
 		public const string MonthRegex = @"(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|01月|02月|03月|04月|05月|06月|07月|08月|09月|10月|11月|12月|1月|2月|3月|4月|5月|6月|7月|8月|9月|大年)";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|1|2|3|4|5|6|7|8|9)";
-		public const string Date_DayRegexInChinese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)";
+		public const string DateDayRegexInChinese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)";
 		public const string DayRegexNumInChinese = @"(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
 		public const string YearRegex = @"(?<year>19\d{2}|20\d{2}|9\d|0\d|1\d)";
 		public const string ZeroToNineIntegerRegexChs = @"[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
-		public static readonly string Date_YearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))";
+		public static readonly string DateYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))";
 		public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期天|星期天)";
 		public const string LunarRegex = @"(农历|初一|正月|大年)";
-		public static readonly string Date_ThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
-		public static readonly string Date_LastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
-		public static readonly string Date_NextRegex = $@"(下一个|下个|下一|下)(的)?{WeekDayRegex}";
+		public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
+		public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
+		public static readonly string DateNextRegex = $@"(下一个|下个|下一|下)(的)?{WeekDayRegex}";
 		public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日)";
 		public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})";
-		public const string Date_ThisRe = @"这个|这一个|这|这一|本|今";
-		public const string Date_LastRe = @"上个|上一个|上|上一|去";
-		public const string Date_NextRe = @"下个|下一个|下|下一|明";
-		public static readonly string SpecialDate = $@"(?<thisyear>({Date_ThisRe}|{Date_LastRe}|{Date_NextRe})年)?(?<thismonth>({Date_ThisRe}|{Date_LastRe}|{Date_NextRe})月)?{Date_DayRegexInChinese}";
-		public const string Date_UnitRegex = @"(?<unit>年|个月|周|日|天)";
+		public const string DateThisRe = @"这个|这一个|这|这一|本|今";
+		public const string DateLastRe = @"上个|上一个|上|上一|去";
+		public const string DateNextRe = @"下个|下一个|下|下一|明";
+		public static readonly string SpecialDate = $@"(?<thisyear>({DateThisRe}|{DateLastRe}|{DateNextRe})年)?(?<thismonth>({DateThisRe}|{DateLastRe}|{DateNextRe})月)?{DateDayRegexInChinese}";
+		public const string DateUnitRegex = @"(?<unit>年|个月|周|日|天)";
 		public const string BeforeRegex = @"之前|前";
 		public const string AfterRegex = @"之后|后";
-		public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({YearRegex}|{Date_YearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){Date_DayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
-		public static readonly string DateRegexList2 = $@"((({YearRegex}|{Date_YearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){Date_DayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
-		public static readonly string DateRegexList3 = $@"((({YearRegex}|{Date_YearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
+		public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
+		public static readonly string DateRegexList2 = $@"((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInChinese}((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
+		public static readonly string DateRegexList3 = $@"((({YearRegex}|{DateYearInChineseRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInChinese}|{DayRegex})((\s*|,|，){WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
 		public static readonly string DateRegexList4 = $@"{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*){YearRegex})?";
 		public static readonly string DateRegexList5 = $@"{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){YearRegex})?";
 		public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{YearRegex}";
 		public static readonly string DateRegexList7 = $@"\b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{YearRegex}";
 		public static readonly string DateRegexList8 = $@"{YearRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegex}";
-		public const string DatePeriod_TillRegex = @"(?<till>到|至|--|-|—|——)";
-		public const string DatePeriod_DayRegexInChinese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十||廿|卅)";
-		public const string DatePeriod_ThisRegex = @"这个|这一个|这|这一";
-		public const string DatePeriod_LastRegex = @"上个|上一个|上|上一";
-		public const string DatePeriod_NextRegex = @"下个|下一个|下|下一";
-		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriod_ThisRegex}|{DatePeriod_LastRegex}|{DatePeriod_NextRegex})\s*月)";
-		public const string DatePeriod_YearRegex = @"(?<year>19\d{2}|20\d{2})年?|(?<year>\d\d)年";
+		public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——)";
+		public const string DatePeriodDayRegexInChinese = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十||廿|卅)";
+		public const string DatePeriodThisRegex = @"这个|这一个|这|这一";
+		public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
+		public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
+		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
+		public const string DatePeriodYearRegex = @"(?<year>19\d{2}|20\d{2})年?|(?<year>\d\d)年";
 		public const string StrictYearRegex = @"(?<year>19\d{2}|20\d{2})年?";
 		public const string YearRegexInNumber = @"(?<year>19\d{2}|20\d{2})";
-		public static readonly string DatePeriod_YearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
+		public static readonly string DatePeriodYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
-		public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({DatePeriod_YearRegex}|{DatePeriod_YearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriod_DayRegexInChinese}|{DayRegex})\s*{DatePeriod_TillRegex}\s*({DatePeriod_DayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){DatePeriod_YearRegex})?";
-		public static readonly string YearAndMonth = $@"({DatePeriod_YearInChineseRegex}|{YearRegex}){MonthRegex}";
+		public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\s+|\s*,\s*){DatePeriodYearRegex})?";
+		public static readonly string YearAndMonth = $@"({DatePeriodYearInChineseRegex}|{YearRegex}){MonthRegex}";
 		public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
-		public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriod_ThisRegex}|{DatePeriod_LastRegex}|{DatePeriod_NextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
+		public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
 		public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
 		public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
 		public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
 		public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
-		public static readonly string YearToYear = $@"({DatePeriod_YearInChineseRegex}|{YearRegex}){DatePeriod_TillRegex}({DatePeriod_YearInChineseRegex}|{YearRegex})";
+		public static readonly string YearToYear = $@"({DatePeriodYearInChineseRegex}|{YearRegex}){DatePeriodTillRegex}({DatePeriodYearInChineseRegex}|{YearRegex})";
 		public static readonly string MonthToMonth = $@"({MonthRegex}){YearRegex}({MonthRegex})";
 		public const string PastRegex = @"(?<past>(前|上|之前))";
 		public const string FutureRegex = @"(?<past>(后|下|之后))";
 		public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
-		public static readonly string SeasonWithYear = $@"(({YearRegex}|{DatePeriod_YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
-		public static readonly string QuarterRegex = $@"(({YearRegex}|{DatePeriod_YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";
+		public static readonly string SeasonWithYear = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
+		public static readonly string QuarterRegex = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";
 		public const string PrepositionRegex = @"(?<prep>^的|在$)";
 		public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
 		public const string NightRegex = @"(?<night>早|晚)";
 		public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
-		public const string DateTimePeriod_TillRegex = @"(?<till>到|直到|--|-|—|——)";
-		public const string DateTimePeriod_PrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
+		public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
+		public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
 		public const string HourRegex = @"(?<hour>00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
 		public const string HourNumRegex = @"(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
 		public const string ZhijianRegex = @"^\s*(之间|之内|期间|中间|间)";
-		public const string DateTimePeriod_ThisRegex = @"这个|这一个|这|这一";
-		public const string DateTimePeriod_LastRegex = @"上个|上一个|上|上一";
-		public const string DateTimePeriod_NextRegex = @"下个|下一个|下|下一";
+		public const string DateTimePeriodThisRegex = @"这个|这一个|这|这一";
+		public const string DateTimePeriodLastRegex = @"上个|上一个|上|上一";
+		public const string DateTimePeriodNextRegex = @"下个|下一个|下|下一";
 		public const string DescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p|a)";
 		public const string TimeOfDayRegex = @"(?<timeOfDay>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
-		public static readonly string SpecificTimeOfDayRegex = $@"((({DateTimePeriod_ThisRegex}|{DateTimePeriod_NextRegex}|{DateTimePeriod_LastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))";
-		public const string DateTimePeriod_UnitRegex = @"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
-		public static readonly string DateTimePeriod_FollowedUnit = $@"^\s*{DateTimePeriod_UnitRegex}";
-		public static readonly string DateTimePeriod_NumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){DateTimePeriod_UnitRegex}";
-		public const string Duration_YearRegex = @"((19\d{2}|20\d{2})|两千)年";
-		public const string Duration_HalfSuffixRegex = @"半";
+		public static readonly string SpecificTimeOfDayRegex = $@"((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))";
+		public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|分钟|秒钟|时|分|秒))";
+		public static readonly string DateTimePeriodFollowedUnit = $@"^\s*{DateTimePeriodUnitRegex}";
+		public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}";
+		public const string DurationYearRegex = @"((19\d{2}|20\d{2})|两千)年";
+		public const string DurationHalfSuffixRegex = @"半";
 		public static readonly Dictionary<string, string> DurationSuffixList = new Dictionary<string, string>
 		{
 			{ "M", "分钟" },
@@ -103,7 +103,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "Mon", "个月" },
 			{ "Y", "年" }
 		};
-		public static readonly IList<string> Duration_AmbiguousUnits = new List<string>
+		public static readonly IList<string> DurationAmbiguousUnits = new List<string>
 		{
 			"分钟",
 			"秒钟",
@@ -117,53 +117,53 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			"个月",
 			"年"
 		};
-		public static readonly string LunarHolidayRegex = $@"(({DatePeriod_YearRegex}|{DatePeriod_YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
-		public static readonly string HolidayRegexList1 = $@"(({DatePeriod_YearRegex}|{DatePeriod_YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
-		public static readonly string HolidayRegexList2 = $@"(({DatePeriod_YearRegex}|{DatePeriod_YearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";
-		public const string Set_UnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
-		public static readonly string Set_EachUnitRegex = $@"(?<each>(每个|每一|每)\s*{Set_UnitRegex})";
-		public const string Set_EachPrefixRegex = @"(?<each>(每)\s*$)";
-		public const string Set_LastRegex = @"(?<last>last|this|next)";
-		public const string Set_EachDayRegex = @"(每|每一)(天|日)\s*$";
-		public const string Time_HourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
-		public const string Time_MinuteNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
-		public const string Time_SecondNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
-		public const string Time_HourChsRegex = @"([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
-		public const string Time_MinuteChsRegex = @"([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])";
-		public static readonly string Time_SecondChsRegex = $@"{Time_MinuteChsRegex}";
-		public const string Time_ClockDescRegex = @"(点\s*整|点\s*钟|点|时)";
-		public const string Time_MinuteDescRegex = @"(分钟|分|)";
-		public const string Time_SecondDescRegex = @"(秒钟|秒)";
-		public const string Time_BanHourPrefixRegex = @"(第)";
-		public static readonly string Time_HourRegex = $@"(?<!{Time_BanHourPrefixRegex})(?<hour>{Time_HourChsRegex}|{Time_HourNumRegex}){Time_ClockDescRegex}";
-		public static readonly string Time_MinuteRegex = $@"(?<min>{Time_MinuteChsRegex}|{Time_MinuteNumRegex}){Time_MinuteDescRegex}";
-		public static readonly string Time_SecondRegex = $@"(?<sec>{Time_SecondChsRegex}|{Time_SecondNumRegex}){Time_SecondDescRegex}";
-		public const string Time_HalfRegex = @"(?<half>过半|半)";
-		public const string Time_QuarterRegex = @"(?<quarter>[一两二三四1-4])\s*(刻钟|刻)";
-		public static readonly string Time_ChineseTimeRegex = $@"{Time_HourRegex}({Time_QuarterRegex}|{Time_HalfRegex}|((过|又)?{Time_MinuteRegex})({Time_SecondRegex})?)?";
-		public static readonly string Time_DigitTimeRegex = $@"(?<hour>{Time_HourNumRegex}):(?<min>{Time_MinuteNumRegex})(:(?<sec>{Time_SecondNumRegex}))?";
-		public const string Time_DayDescRegex = @"(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
-		public const string Time_ApproximateDescPreffixRegex = @"(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
-		public const string Time_ApproximateDescSuffixRegex = @"(之前|以前|以后|之后|前|后|左右)";
-		public static readonly string Time_Regexes1 = $@"{Time_ApproximateDescPreffixRegex}?{Time_DayDescRegex}?{Time_ChineseTimeRegex}{Time_ApproximateDescSuffixRegex}?";
-		public static readonly string Time_Regexes2 = $@"{Time_ApproximateDescPreffixRegex}?{Time_DayDescRegex}?{Time_DigitTimeRegex}{Time_ApproximateDescSuffixRegex}?";
-		public static readonly string Time_Regexes3 = $@"差{Time_MinuteRegex}{Time_ChineseTimeRegex}";
-		public const string TimePeriod_TimePeriodConnectWords = @"(起|至|到|–|-|—|~|～)";
-		public static readonly string TimePeriod_LeftChsTimeRegex = $@"(从)?(?<left>{Time_DayDescRegex}?({Time_ChineseTimeRegex}))";
-		public static readonly string TimePeriod_RightChsTimeRegex = $@"{TimePeriod_TimePeriodConnectWords}(?<right>{Time_DayDescRegex}?{Time_ChineseTimeRegex})(之间)?";
-		public static readonly string TimePeriod_LeftDigitTimeRegex = $@"(从)?(?<left>{Time_DayDescRegex}?({Time_DigitTimeRegex}))";
-		public static readonly string TimePeriod_RightDigitTimeRegex = $@"{TimePeriod_TimePeriodConnectWords}(?<right>{Time_DayDescRegex}?{Time_DigitTimeRegex})(之间)?";
-		public static readonly string TimePeriod_ShortLeftChsTimeRegex = $@"(从)?(?<left>{Time_DayDescRegex}?({Time_HourChsRegex}))";
-		public static readonly string TimePeriod_ShortLeftDigitTimeRegex = $@"(从)?(?<left>{Time_DayDescRegex}?({Time_HourNumRegex}))";
-		public static readonly string TimePeriod_Regexes1 = $@"({TimePeriod_LeftDigitTimeRegex}{TimePeriod_RightDigitTimeRegex}|{TimePeriod_LeftChsTimeRegex}{TimePeriod_RightChsTimeRegex})";
-		public static readonly string TimePeriod_Regexes2 = $@"({TimePeriod_ShortLeftDigitTimeRegex}{TimePeriod_RightDigitTimeRegex}|{TimePeriod_ShortLeftChsTimeRegex}{TimePeriod_RightChsTimeRegex})";
-		public const string ParserConfiguration_Before = @"(前|之前)$";
-		public const string ParserConfiguration_After = @"(后|之后)$";
-		public const string ParserConfiguration_LastWeekDayToken = "最后一个";
-		public const string ParserConfiguration_NextMonthToken = "下一个";
-		public const string ParserConfiguration_LastMonthToken = "上一个";
-		public const string ParserConfiguration_DatePrefix = " ";
-		public static readonly Dictionary<string, string> ParserConfiguration_UnitMap = new Dictionary<string, string>
+		public static readonly string LunarHolidayRegex = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
+		public static readonly string HolidayRegexList1 = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
+		public static readonly string HolidayRegexList2 = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";
+		public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
+		public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
+		public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";
+		public const string SetLastRegex = @"(?<last>last|this|next)";
+		public const string SetEachDayRegex = @"(每|每一)(天|日)\s*$";
+		public const string TimeHourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
+		public const string TimeMinuteNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
+		public const string TimeSecondNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
+		public const string TimeHourChsRegex = @"([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
+		public const string TimeMinuteChsRegex = @"([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])";
+		public static readonly string TimeSecondChsRegex = $@"{TimeMinuteChsRegex}";
+		public const string TimeClockDescRegex = @"(点\s*整|点\s*钟|点|时)";
+		public const string TimeMinuteDescRegex = @"(分钟|分|)";
+		public const string TimeSecondDescRegex = @"(秒钟|秒)";
+		public const string TimeBanHourPrefixRegex = @"(第)";
+		public static readonly string TimeHourRegex = $@"(?<!{TimeBanHourPrefixRegex})(?<hour>{TimeHourChsRegex}|{TimeHourNumRegex}){TimeClockDescRegex}";
+		public static readonly string TimeMinuteRegex = $@"(?<min>{TimeMinuteChsRegex}|{TimeMinuteNumRegex}){TimeMinuteDescRegex}";
+		public static readonly string TimeSecondRegex = $@"(?<sec>{TimeSecondChsRegex}|{TimeSecondNumRegex}){TimeSecondDescRegex}";
+		public const string TimeHalfRegex = @"(?<half>过半|半)";
+		public const string TimeQuarterRegex = @"(?<quarter>[一两二三四1-4])\s*(刻钟|刻)";
+		public static readonly string TimeChineseTimeRegex = $@"{TimeHourRegex}({TimeQuarterRegex}|{TimeHalfRegex}|((过|又)?{TimeMinuteRegex})({TimeSecondRegex})?)?";
+		public static readonly string TimeDigitTimeRegex = $@"(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?";
+		public const string TimeDayDescRegex = @"(?<daydesc>凌晨|清晨|早上|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|午夜|夜间|深夜|傍晚|晚)";
+		public const string TimeApproximateDescPreffixRegex = @"(大[约概]|差不多|可能|也许|约|不超过|不多[于过]|最[多长少]|少于|[超短长多]过|几乎要|将近|差点|快要|接近|至少|起码|超出|不到)";
+		public const string TimeApproximateDescSuffixRegex = @"(之前|以前|以后|之后|前|后|左右)";
+		public static readonly string TimeRegexes1 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?";
+		public static readonly string TimeRegexes2 = $@"{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?";
+		public static readonly string TimeRegexes3 = $@"差{TimeMinuteRegex}{TimeChineseTimeRegex}";
+		public const string TimePeriodTimePeriodConnectWords = @"(起|至|到|–|-|—|~|～)";
+		public static readonly string TimePeriodLeftChsTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeChineseTimeRegex}))";
+		public static readonly string TimePeriodRightChsTimeRegex = $@"{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeChineseTimeRegex})(之间)?";
+		public static readonly string TimePeriodLeftDigitTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))";
+		public static readonly string TimePeriodRightDigitTimeRegex = $@"{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeDigitTimeRegex})(之间)?";
+		public static readonly string TimePeriodShortLeftChsTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeHourChsRegex}))";
+		public static readonly string TimePeriodShortLeftDigitTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))";
+		public static readonly string TimePeriodRegexes1 = $@"({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
+		public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})";
+		public const string ParserConfigurationBefore = @"(前|之前)$";
+		public const string ParserConfigurationAfter = @"(后|之后)$";
+		public const string ParserConfigurationLastWeekDayToken = "最后一个";
+		public const string ParserConfigurationNextMonthToken = "下一个";
+		public const string ParserConfigurationLastMonthToken = "上一个";
+		public const string ParserConfigurationDatePrefix = " ";
+		public static readonly Dictionary<string, string> ParserConfigurationUnitMap = new Dictionary<string, string>
 		{
 			{ "年", "Y" },
 			{ "月", "MON" },
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "秒", "S" },
 			{ "星期", "W" }
 		};
-		public static readonly Dictionary<string, long> ParserConfiguration_UnitValueMap = new Dictionary<string, long>
+		public static readonly Dictionary<string, long> ParserConfigurationUnitValueMap = new Dictionary<string, long>
 		{
 			{ "years", 31536000 },
 			{ "year", 31536000 },
@@ -203,21 +203,21 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "secs", 1 },
 			{ "sec", 1 }
 		};
-		public static readonly Dictionary<string, string> ParserConfiguration_SeasonMap = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> ParserConfigurationSeasonMap = new Dictionary<string, string>
 		{
 			{ "春", "SP" },
 			{ "夏", "SU" },
 			{ "秋", "FA" },
 			{ "冬", "WI" }
 		};
-		public static readonly Dictionary<string, int> ParserConfiguration_SeasonValueMap = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> ParserConfigurationSeasonValueMap = new Dictionary<string, int>
 		{
 			{ "SP", 3 },
 			{ "SU", 6 },
 			{ "FA", 9 },
 			{ "WI", 12 }
 		};
-		public static readonly Dictionary<string, int> ParserConfiguration_CardinalMap = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> ParserConfigurationCardinalMap = new Dictionary<string, int>
 		{
 			{ "一", 1 },
 			{ "二", 2 },
@@ -240,7 +240,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "第四", 4 },
 			{ "第五", 5 }
 		};
-		public static readonly Dictionary<string, int> ParserConfiguration_DayOfMonth = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> ParserConfigurationDayOfMonth = new Dictionary<string, int>
 		{
 			{ "01", 1 },
 			{ "02", 2 },
@@ -439,7 +439,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "二十八", 28 },
 			{ "二十九", 29 }
 		};
-		public static readonly Dictionary<string, int> ParserConfiguration_DayOfWeek = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> ParserConfigurationDayOfWeek = new Dictionary<string, int>
 		{
 			{ "星期一", 1 },
 			{ "星期二", 2 },
@@ -458,7 +458,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "周日", 0 },
 			{ "周天", 0 }
 		};
-		public static readonly Dictionary<string, int> ParserConfiguration_MonthOfYear = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> ParserConfigurationMonthOfYear = new Dictionary<string, int>
 		{
 			{ "1", 1 },
 			{ "2", 2 },
@@ -517,13 +517,13 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "正月", 13 },
 			{ "大年", 13 }
 		};
-		public const string DateTime_SimpleAmRegex = @"(?<am>早|晨)";
-		public const string DateTime_SimplePmRegex = @"(?<pm>晚)";
-		public const string DateTimePeriod_MORegex = @"(凌晨|清晨|早上|早|上午)";
-		public const string DateTimePeriod_AFRegex = @"(中午|下午|午后|傍晚)";
-		public const string DateTimePeriod_EVRegex = @"(晚上|夜里|夜晚|晚)";
-		public const string DateTimePeriod_NIRegex = @"(半夜|夜间|深夜)";
-		public static readonly Dictionary<string, int> Duration_UnitValueMap = new Dictionary<string, int>
+		public const string DateTimeSimpleAmRegex = @"(?<am>早|晨)";
+		public const string DateTimeSimplePmRegex = @"(?<pm>晚)";
+		public const string DateTimePeriodMORegex = @"(凌晨|清晨|早上|早|上午)";
+		public const string DateTimePeriodAFRegex = @"(中午|下午|午后|傍晚)";
+		public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
+		public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
+		public static readonly Dictionary<string, int> DurationUnitValueMap = new Dictionary<string, int>
 		{
 			{ "Y", 31536000 },
 			{ "Mon", 2592000 },
@@ -533,15 +533,15 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "M", 60 },
 			{ "S", 1 }
 		};
-		public static readonly Dictionary<string, string> Holiday_NoFixedTimex = new Dictionary<string, string>
+		public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
 		{
 			{ "父亲节", "-06-WXX-6-3" },
 			{ "母亲节", "-05-WXX-7-2" },
 			{ "感恩节", "-11-WXX-4-4" }
 		};
-		public const string Merged_BeforeRegex = @"(前|之前)$";
-		public const string Merged_AfterRegex = @"(后|之后)$";
-		public static readonly Dictionary<char, int> Time_NumberDictionary = new Dictionary<char, int>
+		public const string MergedBeforeRegex = @"(前|之前)$";
+		public const string MergedAfterRegex = @"(后|之后)$";
+		public static readonly Dictionary<char, int> TimeNumberDictionary = new Dictionary<char, int>
 		{
 			{ '零', 0 },
 			{ '一', 1 },
@@ -557,7 +557,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ '两', 2 },
 			{ '十', 10 }
 		};
-		public static readonly Dictionary<string, int> Time_LowBoundDesc = new Dictionary<string, int>
+		public static readonly Dictionary<string, int> TimeLowBoundDesc = new Dictionary<string, int>
 		{
 			{ "中午", 11 },
 			{ "下午", 12 },

@@ -18,7 +18,7 @@ export interface IDatePeriodExtractorConfiguration {
     inConnectorRegex: RegExp
     rangeUnitRegex: RegExp
     datePointExtractor: BaseDateExtractor
-    cardinalExtractor: BaseNumberExtractor
+    integerExtractor: BaseNumberExtractor
     durationExtractor: BaseDurationExtractor
     getFromTokenIndex(source: string): { matched: boolean, index: number };
     getBetweenTokenIndex(source: string): { matched: boolean, index: number };
@@ -26,8 +26,8 @@ export interface IDatePeriodExtractorConfiguration {
 }
 
 export class BaseDatePeriodExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD;
-    private readonly config: IDatePeriodExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_DATEPERIOD;
+    protected readonly config: IDatePeriodExtractorConfiguration;
 
     constructor(config: IDatePeriodExtractorConfiguration) {
         this.config = config;
@@ -43,7 +43,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         return result;
     }
 
-    private matchSimpleCases(source: string): Array<Token> {
+    protected matchSimpleCases(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         this.config.simpleCasesRegexes.forEach(regexp => {
             RegExpUtility.getMatches(regexp, source).forEach(match => {
@@ -53,7 +53,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
         return tokens;
     }
 
-    private mergeTwoTimePoints(source: string): Array<Token> {
+    protected mergeTwoTimePoints(source: string): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         let er = this.config.datePointExtractor.extract(source);
         if (er.length <= 1) {
@@ -169,7 +169,7 @@ export class BaseDatePeriodExtractor implements IExtractor {
 export interface IDatePeriodParserConfiguration {
     dateExtractor: BaseDateExtractor
     dateParser: BaseDateParser
-    durationExtractor: BaseDurationExtractor
+    durationExtractor: IExtractor
     durationParser: BaseDurationParser
     monthFrontBetweenRegex: RegExp
     betweenRegex: RegExp
@@ -210,15 +210,16 @@ export interface IDatePeriodParserConfiguration {
 }
 
 export class BaseDatePeriodParser implements IDateTimeParser {
-    private readonly parserName = Constants.SYS_DATETIME_DATEPERIOD;
-    private readonly config: IDatePeriodParserConfiguration;
+    protected readonly parserName = Constants.SYS_DATETIME_DATEPERIOD;
+    protected readonly config: IDatePeriodParserConfiguration;
 
-    private readonly inclusiveEndPeriod = false;
+    protected readonly inclusiveEndPeriod;
     private readonly weekOfComment = 'WeekOf';
     private readonly monthOfComment = 'MonthOf';
 
-    constructor(config: IDatePeriodParserConfiguration) {
+    constructor(config: IDatePeriodParserConfiguration, inclusiveEndPeriod = false) {
         this.config = config;
+        this.inclusiveEndPeriod = inclusiveEndPeriod;
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -318,11 +319,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseSimpleCases(source: string, referenceDate: Date): DateTimeResolutionResult {
-        let result = new DateTimeResolutionResult();
-        let year = referenceDate.getFullYear();
-        let month = referenceDate.getMonth();
-        let noYear = false;
+    protected getMatchSimpleCase(source: string): Match {
         let match = RegExpUtility.getMatches(this.config.monthFrontBetweenRegex, source).pop();
         if (!match) {
             match = RegExpUtility.getMatches(this.config.betweenRegex, source).pop();
@@ -333,6 +330,17 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         if (!match) {
             match = RegExpUtility.getMatches(this.config.simpleCasesRegex, source).pop();
         }
+        return match;
+    }
+
+    protected parseSimpleCases(source: string, referenceDate: Date): DateTimeResolutionResult {
+        let result = new DateTimeResolutionResult();
+        let year = referenceDate.getFullYear();
+        let month = referenceDate.getMonth();
+        let noYear = false;
+
+        let match = this.getMatchSimpleCase(source);
+        
         if (!match || match.index !== 0 || match.length !== source.length) return result;
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
@@ -379,7 +387,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseOneWordPeriod(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseOneWordPeriod(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let year = referenceDate.getFullYear();
         let month = referenceDate.getMonth();
@@ -476,7 +484,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private mergeTwoTimePoints(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected mergeTwoTimePoints(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         let ers = this.config.dateExtractor.extract(trimmedSource);
@@ -506,7 +514,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseYear(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseYear(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.yearRegex, trimmedSource).pop();
@@ -522,7 +530,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.config.durationExtractor.extract(source);
         let beginDate = new Date(referenceDate);
@@ -627,7 +635,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseWeekOfMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseWeekOfMonth(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.weekOfMonthRegex, source).pop();
         if (!match || match.length !== source.length) return result;
@@ -652,7 +660,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return this.getWeekOfMonth(cardinal, month, year, referenceDate, noYear);
     }
 
-    private getWeekOfMonth(cardinal: number, month: number, year: number, referenceDate: Date, noYear: boolean): DateTimeResolutionResult {
+    protected getWeekOfMonth(cardinal: number, month: number, year: number, referenceDate: Date, noYear: boolean): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let seedDate = this.computeDate(cardinal, 1, month, year);
         if (seedDate.getMonth() !== month) {
@@ -706,7 +714,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseQuarter(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseQuarter(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.quarterRegex, source).pop();
         if (!match || match.length !== source.length) {
@@ -735,7 +743,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private parseSeason(source: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseSeason(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.seasonRegex, source).pop();
         if (!match || match.length !== source.length) return result;
@@ -801,7 +809,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         return result;
     }
 
-    private computeDate(cardinal: number, weekday: number, month: number, year: number) {
+    protected computeDate(cardinal: number, weekday: number, month: number, year: number) {
         let firstDay = new Date(year, month, 1);
         let firstWeekday = DateUtils.this(firstDay, weekday);
         if (weekday === 0) weekday = 7;

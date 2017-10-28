@@ -84,7 +84,8 @@ class DictionaryWriter extends CodeWriter {
         this.keyType = toJsType(keyType);
         this.valueType = toJsType(valueType);
 
-        let valueQuote1: string, valueQuote2: string;
+        let valueQuote1: string;
+        let valueQuote2: string;
         if (this.valueType.endsWith("[]")) {
             valueQuote1 = "[";
             valueQuote2 = "]";

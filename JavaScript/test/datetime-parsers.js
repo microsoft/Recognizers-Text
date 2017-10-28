@@ -11,7 +11,8 @@ var FrenchCommonDateTimeParserConfiguration = Recognizers.FrenchCommonDateTimePa
 var LanguagesConfig = {
     'English': new EnglishCommonDateTimeParserConfiguration(),
     'Spanish': new SpanishCommonDateTimeParserConfiguration(),
-    'French': new FrenchCommonDateTimeParserConfiguration()
+    'French': new FrenchCommonDateTimeParserConfiguration(),
+    'Chinese': null
 };
 
 var ParserTypes = [
@@ -42,12 +43,17 @@ function createParser(lang, parser, commonConfig) {
     try {
         // try with a language specific parser
         parserTypeName = [lang, parser, Constants.Parser].join('');
+        var hasSpecificClass = false;
 
         try {
             ParserType = Recognizers[parserTypeName];
         } catch(err) {
             // specific parser not found... continue to default
             ParserType = null;
+        }
+
+        if (ParserType) {
+            hasSpecificClass = true;
         }
 
         // fallback to base parser
@@ -64,14 +70,18 @@ function createParser(lang, parser, commonConfig) {
         var configModuleName = '../compiled/dateTime/' + lang.toLowerCase() + '/' + toCamelCase(parser) + Constants.Configuration;
         var configTypeName = lang + parser + Constants.ParserConfiguration;
         var ConfigType = Recognizers[configTypeName];
-        if (!ConfigType) {
+        if (!ConfigType && !hasSpecificClass) {
             throw new Error(`Config Type ${configTypeName} was not found in module ${configModuleName}`);
         }
 
-        var config = commonConfig
-            ? new ConfigType(commonConfig)
-            : new ConfigType();
-
+        try {
+            var config = commonConfig
+                ? new ConfigType(commonConfig)
+                : new ConfigType();
+        } catch (err) {
+            var config = null;
+        }
+        
         return new ParserType(config);
     } catch (err) {
         console.error('Error while creating Parser for DateTime', err.toString());
