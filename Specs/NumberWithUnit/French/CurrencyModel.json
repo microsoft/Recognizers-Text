@@ -614,7 +614,7 @@
 }
 ,
 {
-  "Input": "Pour les 20 restaurants les plus chers dans la ville, le prix d'un dîner est monté de 63,45 $, aussi une augmentation de 8 pour cent.",
+  "Input": "Pour les 20 restaurants les plus chers dans la ville, le prix d'un dîner est monté de 63,45 $, aussi une augmentation de 8%.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -623,14 +623,6 @@
       "Resolution": {
         "value": "63,45",
         "unit": "Dollar"
-      }
-    },
-    {
-      "Text": "cent",
-      "TypeName": "currency",
-      "Resolution": {
-        "value": null,
-        "unit": "Cent"
       }
     }
   ]
