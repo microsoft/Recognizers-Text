@@ -3,15 +3,15 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Year: years old|year old|year-old|years-old|-year-old|-years-old|years of age|year of age
-    Month: months old|month old|month-old|months-old|-month-old|-months-old|month of age|months of age
-    Week: weeks old|week old|week-old|weeks-old|-week-old|-weeks-old|week of age|weeks of age
-    Day: days old|day old|day-old|days-old|-day-old|-days-old|day of age|days of age
+    Year: anni|anno|anni di età|anno di età|anni d'età|anno d'età
+    Month: mese|mesi|mese di età|mesi di età|mese d'età|mesi d'età
+    Week: settimana|settimane|settimana di età|settimane di età|settimana d'età|settimane d'età
+    Day: giorni|giorno|giorni di età|giorno mane di età|giorni d'età|giorno d'età
 #AreaExtractorConfiguration
 AreaSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Square kilometer: sq km|sq kilometer|sq kilometre|sq kilometers|sq kilometres|square kilometer|square kilometre|square kilometers|square kilometres|km2|km^2|km²
+    Square kilometer: chilometro quadrato|chilometri quadrati|km2|km^2|km²
     Square hectometer: sq hm|sq hectometer|sq hectometre|sq hectometers|sq hectometres|square hectometer|square hectometre|square hectometers|square hectometres|hm2|hm^2|hm²|hectare|hectares
     Square decameter: sq dam|sq decameter|sq decametre|sq decameters|sq decametres|square decameter|square decametre|square decameters|square decametres|sq dekameter|sq dekametre|sq dekameters|sq dekametres|square dekameter|square dekametre|square dekameters|square dekametres|dam2|dam^2|dam²
     Square meter: sq m|sq meter|sq metre|sq meters|sq metres|sq metre|square meter|square meters|square metre|square metres|m2|m^2|m²
