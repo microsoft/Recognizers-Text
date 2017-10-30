@@ -29,11 +29,11 @@
 }
 ,
 {
-  "Input": "Nacional pagó a Siegel y Shuster $ 94.000 para cancelar todas las reclamaciones.",
+  "Input": "Nacional pagó a Siegel y Shuster $ 94000 para cancelar todas las reclamaciones.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "$ 94.000",
+      "Text": "$ 94000",
       "TypeName": "currency",
       "Resolution": {
         "value": "94000",

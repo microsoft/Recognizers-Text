@@ -184,6 +184,46 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                             ),
             });
+
+            RegisterModel(Culture.French, new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new French.CurrencyExtractorConfiguration()),
+                                    new NumberWithUnitParser(new French.CurrencyParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(TemperatureModel)] = new TemperatureModel(
+                new Dictionary<IExtractor, IParser>
+                            {           
+                                {
+                                    new NumberWithUnitExtractor(new French.TemperatureExtractorConfiguration()),
+                                    new NumberWithUnitParser(new French.TemperatureParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(DimensionModel)] = new DimensionModel(
+                new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new French.DimensionExtractorConfiguration()),
+                                    new NumberWithUnitParser(new French.DimensionParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(AgeModel)] = new AgeModel(
+                new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new French.AgeExtractorConfiguration()),
+                                    new NumberWithUnitParser(new French.AgeParserConfiguration())
+                                }
+                            }
+                            ),
+            });
         }
 
         public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
