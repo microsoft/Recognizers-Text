@@ -7,8 +7,14 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IEnumerable<Regex> TimeRegexList { get; }
 
+        IExtractor TimeExtractor { get; }
+
+        IExtractor NumExtractor { get; }
+
         Regex AtRegex { get; }
 
         Regex IshRegex { get; }
+
+        Regex SpecialTimePattern { get; }
     }
 }
