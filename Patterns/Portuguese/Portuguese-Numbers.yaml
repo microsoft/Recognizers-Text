@@ -31,9 +31,6 @@ AllIntRegex: !nestedRegex
 AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))
   references: [ ZeroToNineIntegerRegex, AllIntRegex ]
-AllFloatRegex: !nestedRegex
-  def: '{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
-  references: [ AllIntRegex, AllPointRegex ]
 SpecialFractionInteger: !nestedRegex
   def: ((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))\s+a?v[oa]s?)
   references : [ AllIntRegex, ZeroToNineIntegerRegex ]

@@ -6,7 +6,9 @@ var DateTimeOptions = Recognizers.DateTimeOptions;
 
 var LanguagesConfig = [
     'English',
-    'Spanish'
+    'Spanish',
+    'Chinese',
+    'French'
 ];
 
 var ExtractorTypes = {
@@ -37,6 +39,12 @@ module.exports = _.zipObject(extractorKeys, extractorObjects);
 function createExtractor(lang, extractor, options) {
     try {
         var extractorModuleName = 'Base' + extractor;
+        var extractorLanguageTypeName = [lang, extractor, Constants.Extractor].join('');
+        var ExtractorLanguageType = Recognizers[extractorLanguageTypeName];
+        if (ExtractorLanguageType) {
+            return new ExtractorLanguageType(options);
+        }
+
         var extractorTypeName = [Constants.Base, extractor, Constants.Extractor].join('');
         var ExtractorType = Recognizers[extractorTypeName];
         if (!ExtractorType) {

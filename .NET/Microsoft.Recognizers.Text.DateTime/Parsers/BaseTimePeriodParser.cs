@@ -104,16 +104,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var hourGroup = match.Groups["hour"];
                 var hourStr = hourGroup.Captures[0].Value;
 
-                int beginHour;
-                if (!this.config.Numbers.TryGetValue(hourStr, out beginHour))
+                if (!this.config.Numbers.TryGetValue(hourStr, out int beginHour))
                 {
                     beginHour = int.Parse(hourStr);
                 }
 
                 hourStr = hourGroup.Captures[1].Value;
 
-                int endHour;
-                if (!this.config.Numbers.TryGetValue(hourStr, out endHour))
+                if (!this.config.Numbers.TryGetValue(hourStr, out int endHour))
                 {
                     endHour = int.Parse(hourStr);
                 }
@@ -241,8 +239,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             int day = referenceTime.Day,
                 month = referenceTime.Month,
                 year = referenceTime.Year;
-            string timex;
-            int beginHour, endHour, endMinSeg;
             var ret = new DateTimeResolutionResult();
 
             // extract early/late prefix from text
@@ -267,7 +263,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!this.config.GetMatchedTimexRange(text, out timex, out beginHour, out endHour, out endMinSeg))
+            if (!this.config.GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
             {
                 return new DateTimeResolutionResult();
             }

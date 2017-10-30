@@ -28,6 +28,33 @@ export namespace EnglishNumeric {`,
         `import { BaseNumbers } from "./baseNumbers";
 export namespace SpanishNumeric {`,
         footer: `}`
+    },
+    // PORTUGUESE NUMERIC
+    {
+        yaml: `${resourcesPath}/Portuguese/Portuguese-Numbers.yaml`,
+        output: `${outputPath}portugueseNumeric.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace PortugueseNumeric {`,
+        footer: `}`
+    },
+    // CHINESE NUMERIC
+    {
+        yaml: `${resourcesPath}/Chinese/Chinese-Numbers.yaml`,
+        output: `${outputPath}chineseNumeric.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace ChineseNumeric {`,
+        footer: `}`
+    },
+    // FRENCH NUMERIC
+    {
+        yaml: `${resourcesPath}/French/French-Numbers.yaml`,
+        output: `${outputPath}frenchNumeric.ts`,
+        header:
+        `import { BaseNumbers } from "./baseNumbers";
+export namespace FrenchNumeric {`,
+        footer: `}`
     }
 ];
 

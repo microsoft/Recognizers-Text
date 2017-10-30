@@ -1,0 +1,687 @@
+[{
+  "Input": "La température l'extérieur est 40 deg celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40 deg celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "40",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "C'est 90 fahrenheit au texas",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "90",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "-5 degrés fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "-5 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "-5",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "6 deg c",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 deg c",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "6",
+        "unit": "C"
+      }
+    }
+  ]
+},
+{
+  "Input": "25 deg f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "25 deg f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "25",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "200 centigrade",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "200 centigrade",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "200",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "250 deg centigrade",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "250 deg centigrade",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "250",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "98,6 degrés f est normal température",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98,6 degrés f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98,6",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "régler la température à 30 degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "30 degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "30",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "la température normale est de 98,6 degrés fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98,6 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98,6",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "100 degrés f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 degrés f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20 degrés c",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 degrés c",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "100,2 degrés fahrenheit est bas",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100,2 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100,2",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "10,5 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10,5 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "10,5",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20 degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20,3 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20,3 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20,3",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "34,5 celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "34,5 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "34,5",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "the température outside is 98 degrés",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98 degrés",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "98",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "régler le thermostat à 85 °",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "85 °",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "85",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "augmenter la température de 5 degrés",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 degrés",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "5",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "régler la température à 70 degrés f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70 degrés f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "70",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "augmenter la température de 20 degrés",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 degrés",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "20",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "régler la température à 100 degrés",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 degrés",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "100",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "garder la température à 75 degrés f",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75 degrés f",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "75",
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "laissez la température à 40 degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40 degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "40",
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Laisser la température à 50 deg.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50 deg.",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "50",
+        "unit": "Degré"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "convertir 10 celsius en fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "10",
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "34,9 centigrade à fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "34,9 centigrade",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "34,9",
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "convertir 200 celsius celsius en fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "200 celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "200",
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "fahrenheit à celsius 101 fahrenheit est combien celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "101 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "101",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "50 degrés celsius celsius à fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50 degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "50",
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    },
+    {
+      "Text": "fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "pourriez-vous convertir 51 fahrenheit en degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "51 fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "51",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "convertir 106 degrés fahrenheit en degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "106 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "106",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "convertir 45 degrés fahrenheit en degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "45 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "45",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "comment convertir - 20 degrés fahrenheit en degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "- 20 degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "-20",
+        "unit": "F"
+      }
+    },
+    {
+      "Text": "degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Convertir 106 Kelvin",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "106 Kelvin",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "106",
+        "unit": "Kelvin"
+      }
+    }
+  ]
+},
+{
+  "Input": "Convertir 106 kelvin a degrés celsius",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "106 kelvin",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "106",
+        "unit": "Kelvin"
+      }
+    },
+    {
+      "Text": "degrés celsius",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "C"
+      }
+    }
+  ]
+},
+{
+  "Input": "convertir 200k K en degrés fahrenheit",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "200k K",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": "200000",
+        "unit": "Kelvin"
+      }
+    },
+    {
+      "Text": "degrés fahrenheit",
+      "TypeName": "temperature",
+      "Resolution": {
+        "value": null,
+        "unit": "F"
+      }
+    }
+  ]
+}
+]

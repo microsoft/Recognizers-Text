@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IExtractor InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.Duration_YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DurationYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.Duration_HalfSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.DurationHalfSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // extract by number with unit
         public override List<ExtractResult> Extract(string source)
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             public static readonly ImmutableDictionary<string, string> DurationSuffixList = DateTimeDefinitions.DurationSuffixList.ToImmutableDictionary();
 
-            public override ImmutableList<string> AmbiguousUnitList => DateTimeDefinitions.Duration_AmbiguousUnits.ToImmutableList();
+            public override ImmutableList<string> AmbiguousUnitList => DateTimeDefinitions.DurationAmbiguousUnits.ToImmutableList();
         }
     }
 

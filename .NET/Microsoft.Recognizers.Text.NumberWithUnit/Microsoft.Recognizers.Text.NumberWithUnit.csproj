@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Recognizers.Text.NumberWithUnit</RootNamespace>
     <AssemblyName>Microsoft.Recognizers.Text.NumberWithUnit</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -78,6 +78,26 @@
     <Compile Include="English\Parsers\WeightParserConfiguration.cs" />
     <Compile Include="Extractors\NumberWithUnitExtractor.cs" />
     <Compile Include="Extractors\INumberWithUnitExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\AgeExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\AreaExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\CurrencyExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\DimensionExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\FrenchNumberWithUnitExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\LengthExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\SpeedExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\TemperatureExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\VolumeExtractorConfiguration.cs" />
+    <Compile Include="French\Extractors\WeightExtractorConfiguration.cs" />
+    <Compile Include="French\Parsers\AgeParserConfiguration.cs" />
+    <Compile Include="French\Parsers\AreaParserConfiguration.cs" />
+    <Compile Include="French\Parsers\CurrencyParserConfiguraiton.cs" />
+    <Compile Include="French\Parsers\DimensionParserConfiguration.cs" />
+    <Compile Include="French\Parsers\FrenchNumberWithUnitParserConfiguration.cs" />
+    <Compile Include="French\Parsers\LenthParserConfiguration.cs" />
+    <Compile Include="French\Parsers\SpeedParserConfiguration.cs" />
+    <Compile Include="French\Parsers\TemperatureParserConfiguration.cs" />
+    <Compile Include="French\Parsers\VolumeParserConfiguration.cs" />
+    <Compile Include="French\Parsers\WeightParserConfiguration.cs" />
     <Compile Include="Models\AbstractNumberWithUnitModel.cs" />
     <Compile Include="Models\AgeModel.cs" />
     <Compile Include="Models\CurrencyModel.cs" />
@@ -131,7 +151,9 @@
   <ItemGroup>
     <None Include="CreatePackage.cmd" />
     <None Include="Microsoft.Recognizers.Text.NumberWithUnit.nuspec" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj">

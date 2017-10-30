@@ -76,8 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             .Replace("P", "")
                             .Replace("T", "");
 
-                        double number = 0;
-                        if (double.TryParse(numStr, out number))
+                        if (double.TryParse(numStr, out double number))
                         {
                             return GetAgoLaterResult(
                                 pr,

@@ -1,0 +1,225 @@
+[{
+  "Input": "Quand elle avait cinq ans, elle a appris à aller à une bicyclette",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinq ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "5",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cette saga a dix ans.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dix ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "J'ai seulement 29 ans!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "29 ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "29",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Maintenant, après trente cinq ans, mes perspectives changent",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trente cinq ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "35",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La Grande Muraille de Chine a plus de 500 ans et prolonge au-dessus de 5000 miles",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500 ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "500",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Elle est 60 ans; elle est née dans le 8 mai 1945",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "60 ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "60",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "25 % de cas ne sont pas diagnostiqués jusqu'à autour de 3 ans.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Quand sera là la pression pour accomplir une promesse qui est un ans?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un ans",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "1",
+        "unit": "Ans"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "C'est arrivé quand le bébé était seulement dix mois.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dix mois",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Mois"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La proposition de comité est 8 mois.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8 mois",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "8",
+        "unit": "Mois"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "50 % de cas sont diagnostiqués a peus peu près dix-huit mois d'âge",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dix-huit mois d'âge",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "18",
+        "unit": "Mois"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "C'est possible, mais en 2006 95 % d'entre eux étaient plus jeunes que trois mois.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois mois",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Mois"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Si nous avançons en décembre ce sera trois semaines vieilles",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "trois semaines",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Semaines"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "à l'âge de 6 semaines, on peut déjà fêter Noël",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 semaines",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "6",
+        "unit": "Semaines"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Un 90 jour la vieille facture est tres tard",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 jour",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "90",
+        "unit": "Jour"
+      }
+    }
+  ]
+}
+]

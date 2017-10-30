@@ -6,7 +6,7 @@ ECHO # Building .NET platform
 
 SET "Vs2017SubDir=\Microsoft Visual Studio\2017\Enterprise"
 SET MsBuildSubDir=\MSBuild\15.0\bin
-SET VsCommonSubDir=\Common7\IDE
+SET VsCommonSubDir=\Common7\IDE\CommonExtensions\Microsoft\TestWindow
 
 SET "ProgFilesDir=%programfiles(x86)%"
 
@@ -22,10 +22,10 @@ IF NOT EXIST "!MsBuildDir!\msbuild.exe" (
 	)
 )
 
-ECHO # Finding MSTest
-SET "MsTestDir=!ProgFilesDir!%Vs2017SubDir%%VsCommonSubDir%"
-IF NOT EXIST "%MsTestDir%\MSTest.exe" (
-    ECHO "mstest.exe" could not be found at "%MsTestDir%"
+ECHO # Finding VsTest
+SET "VsTestDir=!ProgFilesDir!%Vs2017SubDir%%VsCommonSubDir%"
+IF NOT EXIST "%VsTestDir%\vstest.console.exe" (
+    ECHO "vstest.console.exe" could not be found at "%VsTestDir%"
     EXIT /B
 )
 
@@ -40,9 +40,9 @@ CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Con
 ECHO.
 ECHO # Running .NET Tests
 SET testcontainer=
-FOR /R %%f IN (*.Tests.dll) DO (
+FOR /R %%f IN (*Tests.dll) DO (
 	(ECHO "%%f" | FIND /V "\bin\Debug" 1>NUL) || (
-		SET testcontainer=!testcontainer! /testcontainer:%%f
+		SET testcontainer=!testcontainer! "%%f"
 	)
 )
-CALL "!MsTestDir!\mstest" %testcontainer%
+CALL "!VsTestDir!\vstest.console" %testcontainer%

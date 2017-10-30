@@ -124,7 +124,7 @@ export interface ITimePeriodParserConfiguration {
 
 export class BaseTimePeriodParser implements IDateTimeParser {
     public static readonly ParserName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
-    private readonly config: ITimePeriodParserConfiguration;
+    protected readonly config: ITimePeriodParserConfiguration;
 
     constructor(configuration: ITimePeriodParserConfiguration) {
         this.config = configuration;

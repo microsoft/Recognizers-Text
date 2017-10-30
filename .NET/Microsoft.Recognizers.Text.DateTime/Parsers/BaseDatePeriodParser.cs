@@ -658,8 +658,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var numberString = dateTimex.Replace("P", "").Substring(0, dateTimex.Length - 2);
             string unit = dateTimex.Substring(dateTimex.Length - 1);
 
-            double swiftValue = 0;
-            Double.TryParse(numberString, out swiftValue);
+            Double.TryParse(numberString, out double swiftValue);
 
             if (swiftValue == 0)
             {

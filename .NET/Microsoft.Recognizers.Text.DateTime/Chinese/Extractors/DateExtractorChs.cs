@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.Date_DayRegexInChinese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DateDayRegexInChinese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegexNumInChinese = new Regex(DateTimeDefinitions.DayRegexNumInChinese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -22,31 +22,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.Date_YearInChineseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DateYearInChineseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.Date_ThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.Date_LastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateLastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.Date_NextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateNextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDayRegex = new Regex(DateTimeDefinitions.SpecialDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.Date_ThisRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.DateThisRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.Date_LastRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRe = new Regex(DateTimeDefinitions.DateLastRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.Date_NextRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextRe = new Regex(DateTimeDefinitions.DateNextRe, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.Date_UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] DateRegexList =
         {

@@ -203,8 +203,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                 int start = (int)number.Start, length = (int)number.Length;
                 var maxFindLen = sourceLen - start - length;
-                PrefixUnitResult prefixUnit;
-                mappingPrefix.TryGetValue(start, out prefixUnit);
+                mappingPrefix.TryGetValue(start, out PrefixUnitResult prefixUnit);
 
                 if (maxFindLen > 0)
                 {

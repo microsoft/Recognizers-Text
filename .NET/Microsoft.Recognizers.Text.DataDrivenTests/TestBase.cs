@@ -31,8 +31,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void ModelInitialize(IDictionary<string, IModel> models)
         {
             var key = TestContext.TestName;
-            IModel model;
-            if (!models.TryGetValue(key, out model))
+            if (!models.TryGetValue(key, out IModel model))
             {
                 model = TestContext.GetModel();
                 models.Add(key, model);
@@ -44,8 +43,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void ExtractorInitialize(IDictionary<string, IExtractor> extractors)
         {
             var key = TestContext.TestName;
-            IExtractor extractor;
-            if (!extractors.TryGetValue(key, out extractor))
+            if (!extractors.TryGetValue(key, out IExtractor extractor))
             {
                 extractor = TestContext.GetExtractor();
                 extractors.Add(key, extractor);
@@ -57,8 +55,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void ParserInitialize(IDictionary<string, IDateTimeParser> parsers)
         {
             var key = TestContext.TestName;
-            IDateTimeParser parser;
-            if (!parsers.TryGetValue(key, out parser))
+            if (!parsers.TryGetValue(key, out IDateTimeParser parser))
             {
                 parser = TestContext.GetDateTimeParser();
                 parsers.Add(key, parser);
@@ -69,8 +66,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestNumber()
         {
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);
             }
@@ -99,8 +95,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestNumberWithUnit()
         {
 
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);
             }
@@ -130,8 +125,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTime()
         {
 
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);
             }
@@ -170,8 +164,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTimeExtractor()
         {
 
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);
             }
@@ -199,8 +192,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTimeParser()
         {
 
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message, GetMessage(TestSpec));
             }
@@ -239,8 +231,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         public void TestDateTimeMergedParser()
         {
 
-            string message;
-            if (TestUtils.EvaluateSpec(TestSpec, out message))
+            if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);
             }

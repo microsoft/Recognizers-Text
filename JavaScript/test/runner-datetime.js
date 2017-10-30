@@ -1,5 +1,4 @@
 var Recognizer = require('recognizers-text-date-time').DateTimeRecognizer;
-var DateUtils = require('recognizers-text-date-time').DateUtils;
 var DateTimeOptions = require('recognizers-text-date-time').DateTimeOptions;
 var _ = require('lodash');
 
@@ -7,6 +6,8 @@ var Constants = require('./constants');
 var SupportedCultures = require('./cultures');
 var Extractors = require('./datetime-extractors');
 var Parsers = require('./datetime-parsers');
+
+var ignoredTest = null;
 
 module.exports = function getDateTimeRunner(config) {
     var extractor = getExtractor(config);
@@ -34,9 +35,11 @@ module.exports = function getDateTimeRunner(config) {
             return ignoredTest;
             // throw new Error(`Cannot found parser for ${JSON.stringify(config)}. Please verify datetime-parsers.js is properly defined.`);
         }
+
         if (config.subType.includes("Merged")) {
             return getMergedParserTestRunner(extractor, parser);
         }
+
         return getParserTestRunner(extractor, parser);
     }
 
@@ -92,7 +95,7 @@ function getParserTestRunner(extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (actual.value) {
+            if (actual.value && expected.Value) {
                 // timex
                 t.is(actual.value.timex, expected.Value.Timex, 'Result.Value.Timex');
 
@@ -129,14 +132,15 @@ function getMergedParserTestRunner(extractor, parser) {
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
-            if (actual.value) {
+            if (actual.value && expected.Value) {
+                t.is(!!actual.value, true, "Result.value is defined");
                 var actualObj = toObject(actual.value);
                 var actualValues = actualObj.values.map(o => toObject(o));
                 _.zip(actualValues, expected.Value.values).forEach(o => {
                     var actual = o[0];
                     var expected = o[1];
 
-                    t.deepEqual(actual, expected);
+                    t.deepEqual(actual, expected, 'Values');
                 });
             }
         });
@@ -163,7 +167,7 @@ function getModelTestRunner(model) {
             if (actual.resolution) {
                 var values = actual.resolution.get('values').map(toObject);
                 t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
-                t.deepEqual(values, expected.Resolution.values, 'Resource.Value');
+                t.deepEqual(values, expected.Resolution.values, 'Resolution.Values');
             }
         });
     };
@@ -185,47 +189,47 @@ function getParser(config) {
     return parser;
 }
 
-const models = [];
+var models = {};
+function getModel(config) {
+    var options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
+    var culture = SupportedCultures[config.language].cultureCode;
 
-function findModel(options, culture) {
-    let modelObj = models.find(function(m) {
-        if ((m.options === options) && (m.culture === culture)) {
-            return m;
+    var key = [culture, options.toString()].join('-');
+    var model = models[key];
+    if (model === undefined) {
+        try {
+            model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(culture, false),
+			models[key] = model;
+        } catch (err) {
+            // not yet supported - save null model, tests will then be ignored
+            models[key] = null;
+
+            return null;
         }
-    });
-    if (!modelObj) {
-        modelObj = {
-            model: Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(),
-            options: options,
-            culture: culture,
-        };
-        models.push(modelObj);
+
     }
-    return modelObj.model;
+
+    return model;
 }
 
-function getModel(config) {
-    let options = config.subType.includes('SplitDateAndTime') ? DateTimeOptions.SplitDateAndTime : DateTimeOptions.None;
-    let cultureCode = SupportedCultures[config.language].cultureCode;
-    return findModel(options, cultureCode);
+function parseISOLocal(s) {
+    var b = s.split(/\D/);
+    return new Date(b[0], b[1] - 1, b[2], b[3], b[4], b[5]);
 }
 
 function getReferenceDate(testCase) {
     if (testCase.Context && testCase.Context.ReferenceDateTime) {
-        return new Date(Date.parse(testCase.Context.ReferenceDateTime));
+        return parseISOLocal(testCase.Context.ReferenceDateTime);
     }
 
     return null;
-}
-
-function ignoredTest(t, testCase) {
-    t.skip.true(true, 'Test case not supported.');
 }
 
 function toObject(map) {
     if (!map) return undefined;
     var keys = Array.from(map.keys());
     var values = Array.from(map.values()).map(asString);
+
     return _.zipObject(keys, values);
 }
 
@@ -241,12 +245,6 @@ function asString(o) {
         var parts = isoDate.split('T');
         var time = parts[1].split('.')[0].replace('00:00:00', '');
         return [parts[0], time].join(' ').trim();
-    }
-
-
-    // JS min Date is 1901, while .NET is 0001
-    if (o === '1901-01-01') {
-        return '0001-01-01';
     }
 
     return o;

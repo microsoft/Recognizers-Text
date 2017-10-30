@@ -3,7 +3,7 @@ import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
 import { Match, RegExpUtility } from "../utilities";
 import { LongFormatType } from "./models";
-import escapeRegExp = require("lodash.escapeRegExp");
+import escapeRegExp = require("lodash.escaperegexp");
 
 export interface IExtractor {
     extract(input: string): Array<ExtractResult>

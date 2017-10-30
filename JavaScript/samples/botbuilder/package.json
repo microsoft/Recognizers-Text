@@ -1,0 +1,18 @@
+{
+  "name": "recognizers-text-botbuilder-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "botbuilder": "^3.11.0",
+    "dotenv-extended": "^2.0.1",
+    "lodash": "^4.17.4",
+    "recognizers-text": "file:../../",
+    "restify": "^6.0.1"
+  }
+}

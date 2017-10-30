@@ -14,8 +14,8 @@ export class Culture {
     new Culture("English", Culture.English, new LongFormatType(',', '.')),
     new Culture("Chinese", Culture.Chinese, null),
     new Culture("Spanish", Culture.Spanish, new LongFormatType('.', ',')),
-    new Culture("Portuguese", Culture.Portuguese, null),
-    new Culture("French", Culture.French, null)
+    new Culture("Portuguese", Culture.Portuguese, new LongFormatType('.', ',')),
+    new Culture("French", Culture.French, new LongFormatType('.', ','))
   ]
 
   readonly cultureName: string

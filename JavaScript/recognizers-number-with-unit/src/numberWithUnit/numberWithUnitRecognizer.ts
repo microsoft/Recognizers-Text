@@ -10,6 +10,14 @@ import { SpanishCurrencyExtractorConfiguration, SpanishCurrencyParserConfigurati
 import { SpanishTemperatureExtractorConfiguration, SpanishTemperatureParserConfiguration } from "./spanish/temperature";
 import { SpanishDimensionExtractorConfiguration, SpanishDimensionParserConfiguration } from "./spanish/dimension";
 import { SpanishAgeExtractorConfiguration, SpanishAgeParserConfiguration } from "./spanish/age";
+import { PortugueseCurrencyExtractorConfiguration, PortugueseCurrencyParserConfiguration } from "./portuguese/currency";
+import { PortugueseTemperatureExtractorConfiguration, PortugueseTemperatureParserConfiguration } from "./portuguese/temperature";
+import { PortugueseDimensionExtractorConfiguration, PortugueseDimensionParserConfiguration } from "./portuguese/dimension";
+import { PortugueseAgeExtractorConfiguration, PortugueseAgeParserConfiguration } from "./portuguese/age";
+import { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfiguration } from "./chinese/currency";
+import { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./chinese/temperature";
+import { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./chinese/dimension";
+import { ChineseAgeExtractorConfiguration, ChineseAgeParserConfiguration } from "./chinese/age";
 
 export default class NumberWithUnitRecognizer extends Recognizer {
     static readonly instance: NumberWithUnitRecognizer = new NumberWithUnitRecognizer();
@@ -31,7 +39,7 @@ export default class NumberWithUnitRecognizer extends Recognizer {
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
 
-        // TODO: Register Spanish models
+        // Spanish models
         this.registerModel("CurrencyModel", Culture.Spanish, new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new SpanishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new SpanishCurrencyParserConfiguration())]
         ])));
@@ -45,8 +53,38 @@ export default class NumberWithUnitRecognizer extends Recognizer {
             [new NumberWithUnitExtractor(new SpanishAgeExtractorConfiguration()), new NumberWithUnitParser(new SpanishAgeParserConfiguration())]
         ])));
 
-        // TODO: register Chinese models
-        // TODO: Register Portuguese models
+        // Portuguese models
+        this.registerModel("CurrencyModel", Culture.Portuguese, new CurrencyModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new PortugueseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new PortugueseCurrencyParserConfiguration())]
+        ])));
+        this.registerModel("TemperatureModel", Culture.Portuguese, new TemperatureModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new PortugueseTemperatureExtractorConfiguration()), new NumberWithUnitParser(new PortugueseTemperatureParserConfiguration())]
+        ])));
+        this.registerModel("DimensionModel", Culture.Portuguese, new DimensionModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new PortugueseDimensionExtractorConfiguration()), new NumberWithUnitParser(new PortugueseDimensionParserConfiguration())]
+        ])));
+        this.registerModel("AgeModel", Culture.Portuguese, new AgeModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new PortugueseAgeExtractorConfiguration()), new NumberWithUnitParser(new PortugueseAgeParserConfiguration())]
+        ])));
+
+        // English models
+        this.registerModel("CurrencyModel", Culture.Chinese, new CurrencyModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new ChineseCurrencyParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
+        ])));
+        this.registerModel("TemperatureModel", Culture.Chinese, new TemperatureModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new ChineseTemperatureExtractorConfiguration()), new NumberWithUnitParser(new ChineseTemperatureParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishTemperatureExtractorConfiguration()), new NumberWithUnitParser(new EnglishTemperatureParserConfiguration())]
+        ])));
+        this.registerModel("DimensionModel", Culture.Chinese, new DimensionModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new ChineseDimensionExtractorConfiguration()), new NumberWithUnitParser(new ChineseDimensionParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishDimensionExtractorConfiguration()), new NumberWithUnitParser(new EnglishDimensionParserConfiguration())]
+        ])));
+        this.registerModel("AgeModel", Culture.Chinese, new AgeModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new ChineseAgeExtractorConfiguration()), new NumberWithUnitParser(new ChineseAgeParserConfiguration())],
+            [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
+        ])));
+
         // TODO: Register French models
     }
 

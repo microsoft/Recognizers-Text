@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recognizers-Text | Browser Sandbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- IE11 Polyfill to support ES2015 features -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/shim.min.js"><\/script>');
+    </script>
+    <!-- The Recognizers-Text Bundle for the browser -->
+    <script src="scripts/recognizers-text.browser.js"></script>
+</head>
+
+<body>
+    <h1>Browser Test</h1>
+
+    <Label>Language: </Label>
+    <select id="language">
+            <option value="en-us" selected="selected">English</option>
+            <option value="es-es">Spanish</option>
+            <option value="fr-fr">French</option>
+            <option value="pt-br">Portuguese</option>
+            <option value="zh-cn">Chinese</option>
+    </select>
+
+    <br />
+    <br />
+
+    <Label>Recognizer: </Label>
+    <select id="recognizer">
+            <option value="Number" selected="selected">Number</option>
+            <option value="NumberOrdinal">Number - Ordinal</option>
+            <option value="NumberPercentage">Number - Percentage</option>
+            <option value="NumberWithUnitCurrency">Number with Unit - Currency</option>
+            <option value="NumberWithUnitTemperature">Number with Unit - Temperature</option>
+            <option value="NumberWithUnitDimension">Number with Unit - Dimension</option>
+            <option value="NumberWithUnitAge">Number with Unit - Age</option>
+            <option value="DateTime">DateTime</option>
+    </select>
+
+    <br />
+    <br />
+
+    <form id="parse">
+        <label>
+            Input:
+            <input type="text" id="input" value="I have twenty apples" size="40" />
+            <input type="submit" id="submit" value="Parse" />
+        </label>
+    </form>
+
+    <br /> Result:
+    <pre id="output">
+        ...
+    </pre>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // bind ui
+            document.getElementById("parse").addEventListener("submit", function (e) {
+                e.preventDefault();
+                var result = parse(document.getElementById("input").value);
+
+                var output = JSON.stringify(result, null, "\t");
+                document.getElementById("output").innerHTML = output;
+            });
+
+            // first time trigger
+            document.getElementById("submit").click();
+
+            // parse input using specified recognizer
+            function parse(input) {
+                var model;
+                var language = document.getElementById("language");
+                var recognizer = document.getElementById("recognizer");
+                var culture = language.options[language.selectedIndex].value;
+                var selectedRecognizer = recognizer.options[recognizer.selectedIndex].value;
+
+                try {
+                    switch (selectedRecognizer) {
+                        case "Number":
+                            model = RecognizersText.NumberRecognizer.instance.getNumberModel(culture, false);
+                            break;
+                        case "NumberOrdinal":
+                            model = RecognizersText.NumberRecognizer.instance.getOrdinalModel(culture, false);
+                            break;
+                        case "NumberPercentage":
+                            model = RecognizersText.NumberRecognizer.instance.getPercentageModel(culture, false);
+                            break;
+                        case "NumberWithUnitCurrency":
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getCurrencyModel(culture, false);
+                            break;
+                        case "NumberWithUnitTemperature":
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getTemperatureModel(culture, false);
+                            break;
+                        case "NumberWithUnitDimension":
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getDimensionModel(culture, false);
+                            break;
+                        case "NumberWithUnitAge":
+                            model = RecognizersText.NumberWithUnitRecognizer.instance.getAgeModel(culture, false);
+                            break;
+                        case "DateTime":
+                            model = RecognizersText.DateTimeRecognizer.instance.getDateTimeModel(culture, false);
+                            break;
+                    }
+                } catch(err) {
+                    return "Specified model is not yet supported: " + err.message;
+                }
+
+                // Show result
+                var result = model.parse(input);
+
+                // Format for DateTimes
+                result.forEach(function(r) {
+                    if(!r.resolution || !r.resolution.get) return;
+                    r.resolution = r.resolution.get('values').map(toObject);
+                });
+
+                return result;
+            }
+
+            // helpers
+            function toObject(map) {
+                if (!map) return undefined;
+                var keys = Array.from(map.keys());
+                var values = Array.from(map.values()).map(asString);
+                return _.zipObject(keys, values);
+            }
+
+            function asString(o) {
+                if (!o) return o;
+
+                if (_.isNumber(o)) {
+                    return o.toString();
+                }
+
+                if (_.isDate(o)) {
+                    var isoDate = new Date(o.getTime() - o.getTimezoneOffset() * 60000).toISOString();
+                    var parts = isoDate.split('T');
+                    var time = parts[1].split('.')[0].replace('00:00:00', '');
+                    return [parts[0], time].join(' ').trim();
+                }
+
+                // JS min Date is 1901, while .NET is 0001
+                if (o === '1901-01-01') {
+                    return '0001-01-01';
+                }
+
+                return o;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

@@ -28,6 +28,24 @@ export namespace EnglishDateTime {`,
         `import { BaseDateTime } from "./baseDateTime";
 export namespace SpanishDateTime {`,
         footer: `}`
+    },
+    // CHINESE DATE TIME WITH UNIT
+    {
+        yaml: `${resourcesPath}/Chinese/Chinese-DateTime.yaml`,
+        output: `${outputPath}chineseDateTime.ts`,
+        header:
+        `import { BaseDateTime } from "./baseDateTime";
+export namespace ChineseDateTime {`,
+        footer: `}`
+    },
+    // FRENCH DATE TIME WITH UNIT
+    {
+        yaml: `${resourcesPath}/French/French-DateTime.yaml`,
+        output: `${outputPath}frenchDateTime.ts`,
+        header:
+        `import { BaseDateTime } from "./baseDateTime";
+export namespace FrenchDateTime {`,
+        footer: `}`
     }
 ];
 
