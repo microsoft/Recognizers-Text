@@ -8,12 +8,6 @@ module.exports = function (describe, specs) {
             suite.specs.forEach(testCase => {
                 var caseName = `"${testCase.Input}"`;
 
-                // DateTime Chinese currently not supported
-                if (suite.config.type === 'DateTime' && suite.config.language === 'Chinese') {
-                    it.skip(caseName, t => { });
-                    return;
-                }
-
                 // Not Supported by Design - right now we don't care about implementing it
                 var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());
                 if (notSupportedByDesign.includes('javascript')) {

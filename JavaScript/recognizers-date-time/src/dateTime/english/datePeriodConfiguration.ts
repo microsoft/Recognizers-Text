@@ -1,6 +1,6 @@
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
-import { BaseNumberExtractor, RegExpUtility, EnglishCardinalExtractor } from "recognizers-text-number"
+import { BaseNumberExtractor, RegExpUtility, EnglishIntegerExtractor } from "recognizers-text-number"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
@@ -20,7 +20,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly inConnectorRegex: RegExp
     readonly rangeUnitRegex: RegExp
     readonly datePointExtractor: BaseDateExtractor
-    readonly cardinalExtractor: BaseNumberExtractor
+    readonly integerExtractor: BaseNumberExtractor
     readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
 
@@ -53,7 +53,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.inConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis");
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, "gis");
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
-        this.cardinalExtractor = new EnglishCardinalExtractor();
+        this.integerExtractor = new EnglishIntegerExtractor();
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
     }

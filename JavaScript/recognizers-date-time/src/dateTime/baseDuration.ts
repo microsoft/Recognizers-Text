@@ -88,8 +88,8 @@ export interface IDurationParserConfiguration {
 }
 
 export class BaseDurationParser implements IDateTimeParser {
-    private readonly parserName = Constants.SYS_DATETIME_DURATION;
-    private readonly config: IDurationParserConfiguration;
+    protected readonly parserName = Constants.SYS_DATETIME_DURATION;
+    protected readonly config: IDurationParserConfiguration;
     
     constructor(config: IDurationParserConfiguration) {
         this.config = config;
@@ -276,7 +276,7 @@ export class BaseDurationParser implements IDateTimeParser {
         return result;
     }
     
-    private isLessThanDay(source: string): boolean {
+    protected isLessThanDay(source: string): boolean {
         return (source === 'S') || (source === 'M') || (source === 'H')
     }
 }

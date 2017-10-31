@@ -19,8 +19,8 @@ export interface ISetExtractorConfiguration {
     beforeEachDayRegex: RegExp;
     setWeekDayRegex: RegExp;
     setEachRegex: RegExp;
-    durationExtractor: BaseDurationExtractor;
-    timeExtractor: BaseTimeExtractor;
+    durationExtractor: IExtractor;
+    timeExtractor: IExtractor;
     dateExtractor: BaseDateExtractor;
     dateTimeExtractor: BaseDateTimeExtractor;
     datePeriodExtractor: BaseDatePeriodExtractor;
@@ -29,8 +29,8 @@ export interface ISetExtractorConfiguration {
 }
 
 export class BaseSetExtractor implements IExtractor {
-    private readonly extractorName = Constants.SYS_DATETIME_SET
-    private readonly config: ISetExtractorConfiguration;
+    protected readonly extractorName = Constants.SYS_DATETIME_SET
+    protected readonly config: ISetExtractorConfiguration;
     
     constructor(config: ISetExtractorConfiguration) {
         this.config = config;
@@ -39,6 +39,7 @@ export class BaseSetExtractor implements IExtractor {
     extract(source: string): Array<ExtractResult> {
         let tokens: Array<Token> = new Array<Token>()
         .concat(this.matchEachUnit(source))
+        .concat(this.matchPeriodic(source))
         .concat(this.matchEachDuration(source))
         .concat(this.timeEveryday(source))
         .concat(this.matchEach(this.config.dateExtractor, source))
@@ -51,18 +52,23 @@ export class BaseSetExtractor implements IExtractor {
         return result;
     }
     
-    private matchEachUnit(source: string): Array<Token> {
+    protected matchEachUnit(source: string): Array<Token> {
         let ret = [];
-        RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
-            ret.push(new Token(match.index, match.index + match.length))
-        });
         RegExpUtility.getMatches(this.config.eachUnitRegex, source).forEach(match => {
             ret.push(new Token(match.index, match.index + match.length))
         });
         return ret;
     }
     
-    private matchEachDuration(source: string): Array<Token> {
+    protected matchPeriodic(source: string): Array<Token> {
+        let ret = [];
+        RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
+            ret.push(new Token(match.index, match.index + match.length))
+        });
+        return ret;
+    }
+    
+    protected matchEachDuration(source: string): Array<Token> {
         let ret = [];
         this.config.durationExtractor.extract(source).forEach(er => {
             if (RegExpUtility.getMatches(this.config.lastRegex, er.text).length > 0) return;
@@ -75,7 +81,7 @@ export class BaseSetExtractor implements IExtractor {
         return ret;
     }
     
-    private timeEveryday(source: string): Array<Token> {
+    protected timeEveryday(source: string): Array<Token> {
         let ret = [];
         this.config.timeExtractor.extract(source).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
@@ -122,9 +128,9 @@ export class BaseSetExtractor implements IExtractor {
 }
 
 export interface ISetParserConfiguration {
-    durationExtractor: BaseDurationExtractor;
+    durationExtractor: IExtractor;
     durationParser: BaseDurationParser;
-    timeExtractor: BaseTimeExtractor;
+    timeExtractor: IExtractor;
     timeParser: BaseTimeParser;
     dateExtractor: BaseDateExtractor;
     dateParser: BaseDateParser;
@@ -149,7 +155,7 @@ export interface ISetParserConfiguration {
 
 export class BaseSetParser implements IDateTimeParser {
     public static readonly ParserName = Constants.SYS_DATETIME_SET;
-    private readonly config: ISetParserConfiguration;
+    protected readonly config: ISetParserConfiguration;
     
     constructor(configuration: ISetParserConfiguration) {
         this.config = configuration;
@@ -195,138 +201,134 @@ export class BaseSetParser implements IDateTimeParser {
             }
             
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>(
-                    [
-                        [TimeTypeConstants.SET, innerResult.futureValue]
-                    ]);
-                    
-                    innerResult.pastResolution = new Map<string, string>(
-                        [
-                            [TimeTypeConstants.SET, innerResult.pastValue]
-                        ]);
+                innerResult.futureResolution = new Map<string, string>([
+                    [TimeTypeConstants.SET, innerResult.futureValue]
+                ]);
+                innerResult.pastResolution = new Map<string, string>([
+                    [TimeTypeConstants.SET, innerResult.pastValue]
+                ]);
                         
-                        value = innerResult;
-                    }
-                }
-                
-                let ret = new DateTimeParseResult(er);
-                ret.value = value,
-                ret.timexStr = value === null ? "" : value.timex,
-                ret.resolutionStr = ""
-                
+                value = innerResult;
+            }
+        }
+        
+        let ret = new DateTimeParseResult(er);
+        ret.value = value,
+        ret.timexStr = value === null ? "" : value.timex,
+        ret.resolutionStr = ""
+        
+        return ret;
+    }
+            
+    protected parseEachDuration(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.durationExtractor.extract(text);
+        if (ers.length !== 1 || text.substring(ers[0].start + ers[0].length || 0)) {
+            return ret;
+        }
+        
+        let beforeStr = text.substring(0, ers[0].start || 0);
+        let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
+        if (matches.length) {
+            let pr = this.config.durationParser.parse(ers[0], new Date());
+            ret.timex = pr.timexStr;
+            ret.futureValue = ret.pastValue = "Set: " + pr.timexStr;
+            ret.success = true;
+            return ret;
+        }
+        
+        return ret;
+    }
+            
+    protected parseEachUnit(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        // handle "daily", "weekly"
+        let matches = RegExpUtility.getMatches(this.config.periodicRegex, text);
+        if (matches.length) {
+            let getMatchedDailyTimex = this.config.getMatchedDailyTimex(text);
+            if (!getMatchedDailyTimex.matched) {
                 return ret;
             }
             
-            private parseEachDuration(text: string): DateTimeResolutionResult {
-                let ret = new DateTimeResolutionResult();
-                let ers = this.config.durationExtractor.extract(text);
-                if (ers.length !== 1 || text.substring(ers[0].start + ers[0].length || 0)) {
-                    return ret;
-                }
-                
-                let beforeStr = text.substring(0, ers[0].start || 0);
-                let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
-                if (matches.length) {
-                    let pr = this.config.durationParser.parse(ers[0], new Date());
-                    ret.timex = pr.timexStr;
-                    ret.futureValue = ret.pastValue = "Set: " + pr.timexStr;
-                    ret.success = true;
-                    return ret;
-                }
-                
-                return ret;
-            }
+            ret.timex = getMatchedDailyTimex.timex;
+            ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+            ret.success = true;
             
-            private parseEachUnit(text: string): DateTimeResolutionResult {
-                let ret = new DateTimeResolutionResult();
-                // handle "daily", "weekly"
-                let matches = RegExpUtility.getMatches(this.config.periodicRegex, text);
-                if (matches.length) {
-                    let getMatchedDailyTimex = this.config.getMatchedDailyTimex(text);
-                    if (!getMatchedDailyTimex.matched) {
-                        return ret;
-                    }
-                    
-                    ret.timex = getMatchedDailyTimex.timex;
-                    ret.futureValue = ret.pastValue = "Set: " + ret.timex;
-                    ret.success = true;
-                    
+            return ret;
+        }
+        
+        // handle "each month"
+        matches = RegExpUtility.getMatches(this.config.eachUnitRegex, text);
+        if (matches.length && matches[0].length === text.length) {
+            let sourceUnit = matches[0].groups("unit").value;
+            if (sourceUnit && this.config.unitMap.has(sourceUnit)) {
+                let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
+                if (!getMatchedUnitTimex.matched) {
                     return ret;
                 }
-                
-                // handle "each month"
-                matches = RegExpUtility.getMatches(this.config.eachUnitRegex, text);
-                if (matches.length && matches[0].length === text.length) {
-                    let sourceUnit = matches[0].groups("unit").value;
-                    if (sourceUnit && this.config.unitMap.has(sourceUnit)) {
-                        let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
-                        if (!getMatchedUnitTimex.matched) {
-                            return ret;
-                        }
 
-                        if (!StringUtility.isNullOrEmpty(matches[0].groups('other').value)) {
-                            getMatchedUnitTimex.timex = getMatchedUnitTimex.timex.replace('1', '2');
-                        }
-                        
-                        ret.timex = getMatchedUnitTimex.timex;
-                        ret.futureValue = ret.pastValue = "Set: " + ret.timex;
-                        ret.success = true;
-                        return ret;
-                    }
+                if (!StringUtility.isNullOrEmpty(matches[0].groups('other').value)) {
+                    getMatchedUnitTimex.timex = getMatchedUnitTimex.timex.replace('1', '2');
                 }
                 
-                return ret;
-            }
-            
-            private parserTimeEveryday(text: string): DateTimeResolutionResult {
-                let ret = new DateTimeResolutionResult();
-                let ers = this.config.timeExtractor.extract(text);
-                if (ers.length !== 1) {
-                    return ret;
-                }
-                
-                let afterStr = text.replace(ers[0].text, "");
-                let matches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
-                if (matches.length) {
-                    let pr = this.config.timeParser.parse(ers[0], new Date());
-                    ret.timex = pr.timexStr;
-                    ret.futureValue = ret.pastValue = "Set: " + ret.timex;
-                    ret.success = true;
-                    return ret;
-                }
-                
-                return ret;
-            }
-            
-            private parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
-                let ret = new DateTimeResolutionResult();
-                let success = false;
-                let er: ExtractResult[];
-                let match = RegExpUtility.getMatches(this.config.setEachRegex, text).pop();
-                if (match) {
-                    let trimmedText = text.substr(0, match.index) + text.substr(match.index + match.length);
-                    er = extractor.extract(trimmedText);
-                    if (er.length === 1 && er[0].length === trimmedText.length) {
-                        success = true;
-                    }
-                }
-                match = RegExpUtility.getMatches(this.config.setWeekDayRegex, text).pop();
-                if (match) {
-                    let trimmedText = text.substr(0, match.index) + match.groups('weekday').value + text.substr(match.index + match.length);
-                    er = extractor.extract(trimmedText);
-                    if (er.length === 1 && er[0].length === trimmedText.length) {
-                        success = true;
-                    }
-                }
-                if (success) {
-                    let pr = parser.parse(er[0]);
-                    ret.timex = pr.timexStr;
-                    ret.futureValue = `Set: ${pr.timexStr}`;
-                    ret.pastValue = `Set: ${pr.timexStr}`;
-                    ret.success = true;
-                    return ret;
-                }
+                ret.timex = getMatchedUnitTimex.timex;
+                ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+                ret.success = true;
                 return ret;
             }
         }
         
+        return ret;
+    }
+            
+    protected parserTimeEveryday(text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let ers = this.config.timeExtractor.extract(text);
+        if (ers.length !== 1) {
+            return ret;
+        }
+        
+        let afterStr = text.replace(ers[0].text, "");
+        let matches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
+        if (matches.length) {
+            let pr = this.config.timeParser.parse(ers[0], new Date());
+            ret.timex = pr.timexStr;
+            ret.futureValue = ret.pastValue = "Set: " + ret.timex;
+            ret.success = true;
+            return ret;
+        }
+        
+        return ret;
+    }
+            
+    protected parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
+        let ret = new DateTimeResolutionResult();
+        let success = false;
+        let er: ExtractResult[];
+        let match = RegExpUtility.getMatches(this.config.setEachRegex, text).pop();
+        if (match) {
+            let trimmedText = text.substr(0, match.index) + text.substr(match.index + match.length);
+            er = extractor.extract(trimmedText);
+            if (er.length === 1 && er[0].length === trimmedText.length) {
+                success = true;
+            }
+        }
+        match = RegExpUtility.getMatches(this.config.setWeekDayRegex, text).pop();
+        if (match) {
+            let trimmedText = text.substr(0, match.index) + match.groups('weekday').value + text.substr(match.index + match.length);
+            er = extractor.extract(trimmedText);
+            if (er.length === 1 && er[0].length === trimmedText.length) {
+                success = true;
+            }
+        }
+        if (success) {
+            let pr = parser.parse(er[0]);
+            ret.timex = pr.timexStr;
+            ret.futureValue = `Set: ${pr.timexStr}`;
+            ret.pastValue = `Set: ${pr.timexStr}`;
+            ret.success = true;
+            return ret;
+        }
+        return ret;
+    }
+}

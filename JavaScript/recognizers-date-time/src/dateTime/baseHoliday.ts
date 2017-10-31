@@ -45,7 +45,7 @@ export interface IHolidayParserConfiguration {
 
 export class BaseHolidayParser implements IDateTimeParser {
     public static readonly ParserName = Constants.SYS_DATETIME_DATE; // "Date";
-    private readonly config: IHolidayParserConfiguration;
+    protected readonly config: IHolidayParserConfiguration;
 
     constructor(config: IHolidayParserConfiguration) {
         this.config = config;
@@ -59,27 +59,25 @@ export class BaseHolidayParser implements IDateTimeParser {
             let innerResult = this.parseHolidayRegexMatch(er.text, referenceDate);
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>(
-                    [
-                        [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue)]
-                    ]);
-                innerResult.pastResolution = new Map<string, string>(
-                    [
-                        [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue)]
-                    ]);
+                innerResult.futureResolution = new Map<string, string>([
+                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue)]
+                ]);
+                innerResult.pastResolution = new Map<string, string>([
+                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue)]
+                ]);
                 value = innerResult;
             }
         }
 
         let ret = new DateTimeParseResult(er);
-        ret.value = value,
-            ret.timexStr = value === null ? "" : value.timex,
-            ret.resolutionStr = ""
+        ret.value = value;
+        ret.timexStr = value === null ? "" : value.timex;
+        ret.resolutionStr = "";
 
         return ret;
     }
 
-    private parseHolidayRegexMatch(text: string, referenceDate: Date): DateTimeResolutionResult {
+    protected parseHolidayRegexMatch(text: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedText = text.trim();
         for (let regex of this.config.holidayRegexList) {
             let offset = 0;
@@ -93,7 +91,7 @@ export class BaseHolidayParser implements IDateTimeParser {
         return new DateTimeResolutionResult();
     }
 
-    private match2Date(match: Match, referenceDate: Date): DateTimeResolutionResult {
+    protected match2Date(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let holidayStr = this.config.sanitizeHolidayToken(match.groups("holiday").value.toLowerCase());
 

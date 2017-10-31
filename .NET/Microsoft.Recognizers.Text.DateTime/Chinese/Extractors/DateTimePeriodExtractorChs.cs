@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriod_TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriod_PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -21,11 +21,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriod_ThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriod_LastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriod_NextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DescRegex = new Regex(DateTimeDefinitions.DescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -33,11 +33,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriod_UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriod_FollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriod_NumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

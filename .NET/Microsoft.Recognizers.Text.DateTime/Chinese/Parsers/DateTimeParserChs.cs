@@ -9,9 +9,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIME;
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTime_SimpleAmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTime_SimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
         private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();

@@ -6,12 +6,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedParserChs : BaseMergedParser
     {
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.Merged_BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.MergedBeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         //TODO implement SinceRegex
-        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.Merged_AfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.MergedAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public MergedParserChs(IMergedParserConfiguration configuration, DateTimeOptions options) : base(configuration, options) { }
 

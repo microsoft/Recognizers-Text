@@ -10,25 +10,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriod_TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DatePeriod_DayRegexInChinese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DayRegexInChinese = new Regex(DateTimeDefinitions.DatePeriodDayRegexInChinese, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriod_ThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriod_LastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriod_NextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriodNextRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DatePeriod_YearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.DatePeriodYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex ZeroToNineIntegerRegexChs = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexChs, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DatePeriod_YearInChineseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex YearInChineseRegex = new Regex(DateTimeDefinitions.DatePeriodYearInChineseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

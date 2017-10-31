@@ -364,6 +364,32 @@ export class DateUtils {
         return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
     }
 
+    static addTime(seedDate: Date, timeToAdd: Date): Date {
+        let date = new Date(seedDate);
+        date.setHours(seedDate.getHours() + timeToAdd.getHours());
+        date.setMinutes(seedDate.getMinutes() + timeToAdd.getMinutes());
+        date.setSeconds(seedDate.getSeconds() + timeToAdd.getSeconds());
+        return date;
+    }
+
+    static addSeconds(seedDate: Date, secondsToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setSeconds(seedDate.getSeconds() + secondsToAdd);
+        return date;
+    }
+
+    static addMinutes(seedDate: Date, minutesToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setMinutes(seedDate.getMinutes() + minutesToAdd);
+        return date;
+    }
+
+    static addHours(seedDate: Date, hoursToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setHours(seedDate.getHours() + hoursToAdd);
+        return date;
+    }
+
     static addDays(seedDate: Date, daysToAdd: number): Date {
         let date = new Date(seedDate);
         date.setDate(seedDate.getDate() + daysToAdd);
@@ -376,9 +402,19 @@ export class DateUtils {
         return date;
     }
 
+    static addYears(seedDate: Date, yearsToAdd: number): Date {
+        let date = new Date(seedDate);
+        date.setFullYear(seedDate.getFullYear() + yearsToAdd);
+        return date;
+    }
+
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
         let onejan = new Date(referenceDate.getFullYear(), 0, 1);
         let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+        // if the first day is Sunday, add a week to mimic calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday) behavior
+        if (onejan.getDay() === 0) {
+            weekNo++;
+        }
         return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
@@ -397,6 +433,13 @@ export class DateUtils {
 
     static safeCreateFromMinValue(year: number, month: number, day: number, hour = 0, minute = 0, second = 0) {
         return this.safeCreateFromValue(this.minValue(), year, month, day, hour, minute, second);
+    }
+
+    static safeCreateFromMinValueWithDateAndTime(date: Date, time?: Date): Date {
+        return this.safeCreateFromMinValue(
+            date.getFullYear(), date.getMonth(), date.getDate(),
+            time ? time.getHours() : 0, time ? time.getMinutes() : 0, time ? time.getSeconds() : 0
+        );
     }
 
     static isLeapYear(year: number): boolean {
