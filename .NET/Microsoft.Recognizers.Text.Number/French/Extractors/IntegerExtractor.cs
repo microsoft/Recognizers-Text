@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.French
                     "IntegerNum"
                 },
                 {
-                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumComma, placeholder),
+                    GenerateLongFormatNumberRegexes(LongFormatType.IntegerNumDot, placeholder),
                     "IntegerNum"
                 },
                 {

@@ -1,9 +1,54 @@
 [{
+  "Input": "Comté de montgomery, md.  75 millions de dollar d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75 millions de dollar",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "75000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Comté de montgomery, md. - - $ 75 millions d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "$ 75 millions",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "75000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Comté de montgomery, md. 75 millions de $ d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "75000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Comté de montgomery, md. - - $75 millions d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "$75 millions",
       "TypeName": "currency",
       "Resolution": {
         "value": "75000000",
@@ -33,10 +78,10 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "94000 $",
+      "Text": "94.000 $",
       "TypeName": "currency",
       "Resolution": {
-        "value": "94000",
+        "value": "94.000",
         "unit": "Dollar"
       }
     }
@@ -869,14 +914,14 @@
 }
 ,
 {
-  "Input": "Août ajusté dépensant(passant) par le salaire - des familles gagnantes était en bas 0. 6 % à 309.381,25 yens d'une année plus tôt.",
+  "Input": "Août ajusté dépensant(passant) par le salaire - des familles gagnantes était en bas 0. 6 % à 309.381 yens d'une année plus tôt.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "309.381,25 yens",
+      "Text": "309.381 yens",
       "TypeName": "currency",
       "Resolution": {
-        "value": "309381,25",
+        "value": "309381",
         "unit": "Yen Japonais"
       }
     }
