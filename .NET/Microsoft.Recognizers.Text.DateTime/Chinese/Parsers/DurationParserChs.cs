@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
         }
 
-        public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.Duration_UnitValueMap;
+        public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
 
         private readonly IFullDateTimeParserConfiguration config;
 

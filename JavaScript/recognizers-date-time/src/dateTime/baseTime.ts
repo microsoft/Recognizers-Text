@@ -94,27 +94,27 @@ export class BaseTimeExtractor implements IExtractor {
                             [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.futureValue)]
                         ]);
 
-                        innerResult.pastResolution = new Map<string, string>(
-                            [
-                                [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.pastValue)]
-                            ]);
-
-                            value = innerResult;
-                        }
-                    }
-
-                    let ret = new DateTimeParseResult(er);
-                    ret.value = value,
-                    ret.timexStr = value === null ? "" : value.timex,
-                    ret.resolutionStr = ""
-
-                    return ret;
+                    innerResult.pastResolution = new Map<string, string>(
+                        [
+                            [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.pastValue)]
+                        ]);
+                    
+                    value = innerResult;
                 }
+            }
 
-                internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
-                    let innerResult = this.parseBasicRegexMatch(text, referenceTime);
-                    return innerResult;
-                }
+            let ret = new DateTimeParseResult(er);
+            ret.value = value,
+            ret.timexStr = value === null ? "" : value.timex,
+            ret.resolutionStr = ""
+
+            return ret;
+        }
+        
+        internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
+            let innerResult = this.parseBasicRegexMatch(text, referenceTime);
+            return innerResult;
+        }
 
                 // parse basic patterns in TimeRegexList
                 private parseBasicRegexMatch(text: string, referenceTime: Date): DateTimeResolutionResult {

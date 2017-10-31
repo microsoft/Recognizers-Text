@@ -20,7 +20,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint -t codeFrame -e './**/node_modules/**/*.ts' -e './**/src/resources/*.ts' 'src/**/*.ts' 'test/**/*.ts' './**/src/**/*.ts'",
+    "lint": "tslint -t codeFrame -e './**/node_modules/**/*.ts' -e './**/src/resources/*.ts' './**/*.ts'",
     "prebuild-number": "cd ./recognizers-number/ && npm install && npm run build && cd ../",
     "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
     "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",

@@ -1,0 +1,1464 @@
+[{
+  "Input": "Comté de montgomery, md. - - $ 75 millions d'obligation générale, la série b, les liens(obligations) d'amélioration publics consolidés de 1989, par des fabricants Hanovre a confiance en groupe de compagnie.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "$ 75 millions",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "75000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le conglomérat finlandais nokia oy d'ab dit cela a atteint un accord pour acheter à l'entreprise de câble hollandaise nkf kabel b. v. pour 420 millions de mark finlandais.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "420 millions de mark finlandais",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "420000000",
+        "unit": "Mark Finlandais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Siegel payé national et 94000 $ shuster pour laisser tomber toutes les réclamations.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "94000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "94000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Compagnie de services de dynamique générale , Une unité de corporation de dynamique générale , Gagné une armée de 48,2 millions $ se contracte pour établir des installations de maintien de véhicules à chenilles au Pakistan.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "48,2 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "48200000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le prix du deuxième simulateur s'étend entre 16,4 millions de $ c",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16,4 millions de $ c",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "16400000",
+        "unit": "Dollar Canadien"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le prix du deuxième simulateur s'étend entre 16,4 millions de $CAD",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16,4 millions de $CAD",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "16400000",
+        "unit": "Dollar Canadien"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Golar la compagnie de tenue de gaz(d'essence), une filiale de gotaas - larsen l'expédition(la navigation) de la corporation, l'offre de 280 millions de $ des notes(billets) d'hypothèque de bateau d'abord préférées, via merrill lynchent des marchés des capitaux.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "280 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "280000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le barde / ems avait les ventes de 1988 d'environ 14 millions de $, birtcher a dit.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "14000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les prix d'entente commencent à 12,345 $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12,345 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "12,345",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "batman' ' seul a enregistré plus de 247 millions de $ dans la boîte - des reçus(recettes) de bureau(fonctions) jusqu'à présent, le faisant le bro(les frangins) d'avertisseur. ' Le plus grand film réalisant un chiffre d'affaires brut jamais.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "247 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "247000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Coyle ' s la valeur nette a été évalué à £ 8,10 millions en octobre 2014.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "£ 8,10 millions",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "8100000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le revenu d'intérêt net a diminué 27 % dans le quart(quartier,trimestre) à 254 millions de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "254 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "254000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Une cour d'appel fédérale a aboli un naturel - le règlement à gaz qui avait empêché des entreprises de pipeline de passer à la partie de clients de 1 milliard de $ dans des coûts de controversé prennent - ou - la paie ' ' des contrats.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 milliard de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1000000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le quart(quartier,trimestre) 1988 aussi inclus un - gains de temps totalisants environ 35 millions de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "35 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "35000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "le parc et sa famille a économisé pendant quatre ans pour acheter un appartement minuscule ici, mais a constaté que plus près ils sont arrivés à sauver 40000 $ dont ils ont à l'origine eu besoin, plus du prix est monté.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "40000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "40000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "e. Robert wallach a été condamné par un u. s. le juge à New York à six ans en prison et condamné à une amende 250000 $ pour sa conviction(condamnation) de racket dans le scandale wedtech.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "250000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "250000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Un article dans l'enquête(la vue générale) économique du Moyen-Orient (mees) publié mercredi révèle aujourd'hui que l'Irak a demandé à ses clients de payer 50 cents plus par baril de pétrole sur le prix du pétrole officiel à partir du 1 décembre dans un compte(un compte rendu) pas dans la surveillance de Nations unies.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "50",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La corporation de General Motors ' s chevrolet la division, réagissant pour ralentir des ventes, a dit qu'il fera(sera) des remises de l'offre 800 $ sur son 1990 beretta, les deux - la version de porte de son cœur compact - la ligne de voiture.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "800 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "800",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "(Storer a aussi pris 125 millions $ de liens de TV sci juniors comme le paiement partiel pour les actifs de TV. )",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "125 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "125000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Dans national sur - le - le compteur(comptoir) négociant vendredi, scimed des parts(actions) a dégringolé 2,75 $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,75 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2,75",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "En même temps, les investisseurs évaluent que la restructuration couperait(réduirait) l'entreprise ' s la facture(le projet de loi) d'intérêt liquide annuelle d'environ 90 millions de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "90000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les dépenses d'investissement en 1990 monteront légèrement, M. marous a dit, de 470 millions $ estimés cette année.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "470 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "470000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Shearson a vraiment seulement 300 millions de $ de capital(capitale), ' ' dit M. l'archer de s et p.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "300 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "300000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cela peut être direct - - il veut de argent pour la nourriture - - ou incroyablement complexe; sa soeur est à ce moment même près de la mort dans hoboken, il a perdu son portefeuille(pochette) et a seulement 1,22 $ dans le changement(la monnaie) pour mettre vers un billet de bus coûtant(évaluant,de valeur) et wo n ' t vous lui donne la différence ?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,22 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1,22",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le contrat de décembre est monté de 1,20 cents",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,20 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1,2",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Walter kirchberger, un analyste avec painewebber inc. , Dit que l'offre de détenteurs plus haut, 70 $ - un - le cours de l'action est une méthode assez efficace de bloquer ' ' le stena - tiphook l'offre.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "70",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Des ventes nettes pendant cette année ' s le troisième trimestre étaient 14 millions de $ l'année dernière.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "14000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La société mère de première banque nationale de Chicago, avec 48 milliards de $ dans des actifs(atouts), a dit qu'il a mis de côté pour absorber des pertes aux prêts et des investissements dans des pays financièrement dérangés.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "48 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "48000000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Fluor la corporation a dit que l'on lui a attribué un contrat de 300 millions de $ pour fournir l'ingénierie et la construction - des services de gestion à une mine de cuivre dans irian jaya, l'Indonésie, pour une unité de freeport - mcmoran la compagnie de cuivre",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "300 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "300000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La Bourse américaine a dit qu'une place(un siège) a été vendue à en baisse de 5000 $ de la vente précédente vendredi dernier.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "5000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Communications d'avertisseur inc., qui est acquis par l'avertisseur de temps, a déposé(classé) une infraction de 1 milliard de $ - de - le costume(procès) de contrat contre sony et les deux producteurs.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 milliard de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1000000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "En août, asarco, par son lac d ' amiante du la filiale du Québec, a vendu son maintien un - le troisième intérêt dans un amiante la société en commandite minière au Canada pour 11,7 millions de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11,7 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "11700000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "En 1988, les exportations de jouets à l'intérieur du pays produits et des jeux sont tombées 19 % de 1987, à 10,05 milliards de $ hk.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10,05 milliards de $ hk",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "10050000000",
+        "unit": "Dollar de Hong Kong"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Fiscal quatrième - quart(quartier,trimestre) de ventes a augmenté d'environ 18 % à de 1,17 milliards de $, une année plus tôt.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,17 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1170000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Pendant la première heure de commerce hier, les prix sont tombés bien 1 / 4 point, ou en bas environ 2,50 $ pour chaque quantité(montant) de visage.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,50 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2,5",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "On a demandé au New Jersey, par exemple, accepter 300000 $, mais a refusé.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "300000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "300000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les ventes sont montées 6. 2 % à 1,45 milliard $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,45 milliard $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1450000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Depuis hier après-midi, les rachats(remboursements) ont représenté moins de 15 % de la situation de trésorerie totale d'environ 2 milliards de $ de fidélité ' s des fonds de stock(d'actions).",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2000000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Onvia. com inc., en baisse de 34 cents",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "34 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "34",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le prospectus tw dit que si l'acquisition avait été complétée(achevée) plus tôt, des revenus(bénéfices) avant impôts auraient été insuffisants pour couvrir ses frais fixes, y compris l'intérêt sur des titres de dettes, ' ' par approximativement 62,7 millions de $ dans les six premiers mois de 1989.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "62,7 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "62700000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Filenet a noté qu'il avait des titres liquides et commercialisables totalisant 22,5 millions de $ le 30 septembre et des actionnaires.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22,5 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "22500000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Pour les 20 restaurants les plus chers dans la ville, le prix d'un dîner est monté de 63,45 $, aussi une augmentation de 8%.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "63,45 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "63,45",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Compagnies aériennes de monde de transaction inc. , Offre de notes seniors de 150 millions $, via drexel burnham.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "150 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "150000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le fettuccine avec des champignons de Portobello coûte 8,50 $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8,50 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "8,5",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La livraison(L'accouchement) de marche finie avec une avance d'à 14,27 cents.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14,27 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "14,27",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les frais financiers dans le troisième trimestre 1988 étaient 75,3 millions de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "75,3 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "75300000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2,38 milliards de $ dalkon protègent la confiance(le trust) de prétendants a été établi dans le cadre d'a. H. robins ' la faillite - la réorganisation planifie de résoudre des réclamations de blessure résultant de l'utilisation de la protection(du bouclier).",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,38 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2380000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les termes de l'offre ont mis une valeur de 528 millions de francs sur les 32. Actionnariat de 99 %.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "528 millions de francs",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "528000000",
+        "unit": "Franc"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La Russie a accepté un nous le prêt de Banque mondiale de 150 millions de $ usd pour combattre la propagation de SIDA et la tuberculose, finissant un processus de négociation qui a duré quatre ans, des officiels(fonctionnaires) de Banque mondiale ont dit vendredi.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "150 millions de $ usd",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "150000000",
+        "unit": "Dollar Américain"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le pacte bellsouth précédent a été estimé à environ 98 $ par action.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "98 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "98",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Un négociant a dit que la conversation consistait en ce que la société a vendu environ 500 millions de $ d'indicateur de bellweather 30 - des liens(obligations) d'année.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "500000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Pour le troisième trimestre, dessèche a dit que son revenu total est monté 4. 8 % à 13,18 milliards de $ plus tôt l'année dernière.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "13,18 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "13180000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Pendant les neuf mois, éthyle a dit que le réseau(filet) est tombé 2 % ou 1,40 $ par action",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,40 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1,4",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les analystes ' des espérances suggèrent un déficit de compte courant de septembre de 1. 6 milliards (2,54 milliards de $), comparés avec août ' s 2, 0 milliards de déficit.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2,54 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2540000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "125 millions de dollars australiens de zéro - eurobonds de coupon dues le 12 décembre 1994, évalué à 50. 9375 pour céder 15. 06 % moins d'honoraires via banque hambros ltd.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "125 millions de dollars australiens",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "125000000",
+        "unit": "Dollar Australien"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Vendredi, le secrétaire de cabinet en chef a annoncé que huit ministres siégeants au Cabinet avaient reçu cinq millions de yens de l'industrie",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinq millions de yens",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "5000000",
+        "unit": "Yen Japonais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Inclusion de 450000 yens par Premier ministre toshiki kaifu.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "450000 yens",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "450000",
+        "unit": "Yen Japonais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Orkem s. A., un état français - le fabricant chimique contrôlé, fait une offre amicale de 470 pence une part(action) pour les 59. 2 % d'u. k. le groupe de produit chimique de spécialité couvrent des frères plc qu'il n ' t possède déjà, les deux côtés ont dit.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "470 pence",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "470",
+        "unit": "Pence"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Août ajusté dépensant(passant) par le salaire - des familles gagnantes était en bas 0. 6 % à 309.381,25 yens d'une année plus tôt.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "309.381,25 yens",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "309381,25",
+        "unit": "Yen Japonais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La confiance(Le trust) d'immeuble de revenu national a dit qu'il reprendra des paiements de dividende avec un dividende par action de 12 cents à être payé le 6 novembre aux parts(actions) de rapport(record) le 25 octobre.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "12",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "M. bowder a dit la charge de 300 millions de $ c aux revenus(bénéfices)",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "300 millions de $ c",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "300000000",
+        "unit": "Dollar Canadien"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "S'élèverait de 1,34 $ c à une part.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,34 $ c",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1,34",
+        "unit": "Dollar Canadien"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les prix d'oeuf(ovule) ont atteint en moyenne 64,2 cents une douzaine.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "64,2 cents",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "64,2",
+        "unit": "Cent"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Tout de même, il a dit qu'il attend aux ventes pendant tout 1989 pour être sur la commande de 20 milliards de francs, reflétant des facturations prévues pour deux grands contrats au second semestre.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 milliards de francs",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "20000000000",
+        "unit": "Franc"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La transaction a appelé à M. Murdoch ' s des nouvelles plc international, une unité de l'Australie - la corporation de nouvelles basée, souscrire à une question(publication) de droits par zeta estimé à 6,65 milliards de pesewas.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6,65 milliards de pesewas",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "6650000000",
+        "unit": "Pesewa"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Fujitsu ltd. a dit qu'il veut retirer son offre d'une yen controversée de concevoir un système d'ordinateur de canalisation d'eau pour la ville de Hiroshima.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "une yen",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1",
+        "unit": "Yen Japonais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "250 millions de florins hollandais de 7 3 / des liens(obligations) de 4 % dus(censés) le 15 novembre 1999, évalué à 101 1 / 4 pour céder 7. 57 % évaluent en question et 7. Honoraires moins pleins(complets) de 86 %, via banque(rive) amro.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "250 millions de florins hollandais",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "250000000",
+        "unit": "Florins Néerlandais"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "De plus, la banque(rive) a une option pour acheter des 30. Intérêt(pieu) de 84 % dans bip de Société Générale après le 1 janvier 1990 à 1015 francs une part(action).",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1015 francs",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1015",
+        "unit": "Franc"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ses parts(actions) ont glissé dans de dernières(tardives) transactions pour fermer un penny",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un penny",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1",
+        "unit": "Penny"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Par action plus bas à 197 centimes.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "197 centimes",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "197",
+        "unit": "Centimes"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Son résultat d'exploitation trimestriel amélioré à 361 millions de livres",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "361 millions de livres",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "361000000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "L'année dernière, la valeur de production brute des entreprises de commune de la ville entière a passé à travers 100 milliards de yuans pour la première fois, se classant premier dans la province entière.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 milliards de yuans",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "100000000000",
+        "unit": "Yuan Chinois"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Les gardes sont arrivés pour garder un évalués £ 50 millions sauvés par baxendale - le marcheur ' s le conseil.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "£ 50 millions",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "50000000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "À son tour, Francis leung pak - à a consenti à vendre une participation de 8 % dans pccw à telef ó Nica pour 323 millions d'euros.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "323 millions d'euros",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "323000000",
+        "unit": "Euro"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Uefa a facturé ferguson pour apporter le jeu dans la mauvaise réputation avec ses commentaires et sur 1 peut cette année il a été condamné à une amende 10000 francs suisses  .",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10000 francs suisses",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "10000",
+        "unit": "Franc Suisse"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "L'ipl s'est inscrit(s'est fait embaucher) des compagnies aériennes de martin-pêcheur comme l'arbitre officiel le partenaire pour la série dans un (approximativement £ 15 millions) accord.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "£ 15 millions",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "15000000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le revenu d'Adelaide ' s l'industrie d'électronique a grandi à environ 15 % par an depuis 1990 et en 2011 excède 4 milliards de $.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 milliards de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "4000000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Abel et des associés offrent 4 millions de $ pour faire le film ' s des effets et primordial accepté.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "4000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Malone le 20ème siècle poursuivi en justice - renard pour 1,6 millions de $ pour rupture de contrat;",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1,6 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "1600000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "En 2003, bayern Munich a prêté 2 millions de € à Dortmund pendant deux ou trois mois pour payer leur masse salariale(effectifs).",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 millions de €",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2000000",
+        "unit": "Euro"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Lockheed Martin et le gouvernement des États-Unis a intensivement fait pression en faveur de l'Inde ' s sur 10 milliards de $ usd le contrat sur 126 avions de combat polyvalent.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10 milliards de $ usd",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "10000000000",
+        "unit": "Dollar Américain"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Selon la société de recherche npd, le prix de vente moyen de tous les PC d'ordinateur portable de fenêtres est tombé de 659 $ en octobre 2008",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "659 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "659",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Un. Le tél a flotté sur la Bourse australienne à 2 $ par action en novembre 1997.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "2",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le stand est (worcester l'avenue) le stand a été fini en 1934 et cette capacité accrue à autour de 80, 000 spectateurs, mais coût 60000 £.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "60000 £",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "60000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Son coéquipier fulham Johnny haynes est devenu le premier £ 100 acteur(joueur).",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "£ 100",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "100",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Pendant les neuf mois, amr ' s le réseau est monté de 15 % à 415,9 millions $",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "415,9 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "415900000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "La compagnie aérienne ' s le cours de l'action est déjà nettement inférieure le niveau de 210 pence occupé l'entreprise a annoncé la question(publication) de droits fin septembre.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "210 pence",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "210",
+        "unit": "Pence"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Rolling Stone a noté, harpercollins a acquis le projet de livre pour 3 millions $ en 2008.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "3000000",
+        "unit": "Dollar"
+      }
+    },
+    {
+      "Text": "livre",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": null,
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Leur conclusion était une déclaration laconique que 48 $\"ne sont pas adéquats.\"",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "48 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "48",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2013, l'édition de magazine de Forbes représente(dispose de) Keith sur la couverture avec la légende la musique country ' s l'homme de 500 millions de $ ' '.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "500 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "500000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Tourmentez ferguson nous a poursuivis en justice le gué pour utilisation illégale de ses brevets demandant la compensation de 90 millions £, installés hors cour en 1952.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "90 millions £",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "90000000",
+        "unit": "Livre"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Aerosmith signé avec la Colombie à milieu de - 1972 pour 125.000,50 $ rapportés et publié leur album de début, aerosmith.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "125.000,50 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "125000,5",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "C'était un de coke ' s les plus grandes acquisitions puisque(depuis que) il a acheté odwalla inc. pour 186 millions de $ en 2001.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "186 millions de $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "186000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Par la suite, pomme et créatif atteint un règlement, avec pomme payant 100 millions $ à jonction créative et créative le fait pour iPod ' ' programme accessoire.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "100 millions $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "100000000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Le cerf - le classement de Scott est alors passé en revue et n'importe quelles préoccupations(entreprises) antitrust d'habitude respectées. Typiquement, le cerf - Scott est utilisé maintenant pour donner aux directeurs(managers) de sociétés cibles les premières nouvelles d'une offre et une chance d'utiliser examen(la revue) réglementaire(régulateur) comme une tactique s'attardant. impôt(la taxe) de 20000,15 $ serait un petit coût dans un multimilliard - accord de dollar, mais une traînée sérieuse sur des milliers d'accords petits, amicaux.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20000,15 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "20000,15",
+        "unit": "Dollar"
+      }
+    },
+    {
+      "Text": "dollar",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": null,
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Dollar: 143,80 yens, en haut 0. 95; 1. 8500 marques, en haut 0. 0085.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "143,80 yens",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "143,8",
+        "unit": "Yen Japonais"
+      }
+    },
+    {
+      "Text": "Dollar",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": null,
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+]

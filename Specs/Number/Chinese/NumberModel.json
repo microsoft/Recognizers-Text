@@ -3064,8 +3064,7 @@
 ,
 {
   "Input": "2222.2222.22222.222",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python,javascript",
   "Results": [
     {
       "Text": "2222",
@@ -3100,8 +3099,7 @@
 ,
 {
   "Input": "...9",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python,javascript",
   "Results": [
     {
       "Text": "9",
@@ -3115,8 +3113,7 @@
 ,
 {
   "Input": "－－9",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python,javascript",
   "Results": [
     {
       "Text": "9",
