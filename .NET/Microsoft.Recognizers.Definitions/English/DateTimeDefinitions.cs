@@ -182,6 +182,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string RestOfDateRegex = @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|month|year)\b";
 		public const string RestOfDateTimeRegex = @"\bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b";
 		public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>lunchtime)\b";
+		public const string NumberEndingPattern = @"^(\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>[A-za-z]*|(\d*))((\.)?$|(\.,|,|!|\?)))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

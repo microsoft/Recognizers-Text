@@ -108,6 +108,9 @@ WeekDayAndDayOfMothRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(el\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
+NumberEndingPattern: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 SpecialDateRegex: !nestedRegex
   def: (?<=\b(en)\s+el\s+){DayRegex}\b
   references: [ DayRegex ]

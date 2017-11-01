@@ -408,6 +408,8 @@ RestOfDateTimeRegex: !simpleRegex
   def: \bRest\s+(of\s+)?((the|my|this|current)\s+)?(?<unit>day)\b
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>lunchtime)\b
+NumberEndingPattern: !simpleRegex
+  def: ^(\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>[A-za-z]*|(\d*))((\.)?$|(\.,|,|!|\?)))
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

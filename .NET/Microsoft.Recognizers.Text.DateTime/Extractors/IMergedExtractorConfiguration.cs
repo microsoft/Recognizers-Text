@@ -18,9 +18,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor DurationExtractor { get; }
 
-        IExtractor GetExtractor { get; }
+        IExtractor SetExtractor { get; }
 
         IExtractor HolidayExtractor { get; }
+
+        IExtractor IntegerExtractor { get; }
 
         Regex AfterRegex { get; }
 
@@ -33,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SingleAmbiguousMonthRegex { get; }
 
         Regex PrepositionSuffixRegex { get; }
+
+        Regex NumberEndingPattern { get; }
 
     }
 }

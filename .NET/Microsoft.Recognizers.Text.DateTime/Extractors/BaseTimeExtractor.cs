@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -72,6 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.config.IshRegex != null && this.config.IshRegex.IsMatch(text))
             {
                 var matches = this.config.IshRegex.Matches(text);
+
                 foreach (Match match in matches)
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length));

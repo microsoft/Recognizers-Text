@@ -367,4 +367,152 @@
   "NotSupportedByDesign": "python",
   "Results": []
 }
+,
+{
+  "Input": "I'll change the 3pm appointment to 4.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the 3pm appointment to 4,",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the three pm appointment to four",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "three pm",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "four",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to eleven",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "eleven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to 4.,",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to eleven!",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "eleven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to eleven?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "eleven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to 4, how do you think?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+	,
+	{
+      "Text": "4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to 4.3",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+  ]
+}
 ]
