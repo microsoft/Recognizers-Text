@@ -1,6 +1,7 @@
 ﻿using Microsoft.Recognizers.Definitions.English;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -97,6 +98,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.ConnectNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] TimeRegexList =
         {
             // (three min past)? seven|7|(senven thirty) pm
@@ -144,11 +149,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
+        Regex ITimeExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+
         public IExtractor DurationExtractor { get; }
+
+        public IExtractor TimeExtractor { get; }
+
+        public IExtractor NumExtractor { get; }
 
         public EnglishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+
+            IExtractor TimeExtractor = new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
+
+            IExtractor NumExtractor = NumberExtractor.GetInstance();
         }
     }
 }
