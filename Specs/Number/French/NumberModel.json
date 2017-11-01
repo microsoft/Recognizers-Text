@@ -294,6 +294,7 @@
 ,
 {
   "Input": "192.168.1.2",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
