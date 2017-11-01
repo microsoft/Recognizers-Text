@@ -116,8 +116,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.IshRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimePattern =
-            new Regex(DateTimeDefinitions.SpecialTimePattern,
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex TimeUnitRegex = new Regex(DateTimeDefinitions.TimeUnitRegex,
@@ -178,19 +178,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         };
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => new NumberExtractor();
-
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
-        Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
+        Regex ITimeExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
         public IExtractor DurationExtractor { get; }
+
+        public IExtractor TimeExtractor { get; }
+
+        public IExtractor NumExtractor { get; }
+
         public FrenchTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+
+            IExtractor TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
+
+            IExtractor NumExtractor = new NumberExtractor();
         }
     }
 }

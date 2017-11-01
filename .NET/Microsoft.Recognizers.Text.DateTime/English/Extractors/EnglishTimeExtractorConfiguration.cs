@@ -98,8 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.ConnectNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimePattern =
-            new Regex(DateTimeDefinitions.SpecialTimePattern,
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeRegexList =
@@ -145,21 +145,25 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => NumberExtractor.GetInstance();
-
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
-        Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
+        Regex ITimeExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
         public IExtractor DurationExtractor { get; }
+
+        public IExtractor TimeExtractor { get; }
+
+        public IExtractor NumExtractor { get; }
 
         public EnglishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+
+            IExtractor TimeExtractor = new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
+
+            IExtractor NumExtractor = NumberExtractor.GetInstance();
         }
     }
 }

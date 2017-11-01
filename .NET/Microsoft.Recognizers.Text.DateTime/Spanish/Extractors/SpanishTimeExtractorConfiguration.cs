@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimePattern = new Regex(DateTimeDefinitions.SpecialTimePattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeRegexList =
         {
@@ -92,21 +92,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimeExtractorConfiguration.IshRegex => null;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => new NumberExtractor();
-
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
-        Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
+        Regex ITimeExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
         public IExtractor DurationExtractor { get; }
+
+        public IExtractor TimeExtractor { get; }
+
+        public IExtractor NumExtractor { get; }
 
         public SpanishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+
+            IExtractor TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
+
+            IExtractor NumExtractor = new NumberExtractor();
         }
     }
 }

@@ -15,6 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex IshRegex { get; }
 
-        Regex SpecialTimePattern { get; }
+        Regex NumberEndingPattern { get; }
     }
 }
