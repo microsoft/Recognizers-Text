@@ -294,20 +294,14 @@
 ,
 {
   "Input": "192.168.1.2",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "192",
+      "Text": "192.168",
       "TypeName": "number",
       "Resolution": {
-        "value": "192"
-      }
-    },
-    {
-      "Text": "168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "168"
+        "value": "192168"
       }
     },
     {
