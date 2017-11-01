@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -50,7 +49,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] TimeRegexList =
         {
@@ -96,21 +94,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
-        Regex ITimeExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
-
         public IExtractor DurationExtractor { get; }
-
-        public IExtractor TimeExtractor { get; }
-
-        public IExtractor NumExtractor { get; }
 
         public SpanishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
-
-            IExtractor TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-
-            IExtractor NumExtractor = new NumberExtractor();
         }
     }
 }

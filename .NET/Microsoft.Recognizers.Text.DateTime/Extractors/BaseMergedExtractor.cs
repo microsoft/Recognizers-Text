@@ -26,8 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.DateTimeExtractor.Extract(text), text);
             AddTo(ret, this.config.TimePeriodExtractor.Extract(text), text);
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text), text);
-            AddTo(ret, this.config.GetExtractor.Extract(text), text);
+            AddTo(ret, this.config.SetExtractor.Extract(text), text);
             AddTo(ret, this.config.HolidayExtractor.Extract(text), text);
+            //this should be at the end since if need the extractor to determine the previous text contains time or not
+            AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
             AddMod(ret, text);
 
@@ -127,6 +129,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return false;
+        }
+
+        // handle cases like "move 3pm appointment to 4"
+        private List<ExtractResult> NumberEndingRegexMatch(string text, List<ExtractResult> extractResults)
+        {
+            var tokens = new List<Token>();
+
+            foreach (var extractResult in extractResults)
+            {
+                if (extractResult.Type.Equals(Constants.SYS_DATETIME_TIME)
+                    || extractResult.Type.Equals(Constants.SYS_DATETIME_DATETIME))
+                {
+                    var stringAfter = text.Substring((int)extractResult.Start + (int)extractResult.Length);
+                    var match = this.config.NumberEndingPattern.Match(stringAfter);
+                    if (match != null && match.Success)
+                    {
+                        var newTime = match.Groups["newTime"];
+                        var numRes = this.config.IntegerExtractor.Extract(newTime.ToString());
+                        if (numRes.Count == 0)
+                        {
+                            continue;
+                        }
+
+                        var startPosition = (int)extractResult.Start + (int)extractResult.Length + newTime.Index;
+                        tokens.Add(new Token(startPosition, startPosition + newTime.Length));
+                    }
+                }
+            }
+
+            return Token.MergeAllTokens(tokens, text, Constants.SYS_DATETIME_TIME);
         }
 
         private void AddMod(List<ExtractResult> ers, string text)
