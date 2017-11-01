@@ -78,10 +78,25 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
+      "Text": "94000 $",
+      "TypeName": "currency",
+      "Resolution": {
+        "value": "94000",
+        "unit": "Dollar"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Siegel payé national et 94.000 $ shuster pour laisser tomber toutes les réclamations.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
       "Text": "94.000 $",
       "TypeName": "currency",
       "Resolution": {
-        "value": "94.000",
+        "value": "94000",
         "unit": "Dollar"
       }
     }
