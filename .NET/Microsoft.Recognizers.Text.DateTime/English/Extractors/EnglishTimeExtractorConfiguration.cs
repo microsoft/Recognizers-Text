@@ -146,10 +146,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor DurationExtractor { get; }
 
-        //public IExtractor TimeExtractor { get; }
-
-        public IExtractor IntegerExtractor { get; }
-
         public EnglishTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());

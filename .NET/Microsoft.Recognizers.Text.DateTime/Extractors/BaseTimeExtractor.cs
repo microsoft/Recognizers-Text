@@ -70,18 +70,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> SpecialsRegexMatch(string text)
         {
             var ret = new List<Token>();
-            MatchCollection matches;
             // handle "ish"
             if (this.config.IshRegex != null && this.config.IshRegex.IsMatch(text))
             {
-                matches = this.config.IshRegex.Matches(text);
+                var matches = this.config.IshRegex.Matches(text);
 
                 foreach (Match match in matches)
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
-            
             return ret;
         }
     }
