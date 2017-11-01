@@ -409,7 +409,7 @@ RestOfDateTimeRegex: !simpleRegex
 MealTimeRegex: !simpleRegex
   def: \b(at\s+)?(?<mealTime>lunchtime)\b
 SpecialTimePattern: !simpleRegex
-  def: \b((?<oldTime>.*)\s+(?<meeting>meeting|appointment|conference|assembly)\s+to\s+(?<newTime>.*)(.|,)?)\b
+  def: \b((?<oldTime>.*)\s+(?<meeting>meeting|appointment|conference|assembly)\s+to\s+(?<newTime>[A-za-z]*|(\d*))(\.,|\.|,|!|\?)?)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

@@ -909,4 +909,74 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll change the ten am appointment to 4.,",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to eleven!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "eleven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to eleven?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+    ,
+    {
+      "Text": "eleven",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to 4, how do you think?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll change the ten am appointment to 4.3",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "time"
+    }
+  ]
+}
 ]
