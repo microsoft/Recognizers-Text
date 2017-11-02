@@ -50,8 +50,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimePattern = new Regex(DateTimeDefinitions.SpecialTimePattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-
         public static readonly Regex[] TimeRegexList =
         {
             // (tres min pasadas las)? siete|7|(siete treinta) pm
@@ -92,15 +90,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimeExtractorConfiguration.IshRegex => null;
 
-        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => new NumberExtractor();
-
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
-
-        Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

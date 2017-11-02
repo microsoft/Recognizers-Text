@@ -98,9 +98,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.ConnectNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex SpecialTimePattern =
+        /*public static readonly Regex SpecialTimePattern =
             new Regex(DateTimeDefinitions.SpecialTimePattern,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);*/
 
         public static readonly Regex[] TimeRegexList =
         {
@@ -145,15 +145,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
-        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => NumberExtractor.GetInstance();
-
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
-
-        Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
 
         public IDateTimeExtractor DurationExtractor { get; }
 
