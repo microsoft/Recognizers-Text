@@ -81,6 +81,33 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return Match2Time(match, referenceTime);
             }
 
+            // parse hour pattern, like "twenty one", "16"
+            // create a extract result which content the pass-in text
+            int hour;
+            if (this.config.Numbers.TryGetValue(text, out hour) || int.TryParse(text, out hour))
+            {
+                if (hour >= 0 && hour <= 24)
+                {
+                    var ret = new DateTimeResolutionResult();
+
+                    if (hour == 24)
+                    {
+                        hour = 0;
+                    }
+
+                    if (hour <= 12 && hour != 0)
+                    {
+                        ret.Comment = "ampm";
+                    }
+
+                    ret.Timex = "T" + hour.ToString("D2");
+                    ret.FutureValue = ret.PastValue = 
+                        DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day, hour, 0, 0);
+                    ret.Success = true;
+                    return ret;
+                }
+            }
+
             var regexes = this.config.TimeRegexes;
 
             foreach (var regex in regexes)
