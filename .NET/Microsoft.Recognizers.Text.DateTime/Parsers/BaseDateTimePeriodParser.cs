@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLower();
 
-            var er = Config.TimePeriodExtractor.Extract(trimedText);
+            var er = Config.TimePeriodExtractor.Extract(trimedText, referenceTime);
             if (er.Count != 1)
             {
                 return ParseSimpleCases(text, referenceTime);
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!string.IsNullOrEmpty(timePeriodTimex)
                 && timePeriodTimex.StartsWith("("))
             {
-                var dateResult = this.Config.DateExtractor.Extract(trimedText.Replace(er[0].Text, ""));
+                var dateResult = this.Config.DateExtractor.Extract(trimedText.Replace(er[0].Text, ""), referenceTime);
                 var dateStr = "";
                 DateObject futureTime;
                 DateObject pastTime;
@@ -230,7 +230,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // parse following date
-                var er = this.Config.DateExtractor.Extract(trimedText.Replace(match.Value, ""));
+                var er = this.Config.DateExtractor.Extract(trimedText.Replace(match.Value, ""), referenceTime);
 
                 DateObject futureTime;
                 DateObject pastTime;
@@ -319,9 +319,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr1 = null, pr2 = null;
             bool bothHasDate = false, beginHasDate = false, endHasDate = false;
 
-            var er1 = this.Config.TimeExtractor.Extract(text);
+            var er1 = this.Config.TimeExtractor.Extract(text, referenceTime);
 
-            var er2 = this.Config.DateTimeExtractor.Extract(text);
+            var er2 = this.Config.DateTimeExtractor.Extract(text, referenceTime);
             if (er2.Count == 2)
             {
                 pr1 = this.Config.DateTimeParser.Parse(er2[0], referenceTime);
@@ -518,12 +518,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
-                var ers = this.Config.DateExtractor.Extract(beforeStr);
+                var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {
 
                     var afterStr = trimedText.Substring(match.Index + match.Length).Trim();
-                    ers = this.Config.DateExtractor.Extract(afterStr);
+                    ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
                     if (ers.Count == 0 || ers[0].Length != afterStr.Length)
                     {
                         return ret;
@@ -565,7 +565,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var ers = Config.DurationExtractor.Extract(text);
+            var ers = Config.DurationExtractor.Extract(text, referenceTime);
             if (ers.Count == 1)
             {
                 var pr = Config.DurationParser.Parse(ers[0]);

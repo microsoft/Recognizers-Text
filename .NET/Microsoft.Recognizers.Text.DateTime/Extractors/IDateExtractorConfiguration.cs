@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IParser NumberParser { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

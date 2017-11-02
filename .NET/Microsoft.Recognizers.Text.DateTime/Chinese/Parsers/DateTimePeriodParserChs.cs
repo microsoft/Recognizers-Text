@@ -13,10 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
-        private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
-        private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();
-        private static readonly IExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
-        private static readonly IExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
+        private static readonly IDateTimeExtractor TimeWithDateExtractor = new DateTimeExtractorChs();
+        private static readonly IDateTimeExtractor TimePeriodExtractor = new TimePeriodExtractorChs();
         private static readonly IExtractor CardinalExtractor = new CardinalExtractor();
 
         private static readonly IParser CardinalParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal,
@@ -114,8 +114,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var er1 = SingleDateExtractor.Extract(text);
-            var er2 = TimePeriodExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text, referenceTime);
+            var er2 = TimePeriodExtractor.Extract(text, referenceTime);
             if (er1.Count != 1 || er2.Count != 1)
             {
                 return ret;
@@ -162,8 +162,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
             bool bothHasDate = false, beginHasDate = false, endHasDate = false;
-            var er1 = SingleTimeExtractor.Extract(text);
-            var er2 = TimeWithDateExtractor.Extract(text);
+            var er1 = SingleTimeExtractor.Extract(text, referenceTime);
+            var er2 = TimeWithDateExtractor.Extract(text, referenceTime);
 
             var rightTime = DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day);
             var leftTime = DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day);
@@ -448,7 +448,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
-                var ers = SingleDateExtractor.Extract(beforeStr);
+                var ers = SingleDateExtractor.Extract(beforeStr, referenceTime);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {
                     return ret;

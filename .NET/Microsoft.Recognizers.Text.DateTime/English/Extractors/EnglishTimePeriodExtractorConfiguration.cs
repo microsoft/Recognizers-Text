@@ -59,7 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IExtractor SingleTimeExtractor { get; }
+        public IDateTimeExtractor SingleTimeExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
 

@@ -145,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
+        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
 
         public IExtractor NumExtractor => NumberExtractor.GetInstance();
 
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public EnglishTimeExtractorConfiguration()
         {

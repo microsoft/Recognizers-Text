@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimePeriodParserConfiguration : ITimePeriodParserConfiguration
     {
-        public IExtractor TimeExtractor { get; }
+        public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
 

@@ -178,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         };
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
+        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
 
         public IExtractor NumExtractor => new NumberExtractor();
 
@@ -187,7 +187,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
         public FrenchTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());

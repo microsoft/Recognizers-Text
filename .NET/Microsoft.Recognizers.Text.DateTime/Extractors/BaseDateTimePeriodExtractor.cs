@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimePeriodExtractor : IExtractor
+    public class BaseDateTimePeriodExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -15,19 +16,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
-            tokens.AddRange(MatchSimpleCases(text));
-            tokens.AddRange(MergeTwoTimePoints(text));
-            tokens.AddRange(MatchDuration(text));
-            tokens.AddRange(MatchNight(text));
+            tokens.AddRange(MatchSimpleCases(text, reference));
+            tokens.AddRange(MergeTwoTimePoints(text, reference));
+            tokens.AddRange(MatchDuration(text, reference));
+            tokens.AddRange(MatchNight(text, reference));
             tokens.AddRange(MatchRelativeUnit(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        private List<Token> MatchSimpleCases(string text)
+        private List<Token> MatchSimpleCases(string text, DateObject reference)
         {
             var ret = new List<Token>();
             foreach (var regex in this.config.SimpleCasesRegex)
@@ -40,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // has a date before?
                         var beforeStr = text.Substring(0, match.Index);
-                        var er = this.config.SingleDateExtractor.Extract(beforeStr);
+                        var er = this.config.SingleDateExtractor.Extract(beforeStr, reference);
                         if (er.Count > 0)
                         {
                             var begin = er[0].Start ?? 0;
@@ -56,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else
                     {
                         // is it followed by a date?
-                        var er = this.config.SingleDateExtractor.Extract(followedStr);
+                        var er = this.config.SingleDateExtractor.Extract(followedStr, reference);
                         if (er.Count > 0)
                         {
                             var begin = er[0].Start ?? 0;
@@ -74,11 +75,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MergeTwoTimePoints(string text)
+        private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var er1 = this.config.SingleDateTimeExtractor.Extract(text);
-            var er2 = this.config.SingleTimeExtractor.Extract(text);
+            var er1 = this.config.SingleDateTimeExtractor.Extract(text, reference);
+            var er2 = this.config.SingleTimeExtractor.Extract(text, reference);
             var timePoints = new List<ExtractResult>();
             
             // handle the overlap problem
@@ -169,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchNight(string text)
+        private List<Token> MatchNight(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
@@ -181,7 +182,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Date followed by morning, afternoon
             // morning, afternoon followed by Date
-            var ers = this.config.SingleDateExtractor.Extract(text);
+            var ers = this.config.SingleDateExtractor.Extract(text, reference);
             if (ers.Count == 0)
             {
                 return ret;
@@ -215,12 +216,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         //TODO: this can be abstracted with the similar method in BaseDatePeriodExtractor
-        private List<Token> MatchDuration(string text)
+        private List<Token> MatchDuration(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var durationExtractions = config.DurationExtractor.Extract(text);
+            var durationExtractions = config.DurationExtractor.Extract(text, reference);
             foreach (var durationExtraction in durationExtractions)
             {
                 var match = config.TimeUnitRegex.Match(durationExtraction.Text);

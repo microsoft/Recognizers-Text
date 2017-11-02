@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private readonly IExtractor integerExtractor;
         private readonly IExtractor ordinalExtractor;
         private readonly IParser numberParser;
-        private readonly IExtractor durationExtractor;
+        private readonly IDateTimeExtractor durationExtractor;
 
         public DateParser(IFullDateTimeParserConfiguration configuration)
         {
@@ -483,7 +483,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParserDurationWithBeforeAndAfter(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            var durationRes = durationExtractor.Extract(text);
+            var durationRes = durationExtractor.Extract(text, referenceDate);
             var numStr = string.Empty;
             var unitStr = string.Empty;
             if (durationRes.Count > 0)

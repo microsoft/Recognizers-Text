@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
 
-            var ers = this.config.TimeExtractor.Extract(text);
+            var ers = this.config.TimeExtractor.Extract(text, referenceTime);
             if (ers.Count != 2)
             {
                 return ret;

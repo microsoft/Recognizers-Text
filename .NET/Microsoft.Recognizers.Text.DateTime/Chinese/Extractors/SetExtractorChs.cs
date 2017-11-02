@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class SetExtractorChs : IExtractor
+    public class SetExtractorChs : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -23,23 +24,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
         private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchEachUnit(text));
-            tokens.AddRange(MatchEachDuration(text));
-            tokens.AddRange(TimeEveryday(text));
-            tokens.AddRange(MatchEachDate(text));
-            tokens.AddRange(MatchEachDateTime(text));
+            tokens.AddRange(MatchEachDuration(text, referenceTime));
+            tokens.AddRange(TimeEveryday(text, referenceTime));
+            tokens.AddRange(MatchEachDate(text, referenceTime));
+            tokens.AddRange(MatchEachDateTime(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        public List<Token> MatchEachDuration(string text)
+        public List<Token> MatchEachDuration(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
 
-            var ers = DurationExtractor.Extract(text);
+            var ers = DurationExtractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 // "each last summer" doesn't make sense
@@ -73,10 +74,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        public List<Token> TimeEveryday(string text)
+        public List<Token> TimeEveryday(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = TimeExtractor.Extract(text);
+            var ers = TimeExtractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -89,10 +90,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        public List<Token> MatchEachDate(string text)
+        public List<Token> MatchEachDate(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = DateExtractor.Extract(text);
+            var ers = DateExtractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -105,10 +106,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        public List<Token> MatchEachDateTime(string text)
+        public List<Token> MatchEachDateTime(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = DateTimeExtractor.Extract(text);
+            var ers = DateTimeExtractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);

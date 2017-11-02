@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseTimePeriodExtractor : IExtractor
+    public class BaseTimePeriodExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
@@ -14,11 +15,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
-            tokens.AddRange(MergeTwoTimePoints(text));
+            tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchNight(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
@@ -47,10 +48,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MergeTwoTimePoints(string text)
+        private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.SingleTimeExtractor.Extract(text);
+            var ers = this.config.SingleTimeExtractor.Extract(text, reference);
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
             var idx = 0;

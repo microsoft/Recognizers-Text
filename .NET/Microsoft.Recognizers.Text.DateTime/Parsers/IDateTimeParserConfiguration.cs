@@ -10,9 +10,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string TokenBeforeTime { get; }
 
-        IExtractor DateExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
         IDateTimeParser DateParser { get; }
 
@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IParser NumberParser { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeParser DurationParser { get; }
 

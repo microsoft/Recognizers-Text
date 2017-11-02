@@ -13,19 +13,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IParser NumberParser { get; }
 
-        IExtractor DateExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
-        IExtractor DateTimeExtractor { get; }
+        IDateTimeExtractor DateTimeExtractor { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
-        IExtractor DatePeriodExtractor { get; }
+        IDateTimeExtractor DatePeriodExtractor { get; }
 
-        IExtractor TimePeriodExtractor { get; }
+        IDateTimeExtractor TimePeriodExtractor { get; }
 
-        IExtractor DateTimePeriodExtractor { get; }
+        IDateTimeExtractor DateTimePeriodExtractor { get; }
 
         IDateTimeParser DateParser { get; }
 

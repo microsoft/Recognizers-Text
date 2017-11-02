@@ -32,11 +32,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
 
-        public IExtractor DatePointExtractor { get; }
+        public IDateTimeExtractor DatePointExtractor { get; }
 
-        public IExtractor TimePointExtractor { get; }
+        public IDateTimeExtractor TimePointExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

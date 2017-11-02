@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.English;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseTimeExtractor : IExtractor
+    public class BaseTimeExtractor : IDateTimeExtractor
     {
         private static readonly string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
@@ -23,12 +22,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public virtual List<ExtractResult> Extract(string text)
+        public virtual List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(AtRegexMatch(text));
-            tokens.AddRange(SpecialsRegexMatch(text));
+            tokens.AddRange(SpecialsRegexMatch(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -67,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> SpecialsRegexMatch(string text)
+        private List<Token> SpecialsRegexMatch(string text, DateObject reference)
         {
             var ret = new List<Token>();
             MatchCollection matches;
@@ -89,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // check if oldTime string is a time format
                 var oldTime = match.Groups["oldTime"];
-                var timeRes = this.config.TimeExtractor.Extract(oldTime.ToString());
+                var timeRes = this.config.TimeExtractor.Extract(oldTime.ToString(), reference);
                 if (timeRes.Count == 0) continue;
                 // check if newTime string is a number format
                 var newTime = match.Groups["newTime"];

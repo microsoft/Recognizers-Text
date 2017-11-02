@@ -7,7 +7,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IEnumerable<Regex> TimeRegexList { get; }
 
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
         IExtractor NumExtractor { get; }
 

@@ -102,10 +102,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var er1 = this.config.DateExtractor.Extract(text);
+            var er1 = this.config.DateExtractor.Extract(text, referenceTime);
             if (er1.Count == 0)
             {
-                er1 = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text);
+                er1 = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceTime);
                 if (er1.Count == 1)
                 {
                     er1[0].Start -= this.config.TokenBeforeDate.Length;
@@ -125,11 +125,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            var er2 = this.config.TimeExtractor.Extract(text);
+            var er2 = this.config.TimeExtractor.Extract(text, referenceTime);
             if (er2.Count == 0)
             {
                 // here we filter out "morning, afternoon, night..." time entities
-                er2 = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + text);
+                er2 = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + text, referenceTime);
                 if (er2.Count == 1)
                 {
                     er2[0].Start -= this.config.TokenBeforeTime.Length;
@@ -239,10 +239,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                var ers = this.config.TimeExtractor.Extract(trimedText);
+                var ers = this.config.TimeExtractor.Extract(trimedText, referenceTime);
                 if (ers.Count != 1)
                 {
-                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimedText);
+                    ers = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + trimedText, referenceTime);
                     if (ers.Count == 1)
                     {
                         ers[0].Start -= this.config.TokenBeforeTime.Length;
@@ -300,7 +300,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseSpecailTimeOfDate(string text, DateObject refeDateTime)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateExtractor.Extract(text);
+            var ers = this.config.DateExtractor.Extract(text, refeDateTime);
             if (ers.Count != 1)
             {
                 return ret;

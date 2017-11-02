@@ -28,44 +28,44 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var innerResult = ParseEachUnit(er.Text);
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDuration(er.Text);
+                    innerResult = ParseEachDuration(er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserTimeEveryday(er.Text);
+                    innerResult = ParserTimeEveryday(er.Text, refDate);
                 }
 
                 // NOTE: Please do not change the order of following function
                 // datetimeperiod>dateperiod>timeperiod>datetime>date>time
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text);
+                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text);
+                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text);
+                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text);
+                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text);
+                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text);
+                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text, refDate);
                 }
 
                 if (innerResult.Success)
@@ -99,10 +99,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEachDuration(string text)
+        private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.DurationExtractor.Extract(text);
+            var ers = this.config.DurationExtractor.Extract(text, refDate);
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
@@ -168,10 +168,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParserTimeEveryday(string text)
+        private DateTimeResolutionResult ParserTimeEveryday(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.TimeExtractor.Extract(text);
+            var ers = this.config.TimeExtractor.Extract(text, refDate);
             if (ers.Count != 1)
             {
                 return ret;
@@ -191,7 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEach(IExtractor extractor, IDateTimeParser parser, string text)
+        private DateTimeResolutionResult ParseEach(IDateTimeExtractor extractor, IDateTimeParser parser, string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
             List<ExtractResult> ers = null;
@@ -201,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 var trimedText = text.Remove(match.Index, match.Length);
-                ers = extractor.Extract(trimedText);
+                ers = extractor.Extract(trimedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimedText.Length)
                 {
                     success = true;
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var trimedText = text.Remove(match.Index, match.Length);
                 trimedText = trimedText.Insert(match.Index, match.Groups["weekday"].ToString());
-                ers = extractor.Extract(trimedText);
+                ers = extractor.Extract(trimedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimedText.Length)
                 {
                     success = true;
@@ -223,7 +223,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (success)
             {
-                var pr = parser.Parse(ers[0], DateObject.Now);
+                //var pr = parser.Parse(ers[0], DateObject.Now);
+                var pr = parser.Parse(ers[0], refDate);
                 ret.Timex = pr.TimexStr;
                 ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
                 ret.Success = true;

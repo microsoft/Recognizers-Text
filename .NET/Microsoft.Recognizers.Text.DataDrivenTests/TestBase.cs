@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
 
         public IModel Model { get; set; }
-        public IExtractor Extractor { get; set; }
+        public IDateTimeExtractor Extractor { get; set; }
         public IDateTimeParser DateTimeParser { get; set; }
         public TestModel TestSpec { get; set; }
 
@@ -40,10 +40,10 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             Model = model;
         }
 
-        public void ExtractorInitialize(IDictionary<string, IExtractor> extractors)
+        public void ExtractorInitialize(IDictionary<string, IDateTimeExtractor> extractors)
         {
             var key = TestContext.TestName;
-            if (!extractors.TryGetValue(key, out IExtractor extractor))
+            if (!extractors.TryGetValue(key, out IDateTimeExtractor extractor))
             {
                 extractor = TestContext.GetExtractor();
                 extractors.Add(key, extractor);
@@ -174,7 +174,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 Debugger.Break();
             }
 
-            var actualResults = Extractor.Extract(TestSpec.Input);
+            var referenceDateTime = TestSpec.GetReferenceDateTime();
+
+            var actualResults = Extractor.Extract(TestSpec.Input, referenceDateTime);
             var expectedResults = TestSpec.CastResults<ExtractResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
@@ -204,7 +206,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
-            var extractResults = Extractor.Extract(TestSpec.Input);
+            var extractResults = Extractor.Extract(TestSpec.Input, referenceDateTime);
             var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime)).ToArray();
 
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();
@@ -243,7 +245,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
-            var extractResults = Extractor.Extract(TestSpec.Input);
+            var extractResults = Extractor.Extract(TestSpec.Input, referenceDateTime);
             var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime)).ToArray();
             
             var expectedResults = TestSpec.CastResults<DateTimeParseResult>();

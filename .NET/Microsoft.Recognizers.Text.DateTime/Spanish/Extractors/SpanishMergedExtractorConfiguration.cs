@@ -21,23 +21,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex PrepositionSuffixRegex =
             new Regex(@"\b(on|in|at|around|for|during|since|from|to)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public IExtractor DateExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public IExtractor TimeExtractor { get; }
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public IExtractor DateTimeExtractor { get; }
+        public IDateTimeExtractor DateTimeExtractor { get; }
 
-        public IExtractor DatePeriodExtractor { get; }
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
-        public IExtractor TimePeriodExtractor { get; }
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        public IExtractor DateTimePeriodExtractor { get; }
+        public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-        public IExtractor GetExtractor { get; }
+        public IDateTimeExtractor GetExtractor { get; }
 
-        public IExtractor HolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public SpanishMergedExtractorConfiguration()
         {

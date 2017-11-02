@@ -131,11 +131,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }
 
-        public IExtractor DatePointExtractor { get; }
+        public IDateTimeExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 

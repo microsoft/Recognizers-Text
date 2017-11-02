@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateExtractor : IExtractor
+    public class BaseDateExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -15,13 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(NumberWithMonth(text));
-            tokens.AddRange(DurationWithBeforeAndAfter(text));
+            tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -163,10 +164,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> DurationWithBeforeAndAfter(string text)
+        private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var durationEr = config.DurationExtractor.Extract(text);
+            var durationEr = config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
             {

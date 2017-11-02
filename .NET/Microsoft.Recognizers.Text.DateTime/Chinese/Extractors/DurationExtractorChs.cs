@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -21,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly Regex HalfSuffixRegex = new Regex(DateTimeDefinitions.Duration_HalfSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         // extract by number with unit
-        public override List<ExtractResult> Extract(string source)
+        public override List<ExtractResult> Extract(string source, DateObject referenceTime)
         {
             //Use Unit to extract 
             var retList = InternalExtractor.Extract(source);

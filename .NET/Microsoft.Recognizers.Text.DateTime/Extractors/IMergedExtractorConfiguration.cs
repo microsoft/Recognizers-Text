@@ -4,23 +4,23 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IMergedExtractorConfiguration
     {
-        IExtractor DateExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
-        IExtractor DateTimeExtractor { get; }
+        IDateTimeExtractor DateTimeExtractor { get; }
 
-        IExtractor DatePeriodExtractor { get; }
+        IDateTimeExtractor DatePeriodExtractor { get; }
 
-        IExtractor TimePeriodExtractor { get; }
+        IDateTimeExtractor TimePeriodExtractor { get; }
 
-        IExtractor DateTimePeriodExtractor { get; }
+        IDateTimeExtractor DateTimePeriodExtractor { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
-        IExtractor GetExtractor { get; }
+        IDateTimeExtractor GetExtractor { get; }
 
-        IExtractor HolidayExtractor { get; }
+        IDateTimeExtractor HolidayExtractor { get; }
 
         Regex AfterRegex { get; }
 

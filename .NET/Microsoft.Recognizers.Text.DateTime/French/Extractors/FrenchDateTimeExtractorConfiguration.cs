@@ -71,9 +71,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
         }
 
-        public IExtractor DatePointExtractor { get; }
+        public IDateTimeExtractor DatePointExtractor { get; }
 
-        public IExtractor TimePointExtractor { get; }
+        public IDateTimeExtractor TimePointExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public bool IsConnector(string text)
         {

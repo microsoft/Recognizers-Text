@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseMergedExtractor : IExtractor
+    public class BaseMergedExtractor : IDateTimeExtractor
     {
         private readonly IMergedExtractorConfiguration config;
         private readonly DateTimeOptions options;
@@ -15,19 +16,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.options = options;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
             // the order is important, since there is a problem in merging
-            AddTo(ret, this.config.DateExtractor.Extract(text), text);
-            AddTo(ret, this.config.TimeExtractor.Extract(text), text);
-            AddTo(ret, this.config.DurationExtractor.Extract(text), text);
-            AddTo(ret, this.config.DatePeriodExtractor.Extract(text), text);
-            AddTo(ret, this.config.DateTimeExtractor.Extract(text), text);
-            AddTo(ret, this.config.TimePeriodExtractor.Extract(text), text);
-            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text), text);
-            AddTo(ret, this.config.GetExtractor.Extract(text), text);
-            AddTo(ret, this.config.HolidayExtractor.Extract(text), text);
+            AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DurationExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DatePeriodExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DateTimeExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.TimePeriodExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.GetExtractor.Extract(text, reference), text);
+            AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
 
             AddMod(ret, text);
 

@@ -1,10 +1,11 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimeExtractor : IExtractor
+    public class BaseDateTimeExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
@@ -15,15 +16,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTime(text));
+            tokens.AddRange(MergeDateAndTime(text, reference));
             tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(TimeOfTodayBefore(text));
-            tokens.AddRange(TimeOfTodayAfter(text));
-            tokens.AddRange(SpecialTimeOfDate(text));
-            tokens.AddRange(DurationWithBeforeAndAfter(text));
+            tokens.AddRange(TimeOfTodayBefore(text, reference));
+            tokens.AddRange(TimeOfTodayAfter(text, reference));
+            tokens.AddRange(SpecialTimeOfDate(text, reference));
+            tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -45,16 +46,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // merge a Date entity and a Time entity, like "at 7 tomorrow"
-        public List<Token> MergeDateAndTime(string text)
+        public List<Token> MergeDateAndTime(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.DatePointExtractor.Extract(text);
+            var ers = this.config.DatePointExtractor.Extract(text, reference);
             if (ers.Count == 0)
             {
                 return ret;
             }
 
-            ers.AddRange(this.config.TimePointExtractor.Extract(text));
+            ers.AddRange(this.config.TimePointExtractor.Extract(text, reference));
             if (ers.Count < 2)
             {
                 return ret;
@@ -116,11 +117,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse a specific time of today, tonight, this afternoon, like "seven this afternoon"
-        public List<Token> TimeOfTodayAfter(string text)
+        public List<Token> TimeOfTodayAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
-            var ers = this.config.TimePointExtractor.Extract(text);
+            var ers = this.config.TimePointExtractor.Extract(text, reference);
 
             foreach (var er in ers)
             {
@@ -149,10 +150,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse a specific time of today, tonight, this afternoon, "this afternoon at 7"
-        public List<Token> TimeOfTodayBefore(string text)
+        public List<Token> TimeOfTodayBefore(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.TimePointExtractor.Extract(text);
+            var ers = this.config.TimePointExtractor.Extract(text, reference);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -187,10 +188,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<Token> SpecialTimeOfDate(string text)
+        public List<Token> SpecialTimeOfDate(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.DatePointExtractor.Extract(text);
+            var ers = this.config.DatePointExtractor.Extract(text, reference);
 
             // handle "the end of the day"
             foreach (var er in ers)
@@ -218,11 +219,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // process case like "two minutes ago" "three hours later"
-        private List<Token> DurationWithBeforeAndAfter(string text)
+        private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
-            var durationEr = config.DurationExtractor.Extract(text);
+            var durationEr = config.DurationExtractor.Extract(text, reference);
             foreach (var er in durationEr)
             {
                 var match = config.UnitRegex.Match(er.Text);

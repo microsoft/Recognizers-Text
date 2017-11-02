@@ -7,13 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
-        IExtractor DateExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
 
         IParser NumberParser { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeParser DurationParser { get; }
 

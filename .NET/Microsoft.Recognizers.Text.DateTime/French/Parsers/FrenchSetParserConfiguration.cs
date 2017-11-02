@@ -5,31 +5,31 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchSetParserConfiguration : ISetParserConfiguration
     {
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 
-        public IExtractor TimeExtractor { get; }
+        public IDateTimeExtractor TimeExtractor { get; }
 
         public IDateTimeParser TimeParser { get; }
 
-        public IExtractor DateExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
 
-        public IExtractor DateTimeExtractor { get; }
+        public IDateTimeExtractor DateTimeExtractor { get; }
 
         public IDateTimeParser DateTimeParser { get; }
 
-        public IExtractor DatePeriodExtractor { get; }
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         public IDateTimeParser DatePeriodParser { get; }
 
-        public IExtractor TimePeriodExtractor { get; }
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeParser TimePeriodParser { get; }
 
-        public IExtractor DateTimePeriodExtractor { get; }
+        public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
         public IDateTimeParser DateTimePeriodParser { get; }
 

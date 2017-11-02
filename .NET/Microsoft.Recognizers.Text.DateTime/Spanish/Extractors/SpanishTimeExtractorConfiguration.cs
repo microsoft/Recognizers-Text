@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimeExtractorConfiguration.IshRegex => null;
 
-        public IExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
+        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new English.EnglishTimeExtractorConfiguration());
 
         public IExtractor NumExtractor => new NumberExtractor();
 
@@ -102,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex ITimeExtractorConfiguration.SpecialTimePattern => SpecialTimePattern;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public SpanishTimeExtractorConfiguration()
         {

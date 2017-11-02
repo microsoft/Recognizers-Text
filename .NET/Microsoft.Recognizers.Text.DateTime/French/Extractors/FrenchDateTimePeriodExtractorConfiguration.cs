@@ -82,13 +82,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor SingleDateExtractor { get; }
+        public IDateTimeExtractor SingleDateExtractor { get; }
 
-        public IExtractor SingleTimeExtractor { get; }
+        public IDateTimeExtractor SingleTimeExtractor { get; }
 
-        public IExtractor SingleDateTimeExtractor { get; }
+        public IDateTimeExtractor SingleDateTimeExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public bool GetFromTokenIndex(string text, out int index)
         {

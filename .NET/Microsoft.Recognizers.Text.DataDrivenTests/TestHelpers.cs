@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
         }
 
-        public static IExtractor GetExtractor(this TestContext context)
+        public static IDateTimeExtractor GetExtractor(this TestContext context)
         {
             var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var extractorName = TestUtils.GetExtractor(context.TestName);
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for '{language}' not supported");
         }
 
-        public static IExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
+        public static IDateTimeExtractor GetEnglishExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {
@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for English not supported");
         }
 
-        public static IExtractor GetChineseExtractor(DateTimeExtractors extractorName)
+        public static IDateTimeExtractor GetChineseExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {
@@ -282,7 +282,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for English not supported");
         }
 
-        public static IExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
+        public static IDateTimeExtractor GetSpanishExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {
@@ -341,7 +341,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             throw new Exception($"Parser '{parserName}' for Spanish not supported");
         }
 
-        public static IExtractor GetFrenchExtractor(DateTimeExtractors extractorName)
+        public static IDateTimeExtractor GetFrenchExtractor(DateTimeExtractors extractorName)
         {
             switch (extractorName)
             {

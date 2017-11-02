@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateTimeExtractorChs : IExtractor
+    public class DateTimeExtractorChs : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
@@ -20,12 +21,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimePointExtractor = new TimeExtractorChs();
 
-        public List<ExtractResult> Extract(string text)
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTime(text));
+            tokens.AddRange(MergeDateAndTime(text, referenceTime));
             tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(TimeOfToday(text));
+            tokens.AddRange(TimeOfToday(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -47,16 +48,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // merge a Date entity and a Time entity, like "明天早上七点"
-        public List<Token> MergeDateAndTime(string text)
+        public List<Token> MergeDateAndTime(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = DatePointExtractor.Extract(text);
+            var ers = DatePointExtractor.Extract(text, referenceTime);
             if (ers.Count == 0)
             {
                 return ret;
             }
 
-            ers.AddRange(TimePointExtractor.Extract(text));
+            ers.AddRange(TimePointExtractor.Extract(text, referenceTime));
             if (ers.Count < 2)
             {
                 return ret;
@@ -105,10 +106,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // parse a specific time of today, tonight, this afternoon, "今天下午七点"
-        public List<Token> TimeOfToday(string text)
+        public List<Token> TimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = TimePointExtractor.Extract(text);
+            var ers = TimePointExtractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);

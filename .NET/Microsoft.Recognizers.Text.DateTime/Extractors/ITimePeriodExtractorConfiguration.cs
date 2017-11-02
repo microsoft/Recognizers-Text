@@ -10,8 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex TillRegex { get; }
 
         Regex TimeOfDayRegex { get; }
-        
-        IExtractor SingleTimeExtractor { get; }
+
+        IDateTimeExtractor SingleTimeExtractor { get; }
         
         bool GetFromTokenIndex(string text, out int index);
 

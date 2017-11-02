@@ -104,6 +104,7 @@
     <Compile Include="Extractors\BaseTimePeriodExtractor.cs" />
     <Compile Include="Extractors\IDateExtractorConfiguration.cs" />
     <Compile Include="Extractors\IDatePeriodExtractorConfiguration.cs" />
+    <Compile Include="Extractors\IDateTimeExtractor.cs" />
     <Compile Include="Extractors\IDateTimeExtractorConfiguration.cs" />
     <Compile Include="Extractors\IDateTimePeriodExtractorConfiguration.cs" />
     <Compile Include="Extractors\IDurationExtractorConfiguration.cs" />
