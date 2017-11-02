@@ -22,10 +22,21 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.HalfADozenText = NumbersDefinitions.HalfADozenText;
             this.WordSeparatorToken = NumbersDefinitions.WordSeparatorToken;
 
-            this.WrittenDecimalSeparatorTexts = NumbersDefinitions.WrittenDecimalSeparatorTexts.ToImmutableList();
-            this.WrittenGroupSeparatorTexts = NumbersDefinitions.WrittenGroupSeparatorTexts.ToImmutableList();
-            this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts.ToImmutableList();
-            this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts.ToImmutableList();
+            this.WrittenDecimalSeparatorTexts = NumbersDefinitions.WrittenDecimalSeparatorTexts;
+            this.WrittenGroupSeparatorTexts = NumbersDefinitions.WrittenGroupSeparatorTexts;
+            this.WrittenIntegerSeparatorTexts = NumbersDefinitions.WrittenIntegerSeparatorTexts;
+            this.WrittenFractionSeparatorTexts = NumbersDefinitions.WrittenFractionSeparatorTexts;
+
+            foreach (var sufix in NumbersDefinitions.SufixOrdinalDictionary)
+            {
+                foreach (var prefix in NumbersDefinitions.PrefixCardinalDictionary)
+                {
+                    if (!NumbersDefinitions.OrdinalNumberMap.ContainsKey(prefix.Key + sufix.Key))
+                    {
+                        NumbersDefinitions.OrdinalNumberMap.Add(prefix.Key + sufix.Key, prefix.Value * sufix.Value);
+                    }
+                }
+            }
 
             this.CardinalNumberMap = NumbersDefinitions.CardinalNumberMap.ToImmutableDictionary();
             this.OrdinalNumberMap = NumbersDefinitions.OrdinalNumberMap.ToImmutableDictionary();
@@ -51,6 +62,8 @@ namespace Microsoft.Recognizers.Text.Number.French
         public string LangMarker { get; private set; }
 
         public char NonDecimalSeparatorChar { get; private set; }
+
+        public string NonDecimalSeparatorText { get; private set; }
 
         public ImmutableDictionary<string, long> OrdinalNumberMap { get; private set; }
 

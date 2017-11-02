@@ -294,20 +294,14 @@
 ,
 {
   "Input": "192.168.1.2",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "192",
+      "Text": "192.168",
       "TypeName": "number",
       "Resolution": {
-        "value": "192"
-      }
-    },
-    {
-      "Text": "168",
-      "TypeName": "number",
-      "Resolution": {
-        "value": "168"
+        "value": "192168"
       }
     },
     {
@@ -932,6 +926,19 @@
     }
   ]
 }
+,{
+  "Input": "2 millions",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 millions",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "2000000"
+      }
+    }
+  ]
+}
 ,
 {
   "Input": "1 billion",
@@ -939,6 +946,20 @@
   "Results": [
     {
       "Text": "1 billion",
+      "TypeName": "number",
+      "Resolution": {
+        "value": "1000000000000"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1 billions",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 billions",
       "TypeName": "number",
       "Resolution": {
         "value": "1000000000000"

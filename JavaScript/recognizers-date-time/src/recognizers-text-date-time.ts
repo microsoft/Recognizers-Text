@@ -47,7 +47,20 @@ export { FrenchSetExtractorConfiguration, FrenchSetParserConfiguration } from ".
 export { FrenchDurationExtractorConfiguration, FrenchDurationParserConfiguration } from "./dateTime/french/durationConfiguration";
 export { FrenchHolidayExtractorConfiguration, FrenchHolidayParserConfiguration } from "./dateTime/french/holidayConfiguration";
 export { FrenchMergedExtractorConfiguration, FrenchMergedParserConfiguration } from "./dateTime/french/mergedConfiguration";
+
+export { ChineseDurationExtractor, ChineseDurationParser } from "./dateTime/chinese/durationConfiguration";
+export { ChineseTimeExtractor, ChineseTimeParser } from "./dateTime/chinese/timeConfiguration";
+export { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./dateTime/chinese/timePeriodConfiguration";
+export { ChineseDateExtractor, ChineseDateParser } from "./dateTime/chinese/dateConfiguration";
+export { ChineseDatePeriodExtractor, ChineseDatePeriodParser } from "./dateTime/chinese/datePeriodConfiguration";
+export { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTime/chinese/dateTimeConfiguration";
+export { ChineseDateTimePeriodExtractor, ChineseDateTimePeriodParser } from "./dateTime/chinese/dateTimePeriodConfiguration";
+export { ChineseSetExtractor, ChineseSetParser } from "./dateTime/chinese/setConfiguration";
+export { ChineseHolidayExtractorConfiguration, ChineseHolidayParser } from "./dateTime/chinese/holidayConfiguration";
+export { ChineseMergedExtractor, ChineseMergedParser, ChineseFullMergedParser } from "./dateTime/chinese/mergedConfiguration";
+
 export { BaseDateTime } from "./resources/baseDateTime";
 export { EnglishDateTime } from "./resources/englishDateTime";
 export { SpanishDateTime } from "./resources/spanishDateTime";
 export { FrenchDateTime } from "./resources/frenchDateTime";
+export { ChineseDateTime } from "./resources/chineseDateTime";

@@ -82,9 +82,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
     public static class TimeFunctions
     {
-        public static readonly Dictionary<char, int> NumberDictionary = DateTimeDefinitions.Time_NumberDictionary;
+        public static readonly Dictionary<char, int> NumberDictionary = DateTimeDefinitions.TimeNumberDictionary;
 
-        public static readonly Dictionary<string, int> LowBoundDesc = DateTimeDefinitions.Time_LowBoundDesc;
+        public static readonly Dictionary<string, int> LowBoundDesc = DateTimeDefinitions.TimeLowBoundDesc;
 
         public static TimeResult HandleLess(DateTimeExtra<TimeType> extra)
         {

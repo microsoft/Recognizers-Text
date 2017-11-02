@@ -29,7 +29,7 @@ CurrencySuffixList: !dictionary
   types: [ string, string ]
   entries:
 #Abkhazian apsar
-    Abkhazian apsar: abkhazian apsar|apsars'
+    Abkhazian apsar: abkhazian apsar|apsars
 #Afghan afghani
     Afghan afghani: afghan afghani|؋|afn|afghanis|afghani
     Pul: pul

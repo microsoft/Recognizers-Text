@@ -23,6 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PrepositionSuffixRegex =
             new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex NumberEndingPattern =
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -37,9 +40,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public IDateTimeExtractor GetExtractor { get; }
+        public IDateTimeExtractor SetExtractor { get; }
 
         public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IExtractor IntegerExtractor { get; }
 
         public EnglishMergedExtractorConfiguration()
         {
@@ -50,8 +55,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new EnglishDateTimePeriodExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-            GetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+            SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
@@ -60,5 +66,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.FromToRegex => FromToRegex;
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
+        Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
     }
 }

@@ -2,7 +2,7 @@
 LangMarker: Fr
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (cent|mille|million|milliard|billion)
+  def: (cent|mille|millions|million|milliard|milliards|billion|billions)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (et un|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -31,10 +31,10 @@ AllIntRegex: !nestedRegex
   def: ({SeparaIntRegex}|mille(\s+{BelowThousandsRegex})?)
   references: [ SeparaIntRegex, BelowThousandsRegex ]
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]
@@ -151,7 +151,7 @@ WrittenFractionSeparatorTexts: [et, sur]
 HalfADozenRegex: !simpleRegex
   def: (?<=\b)+demi\s+douzaine
 DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(cent|mille|million|milliard|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+  def: ((?<=\b)(cent|mille|million|millions|milliard|milliards|billions|billion|douzaine(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -199,8 +199,10 @@ CardinalNumberMap: !dictionary
     mille: 1000
     un million: 1000000
     million: 1000000
+    millions: 1000000
     un milliard: 1000000000
     milliard: 1000000000
+    milliards: 1000000000
     un mille milliards: 1000000000000
     un billion: 1000000000000
 OrdinalNumberMap: !dictionary
@@ -288,14 +290,86 @@ OrdinalNumberMap: !dictionary
     billionième: 1000000000000
     trillionième: 1000000000000000000
     trillionieme: 1000000000000000000
+PrefixCardinalDictionary: !dictionary
+  types: [ string, long ]
+  entries:
+    deux: 2 
+    trois: 3 
+    quatre: 4 
+    cinq: 5 
+    six: 6 
+    sept: 7 
+    huit: 8 
+    neuf: 9 
+    dix: 10 
+    onze: 11 
+    douze: 12 
+    treize: 13
+    quatorze: 14
+    quinze: 15
+    seize: 16
+    dix sept: 17
+    dix-sept: 17
+    dix-huit: 18
+    dix huit: 18
+    dix-neuf: 19
+    dix neuf: 19
+    vingt: 20
+    vingt-et-un: 21 
+    vingt et un: 21
+    vingt-deux: 21 
+    vingt deux: 22 
+    vingt-trois: 23 
+    vingt trois: 23 
+    vingt-quatre: 24 
+    vingt quatre: 24
+    vingt-cinq: 25 
+    vingt cinq: 25
+    vingt-six: 26
+    vingt six: 26 
+    vingt-sept: 27 
+    vingt sept: 27
+    vingt-huit: 28 
+    vingt huit: 28 
+    vingt-neuf: 29 
+    vingt neuf: 29 
+    trente: 30
+    quarante: 40
+    cinquante: 50
+    soixante: 60
+    soixante-dix: 70
+    soixante dix: 70
+    septante: 70
+    quatre-vingt: 80
+    quatre vingt: 80
+    quatre vingt dix: 90
+    quatre-vingt-dix: 90
+    cent: 100 
+    deux cent: 200
+    trois cents: 300
+    quatre cents: 400
+    cinq cent: 500
+    six cent: 600
+    sept cent: 700
+    huit cent: 800
+    neuf cent: 900
+SufixOrdinalDictionary: !dictionary
+  types: [ string, long ]
+  entries:
+    millième: 1000 
+    million: 1000000 
+    milliardième: 1000000000000
 RoundNumberMap: !dictionary
   types: [ string, long ]
   entries:
     cent: 100
     mille: 1000
     million: 1000000
+    millions: 1000000
     milliard: 1000000000
+    milliards: 1000000000
     billion: 1000000000000
+    billions: 1000000000000
     centieme: 100
     centième: 100
     millieme: 1000

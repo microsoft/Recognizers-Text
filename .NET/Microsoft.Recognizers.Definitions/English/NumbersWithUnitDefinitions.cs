@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		};
 		public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
 		{
-			{ "Abkhazian apsar", "abkhazian apsar|apsars'" },
+			{ "Abkhazian apsar", "abkhazian apsar|apsars" },
 			{ "Afghan afghani", "afghan afghani|؋|afn|afghanis|afghani" },
 			{ "Pul", "pul" },
 			{ "Euro", "euros|euro|€|eur" },

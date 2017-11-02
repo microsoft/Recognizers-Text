@@ -91,6 +91,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="French\NumbersWithUnitDefinitions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Include="Portuguese\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -158,6 +163,10 @@
     <Content Include="French\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </Content>
+    <Content Include="French\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </Content>
     <Content Include="Spanish\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

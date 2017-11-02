@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
-        public List<ExtractResult> Extract(string text)
+        public virtual List<ExtractResult> Extract(string text)
         {
             return Extract(text, DateObject.Now);
         }
@@ -74,33 +74,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> SpecialsRegexMatch(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            MatchCollection matches;
             // handle "ish"
             if (this.config.IshRegex != null && this.config.IshRegex.IsMatch(text))
             {
-                matches = this.config.IshRegex.Matches(text);
+                var matches = this.config.IshRegex.Matches(text);
 
                 foreach (Match match in matches)
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
-            }
-            // handle special patterns
-            //Regex r = new Regex($@"\b((?<oldTime>.*)\s+(?<meeting>meeting|appointment|conference|assembly)\s+to\s+(?<newTime>.*)(.|,)?)\b",
-            //RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            matches = this.config.SpecialTimePattern.Matches(text);
-            foreach (Match match in matches)
-            {
-                // check if oldTime string is a time format
-                var oldTime = match.Groups["oldTime"];
-                var timeRes = this.config.TimeExtractor.Extract(oldTime.ToString(), reference);
-                if (timeRes.Count == 0) continue;
-                // check if newTime string is a number format
-                var newTime = match.Groups["newTime"];
-                var numRes = this.config.NumExtractor.Extract(newTime.ToString());
-                if (numRes.Count == 0) continue;
-
-                ret.Add(new Token(newTime.Index, newTime.Index + newTime.Length));
             }
             return ret;
         }

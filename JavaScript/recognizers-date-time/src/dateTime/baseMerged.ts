@@ -16,13 +16,13 @@ import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {
     dateExtractor: BaseDateExtractor
-    timeExtractor: BaseTimeExtractor
+    timeExtractor: IExtractor
     dateTimeExtractor: BaseDateTimeExtractor
     datePeriodExtractor: BaseDatePeriodExtractor
-    timePeriodExtractor: BaseTimePeriodExtractor
+    timePeriodExtractor: IExtractor
     dateTimePeriodExtractor: BaseDateTimePeriodExtractor
     holidayExtractor: BaseHolidayExtractor
-    durationExtractor: BaseDurationExtractor
+    durationExtractor: IExtractor
     setExtractor: BaseSetExtractor
     afterRegex: RegExp
     beforeRegex: RegExp
@@ -33,8 +33,8 @@ export interface IMergedExtractorConfiguration {
 }
 
 export class BaseMergedExtractor implements IExtractor {
-    private readonly config: IMergedExtractorConfiguration;
-    private readonly options: DateTimeOptions;
+    protected readonly config: IMergedExtractorConfiguration;
+    protected readonly options: DateTimeOptions;
 
     constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
         this.config = config;
@@ -58,7 +58,7 @@ export class BaseMergedExtractor implements IExtractor {
         return result;
     }
 
-    private addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
+    protected addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {
         source.forEach(value => {
             if (this.options === DateTimeOptions.SkipFromToMerge && this.shouldSkipFromMerge(value)) return;
 
@@ -112,7 +112,7 @@ export class BaseMergedExtractor implements IExtractor {
         return false;
     }
 
-    private addMod(ers: ExtractResult[], source: string) {
+    protected addMod(ers: ExtractResult[], source: string) {
         let lastEnd = 0;
         ers.forEach(er => {
             let beforeStr = source.substr(lastEnd, er.start).toLowerCase();
@@ -169,7 +169,7 @@ export interface IMergedParserConfiguration {
 export class BaseMergedParser implements IDateTimeParser {
     readonly parserTypeName = 'datetimeV2';
 
-    private readonly config: IMergedParserConfiguration;
+    protected readonly config: IMergedParserConfiguration;
     private readonly options: DateTimeOptions;
 
     private readonly dateMinValue = FormatUtil.formatDate(DateUtils.minValue());
@@ -324,7 +324,7 @@ export class BaseMergedParser implements IDateTimeParser {
         return null;
     }
 
-    private determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): string {
+    protected determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): string {
         if ((this.options & DateTimeOptions.SplitDateAndTime) === DateTimeOptions.SplitDateAndTime) {
             if (type === Constants.SYS_DATETIME_DATETIME) {
                 return Constants.SYS_DATETIME_TIME;
@@ -357,7 +357,7 @@ export class BaseMergedParser implements IDateTimeParser {
         return results;
     }
 
-    private dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): Map<string, any> {
+    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): Map<string, any> {
         if (!slot) return null;
 
         let result = new Map<string, any>();
@@ -430,7 +430,7 @@ export class BaseMergedParser implements IDateTimeParser {
         return new Map<string, any>().set('values', resolutions);
     }
 
-    private addResolutionFieldsAny( dic:Map<string, any>,  key:string,  value:any)
+    protected addResolutionFieldsAny( dic:Map<string, any>,  key:string,  value:any)
     {
         if (value instanceof String)
         {
@@ -445,7 +445,7 @@ export class BaseMergedParser implements IDateTimeParser {
         }
     }
 
-    private addResolutionFields(dic:Map<string, string> ,  key:string,  value:string)
+    protected addResolutionFields(dic:Map<string, string> ,  key:string,  value:string)
     {
         if (!StringUtility.isNullOrEmpty(value))
         {
@@ -453,7 +453,7 @@ export class BaseMergedParser implements IDateTimeParser {
         }
     }
 
-    private generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {
+    protected generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {
         let result = new Map<string, string>();
         switch (type) {
             case Constants.SYS_DATETIME_DATETIME:
@@ -523,7 +523,7 @@ export class BaseMergedParser implements IDateTimeParser {
         result.set(TimeTypeConstants.END, end);
     }
 
-    private resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
+    protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
         if (!valuesMap.has(keyName)) return;
 
         let resolution: Map<string, any> = valuesMap.get(keyName);
