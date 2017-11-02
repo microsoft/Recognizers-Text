@@ -46,7 +46,7 @@ CurrencySuffixList: !dictionary
 #No use of "AMD"
     Armenian dram: dram armenia|dram armeno|dram armeni
 #Aruban florin
-    Aruban florin: florino arubano|fiorini arubani|ƒ|awg
+    Aruban florin: fiorino arubano|fiorini arubani|ƒ|awg
 #Bangladeshi taka
     Bangladeshi taka: taka bengalese|taka bengalesi|৳|bdt|taka|taka bangladesh
     Paisa: poisha|paisa
