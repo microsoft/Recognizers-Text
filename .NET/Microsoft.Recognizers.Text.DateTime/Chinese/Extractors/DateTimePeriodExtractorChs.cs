@@ -50,6 +50,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly CardinalExtractor CardinalExtractor = new CardinalExtractor();
         private static readonly TimePeriodExtractorChs TimePeriodExtractor = new TimePeriodExtractorChs();
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();

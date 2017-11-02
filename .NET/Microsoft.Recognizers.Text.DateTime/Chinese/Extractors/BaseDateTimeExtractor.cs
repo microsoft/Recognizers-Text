@@ -12,6 +12,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         protected virtual string ExtractType { get; } = "";
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public virtual List<ExtractResult> Extract(string source, DateObject referenceTime)
         {
             if (string.IsNullOrEmpty(source))

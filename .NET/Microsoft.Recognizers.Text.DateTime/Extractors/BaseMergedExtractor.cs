@@ -16,6 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.options = options;
         }
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();

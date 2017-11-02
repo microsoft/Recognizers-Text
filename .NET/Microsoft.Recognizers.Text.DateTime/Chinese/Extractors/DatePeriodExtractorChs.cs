@@ -90,6 +90,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             QuarterRegex
         };
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();

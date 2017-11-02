@@ -89,6 +89,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly DurationExtractorChs DurationExtractor = new DurationExtractorChs();
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();

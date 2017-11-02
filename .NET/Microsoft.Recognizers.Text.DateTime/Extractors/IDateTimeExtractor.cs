@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimeExtractor
+    public interface IDateTimeExtractor : IExtractor
     {
         List<ExtractResult> Extract(string input, DateObject reference);
     }

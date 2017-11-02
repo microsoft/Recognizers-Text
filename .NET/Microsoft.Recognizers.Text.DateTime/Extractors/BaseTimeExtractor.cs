@@ -22,6 +22,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
         }
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public virtual List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();

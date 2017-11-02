@@ -24,6 +24,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
         private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
 
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
