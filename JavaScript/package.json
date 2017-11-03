@@ -2,6 +2,8 @@
   "name": "recognizers-text",
   "version": "1.0.0",
   "description": "recognizers-text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
   "keywords": [
     "nlp",
     "nlp-entity-extraction",
@@ -18,12 +20,13 @@
   "files": [
     "dist"
   ],
-  "author": "Microsoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/recognizers-text"
+    "url": "https://github.com/Microsoft/Recognizers-Text"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
   "engines": {
     "node": ">=6.0.0"
   },
