@@ -1,8 +1,16 @@
 {
   "name": "recognizers-text",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "recognizers-text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "datetime",
+    "entity-extraction",
+    "timex",
+    "numex",
+    "parser-library"
+  ],
   "main": "dist/recognizers-text.umd.js",
   "module": "dist/recognizers-text.es5.js",
   "typings": "dist/types/recognizers-text.d.ts",

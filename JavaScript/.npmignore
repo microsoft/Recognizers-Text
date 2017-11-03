@@ -1,0 +1,11 @@
+.vscode
+samples
+src
+recognizers-*
+test
+.babelrc
+build.*
+dist/docs
+rollup.config.js
+tsconfig.json
+tslint.json
