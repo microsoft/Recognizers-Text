@@ -1018,5 +1018,159 @@
       }
     }
   ]
-}
+},
+{
+  "Input": "I'll change the ten am appointment to twenty!",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+      {
+      "timex": "T10",
+      "type": "time",
+      "value": "10:00:00"
+      }
+    ]
+      }
+    },
+    {
+      "Text": "twenty",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+          {
+          "timex": "T20",
+          "type": "time",
+          "value": "20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll change the ten am appointment to 20!",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+      {
+      "timex": "T10",
+      "type": "time",
+      "value": "10:00:00"
+      }
+    ]
+      }
+    },
+    {
+      "Text": "20",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+          {
+          "timex": "T20",
+          "type": "time",
+          "value": "20:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll change the ten am appointment to nine!",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+      {
+      "timex": "T10",
+      "type": "time",
+      "value": "10:00:00"
+      }
+    ]
+      }
+    },
+    {
+      "Text": "nine",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+          {
+          "timex": "T09",
+          "type": "time",
+          "value": "09:00:00"
+          },
+          {
+          "timex": "T21",
+          "type": "time",
+          "value": "21:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll change the ten am appointment to 26!",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+      {
+      "timex": "T10",
+      "type": "time",
+      "value": "10:00:00"
+      }
+    ]
+      }
+    }
+  ]
+},
+{
+  "Input": "I'll change the ten am appointment to twenty six.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ten am",
+      "Type": "datetimeV2.time",
+      "Value": {
+        "values": [
+      {
+      "timex": "T10",
+      "type": "time",
+      "value": "10:00:00"
+      }
+    ]
+      }
+    }
+  ]
+},
 ]

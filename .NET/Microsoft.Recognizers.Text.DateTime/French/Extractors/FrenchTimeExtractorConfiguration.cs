@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
-using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -173,11 +172,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ConnectNumRegex
         };
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
-
-        public IDateTimeExtractor TimeExtractor => new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
-
-        public IExtractor NumExtractor => new NumberExtractor();
-
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
