@@ -4,6 +4,8 @@ import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
 import camelCase from 'lodash.camelcase';
 import babel from 'rollup-plugin-babel';
+import alias from 'rollup-plugin-alias';
+import path from 'path';
 
 export default {
   input: `compiled/${pkg.name}.js`,
@@ -15,6 +17,9 @@ export default {
   exports: 'named',
   sourcemap: true,
   plugins: [
+    alias({
+      'recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js')
+    }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
     // Allow node_modules resolution, so you can use 'external' to control
