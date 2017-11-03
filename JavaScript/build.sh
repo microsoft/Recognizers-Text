@@ -9,7 +9,6 @@ npm run prebuild-number-with-unit
 echo // Building recognizers date-time module
 npm run prebuild-date-time
 
-REM Build main module
 echo // Installing dependencies - npm install
 npm i
 
