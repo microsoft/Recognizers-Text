@@ -1,4 +1,5 @@
 export { default as NumberWithUnitRecognizer } from "./numberWithUnit/numberWithUnitRecognizer";
+export { Culture, CultureInfo } from "recognizers-text-number";
 export { Constants } from "./numberWithUnit/constants";
 export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult } from "./numberWithUnit/extractors";
 export { CompositeEntityType, AbstractNumberWithUnitModel, AgeModel, CurrencyModel, DimensionModel, TemperatureModel } from "./numberWithUnit/models";
