@@ -309,29 +309,6 @@
 }
 ,
 {
-  "Input": "put make cable's wedding in my calendar for wednesday the thirty first",
-  "Context": {
-    "ReferenceDateTime": "2017-09-15T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "wednesday the thirty first",
-      "Type": "datetimeV2.date",
-      "Value": {
-        "values": [
-          {
-            "timex": "XXXX-WXX-3,XXXX-XX-31",
-            "type": "date",
-            "value": "not resolved"
-          }
-        ]
-      }
-    }
-  ]
-}
-,
-{
   "Input": "put make cable's wedding in my calendar for tuesday the thirty first",
   "Context": {
     "ReferenceDateTime": "2017-10-15T00:00:00"

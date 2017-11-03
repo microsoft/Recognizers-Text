@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
-            tokens.AddRange(NumberWithMonth(text));
+            tokens.AddRange(NumberWithMonth(text, reference));
             tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // check every integers and ordinal number for date
-        private List<Token> NumberWithMonth(string text)
+        private List<Token> NumberWithMonth(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
@@ -115,14 +115,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     match = this.config.WeekDayAndDayOfMothRegex.Match(text);
                     if (match.Success)
                     {
-                        // create a extract result which content ordinal string of text
-                        ExtractResult erTmp = new ExtractResult();
-                        erTmp.Text = match.Groups["DayOfMonth"].Value;
-                        erTmp.Start = match.Groups["DayOfMonth"].Index;
-                        erTmp.Length = match.Groups["DayOfMonth"].Length;
-                        var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
+                        int month = reference.Month, year = reference.Year;
 
-                        if (day == num)
+                        // get week of day for the ordinal number which is regarded as a date of reference month
+                        var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
+                        var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
+
+                        // get week day from text directly, compare it with the weekday generated above
+                        // to see whether they refer to a same week day
+                        var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
+                        if (!date.Equals(DateObject.MinValue) &&
+                            config.DayOfWeek[date2weekdayStr] == config.DayOfWeek[extractedWeekDayStr])
                         {
                             ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
                             continue;
