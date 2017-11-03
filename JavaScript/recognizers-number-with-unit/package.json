@@ -20,9 +20,9 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && rimraf compiled",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
-    "build": "npm run build-resources && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
+    "build": "npm run build-resources && tsc && rollup -c && typedoc --out dist/docs --target es6 --theme minimal src"
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
