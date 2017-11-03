@@ -3,7 +3,6 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
 import camelCase from 'lodash.camelcase';
-import babel from 'rollup-plugin-babel';
 import alias from 'rollup-plugin-alias';
 import path from 'path';
 
@@ -29,10 +28,6 @@ export default {
     resolve(),
 
     // Resolve source maps to the original source
-    sourceMaps(),
-
-    babel({
-      exclude: 'node_modules/**'
-    })
+    sourceMaps()
   ]
 };

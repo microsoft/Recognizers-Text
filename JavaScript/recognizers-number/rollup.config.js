@@ -3,7 +3,6 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
 import camelCase from 'lodash.camelcase';
-import babel from 'rollup-plugin-babel';
 
 export default {
   input: `compiled/${pkg.name}.js`,
@@ -23,10 +22,6 @@ export default {
     resolve(),
 
     // Resolve source maps to the original source
-    sourceMaps(),
-
-    babel({
-      exclude: 'node_modules/**'
-    })
+    sourceMaps()
   ]
 };
