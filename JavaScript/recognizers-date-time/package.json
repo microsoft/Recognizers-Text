@@ -31,7 +31,7 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "prebuild": "rimraf dist && rimraf compiled",
+    "prebuild": "npm install --no-save ../recognizers-number/ ../recognizers-number-with-unit/ && rimraf dist && rimraf compiled",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
     "build": "npm run build-resources && tsc && rollup -c && typedoc --out dist/docs --target es6 --theme minimal src"
   },
@@ -54,8 +54,6 @@
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0",
-    "lodash.tonumber": "^4.0.3",
-    "recognizers-text-number": "file:../recognizers-number",
-    "recognizers-text-number-with-unit": "file:../recognizers-number-with-unit"
+    "lodash.tonumber": "^4.0.3"
   }
 }
