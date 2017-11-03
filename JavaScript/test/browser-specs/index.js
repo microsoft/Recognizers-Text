@@ -17746,8 +17746,6 @@ window.onload = function () {
 
     // wrap expepect.js describe/it API with the same API as AVA
     // https://github.com/Automattic/expect.js/#api
-
-
     var itWrap = function itWrap(name, run) {
         it(name, function () {
             run({
@@ -17757,9 +17755,6 @@ window.onload = function () {
                 deepEqual: function deepEqual(actual, expected, message) {
                     expect(actual).to.eql(expected, message);
                 }
-                // skip: function(caseName, noFun) {
-                //     console.log(`Skipping '${caseName}'`);
-                // }
             });
         });
     };
