@@ -1,8 +1,18 @@
 {
   "name": "recognizers-text-date-time",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "recognizers-text provides robust recognition and resolution of date/time expressed in multiple languages. Support for English, Spanish, Chinese and French.",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "datetime",
+    "entity-extraction",
+    "timex",
+    "numex",
+    "parser-library"
+  ],
   "main": "dist/recognizers-text-date-time.umd.js",
   "module": "dist/recognizers-text-date-time.es5.js",
   "typings": "dist/types/recognizers-text-date-time.d.ts",
@@ -10,33 +20,31 @@
   "files": [
     "dist"
   ],
-  "author": "Microsoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/recognizers-text"
+    "url": "https://github.com/Microsoft/Recognizers-Text"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
   "engines": {
     "node": ">=6.0.0"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "npm install --no-save ../recognizers-number/ ../recognizers-number-with-unit/ && rimraf dist && rimraf compiled",
     "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/",
-    "build": "npm run build-resources && tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
+    "build": "npm run build-resources && tsc && rollup -c && typedoc --out dist/docs --target es6 --theme minimal src"
   },
   "devDependencies": {
     "@types/js-yaml": "^3.9.0",
     "@types/lodash.isequal": "^4.5.2",
     "@types/lodash.tonumber": "^4.0.3",
     "@types/node": "^8.0.20",
-    "babel-core": "^6.26.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
     "js-yaml": "^3.9.1",
     "lodash.camelcase": "^4.3.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
@@ -46,8 +54,6 @@
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0",
-    "lodash.tonumber": "^4.0.3",
-    "recognizers-text-number": "file:../recognizers-number",
-    "recognizers-text-number-with-unit": "file:../recognizers-number-with-unit"
+    "lodash.tonumber": "^4.0.3"
   }
 }

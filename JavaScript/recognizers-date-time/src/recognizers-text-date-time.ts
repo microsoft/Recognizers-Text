@@ -1,4 +1,5 @@
 export { default as DateTimeRecognizer, DateTimeOptions } from "./dateTime/dateTimeRecognizer";
+export { Culture, CultureInfo } from "recognizers-text-number";
 export { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "./dateTime/baseDate";
 export { ITimeExtractorConfiguration, ITimeParserConfiguration, BaseTimeExtractor, BaseTimeParser } from "./dateTime/baseTime";
 export { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration, BaseDatePeriodExtractor, BaseDatePeriodParser } from "./dateTime/baseDatePeriod";

@@ -3,7 +3,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
 import camelCase from 'lodash.camelcase';
-import babel from 'rollup-plugin-babel';
+import alias from 'rollup-plugin-alias';
+import path from 'path';
 
 export default {
   input: `compiled/${pkg.name}.js`,
@@ -15,6 +16,10 @@ export default {
   exports: 'named',
   sourcemap: true,
   plugins: [
+    alias({
+      'recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
+      'recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js')
+    }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
     // Allow node_modules resolution, so you can use 'external' to control
@@ -23,10 +28,6 @@ export default {
     resolve(),
 
     // Resolve source maps to the original source
-    sourceMaps(),
-
-    babel({
-      exclude: 'node_modules/**'
-    })
+    sourceMaps()
   ]
 };
