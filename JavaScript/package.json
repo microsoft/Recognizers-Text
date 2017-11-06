@@ -1,8 +1,18 @@
 {
   "name": "recognizers-text",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "recognizers-text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "datetime",
+    "entity-extraction",
+    "timex",
+    "numex",
+    "parser-library"
+  ],
   "main": "dist/recognizers-text.umd.js",
   "module": "dist/recognizers-text.es5.js",
   "typings": "dist/types/recognizers-text.d.ts",
@@ -10,12 +20,13 @@
   "files": [
     "dist"
   ],
-  "author": "Microsoft",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/recognizers-text"
+    "url": "https://github.com/Microsoft/Recognizers-Text"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
   "engines": {
     "node": ">=6.0.0"
   },
@@ -25,8 +36,8 @@
     "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
     "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",
     "prebuild-all": "npm run prebuild-number && npm run prebuild-number-with-unit && npm run prebuild-date-time",
-    "prebuild": "rimraf dist",
-    "build": "tsc && rollup -c && rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src",
+    "prebuild": "npm install --no-save ./recognizers-number/ ./recognizers-number-with-unit/ ./recognizers-date-time && rimraf dist && rimraf compiled ",
+    "build": "tsc && rollup -c && typedoc --out dist/docs --target es6 --theme minimal src",
     "test-watch": "tsc-watch --onSuccess \"ava --watch\"",
     "test": "tsc && ava"
   },
@@ -50,6 +61,7 @@
     "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
     "rollup": "^0.50.0",
+    "rollup-plugin-alias": "^1.4.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.0",
     "rollup-plugin-node-resolve": "^3.0.0",
@@ -62,8 +74,8 @@
     "typescript": "^2.5.3"
   },
   "dependencies": {
-    "recognizers-text-date-time": "file:recognizers-date-time",
-    "recognizers-text-number": "file:recognizers-number",
-    "recognizers-text-number-with-unit": "file:recognizers-number-with-unit"
+    "lodash.escaperegexp": "^4.1.2",
+    "lodash.last": "^3.0.0",
+    "lodash.max": "^4.0.1"
   }
 }
