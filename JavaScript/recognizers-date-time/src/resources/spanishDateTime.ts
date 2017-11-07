@@ -52,6 +52,7 @@ export namespace SpanishDateTime {
 	export const ForTheRegex = `^[.]`;
 	export const WeekDayAndDayOfMothRegex = `^[.]`;
 	export const WeekDayOfMonthRegex = `(?<wom>(el\\s+)?(?<cardinal>primer|1er|segundo|2do|tercer|3er|cuarto|4to|quinto|5to|[uú]ltimo)\\s+${WeekDayRegex}\\s+${MonthSuffixRegex})`;
+	export const NumberEndingPattern = `^[.]`;
 	export const SpecialDateRegex = `(?<=\\b(en)\\s+el\\s+)${DayRegex}\\b`;
 	export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
 	export const MonthEndRegex = `(${MonthRegex}\\s*(el)?\\s*$)`;
