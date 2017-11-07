@@ -117,15 +117,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         int month = reference.Month, year = reference.Year;
 
-                        // get week of day for the ordinal number which is regarded as a date of reference month
+                         // get week of day for the ordinal number which is regarded as a date of reference month
                         var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
-                        var date2weekdayStr = date.DayOfWeek.ToString().ToLower();
+                        var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
 
                         // get week day from text directly, compare it with the weekday generated above
                         // to see whether they refer to a same week day
                         var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
                         if (!date.Equals(DateObject.MinValue) &&
-                            config.DayOfWeek[date2weekdayStr] == config.DayOfWeek[extractedWeekDayStr])
+                            config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
                         {
                             ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
                             continue;

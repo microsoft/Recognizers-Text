@@ -223,7 +223,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (success)
             {
-                //var pr = parser.Parse(ers[0], DateObject.Now);
                 var pr = parser.Parse(ers[0], refDate);
                 ret.Timex = pr.TimexStr;
                 ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
