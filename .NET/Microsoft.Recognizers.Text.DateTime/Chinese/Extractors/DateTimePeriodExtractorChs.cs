@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateTimePeriodExtractorChs : IExtractor
+    public class DateTimePeriodExtractorChs : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEPERIOD;
 
@@ -51,21 +52,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public List<ExtractResult> Extract(string text)
         {
+            return Extract(text, DateObject.Now);
+        }
+
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        {
             var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTimePeriod(text));
-            tokens.AddRange(MergeTwoTimePoints(text));
+            tokens.AddRange(MergeDateAndTimePeriod(text, referenceTime));
+            tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
             tokens.AddRange(MatchNubmerWithUnit(text));
-            tokens.AddRange(MatchNight(text));
+            tokens.AddRange(MatchNight(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
         // merge Date and Time peroid
-        private List<Token> MergeDateAndTimePeriod(string text)
+        private List<Token> MergeDateAndTimePeriod(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var er1 = SingleDateExtractor.Extract(text);
-            var er2 = TimePeriodExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text, referenceTime);
+            var er2 = TimePeriodExtractor.Extract(text, referenceTime);
             var timePoints = new List<ExtractResult>();
 
             // handle the overlap problem
@@ -119,11 +125,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private List<Token> MergeTwoTimePoints(string text)
+        private List<Token> MergeTwoTimePoints(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var er1 = TimeWithDateExtractor.Extract(text);
-            var er2 = SingleTimeExtractor.Extract(text);
+            var er1 = TimeWithDateExtractor.Extract(text, referenceTime);
+            var er2 = SingleTimeExtractor.Extract(text, referenceTime);
             var timePoints = new List<ExtractResult>();
 
             // handle the overlap problem
@@ -208,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private List<Token> MatchNight(string text)
+        private List<Token> MatchNight(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
             var matches = SpecificTimeOfDayRegex.Matches(text);
@@ -218,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             }
 
             // Date followed by morning, afternoon
-            var ers = SingleDateExtractor.Extract(text);
+            var ers = SingleDateExtractor.Extract(text, referenceTime);
             if (ers.Count == 0)
             {
                 return ret;

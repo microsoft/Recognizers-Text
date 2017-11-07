@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 

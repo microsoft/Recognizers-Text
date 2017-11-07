@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseSetExtractor : IExtractor
+    public class BaseSetExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -16,25 +17,30 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text)
         {
+            return Extract(text, DateObject.Now);
+        }
+
+        public List<ExtractResult> Extract(string text, DateObject reference)
+        {
             var tokens = new List<Token>();
             tokens.AddRange(MatchEachUnit(text));
-            tokens.AddRange(MatchEachDuration(text));
-            tokens.AddRange(TimeEveryday(text));
-            tokens.AddRange(MatchEach(config.DateExtractor, text));
-            tokens.AddRange(MatchEach(config.TimeExtractor, text));
-            tokens.AddRange(MatchEach(config.DateTimeExtractor, text));
-            tokens.AddRange(MatchEach(config.DatePeriodExtractor, text));
-            tokens.AddRange(MatchEach(config.TimePeriodExtractor, text));
-            tokens.AddRange(MatchEach(config.DateTimePeriodExtractor, text));
+            tokens.AddRange(MatchEachDuration(text, reference));
+            tokens.AddRange(TimeEveryday(text, reference));
+            tokens.AddRange(MatchEach(config.DateExtractor, text, reference));
+            tokens.AddRange(MatchEach(config.TimeExtractor, text, reference));
+            tokens.AddRange(MatchEach(config.DateTimeExtractor, text, reference));
+            tokens.AddRange(MatchEach(config.DatePeriodExtractor, text, reference));
+            tokens.AddRange(MatchEach(config.TimePeriodExtractor, text, reference));
+            tokens.AddRange(MatchEach(config.DateTimePeriodExtractor, text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        public List<Token> MatchEachDuration(string text)
+        public List<Token> MatchEachDuration(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
-            var ers = this.config.DurationExtractor.Extract(text);
+            var ers = this.config.DurationExtractor.Extract(text, reference);
             foreach (var er in ers)
             {
                 // "each last summer" doesn't make sense
@@ -74,10 +80,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public virtual List<Token> TimeEveryday(string text)
+        public virtual List<Token> TimeEveryday(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.TimeExtractor.Extract(text);
+            var ers = this.config.TimeExtractor.Extract(text, reference);
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
@@ -102,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<Token> MatchEach(IExtractor extractor, string text)
+        public List<Token> MatchEach(IDateTimeExtractor extractor, string text, DateObject reference)
         {
             var ret = new List<Token>();
             var matches = config.SetEachRegex.Matches(text);
@@ -111,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     var trimedText = text.Remove(match.Index, match.Length);
-                    var ers = extractor.Extract(trimedText);
+                    var ers = extractor.Extract(trimedText, reference);
                     foreach (var er in ers)
                     {
                         if (er.Start <= match.Index && (er.Start+er.Length) > match.Index)
@@ -131,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var trimedText = text.Remove(match.Index, match.Length);
                     trimedText = trimedText.Insert(match.Index, match.Groups["weekday"].ToString());
 
-                    var ers = extractor.Extract(trimedText);
+                    var ers = extractor.Extract(trimedText, reference);
                     foreach (var er in ers)
                     {
                         if (er.Start <= match.Index)

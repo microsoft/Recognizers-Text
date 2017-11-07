@@ -5,31 +5,31 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ISetParserConfiguration
     {
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeParser DurationParser { get; }
 
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
         IDateTimeParser TimeParser { get; }
 
-        IExtractor DateExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeParser DateParser { get; }
 
-        IExtractor DateTimeExtractor { get; }
+        IDateTimeExtractor DateTimeExtractor { get; }
 
         IDateTimeParser DateTimeParser { get; }
 
-        IExtractor DatePeriodExtractor { get; }
+        IDateTimeExtractor DatePeriodExtractor { get; }
 
         IDateTimeParser DatePeriodParser { get; }
 
-        IExtractor TimePeriodExtractor { get; }
+        IDateTimeExtractor TimePeriodExtractor { get; }
 
         IDateTimeParser TimePeriodParser { get; }
 
-        IExtractor DateTimePeriodExtractor { get; }
+        IDateTimeExtractor DateTimePeriodExtractor { get; }
 
         IDateTimeParser DateTimePeriodParser { get; }
 

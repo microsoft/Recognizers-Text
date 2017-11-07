@@ -14,19 +14,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IParser NumberParser { get; protected set; }
 
-        public virtual IExtractor DateExtractor { get; protected set; }
+        public virtual IDateTimeExtractor DateExtractor { get; protected set; }
 
-        public virtual IExtractor TimeExtractor { get; protected set; }
+        public virtual IDateTimeExtractor TimeExtractor { get; protected set; }
 
-        public virtual IExtractor DateTimeExtractor { get; protected set; }
+        public virtual IDateTimeExtractor DateTimeExtractor { get; protected set; }
 
-        public virtual IExtractor DurationExtractor { get; protected set; }
+        public virtual IDateTimeExtractor DurationExtractor { get; protected set; }
 
-        public virtual IExtractor DatePeriodExtractor { get; protected set; }
+        public virtual IDateTimeExtractor DatePeriodExtractor { get; protected set; }
 
-        public virtual IExtractor TimePeriodExtractor { get; protected set; }
+        public virtual IDateTimeExtractor TimePeriodExtractor { get; protected set; }
 
-        public virtual IExtractor DateTimePeriodExtractor { get; protected set; }
+        public virtual IDateTimeExtractor DateTimePeriodExtractor { get; protected set; }
 
         public virtual IDateTimeParser DateParser { get; protected set; }
 

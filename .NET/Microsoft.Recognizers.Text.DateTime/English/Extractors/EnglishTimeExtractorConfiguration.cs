@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public EnglishTimeExtractorConfiguration()
         {

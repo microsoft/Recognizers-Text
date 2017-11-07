@@ -10,11 +10,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         #region internalsParsers
 
-        public IExtractor DateExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 

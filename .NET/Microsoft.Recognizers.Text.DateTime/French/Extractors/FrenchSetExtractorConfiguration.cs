@@ -48,19 +48,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new FrenchDateTimePeriodExtractorConfiguration());
         }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-        public IExtractor TimeExtractor { get; }
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public IExtractor DateExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public IExtractor DateTimeExtractor { get; }
+        public IDateTimeExtractor DateTimeExtractor { get; }
 
-        public IExtractor DatePeriodExtractor { get; }
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
-        public IExtractor TimePeriodExtractor { get; }
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        public IExtractor DateTimePeriodExtractor { get; }
+        public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
         Regex ISetExtractorConfiguration.LastRegex => SetLastRegex;
 

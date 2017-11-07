@@ -13,8 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly IExtractor SingleDateExtractor = new DateExtractorChs();
-        private static readonly IExtractor SingleTimeExtractor = new TimeExtractorChs();
+        private static readonly IDateTimeExtractor SingleDateExtractor = new DateExtractorChs();
+        private static readonly IDateTimeExtractor SingleTimeExtractor = new TimeExtractorChs();
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -126,13 +126,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
 
-            var er1 = SingleDateExtractor.Extract(text);
+            var er1 = SingleDateExtractor.Extract(text, referenceTime);
             if (er1.Count == 0)
             {
                 return ret;
             }
 
-            var er2 = SingleTimeExtractor.Extract(text);
+            var er2 = SingleTimeExtractor.Extract(text, referenceTime);
             if (er2.Count == 0)
             {
                 return ret;
@@ -192,7 +192,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = SingleTimeExtractor.Extract(text);
+            var ers = SingleTimeExtractor.Extract(text, referenceTime);
             if (ers.Count != 1)
             {
                 return ret;

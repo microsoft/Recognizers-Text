@@ -175,7 +175,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
         public FrenchTimeExtractorConfiguration()
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());

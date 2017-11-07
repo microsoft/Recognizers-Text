@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDatePeriodExtractor : IExtractor
+    public class BaseDatePeriodExtractor : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
@@ -16,11 +17,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text)
         {
+            return Extract(text, DateObject.Now);
+        }
+
+        public List<ExtractResult> Extract(string text, DateObject reference)
+        {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
-            tokens.AddRange(MergeTwoTimePoints(text));
-            tokens.AddRange(MatchDuration(text));
-            tokens.AddRange(SingleTimePointWithPatterns(text));
+            tokens.AddRange(MergeTwoTimePoints(text, reference));
+            tokens.AddRange(MatchDuration(text, reference));
+            tokens.AddRange(SingleTimePointWithPatterns(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -39,10 +45,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MergeTwoTimePoints(string text)
+        private List<Token> MergeTwoTimePoints(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var er = this.config.DatePointExtractor.Extract(text);
+            var er = this.config.DatePointExtractor.Extract(text, reference);
             if (er.Count <= 1)
             {
                 return ret;
@@ -102,10 +108,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         //Extract the month of date, week of date to a date range
-        private List<Token> SingleTimePointWithPatterns(string text)
+        private List<Token> SingleTimePointWithPatterns(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var er = this.config.DatePointExtractor.Extract(text);
+            var er = this.config.DatePointExtractor.Extract(text, reference);
             if (er.Count < 1)
             {
                 return ret;
@@ -136,12 +142,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<Token> MatchDuration(string text)
+        public List<Token> MatchDuration(string text, DateObject reference)
         {
             var ret = new List<Token>();
 
             var durations = new List<Token>();
-            var durationExtractions = config.DurationExtractor.Extract(text);
+            var durationExtractions = config.DurationExtractor.Extract(text, reference);
             foreach (var durationExtraction in durationExtractions)
             {
                 var match = config.DateUnitRegex.Match(durationExtraction.Text);

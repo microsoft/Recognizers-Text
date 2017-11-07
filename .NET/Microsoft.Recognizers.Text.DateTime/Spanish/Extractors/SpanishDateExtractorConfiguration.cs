@@ -98,7 +98,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

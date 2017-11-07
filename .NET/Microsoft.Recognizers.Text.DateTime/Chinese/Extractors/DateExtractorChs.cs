@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class DateExtractorChs : IExtractor
+    public class DateExtractorChs : IDateTimeExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -90,10 +91,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public List<ExtractResult> Extract(string text)
         {
+            return Extract(text, DateObject.Now);
+        }
+
+        public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        {
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
-            tokens.AddRange(DurationWithBeforeAndAfter(text));
+            tokens.AddRange(DurationWithBeforeAndAfter(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -138,10 +144,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         }
 
         // process case like "三天前" "两个月前"
-        private List<Token> DurationWithBeforeAndAfter(string text)
+        private List<Token> DurationWithBeforeAndAfter(string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var durationEr = DurationExtractor.Extract(text);
+            var durationEr = DurationExtractor.Extract(text, referenceTime);
             foreach (var er in durationEr)
             {
                 var pos = (int)er.Start + (int)er.Length;

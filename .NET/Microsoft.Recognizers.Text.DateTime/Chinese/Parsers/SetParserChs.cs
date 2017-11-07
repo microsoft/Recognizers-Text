@@ -7,10 +7,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_SET;
 
-        private static readonly IExtractor DurationExtractor = new DurationExtractorChs();
-        private static readonly IExtractor TimeExtractor = new TimeExtractorChs();
-        private static readonly IExtractor DateExtractor = new DateExtractorChs();
-        private static readonly IExtractor DateTimeExtractor = new DateTimeExtractorChs();
+        private static readonly IDateTimeExtractor DurationExtractor = new DurationExtractorChs();
+        private static readonly IDateTimeExtractor TimeExtractor = new TimeExtractorChs();
+        private static readonly IDateTimeExtractor DateExtractor = new DateExtractorChs();
+        private static readonly IDateTimeExtractor DateTimeExtractor = new DateTimeExtractorChs();
 
         private readonly IFullDateTimeParserConfiguration config;
 
@@ -33,24 +33,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 var innerResult = ParseEachUnit(er.Text);
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDuration(er.Text);
+                    innerResult = ParseEachDuration(er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserTimeEveryday(er.Text);
+                    innerResult = ParserTimeEveryday(er.Text, refDate);
                 }
 
                 // NOTE: Please do not change the order of following function
                 // we must consider datetime before date
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDateTime(er.Text);
+                    innerResult = ParseEachDateTime(er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDate(er.Text);
+                    innerResult = ParseEachDate(er.Text, refDate);
                 }
 
                 if (innerResult.Success)
@@ -83,10 +83,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEachDuration(string text)
+        private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = DurationExtractor.Extract(text);
+            var ers = DurationExtractor.Extract(text, refDate);
             if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
@@ -145,10 +145,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateTimeResolutionResult ParserTimeEveryday(string text)
+        private DateTimeResolutionResult ParserTimeEveryday(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = TimeExtractor.Extract(text);
+            var ers = TimeExtractor.Extract(text, refDate);
             if (ers.Count != 1)
             {
                 return ret;
@@ -168,10 +168,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEachDate(string text)
+        private DateTimeResolutionResult ParseEachDate(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = DateExtractor.Extract(text);
+            var ers = DateExtractor.Extract(text, refDate);
             if (ers.Count != 1)
             {
                 return ret;
@@ -190,10 +190,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        private DateTimeResolutionResult ParseEachDateTime(string text)
+        private DateTimeResolutionResult ParseEachDateTime(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = DateTimeExtractor.Extract(text);
+            var ers = DateTimeExtractor.Extract(text, refDate);
             if (ers.Count != 1)
             {
                 return ret;

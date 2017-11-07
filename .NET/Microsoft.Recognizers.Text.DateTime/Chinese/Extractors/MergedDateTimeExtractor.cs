@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class MergedExtractorChs : IExtractor
+    public class MergedExtractorChs : IDateTimeExtractor
     {
         private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
@@ -24,17 +25,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public List<ExtractResult> Extract(string text)
         {
-            var ret = DateExtractor.Extract(text);
+            return Extract(text, DateObject.Now);
+        }
+
+            public List<ExtractResult> Extract(string text, DateObject referenceTime)
+        {
+            var ret = DateExtractor.Extract(text, referenceTime);
 
             // the order is important, since there is a problem in merging
-            AddTo(ret, TimeExtractor.Extract(text));
-            AddTo(ret, DurationExtractor.Extract(text));
-            AddTo(ret, DatePeriodExtractor.Extract(text));
-            AddTo(ret, DateTimeExtractor.Extract(text));
-            AddTo(ret, TimePeriodExtractor.Extract(text));
-            AddTo(ret, DateTimePeriodExtractor.Extract(text));
-            AddTo(ret, SetExtractor.Extract(text));
-            AddTo(ret, HolidayExtractor.Extract(text));
+            AddTo(ret, TimeExtractor.Extract(text, referenceTime));
+            AddTo(ret, DurationExtractor.Extract(text, referenceTime));
+            AddTo(ret, DatePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, DateTimeExtractor.Extract(text, referenceTime));
+            AddTo(ret, TimePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, DateTimePeriodExtractor.Extract(text, referenceTime));
+            AddTo(ret, SetExtractor.Extract(text, referenceTime));
+            AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
             CheckBlackList(ret, text);
             return ret;

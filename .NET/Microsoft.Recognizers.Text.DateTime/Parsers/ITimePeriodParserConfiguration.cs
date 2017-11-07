@@ -6,7 +6,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ITimePeriodParserConfiguration
     {
-        IExtractor TimeExtractor { get; }
+        IDateTimeExtractor TimeExtractor { get; }
 
         IDateTimeParser TimeParser { get; }
 

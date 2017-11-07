@@ -23,11 +23,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
-        IExtractor DurationExtractor { get; }
+        IDateTimeExtractor DurationExtractor { get; }
 
-        IExtractor DatePointExtractor { get; }
+        IDateTimeExtractor DatePointExtractor { get; }
 
-        IExtractor TimePointExtractor { get; }
+        IDateTimeExtractor TimePointExtractor { get; }
 
         bool IsConnector(string text);
 

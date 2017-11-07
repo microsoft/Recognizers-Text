@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
     public class TestDateTime_Spanish : TestBase
     {
         public static TestResources TestResources { get; private set; }
-        public static IDictionary<string, IExtractor> Extractors { get; private set; }
+        public static IDictionary<string, IDateTimeExtractor> Extractors { get; private set; }
         public static IDictionary<string, IDateTimeParser> Parsers { get; private set; }
 
         [ClassInitialize]
@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         {
             TestResources = new TestResources();
             TestResources.InitFromTestContext(context);
-            Extractors = new Dictionary<string, IExtractor>();
+            Extractors = new Dictionary<string, IDateTimeExtractor>();
             Parsers = new Dictionary<string, IDateTimeParser>();
         }
 

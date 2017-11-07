@@ -26,23 +26,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public IExtractor DateExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public IExtractor TimeExtractor { get; }
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public IExtractor DateTimeExtractor { get; }
+        public IDateTimeExtractor DateTimeExtractor { get; }
 
-        public IExtractor DatePeriodExtractor { get; }
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
-        public IExtractor TimePeriodExtractor { get; }
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        public IExtractor DateTimePeriodExtractor { get; }
+        public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-        public IExtractor SetExtractor { get; }
+        public IDateTimeExtractor SetExtractor { get; }
 
-        public IExtractor HolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 

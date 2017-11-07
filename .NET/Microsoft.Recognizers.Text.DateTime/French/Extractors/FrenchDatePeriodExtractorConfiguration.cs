@@ -203,11 +203,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         }
 
-        public IExtractor DatePointExtractor { get; }
+        public IDateTimeExtractor DatePointExtractor { get; }
 
         public IExtractor CardinalExtractor { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 

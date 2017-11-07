@@ -2,16 +2,22 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public abstract class BaseDateTimeExtractor<T> : IExtractor
+    public abstract class BaseDateTimeExtractor<T> : IDateTimeExtractor
     {
         internal abstract ImmutableDictionary<Regex, T> Regexes { get; }
 
         protected virtual string ExtractType { get; } = "";
 
-        public virtual List<ExtractResult> Extract(string source)
+        public List<ExtractResult> Extract(string text)
+        {
+            return Extract(text, DateObject.Now);
+        }
+
+        public virtual List<ExtractResult> Extract(string source, DateObject referenceTime)
         {
             if (string.IsNullOrEmpty(source))
             {

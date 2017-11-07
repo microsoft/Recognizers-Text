@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IParser NumberParser { get; }
 
-        public IExtractor DurationExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

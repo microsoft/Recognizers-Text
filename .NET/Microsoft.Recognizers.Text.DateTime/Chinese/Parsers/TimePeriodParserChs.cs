@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var extra = er.Data as DateTimeExtra<PeriodType>;
             if (extra == null)
             {
-                var result = new TimeExtractorChs().Extract(er.Text);
+                var result = new TimeExtractorChs().Extract(er.Text, refDate);
                 extra = result[0]?.Data as DateTimeExtra<PeriodType>;
             }
 
