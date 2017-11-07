@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+
 using YamlDotNet.Serialization;
 
 namespace Microsoft.Recognizers.Definitions.Common

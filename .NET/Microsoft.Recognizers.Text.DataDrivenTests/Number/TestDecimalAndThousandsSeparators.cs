@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests

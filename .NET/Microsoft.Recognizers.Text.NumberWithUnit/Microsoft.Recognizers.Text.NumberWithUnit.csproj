@@ -157,7 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj">
-      <Project>{87a1de51-0c7b-4beb-b3a5-f04b5e2d8ef1}</Project>
+      <Project>{9a4eed9d-a3ce-4ba2-9021-042768d14a48}</Project>
       <Name>Microsoft.Recognizers.Definitions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
