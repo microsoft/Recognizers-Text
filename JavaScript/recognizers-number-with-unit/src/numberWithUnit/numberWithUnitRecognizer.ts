@@ -18,6 +18,10 @@ import { ChineseCurrencyExtractorConfiguration, ChineseCurrencyParserConfigurati
 import { ChineseTemperatureExtractorConfiguration, ChineseTemperatureParserConfiguration } from "./chinese/temperature";
 import { ChineseDimensionExtractorConfiguration, ChineseDimensionParserConfiguration } from "./chinese/dimension";
 import { ChineseAgeExtractorConfiguration, ChineseAgeParserConfiguration } from "./chinese/age";
+import { FrenchCurrencyExtractorConfiguration, FrenchCurrencyParserConfiguration } from "./french/currency";
+import { FrenchTemperatureExtractorConfiguration, FrenchTemperatureParserConfiguration } from "./french/temperature";
+import { FrenchDimensionExtractorConfiguration, FrenchDimensionParserConfiguration } from "./french/dimension";
+import { FrenchAgeExtractorConfiguration, FrenchAgeParserConfiguration } from "./french/age";
 
 export default class NumberWithUnitRecognizer extends Recognizer {
     static readonly instance: NumberWithUnitRecognizer = new NumberWithUnitRecognizer();
@@ -67,7 +71,7 @@ export default class NumberWithUnitRecognizer extends Recognizer {
             [new NumberWithUnitExtractor(new PortugueseAgeExtractorConfiguration()), new NumberWithUnitParser(new PortugueseAgeParserConfiguration())]
         ])));
 
-        // English models
+        // Chinese models
         this.registerModel("CurrencyModel", Culture.Chinese, new CurrencyModel(new Map<IExtractor, IParser>([
             [new NumberWithUnitExtractor(new ChineseCurrencyExtractorConfiguration()), new NumberWithUnitParser(new ChineseCurrencyParserConfiguration())],
             [new NumberWithUnitExtractor(new EnglishCurrencyExtractorConfiguration()), new NumberWithUnitParser(new EnglishCurrencyParserConfiguration())]
@@ -85,7 +89,19 @@ export default class NumberWithUnitRecognizer extends Recognizer {
             [new NumberWithUnitExtractor(new EnglishAgeExtractorConfiguration()), new NumberWithUnitParser(new EnglishAgeParserConfiguration())]
         ])));
 
-        // TODO: Register French models
+        // French models
+        this.registerModel("CurrencyModel", Culture.French, new CurrencyModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new FrenchCurrencyExtractorConfiguration()), new NumberWithUnitParser(new FrenchCurrencyParserConfiguration())]
+        ])));
+        this.registerModel("TemperatureModel", Culture.French, new TemperatureModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new FrenchTemperatureExtractorConfiguration()), new NumberWithUnitParser(new FrenchTemperatureParserConfiguration())]
+        ])));
+        this.registerModel("DimensionModel", Culture.French, new DimensionModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new FrenchDimensionExtractorConfiguration()), new NumberWithUnitParser(new FrenchDimensionParserConfiguration())]
+        ])));
+        this.registerModel("AgeModel", Culture.French, new AgeModel(new Map<IExtractor, IParser>([
+            [new NumberWithUnitExtractor(new FrenchAgeExtractorConfiguration()), new NumberWithUnitParser(new FrenchAgeParserConfiguration())]
+        ])));
     }
 
     getCurrencyModel(culture: string, fallbackToDefaultCulture: boolean = true): IModel {
