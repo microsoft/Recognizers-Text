@@ -7,7 +7,6 @@
     using Microsoft.Bot.Builder.Dialogs.Internals;
     using Microsoft.Bot.Connector;
     using Microsoft.Recognizers.Text.DateTime;
-    using Microsoft.Recognizers.Text.Number;
 
     [Serializable]
     public class DeliveryPrompt : Prompt<IEnumerable<DateTime>, DateTime>

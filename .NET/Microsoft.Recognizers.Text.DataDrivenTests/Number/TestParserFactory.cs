@@ -1,6 +1,8 @@
 ﻿using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.French;
+using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.Recognizers.Text.Number.Spanish;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

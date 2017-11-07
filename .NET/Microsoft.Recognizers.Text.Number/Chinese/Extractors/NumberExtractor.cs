@@ -1,6 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class NumberExtractor : BaseNumberExtractor
@@ -11,9 +13,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public NumberExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+
             //Add Cardinal
             var cardExtractChs = new CardinalExtractor(mode);
             builder.AddRange(cardExtractChs.Regexes);
+            
             //Add Fraction
             var fracExtractChs = new FractionExtractor();
             builder.AddRange(fracExtractChs.Regexes);

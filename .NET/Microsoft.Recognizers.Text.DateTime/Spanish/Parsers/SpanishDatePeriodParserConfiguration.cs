@@ -1,7 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.DateTime.English;
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -9,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     {
         public string TokenBeforeDate { get; }
 
-        #region internalsParsers
+        #region internalParsers
 
         public IDateTimeExtractor DateExtractor { get; }
 

@@ -4,7 +4,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number
+namespace Microsoft.Recognizers.Text.Number.Extractors
 {
     public abstract class BasePercentageExtractor : IExtractor
     {

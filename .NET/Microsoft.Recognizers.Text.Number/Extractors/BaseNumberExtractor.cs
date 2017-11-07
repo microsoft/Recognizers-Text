@@ -2,9 +2,10 @@
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions;
 
-namespace Microsoft.Recognizers.Text.Number
+namespace Microsoft.Recognizers.Text.Number.Extractors
 {
     public abstract class BaseNumberExtractor : IExtractor
     {

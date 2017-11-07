@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Text.Number.Extractors;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime

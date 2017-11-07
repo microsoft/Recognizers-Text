@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
+using Microsoft.Recognizers.Text.Models;
+using Microsoft.Recognizers.Text.Number.Extractors;
+
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
     [TestClass]

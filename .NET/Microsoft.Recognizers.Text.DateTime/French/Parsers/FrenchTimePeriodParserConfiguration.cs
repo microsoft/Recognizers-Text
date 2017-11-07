@@ -2,6 +2,8 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimePeriodParserConfiguration : ITimePeriodParserConfiguration

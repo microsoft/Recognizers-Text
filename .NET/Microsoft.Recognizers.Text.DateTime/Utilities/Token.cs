@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class Token

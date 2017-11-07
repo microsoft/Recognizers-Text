@@ -3,7 +3,7 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number
+namespace Microsoft.Recognizers.Text.Number.Parsers
 {
     public interface INumberParserConfiguration
     {

@@ -5,6 +5,8 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
 using System;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration

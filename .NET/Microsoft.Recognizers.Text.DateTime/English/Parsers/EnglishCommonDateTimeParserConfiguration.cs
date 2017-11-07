@@ -1,9 +1,9 @@
 ﻿using System.Collections.Immutable;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number.Parsers;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {

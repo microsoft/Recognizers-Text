@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+
 using Microsoft.Recognizers.Text.Number.Chinese;
 
-namespace Microsoft.Recognizers.Text.Number
+namespace Microsoft.Recognizers.Text.Number.Parsers
 {
     public enum AgnosticNumberParserType
     {

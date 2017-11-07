@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using DateObject = System.DateTime;
+using Microsoft.Recognizers.Text.Number.Extractors;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {

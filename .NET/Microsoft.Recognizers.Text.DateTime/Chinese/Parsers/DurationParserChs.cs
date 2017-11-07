@@ -2,6 +2,8 @@
 using System.Globalization;
 using DateObject = System.DateTime;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;

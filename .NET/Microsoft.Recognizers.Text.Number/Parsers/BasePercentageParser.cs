@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Microsoft.Recognizers.Text.Number
+using Microsoft.Recognizers.Text.Number.Extractors;
+
+namespace Microsoft.Recognizers.Text.Number.Parsers
 {
     public class BasePercentageParser : BaseNumberParser
     {

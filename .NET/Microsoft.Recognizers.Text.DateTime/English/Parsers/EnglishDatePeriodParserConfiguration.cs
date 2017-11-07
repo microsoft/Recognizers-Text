@@ -2,13 +2,16 @@
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
+
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodParserConfiguration : IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
-        #region internalsParsers
+        #region internalParsers
 
         public IDateTimeExtractor DateExtractor { get; }
 

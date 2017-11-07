@@ -4,7 +4,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number
+using Microsoft.Recognizers.Text.Number.Extractors;
+
+namespace Microsoft.Recognizers.Text.Number.Parsers
 {
     public class BaseNumberParser : IParser
     {

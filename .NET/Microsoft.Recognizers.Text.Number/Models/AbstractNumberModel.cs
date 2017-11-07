@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.Recognizers.Text.Number
+using Microsoft.Recognizers.Text.Models;
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
+
+namespace Microsoft.Recognizers.Text.Number.Models
 {
     public abstract class AbstractNumberModel : IModel
     {

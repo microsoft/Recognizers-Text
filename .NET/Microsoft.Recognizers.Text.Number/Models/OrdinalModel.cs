@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.Number
+﻿using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
+
+namespace Microsoft.Recognizers.Text.Number.Models
 {
     public class OrdinalModel : AbstractNumberModel
     {

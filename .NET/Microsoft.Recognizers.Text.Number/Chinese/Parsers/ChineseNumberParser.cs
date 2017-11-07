@@ -1,5 +1,8 @@
 ﻿using System.Text;
 
+using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number.Parsers;
+
 namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class ChineseNumberParser : BaseNumberParser
@@ -16,6 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             string extra = null;
             ParseResult ret = null;
             extra = extResultChs.Data as string;
+
             var simplifiedExtResultChs = new ExtractResult()
             {
                 Start = extResultChs.Start,

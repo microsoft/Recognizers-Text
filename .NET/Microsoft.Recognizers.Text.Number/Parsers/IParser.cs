@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text
+﻿using Microsoft.Recognizers.Text.Number.Extractors;
+
+namespace Microsoft.Recognizers.Text.Number.Parsers
 {
     public interface IParser
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
