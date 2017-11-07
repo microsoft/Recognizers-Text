@@ -122,48 +122,63 @@
     </None>
     <None Update="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BaseNumbers.cs</LastGenOutput>
     </None>
     <None Update="Chinese\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Chinese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Chinese\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="English\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="French\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Spanish\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
