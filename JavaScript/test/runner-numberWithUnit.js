@@ -27,6 +27,11 @@ module.exports = function getNumberWithUnitTestRunner(config) {
             var expected = o[1];
             t.is(actual.text, expected.Text, 'Result.Text');
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
+
+            // Check resolution is defined (or not) in both actual and expected
+            t.is(!!actual.resolution, !!expected.Resolution, 'Result.Resolution is defined');
+            if(!actual.resolution) return;
+
             t.is(actual.resolution.value, expected.Resolution.value, 'Result.Resolution.value');
             t.is(actual.resolution.unit, expected.Resolution.unit, 'Result.Resolution.unit');
         });
