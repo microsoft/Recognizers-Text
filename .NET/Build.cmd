@@ -34,15 +34,23 @@ ECHO # Restoring NuGet dependencies
 CALL "buildtools\nuget" restore
 
 ECHO.
-ECHO # Building .NET solution (debug)
-CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Debug
+ECHO # Building .NET solution (release)
+CALL "!MsBuildDir!\msbuild" Microsoft.Recognizers.Text.sln /t:Clean,Build /p:Configuration=Release
 
 ECHO.
 ECHO # Running .NET Tests
 SET testcontainer=
 FOR /R %%f IN (*Tests.dll) DO (
-	(ECHO "%%f" | FIND /V "\bin\Debug" 1>NUL) || (
+	(ECHO "%%f" | FIND /V "\bin\Release" 1>NUL) || (
 		SET testcontainer=!testcontainer! "%%f"
 	)
 )
 CALL "!VsTestDir!\vstest.console" /Parallel %testcontainer%
+
+ECHO.
+ECHO # Running CreateAllPackages.cmd
+CALL CreateAllPackages.cmd
+IF %ERRORLEVEL% NEQ 0 (
+	ECHO # Failed to create packages.
+	EXIT /b -1
+)
