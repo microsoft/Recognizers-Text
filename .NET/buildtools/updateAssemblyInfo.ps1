@@ -15,7 +15,7 @@ function UpdateAssemblyInfo()
     {
         Write-Host ($file.FullName)
 		
-		if($replace)
+		if ($replace)
 		{
 			$tmpFile = $file.FullName + ".tmp"
 			$fileContent = Get-Content $file.FullName -encoding utf8
