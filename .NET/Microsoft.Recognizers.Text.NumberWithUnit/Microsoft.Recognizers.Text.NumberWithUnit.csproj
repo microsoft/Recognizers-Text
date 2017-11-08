@@ -7,6 +7,10 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
+    <DocumentationFile>bin\Release\net462\Microsoft.Recognizers.Text.NumberWithUnit.xml</DocumentationFile>
+  </PropertyGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="rem xcopy /E &quot;$(TargetDir)\..\*&quot; &quot;$(TargetDir)..\..\..\..\build\package\&quot; /Y" />
   </Target>
