@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net462;net45</TargetFrameworks>
+    <TargetFrameworks>net462;net452;net45</TargetFrameworks>
 	<PackageId>Microsoft.Recognizers.Text.Definitions.Common</PackageId>
     <Authors />
     <Company>Microsoft</Company>
