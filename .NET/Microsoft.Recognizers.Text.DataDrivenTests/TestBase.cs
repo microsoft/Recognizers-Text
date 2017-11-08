@@ -1,10 +1,13 @@
-﻿using Microsoft.Recognizers.Text.DateTime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+
+using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Newtonsoft.Json;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {

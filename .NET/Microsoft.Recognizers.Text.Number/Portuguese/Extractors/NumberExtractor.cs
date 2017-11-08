@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese

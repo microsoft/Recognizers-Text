@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime
+﻿using Microsoft.Recognizers.Text.Number;
+
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class ExtractResultExtension
     {

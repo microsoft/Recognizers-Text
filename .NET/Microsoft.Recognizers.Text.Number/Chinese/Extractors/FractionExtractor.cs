@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number.Chinese
@@ -8,6 +9,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
     public class FractionExtractor : BaseNumberExtractor
     {
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }
+
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_FRACTION;
         
         public FractionExtractor()
@@ -19,17 +21,18 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
-                // 8/3 
                 {
+                    // 8/3 
                     new Regex(NumbersDefinitions.FractionNotationRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "FracNum"
                 },
-                //四分之六十五
                 {
+                    //四分之六十五
                     new Regex(NumbersDefinitions.AllFractionNumber, RegexOptions.Singleline)
                     , "FracChs"
                 }
             };
+
             Regexes = regexes.ToImmutableDictionary();
         }
     }

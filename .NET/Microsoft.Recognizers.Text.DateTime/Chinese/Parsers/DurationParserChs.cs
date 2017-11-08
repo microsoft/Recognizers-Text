@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using DateObject = System.DateTime;
+
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.NumberWithUnit;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
+using Microsoft.Recognizers.Text.NumberWithUnit;
+
 using static Microsoft.Recognizers.Text.DateTime.Chinese.DurationExtractorChs;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -63,7 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             if (hasHalfSuffix)
             {
-                numStr = (double.Parse(numStr) + 0.5).ToString();
+                numStr = (double.Parse(numStr) + 0.5).ToString(CultureInfo.InvariantCulture);
             }
 
             dtParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : "") + numStr + unitStr[0];

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese

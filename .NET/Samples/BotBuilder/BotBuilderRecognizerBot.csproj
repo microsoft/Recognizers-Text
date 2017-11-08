@@ -143,12 +143,16 @@
       <Project>{19522B81-C63F-4DD5-AB4C-674CD44D67D6}</Project>
       <Name>Microsoft.Recognizers.Text.DateTime</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
+      <Project>{e9be4f64-9cc5-433c-90cc-a379a732e5e8}</Project>
+      <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
-      <Project>{61205449-bdba-4bf3-8b24-ae059e0b1b61}</Project>
+      <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
-      <Project>{0FF232B5-8471-429F-B87F-4096576D32EB}</Project>
+      <Project>{59755149-e656-4ef7-87a5-76eee3fd5146}</Project>
       <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>

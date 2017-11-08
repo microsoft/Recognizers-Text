@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
+
 using Microsoft.Recognizers.Definitions.Portuguese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese

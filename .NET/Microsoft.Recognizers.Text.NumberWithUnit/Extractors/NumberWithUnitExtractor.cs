@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitExtractor : IExtractor
@@ -26,7 +28,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 suffixRegexes = BuildRegexFromSet(this.config.SuffixList.Values);
             }
 
-            if (this.config.PrefixList?.Count > 0) {
+            if (this.config.PrefixList?.Count > 0)
+            {
 
                 foreach (var preMatch in this.config.PrefixList.Values)
                 {

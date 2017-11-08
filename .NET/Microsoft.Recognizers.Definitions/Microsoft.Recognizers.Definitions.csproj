@@ -1,215 +1,201 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{87A1DE51-0C7B-4BEB-B3A5-F04B5E2D8EF1}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Recognizers.Definitions</RootNamespace>
-    <AssemblyName>Microsoft.Recognizers.Definitions</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworks>net462;net452;net45</TargetFrameworks>
+    <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net462|AnyCPU'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="build\**" />
+    <EmbeddedResource Remove="build\**" />
+    <None Remove="build\**" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="BaseDateTime.cs">
+    <Content Include="BaseDateTime.tt" />
+    <Content Include="BaseNumbers.tt" />
+    <Content Include="Chinese\DateTimeDefinitions.tt" />
+    <Content Include="Chinese\NumbersDefinitions.tt" />
+    <Content Include="Chinese\NumbersWithUnitDefinitions.tt" />
+    <Content Include="English\DateTimeDefinitions.tt" />
+    <Content Include="English\NumbersDefinitions.tt" />
+    <Content Include="English\NumbersWithUnitDefinitions.tt" />
+    <Content Include="French\DateTimeDefinitions.tt" />
+    <Content Include="French\NumbersDefinitions.tt" />
+    <Content Include="French\NumbersWithUnitDefinitions.tt" />
+    <Content Include="Portuguese\NumbersDefinitions.tt" />
+    <Content Include="Portuguese\NumbersWithUnitDefinitions.tt" />
+    <Content Include="Spanish\DateTimeDefinitions.tt" />
+    <Content Include="Spanish\NumbersDefinitions.tt" />
+    <Content Include="Spanish\NumbersWithUnitDefinitions.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="BaseDateTime.cs">
       <DependentUpon>BaseDateTime.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Chinese\DateTimeDefinitions.cs">
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Chinese\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Chinese\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="English\DateTimeDefinitions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="English\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="English\NumbersDefinitions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BaseNumbers.cs">
+    <Compile Update="BaseNumbers.cs">
       <DependentUpon>BaseNumbers.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="French\DateTimeDefinitions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Update="Chinese\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="French\NumbersDefinitions.cs">
+    <Compile Update="Chinese\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="French\NumbersWithUnitDefinitions.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
+    <Compile Update="Chinese\NumbersWithUnitDefinitions.cs">
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Portuguese\NumbersDefinitions.cs">
-      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Portuguese\NumbersWithUnitDefinitions.cs">
-      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spanish\DateTimeDefinitions.cs">
+    <Compile Update="English\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Spanish\NumbersDefinitions.cs">
+    <Compile Update="English\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Spanish\NumbersWithUnitDefinitions.cs">
+    <Compile Update="English\NumbersWithUnitDefinitions.cs">
       <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="French\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="French\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="French\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Portuguese\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Portuguese\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Spanish\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Spanish\NumbersDefinitions.cs">
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Spanish\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
-    <Content Include="BaseDateTime.tt">
+    <None Update="BaseDateTime.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDateTime.cs</LastGenOutput>
-    </Content>
-    <Content Include="Chinese\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Chinese\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Chinese\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="English\DateTimeDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="English\NumbersWithUnitDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="English\NumbersDefinitions.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="BaseNumbers.tt">
+    </None>
+    <None Update="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseNumbers.cs</LastGenOutput>
-    </Content>
-    <Content Include="French\DateTimeDefinitions.tt">
+    </None>
+    <None Update="Chinese\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="French\NumbersDefinitions.tt">
+    </None>
+    <None Update="Chinese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="French\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Chinese\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Spanish\DateTimeDefinitions.tt">
+    </None>
+    <None Update="English\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Spanish\NumbersDefinitions.tt">
+    </None>
+    <None Update="English\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Portuguese\NumbersDefinitions.tt">
+    </None>
+    <None Update="English\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="French\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="French\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Portuguese\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="French\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </Content>
-    <Content Include="Spanish\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Portuguese\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Portuguese\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
-    </Content>
+    </None>
+    <None Update="Spanish\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Spanish\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Spanish\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
   </ItemGroup>
+
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="CommonDefinitions.ttinclude" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj">
-      <Project>{60aaec39-306f-441b-8719-5e0a3a823568}</Project>
-      <Name>Microsoft.Recognizers.Definitions.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)*" "$(TargetDir)..\..\..\build\package\" /Y</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="rem xcopy /E &quot;$(TargetDir)\..\*&quot; &quot;$(TargetDir)..\..\..\..\build\package\&quot; /Y" />
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
