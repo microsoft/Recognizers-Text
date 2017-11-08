@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text-number";
+import { RegExpUtility, BaseNumberExtractor, SpanishIntegerExtractor } from "recognizers-text-number";
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -32,12 +32,14 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly holidayExtractor: BaseHolidayExtractor;
     readonly durationExtractor: BaseDurationExtractor;
     readonly setExtractor: BaseSetExtractor;
+    readonly integerExtractor: BaseNumberExtractor;
     readonly afterRegex: RegExp;
     readonly beforeRegex: RegExp;
     readonly sinceRegex: RegExp;
     readonly fromToRegex: RegExp;
     readonly singleAmbiguousMonthRegex: RegExp;
     readonly prepositionSuffixRegex: RegExp;
+    readonly numberEndingPattern: RegExp
 
     constructor() {
         this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex, "gis");
@@ -46,7 +48,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.fromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromToRegex, "gis");
         this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex, "gis");
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex, "gis");
-
+        this.numberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
 
         this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
         this.timeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
@@ -57,6 +59,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.setExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
         this.holidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
+        this.integerExtractor = new SpanishIntegerExtractor();
     }
 }
 

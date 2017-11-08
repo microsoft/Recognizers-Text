@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants";
-import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "recognizers-text-number"
+import { IExtractor, ExtractResult, RegExpUtility, StringUtility, BaseNumberExtractor } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, DateUtils, DateTimeResolutionResult } from "./utilities"
+import { FormatUtil, DateUtils, DateTimeResolutionResult, Token } from "./utilities"
 import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod"
@@ -24,12 +24,14 @@ export interface IMergedExtractorConfiguration {
     holidayExtractor: BaseHolidayExtractor
     durationExtractor: IExtractor
     setExtractor: BaseSetExtractor
+    integerExtractor: BaseNumberExtractor
     afterRegex: RegExp
     beforeRegex: RegExp
     sinceRegex: RegExp
     fromToRegex: RegExp
     singleAmbiguousMonthRegex: RegExp
     prepositionSuffixRegex: RegExp
+    numberEndingPattern: RegExp
 }
 
 export class BaseMergedExtractor implements IExtractor {
@@ -52,10 +54,38 @@ export class BaseMergedExtractor implements IExtractor {
         this.addTo(result, this.config.dateTimePeriodExtractor.extract(source), source);
         this.addTo(result, this.config.setExtractor.extract(source), source);
         this.addTo(result, this.config.holidayExtractor.extract(source), source);
+        //this should be at the end since if need the extractor to determine the previous text contains time or not
+        this.addTo(result, this.numberEndingRegexMatch(source, result), source);
+
         this.addMod(result, source);
 
         result = result.sort((a, b) => a.start - b.start);
         return result;
+    }
+
+    // handle cases like "move 3pm appointment to 4"
+    private numberEndingRegexMatch(text: string, extractResults: ExtractResult[]): ExtractResult[] {
+        let tokens = new Array<Token>();
+
+        extractResults.forEach(extractResult => {
+            if (extractResult.type === Constants.SYS_DATETIME_TIME
+                || extractResult.type === Constants.SYS_DATETIME_DATETIME) {
+                var stringAfter = text.substring(extractResult.start + extractResult.length);
+                var match = RegExpUtility.getMatches(this.config.numberEndingPattern, stringAfter);
+                if (match != null && match.length) {
+                    var newTime = match[0].groups("newTime");
+                    var numRes = this.config.integerExtractor.extract(newTime.toString());
+                    if (numRes.length == 0) {
+                        return;
+                    }
+
+                    var startPosition = extractResult.start + extractResult.length + newTime.index;
+                    tokens.push(new Token(startPosition, startPosition + newTime.length));
+                }
+            }
+        });
+
+        return Token.mergeAllTokens(tokens, text, Constants.SYS_DATETIME_TIME);
     }
 
     protected addTo(destination: ExtractResult[], source: ExtractResult[], text: string) {

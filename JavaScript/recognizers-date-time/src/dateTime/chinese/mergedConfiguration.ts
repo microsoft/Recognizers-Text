@@ -8,7 +8,7 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { RegExpUtility, ExtractResult } from "recognizers-text-number";
+import { RegExpUtility, ExtractResult, BaseNumberExtractor } from "recognizers-text-number";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration"
 import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration"
@@ -35,12 +35,14 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly holidayExtractor: BaseHolidayExtractor
     readonly durationExtractor: ChineseDurationExtractor
     readonly setExtractor: BaseSetExtractor
+    readonly integerExtractor: BaseNumberExtractor
     readonly afterRegex: RegExp
     readonly sinceRegex: RegExp
     readonly beforeRegex: RegExp
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
+    readonly numberEndingPattern: RegExp
 
     constructor() {
         this.dateExtractor = new ChineseDateExtractor();
