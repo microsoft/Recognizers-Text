@@ -1,7 +1,5 @@
 ﻿using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.English;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {

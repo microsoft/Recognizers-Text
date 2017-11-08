@@ -1,4 +1,4 @@
-namespace Microsoft.Recognizers.Text.Utilities
+namespace Microsoft.Recognizers.Text
 {
     public static class FormatUtility
     {

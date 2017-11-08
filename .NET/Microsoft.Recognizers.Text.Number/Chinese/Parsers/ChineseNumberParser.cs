@@ -16,7 +16,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             string extra = null;
             ParseResult ret = null;
             extra = extResultChs.Data as string;
-
             var simplifiedExtResultChs = new ExtractResult()
             {
                 Start = extResultChs.Start,

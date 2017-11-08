@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.French;
+using DateObject = System.DateTime;
 
 // TODO: Finish translating Dictionary below 
 

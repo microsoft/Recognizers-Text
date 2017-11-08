@@ -1,6 +1,5 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
-
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English

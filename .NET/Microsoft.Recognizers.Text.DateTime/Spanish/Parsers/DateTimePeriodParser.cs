@@ -1,7 +1,6 @@
 ﻿using System;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Spanish;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {

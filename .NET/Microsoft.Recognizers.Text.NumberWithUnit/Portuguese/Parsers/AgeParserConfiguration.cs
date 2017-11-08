@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Microsoft.Recognizers.Text.NumberWithUnit.Portuguese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
 {

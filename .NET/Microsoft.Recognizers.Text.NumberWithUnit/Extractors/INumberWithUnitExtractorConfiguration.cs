@@ -1,8 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public interface INumberWithUnitExtractorConfiguration

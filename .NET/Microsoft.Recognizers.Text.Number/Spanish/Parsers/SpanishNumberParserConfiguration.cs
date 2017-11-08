@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Recognizers.Definitions.Spanish;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.Number.Spanish
 {

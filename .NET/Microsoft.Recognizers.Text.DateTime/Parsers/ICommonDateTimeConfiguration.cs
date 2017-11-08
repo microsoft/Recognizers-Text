@@ -1,7 +1,5 @@
 ﻿using System.Collections.Immutable;
-
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -34,7 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeParser { get; }
 
         IDateTimeParser DateTimeParser { get; }
-
         IDateTimeParser DurationParser { get; }
 
         IDateTimeParser DatePeriodParser { get; }
@@ -58,7 +55,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> DayOfMonth { get; }
 
         IImmutableDictionary<string, int> DayOfWeek { get; }
-
         IImmutableDictionary<string, double> DoubleNumbers { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }

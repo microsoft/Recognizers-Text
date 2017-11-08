@@ -1,7 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
-
 using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
