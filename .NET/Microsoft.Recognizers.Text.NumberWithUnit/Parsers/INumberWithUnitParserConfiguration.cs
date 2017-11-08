@@ -4,7 +4,7 @@ using System.Globalization;
 using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Parsers
 {
     public interface INumberWithUnitParserConfiguration
     {

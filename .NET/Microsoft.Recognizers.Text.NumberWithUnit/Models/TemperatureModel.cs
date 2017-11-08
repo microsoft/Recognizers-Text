@@ -3,7 +3,7 @@
 using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Models
 {
     public class TemperatureModel : AbstractNumberWithUnitModel
     {

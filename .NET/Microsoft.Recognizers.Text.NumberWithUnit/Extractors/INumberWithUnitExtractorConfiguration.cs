@@ -3,7 +3,7 @@ using System.Globalization;
 
 using Microsoft.Recognizers.Text.Number.Extractors;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Extractors
 {
     public interface INumberWithUnitExtractorConfiguration
     {

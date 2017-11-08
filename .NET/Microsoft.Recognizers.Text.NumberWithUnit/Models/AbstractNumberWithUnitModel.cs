@@ -4,9 +4,10 @@ using System.Linq;
 using Microsoft.Recognizers.Text.Models;
 using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.NumberWithUnit.Parsers;
 using Microsoft.Recognizers.Text.Utilities;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit
+namespace Microsoft.Recognizers.Text.NumberWithUnit.Models
 {
     public abstract class AbstractNumberWithUnitModel : IModel
     {

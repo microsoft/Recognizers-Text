@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.NumberWithUnit.Parsers;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {

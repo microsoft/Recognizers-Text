@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Models;
 using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.NumberWithUnit.Extractors;
+using Microsoft.Recognizers.Text.NumberWithUnit.Models;
+using Microsoft.Recognizers.Text.NumberWithUnit.Parsers;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {

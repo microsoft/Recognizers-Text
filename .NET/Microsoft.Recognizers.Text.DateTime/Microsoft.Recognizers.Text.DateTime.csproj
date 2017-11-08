@@ -202,7 +202,7 @@
       <Name>Microsoft.Recognizers.Definitions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
-      <Project>{d7ea6651-8118-478d-aaa7-437613159978}</Project>
+      <Project>{e9be4f64-9cc5-433c-90cc-a379a732e5e8}</Project>
       <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
