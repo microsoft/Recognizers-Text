@@ -5,7 +5,6 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using DateObject = System.DateTime;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {

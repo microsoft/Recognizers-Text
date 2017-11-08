@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 using Microsoft.Recognizers.Text.Number.Chinese;
 
 namespace Microsoft.Recognizers.Text.Number

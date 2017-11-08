@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
-
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class SetParserChs : IDateTimeParser

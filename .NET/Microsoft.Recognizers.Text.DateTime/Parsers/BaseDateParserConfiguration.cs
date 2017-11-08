@@ -1,8 +1,6 @@
 ﻿using System.Collections.Immutable;
-
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
-using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {

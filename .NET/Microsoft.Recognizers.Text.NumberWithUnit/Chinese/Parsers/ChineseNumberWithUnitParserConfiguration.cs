@@ -1,7 +1,6 @@
 ﻿using System.Globalization;
-
-using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Chinese;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {

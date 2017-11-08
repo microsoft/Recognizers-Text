@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Utilities;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel

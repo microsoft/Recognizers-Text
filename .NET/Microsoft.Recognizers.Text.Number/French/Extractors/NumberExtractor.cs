@@ -1,7 +1,6 @@
-﻿using System.Collections.Concurrent;
-using System.Collections.Immutable;
+﻿using System.Collections.Immutable;
+using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Number.French

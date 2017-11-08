@@ -4,15 +4,14 @@ using System.IO;
 using System.Linq;
 using DateObject = System.DateTime;
 using Newtonsoft.Json;
-
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.Number.Chinese;
+using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Recognizers.Text.DateTime.French;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {

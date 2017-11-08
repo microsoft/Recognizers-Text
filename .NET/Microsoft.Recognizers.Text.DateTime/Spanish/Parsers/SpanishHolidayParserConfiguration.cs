@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using DateObject = System.DateTime;
-
 using Microsoft.Recognizers.Definitions.Spanish;
+using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
