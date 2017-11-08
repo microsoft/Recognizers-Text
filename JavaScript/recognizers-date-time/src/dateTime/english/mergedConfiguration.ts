@@ -8,7 +8,7 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { RegExpUtility } from "recognizers-text-number";
+import { RegExpUtility, BaseNumberExtractor, EnglishIntegerExtractor } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
@@ -31,12 +31,14 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly holidayExtractor: BaseHolidayExtractor
     readonly durationExtractor: BaseDurationExtractor
     readonly setExtractor: BaseSetExtractor
+    readonly integerExtractor: BaseNumberExtractor
     readonly afterRegex: RegExp
     readonly sinceRegex: RegExp
     readonly beforeRegex: RegExp
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
+    readonly numberEndingPattern: RegExp
 
     constructor() {
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
@@ -48,12 +50,14 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         this.holidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.setExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
+        this.integerExtractor = new EnglishIntegerExtractor();
         this.afterRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SinceRegex);
         this.beforeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BeforeRegex);
         this.fromToRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.FromToRegex);
         this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.SingleAmbiguousMonthRegex);
         this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PrepositionSuffixRegex);
+        this.numberEndingPattern = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberEndingPattern);
     }
 }
 
