@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Recognizers.Text.DataDrivenTests;
-using Microsoft.Recognizers.Text.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests

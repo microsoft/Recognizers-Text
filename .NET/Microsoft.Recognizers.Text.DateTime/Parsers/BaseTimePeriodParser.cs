@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Microsoft.Recognizers.Text.Models;
-using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime

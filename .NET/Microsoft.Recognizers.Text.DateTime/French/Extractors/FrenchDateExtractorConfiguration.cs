@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
-using System.Collections.Immutable;
-
-using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.French;
-using Microsoft.Recognizers.Text.Number.Parsers;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {

@@ -11,11 +11,7 @@ using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.Models;
 using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Models;
-using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests

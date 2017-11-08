@@ -3,7 +3,6 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
-using Microsoft.Recognizers.Text.Number.Extractors;
 
 namespace Microsoft.Recognizers.Text.Number.Portuguese
 {

@@ -4,9 +4,9 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
-using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
-using Microsoft.Recognizers.Text.NumberWithUnit.Extractors;
+using Microsoft.Recognizers.Text.NumberWithUnit;
 
 using DateObject = System.DateTime;
 

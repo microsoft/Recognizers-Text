@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Number.Chinese;
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 

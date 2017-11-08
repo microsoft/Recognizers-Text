@@ -5,7 +5,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
-using Microsoft.Recognizers.Text.Number.Parsers;
 
 namespace Microsoft.Recognizers.Text.Number.French
 {

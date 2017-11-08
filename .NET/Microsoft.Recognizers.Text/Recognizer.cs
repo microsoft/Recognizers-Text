@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Models;
-
 namespace Microsoft.Recognizers.Text
 {
     public abstract class Recognizer : IRecognizer

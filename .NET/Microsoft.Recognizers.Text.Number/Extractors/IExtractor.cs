@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Microsoft.Recognizers.Text.Number.Extractors
+namespace Microsoft.Recognizers.Text.Number
 {
     public interface IExtractor
     {

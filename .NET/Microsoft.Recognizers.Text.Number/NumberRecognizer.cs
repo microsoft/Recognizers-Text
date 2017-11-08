@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Models;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
-using Microsoft.Recognizers.Text.Number.Extractors;
 using Microsoft.Recognizers.Text.Number.French;
-using Microsoft.Recognizers.Text.Number.Models;
-using Microsoft.Recognizers.Text.Number.Parsers;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
 

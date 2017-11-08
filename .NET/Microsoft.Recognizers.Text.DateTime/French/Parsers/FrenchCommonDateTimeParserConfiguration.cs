@@ -1,8 +1,9 @@
 ﻿using System.Collections.Immutable;
+
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Number.French;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {

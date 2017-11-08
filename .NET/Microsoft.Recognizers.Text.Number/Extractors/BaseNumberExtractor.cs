@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 
-namespace Microsoft.Recognizers.Text.Number.Extractors
+namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class BaseNumberExtractor : IExtractor
     {

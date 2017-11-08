@@ -4,7 +4,6 @@ using System.Linq;
 
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
-using Microsoft.Recognizers.Text.Models;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 

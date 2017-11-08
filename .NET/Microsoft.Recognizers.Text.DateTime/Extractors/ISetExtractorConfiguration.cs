@@ -1,7 +1,5 @@
 ﻿using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number.Extractors;
-
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface ISetExtractorConfiguration

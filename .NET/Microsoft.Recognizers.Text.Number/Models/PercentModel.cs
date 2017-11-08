@@ -1,7 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
-
-namespace Microsoft.Recognizers.Text.Number.Models
+﻿namespace Microsoft.Recognizers.Text.Number
 {
     public class PercentModel : AbstractNumberModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Microsoft.Recognizers.Text.Models
+namespace Microsoft.Recognizers.Text
 {
     public interface IModel
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Extractors
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitExtractor : IExtractor
     {

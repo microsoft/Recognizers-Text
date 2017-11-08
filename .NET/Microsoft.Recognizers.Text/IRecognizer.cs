@@ -1,6 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Models;
-
-namespace Microsoft.Recognizers.Text
+﻿namespace Microsoft.Recognizers.Text
 {
     public interface IRecognizer
     {

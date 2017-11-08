@@ -2,7 +2,7 @@
 
 using Microsoft.Recognizers.Text.Number.Chinese;
 
-namespace Microsoft.Recognizers.Text.Number.Parsers
+namespace Microsoft.Recognizers.Text.Number
 {
     public enum AgnosticNumberParserType
     {

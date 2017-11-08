@@ -2,10 +2,9 @@
 using System.Linq;
 using System.Text;
 
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Parsers
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitParser : IParser
     {

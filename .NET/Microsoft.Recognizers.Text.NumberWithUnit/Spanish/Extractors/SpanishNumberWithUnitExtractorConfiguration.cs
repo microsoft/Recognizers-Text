@@ -2,9 +2,8 @@
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.Spanish;
-using Microsoft.Recognizers.Text.Number.Extractors;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Spanish;
-using Microsoft.Recognizers.Text.NumberWithUnit.Extractors;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 {

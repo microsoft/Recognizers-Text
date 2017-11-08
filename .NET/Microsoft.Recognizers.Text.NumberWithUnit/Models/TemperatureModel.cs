@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using Microsoft.Recognizers.Text.Number.Extractors;
-using Microsoft.Recognizers.Text.Number.Parsers;
+using Microsoft.Recognizers.Text.Number;
 
-namespace Microsoft.Recognizers.Text.NumberWithUnit.Models
+namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class TemperatureModel : AbstractNumberWithUnitModel
     {
