@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="build\**" />
+    <EmbeddedResource Remove="build\**" />
+    <None Remove="build\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="BaseDateTime.tt" />
     <Content Include="BaseNumbers.tt" />
     <Content Include="Chinese\DateTimeDefinitions.tt" />
@@ -187,7 +193,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(TargetDir)*&quot; &quot;$(TargetDir)..\..\..\build\package\&quot; /Y" />
+    <Exec Command="xcopy /E &quot;$(TargetDir)*&quot; &quot;$(TargetDir)..\..\..\..\build\package\&quot; /Y" />
   </Target>
 
 </Project>
