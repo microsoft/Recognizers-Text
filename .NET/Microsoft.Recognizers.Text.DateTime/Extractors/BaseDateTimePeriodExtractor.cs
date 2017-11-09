@@ -41,11 +41,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    var followedStr = text.Substring(match.Index + match.Length);
-                    if (string.IsNullOrEmpty(followedStr))
+                    // has a date before?
+                    var hasBeforeDate = false;
+                    var beforeStr = text.Substring(0, match.Index);
+                    if (!string.IsNullOrEmpty(beforeStr))
                     {
-                        // has a date before?
-                        var beforeStr = text.Substring(0, match.Index);
                         var er = this.config.SingleDateExtractor.Extract(beforeStr, reference);
                         if (er.Count > 0)
                         {
@@ -56,10 +56,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (string.IsNullOrEmpty(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                             {
                                 ret.Add(new Token(begin, match.Index + match.Length));
+                                hasBeforeDate = true;
                             }
                         }
                     }
-                    else
+
+                    var followedStr = text.Substring(match.Index + match.Length);
+                    if (!string.IsNullOrEmpty(followedStr) && !hasBeforeDate)
                     {
                         // is it followed by a date?
                         var er = this.config.SingleDateExtractor.Extract(followedStr, reference);

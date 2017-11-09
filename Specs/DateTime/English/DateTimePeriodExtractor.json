@@ -778,4 +778,37 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM. ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday between 1PM and 4 PM",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Can you schedule us tomorrow between 8am and 2pm?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow between 8am and 2pm",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Dec 9th between 8am and 2pm",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]
