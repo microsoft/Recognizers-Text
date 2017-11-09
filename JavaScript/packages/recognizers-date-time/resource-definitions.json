@@ -1,0 +1,58 @@
+{
+    "outputPath": "./src/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-DateTime" ],
+            "output": "baseDateTime",
+            "header": [
+                "export namespace BaseDateTime {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "English", "English-DateTime" ],
+            "output": "englishDateTime",
+            "header": [
+                "import { BaseDateTime } from \"./baseDateTime\";",
+                "export namespace EnglishDateTime {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Spanish", "Spanish-DateTime" ],
+            "output": "spanishDateTime",
+            "header": [
+                "import { BaseDateTime } from \"./baseDateTime\";",
+                "export namespace SpanishDateTime {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-DateTime" ],
+            "output": "portugueseDateTime",
+            "header": [
+                "import { BaseDateTime } from \"./baseDateTime\";",
+                "export namespace PortugueseDateTime {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-DateTime" ],
+            "output": "chineseDateTime",
+            "header": [
+                "import { BaseDateTime } from \"./baseDateTime\";",
+                "export namespace ChineseDateTime {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "French", "French-DateTime" ],
+            "output": "frenchDateTime",
+            "header": [
+                "import { BaseDateTime } from \"./baseDateTime\";",
+                "export namespace FrenchDateTime {"
+            ],
+            "footer": [ "}" ]
+        }
+    ]
+}
