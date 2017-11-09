@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.English;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -25,6 +26,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex[] BlackList =
+        {
+            // one on one
+            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+        };
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -67,5 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+        IEnumerable<Regex> IMergedExtractorConfiguration.BlackList => BlackList;
     }
 }

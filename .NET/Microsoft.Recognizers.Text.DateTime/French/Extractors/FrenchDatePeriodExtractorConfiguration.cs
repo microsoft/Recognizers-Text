@@ -171,6 +171,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex RestOfDateRegex =
             new Regex(DateTimeDefinitions.RestOfDateRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex LaterEarlyPeriodRegex =
+            new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -194,6 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             PastPrefixRegex,
             NextPrefixRegex,
             ThisPrefexRegex,
+            LaterEarlyPeriodRegex,
         };
 
         public FrenchDatePeriodExtractorConfiguration()

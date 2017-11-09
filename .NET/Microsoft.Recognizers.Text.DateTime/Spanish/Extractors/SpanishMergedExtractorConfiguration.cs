@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -22,6 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             new Regex(@"\b(on|in|at|around|for|during|since|from|to)$", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex[] BlackList =
+        {
+        };
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -64,5 +69,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+        IEnumerable<Regex> IMergedExtractorConfiguration.BlackList => BlackList;
     }
 }

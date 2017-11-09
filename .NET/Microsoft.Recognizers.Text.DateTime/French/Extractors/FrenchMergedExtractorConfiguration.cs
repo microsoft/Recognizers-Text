@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.French;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -26,6 +27,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex NumberEndingPattern =
             new Regex(DateTimeDefinitions.NumberEndingPattern,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex[] BlackList =
+        {
+
+        };
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -68,5 +74,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
+        IEnumerable<Regex> IMergedExtractorConfiguration.BlackList => BlackList;
     }
 }

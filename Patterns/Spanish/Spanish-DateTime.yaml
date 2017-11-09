@@ -370,6 +370,9 @@ BeforeEachDayRegex: !nestedRegex
 SetEachRegex: !nestedRegex
   def: (?<each>({EachExpression})\s*)
   references: [ EachExpression ]
+LaterEarlyPeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes)\b
