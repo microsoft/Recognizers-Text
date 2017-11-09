@@ -36,3 +36,6 @@ build_script:
 
 # disable automatic tests
 test: off
+
+artifacts:
+    - path : '**\*Microsoft.Recognizers*.nupkg'
