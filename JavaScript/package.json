@@ -6,7 +6,7 @@
 		"build": "lerna bootstrap",
 		"lint": "tslint -t codeFrame ./packages/**/*.ts",
 		"test": "ava",
-		"browserify": "browserify -d ./test -o ./test/browser-specs/index.js",
+		"browserify": "browserify -d -o ./test/browser-specs/index.js package.json ./test/runner-browser.js",
 		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"
 	},
 	"browserify-shim": {
