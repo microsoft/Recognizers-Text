@@ -1,6 +1,6 @@
 {
   "name": "recognizers-text-number",
-  "version": "1.0.0",
+  "version": "1.0.0-rc.27",
   "description": "recognizers-text-number provides robust recognition and resolution of numbers expressed in multiple languages. Support for English, Spanish, Chinese, French and Portuguese.",
   "author": "Microsoft Corp.",
   "license": "MIT",
