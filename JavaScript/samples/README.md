@@ -61,7 +61,7 @@ Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(myCulture)
 Recognizers.DateTimeRecognizer.instance.getDateTimeModel(myCulture)
 ````
 
-All these models accept an input as a string and returns an **Array** of [ModelResult](../recognizers-number/src/models.ts#L8-L14):
+All these models accept an input as a string and returns an **Array** of [ModelResult](../packages/recognizers-number/src/models.ts#L8-L14):
 
 ````JavaScript
 // Number model
@@ -127,7 +127,7 @@ var result = model.parse("I need to leave ASAP");
 // ]
 ````
 
-> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`).
+> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`). This is the default when using `require('recognizers-text')`.
 
 > NOTE for IE11: In order to support it, the [core-js shim](https://github.com/zloirock/core-js) needs to be added:
 
