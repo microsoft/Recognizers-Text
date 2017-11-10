@@ -1,4 +1,4 @@
-src
-dist/docs
-rollup.config.js
-tsconfig.json
+*
+!dist/*.js
+!dist/types/**/*
+!README.md

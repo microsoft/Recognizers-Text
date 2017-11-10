@@ -17,9 +17,6 @@
   "module": "dist/recognizers-text-date-time.es5.js",
   "typings": "dist/types/recognizers-text-date-time.d.ts",
   "browser": "dist/recognizers-text-date-time.browser.js",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Microsoft/Recognizers-Text"
