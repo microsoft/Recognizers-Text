@@ -33,7 +33,7 @@
     "scripts": {
       "clean-build": "rimraf dist && rimraf compiled",
       "prepare": "npm run clean-build && tsc && rollup -c",
-      "prepublishOnly": "rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
+      "prepublishOnly": "rimraf compiled"
     },
     "dependencies": {
       "recognizers-text-number": "^1.0.0",
@@ -41,4 +41,3 @@
       "recognizers-text-date-time": "^1.0.0"
     }
   }
-  

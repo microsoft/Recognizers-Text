@@ -55,7 +55,6 @@
 		"tslint": "^5.7.0",
 		"tslint-config-prettier": "^1.4.0",
 		"tslint-config-standard": "^6.0.0",
-		"typedoc": "^0.8.0",
 		"typescript": "^2.5.3",
 		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-stage-0": "^6.24.1",
