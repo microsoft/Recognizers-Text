@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"license": "MIT",
 	"scripts": {
+		"build": "lerna bootstrap",
 		"lint": "tslint -t codeFrame ./packages/**/*.ts",
 		"test": "ava",
 		"browserify": "browserify -d ./test -o ./test/browser-specs/index.js",
