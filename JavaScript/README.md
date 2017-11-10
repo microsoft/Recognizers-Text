@@ -15,7 +15,6 @@ You can choose between build the solution manually or through an automatized bui
 Open terminal and launch
 
     cd JavaScript
-    npm run prebuild-all
     npm install
     npm run build
     npm run test
