@@ -28,8 +28,7 @@
   "scripts": {
     "build-resources": "ts-node --project ../resource-generator/ ../resource-generator/ ../recognizers-number/resource-definitions.json",
     "clean-build": "rimraf dist && rimraf compiled",
-    "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c",
-    "prepublishOnly": "rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
+    "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
     "bignumber.js": "^4.1.0",
