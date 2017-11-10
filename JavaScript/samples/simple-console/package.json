@@ -8,6 +8,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "recognizers-text": "file:../../"
+    "recognizers-text": "file:../../packages/recognizers-text"
   }
 }

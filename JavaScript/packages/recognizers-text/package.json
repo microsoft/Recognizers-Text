@@ -35,8 +35,6 @@
       "prepare": "npm run clean-build && tsc && rollup -c",
       "prepublishOnly": "rimraf compiled && typedoc --out dist/docs --target es6 --theme minimal src"
     },
-    "devDependencies": {
-    },
     "dependencies": {
       "recognizers-text-number": "^1.0.0",
       "recognizers-text-number-with-unit": "^1.0.0",
