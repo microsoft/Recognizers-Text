@@ -47,19 +47,19 @@ Install Recognizer's by launching the following commands:
 
     This recognizer will find any number from the input. E.g. "I have two apples" will return "2".
 
-    `Recognizers.NumberRecognizer.instance.getNumberModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English)`
 
 * [OrdinalModel](recognizers-number/src/number/numberRecognizer.ts)
 
     This recognizer will find any ordinal number. E.g. "eleventh" will return "11".
 
-    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Recognizers.Culture.English)`
 
 * [PercentageModel](recognizers-number/src/number/numberRecognizer.ts)
 
     This recognizer will find any number presented as percentage. E.g. "one hundred percents" will return "100%".
 
-    `Recognizers.NumberRecognizer.instance.getPercentageModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getPercentageModel(Recognizers.Culture.English)`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
@@ -67,25 +67,25 @@ Install Recognizer's by launching the following commands:
 
     This recognizer will find any age number presented. E.g. "After ninety five years of age, perspectives change" will return "95 Year".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Recognizers.Culture.English)`
 
 * [CurrencyModel](recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any currency presented. E.g. "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Recognizers.Culture.English)`
 
 * [DimensionModel](recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any dimension presented. E.g. "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Recognizers.Culture.English)`
 
 * [TemperatureModel](recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any temperature presented. E.g. "Set the temperature to 30 degrees celsius" will return "30 C".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Recognizers.Culture.English)`
 
 ### Microsoft.Recognizers.Text.DateTime
 
@@ -93,7 +93,7 @@ Install Recognizer's by launching the following commands:
 
     This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
 
-    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Culture.English)`
+    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English)`
 
 ## Samples
 
