@@ -1,6 +1,9 @@
 {
+	"name": "recognizers",
+	"version": "1.0.0",
 	"license": "MIT",
 	"scripts": {
+		"lint": "tslint -t codeFrame ./packages/**/*.ts",
 		"test": "ava",
 		"browserify": "browserify -d ./test -o ./test/browser-specs/index.js",
 		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"

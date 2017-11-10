@@ -1,16 +1,16 @@
 import * as generator from "./lib/base-code-generator";
 import { join, basename } from "path";
 
-class resourceConfig {
+class ResourceConfig {
     input: Array<string>;
     output: string;
     header: Array<string>;
     footer: Array<string>;
 }
 
-class resourceDefinitions {
+class ResourceDefinitions {
     outputPath: string;
-    configFiles: Array<resourceConfig>;
+    configFiles: Array<ResourceConfig>;
 }
 
 const resourcesPath = '../../../Patterns/';
@@ -18,7 +18,7 @@ const resourcesPath = '../../../Patterns/';
 class Startup {
     public static main(): number {
         let resourceDefinitionPath = process.argv[2];
-        let specs: resourceDefinitions = require(resourceDefinitionPath);
+        let specs: ResourceDefinitions = require(resourceDefinitionPath);
         let outputPath = specs.outputPath;
         specs.configFiles.forEach(config => {
             let inputFilePath = join(resourcesPath, ...config.input).concat('.yaml');
