@@ -54,7 +54,7 @@ export class SpanishDateTimePeriodParser extends BaseDateTimePeriodParser {
         if (matches.length) {
             let match = matches[0];
             let beforeStr = trimedText.substring(0, match.index + startIndex).trim();
-            let ers = this.config.dateExtractor.extract(beforeStr);
+            let ers = this.config.dateExtractor.extract(beforeStr, referenceDate);
             if (ers.length === 0) {
                 return ret;
             }

@@ -2,7 +2,7 @@ import { RegExpUtility, BaseNumberExtractor, FrenchIntegerExtractor } from "reco
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
@@ -22,15 +22,15 @@ import { FrenchDateTimePeriodExtractorConfiguration, FrenchDateTimePeriodParserC
 import { FrenchSetExtractorConfiguration, FrenchSetParserConfiguration } from "./setConfiguration";
 
 export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfiguration {
-    readonly dateExtractor: BaseDateExtractor;
-    readonly timeExtractor: BaseTimeExtractor;
-    readonly dateTimeExtractor: BaseDateTimeExtractor;
-    readonly datePeriodExtractor: BaseDatePeriodExtractor;
-    readonly timePeriodExtractor: BaseTimePeriodExtractor;
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
-    readonly holidayExtractor: BaseHolidayExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
-    readonly setExtractor: BaseSetExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
+    readonly dateTimeExtractor: IDateTimeExtractor;
+    readonly datePeriodExtractor: IDateTimeExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
+    readonly dateTimePeriodExtractor: IDateTimeExtractor;
+    readonly holidayExtractor: IDateTimeExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
+    readonly setExtractor: IDateTimeExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly afterRegex: RegExp;
     readonly beforeRegex: RegExp;

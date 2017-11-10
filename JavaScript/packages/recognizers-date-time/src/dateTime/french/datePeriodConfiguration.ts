@@ -6,6 +6,7 @@ import { FrenchDateExtractorConfiguration } from "./dateConfiguration";
 import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
+import { IDateTimeExtractor } from "../baseDateTime"
 
 export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -19,9 +20,9 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
     readonly dateUnitRegex: RegExp;
     readonly inConnectorRegex: RegExp;
     readonly rangeUnitRegex: RegExp;
-    readonly datePointExtractor: BaseDateExtractor;
+    readonly datePointExtractor: IDateTimeExtractor;
     readonly integerExtractor: BaseNumberExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
     readonly connectorAndRegex: RegExp;
@@ -83,9 +84,9 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
 }
 
 export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserConfiguration {
-    readonly dateExtractor: BaseDateExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
     readonly monthFrontBetweenRegex: RegExp;
     readonly betweenRegex: RegExp;

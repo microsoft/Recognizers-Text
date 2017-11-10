@@ -6,7 +6,7 @@ import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod"
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "./baseTimePeriod"
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./baseDateTimePeriod"
 import { BaseSetExtractor, BaseSetParser } from "./baseSet"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
@@ -15,15 +15,15 @@ import isEqual = require('lodash.isequal');
 import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {
-    dateExtractor: BaseDateExtractor
-    timeExtractor: IExtractor
-    dateTimeExtractor: BaseDateTimeExtractor
-    datePeriodExtractor: BaseDatePeriodExtractor
-    timePeriodExtractor: IExtractor
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-    holidayExtractor: BaseHolidayExtractor
-    durationExtractor: IExtractor
-    setExtractor: BaseSetExtractor
+    dateExtractor: IDateTimeExtractor
+    timeExtractor: IDateTimeExtractor
+    dateTimeExtractor: IDateTimeExtractor
+    datePeriodExtractor: IDateTimeExtractor
+    timePeriodExtractor: IDateTimeExtractor
+    dateTimePeriodExtractor: IDateTimeExtractor
+    holidayExtractor: IDateTimeExtractor
+    durationExtractor: IDateTimeExtractor
+    setExtractor: IDateTimeExtractor
     integerExtractor: BaseNumberExtractor
     afterRegex: RegExp
     beforeRegex: RegExp
@@ -34,7 +34,7 @@ export interface IMergedExtractorConfiguration {
     numberEndingPattern: RegExp
 }
 
-export class BaseMergedExtractor implements IExtractor {
+export class BaseMergedExtractor implements IDateTimeExtractor {
     protected readonly config: IMergedExtractorConfiguration;
     protected readonly options: DateTimeOptions;
 
@@ -43,17 +43,20 @@ export class BaseMergedExtractor implements IExtractor {
         this.options = options;
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let result: Array<ExtractResult> = new Array<ExtractResult>();
-        this.addTo(result, this.config.dateExtractor.extract(source), source);
-        this.addTo(result, this.config.timeExtractor.extract(source), source);
-        this.addTo(result, this.config.durationExtractor.extract(source), source);
-        this.addTo(result, this.config.datePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.dateTimeExtractor.extract(source), source);
-        this.addTo(result, this.config.timePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.setExtractor.extract(source), source);
-        this.addTo(result, this.config.holidayExtractor.extract(source), source);
+        this.addTo(result, this.config.dateExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.timeExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.durationExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.datePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.dateTimeExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.timePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.setExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
         //this should be at the end since if need the extractor to determine the previous text contains time or not
         this.addTo(result, this.numberEndingRegexMatch(source, result), source);
 

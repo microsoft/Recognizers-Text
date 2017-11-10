@@ -2,7 +2,7 @@ import { BaseNumberExtractor, IExtractor, FrenchCardinalExtractor, RegExpUtility
 import { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { IDateTimeParser, ICommonDateTimeParserConfiguration } from "../parsers";
 import { FrenchDateExtractorConfiguration } from "./dateConfiguration";
@@ -14,10 +14,10 @@ import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
 
 export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: BaseNumberExtractor;
-    readonly singleDateExtractor: BaseDateExtractor;
-    readonly singleTimeExtractor: BaseTimeExtractor;
-    readonly singleDateTimeExtractor: BaseDateTimeExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly singleDateExtractor: IDateTimeExtractor;
+    readonly singleTimeExtractor: IDateTimeExtractor;
+    readonly singleDateTimeExtractor: IDateTimeExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly simpleCasesRegexes: RegExp[];
     readonly prepositionRegex: RegExp;
     readonly tillRegex: RegExp;
@@ -108,11 +108,11 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
 
     readonly numbers: ReadonlyMap<string, number>;
     readonly unitMap: ReadonlyMap<string, string>;
-    readonly dateExtractor: BaseDateExtractor;
-    readonly timeExtractor: BaseTimeExtractor;
-    readonly dateTimeExtractor: BaseDateTimeExtractor;
-    readonly timePeriodExtractor: IExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
+    readonly dateTimeExtractor: IDateTimeExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
     readonly timeParser: BaseTimeParser;
     readonly dateTimeParser: BaseDateTimeParser;

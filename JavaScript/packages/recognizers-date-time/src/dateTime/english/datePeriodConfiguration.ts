@@ -6,6 +6,7 @@ import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
@@ -19,9 +20,9 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly dateUnitRegex: RegExp
     readonly inConnectorRegex: RegExp
     readonly rangeUnitRegex: RegExp
-    readonly datePointExtractor: BaseDateExtractor
+    readonly datePointExtractor: IDateTimeExtractor
     readonly integerExtractor: BaseNumberExtractor
-    readonly durationExtractor: BaseDurationExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly rangeConnectorRegex: RegExp
 
     constructor() {
@@ -83,9 +84,9 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
 }
 
 export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserConfiguration {
-    readonly dateExtractor: BaseDateExtractor
+    readonly dateExtractor: IDateTimeExtractor
     readonly dateParser: BaseDateParser
-    readonly durationExtractor: BaseDurationExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly durationParser: BaseDurationParser
     readonly monthFrontBetweenRegex: RegExp
     readonly betweenRegex: RegExp

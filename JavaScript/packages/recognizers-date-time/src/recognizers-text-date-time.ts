@@ -4,7 +4,7 @@ export { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtracto
 export { ITimeExtractorConfiguration, ITimeParserConfiguration, BaseTimeExtractor, BaseTimeParser } from "./dateTime/baseTime";
 export { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration, BaseDatePeriodExtractor, BaseDatePeriodParser } from "./dateTime/baseDatePeriod";
 export { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration, BaseTimePeriodExtractor, BaseTimePeriodParser } from "./dateTime/baseTimePeriod";
-export { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration, BaseDateTimeExtractor, BaseDateTimeParser } from "./dateTime/baseDateTime";
+export { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration, BaseDateTimeExtractor, BaseDateTimeParser } from "./dateTime/baseDateTime";
 export { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration, BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./dateTime/baseDateTimePeriod";
 export { IDurationExtractorConfiguration, IDurationParserConfiguration, BaseDurationExtractor, BaseDurationParser } from "./dateTime/baseDuration";
 export { ISetExtractorConfiguration, ISetParserConfiguration, BaseSetExtractor, BaseSetParser } from "./dateTime/baseSet";

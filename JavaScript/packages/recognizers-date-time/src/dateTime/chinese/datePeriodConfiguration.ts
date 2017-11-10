@@ -72,10 +72,13 @@ export class ChineseDatePeriodExtractor extends BaseDatePeriodExtractor {
         super(new ChineseDatePeriodExtractorConfiguration());
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+        
         let tokens: Array<Token> = new Array<Token>()
             .concat(super.matchSimpleCases(source))
-            .concat(super.mergeTwoTimePoints(source))
+            .concat(super.mergeTwoTimePoints(source, refDate))
             .concat(this.matchNumberWithUnit(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
@@ -618,7 +621,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     protected parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         // for case "前两年" "后三年"
-        let durationResult = this.config.durationExtractor.extract(source).pop();
+        let durationResult = this.config.durationExtractor.extract(source, referenceDate).pop();
         if (!durationResult) return result;
 
         let match = RegExpUtility.getMatches(this.unitRegex, durationResult.text).pop();

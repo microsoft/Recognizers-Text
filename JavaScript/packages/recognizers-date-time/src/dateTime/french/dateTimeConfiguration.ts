@@ -1,5 +1,5 @@
 import { BaseNumberExtractor, BaseNumberParser, RegExpUtility } from "recognizers-text-number";
-import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime";
+import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration, IDateTimeExtractor } from "../baseDateTime";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -66,13 +66,13 @@ export class FrenchDateTimeExtractorConfiguration implements IDateTimeExtractorC
 export class FrenchDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     readonly tokenBeforeDate: string;
     readonly tokenBeforeTime: string;
-    readonly dateExtractor: BaseDateExtractor;
-    readonly timeExtractor: BaseTimeExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
     readonly timeParser: BaseTimeParser;
     readonly cardinalExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
     readonly nowRegex: RegExp;
     readonly amTimeRegex: RegExp;

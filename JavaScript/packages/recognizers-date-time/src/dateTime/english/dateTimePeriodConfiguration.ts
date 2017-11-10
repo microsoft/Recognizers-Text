@@ -1,24 +1,23 @@
 import { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration } from "../baseDateTimePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { RegExpUtility, EnglishCardinalExtractor } from "recognizers-text-number";
+import { IExtractor, RegExpUtility, EnglishCardinalExtractor } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 import { EnglishDateTimeExtractorConfiguration } from "./dateTimeConfiguration"
 import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
-import { IExtractor } from "recognizers-text-number"
 import { IDateTimeParser } from "../parsers"
 
 export class EnglishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: EnglishCardinalExtractor
-    readonly singleDateExtractor: BaseDateExtractor
-    readonly singleTimeExtractor: BaseTimeExtractor
-    readonly singleDateTimeExtractor: BaseDateTimeExtractor
-    readonly durationExtractor: BaseDurationExtractor
+    readonly singleDateExtractor: IDateTimeExtractor
+    readonly singleTimeExtractor: IDateTimeExtractor
+    readonly singleDateTimeExtractor: IDateTimeExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly simpleCasesRegexes: RegExp[]
     readonly prepositionRegex: RegExp
     readonly tillRegex: RegExp
@@ -92,11 +91,11 @@ export class EnglishDateTimePeriodParserConfiguration implements IDateTimePeriod
     readonly relativeTimeUnitRegex: RegExp
     readonly numbers: ReadonlyMap<string, number>
     readonly unitMap: ReadonlyMap<string, string>
-    readonly dateExtractor: BaseDateExtractor
-    readonly timePeriodExtractor: IExtractor
-    readonly timeExtractor: BaseTimeExtractor
-    readonly dateTimeExtractor: BaseDateTimeExtractor
-    readonly durationExtractor: BaseDurationExtractor
+    readonly dateExtractor: IDateTimeExtractor
+    readonly timePeriodExtractor: IDateTimeExtractor
+    readonly timeExtractor: IDateTimeExtractor
+    readonly dateTimeExtractor: IDateTimeExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly dateParser: BaseDateParser
     readonly timeParser: BaseTimeParser
     readonly dateTimeParser: BaseDateTimeParser

@@ -14,6 +14,7 @@ import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfi
 import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil } from "../utilities";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
+import { IDateTimeExtractor } from "../baseDateTime";
 
 class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: ChineseCardinalExtractor
@@ -79,20 +80,23 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
         this.futureRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.FutureRegex);
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.mergeDateAndTimePeriod(source))
-        .concat(this.mergeTwoTimePoints(source))
+        .concat(this.mergeDateAndTimePeriod(source, referenceDate))
+        .concat(this.mergeTwoTimePoints(source, referenceDate))
         .concat(this.matchNubmerWithUnit(source))
-        .concat(this.matchNight(source))
+        .concat(this.matchNight(source, referenceDate))
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    private mergeDateAndTimePeriod(source: string): Array<Token> {
+    private mergeDateAndTimePeriod(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ersDate = this.config.singleDateExtractor.extract(source);
-        let ersTime = this.config.singleTimeExtractor.extract(source);
+        let ersDate = this.config.singleDateExtractor.extract(source, refDate);
+        let ersTime = this.config.singleTimeExtractor.extract(source, refDate);
         let timeResults = new Array<ExtractResult>();
         let j = 0;
         for (let i = 0; i < ersDate.length; i++) {
@@ -133,10 +137,10 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
         return tokens;
     }
 
-    protected mergeTwoTimePoints(source: string): Array<Token> {
+    protected mergeTwoTimePoints(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ersDateTime = this.config.singleDateTimeExtractor.extract(source);
-        let ersTime = this.config.singleTimeExtractor.extract(source);
+        let ersDateTime = this.config.singleDateTimeExtractor.extract(source, refDate);
+        let ersTime = this.config.singleTimeExtractor.extract(source, refDate);
         let innerMarks: ExtractResult[] = [];
         let j = 0;
         ersDateTime.forEach((erDateTime, index) => {
@@ -234,13 +238,13 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
         return tokens;
     }
 
-    protected matchNight(source: string): Array<Token> {
+    protected matchNight(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
         RegExpUtility.getMatches(this.config.specificTimeOfDayRegex, source).forEach(match => {
             tokens.push(new Token(match.index, match.index + match.length))
         });
 
-        this.config.singleDateExtractor.extract(source).forEach(er => {
+        this.config.singleDateExtractor.extract(source, refDate).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
             let match = RegExpUtility.getMatches(this.config.timeOfDayRegex, afterStr).pop();
             if (match) {
@@ -267,9 +271,9 @@ class ChineseDateTimePeriodParserConfiguration implements IDateTimePeriodParserC
     readonly numbers: ReadonlyMap<string, number>
     readonly unitMap: ReadonlyMap<string, string>
     readonly dateExtractor: BaseDateExtractor
-    readonly timeExtractor: IExtractor
+    readonly timeExtractor: IDateTimeExtractor
     readonly dateTimeExtractor: ChineseDateTimeExtractor
-    readonly timePeriodExtractor: IExtractor
+    readonly timePeriodExtractor: IDateTimeExtractor
     readonly durationExtractor: BaseDurationExtractor
     readonly dateParser: BaseDateParser
     readonly timeParser: BaseTimeParser
@@ -414,8 +418,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     protected mergeDateAndTimePeriods(text: string, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
 
-        let erDate = this.config.dateExtractor.extract(text).pop();
-        let erTimePeriod = this.config.timePeriodExtractor.extract(text).pop();
+        let erDate = this.config.dateExtractor.extract(text, referenceTime).pop();
+        let erTimePeriod = this.config.timePeriodExtractor.extract(text, referenceTime).pop();
         if (!erDate || !erTimePeriod) return result;
 
         let prDate = this.config.dateParser.parse(erDate, referenceTime);
@@ -450,8 +454,8 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
     protected mergeTwoTimePoints(text: string, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let prs: { begin: DateTimeParseResult, end: DateTimeParseResult };
-        let timeErs = this.config.timeExtractor.extract(text);
-        let datetimeErs = this.config.dateTimeExtractor.extract(text);
+        let timeErs = this.config.timeExtractor.extract(text, referenceTime);
+        let datetimeErs = this.config.dateTimeExtractor.extract(text, referenceTime);
         let bothHasDate = false;
         let beginHasDate = false;
         let endHasDate = false;
@@ -597,7 +601,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         if (!timeMatch) return result;
 
         let beforeStr = source.substr(0, timeMatch.index).trim();
-        let erDate = this.config.dateExtractor.extract(beforeStr).pop();
+        let erDate = this.config.dateExtractor.extract(beforeStr, referenceTime).pop();
         if (!erDate || erDate.length !== beforeStr.length) return result;
 
         let prDate = this.config.dateParser.parse(erDate, referenceTime);

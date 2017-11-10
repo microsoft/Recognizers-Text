@@ -6,7 +6,7 @@ import { BaseDateExtractor, BaseDateParser} from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser} from "./baseTime"
 import { BaseDatePeriodExtractor, BaseDatePeriodParser} from "./baseDatePeriod"
 import { BaseTimePeriodExtractor, BaseTimePeriodParser} from "./baseTimePeriod"
-import { BaseDateTimeExtractor, BaseDateTimeParser} from "./baseDateTime"
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser} from "./baseDateTime"
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod"
 import { BaseSetExtractor, BaseSetParser} from "./baseSet"
 import { BaseDurationExtractor, BaseDurationParser} from "./baseDuration"
@@ -27,13 +27,13 @@ export interface ICommonDateTimeParserConfiguration {
     integerExtractor: BaseNumberExtractor;
     ordinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
-    dateExtractor: BaseDateExtractor;
-    timeExtractor: BaseTimeExtractor;
-    dateTimeExtractor: BaseDateTimeExtractor;
-    durationExtractor: BaseDurationExtractor;
-    datePeriodExtractor: BaseDatePeriodExtractor;
-    timePeriodExtractor: BaseTimePeriodExtractor;
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    dateExtractor: IDateTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
+    dateTimeExtractor: IDateTimeExtractor;
+    durationExtractor: IDateTimeExtractor;
+    datePeriodExtractor: IDateTimeExtractor;
+    timePeriodExtractor: IDateTimeExtractor;
+    dateTimePeriodExtractor: IDateTimeExtractor;
     dateParser: BaseDateParser;
     timeParser: BaseTimeParser;
     dateTimeParser: BaseDateTimeParser;
@@ -58,13 +58,13 @@ export abstract class BaseDateParserConfiguration implements ICommonDateTimePars
     integerExtractor: BaseNumberExtractor;
     ordinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
-    dateExtractor: BaseDateExtractor;
-    timeExtractor: BaseTimeExtractor;
-    dateTimeExtractor: BaseDateTimeExtractor;
-    durationExtractor: BaseDurationExtractor;
-    datePeriodExtractor: BaseDatePeriodExtractor;
-    timePeriodExtractor: BaseTimePeriodExtractor;
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    dateExtractor: IDateTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
+    dateTimeExtractor: IDateTimeExtractor;
+    durationExtractor: IDateTimeExtractor;
+    datePeriodExtractor: IDateTimeExtractor;
+    timePeriodExtractor: IDateTimeExtractor;
+    dateTimePeriodExtractor: IDateTimeExtractor;
     dateParser: BaseDateParser;
     timeParser: BaseTimeParser;
     dateTimeParser: BaseDateTimeParser;

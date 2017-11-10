@@ -5,12 +5,13 @@ import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
 import { IDateTimeUtilityConfiguration } from "../utilities"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
+import { IDateTimeExtractor } from "../baseDateTime"
 
 export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
-    readonly singleTimeExtractor: BaseTimeExtractor;
+    readonly singleTimeExtractor: IDateTimeExtractor;
 
     constructor() {
         this.simpleCasesRegex = [
@@ -46,7 +47,7 @@ export class EnglishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 }
 
 export class EnglishTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
-    timeExtractor: BaseTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
     timeParser: BaseTimeParser;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;

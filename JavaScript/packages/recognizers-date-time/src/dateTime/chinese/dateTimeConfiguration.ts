@@ -1,6 +1,6 @@
 import { IExtractor, ExtractResult, BaseNumberParser, BaseNumberExtractor, RegExpUtility, StringUtility } from "recognizers-text-number"
 import { Constants, TimeTypeConstants } from "../constants";
-import { IDateTimeExtractorConfiguration, BaseDateTimeExtractor, IDateTimeParserConfiguration, BaseDateTimeParser } from "../baseDateTime";
+import { IDateTimeExtractor, IDateTimeExtractorConfiguration, BaseDateTimeExtractor, IDateTimeParserConfiguration, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -51,20 +51,23 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
         super(new ChineseDateTimeExtractorConfiguration());
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.mergeDateAndTime(source))
+        .concat(this.mergeDateAndTime(source, referenceDate))
         .concat(this.basicRegexMatch(source))
-        .concat(this.timeOfToday(source));
+        .concat(this.timeOfToday(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected mergeDateAndTime(source: string): Array<Token> {
+    protected mergeDateAndTime(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ers = this.config.datePointExtractor.extract(source);
+        let ers = this.config.datePointExtractor.extract(source, refDate);
         if (ers.length < 1) return tokens;
-        ers = ers.concat(this.config.timePointExtractor.extract(source));
+        ers = ers.concat(this.config.timePointExtractor.extract(source, refDate));
         if (ers.length < 2) return tokens;
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
@@ -95,9 +98,9 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
         return tokens;
     }
 
-    private timeOfToday(source: string): Array<Token> {
+    private timeOfToday(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        this.config.timePointExtractor.extract(source).forEach(er => {
+        this.config.timePointExtractor.extract(source, refDate).forEach(er => {
             let beforeStr = source.substr(0, er.start);
             let innerMatch = RegExpUtility.getMatches(this.config.nightRegex, er.text).pop();
             if (innerMatch && innerMatch.index === 0) {
@@ -120,7 +123,7 @@ export class ChineseDateTimeExtractor extends BaseDateTimeExtractor {
 class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     readonly tokenBeforeDate: string;
     readonly tokenBeforeTime: string;
-    readonly dateExtractor: BaseDateExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
     readonly timeExtractor: ChineseTimeExtractor;
     readonly dateParser: ChineseDateParser;
     readonly timeParser: ChineseTimeParser;
@@ -230,12 +233,12 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
     protected mergeDateAndTime(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
 
-        let er1 = this.config.dateExtractor.extract(text);
+        let er1 = this.config.dateExtractor.extract(text, referenceTime);
         if (er1.length === 0) {
             return ret;
         }
 
-        let er2 = this.config.timeExtractor.extract(text);
+        let er2 = this.config.timeExtractor.extract(text, referenceTime);
         if (er2.length === 0) {
             return ret;
         }
@@ -284,7 +287,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
     protected parseTimeOfToday(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
 
-        let ers = this.config.timeExtractor.extract(text);
+        let ers = this.config.timeExtractor.extract(text, referenceTime);
         if (ers.length !== 1) {
             return ret;
         }

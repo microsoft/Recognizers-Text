@@ -50,7 +50,7 @@ export class ChineseTimeParser extends BaseTimeParser {
         
         let extra: DateTimeExtra<TimeType> = er.data;
         if (!extra) {
-            let innerResult = this.innerExtractor.extract(er.text).pop();
+            let innerResult = this.innerExtractor.extract(er.text, referenceTime).pop();
             extra = innerResult.data;
         }
 
