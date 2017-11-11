@@ -6,7 +6,7 @@ Recognizer's are organized into groups and designed to be used in C# and Node.js
 
 ## Cloning and building the Repository
 
-    git clone https://github.com/southworkscom/Recognizers-Text.git
+    git clone https://github.com/Microsoft/Recognizers-Text.git
     cd Recognizers-Text
 
 You can choose between build the solution manually or through an automatized build.cmd file.
