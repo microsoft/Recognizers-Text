@@ -15,28 +15,17 @@ IF ERRORLEVEL 1 (
     EXIT /B
 )
 
-REM Prebuild each sub-module referenced on main module
+REM Dependencies
 ECHO.
-ECHO # Building recognizers number module
-CALL npm run prebuild-number
-
-ECHO.
-ECHO # Building recognizers number-with-unit module
-CALL npm run prebuild-number-with-unit
-
-ECHO.
-ECHO # Building recognizers date-time module
-CALL npm run prebuild-date-time
-
-REM Build main module
-ECHO.
-ECHO # Installing dependencies - npm install
+ECHO # Installing dependencies
 CALL npm i
 
+REM Build Packages
 ECHO.
 ECHO # Building - npm run build
 CALL npm run build
 
+REM Tests
 ECHO.
-ECHO # Running test - npm run test
+ECHO # Running tests - npm run test
 CALL npm run test

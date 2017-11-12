@@ -1,0 +1,20 @@
+{
+  "name": "resource-generator",
+  "version": "1.0.0",
+  "description": "Internal resource generator tool",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [],
+  "files": [
+    "compiled"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "build-resources": "ts-node --project tools/resource-generator/ tools/resource-generator/"
+  },
+  "dependencies": {
+    "js-yaml": "^3.9.1"
+  }
+}

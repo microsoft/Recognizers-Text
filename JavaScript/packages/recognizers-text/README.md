@@ -2,27 +2,9 @@
 
 ## Getting Started
 
-Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples, install the `recognizers-text` package, or  clone our GitHub repository using Git.
+Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications!
 
-## Cloning and building the Repository
-
-    git clone https://github.com/Microsoft/Recognizers-Text.git
-    cd Recognizers-Text
-
-You can choose between build the solution manually or through an automatized build.cmd file.
-
-### Manual Build
-
-Open a terminal and run the following commands:
-
-    cd JavaScript
-    npm install
-    npm run build
-    npm run test
-
-### Automatized Build
-
-Launch `Build.cmd` file.
+To use the samples, install the `recognizers-text` package.
 
 ## Installation from NPM
 
@@ -107,12 +89,3 @@ var Recognizers = require('recognizers-text');
 ## Samples
 
 [Start using recognizers!](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/samples)
-
-## Integration tips
-
-The recognizers were designed to disjoint language's logic from the recognizer's core in order to grow without the obligation of change the supported platforms.
-
-To achieve this, the recognizers contains the following folders:
-
-* [Specs](https://github.com/Microsoft/Recognizers-Text/tree/master/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
-* [Patterns](https://github.com/Microsoft/Recognizers-Text/tree/master/Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.

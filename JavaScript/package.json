@@ -1,81 +1,75 @@
 {
-  "name": "recognizers-text",
-  "version": "1.0.0",
-  "description": "recognizers-text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
-  "author": "Microsoft Corp.",
-  "license": "MIT",
-  "keywords": [
-    "nlp",
-    "nlp-entity-extraction",
-    "datetime",
-    "entity-extraction",
-    "timex",
-    "numex",
-    "parser-library"
-  ],
-  "main": "dist/recognizers-text.umd.js",
-  "module": "dist/recognizers-text.es5.js",
-  "typings": "dist/types/recognizers-text.d.ts",
-  "browser": "dist/recognizers-text.browser.js",
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Microsoft/Recognizers-Text"
-  },
-  "bugs": {
-    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
-  },
-  "engines": {
-    "node": ">=6.0.0"
-  },
-  "scripts": {
-    "lint": "tslint -t codeFrame -e './**/node_modules/**/*.ts' -e './**/src/resources/*.ts' './**/*.ts'",
-    "prebuild-number": "cd ./recognizers-number/ && npm install && npm run build && cd ../",
-    "prebuild-number-with-unit": "cd ./recognizers-number-with-unit/ && npm install && npm run build && cd ../",
-    "prebuild-date-time": "cd ./recognizers-date-time/ && npm install && npm run build && cd ../",
-    "prebuild-all": "npm run prebuild-number && npm run prebuild-number-with-unit && npm run prebuild-date-time",
-    "prebuild": "npm install --no-save ./recognizers-number/ ./recognizers-number-with-unit/ ./recognizers-date-time && rimraf dist && rimraf compiled ",
-    "build": "tsc && rollup -c && typedoc --out dist/docs --target es6 --theme minimal src",
-    "test-watch": "tsc-watch --onSuccess \"ava --watch\"",
-    "test": "tsc && ava"
-  },
-  "ava": {
-    "files": [
-      "test/index.js"
-    ]
-  },
-  "devDependencies": {
-    "@types/js-yaml": "^3.9.0",
-    "@types/node": "^8.0.20",
-    "@types/npm": "^2.0.29",
-    "ava": "^0.22.0",
-    "ava-spec": "^1.1.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-es2015": "^6.24.1",
-    "colors": "^1.1.2",
-    "js-yaml": "^3.9.1",
-    "lodash.camelcase": "^4.3.0",
-    "lodash.keys": "^4.2.0",
-    "prettier": "^1.6.1",
-    "rimraf": "^2.6.1",
-    "rollup": "^0.50.0",
-    "rollup-plugin-alias": "^1.4.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "tsc-watch": "^1.0.8",
-    "tslint": "^5.7.0",
-    "tslint-config-prettier": "^1.4.0",
-    "tslint-config-standard": "^6.0.0",
-    "typedoc": "^0.8.0",
-    "typescript": "^2.5.3"
-  },
-  "dependencies": {
-    "lodash.escaperegexp": "^4.1.2",
-    "lodash.last": "^3.0.0",
-    "lodash.max": "^4.0.1"
-  }
+	"name": "recognizers",
+	"version": "1.0.0",
+	"license": "MIT",
+	"scripts": {
+		"build": "lerna bootstrap",
+		"lint": "tslint -t codeFrame ./packages/**/*.ts",
+		"test": "ava",
+		"browserify": "browserify -d -o ./test/browser-specs/index.js package.json ./test/runner-browser.js",
+		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"
+	},
+	"browserify-shim": {
+		"recognizers-text-number": "global:recognizersTextNumber",
+		"recognizers-text-number-with-unit": "global:recognizersTextNumberWithUnit",
+		"recognizers-text-date-time": "global:recognizersTextDateTime"
+	},
+	"browserify": {
+		"transform": [
+			"browserify-shim",
+			"babelify"
+		]
+	},
+	"ava": {
+		"files": [
+			"./test/index.js"
+		]
+	},
+	"devDependencies": {
+		"@types/bignumber.js": "^4.0.3",
+		"@types/js-yaml": "^3.9.0",
+		"@types/lodash.escaperegexp": "^4.1.3",
+		"@types/lodash.isequal": "^4.5.2",
+		"@types/lodash.last": "^3.0.3",
+		"@types/lodash.max": "^4.0.3",
+		"@types/lodash.sortby": "^4.7.3",
+		"@types/lodash.tonumber": "^4.0.3",
+		"@types/lodash.trimend": "^4.5.1",
+		"@types/node": "^8.0.20",
+		"@types/npm": "^2.0.29",
+		"@types/xregexp": "^3.0.29",
+		"ava": "^0.22.0",
+		"ava-spec": "^1.1.0",
+		"babel-plugin-external-helpers": "^6.22.0",
+		"colors": "^1.1.2",
+		"js-yaml": "^3.9.1",
+		"lerna": "^2.5.1",
+		"lodash.camelcase": "^4.3.0",
+		"lodash.keys": "^4.2.0",
+		"prettier": "^1.6.1",
+		"rimraf": "^2.6.1",
+		"rollup": "^0.50.0",
+		"rollup-plugin-alias": "^1.4.0",
+		"rollup-plugin-babel": "^3.0.2",
+		"rollup-plugin-commonjs": "^8.2.0",
+		"rollup-plugin-node-resolve": "^3.0.0",
+		"rollup-plugin-sourcemaps": "^0.4.2",
+		"ts-node": "^3.3.0",
+		"tsc-watch": "^1.0.8",
+		"tslint": "^5.7.0",
+		"tslint-config-prettier": "^1.4.0",
+		"tslint-config-standard": "^6.0.0",
+		"typescript": "^2.5.3",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"babelify": "^7.3.0",
+		"browserify": "^14.4.0",
+		"browserify-shim": "^3.8.14",
+		"express": "^4.16.1"
+	},
+	"dependencies": {
+		"recognizers-text-number": "file:./packages/recognizers-number",
+		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
+		"recognizers-text-date-time": "file:./packages/recognizers-date-time"
+	}
 }

@@ -1,0 +1,58 @@
+{
+    "outputPath": "./src/resources/",
+    "configFiles": [
+        {
+            "input": [ "Base-Numbers" ],
+            "output": "baseNumbers",
+            "header": [
+                "export namespace BaseNumbers {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "English", "English-Numbers" ],
+            "output": "englishNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace EnglishNumeric {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Spanish", "Spanish-Numbers" ],
+            "output": "spanishNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace SpanishNumeric {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Portuguese", "Portuguese-Numbers" ],
+            "output": "portugueseNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace PortugueseNumeric {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "Chinese", "Chinese-Numbers" ],
+            "output": "chineseNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace ChineseNumeric {"
+            ],
+            "footer": [ "}" ]
+        },
+        {
+            "input": [ "French", "French-Numbers" ],
+            "output": "frenchNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace FrenchNumeric {"
+            ],
+            "footer": [ "}" ]
+        }
+    ]
+}
