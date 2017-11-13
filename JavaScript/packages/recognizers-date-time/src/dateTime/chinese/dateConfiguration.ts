@@ -1,4 +1,5 @@
-import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, StringUtility, Match, IExtractor, ExtractResult, BaseNumberParser, BaseNumberExtractor, RegExpUtility } from "recognizers-text-number"
+import { IExtractor, ExtractResult } from "recognizers-text-base";
+import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, StringUtility, Match, BaseNumberParser, BaseNumberExtractor, RegExpUtility } from "recognizers-text-number"
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"

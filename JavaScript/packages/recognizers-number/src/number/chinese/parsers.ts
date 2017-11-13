@@ -1,9 +1,9 @@
-import { BaseNumberParser, ParseResult, IParser } from "../parsers";
+import { ExtractResult, IParser, ParseResult } from "recognizers-text-base";
+import { BaseNumberParser } from "../parsers";
 import { ChineseNumberParserConfiguration } from "./parserConfiguration";
 import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { ExtractResult } from "../extractors";
 import { CultureInfo, Culture } from "../../culture";
 import { RegExpUtility, StringUtility } from "../../utilities";
 import { BigNumber } from 'bignumber.js';

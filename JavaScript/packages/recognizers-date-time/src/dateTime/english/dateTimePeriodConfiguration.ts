@@ -1,3 +1,4 @@
+import { IExtractor } from "recognizers-text-base";
 import { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration } from "../baseDateTimePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";

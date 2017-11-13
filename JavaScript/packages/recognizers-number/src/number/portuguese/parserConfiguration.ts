@@ -1,4 +1,5 @@
-import { INumberParserConfiguration, ParseResult } from "../parsers";
+import { ParseResult } from "recognizers-text-base";
+import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { PortugueseNumeric } from "../../resources/portugueseNumeric";
 import { RegExpUtility } from "../../utilities"

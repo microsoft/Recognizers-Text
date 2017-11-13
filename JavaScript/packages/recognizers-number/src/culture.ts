@@ -1,7 +1,7 @@
+import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "recognizers-text-base";
 import trimEnd = require("lodash.trimend");
 import { BigNumber } from 'bignumber.js';
 import { LongFormatType } from "./number/models";
-import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "recognizers-text-base";
 
 export class Culture extends BaseCulture {
 

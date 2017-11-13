@@ -1,4 +1,5 @@
-import { BaseNumberExtractor, IExtractor, FrenchIntegerExtractor, RegExpUtility, IParser } from "recognizers-text-number";
+import { IExtractor, IParser } from "recognizers-text-base";
+import { BaseNumberExtractor, FrenchIntegerExtractor, RegExpUtility } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
