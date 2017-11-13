@@ -203,21 +203,45 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
                 var match = this.config.PeriodTimeOfDayWithDateRegex.Match(afterStr);
-                if (match.Success && string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                if (match.Success)
                 {
-                    ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                    if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
+                    {
+                        ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                    }
+                    else if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index).TrimStart(',')))
+                    {
+                        var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
+                        if (suffix.StartsWith(".") || suffix.StartsWith("!") || suffix.StartsWith("?") || suffix.StartsWith(";") || string.IsNullOrWhiteSpace(suffix))
+                        {
+                            ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                        }
+                    }
                 }
 
                 var prefixStr = text.Substring(0, er.Start?? 0);
 
                 match = this.config.PeriodTimeOfDayWithDateRegex.Match(prefixStr);
-                if (match.Success && string.IsNullOrWhiteSpace(prefixStr.Substring(match.Index + match.Length)))
+                if (match.Success)
                 {
-                    var midStr = text.Substring(match.Index + match.Length, er.Start - match.Index - match.Length ?? 0);
-                    if (!string.IsNullOrEmpty(midStr) && string.IsNullOrWhiteSpace(midStr))
+                    if (string.IsNullOrWhiteSpace(prefixStr.Substring(match.Index + match.Length)))
                     {
-                        ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
+                        var midStr = text.Substring(match.Index + match.Length, er.Start - match.Index - match.Length ?? 0);
+                        if (!string.IsNullOrEmpty(midStr) && string.IsNullOrWhiteSpace(midStr))
+                        {
+                            ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
+                        }
                     }
+                    else if (string.IsNullOrWhiteSpace(prefixStr.Substring(match.Index + match.Length).TrimStart(',')))
+                    {
+                        var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
+                        if (suffix.StartsWith(".") || suffix.StartsWith("!") || suffix.StartsWith("?") || suffix.StartsWith(";") || string.IsNullOrWhiteSpace(suffix))
+                        {
+                            ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
+                        }
+
+                    }
+                    
                 }
 
             }

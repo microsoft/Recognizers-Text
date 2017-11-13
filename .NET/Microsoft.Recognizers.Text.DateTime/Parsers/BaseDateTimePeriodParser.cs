@@ -522,10 +522,39 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var ers = this.Config.DateExtractor.Extract(beforeStr, referenceTime);
                 if (ers.Count == 0 || ers[0].Length != beforeStr.Length)
                 {
+                    var valid = false;
 
-                    var afterStr = trimedText.Substring(match.Index + match.Length).Trim();
-                    ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
-                    if (ers.Count == 0 || ers[0].Length != afterStr.Length)
+                    if (ers.Count > 0 && ers[0].Start == 0)
+                    {
+                        var midStr = beforeStr.Substring(ers[0].Start + ers[0].Length ?? 0);
+                        if (string.IsNullOrWhiteSpace(midStr.Replace(',', ' ')))
+                        {
+                            valid = true;
+                        }
+                    }
+
+                    if (!valid)
+                    {
+                        var afterStr = trimedText.Substring(match.Index + match.Length).Trim();
+                        ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
+                        if (ers.Count == 0 || ers[0].Length != afterStr.Length)
+                        {
+                            if (ers.Count > 0 && ers[0].Start + ers[0].Length == afterStr.Length)
+                            {
+                                var midStr = afterStr.Substring(0, ers[0].Start?? 0);
+                                if (string.IsNullOrWhiteSpace(midStr.Replace(',', ' ')))
+                                {
+                                    valid = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            valid = true;
+                        }
+                    }
+
+                    if (!valid)
                     {
                         return ret;
                     }

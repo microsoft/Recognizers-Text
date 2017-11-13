@@ -1597,4 +1597,108 @@
     }
   ]
 }
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Friday, in the afternoon",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-17TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, this Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-17TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, next Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, next Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-24TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-24 12:00:00",
+          "endDateTime": "2017-11-24 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-24 12:00:00",
+          "endDateTime": "2017-11-24 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, last Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, last Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-10TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-10 12:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-10 12:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        }
+      }
+    }
+  ]
+}
 ]
