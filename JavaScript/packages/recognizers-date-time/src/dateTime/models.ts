@@ -1,5 +1,5 @@
-import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "recognizers-text-number";
-import { IDateTimeExtractor } from "./baseDateTime"
+import { IModel, ModelResult } from "recognizers-text-base";
+import { IExtractor, ParseResult, FormatUtility } from "recognizers-text-number";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 
 export class DateTimeModelResult extends ModelResult {

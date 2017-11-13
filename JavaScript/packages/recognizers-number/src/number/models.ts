@@ -1,4 +1,4 @@
-import { IModel, ModelResult } from "../models";
+import { IModel, ModelResult } from "recognizers-text-base";
 import { IExtractor } from "./extractors";
 import { IParser, ParseResult } from "./parsers";
 

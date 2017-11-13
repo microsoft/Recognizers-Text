@@ -1,7 +1,5 @@
 export { default as NumberRecognizer } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
-export { IModel, ModelResult, ModelContainer } from "./models";
-export { IRecognizer, Recognizer } from "./recognizer";
 export { FormatUtility, StringUtility, Match, RegExpUtility } from "./utilities";
 export { BaseNumbers } from "./resources/baseNumbers";
 export { EnglishNumeric } from "./resources/englishNumeric";
