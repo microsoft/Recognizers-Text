@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Chinese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
@@ -30,6 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly string SecondDescRegex = DateTimeDefinitions.TimeSecondDescRegex;
 
         public static readonly string BanHourPrefixRegex = DateTimeDefinitions.TimeBanHourPrefixRegex;
+
         //e.g: 12点, 十二点, 十二点整
         public static readonly string HourRegex = DateTimeDefinitions.TimeHourRegex;
 

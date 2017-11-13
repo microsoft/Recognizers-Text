@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;

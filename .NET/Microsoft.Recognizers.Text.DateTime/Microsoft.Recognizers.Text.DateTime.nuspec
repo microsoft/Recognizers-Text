@@ -18,8 +18,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\build\package\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net452"/>
-    <file src="..\build\package\Microsoft.Recognizers.Text.DateTime.pdb" target="lib\net452" />
+    <file src="..\build\package\net45\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net45"/>
+    <file src="..\build\package\net452\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net452"/>
+    <file src="..\build\package\net462\Microsoft.Recognizers.Text.DateTime.dll" target="lib\net462"/>
     <file src="**\*.cs" exclude="**\obj\**\*.cs" target="src" />
   </files>
 </package>

@@ -13,7 +13,7 @@ app.get('/specs.js', function (req, res) {
 });
 
 app.use(express.static(__dirname));
-app.use("/scripts", express.static(path.join(__dirname, '../../')));
+app.use("/scripts", express.static(path.join(__dirname, '../../packages/')));
 
 app.listen(8001, function () {
   console.log('Browser Sample listening on port 8001!');

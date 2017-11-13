@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
-using Microsoft.Recognizers.Text.Number;
+
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {

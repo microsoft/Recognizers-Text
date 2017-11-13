@@ -1,0 +1,39 @@
+{
+  "name": "recognizers-text",
+  "version": "1.0.0-rc.27",
+  "description": "recognizers-text provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "datetime",
+    "entity-extraction",
+    "timex",
+    "numex",
+    "parser-library"
+  ],
+  "main": "dist/recognizers-text.umd.js",
+  "module": "dist/recognizers-text.es5.js",
+  "typings": "dist/types/recognizers-text.d.ts",
+  "browser": "dist/recognizers-text.browser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/Recognizers-Text"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "clean-build": "rimraf dist && rimraf compiled",
+    "prepare": "npm run clean-build && tsc && rollup -c"
+  },
+  "dependencies": {
+    "recognizers-text-date-time": "^1.0.0-rc.27",
+    "recognizers-text-number": "^1.0.0-rc.27",
+    "recognizers-text-number-with-unit": "^1.0.0-rc.27"
+  }
+}

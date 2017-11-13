@@ -11,9 +11,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
         public NumberExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
+
             //Add Cardinal
             var cardExtractChs = new CardinalExtractor(mode);
             builder.AddRange(cardExtractChs.Regexes);
+            
             //Add Fraction
             var fracExtractChs = new FractionExtractor();
             builder.AddRange(fracExtractChs.Regexes);

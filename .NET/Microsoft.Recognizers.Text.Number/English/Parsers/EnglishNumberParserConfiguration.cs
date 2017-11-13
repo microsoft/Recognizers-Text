@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.Number.English

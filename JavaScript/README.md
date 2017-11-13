@@ -2,97 +2,111 @@
 
 ## Getting Started
 
-Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples clone our GitHub repository using Git.
+Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples, install the `recognizers-text` package, or  clone our GitHub repository using Git.
 
-    git clone https://github.com/southworkscom/Recognizers-Text.git
+## Cloning and building the Repository
+
+    git clone https://github.com/Microsoft/Recognizers-Text.git
     cd Recognizers-Text
-
-## Setup
 
 You can choose between build the solution manually or through an automatized build.cmd file.
 
 ### Manual Build
-Open terminal and launch
 
-    npm run prebuild-all
+Open a terminal and run the following commands:
+
+    cd JavaScript
+    npm install
     npm run build
     npm run test
 
 ### Automatized Build
+
 Launch `Build.cmd` file.
 
-## Installation
+## Installation from NPM
 
-Install Recognizer's by launching the following commands:
+Install all the Recognizer's by launching the following command:
 
-* Get numbers Recognizer's features:
+* Get **all** the Recognizers in a single module:
+`npm install recognizers-text`
+
+Or, if you prefer to use a single type of recognizer:
+
+* Get **only** the numbers Recognizer's features:
 `npm install recognizers-text-number`
 
-* Get numbers with units Recognizer's features:
+* Get **only** the numbers with units Recognizer's features:
 `npm install recognizers-text-number-with-unit`
 
-* Get datetime Recognizer's features:
+* Get **only** the date and time Recognizer's features:
 `npm install recognizers-text-date-time`
 
 ## API Documentation
 
+Once the proper package is installed, you'll need to reference the package:
+
+````JavaScript
+var Recognizers = require('recognizers-text');
+````
+
 ### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](/recognizers-number/src/number/numberRecognizer.ts)
+* [NumberModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
 
     This recognizer will find any number from the input. E.g. "I have two apples" will return "2".
 
-    `Recognizers.NumberRecognizer.instance.getNumberModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English)`
 
-* [OrdinalModel](/recognizers-number/src/number/numberRecognizer.ts)
+* [OrdinalModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
 
     This recognizer will find any ordinal number. E.g. "eleventh" will return "11".
 
-    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getOrdinalModel(Recognizers.Culture.English)`
 
-* [PercentageModel](/recognizers-number/src/number/numberRecognizer.ts)
+* [PercentageModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
 
     This recognizer will find any number presented as percentage. E.g. "one hundred percents" will return "100%".
 
-    `Recognizers.NumberRecognizer.instance.getPercentageModel(Culture.English)`
+    `Recognizers.NumberRecognizer.instance.getPercentageModel(Recognizers.Culture.English)`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
-* [AgeModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* [AgeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any age number presented. E.g. "After ninety five years of age, perspectives change" will return "95 Year".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getAgeModel(Recognizers.Culture.English)`
 
-* [CurrencyModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* [CurrencyModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any currency presented. E.g. "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getCurrencyModel(Recognizers.Culture.English)`
 
-* [DimensionModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* [DimensionModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any dimension presented. E.g. "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getDimensionModel(Recognizers.Culture.English)`
 
-* [TemperatureModel](/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* [TemperatureModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
 
     This recognizer will find any temperature presented. E.g. "Set the temperature to 30 degrees celsius" will return "30 C".
 
-    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Culture.English)`
+    `Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(Recognizers.Culture.English)`
 
 ### Microsoft.Recognizers.Text.DateTime
 
-* [DateTimeModel](/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts)
+* [DateTimeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-date-time/src/dateTime/dateTimeRecognizer.ts)
 
     This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
 
-    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Culture.English)`
+    `Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English)`
 
 ## Samples
 
-[Start using recognizers!](/samples)
+[Start using recognizers!](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/samples)
 
 ## Integration tips
 
@@ -100,5 +114,5 @@ The recognizers were designed to disjoint language's logic from the recognizer's
 
 To achieve this, the recognizers contains the following folders:
 
-* [Specs](..\Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
-* [Patterns](..\Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
+* [Specs](https://github.com/Microsoft/Recognizers-Text/tree/master/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
+* [Patterns](https://github.com/Microsoft/Recognizers-Text/tree/master/Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.

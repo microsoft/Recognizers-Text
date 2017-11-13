@@ -3,6 +3,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedExtractor : IDateTimeExtractor
@@ -24,7 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var ret = new List<ExtractResult>();
-            // the order is important, since there is a problem in merging
+
+            // The order is important, since there is a problem in merging
             AddTo(ret, this.config.DateExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.TimeExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.DurationExtractor.Extract(text, reference), text);
@@ -34,7 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.DateTimePeriodExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.SetExtractor.Extract(text, reference), text);
             AddTo(ret, this.config.HolidayExtractor.Extract(text, reference), text);
-            //this should be at the end since if need the extractor to determine the previous text contains time or not
+            
+            // This should be at the end since if need the extractor to determine the previous text contains time or not
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
             AddMod(ret, text);
@@ -132,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             tempDst.Add(dst[i]);
                         }
                     }
+
                     //insert at the first overlap occurence to keep the order
                     tempDst.Insert(firstIndex, result);
                     dst.Clear();

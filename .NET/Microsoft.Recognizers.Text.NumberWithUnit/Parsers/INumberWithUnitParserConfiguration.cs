@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public interface INumberWithUnitParserConfiguration

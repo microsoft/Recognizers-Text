@@ -34,7 +34,7 @@ NumbersWithPlaceHolder: !paramsRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+(?!(,\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 NumbersWithSuffix: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
+  def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(k|M|T|G)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ DigitsNumberRegex, RoundNumberIntegerRegex ]

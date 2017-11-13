@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\vswhere.2.2.11\build\vswhere.props" Condition="Exists('..\packages\vswhere.2.2.11\build\vswhere.props')" />
   <Import Project="..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -85,15 +86,15 @@
       <Name>Microsoft.Recognizers.Text.DateTime</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj">
-      <Project>{D7EA6651-8118-478D-AAA7-437613159978}</Project>
+      <Project>{e9be4f64-9cc5-433c-90cc-a379a732e5e8}</Project>
       <Name>Microsoft.Recognizers.Text.NumberWithUnit</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text.Number\Microsoft.Recognizers.Text.Number.csproj">
-      <Project>{61205449-bdba-4bf3-8b24-ae059e0b1b61}</Project>
+      <Project>{f1005971-0341-4635-ac1b-b272681d0834}</Project>
       <Name>Microsoft.Recognizers.Text.Number</Name>
     </ProjectReference>
     <ProjectReference Include="..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj">
-      <Project>{0ff232b5-8471-429f-b87f-4096576d32eb}</Project>
+      <Project>{59755149-e656-4ef7-87a5-76eee3fd5146}</Project>
       <Name>Microsoft.Recognizers.Text</Name>
     </ProjectReference>
   </ItemGroup>
@@ -105,6 +106,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.targets'))" />
+    <Error Condition="!Exists('..\packages\vswhere.2.2.11\build\vswhere.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\vswhere.2.2.11\build\vswhere.props'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.1.1.11\build\net45\MSTest.TestAdapter.targets')" />
 </Project>

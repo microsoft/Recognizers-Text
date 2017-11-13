@@ -44,7 +44,7 @@ CurrencySuffixList: !dictionary
 #Armenian
 #No use of "AMD"
     Dram arménien: dram arménien|drams arméniens
-#Aruban florin // d'Aruba, add later, messes with txt visibility while working 
+#Aruban florin // d'Aruba, add later, messes with txt visibility while working
     Florins d'Aruba: florins aruba|ƒ|awg
 #Bangladeshi taka
     Bangladeshi taka: bangladeshi taka|৳|bdt|taka|takas|bangladeshi takas
@@ -334,7 +334,7 @@ CurrencySuffixList: !dictionary
     #Nauru - Australian dollar
     #Micronesia - american dollar
     #kiribati - american dollar
-    #niue - new zealand 
+    #niue - new zealand
     #palau - american dollar
     #pitcairn islands - new zealand dollar
     #tuvalu - australien dollar
@@ -433,7 +433,7 @@ InformationSuffixList: !dictionary
     Gigaoctet: gigaoctet|gigaoctets|Go|Gio|GB|GiB|gigabyte|gigabytes
     Téraoctet: téraoctet|téraoctets|To|Tio|TB|TiB|térabyte|térabytes
     Pétaoctet: pétaoctet|pétaoctets|Po|Pio|PB|PiB|pétabyte|pétabytes
-AmbiguousDimensionUnitList: !list 
+AmbiguousDimensionUnitList: !list
    types: [ string, string ]
    entries:
      - mi
@@ -456,7 +456,7 @@ LengthSuffixList: !dictionary
     Kilomètres: km|kilomètres|kilomètre|kilometres|kilometre|-km
     Hectomètre: hm|hectomètre|hectomètres|hectometre|hectometres|-hm
     Décamètre: dam|décamètre|décamètres|decametre|decametres|-dm
-    Mètres: m|mètres|mètre|metres|metre|m.|-m 
+    Mètres: m|mètres|mètre|metres|metre|m.|-m
     Décimètres: dm|décimètres|décimètre|decimetres|decimetre
     Centimètres: cm|centimètres|centimètre|centimetres|centimetre
     Millimètres: mm|millimètres|millimètre|millimetre|millimetres
@@ -476,7 +476,7 @@ AmbiguousLengthUnitList: !list
     - pm
     - pt
     - pts
-AmbuguousLengthUnitList: !list 
+AmbuguousLengthUnitList: !list
   types: [ string ]
   entries:
     - m
@@ -498,7 +498,7 @@ SpeedSuffixList: !dictionary
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Kelvin: k|K|kelvin   
+    Kelvin: k|K|kelvin
     F: °f|degres f|degrés f|deg f|° f|degrés fahrenheit|degres fahrenheit|fahrenheit
     R: rankine|°r|° r
     C: °c|deg c|degrés celsius|degrés c|degres celsius|celsius|deg celsius|degs celsius|centigrade|deg centigrade|degs centigrade|degrés centigrade|degres centigrade|degré centigrade|degre centigrade
@@ -506,7 +506,7 @@ TemperatureSuffixList: !dictionary
 #VolumeExtractorConfiguration
 VolumeSuffixList: !dictionary
   types: [ string, string ]
-  entries: 
+  entries:
     Mètre cube: m3|m^3|m³|mètre cube|mètres cube|metre cube|metres cube
     Centimètre cube: cm3|cm^3|cm³|centimètre cube|centimètres cube|centimetre cube|centimetres cube
     Millimètre cube: mm3|mm^3|mm³|millimètre cube|millimètres cube|millimetre cube|millimetres cube
@@ -534,7 +534,7 @@ AmbiguousVolumeUnitList: !list
 #WeightExtractorConfiguration
 WeightSuffixList: !dictionary
   types: [ string, string ]
-  entries: 
+  entries:
     Kilogramme: kg|kilogramme|kilogrammes|kilo|kilos
     Gram: g|gramme|grammes
     Milligramme: mg|milligramme|milligrammes

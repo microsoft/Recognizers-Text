@@ -1,5 +1,6 @@
-﻿using Microsoft.Recognizers.Definitions.English;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {

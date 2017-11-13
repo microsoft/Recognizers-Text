@@ -11,10 +11,10 @@ for /f "usebackq tokens=*" %%i in (`..\packages\vswhere.2.2.7\tools\vswhere -lat
 if not exist ..\nuget mkdir ..\nuget
 if exist ..\nuget\Microsoft.Recognizers.Text.DateTime*nupkg erase /s ..\nuget\Microsoft.Recognizers.Text.DateTime*nupkg
 "%MSBuildDir%\MSBuild\15.0\Bin\MSBuild.exe" /property:Configuration=release Microsoft.Recognizers.Text.DateTime.csproj
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\Microsoft.Recognizers.Text.Number.dll).FileVersionInfo.FileVersion"') do set number=%%v
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\Microsoft.Recognizers.Text.NumberWithUnit.dll).FileVersionInfo.FileVersion"') do set numberWithUnit=%%v
-for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\Microsoft.Recognizers.Text.DateTime.dll).FileVersionInfo.FileVersion"') do set version=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.dll).FileVersionInfo.FileVersion"') do set basic=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.Number.dll).FileVersionInfo.FileVersion"') do set number=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.NumberWithUnit.dll).FileVersionInfo.FileVersion"') do set numberWithUnit=%%v
+for /f %%v in ('powershell -noprofile "(Get-Command .\bin\release\net462\Microsoft.Recognizers.Text.DateTime.dll).FileVersionInfo.FileVersion"') do set version=%%v
 ..\packages\NuGet.CommandLine.4.3.0\tools\NuGet.exe pack Microsoft.Recognizers.Text.DateTime.nuspec -symbols -properties version=%version%;basic=%basic%;number=%number%;numberWithUnit=%numberWithUnit% -OutputDirectory ..\nuget
 
 set error=%errorlevel%

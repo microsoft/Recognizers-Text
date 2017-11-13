@@ -1,6 +1,8 @@
 ﻿using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Spanish;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {

@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Recognizers.Text
+﻿namespace Microsoft.Recognizers.Text.Number
 {
     public interface IParser
     {

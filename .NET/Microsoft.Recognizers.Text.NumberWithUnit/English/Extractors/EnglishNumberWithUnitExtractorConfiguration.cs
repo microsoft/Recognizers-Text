@@ -1,7 +1,9 @@
 ﻿using System.Collections.Immutable;
 using System.Globalization;
+
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number.English;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 {

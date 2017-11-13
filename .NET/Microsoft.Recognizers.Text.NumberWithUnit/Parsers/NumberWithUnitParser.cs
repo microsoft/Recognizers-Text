@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Text;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitParser : IParser

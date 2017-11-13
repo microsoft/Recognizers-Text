@@ -1,0 +1,41 @@
+{
+  "name": "recognizers-text-date-time",
+  "version": "1.0.0-rc.27",
+  "description": "recognizers-text provides robust recognition and resolution of date/time expressed in multiple languages. Support for English, Spanish, Chinese and French.",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "datetime",
+    "entity-extraction",
+    "timex",
+    "numex",
+    "parser-library"
+  ],
+  "main": "dist/recognizers-text-date-time.umd.js",
+  "module": "dist/recognizers-text-date-time.es5.js",
+  "typings": "dist/types/recognizers-text-date-time.d.ts",
+  "browser": "dist/recognizers-text-date-time.browser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/Recognizers-Text"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "build-resources": "ts-node --project ../resource-generator/ ../resource-generator/ ../recognizers-date-time/resource-definitions.json",
+    "clean-build": "rimraf dist && rimraf compiled",
+    "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
+  },
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "lodash.tonumber": "^4.0.3",
+    "recognizers-text-number": "^1.0.0-rc.27",
+    "recognizers-text-number-with-unit": "^1.0.0-rc.27"
+  }
+}

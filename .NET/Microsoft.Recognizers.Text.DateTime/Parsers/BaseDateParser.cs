@@ -1,8 +1,9 @@
-﻿using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Text.Number.English;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
+using Microsoft.Recognizers.Text.Number;
+
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -304,8 +305,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 erTmp.Text = match.Groups["DayOfMonth"].Value.ToString();
                 erTmp.Start = match.Groups["DayOfMonth"].Index;
                 erTmp.Length = match.Groups["DayOfMonth"].Length;
+                
                 // parse the day in text into number
                 var day = Convert.ToInt32((double)(this.config.NumberParser.Parse(erTmp).Value ?? 0));
+                
                 // the validity of the phrase is guaranteed in the Date Extractor
                 ret.Timex = FormatUtil.LuisDate(year, month, day);
                 ret.FutureValue = new DateObject(year, month, day); ;

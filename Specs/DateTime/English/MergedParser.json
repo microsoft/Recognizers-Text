@@ -309,6 +309,35 @@
 }
 ,
 {
+  "Input": "put make cable's wedding in my calendar for wednesday the thirty first",
+  "Context": {
+    "ReferenceDateTime": "2017-09-15T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "wednesday",
+      "Type": "datetimeV2.date",
+      "Value": {
+        "values": [
+          {
+            "timex": "XXXX-WXX-3",
+            "type": "date",
+            "value": "2017-09-13"
+          },
+          {
+            "timex": "XXXX-WXX-3",
+            "type": "date",
+            "value": "2017-09-20"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "put make cable's wedding in my calendar for tuesday the thirty first",
   "Context": {
     "ReferenceDateTime": "2017-10-15T00:00:00"
@@ -1001,6 +1030,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1036,6 +1066,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1071,6 +1102,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1111,6 +1143,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1133,6 +1166,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1149,5 +1183,5 @@
       }
     }
   ]
-},
+}
 ]

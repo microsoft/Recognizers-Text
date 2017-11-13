@@ -12,7 +12,7 @@
     "botbuilder": "^3.11.0",
     "dotenv-extended": "^2.0.1",
     "lodash": "^4.17.4",
-    "recognizers-text": "file:../../",
+    "recognizers-text": "file:../../packages/recognizers-text",
     "restify": "^6.0.1"
   }
 }

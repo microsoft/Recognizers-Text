@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using DateObject = System.DateTime;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class TimePeriodParserChs : IDateTimeParser

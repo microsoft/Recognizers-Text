@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer 

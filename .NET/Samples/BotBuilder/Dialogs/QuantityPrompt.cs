@@ -1,11 +1,12 @@
-﻿namespace BotBuilderRecognizerSample
+﻿using Microsoft.Recognizers.Text.Number;
+
+namespace BotBuilderRecognizerSample
 {
     using System;
     using System.Linq;
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Builder.Dialogs.Internals;
     using Microsoft.Bot.Connector;
-    using Microsoft.Recognizers.Text.Number;
 
     [Serializable]
     public class QuantityPrompt : Prompt<int, int>
