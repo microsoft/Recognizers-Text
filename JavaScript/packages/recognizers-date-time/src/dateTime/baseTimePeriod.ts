@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 
@@ -210,7 +210,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 endHour = Number.parseInt(hourStr, 10);
             }
 
-            // parse "pm" 
+            // parse "pm"
             let leftDesc = matches[0].groups("leftDesc").value;
             let rightDesc = matches[0].groups("rightDesc").value;
             let pmStr = matches[0].groups("pm").value;
@@ -287,7 +287,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
             pr2.value.futureValue = endTime;
         }
 
-        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${new Date(endTime.getTime() - beginTime.getTime()).getUTCHours()}H)`;
+        ret.timex = `(${pr1.timexStr},${pr2.timexStr},PT${DateUtils.totalHours(endTime, beginTime)}H)`;
         ret.futureValue = ret.pastValue = { item1: beginTime, item2: endTime };
         ret.success = true;
 
