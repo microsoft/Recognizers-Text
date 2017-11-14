@@ -4,7 +4,7 @@
 
 Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples clone our GitHub repository using Git.
 
-    git clone https://github.com/southworkscom/Recognizers-Text.git
+    git clone https://github.com/Microsoft/Recognizers-Tex.git
     cd Recognizers-Text
 
 ## Setup
