@@ -723,4 +723,15 @@
     }
   ]
 }
+,
+{
+  "Input": "16. Nov. 2016 10:38",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16. Nov. 2016 10:38",
+      "Type": "datetime"
+    }
+  ]
+}
 ]
