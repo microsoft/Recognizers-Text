@@ -52,6 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this regex, let it correspond to the one in English
         public static readonly Regex RestOfDateRegex =
             new Regex(@"^[.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        //TODO: add this regex, let it correspond to the one in English
+        public static readonly Regex WeekWithWeekDayRangeRegex =
+            new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -70,6 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SeasonRegex,
             RestOfDateRegex,
             LaterEarlyPeriodRegex,
+            WeekWithWeekDayRangeRegex,
         };
 
         public SpanishDatePeriodExtractorConfiguration()

@@ -50,6 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex InConnectorRegex { get; }
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
+        public Regex WeekWithWeekDayRangeRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -107,6 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthOfRegex = SpanishDatePeriodExtractorConfiguration.MonthOfRegex;
             RestOfDateRegex = SpanishDatePeriodExtractorConfiguration.RestOfDateRegex;
             LaterEarlyPeriodRegex = SpanishDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
+            WeekWithWeekDayRangeRegex = SpanishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

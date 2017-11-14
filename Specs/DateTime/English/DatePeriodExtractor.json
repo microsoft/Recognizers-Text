@@ -2593,4 +2593,52 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week between Wednesday and Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week from Wednesday to Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week from Wednesday to Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week from Wednesday to Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week from Wednesday to Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week between Wednesday and Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week between Wednesday and Friday",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

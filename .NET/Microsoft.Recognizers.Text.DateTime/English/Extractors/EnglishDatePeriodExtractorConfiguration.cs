@@ -110,6 +110,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex LaterEarlyPeriodRegex =
             new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WeekWithWeekDayRangeRegex =
+            new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -128,6 +131,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             WhichWeekRegex,
             RestOfDateRegex,
             LaterEarlyPeriodRegex,
+            WeekWithWeekDayRangeRegex,
         };
 
         public EnglishDatePeriodExtractorConfiguration()

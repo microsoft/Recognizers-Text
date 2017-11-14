@@ -71,6 +71,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex LaterEarlyPeriodRegex { get; }
 
+        Regex WeekWithWeekDayRangeRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

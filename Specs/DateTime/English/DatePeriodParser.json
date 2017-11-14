@@ -2086,4 +2086,82 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week between Wednesday and Friday",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-22,2017-11-24,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-22",
+          "endDate": "2017-11-24"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-22",
+          "endDate": "2017-11-24"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week between Friday and Sunday.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week between Friday and Sunday",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-10,2017-11-12,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-12"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week from Tue to Thur.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week from Tue to Thur",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-14,2017-11-16,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-14",
+          "endDate": "2017-11-16"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-14",
+          "endDate": "2017-11-16"
+        }
+      }
+    }
+  ]
+}
 ]

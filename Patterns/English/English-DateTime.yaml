@@ -416,6 +416,9 @@ OneOnOneRegex: !simpleRegex
 LaterEarlyPeriodRegex: !nestedRegex
   def: \b((?<LatePrefix>late|later)|(?<EarlyPrefix>early))\s+(?<suffix>{OneWordPeriodRegex})\b
   references: [OneWordPeriodRegex]
+WeekWithWeekDayRange: !nestedRegex
+  def: \b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
+  references: [NextPrefixRegex, PastPrefixRegex, WeekDayRegex]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

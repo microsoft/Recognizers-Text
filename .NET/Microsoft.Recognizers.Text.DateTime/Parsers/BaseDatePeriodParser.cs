@@ -4,6 +4,7 @@ using System.Globalization;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -284,9 +285,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!(match.Success && match.Index == 0 && match.Length == trimedText.Length))
             {
-                //System.Text.RegularExpressions.Regex LaterEarlyRegex =
-            //new System.Text.RegularExpressions.Regex($@"((?<LatePrefix>late|later)|(?<EarlyPrefix>early))\s+(?<suffix>{this.config.OneWordPeriodRegex})", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-
                 match = this.config.LaterEarlyPeriodRegex.Match(trimedText);
             }
 
@@ -560,6 +558,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 er[0].Start -= this.config.TokenBeforeDate.Length;
                 er[1].Start -= this.config.TokenBeforeDate.Length;
+            }
+
+            var match = this.config.WeekWithWeekDayRangeRegex.Match(text);
+            string weekPrefix = null;
+            if (match.Success)
+            {
+                weekPrefix = match.Groups["week"].ToString();
+            }
+
+            if (!string.IsNullOrEmpty(weekPrefix))
+            {
+                er[0].Text = weekPrefix + " " + er[0].Text;
+                er[1].Text = weekPrefix + " " + er[1].Text;
             }
 
             var pr1 = this.config.DateParser.Parse(er[0], referenceDate);
