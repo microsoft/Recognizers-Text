@@ -1,0 +1,7 @@
+﻿---
+LangMarker: Eng
+#Boolean Recognizers
+TrueRegex: !simpleRegex
+  def: \b(y(e[sp])?|sure|ok|\uD83D\uDC4D|\uD83D\uDC4C)\b
+FalseRegex: !simpleRegex
+  def: \b(n(o(pe)?)?|\uD83D\uDC4E|\u270B|\uD83D\uDD90)\b
