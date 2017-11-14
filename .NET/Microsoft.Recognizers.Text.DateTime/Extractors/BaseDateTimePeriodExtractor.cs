@@ -246,6 +246,46 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             }
 
+            // check whether there is a adjacent time period string, before or after
+            foreach (var e in ret.ToArray())
+            {
+                // try to extract a time period in before-string 
+                var beforeStr = text.Substring(0, e.Start);
+                if (!string.IsNullOrEmpty(beforeStr))
+                {
+                    var TimeErs = this.config.TimePeriodExtractor.Extract(beforeStr);
+                    if (TimeErs.Count > 0)
+                    {
+                        foreach (var tp in TimeErs)
+                        {
+                            var midStr = beforeStr.Substring(tp.Start + tp.Length?? 0);
+                            if (string.IsNullOrWhiteSpace(midStr))
+                            {
+                                ret.Add(new Token(tp.Start?? 0, tp.Start + tp.Length + midStr.Length + e.Length ?? 0));
+                            }
+                        }
+                    }
+                }
+
+                // try to extract a time period in after-string
+                var afterStr = text.Substring(e.Start + e.Length);
+                if (!string.IsNullOrEmpty(afterStr))
+                {
+                    var TimeErs = this.config.TimePeriodExtractor.Extract(afterStr);
+                    if (TimeErs.Count > 0)
+                    {
+                        foreach (var tp in TimeErs)
+                        {
+                            var midStr = afterStr.Substring(0, tp.Start?? 0);
+                            if (string.IsNullOrWhiteSpace(midStr))
+                            {
+                                ret.Add(new Token(e.Start, e.Start + e.Length + midStr.Length + tp.Length?? 0));
+                            }
+                        }
+                    }
+                }
+            }
+
             return ret;
         }
 

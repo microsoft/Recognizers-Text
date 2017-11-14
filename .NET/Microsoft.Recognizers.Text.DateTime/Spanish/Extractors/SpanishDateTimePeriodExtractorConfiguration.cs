@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
         }
 
         public IExtractor CardinalExtractor { get; }
@@ -33,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor SingleDateTimeExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[] 
         {

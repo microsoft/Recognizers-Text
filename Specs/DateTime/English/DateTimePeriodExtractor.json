@@ -859,4 +859,28 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday afternoon between 1PM and 4 PM",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon on Friday between 1PM and 4 PM",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]

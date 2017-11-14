@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
         }
 
         private static readonly Regex[] SimpleCases =
@@ -89,6 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor SingleDateTimeExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public bool GetFromTokenIndex(string text, out int index)
         {
