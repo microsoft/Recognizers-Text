@@ -781,6 +781,7 @@
 ,
 {
   "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM. ",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -792,6 +793,7 @@
 ,
 {
   "Input": "Can you schedule us tomorrow between 8am and 2pm?",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -803,6 +805,7 @@
 ,
 {
   "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
