@@ -15,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
         }
 
         private static readonly Regex[] SimpleCases =
@@ -62,6 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex RestOfDateTimeRegex =
             new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex GeneralEndingRegex =
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MiddlePauseRegex =
+            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -80,6 +87,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
+
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor SingleDateExtractor { get; }
@@ -89,6 +100,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor SingleDateTimeExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public bool GetFromTokenIndex(string text, out int index)
         {
