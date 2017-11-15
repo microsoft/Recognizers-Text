@@ -2,7 +2,7 @@ import { IExtractor, ExtractResult } from "recognizers-text-base";
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
-import { Match, RegExpUtility } from "../utilities";
+import { Match, RegExpUtility } from "recognizers-text-base";
 import { LongFormatType } from "./models";
 import escapeRegExp = require("lodash.escaperegexp");
 

@@ -5,7 +5,7 @@ import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { CultureInfo, Culture } from "../../culture";
-import { RegExpUtility, StringUtility } from "../../utilities";
+import { RegExpUtility, StringUtility } from "recognizers-text-base";
 import { BigNumber } from 'bignumber.js';
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");

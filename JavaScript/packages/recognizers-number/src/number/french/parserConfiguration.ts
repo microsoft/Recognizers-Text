@@ -2,7 +2,7 @@ import { ParseResult } from "recognizers-text-base";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { FrenchNumeric } from "../../resources/frenchNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text-base"
 
 export class FrenchNumberParserConfiguration implements INumberParserConfiguration {
 

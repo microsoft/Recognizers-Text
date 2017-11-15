@@ -3,7 +3,7 @@ import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
-import { RegExpUtility } from "../utilities";
+import { RegExpUtility } from "recognizers-text-base";
 import { BigNumber } from 'bignumber.js';
 
 // Disable BigNumber errors when passing number with more than 15 significant digits

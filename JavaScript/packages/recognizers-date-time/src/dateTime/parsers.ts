@@ -1,5 +1,5 @@
-import { IParser, ParseResult, ExtractResult } from "recognizers-text-base";
-import { BaseNumberParser, BaseNumberExtractor, RegExpUtility, Match, StringUtility } from "recognizers-text-number";
+import { IParser, ParseResult, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-base";
+import { BaseNumberParser, BaseNumberExtractor } from "recognizers-text-number";
 import { IDateTimeUtilityConfiguration, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";
 import { BaseDateTime } from "../resources/baseDateTime";
 import { Constants, TimeTypeConstants } from "./constants";

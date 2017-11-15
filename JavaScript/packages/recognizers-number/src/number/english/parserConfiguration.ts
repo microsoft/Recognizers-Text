@@ -2,7 +2,7 @@ import { ParseResult } from "recognizers-text-base";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { EnglishNumeric } from "../../resources/englishNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text-base"
 
 export class EnglishNumberParserConfiguration implements INumberParserConfiguration {
 

@@ -1,5 +1,5 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
-import { RegExpUtility } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text-base";
 import { DateUtils } from "../utilities";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 
