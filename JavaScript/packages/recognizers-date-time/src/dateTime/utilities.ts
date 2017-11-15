@@ -86,7 +86,7 @@ export class AgoLaterUtil {
                     value = MatchingUtil.getInIndex(beforeString, config.inConnectorRegex);
                     // for range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (RegExpUtility.getMatches(config.rangeUnitRegex, er.text).length > 0) return ret;
-                    if (value.matched && er.start && er.length && er.start > value.index) {
+                    if (value.matched && er.start && er.length && er.start >= value.index) {
                         ret.push(new Token(er.start - value.index, er.start + er.length));
                     }
                 }
