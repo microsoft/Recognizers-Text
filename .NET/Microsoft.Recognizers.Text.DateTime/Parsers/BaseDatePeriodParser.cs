@@ -462,7 +462,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15).AddDays(1);
                 pastEnd = InclusiveEndPeriod
                     ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15)
-                    : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15);
+                    : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15).AddDays(1);
             }
             else if (latePrefix)
             {
