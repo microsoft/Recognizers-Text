@@ -1124,4 +1124,51 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back 6 jan 2017 - 6:37am",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 jan 2017 - 6:37am",
+      "Type": "datetime",
+      "Value": {
+        "Timex": "2017-01-06T06:37",
+        "FutureResolution": {
+          "dateTime": "2017-01-06 06:37:00"
+        },
+        "PastResolution": {
+          "dateTime": "2017-01-06 06:37:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "16. Nov. 2016 10:38",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16. Nov. 2016 10:38",
+      "Type": "datetime",
+      "Value": {
+        "Timex": "2016-11-16T10:38",
+        "FutureResolution": {
+          "dateTime": "2016-11-16 10:38:00"
+        },
+        "PastResolution": {
+          "dateTime": "2016-11-16 10:38:00"
+        }
+      }
+    }
+  ]
+}
 ]

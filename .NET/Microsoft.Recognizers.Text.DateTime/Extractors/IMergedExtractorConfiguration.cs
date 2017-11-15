@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Number;
 
@@ -25,6 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeExtractor HolidayExtractor { get; }
 
         IExtractor IntegerExtractor { get; }
+
+        IEnumerable<Regex> FilterWordRegexList { get; }
 
         Regex AfterRegex { get; }
 

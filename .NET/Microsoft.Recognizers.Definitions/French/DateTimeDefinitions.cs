@@ -188,6 +188,10 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string WeekDayAndDayOfMothRegex = $@"\b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b";
 		public const string RestOfDateRegex = @"\b(Reste|fin)\s+(d[eu]\s+)?((le|cette|ce)\s+)?(?<duration>semaine|mois|l'ann[ée]e)\b";
 		public const string RestOfDateTimeRegex = @"\b(Reste|fin)\s+(d[eu]\s+)?((le|cette|ce)\s+)?(?<unit>jour)\b";
+		public const string LaterEarlyPeriodRegex = @"^[.]";
+		public const string WeekWithWeekDayRangeRegex = @"^[.]";
+		public const string GeneralEndingRegex = @"^[.]";
+		public const string MiddlePauseRegex = @"^[.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },

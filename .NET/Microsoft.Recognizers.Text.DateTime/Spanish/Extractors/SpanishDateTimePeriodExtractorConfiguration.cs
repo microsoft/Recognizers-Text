@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+            TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
         }
 
         public IExtractor CardinalExtractor { get; }
@@ -33,6 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor SingleDateTimeExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[] 
         {
@@ -66,6 +69,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex RelativeTimeUnitRegex = new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex GeneralEndingRegex =
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex MiddlePauseRegex =
+            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.WeekDayRegex => WeekDayRegex;
@@ -75,6 +84,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex => RelativeTimeUnitRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex => RestOfDateTimeRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

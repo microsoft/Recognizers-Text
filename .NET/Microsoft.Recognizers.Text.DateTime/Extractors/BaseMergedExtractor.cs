@@ -43,9 +43,30 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             AddMod(ret, text);
 
+            //filtering
+            if ((this.options & DateTimeOptions.Calendar) != 0)
+            {
+                CheckCalendarFilterList(ret, text);
+            }
+
             ret = ret.OrderBy(p => p.Start).ToList();
 
             return ret;
+        }
+
+        private void CheckCalendarFilterList(List<ExtractResult> ers, string text)
+        {
+            foreach (var er in ers.Reverse<ExtractResult>())
+            {
+                foreach (var negRegex in this.config.FilterWordRegexList)
+                {
+                    var match = negRegex.Match(er.Text);
+                    if (match.Success)
+                    {
+                        ers.Remove(er);
+                    }
+                }
+            }
         }
 
         private void AddTo(List<ExtractResult> dst, List<ExtractResult> src, string text)

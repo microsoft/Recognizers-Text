@@ -1150,4 +1150,47 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana could try to arrange a Skype call either Friday this week or Tuesday of next week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday this week",
+      "Type": "date"
+    }
+    ,
+    {
+      "Text": "Tuesday of next week",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana could try to arrange a Skype call either Friday of this week or this week on Saturday",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday of this week",
+      "Type": "date"
+    }
+    ,
+    {
+      "Text": "this week on Saturday",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "16. Nov. 2016",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16. Nov. 2016",
+      "Type": "date"
+    }
+  ]
+}
 ]

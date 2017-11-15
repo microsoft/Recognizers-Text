@@ -1861,4 +1861,316 @@
     }
   ]
 }
+,
+{
+  "Input": "Please find us a time to meet later this month",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this month",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-11",
+        "FutureResolution": {
+          "startDate": "2017-11-16",
+          "endDate": "2017-12-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-16",
+          "endDate": "2017-12-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this week",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W46",
+        "FutureResolution": {
+          "startDate": "2017-11-09",
+          "endDate": "2017-11-13"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-09",
+          "endDate": "2017-11-13"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017",
+        "FutureResolution": {
+          "startDate": "2017-07-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-07-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early next year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early next year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2018-07-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2018-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early next week",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early next week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W47",
+        "FutureResolution": {
+          "startDate": "2017-11-13",
+          "endDate": "2017-11-16"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-13",
+          "endDate": "2017-11-16"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early next month",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early next month",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-12",
+        "FutureResolution": {
+          "startDate": "2017-12-01",
+          "endDate": "2017-12-16"
+        },
+        "PastResolution": {
+          "startDate": "2017-12-01",
+          "endDate": "2017-12-16"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We had a meeting late last year",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late last year",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016",
+        "FutureResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-07-01",
+          "endDate": "2017-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We had a meeting late last week",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late last week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W45",
+        "FutureResolution": {
+          "startDate": "2017-11-02",
+          "endDate": "2017-11-06"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-02",
+          "endDate": "2017-11-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We had a meeting late last month",
+  "Context": {
+    "ReferenceDateTime": "2017-11-08T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late last month",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-10",
+        "FutureResolution": {
+          "startDate": "2017-10-16",
+          "endDate": "2017-11-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-10-16",
+          "endDate": "2017-11-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week between Wednesday and Friday",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-22,2017-11-24,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-22",
+          "endDate": "2017-11-24"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-22",
+          "endDate": "2017-11-24"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week between Friday and Sunday.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week between Friday and Sunday",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-10,2017-11-12,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-12"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-10",
+          "endDate": "2017-11-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week from Tue to Thur.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week from Tue to Thur",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-11-14,2017-11-16,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-11-14",
+          "endDate": "2017-11-16"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-14",
+          "endDate": "2017-11-16"
+        }
+      }
+    }
+  ]
+}
 ]

@@ -1522,4 +1522,238 @@
     }
   ]
 }
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-09T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday between 1PM and 4 PM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+        "FutureResolution": {
+          "startDateTime": "2017-11-10 13:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-03 13:00:00",
+          "endDateTime": "2017-11-03 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you schedule us tomorrow between 8am and 2pm?",
+  "Context": {
+    "ReferenceDateTime": "2017-11-09T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow between 8am and 2pm",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+        "FutureResolution": {
+          "startDateTime": "2017-11-10 08:00:00",
+          "endDateTime": "2017-11-10 14:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-10 08:00:00",
+          "endDateTime": "2017-11-10 14:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
+  "Context": {
+    "ReferenceDateTime": "2017-11-09T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Dec 9th between 8am and 2pm",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+        "FutureResolution": {
+          "startDateTime": "2017-12-09 08:00:00",
+          "endDateTime": "2017-12-09 14:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-12-09 08:00:00",
+          "endDateTime": "2016-12-09 14:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this Friday, in the afternoon",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-17TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, this Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-17TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-17 12:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, next Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, next Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-24TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-24 12:00:00",
+          "endDateTime": "2017-11-24 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-24 12:00:00",
+          "endDateTime": "2017-11-24 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, last Friday!",
+  "Context": {
+    "ReferenceDateTime": "2017-11-13T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon, last Friday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2017-11-10TAF",
+        "FutureResolution": {
+          "startDateTime": "2017-11-10 12:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-10 12:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T19:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Friday afternoon between 1PM and 4 PM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 13:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-10 13:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
+  "Context": {
+    "ReferenceDateTime": "2017-11-14T19:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon on Friday between 1PM and 4 PM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+        "FutureResolution": {
+          "startDateTime": "2017-11-17 13:00:00",
+          "endDateTime": "2017-11-17 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2017-11-10 13:00:00",
+          "endDateTime": "2017-11-10 16:00:00"
+        }
+      }
+    }
+  ]
+}
 ]

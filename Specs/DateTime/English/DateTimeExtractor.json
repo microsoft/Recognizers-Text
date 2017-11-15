@@ -712,4 +712,27 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back 6 Jan 2017 - 6:37am",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "6 Jan 2017 - 6:37am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "16. Nov. 2016 10:38",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16. Nov. 2016 10:38",
+      "Type": "datetime"
+    }
+  ]
+}
 ]

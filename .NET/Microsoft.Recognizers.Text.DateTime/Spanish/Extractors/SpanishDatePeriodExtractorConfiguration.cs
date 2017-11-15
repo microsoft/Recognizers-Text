@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex MonthOfRegex = new Regex(DateTimeDefinitions.MonthOfRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex InConnectorRegex = new Regex(DateTimeDefinitions.InConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex LaterEarlyPeriodRegex = new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -51,6 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this regex, let it correspond to the one in English
         public static readonly Regex RestOfDateRegex =
             new Regex(@"^[.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        //TODO: add this regex, let it correspond to the one in English
+        public static readonly Regex WeekWithWeekDayRangeRegex =
+            new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         private static readonly Regex[] SimpleCasesRegexes =
         {
@@ -67,7 +71,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             QuarterRegex,
             QuarterRegexYearFront,
             SeasonRegex,
-            RestOfDateRegex
+            RestOfDateRegex,
+            LaterEarlyPeriodRegex,
+            WeekWithWeekDayRangeRegex,
         };
 
         public SpanishDatePeriodExtractorConfiguration()

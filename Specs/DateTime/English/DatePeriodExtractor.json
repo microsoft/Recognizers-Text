@@ -2494,4 +2494,160 @@
     }
   ]
 }
+,
+{
+  "Input": "Please find us a time to meet later this month",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet later this week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "later this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet late next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet late next year",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "We met late last week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "late last week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early this month",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early this month",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early this week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early this week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early next week",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early next week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Please find us a time to meet early next year",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "early next year",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week between Wednesday and Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week from Wednesday to Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week from Wednesday to Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week from Wednesday to Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week from Wednesday to Friday",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week between Wednesday and Friday.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this week between Wednesday and Friday",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

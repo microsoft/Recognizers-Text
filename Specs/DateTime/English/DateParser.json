@@ -2021,4 +2021,27 @@
     }
   ]
 }
+,
+{
+  "Input": "16. Nov. 2016",
+  "Context": {
+    "ReferenceDateTime": "2016-11-14T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "16. Nov. 2016",
+      "Type": "date",
+      "Value": {
+        "Timex": "2016-11-16",
+        "FutureResolution": {
+          "date": "2016-11-16"
+        },
+        "PastResolution": {
+          "date": "2016-11-16"
+        }
+      }
+    }
+  ]
+}
 ]
