@@ -209,12 +209,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
                     }
-                    else if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index).TrimStart(',')))
+                    else
                     {
-                        var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
-                        if (suffix.StartsWith(".") || suffix.StartsWith("!") || suffix.StartsWith("?") || suffix.StartsWith(";") || string.IsNullOrWhiteSpace(suffix))
+                        Regex pauseRegex = new Regex(Definitions.English.DateTimeDefinitions.MiddlePauseRegex);
+                        var pauseMatch = pauseRegex.Match(afterStr.Substring(0, match.Index));
+
+                        if (pauseMatch.Success)
                         {
-                            ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                            var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
+    
+                            Regex regex = new Regex(Definitions.English.DateTimeDefinitions.GeneralEndingRegex);
+                            var endingMatch = regex.Match(suffix);
+                            if (endingMatch.Success)
+                            {
+                                ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
+                            }
                         }
                     }
                 }
@@ -232,14 +241,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
                         }
                     }
-                    else if (string.IsNullOrWhiteSpace(prefixStr.Substring(match.Index + match.Length).TrimStart(',')))
+                    else
                     {
-                        var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
-                        if (suffix.StartsWith(".") || suffix.StartsWith("!") || suffix.StartsWith("?") || suffix.StartsWith(";") || string.IsNullOrWhiteSpace(suffix))
-                        {
-                            ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
-                        }
+                        Regex pauseRegex = new Regex(Definitions.English.DateTimeDefinitions.MiddlePauseRegex);
+                        var pauseMatch = pauseRegex.Match(prefixStr.Substring(match.Index + match.Length));
 
+                        if (pauseMatch.Success)
+                        {
+                            var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
+
+                            Regex regex = new Regex(Definitions.English.DateTimeDefinitions.GeneralEndingRegex);
+                            var endingMatch = regex.Match(suffix);
+                            if (endingMatch.Success)
+                            {
+                                ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
+                            }
+
+                        }
                     }
                     
                 }
@@ -250,36 +268,42 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var e in ret.ToArray())
             {
                 // try to extract a time period in before-string 
-                var beforeStr = text.Substring(0, e.Start);
-                if (!string.IsNullOrEmpty(beforeStr))
+                if (e.Start > 0)
                 {
-                    var TimeErs = this.config.TimePeriodExtractor.Extract(beforeStr);
-                    if (TimeErs.Count > 0)
+                    var beforeStr = text.Substring(0, e.Start);
+                    if (!string.IsNullOrEmpty(beforeStr))
                     {
-                        foreach (var tp in TimeErs)
+                        var TimeErs = this.config.TimePeriodExtractor.Extract(beforeStr);
+                        if (TimeErs.Count > 0)
                         {
-                            var midStr = beforeStr.Substring(tp.Start + tp.Length?? 0);
-                            if (string.IsNullOrWhiteSpace(midStr))
+                            foreach (var tp in TimeErs)
                             {
-                                ret.Add(new Token(tp.Start?? 0, tp.Start + tp.Length + midStr.Length + e.Length ?? 0));
+                                var midStr = beforeStr.Substring(tp.Start + tp.Length ?? 0);
+                                if (string.IsNullOrWhiteSpace(midStr))
+                                {
+                                    ret.Add(new Token(tp.Start ?? 0, tp.Start + tp.Length + midStr.Length + e.Length ?? 0));
+                                }
                             }
                         }
                     }
                 }
 
                 // try to extract a time period in after-string
-                var afterStr = text.Substring(e.Start + e.Length);
-                if (!string.IsNullOrEmpty(afterStr))
+                if (e.Start + e.Length <= text.Length)
                 {
-                    var TimeErs = this.config.TimePeriodExtractor.Extract(afterStr);
-                    if (TimeErs.Count > 0)
+                    var afterStr = text.Substring(e.Start + e.Length);
+                    if (!string.IsNullOrEmpty(afterStr))
                     {
-                        foreach (var tp in TimeErs)
+                        var TimeErs = this.config.TimePeriodExtractor.Extract(afterStr);
+                        if (TimeErs.Count > 0)
                         {
-                            var midStr = afterStr.Substring(0, tp.Start?? 0);
-                            if (string.IsNullOrWhiteSpace(midStr))
+                            foreach (var tp in TimeErs)
                             {
-                                ret.Add(new Token(e.Start, e.Start + e.Length + midStr.Length + tp.Length?? 0));
+                                var midStr = afterStr.Substring(0, tp.Start ?? 0);
+                                if (string.IsNullOrWhiteSpace(midStr))
+                                {
+                                    ret.Add(new Token(e.Start, e.Start + e.Length + midStr.Length + tp.Length ?? 0));
+                                }
                             }
                         }
                     }

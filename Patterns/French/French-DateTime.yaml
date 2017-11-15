@@ -423,6 +423,12 @@ LaterEarlyPeriodRegex: !simpleRegex
 WeekWithWeekDayRangeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+GeneralEndingRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+MiddlePauseRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

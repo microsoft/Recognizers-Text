@@ -419,6 +419,10 @@ LaterEarlyPeriodRegex: !nestedRegex
 WeekWithWeekDayRangeRegex: !nestedRegex
   def: \b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
   references: [NextPrefixRegex, PastPrefixRegex, WeekDayRegex]
+GeneralEndingRegex: !simpleRegex
+  def: ^\s*((\.,)|\.|,|!|\?)?\s*$
+MiddlePauseRegex: !simpleRegex
+  def: \s*(,)\s*
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
