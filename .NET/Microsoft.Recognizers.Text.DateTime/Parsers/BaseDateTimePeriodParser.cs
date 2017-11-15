@@ -577,6 +577,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                var hasSpecificTimePeriod = false;
                 if (timePeriodErs.Count > 0)
                 {
                     var TimePr = this.Config.TimePeriodParser.Parse(timePeriodErs[0]);
@@ -603,6 +604,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 endHour = periodPast.Item2.Hour;
                             }
                         }
+                        hasSpecificTimePeriod = true;
                     }
                 }
 
@@ -610,7 +612,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
-                ret.Timex = pr.TimexStr + timeStr;
+                if (!hasSpecificTimePeriod)
+                {
+                    ret.Timex = pr.TimexStr + timeStr;
+                }
+                else
+                {
+                    ret.Timex = string.Format("{0}T{1},{0}T{2},PT{3}H", pr.TimexStr, beginHour, endHour, endHour - beginHour);
+                }
 
                 ret.FutureValue =
                     new Tuple<DateObject, DateObject>(
