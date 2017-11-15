@@ -173,7 +173,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
                 }
-
                 idx++;
             }
 
@@ -211,15 +210,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        Regex pauseRegex = new Regex(Definitions.English.DateTimeDefinitions.MiddlePauseRegex);
-                        var pauseMatch = pauseRegex.Match(afterStr.Substring(0, match.Index));
+                        var pauseMatch = config.MiddlePauseRegex.Match(afterStr.Substring(0, match.Index));
 
                         if (pauseMatch.Success)
                         {
                             var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
     
-                            Regex regex = new Regex(Definitions.English.DateTimeDefinitions.GeneralEndingRegex);
-                            var endingMatch = regex.Match(suffix);
+                            var endingMatch = config.GeneralEndingRegex.Match(suffix);
                             if (endingMatch.Success)
                             {
                                 ret.Add(new Token(er.Start ?? 0, er.Start + er.Length + match.Index + match.Length ?? 0));
@@ -243,15 +240,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        Regex pauseRegex = new Regex(Definitions.English.DateTimeDefinitions.MiddlePauseRegex);
-                        var pauseMatch = pauseRegex.Match(prefixStr.Substring(match.Index + match.Length));
+                        var pauseMatch = config.MiddlePauseRegex.Match(prefixStr.Substring(match.Index + match.Length));
 
                         if (pauseMatch.Success)
                         {
                             var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
 
-                            Regex regex = new Regex(Definitions.English.DateTimeDefinitions.GeneralEndingRegex);
-                            var endingMatch = regex.Match(suffix);
+                            var endingMatch = config.GeneralEndingRegex.Match(suffix);
                             if (endingMatch.Success)
                             {
                                 ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
@@ -259,12 +254,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         }
                     }
-                    
                 }
-
             }
 
-            // check whether there is a adjacent time period string, before or after
+            // check whether there are adjacent time period strings, before or after
             foreach (var e in ret.ToArray())
             {
                 // try to extract a time period in before-string 
