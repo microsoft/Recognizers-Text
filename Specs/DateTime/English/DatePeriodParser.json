@@ -1955,11 +1955,11 @@
         "Timex": "2018",
         "FutureResolution": {
           "startDate": "2018-01-01",
-          "endDate": "2018-06-30"
+          "endDate": "2018-07-01"
         },
         "PastResolution": {
           "startDate": "2018-01-01",
-          "endDate": "2018-06-30"
+          "endDate": "2018-07-01"
         }
       }
     }
@@ -1981,11 +1981,11 @@
         "Timex": "2017-W47",
         "FutureResolution": {
           "startDate": "2017-11-13",
-          "endDate": "2017-11-15"
+          "endDate": "2017-11-16"
         },
         "PastResolution": {
           "startDate": "2017-11-13",
-          "endDate": "2017-11-15"
+          "endDate": "2017-11-16"
         }
       }
     }
@@ -2007,11 +2007,11 @@
         "Timex": "2017-12",
         "FutureResolution": {
           "startDate": "2017-12-01",
-          "endDate": "2017-12-15"
+          "endDate": "2017-12-16"
         },
         "PastResolution": {
           "startDate": "2017-12-01",
-          "endDate": "2017-12-15"
+          "endDate": "2017-12-16"
         }
       }
     }
