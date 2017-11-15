@@ -1790,4 +1790,51 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be back in 5 minutes",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 5 minutes",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07T00:05:00",
+            "type": "datetime",
+            "value": "2016-11-07 00:05:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "in 5 minutes",
+  "Debug": true,
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 5 minutes",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-11-07T00:05:00",
+            "type": "datetime",
+            "value": "2016-11-07 00:05:00"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

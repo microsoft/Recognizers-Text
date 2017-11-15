@@ -86,7 +86,7 @@ export class AgoLaterUtil {
                     value = MatchingUtil.getInIndex(beforeString, config.inConnectorRegex);
                     // for range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (RegExpUtility.getMatches(config.rangeUnitRegex, er.text).length > 0) return ret;
-                    if (value.matched && er.start && er.length && er.start > value.index) {
+                    if (value.matched && er.start && er.length && er.start >= value.index) {
                         ret.push(new Token(er.start - value.index, er.start + er.length));
                     }
                 }
@@ -357,11 +357,15 @@ export class DateUtils {
         // C#: Math.Round(4.5) == 4
         // C#: Convert.ToInt32(4.5) == 4
         // JS: Math.round(4.5) == 5 !!
-        return Math.round(Math.abs(from.getTime() - to.getTime() - 0.00001) / this.oneHour);
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * 60 * 1000);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * 60 * 1000);
+        return Math.round(Math.abs(fromEpoch - toEpoch - 0.00001) / this.oneHour);
     }
 
     static totalSeconds(from: Date, to: Date): number {
-        return Math.round(Math.abs(from.getTime() - to.getTime()) / this.oneSecond);
+        let fromEpoch = from.getTime() - (from.getTimezoneOffset() * 60 * 1000);
+        let toEpoch = to.getTime() - (to.getTimezoneOffset() * 60 * 1000);
+        return Math.round(Math.abs(fromEpoch - toEpoch) / this.oneSecond);
     }
 
     static addTime(seedDate: Date, timeToAdd: Date): Date {
@@ -418,7 +422,7 @@ export class DateUtils {
         return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
-    static minValue(): Date { 
+    static minValue(): Date {
         let date = new Date(1, 0, 1, 0, 0, 0, 0);
         date.setFullYear(1);
         return date;
