@@ -1,9 +1,0 @@
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\Microsoft.Recognizers.Resources.dll
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\Microsoft.Recognizers.Resources.pdb
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\Microsoft.Recognizers.Resources.Common.dll
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\YamlDotNet.dll
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\Microsoft.Recognizers.Resources.Common.pdb
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\bin\Debug\YamlDotNet.xml
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\obj\Debug\Microsoft.Recognizers.Resources.csprojResolveAssemblyReference.cache
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\obj\Debug\Microsoft.Recognizers.Resources.dll
-D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources\obj\Debug\Microsoft.Recognizers.Resources.pdb

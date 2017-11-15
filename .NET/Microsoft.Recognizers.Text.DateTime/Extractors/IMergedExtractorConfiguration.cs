@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
-        IEnumerable<Regex> FilterWordRegexList { get; }
+        IEnumerable<Regex> BlackList { get; }
 
         Regex AfterRegex { get; }
 

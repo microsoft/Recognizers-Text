@@ -369,9 +369,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         
                         if (earlyPrefix)
                         {
-                            endDate = InclusiveEndPeriod
-                                        ? referenceDate.This(DayOfWeek.Wednesday).AddDays(7 * swift)
-                                        : referenceDate.This(DayOfWeek.Wednesday).AddDays(7 * swift).AddDays(1);
+                            endDate = referenceDate.This(DayOfWeek.Wednesday).AddDays(7 * swift);
                         }
                         if (latePrefix)
                         {
@@ -421,9 +419,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     : DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1);
                         if (earlyPrefix)
                         {
-                            endDate = InclusiveEndPeriod
-                                    ? DateObject.MinValue.SafeCreateFromValue(year, 6, 30)
-                                    : DateObject.MinValue.SafeCreateFromValue(year, 6, 30).AddDays(1);
+                            endDate = DateObject.MinValue.SafeCreateFromValue(year, 6, 30);
                         }
                         if (latePrefix)
                         {
@@ -457,12 +453,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 1).AddMonths(1);
             if (earlyPrefix)
             {
-                futureEnd = InclusiveEndPeriod
-                    ? DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15)
-                    : DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15).AddDays(1);
-                pastEnd = InclusiveEndPeriod
-                    ? DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15)
-                    : DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15);
+                futureEnd = DateObject.MinValue.SafeCreateFromValue(futureYear, month, 15);
+                pastEnd = DateObject.MinValue.SafeCreateFromValue(pastYear, month, 15);
             }
             else if (latePrefix)
             {
