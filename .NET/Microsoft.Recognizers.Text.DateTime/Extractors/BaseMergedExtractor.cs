@@ -44,9 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddMod(ret, text);
 
             //filtering
-            if ((this.options & DateTimeOptions.Filtering) != 0)
+            if ((this.options & DateTimeOptions.Calendar) != 0)
             {
-                CheckBlackList(ret, text);
+                CheckCalendarFilterList(ret, text);
             }
 
             ret = ret.OrderBy(p => p.Start).ToList();
@@ -54,11 +54,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private void CheckBlackList(List<ExtractResult> ers, string text)
+        private void CheckCalendarFilterList(List<ExtractResult> ers, string text)
         {
             foreach (var er in ers.Reverse<ExtractResult>())
             {
-                foreach (var negRegex in this.config.BlackList)
+                foreach (var negRegex in this.config.FilterWordRegexList)
                 {
                     var match = negRegex.Match(er.Text);
                     if (match.Success)

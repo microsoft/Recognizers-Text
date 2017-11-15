@@ -8,6 +8,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         None = 0,
         SkipFromToMerge = 1,
         SplitDateAndTime = 2,
-        Filtering = 4,
+        Calendar = 4,
     }
 }

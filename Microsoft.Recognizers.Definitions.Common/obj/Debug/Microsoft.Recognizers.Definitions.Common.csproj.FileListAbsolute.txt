@@ -1,0 +1,7 @@
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\bin\Debug\Microsoft.Recognizers.Definitions.Common.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\bin\Debug\Microsoft.Recognizers.Definitions.Common.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\bin\Debug\YamlDotNet.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\bin\Debug\YamlDotNet.xml
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\obj\Debug\Microsoft.Recognizers.Definitions.Common.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\obj\Debug\Microsoft.Recognizers.Definitions.Common.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Definitions.Common\obj\Debug\Microsoft.Recognizers.Definitions.Common.csprojResolveAssemblyReference.cache

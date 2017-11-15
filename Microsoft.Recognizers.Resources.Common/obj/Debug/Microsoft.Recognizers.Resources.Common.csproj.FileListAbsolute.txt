@@ -1,0 +1,6 @@
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\bin\Debug\Microsoft.Recognizers.Resources.Common.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\bin\Debug\Microsoft.Recognizers.Resources.Common.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\bin\Debug\YamlDotNet.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\bin\Debug\YamlDotNet.xml
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\obj\Debug\Microsoft.Recognizers.Resources.Common.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Resources.Common\obj\Debug\Microsoft.Recognizers.Resources.Common.pdb

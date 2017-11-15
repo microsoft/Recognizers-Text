@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex NumberEndingPattern = new Regex(DateTimeDefinitions.NumberEndingPattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex[] BlackList =
+        public static readonly Regex[] FilterWordRegexList =
         {
         };
 
@@ -71,6 +71,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.SingleAmbiguousMonthRegex => SingleAmbiguousMonthRegex;
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
-        IEnumerable<Regex> IMergedExtractorConfiguration.BlackList => BlackList;
+        IEnumerable<Regex> IMergedExtractorConfiguration.FilterWordRegexList => FilterWordRegexList;
     }
 }

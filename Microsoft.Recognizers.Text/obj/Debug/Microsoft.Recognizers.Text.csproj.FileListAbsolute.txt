@@ -1,0 +1,5 @@
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text\bin\Debug\Microsoft.Recognizers.Text.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text\bin\Debug\Microsoft.Recognizers.Text.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text\obj\Debug\Microsoft.Recognizers.Text.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text\obj\Debug\Microsoft.Recognizers.Text.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text\obj\Debug\Microsoft.Recognizers.Text.csprojResolveAssemblyReference.cache

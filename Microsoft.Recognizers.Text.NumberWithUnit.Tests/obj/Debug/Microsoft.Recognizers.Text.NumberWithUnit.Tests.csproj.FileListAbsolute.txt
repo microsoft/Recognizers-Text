@@ -1,0 +1,15 @@
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.NumberWithUnit.Tests.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.NumberWithUnit.Tests.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.Number.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.NumberWithUnit.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\System.Collections.Immutable.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.NumberWithUnit.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.Number.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Text.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\System.Collections.Immutable.xml
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\obj\Debug\Microsoft.Recognizers.Text.NumberWithUnit.Tests.csprojResolveAssemblyReference.cache
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\obj\Debug\Microsoft.Recognizers.Text.NumberWithUnit.Tests.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\obj\Debug\Microsoft.Recognizers.Text.NumberWithUnit.Tests.pdb
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Definitions.dll
+D:\tfs\Recognizers-Text\Microsoft.Recognizers.Text.NumberWithUnit.Tests\bin\Debug\Microsoft.Recognizers.Definitions.pdb

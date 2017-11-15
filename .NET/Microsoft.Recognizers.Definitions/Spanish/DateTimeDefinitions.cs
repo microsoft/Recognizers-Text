@@ -148,6 +148,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public static readonly string EachDayRegex = $@"\s*({EachExpression})\s*d[ií]as\s*\b";
 		public static readonly string BeforeEachDayRegex = $@"({EachExpression})\s*d[ií]as(\s+a\s+las?)?\s*\b";
 		public static readonly string SetEachRegex = $@"(?<each>({EachExpression})\s*)";
+		public const string LaterEarlyPeriodRegex = @"^[.]";
+		public const string WeekWithWeekDayRangeRegex = @"^[.]";
+		public const string GeneralEndingRegex = @"^[.]";
+		public const string MiddlePauseRegex = @"^[.]";
 		public const string AgoRegex = @"\b(antes)\b";
 		public const string LaterRegex = @"\b(despu[eé]s|desde ahora)\b";
 		public const string Tomorrow = "mañana";
