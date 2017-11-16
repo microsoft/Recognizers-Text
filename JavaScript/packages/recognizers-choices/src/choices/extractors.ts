@@ -53,6 +53,8 @@ export class ChoicesExtractor implements IExtractor {
             });
         });
 
+        partialResults = partialResults.sort((a, b) => a.start - b.start);
+
         if (this.config.onlyTopMatch) {
             let topResult = partialResults.reduce((top, value) => top = top.data.score < value.data.score ? value : top, partialResults[0]);
             topResult.data.otherMatches = partialResults.filter(r => r !== topResult);

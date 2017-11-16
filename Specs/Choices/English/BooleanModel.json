@@ -37,7 +37,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+		"score": 0.4666666666666667
       }
     }
   ]
@@ -52,7 +52,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 1.0
+		"score": 0.4857142857142857
       }
     }
   ]
@@ -63,11 +63,11 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no",
+      "Text": "yes",
       "TypeName": "boolean",
       "Resolution": {
-        "value": false,
-		"score": 1.0
+        "value": true,
+		"score": 0.52
       }
     }
   ]
@@ -82,7 +82,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": false,
-		"score": 1.0
+		"score": 0.52
       }
     }
   ]
@@ -97,7 +97,7 @@
       "TypeName": "boolean",
       "Resolution": {
         "value": true,
-		"score": 1.0
+		"score": 0.55
       }
     }
   ]
