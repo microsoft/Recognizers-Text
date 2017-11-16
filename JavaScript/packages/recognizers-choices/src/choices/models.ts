@@ -32,10 +32,18 @@ export abstract class ChoicesModel implements IModel {
 export class BooleanModel extends ChoicesModel {
     public readonly modelTypeName = 'boolean';
 
-    protected getResolution(result: any): any {
-        return {
-            value: result.value,
-            score: result.data.score
+    protected getResolution(sources: any): any {
+        let results: any = {
+            value: sources.value,
+            score: sources.data.score
         }
+        if (sources.data.otherMatches) {
+            results.otherResults = sources.data.otherMatches.map(o => ({
+                text: o.text,
+                value: o.value,
+                score: o.data.score
+            }))
+        }
+        return results;
     }
 }

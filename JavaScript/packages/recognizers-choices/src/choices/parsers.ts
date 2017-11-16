@@ -15,6 +15,13 @@ export class ChoicesParser<T> implements IParser {
     parse(extResult: ExtractResult): ParseResult {
         let result = new ParseResult(extResult);
         result.value = this.config.resolutions.get(result.type);
+        if (result.data.otherMatches) {
+            result.data.otherMatches = result.data.otherMatches.map(m => {
+                let r = new ParseResult(m);
+                r.value = this.config.resolutions.get(r.type);
+                return r;
+            });
+        }
         return result;
     }
 }
