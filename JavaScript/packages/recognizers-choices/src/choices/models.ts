@@ -1,8 +1,8 @@
 import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text-base";
 
-export class BooleanModel implements IModel {
-    public readonly modelTypeName = 'boolean';
-     
+export abstract class ChoicesModel implements IModel {
+    public abstract readonly modelTypeName: string;
+
     protected readonly extractor: IExtractor;
     protected readonly parser: IParser;
 
@@ -20,9 +20,22 @@ export class BooleanModel implements IModel {
             .map(o => ({
                 start: o.start,
                 end: o.start + o.length - 1,
-                resolution: { value: o.resolutionStr },
+                resolution: this.getResolution(o),
                 text: o.text,
                 typeName: this.modelTypeName
             }));
+    }
+
+    protected abstract getResolution(data: any): any;
+}
+
+export class BooleanModel extends ChoicesModel {
+    public readonly modelTypeName = 'boolean';
+
+    protected getResolution(result: any): any {
+        return {
+            value: result.value,
+            score: result.data.score
+        }
     }
 }

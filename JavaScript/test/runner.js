@@ -1,12 +1,17 @@
 var NumberTestRunner = require('./runner-number');
 var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
 var DateTimeTestRunner = require('./runner-datetime');
+var ChoicesTestRunner = require('./runner-choices');
 
 module.exports = function (describe, specs) {
     specs.forEach(suite => {
         describe(`${suite.config.type} - ${suite.config.language} - ${suite.config.subType} -`, it => {
             suite.specs.forEach(testCase => {
                 var caseName = `"${testCase.Input}"`;
+
+                if (suite.config.type !== 'Choices') {
+                    return;
+                }
 
                 // Not Supported by Design - right now we don't care about implementing it
                 var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());
@@ -37,6 +42,8 @@ function getTestRunner(config) {
             return NumberWithUnitTestRunner(config);
         case 'DateTime':
             return DateTimeTestRunner(config);
+        case 'Choices':
+            return ChoicesTestRunner(config);
         default:
             throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
     }

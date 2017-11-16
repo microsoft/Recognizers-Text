@@ -69,8 +69,9 @@
 	},
 	"dependencies": {
 		"recognizers-text-base": "file:./packages/recognizers-base",
+		"recognizers-text-choices": "file:packages/recognizers-choices",
+		"recognizers-text-date-time": "file:./packages/recognizers-date-time",
 		"recognizers-text-number": "file:./packages/recognizers-number",
-		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
-		"recognizers-text-date-time": "file:./packages/recognizers-date-time"
+		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit"
 	}
 }

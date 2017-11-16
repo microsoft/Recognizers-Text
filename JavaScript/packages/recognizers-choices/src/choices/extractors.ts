@@ -1,4 +1,5 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-base";
+import { Constants } from "./constants";
 
 export interface IChoiceExtractorConfiguration {
     regexesMap: Map<RegExp, string>;
@@ -10,6 +11,7 @@ export interface IChoiceExtractorConfiguration {
 
 export class ChoicesExtractor implements IExtractor {
     private readonly config: IChoiceExtractorConfiguration;
+    protected extractType: string;
 
     constructor(config: IChoiceExtractorConfiguration) {
         this.config = config;
@@ -96,24 +98,26 @@ export interface IBooleanExtractorConfiguration {
     regexTrue: RegExp;
     regexFalse: RegExp;
     tokenRegex: RegExp;
+    onlyTopMatch: boolean;
 }
 
 export class BooleanExtractor extends ChoicesExtractor {
-    private static readonly booleanTrue = 'choices_true';
-    private static readonly booleanFalse = 'choices_false';
+    private static readonly booleanTrue = Constants.SYS_BOOLEAN_TRUE;
+    private static readonly booleanFalse = Constants.SYS_BOOLEAN_FALSE;
 
     constructor(config: IBooleanExtractorConfiguration) {
         let regexesMap = new Map<RegExp, string>()
-            .set(config.regexTrue, BooleanExtractor.booleanTrue)
-            .set(config.regexFalse, BooleanExtractor.booleanFalse)
-
+            .set(config.regexTrue, Constants.SYS_BOOLEAN_TRUE)
+            .set(config.regexFalse, Constants.SYS_BOOLEAN_FALSE)
+        
         let choicesConfig: IChoiceExtractorConfiguration = {
             regexesMap: regexesMap,
             tokenRegex: config.tokenRegex,
             allowPartialMatch: false,
             maxDistance: 2,
-            onlyTopMatch: true
+            onlyTopMatch: config.onlyTopMatch
         }
         super(choicesConfig);
+        this.extractType = Constants.SYS_BOOLEAN;
     }
 }
