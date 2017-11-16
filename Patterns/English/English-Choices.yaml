@@ -1,6 +1,8 @@
 ﻿---
 LangMarker: Eng
 #Boolean Recognizers
+TokenizerRegex: !simpleRegex
+  def: '[^\w\d]'
 TrueRegex: !simpleRegex
   def: \b(y(e[sp])?|sure|ok|\uD83D\uDC4D|\uD83D\uDC4C)\b
 FalseRegex: !simpleRegex

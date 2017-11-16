@@ -8,6 +8,7 @@
 
 export namespace EnglishChoices {
 	export const LangMarker = 'Eng';
+	export const TokenizerRegex = `[^\\w\\d]`;
 	export const TrueRegex = `\\b(y(e[sp])?|sure|ok|\\uD83D\\uDC4D|\\uD83D\\uDC4C)\\b`;
 	export const FalseRegex = `\\b(n(o(pe)?)?|\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)\\b`;
 }

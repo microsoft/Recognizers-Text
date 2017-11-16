@@ -13,7 +13,7 @@ export default class BooleanRecognizer extends Recognizer {
         // English models
         this.registerModel("BooleanModel", Culture.English, new BooleanModel(
             new BooleanParser(),
-            new BooleanExtractor(new RegExp(EnglishChoices.TrueRegex), new RegExp(EnglishChoices.FalseRegex))
+            new BooleanExtractor(null)
         ));
     }
 
