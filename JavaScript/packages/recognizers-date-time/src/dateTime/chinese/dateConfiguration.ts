@@ -57,18 +57,21 @@ export class ChineseDateExtractor extends BaseDateExtractor {
         this.durationExtractor = new ChineseDurationExtractor();
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
             .concat(super.basicRegexMatch(source))
             .concat(super.implicitDate(source))
-            .concat(this.durationWithBeforeAndAfter(source));
+            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected durationWithBeforeAndAfter(source: string): Array<Token> {
+    protected durationWithBeforeAndAfter(source: string, refDate: Date): Array<Token> {
         let ret = [];
-        let durEx = this.durationExtractor.extract(source);
+        let durEx = this.durationExtractor.extract(source, refDate);
         durEx.forEach(er => {
             let pos = er.start + er.length;
             if (pos < source.length) {

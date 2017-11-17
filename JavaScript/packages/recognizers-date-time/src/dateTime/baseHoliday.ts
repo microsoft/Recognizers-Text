@@ -3,12 +3,13 @@ import { IExtractor, ExtractResult, RegExpUtility, Match } from "recognizers-tex
 import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateTime } from "../resources/baseDateTime";
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface IHolidayExtractorConfiguration {
     holidayRegexes: RegExp[]
 }
 
-export class BaseHolidayExtractor implements IExtractor {
+export class BaseHolidayExtractor implements IDateTimeExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DATE
     private readonly config: IHolidayExtractorConfiguration;
 
@@ -16,7 +17,10 @@ export class BaseHolidayExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+        
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.holidayMatch(source))
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);

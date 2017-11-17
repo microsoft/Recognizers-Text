@@ -2,6 +2,7 @@ import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, StringUtility } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { Token, DateTimeResolutionResult } from "./utilities";
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface IDurationExtractorConfiguration {
     allRegex: RegExp,
@@ -15,7 +16,7 @@ export interface IDurationExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
 }
 
-export class BaseDurationExtractor implements IExtractor {
+export class BaseDurationExtractor implements IDateTimeExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DURATION;
     private readonly config: IDurationExtractorConfiguration;
     
@@ -23,7 +24,10 @@ export class BaseDurationExtractor implements IExtractor {
         this.config = config;
     }
     
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let baseTokens = this.numberWithUnit(source);
         let tokens: Array<Token> = new Array<Token>()
         .concat(baseTokens)

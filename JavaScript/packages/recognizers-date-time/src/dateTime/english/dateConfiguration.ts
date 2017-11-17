@@ -6,6 +6,7 @@ import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration, EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
 import { IDateTimeParser } from "../parsers"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -21,7 +22,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly ordinalExtractor: BaseNumberExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor() {
@@ -68,7 +69,7 @@ export class EnglishDateParserConfiguration implements IDateParserConfiguration 
     readonly ordinalExtractor: BaseNumberExtractor
     readonly integerExtractor: BaseNumberExtractor
     readonly cardinalExtractor: BaseNumberExtractor
-    readonly durationExtractor: BaseDurationExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly numberParser: BaseNumberParser
     readonly durationParser: IDateTimeParser
     readonly monthOfYear: ReadonlyMap<string, number>

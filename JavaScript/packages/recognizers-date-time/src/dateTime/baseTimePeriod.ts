@@ -3,18 +3,19 @@ import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "recogni
 import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
+import { IDateTimeExtractor } from "./baseDateTime"
 
 export interface ITimePeriodExtractorConfiguration {
     simpleCasesRegex: RegExp[];
     tillRegex: RegExp;
     timeOfDayRegex: RegExp;
-    singleTimeExtractor: BaseTimeExtractor;
+    singleTimeExtractor: IDateTimeExtractor;
     getFromTokenIndex(text: string): { matched: boolean, index: number };
     hasConnectorToken(text: string): boolean;
     getBetweenTokenIndex(text: string): { matched: boolean, index: number };
 }
 
-export class BaseTimePeriodExtractor implements IExtractor {
+export class BaseTimePeriodExtractor implements IDateTimeExtractor {
     readonly extractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
     readonly config: ITimePeriodExtractorConfiguration;
 
@@ -22,10 +23,13 @@ export class BaseTimePeriodExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
             .concat(this.matchSimpleCases(source))
-            .concat(this.mergeTwoTimePoints(source))
+            .concat(this.mergeTwoTimePoints(source, referenceDate))
             .concat(this.matchNight(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
@@ -49,9 +53,9 @@ export class BaseTimePeriodExtractor implements IExtractor {
         return ret;
     }
 
-    private mergeTwoTimePoints(text: string): Array<Token> {
+    private mergeTwoTimePoints(text: string, refDate: Date): Array<Token> {
         let ret = [];
-        let ers = this.config.singleTimeExtractor.extract(text);
+        let ers = this.config.singleTimeExtractor.extract(text, refDate);
 
         // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
         let idx = 0;
@@ -110,7 +114,7 @@ export class BaseTimePeriodExtractor implements IExtractor {
 }
 
 export interface ITimePeriodParserConfiguration {
-    timeExtractor: BaseTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
     timeParser: BaseTimeParser;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;
@@ -263,7 +267,7 @@ export class BaseTimePeriodParser implements IDateTimeParser {
 
     private mergeTwoTimePoints(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let ers = this.config.timeExtractor.extract(text);
+        let ers = this.config.timeExtractor.extract(text, referenceTime);
         let pr1: DateTimeParseResult = null;
         let pr2: DateTimeParseResult = null;
         if (ers.length !== 2) {

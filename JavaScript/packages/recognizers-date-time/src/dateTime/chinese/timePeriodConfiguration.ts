@@ -7,6 +7,7 @@ import { DateTimeResolutionResult, FormatUtil, DateUtils } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export enum TimePeriodType {
     ShortTime,
@@ -25,7 +26,7 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
 }
 
 class ChineseTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
-    timeExtractor: any;
+    timeExtractor: IDateTimeExtractor;
     timeParser: ChineseTimeParser;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;

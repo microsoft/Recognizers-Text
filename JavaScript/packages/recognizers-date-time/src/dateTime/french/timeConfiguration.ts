@@ -5,13 +5,14 @@ import { BaseDurationExtractor } from "../baseDuration";
 import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { IDateTimeUtilityConfiguration } from "../utilities";
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class FrenchTimeExtractorConfiguration implements ITimeExtractorConfiguration {
     readonly timeRegexList: RegExp[];
     readonly atRegex: RegExp;
     readonly ishRegex: RegExp;
 
-    readonly durationExtractor: IExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
 
     constructor() {
         this.atRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AtRegex, "gis");

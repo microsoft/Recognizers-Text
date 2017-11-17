@@ -3,7 +3,7 @@ import { ISetExtractorConfiguration, ISetParserConfiguration } from "../baseSet"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { BaseDateTimeExtractor, BaseDateTimeParser, IDateTimeExtractor } from "../baseDateTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
@@ -26,13 +26,13 @@ export class SpanishSetExtractorConfiguration implements ISetExtractorConfigurat
     readonly beforeEachDayRegex: RegExp;
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
-    readonly durationExtractor: BaseDurationExtractor;
-    readonly timeExtractor: BaseTimeExtractor;
-    readonly dateExtractor: BaseDateExtractor;
-    readonly dateTimeExtractor: BaseDateTimeExtractor;
-    readonly datePeriodExtractor: BaseDatePeriodExtractor;
-    readonly timePeriodExtractor: BaseTimePeriodExtractor;
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
+    readonly dateTimeExtractor: IDateTimeExtractor;
+    readonly datePeriodExtractor: IDateTimeExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
+    readonly dateTimePeriodExtractor: IDateTimeExtractor;
 
     constructor() {
         this.lastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LastDateRegex, "gis");
@@ -55,19 +55,19 @@ export class SpanishSetExtractorConfiguration implements ISetExtractorConfigurat
 }
 
 export class SpanishSetParserConfiguration implements ISetParserConfiguration {
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
-    readonly timeExtractor: BaseTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
-    readonly dateExtractor: BaseDateExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
-    readonly dateTimeExtractor: BaseDateTimeExtractor;
+    readonly dateTimeExtractor: IDateTimeExtractor;
     readonly dateTimeParser: BaseDateTimeParser;
-    readonly datePeriodExtractor: BaseDatePeriodExtractor;
+    readonly datePeriodExtractor: IDateTimeExtractor;
     readonly datePeriodParser: BaseDatePeriodParser;
-    readonly timePeriodExtractor: BaseTimePeriodExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
     readonly timePeriodParser: BaseTimePeriodParser;
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    readonly dateTimePeriodExtractor: IDateTimeExtractor;
     readonly dateTimePeriodParser: BaseDateTimePeriodParser;
     readonly unitMap: ReadonlyMap<string, string>;
     readonly eachPrefixRegex: RegExp;

@@ -6,6 +6,7 @@ import { SpanishDateExtractorConfiguration } from "./dateConfiguration";
 import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
@@ -19,9 +20,9 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly dateUnitRegex: RegExp;
     readonly inConnectorRegex: RegExp;
     readonly rangeUnitRegex: RegExp;
-    readonly datePointExtractor: BaseDateExtractor;
+    readonly datePointExtractor: IDateTimeExtractor;
     readonly integerExtractor: BaseNumberExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
     readonly connectorAndRegex: RegExp;
@@ -80,9 +81,9 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
 }
 
 export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserConfiguration {
-    readonly dateExtractor: BaseDateExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
     readonly monthFrontBetweenRegex: RegExp;
     readonly betweenRegex: RegExp;

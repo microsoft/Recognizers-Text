@@ -40,7 +40,10 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
         this.halfSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DurationHalfSuffixRegex);
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let results = new Array<ExtractResult>();
         this.extractor.extract(source).forEach(result => {
             // filter

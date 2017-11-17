@@ -66,17 +66,20 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
         this.dayOfMonthRegex = RegExpUtility.getSafeRegExp(`^\\d{1,2}号`, 'gi');
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let result: Array<ExtractResult> = new Array<ExtractResult>();
-        this.addTo(result, this.config.dateExtractor.extract(source), source);
-        this.addTo(result, this.config.timeExtractor.extract(source), source);
-        this.addTo(result, this.config.durationExtractor.extract(source), source);
-        this.addTo(result, this.config.datePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.dateTimeExtractor.extract(source), source);
-        this.addTo(result, this.config.timePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source), source);
-        this.addTo(result, this.config.setExtractor.extract(source), source);
-        this.addTo(result, this.config.holidayExtractor.extract(source), source);
+        this.addTo(result, this.config.dateExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.timeExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.durationExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.datePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.dateTimeExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.timePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.dateTimePeriodExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.setExtractor.extract(source, referenceDate), source);
+        this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
         this.addMod(result, source);
 
         result = result.sort((a, b) => a.start - b.start);

@@ -6,12 +6,13 @@ import { FrenchTimeExtractorConfiguration } from "./timeConfiguration";
 import { FrenchDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
-    readonly singleTimeExtractor: BaseTimeExtractor;
+    readonly singleTimeExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: FrenchDateTimeUtilityConfiguration;
 
     readonly fromRegex: RegExp;
@@ -51,7 +52,7 @@ export class FrenchTimePeriodExtractorConfiguration implements ITimePeriodExtrac
 }
 
 export class FrenchTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
-    readonly timeExtractor: BaseTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
     readonly pureNumberFromToRegex: RegExp;
     readonly pureNumberBetweenAndRegex: RegExp;

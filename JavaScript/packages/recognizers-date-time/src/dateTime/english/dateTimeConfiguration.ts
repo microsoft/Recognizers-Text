@@ -1,4 +1,4 @@
-import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime"
+import { IDateTimeExtractor, IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseNumberExtractor,RegExpUtility, StringUtility, BaseNumberParser } from "recognizers-text-number"
@@ -12,9 +12,9 @@ import { EnglishDateExtractorConfiguration } from "./dateConfiguration"
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration"
 
 export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
-    readonly datePointExtractor: BaseDateExtractor
-    readonly timePointExtractor: BaseTimeExtractor
-    readonly durationExtractor: BaseDurationExtractor
+    readonly datePointExtractor: IDateTimeExtractor
+    readonly timePointExtractor: IDateTimeExtractor
+    readonly durationExtractor: IDateTimeExtractor
     readonly suffixRegex: RegExp
     readonly nowRegex: RegExp
     readonly timeOfTodayAfterRegex: RegExp
@@ -58,13 +58,13 @@ export class EnglishDateTimeExtractorConfiguration implements IDateTimeExtractor
 export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     tokenBeforeDate: string;
     tokenBeforeTime: string;
-    dateExtractor: BaseDateExtractor;
-    timeExtractor: BaseTimeExtractor;
+    dateExtractor: IDateTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
     dateParser: BaseDateParser;
     timeParser: BaseTimeParser;
     cardinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
-    durationExtractor: BaseDurationExtractor;
+    durationExtractor: IDateTimeExtractor;
     durationParser: IDateTimeParser;
     nowRegex: RegExp;
     amTimeRegex: RegExp;

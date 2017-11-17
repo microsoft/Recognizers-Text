@@ -59,12 +59,13 @@ module.exports = function getDateTimeRunner(config) {
 function getExtractorTestRunner(extractor) {
     return function (t, testCase) {
         var expected = testCase.Results;
+        var referenceDateTime = getReferenceDate(testCase);
 
         if (testCase.Debug) {
             debugger;
         }
 
-        var result = extractor.extract(testCase.Input);
+        var result = extractor.extract(testCase.Input, referenceDateTime);
 
         t.is(result.length, expected.length, 'Result count');
         _.zip(result, expected).forEach(o => {
@@ -85,7 +86,7 @@ function getParserTestRunner(extractor, parser) {
             debugger;
         }
 
-        var extractResults = extractor.extract(testCase.Input);
+        var extractResults = extractor.extract(testCase.Input, referenceDateTime);
         var result = extractResults.map(o => parser.parse(o, referenceDateTime));
 
         t.is(result.length, expected.length, 'Result count');
@@ -122,7 +123,7 @@ function getMergedParserTestRunner(extractor, parser) {
             debugger;
         }
 
-        var extractResults = extractor.extract(testCase.Input);
+        var extractResults = extractor.extract(testCase.Input, referenceDateTime);
         var result = extractResults.map(o => parser.parse(o, referenceDateTime));
 
         t.is(result.length, expected.length, 'Result count');
