@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, StringMap } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -220,10 +220,10 @@ export class BaseDateParser implements IDateTimeParser {
                 innerResult = this.parseSingleNumber(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 resultValue = innerResult;
             }
         }

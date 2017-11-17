@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, StringUtility } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { Token, DateTimeResolutionResult } from "./utilities";
+import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface IDurationExtractorConfiguration {
@@ -109,10 +109,10 @@ export class BaseDurationParser implements IDateTimeParser {
                 innerResult = this.parseImplicitDuration(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DURATION, innerResult.futureValue);
-                innerResult.pastResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DURATION, innerResult.pastValue);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DURATION] = innerResult.futureValue.toString();
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DURATION] = innerResult.pastValue.toString();
                 resultValue = innerResult;
             }
         }

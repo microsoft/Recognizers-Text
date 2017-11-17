@@ -5,7 +5,7 @@ import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, DateUtils, Token, DateTimeResolutionResult } from "./utilities";
+import { FormatUtil, DateUtils, Token, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface IDateTimePeriodExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
@@ -262,12 +262,12 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 innerResult = this.parseRelativeUnit(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[1]));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[1]));
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[0]);
+                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[1]);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[0]);
+                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[1]);
                 resultValue = innerResult;
             }
         }

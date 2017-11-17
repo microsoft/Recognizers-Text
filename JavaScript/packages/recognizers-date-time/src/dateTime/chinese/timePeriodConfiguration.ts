@@ -3,7 +3,7 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
@@ -67,14 +67,12 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         let parseResult = this.parseTimePeriod(extra, referenceTime);
 
         if (parseResult.success) {
-            parseResult.futureResolution = new Map<string, string>([
-                [TimeTypeConstants.START_TIME, FormatUtil.formatTime(parseResult.futureValue.item1)],
-                [TimeTypeConstants.END_TIME, FormatUtil.formatTime(parseResult.futureValue.item2)]
-            ]);
-            parseResult.pastResolution = new Map<string, string>([
-                [TimeTypeConstants.START_TIME, FormatUtil.formatTime(parseResult.pastValue.item1)],
-                [TimeTypeConstants.END_TIME, FormatUtil.formatTime(parseResult.pastValue.item2)]
-            ]);
+            parseResult.futureResolution = {};
+            parseResult.futureResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.futureValue.item1);
+            parseResult.futureResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.futureValue.item2);
+            parseResult.pastResolution = {};
+            parseResult.pastResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.pastValue.item1);
+            parseResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.pastValue.item2);
         }
 
         let result = new DateTimeParseResult(er);

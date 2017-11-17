@@ -10,7 +10,7 @@ import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDa
 import { ChineseDurationExtractor } from "./durationConfiguration";
 import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateUtils, FormatUtil, DateTimeResolutionResult } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateUtils, FormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 
@@ -38,8 +38,8 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
         this.nightRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NightRegex);
         this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfTodayRegex);
     }
-            
-    isConnectorToken(source: string): boolean { 
+
+    isConnectorToken(source: string): boolean {
         return StringUtility.isNullOrEmpty(source)
             || source === ','
             || RegExpUtility.isMatch(this.prepositionRegex, source)
@@ -211,12 +211,10 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
                 innerResult = this.parseTimeOfToday(er.text, referenceTime);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.futureValue)]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.pastValue)]
-                ]);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue);
                 value = innerResult;
             }
         }

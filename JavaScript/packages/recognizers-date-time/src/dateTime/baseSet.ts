@@ -8,7 +8,7 @@ import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod"
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "./baseTimePeriod"
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod"
-import { Token, DateTimeResolutionResult } from "./utilities";
+import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface ISetExtractorConfiguration {
     lastRegex: RegExp;
@@ -204,13 +204,11 @@ export class BaseSetParser implements IDateTimeParser {
             }
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.futureValue]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.pastValue]
-                ]);
-                        
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.SET] = innerResult.futureValue;
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.SET] = innerResult.pastValue;
+
                 value = innerResult;
             }
         }

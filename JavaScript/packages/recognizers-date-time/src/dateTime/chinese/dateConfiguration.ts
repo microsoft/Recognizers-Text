@@ -4,7 +4,7 @@ import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtracto
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, FormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities";
+import { Token, FormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 
@@ -208,11 +208,10 @@ export class ChineseDateParser extends BaseDateParser {
                 innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
-
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 innerResult.isLunar = this.parseLunarCalendar(source);
                 resultValue = innerResult;
             }

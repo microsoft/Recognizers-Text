@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { IDateTimeExtractor } from "./baseDateTime";
 
@@ -93,16 +93,10 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
             if (er.type === this.ParserName) {
                 let innerResult = this.internalParse(er.text, referenceTime);
                 if (innerResult.success) {
-                    innerResult.futureResolution = new Map<string, string>(
-                        [
-                            [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.futureValue)]
-                        ]);
-
-                    innerResult.pastResolution = new Map<string, string>(
-                        [
-                            [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.pastValue)]
-                        ]);
-                    
+                    innerResult.futureResolution = {};
+                    innerResult.futureResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.futureValue);
+                    innerResult.pastResolution = {};
+                    innerResult.pastResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.pastValue);
                     value = innerResult;
                 }
             }

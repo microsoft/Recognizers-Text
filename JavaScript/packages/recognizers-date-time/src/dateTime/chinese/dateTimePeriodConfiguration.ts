@@ -11,7 +11,7 @@ import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./timePeriodConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
-import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil } from "../utilities";
+import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil, StringMap } from "../utilities";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeExtractor } from "../baseDateTime";
@@ -398,12 +398,12 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
                 innerResult = this.parseNumberWithUnit(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[1]));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[1]));
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[0]);
+                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[1]);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[0]);
+                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[1]);
                 resultValue = innerResult;
             }
         }

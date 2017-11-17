@@ -5,7 +5,7 @@ import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuratio
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
-import { DateTimeResolutionResult } from "../utilities";
+import { DateTimeResolutionResult, StringMap } from "../utilities";
 
 export enum DurationType {
     WithNumber
@@ -129,8 +129,10 @@ export class ChineseDurationParser extends BaseDurationParser {
             innerResult.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${numberStr}${unitStr.charAt(0)}`;
             innerResult.futureValue = Number.parseFloat(numberStr) * this.config.unitValueMap.get(unitStr);
             innerResult.pastValue = Number.parseFloat(numberStr) * this.config.unitValueMap.get(unitStr);
-            innerResult.futureResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.futureValue]])
-            innerResult.pastResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.pastValue]])
+            innerResult.futureResolution = {};
+            innerResult.futureResolution[TimeTypeConstants.DURATION] = innerResult.futureValue.toString();
+            innerResult.pastResolution = {};
+            innerResult.pastResolution[TimeTypeConstants.DURATION] = innerResult.pastValue.toString();
             innerResult.success = true;
 
             resultValue = innerResult;

@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, BaseNumberExtractor, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateExtractor, BaseDateParser } from "./baseDate"
@@ -273,15 +273,17 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
-                    innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue[0])
-                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue[1]);
-                    innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue[0])
-                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue[1]);
+
+                    innerResult.futureResolution = {};
+                    innerResult.futureResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.futureValue[0]);
+                    innerResult.futureResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.futureValue[1]);
+                    innerResult.pastResolution = {};
+                    innerResult.pastResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.pastValue[0]);
+                    innerResult.pastResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.pastValue[1]);
+
                 } else {
-                    innerResult.futureResolution = new Map<string, string>();
-                    innerResult.pastResolution = new Map<string, string>();
+                    innerResult.futureResolution = {};
+                    innerResult.pastResolution = {};
                 }
                 resultValue = innerResult;
             }

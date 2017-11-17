@@ -4,7 +4,7 @@ import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils }
 import { BaseTimeParser } from "../baseTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
-import { DateTimeResolutionResult, FormatUtil, DateUtils } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
 export enum TimeType {
@@ -58,12 +58,10 @@ export class ChineseTimeParser extends BaseTimeParser {
         let parseResult = this.packTimeResult(extra, timeResult, referenceTime);
 
         if (parseResult.success) {
-            parseResult.futureResolution = new Map<string, string>([
-                [TimeTypeConstants.TIME, FormatUtil.formatTime(parseResult.futureValue)]
-            ]);
-            parseResult.pastResolution = new Map<string, string>([
-                [TimeTypeConstants.TIME, FormatUtil.formatTime(parseResult.pastValue)]
-            ]);
+            parseResult.futureResolution = {};
+            parseResult.futureResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(parseResult.futureValue);
+            parseResult.pastResolution = {};
+            parseResult.pastResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(parseResult.pastValue);
         }
 
         let result = new DateTimeParseResult(er);

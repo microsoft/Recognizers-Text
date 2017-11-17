@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility, BaseNumberExtractor } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, DateUtils, DateTimeResolutionResult, Token } from "./utilities"
+import { FormatUtil, DateUtils, DateTimeResolutionResult, Token, StringMap } from "./utilities"
 import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod"
@@ -389,11 +389,11 @@ export class BaseMergedParser implements IDateTimeParser {
         return results;
     }
 
-    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): Map<string, any> {
+    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean): { [s: string]: Array<StringMap>; } {
         if (!slot) return null;
 
         let result = new Map<string, any>();
-        let resolutions = new Array<Map<string, string>>();
+        let resolutions = new Array<StringMap>();
 
         let type = slot.type;
         let outputType = this.determineDateTimeType(type, hasBefore, hasAfter, hasSince);
@@ -419,13 +419,13 @@ export class BaseMergedParser implements IDateTimeParser {
         let future = this.generateFromResolution(type, futureResolution, mod);
         let past = this.generateFromResolution(type, pastResolution, mod);
 
-        let futureValues = Array.from(future.values()).sort();
-        let pastValues = Array.from(past.values()).sort();
+        let futureValues = Array.from(this.getValues(future)).sort();
+        let pastValues = Array.from(this.getValues(past)).sort();
         if (isEqual(futureValues, pastValues)) {
-            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
+            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
         } else {
-            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
-            if (future.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            if (futureValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
         }
 
         if (comment && comment === 'ampm') {
@@ -438,36 +438,42 @@ export class BaseMergedParser implements IDateTimeParser {
         }
 
         result.forEach((value, key) => {
-            if (value instanceof Map) {
-                let newValues = new Map<string, string>();
+            if (this.isObject(value)) {
+                // is "StringMap"
+                let newValues = {};
 
                 this.addResolutionFields(newValues, Constants.TimexKey, timex);
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
                 this.addResolutionFields(newValues, Constants.IsLunarKey, isLunar ? String(isLunar) : "");
 
-                value.forEach((innerValue, innerKey) => {
-                    newValues.set(innerKey, innerValue);
+                Object.keys(value).forEach((innerKey) => {
+                    newValues[innerKey] = value[innerKey];
                 });
+
                 resolutions.push(newValues);
             }
         });
 
-        if (past.size === 0 && future.size === 0) {
-            resolutions.push(new Map<string, string>()
-                .set('timex', timex)
-                .set('type', outputType)
-                .set('value', 'not resolved'));
+        if (Object.keys(past).length === 0 && Object.keys(future).length === 0) {
+            let o = {};
+            o['timex'] = timex;
+            o['type'] = outputType;
+            o['value'] = 'not resolved';
+            resolutions.push(o);
         }
-        return new Map<string, any>().set('values', resolutions);
+        return {
+            values: resolutions
+        };
     }
 
-    protected addResolutionFieldsAny( dic:Map<string, any>,  key:string,  value:any)
-    {
-        if (value instanceof String)
-        {
-            if (!StringUtility.isNullOrEmpty(value as string))
-            {
+    protected isObject(o: any) {
+        return (!!o) && (o.constructor === Object);
+    }
+
+    protected addResolutionFieldsAny(dic: Map<string, any>, key: string, value: any) {
+        if (value instanceof String) {
+            if (!StringUtility.isNullOrEmpty(value as string)) {
                 dic.set(key, value);
             }
         }
@@ -476,37 +482,42 @@ export class BaseMergedParser implements IDateTimeParser {
         }
     }
 
-    protected addResolutionFields(dic:Map<string, string> ,  key:string,  value:string)
-    {
-        if (!StringUtility.isNullOrEmpty(value))
-        {
-            dic.set(key, value);
+    protected addResolutionFields(dic: StringMap, key: string, value: string) {
+        if (!StringUtility.isNullOrEmpty(value)) {
+            dic[key] = value;
         }
     }
 
-    protected generateFromResolution(type: string, resolutions: Map<string, string>, mod: string): Map<string, string> {
-        let result = new Map<string, string>();
+    protected generateFromResolution(type: string, resolutions: StringMap, mod: string): StringMap {
+        let result = {};
         switch (type) {
             case Constants.SYS_DATETIME_DATETIME:
                 this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.DATETIME, mod, result);
                 break;
+
             case Constants.SYS_DATETIME_TIME:
                 this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.TIME, mod, result);
                 break;
+
             case Constants.SYS_DATETIME_DATE:
                 this.addSingleDateTimeToResolution(resolutions, TimeTypeConstants.DATE, mod, result);
                 break;
+
             case Constants.SYS_DATETIME_DURATION:
-                if (resolutions.has(TimeTypeConstants.DURATION)) {
-                    result.set(TimeTypeConstants.VALUE, resolutions.get(TimeTypeConstants.DURATION));
+                if (resolutions.hasOwnProperty(TimeTypeConstants.DURATION)) {
+                    result[TimeTypeConstants.VALUE] = resolutions[TimeTypeConstants.DURATION];
                 }
+
                 break;
+
             case Constants.SYS_DATETIME_TIMEPERIOD:
                 this.addPeriodToResolution(resolutions, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, result);
                 break;
+
             case Constants.SYS_DATETIME_DATEPERIOD:
                 this.addPeriodToResolution(resolutions, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, result);
                 break;
+
             case Constants.SYS_DATETIME_DATETIMEPERIOD:
                 this.addPeriodToResolution(resolutions, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, result);
                 break;
@@ -514,13 +525,13 @@ export class BaseMergedParser implements IDateTimeParser {
         return result;
     }
 
-    private addSingleDateTimeToResolution(resolutions: Map<string, string>, type: string, mod: string, result: Map<string, string>) {
+    private addSingleDateTimeToResolution(resolutions: StringMap, type: string, mod: string, result: StringMap) {
         let key = TimeTypeConstants.VALUE;
-        let value = resolutions.get(type);
+        let value = resolutions[type];
         if (!value || this.dateMinValue === value || this.dateTimeMinValue === value) return;
 
         if (!StringUtility.isNullOrEmpty(mod)) {
-            if (mod === TimeTypeConstants.beforeMod){
+            if (mod === TimeTypeConstants.beforeMod) {
                 key = TimeTypeConstants.END;
             } else if (mod === TimeTypeConstants.afterMod) {
                 key = TimeTypeConstants.START;
@@ -528,70 +539,84 @@ export class BaseMergedParser implements IDateTimeParser {
                 key = TimeTypeConstants.START;
             }
         }
-        result.set(key, value);
+
+        result[key] = value;
     }
 
-    private addPeriodToResolution(resolutions: Map<string, string>, startType: string, endType: string, mod: string, result: Map<string, string>) {
-        let start = resolutions.get(startType);
-        let end = resolutions.get(endType);
+    private addPeriodToResolution(resolutions: StringMap, startType: string, endType: string, mod: string, result: StringMap) {
+        let start = resolutions[startType];
+        let end = resolutions[endType];
         if (!StringUtility.isNullOrEmpty(mod)) {
             if (mod === TimeTypeConstants.beforeMod) {
-                result.set(TimeTypeConstants.END, start);
+                result[TimeTypeConstants.END] = start;
                 return;
             }
+
             if (mod === TimeTypeConstants.afterMod) {
-                result.set(TimeTypeConstants.START, end);
+                result[TimeTypeConstants.START] = end;
                 return;
             }
+
             if (mod === TimeTypeConstants.sinceMod) {
-                result.set(TimeTypeConstants.START, start);
+                result[TimeTypeConstants.START] = start;
                 return;
             }
         }
+
         if (StringUtility.isNullOrEmpty(start) || StringUtility.isNullOrEmpty(end)) return;
 
-        result.set(TimeTypeConstants.START, start);
-        result.set(TimeTypeConstants.END, end);
+        result[TimeTypeConstants.START] = start;
+        result[TimeTypeConstants.END] = end;
+    }
+
+    protected getValues(obj: any): Array<any> {
+        return Object.keys(obj).map(key => obj[key]);
     }
 
     protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {
         if (!valuesMap.has(keyName)) return;
 
-        let resolution: Map<string, any> = valuesMap.get(keyName);
+        let resolution: StringMap = valuesMap.get(keyName);
         if (!valuesMap.has('timex')) return;
 
         let timex = valuesMap.get('timex');
         valuesMap.delete(keyName);
         valuesMap.set(keyName + 'Am', resolution);
 
-        let resolutionPm = new Map<string, string>();
+        let resolutionPm: StringMap = {};
         switch (valuesMap.get('type')) {
             case Constants.SYS_DATETIME_TIME:
-                resolutionPm.set(TimeTypeConstants.VALUE, FormatUtil.toPm(resolution.get(TimeTypeConstants.VALUE)));
-                resolutionPm.set('timex', FormatUtil.toPm(timex));
+                resolutionPm[TimeTypeConstants.VALUE] = FormatUtil.toPm(resolution[TimeTypeConstants.VALUE]);
+                resolutionPm['timex'] = FormatUtil.toPm(timex);
                 break;
+
             case Constants.SYS_DATETIME_DATETIME:
-                let splitValue = resolution.get(TimeTypeConstants.VALUE).split(' ');
-                resolutionPm.set(TimeTypeConstants.VALUE, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
-                resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
+                let splitValue = resolution[TimeTypeConstants.VALUE].split(' ');
+                resolutionPm[TimeTypeConstants.VALUE] = `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`;
+                resolutionPm['timex'] = FormatUtil.allStringToPm(timex);
                 break;
+
             case Constants.SYS_DATETIME_TIMEPERIOD:
-                if (resolution.has(TimeTypeConstants.START)) resolutionPm.set(TimeTypeConstants.START, FormatUtil.toPm(resolution.get(TimeTypeConstants.START)));
-                if (resolution.has(TimeTypeConstants.END)) resolutionPm.set(TimeTypeConstants.END, FormatUtil.toPm(resolution.get(TimeTypeConstants.END)));
-                resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
+                if (resolution.hasOwnProperty(TimeTypeConstants.START)) resolutionPm[TimeTypeConstants.START] = FormatUtil.toPm(resolution[TimeTypeConstants.START]);
+                if (resolution.hasOwnProperty(TimeTypeConstants.END)) resolutionPm[TimeTypeConstants.END] = FormatUtil.toPm(resolution[TimeTypeConstants.END]);
+                resolutionPm['timex'] = FormatUtil.allStringToPm(timex);
                 break;
+
             case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                if (resolution.has(TimeTypeConstants.START)) {
-                    let splitValue = resolution.get(TimeTypeConstants.START).split(' ');
-                    resolutionPm.set(TimeTypeConstants.START, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
+                if (resolution.hasOwnProperty(TimeTypeConstants.START)) {
+                    let splitValue = resolution[TimeTypeConstants.START].split(' ');
+                    resolutionPm[TimeTypeConstants.START] = `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`;
                 }
-                if (resolution.has(TimeTypeConstants.END)) {
-                    let splitValue = resolution.get(TimeTypeConstants.END).split(' ');
-                    resolutionPm.set(TimeTypeConstants.END, `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`);
+
+                if (resolution.hasOwnProperty(TimeTypeConstants.END)) {
+                    let splitValue = resolution[TimeTypeConstants.END].split(' ');
+                    resolutionPm[TimeTypeConstants.END] = `${splitValue[0]} ${FormatUtil.toPm(splitValue[1])}`;
                 }
-                resolutionPm.set('timex', FormatUtil.allStringToPm(timex));
+
+                resolutionPm['timex'] = FormatUtil.allStringToPm(timex);
                 break;
         }
+
         valuesMap.set(keyName + 'Pm', resolutionPm);
     }
 }

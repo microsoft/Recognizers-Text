@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, Match } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, DayOfWeek, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseDateTime } from "../resources/baseDateTime";
 import { IDateTimeExtractor } from "./baseDateTime";
@@ -63,12 +63,10 @@ export class BaseHolidayParser implements IDateTimeParser {
             let innerResult = this.parseHolidayRegexMatch(er.text, referenceDate);
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue)]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue)]
-                ]);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 value = innerResult;
             }
         }

@@ -13,7 +13,7 @@ import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfi
 import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
 class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
@@ -156,13 +156,10 @@ export class ChineseSetParser extends BaseSetParser {
                 innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.futureValue]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.pastValue]
-                ]);
-                        
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.SET] = innerResult.futureValue;
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.SET] = innerResult.pastValue;
                 value = innerResult;
             }
         }
