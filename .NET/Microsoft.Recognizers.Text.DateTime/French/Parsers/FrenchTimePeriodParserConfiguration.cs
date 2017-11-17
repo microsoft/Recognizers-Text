@@ -12,11 +12,17 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser TimeParser { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
+
+        public Regex GeneralEndingRegex { get; }
+
+        public Regex TillRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -25,10 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo; 
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd; 
-            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex; 
+            TimeOfDayRegex = FrenchTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = FrenchTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = FrenchTimePeriodExtractorConfiguration.TillRegex;
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }
