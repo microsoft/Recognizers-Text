@@ -179,6 +179,10 @@ export namespace FrenchDateTime {
 	export const WeekDayAndDayOfMothRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
 	export const RestOfDateRegex = `\\b(Reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
 	export const RestOfDateTimeRegex = `\\b(Reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<unit>jour)\\b`;
+	export const LaterEarlyPeriodRegex = `^[.]`;
+	export const WeekWithWeekDayRangeRegex = `^[.]`;
+	export const GeneralEndingRegex = `^[.]`;
+	export const MiddlePauseRegex = `^[.]`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["annees", "Y"],["annee", "Y"],["ans", "Y"],["mois", "MON"],["semaines", "W"],["semaine", "W"],["journees", "D"],["journee", "D"],["jour", "D"],["jours", "D"],["heures", "H"],["heure", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["secondes", "S"],["seconde", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["annees", 31536000],["annee", 31536000],["l'annees", 31536000],["l'annee", 31536000],["ans", 31536000],["mois", 2592000],["semaines", 604800],["semaine", 604800],["journees", 86400],["journee", 86400],["jour", 86400],["jours", 86400],["heures", 3600],["heure", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["secondes", 1],["seconde", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["printemps", "SP"],["été", "SU"],["automne", "FA"],["hiver", "WI"]]);
