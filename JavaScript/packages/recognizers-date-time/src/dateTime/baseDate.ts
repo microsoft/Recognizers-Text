@@ -1,7 +1,7 @@
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -37,11 +37,11 @@ export class BaseDateExtractor implements IDateTimeExtractor {
         if (!refDate) refDate = new Date();
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
-            .concat(this.basicRegexMatch(source))
-            .concat(this.implicitDate(source))
-            .concat(this.numberWithMonth(source, referenceDate))
-            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
+        let tokens: Array<Token> = new Array<Token>();
+        tokens = tokens.concat(this.basicRegexMatch(source));
+        tokens = tokens.concat(this.implicitDate(source));
+        tokens = tokens.concat(this.numberWithMonth(source, referenceDate));
+        tokens = tokens.concat(this.durationWithBeforeAndAfter(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -103,13 +103,13 @@ export class BaseDateExtractor implements IDateTimeExtractor {
 
                     // get week of day for the ordinal number which is regarded as a date of reference month
                     let date = DateUtils.safeCreateFromMinValue(year, month, num);
-                    let numWeekDayStr = date.getDay().toString().toLowerCase();
+                    let numWeekDayStr = DayOfWeek[date.getDay()].toString().toLowerCase();
 
                     // get week day from text directly, compare it with the weekday generated above
                     // to see whether they refer to a same week day
-                    var extractedWeekDayStr = match.groups("weekday").value.toString().toLowerCase();
+                    let extractedWeekDayStr = match.groups("weekday").value.toString().toLowerCase();
                     if (date !== DateUtils.minValue() &&
-                        this.config.dayOfWeek[numWeekDayStr] == this.config.dayOfWeek[extractedWeekDayStr]) {
+                        this.config.dayOfWeek.get(numWeekDayStr) == this.config.dayOfWeek.get(extractedWeekDayStr)) {
                         ret.push(new Token(match.index, result.start + result.length));
                         return;
                     }

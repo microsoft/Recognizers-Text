@@ -73,16 +73,16 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         extractResults.forEach(extractResult => {
             if (extractResult.type === Constants.SYS_DATETIME_TIME
                 || extractResult.type === Constants.SYS_DATETIME_DATETIME) {
-                var stringAfter = text.substring(extractResult.start + extractResult.length);
-                var match = RegExpUtility.getMatches(this.config.numberEndingPattern, stringAfter);
+                let stringAfter = text.substring(extractResult.start + extractResult.length);
+                let match = RegExpUtility.getMatches(this.config.numberEndingPattern, stringAfter);
                 if (match != null && match.length) {
-                    var newTime = match[0].groups("newTime");
-                    var numRes = this.config.integerExtractor.extract(newTime.toString());
+                    let newTime = match[0].groups("newTime");
+                    let numRes = this.config.integerExtractor.extract(newTime.value);
                     if (numRes.length == 0) {
                         return;
                     }
 
-                    var startPosition = extractResult.start + extractResult.length + newTime.index;
+                    let startPosition = extractResult.start + extractResult.length + newTime.index;
                     tokens.push(new Token(startPosition, startPosition + newTime.length));
                 }
             }
