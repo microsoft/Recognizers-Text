@@ -47,7 +47,7 @@ export class ChineseTimeParser extends BaseTimeParser {
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
         if (!referenceTime) referenceTime = new Date();
-        
+
         let extra: DateTimeExtra<TimeType> = er.data;
         if (!extra) {
             let innerResult = this.innerExtractor.extract(er.text, referenceTime).pop();
@@ -91,7 +91,7 @@ export class ChineseTimeParser extends BaseTimeParser {
 
         return new TimeResult(all / 60, all % 60, second);
     }
-    
+
     private handleChinese(extra: DateTimeExtra<TimeType>): TimeResult {
         let hour = this.matchToValue(extra.namedEntity('hour').value);
         let quarter = this.matchToValue(extra.namedEntity('quarter').value);
@@ -103,7 +103,7 @@ export class ChineseTimeParser extends BaseTimeParser {
 
         return new TimeResult(hour, minute, second);
     }
-    
+
     private handleDigit(extra: DateTimeExtra<TimeType>): TimeResult {
         return new TimeResult(
             this.matchToValue(extra.namedEntity('hour').value),
@@ -142,7 +142,7 @@ export class ChineseTimeParser extends BaseTimeParser {
         if (hour === 24) {
             hour = 0;
         }
-        
+
         result.futureValue = DateUtils.safeCreateFromMinValue(year, month, day, hour, min, sec);
         result.pastValue = DateUtils.safeCreateFromMinValue(year, month, day, hour, min, sec);
         result.timex = timex;

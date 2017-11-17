@@ -247,7 +247,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
             ret.timexStr = value === null ? "" : value.timex,

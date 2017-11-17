@@ -114,7 +114,7 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
 
             return ret;
         }
-        
+
         internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
             let innerResult = this.parseBasicRegexMatch(text, referenceTime);
             return innerResult;

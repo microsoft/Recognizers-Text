@@ -58,7 +58,7 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
         if (!referenceTime) referenceTime = new Date();
-        
+
         let extra: DateTimeExtra<TimePeriodType> = er.data;
         if (!extra) {
             return null;
@@ -87,7 +87,7 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
     private parseTimePeriod(extra: DateTimeExtra<TimePeriodType>, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        
+
         let leftEntity = extra.namedEntity('left');
         let leftResult = extra.dataType === TimePeriodType.FullTime
             ? this.getParseTimeResult(leftEntity, referenceTime)

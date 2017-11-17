@@ -31,11 +31,11 @@ export interface ISetExtractorConfiguration {
 export class BaseSetExtractor implements IDateTimeExtractor {
     protected readonly extractorName = Constants.SYS_DATETIME_SET
     protected readonly config: ISetExtractorConfiguration;
-    
+
     constructor(config: ISetExtractorConfiguration) {
         this.config = config;
     }
-    
+
     extract(source: string, refDate: Date): Array<ExtractResult> {
         if (!refDate) refDate = new Date();
         let referenceDate = refDate;
@@ -54,7 +54,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
-    
+
     protected matchEachUnit(source: string): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.eachUnitRegex, source).forEach(match => {
@@ -62,7 +62,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         });
         return ret;
     }
-    
+
     protected matchPeriodic(source: string): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
@@ -70,7 +70,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         });
         return ret;
     }
-    
+
     protected matchEachDuration(source: string, refDate: Date): Array<Token> {
         let ret = [];
         this.config.durationExtractor.extract(source, refDate).forEach(er => {
@@ -83,7 +83,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         });
         return ret;
     }
-    
+
     protected timeEveryday(source: string, refDate: Date): Array<Token> {
         let ret = [];
         this.config.timeExtractor.extract(source, refDate).forEach(er => {
@@ -103,7 +103,7 @@ export class BaseSetExtractor implements IDateTimeExtractor {
         });
         return ret;
     }
-    
+
     private matchEach(extractor: IDateTimeExtractor, source: string, refDate: Date): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.setEachRegex, source).forEach(match => {
@@ -159,11 +159,11 @@ export interface ISetParserConfiguration {
 export class BaseSetParser implements IDateTimeParser {
     public static readonly ParserName = Constants.SYS_DATETIME_SET;
     protected readonly config: ISetParserConfiguration;
-    
+
     constructor(configuration: ISetParserConfiguration) {
         this.config = configuration;
     }
-    
+
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) referenceDate = new Date();
         let value = null;
@@ -172,37 +172,37 @@ export class BaseSetParser implements IDateTimeParser {
             if (!innerResult.success) {
                 innerResult = this.parseEachDuration(er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parserTimeEveryday(er.text, referenceDate);
             }
-            
+
             // NOTE: Please do not change the order of following function
             // datetimeperiod>dateperiod>timeperiod>datetime>date>time
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.dateTimePeriodExtractor, this.config.dateTimePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.datePeriodExtractor, this.config.datePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.timePeriodExtractor, this.config.timePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
                 innerResult = this.parseEach(this.config.timeExtractor, this.config.timeParser, er.text, referenceDate);
             }
-            
+
             if (innerResult.success) {
                 innerResult.futureResolution = new Map<string, string>([
                     [TimeTypeConstants.SET, innerResult.futureValue]
@@ -214,22 +214,22 @@ export class BaseSetParser implements IDateTimeParser {
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er);
         ret.value = value,
         ret.timexStr = value === null ? "" : value.timex,
         ret.resolutionStr = ""
-        
+
         return ret;
     }
-            
+
     protected parseEachDuration(text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let ers = this.config.durationExtractor.extract(text, refDate);
         if (ers.length !== 1 || text.substring(ers[0].start + ers[0].length || 0)) {
             return ret;
         }
-        
+
         let beforeStr = text.substring(0, ers[0].start || 0);
         let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
         if (matches.length) {
@@ -239,10 +239,10 @@ export class BaseSetParser implements IDateTimeParser {
             ret.success = true;
             return ret;
         }
-        
+
         return ret;
     }
-            
+
     protected parseEachUnit(text: string): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         // handle "daily", "weekly"
@@ -252,14 +252,14 @@ export class BaseSetParser implements IDateTimeParser {
             if (!getMatchedDailyTimex.matched) {
                 return ret;
             }
-            
+
             ret.timex = getMatchedDailyTimex.timex;
             ret.futureValue = ret.pastValue = "Set: " + ret.timex;
             ret.success = true;
-            
+
             return ret;
         }
-        
+
         // handle "each month"
         matches = RegExpUtility.getMatches(this.config.eachUnitRegex, text);
         if (matches.length && matches[0].length === text.length) {
@@ -273,24 +273,24 @@ export class BaseSetParser implements IDateTimeParser {
                 if (!StringUtility.isNullOrEmpty(matches[0].groups('other').value)) {
                     getMatchedUnitTimex.timex = getMatchedUnitTimex.timex.replace('1', '2');
                 }
-                
+
                 ret.timex = getMatchedUnitTimex.timex;
                 ret.futureValue = ret.pastValue = "Set: " + ret.timex;
                 ret.success = true;
                 return ret;
             }
         }
-        
+
         return ret;
     }
-            
+
     protected parserTimeEveryday(text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let ers = this.config.timeExtractor.extract(text, refDate);
         if (ers.length !== 1) {
             return ret;
         }
-        
+
         let afterStr = text.replace(ers[0].text, "");
         let matches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
         if (matches.length) {
@@ -300,10 +300,10 @@ export class BaseSetParser implements IDateTimeParser {
             ret.success = true;
             return ret;
         }
-        
+
         return ret;
     }
-            
+
     protected parseEach(extractor: IDateTimeExtractor, parser: IDateTimeParser, text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let success = false;

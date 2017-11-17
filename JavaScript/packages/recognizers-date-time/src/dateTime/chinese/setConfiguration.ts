@@ -101,7 +101,7 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     readonly eachDayRegex: RegExp;
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
-    
+
     constructor() {
         this.dateExtractor = new ChineseDateExtractor();
         this.timeExtractor = new ChineseTimeExtractor();
@@ -166,35 +166,35 @@ export class ChineseSetParser extends BaseSetParser {
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er);
         ret.value = value,
         ret.timexStr = value === null ? "" : value.timex,
         ret.resolutionStr = ""
-        
+
         return ret;
     }
-            
+
     protected parseEachUnit(text: string): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        
+
         // handle "each month"
         let match = RegExpUtility.getMatches(this.config.eachUnitRegex, text).pop();
         if (!match || match.length !== text.length) return ret;
-        
+
         let sourceUnit = match.groups("unit").value;
         if (StringUtility.isNullOrEmpty(sourceUnit) || !this.config.unitMap.has(sourceUnit)) return ret;
-        
+
         let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
         if (!getMatchedUnitTimex.matched) return ret;
 
         ret.timex = getMatchedUnitTimex.timex;
-        ret.futureValue = "Set: " + ret.timex; 
+        ret.futureValue = "Set: " + ret.timex;
         ret.pastValue = "Set: " + ret.timex;
         ret.success = true;
         return ret;
     }
-            
+
     protected parserTimeEveryday(text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = this.config.timeExtractor.extract(text, refDate);
@@ -213,7 +213,7 @@ export class ChineseSetParser extends BaseSetParser {
 
         return result;
     }
-            
+
     protected parseEach(extractor: IDateTimeExtractor, parser: IDateTimeParser, text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let ers = extractor.extract(text, refDate);

@@ -59,7 +59,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
 
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
-    
+
     constructor(options: DateTimeOptions) {
         let config = new ChineseMergedExtractorConfiguration();
         super(config, options);
@@ -137,11 +137,11 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                     return false;
                 }
             }
-            
+
             if (RegExpUtility.isMatch(this.dayOfMonthRegex, value.text)) {
                 return false;
             }
-            
+
             return true;
         });
     }
@@ -165,7 +165,7 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
         this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
-        
+
         this.dateParser = new ChineseDateParser();
         this.holidayParser = new ChineseHolidayParser();
         this.timeParser = new ChineseTimeParser();

@@ -220,12 +220,13 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
             ret.timexStr = value === null ? "" : value.timex,
             ret.resolutionStr = ""
         };
+
         return ret;
     }
 
@@ -269,6 +270,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
         if (timeStr.endsWith("ampm")) {
             timeStr = timeStr.substring(0, timeStr.length - 4);
         }
+
         timeStr = "T" + FormatUtil.toString(hour, 2) + timeStr.substring(3);
         ret.timex = pr1.timexStr + timeStr;
 
@@ -277,6 +279,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
             && !RegExpUtility.getMatches(this.config.amTimeRegex, text).length && val.comment) {
             ret.comment = "ampm";
         }
+
         ret.futureValue = new Date(futureDate.getFullYear(), futureDate.getMonth(), futureDate.getDate(), hour, min, sec);
         ret.pastValue = new Date(pastDate.getFullYear(), pastDate.getMonth(), pastDate.getDate(), hour, min, sec);
         ret.success = true;

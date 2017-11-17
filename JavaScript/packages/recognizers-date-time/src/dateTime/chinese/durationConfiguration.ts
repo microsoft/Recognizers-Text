@@ -19,7 +19,7 @@ class DurationExtractorConfiguration extends ChineseNumberWithUnitExtractorConfi
 
     constructor() {
         super(new CultureInfo(Culture.Chinese));
-        
+
         this.extractType = Constants.SYS_DATETIME_DURATION;
         this.suffixList = ChineseDateTime.DurationSuffixList;
         this.prefixList = new Map<string, string>();
@@ -61,7 +61,7 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
 
             results.push(result);
         });
-        
+
         return results;
     }
 }
@@ -100,7 +100,7 @@ export class ChineseDurationParser extends BaseDurationParser {
         super(config);
         this.internalParser = new NumberWithUnitParser(new DurationParserConfiguration());
     }
-    
+
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) referenceDate = new Date();
         let resultValue;
@@ -132,14 +132,15 @@ export class ChineseDurationParser extends BaseDurationParser {
             innerResult.futureResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.futureValue]])
             innerResult.pastResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.pastValue]])
             innerResult.success = true;
-            
+
             resultValue = innerResult;
         }
+
         let result = new DateTimeParseResult(extractorResult);
         result.value = resultValue;
         result.timexStr = resultValue ? resultValue.timex : '';
         result.resolutionStr = '';
-        
+
         return result;
     }
 }

@@ -8,7 +8,7 @@ import { Constants, TimeTypeConstants } from "../constants";
 
 export class ChineseHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
     readonly holidayRegexes: RegExp[]
-            
+
     constructor() {
         this.holidayRegexes = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.HolidayRegexList1),

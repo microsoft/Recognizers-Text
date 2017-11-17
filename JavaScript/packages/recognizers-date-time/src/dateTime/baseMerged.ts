@@ -57,7 +57,8 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         this.addTo(result, this.config.dateTimePeriodExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.setExtractor.extract(source, referenceDate), source);
         this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
-        //this should be at the end since if need the extractor to determine the previous text contains time or not
+
+        // this should be at the end since if need the extractor to determine the previous text contains time or not
         this.addTo(result, this.numberEndingRegexMatch(source, result), source);
 
         this.addMod(result, source);
@@ -78,7 +79,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
                 if (match != null && match.length) {
                     let newTime = match[0].groups("newTime");
                     let numRes = this.config.integerExtractor.extract(newTime.value);
-                    if (numRes.length == 0) {
+                    if (numRes.length === 0) {
                         return;
                     }
 
@@ -306,13 +307,11 @@ export class BaseMergedParser implements IDateTimeParser {
             pr.value = val;
         }
 
-        if ((this.options & DateTimeOptions.SplitDateAndTime)===DateTimeOptions.SplitDateAndTime
-             && pr.value && pr.value.subDateTimeEntities != null)
-        {
+        if ((this.options & DateTimeOptions.SplitDateAndTime) === DateTimeOptions.SplitDateAndTime
+            && pr.value && pr.value.subDateTimeEntities != null) {
             pr.value = this.dateTimeResolutionForSplit(pr);
         }
-        else
-        {
+        else {
             pr = this.setParseResult(pr, hasBefore, hasAfter, hasSince);
         }
 
@@ -472,8 +471,7 @@ export class BaseMergedParser implements IDateTimeParser {
                 dic.set(key, value);
             }
         }
-        else
-        {
+        else {
             dic.set(key, value);
         }
     }

@@ -148,8 +148,8 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
             if (er.start && er.length) {
                 let beforeStr = source.substring(0, er.start);
                 tokens = tokens
-                .concat(this.getTokenForRegexMatching(beforeStr, this.config.weekOfRegex, er))
-                .concat(this.getTokenForRegexMatching(beforeStr, this.config.monthOfRegex, er))
+                    .concat(this.getTokenForRegexMatching(beforeStr, this.config.weekOfRegex, er))
+                    .concat(this.getTokenForRegexMatching(beforeStr, this.config.monthOfRegex, er))
             }
         });
         return tokens;
@@ -344,7 +344,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let noYear = false;
 
         let match = this.getMatchSimpleCase(source);
-        
+
         if (!match || match.index !== 0 || match.length !== source.length) return result;
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
@@ -494,10 +494,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let ers = this.config.dateExtractor.extract(trimmedSource, referenceDate);
         if (!ers || ers.length < 2) {
             ers = this.config.dateExtractor.extract(this.config.tokenBeforeDate + trimmedSource, referenceDate)
-            .map(er => {
-                er.start -= this.config.tokenBeforeDate.length;
-                return er;
-            });
+                .map(er => {
+                    er.start -= this.config.tokenBeforeDate.length;
+                    return er;
+                });
             if (!ers || ers.length < 2) return result;
         }
         let prs = ers.map(er => this.config.dateParser.parse(er, referenceDate)).filter(pr => pr);
@@ -650,7 +650,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let year = referenceDate.getFullYear();
         let noYear = false;
         let cardinal = this.config.isLastCardinal(cardinalStr) ? 5
-        : this.config.cardinalMap.get(cardinalStr);
+            : this.config.cardinalMap.get(cardinalStr);
         if (StringUtility.isNullOrEmpty(monthStr)) {
             let swift = this.config.getSwiftDayOrMonth(source);
             let tempDate = new Date(referenceDate);
@@ -686,8 +686,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             }
         }
         result.timex = noYear ?
-        `XXXX-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}` :
-        `${FormatUtil.toString(year, 4)}-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}`;
+            `XXXX-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}` :
+            `${FormatUtil.toString(year, 4)}-${FormatUtil.toString(month + 1, 2)}-W${FormatUtil.toString(cardinal, 2)}`;
         result.futureValue = [futureDate, DateUtils.addDays(futureDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.pastValue = [pastDate, DateUtils.addDays(pastDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.success = true;

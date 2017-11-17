@@ -255,10 +255,10 @@ export class ChineseDateParser extends BaseDateParser {
             let monthStr = match.groups('thismonth').value;
             let dayStr = match.groups('day').value;
             day = this.config.dayOfMonth.get(dayStr);
-            
+
             let hasYear = !StringUtility.isNullOrEmpty(yearStr);
             let hasMonth = !StringUtility.isNullOrEmpty(monthStr);
-            
+
             if (hasMonth) {
                 if (RegExpUtility.isMatch(this.tokenNextRegex, monthStr)) {
                     month++;
