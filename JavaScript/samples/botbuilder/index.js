@@ -9,7 +9,6 @@ require('dotenv-extended').load();
 var _ = require('lodash');
 var builder = require('botbuilder');
 var restify = require('restify');
-var helpers = require('./helpers');
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -154,12 +153,7 @@ function validateAndExtract(input) {
     var results = dateModel.parse(input);
 
     // Log the results
-    results.forEach((r, ix) => {
-        console.log(`DateModel.result[${ix}]:`, r);
-        if (r.resolution && r.resolution.get) {
-            console.log(`DateModel.result[${ix}].resolution:`, r.resolution.get('values').map(helpers.toObject))
-        }
-    });
+    console.log('dateModel.parse() results', results);
 
     // Check there are valid results
     if (results.length && results[0].typeName.startsWith('datetimeV2')) {
@@ -169,7 +163,7 @@ function validateAndExtract(input) {
 
         var first = results[0];
         var subType = first.typeName.split('.')[1];
-        var resolutionValues = first.resolution && first.resolution.get("values");
+        var resolutionValues = first.resolution && first.resolution.values;
 
         if (!resolutionValues) {
             // no resolution values
@@ -180,7 +174,7 @@ function validateAndExtract(input) {
 
         if (subType.includes('date') && !subType.includes('range')) {
             // a date (or date & time) or multiple
-            var moments = resolutionValues.map(m => new Date(m.get('value')));
+            var moments = resolutionValues.map(m => new Date(m.value));
             var moment = moments.find(isFuture) || moments[0];              // Look for the first future moment; default to first resolution
             if (isFuture(moment)) {
                 // a future moment, valid!
@@ -198,8 +192,8 @@ function validateAndExtract(input) {
             }
         } else if (subType.includes('date') && subType.includes('range')) {
             // range
-            var from = new Date(resolutionValues[0].get('start'));
-            var to = new Date(resolutionValues[0].get('end'));
+            var from = new Date(resolutionValues[0].start);
+            var to = new Date(resolutionValues[0].end);
             if (!isNaN(from.getTime()) && !isNaN(to.getTime())) {
                 if (isFuture(from) && isFuture(to)) {
                     // future
