@@ -8,7 +8,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4",
     "recognizers-text": "file:../../packages/recognizers-text"
   }
 }

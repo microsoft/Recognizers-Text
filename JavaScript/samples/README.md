@@ -222,7 +222,7 @@ var bot = new builder.UniversalBot(connector, [
 
 Asking the user for a specific delivery time may require special parsing, like extracting both date and time from the user input, or even obtain a range of dates and times.
 
-The [`ask-date` dialog](./botbuilder/index.js#L121-L134) does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these avaliable return values using the DateTime Recognizer:
+The [`ask-date` dialog](./botbuilder/index.js#L118-L132) does exactly that. It will prompt the user for a possible delivery time, parse the user's input and extract, at least, one of these avaliable return values using the DateTime Recognizer:
 
  - date
  - daterange
@@ -245,6 +245,9 @@ function validateAndExtract(input) {
 
     var results = dateModel.parse(input);
 
+    // Log the results
+    console.log('dateModel.parse() results', results);
+
     // Check there are valid results
     if (results.length && results[0].typeName.startsWith('datetimeV2')) {
         // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/JavaScript/recognizers-date-time/src/dateTime/constants.ts#L2-L9)
@@ -253,7 +256,7 @@ function validateAndExtract(input) {
 
         var first = results[0];
         var subType = first.typeName.split('.')[1];
-        var resolutionValues = first.resolution && first.resolution.get("values");
+        var resolutionValues = first.resolution && first.resolution.values;
 
         if (!resolutionValues) {
             // no resolution values
@@ -264,7 +267,7 @@ function validateAndExtract(input) {
 
         if (subType.includes('date') && !subType.includes('range')) {
             // a date (or date & time) or multiple
-            var moments = resolutionValues.map(m => new Date(m.get('value')));
+            var moments = resolutionValues.map(m => new Date(m.value));
             var moment = moments.find(isFuture) || moments[0];              // Look for the first future moment; default to first resolution
             if (isFuture(moment)) {
                 // a future moment, valid!
@@ -282,8 +285,8 @@ function validateAndExtract(input) {
             }
         } else if (subType.includes('date') && subType.includes('range')) {
             // range
-            var from = new Date(resolutionValues[0].get('start'));
-            var to = new Date(resolutionValues[0].get('end'));
+            var from = new Date(resolutionValues[0].start);
+            var to = new Date(resolutionValues[0].end);
             if (!isNaN(from.getTime()) && !isNaN(to.getTime())) {
                 if (isFuture(from) && isFuture(to)) {
                     // future
@@ -315,7 +318,7 @@ function isFuture(date) {
 }
 ````
 
-We use the helper function from the [`ask-date` custom prompt dialog](./botbuilder/index.js#L120-L134):
+We use the helper function from the [`ask-date` custom prompt dialog](./botbuilder/index.js#L118-L132):
 
 ````JavaScript
 var DateValidationErros = {

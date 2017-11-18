@@ -22,7 +22,7 @@ import { ChineseHolidayExtractorConfiguration, ChineseHolidayParser } from "./ho
 import { DateTimeOptions } from "../dateTimeRecognizer";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
-import { FormatUtil, DateUtils, DateTimeResolutionResult } from "../utilities";
+import { FormatUtil, DateUtils, DateTimeResolutionResult, StringMap } from "../utilities";
 import isEqual = require('lodash.isequal');
 
 class ChineseMergedExtractorConfiguration implements IMergedExtractorConfiguration {
@@ -59,7 +59,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
 
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
-    
+
     constructor(options: DateTimeOptions) {
         let config = new ChineseMergedExtractorConfiguration();
         super(config, options);
@@ -137,11 +137,11 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
                     return false;
                 }
             }
-            
+
             if (RegExpUtility.isMatch(this.dayOfMonthRegex, value.text)) {
                 return false;
             }
-            
+
             return true;
         });
     }
@@ -165,7 +165,7 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
         this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
         this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
         this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
-        
+
         this.dateParser = new ChineseDateParser();
         this.holidayParser = new ChineseHolidayParser();
         this.timeParser = new ChineseTimeParser();
@@ -338,11 +338,11 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         return pr;
     }
 
-    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): Map<string, any> {
+    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): { [s: string]: Array<StringMap>; } {
         if (!slot) return null;
 
         let result = new Map<string, any>();
-        let resolutions = new Array<Map<string, string>>();
+        let resolutions = new Array<StringMap>();
 
         let type = slot.type;
         let outputType = this.determineDateTimeType(type, hasBefore, hasAfter);
@@ -356,10 +356,10 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let comment = value.comment;
 
         // the following should added to res first since the ResolveAmPm is using these fields
-        this.addResolutionFields(result, Constants.TimexKey, timex);
-        this.addResolutionFields(result, Constants.CommentKey, comment);
-        this.addResolutionFields(result, Constants.ModKey, mod);
-        this.addResolutionFields(result, Constants.TypeKey, outputType);
+        this.addResolutionFieldsAny(result, Constants.TimexKey, timex);
+        this.addResolutionFieldsAny(result, Constants.CommentKey, comment);
+        this.addResolutionFieldsAny(result, Constants.ModKey, mod);
+        this.addResolutionFieldsAny(result, Constants.TypeKey, outputType);
 
         let futureResolution = value.futureResolution;
         let pastResolution = value.pastResolution;
@@ -367,13 +367,13 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let future = this.generateFromResolution(type, futureResolution, mod);
         let past = this.generateFromResolution(type, pastResolution, mod);
 
-        let futureValues = Array.from(future.values()).sort();
-        let pastValues = Array.from(past.values()).sort();
+        let futureValues = Array.from(this.getValues(future)).sort();
+        let pastValues = Array.from(this.getValues(past)).sort();
         if (isEqual(futureValues, pastValues)) {
-            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
+            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
         } else {
-            if (past.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
-            if (future.size > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
+            if (pastValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToPastKey, past);
+            if (futureValues.length > 0) this.addResolutionFieldsAny(result, Constants.ResolveToFutureKey, future);
         }
 
         if (comment && comment === 'ampm') {
@@ -390,27 +390,32 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         }
 
         result.forEach((value, key) => {
-            if (value instanceof Map) {
-                let newValues = new Map<string, string>();
+            if (this.isObject(value)) {
+                // is "StringMap"
+                let newValues = {};
 
                 this.addResolutionFields(newValues, Constants.TimexKey, timex);
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
 
-                value.forEach((innerValue, innerKey) => {
-                    newValues.set(innerKey, innerValue);
+                Object.keys(value).forEach((innerKey) => {
+                    newValues[innerKey] = value[innerKey];
                 });
+
                 resolutions.push(newValues);
             }
         });
 
-        if (past.size === 0 && future.size === 0) {
-            resolutions.push(new Map<string, string>()
-                .set('timex', timex)
-                .set('type', outputType)
-                .set('value', 'not resolved'));
+        if (Object.keys(past).length === 0 && Object.keys(future).length === 0) {
+            let o = {};
+            o['timex'] = timex;
+            o['type'] = outputType;
+            o['value'] = 'not resolved';
+            resolutions.push(o);
         }
-        return new Map<string, any>().set('values', resolutions);
+        return {
+            values: resolutions
+        };
     }
 
     protected determineDateTimeType(type: string, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): string {

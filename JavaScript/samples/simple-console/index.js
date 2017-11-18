@@ -1,5 +1,4 @@
 var Recognizers = require('recognizers-text');
-var helpers = require('./helpers');
 
 // Use English for the Recognizers culture
 const defaultCulture = Recognizers.Culture.English;
@@ -25,15 +24,7 @@ function runRecognition() {
                 // Retrieve all the parsers and call 'parse' to recognize all the values from the user input
                 var results = getModels().map(function (model) {
                         // Recognize values from the user input
-                        var result = model.parse(input);
-
-                        // Format resolution for DateTimes
-                        result.forEach(r => {
-                            if (!r.resolution || !r.resolution.get) return;
-                            r.resolution = r.resolution.get('values').map(helpers.toObject);
-                        });
-
-                        return result;
+                        return model.parse(input);
                     });
 
                 results = [].concat.apply([], results);

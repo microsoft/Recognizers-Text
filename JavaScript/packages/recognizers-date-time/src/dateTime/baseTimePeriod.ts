@@ -1,6 +1,6 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { IDateTimeExtractor } from "./baseDateTime"
@@ -146,30 +146,12 @@ export class BaseTimePeriodParser implements IDateTimeParser {
                 innerResult = this.parseNight(er.text, referenceTime);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>(
-                    [
-                        [
-                            TimeTypeConstants.START_TIME,
-                            FormatUtil.formatTime(innerResult.futureValue.item1)
-                        ],
-                        [
-                            TimeTypeConstants.END_TIME,
-                            FormatUtil.formatTime(innerResult.futureValue.item2)
-                        ]
-                    ]);
-
-                innerResult.pastResolution = new Map<string, string>(
-                    [
-                        [
-                            TimeTypeConstants.START_TIME,
-                            FormatUtil.formatTime(innerResult.pastValue.item1)
-                        ],
-                        [
-                            TimeTypeConstants.END_TIME,
-                            FormatUtil.formatTime(innerResult.pastValue.item2)
-                        ]
-                    ]);
-
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(innerResult.futureValue.item1);
+                innerResult.futureResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(innerResult.futureValue.item2);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(innerResult.pastValue.item1);
+                innerResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(innerResult.pastValue.item2);
                 value = innerResult;
             }
         }

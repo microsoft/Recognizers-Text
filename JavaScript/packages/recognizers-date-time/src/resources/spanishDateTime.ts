@@ -139,6 +139,10 @@ export namespace SpanishDateTime {
 	export const EachDayRegex = `\\s*(${EachExpression})\\s*d[ií]as\\s*\\b`;
 	export const BeforeEachDayRegex = `(${EachExpression})\\s*d[ií]as(\\s+a\\s+las?)?\\s*\\b`;
 	export const SetEachRegex = `(?<each>(${EachExpression})\\s*)`;
+	export const LaterEarlyPeriodRegex = `^[.]`;
+	export const WeekWithWeekDayRangeRegex = `^[.]`;
+	export const GeneralEndingRegex = `^[.]`;
+	export const MiddlePauseRegex = `^[.]`;
 	export const AgoRegex = `\\b(antes)\\b`;
 	export const LaterRegex = `\\b(despu[eé]s|desde ahora)\\b`;
 	export const Tomorrow = 'mañana';

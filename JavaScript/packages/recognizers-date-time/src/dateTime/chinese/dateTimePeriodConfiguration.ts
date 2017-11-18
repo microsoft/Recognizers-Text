@@ -11,7 +11,7 @@ import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseTimePeriodExtractor, ChineseTimePeriodParser } from "./timePeriodConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
-import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil } from "../utilities";
+import { DateUtils, Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, FormatUtil, StringMap } from "../utilities";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeExtractor } from "../baseDateTime";
@@ -36,7 +36,7 @@ class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtr
     readonly rangeConnectorRegex: RegExp
     readonly relativeTimeUnitRegex: RegExp
     readonly restOfDateTimeRegex: RegExp
-    
+
     getFromTokenIndex(source: string) {
         let result = { matched: false, index: -1 };
         if (source.endsWith("从")) {
@@ -157,7 +157,7 @@ export class ChineseDateTimePeriodExtractor extends BaseDateTimePeriodExtractor 
             innerMarks.push(ersTime[j++]);
         }
         innerMarks = innerMarks.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
-        
+
         let idx = 0;
         while (idx < innerMarks.length - 1) {
             let currentMark = innerMarks[idx];
@@ -398,12 +398,12 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
                 innerResult = this.parseNumberWithUnit(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.futureValue[1]));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[0]))
-                    .set(TimeTypeConstants.END_DATETIME, FormatUtil.formatDateTime(innerResult.pastValue[1]));
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[0]);
+                innerResult.futureResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue[1]);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.START_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[0]);
+                innerResult.pastResolution[TimeTypeConstants.END_DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue[1]);
                 resultValue = innerResult;
             }
         }
@@ -424,7 +424,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
 
         let prDate = this.config.dateParser.parse(erDate, referenceTime);
         let prTimePeriod = this.config.timePeriodParser.parse(erTimePeriod, referenceTime);
-        
+
         let split = prTimePeriod.timexStr.split('T');
         if (split.length !== 4) {
             return result;
@@ -481,7 +481,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             }
         }
         if (!prs || !prs.begin.value || !prs.end.value) return result;
-        
+
         let futureBegin: Date = prs.begin.value.futureValue;
         let futureEnd: Date = prs.end.value.futureValue;
         let pastBegin: Date = prs.begin.value.pastValue;
@@ -532,7 +532,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         let leftTimex = hasFuzzyTimex ? prs.begin.timexStr : FormatUtil.luisDateTime(leftTime);
         let rightTimex = hasFuzzyTimex ? prs.end.timexStr : FormatUtil.luisDateTime(rightTime);
         let hoursBetween = DateUtils.totalHours(rightTime, leftTime);
-        
+
         result.timex = `(${leftTimex},${rightTimex},PT${hoursBetween}H)`;
         result.success = true;
 
@@ -566,7 +566,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
                 DateUtils.safeCreateFromMinValue(date.getFullYear(), date.getMonth(), date.getDate(), values.endHour, values.endMin, values.endMin)
             ];
             result.success = true;
-            return result; 
+            return result;
         }
 
         let beginHour = 0;
@@ -578,7 +578,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         if (RegExpUtility.isMatch(this.TMORegex, source)) {
             timeStr = 'TMO';
             beginHour = 8;
-            endHour = 12;    
+            endHour = 12;
         } else if (RegExpUtility.isMatch(this.TAFRegex, source)) {
             timeStr = 'TAF';
             beginHour = 12;
@@ -636,7 +636,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         }
 
         let beforeStr = text.substr(0, er.start).trim().toLowerCase();
-        
+
         return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, pr.resolutionStr, pr.value, referenceTime);
     }
 
@@ -647,7 +647,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
 
         let sourceUnit = match.groups('unit').value.toLowerCase();
         let beforeStr = text.substr(0, match.index).trim().toLowerCase();
-        
+
         return this.parseCommonDurationWithUnit(beforeStr, sourceUnit, '1', 1, referenceTime);
     }
 
@@ -657,7 +657,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         if (!this.config.unitMap.has(sourceUnit)) return result;
 
         let unitStr = this.config.unitMap.get(sourceUnit);
-        
+
         let pastMatch = RegExpUtility.getMatches(this.config.pastRegex, beforeStr).pop();
         let hasPast = pastMatch && pastMatch.length === beforeStr.length;
 
@@ -684,7 +684,7 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
             break;
             default: return result;
         }
-        
+
         let beginTimex = `${FormatUtil.luisDateFromDate(beginDate)}T${FormatUtil.luisTimeFromDate(beginDate)}`;
         let endTimex = `${FormatUtil.luisDateFromDate(endDate)}T${FormatUtil.luisTimeFromDate(endDate)}`;
         result.timex = `(${beginTimex},${endTimex},PT${numStr}${unitStr.charAt(0)})`;

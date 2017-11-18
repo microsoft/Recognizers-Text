@@ -287,14 +287,18 @@ export class FormatUtil {
     }
 }
 
+export class StringMap {
+    [key: string]: string;
+}
+
 export class DateTimeResolutionResult {
     success: boolean;
     timex: string;
     isLunar: boolean;
     mod: string;
     comment: string;
-    futureResolution: Map<string, string>;
-    pastResolution: Map<string, string>;
+    futureResolution: StringMap;
+    pastResolution: StringMap;
     futureValue: any;
     pastValue: any;
     subDateTimeEntities: Array<any>;
@@ -470,5 +474,4 @@ export class DateUtils {
             && minute >= 0 && minute < 60
             && second >= 0 && minute < 60;
     }
-
 }

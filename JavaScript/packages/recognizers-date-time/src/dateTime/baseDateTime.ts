@@ -4,7 +4,7 @@ import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult } from "./utilities";
+import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface IDateTimeExtractor {
     extract(input: string, refDate: Date): Array<ExtractResult>
@@ -238,16 +238,14 @@ export class BaseDateTimeParser implements IDateTimeParser {
             }
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.futureValue)]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.pastValue)]
-                ]);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue);
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
             ret.timexStr = value === null ? "" : value.timex,
