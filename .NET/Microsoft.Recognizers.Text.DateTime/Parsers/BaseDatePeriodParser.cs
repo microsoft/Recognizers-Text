@@ -359,7 +359,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);
 
                         ret.Timex = monday.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                                         .ToString("D2");
 
                         var beginDate = referenceDate.This(DayOfWeek.Monday).AddDays(7 * swift);

@@ -209,7 +209,7 @@
       "Text": "cette semaine",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46",
+        "Timex": "2016-W45",
         "FutureResolution": {
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
@@ -834,7 +834,7 @@
       "Text": "cette semaine",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46",
+        "Timex": "2016-W45",
         "FutureResolution": {
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
