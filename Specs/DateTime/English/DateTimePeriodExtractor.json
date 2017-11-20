@@ -900,7 +900,7 @@
 }
 ,
 {
-  "Input": "Can you schedule us 2015-09-23 1:30p.m. to 4",
+  "Input": "Can you schedule us 2015-09-23 1:30p.m. to 4.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -908,14 +908,6 @@
       "Text": "2015-09-23 1:30p.m. to 4",
       "Type": "datetimerange"
     }
-  ]
-}
-,
-{
-  "Input": "let's send these at 2015-09-23 1:30p.m. to 4 people",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
   ]
 }
 ]

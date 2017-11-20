@@ -91,13 +91,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var idx = 0;
             while (idx < ers.Count - 1)
             {
-                if (ers[idx].Type == "number" && ers[idx + 1].Type == "number")
-                {
-                    // cases like "2 to 4" is invalid, should be ignored.
-                    idx++;
-                    continue;
-                }
-
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
 

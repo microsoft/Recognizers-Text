@@ -231,18 +231,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 var tillMatch = this.config.TillRegex.Match(middleStr);
                                 if (tillMatch.Success)
                                 {
-                                    pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
-                                    var pr1PastTime = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
-                                    if (pr1PastTime.Hour >= 12)
-                                    {
-                                        num.Text = $"{num.Text} p.m.";
-                                    }
-                                    else
-                                    {
-                                        num.Text = $"{num.Text} a.m.";
-                                    }
                                     num.Data = null;
-                                    num.Type = "time";
+                                    num.Type = Constants.SYS_DATETIME_TIME;
                                     ers.Add(num);
                                     endingTimePoint = true;
                                     break;
@@ -258,15 +248,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!endingTimePoint)
-            {
-                pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
-                pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
-            }
-            else
-            {
-                pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
-            }
+            pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
+            pr2 = this.config.TimeParser.Parse(ers[1], referenceTime);
 
             if (pr1.Value == null || pr2.Value == null)
             {
@@ -284,6 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
+                pr2.TimexStr = $"T{endTime.Hour}";
             }
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";
