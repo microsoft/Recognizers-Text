@@ -193,11 +193,59 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
+            var endingTimePoint = false;
 
             var ers = this.config.TimeExtractor.Extract(text, referenceTime);
             if (ers.Count != 2)
             {
-                return ret;
+                if (ers.Count == 1)
+                {
+                    var numErs = this.config.IntegerExtractor.Extract(text);
+
+                    foreach (var num in numErs)
+                    {
+                        if (num.Start > ers[0].Start + ers[0].Length)
+                        {
+                            // check if it is a ending number
+                            var endingNumber = false;
+                            if (num.Start + num.Length == text.Length)
+                            {
+                                endingNumber = true;
+                            }
+                            else
+                            {
+                                var afterStr = text.Substring(num.Start + num.Length?? 0);
+                                var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
+                                if (endingMatch.Success)
+                                {
+                                    endingNumber = true;
+                                }
+                            }
+
+                            // check if the middle string between the time point and the ending number is a connect string.
+                            if (endingNumber)
+                            {
+                                var midStrBegin = ers[0].Start + ers[0].Length;
+                                var midStrEnd = num.Start - midStrBegin;
+                                var middleStr = text.Substring(midStrBegin?? 0, midStrEnd?? 0);
+                                var tillMatch = this.config.TillRegex.Match(middleStr);
+                                if (tillMatch.Success)
+                                {
+                                    num.Data = null;
+                                    num.Type = Constants.SYS_DATETIME_TIME;
+                                    ers.Add(num);
+                                    endingTimePoint = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (!endingTimePoint)
+                {
+                    return ret;
+                }
             }
 
             pr1 = this.config.TimeParser.Parse(ers[0], referenceTime);
@@ -219,6 +267,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
+                pr2.TimexStr = $"T{endTime.Hour}";
             }
 
             ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";

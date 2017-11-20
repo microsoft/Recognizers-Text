@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -52,21 +53,29 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex GeneralEndingRegex =
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IEnumerable<Regex> SimpleCasesRegex => new[] { PureNumFromTo, PureNumBetweenAnd };
 
         Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
+
+        Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

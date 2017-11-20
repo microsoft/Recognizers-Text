@@ -481,4 +481,45 @@
     }
   ]
 }
+,
+{
+  "Input": "set up meeting 1p.m. to 4",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1p.m. to 4",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting 1p.m. to 4.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1p.m. to 4",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting 1:30p.m. to 4!",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1:30p.m. to 4",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting 1:30p.m. to 4 people",
+  "NotSupportedByDesign": "python",
+  "Results": [
+  ]
+}
 ]

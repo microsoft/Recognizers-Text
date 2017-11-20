@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -24,20 +25,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this according to coresponding English regex
         public static readonly Regex TimeOfDayRegex = new Regex(@"", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex GeneralEndingRegex =
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishTimePeriodExtractorConfiguration()
         {
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IEnumerable<Regex> SimpleCasesRegex => new Regex[] { PureNumFromTo, PureNumBetweenAnd };
 
-        Regex ITimePeriodExtractorConfiguration.TillRegex => SpanishDatePeriodExtractorConfiguration.TillRegex;
+        Regex ITimePeriodExtractorConfiguration.TillRegex => TillRegex;
 
         Regex ITimePeriodExtractorConfiguration.TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
+
+        Regex ITimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -11,11 +12,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser TimeParser { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex PureNumberBetweenAndRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
+
+        public Regex GeneralEndingRegex { get; }
+
+        public Regex TillRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -24,10 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             TimeExtractor = config.TimeExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             TimeParser = config.TimeParser;
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
             TimeOfDayRegex = SpanishTimePeriodExtractorConfiguration.TimeOfDayRegex;
+            GeneralEndingRegex = SpanishTimePeriodExtractorConfiguration.GeneralEndingRegex;
+            TillRegex = SpanishTimePeriodExtractorConfiguration.TillRegex;
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
         }

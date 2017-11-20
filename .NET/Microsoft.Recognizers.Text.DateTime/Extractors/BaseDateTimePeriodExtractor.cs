@@ -176,6 +176,31 @@ namespace Microsoft.Recognizers.Text.DateTime
                 idx++;
             }
 
+            // regarding the pharse as-- {Date} {TimePeriod}
+            // like "2015-9-23 1pm to 4"
+            er1 = this.config.SingleDateExtractor.Extract(text, reference);
+            er2 = this.config.TimePeriodExtractor.Extract(text, reference);
+            er1.AddRange(er2);
+            var points = er1.OrderBy(x => x.Start).ToList();
+            for (idx = 0; idx < points.Count-1; idx++)
+            {
+                if (points[idx].Type == points[idx + 1].Type)
+                {
+                    continue;
+                }
+                var midBegin = points[idx].Start + points[idx].Length ?? 0;
+                var midEnd = points[idx + 1].Start?? 0;
+                if (midEnd - midBegin > 0)
+                {
+                    var midStr = text.Substring(midBegin, midEnd-midBegin);
+                    if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
+                    {
+                        ret.Add(new Token(points[idx].Start ?? 0, points[idx + 1].Start + points[idx + 1].Length ?? 0));
+                        idx += 2;
+                    }
+                }
+            }
+
             return ret;
         }
 
