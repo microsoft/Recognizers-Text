@@ -485,7 +485,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
                         ret.Timex = monday.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                                         .ToString("D2");
                         ret.FutureValue =
                             ret.PastValue =
@@ -502,7 +502,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                         var endDate = referenceDate.This(DayOfWeek.Sunday).AddDays(7*swift);
 
                         ret.Timex = beginDate.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstDay, DayOfWeek.Monday)
+                                    Cal.GetWeekOfYear(beginDate, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
                                         .ToString("D2") + "-WE";
 
                         ret.FutureValue =

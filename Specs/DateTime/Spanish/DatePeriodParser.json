@@ -228,13 +228,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "esta semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46",
+        "Timex": "2016-W45",
         "FutureResolution": {
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
@@ -728,13 +729,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "fin de semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -753,13 +755,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "este fin de semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
