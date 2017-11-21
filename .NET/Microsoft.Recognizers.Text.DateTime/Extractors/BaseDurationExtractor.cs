@@ -12,9 +12,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private readonly IDurationExtractorConfiguration config;
 
-        public BaseDurationExtractor(IDurationExtractorConfiguration config)
+        private readonly bool merge;
+
+        public BaseDurationExtractor(IDurationExtractorConfiguration config, bool merge = true)
         {
             this.config = config;
+            this.merge = merge;
         }
 
         public List<ExtractResult> Extract(string text)
@@ -29,7 +32,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(NumberWithUnitAndSuffix(text, NumberWithUnit(text)));
             tokens.AddRange(ImplicitDuration(text));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            if (this.merge)
+            {
+                rets = MergedDuration(rets, text);
+            }
+
+            return rets;
         }
         
         // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
@@ -101,6 +111,87 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Add(new Token(match.Index, match.Index + match.Length));
             }
             return ret;
-        } 
+        }
+
+        private List<ExtractResult> MergedDuration(List<ExtractResult> tokens, string text)
+        {
+            if (tokens.Count <= 1)
+            {
+                return tokens;
+            }
+
+            var UnitMap = this.config.UnitMap;
+            var UnitValueMap = this.config.UnitValueMap;
+            var unitRegex = this.config.DurationUnitRegex;
+            List<ExtractResult> ret = new List<ExtractResult>();
+
+            var idx_i = 0;
+            while (idx_i < tokens.Count)
+            {
+                string curUnit = null;
+                var unitMatch = unitRegex.Match(tokens[idx_i].Text);
+                
+                if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
+                {
+                    curUnit = unitMatch.Groups["unit"].ToString();
+                }
+
+                if (string.IsNullOrEmpty(curUnit))
+                {
+                    idx_i++;
+                    continue;
+                }
+
+                var idx_j = idx_i + 1;
+                while (idx_j < tokens.Count)
+                {
+                    var valid = false;
+                    var midStrBegin = tokens[idx_j - 1].Start + tokens[idx_j - 1].Length ?? 0;
+                    var midStrEnd = tokens[idx_j].Start ?? 0;
+                    var midStr = text.Substring(midStrBegin, midStrEnd - midStrBegin);
+                    if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
+                    {
+                        unitMatch = unitRegex.Match(tokens[idx_j].Text);
+                        if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
+                        {
+                            var nextUnitStr = unitMatch.Groups["unit"].ToString();
+                            if (UnitValueMap[nextUnitStr] != UnitValueMap[curUnit])
+                            {
+                                valid = true;
+                                if (UnitValueMap[nextUnitStr] < UnitValueMap[curUnit])
+                                {
+                                    curUnit = nextUnitStr;
+                                }
+                            }
+                        }
+                    }
+
+                    if (!valid)
+                    {
+                        break;
+                    }
+
+                    idx_j++;
+                }
+
+                if (idx_j - 1 > idx_i)
+                {
+                    var node = new ExtractResult();
+                    node.Start = tokens[idx_i].Start;
+                    node.Length = tokens[idx_j - 1].Start + tokens[idx_j - 1].Length - node.Start;
+                    node.Text = text.Substring(node.Start?? 0, node.Length?? 0);
+                    node.Type = tokens[idx_i].Type;
+                    ret.Add(node);
+                }
+                else
+                {
+                    ret.Add(tokens[idx_i]);
+                }
+
+                idx_i = idx_j;
+            }
+
+            return ret;
+        }
     }
 }

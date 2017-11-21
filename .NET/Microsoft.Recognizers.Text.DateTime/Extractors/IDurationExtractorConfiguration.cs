@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.Number;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -26,6 +27,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RelativeDurationUnitRegex { get; }
 
+        Regex DurationUnitRegex { get; }
+
         IExtractor CardinalExtractor { get; }
+
+        IImmutableDictionary<string, string> UnitMap { get; }
+
+        IImmutableDictionary<string, long> UnitValueMap { get; }
     }
 }
