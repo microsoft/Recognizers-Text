@@ -253,6 +253,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -278,6 +279,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -678,6 +680,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -703,6 +706,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -728,6 +732,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -753,13 +758,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "the weekend",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -778,13 +784,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this weekend",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -803,13 +810,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "my weekend",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -1278,13 +1286,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "weekend",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -1303,13 +1312,14 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "this weekend",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -2220,6 +2230,110 @@
         "PastResolution": {
           "startDate": "2017-01-02",
           "endDate": "2017-01-09"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "first week of 2015",
+  "Context": {
+    "ReferenceDateTime": "2017-11-20T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "first week of 2015",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2015-01-W01",
+        "FutureResolution": {
+          "startDate": "2014-12-29",
+          "endDate": "2015-01-05"
+        },
+        "PastResolution": {
+          "startDate": "2014-12-29",
+          "endDate": "2015-01-05"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "second week of 2015",
+  "Context": {
+    "ReferenceDateTime": "2017-11-20T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "second week of 2015",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2015-01-W02",
+        "FutureResolution": {
+          "startDate": "2015-01-05",
+          "endDate": "2015-01-12"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-05",
+          "endDate": "2015-01-12"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "this weekend",
+  "Context": {
+    "ReferenceDateTime": "2017-11-20T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "this weekend",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-W47-WE",
+        "FutureResolution": {
+          "startDate": "2017-11-25",
+          "endDate": "2017-11-27"
+        },
+        "PastResolution": {
+          "startDate": "2017-11-25",
+          "endDate": "2017-11-27"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "last week of 2015",
+  "Context": {
+    "ReferenceDateTime": "2017-11-20T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "last week of 2015",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2015-12-W53",
+        "FutureResolution": {
+          "startDate": "2015-12-28",
+          "endDate": "2016-01-04"
+        },
+        "PastResolution": {
+          "startDate": "2015-12-28",
+          "endDate": "2016-01-04"
         }
       }
     }
