@@ -20,6 +20,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TillRegex = @"(?<till>to|till|til|until|thru|through|--|-|—|——)";
 		public const string RangeConnectorRegex = @"(?<and>and|through|to|--|-|—|——)";
 		public const string RelativeRegex = @"(?<order>next|upcoming|this|last|past|previous|current|the|my)";
+		public const string StrictRelativeRegex = @"(?<order>next|upcoming|this|last|past|previous|current)";
 		public const string NextPrefixRegex = @"(next|upcoming)\b";
 		public const string PastPrefixRegex = @"(last|past|previous)\b";
 		public const string ThisPrefixRegex = @"(this|current)\b";
@@ -118,7 +119,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string PureNumBetweenAnd = $@"(between\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
 		public const string PrepositionRegex = @"(?<prep>^(at|on|of)(\s+the)?$)";
 		public const string TimeOfDayRegex = @"\b(?<timeOfDay>((((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime)))s?)\b";
-		public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b";
+		public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b";
 		public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
 		public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
 		public const string NowRegex = @"\b(?<now>(right\s+)?now|as soon as possible|asap|recently|previously)\b";
@@ -131,7 +132,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})";
 		public const string TheEndOfRegex = @"(the\s+)?end of(\s+the)?\s*$";
 		public const string PeriodTimeOfDayRegex = @"\b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b";
-		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b";
+		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b";
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+on)?))\b";
 		public const string DurationUnitRegex = @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))";
