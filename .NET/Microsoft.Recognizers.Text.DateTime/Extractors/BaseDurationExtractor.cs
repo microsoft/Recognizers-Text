@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (this.merge)
             {
-                rets = MergedDuration(rets, text);
+                rets = MergeMultipleDuration(rets, text);
             }
 
             return rets;
@@ -113,11 +113,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<ExtractResult> MergedDuration(List<ExtractResult> tokens, string text)
+        private List<ExtractResult> MergeMultipleDuration(List<ExtractResult> extractorResults, string text)
         {
-            if (tokens.Count <= 1)
+            if (extractorResults.Count <= 1)
             {
-                return tokens;
+                return extractorResults;
             }
 
             var UnitMap = this.config.UnitMap;
@@ -126,10 +126,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             List<ExtractResult> ret = new List<ExtractResult>();
 
             var idx_i = 0;
-            while (idx_i < tokens.Count)
+            while (idx_i < extractorResults.Count)
             {
                 string curUnit = null;
-                var unitMatch = unitRegex.Match(tokens[idx_i].Text);
+                var unitMatch = unitRegex.Match(extractorResults[idx_i].Text);
                 
                 if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
                 {
@@ -143,15 +143,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var idx_j = idx_i + 1;
-                while (idx_j < tokens.Count)
+                while (idx_j < extractorResults.Count)
                 {
                     var valid = false;
-                    var midStrBegin = tokens[idx_j - 1].Start + tokens[idx_j - 1].Length ?? 0;
-                    var midStrEnd = tokens[idx_j].Start ?? 0;
+                    var midStrBegin = extractorResults[idx_j - 1].Start + extractorResults[idx_j - 1].Length ?? 0;
+                    var midStrEnd = extractorResults[idx_j].Start ?? 0;
                     var midStr = text.Substring(midStrBegin, midStrEnd - midStrBegin);
                     if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
                     {
-                        unitMatch = unitRegex.Match(tokens[idx_j].Text);
+                        unitMatch = unitRegex.Match(extractorResults[idx_j].Text);
                         if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
                         {
                             var nextUnitStr = unitMatch.Groups["unit"].ToString();
@@ -177,15 +177,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (idx_j - 1 > idx_i)
                 {
                     var node = new ExtractResult();
-                    node.Start = tokens[idx_i].Start;
-                    node.Length = tokens[idx_j - 1].Start + tokens[idx_j - 1].Length - node.Start;
+                    node.Start = extractorResults[idx_i].Start;
+                    node.Length = extractorResults[idx_j - 1].Start + extractorResults[idx_j - 1].Length - node.Start;
                     node.Text = text.Substring(node.Start?? 0, node.Length?? 0);
-                    node.Type = tokens[idx_i].Type;
+                    node.Type = extractorResults[idx_i].Type;
                     ret.Add(node);
                 }
                 else
                 {
-                    ret.Add(tokens[idx_i]);
+                    ret.Add(extractorResults[idx_i]);
                 }
 
                 idx_i = idx_j;
