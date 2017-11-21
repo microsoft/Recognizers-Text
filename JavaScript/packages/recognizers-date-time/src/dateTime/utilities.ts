@@ -418,12 +418,32 @@ export class DateUtils {
     }
 
     static getWeekNumber(referenceDate: Date): { weekNo: number, year: number } {
-        let onejan = new Date(referenceDate.getFullYear(), 0, 1);
-        let weekNo = Math.ceil((((referenceDate.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
-        // if the first day is Sunday, add a week to mimic calendar.GetWeekOfYear(date, CalendarWeekRule.FirstDay, DayOfWeek.Monday) behavior
-        if (onejan.getDay() === 0) {
-            weekNo++;
+        // Create a copy of this date object
+	    let target  = new Date(referenceDate.valueOf());
+    
+        // ISO week date weeks start on monday
+        // so correct the day number
+        let dayNr   = (referenceDate.getDay() + 6) % 7;
+    
+        // ISO 8601 states that week 1 is the week
+        // with the first thursday of that year.
+        // Set the target date to the thursday in the target week
+        target.setDate(target.getDate() - dayNr + 3);
+    
+        // Store the millisecond value of the target date
+        let firstThursday = target.valueOf();
+    
+        // Set the target to the first thursday of the year
+        // First set the target to january first
+        target.setMonth(0, 1);
+        // Not a thursday? Correct the date to the next thursday
+        if (target.getDay() !== 4) {
+            target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
         }
+    
+        // The weeknumber is the number of weeks between the 
+        // first thursday of the year and the thursday in the target week
+        let weekNo = 1 + Math.ceil((firstThursday - target.valueOf()) / 604800000); // 604800000 = 7 * 24 * 3600 * 1000
         return { weekNo: weekNo, year: referenceDate.getUTCFullYear() }
     }
 
