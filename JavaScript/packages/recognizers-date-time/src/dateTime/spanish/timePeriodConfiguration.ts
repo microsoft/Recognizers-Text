@@ -6,12 +6,13 @@ import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 import { SpanishDateTimeUtilityConfiguration } from "./baseConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers";
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtractorConfiguration {
     readonly simpleCasesRegex: RegExp[];
     readonly tillRegex: RegExp;
     readonly timeOfDayRegex: RegExp;
-    readonly singleTimeExtractor: BaseTimeExtractor;
+    readonly singleTimeExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: SpanishDateTimeUtilityConfiguration;
 
     readonly fromRegex: RegExp;
@@ -49,7 +50,7 @@ export class SpanishTimePeriodExtractorConfiguration implements ITimePeriodExtra
 }
 
 export class SpanishTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
-    readonly timeExtractor: BaseTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
     readonly pureNumberFromToRegex: RegExp;
     readonly pureNumberBetweenAndRegex: RegExp;

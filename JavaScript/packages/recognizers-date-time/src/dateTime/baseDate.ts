@@ -1,7 +1,8 @@
 import { Constants, TimeTypeConstants } from "./constants"
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, StringMap } from "./utilities";
+import { IDateTimeExtractor } from "./baseDateTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import toNumber = require("lodash.tonumber");
@@ -20,11 +21,11 @@ export interface IDateExtractorConfiguration {
     ordinalExtractor: BaseNumberExtractor,
     integerExtractor: BaseNumberExtractor,
     numberParser: BaseNumberParser,
-    durationExtractor: BaseDurationExtractor,
+    durationExtractor: IDateTimeExtractor,
     utilityConfiguration: IDateTimeUtilityConfiguration,
 }
 
-export class BaseDateExtractor implements IExtractor {
+export class BaseDateExtractor implements IDateTimeExtractor {
     protected readonly extractorName = Constants.SYS_DATETIME_DATE;
     protected readonly config: IDateExtractorConfiguration;
 
@@ -32,12 +33,15 @@ export class BaseDateExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
-        let tokens: Array<Token> = new Array<Token>()
-            .concat(this.basicRegexMatch(source))
-            .concat(this.implicitDate(source))
-            .concat(this.numberWithMonth(source))
-            .concat(this.durationWithBeforeAndAfter(source));
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
+        let tokens: Array<Token> = new Array<Token>();
+        tokens = tokens.concat(this.basicRegexMatch(source));
+        tokens = tokens.concat(this.implicitDate(source));
+        tokens = tokens.concat(this.numberWithMonth(source, referenceDate));
+        tokens = tokens.concat(this.durationWithBeforeAndAfter(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
@@ -64,7 +68,7 @@ export class BaseDateExtractor implements IExtractor {
         return ret;
     }
 
-    private numberWithMonth(source: string): Array<Token> {
+    private numberWithMonth(source: string, refDate: Date): Array<Token> {
         let ret = [];
         let er = this.config.ordinalExtractor.extract(source).concat(this.config.integerExtractor.extract(source));
         er.forEach(result => {
@@ -94,16 +98,18 @@ export class BaseDateExtractor implements IExtractor {
                 // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
                 match = RegExpUtility.getMatches(this.config.weekDayAndDayOfMothRegex, source).pop();
                 if (match) {
-                    // create a extract result which content ordinal string of text
-                    let numberStr = match.groups('DayOfMonth').value;
-                    let numberEr: ExtractResult = {
-                        text: numberStr,
-                        start: 0,
-                        length: numberStr.length,
-                        type: null
-                    }
-                    let day = Number.parseInt(this.config.numberParser.parse(numberEr).value);
-                    if (day === num) {
+                    let month = refDate.getMonth();
+                    let year = refDate.getFullYear();
+
+                    // get week of day for the ordinal number which is regarded as a date of reference month
+                    let date = DateUtils.safeCreateFromMinValue(year, month, num);
+                    let numWeekDayStr = DayOfWeek[date.getDay()].toString().toLowerCase();
+
+                    // get week day from text directly, compare it with the weekday generated above
+                    // to see whether they refer to a same week day
+                    let extractedWeekDayStr = match.groups("weekday").value.toString().toLowerCase();
+                    if (date !== DateUtils.minValue() &&
+                        this.config.dayOfWeek.get(numWeekDayStr) == this.config.dayOfWeek.get(extractedWeekDayStr)) {
                         ret.push(new Token(match.index, result.start + result.length));
                         return;
                     }
@@ -140,9 +146,9 @@ export class BaseDateExtractor implements IExtractor {
         return ret;
     }
 
-    protected durationWithBeforeAndAfter(source: string): Array<Token> {
+    protected durationWithBeforeAndAfter(source: string, refDate: Date): Array<Token> {
         let ret = [];
-        let durEx = this.config.durationExtractor.extract(source);
+        let durEx = this.config.durationExtractor.extract(source, refDate);
         durEx.forEach(er => {
             let match = RegExpUtility.getMatches(this.config.dateUnitRegex, er.text).pop();
             if (!match) return;
@@ -156,7 +162,7 @@ export interface IDateParserConfiguration {
     ordinalExtractor: BaseNumberExtractor
     integerExtractor: BaseNumberExtractor
     cardinalExtractor: BaseNumberExtractor
-    durationExtractor: BaseDurationExtractor
+    durationExtractor: IDateTimeExtractor
     durationParser: IDateTimeParser
     numberParser: BaseNumberParser
     monthOfYear: ReadonlyMap<string, number>
@@ -214,10 +220,10 @@ export class BaseDateParser implements IDateTimeParser {
                 innerResult = this.parseSingleNumber(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 resultValue = innerResult;
             }
         }
@@ -387,30 +393,15 @@ export class BaseDateParser implements IDateTimeParser {
             let month = referenceDate.getMonth();
             let year = referenceDate.getFullYear();
 
-            let date = DateUtils.safeCreateFromMinValue(year, month, day);
+            // the validity of the phrase is guaranteed in the Date Extractor
+            result.timex = FormatUtil.luisDate(year, month, day)
+            result.futureValue = new Date(year, month, day);
+            result.pastValue = new Date(year, month, day);
+            result.success = true;
 
-            let weekdayStr = match.groups('weekday').value;
-            if (date !== DateUtils.minValue() &&
-                this.config.dayOfWeek.get(weekdayStr) === date.getDay()) {
-                result.timex = FormatUtil.luisDate(year, month, day)
-                result.futureValue = new Date(year, month, day);
-                result.pastValue = new Date(year, month, day);
-                result.success = true;
-
-                return result;
-            }
-            else {
-                // the resolution should have no value
-                let weekDay = this.config.dayOfWeek.get(weekdayStr);
-                let timexDayOfWeek = "XXXX-WXX-" + weekDay;
-                let timexDay = FormatUtil.luisDate(-1, -1, day);
-                result.timex = timexDayOfWeek + "," + timexDay;
-
-                result.futureValue = DateUtils.minValue();
-                result.pastValue = DateUtils.minValue();
-                result.success = true;
-            }
+            return result;
         }
+
         return result;
     }
 

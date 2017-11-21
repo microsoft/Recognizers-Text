@@ -3,10 +3,11 @@ import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } 
 import { BaseDateTimeExtractor, DateTimeExtra, TimeResult, TimeResolutionUtils } from "./baseDateTime";
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
-import { DateTimeResolutionResult, FormatUtil, DateUtils } from "../utilities";
+import { DateTimeResolutionResult, FormatUtil, DateUtils, StringMap } from "../utilities";
 import { BaseTimePeriodParser, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 import { ChineseTimeParser } from "./timeConfiguration"
+import { IDateTimeExtractor } from "../baseDateTime";
 
 export enum TimePeriodType {
     ShortTime,
@@ -25,7 +26,7 @@ export class ChineseTimePeriodExtractor extends BaseDateTimeExtractor<TimePeriod
 }
 
 class ChineseTimePeriodParserConfiguration implements ITimePeriodParserConfiguration {
-    timeExtractor: any;
+    timeExtractor: IDateTimeExtractor;
     timeParser: ChineseTimeParser;
     pureNumberFromToRegex: RegExp;
     pureNumberBetweenAndRegex: RegExp;
@@ -57,7 +58,7 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
     public parse(er: ExtractResult, referenceTime?: Date): DateTimeParseResult | null {
         if (!referenceTime) referenceTime = new Date();
-        
+
         let extra: DateTimeExtra<TimePeriodType> = er.data;
         if (!extra) {
             return null;
@@ -66,14 +67,12 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         let parseResult = this.parseTimePeriod(extra, referenceTime);
 
         if (parseResult.success) {
-            parseResult.futureResolution = new Map<string, string>([
-                [TimeTypeConstants.START_TIME, FormatUtil.formatTime(parseResult.futureValue.item1)],
-                [TimeTypeConstants.END_TIME, FormatUtil.formatTime(parseResult.futureValue.item2)]
-            ]);
-            parseResult.pastResolution = new Map<string, string>([
-                [TimeTypeConstants.START_TIME, FormatUtil.formatTime(parseResult.pastValue.item1)],
-                [TimeTypeConstants.END_TIME, FormatUtil.formatTime(parseResult.pastValue.item2)]
-            ]);
+            parseResult.futureResolution = {};
+            parseResult.futureResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.futureValue.item1);
+            parseResult.futureResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.futureValue.item2);
+            parseResult.pastResolution = {};
+            parseResult.pastResolution[TimeTypeConstants.START_TIME] = FormatUtil.formatTime(parseResult.pastValue.item1);
+            parseResult.pastResolution[TimeTypeConstants.END_TIME] = FormatUtil.formatTime(parseResult.pastValue.item2);
         }
 
         let result = new DateTimeParseResult(er);
@@ -86,7 +85,7 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
 
     private parseTimePeriod(extra: DateTimeExtra<TimePeriodType>, referenceTime: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        
+
         let leftEntity = extra.namedEntity('left');
         let leftResult = extra.dataType === TimePeriodType.FullTime
             ? this.getParseTimeResult(leftEntity, referenceTime)

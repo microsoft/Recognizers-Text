@@ -61,11 +61,44 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ers = this.config.SingleTimeExtractor.Extract(text, reference);
 
             // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
+
+            // handling ending number as a time point.
+            var numErs = this.config.IntegerExtractor.Extract(text);
+            // check if it is a ending number
+            if (numErs.Count > 0)
+            {
+                var endingNumber = false;
+                var num = numErs[numErs.Count - 1];
+                if (num.Start + num.Length == text.Length)
+                {
+                    endingNumber = true;
+                }
+                else
+                {
+                    var afterStr = text.Substring(num.Start + num.Length ?? 0);
+                    var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
+                    if (endingMatch.Success)
+                    {
+                        endingNumber = true;
+                    }
+                }
+                if (endingNumber)
+                {
+                    ers.Add(num);
+                }
+            }
+
             var idx = 0;
             while (idx < ers.Count - 1)
             {
                 var middleBegin = ers[idx].Start + ers[idx].Length ?? 0;
                 var middleEnd = ers[idx + 1].Start ?? 0;
+
+                if (middleEnd - middleBegin <= 0)
+                {
+                    idx++;
+                    continue;
+                }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
                 var match = this.config.TillRegex.Match(middleStr);

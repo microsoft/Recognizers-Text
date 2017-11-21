@@ -5,6 +5,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { FrenchDateTimeUtilityConfiguration, FrenchCommonDateTimeParserConfiguration } from "./baseConfiguration";
 import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
+import { IDateTimeExtractor } from "../baseDateTime"
 
 export class FrenchDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly dateRegexList: RegExp[];
@@ -21,7 +22,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly ordinalExtractor: BaseNumberExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
 
     constructor() {
@@ -70,7 +71,7 @@ export class FrenchDateParserConfiguration implements IDateParserConfiguration {
     readonly ordinalExtractor: BaseNumberExtractor;
     readonly integerExtractor: BaseNumberExtractor;
     readonly cardinalExtractor: BaseNumberExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
     readonly numberParser: BaseNumberParser;
     readonly monthOfYear: ReadonlyMap<string, number>;

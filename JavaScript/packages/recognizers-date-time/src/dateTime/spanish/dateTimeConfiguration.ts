@@ -1,5 +1,5 @@
 import { BaseNumberExtractor, BaseNumberParser, RegExpUtility } from "recognizers-text-number";
-import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration } from "../baseDateTime";
+import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration, IDateTimeExtractor } from "../baseDateTime";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -12,9 +12,9 @@ import { ICommonDateTimeParserConfiguration } from "../parsers";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 
 export class SpanishDateTimeExtractorConfiguration implements IDateTimeExtractorConfiguration {
-    readonly datePointExtractor: BaseDateExtractor;
-    readonly timePointExtractor: BaseTimeExtractor;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly datePointExtractor: IDateTimeExtractor;
+    readonly timePointExtractor: IDateTimeExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly suffixRegex: RegExp;
     readonly nowRegex: RegExp;
     readonly timeOfTodayAfterRegex: RegExp;
@@ -64,13 +64,13 @@ export class SpanishDateTimeExtractorConfiguration implements IDateTimeExtractor
 export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfiguration {
     readonly tokenBeforeDate: string;
     readonly tokenBeforeTime: string;
-    readonly dateExtractor: BaseDateExtractor;
-    readonly timeExtractor: BaseTimeExtractor;
+    readonly dateExtractor: IDateTimeExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly dateParser: BaseDateParser;
     readonly timeParser: BaseTimeParser;
     readonly cardinalExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
-    readonly durationExtractor: BaseDurationExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
     readonly nowRegex: RegExp;
     readonly amTimeRegex: RegExp;

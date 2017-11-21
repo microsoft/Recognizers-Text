@@ -7,13 +7,13 @@ import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { BaseDateTimeExtractor, BaseDateTimeParser, IDateTimeExtractor } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration";
 import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { ChineseDateTimeExtractor, ChineseDateTimeParser } from "./dateTimeConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 
 class ChineseSetExtractorConfiguration implements ISetExtractorConfiguration {
@@ -52,20 +52,23 @@ export class ChineseSetExtractor extends BaseSetExtractor {
         super(new ChineseSetExtractorConfiguration());
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
             .concat(super.matchEachUnit(source))
-            .concat(super.matchEachDuration(source))
-            .concat(this.matchEachSpecific(this.config.timeExtractor, this.config.eachDayRegex, source))
-            .concat(this.matchEachSpecific(this.config.dateExtractor, this.config.eachPrefixRegex, source))
-            .concat(this.matchEachSpecific(this.config.dateTimeExtractor, this.config.eachPrefixRegex, source))
+            .concat(super.matchEachDuration(source, referenceDate))
+            .concat(this.matchEachSpecific(this.config.timeExtractor, this.config.eachDayRegex, source, referenceDate))
+            .concat(this.matchEachSpecific(this.config.dateExtractor, this.config.eachPrefixRegex, source, referenceDate))
+            .concat(this.matchEachSpecific(this.config.dateTimeExtractor, this.config.eachPrefixRegex, source, referenceDate))
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    private matchEachSpecific(extractor: IExtractor, eachRegex: RegExp, source: string) {
+    private matchEachSpecific(extractor: IDateTimeExtractor, eachRegex: RegExp, source: string, refDate: Date) {
         let ret = [];
-        extractor.extract(source).forEach(er => {
+        extractor.extract(source, refDate).forEach(er => {
             let beforeStr = source.substr(0, er.start);
             let beforeMatch = RegExpUtility.getMatches(eachRegex, beforeStr).pop();
             if (beforeMatch) {
@@ -77,9 +80,9 @@ export class ChineseSetExtractor extends BaseSetExtractor {
 }
 
 class ChineseSetParserConfiguration implements ISetParserConfiguration {
-    readonly durationExtractor: IExtractor;
+    readonly durationExtractor: IDateTimeExtractor;
     readonly durationParser: BaseDurationParser;
-    readonly timeExtractor: IExtractor;
+    readonly timeExtractor: IDateTimeExtractor;
     readonly timeParser: BaseTimeParser;
     readonly dateExtractor: BaseDateExtractor;
     readonly dateParser: BaseDateParser;
@@ -98,7 +101,7 @@ class ChineseSetParserConfiguration implements ISetParserConfiguration {
     readonly eachDayRegex: RegExp;
     readonly setWeekDayRegex: RegExp;
     readonly setEachRegex: RegExp;
-    
+
     constructor() {
         this.dateExtractor = new ChineseDateExtractor();
         this.timeExtractor = new ChineseTimeExtractor();
@@ -141,60 +144,57 @@ export class ChineseSetParser extends BaseSetParser {
         if (er.type === BaseSetParser.ParserName) {
             let innerResult = this.parseEachUnit(er.text);
             if (!innerResult.success) {
-                innerResult = this.parseEachDuration(er.text);
+                innerResult = this.parseEachDuration(er.text, referenceDate);
             }
             if (!innerResult.success) {
-                innerResult = this.parserTimeEveryday(er.text);
+                innerResult = this.parserTimeEveryday(er.text, referenceDate);
             }
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text);
+                innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text, referenceDate);
             }
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text);
+                innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.futureValue]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.pastValue]
-                ]);
-                        
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.SET] = innerResult.futureValue;
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.SET] = innerResult.pastValue;
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er);
         ret.value = value,
         ret.timexStr = value === null ? "" : value.timex,
         ret.resolutionStr = ""
-        
+
         return ret;
     }
-            
+
     protected parseEachUnit(text: string): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        
+
         // handle "each month"
         let match = RegExpUtility.getMatches(this.config.eachUnitRegex, text).pop();
         if (!match || match.length !== text.length) return ret;
-        
+
         let sourceUnit = match.groups("unit").value;
         if (StringUtility.isNullOrEmpty(sourceUnit) || !this.config.unitMap.has(sourceUnit)) return ret;
-        
+
         let getMatchedUnitTimex = this.config.getMatchedUnitTimex(sourceUnit);
         if (!getMatchedUnitTimex.matched) return ret;
 
         ret.timex = getMatchedUnitTimex.timex;
-        ret.futureValue = "Set: " + ret.timex; 
+        ret.futureValue = "Set: " + ret.timex;
         ret.pastValue = "Set: " + ret.timex;
         ret.success = true;
         return ret;
     }
-            
-    protected parserTimeEveryday(text: string): DateTimeResolutionResult {
+
+    protected parserTimeEveryday(text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let ers = this.config.timeExtractor.extract(text);
+        let ers = this.config.timeExtractor.extract(text, refDate);
         if (ers.length !== 1) return result;
 
         let er = ers[0];
@@ -210,10 +210,10 @@ export class ChineseSetParser extends BaseSetParser {
 
         return result;
     }
-            
-    protected parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
+
+    protected parseEach(extractor: IDateTimeExtractor, parser: IDateTimeParser, text: string, refDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let ers = extractor.extract(text);
+        let ers = extractor.extract(text, refDate);
         if (ers.length !== 1) return result;
 
         let er = ers[0];

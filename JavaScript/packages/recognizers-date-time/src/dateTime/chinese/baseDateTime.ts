@@ -1,4 +1,5 @@
 import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "recognizers-text-number";
+import { IDateTimeExtractor } from "../baseDateTime"
 import { Constants, TimeTypeConstants } from "../constants"
 import { Token } from "../utilities";
 
@@ -21,7 +22,7 @@ export class TimeResult {
     }
 }
 
-export abstract class BaseDateTimeExtractor<T> implements IExtractor {
+export abstract class BaseDateTimeExtractor<T> implements IDateTimeExtractor {
     protected abstract readonly extractorName: string;
     private readonly regexesDictionary: Map<RegExp, T>;
 
@@ -29,7 +30,10 @@ export abstract class BaseDateTimeExtractor<T> implements IExtractor {
         this.regexesDictionary = regexesDictionary;
     }
     
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let results = new Array<ExtractResult>();
         if (StringUtility.isNullOrEmpty(source)) {
             return results;

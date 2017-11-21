@@ -1,7 +1,8 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, BaseNumberExtractor, BaseNumberParser, RegExpUtility, StringUtility } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { Token, DateTimeResolutionResult } from "./utilities";
+import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface IDurationExtractorConfiguration {
     allRegex: RegExp,
@@ -15,15 +16,18 @@ export interface IDurationExtractorConfiguration {
     cardinalExtractor: BaseNumberExtractor
 }
 
-export class BaseDurationExtractor implements IExtractor {
+export class BaseDurationExtractor implements IDateTimeExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_DURATION;
     private readonly config: IDurationExtractorConfiguration;
-    
+
     constructor(config: IDurationExtractorConfiguration) {
         this.config = config;
     }
-    
-    extract(source: string): Array<ExtractResult> {
+
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let baseTokens = this.numberWithUnit(source);
         let tokens: Array<Token> = new Array<Token>()
         .concat(baseTokens)
@@ -32,7 +36,7 @@ export class BaseDurationExtractor implements IExtractor {
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
-    
+
     private numberWithUnit(source: string): Array<Token> {
         return this.config.cardinalExtractor.extract(source)
         .map(o => {
@@ -46,7 +50,7 @@ export class BaseDurationExtractor implements IExtractor {
         .concat(this.getTokensFromRegex(this.config.anUnitRegex, source))
         .concat(this.getTokensFromRegex(this.config.inExactNumberUnitRegex, source));
     }
-    
+
     private numberWithUnitAndSuffix(source: string, ers: Token[]): Array<Token> {
         return ers.map(o => {
             let afterString = source.substring(o.start + o.length);
@@ -56,7 +60,7 @@ export class BaseDurationExtractor implements IExtractor {
             }
         });
     }
-    
+
     private implicitDuration(source: string): Array<Token> {
         // handle "all day", "all year"
         return this.getTokensFromRegex(this.config.allRegex, source)
@@ -65,7 +69,7 @@ export class BaseDurationExtractor implements IExtractor {
             // handle "next day", "last year"
             .concat(this.getTokensFromRegex(this.config.relativeDurationUnitRegex, source));
     }
-    
+
     private getTokensFromRegex(regexp: RegExp, source: string): Array<Token> {
         return RegExpUtility.getMatches(regexp, source)
         .map(o => new Token(o.index, o.index + o.length));
@@ -90,11 +94,11 @@ export interface IDurationParserConfiguration {
 export class BaseDurationParser implements IDateTimeParser {
     protected readonly parserName = Constants.SYS_DATETIME_DURATION;
     protected readonly config: IDurationParserConfiguration;
-    
+
     constructor(config: IDurationParserConfiguration) {
         this.config = config;
     }
-    
+
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) referenceDate = new Date();
         let resultValue;
@@ -105,10 +109,10 @@ export class BaseDurationParser implements IDateTimeParser {
                 innerResult = this.parseImplicitDuration(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DURATION, innerResult.futureValue);
-                innerResult.pastResolution = new Map<string, string>()
-                .set(TimeTypeConstants.DURATION, innerResult.pastValue);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DURATION] = innerResult.futureValue.toString();
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DURATION] = innerResult.pastValue.toString();
                 resultValue = innerResult;
             }
         }
@@ -116,10 +120,10 @@ export class BaseDurationParser implements IDateTimeParser {
         result.value = resultValue;
         result.timexStr = resultValue ? resultValue.timex : '';
         result.resolutionStr = '';
-        
+
         return result;
     }
-    
+
     private parseNumberWithUnit(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = this.parseNumberSpaceUnit(trimmedSource);
@@ -134,7 +138,7 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private parseImplicitDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         // handle "all day" "all year"
@@ -149,15 +153,15 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private getResultFromRegex(regex: RegExp, source: string, num: number): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(regex, source).pop();
         if (!match) return result;
-        
+
         let sourceUnit = match.groups('unit').value;
         if (!this.config.unitMap.has(sourceUnit)) return result;
-        
+
         let unitStr = this.config.unitMap.get(sourceUnit);
         result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
         result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
@@ -165,7 +169,7 @@ export class BaseDurationParser implements IDateTimeParser {
         result.success = true;
         return result;
     }
-    
+
     private parseNumberSpaceUnit(source: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let suffixStr = source;
@@ -183,7 +187,7 @@ export class BaseDurationParser implements IDateTimeParser {
             if (this.config.unitMap.has(sourceUnit)) {
                 let num = Number.parseFloat(pr.value) + this.parseNumberWithUnitAndSuffix(suffixStr);
                 let unitStr = this.config.unitMap.get(sourceUnit);
-                
+
                 result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
                 result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
                 result.pastValue = result.futureValue;
@@ -193,7 +197,7 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private parseNumberWithUnitAndSuffix(source: string): number {
         let match = RegExpUtility.getMatches(this.config.suffixAndRegex, source).pop();
         if (match) {
@@ -204,20 +208,20 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return 0;
     }
-    
+
     private parseNumberCombinedUnit(source: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.numberCombinedWithUnit, source).pop();
         if (!match) return result;
         let num = Number.parseFloat(match.groups('num').value) + this.parseNumberWithUnitAndSuffix(source);
-        
+
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);
             if (num > 1000 && (unitStr === 'Y' || unitStr === 'MON' || unitStr === 'W')) {
                 return result;
             }
-            
+
             result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
             result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
             result.pastValue = result.futureValue;
@@ -226,7 +230,7 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private parseAnUnit(source: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.anUnitRegex, source).pop();
@@ -237,11 +241,11 @@ export class BaseDurationParser implements IDateTimeParser {
         let num = StringUtility.isNullOrEmpty(match.groups('half').value) ? 1 : 0.5
         num += this.parseNumberWithUnitAndSuffix(source);
         let numStr = num.toString();
-        
+
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);
-            
+
             result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
             result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
             result.pastValue = result.futureValue;
@@ -250,23 +254,23 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     private parseInExactNumberUnit(source: string): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let match = RegExpUtility.getMatches(this.config.inExactNumberUnitRegex, source).pop();
         if (!match) return result;
-        
+
         // set the inexact number "few", "some" to 3 for now
         let num = 3;
         let numStr = num.toString();
-        
+
         let sourceUnit = match.groups('unit').value;
         if (this.config.unitMap.has(sourceUnit)) {
             let unitStr = this.config.unitMap.get(sourceUnit);
             if (num > 1000 && (unitStr === 'Y' || unitStr === 'MON' || unitStr === 'W')) {
                 return result;
             }
-            
+
             result.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${num}${unitStr[0]}`;
             result.futureValue = num * this.config.unitValueMap.get(sourceUnit);
             result.pastValue = result.futureValue;
@@ -275,7 +279,7 @@ export class BaseDurationParser implements IDateTimeParser {
         }
         return result;
     }
-    
+
     protected isLessThanDay(source: string): boolean {
         return (source === 'S') || (source === 'M') || (source === 'H')
     }

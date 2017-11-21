@@ -5,7 +5,7 @@ import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { Token, IDateTimeUtilityConfiguration, DateTimeResolutionResult, DateUtils, FormatUtil, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -72,10 +72,13 @@ export class ChineseDatePeriodExtractor extends BaseDatePeriodExtractor {
         super(new ChineseDatePeriodExtractorConfiguration());
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+        
         let tokens: Array<Token> = new Array<Token>()
             .concat(super.matchSimpleCases(source))
-            .concat(super.mergeTwoTimePoints(source))
+            .concat(super.mergeTwoTimePoints(source, refDate))
             .concat(this.matchNumberWithUnit(source));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
@@ -176,7 +179,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodThisRegex);
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodNextRegex);
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodLastRegex);
-        
+
     }
 
     getSwiftDayOrMonth(source: string): number {
@@ -327,15 +330,15 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
             if (innerResult.success) {
                 if (innerResult.futureValue && innerResult.pastValue) {
-                    innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.futureValue[0])
-                    .set(TimeTypeConstants.END_DATE, innerResult.futureValue[1]);
-                    innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.START_DATE, innerResult.pastValue[0])
-                    .set(TimeTypeConstants.END_DATE, innerResult.pastValue[1]);
+                    innerResult.futureResolution = {};
+                    innerResult.futureResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.futureValue[0]);
+                    innerResult.futureResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.futureValue[1]);
+                    innerResult.pastResolution = {};
+                    innerResult.pastResolution[TimeTypeConstants.START_DATE] = FormatUtil.formatDate(innerResult.pastValue[0]);
+                    innerResult.pastResolution[TimeTypeConstants.END_DATE] = FormatUtil.formatDate(innerResult.pastValue[1]);
                 } else {
-                    innerResult.futureResolution = new Map<string, string>();
-                    innerResult.pastResolution = new Map<string, string>();
+                    innerResult.futureResolution = {};
+                    innerResult.pastResolution = {};
                 }
                 resultValue = innerResult;
             }
@@ -360,7 +363,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let inputYear = false;
 
         let match = this.getMatchSimpleCase(source);
-        
+
         if (!match || match.index !== 0 || match.length !== source.length) return result;
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
@@ -409,7 +412,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         result.success = true;
         return result;
     }
-    
+
     protected parseYear(source: string, referenceDate: Date): DateTimeResolutionResult {
         let trimmedSource = source.trim();
         let result = new DateTimeResolutionResult();
@@ -439,7 +442,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         }
         let beginDay = DateUtils.safeCreateFromMinValue(year, 1, 1);
         let endDay = DateUtils.safeCreateFromMinValue(year + 1, 1, 1);
-        
+
         result.timex = FormatUtil.toString(year, 4);
         result.futureValue = [beginDay, endDay];
         result.pastValue = [beginDay, endDay];
@@ -553,7 +556,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         if (hasYear) {
             result.timex = `${FormatUtil.toString(year, 4)}-${season}`;
         }
-        
+
         result.success = true;
         return result;
     }
@@ -587,7 +590,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         } else if (year < 100 && year < 20) {
             year += 2000;
         }
-        
+
         let cardinalStr = match.groups('cardinal').value;
         let quarterNum = this.config.cardinalMap.get(cardinalStr);
         let beginDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, quarterNum * 3 - 3, 1);
@@ -601,14 +604,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
     protected parseNumberWithUnit(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        
+
         // if there are NO spaces between number and unit
         let match = RegExpUtility.getMatches(this.numberCombinedWithUnitRegex, source).pop();
         if (!match) return result;
 
         let sourceUnit = match.groups('unit').value.trim().toLowerCase();
         if (!this.config.unitMap.has(sourceUnit)) return result;
-        
+
         let numStr = match.groups('num').value;
         let beforeStr = source.substr(0, match.index).trim().toLowerCase();
 
@@ -618,7 +621,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
     protected parseDuration(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         // for case "前两年" "后三年"
-        let durationResult = this.config.durationExtractor.extract(source).pop();
+        let durationResult = this.config.durationExtractor.extract(source, referenceDate).pop();
         if (!durationResult) return result;
 
         let match = RegExpUtility.getMatches(this.unitRegex, durationResult.text).pop();
@@ -648,7 +651,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         if (!hasFuture && !hasPast) {
             return result;
         }
-        
+
         let beginDate = new Date(referenceDate);
         let endDate = new Date(referenceDate);
         let difference = Number.parseFloat(numStr);
@@ -737,7 +740,7 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         let endDate = month === 11
             ? DateUtils.safeCreateFromMinValue(year + 1, 1, 1)
             : DateUtils.safeCreateFromMinValue(year, month + 1, 1);
-        
+
         result.timex = FormatUtil.toString(year, 4) + '-' + FormatUtil.toString(month, 2);
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];

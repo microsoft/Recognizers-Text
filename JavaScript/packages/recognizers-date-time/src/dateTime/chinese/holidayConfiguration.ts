@@ -1,14 +1,14 @@
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration, BaseHolidayParser } from "../baseHoliday"
 import { RegExpUtility, ExtractResult, Match, IExtractor, IParser, StringUtility, ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "recognizers-text-number";
 import { Constants as NumberConstants } from "recognizers-text-number"
-import { DateUtils, FormatUtil, DateTimeResolutionResult } from "../utilities";
+import { DateUtils, FormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
 
 export class ChineseHolidayExtractorConfiguration implements IHolidayExtractorConfiguration {
     readonly holidayRegexes: RegExp[]
-            
+
     constructor() {
         this.holidayRegexes = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.HolidayRegexList1),
@@ -127,12 +127,10 @@ export class ChineseHolidayParser extends BaseHolidayParser {
             let innerResult = this.parseHolidayRegexMatch(er.text, referenceDate);
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue)]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue)]
-                ]);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 innerResult.isLunar = this.isLunar(er.text);
                 value = innerResult;
             }

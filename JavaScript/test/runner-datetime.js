@@ -59,12 +59,13 @@ module.exports = function getDateTimeRunner(config) {
 function getExtractorTestRunner(extractor) {
     return function (t, testCase) {
         var expected = testCase.Results;
+        var referenceDateTime = getReferenceDate(testCase);
 
         if (testCase.Debug) {
             debugger;
         }
 
-        var result = extractor.extract(testCase.Input);
+        var result = extractor.extract(testCase.Input, referenceDateTime);
 
         t.is(result.length, expected.length, 'Result count');
         _.zip(result, expected).forEach(o => {
@@ -85,7 +86,7 @@ function getParserTestRunner(extractor, parser) {
             debugger;
         }
 
-        var extractResults = extractor.extract(testCase.Input);
+        var extractResults = extractor.extract(testCase.Input, referenceDateTime);
         var result = extractResults.map(o => parser.parse(o, referenceDateTime));
 
         t.is(result.length, expected.length, 'Result count');
@@ -102,8 +103,8 @@ function getParserTestRunner(extractor, parser) {
                 // resolutions
                 var actualValue = {
                     timex: actual.value.timex,
-                    futureResolution: toObject(actual.value.futureResolution),
-                    pastResolution: toObject(actual.value.pastResolution),
+                    futureResolution: actual.value.futureResolution,
+                    pastResolution: actual.value.pastResolution,
                 }
 
                 t.deepEqual(actualValue.futureResolution, expected.Value.FutureResolution);
@@ -122,7 +123,7 @@ function getMergedParserTestRunner(extractor, parser) {
             debugger;
         }
 
-        var extractResults = extractor.extract(testCase.Input);
+        var extractResults = extractor.extract(testCase.Input, referenceDateTime);
         var result = extractResults.map(o => parser.parse(o, referenceDateTime));
 
         t.is(result.length, expected.length, 'Result count');
@@ -134,9 +135,7 @@ function getMergedParserTestRunner(extractor, parser) {
 
             if (actual.value && expected.Value) {
                 t.is(!!actual.value, true, "Result.value is defined");
-                var actualObj = toObject(actual.value);
-                var actualValues = actualObj.values.map(o => toObject(o));
-                _.zip(actualValues, expected.Value.values).forEach(o => {
+                _.zip(actual.value.values, expected.Value.values).forEach(o => {
                     var actual = o[0];
                     var expected = o[1];
 
@@ -165,7 +164,7 @@ function getModelTestRunner(model) {
             t.is(actual.typeName, expected.TypeName, 'Result.TypeName');
 
             if (actual.resolution) {
-                var values = actual.resolution.get('values').map(toObject);
+                var values = actual.resolution.values;
                 t.is(values.length, expected.Resolution.values.length, 'Resolution.Values count');
                 t.deepEqual(values, expected.Resolution.values, 'Resolution.Values');
             }
@@ -223,29 +222,4 @@ function getReferenceDate(testCase) {
     }
 
     return null;
-}
-
-function toObject(map) {
-    if (!map) return undefined;
-    var keys = Array.from(map.keys());
-    var values = Array.from(map.values()).map(asString);
-
-    return _.zipObject(keys, values);
-}
-
-function asString(o) {
-    if (!o) return o;
-
-    if (_.isNumber(o)) {
-        return o.toString();
-    }
-
-    if (_.isDate(o)) {
-        var isoDate = new Date(o.getTime() - o.getTimezoneOffset() * 60000).toISOString();
-        var parts = isoDate.split('T');
-        var time = parts[1].split('.')[0].replace('00:00:00', '');
-        return [parts[0], time].join(' ').trim();
-    }
-
-    return o;
 }

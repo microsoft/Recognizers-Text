@@ -1,7 +1,8 @@
 import { Constants, TimeTypeConstants } from "./constants";
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-number"
-import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "./utilities";
+import { Token, FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, DateUtils, StringMap } from "./utilities";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export interface ITimeExtractorConfiguration {
     timeRegexList: RegExp[]
@@ -9,7 +10,7 @@ export interface ITimeExtractorConfiguration {
     ishRegex: RegExp
 }
 
-export class BaseTimeExtractor implements IExtractor {
+export class BaseTimeExtractor implements IDateTimeExtractor {
     private readonly extractorName = Constants.SYS_DATETIME_TIME; // "Time";
     private readonly config: ITimeExtractorConfiguration;
 
@@ -17,11 +18,14 @@ export class BaseTimeExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(text: string): Array<ExtractResult> {
+    extract(text: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
         .concat(this.basicRegexMatch(text))
         .concat(this.atRegexMatch(text))
-        .concat(this.specialsRegexMatch(text));
+        .concat(this.specialsRegexMatch(text, referenceDate));
 
         let result = Token.mergeAllTokens(tokens, text, this.extractorName);
         return result;
@@ -52,18 +56,18 @@ export class BaseTimeExtractor implements IExtractor {
             return ret;
         }
 
-        specialsRegexMatch(text: string): Array<Token> {
-            let ret = [];
-            // handle "ish"
-            if (this.config.ishRegex !== null) {
-                let matches = RegExpUtility.getMatches(this.config.ishRegex, text);
-                matches.forEach(match => {
-                    ret.push(new Token(match.index, match.index + match.length));
-                });
-            }
-            return ret;
+    specialsRegexMatch(text: string, refDate: Date): Array<Token> {
+        let ret = [];
+        // handle "ish"
+        if (this.config.ishRegex !== null) {
+            let matches = RegExpUtility.getMatches(this.config.ishRegex, text);
+            matches.forEach(match => {
+                ret.push(new Token(match.index, match.index + match.length));
+            });
         }
+        return ret;
     }
+}
 
     export interface ITimeParserConfiguration {
         timeTokenPrefix: string;
@@ -89,16 +93,10 @@ export class BaseTimeExtractor implements IExtractor {
             if (er.type === this.ParserName) {
                 let innerResult = this.internalParse(er.text, referenceTime);
                 if (innerResult.success) {
-                    innerResult.futureResolution = new Map<string, string>(
-                        [
-                            [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.futureValue)]
-                        ]);
-
-                    innerResult.pastResolution = new Map<string, string>(
-                        [
-                            [TimeTypeConstants.TIME, FormatUtil.formatTime(innerResult.pastValue)]
-                        ]);
-                    
+                    innerResult.futureResolution = {};
+                    innerResult.futureResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.futureValue);
+                    innerResult.pastResolution = {};
+                    innerResult.pastResolution[TimeTypeConstants.TIME] = FormatUtil.formatTime(innerResult.pastValue);
                     value = innerResult;
                 }
             }
@@ -110,7 +108,7 @@ export class BaseTimeExtractor implements IExtractor {
 
             return ret;
         }
-        
+
         internalParse(text: string, referenceTime: Date): DateTimeResolutionResult {
             let innerResult = this.parseBasicRegexMatch(text, referenceTime);
             return innerResult;
@@ -129,6 +127,29 @@ export class BaseTimeExtractor implements IExtractor {
 
                     if (matches.length > 0 && matches[0].index === offset && matches[0].length === trimmedText.length) {
                         return this.match2Time(matches[0], referenceTime);
+                    }
+
+                    // parse hour pattern, like "twenty one", "16"
+                    // create a extract result which content the pass-in text
+                    let hour = this.config.numbers.get(text) || Number(text);
+                    if (hour) {
+                        if (hour >= 0 && hour <= 24) {
+                            let ret = new DateTimeResolutionResult();
+
+                            if (hour === 24) {
+                                hour = 0;
+                            }
+
+                            if (hour <= 12 && hour !== 0) {
+                                ret.comment = "ampm";
+                            }
+
+                            ret.timex = "T" + FormatUtil.toString(hour, 2);
+                            ret.futureValue = ret.pastValue =
+                                DateUtils.safeCreateFromMinValue(referenceTime.getFullYear(), referenceTime.getMonth(), referenceTime.getDate(), hour, 0, 0);
+                            ret.success = true;
+                            return ret;
+                        }
                     }
 
                     for (let regex of this.config.timeRegexes) {

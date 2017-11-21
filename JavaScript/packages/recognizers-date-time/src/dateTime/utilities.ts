@@ -1,6 +1,7 @@
 import { IExtractor, ExtractResult, RegExpUtility } from "recognizers-text-number"
 import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers"
 import { TimeTypeConstants } from "../dateTime/constants"
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export class Token {
     constructor(start: number, end: number) {
@@ -95,9 +96,9 @@ export class AgoLaterUtil {
         return ret;
     }
 
-    static parseDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
+    static parseDurationWithAgoAndLater(source: string, referenceDate: Date, durationExtractor: IDateTimeExtractor, durationParser: IDateTimeParser, unitMap: ReadonlyMap<string, string>, unitRegex: RegExp, utilityConfiguration: IDateTimeUtilityConfiguration, mode: AgoLaterMode): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
-        let duration = durationExtractor.extract(source).pop();
+        let duration = durationExtractor.extract(source, referenceDate).pop();
         if (!duration) return result;
         let pr = durationParser.parse(duration, referenceDate);
         if (!pr) return result;
@@ -286,14 +287,18 @@ export class FormatUtil {
     }
 }
 
+export class StringMap {
+    [key: string]: string;
+}
+
 export class DateTimeResolutionResult {
     success: boolean;
     timex: string;
     isLunar: boolean;
     mod: string;
     comment: string;
-    futureResolution: Map<string, string>;
-    pastResolution: Map<string, string>;
+    futureResolution: StringMap;
+    pastResolution: StringMap;
     futureValue: any;
     pastValue: any;
     subDateTimeEntities: Array<any>;
@@ -469,5 +474,4 @@ export class DateUtils {
             && minute >= 0 && minute < 60
             && second >= 0 && minute < 60;
     }
-
 }

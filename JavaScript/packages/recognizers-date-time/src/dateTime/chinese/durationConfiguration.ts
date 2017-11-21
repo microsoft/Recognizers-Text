@@ -5,7 +5,7 @@ import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuratio
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
-import { DateTimeResolutionResult } from "../utilities";
+import { DateTimeResolutionResult, StringMap } from "../utilities";
 
 export enum DurationType {
     WithNumber
@@ -19,7 +19,7 @@ class DurationExtractorConfiguration extends ChineseNumberWithUnitExtractorConfi
 
     constructor() {
         super(new CultureInfo(Culture.Chinese));
-        
+
         this.extractType = Constants.SYS_DATETIME_DURATION;
         this.suffixList = ChineseDateTime.DurationSuffixList;
         this.prefixList = new Map<string, string>();
@@ -40,7 +40,10 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
         this.halfSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DurationHalfSuffixRegex);
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let results = new Array<ExtractResult>();
         this.extractor.extract(source).forEach(result => {
             // filter
@@ -58,7 +61,7 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
 
             results.push(result);
         });
-        
+
         return results;
     }
 }
@@ -97,7 +100,7 @@ export class ChineseDurationParser extends BaseDurationParser {
         super(config);
         this.internalParser = new NumberWithUnitParser(new DurationParserConfiguration());
     }
-    
+
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) referenceDate = new Date();
         let resultValue;
@@ -126,17 +129,20 @@ export class ChineseDurationParser extends BaseDurationParser {
             innerResult.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${numberStr}${unitStr.charAt(0)}`;
             innerResult.futureValue = Number.parseFloat(numberStr) * this.config.unitValueMap.get(unitStr);
             innerResult.pastValue = Number.parseFloat(numberStr) * this.config.unitValueMap.get(unitStr);
-            innerResult.futureResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.futureValue]])
-            innerResult.pastResolution = new Map<string, string>([[TimeTypeConstants.DURATION, innerResult.pastValue]])
+            innerResult.futureResolution = {};
+            innerResult.futureResolution[TimeTypeConstants.DURATION] = innerResult.futureValue.toString();
+            innerResult.pastResolution = {};
+            innerResult.pastResolution[TimeTypeConstants.DURATION] = innerResult.pastValue.toString();
             innerResult.success = true;
-            
+
             resultValue = innerResult;
         }
+
         let result = new DateTimeParseResult(extractorResult);
         result.value = resultValue;
         result.timexStr = resultValue ? resultValue.timex : '';
         result.resolutionStr = '';
-        
+
         return result;
     }
 }

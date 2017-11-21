@@ -4,7 +4,7 @@ import { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtracto
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { Constants, TimeTypeConstants } from "../constants"
 import { ChineseDurationExtractor } from "./durationConfiguration";
-import { Token, FormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities";
+import { Token, FormatUtil, DateUtils, DateTimeResolutionResult, IDateTimeUtilityConfiguration, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers"
 
@@ -57,18 +57,21 @@ export class ChineseDateExtractor extends BaseDateExtractor {
         this.durationExtractor = new ChineseDurationExtractor();
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
             .concat(super.basicRegexMatch(source))
             .concat(super.implicitDate(source))
-            .concat(this.durationWithBeforeAndAfter(source));
+            .concat(this.durationWithBeforeAndAfter(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected durationWithBeforeAndAfter(source: string): Array<Token> {
+    protected durationWithBeforeAndAfter(source: string, refDate: Date): Array<Token> {
         let ret = [];
-        let durEx = this.durationExtractor.extract(source);
+        let durEx = this.durationExtractor.extract(source, refDate);
         durEx.forEach(er => {
             let pos = er.start + er.length;
             if (pos < source.length) {
@@ -205,11 +208,10 @@ export class ChineseDateParser extends BaseDateParser {
                 innerResult = this.parserDurationWithAgoAndLater(source, referenceDate);
             }
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.futureValue));
-                innerResult.pastResolution = new Map<string, string>()
-                    .set(TimeTypeConstants.DATE, FormatUtil.formatDate(innerResult.pastValue));
-
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATE] = FormatUtil.formatDate(innerResult.pastValue);
                 innerResult.isLunar = this.parseLunarCalendar(source);
                 resultValue = innerResult;
             }
@@ -252,10 +254,10 @@ export class ChineseDateParser extends BaseDateParser {
             let monthStr = match.groups('thismonth').value;
             let dayStr = match.groups('day').value;
             day = this.config.dayOfMonth.get(dayStr);
-            
+
             let hasYear = !StringUtility.isNullOrEmpty(yearStr);
             let hasMonth = !StringUtility.isNullOrEmpty(monthStr);
-            
+
             if (hasMonth) {
                 if (RegExpUtility.isMatch(this.tokenNextRegex, monthStr)) {
                     month++;

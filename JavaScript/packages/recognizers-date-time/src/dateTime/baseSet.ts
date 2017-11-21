@@ -6,9 +6,9 @@ import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "./baseDatePeriod"
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "./baseTimePeriod"
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "./baseDateTime"
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser} from "./baseDateTimePeriod"
-import { Token, DateTimeResolutionResult } from "./utilities";
+import { Token, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface ISetExtractorConfiguration {
     lastRegex: RegExp;
@@ -19,39 +19,42 @@ export interface ISetExtractorConfiguration {
     beforeEachDayRegex: RegExp;
     setWeekDayRegex: RegExp;
     setEachRegex: RegExp;
-    durationExtractor: IExtractor;
-    timeExtractor: IExtractor;
-    dateExtractor: BaseDateExtractor;
-    dateTimeExtractor: BaseDateTimeExtractor;
-    datePeriodExtractor: BaseDatePeriodExtractor;
-    timePeriodExtractor: BaseTimePeriodExtractor;
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    durationExtractor: IDateTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
+    dateExtractor: IDateTimeExtractor;
+    dateTimeExtractor: IDateTimeExtractor;
+    datePeriodExtractor: IDateTimeExtractor;
+    timePeriodExtractor: IDateTimeExtractor;
+    dateTimePeriodExtractor: IDateTimeExtractor;
 }
 
-export class BaseSetExtractor implements IExtractor {
+export class BaseSetExtractor implements IDateTimeExtractor {
     protected readonly extractorName = Constants.SYS_DATETIME_SET
     protected readonly config: ISetExtractorConfiguration;
-    
+
     constructor(config: ISetExtractorConfiguration) {
         this.config = config;
     }
-    
-    extract(source: string): Array<ExtractResult> {
+
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
         .concat(this.matchEachUnit(source))
         .concat(this.matchPeriodic(source))
-        .concat(this.matchEachDuration(source))
-        .concat(this.timeEveryday(source))
-        .concat(this.matchEach(this.config.dateExtractor, source))
-        .concat(this.matchEach(this.config.timeExtractor, source))
-        .concat(this.matchEach(this.config.dateTimeExtractor, source))
-        .concat(this.matchEach(this.config.datePeriodExtractor, source))
-        .concat(this.matchEach(this.config.timePeriodExtractor, source))
-        .concat(this.matchEach(this.config.dateTimePeriodExtractor, source))
+        .concat(this.matchEachDuration(source, referenceDate))
+        .concat(this.timeEveryday(source, referenceDate))
+        .concat(this.matchEach(this.config.dateExtractor, source, referenceDate))
+        .concat(this.matchEach(this.config.timeExtractor, source, referenceDate))
+        .concat(this.matchEach(this.config.dateTimeExtractor, source, referenceDate))
+        .concat(this.matchEach(this.config.datePeriodExtractor, source, referenceDate))
+        .concat(this.matchEach(this.config.timePeriodExtractor, source, referenceDate))
+        .concat(this.matchEach(this.config.dateTimePeriodExtractor, source, referenceDate))
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
-    
+
     protected matchEachUnit(source: string): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.eachUnitRegex, source).forEach(match => {
@@ -59,7 +62,7 @@ export class BaseSetExtractor implements IExtractor {
         });
         return ret;
     }
-    
+
     protected matchPeriodic(source: string): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.periodicRegex, source).forEach(match => {
@@ -67,10 +70,10 @@ export class BaseSetExtractor implements IExtractor {
         });
         return ret;
     }
-    
-    protected matchEachDuration(source: string): Array<Token> {
+
+    protected matchEachDuration(source: string, refDate: Date): Array<Token> {
         let ret = [];
-        this.config.durationExtractor.extract(source).forEach(er => {
+        this.config.durationExtractor.extract(source, refDate).forEach(er => {
             if (RegExpUtility.getMatches(this.config.lastRegex, er.text).length > 0) return;
             let beforeStr = source.substr(0, er.start);
             let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
@@ -80,10 +83,10 @@ export class BaseSetExtractor implements IExtractor {
         });
         return ret;
     }
-    
-    protected timeEveryday(source: string): Array<Token> {
+
+    protected timeEveryday(source: string, refDate: Date): Array<Token> {
         let ret = [];
-        this.config.timeExtractor.extract(source).forEach(er => {
+        this.config.timeExtractor.extract(source, refDate).forEach(er => {
             let afterStr = source.substr(er.start + er.length);
             if (StringUtility.isNullOrWhitespace(afterStr) && this.config.beforeEachDayRegex) {
                 let beforeStr = source.substr(0, er.start);
@@ -100,12 +103,12 @@ export class BaseSetExtractor implements IExtractor {
         });
         return ret;
     }
-    
-    private matchEach(extractor: IExtractor, source: string): Array<Token> {
+
+    private matchEach(extractor: IDateTimeExtractor, source: string, refDate: Date): Array<Token> {
         let ret = [];
         RegExpUtility.getMatches(this.config.setEachRegex, source).forEach(match => {
             let trimmedSource = source.substr(0, match.index) + source.substr(match.index + match.length);
-            extractor.extract(trimmedSource).forEach(er => {
+            extractor.extract(trimmedSource, refDate).forEach(er => {
                 if (er.start <= match.index && (er.start + er.length) > match.index) {
                     ret.push(new Token(er.start, er.start + match.length + er.length));
                 }
@@ -113,7 +116,7 @@ export class BaseSetExtractor implements IExtractor {
         });
         RegExpUtility.getMatches(this.config.setWeekDayRegex, source).forEach(match => {
             let trimmedSource = source.substr(0, match.index) + match.groups('weekday').value + source.substr(match.index + match.length);
-            extractor.extract(trimmedSource).forEach(er => {
+            extractor.extract(trimmedSource, refDate).forEach(er => {
                 if (er.start <= match.index) {
                     let length = er.length + 1;
                     if (!StringUtility.isNullOrEmpty(match.groups('prefix').value)) {
@@ -128,19 +131,19 @@ export class BaseSetExtractor implements IExtractor {
 }
 
 export interface ISetParserConfiguration {
-    durationExtractor: IExtractor;
+    durationExtractor: IDateTimeExtractor;
     durationParser: BaseDurationParser;
-    timeExtractor: IExtractor;
+    timeExtractor: IDateTimeExtractor;
     timeParser: BaseTimeParser;
-    dateExtractor: BaseDateExtractor;
+    dateExtractor: IDateTimeExtractor;
     dateParser: BaseDateParser;
-    dateTimeExtractor: BaseDateTimeExtractor;
+    dateTimeExtractor: IDateTimeExtractor;
     dateTimeParser: BaseDateTimeParser;
-    datePeriodExtractor: BaseDatePeriodExtractor;
+    datePeriodExtractor: IDateTimeExtractor;
     datePeriodParser: BaseDatePeriodParser;
-    timePeriodExtractor: BaseTimePeriodExtractor;
+    timePeriodExtractor: IDateTimeExtractor;
     timePeriodParser: BaseTimePeriodParser;
-    dateTimePeriodExtractor: BaseDateTimePeriodExtractor;
+    dateTimePeriodExtractor: IDateTimeExtractor;
     dateTimePeriodParser: BaseDateTimePeriodParser;
     unitMap: ReadonlyMap<string, string>;
     eachPrefixRegex: RegExp;
@@ -156,77 +159,75 @@ export interface ISetParserConfiguration {
 export class BaseSetParser implements IDateTimeParser {
     public static readonly ParserName = Constants.SYS_DATETIME_SET;
     protected readonly config: ISetParserConfiguration;
-    
+
     constructor(configuration: ISetParserConfiguration) {
         this.config = configuration;
     }
-    
+
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
         if (!referenceDate) referenceDate = new Date();
         let value = null;
         if (er.type === BaseSetParser.ParserName) {
             let innerResult = this.parseEachUnit(er.text);
             if (!innerResult.success) {
-                innerResult = this.parseEachDuration(er.text);
+                innerResult = this.parseEachDuration(er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parserTimeEveryday(er.text);
+                innerResult = this.parserTimeEveryday(er.text, referenceDate);
             }
-            
+
             // NOTE: Please do not change the order of following function
             // datetimeperiod>dateperiod>timeperiod>datetime>date>time
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.dateTimePeriodExtractor, this.config.dateTimePeriodParser, er.text);
+                innerResult = this.parseEach(this.config.dateTimePeriodExtractor, this.config.dateTimePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.datePeriodExtractor, this.config.datePeriodParser, er.text);
+                innerResult = this.parseEach(this.config.datePeriodExtractor, this.config.datePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.timePeriodExtractor, this.config.timePeriodParser, er.text);
+                innerResult = this.parseEach(this.config.timePeriodExtractor, this.config.timePeriodParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text);
+                innerResult = this.parseEach(this.config.dateTimeExtractor, this.config.dateTimeParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text);
+                innerResult = this.parseEach(this.config.dateExtractor, this.config.dateParser, er.text, referenceDate);
             }
-            
+
             if (!innerResult.success) {
-                innerResult = this.parseEach(this.config.timeExtractor, this.config.timeParser, er.text);
+                innerResult = this.parseEach(this.config.timeExtractor, this.config.timeParser, er.text, referenceDate);
             }
-            
+
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.futureValue]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.SET, innerResult.pastValue]
-                ]);
-                        
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.SET] = innerResult.futureValue;
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.SET] = innerResult.pastValue;
+
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er);
         ret.value = value,
         ret.timexStr = value === null ? "" : value.timex,
         ret.resolutionStr = ""
-        
+
         return ret;
     }
-            
-    protected parseEachDuration(text: string): DateTimeResolutionResult {
+
+    protected parseEachDuration(text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let ers = this.config.durationExtractor.extract(text);
+        let ers = this.config.durationExtractor.extract(text, refDate);
         if (ers.length !== 1 || text.substring(ers[0].start + ers[0].length || 0)) {
             return ret;
         }
-        
+
         let beforeStr = text.substring(0, ers[0].start || 0);
         let matches = RegExpUtility.getMatches(this.config.eachPrefixRegex, beforeStr);
         if (matches.length) {
@@ -236,10 +237,10 @@ export class BaseSetParser implements IDateTimeParser {
             ret.success = true;
             return ret;
         }
-        
+
         return ret;
     }
-            
+
     protected parseEachUnit(text: string): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         // handle "daily", "weekly"
@@ -249,14 +250,14 @@ export class BaseSetParser implements IDateTimeParser {
             if (!getMatchedDailyTimex.matched) {
                 return ret;
             }
-            
+
             ret.timex = getMatchedDailyTimex.timex;
             ret.futureValue = ret.pastValue = "Set: " + ret.timex;
             ret.success = true;
-            
+
             return ret;
         }
-        
+
         // handle "each month"
         matches = RegExpUtility.getMatches(this.config.eachUnitRegex, text);
         if (matches.length && matches[0].length === text.length) {
@@ -270,24 +271,24 @@ export class BaseSetParser implements IDateTimeParser {
                 if (!StringUtility.isNullOrEmpty(matches[0].groups('other').value)) {
                     getMatchedUnitTimex.timex = getMatchedUnitTimex.timex.replace('1', '2');
                 }
-                
+
                 ret.timex = getMatchedUnitTimex.timex;
                 ret.futureValue = ret.pastValue = "Set: " + ret.timex;
                 ret.success = true;
                 return ret;
             }
         }
-        
+
         return ret;
     }
-            
-    protected parserTimeEveryday(text: string): DateTimeResolutionResult {
+
+    protected parserTimeEveryday(text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let ers = this.config.timeExtractor.extract(text);
+        let ers = this.config.timeExtractor.extract(text, refDate);
         if (ers.length !== 1) {
             return ret;
         }
-        
+
         let afterStr = text.replace(ers[0].text, "");
         let matches = RegExpUtility.getMatches(this.config.eachDayRegex, afterStr);
         if (matches.length) {
@@ -297,18 +298,18 @@ export class BaseSetParser implements IDateTimeParser {
             ret.success = true;
             return ret;
         }
-        
+
         return ret;
     }
-            
-    protected parseEach(extractor: IExtractor, parser: IDateTimeParser, text: string): DateTimeResolutionResult {
+
+    protected parseEach(extractor: IDateTimeExtractor, parser: IDateTimeParser, text: string, refDate: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
         let success = false;
         let er: ExtractResult[];
         let match = RegExpUtility.getMatches(this.config.setEachRegex, text).pop();
         if (match) {
             let trimmedText = text.substr(0, match.index) + text.substr(match.index + match.length);
-            er = extractor.extract(trimmedText);
+            er = extractor.extract(trimmedText, refDate);
             if (er.length === 1 && er[0].length === trimmedText.length) {
                 success = true;
             }
@@ -316,7 +317,7 @@ export class BaseSetParser implements IDateTimeParser {
         match = RegExpUtility.getMatches(this.config.setWeekDayRegex, text).pop();
         if (match) {
             let trimmedText = text.substr(0, match.index) + match.groups('weekday').value + text.substr(match.index + match.length);
-            er = extractor.extract(trimmedText);
+            er = extractor.extract(trimmedText, refDate);
             if (er.length === 1 && er[0].length === trimmedText.length) {
                 success = true;
             }

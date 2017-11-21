@@ -5,7 +5,7 @@ import { BaseSetExtractor, BaseSetParser } from "../baseSet";
 import { BaseHolidayExtractor, BaseHolidayParser } from "../baseHoliday";
 import { BaseDatePeriodExtractor, BaseDatePeriodParser } from "../baseDatePeriod";
 import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod";
-import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { RegExpUtility, BaseNumberExtractor, EnglishIntegerExtractor } from "recognizers-text-number";
@@ -22,15 +22,15 @@ import { EnglishSetExtractorConfiguration, EnglishSetParserConfiguration } from 
 import { EnglishHolidayExtractorConfiguration, EnglishHolidayParserConfiguration } from "./holidayConfiguration"
 
 export class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
-    readonly dateExtractor: BaseDateExtractor
-    readonly timeExtractor: BaseTimeExtractor
-    readonly dateTimeExtractor: BaseDateTimeExtractor
-    readonly datePeriodExtractor: BaseDatePeriodExtractor
-    readonly timePeriodExtractor: BaseTimePeriodExtractor
-    readonly dateTimePeriodExtractor: BaseDateTimePeriodExtractor
-    readonly holidayExtractor: BaseHolidayExtractor
-    readonly durationExtractor: BaseDurationExtractor
-    readonly setExtractor: BaseSetExtractor
+    readonly dateExtractor: IDateTimeExtractor
+    readonly timeExtractor: IDateTimeExtractor
+    readonly dateTimeExtractor: IDateTimeExtractor
+    readonly datePeriodExtractor: IDateTimeExtractor
+    readonly timePeriodExtractor: IDateTimeExtractor
+    readonly dateTimePeriodExtractor: IDateTimeExtractor
+    readonly holidayExtractor: IDateTimeExtractor
+    readonly durationExtractor: IDateTimeExtractor
+    readonly setExtractor: IDateTimeExtractor
     readonly integerExtractor: BaseNumberExtractor
     readonly afterRegex: RegExp
     readonly sinceRegex: RegExp

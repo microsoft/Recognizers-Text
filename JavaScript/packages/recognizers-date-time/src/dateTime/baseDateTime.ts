@@ -4,12 +4,16 @@ import { BaseDateExtractor, BaseDateParser } from "./baseDate"
 import { BaseTimeExtractor, BaseTimeParser } from "./baseTime"
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
-import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult } from "./utilities";
+import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult, StringMap } from "./utilities";
+
+export interface IDateTimeExtractor {
+    extract(input: string, refDate: Date): Array<ExtractResult>
+}
 
 export interface IDateTimeExtractorConfiguration {
-    datePointExtractor: BaseDateExtractor
-    timePointExtractor: IExtractor
-    durationExtractor: BaseDurationExtractor
+    datePointExtractor: IDateTimeExtractor
+    timePointExtractor: IDateTimeExtractor
+    durationExtractor: IDateTimeExtractor
     suffixRegex: RegExp
     nowRegex: RegExp
     timeOfTodayAfterRegex: RegExp
@@ -23,7 +27,7 @@ export interface IDateTimeExtractorConfiguration {
     isConnectorToken(source: string): boolean
 }
 
-export class BaseDateTimeExtractor implements IExtractor {
+export class BaseDateTimeExtractor implements IDateTimeExtractor {
     protected readonly extractorName = Constants.SYS_DATETIME_DATETIME;
     protected readonly config: IDateTimeExtractorConfiguration;
 
@@ -31,23 +35,26 @@ export class BaseDateTimeExtractor implements IExtractor {
         this.config = config;
     }
 
-    extract(source: string): Array<ExtractResult> {
+    extract(source: string, refDate: Date): Array<ExtractResult> {
+        if (!refDate) refDate = new Date();
+        let referenceDate = refDate;
+
         let tokens: Array<Token> = new Array<Token>()
-        .concat(this.mergeDateAndTime(source))
+        .concat(this.mergeDateAndTime(source, referenceDate))
         .concat(this.basicRegexMatch(source))
-        .concat(this.timeOfTodayBefore(source))
-        .concat(this.timeOfTodayAfter(source))
-        .concat(this.specialTimeOfDate(source))
-        .concat(this.durationWithBeforeAndAfter(source));
+        .concat(this.timeOfTodayBefore(source, referenceDate))
+        .concat(this.timeOfTodayAfter(source, referenceDate))
+        .concat(this.specialTimeOfDate(source, referenceDate))
+        .concat(this.durationWithBeforeAndAfter(source, referenceDate));
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }
 
-    protected mergeDateAndTime(source: string): Array<Token> {
+    protected mergeDateAndTime(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ers = this.config.datePointExtractor.extract(source);
+        let ers = this.config.datePointExtractor.extract(source, refDate);
         if (ers.length < 1) return tokens;
-        ers = ers.concat(this.config.timePointExtractor.extract(source));
+        ers = ers.concat(this.config.timePointExtractor.extract(source, refDate));
         if (ers.length < 2) return tokens;
         ers = ers.sort((erA, erB) => erA.start < erB.start ? -1 : erA.start === erB.start ? 0 : 1);
         let i = 0;
@@ -96,9 +103,9 @@ export class BaseDateTimeExtractor implements IExtractor {
         return tokens;
     }
 
-    private timeOfTodayBefore(source: string): Array<Token> {
+    private timeOfTodayBefore(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ers = this.config.timePointExtractor.extract(source);
+        let ers = this.config.timePointExtractor.extract(source, refDate);
         ers.forEach(er => {
             let beforeStr = source.substr(0, er.start);
             let innerMatches = RegExpUtility.getMatches(this.config.nightRegex, er.text);
@@ -120,9 +127,9 @@ export class BaseDateTimeExtractor implements IExtractor {
         return tokens;
     }
 
-    private timeOfTodayAfter(source: string): Array<Token> {
+    private timeOfTodayAfter(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ers = this.config.timePointExtractor.extract(source);
+        let ers = this.config.timePointExtractor.extract(source, refDate);
         ers.forEach(er => {
             let afterStr = source.substr(er.start + er.length);
             if (StringUtility.isNullOrWhitespace(afterStr)) return;
@@ -140,9 +147,9 @@ export class BaseDateTimeExtractor implements IExtractor {
         return tokens;
     }
 
-    private specialTimeOfDate(source: string): Array<Token> {
+    private specialTimeOfDate(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        let ers = this.config.datePointExtractor.extract(source);
+        let ers = this.config.datePointExtractor.extract(source, refDate);
         ers.forEach(er => {
             let beforeStr = source.substr(0, er.start);
             let beforeMatches = RegExpUtility.getMatches(this.config.theEndOfRegex, beforeStr);
@@ -159,9 +166,9 @@ export class BaseDateTimeExtractor implements IExtractor {
         return tokens;
     }
 
-    private durationWithBeforeAndAfter(source: string): Array<Token> {
+    private durationWithBeforeAndAfter(source: string, refDate: Date): Array<Token> {
         let tokens: Array<Token> = new Array<Token>();
-        this.config.durationExtractor.extract(source).forEach(er => {
+        this.config.durationExtractor.extract(source, refDate).forEach(er => {
             let matches = RegExpUtility.getMatches(this.config.unitRegex, er.text);
             if (matches && matches.length > 0) {
                 tokens = AgoLaterUtil.extractorDurationWithBeforeAndAfter(source, er, tokens, this.config.utilityConfiguration);
@@ -174,13 +181,13 @@ export class BaseDateTimeExtractor implements IExtractor {
 export interface IDateTimeParserConfiguration {
     tokenBeforeDate: string;
     tokenBeforeTime: string;
-    dateExtractor: IExtractor;
-    timeExtractor: IExtractor;
+    dateExtractor: IDateTimeExtractor;
+    timeExtractor: IDateTimeExtractor;
     dateParser: IDateTimeParser;
     timeParser: IDateTimeParser;
     cardinalExtractor: BaseNumberExtractor;
     numberParser: BaseNumberParser;
-    durationExtractor: BaseDurationExtractor;
+    durationExtractor: IDateTimeExtractor;
     durationParser: IDateTimeParser;
     nowRegex: RegExp;
     amTimeRegex: RegExp;
@@ -231,16 +238,14 @@ export class BaseDateTimeParser implements IDateTimeParser {
             }
 
             if (innerResult.success) {
-                innerResult.futureResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.futureValue)]
-                ]);
-                innerResult.pastResolution = new Map<string, string>([
-                    [TimeTypeConstants.DATETIME, FormatUtil.formatDateTime(innerResult.pastValue)]
-                ]);
+                innerResult.futureResolution = {};
+                innerResult.futureResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.futureValue);
+                innerResult.pastResolution = {};
+                innerResult.pastResolution[TimeTypeConstants.DATETIME] = FormatUtil.formatDateTime(innerResult.pastValue);
                 value = innerResult;
             }
         }
-        
+
         let ret = new DateTimeParseResult(er); {
             ret.value = value,
             ret.timexStr = value === null ? "" : value.timex,
@@ -270,9 +275,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
     protected mergeDateAndTime(text: string, referenceTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
 
-        let er1 = this.config.dateExtractor.extract(text);
+        let er1 = this.config.dateExtractor.extract(text, referenceTime);
         if (er1.length === 0) {
-            er1 = this.config.dateExtractor.extract(this.config.tokenBeforeDate + text);
+            er1 = this.config.dateExtractor.extract(this.config.tokenBeforeDate + text, referenceTime);
             if (er1.length === 1) {
                 er1[0].start -= this.config.tokenBeforeDate.length;
             }
@@ -288,10 +293,10 @@ export class BaseDateTimeParser implements IDateTimeParser {
             }
         }
 
-        let er2 = this.config.timeExtractor.extract(text);
+        let er2 = this.config.timeExtractor.extract(text, referenceTime);
         if (er2.length === 0) {
             // here we filter out "morning, afternoon, night..." time entities
-            er2 = this.config.timeExtractor.extract(this.config.tokenBeforeTime + text);
+            er2 = this.config.timeExtractor.extract(this.config.tokenBeforeTime + text, referenceTime);
             if (er2.length === 1) {
                 er2[0].start -= this.config.tokenBeforeTime.length;
             }
@@ -387,9 +392,9 @@ export class BaseDateTimeParser implements IDateTimeParser {
             timeStr = "T" + FormatUtil.toString(hour, 2);
         }
         else {
-            let ers = this.config.timeExtractor.extract(trimmedText);
+            let ers = this.config.timeExtractor.extract(trimmedText, referenceTime);
             if (ers.length !== 1) {
-                ers = this.config.timeExtractor.extract(this.config.tokenBeforeTime + trimmedText);
+                ers = this.config.timeExtractor.extract(this.config.tokenBeforeTime + trimmedText, referenceTime);
                 if (ers.length === 1) {
                     ers[0].start -= this.config.tokenBeforeTime.length;
                 }
@@ -443,7 +448,7 @@ export class BaseDateTimeParser implements IDateTimeParser {
 
     private parseSpecialTimeOfDate(text: string, refDateTime: Date): DateTimeResolutionResult {
         let ret = new DateTimeResolutionResult();
-        let ers = this.config.dateExtractor.extract(text);
+        let ers = this.config.dateExtractor.extract(text, refDateTime);
         if (ers.length !== 1) {
             return ret;
         }
