@@ -1233,15 +1233,14 @@
       "Text": "morning",
       "Type": "timerange",
       "Value": {
-        "Timex": "TMO",
-        "FutureResolution": {
-          "startTime": "08:00:00",
-          "endTime": "12:00:00"
-        },
-        "PastResolution": {
-          "startTime": "08:00:00",
-          "endTime": "12:00:00"
-        }
+        "values": [
+          {
+            "timex": "TMO",
+            "type": "timerange",
+            "start": "08:00:00",
+            "end": "12:00:00"
+          }
+        ]
       }
     }
   ]
