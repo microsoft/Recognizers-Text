@@ -522,4 +522,28 @@
   "Results": [
   ]
 }
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday I will leave.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon I will leave.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the afternoon",
+      "Type": "timerange"
+    }
+  ]
+}
 ]

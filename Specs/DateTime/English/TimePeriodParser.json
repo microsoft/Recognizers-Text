@@ -873,4 +873,29 @@
     }
   ]
 }
+,
+{
+  "Input": "Schedule during the morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "morning",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "TMO",
+        "FutureResolution": {
+          "startTime": "08:00:00",
+          "endTime": "12:00:00"
+        },
+        "PastResolution": {
+          "startTime": "08:00:00",
+          "endTime": "12:00:00"
+        }
+      }
+    }
+  ]
+}
 ]
