@@ -2,7 +2,7 @@ import { BaseNumberExtractor, IExtractor, FrenchCardinalExtractor, RegExpUtility
 import { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
-import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
+import { BaseDateTimeExtractor, BaseDateTimeParser, IDateTimeExtractor } from "../baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
 import { IDateTimeParser, ICommonDateTimeParserConfiguration } from "../parsers";
 import { FrenchDateExtractorConfiguration } from "./dateConfiguration";
@@ -11,6 +11,8 @@ import { FrenchDurationExtractorConfiguration } from "./durationConfiguration";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { FrenchTimeExtractorConfiguration } from "./timeConfiguration";
 import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { BaseTimePeriodExtractor } from "../baseTimePeriod";
+import { FrenchTimePeriodExtractorConfiguration } from "./timePeriodConfiguration";
 
 export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: BaseNumberExtractor;
@@ -18,6 +20,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
     readonly singleTimeExtractor: IDateTimeExtractor;
     readonly singleDateTimeExtractor: IDateTimeExtractor;
     readonly durationExtractor: IDateTimeExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
     readonly simpleCasesRegexes: RegExp[];
     readonly prepositionRegex: RegExp;
     readonly tillRegex: RegExp;
@@ -32,6 +35,8 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
     readonly relativeTimeUnitRegex: RegExp;
     readonly restOfDateTimeRegex: RegExp;
     readonly weekDayRegex: RegExp;
+    readonly generalEndingRegex: RegExp;
+    readonly middlePauseRegex: RegExp;
 
     readonly fromRegex: RegExp;
     readonly connectorAndRegex: RegExp;
@@ -40,28 +45,30 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis")
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex)
         ]
 
-        this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex, "gis");
-        this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex, "gis");
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodSpecificTimeOfDayRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeFollowedUnit, "gis");
-        this.timeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex, "gis");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex, "gis");
-        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit, "gis");
-        this.weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex, "gis");
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex, "gis");
-        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex, "gis");
+        this.prepositionRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionRegex);
+        this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodSpecificTimeOfDayRegex);
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeFollowedUnit);
+        this.timeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex);
+        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit);
+        this.weekDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayRegex);
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex);
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex);
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex);
+        this.generalEndingRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.GeneralEndingRegex);
+        this.middlePauseRegex= RegExpUtility.getSafeRegExp(FrenchDateTime.MiddlePauseRegex);
 
-        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2, "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex, "gis");
-        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex, "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex2);
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex);
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
 
         this.cardinalExtractor = new FrenchCardinalExtractor();
 
@@ -69,6 +76,7 @@ export class FrenchDateTimePeriodExtractorConfiguration implements IDateTimePeri
         this.singleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
         this.singleDateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
+        this.timePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration());
     }
 
     getFromTokenIndex(source: string): { matched: boolean; index: number; } {
@@ -137,26 +145,26 @@ export class FrenchDateTimePeriodParserConfiguration implements IDateTimePeriodP
         this.unitMap = config.unitMap;
         this.numbers = config.numbers;
 
-        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex, "gis");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex, "gis");
-        this.thisPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex, "gis");
+        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
+        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.thisPrefixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex);
 
-        this.morningStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MorningStartEndRegex, "gis");
-        this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfternoonStartEndRegex, "gis");
-        this.eveningStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.EveningStartEndRegex, "gis");
-        this.nightStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NightStartEndRegex, "gis");
+        this.morningStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MorningStartEndRegex);
+        this.afternoonStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfternoonStartEndRegex);
+        this.eveningStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.EveningStartEndRegex);
+        this.nightStartEndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NightStartEndRegex);
 
-        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo, "gis");
-        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd, "gis");
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex, "gis");
-        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit, "gis");
-        this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex, "gis");
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex, "gis");
-        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex, "gis");
+        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumFromTo);
+        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PureNumBetweenAnd);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SpecificTimeOfDayRegex);
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeOfDayRegex);
+        this.pastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.futureRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
+        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeNumberCombinedWithUnit);
+        this.unitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TimeUnitRegex);
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PeriodTimeOfDayWithDateRegex);
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeTimeUnitRegex);
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RestOfDateTimeRegex);
     }
 
     getMatchedTimeRange(source: string): { timeStr: string; beginHour: number; endHour: number; endMin: number; success: boolean; } {

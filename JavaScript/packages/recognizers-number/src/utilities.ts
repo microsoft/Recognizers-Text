@@ -52,6 +52,7 @@ export class Match {
 
 export class RegExpUtility {
     static getMatches(regex: RegExp, source: string): Array<Match> {
+        if (!regex) return [];
         let rawRegex: string = (regex as any).xregexp.source;
         if (!rawRegex.includes('(?<nlb__')) {
             return this.getMatchesSimple(regex, source);

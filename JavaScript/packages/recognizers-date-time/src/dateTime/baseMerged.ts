@@ -32,6 +32,7 @@ export interface IMergedExtractorConfiguration {
     singleAmbiguousMonthRegex: RegExp
     prepositionSuffixRegex: RegExp
     numberEndingPattern: RegExp
+    filterWordRegexList: RegExp[]
 }
 
 export class BaseMergedExtractor implements IDateTimeExtractor {
@@ -63,8 +64,24 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
 
         this.addMod(result, source);
 
+        //filtering
+        if ((this.options & DateTimeOptions.Calendar) != 0) {
+            this.checkCalendarFilterList(result, source);
+        }
+
         result = result.sort((a, b) => a.start - b.start);
         return result;
+    }
+
+    private checkCalendarFilterList(ers: ExtractResult[], text: string) {
+        for (let er of ers.reverse()) {
+            for (let negRegex of this.config.filterWordRegexList) {
+                var match = RegExpUtility.getMatches(negRegex, er.text).pop();
+                if (match) {
+                    ers.splice(ers.indexOf(er));
+                }
+            }
+        }
     }
 
     // handle cases like "move 3pm appointment to 4"
