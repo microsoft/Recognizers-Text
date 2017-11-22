@@ -711,12 +711,39 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (swift < -1) return result;
             year = referenceDate.getFullYear() + swift;
         }
+
+        let targetWeekMonday: Date;
         if (this.config.isLastCardinal(cardinalStr)) {
-            result = this.getWeekOfMonth(5, 11, year, referenceDate, false);
+            let lastDay = DateUtils.safeCreateFromMinValue(year, 11, 31);
+            let lastDayWeekMonday = DateUtils.this(lastDay, DayOfWeek.Monday);
+            let weekNum = DateUtils.getWeekNumber(lastDay).weekNo;
+            if (weekNum === 1) {
+                lastDayWeekMonday = DateUtils.this(DateUtils.addDays(lastDay, -7), DayOfWeek.Monday);
+            }
+
+            targetWeekMonday = lastDayWeekMonday;
+            weekNum = DateUtils.getWeekNumber(targetWeekMonday).weekNo;
+
+            result.timex = `${ FormatUtil.toString(year, 4) }-${ FormatUtil.toString(targetWeekMonday.getMonth() + 1, 2) }-W${ FormatUtil.toString(weekNum, 2) }`;
         } else {
             let cardinal = this.config.cardinalMap.get(cardinalStr);
-            result = this.getWeekOfMonth(cardinal, 0, year, referenceDate, false);
+
+            let firstDay = DateUtils.safeCreateFromMinValue(year, 0, 1);
+            let firstDayWeekMonday = DateUtils.this(firstDay, DayOfWeek.Monday);
+            let weekNum = DateUtils.getWeekNumber(firstDay).weekNo;
+            if (weekNum !== 1) {
+                firstDayWeekMonday = DateUtils.this(DateUtils.addDays(firstDay, 7), DayOfWeek.Monday);
+            }
+
+            targetWeekMonday = DateUtils.addDays(firstDayWeekMonday, 7 * (cardinal - 1));
+            let targetWeekSunday = DateUtils.this(targetWeekMonday, DayOfWeek.Sunday);
+            result.timex = `${ FormatUtil.toString(year, 4) }-${ FormatUtil.toString(targetWeekSunday.getMonth() + 1, 2) }-W${ FormatUtil.toString(cardinal, 2) }`;
         }
+
+        result.futureValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
+        result.pastValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
+        result.success = true;
+        
         return result;
     }
 
