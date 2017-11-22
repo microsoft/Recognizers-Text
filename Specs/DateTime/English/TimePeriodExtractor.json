@@ -530,7 +530,7 @@
   "Results": [
     {
       "Text": "the afternoon",
-      "Type": "datetimerange"
+      "Type": "timerange"
     }
   ]
 }
@@ -542,7 +542,7 @@
   "Results": [
     {
       "Text": "the afternoon",
-      "Type": "datetimerange"
+      "Type": "timerange"
     }
   ]
 }
