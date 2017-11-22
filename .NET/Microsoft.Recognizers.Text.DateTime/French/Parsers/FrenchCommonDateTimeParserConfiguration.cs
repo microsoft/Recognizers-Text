@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DatePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
+            DateTimeALTParser = new BaseDateTimeALTParser(new FrenchDateTimeALTParserConfiguration(this));
         }
     }
 }

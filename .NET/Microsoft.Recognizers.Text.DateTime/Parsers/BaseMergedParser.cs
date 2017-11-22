@@ -100,6 +100,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pr = this.Config.GetParser.Parse(er, referenceTime);
             }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+            {
+                pr = this.Config.DateTimeALTParser.Parse(er, referenceTime);
+            }
             else
             {
                 return null;
@@ -456,8 +460,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
             }
+            else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+            {
+                AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
+            }
 
             return res;
+        }
+
+        public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
+            Dictionary<string, string> res)
+        {
+            AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
+            if (resolutionDic.ContainsKey(Constants.Context))
+            {
+                res.Add(Constants.Context, resolutionDic[Constants.Context]);
+            }
+            return;
         }
 
         public void AddSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod, 

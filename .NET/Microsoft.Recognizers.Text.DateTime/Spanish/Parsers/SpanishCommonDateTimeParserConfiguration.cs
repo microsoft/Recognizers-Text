@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
+            DateTimeALTParser = new BaseDateTimeALTParser(new SpanishDateTimeALTParserConfiguration(this));
         }
     }
 }

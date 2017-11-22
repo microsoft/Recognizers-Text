@@ -42,7 +42,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimePeriodParser { get; }
 
         IDateTimeParser DateTimePeriodParser { get; }
-        
+
+        IDateTimeParser DateTimeALTParser { get; }
+
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

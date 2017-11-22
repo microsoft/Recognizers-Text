@@ -382,6 +382,9 @@ GeneralEndingRegex: !simpleRegex
 MiddlePauseRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+OrRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes)\b

@@ -25,6 +25,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor HolidayExtractor { get; }
 
+        IDateTimeListExtractor DateTimeALTExtractor { get; }
+
         IExtractor IntegerExtractor { get; }
 
         IEnumerable<Regex> FilterWordRegexList { get; }

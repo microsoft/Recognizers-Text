@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeListExtractor DateTimeALTExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public EnglishMergedExtractorConfiguration()
@@ -64,6 +66,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new EnglishSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+            DateTimeALTExtractor = new BaseDateTimeALTExtractor(new EnglishDateTimeALTExtractorConfiguration());
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
 
