@@ -529,7 +529,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the afternoon",
+      "Text": "in the afternoon",
       "Type": "timerange"
     }
   ]
@@ -541,7 +541,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "the afternoon",
+      "Text": "in the afternoon",
       "Type": "timerange"
     }
   ]
