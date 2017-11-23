@@ -18,6 +18,7 @@ export default {
   plugins: [
     alias({
       'recognizers-text-base': path.resolve(__dirname, '../recognizers-base/compiled/recognizers-text-base.js'),
+      'recognizers-text-choices': path.resolve(__dirname, '../recognizers-choices/compiled/recognizers-text-choices.js'),
       'recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
       'recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js'),
       'recognizers-text-date-time': path.resolve(__dirname, '../recognizers-date-time/compiled/recognizers-text-date-time.js'),
