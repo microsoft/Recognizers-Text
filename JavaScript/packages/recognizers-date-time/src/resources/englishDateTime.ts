@@ -11,6 +11,7 @@ export namespace EnglishDateTime {
 	export const TillRegex = `(?<till>to|till|til|until|thru|through|--|-|—|——)`;
 	export const RangeConnectorRegex = `(?<and>and|through|to|--|-|—|——)`;
 	export const RelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current|the|my)`;
+	export const StrictRelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current)`;
 	export const NextPrefixRegex = `(next|upcoming)\\b`;
 	export const PastPrefixRegex = `(last|past|previous)\\b`;
 	export const ThisPrefixRegex = `(this|current)\\b`;
@@ -109,7 +110,7 @@ export namespace EnglishDateTime {
 	export const PureNumBetweenAnd = `(between\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
 	export const PrepositionRegex = `(?<prep>^(at|on|of)(\\s+the)?$)`;
 	export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(morning|afternoon|night|evening)))|(((in\\s+(the)?\\s+)?)(daytime)))s?)\\b`;
-	export const SpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
+	export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btonight)s?\\b`;
 	export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
 	export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
 	export const NowRegex = `\\b(?<now>(right\\s+)?now|as soon as possible|asap|recently|previously)\\b`;
@@ -122,7 +123,7 @@ export namespace EnglishDateTime {
 	export const SimpleTimeOfTodayBeforeRegex = `${DateTimeSpecificTimeOfDayRegex}(\\s*,)?(\\s+(at|around))?\\s*(${HourNumRegex}|${BaseDateTime.HourRegex})`;
 	export const TheEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
-	export const PeriodSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
+	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
 	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+on)?))\\b`;
 	export const DurationUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))`;
