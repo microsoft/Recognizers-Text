@@ -30,37 +30,39 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.OneWordPeriodRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthWithYearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumWithYearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfMonthRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfYearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthFrontBetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthFrontSimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegexYearFront, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.SeasonRegex, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateRegex, "gis")
+            RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.SimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.DayBetweenRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.OneWordPeriodRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthWithYearRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumWithYearRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfMonthRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfYearRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthFrontBetweenRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.MonthFrontSimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.SeasonRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex)
         ];
-        this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberCombinedWithDateUnit, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
-        this.weekOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfRegex, "gis");
-        this.monthOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthOfRegex, "gis");
-        this.dateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex, "gis");
-        this.inConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InConnectorRegex, "gis");
-        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeUnitRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberCombinedWithDateUnit);
+        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
+        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
+        this.weekOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfRegex);
+        this.monthOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthOfRegex);
+        this.dateUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateUnitRegex);
+        this.inConnectorRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.InConnectorRegex);
+        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeUnitRegex);
 
-        this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex, "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex, "gis");
-        this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex, "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
         this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
@@ -105,6 +107,8 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly monthOfRegex: RegExp;
     readonly whichWeekRegex: RegExp;
     readonly restOfDateRegex: RegExp;
+    readonly laterEarlyPeriodRegex: RegExp;
+    readonly weekWithWeekDayRangeRegex: RegExp;
     readonly tokenBeforeDate: string;
     readonly dayOfMonth: ReadonlyMap<string, number>;
     readonly monthOfYear: ReadonlyMap<string, number>;
@@ -149,6 +153,8 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.weekOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekOfRegex);
         this.monthOfRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthOfRegex);
         this.restOfDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateRegex);
+        this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex);
+        this.weekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex);
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);

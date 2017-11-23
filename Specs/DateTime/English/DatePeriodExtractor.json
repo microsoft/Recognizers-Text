@@ -2497,7 +2497,6 @@
 ,
 {
   "Input": "Please find us a time to meet later this month",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2509,7 +2508,6 @@
 ,
 {
   "Input": "Please find us a time to meet later this week",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2521,7 +2519,6 @@
 ,
 {
   "Input": "Please find us a time to meet late next week",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2533,7 +2530,6 @@
 ,
 {
   "Input": "Please find us a time to meet late next year",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2545,7 +2541,6 @@
 ,
 {
   "Input": "We met late last week",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2557,7 +2552,6 @@
 ,
 {
   "Input": "Please find us a time to meet early this month",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2569,7 +2563,6 @@
 ,
 {
   "Input": "Please find us a time to meet early this week",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2581,7 +2574,6 @@
 ,
 {
   "Input": "Please find us a time to meet early next week",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2593,7 +2585,6 @@
 ,
 {
   "Input": "Please find us a time to meet early next year",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2605,7 +2596,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week between Wednesday and Friday.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2617,7 +2607,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio next week from Wednesday to Friday.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2629,7 +2618,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio last week from Wednesday to Friday.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2641,7 +2629,6 @@
 ,
 {
   "Input": "Cortana, please coordinate a 25 minutes meeting with antonio this week between Wednesday and Friday.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

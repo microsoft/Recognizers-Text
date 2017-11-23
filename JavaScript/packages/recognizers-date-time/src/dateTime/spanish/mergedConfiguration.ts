@@ -39,15 +39,16 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly fromToRegex: RegExp;
     readonly singleAmbiguousMonthRegex: RegExp;
     readonly prepositionSuffixRegex: RegExp;
-    readonly numberEndingPattern: RegExp
+    readonly numberEndingPattern: RegExp;
+    readonly filterWordRegexList: RegExp[];
 
     constructor() {
-        this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex, "gis");
-        this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex, "gis");
-        this.sinceRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SinceRegex, "gis");
-        this.fromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromToRegex, "gis");
-        this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex, "gis");
-        this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
+        this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
+        this.sinceRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SinceRegex);
+        this.fromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromToRegex);
+        this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SingleAmbiguousMonthRegex);
+        this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionSuffixRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberEndingPattern);
 
         this.dateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
@@ -60,6 +61,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.setExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
         this.holidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
+        this.filterWordRegexList = [];
     }
 }
 
@@ -80,9 +82,9 @@ export class SpanishMergedParserConfiguration extends SpanishCommonDateTimeParse
     constructor() {
         super();
 
-        this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex, "gis");
-        this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex, "gis");
-        this.sinceRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SinceRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BeforeRegex);
+        this.afterRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AfterRegex);
+        this.sinceRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SinceRegex);
 
         this.datePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));

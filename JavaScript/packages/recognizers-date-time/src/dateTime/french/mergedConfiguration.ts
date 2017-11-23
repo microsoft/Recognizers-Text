@@ -39,14 +39,15 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
     readonly singleAmbiguousMonthRegex: RegExp;
     readonly prepositionSuffixRegex: RegExp;
     readonly numberEndingPattern: RegExp
+    readonly filterWordRegexList:RegExp[];
 
     constructor() {
-        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex, "gis");
-        this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex, "gis");
-        this.sinceRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SinceRegex, "gis");
-        this.fromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromToRegex, "gis");
-        this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex, "gis");
-        this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
+        this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);
+        this.sinceRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SinceRegex);
+        this.fromToRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromToRegex);
+        this.singleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SingleAmbiguousMonthRegex);
+        this.prepositionSuffixRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PrepositionSuffixRegex);
         this.numberEndingPattern = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberEndingPattern);
 
         this.dateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
@@ -59,6 +60,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
         this.setExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
         this.holidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
+        this.filterWordRegexList = [];
     }
 }
 
@@ -79,9 +81,9 @@ export class FrenchMergedParserConfiguration extends FrenchCommonDateTimeParserC
     constructor() {
         super();
 
-        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex, "gis");
-        this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex, "gis");
-        this.sinceRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SinceRegex, "gis");
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex);
+        this.afterRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.AfterRegex);
+        this.sinceRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.SinceRegex);
 
         this.datePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
         this.timePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));

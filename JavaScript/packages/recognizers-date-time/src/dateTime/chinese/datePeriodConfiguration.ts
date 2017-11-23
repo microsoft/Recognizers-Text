@@ -149,7 +149,9 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly nextPrefixRegex: RegExp
     readonly pastPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
-    readonly restOfDateRegex : RegExp
+    readonly restOfDateRegex: RegExp
+    readonly laterEarlyPeriodRegex: RegExp
+    readonly weekWithWeekDayRangeRegex: RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>
