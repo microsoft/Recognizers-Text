@@ -9,10 +9,6 @@ module.exports = function (describe, specs) {
             suite.specs.forEach(testCase => {
                 var caseName = `"${testCase.Input}"`;
 
-                if (suite.config.type !== 'Choices') {
-                    return;
-                }
-
                 // Not Supported by Design - right now we don't care about implementing it
                 var notSupportedByDesign = (testCase.NotSupportedByDesign || '').split(',').map(s => s.trim());
                 if (notSupportedByDesign.includes('javascript')) {
