@@ -24,5 +24,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ResolveToPastKey = "resolveToPast";
         public const string ResolveToFutureKey = "resolveToFuture";
         public const string Context = "context";
+        public const string SubType = "subType";
     }
 }

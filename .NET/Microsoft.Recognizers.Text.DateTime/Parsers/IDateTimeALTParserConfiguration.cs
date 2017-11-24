@@ -8,5 +8,9 @@ namespace Microsoft.Recognizers.Text.DateTime
     public interface IDateTimeALTParserConfiguration
     {
         IDateTimeParser DateTimeParser { get; }
+
+        IDateTimeParser DateParser { get; }
+
+        IDateTimeParser TimeParser { get; }
     }
 }

@@ -40,5 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string beforeMod = "before";
         public const string afterMod = "after";
         public const string sinceMod = "since";
+
+        public const string relativePrefixMod = "relativePrefixMod";
+        public const string AmPmMod = "AmPmMod";
     }
 }

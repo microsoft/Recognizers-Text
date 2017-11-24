@@ -69,16 +69,35 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
+            var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
             dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
-            dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
-            var datetimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
+            var dateTimePr = new DateTimeParseResult();
 
-            if (datetimePr.Value != null)
+            if (subType == Constants.SYS_DATETIME_DATE)
             {
-                ret.FutureValue = ((DateTimeResolutionResult)datetimePr.Value).FutureValue;
-                ret.PastValue = ((DateTimeResolutionResult)datetimePr.Value).PastValue;
-                ret.Timex = datetimePr.TimexStr;
+                dateTimeEr.Type = Constants.SYS_DATETIME_DATE;
+                dateTimePr = this.config.DateParser.Parse(dateTimeEr, referenceTime);
+            }
+            else if (subType == Constants.SYS_DATETIME_TIME)
+            {
+                if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
+                {
+                    dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
+                    dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
+                }
+                else if (contextEr.Type == TimeTypeConstants.AmPmMod)
+                {
+                    dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
+                    dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
+                }
+            }
+
+            if (dateTimePr.Value != null)
+            {
+                ret.FutureValue = ((DateTimeResolutionResult)dateTimePr.Value).FutureValue;
+                ret.PastValue = ((DateTimeResolutionResult)dateTimePr.Value).PastValue;
+                ret.Timex = dateTimePr.TimexStr;
                 ret.Success = true;
             }
 

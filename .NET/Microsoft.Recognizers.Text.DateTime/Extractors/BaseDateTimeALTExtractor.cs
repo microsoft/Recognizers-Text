@@ -26,13 +26,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(List<ExtractResult> extractResult, string text, DateObject reference)
         {
-            extractResult = DateTimeAndTimeALT(extractResult, text, reference);
+            extractResult = ExtractALT(extractResult, text, reference);
 
             return extractResult;
         }
 
         // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
-        public List<ExtractResult> DateTimeAndTimeALT(List<ExtractResult> extractResult, string text, DateObject reference)
+        // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
+        public List<ExtractResult> ExtractALT(List<ExtractResult> extractResult, string text, DateObject reference)
         {
             var ers = extractResult;
             ers = ers.OrderBy(o => o.Start).ToList();
@@ -51,36 +52,101 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
                 }
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATETIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME))
+                var middleBegin = ers[i].Start + ers[i].Length ?? 0;
+                var middleEnd = ers[j].Start ?? 0;
+                if (middleBegin > middleEnd)
                 {
-                    var middleBegin = ers[i].Start + ers[i].Length ?? 0;
-                    var middleEnd = ers[j].Start ?? 0;
-                    if (middleBegin > middleEnd)
-                    {
-                        i = j + 1;
-                        continue;
-                    }
-
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                    if (middleStr == "or")
-                    {
-                        var dateErs = this.config.DateExtractor.Extract(ers[i].Text);
-                        if (dateErs.Count == 1)
-                        {
-                            ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
-                            var data = new Dictionary<string, object>();
-                            data.Add(Constants.Context, dateErs[0]);
-                            ers[j].Data = data;
-                        }
-                    }
-
                     i = j + 1;
                     continue;
                 }
+
+                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                if (this.config.IsConnector(middleStr))
+                {
+                    if (isALT(ers[i], ers[j], out var data))
+                    {
+                        ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
+                        //var data = new Dictionary<string, object>();
+                        //data.Add(Constants.Context, contextErs);
+                        ers[j].Data = data;
+
+                        i = j + 1;
+                        continue;
+                    }
+                }
+                
                 i = j;
             }
 
             return ers;
+        }
+
+        private bool isALT(ExtractResult former, ExtractResult latter, out Dictionary<string, object> data)
+        {
+            var alt = false;
+            data = new Dictionary<string, object>();
+            // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
+            if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_TIME)
+            {
+                var ers = config.DateExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    alt = true;
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
+                }
+            }
+            // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
+            else if (former.Type == Constants.SYS_DATETIME_DATE && latter.Type == Constants.SYS_DATETIME_DATE)
+            {
+                var ers = config.DatePeriodExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    alt = true;
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
+                }
+                else
+                {
+                    // "Thursday" in "next/last/this Tuesday or Thursday"
+                    foreach (var regex in config.RelativePrefixList)
+                    {
+                        var match = regex.Match(former.Text);
+                        if (match.Success)
+                        {
+                            alt = true;
+                            var contextErs = new ExtractResult();
+                            contextErs.Text = match.Value;
+                            contextErs.Start = match.Index;
+                            contextErs.Length = match.Length;
+                            contextErs.Type = TimeTypeConstants.relativePrefixMod;
+                            data.Add(Constants.Context, contextErs);
+                            data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
+                        }
+                    }
+                }
+            }
+            else if (former.Type == Constants.SYS_DATETIME_TIME && latter.Type == Constants.SYS_DATETIME_TIME)
+            {
+                // "8 oclock" in "in the morning at 7 oclock or 8 oclock"
+                foreach (var regex in config.AmPmRegexList)
+                {
+                    var match = regex.Match(former.Text);
+                    if (match.Success)
+                    {
+                        alt = true;
+                        var contextErs = new ExtractResult();
+                        contextErs.Text = match.Value;
+                        contextErs.Start = match.Index;
+                        contextErs.Length = match.Length;
+                        contextErs.Type = TimeTypeConstants.AmPmMod;
+                        data.Add(Constants.Context, contextErs);
+                        data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
+                    }
+                }
+            }
+
+                return alt;
         }
     }
 }
