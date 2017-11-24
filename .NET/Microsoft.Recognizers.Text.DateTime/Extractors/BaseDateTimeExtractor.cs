@@ -233,6 +233,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationEr = config.DurationExtractor.Extract(text, reference);
             foreach (var er in durationEr)
             {
+                // if it is a muti-duration and its type is equal to Date than skip it.
+                if (er.Data != null)
+                {
+                    var t = er.Data.GetType();
+                    bool isDict = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Dictionary<,>);
+                    if (isDict)
+                    {
+                        var durationTypeDict = (Dictionary<string, string>)(er.Data);
+                        if (durationTypeDict.ContainsKey(Constants.MutiDurationType)
+                            && durationTypeDict[Constants.MutiDurationType] == Constants.MutiDuration_Date)
+                        {
+                            continue;
+                        }
+                    }
+                }
+
                 var match = config.UnitRegex.Match(er.Text);
                 if (!match.Success)
                 {

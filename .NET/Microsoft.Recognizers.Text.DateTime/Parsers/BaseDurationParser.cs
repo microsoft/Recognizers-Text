@@ -376,10 +376,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Timex = $"{ret.Timex}{timexDict[unit].Substring(1)}";
                 }
 
-                var value = 0;
+                double value = 0;
                 foreach (var pr in prs)
                 {
-                    value += int.Parse(((DateTimeResolutionResult)(pr.Value)).FutureValue.ToString());
+                    value += double.Parse(((DateTimeResolutionResult)(pr.Value)).FutureValue.ToString());
                 }
 
                 ret.FutureValue = ret.PastValue = value;

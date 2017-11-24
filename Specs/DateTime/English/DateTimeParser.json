@@ -1171,4 +1171,52 @@
     }
   ]
 }
+,
+{
+  "Input": "I will leave 1 day 2 hours later",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T19:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 day 2 hours later",
+      "Type": "datetime",
+      "Value": {
+        "Timex": "2017-11-24T21:00:00",
+        "FutureResolution": {
+          "dateTime": "2017-11-24 21:00:00"
+        },
+        "PastResolution": {
+          "dateTime": "2017-11-24 21:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We met 1 month 2 days 2 hours 30 mins ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T19:15:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month 2 days 2 hours 30 mins ago",
+      "Type": "datetime",
+      "Value": {
+        "Timex": "2017-10-21T16:45:00",
+        "FutureResolution": {
+          "dateTime": "2017-10-21 16:45:00"
+        },
+        "PastResolution": {
+          "dateTime": "2017-10-21 16:45:00"
+        }
+      }
+    }
+  ]
+}
 ]

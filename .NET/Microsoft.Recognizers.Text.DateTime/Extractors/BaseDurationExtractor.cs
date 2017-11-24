@@ -126,6 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             List<ExtractResult> ret = new List<ExtractResult>();
 
             var idx_i = 0;
+            var timeUnit = 0;
+            var totalUnit = 0;
             while (idx_i < extractorResults.Count)
             {
                 string curUnit = null;
@@ -134,6 +136,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
                 {
                     curUnit = unitMatch.Groups["unit"].ToString();
+                    totalUnit++;
+                    if (DurationParsingUtil.isTimeDuration(UnitMap[curUnit]))
+                    {
+                        timeUnit++;
+                    }
                 }
 
                 if (string.IsNullOrEmpty(curUnit))
@@ -163,6 +170,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     curUnit = nextUnitStr;
                                 }
                             }
+
+                            totalUnit++;
+                            if (DurationParsingUtil.isTimeDuration(UnitMap[nextUnitStr]))
+                            {
+                                timeUnit++;
+                            }
                         }
                     }
 
@@ -181,7 +194,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                     node.Length = extractorResults[idx_j - 1].Start + extractorResults[idx_j - 1].Length - node.Start;
                     node.Text = text.Substring(node.Start?? 0, node.Length?? 0);
                     node.Type = extractorResults[idx_i].Type;
+
+                    // add mutiple duration type to extract result
+                    var typeDict = new Dictionary<string, string>();
+                    if (timeUnit == totalUnit)
+                    {
+                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_Time);
+                    }
+                    else if (timeUnit == 0)
+                    {
+                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_Date);
+                    }
+                    else
+                    {
+                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_DateTime);
+                    }
+                    node.Data = typeDict;
+
                     ret.Add(node);
+
+                    timeUnit = 0;
+                    totalUnit = 0;
                 }
                 else
                 {
