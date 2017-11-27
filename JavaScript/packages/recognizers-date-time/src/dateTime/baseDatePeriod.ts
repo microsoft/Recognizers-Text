@@ -195,6 +195,8 @@ export interface IDatePeriodParserConfiguration {
     monthOfRegex: RegExp
     whichWeekRegex: RegExp
     restOfDateRegex: RegExp
+    laterEarlyPeriodRegex: RegExp
+    weekWithWeekDayRangeRegex: RegExp
     tokenBeforeDate: string
     dayOfMonth: ReadonlyMap<string, number>
     monthOfYear: ReadonlyMap<string, number>
@@ -397,6 +399,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         let year = referenceDate.getFullYear();
         let month = referenceDate.getMonth();
+        let earlyPrefix = false;
+        let latePrefix = false;
 
         if (this.config.isYearToDate(source)) {
             result.timex = FormatUtil.toString(year, 4);
@@ -415,11 +419,31 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
         let futureYear = year;
         let pastYear = year;
-        let match = RegExpUtility.getMatches(this.config.oneWordPeriodRegex, source).pop();
-        if (!match || match.index !== 0 || match.length !== source.length) return result;
+        let trimedText = source.trim().toLowerCase();
+        let match = RegExpUtility.getMatches(this.config.oneWordPeriodRegex, trimedText).pop();
+
+        if (!(match && match.index == 0 && match.length == trimedText.length))
+        {
+            match = RegExpUtility.getMatches(this.config.laterEarlyPeriodRegex, trimedText).pop();
+        }
+
+        if (!match || match.index !== 0 || match.length !== trimedText.length) return result;
+
+        if (match.groups("EarlyPrefix").value)
+        {
+            earlyPrefix = true;
+            trimedText = match.groups("suffix").value;
+        }
+
+        if (match.groups("LatePrefix").value)
+        {
+            latePrefix = true;
+            trimedText = match.groups("suffix").value;
+        }
+
         let monthStr = match.groups('month').value;
         if (!StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftYear(source);
+            let swift = this.config.getSwiftYear(trimedText);
             month = this.config.monthOfYear.get(monthStr) - 1;
             if (swift >= -1) {
                 result.timex = `${FormatUtil.toString(year + swift, 4)}-${FormatUtil.toString(month + 1, 2)}`;
@@ -432,18 +456,35 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 if (month >= referenceDate.getMonth()) pastYear--;
             }
         } else {
-            let swift = this.config.getSwiftDayOrMonth(source);
-            if (this.config.isWeekOnly(source)) {
+            let swift = this.config.getSwiftDayOrMonth(trimedText);
+            if (this.config.isWeekOnly(trimedText)) {
                 let monday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
-                let sunday = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Sunday), (7 * swift) + (this.inclusiveEndPeriod ? 0 : 1));
 
                 result.timex = `${FormatUtil.toString(monday.getFullYear(), 4)}-W${FormatUtil.toString(DateUtils.getWeekNumber(monday).weekNo, 2)}`;
-                result.futureValue = [monday, sunday];
-                result.pastValue = [monday, sunday];
+
+                var beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Monday), 7 * swift);
+                var endDate = this.inclusiveEndPeriod
+                    ? DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Sunday), 7 * swift)
+                    : DateUtils.addDays(
+                        DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Sunday), 7 * swift), 1);
+
+                if (earlyPrefix) {
+                    endDate = this.inclusiveEndPeriod
+                        ? DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Wednesday), 7 * swift)
+                        : DateUtils.addDays(
+                            DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Wednesday), 7 * swift), 1);
+                }
+
+                if (latePrefix) {
+                    beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Thursday), 7 * swift);
+                }
+
+                result.futureValue = [beginDate, endDate];
+                result.pastValue = [beginDate, endDate];
                 result.success = true;
                 return result;
             }
-            if (this.config.isWeekend(source)) {
+            if (this.config.isWeekend(trimedText)) {
                 let beginDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Saturday), 7 * swift);
                 let endDate = DateUtils.addDays(DateUtils.this(referenceDate, DayOfWeek.Sunday), (7 * swift) + (this.inclusiveEndPeriod ? 0 : 1));
 
@@ -453,7 +494,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 result.success = true;
                 return result;
             }
-            if (this.config.isMonthOnly(source)) {
+            if (this.config.isMonthOnly(trimedText)) {
                 let tempDate = new Date(referenceDate);
                 tempDate.setMonth(referenceDate.getMonth() + swift);
                 month = tempDate.getMonth();
@@ -461,31 +502,65 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 result.timex = `${FormatUtil.toString(year, 4)}-${FormatUtil.toString(month + 1, 2)}`;
                 futureYear = year;
                 pastYear = year;
-            } else if (this.config.isYearOnly(source)) {
+            } else if (this.config.isYearOnly(trimedText)) {
                 let tempDate = new Date(referenceDate);
                 tempDate.setFullYear(referenceDate.getFullYear() + swift);
                 year = tempDate.getFullYear();
+                var beginDate = DateUtils.safeCreateFromMinValue(year, 0, 1);
+                var endDate = this.inclusiveEndPeriod
+                    ? DateUtils.safeCreateFromMinValue(year, 11, 31)
+                    : DateUtils.addDays(
+                        DateUtils.safeCreateFromMinValue(year, 11, 31), 1);
+                if (earlyPrefix) {
+                    endDate = this.inclusiveEndPeriod
+                        ? DateUtils.safeCreateFromMinValue(year, 5, 30)
+                        : DateUtils.addDays(
+                            DateUtils.safeCreateFromMinValue(year, 5, 30), 1);
+                }
+                if (latePrefix) {
+                    beginDate = DateUtils.safeCreateFromMinValue(year, 6, 1);
+                }
+
                 result.timex = FormatUtil.toString(year, 4);
-                result.futureValue = [
-                    DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1),
-                    DateUtils.addDays(DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 11, 31), this.inclusiveEndPeriod ? 0 : 1)
-                ];
-                result.pastValue = [
-                    DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 0, 1),
-                    DateUtils.addDays(DateUtils.safeCreateFromValue(DateUtils.minValue(), year, 11, 31), this.inclusiveEndPeriod ? 0 : 1)
-                ];
+                result.futureValue = [beginDate, endDate];
+                result.pastValue = [beginDate, endDate];
                 result.success = true;
                 return result;
             }
         }
-        result.futureValue = [
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear, month, 1),
-            DateUtils.addDays(DateUtils.addMonths(DateUtils.safeCreateFromValue(DateUtils.minValue(), futureYear, month, 1), 1), this.inclusiveEndPeriod ? -1 : 0)
-        ];
-        result.pastValue = [
-            DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear, month, 1),
-            DateUtils.addDays(DateUtils.addMonths(DateUtils.safeCreateFromValue(DateUtils.minValue(), pastYear, month, 1), 1), this.inclusiveEndPeriod ? -1 : 0)
-        ];
+        
+        let futureStart = DateUtils.safeCreateFromMinValue(futureYear, month, 1);
+        let futureEnd = this.inclusiveEndPeriod
+            ? DateUtils.addDays(
+                DateUtils.addMonths(
+                    DateUtils.safeCreateFromMinValue(futureYear, month, 1), 1), -1)
+            : DateUtils.addMonths(
+                DateUtils.safeCreateFromMinValue(futureYear, month, 1), 1);
+        let pastStart = DateUtils.safeCreateFromMinValue(pastYear, month, 1);
+        let pastEnd = this.inclusiveEndPeriod
+            ? DateUtils.addDays(
+                DateUtils.addMonths(
+                    DateUtils.safeCreateFromMinValue(pastYear, month, 1), 1), -1)
+            : DateUtils.addMonths(
+                DateUtils.safeCreateFromMinValue(pastYear, month, 1), 1);
+        if (earlyPrefix) {
+            futureEnd = this.inclusiveEndPeriod
+                ? DateUtils.safeCreateFromMinValue(futureYear, month, 15)
+                : DateUtils.addDays(
+                    DateUtils.safeCreateFromMinValue(futureYear, month, 15), 1);
+            pastEnd = this.inclusiveEndPeriod
+                ? DateUtils.safeCreateFromMinValue(pastYear, month, 15)
+                : DateUtils.addDays(
+                    DateUtils.safeCreateFromMinValue(pastYear, month, 15), 1);
+        }
+        else if (latePrefix)
+        {
+            futureStart = DateUtils.safeCreateFromMinValue(futureYear, month, 16);
+            pastStart = DateUtils.safeCreateFromMinValue(pastYear, month, 16);
+        }
+
+        result.futureValue = [futureStart, futureEnd];
+        result.pastValue = [pastStart, pastEnd];
         result.success = true;
         return result;
     }
@@ -502,6 +577,20 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 });
             if (!ers || ers.length < 2) return result;
         }
+
+        let match = RegExpUtility.getMatches(this.config.weekWithWeekDayRangeRegex, source).pop();
+        let weekPrefix: string = null;
+        if (match)
+        {
+            weekPrefix = match.groups("week").value;
+        }
+
+        if (! StringUtility.isNullOrWhitespace(weekPrefix))
+        {
+            ers[0].text = weekPrefix + " " + ers[0].text;
+            ers[1].text = weekPrefix + " " + ers[1].text;
+        }
+
         let prs = ers.map(er => this.config.dateParser.parse(er, referenceDate)).filter(pr => pr);
         if (prs.length < 2) return result;
 
@@ -711,12 +800,39 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             if (swift < -1) return result;
             year = referenceDate.getFullYear() + swift;
         }
+
+        let targetWeekMonday: Date;
         if (this.config.isLastCardinal(cardinalStr)) {
-            result = this.getWeekOfMonth(5, 11, year, referenceDate, false);
+            let lastDay = DateUtils.safeCreateFromMinValue(year, 11, 31);
+            let lastDayWeekMonday = DateUtils.this(lastDay, DayOfWeek.Monday);
+            let weekNum = DateUtils.getWeekNumber(lastDay).weekNo;
+            if (weekNum === 1) {
+                lastDayWeekMonday = DateUtils.this(DateUtils.addDays(lastDay, -7), DayOfWeek.Monday);
+            }
+
+            targetWeekMonday = lastDayWeekMonday;
+            weekNum = DateUtils.getWeekNumber(targetWeekMonday).weekNo;
+
+            result.timex = `${ FormatUtil.toString(year, 4) }-${ FormatUtil.toString(targetWeekMonday.getMonth() + 1, 2) }-W${ FormatUtil.toString(weekNum, 2) }`;
         } else {
             let cardinal = this.config.cardinalMap.get(cardinalStr);
-            result = this.getWeekOfMonth(cardinal, 0, year, referenceDate, false);
+
+            let firstDay = DateUtils.safeCreateFromMinValue(year, 0, 1);
+            let firstDayWeekMonday = DateUtils.this(firstDay, DayOfWeek.Monday);
+            let weekNum = DateUtils.getWeekNumber(firstDay).weekNo;
+            if (weekNum !== 1) {
+                firstDayWeekMonday = DateUtils.this(DateUtils.addDays(firstDay, 7), DayOfWeek.Monday);
+            }
+
+            targetWeekMonday = DateUtils.addDays(firstDayWeekMonday, 7 * (cardinal - 1));
+            let targetWeekSunday = DateUtils.this(targetWeekMonday, DayOfWeek.Sunday);
+            result.timex = `${ FormatUtil.toString(year, 4) }-${ FormatUtil.toString(targetWeekSunday.getMonth() + 1, 2) }-W${ FormatUtil.toString(cardinal, 2) }`;
         }
+
+        result.futureValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
+        result.pastValue = [targetWeekMonday, DateUtils.addDays(targetWeekMonday, this.inclusiveEndPeriod ? 6 : 7)];
+        result.success = true;
+        
         return result;
     }
 

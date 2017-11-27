@@ -234,7 +234,7 @@
       "Text": "esta semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46",
+        "Timex": "2016-W45",
         "FutureResolution": {
           "startDate": "2016-11-07",
           "endDate": "2016-11-14"
@@ -734,7 +734,7 @@
       "Text": "fin de semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"
@@ -759,7 +759,7 @@
       "Text": "este fin de semana",
       "Type": "daterange",
       "Value": {
-        "Timex": "2016-W46-WE",
+        "Timex": "2016-W45-WE",
         "FutureResolution": {
           "startDate": "2016-11-12",
           "endDate": "2016-11-14"

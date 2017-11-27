@@ -22,6 +22,7 @@ class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtr
     readonly singleTimeExtractor: ChineseTimeExtractor
     readonly singleDateTimeExtractor: ChineseDateTimeExtractor
     readonly durationExtractor: BaseDurationExtractor
+    readonly timePeriodExtractor: IDateTimeExtractor
     readonly simpleCasesRegexes: RegExp[]
     readonly prepositionRegex: RegExp
     readonly tillRegex: RegExp
@@ -36,6 +37,8 @@ class ChineseDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtr
     readonly rangeConnectorRegex: RegExp
     readonly relativeTimeUnitRegex: RegExp
     readonly restOfDateTimeRegex: RegExp
+    readonly generalEndingRegex: RegExp
+    readonly middlePauseRegex: RegExp
 
     getFromTokenIndex(source: string) {
         let result = { matched: false, index: -1 };

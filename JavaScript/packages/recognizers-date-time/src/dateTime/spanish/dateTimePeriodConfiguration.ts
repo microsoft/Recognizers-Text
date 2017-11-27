@@ -11,6 +11,8 @@ import { SpanishDurationExtractorConfiguration } from "./durationConfiguration";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { SpanishTimeExtractorConfiguration } from "./timeConfiguration";
 import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
+import { BaseTimePeriodExtractor } from "../baseTimePeriod";
+import { SpanishTimePeriodExtractorConfiguration } from "./timePeriodConfiguration";
 
 export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePeriodExtractorConfiguration {
     readonly cardinalExtractor: BaseNumberExtractor;
@@ -18,6 +20,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly singleTimeExtractor: IDateTimeExtractor;
     readonly singleDateTimeExtractor: IDateTimeExtractor;
     readonly durationExtractor: IDateTimeExtractor;
+    readonly timePeriodExtractor: IDateTimeExtractor;
     readonly simpleCasesRegexes: RegExp[];
     readonly prepositionRegex: RegExp;
     readonly tillRegex: RegExp;
@@ -32,6 +35,8 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
     readonly relativeTimeUnitRegex: RegExp;
     readonly restOfDateTimeRegex: RegExp;
     readonly weekDayRegex: RegExp;
+    readonly generalEndingRegex: RegExp;
+    readonly middlePauseRegex: RegExp;
 
     readonly fromRegex: RegExp;
     readonly connectorAndRegex: RegExp;
@@ -40,27 +45,29 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd, "gis")
+            RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo),
+            RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd)
         ]
 
-        this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex, "gis");
-        this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex, "gis");
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeOfDayRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit, "gis");
-        this.timeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex, "gis");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
-        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit, "gis");
-        this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex, "gis");
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex, "gis");
-        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex, "gis");
+        this.prepositionRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PrepositionRegex);
+        this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeOfDayRegex);
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedUnit);
+        this.timeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex);
+        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
+        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit);
+        this.weekDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.WeekDayRegex);
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex);
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
+        this.generalEndingRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.GeneralEndingRegex);
+        this.middlePauseRegex= RegExpUtility.getSafeRegExp(SpanishDateTime.MiddlePauseRegex);
 
-        this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex, "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex, "gis");
-        this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex, "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FromRegex);
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectorAndRegex);
+        this.betweenRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.BetweenRegex);
 
         this.cardinalExtractor = new SpanishCardinalExtractor();
 
@@ -68,6 +75,7 @@ export class SpanishDateTimePeriodExtractorConfiguration implements IDateTimePer
         this.singleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
         this.singleDateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
+        this.timePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
     }
 
     getFromTokenIndex(source: string): { matched: boolean; index: number; } {
@@ -131,21 +139,21 @@ export class SpanishDateTimePeriodParserConfiguration implements IDateTimePeriod
         this.unitMap = config.unitMap;
         this.numbers = config.numbers;
 
-        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex, "gis");
-        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex, "gis");
-        this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex, "gis");
+        this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex);
+        this.pastPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastPrefixRegex);
+        this.thisPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.ThisPrefixRegex);
 
-        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo, "gis");
-        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd, "gis");
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeOfDayRegex, "gis");
-        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex, "gis");
-        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit, "gis");
-        this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex, "gis");
-        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex, "gis");
-        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex, "gis");
-        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex, "gis");
+        this.pureNumberFromToRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumFromTo);
+        this.pureNumberBetweenAndRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PureNumBetweenAnd);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.SpecificTimeOfDayRegex);
+        this.timeOfDayRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TimeOfDayRegex);
+        this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
+        this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
+        this.numberCombinedWithUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.DateTimePeriodNumberCombinedWithUnit);
+        this.unitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.UnitRegex);
+        this.periodTimeOfDayWithDateRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PeriodTimeOfDayWithDateRegex);
+        this.relativeTimeUnitRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeTimeUnitRegex);
+        this.restOfDateTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RestOfDateTimeRegex);
     }
 
     getMatchedTimeRange(source: string): { timeStr: string; beginHour: number; endHour: number; endMin: number; success: boolean; } {

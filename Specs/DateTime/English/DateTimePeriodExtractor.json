@@ -781,7 +781,6 @@
 ,
 {
   "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday between 1PM and 4 PM. ",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -793,7 +792,6 @@
 ,
 {
   "Input": "Can you schedule us tomorrow between 8am and 2pm?",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -805,7 +803,6 @@
 ,
 {
   "Input": "Can you schedule us Dec 9th between 8am and 2pm?",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -817,7 +814,6 @@
 ,
 {
   "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -828,20 +824,7 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting this Friday, in the afternoon I will leave.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the afternoon",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
   "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -852,20 +835,7 @@
 }
 ,
 {
-  "Input": "Hi Cortana- Please schedule a skype meeting with Jennifer.  I need a 30 min meeting in the afternoon, this Friday I will leave.",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "the afternoon",
-      "Type": "datetimerange"
-    }
-  ]
-}
-,
-{
   "Input": "Cortana, please schedule a skype for business meeting with Wayne, on Friday afternoon between 1PM and 4 PM.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -877,7 +847,6 @@
 ,
 {
   "Input": "Cortana, please schedule a skype for business meeting with Wayne, in the afternoon on Friday between 1PM and 4 PM.",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

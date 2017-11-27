@@ -43,6 +43,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
     readonly numberEndingPattern: RegExp
+    readonly filterWordRegexList: RegExp[]
 
     constructor() {
         this.dateExtractor = new ChineseDateExtractor();
