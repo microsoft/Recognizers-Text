@@ -182,19 +182,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in durationEr)
             {
                 // if it is a muti-duration and its type is not equal to Date than skip it.
-                if (er.Data != null)
+                if (er.Data != null && er.Data.ToString() != Constants.MutiDuration_Date)
                 {
-                    var t = er.Data.GetType();
-                    bool isDict = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(Dictionary<,>);
-                    if (isDict)
-                    {
-                        var durationTypeDict = (Dictionary<string, string>)(er.Data);
-                        if (durationTypeDict.ContainsKey(Constants.MutiDurationType)
-                            && durationTypeDict[Constants.MutiDurationType] != Constants.MutiDuration_Date)
-                        {
-                            continue;
-                        }
-                    }
+                    continue;
                 }
 
                 var match = config.DateUnitRegex.Match(er.Text);

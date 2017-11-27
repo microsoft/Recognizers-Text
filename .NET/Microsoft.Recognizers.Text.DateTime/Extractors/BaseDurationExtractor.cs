@@ -196,20 +196,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     node.Type = extractorResults[idx_i].Type;
 
                     // add mutiple duration type to extract result
-                    var typeDict = new Dictionary<string, string>();
+                    string type = null;
                     if (timeUnit == totalUnit)
                     {
-                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_Time);
+                        type = Constants.MutiDuration_Time;
                     }
                     else if (timeUnit == 0)
                     {
-                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_Date);
+                        type = Constants.MutiDuration_Date;
                     }
                     else
                     {
-                        typeDict.Add(Constants.MutiDurationType, Constants.MutiDuration_DateTime);
+                        type = Constants.MutiDuration_DateTime;
                     }
-                    node.Data = typeDict;
+                    node.Data = type;
 
                     ret.Add(node);
 
