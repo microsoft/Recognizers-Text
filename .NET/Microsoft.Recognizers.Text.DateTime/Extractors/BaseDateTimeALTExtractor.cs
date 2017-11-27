@@ -42,32 +42,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             while (i < ers.Count - 1)
             {
                 var j = i + 1;
-                while (j < ers.Count && ers[i].IsOverlap(ers[j]))
-                {
-                    j++;
-                }
 
                 if (j >= ers.Count)
                 {
                     break;
                 }
 
+                // check whether middle string is a connector
                 var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                 var middleEnd = ers[j].Start ?? 0;
-                if (middleBegin > middleEnd)
-                {
-                    i = j + 1;
-                    continue;
-                }
-
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                if (this.config.IsConnector(middleStr))
+                var matches = this.config.OrRegex.Matches(middleStr);
+                if (matches.Count == 1)
                 {
-                    if (isALT(ers[i], ers[j], out var data))
+                    // extract different data accordingly
+                    var data = ExtractALT(ers[i], ers[j]);
+                    if (data.Count > 0)
                     {
                         ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
-                        //var data = new Dictionary<string, object>();
-                        //data.Add(Constants.Context, contextErs);
                         ers[j].Data = data;
 
                         i = j + 1;
@@ -81,28 +73,47 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private bool isALT(ExtractResult former, ExtractResult latter, out Dictionary<string, object> data)
+        private Dictionary<string, object> ExtractALT(ExtractResult former, ExtractResult latter)
         {
-            var alt = false;
-            data = new Dictionary<string, object>();
+            var data = ExtractDateTime_Time(former, latter);
+
+            if (data.Count == 0)
+            {
+                data = ExtractDate_Date(former, latter);
+            }
+            if (data.Count == 0)
+            {
+                data = ExtractTime_Time(former, latter);
+            }
+
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDateTime_Time(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
             // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
             if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_TIME)
             {
                 var ers = config.DateExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    alt = true;
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIME);
                 }
             }
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDate_Date(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
             // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
-            else if (former.Type == Constants.SYS_DATETIME_DATE && latter.Type == Constants.SYS_DATETIME_DATE)
+            if (former.Type == Constants.SYS_DATETIME_DATE && latter.Type == Constants.SYS_DATETIME_DATE)
             {
                 var ers = config.DatePeriodExtractor.Extract(former.Text);
                 if (ers.Count == 1)
                 {
-                    alt = true;
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_DATE);
                 }
@@ -114,7 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var match = regex.Match(former.Text);
                         if (match.Success)
                         {
-                            alt = true;
                             var contextErs = new ExtractResult();
                             contextErs.Text = match.Value;
                             contextErs.Start = match.Index;
@@ -126,7 +136,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-            else if (former.Type == Constants.SYS_DATETIME_TIME && latter.Type == Constants.SYS_DATETIME_TIME)
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractTime_Time(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+            if (former.Type == Constants.SYS_DATETIME_TIME && latter.Type == Constants.SYS_DATETIME_TIME)
             {
                 // "8 oclock" in "in the morning at 7 oclock or 8 oclock"
                 foreach (var regex in config.AmPmRegexList)
@@ -134,7 +150,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var match = regex.Match(former.Text);
                     if (match.Success)
                     {
-                        alt = true;
                         var contextErs = new ExtractResult();
                         contextErs.Text = match.Value;
                         contextErs.Start = match.Index;
@@ -145,8 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
-
-                return alt;
+            return data;
         }
     }
 }

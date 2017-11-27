@@ -48,11 +48,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         IEnumerable<Regex> IDateTimeALTExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
-        public bool IsConnector(string text)
-        {
-            text = text.Trim();
-            var match = OrRegex.Match(text);
-            return match.Success;
-        }
+        Regex IDateTimeALTExtractorConfiguration.OrRegex => OrRegex;
     }
 }

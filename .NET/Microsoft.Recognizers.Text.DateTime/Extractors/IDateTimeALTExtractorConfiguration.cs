@@ -13,6 +13,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> AmPmRegexList { get; }
 
-        bool IsConnector(string text);
+        Regex OrRegex { get; }
     }
 }
