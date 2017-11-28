@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public SpanishDurationExtractorConfiguration()
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
@@ -65,5 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
     }
 }

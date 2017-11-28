@@ -672,4 +672,7 @@ NightRegex: !simpleRegex
 DurationUnitRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]
+DurationConnectorRegex: !simpleRegex
+  # TODO: add this according to the related part in English
+  def: ^[.]
 ...

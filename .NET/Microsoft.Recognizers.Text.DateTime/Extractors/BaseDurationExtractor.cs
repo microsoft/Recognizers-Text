@@ -156,7 +156,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var midStrBegin = extractorResults[idx_j - 1].Start + extractorResults[idx_j - 1].Length ?? 0;
                     var midStrEnd = extractorResults[idx_j].Start ?? 0;
                     var midStr = text.Substring(midStrBegin, midStrEnd - midStrBegin);
-                    if (string.IsNullOrWhiteSpace(midStr) && !string.IsNullOrEmpty(midStr))
+                    var match = this.config.DurationConnectorRegex.Match(midStr);
+                    if (match.Success)
                     {
                         unitMatch = unitRegex.Match(extractorResults[idx_j].Text);
                         if (unitMatch.Success && UnitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))

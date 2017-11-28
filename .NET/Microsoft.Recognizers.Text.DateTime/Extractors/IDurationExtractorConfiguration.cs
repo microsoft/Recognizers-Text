@@ -29,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DurationUnitRegex { get; }
 
+        Regex DurationConnectorRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }

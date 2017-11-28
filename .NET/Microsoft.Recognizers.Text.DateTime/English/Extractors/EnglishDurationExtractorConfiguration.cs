@@ -41,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RelativeDurationUnitRegex =
             new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DurationConnectorRegex =
+            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public EnglishDurationExtractorConfiguration()
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
@@ -75,5 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
 
         Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
     }
 }
