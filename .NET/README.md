@@ -100,5 +100,5 @@ The recognizers were designed to disjoint language's logic from the recognizer's
 
 To achieve this, the recognizers contains the following folders:
 
-* [Specs](/../Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
-* [Patterns](/../Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
+* [Specs](/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
+* [Patterns](/Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
