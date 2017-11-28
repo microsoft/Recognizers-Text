@@ -423,7 +423,7 @@ GeneralEndingRegex: !simpleRegex
   def: ^\s*((\.,)|\.|,|!|\?)?\s*$
 MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
-OrRgex: !simpleRegex
+OrRegex: !simpleRegex
   def: \s*(or)\s*
 UnitMap: !dictionary
   types: [ string, string ]
