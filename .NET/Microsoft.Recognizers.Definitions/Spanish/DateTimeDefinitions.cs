@@ -412,5 +412,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string RestOfDateTimeRegex = @"^[\.]";
 		public const string SetWeekDayRegex = @"^[\.]";
 		public const string NightRegex = @"\b(medionoche|noche)\b";
+		public const string DurationUnitRegex = @"^[\.]";
+		public const string DurationConnectorRegex = @"^[.]";
 	}
 }
