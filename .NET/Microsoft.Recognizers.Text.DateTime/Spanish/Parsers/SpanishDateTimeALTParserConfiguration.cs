@@ -8,11 +8,14 @@
 
         public IDateTimeParser TimeParser { get; }
 
+        public IDateTimeParser DateTimePeriodParser { get; }
+
         public SpanishDateTimeALTParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTimeParser = config.DateTimeParser;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            DateTimePeriodParser = config.DateTimePeriodParser;
         }
 
     }

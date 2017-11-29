@@ -462,10 +462,41 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
+                // for a period
+                if (resolutionDic.Count > 2)
+                {
+                    AddAltPeriodToResolution(resolutionDic, mod, res);
+                }
+                // for a datetime point
+                else
+                {
+                    AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
+                }
             }
 
             return res;
+        }
+
+        public void AddAltPeriodToResolution(Dictionary<string, string> resolutionDic, string mod, Dictionary<string, string> res)
+        {
+            if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATETIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATETIME))
+            {
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATETIME, TimeTypeConstants.END_DATETIME, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_DATE) && resolutionDic.ContainsKey(TimeTypeConstants.END_DATE))
+            {
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_DATE, TimeTypeConstants.END_DATE, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.START_TIME) && resolutionDic.ContainsKey(TimeTypeConstants.END_TIME))
+            {
+                AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
+            }
+
+            if (resolutionDic.ContainsKey(Constants.Context))
+            {
+                res.Add(Constants.Context, resolutionDic[Constants.Context]);
+            }
+            return;
         }
 
         public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
