@@ -426,7 +426,7 @@ GeneralEndingRegex: !simpleRegex
 MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
 DurationConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>\s+|and)\s*$
+  def: ^\s*(?<connector>\s+|and|,)\s*$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

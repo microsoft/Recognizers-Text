@@ -22,11 +22,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ResolveKey = "resolve";
         public const string ResolveToPastKey = "resolveToPast";
         public const string ResolveToFutureKey = "resolveToFuture";
-        public const string MutiDurationType = "mutiDurationType";
+        public const string MultipleDurationType = "multipleDurationType";
 
-        //Mutiple Duration Type
-        public const string MutiDuration_DateTime = "mutiDurationDateTime";
-        public const string MutiDuration_Date = "mutiDurationDate";
-        public const string MutiDuration_Time = "mutiDurationTime";
+        //Multiple Duration Types
+        public const string MultipleDuration_DateTime = "multipleDurationDateTime";
+        public const string MultipleDuration_Date = "multipleDurationDate";
+        public const string MultipleDuration_Time = "multipleDurationTime";
     }
 }

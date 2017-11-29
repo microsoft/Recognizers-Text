@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             return ret.ToImmutableDictionary();
         }
-        public enum MutiDurationType
+        public enum MultiDurationType
         {
             Date = 0,
             Time,

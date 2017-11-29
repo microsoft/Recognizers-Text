@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseNumerWithUnit(er.Text, referenceTime);
                 }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseImplicitDuration(er.Text, referenceTime);
@@ -320,9 +321,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             var DurationExtractor = this.config.DurationExtractor;
+
+            //DurationExtractor without parameter will not extract merged duration
             var ers = DurationExtractor.Extract(text);
 
-            // only handle merged duration cases like "1 month 21 days", skip cases like "1 month 2 days ago".
+            // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)
             {
                 ret.Success = false;
@@ -351,6 +354,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var prs = new List<DateTimeParseResult>();
             var timexDict = new Dictionary<string, string>();
+            // insert timex into a dictionary
             foreach (var er in ers)
             {
                 var unitRegex = this.config.DurationUnitRegex;
@@ -366,6 +370,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // sort the timex using the granularity of the duration, "P1M23D" for "1 month 23 days" and "23 days 1 month"
             if (prs.Count == ers.Count)
             {
                 var unitList = new List<string>(timexDict.Keys);

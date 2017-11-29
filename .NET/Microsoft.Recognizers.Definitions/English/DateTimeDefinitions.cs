@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string WeekWithWeekDayRangeRegex = $@"\b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b";
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
-		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and)\s*$";
+		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

@@ -196,19 +196,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     node.Text = text.Substring(node.Start?? 0, node.Length?? 0);
                     node.Type = extractorResults[idx_i].Type;
 
-                    // add mutiple duration type to extract result
+                    // add multiple duration type to extract result
                     string type = null;
                     if (timeUnit == totalUnit)
                     {
-                        type = Constants.MutiDuration_Time;
+                        type = Constants.MultipleDuration_Time;
                     }
                     else if (timeUnit == 0)
                     {
-                        type = Constants.MutiDuration_Date;
+                        type = Constants.MultipleDuration_Date;
                     }
                     else
                     {
-                        type = Constants.MutiDuration_DateTime;
+                        type = Constants.MultipleDuration_DateTime;
                     }
                     node.Data = type;
 
