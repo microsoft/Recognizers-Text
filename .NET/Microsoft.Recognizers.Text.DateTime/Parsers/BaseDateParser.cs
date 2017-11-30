@@ -470,8 +470,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 config.DurationParser,
                 config.UnitMap,
                 config.UnitRegex,
-                config.UtilityConfiguration,
-                AgoLaterUtil.AgoLaterMode.Date
+                config.UtilityConfiguration
                 );
         }
 

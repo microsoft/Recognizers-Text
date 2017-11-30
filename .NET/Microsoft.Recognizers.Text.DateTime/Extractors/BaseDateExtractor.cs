@@ -181,6 +181,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var er in durationEr)
             {
+                // if it is a multiple duration and its type is not equal to Date than skip it.
+                if (er.Data != null && er.Data.ToString() != Constants.MultipleDuration_Date)
+                {
+                    continue;
+                }
+
                 var match = config.DateUnitRegex.Match(er.Text);
                 if (match.Success)
                 {

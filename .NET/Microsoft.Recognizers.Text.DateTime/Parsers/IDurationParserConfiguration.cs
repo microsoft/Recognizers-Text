@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IExtractor CardinalExtractor { get; }
 
+        IExtractor DurationExtractor { get; }
+
         IParser NumberParser { get; }
 
         Regex NumberCombinedWithUnit { get; }
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex InExactNumberRegex { get; }
 
         Regex InExactNumberUnitRegex { get; }
+
+        Regex DurationUnitRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

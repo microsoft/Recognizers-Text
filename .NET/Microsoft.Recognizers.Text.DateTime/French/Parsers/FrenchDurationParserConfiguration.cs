@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor DurationExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public Regex NumberCombinedWithUnit { get; }
@@ -29,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex InExactNumberUnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
@@ -39,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = FrenchDurationExtractorConfiguration.AnUnitRegex;
             AllDateUnitRegex = FrenchDurationExtractorConfiguration.AllRegex;
@@ -48,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ConjunctionRegex = FrenchDurationExtractorConfiguration.ConjunctionRegex;
             InExactNumberRegex = FrenchDurationExtractorConfiguration.InExactNumberRegex;
             InExactNumberUnitRegex = FrenchDurationExtractorConfiguration.InExactNumberUnitRegex;
+            DurationUnitRegex = FrenchDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

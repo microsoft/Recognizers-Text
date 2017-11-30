@@ -2044,4 +2044,148 @@
     }
   ]
 }
+,
+{
+  "Input": "We had a meeting 1 month 21 days ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month 21 days ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2017-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I left here 2 years 1 month 21 days ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 years 1 month 21 days ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-10-02",
+        "FutureResolution": {
+          "date": "2015-10-02"
+        },
+        "PastResolution": {
+          "date": "2015-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I will leve here 2 years 21 days later",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 years 21 days later",
+      "Type": "date",
+      "Value": {
+        "Timex": "2019-12-14",
+        "FutureResolution": {
+          "date": "2019-12-14"
+        },
+        "PastResolution": {
+          "date": "2019-12-14"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I left here 1 month 2 years 21 days ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month 2 years 21 days ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2015-10-02",
+        "FutureResolution": {
+          "date": "2015-10-02"
+        },
+        "PastResolution": {
+          "date": "2015-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We had a meeting 1 month and 21 days ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month and 21 days ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2017-10-02"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "We had a meeting 1 month, 21 days ago",
+  "Context": {
+    "ReferenceDateTime": "2017-11-23T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month, 21 days ago",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-10-02",
+        "FutureResolution": {
+          "date": "2017-10-02"
+        },
+        "PastResolution": {
+          "date": "2017-10-02"
+        }
+      }
+    }
+  ]
+}
 ]

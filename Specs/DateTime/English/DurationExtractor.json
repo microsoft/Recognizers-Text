@@ -448,4 +448,28 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave for 1 year 1 month 21 days",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 year 1 month 21 days",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 2 days 1 month",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days 1 month",
+      "Type": "duration"
+    }
+  ]
+}
 ]
