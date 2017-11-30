@@ -38,19 +38,19 @@ Install Recognizer's by launching the following commands:
 
 ### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](/Microsoft.Recognizers.Text.Number/Models/NumberModel.cs)
+* [NumberModel](/.NET/Microsoft.Recognizers.Text.Number/Models/NumberModel.cs)
 
     This recognizer will find any number from the input. E.g "I have two apples" will return "2".
 
     `NumberRecognizer.Instance.GetNumberModel(Culture.English)`
 
-* [OrdinalModel](/Microsoft.Recognizers.Text.Number/Models/OrdinalModel.cs)
+* [OrdinalModel](/.NET/Microsoft.Recognizers.Text.Number/Models/OrdinalModel.cs)
 
     This recognizer will find any ordinal number. E.g "eleventh" will return "11".
 
     `NumberRecognizer.Instance.GetOrdinalModel(Culture.English)`
 
-* [PercentageModel](/Microsoft.Recognizers.Text.Number/Models/PercentModel.cs)
+* [PercentageModel](/.NET/Microsoft.Recognizers.Text.Number/Models/PercentModel.cs)
 
     This recognizer will find any number presented as percentage. E.g "one hundred percents" will return "100%".
 
@@ -58,25 +58,25 @@ Install Recognizer's by launching the following commands:
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
-* [AgeModel](/Microsoft.Recognizers.Text.NumberWithUnit/Models/AgeModel.cs)
+* [AgeModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/AgeModel.cs)
 
     This recognizer will find any age number presented. E.g "After ninety five years of age, perspectives change" will return "95 Year".
 
     `NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.English)`
 
-* [CurrencyModel](/Microsoft.Recognizers.Text.NumberWithUnit/Models/CurrencyModel.cs)
+* [CurrencyModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/CurrencyModel.cs)
 
     This recognizer will find any currency presented. E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
     `NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.English)`
 
-* [DimensionModel](/Microsoft.Recognizers.Text.NumberWithUnit/Models/DimensionModel.cs)
+* [DimensionModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/DimensionModel.cs)
 
     This recognizer will find any dimension presented. E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
     `NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.English)`
 
-* [TemperatureModel](/Microsoft.Recognizers.Text.NumberWithUnit/Models/TemperatureModel.cs)
+* [TemperatureModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/TemperatureModel.cs)
 
     This recognizer will find any temperature presented. E.g "Set the temperature to 30 degrees celsius" will return "30 C".
 
@@ -84,7 +84,7 @@ Install Recognizer's by launching the following commands:
 
 ### Microsoft.Recognizers.Text.DateTime
 
-* [DateTimeModel](/Microsoft.Recognizers.Text.DateTime/Models/DateTimeModel.cs)
+* [DateTimeModel](/.NET/Microsoft.Recognizers.Text.DateTime/Models/DateTimeModel.cs)
 
     This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
 
@@ -92,7 +92,7 @@ Install Recognizer's by launching the following commands:
 
 ## Samples
 
-[Start using recognizers!](/Samples)
+[Start using recognizers!](/.NET/Samples)
 
 ## Integration tips
 
@@ -100,5 +100,5 @@ The recognizers were designed to disjoint language's logic from the recognizer's
 
 To achieve this, the recognizers contains the following folders:
 
-* [Specs](..\Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
-* [Patterns](..\Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
+* [Specs](/Specs) - Contains all the necessary tests that should be run on any improvements to the recognizers. It's divided by recognizer and supported language.
+* [Patterns](/Patterns)  - Contains all the regular expresions that fulfill the recognizers logic. It's divided by supported language.
