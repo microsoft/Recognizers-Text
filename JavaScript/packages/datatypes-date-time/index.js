@@ -7,3 +7,4 @@ module.exports = {
     creator: require('./src/timexCreator.js'),
     resolver: require('./src/timexRangeResolver.js')
 };
+
