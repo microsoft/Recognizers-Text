@@ -193,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
-            var endingTimePoint = false;
+            var validTimeNumber = false;
 
             var ers = this.config.TimeExtractor.Extract(text, referenceTime);
             if (ers.Count != 2)
@@ -204,10 +204,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     foreach (var num in numErs)
                     {
+                        int midStrBegin = 0, midStrEnd = 0;
+                        // ending number
                         if (num.Start > ers[0].Start + ers[0].Length)
                         {
-                            // check if it is a ending number
-                            var endingNumber = false;
+                            midStrBegin = ers[0].Start + ers[0].Length ?? 0;
+                            midStrEnd = num.Start - midStrBegin ?? 0;
+                            /*var endingNumber = false;
                             if (num.Start + num.Length == text.Length)
                             {
                                 endingNumber = true;
@@ -220,29 +223,57 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 {
                                     endingNumber = true;
                                 }
-                            }
+                            }*/
 
-                            // check if the middle string between the time point and the ending number is a connect string.
-                            if (endingNumber)
+                            /*if (endingNumber)
                             {
-                                var midStrBegin = ers[0].Start + ers[0].Length;
-                                var midStrEnd = num.Start - midStrBegin;
-                                var middleStr = text.Substring(midStrBegin?? 0, midStrEnd?? 0);
+                                midStrBegin = ers[0].Start + ers[0].Length ?? 0;
+                                midStrEnd = num.Start - midStrBegin ?? 0;
+                            }
+                            else
+                            {
+                                midStrBegin = num.Start + num.Length ?? 0;
+                                midStrEnd = ers[0].Start - midStrBegin ?? 0;
+                            }*/
+                        }
+                        else if (num.Start + num.Length < ers[0].Start)
+                        {
+                            midStrBegin = num.Start + num.Length ?? 0;
+                            midStrEnd = ers[0].Start - midStrBegin ?? 0;
+                        }
+
+                        // check if the middle string between the time point and the valid number is a connect string.
+                        var middleStr = text.Substring(midStrBegin, midStrEnd);
+                        var tillMatch = this.config.TillRegex.Match(middleStr);
+                        if (tillMatch.Success)
+                        {
+                            num.Data = null;
+                            num.Type = Constants.SYS_DATETIME_TIME;
+                            ers.Add(num);
+                            validTimeNumber = true;
+                            break;
+                        }
+
+                        /*// check if the middle string between the time point and the valid number is a connect string.
+                        if (endingNumber)
+                            {
+                                var middleStr = text.Substring(midStrBegin, midStrEnd);
                                 var tillMatch = this.config.TillRegex.Match(middleStr);
                                 if (tillMatch.Success)
                                 {
                                     num.Data = null;
                                     num.Type = Constants.SYS_DATETIME_TIME;
                                     ers.Add(num);
-                                    endingTimePoint = true;
+                                    validTimeNumber = true;
                                     break;
                                 }
-                            }
-                        }
+                            }*/
                     }
+
+                    ers.Sort((x, y) => (x.Start - y.Start ?? 0));
                 }
 
-                if (!endingTimePoint)
+                if (!validTimeNumber)
                 {
                     return ret;
                 }
@@ -268,9 +299,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endTime = endTime.AddHours(12);
                 ((DateTimeResolutionResult) pr2.Value).FutureValue = endTime;
                 pr2.TimexStr = $"T{endTime.Hour}";
+                if (endTime.Minute > 0)
+                {
+                    pr2.TimexStr = $"{pr2.TimexStr}:{endTime.Minute}";
+                }
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((endTime - beginTime).TotalHours)}H)";
+            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToDouble((endTime - beginTime).TotalHours)}H)";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
 
