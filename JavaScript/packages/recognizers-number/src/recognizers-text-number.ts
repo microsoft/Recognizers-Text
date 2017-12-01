@@ -1,6 +1,6 @@
 export { default as NumberRecognizer } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
-export { FormatUtility, StringUtility, Match, RegExpUtility } from "recognizers-text-base";
+export { FormatUtility, StringUtility, Match, RegExpUtility } from "recognizers-text";
 export { BaseNumbers } from "./resources/baseNumbers";
 export { EnglishNumeric } from "./resources/englishNumeric";
 export { SpanishNumeric } from "./resources/spanishNumeric";

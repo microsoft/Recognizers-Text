@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, FormatUtility } from "recognizers-text-base";
+import { IModel, ModelResult, IExtractor, IParser, FormatUtility } from "recognizers-text";
 import { UnitValue } from "./parsers";
 
 export enum CompositeEntityType {

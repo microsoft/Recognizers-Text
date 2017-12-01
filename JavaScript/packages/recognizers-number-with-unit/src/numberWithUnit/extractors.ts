@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-base";
+import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
 import { Culture, CultureInfo } from "recognizers-text-number";
 import max = require("lodash.max");
 import escapeRegExp = require("lodash.escaperegexp");

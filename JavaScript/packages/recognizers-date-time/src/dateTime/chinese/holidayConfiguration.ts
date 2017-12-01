@@ -1,4 +1,4 @@
-import { RegExpUtility, Match, StringUtility, IExtractor, IParser, ExtractResult } from "recognizers-text-base";
+import { RegExpUtility, Match, StringUtility, IExtractor, IParser, ExtractResult } from "recognizers-text";
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration, BaseHolidayParser } from "../baseHoliday"
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "recognizers-text-number";
 import { Constants as NumberConstants } from "recognizers-text-number"

@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text-base";
+import { RegExpUtility } from "recognizers-text";
 import { EnglishCardinalExtractor, EnglishIntegerExtractor, EnglishOrdinalExtractor, BaseNumberParser, EnglishNumberParserConfiguration } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime"
 import { BaseDateTime } from "../../resources/baseDateTime"

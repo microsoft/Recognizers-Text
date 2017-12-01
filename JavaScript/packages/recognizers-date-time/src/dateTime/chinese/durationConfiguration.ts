@@ -1,4 +1,4 @@
-import { RegExpUtility, ExtractResult } from "recognizers-text-base";
+import { RegExpUtility, ExtractResult } from "recognizers-text";
 import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor } from "./baseDateTime";

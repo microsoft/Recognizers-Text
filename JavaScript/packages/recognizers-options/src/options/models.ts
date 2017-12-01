@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text-base";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text";
 
 export abstract class OptionsModel implements IModel {
     public abstract readonly modelTypeName: string;

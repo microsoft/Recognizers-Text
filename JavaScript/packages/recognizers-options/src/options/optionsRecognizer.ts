@@ -1,4 +1,4 @@
-import { Recognizer, IModel, Culture } from "recognizers-text-base";
+import { Recognizer, IModel, Culture } from "recognizers-text";
 import { BooleanModel } from "./models";
 import { BooleanExtractor } from "./extractors";
 import { BooleanParser } from "./parsers";

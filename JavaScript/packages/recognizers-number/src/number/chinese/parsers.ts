@@ -1,11 +1,11 @@
-import { ExtractResult, IParser, ParseResult } from "recognizers-text-base";
+import { ExtractResult, IParser, ParseResult } from "recognizers-text";
 import { BaseNumberParser } from "../parsers";
 import { ChineseNumberParserConfiguration } from "./parserConfiguration";
 import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
 import { CultureInfo, Culture } from "../../culture";
-import { RegExpUtility, StringUtility } from "recognizers-text-base";
+import { RegExpUtility, StringUtility } from "recognizers-text";
 import { BigNumber } from 'bignumber.js';
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");

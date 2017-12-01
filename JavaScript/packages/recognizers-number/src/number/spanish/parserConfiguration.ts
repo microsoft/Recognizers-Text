@@ -1,8 +1,8 @@
-import { ParseResult } from "recognizers-text-base";
+import { ParseResult } from "recognizers-text";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { SpanishNumeric } from "../../resources/spanishNumeric";
-import { RegExpUtility } from "recognizers-text-base"
+import { RegExpUtility } from "recognizers-text"
 
 export class SpanishNumberParserConfiguration implements INumberParserConfiguration {
 

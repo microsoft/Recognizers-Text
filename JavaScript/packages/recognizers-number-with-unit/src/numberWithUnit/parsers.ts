@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, IParser, ParseResult } from "recognizers-text-base";
+import { IExtractor, ExtractResult, IParser, ParseResult } from "recognizers-text";
 import { CultureInfo } from "recognizers-text-number";
 import last = require("lodash.last");
 

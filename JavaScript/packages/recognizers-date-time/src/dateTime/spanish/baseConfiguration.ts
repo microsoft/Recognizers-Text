@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text-base";
+import { RegExpUtility } from "recognizers-text";
 import { SpanishCardinalExtractor, SpanishIntegerExtractor, SpanishOrdinalExtractor, BaseNumberParser, SpanishNumberParserConfiguration } from "recognizers-text-number";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";

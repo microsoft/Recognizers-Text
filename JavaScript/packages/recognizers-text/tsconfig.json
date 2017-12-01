@@ -8,6 +8,7 @@
         "moduleResolution": "node",
         "declaration": true,
         "declarationDir": "dist/types",
+        "allowSyntheticDefaultImports": true,
         "typeRoots": [
             "node_modules/@types"
         ]

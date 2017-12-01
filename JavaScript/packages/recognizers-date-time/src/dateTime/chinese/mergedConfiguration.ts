@@ -8,7 +8,7 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { ExtractResult, RegExpUtility } from "recognizers-text-base";
+import { ExtractResult, RegExpUtility } from "recognizers-text";
 import { BaseNumberExtractor } from "recognizers-text-number";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration"

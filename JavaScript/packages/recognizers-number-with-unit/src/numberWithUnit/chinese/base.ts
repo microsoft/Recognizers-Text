@@ -1,4 +1,4 @@
-import { IExtractor, IParser } from "recognizers-text-base";
+import { IExtractor, IParser } from "recognizers-text";
 import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberExtractor, ChineseNumberParserConfiguration, ChineseNumberMode } from "recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";

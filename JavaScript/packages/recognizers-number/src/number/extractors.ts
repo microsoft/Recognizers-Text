@@ -1,8 +1,8 @@
-import { IExtractor, ExtractResult } from "recognizers-text-base";
+import { IExtractor, ExtractResult } from "recognizers-text";
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
-import { Match, RegExpUtility } from "recognizers-text-base";
+import { Match, RegExpUtility } from "recognizers-text";
 import { LongFormatType } from "./models";
 import escapeRegExp = require("lodash.escaperegexp");
 

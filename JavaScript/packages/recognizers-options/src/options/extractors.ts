@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text-base";
+import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
 import { Constants } from "./constants";
 
 export interface IChoiceExtractorConfiguration {

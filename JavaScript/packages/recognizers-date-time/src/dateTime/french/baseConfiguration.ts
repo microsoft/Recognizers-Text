@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text-base";
+import { RegExpUtility } from "recognizers-text";
 import { FrenchCardinalExtractor, FrenchIntegerExtractor, FrenchOrdinalExtractor, BaseNumberParser, FrenchNumberParserConfiguration } from "recognizers-text-number";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
