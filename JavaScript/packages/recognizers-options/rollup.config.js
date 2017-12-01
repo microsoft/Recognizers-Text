@@ -7,7 +7,7 @@ import alias from 'rollup-plugin-alias';
 import path from 'path';
 
 export default {
-  input: `compiled/recognizers-text-choices.js`,
+  input: `compiled/recognizers-text-options.js`,
   output: [
     { file: pkg.module, format: 'es' },
     { file: pkg.main, name: camelCase(pkg.name), format: 'umd', exports: 'named'  },

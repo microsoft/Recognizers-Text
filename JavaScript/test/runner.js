@@ -1,7 +1,7 @@
 var NumberTestRunner = require('./runner-number');
 var NumberWithUnitTestRunner = require('./runner-numberWithUnit');
 var DateTimeTestRunner = require('./runner-datetime');
-var ChoicesTestRunner = require('./runner-choices');
+var OptionsTestRunner = require('./runner-options');
 
 module.exports = function (describe, specs) {
     specs.forEach(suite => {
@@ -38,8 +38,8 @@ function getTestRunner(config) {
             return NumberWithUnitTestRunner(config);
         case 'DateTime':
             return DateTimeTestRunner(config);
-        case 'Choices':
-            return ChoicesTestRunner(config);
+        case 'Options':
+            return OptionsTestRunner(config);
         default:
             throw new Error(`Extractor type unknown: ${JSON.stringify(config)}`);
     }

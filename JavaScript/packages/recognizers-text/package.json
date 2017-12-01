@@ -32,7 +32,7 @@
     "prepare": "npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "recognizers-text-choices": "^1.0.0-rc.27",
+    "recognizers-text-options": "^1.0.0-rc.27",
     "recognizers-text-date-time": "^1.0.0-rc.27",
     "recognizers-text-number": "^1.0.0-rc.27",
     "recognizers-text-number-with-unit": "^1.0.0-rc.27"

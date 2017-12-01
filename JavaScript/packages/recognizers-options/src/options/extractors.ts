@@ -9,7 +9,7 @@ export interface IChoiceExtractorConfiguration {
     onlyTopMatch: boolean;
 }
 
-export class ChoicesExtractor implements IExtractor {
+export class OptionsExtractor implements IExtractor {
     private readonly config: IChoiceExtractorConfiguration;
     protected extractType: string;
 
@@ -103,7 +103,7 @@ export interface IBooleanExtractorConfiguration {
     onlyTopMatch: boolean;
 }
 
-export class BooleanExtractor extends ChoicesExtractor {
+export class BooleanExtractor extends OptionsExtractor {
     private static readonly booleanTrue = Constants.SYS_BOOLEAN_TRUE;
     private static readonly booleanFalse = Constants.SYS_BOOLEAN_FALSE;
 
@@ -112,14 +112,14 @@ export class BooleanExtractor extends ChoicesExtractor {
             .set(config.regexTrue, Constants.SYS_BOOLEAN_TRUE)
             .set(config.regexFalse, Constants.SYS_BOOLEAN_FALSE)
         
-        let choicesConfig: IChoiceExtractorConfiguration = {
+        let optionsConfig: IChoiceExtractorConfiguration = {
             regexesMap: regexesMap,
             tokenRegex: config.tokenRegex,
             allowPartialMatch: false,
             maxDistance: 2,
             onlyTopMatch: config.onlyTopMatch
         }
-        super(choicesConfig);
+        super(optionsConfig);
         this.extractType = Constants.SYS_BOOLEAN;
     }
 }

@@ -1,6 +1,6 @@
 import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text-base";
 
-export abstract class ChoicesModel implements IModel {
+export abstract class OptionsModel implements IModel {
     public abstract readonly modelTypeName: string;
 
     protected readonly extractor: IExtractor;
@@ -29,7 +29,7 @@ export abstract class ChoicesModel implements IModel {
     protected abstract getResolution(data: any): any;
 }
 
-export class BooleanModel extends ChoicesModel {
+export class BooleanModel extends OptionsModel {
     public readonly modelTypeName = 'boolean';
 
     protected getResolution(sources: any): any {
