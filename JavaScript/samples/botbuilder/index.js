@@ -1,5 +1,5 @@
 // Our Number and DateTime Recognizer models
-var Recognizers = require('recognizers-text');
+var Recognizers = require('recognizers-text-suite');
 var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
 var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
 
