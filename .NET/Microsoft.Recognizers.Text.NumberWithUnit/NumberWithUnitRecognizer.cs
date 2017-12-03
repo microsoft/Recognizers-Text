@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         private NumberWithUnitRecognizer(NumberWithUnitOptions options)
         {
 
-            RegisterModel(Culture.English, new Dictionary<Type, IModel>
+            RegisterModel(Culture.English, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
+            RegisterModel(Culture.Chinese, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof (CurrencyModel)] = new CurrencyModel(
                     new Dictionary<IExtractor, IParser>
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     ),
             });
 
-            RegisterModel(Culture.Spanish, new Dictionary<Type, IModel>
+            RegisterModel(Culture.Spanish, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            RegisterModel(Culture.Portuguese, new Dictionary<Type, IModel>
+            RegisterModel(Culture.Portuguese, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -188,7 +188,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            RegisterModel(Culture.French, new Dictionary<Type, IModel>
+            RegisterModel(Culture.French, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -231,22 +231,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture);
+            return GetModel<CurrencyModel>(culture, fallbackToDefaultCulture, NumberWithUnitOptions.None.ToString());
         }
 
         public IModel GetTemperatureModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture);
+            return GetModel<TemperatureModel>(culture, fallbackToDefaultCulture, NumberWithUnitOptions.None.ToString());
         }
 
         public IModel GetDimensionModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture);
+            return GetModel<DimensionModel>(culture, fallbackToDefaultCulture, NumberWithUnitOptions.None.ToString());
         }
 
         public IModel GetAgeModel(string culture, bool fallbackToDefaultCulture = true)
         {
-            return GetModel<AgeModel>(culture, fallbackToDefaultCulture);
+            return GetModel<AgeModel>(culture, fallbackToDefaultCulture, NumberWithUnitOptions.None.ToString());
         }
     }
 }
