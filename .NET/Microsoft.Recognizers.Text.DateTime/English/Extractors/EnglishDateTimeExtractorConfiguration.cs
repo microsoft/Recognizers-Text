@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class EnglishDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishDateTimeExtractorConfiguration()
+        public EnglishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
@@ -88,5 +88,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                     || PrepositionRegex.IsMatch(text)
                     || ConnectorRegex.IsMatch(text));
         }
+
     }
 }

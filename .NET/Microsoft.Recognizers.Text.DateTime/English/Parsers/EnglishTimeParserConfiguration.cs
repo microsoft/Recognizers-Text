@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimeParserConfiguration : ITimeParserConfiguration
+    public class EnglishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
         public string TimeTokenPrefix { get; }
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = EnglishTimeExtractorConfiguration.AtRegex;

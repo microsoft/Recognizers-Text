@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateParserConfiguration
+    public interface IDateParserConfiguration : IOptionsConfiguration
     {
         string DateTokenPrefix { get; }
 

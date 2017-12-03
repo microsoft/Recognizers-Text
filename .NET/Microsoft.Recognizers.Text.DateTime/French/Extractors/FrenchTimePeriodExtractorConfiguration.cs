@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
+    public class FrenchTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
@@ -70,19 +70,25 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex TimeNumberCombinedWithUnit =
             new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        private static readonly Regex FromRegex = 
+            new Regex(DateTimeDefinitions.FromRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex ConnectorAndRegex = 
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex BeforeRegex = 
+            new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchTimePeriodExtractorConfiguration()
+        public FrenchTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             SingleTimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }

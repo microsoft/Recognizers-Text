@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimeParserConfiguration : ITimeParserConfiguration
+    public class FrenchTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
         public string TimeTokenPrefix { get; }
 
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix; 
             AtRegex = FrenchTimeExtractorConfiguration.AtRegex;

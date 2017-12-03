@@ -25,24 +25,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             var type = typeof(DateTimeModel);
 
             RegisterModel(Culture.English, type, new DateTimeModel(
-                    new BaseMergedParser(new EnglishMergedParserConfiguration(), options),
-                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
-                    ));
+                new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
+                new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
+            ));
 
             RegisterModel(Culture.Chinese, type, new DateTimeModel(
-                    new FullDateTimeParser(new ChineseDateTimeParserConfiguration(), options),
-                    new MergedExtractorChs(options)
-                    ));
+                new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
+                new MergedExtractorChs(options)
+            ));
 
             RegisterModel(Culture.Spanish, type, new DateTimeModel(
-                    new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
-                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
-                    ));
+                new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
+                new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
+            ));
 
             RegisterModel(Culture.French, type, new DateTimeModel(
-                    new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
-                    new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
-                    ));
+                new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
+                new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
+            ));
         }
 
         private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
@@ -53,26 +53,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (cultureCode) {
                 case Culture.English:
                     RegisterModel(cultureCode, type, new DateTimeModel(
-                                      new BaseMergedParser(new EnglishMergedParserConfiguration(), options),
-                                      new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
+                                      new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
+                                      new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
                                   ));
                     break;
                 case Culture.Chinese:
                     RegisterModel(cultureCode, type, new DateTimeModel(
-                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration(), options),
+                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
                                       new MergedExtractorChs(options)
                                   ));
                     break;
                 case Culture.Spanish:
                     RegisterModel(Culture.Spanish, type, new DateTimeModel(
-                                      new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
-                                      new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
+                                      new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
+                                      new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
                                   ));
                     break;
                 case Culture.French:
                     RegisterModel(Culture.French, type, new DateTimeModel(
-                                      new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
-                                      new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
+                                      new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
+                                      new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
                                   ));
                     break;
                 default:

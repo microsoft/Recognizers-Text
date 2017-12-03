@@ -6,7 +6,7 @@ using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDurationExtractorConfiguration : IDurationExtractorConfiguration
+    public class FrenchDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(
@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDurationExtractorConfiguration()
+        public FrenchDurationExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

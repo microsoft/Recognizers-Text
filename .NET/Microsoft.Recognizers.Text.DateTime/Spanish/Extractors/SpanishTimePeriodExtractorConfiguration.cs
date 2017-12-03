@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
+    public class SpanishTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; //"TimePeriod";
 
@@ -31,12 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.TillRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishTimePeriodExtractorConfiguration()
+        public SpanishTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             SingleTimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
         }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IDateTimeExtractor SingleTimeExtractor { get; }

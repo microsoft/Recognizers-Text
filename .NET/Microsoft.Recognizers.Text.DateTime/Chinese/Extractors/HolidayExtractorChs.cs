@@ -16,5 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         };
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
+
+        public ChineseHolidayExtractorConfiguration()
+        {
+            Options = DateTimeOptions.None;    
+        }
+
+        public DateTimeOptions Options { get; }
+
     }
 }

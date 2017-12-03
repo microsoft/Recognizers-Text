@@ -7,10 +7,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer 
     {
-        public static readonly NumberWithUnitRecognizer Instance = new NumberWithUnitRecognizer();
+        public static readonly NumberWithUnitRecognizer Instance = new NumberWithUnitRecognizer(NumberWithUnitOptions.None);
 
-        private NumberWithUnitRecognizer()
+        private NumberWithUnitRecognizer(NumberWithUnitOptions options)
         {
+
             RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(

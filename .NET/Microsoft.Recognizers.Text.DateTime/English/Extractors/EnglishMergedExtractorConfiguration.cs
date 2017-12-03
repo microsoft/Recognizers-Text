@@ -1,7 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.English;
-using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number;
+
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishMergedExtractorConfiguration : IMergedExtractorConfiguration
@@ -33,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
         };
 
+        public DateTimeOptions Options { get; }
+
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
@@ -53,8 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor IntegerExtractor { get; }
 
-        public EnglishMergedExtractorConfiguration()
+        public EnglishMergedExtractorConfiguration(DateTimeOptions options)
         {
+            Options = options;
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration());

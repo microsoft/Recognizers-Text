@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ITimeParserConfiguration
+    public interface ITimeParserConfiguration : IOptionsConfiguration
     {
         string TimeTokenPrefix { get; }
 

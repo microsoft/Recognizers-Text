@@ -2,7 +2,7 @@
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ISetExtractorConfiguration
+    public interface ISetExtractorConfiguration: IOptionsConfiguration
     {
         Regex LastRegex { get; }
 

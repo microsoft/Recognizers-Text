@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateExtractorConfiguration
+    public interface IDateExtractorConfiguration : IOptionsConfiguration
     {
         IEnumerable<Regex> DateRegexList { get; }
 

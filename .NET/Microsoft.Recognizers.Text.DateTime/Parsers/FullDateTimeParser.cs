@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public const string ParserTypeName = "datetimeV2";
 
-        public FullDateTimeParser(IFullDateTimeParserConfiguration configuration, DateTimeOptions options)
+        public FullDateTimeParser(IFullDateTimeParserConfiguration configuration)
         {
             config = configuration;
             beforeRegex = new Regex(config.Before, RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -8,8 +8,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateTimeParserConfiguration : IFullDateTimeParserConfiguration
     {
-        public ChineseDateTimeParserConfiguration()
+        public ChineseDateTimeParserConfiguration(DateTimeOptions options = DateTimeOptions.None)
         {
+            Options = options;
             DateParser = new DateParser(this);
             TimeParser = new TimeParserChs(this);
             DateTimeParser = new DateTimeParserChs(this);
@@ -35,6 +36,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             StrictWeekDayRegex = DateExtractorChs.WeekDayRegex;
             WeekDayOfMonthRegex = DateExtractorChs.WeekDayOfMonthRegex;
         }
+
+        public DateTimeOptions Options { get; }
+
         public string Before => DateTimeDefinitions.ParserConfigurationBefore;
 
         public string After => DateTimeDefinitions.ParserConfigurationAfter;

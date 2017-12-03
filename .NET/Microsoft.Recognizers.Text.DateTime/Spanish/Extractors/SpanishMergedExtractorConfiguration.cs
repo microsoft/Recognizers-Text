@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishMergedExtractorConfiguration : IMergedExtractorConfiguration
+    public class SpanishMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor IntegerExtractor { get; }
 
-        public SpanishMergedExtractorConfiguration()
+        public SpanishMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());

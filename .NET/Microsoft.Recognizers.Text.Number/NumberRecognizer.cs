@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer
     {
-        public static readonly NumberRecognizer Instance = new NumberRecognizer();
+        public static readonly NumberRecognizer Instance = new NumberRecognizer(NumberOptions.None);
 
-        private NumberRecognizer()
+        private NumberRecognizer(NumberOptions options)
         {
             RegisterModel(Culture.English, new Dictionary<Type, IModel>
             {

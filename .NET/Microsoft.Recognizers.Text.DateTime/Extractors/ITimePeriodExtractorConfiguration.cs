@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface ITimePeriodExtractorConfiguration
+    public interface ITimePeriodExtractorConfiguration : IOptionsConfiguration
     {
         IExtractor IntegerExtractor { get; }
 
