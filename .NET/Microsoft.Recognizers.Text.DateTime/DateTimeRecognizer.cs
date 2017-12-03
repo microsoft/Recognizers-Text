@@ -10,9 +10,14 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class DateTimeRecognizer : Recognizer
     {
 
-        readonly DateTimeOptions instanceOptions;
+        private DateTimeOptions instanceOptions;
 
-        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
+        public static DateTimeRecognizer GetInstance()
+        {
+            return new DateTimeRecognizer();
+        }
+
+        public static DateTimeRecognizer GetInstance(DateTimeOptions options)
         {
             return new DateTimeRecognizer(options);
         }
@@ -24,30 +29,35 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private DateTimeRecognizer(DateTimeOptions options)
         {
+            Initialize(options);
+        }
+
+        private void Initialize(DateTimeOptions options)
+        {
 
             instanceOptions = options;
 
             var type = typeof(DateTimeModel);
 
             RegisterModel(Culture.English, type, options.ToString(), new DateTimeModel(
-                new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
-            ));
+                              new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
+                              new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
+                          ));
 
             RegisterModel(Culture.Chinese, type, options.ToString(), new DateTimeModel(
-                new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
-                new MergedExtractorChs(options)
-            ));
+                              new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
+                              new MergedExtractorChs(options)
+                          ));
 
             RegisterModel(Culture.Spanish, type, options.ToString(), new DateTimeModel(
-                new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
-                new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
-            ));
+                              new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
+                              new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
+                          ));
 
             RegisterModel(Culture.French, type, options.ToString(), new DateTimeModel(
-                new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
-                new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
-            ));
+                              new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
+                              new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
+                          ));
         }
 
         private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
@@ -88,22 +98,38 @@ namespace Microsoft.Recognizers.Text.DateTime
             
         }
 
-        public DateTimeModel GetDateTimeModel(DateTimeOptions options = DateTimeOptions.None)
+        // Uninitialized recognizer constructor
+        private DateTimeRecognizer()
         {
-            if (options == DateTimeOptions.None) {
-                options = instanceOptions;
-            }
-
-            return GetDateTimeModel("", false, options);
         }
 
-        public DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true, DateTimeOptions options = DateTimeOptions.None)
+        private DateTimeOptions SanityCheck(DateTimeOptions options)
         {
+            if (!ContainsModels())
+            {
+                Initialize(options);
+            }
 
             if (options == DateTimeOptions.None)
             {
                 options = instanceOptions;
             }
+
+            return options;
+        }
+
+        public DateTimeModel GetDateTimeModel(DateTimeOptions options = DateTimeOptions.None)
+        {
+
+            options = SanityCheck(options);
+
+            return GetDateTimeModel("", false, options);
+        }
+        
+        public DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true, DateTimeOptions options = DateTimeOptions.None)
+        {
+
+            options = SanityCheck(options);
 
             DateTimeModel model;
             if (string.IsNullOrEmpty(culture))

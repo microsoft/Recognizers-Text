@@ -27,6 +27,11 @@ namespace Microsoft.Recognizers.Text
             return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture, options);
         }
 
+        protected bool ContainsModels()
+        {
+            return modelContainer.ContainsModels();
+        }
+
         public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = "")
         {
             return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture, options);

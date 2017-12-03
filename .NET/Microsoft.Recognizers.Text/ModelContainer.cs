@@ -103,5 +103,10 @@ namespace Microsoft.Recognizers.Text
                 throw new InvalidOperationException($"Please request a specific culture for {typeof(TModel)}.");
             }
         }
+
+        public bool ContainsModels() {
+            return modelInstances.Keys.Any();
+        }
+
     }
 }
