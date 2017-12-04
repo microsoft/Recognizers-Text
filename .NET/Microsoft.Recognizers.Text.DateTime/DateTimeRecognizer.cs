@@ -4,6 +4,7 @@ using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.French;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -11,6 +12,11 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
 
         private DateTimeOptions instanceOptions;
+
+        public static DateTimeOptions Convert(int value)
+        {
+            return EnumUtils.Convert<DateTimeOptions>(value);
+        }
 
         public static DateTimeRecognizer GetInstance()
         {
