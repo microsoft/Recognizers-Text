@@ -3,6 +3,8 @@
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -65,11 +67,14 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public FrenchDateTimeExtractorConfiguration()
         {
+            IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
         }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IDateTimeExtractor DatePointExtractor { get; }
 

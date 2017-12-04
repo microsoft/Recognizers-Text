@@ -159,7 +159,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             var pr2 = this.config.TimeParser.Parse(er2[correctTimeIdx], referenceTime);
             if (pr1.Value == null || pr2.Value == null)
             {
-                return ret;
+                bool hasTimeNumber = false;
+                if (pr2.Value == null)
+                {
+                    var numExtractor = Number.English.IntegerExtractor.GetInstance();
+                    var numErs = numExtractor.Extract(text);
+                    if (numErs.Count == 1)
+                    {
+                        var numPr = this.config.NumberParser.Parse(numErs[0]);
+                        if (numPr.Value != null)
+                        {
+                            hasTimeNumber = true;
+                            //numPr.
+                        }
+                    }
+                }                
+
+                if (pr1.Value == null || !hasTimeNumber)
+                {
+                    return ret;
+                }
             }
 
             var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;

@@ -3,6 +3,7 @@
 using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.English;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -49,11 +50,14 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateTimeExtractorConfiguration()
         {
+            IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();
         }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IDateTimeExtractor DatePointExtractor { get; }
 

@@ -3,6 +3,8 @@
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -27,11 +29,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public SpanishDateTimeExtractorConfiguration()
         {
+            IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IDateTimeExtractor DatePointExtractor { get; }
 
