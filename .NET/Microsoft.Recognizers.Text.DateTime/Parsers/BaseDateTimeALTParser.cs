@@ -112,6 +112,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var type = pr.Type;
             var isPeriod = false;
             var isSinglePoint = false;
+            string singlePointResolution = "";
+            string pastStartPointResolution = "";
+            string pastEndPointResolution = "";
+            string futureStartPointResolution = "";
+            string futureEndPointResolution = "";
             string singlePointType = "";
             string startPointType = "";
             string endPointType = "";
@@ -125,14 +130,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.SYS_DATETIME_DATEPERIOD:
                         startPointType = TimeTypeConstants.START_DATE;
                         endPointType = TimeTypeConstants.END_DATE;
+                        pastStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        futureStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        futureEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         startPointType = TimeTypeConstants.START_DATETIME;
                         endPointType = TimeTypeConstants.END_DATETIME;
+                        pastStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        futureStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        futureEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         startPointType = TimeTypeConstants.START_TIME;
                         endPointType = TimeTypeConstants.END_TIME;
+                        pastStartPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        futureStartPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
+                        futureEndPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
                 }
             }
@@ -143,12 +160,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     case Constants.SYS_DATETIME_DATE:
                         singlePointType = TimeTypeConstants.DATE;
+                        singlePointResolution = FormatUtil.FormatDate((DateObject)ret.FutureValue);
                         break;
                     case Constants.SYS_DATETIME_DATETIME:
                         singlePointType = TimeTypeConstants.DATETIME;
+                        singlePointResolution = FormatUtil.FormatDateTime((DateObject)ret.FutureValue);
                         break;
                     case Constants.SYS_DATETIME_TIME:
                         singlePointType = TimeTypeConstants.TIME;
+                        singlePointResolution = FormatUtil.FormatTime((DateObject)ret.FutureValue);
                         break;
                 }
             }
@@ -157,27 +177,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.FutureResolution = new Dictionary<string, string>
                 {
-                    {
-                        startPointType,
-                        FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) ret.FutureValue).Item1)
-                    },
-                    {
-                        endPointType,
-                        FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) ret.FutureValue).Item2)
-                    },
+                    {startPointType, futureStartPointResolution},
+                    {endPointType, futureEndPointResolution},
                     {Constants.Context, context}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
-                    {
-                        startPointType,
-                        FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) ret.PastValue).Item1)
-                    },
-                    {
-                        endPointType,
-                        FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>) ret.PastValue).Item2)
-                    },
+                    {startPointType, pastStartPointResolution},
+                    {endPointType, pastEndPointResolution},
                     {Constants.Context, context}
                 };
             }
@@ -185,13 +193,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.FutureResolution = new Dictionary<string, string>
                 {
-                    {singlePointType, FormatUtil.FormatDateTime((DateObject) ret.FutureValue)},
+                    {singlePointType, singlePointResolution},
                     {Constants.Context, context}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
-                    {singlePointType, FormatUtil.FormatDateTime((DateObject) ret.PastValue)},
+                    {singlePointType, singlePointResolution},
                     {Constants.Context, context}
                 };
             }

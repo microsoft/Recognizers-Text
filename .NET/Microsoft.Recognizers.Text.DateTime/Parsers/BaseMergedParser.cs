@@ -502,7 +502,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         public void AddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
             Dictionary<string, string> res)
         {
-            AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
+            if (resolutionDic.ContainsKey(TimeTypeConstants.DATE))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.DATETIME))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
+            }
+            else if (resolutionDic.ContainsKey(TimeTypeConstants.TIME))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
+            }
             if (resolutionDic.ContainsKey(Constants.Context))
             {
                 res.Add(Constants.Context, resolutionDic[Constants.Context]);
