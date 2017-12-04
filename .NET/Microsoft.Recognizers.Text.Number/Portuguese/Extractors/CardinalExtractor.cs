@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Concurrent;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
@@ -11,7 +12,21 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; //"Cardinal";
 
-        public CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances = new ConcurrentDictionary<string, CardinalExtractor>();
+
+        public static CardinalExtractor GetInstance(string placeholder = NumbersDefinitions.PlaceHolderDefault)
+        {
+
+            if (!Instances.ContainsKey(placeholder))
+            {
+                var instance = new CardinalExtractor(placeholder);
+                Instances.TryAdd(placeholder, instance);
+            }
+
+            return Instances[placeholder];
+        }
+
+        private CardinalExtractor(string placeholder = NumbersDefinitions.PlaceHolderDefault)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();
 
