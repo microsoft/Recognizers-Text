@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class SpanishDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimeExtractorConfiguration()
+        public SpanishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());

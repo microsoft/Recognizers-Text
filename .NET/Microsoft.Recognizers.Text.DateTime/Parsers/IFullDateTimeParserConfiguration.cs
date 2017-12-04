@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IFullDateTimeParserConfiguration
+    public interface IFullDateTimeParserConfiguration : IOptionsConfiguration
     {
         string Before { get; }
 

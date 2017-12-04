@@ -4,6 +4,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public sealed class EnglishMergedParserConfiguration : EnglishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
@@ -14,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeParser HolidayParser { get; }
 
-        public EnglishMergedParserConfiguration() : base()
+        public EnglishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;

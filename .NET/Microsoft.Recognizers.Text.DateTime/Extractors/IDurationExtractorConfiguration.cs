@@ -5,7 +5,7 @@ using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationExtractorConfiguration
+    public interface IDurationExtractorConfiguration : IOptionsConfiguration
     {
         Regex FollowedUnit { get; }
 

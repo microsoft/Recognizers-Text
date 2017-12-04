@@ -7,29 +7,34 @@ namespace Microsoft.Recognizers.Text
     {
         private readonly ModelContainer modelContainer = new ModelContainer();
 
-        protected void RegisterModel(string culture, Type type, IModel model)
+        protected void RegisterModel(string culture, Type type, string options, IModel model)
         {
-            modelContainer.RegisterModel(culture, type, model);
+            modelContainer.RegisterModel(culture, type, model, options);
         }
 
-        protected void RegisterModel(string culture, Dictionary<Type, IModel> models)
+        protected void RegisterModel(string culture, string options, Dictionary<Type, IModel> models)
         {
-            modelContainer.RegisterModel(culture, models);
+            modelContainer.RegisterModel(culture, models, options);
         }
 
-        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = "")
         {
-            return modelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture);
+            return modelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture, options);
         }
 
-        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true)
+        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true, string options = "")
         {
-            return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture);
+            return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture, options);
         }
 
-        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        protected bool ContainsModels()
         {
-            return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture);
+            return modelContainer.ContainsModels();
+        }
+
+        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = "")
+        {
+            return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture, options);
         }
 
         protected IModel GetSingleModel<TModel>()

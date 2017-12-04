@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishTimeParserConfiguration : ITimeParserConfiguration
+    public class SpanishTimeParserConfiguration : BaseOptionsConfiguration, ITimeParserConfiguration
     {
         public string TimeTokenPrefix { get; }
 
@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeTokenPrefix = DateTimeDefinitions.TimeTokenPrefix;
             AtRegex = SpanishTimeExtractorConfiguration.AtRegex;

@@ -7,9 +7,9 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimePeriodExtractorConfiguration : IDateTimePeriodExtractorConfiguration
+    public class EnglishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
-        public EnglishDateTimePeriodExtractorConfiguration()
+        public EnglishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());

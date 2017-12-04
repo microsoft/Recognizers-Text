@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimePeriodExtractorConfiguration : IDateTimePeriodExtractorConfiguration
+    public class SpanishDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimePeriodExtractorConfiguration()
+        public SpanishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
 

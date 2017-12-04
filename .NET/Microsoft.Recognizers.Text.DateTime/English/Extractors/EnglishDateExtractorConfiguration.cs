@@ -119,6 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDateExtractorConfiguration()
         {
+            Options = DateTimeOptions.None;
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.English.OrdinalExtractor.GetInstance();
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
@@ -155,5 +156,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
+
+        public DateTimeOptions Options { get; }
+
     }
 }

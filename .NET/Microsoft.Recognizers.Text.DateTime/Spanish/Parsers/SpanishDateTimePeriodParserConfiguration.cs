@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
+    public class SpanishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;

@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimeExtractorConfiguration : ITimeExtractorConfiguration
+    public class EnglishTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public EnglishTimeExtractorConfiguration()
+        public EnglishTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }

@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchTimePeriodParserConfiguration : ITimePeriodParserConfiguration
+    public class FrenchTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;
@@ -49,9 +49,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 trimedText = trimedText.Substring(0, trimedText.Length - 1);
             }
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (trimedText.EndsWith("matinee") || trimedText.EndsWith("matin") || trimedText.EndsWith("matinée"))
             {
                 timex = "TMO";

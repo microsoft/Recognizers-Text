@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationParserConfiguration
+    public interface IDurationParserConfiguration : IOptionsConfiguration
     {
         IExtractor CardinalExtractor { get; }
 

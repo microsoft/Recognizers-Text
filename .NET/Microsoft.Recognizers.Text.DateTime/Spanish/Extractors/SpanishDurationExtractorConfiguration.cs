@@ -6,7 +6,7 @@ using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDurationExtractorConfiguration : IDurationExtractorConfiguration
+    public class SpanishDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDurationExtractorConfiguration()
+        public SpanishDurationExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

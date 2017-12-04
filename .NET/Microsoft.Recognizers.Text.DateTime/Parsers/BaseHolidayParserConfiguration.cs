@@ -9,7 +9,7 @@ using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseHolidayParserConfiguration : IHolidayParserConfiguration
+    public abstract class BaseHolidayParserConfiguration : BaseOptionsConfiguration, IHolidayParserConfiguration
     {
         public IImmutableDictionary<string, string> VariableHolidaysTimexDictionary { get; protected set; }
 
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public IEnumerable<Regex> HolidayRegexList { get; protected set; }
 
-        protected BaseHolidayParserConfiguration()
+        protected BaseHolidayParserConfiguration() : base(DateTimeOptions.None)
         {
             this.VariableHolidaysTimexDictionary = BaseDateTime.VariableHolidaysTimexDictionary.ToImmutableDictionary();
             this.HolidayFuncDictionary = InitHolidayFuncs().ToImmutableDictionary();

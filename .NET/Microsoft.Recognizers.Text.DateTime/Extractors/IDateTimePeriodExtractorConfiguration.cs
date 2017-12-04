@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimePeriodExtractorConfiguration
+    public interface IDateTimePeriodExtractorConfiguration : IOptionsConfiguration
     {
         IEnumerable<Regex> SimpleCasesRegex { get; }
 
