@@ -18,12 +18,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return EnumUtils.Convert<DateTimeOptions>(value);
         }
 
-        public static DateTimeRecognizer GetInstance()
+        public static DateTimeRecognizer GetCleanInstance()
         {
             return new DateTimeRecognizer();
         }
 
-        public static DateTimeRecognizer GetInstance(DateTimeOptions options)
+        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
         {
             return new DateTimeRecognizer(options);
         }
