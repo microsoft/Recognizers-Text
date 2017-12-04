@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
+using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.DateTime.French;
@@ -136,6 +137,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetEnglishExtractor(extractorName);
                 case Culture.Spanish:
                     return GetSpanishExtractor(extractorName);
+                case Culture.Portuguese:
+                    return GetPortugueseExtractor(extractorName);
                 case Culture.Chinese:
                     return GetChineseExtractor(extractorName);
                 case Culture.French:
@@ -155,6 +158,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetEnglishParser(parserName);
                 case Culture.Spanish:
                     return GetSpanishParser(parserName);
+                case Culture.Portuguese:
+                    return GetPortugueseParser(parserName);
                 case Culture.Chinese:
                     return GetChineseParser(parserName);
                 case Culture.French:
@@ -332,7 +337,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.DateTime:
                     return new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(commonConfiguration));
                 case DateTimeParsers.DateTimePeriod:
-                    return new Microsoft.Recognizers.Text.DateTime.Spanish.DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
+                    return new DateTime.Spanish.DateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Duration:
                     return new BaseDurationParser(new SpanishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
@@ -344,6 +349,66 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Spanish not supported");
+        }
+
+        public static IDateTimeExtractor GetPortugueseExtractor(DateTimeExtractors extractorName)
+        {
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration());
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration());
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(DateTimeOptions.None));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Portuguese not supported");
+        }
+
+        public static IDateTimeParser GetPortugueseParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new PortugueseCommonDateTimeParserConfiguration(DateTimeOptions.None);
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new PortugueseDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new BaseTimeParser(new PortugueseTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new PortugueseDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new DateTime.Portuguese.DateTimePeriodParser(new PortugueseDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new PortugueseDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new PortugueseHolidayParserConfiguration());
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new PortugueseSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedParser(new PortugueseMergedParserConfiguration(DateTimeOptions.None));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Portuguese not supported");
         }
 
         public static IDateTimeExtractor GetFrenchExtractor(DateTimeExtractors extractorName)
