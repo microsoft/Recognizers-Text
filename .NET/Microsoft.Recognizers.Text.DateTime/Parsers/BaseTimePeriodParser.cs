@@ -305,7 +305,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToDouble((endTime - beginTime).TotalHours)}H)";
+            var minutes = (endTime - beginTime).TotalMinutes % 60;
+            var hours = (int)(endTime - beginTime).TotalMinutes / 60;
+            ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr}," +
+                        $"PT{(hours > 0 ? hours + "H" : "")}{(minutes > 0 ? minutes + "M" : "")})";
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
             ret.Success = true;
 
