@@ -190,6 +190,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
+		public const string OrRegex = @"\s*(or)\s*";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

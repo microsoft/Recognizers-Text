@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTime,
         DateTimeSplitDateAndTime,
         CustomNumber,
+        DateTimeCalendarMode,
         DateTimeALT
     }
 
@@ -119,6 +120,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
+                case Models.DateTimeCalendarMode:
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
                 // DateTimeALT function is only activated when CalendarMode is enabled
                 case Models.DateTimeALT:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
