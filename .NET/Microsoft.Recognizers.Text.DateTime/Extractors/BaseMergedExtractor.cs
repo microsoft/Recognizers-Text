@@ -40,7 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, NumberEndingRegexMatch(text, ret), text);
 
             // modify time entity to an alternative DateTime expression if it follows a DateTime entity
-            ret = this.config.DateTimeALTExtractor.Extract(ret, text, reference);
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
+            {
+                ret = this.config.DateTimeALTExtractor.Extract(ret, text, reference);
+            }
 
             AddMod(ret, text);
 

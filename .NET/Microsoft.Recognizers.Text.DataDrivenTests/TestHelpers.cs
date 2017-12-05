@@ -119,8 +119,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
+                // DateTimeALT function is only activated when CalendarMode is enabled
                 case Models.DateTimeALT:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
