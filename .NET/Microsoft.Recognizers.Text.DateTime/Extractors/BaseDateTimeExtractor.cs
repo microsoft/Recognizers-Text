@@ -100,12 +100,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).ToLower();
                     var valid = false;
+                    // for cases like "tomorrow 3",  "tomorrow at 3"
                     if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                     {
-                        // for cases like "tomorrow 3",  "tomorrow at 3"
-                        if (string.IsNullOrWhiteSpace(middleStr))
+                        var match = this.config.DateNumberConnectorRegex.Match(middleStr);
+                        if (match.Success)
                         {
                             valid = true;
                         }

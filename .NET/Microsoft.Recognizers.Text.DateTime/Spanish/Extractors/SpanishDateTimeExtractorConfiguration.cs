@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class SpanishDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -26,8 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this for Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimeExtractorConfiguration()
+        public SpanishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
@@ -63,6 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 
         public bool IsConnector(string text)
         {

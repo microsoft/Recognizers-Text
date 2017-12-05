@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
+    public class FrenchDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -90,10 +90,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex MorningStartEndRegex = new Regex(DateTimeDefinitions.MorningStartEndRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex AfternoonStartEndRegex = new Regex(DateTimeDefinitions.AfternoonStartEndRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex EveningStartEndRegex = new Regex(DateTimeDefinitions.EveningStartEndRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex NightStartEndRegex = new Regex(DateTimeDefinitions.NightStartEndRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -133,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 timeStr = null;
                 return false;
             }
+
             return true;
         }
 

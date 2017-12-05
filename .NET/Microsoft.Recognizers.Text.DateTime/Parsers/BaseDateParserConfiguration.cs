@@ -6,8 +6,13 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public abstract class BaseDateParserConfiguration : ICommonDateTimeParserConfiguration
+    public abstract class BaseDateParserConfiguration : BaseOptionsConfiguration, ICommonDateTimeParserConfiguration
     {
+
+        protected BaseDateParserConfiguration(DateTimeOptions options) : base(options)
+        {
+        }
+
         public virtual IExtractor CardinalExtractor { get; protected set; }
 
         public virtual IExtractor IntegerExtractor { get; protected set; }
@@ -63,5 +68,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary();
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
+
     }
 }

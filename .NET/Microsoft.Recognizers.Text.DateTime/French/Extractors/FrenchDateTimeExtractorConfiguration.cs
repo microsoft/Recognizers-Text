@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class FrenchDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = 
           new Regex(  
@@ -65,7 +65,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDateTimeExtractorConfiguration()
+        public static readonly Regex DateNumberConnectorRegex = 
+            new Regex(
+                DateTimeDefinitions.DateNumberConnectorRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public FrenchDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
@@ -99,6 +104,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

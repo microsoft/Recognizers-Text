@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public FrenchCommonDateTimeParserConfiguration()
+        public FrenchCommonDateTimeParserConfiguration(DateTimeOptions options) : base(options)
         {
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 

@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDateTimeExtractorConfiguration
+    public interface IDateTimeExtractorConfiguration : IOptionsConfiguration
     {
         Regex NowRegex { get; }
 
@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex TheEndOfRegex { get; }
 
         Regex UnitRegex { get; }
+
+        Regex DateNumberConnectorRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 

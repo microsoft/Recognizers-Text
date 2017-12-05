@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDatePeriodParserConfiguration : IDatePeriodParserConfiguration
+    public class FrenchDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IImmutableList<string> InStringList { get; }
 
-        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

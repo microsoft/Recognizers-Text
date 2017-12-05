@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDatePeriodParserConfiguration : IDatePeriodParserConfiguration
+    public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableList<string> InStringList { get; }
 
-        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
@@ -204,5 +204,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var trimedText = text.Trim().ToLowerInvariant();
             return trimedText.Equals("year to date");
         }
+
     }
 }

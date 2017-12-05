@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishSetExtractorConfiguration : ISetExtractorConfiguration
+    public class SpanishSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex SetEachRegex = new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishSetExtractorConfiguration()
+        public SpanishSetExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());

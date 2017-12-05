@@ -12,15 +12,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ParserTypeName = "datetimeV2";
 
         protected readonly IMergedParserConfiguration Config;
-        private readonly DateTimeOptions options;
 
         public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
 
-        public BaseMergedParser(IMergedParserConfiguration configuration, DateTimeOptions options)
+        public BaseMergedParser(IMergedParserConfiguration configuration)
         {
             Config = configuration;
-            this.options = options;
         }
 
         public ParseResult Parse(ExtractResult er)
@@ -33,7 +31,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refTime;
             DateTimeParseResult pr = null;
 
-            // push, save teh MOD string
+            // push, save the MOD string
             bool hasBefore = false, hasAfter = false, hasSince = false;
             var modStr = string.Empty;
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
@@ -136,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Value = val;
             }
 
-            if ((options & DateTimeOptions.SplitDateAndTime) != 0
+            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0
                  && ((DateTimeResolutionResult)pr.Value)?.SubDateTimeEntities != null)
             {
                 pr.Value = DateTimeResolutionForSplit(pr);
@@ -152,14 +150,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         public DateTimeParseResult SetParseResult(DateTimeParseResult slot, bool hasBefore, bool hasAfter, bool hasSince)
         {
             slot.Value = DateTimeResolution(slot, hasBefore, hasAfter, hasSince);
-            //change the type at last for the after or before mode
+            // change the type at last for the after or before modes
             slot.Type = $"{ParserTypeName}.{DetermineDateTimeType(slot.Type, hasBefore, hasAfter, hasSince)}";
             return slot;
         }
 
         public string DetermineDateTimeType(string type, bool hasBefore, bool hasAfter, bool hasSince)
         {
-            if ((options & DateTimeOptions.SplitDateAndTime) != 0)
+            if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0)
             {
                 if (type.Equals(Constants.SYS_DATETIME_DATETIME))
                 {

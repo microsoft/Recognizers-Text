@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
+    public class FrenchDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
         public static readonly Regex TillRegex = new Regex(
@@ -181,7 +181,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -204,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekWithWeekDayRangeRegex,
         };
 
-        public FrenchDatePeriodExtractorConfiguration()
+        public FrenchDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();

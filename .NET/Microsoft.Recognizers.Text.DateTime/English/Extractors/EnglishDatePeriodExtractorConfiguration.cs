@@ -136,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public EnglishDatePeriodExtractorConfiguration()
         {
+            Options = DateTimeOptions.None;
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
@@ -198,5 +199,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             var match = Regex.Match(text, DateTimeDefinitions.RangeConnectorRegex);
             return match.Success && match.Length == text.Trim().Length;
         }
+
+        public DateTimeOptions Options { get; }
+
     }
 }
