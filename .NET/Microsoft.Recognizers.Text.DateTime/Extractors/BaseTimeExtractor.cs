@@ -34,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(AtRegexMatch(text));
+            tokens.AddRange(BeforeAfterRegexMatch(text));
             tokens.AddRange(SpecialsRegexMatch(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
@@ -67,6 +68,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         continue;
                     }
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
+            }
+            return ret;
+        }
+
+        private List<Token> BeforeAfterRegexMatch(string text)
+        {
+            var ret = new List<Token>();
+            // handle "before 3", "after three"
+            var beforeAfterRegex = this.config.TimeBeforeAfterRegex;
+            if (beforeAfterRegex.IsMatch(text))
+            {
+                var matches = beforeAfterRegex.Matches(text);
+                foreach (Match match in matches)
+                {
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }

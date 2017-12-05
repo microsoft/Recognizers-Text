@@ -24,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
+        Regex NumberAsTimeRegex { get; }
+
         Regex DateNumberConnectorRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }

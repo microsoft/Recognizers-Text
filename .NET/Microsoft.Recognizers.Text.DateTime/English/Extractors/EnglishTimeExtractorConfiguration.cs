@@ -98,6 +98,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.ConnectNumRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeBeforeAfterRegex =
+            new Regex(
+                DateTimeDefinitions.TimeBeforeAfterRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] TimeRegexList =
         {
             // (three min past)? seven|7|(senven thirty) pm
@@ -144,6 +149,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
 
         Regex ITimeExtractorConfiguration.IshRegex => IshRegex;
+
+        Regex ITimeExtractorConfiguration.TimeBeforeAfterRegex => TimeBeforeAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

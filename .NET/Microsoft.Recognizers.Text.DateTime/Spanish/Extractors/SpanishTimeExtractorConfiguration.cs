@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex ConnectNumRegex = new Regex(DateTimeDefinitions.ConnectNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TimeBeforeAfterRegex = new Regex(DateTimeDefinitions.TimeBeforeAfterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] TimeRegexList =
         {
             // (tres min pasadas las)? siete|7|(siete treinta) pm
@@ -92,6 +94,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         IEnumerable<Regex> ITimeExtractorConfiguration.TimeRegexList => TimeRegexList;
 
         Regex ITimeExtractorConfiguration.AtRegex => AtRegex;
+
+        Regex ITimeExtractorConfiguration.TimeBeforeAfterRegex => TimeBeforeAfterRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

@@ -427,8 +427,14 @@ MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|and|,)\s*$
+NumberAsTimeRegex: !nestedRegex
+  def: \b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b
+  references: [ EngTimeRegex, PeriodHourNumRegex, BaseDateTime.HourRegex ]
+TimeBeforeAfterRegex: !nestedRegex
+  def: \b(((?<=\b(before|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
+  references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>\s+|at|after|before)\s*$
+  def: ^\s*(?<connector>\s+at)\s*$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

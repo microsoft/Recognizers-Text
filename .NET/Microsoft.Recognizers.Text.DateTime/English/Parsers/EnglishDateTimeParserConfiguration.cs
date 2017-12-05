@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
@@ -46,6 +48,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex TheEndOfRegex { get; }
 
         public Regex UnitRegex { get; }
+
+        public Regex DateNumberConnectorRegex { get; }
+
+        public Regex PrepositionRegex { get; }
+
+        public Regex ConnectorRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -72,9 +80,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             SpecificTimeOfDayRegex = EnglishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = EnglishDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = EnglishTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = EnglishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
@@ -139,6 +149,5 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         public bool HaveAmbiguousToken(string text, string matchedText) => false;
-
     }
 }

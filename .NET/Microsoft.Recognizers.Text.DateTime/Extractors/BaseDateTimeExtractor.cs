@@ -63,15 +63,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var timeErs = this.config.TimePointExtractor.Extract(text, reference);
-            var numErs = this.config.IntegerExtractor.Extract(text);
-            if (timeErs.Count < 2 && numErs.Count == 0)
+            var timeNumMatches = this.config.NumberAsTimeRegex.Matches(text);
+            if (timeErs.Count == 0 && timeNumMatches.Count == 0)
             {
                 return ret;
             }
 
             var ers = dateErs;
             ers.AddRange(timeErs);
+
+            // handle cases which use numbers as time points
+            var numErs = new List<ExtractResult>();
+            for (var idx = 0; idx < timeNumMatches.Count; idx++)
+            {
+                var match = timeNumMatches[idx];
+                var node = new ExtractResult();
+                node.Start = match.Index;
+                node.Length = match.Length;
+                node.Text = match.Value;
+                node.Type = Number.Constants.SYS_NUM_INTEGER;
+                numErs.Add(node);
+            }
             ers.AddRange(numErs);
+
             ers = ers.OrderBy(o => o.Start).ToList();
 
             var i = 0;
@@ -100,13 +114,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).ToLower();
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
                     var valid = false;
                     // for cases like "tomorrow 3",  "tomorrow at 3"
                     if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                     {
                         var match = this.config.DateNumberConnectorRegex.Match(middleStr);
-                        if (match.Success)
+                        if (string.IsNullOrEmpty(middleStr) || match.Success)
                         {
                             valid = true;
                         }

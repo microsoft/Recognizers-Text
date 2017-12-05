@@ -1245,5 +1245,53 @@
       }
     }
   ]
+},
+{
+  "Input": "Schedule a meeting before 4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4",
+      "Type": "timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T04",
+            "Mod": "before",
+            "type": "timerange",
+            "end": "04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "Input": "Schedule a meeting after three",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after three",
+      "Type": "timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T03",
+            "Mod": "after",
+            "type": "timerange",
+            "start": "03:00:00"
+          }
+        ]
+      }
+    }
+  ]
 }
 ]

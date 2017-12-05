@@ -26,7 +26,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this for Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public SpanishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
@@ -64,6 +66,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 

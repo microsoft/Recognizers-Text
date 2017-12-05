@@ -683,4 +683,28 @@
     }
   ]
 }
+,
+{
+  "Input": "set up meeting before 4",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4",
+      "Type": "time"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting after five",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after five",
+      "Type": "time"
+    }
+  ]
+}
 ]

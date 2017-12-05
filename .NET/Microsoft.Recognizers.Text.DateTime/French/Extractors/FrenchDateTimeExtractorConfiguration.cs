@@ -65,10 +65,13 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex DateNumberConnectorRegex = 
+        public static readonly Regex NumberAsTimeRegex = 
             new Regex(
-                DateTimeDefinitions.DateNumberConnectorRegex,
+                DateTimeDefinitions.NumberAsTimeRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public FrenchDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
@@ -104,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
 
         Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 
