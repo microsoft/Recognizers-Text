@@ -221,5 +221,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.ModelInitialize(Models);
             base.TestDateTime();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelCalendarMode-English.csv", "DateTimeModelCalendarMode-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModelCalendarMode()
+        {
+            base.ModelInitialize(Models);
+            base.TestDateTime();
+        }
     }
 }
