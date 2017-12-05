@@ -687,4 +687,76 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave for 1 year 1 month 21 days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 year 1 month 21 days",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1Y1M21D",
+        "FutureResolution": {
+          "duration": "35942400"
+        },
+        "PastResolution": {
+          "duration": "35942400"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for 2 days 1 month",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days 1 month",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1M2D",
+        "FutureResolution": {
+          "duration": "2764800"
+        },
+        "PastResolution": {
+          "duration": "2764800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for one week three days",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one week three days",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1W3D",
+        "FutureResolution": {
+          "duration": "864000"
+        },
+        "PastResolution": {
+          "duration": "864000"
+        }
+      }
+    }
+  ]
+}
 ]

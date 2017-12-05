@@ -4,7 +4,6 @@ using System.Globalization;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
-using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -641,7 +640,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (prefixMatch.Success)
                     {
                         mod = TimeTypeConstants.beforeMod;
-                        beginDate = GetSwiftDate(endDate, durationResult.Timex, false);
+                        beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
                     }
 
                     prefixMatch = config.FutureRegex.Match(beforeStr);
@@ -651,23 +650,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             
                         //for future the beginDate should add 1 first
                         beginDate = referenceDate.AddDays(1);
-                        endDate= GetSwiftDate(beginDate, durationResult.Timex, true);
+                        endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
                     }
 
                     //handle the "in two weeks" case which means the second week
                     prefixMatch = config.InConnectorRegex.Match(beforeStr);
-                    if(prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
+                    if(prefixMatch.Success && prefixMatch.Length == beforeStr.Length 
+                        && !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
                         mod = TimeTypeConstants.afterMod;
 
                         beginDate = referenceDate.AddDays(1);
-                        endDate = GetSwiftDate(beginDate, durationResult.Timex, true);
+                        endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
 
                         //change the duration value and the beginDate
                         var unit = durationResult.Timex.Substring(durationResult.Timex.Length - 1);
 
                         durationResult.Timex = "P1" + unit;
-                        beginDate = GetSwiftDate(endDate, durationResult.Timex, false);
+                        beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
                     }
 
                     if (!string.IsNullOrEmpty(mod))
@@ -726,42 +726,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private DateObject GetSwiftDate(DateObject date, string dateTimex, bool positiveSwift)
-        {
-            var numberString = dateTimex.Replace("P", "").Substring(0, dateTimex.Length - 2);
-            string unit = dateTimex.Substring(dateTimex.Length - 1);
-
-            Double.TryParse(numberString, out double swiftValue);
-
-            if (swiftValue == 0)
-            {
-                return date;
-            }
-
-            if (!positiveSwift)
-            {
-                swiftValue = swiftValue*(-1);
-            }
-
-            switch (unit)
-            {
-                case "D":
-                    date = date.AddDays(swiftValue);
-                    break;
-                case "W":
-                    date = date.AddDays(7 * swiftValue);
-                    break;
-                case "M":
-                    date = date.AddMonths((int)swiftValue);
-                    break;
-                case "Y":
-                    date = date.AddYears((int)swiftValue);
-                    break;
-            }
-
-            return date;
         }
 
         private DateTimeResolutionResult ParseWeekOfMonth(string text, DateObject referenceDate)

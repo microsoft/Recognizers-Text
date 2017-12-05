@@ -5,9 +5,11 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDurationParserConfiguration : IDurationParserConfiguration
+    public class EnglishDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
     {
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -29,16 +31,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex InExactNumberUnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = EnglishDurationExtractorConfiguration.AnUnitRegex;
             AllDateUnitRegex = EnglishDurationExtractorConfiguration.AllRegex;
@@ -48,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ConjunctionRegex = EnglishDurationExtractorConfiguration.ConjunctionRegex;
             InExactNumberRegex = EnglishDurationExtractorConfiguration.InExactNumberRegex;
             InExactNumberUnitRegex = EnglishDurationExtractorConfiguration.InExactNumberUnitRegex;
+            DurationUnitRegex = EnglishDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

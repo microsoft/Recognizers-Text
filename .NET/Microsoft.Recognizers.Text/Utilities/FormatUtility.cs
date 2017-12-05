@@ -8,6 +8,7 @@ namespace Microsoft.Recognizers.Text.Utilities
             {
                 query = query.ToLowerInvariant();
             }
+
             query = query.Replace("０", "0");
             query = query.Replace("１", "1");
             query = query.Replace("２", "2");

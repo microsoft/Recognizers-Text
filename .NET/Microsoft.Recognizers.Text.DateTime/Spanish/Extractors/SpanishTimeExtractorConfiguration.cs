@@ -5,11 +5,10 @@ using Microsoft.Recognizers.Definitions.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishTimeExtractorConfiguration : ITimeExtractorConfiguration
+    public class SpanishTimeExtractorConfiguration : BaseOptionsConfiguration, ITimeExtractorConfiguration
     {
         // part 1: smallest component
         // --------------------------------------
-
         public static readonly Regex DescRegex = new Regex(DateTimeDefinitions.DescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -96,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public SpanishTimeExtractorConfiguration()
+        public SpanishTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         }

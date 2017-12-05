@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishHolidayExtractorConfiguration : IHolidayExtractorConfiguration
+    public class EnglishHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -31,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             H2,
             H3
         };
+
+        public EnglishHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        {
+        }
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }

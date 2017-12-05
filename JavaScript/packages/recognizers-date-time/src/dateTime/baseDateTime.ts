@@ -7,7 +7,7 @@ import { IDateTimeParser, DateTimeParseResult } from "./parsers"
 import { FormatUtil, Token, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateTimeResolutionResult, StringMap } from "./utilities";
 
 export interface IDateTimeExtractor {
-    extract(input: string, refDate: Date): Array<ExtractResult>
+    extract(input: string, refDate?: Date): Array<ExtractResult>
 }
 
 export interface IDateTimeExtractorConfiguration {
@@ -39,13 +39,14 @@ export class BaseDateTimeExtractor implements IDateTimeExtractor {
         if (!refDate) refDate = new Date();
         let referenceDate = refDate;
 
-        let tokens: Array<Token> = new Array<Token>()
-        .concat(this.mergeDateAndTime(source, referenceDate))
-        .concat(this.basicRegexMatch(source))
-        .concat(this.timeOfTodayBefore(source, referenceDate))
-        .concat(this.timeOfTodayAfter(source, referenceDate))
-        .concat(this.specialTimeOfDate(source, referenceDate))
-        .concat(this.durationWithBeforeAndAfter(source, referenceDate));
+        let tokens: Array<Token> = new Array<Token>();
+        tokens = tokens.concat(this.mergeDateAndTime(source, referenceDate));
+        tokens = tokens.concat(this.basicRegexMatch(source));
+        tokens = tokens.concat(this.timeOfTodayBefore(source, referenceDate));
+        tokens = tokens.concat(this.timeOfTodayAfter(source, referenceDate));
+        tokens = tokens.concat(this.specialTimeOfDate(source, referenceDate));
+        tokens = tokens.concat(this.durationWithBeforeAndAfter(source, referenceDate));
+
         let result = Token.mergeAllTokens(tokens, source, this.extractorName);
         return result;
     }

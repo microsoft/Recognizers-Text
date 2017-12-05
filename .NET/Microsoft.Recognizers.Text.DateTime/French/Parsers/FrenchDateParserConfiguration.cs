@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateParserConfiguration : IDateParserConfiguration
+    public class FrenchDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
         public string DateTokenPrefix { get; }
 
@@ -64,8 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-
-        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;

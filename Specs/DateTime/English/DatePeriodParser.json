@@ -253,7 +253,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -279,7 +278,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -680,7 +678,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -706,7 +703,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -732,7 +728,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -758,7 +753,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -784,7 +778,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -810,7 +803,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1286,7 +1278,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1312,7 +1303,6 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1877,7 +1867,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1903,7 +1892,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1929,7 +1917,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1955,7 +1942,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1981,7 +1967,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2007,7 +1992,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2033,7 +2017,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2059,7 +2042,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2085,7 +2067,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-08T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2111,7 +2092,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2137,7 +2117,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2163,7 +2142,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-14T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2189,7 +2167,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-17T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2215,7 +2192,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-17T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2241,7 +2217,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2267,7 +2242,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2293,7 +2267,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -2319,7 +2292,6 @@
   "Context": {
     "ReferenceDateTime": "2017-11-20T00:00:00"
   },
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

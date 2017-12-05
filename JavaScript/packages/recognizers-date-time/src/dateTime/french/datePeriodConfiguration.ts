@@ -32,38 +32,40 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.BetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.OneWordPeriodRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthWithYear, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumWithYear, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfYearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontBetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex, "gis")
+            RegExpUtility.getSafeRegExp(FrenchDateTime.SimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.BetweenRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.OneWordPeriodRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthWithYear),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumWithYear),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfYearRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontBetweenRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.MonthFrontSimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.SeasonRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.ThisPrefixRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex),
+            RegExpUtility.getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ];
-        this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedDateUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDateUnit, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex, "gis");
-        this.weekOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfRegex, "gis");
-        this.monthOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthOfRegex, "gis");
-        this.dateUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DateUnitRegex, "gis");
-        this.inConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InConnectorRegex, "gis");
-        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeUnitRegex, "gis");
-        this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedDateUnit);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDateUnit);
+        this.pastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
+        this.futureRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
+        this.weekOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekOfRegex);
+        this.monthOfRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthOfRegex);
+        this.dateUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.DateUnitRegex);
+        this.inConnectorRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.InConnectorRegex);
+        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeUnitRegex);
+        this.weekDayOfMonthRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.WeekDayOfMonthRegex);
 
-        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex, "gis");
-        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex, "gis");
-        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2, "gis");
+        this.fromRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.FromRegex);
+        this.connectorAndRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.ConnectorAndRegex);
+        this.beforeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.BeforeRegex2);
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
@@ -119,6 +121,8 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly pastPrefixRegex: RegExp;
     readonly thisPrefixRegex: RegExp;
     readonly numberCombinedWithUnit: RegExp;
+    readonly laterEarlyPeriodRegex: RegExp;
+    readonly weekWithWeekDayRangeRegex: RegExp;
 
     readonly cardinalExtractor: IExtractor;
     readonly numberParser: IParser;

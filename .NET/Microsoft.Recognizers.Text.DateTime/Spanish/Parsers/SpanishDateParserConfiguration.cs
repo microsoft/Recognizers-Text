@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateParserConfiguration : IDateParserConfiguration
+    public class SpanishDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
         public string DateTokenPrefix { get; }
 
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             DateRegexes = SpanishDateExtractorConfiguration.DateRegexList;
@@ -161,6 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimedText = text.Trim().ToLowerInvariant();
             return PastPrefixRegex.IsMatch(trimedText);
         }
+
     }
 
     public static class StringExtension

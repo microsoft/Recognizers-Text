@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
+    public class EnglishDateTimePeriodParserConfiguration : BaseOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -58,8 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+            
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -157,5 +158,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             return swift;
         }
+
     }
 }

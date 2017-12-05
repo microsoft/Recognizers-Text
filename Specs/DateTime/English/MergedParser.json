@@ -1221,5 +1221,29 @@
       }
     }
   ]
+},
+{
+  "Input": "Schedule during the morning",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "morning",
+      "Type": "timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "TMO",
+            "type": "timerange",
+            "start": "08:00:00",
+            "end": "12:00:00"
+          }
+        ]
+      }
+    }
+  ]
 }
 ]

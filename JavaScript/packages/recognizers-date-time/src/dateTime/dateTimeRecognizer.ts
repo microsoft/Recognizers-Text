@@ -8,7 +8,7 @@ import { FrenchMergedParserConfiguration, FrenchMergedExtractorConfiguration } f
 import { ChineseMergedExtractor, ChineseMergedParser, ChineseFullMergedParser } from "./chinese/mergedConfiguration";
 
 export enum DateTimeOptions {
-    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2
+    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
 }
 
 export default class DateTimeRecognizer extends Recognizer {

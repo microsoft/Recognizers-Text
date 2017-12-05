@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -32,7 +33,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var innerResult = new DateTimeResolutionResult();
 
-                innerResult = ParseNumerWithUnit(er.Text, referenceTime);
+                innerResult = ParseMergedDuration(er.Text, referenceTime);
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseNumerWithUnit(er.Text, referenceTime);
+                }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseImplicitDuration(er.Text, referenceTime);
@@ -309,6 +315,83 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool IsLessThanDay(string unit) {
             return unit.Equals("S") || unit.Equals("M") || unit.Equals("H");
+        }
+
+        private DateTimeResolutionResult ParseMergedDuration(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+            var DurationExtractor = this.config.DurationExtractor;
+
+            //DurationExtractor without parameter will not extract merged duration
+            var ers = DurationExtractor.Extract(text);
+
+            // only handle merged duration cases like "1 month 21 days"
+            if (ers.Count <= 1)
+            {
+                ret.Success = false;
+                return ret;
+            }
+
+            var start = ers[0].Start ?? 0;
+            if (start != 0)
+            {
+                var beforeStr = text.Substring(0, start - 1);
+                if (!string.IsNullOrWhiteSpace(beforeStr))
+                {
+                    return ret;
+                }
+            }
+
+            var end = ers[ers.Count - 1].Start + ers[ers.Count - 1].Length?? 0;
+            if (end != text.Length)
+            {
+                var afterStr = text.Substring(end);
+                if (!string.IsNullOrWhiteSpace(afterStr))
+                {
+                    return ret;
+                }
+            }
+
+            var prs = new List<DateTimeParseResult>();
+            var timexDict = new Dictionary<string, string>();
+            // insert timex into a dictionary
+            foreach (var er in ers)
+            {
+                var unitRegex = this.config.DurationUnitRegex;
+                var unitMatch = unitRegex.Match(er.Text);
+                if (unitMatch.Success)
+                {
+                    var pr = (DateTimeParseResult)Parse(er);
+                    if (pr.Value != null)
+                    {
+                        timexDict.Add(unitMatch.Groups["unit"].Value, pr.TimexStr);
+                        prs.Add(pr);
+                    }
+                }
+            }
+
+            // sort the timex using the granularity of the duration, "P1M23D" for "1 month 23 days" and "23 days 1 month"
+            if (prs.Count == ers.Count)
+            {
+                var unitList = new List<string>(timexDict.Keys);
+                unitList.Sort((x, y) => (this.config.UnitValueMap[x] < this.config.UnitValueMap[y]? 1 : -1));
+                ret.Timex = "P";
+                foreach (var unit in unitList)
+                {
+                    ret.Timex = $"{ret.Timex}{timexDict[unit].Substring(1)}";
+                }
+
+                double value = 0;
+                foreach (var pr in prs)
+                {
+                    value += double.Parse(((DateTimeResolutionResult)(pr.Value)).FutureValue.ToString());
+                }
+
+                ret.FutureValue = ret.PastValue = value;
+            }
+
+            ret.Success = true;
+            return ret;
         }
     }
 }

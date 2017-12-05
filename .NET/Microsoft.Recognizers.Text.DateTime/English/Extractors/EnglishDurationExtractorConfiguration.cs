@@ -2,10 +2,11 @@
 
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDurationExtractorConfiguration : IDurationExtractorConfiguration
+    public class EnglishDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -40,12 +41,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex RelativeDurationUnitRegex =
             new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishDurationExtractorConfiguration()
+        public static readonly Regex DurationConnectorRegex =
+            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public EnglishDurationExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
+            UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
+            UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
+
+        public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit;
 
@@ -66,5 +76,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
     }
 }

@@ -5,9 +5,11 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDurationParserConfiguration : IDurationParserConfiguration
+    public class FrenchDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
     {
         public IExtractor CardinalExtractor { get; }
+
+        public IExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -29,16 +31,19 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex InExactNumberUnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+            DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(), false);
             NumberCombinedWithUnit = FrenchDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             AnUnitRegex = FrenchDurationExtractorConfiguration.AnUnitRegex;
             AllDateUnitRegex = FrenchDurationExtractorConfiguration.AllRegex;
@@ -48,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ConjunctionRegex = FrenchDurationExtractorConfiguration.ConjunctionRegex;
             InExactNumberRegex = FrenchDurationExtractorConfiguration.InExactNumberRegex;
             InExactNumberUnitRegex = FrenchDurationExtractorConfiguration.InExactNumberUnitRegex;
+            DurationUnitRegex = FrenchDurationExtractorConfiguration.DurationUnitRegex;
             UnitMap = config.UnitMap;
             UnitValueMap = config.UnitValueMap;
             DoubleNumbers = config.DoubleNumbers;

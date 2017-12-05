@@ -2,10 +2,11 @@
 
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Number;
+using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDurationExtractorConfiguration : IDurationExtractorConfiguration
+    public class FrenchDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(
@@ -60,12 +61,21 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex RelativeDurationUnitRegex =
             new Regex(DateTimeDefinitions.RelativeDurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDurationExtractorConfiguration()
+        public static readonly Regex DurationConnectorRegex =
+            new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public FrenchDurationExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
+            UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();
+            UnitValueMap = DateTimeDefinitions.UnitValueMap.ToImmutableDictionary();
         }
 
         public IExtractor CardinalExtractor { get; }
+
+        public IImmutableDictionary<string, string> UnitMap { get; }
+
+        public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         Regex IDurationExtractorConfiguration.FollowedUnit => DurationFollowedUnit; 
 
@@ -86,5 +96,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDurationExtractorConfiguration.InExactNumberUnitRegex => InExactNumberUnitRegex;
 
         Regex IDurationExtractorConfiguration.RelativeDurationUnitRegex => RelativeDurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
+
+        Regex IDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;
     }
 }

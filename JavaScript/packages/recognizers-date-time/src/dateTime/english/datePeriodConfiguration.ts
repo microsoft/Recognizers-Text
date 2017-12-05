@@ -27,36 +27,38 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
 
     constructor() {
         this.simpleCasesRegexes = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex, "gis"),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.SimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.OneWordPeriodRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthWithYear),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthNumWithYear),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfMonthRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfYearRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.QuarterRegexYearFront),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.SeasonRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WhichWeekRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex),
+            RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex)
         ];
-        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex, "gis");
-        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit, "gis");
-        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit, "gis");
-        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex, "gis");
-        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex, "gis");
-        this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex, "gis");
-        this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex, "gis");
-        this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex, "gis");
-        this.inConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex, "gis");
-        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex, "gis");
+        this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
+        this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
+        this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
+        this.pastRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
+        this.futureRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
+        this.weekOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekOfRegex);
+        this.monthOfRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthOfRegex);
+        this.dateUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.DateUnitRegex);
+        this.inConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.InConnectorRegex);
+        this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         this.integerExtractor = new EnglishIntegerExtractor();
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
-        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex, "gis");
+        this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 
     getFromTokenIndex(source: string) {
@@ -111,13 +113,15 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly pastPrefixRegex: RegExp
     readonly thisPrefixRegex: RegExp
     readonly restOfDateRegex : RegExp
+    readonly laterEarlyPeriodRegex: RegExp
+    readonly weekWithWeekDayRangeRegex: RegExp
     readonly tokenBeforeDate: string
     readonly dayOfMonth: ReadonlyMap<string, number>
     readonly monthOfYear: ReadonlyMap<string, number>
     readonly cardinalMap: ReadonlyMap<string, number>
     readonly seasonMap: ReadonlyMap<string, string>
     readonly unitMap: ReadonlyMap<string, string>
-
+    
     constructor(config: EnglishCommonDateTimeParserConfiguration) {
         this.dateExtractor = config.dateExtractor;
         this.dateParser = config.dateParser;
@@ -145,7 +149,9 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NextPrefixRegex);
         this.pastPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.PastPrefixRegex);
         this.thisPrefixRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.ThisPrefixRegex);
-        this.restOfDateRegex  = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex );
+        this.restOfDateRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RestOfDateRegex);
+        this.laterEarlyPeriodRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex);
+        this.weekWithWeekDayRangeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex);
         this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
         this.dayOfMonth = config.dayOfMonth;
         this.monthOfYear = config.monthOfYear;

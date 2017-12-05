@@ -5,9 +5,11 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDurationParserConfiguration
+    public interface IDurationParserConfiguration : IOptionsConfiguration
     {
         IExtractor CardinalExtractor { get; }
+
+        IExtractor DurationExtractor { get; }
 
         IParser NumberParser { get; }
 
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex InExactNumberRegex { get; }
 
         Regex InExactNumberUnitRegex { get; }
+
+        Regex DurationUnitRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

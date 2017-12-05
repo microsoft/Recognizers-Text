@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchSetParserConfiguration : ISetParserConfiguration
+    public class FrenchSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
     {
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex SetEachRegex { get; }
 
-        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

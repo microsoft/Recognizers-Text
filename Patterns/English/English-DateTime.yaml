@@ -5,6 +5,8 @@ RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>next|upcoming|this|last|past|previous|current|the|my)
+StrictRelativeRegex: !simpleRegex
+  def: (?<order>next|upcoming|this|last|past|previous|current)
 NextPrefixRegex: !simpleRegex
   def: (next|upcoming)\b
 PastPrefixRegex: !simpleRegex
@@ -263,8 +265,8 @@ PrepositionRegex: !simpleRegex
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>((((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(morning|afternoon|night|evening)))|(((in\s+(the)?\s+)?)(daytime)))s?)\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b
-  references: [ TimeOfDayRegex, RelativeRegex ]
+  def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btonight)s?\b
+  references: [ TimeOfDayRegex, StrictRelativeRegex ]
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -297,8 +299,8 @@ TheEndOfRegex: !simpleRegex
 PeriodTimeOfDayRegex: !simpleRegex
   def: \b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b
 PeriodSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
-  references: [ PeriodTimeOfDayRegex, RelativeRegex ]
+  def: \b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
+  references: [ PeriodTimeOfDayRegex, StrictRelativeRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({TimeOfDayRegex}(\s+on)?))\b
  references: [ TimeOfDayRegex]
@@ -423,6 +425,8 @@ GeneralEndingRegex: !simpleRegex
   def: ^\s*((\.,)|\.|,|!|\?)?\s*$
 MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
+DurationConnectorRegex: !simpleRegex
+  def: ^\s*(?<connector>\s+|and|,)\s*$
 OrRegex: !simpleRegex
   def: \s*(or)\s*
 UnitMap: !dictionary

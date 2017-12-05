@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchHolidayExtractorConfiguration : IHolidayExtractorConfiguration
+    public class FrenchHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex = 
             new Regex(
@@ -40,6 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             H3,
             H4
         };
+
+        public FrenchHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        {
+        }
 
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }

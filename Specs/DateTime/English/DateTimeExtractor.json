@@ -715,7 +715,6 @@
 ,
 {
   "Input": "I'll go back 6 Jan 2017 - 6:37am",
-  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -731,6 +730,54 @@
   "Results": [
     {
       "Text": "16. Nov. 2016 10:38",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I will leave 1 day 2 hours later",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 day 2 hours later",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I met him 2 months 1 day 2 hours ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 months 1 day 2 hours ago",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I met him 2 months 1 day 2 hours ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 months 1 day 2 hours ago",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "I will leave 1 day 30 minutes later",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 day 30 minutes later",
       "Type": "datetime"
     }
   ]

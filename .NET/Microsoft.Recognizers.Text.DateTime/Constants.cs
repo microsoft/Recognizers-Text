@@ -23,7 +23,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ResolveKey = "resolve";
         public const string ResolveToPastKey = "resolveToPast";
         public const string ResolveToFutureKey = "resolveToFuture";
+        public const string MultipleDurationType = "multipleDurationType";
         public const string Context = "context";
         public const string SubType = "subType";
+
+        //Multiple Duration Types
+        public const string MultipleDuration_DateTime = "multipleDurationDateTime";
+        public const string MultipleDuration_Date = "multipleDurationDate";
+        public const string MultipleDuration_Time = "multipleDurationTime";
     }
 }

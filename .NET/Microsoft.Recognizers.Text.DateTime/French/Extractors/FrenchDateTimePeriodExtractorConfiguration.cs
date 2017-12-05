@@ -6,9 +6,9 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimePeriodExtractorConfiguration : IDateTimePeriodExtractorConfiguration
+    public class FrenchDateTimePeriodExtractorConfiguration : BaseOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
-        public FrenchDateTimePeriodExtractorConfiguration()
+        public FrenchDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             SingleDateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());

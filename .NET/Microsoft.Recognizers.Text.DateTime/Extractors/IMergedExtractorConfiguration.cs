@@ -5,8 +5,9 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IMergedExtractorConfiguration
+    public interface IMergedExtractorConfiguration : IOptionsConfiguration
     {
+
         IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeExtractor TimeExtractor { get; }

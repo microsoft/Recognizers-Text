@@ -1183,4 +1183,52 @@
     }
   ]
 }
+,
+{
+  "Input": "We had a meeting 1 month 21 days ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month 21 days ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I left here 2 years 1 month 21 days ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 years 1 month 21 days ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I will leve here 2 years 21 days later",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 years 21 days later",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "I left here 1 month 2 years 21 days ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 month 2 years 21 days ago",
+      "Type": "date"
+    }
+  ]
+}
 ]

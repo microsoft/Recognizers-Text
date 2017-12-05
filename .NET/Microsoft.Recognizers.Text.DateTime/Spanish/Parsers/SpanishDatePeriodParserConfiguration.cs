@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDatePeriodParserConfiguration : IDatePeriodParserConfiguration
+    public class SpanishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         #endregion
 
 
-        public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

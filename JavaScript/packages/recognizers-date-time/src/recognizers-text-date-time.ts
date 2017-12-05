@@ -37,6 +37,7 @@ export { SpanishSetExtractorConfiguration, SpanishSetParserConfiguration } from 
 export { SpanishDurationExtractorConfiguration, SpanishDurationParserConfiguration } from "./dateTime/spanish/durationConfiguration";
 export { SpanishHolidayExtractorConfiguration, SpanishHolidayParserConfiguration } from "./dateTime/spanish/holidayConfiguration";
 export { SpanishMergedExtractorConfiguration, SpanishMergedParserConfiguration } from "./dateTime/spanish/mergedConfiguration";
+export { SpanishDateTimePeriodParser } from "./dateTime/spanish/dateTimePeriodParser";
 export { FrenchCommonDateTimeParserConfiguration, FrenchDateTimeUtilityConfiguration } from "./dateTime/french/baseConfiguration";
 export { FrenchDateExtractorConfiguration, FrenchDateParserConfiguration } from "./dateTime/french/dateConfiguration";
 export { FrenchTimeExtractorConfiguration, FrenchTimeParserConfiguration } from "./dateTime/french/timeConfiguration";

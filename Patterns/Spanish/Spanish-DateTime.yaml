@@ -672,4 +672,10 @@ SetWeekDayRegex: !simpleRegex
   def: ^[\.]
 NightRegex: !simpleRegex
   def: \b(medionoche|noche)\b
+DurationUnitRegex: !simpleRegex
+  # TODO: add this according to the related part in English
+  def: ^[\.]
+DurationConnectorRegex: !simpleRegex
+  # TODO: add this according to the related part in English
+  def: ^[.]
 ...
