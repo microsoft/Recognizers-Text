@@ -9,5 +9,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         SkipFromToMerge = 1,
         SplitDateAndTime = 2,
         CalendarMode = 4,
+        ExtendedTypes = 8,
     }
 }

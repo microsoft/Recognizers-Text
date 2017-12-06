@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimeSplitDateAndTime,
         CustomNumber,
         DateTimeCalendarMode,
-        DateTimeALT
+        DateTimeExtendedTypes,
     }
 
     public enum DateTimeExtractors
@@ -122,9 +122,9 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetCustomModelFor(language);
                 case Models.DateTimeCalendarMode:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
-                // DateTimeALT function is only activated when CalendarMode is enabled
-                case Models.DateTimeALT:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
+                // DateTimeALT function is only activated when ExtendedTypes is enabled
+                case Models.DateTimeExtendedTypes:
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
