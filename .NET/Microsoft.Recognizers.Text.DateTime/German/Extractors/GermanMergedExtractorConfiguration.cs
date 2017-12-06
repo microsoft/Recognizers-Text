@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number;
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanMergedExtractorConfiguration : IMergedExtractorConfiguration
+    public class GermanMergedExtractorConfiguration : BaseOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = 
             new Regex(DateTimeDefinitions.BeforeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor IntegerExtractor { get; }
 
-        public GermanMergedExtractorConfiguration()
+        public GermanMergedExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());

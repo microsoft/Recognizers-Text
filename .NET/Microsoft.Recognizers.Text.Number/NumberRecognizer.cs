@@ -81,7 +81,7 @@ namespace Microsoft.Recognizers.Text.Number
                             new French.PercentageExtractor())
             });
 
-            RegisterModel(Culture.German, new Dictionary<Type, IModel>
+            RegisterModel(Culture.German, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(NumberModel)] = new NumberModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration()),

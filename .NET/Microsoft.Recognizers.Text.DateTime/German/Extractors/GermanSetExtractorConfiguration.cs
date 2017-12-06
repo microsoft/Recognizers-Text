@@ -4,7 +4,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanSetExtractorConfiguration : ISetExtractorConfiguration
+    public class GermanSetExtractorConfiguration : BaseOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly Regex SetUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex SetEachRegex =
             new Regex(DateTimeDefinitions.SetEachRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanSetExtractorConfiguration()
+        public GermanSetExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
             TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());

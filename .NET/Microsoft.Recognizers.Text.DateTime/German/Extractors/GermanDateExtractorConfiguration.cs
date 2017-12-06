@@ -10,7 +10,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateExtractorConfiguration : IDateExtractorConfiguration
+    public class GermanDateExtractorConfiguration : BaseOptionsConfiguration,IDateExtractorConfiguration
     {
         public static readonly Regex MonthRegex =
             new Regex(DateTimeDefinitions.MonthRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly ImmutableDictionary<string, int> DayOfWeek = 
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
-        public GermanDateExtractorConfiguration()
+        public GermanDateExtractorConfiguration() : base(DateTimeOptions.None)
         {
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
             OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();

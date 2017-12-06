@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanHolidayExtractorConfiguration : IHolidayExtractorConfiguration
+    public class GermanHolidayExtractorConfiguration : BaseOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -32,6 +32,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             H3
         };
 
+        public GermanHolidayExtractorConfiguration() : base(DateTimeOptions.None)
+        {
+        }
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }
 }

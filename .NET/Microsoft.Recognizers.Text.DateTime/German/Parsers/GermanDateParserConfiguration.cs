@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateParserConfiguration : IDateParserConfiguration
+    public class GermanDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
         public string DateTokenPrefix { get; }
 
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;

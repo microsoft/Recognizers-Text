@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanSetParserConfiguration : ISetParserConfiguration
+    public class GermanSetParserConfiguration : BaseOptionsConfiguration,ISetParserConfiguration
     {
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -47,7 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex SetEachRegex { get; }
 
-        public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+
+        public GermanSetParserConfiguration(ICommonDateTimeParserConfiguration config): base(config.Options)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;

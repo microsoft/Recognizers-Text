@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimePeriodParserConfiguration : IDateTimePeriodParserConfiguration
+    public class GermanDateTimePeriodParserConfiguration : BaseOptionsConfiguration,IDateTimePeriodParserConfiguration
     {
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public GermanDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;

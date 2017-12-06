@@ -6,7 +6,7 @@ using System.Collections.Immutable;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDurationExtractorConfiguration : IDurationExtractorConfiguration
+    public class GermanDurationExtractorConfiguration : BaseOptionsConfiguration, IDurationExtractorConfiguration
     {
         public static readonly Regex DurationUnitRegex =
             new Regex(DateTimeDefinitions.DurationUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -44,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanDurationExtractorConfiguration()
+        public GermanDurationExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             UnitMap = DateTimeDefinitions.UnitMap.ToImmutableDictionary();

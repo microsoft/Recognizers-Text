@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDurationParserConfiguration : IDurationParserConfiguration
+    public class GermanDurationParserConfiguration : BaseOptionsConfiguration, IDurationParserConfiguration
     {
         public IExtractor CardinalExtractor { get; }
 
@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableDictionary<string, double> DoubleNumbers { get; }
 
-        public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;

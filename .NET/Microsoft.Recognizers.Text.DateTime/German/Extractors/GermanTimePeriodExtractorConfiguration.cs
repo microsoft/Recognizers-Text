@@ -9,7 +9,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
+    public class GermanTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanTimePeriodExtractorConfiguration()
+        public GermanTimePeriodExtractorConfiguration():base(DateTimeOptions.None)
         {
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();

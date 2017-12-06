@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimeParserConfiguration : IDateTimeParserConfiguration
+    public class GermanDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public GermanDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;

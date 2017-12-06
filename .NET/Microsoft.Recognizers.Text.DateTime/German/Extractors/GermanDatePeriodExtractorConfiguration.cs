@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
+    public class GermanDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
         // base regexes
         public static readonly Regex TillRegex = 
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekWithWeekDayRangeRegex,
         };
 
-        public GermanDatePeriodExtractorConfiguration()
+        public GermanDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();

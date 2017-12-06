@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            RegisterModel(Culture.German, new Dictionary<Type, IModel>
+            RegisterModel(Culture.German, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof(CurrencyModel)] = new CurrencyModel(
                             new Dictionary<IExtractor, IParser>
@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             ),
             });
 
-            RegisterModel(Culture.Chinese, new Dictionary<Type, IModel>
+            RegisterModel(Culture.Chinese, options.ToString(), new Dictionary<Type, IModel>
             {
                 [typeof (CurrencyModel)] = new CurrencyModel(
                     new Dictionary<IExtractor, IParser>

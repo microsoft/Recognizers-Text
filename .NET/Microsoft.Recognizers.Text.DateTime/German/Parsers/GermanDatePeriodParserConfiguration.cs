@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDatePeriodParserConfiguration : IDatePeriodParserConfiguration
+    public class GermanDatePeriodParserConfiguration : BaseOptionsConfiguration,IDatePeriodParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -84,7 +84,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IImmutableList<string> InStringList { get; }
 
-        public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;

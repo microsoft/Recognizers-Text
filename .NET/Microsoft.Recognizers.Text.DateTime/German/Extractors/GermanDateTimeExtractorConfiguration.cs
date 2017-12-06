@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
-    public class GermanDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class GermanDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public GermanDateTimeExtractorConfiguration()
+        public GermanDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
