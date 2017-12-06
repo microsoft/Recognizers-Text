@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public void TestNumber()
         {
+
             if (TestUtils.EvaluateSpec(TestSpec, out string message))
             {
                 Assert.Inconclusive(message);

@@ -2,6 +2,7 @@
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.German;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -61,6 +62,18 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new FrenchNumberParserConfiguration());
             IParser parseCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new FrenchNumberParserConfiguration());
             IParser parsePercentage = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration());
+
+            Assert.IsTrue(parseNumber is BaseNumberParser);
+            Assert.IsTrue(parseCardinal is BaseNumberParser);
+            Assert.IsTrue(parsePercentage is BasePercentageParser);
+        }
+
+        [TestMethod]
+        public void TestGermanParser()
+        {
+            IParser parseNumber = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration());
+            IParser parseCardinal = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Cardinal, new GermanNumberParserConfiguration());
+            IParser parsePercentage = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration());
 
             Assert.IsTrue(parseNumber is BaseNumberParser);
             Assert.IsTrue(parseCardinal is BaseNumberParser);
