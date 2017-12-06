@@ -1,2 +1,6 @@
-/.vs/Microsoft.Recognizers.Text/v15
-/TestResults
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/.vs
+/.NET/Microsoft.Recognizers.Text.DateTime/build/package
