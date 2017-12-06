@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanCommonDateTimeParserConfiguration : BaseDateParserConfiguration
     {
-        public GermanCommonDateTimeParserConfiguration()
+        public GermanCommonDateTimeParserConfiguration() : base(DateTimeOptions.None)
         {
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
