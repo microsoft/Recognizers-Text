@@ -1,2 +1,4 @@
 /.vs/Microsoft.Recognizers.Text/v15
 /TestResults
+/.NET/Microsoft.Recognizers.Text.DateTime/build/package
+/.vs
