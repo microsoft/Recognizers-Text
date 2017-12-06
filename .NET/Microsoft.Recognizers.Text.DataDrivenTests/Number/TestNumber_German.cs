@@ -39,11 +39,11 @@ namespace Microsoft.Recognizers.Text.Number.Tests
             base.TestNumber();
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-German.csv", "PercentModel-German#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void PercentModel()
-        {
-            base.TestNumber();
-        }
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "PercentModel-German.csv", "PercentModel-German#csv", DataAccessMethod.Sequential)]
+        //[TestMethod]
+        //public void PercentModel()
+        //{
+        //    base.TestNumber();
+        //}
     }
 }

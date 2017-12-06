@@ -25,32 +25,32 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             base.ModelInitialize(Models);
         }
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-German.csv", "AgeModel-German#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void AgeModel()
-        {
-            base.TestNumberWithUnit();
-        }
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "AgeModel-German.csv", "AgeModel-German#csv", DataAccessMethod.Sequential)]
+        //[TestMethod]
+        //public void AgeModel()
+        //{
+        //    base.TestNumberWithUnit();
+        //}
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-German.csv", "CurrencyModel-German#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void CurrencyModel()
-        {
-            base.TestNumberWithUnit();
-        }
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "CurrencyModel-German.csv", "CurrencyModel-German#csv", DataAccessMethod.Sequential)]
+        //[TestMethod]
+        //public void CurrencyModel()
+        //{
+        //    base.TestNumberWithUnit();
+        //}
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-German.csv", "DimensionModel-German#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void DimensionModel()
-        {
-            base.TestNumberWithUnit();
-        }
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DimensionModel-German.csv", "DimensionModel-German#csv", DataAccessMethod.Sequential)]
+        //[TestMethod]
+        //public void DimensionModel()
+        //{
+        //    base.TestNumberWithUnit();
+        //}
 
-        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-German.csv", "TemperatureModel-German#csv", DataAccessMethod.Sequential)]
-        [TestMethod]
-        public void TemperatureModel()
-        {
-            base.TestNumberWithUnit();
-        }
+        //[DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "TemperatureModel-German.csv", "TemperatureModel-German#csv", DataAccessMethod.Sequential)]
+        //[TestMethod]
+        //public void TemperatureModel()
+        //{
+        //    base.TestNumberWithUnit();
+        //}
     }
 }
