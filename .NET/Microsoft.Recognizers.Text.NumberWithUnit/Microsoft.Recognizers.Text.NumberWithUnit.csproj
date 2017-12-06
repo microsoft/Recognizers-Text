@@ -8,7 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Collections.Immutable" Version="1.4.0" />
+    <Compile Remove="AgeExtractorConfiguration.cs" />
+    <Compile Remove="AreaExtractorConfiguration.cs" />
+    <Compile Remove="CurrencyExtractorConfiguration.cs" />
+    <Compile Remove="DimensionExtractorConfiguration.cs" />
+    <Compile Remove="GermanNumberWithUnitExtractorConfiguration.cs" />
+    <Compile Remove="LengthExtractorConfiguration.cs" />
+    <Compile Remove="SpeedExtractorConfiguration.cs" />
+    <Compile Remove="TemperatureExtractorConfiguration.cs" />
+    <Compile Remove="VolumeExtractorConfiguration.cs" />
+    <Compile Remove="WeightExtractorConfiguration.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="1.3.1" />
   </ItemGroup>
 
   <ItemGroup>
