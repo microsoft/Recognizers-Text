@@ -1,0 +1,28 @@
+[
+  {
+    "Input": "erster",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "erster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zweiter",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "zweiter",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  }
+]
