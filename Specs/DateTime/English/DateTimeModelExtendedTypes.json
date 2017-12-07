@@ -229,5 +229,42 @@
       }
     }
   ]
+},
+{
+  "Input": "Cortana could try to arrange a Skype call next week on Tuesday 9 am or Thursday 1 pm please?",
+  "Context": {
+    "ReferenceDateTime": "2017-12-04T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "next week on tuesday 9 am",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-12-12T09",
+            "type": "datetime",
+            "value": "2017-12-12 09:00:00"
+          }
+        ]
+      }
+    },
+    {
+      "Text": "thursday 1 pm",
+      "TypeName": "datetimeV2.datetimealt",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-12-14T13",
+            "type": "datetimealt",
+            "value": "2017-12-14 13:00:00",
+            "context": "next week"
+          }
+        ]
+      }
+    }
+  ]
 }
 ]

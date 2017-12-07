@@ -87,6 +87,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             if (data.Count == 0)
             {
+                data = ExtractDateTime_DateTime(former, latter);
+            }
+            if (data.Count == 0)
+            {
                 data = ExtractDateTimeRange_TimeRange(former, latter);
             }
 
@@ -170,7 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private Dictionary<string, object> ExtractDateTimeRange_TimeRange(ExtractResult former, ExtractResult latter)
         {
             var data = new Dictionary<string, object>();
-            // modify time entity to an alternative DateTime expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
+            // modify time entity to an alternative DateTimeRange expression, such as "9-10 am" in "Monday 7-8 am or 9-10 am"
             if (former.Type == Constants.SYS_DATETIME_DATETIMEPERIOD && latter.Type == Constants.SYS_DATETIME_TIMEPERIOD)
             {
                 var ers = config.DateExtractor.Extract(former.Text);
@@ -178,6 +182,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     data.Add(Constants.Context, ers[0]);
                     data.Add(Constants.SubType, Constants.SYS_DATETIME_TIMEPERIOD);
+                }
+            }
+            return data;
+        }
+
+        private Dictionary<string, object> ExtractDateTime_DateTime(ExtractResult former, ExtractResult latter)
+        {
+            var data = new Dictionary<string, object>();
+            // modify time entity to an alternative DateTime expression, such as "Tue 1 pm" in "next week Mon 9 am or Tue 1 pm"
+            if (former.Type == Constants.SYS_DATETIME_DATETIME && latter.Type == Constants.SYS_DATETIME_DATETIME)
+            {
+                var ers = config.DatePeriodExtractor.Extract(former.Text);
+                if (ers.Count == 1)
+                {
+                    data.Add(Constants.Context, ers[0]);
+                    data.Add(Constants.SubType, Constants.SYS_DATETIME_DATETIME);
                 }
             }
             return data;

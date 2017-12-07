@@ -52,11 +52,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // merge a Date entity and a Time entity
+        // merge the entity with its related contexts and then parse the combine text
         private DateTimeResolutionResult ParseDateTimeAndTimeALT(ExtractResult er, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
+            // original type of the extracted entity
             var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
             dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
@@ -83,6 +84,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
+            }
+            else if (subType == Constants.SYS_DATETIME_DATETIME)
+            {
+                // "next week Mon 9 am or Tue 1 pm"
+                dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
+                dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
             }
             else if (subType == Constants.SYS_DATETIME_TIMEPERIOD)
             {
