@@ -104,6 +104,11 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.RelativeMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TheRegex =
+            new Regex(
+                DateTimeDefinitions.TheRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
 
         public static readonly Regex[] DateRegexList =
         {
@@ -215,5 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
+
+        Regex IDateExtractorConfiguration.TheRegex => TheRegex;
     }
 }

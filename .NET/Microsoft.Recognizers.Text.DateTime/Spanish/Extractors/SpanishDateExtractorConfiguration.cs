@@ -66,6 +66,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex TheRegex =
+            new Regex(
+                DateTimeDefinitions.TheRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (domingo,)? 5 de Abril
@@ -149,5 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
+
+        Regex IDateExtractorConfiguration.TheRegex => TheRegex;
     }
 }

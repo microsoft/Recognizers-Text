@@ -2188,4 +2188,28 @@
     }
   ]
 }
+,
+{
+  "Input": "We had a meeting the 20th of next month",
+  "Context": {
+    "ReferenceDateTime": "2017-12-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 20th of next month",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-01-20",
+        "FutureResolution": {
+          "date": "2018-01-20"
+        },
+        "PastResolution": {
+          "date": "2018-01-20"
+        }
+      }
+    }
+  ]
+}
 ]
