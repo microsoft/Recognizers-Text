@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                pr = this.Config.DateTimeALTParser.Parse(er, referenceTime);
+                pr = this.Config.DateTimeAltParser.Parse(er, referenceTime);
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeALTParserConfiguration : IDateTimeALTParserConfiguration
+    public class SpanishDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {
         public IDateTimeParser DateTimeParser { get; }
 
@@ -10,7 +10,7 @@
 
         public IDateTimeParser DateTimePeriodParser { get; }
 
-        public SpanishDateTimeALTParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTimeParser = config.DateTimeParser;
             DateParser = config.DateParser;

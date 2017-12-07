@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimeALTParserConfiguration : IDateTimeALTParserConfiguration
+    public class EnglishDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {
         public IDateTimeParser DateTimeParser { get; }
 
@@ -10,7 +10,7 @@
 
         public IDateTimeParser DateTimePeriodParser { get; }
 
-        public EnglishDateTimeALTParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTimeParser = config.DateTimeParser;
             DateParser = config.DateParser;

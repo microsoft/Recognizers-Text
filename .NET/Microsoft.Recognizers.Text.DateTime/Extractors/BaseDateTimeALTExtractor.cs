@@ -8,13 +8,13 @@ using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimeALTExtractor: IDateTimeListExtractor
+    public class BaseDateTimeAltExtractor: IDateTimeListExtractor
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
 
-        private readonly IDateTimeALTExtractorConfiguration config;
+        private readonly IDateTimeAltExtractorConfiguration config;
 
-        public BaseDateTimeALTExtractor(IDateTimeALTExtractorConfiguration config)
+        public BaseDateTimeAltExtractor(IDateTimeAltExtractorConfiguration config)
         {
             this.config = config;
         }
@@ -26,14 +26,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(List<ExtractResult> extractResult, string text, DateObject reference)
         {
-            extractResult = ExtractALT(extractResult, text, reference);
+            extractResult = ExtractAlt(extractResult, text, reference);
 
             return extractResult;
         }
 
         // modify time entity to an alternative DateTime expression, such as "8pm" in "Monday 7pm or 8pm"
         // modify time entity to an alternative Date expression, such as "Thursday" in "next week on Tuesday or Thursday"
-        public List<ExtractResult> ExtractALT(List<ExtractResult> extractResult, string text, DateObject reference)
+        public List<ExtractResult> ExtractAlt(List<ExtractResult> extractResult, string text, DateObject reference)
         {
             var ers = extractResult;
             ers = ers.OrderBy(o => o.Start).ToList();
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (matches.Count == 1)
                 {
                     // extract different data accordingly
-                    var data = ExtractALT(ers[i], ers[j]);
+                    var data = ExtractAlt(ers[i], ers[j]);
                     if (data.Count > 0)
                     {
                         ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private Dictionary<string, object> ExtractALT(ExtractResult former, ExtractResult latter)
+        private Dictionary<string, object> ExtractAlt(ExtractResult former, ExtractResult latter)
         {
             var data = ExtractDateTime_Time(former, latter);
 

@@ -1,6 +1,6 @@
 ﻿namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeALTParserConfiguration : IDateTimeALTParserConfiguration
+    public class FrenchDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {
         public IDateTimeParser DateTimeParser { get; }
 
@@ -10,7 +10,7 @@
 
         public IDateTimeParser DateTimePeriodParser { get; }
 
-        public FrenchDateTimeALTParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public FrenchDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTimeParser = config.DateTimeParser;
             DateParser = config.DateParser;

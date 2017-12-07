@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimeALTExtractorConfiguration : IDateTimeALTExtractorConfiguration
+    public class EnglishDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
     {
-        public EnglishDateTimeALTExtractorConfiguration()
+        public EnglishDateTimeAltExtractorConfiguration()
         {
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             DatePeriodExtractor = new BaseDatePeriodExtractor(new EnglishDatePeriodExtractorConfiguration());
@@ -44,10 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             AmRegex, PmRegex,
         };
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.RelativePrefixList => RelativePrefixList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.AmPmRegexList => AmPmRegexList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
-        Regex IDateTimeALTExtractorConfiguration.OrRegex => OrRegex;
+        Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
     }
 }

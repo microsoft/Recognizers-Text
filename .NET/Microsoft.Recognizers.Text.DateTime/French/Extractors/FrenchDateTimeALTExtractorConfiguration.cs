@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeALTExtractorConfiguration : IDateTimeALTExtractorConfiguration
+    public class FrenchDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
     {
-        public FrenchDateTimeALTExtractorConfiguration()
+        public FrenchDateTimeAltExtractorConfiguration()
         {
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             DatePeriodExtractor = new BaseDatePeriodExtractor(new FrenchDatePeriodExtractorConfiguration());
@@ -38,10 +38,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             AmRegex, PmRegex,
         };
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.RelativePrefixList => RelativePrefixList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.AmPmRegexList => AmPmRegexList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
-        Regex IDateTimeALTExtractorConfiguration.OrRegex => OrRegex;
+        Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
     }
 }

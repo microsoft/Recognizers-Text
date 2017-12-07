@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetCustomModelFor(language);
                 case Models.DateTimeCalendarMode:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
-                // DateTimeALT function is only activated when ExtendedTypes is enabled
+                // DateTimeAlt function is only activated when ExtendedTypes is enabled
                 case Models.DateTimeExtendedTypes:
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
             }

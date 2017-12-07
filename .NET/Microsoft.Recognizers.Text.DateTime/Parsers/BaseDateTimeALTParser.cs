@@ -6,13 +6,13 @@ using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class BaseDateTimeALTParser : IDateTimeParser
+    public class BaseDateTimeAltParser : IDateTimeParser
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATETIMEALT; // "DateTimeALT";
 
-        private readonly IDateTimeALTParserConfiguration config;
+        private readonly IDateTimeAltParserConfiguration config;
 
-        public BaseDateTimeALTParser(IDateTimeALTParserConfiguration configuration)
+        public BaseDateTimeAltParser(IDateTimeAltParserConfiguration configuration)
         {
             config = configuration;
         }
@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             object value = null;
             if (er.Type.Equals(ParserName))
             {
-                var innerResult = ParseDateTimeAndTimeALT(er, referenceTime);
+                var innerResult = ParseDateTimeAndTimeAlt(er, referenceTime);
 
                 if (innerResult.Success)
                 {
@@ -53,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // merge the entity with its related contexts and then parse the combine text
-        private DateTimeResolutionResult ParseDateTimeAndTimeALT(ExtractResult er, DateObject referenceTime)
+        private DateTimeResolutionResult ParseDateTimeAndTimeAlt(ExtractResult er, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];

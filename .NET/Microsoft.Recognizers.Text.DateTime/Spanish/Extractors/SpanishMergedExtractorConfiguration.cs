@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeListExtractor DateTimeALTExtractor { get; }
+        public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new SpanishSetExtractorConfiguration());
-            DateTimeALTExtractor = new BaseDateTimeALTExtractor(new SpanishDateTimeALTExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new SpanishDateTimeAltExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
             IntegerExtractor = new Number.Spanish.IntegerExtractor();
         }

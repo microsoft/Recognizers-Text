@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishDateTimeALTExtractorConfiguration : IDateTimeALTExtractorConfiguration
+    public class SpanishDateTimeAltExtractorConfiguration : IDateTimeAltExtractorConfiguration
     {
-        public SpanishDateTimeALTExtractorConfiguration()
+        public SpanishDateTimeAltExtractorConfiguration()
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
@@ -44,10 +44,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             AmRegex, PmRegex,
         };
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.RelativePrefixList => RelativePrefixList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.RelativePrefixList => RelativePrefixList;
 
-        IEnumerable<Regex> IDateTimeALTExtractorConfiguration.AmPmRegexList => AmPmRegexList;
+        IEnumerable<Regex> IDateTimeAltExtractorConfiguration.AmPmRegexList => AmPmRegexList;
 
-        Regex IDateTimeALTExtractorConfiguration.OrRegex => OrRegex;
+        Regex IDateTimeAltExtractorConfiguration.OrRegex => OrRegex;
     }
 }

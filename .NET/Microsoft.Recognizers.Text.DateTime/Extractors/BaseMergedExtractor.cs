@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // modify time entity to an alternative DateTime expression if it follows a DateTime entity
             if ((this.config.Options & DateTimeOptions.ExtendedTypes) != 0)
             {
-                ret = this.config.DateTimeALTExtractor.Extract(ret, text, reference);
+                ret = this.config.DateTimeAltExtractor.Extract(ret, text, reference);
             }
 
             AddMod(ret, text);
