@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex SinceRegex = new Regex(DateTimeDefinitions.SinceRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        //TODO: change the following three regexes to Spanish if there is same requirement of split from A to B as two time points
+        //TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex = 
             new Regex(@"\b(from).+(to)\b.+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
