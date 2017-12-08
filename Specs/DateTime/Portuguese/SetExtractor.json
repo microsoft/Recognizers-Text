@@ -1,5 +1,6 @@
 [{
   "Input": "saldré semanalmente",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,6 +12,7 @@
 ,
 {
   "Input": "saltré diariamente",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -22,6 +24,7 @@
 ,
 {
   "Input": "saltré a diario",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -33,6 +36,7 @@
 ,
 {
   "Input": "saldré todos los dias",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -44,6 +48,7 @@
 ,
 {
   "Input": "saldré cada mes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -55,6 +60,7 @@
 ,
 {
   "Input": "saldré todos los meses",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -66,6 +72,7 @@
 ,
 {
   "Input": "saldré todos las semanas",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -77,6 +84,7 @@
 ,
 {
   "Input": "saldré mensualmente",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -88,6 +96,7 @@
 ,
 {
   "Input": "saldré anualmente",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -99,6 +108,7 @@
 ,
 {
   "Input": "saldré todos los años",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -110,6 +120,7 @@
 ,
 {
   "Input": "me iré cada dos dias",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -121,6 +132,7 @@
 ,
 {
   "Input": "me iré cada tres semanas",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,6 +144,7 @@
 ,
 {
   "Input": "me iré cada 3 semanas",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -143,6 +156,7 @@
 ,
 {
   "Input": "me iré a las 3pm todos los dias",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -154,6 +168,7 @@
 ,
 {
   "Input": "me iré todos los dias a las 3pm",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,6 +180,7 @@
 ,
 {
   "Input": "saldré cada 15/4",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,6 +192,7 @@
 ,
 {
   "Input": "saldré todos los lunes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,6 +204,7 @@
 ,
 {
   "Input": "saldré cada lunes a las 4pm",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

@@ -3,6 +3,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -26,6 +27,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -49,6 +51,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -72,6 +75,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -95,6 +99,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -118,6 +123,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -141,6 +147,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -164,6 +171,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,6 +195,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -210,6 +219,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -233,6 +243,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -256,6 +267,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -279,6 +291,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -302,6 +315,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -325,6 +339,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -348,6 +363,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -371,6 +387,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -394,6 +411,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -417,6 +435,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -440,6 +459,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -463,6 +483,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -486,6 +507,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -509,6 +531,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -532,6 +555,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -555,6 +579,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -578,6 +603,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -601,6 +627,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,6 +651,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -647,6 +675,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -670,6 +699,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -693,6 +723,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -716,6 +747,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -739,6 +771,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -762,6 +795,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -785,6 +819,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -808,6 +843,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -831,6 +867,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -854,6 +891,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -877,6 +915,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -900,6 +939,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -923,6 +963,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -946,6 +987,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -969,6 +1011,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -992,6 +1035,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1015,6 +1059,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1038,6 +1083,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1061,6 +1107,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1084,6 +1131,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1107,6 +1155,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1130,6 +1179,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1153,6 +1203,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1176,6 +1227,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1199,6 +1251,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1222,6 +1275,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1245,6 +1299,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1268,6 +1323,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1291,6 +1347,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1314,6 +1371,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1337,6 +1395,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1360,6 +1419,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1383,6 +1443,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1406,6 +1467,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1429,6 +1491,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1452,6 +1515,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1475,6 +1539,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1498,6 +1563,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1521,6 +1587,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1544,6 +1611,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

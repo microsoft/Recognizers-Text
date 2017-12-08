@@ -1,5 +1,6 @@
 [{
   "Input": "Volvere el 15",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,6 +12,7 @@
 ,
 {
   "Input": "Volvere el 22 de Abril",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -22,6 +24,7 @@
 ,
 {
   "Input": "Volvere el 1-Ene",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -33,6 +36,7 @@
 ,
 {
   "Input": "Volvere el 1/Ene",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -44,6 +48,7 @@
 ,
 {
   "Input": "Volvere el 2. Octubre",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -55,6 +60,7 @@
 ,
 {
   "Input": "Volvere el 12 de enero, 2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -66,6 +72,7 @@
 ,
 {
   "Input": "Volvere el 12 de Enero de 2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -77,6 +84,7 @@
 ,
 {
   "Input": "Volvere el Lunes 12 de enero, 2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -88,6 +96,7 @@
 ,
 {
   "Input": "Volvere el 02/22/2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -99,6 +108,7 @@
 ,
 {
   "Input": "Volvere el 21/04/2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -110,6 +120,7 @@
 ,
 {
   "Input": "Volvere el 21/04/16",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -121,6 +132,7 @@
 ,
 {
   "Input": "Volvere el 9-18-15",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,6 +144,7 @@
 ,
 {
   "Input": "Volvere el 4.22",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -143,6 +156,7 @@
 ,
 {
   "Input": "Volvere el 4-22",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -154,6 +168,7 @@
 ,
 {
   "Input": "Volvere el    4/22",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,6 +180,7 @@
 ,
 {
   "Input": "Volvere el 22/04",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,6 +192,7 @@
 ,
 {
   "Input": "Volvere       4/22",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,6 +204,7 @@
 ,
 {
   "Input": "Volvere 22/04",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -198,6 +216,7 @@
 ,
 {
   "Input": "Volvere el 2015/08/12",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -209,6 +228,7 @@
 ,
 {
   "Input": "Volvere el 11/12,2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -220,6 +240,7 @@
 ,
 {
   "Input": "Volvere el 11/12,16",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -231,6 +252,7 @@
 ,
 {
   "Input": "Volvere el 1ro de Ene",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -242,6 +264,7 @@
 ,
 {
   "Input": "Volvere el 28-Nov",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -253,6 +276,7 @@
 ,
 {
   "Input": "Volvere el Mi, 22 de Ene",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,6 +288,7 @@
 ,
 {
   "Input": "Volvere el primero de Ene",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -275,6 +300,7 @@
 ,
 {
   "Input": "Volvere el veintiuno de Mayo",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -286,6 +312,7 @@
 ,
 {
   "Input": "Volvere en Mayo veintiuno",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -297,6 +324,7 @@
 ,
 {
   "Input": "Volvere el segundo de Ago",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -308,6 +336,7 @@
 ,
 {
   "Input": "Volvere el vigesimo segundo de Junio",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -319,6 +348,7 @@
 ,
 {
   "Input": "Volvere el viernes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -330,6 +360,7 @@
 ,
 {
   "Input": "Volvere viernes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -341,6 +372,7 @@
 ,
 {
   "Input": "Volvere los viernes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -352,6 +384,7 @@
 ,
 {
   "Input": "Volvere los sabados",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -363,6 +396,7 @@
 ,
 {
   "Input": "Volvere hoy",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -374,6 +408,7 @@
 ,
 {
   "Input": "Volvere mañana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -385,6 +420,7 @@
 ,
 {
   "Input": "Volvi ayer",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,6 +432,7 @@
 ,
 {
   "Input": "Volvi el dia antes de ayer",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -407,6 +444,7 @@
 ,
 {
   "Input": "Volvi anteayer",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -418,6 +456,7 @@
 ,
 {
   "Input": "Volvere el dia despues de mañana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -429,6 +468,7 @@
 ,
 {
   "Input": "Volvere pasado mañana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -440,6 +480,7 @@
 ,
 {
   "Input": "Volvere el dia siguiente",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -451,6 +492,7 @@
 ,
 {
   "Input": "Volvere el proximo dia",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -462,6 +504,7 @@
 ,
 {
   "Input": "Volvere este viernes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -473,6 +516,7 @@
 ,
 {
   "Input": "Volvere el proximo domingo",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -484,6 +528,7 @@
 ,
 {
   "Input": "Volvere el siguiente domingo",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -495,6 +540,7 @@
 ,
 {
   "Input": "Volvere el ultimo domingo",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -506,6 +552,7 @@
 ,
 {
   "Input": "Volvere ultimo dia",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -517,6 +564,7 @@
 ,
 {
   "Input": "Volvere el ultimo dia",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -528,6 +576,7 @@
 ,
 {
   "Input": "Volvere el dia",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -539,6 +588,7 @@
 ,
 {
   "Input": "Volvere el viernes de esta semana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -550,6 +600,7 @@
 ,
 {
   "Input": "Volvere el domingo de la siguiente semana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -561,6 +612,7 @@
 ,
 {
   "Input": "Volvere el domingo de la ultima semana",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -572,6 +624,7 @@
 ,
 {
   "Input": "Volvere el 15 Junio 2016",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -583,6 +636,7 @@
 ,
 {
   "Input": "Volvere el undecimo de mayo",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -594,6 +648,7 @@
 ,
 {
   "Input": "Volvere el primer viernes de julio",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -605,6 +660,7 @@
 ,
 {
   "Input": "Volvere el primer viernes de este mes",
+  "NotSupported": "dotnet,javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
