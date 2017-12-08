@@ -58,7 +58,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Temperature,
         DateTime,
         DateTimeSplitDateAndTime,
-        CustomNumber
+        CustomNumber,
+        DateTimeCalendarMode
     }
 
     public enum DateTimeExtractors
@@ -118,6 +119,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
+                case Models.DateTimeCalendarMode:
+                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
