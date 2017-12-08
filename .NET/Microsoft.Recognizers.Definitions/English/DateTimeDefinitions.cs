@@ -190,6 +190,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
+		public static readonly string NumberAsTimeRegex = $@"\b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
+		public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(before|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
+		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },
