@@ -2,7 +2,7 @@
 <#@ assembly name="System.IO"#>
 <#@ assembly name="System.Runtime"#>
 <#@ assembly name="System.Runtime"#>
-<#@ assembly name="$(SolutionDir)build\package\Microsoft.Recognizers.Definitions.Common.dll" #>
+<#@ assembly name="$(SolutionDir)build\package\net462\Microsoft.Recognizers.Definitions.Common.dll" #>
 <#@ import namespace="System" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Collections" #>
