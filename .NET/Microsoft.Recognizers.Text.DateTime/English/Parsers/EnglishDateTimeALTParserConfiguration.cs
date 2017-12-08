@@ -10,12 +10,15 @@
 
         public IDateTimeParser DateTimePeriodParser { get; }
 
+        public IDateTimeParser TimePeriodParser { get; }
+
         public EnglishDateTimeAltParserConfiguration(ICommonDateTimeParserConfiguration config)
         {
             DateTimeParser = config.DateTimeParser;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             DateTimePeriodParser = config.DateTimePeriodParser;
+            TimePeriodParser = config.TimePeriodParser;
         }
 
     }

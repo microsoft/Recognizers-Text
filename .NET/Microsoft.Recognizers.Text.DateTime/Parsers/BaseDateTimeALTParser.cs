@@ -56,11 +56,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseDateTimeAndTimeAlt(ExtractResult er, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
             // original type of the extracted entity
-            var subType = ((Dictionary<string, object>)er.Data)[Constants.SubType].ToString();
+            var subType = ((Dictionary<string, object>)(er.Data))[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
-            dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
+            // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
+            var hasContext = false;
+            ExtractResult contextEr = null;
+            if (((Dictionary<string, object>)er.Data).ContainsKey(Constants.Context))
+            {
+                contextEr = (ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context];
+                dateTimeEr.Text = $"{contextEr.Text} {er.Text}";
+                hasContext = true;
+            }
+            else
+            {
+                dateTimeEr.Text = er.Text;
+            }
             var dateTimePr = new DateTimeParseResult();
 
             if (subType == Constants.SYS_DATETIME_DATE)
@@ -70,10 +81,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (subType == Constants.SYS_DATETIME_TIME)
             {
+                if (!hasContext)
+                {
+                    dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
+                    dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
+                }
                 // for cases:
                 //      Monday 9 am or 11 am
                 //      next 9 am or 11 am
-                if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
+                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
                     dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
@@ -93,7 +109,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (subType == Constants.SYS_DATETIME_TIMEPERIOD)
             {
-                if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
+                if (!hasContext)
+                {
+                    dateTimeEr.Type = Constants.SYS_DATETIME_TIMEPERIOD;
+                    dateTimePr = this.config.TimePeriodParser.Parse(dateTimeEr, referenceTime);
+                }
+                else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
+                {
+                    dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
+                    dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
+                }
+            }
+            else if (subType == Constants.SYS_DATETIME_DATETIMEPERIOD)
+            {
+                if (!hasContext)
                 {
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIMEPERIOD;
                     dateTimePr = this.config.DateTimePeriodParser.Parse(dateTimeEr, referenceTime);
@@ -115,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private void GetResolution(ExtractResult er, DateTimeParseResult pr, DateTimeResolutionResult ret)
         {
-            var context = ((ExtractResult)((Dictionary<string, object>)er.Data)[Constants.Context]).Text;
+            var parentText = (string)((Dictionary<string, object>)er.Data)[Constants.ParentText];
             var type = pr.Type;
             var isPeriod = false;
             var isSinglePoint = false;
@@ -186,14 +215,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     {startPointType, futureStartPointResolution},
                     {endPointType, futureEndPointResolution},
-                    {Constants.Context, context}
+                    {Constants.ParentText, parentText}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
                     {startPointType, pastStartPointResolution},
                     {endPointType, pastEndPointResolution},
-                    {Constants.Context, context}
+                    {Constants.ParentText, parentText}
                 };
             }
             else if (isSinglePoint)
@@ -201,13 +230,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureResolution = new Dictionary<string, string>
                 {
                     {singlePointType, singlePointResolution},
-                    {Constants.Context, context}
+                    {Constants.ParentText, parentText}
                 };
 
                 ret.PastResolution = new Dictionary<string, string>
                 {
                     {singlePointType, singlePointResolution},
-                    {Constants.Context, context}
+                    {Constants.ParentText, parentText}
                 };
             }
         }

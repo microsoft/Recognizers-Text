@@ -50,7 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 End = o.Start.Value + o.Length.Value - 1,
                 TypeName = o.Type,
                 Resolution = o.Value as SortedDictionary<string, object>,
-                Text = o.Text
+                Text = o.Text,
+                ParentText = (((o.Type.Split('.')).Last().Equals)(Constants.SYS_DATETIME_DATETIMEALT) ? 
+                                ((Dictionary<string, object>)(o.Data))[Constants.ParentText].ToString() : null)
             }).ToList();
         }
     }

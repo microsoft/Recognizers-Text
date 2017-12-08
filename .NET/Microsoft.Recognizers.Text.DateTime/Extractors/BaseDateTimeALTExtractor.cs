@@ -59,8 +59,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var data = ExtractAlt(ers[i], ers[j]);
                     if (data.Count > 0)
                     {
+                        var parentTextStart = ers[i].Start;
+                        var parentTextLen = ers[j].Start + ers[j].Length - ers[i].Start;
+                        var parentText = text.Substring(parentTextStart ?? 0, parentTextLen ?? 0);
+
+                        data.Add(Constants.ParentText, parentText);
                         ers[j].Type = Constants.SYS_DATETIME_DATETIMEALT;
                         ers[j].Data = data;
+
+                        ers[i].Data = new Dictionary<string, object> {
+                                { Constants.SubType, ers[i].Type },
+                                { Constants.ParentText, parentText }
+                            };
+                        ers[i].Type = Constants.SYS_DATETIME_DATETIMEALT;
 
                         i = j + 1;
                         continue;

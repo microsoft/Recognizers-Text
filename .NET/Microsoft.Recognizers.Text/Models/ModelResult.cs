@@ -11,6 +11,8 @@ namespace Microsoft.Recognizers.Text
         public int End { get; set; }
 
         public string TypeName { get; set; }
+
+        public string ParentText { get; set; }
         
         //Resolution field
         public SortedDictionary<string, object> Resolution { get; set; }

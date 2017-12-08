@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MultipleDurationType = "multipleDurationType";
         public const string Context = "context";
         public const string SubType = "subType";
+        public const string ParentText = "parentText";
 
         //Multiple Duration Types
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";

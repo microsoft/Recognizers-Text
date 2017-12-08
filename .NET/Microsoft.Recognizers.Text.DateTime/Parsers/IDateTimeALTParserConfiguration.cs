@@ -14,5 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimeParser { get; }
 
         IDateTimeParser DateTimePeriodParser { get; }
+
+        IDateTimeParser TimePeriodParser { get; }
     }
 }

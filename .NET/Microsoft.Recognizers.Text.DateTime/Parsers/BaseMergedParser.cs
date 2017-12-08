@@ -490,10 +490,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 AddPeriodToResolution(resolutionDic, TimeTypeConstants.START_TIME, TimeTypeConstants.END_TIME, mod, res);
             }
 
-            if (resolutionDic.ContainsKey(Constants.Context))
-            {
-                res.Add(Constants.Context, resolutionDic[Constants.Context]);
-            }
             return;
         }
 
@@ -512,10 +508,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
             }
-            if (resolutionDic.ContainsKey(Constants.Context))
-            {
-                res.Add(Constants.Context, resolutionDic[Constants.Context]);
-            }
+
             return;
         }
 
