@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanHolidayExtractorConfiguration() : base(DateTimeOptions.None)
         {
         }
+
         public IEnumerable<Regex> HolidayRegexes => HolidayRegexList;
     }
 }

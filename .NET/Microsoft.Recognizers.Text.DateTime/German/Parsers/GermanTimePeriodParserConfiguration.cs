@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(DateTimeOptions.None)
+        public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;

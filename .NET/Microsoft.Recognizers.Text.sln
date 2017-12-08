@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CreateAllPackages.cmd = CreateAllPackages.cmd
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
 EndProject
