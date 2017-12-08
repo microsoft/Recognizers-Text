@@ -1,0 +1,216 @@
+[{
+  "Input": "saldré semanalmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "semanalmente",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saltré diariamente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "diariamente",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saltré a diario",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a diario",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré todos los dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los dias",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré cada mes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada mes",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré todos los meses",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los meses",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré todos las semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos las semanas",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré mensualmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mensualmente",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré anualmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anualmente",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré todos los años",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los años",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "me iré cada dos dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada dos dias",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "me iré cada tres semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada tres semanas",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "me iré cada 3 semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada 3 semanas",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "me iré a las 3pm todos los dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm todos los dias",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "me iré todos los dias a las 3pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los dias a las 3pm",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré cada 15/4",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada 15/4",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré todos los lunes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los lunes",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "saldré cada lunes a las 4pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada lunes a las 4pm",
+      "Type": "set"
+    }
+  ]
+}
+]
