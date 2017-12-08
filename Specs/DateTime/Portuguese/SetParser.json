@@ -1,0 +1,378 @@
+[{
+  "Input": "Saldré semanalmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "semanalmente",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "set": "Set: P1W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré quincenalmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "quincenalmente",
+      "Type": "set",
+      "Value": {
+        "Timex": "P2W",
+        "FutureResolution": {
+          "set": "Set: P2W"
+        },
+        "PastResolution": {
+          "set": "Set: P2W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré diariamente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "diariamente",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "set": "Set: P1D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré a diario",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "a diario",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "set": "Set: P1D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré todos los dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los dias",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "set": "Set: P1D"
+        },
+        "PastResolution": {
+          "set": "Set: P1D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré cada mes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada mes",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "set": "Set: P1M"
+        },
+        "PastResolution": {
+          "set": "Set: P1M"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré todos los meses",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los meses",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1M",
+        "FutureResolution": {
+          "set": "Set: P1M"
+        },
+        "PastResolution": {
+          "set": "Set: P1M"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré todas las semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todas las semanas",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1W",
+        "FutureResolution": {
+          "set": "Set: P1W"
+        },
+        "PastResolution": {
+          "set": "Set: P1W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré anualmente",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anualmente",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "set": "Set: P1Y"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré todos los años",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los años",
+      "Type": "set",
+      "Value": {
+        "Timex": "P1Y",
+        "FutureResolution": {
+          "set": "Set: P1Y"
+        },
+        "PastResolution": {
+          "set": "Set: P1Y"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me iré cada dos dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada dos dias",
+      "Type": "set",
+      "Value": {
+        "Timex": "P2D",
+        "FutureResolution": {
+          "set": "Set: P2D"
+        },
+        "PastResolution": {
+          "set": "Set: P2D"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me iré cada tres semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada tres semanas",
+      "Type": "set",
+      "Value": {
+        "Timex": "P3W",
+        "FutureResolution": {
+          "set": "Set: P3W"
+        },
+        "PastResolution": {
+          "set": "Set: P3W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me iré cada 3 semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada 3 semanas",
+      "Type": "set",
+      "Value": {
+        "Timex": "P3W",
+        "FutureResolution": {
+          "set": "Set: P3W"
+        },
+        "PastResolution": {
+          "set": "Set: P3W"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me iré a las 3pm todos los dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3pm todos los dias",
+      "Type": "set",
+      "Value": {
+        "Timex": "T15",
+        "FutureResolution": {
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "set": "Set: T15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me iré todos los dias a las 3pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los dias a las 3pm",
+      "Type": "set",
+      "Value": {
+        "Timex": "T15",
+        "FutureResolution": {
+          "set": "Set: T15"
+        },
+        "PastResolution": {
+          "set": "Set: T15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré cada 15/4",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada 15/4",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-04-15",
+        "FutureResolution": {
+          "set": "Set: XXXX-04-15"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-04-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré todos los lunes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos los lunes",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Saldré cada lunes a las 4pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada lunes a las 4pm",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1T16",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1T16"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1T16"
+        }
+      }
+    }
+  ]
+}
+]

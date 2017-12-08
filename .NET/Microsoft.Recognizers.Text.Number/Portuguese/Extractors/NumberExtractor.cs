@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             switch (mode)
             {
                 case NumberMode.PureNumber:
-                    cardExtract = new CardinalExtractor(NumbersDefinitions.PlaceHolderPureNumber);
+                    cardExtract = CardinalExtractor.GetInstance(NumbersDefinitions.PlaceHolderPureNumber);
                     break;
                 case NumberMode.Currency:
                     builder.Add(new Regex(NumbersDefinitions.CurrencyRegex, RegexOptions.Singleline), "IntegerNum");
@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             if (cardExtract == null)
             {
-                cardExtract = new CardinalExtractor();
+                cardExtract = CardinalExtractor.GetInstance();
             }
             builder.AddRange(cardExtract.Regexes);
 

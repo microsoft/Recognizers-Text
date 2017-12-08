@@ -1,0 +1,240 @@
+[{
+  "Input": "me voy por 3h",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 dias",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3,5 años",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3,5 años",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 h",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 h",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 horas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 horas",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy 3 dias",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 dias",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 meses",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 meses",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 minutos",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 minutos",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3 min",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 min",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 3,5 segundos ",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3,5 segundos",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por 123,45 seg",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "123,45 seg",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por dos semanas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dos semanas",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy 20 minutos",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 minutos",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por veinticuatro horas",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "veinticuatro horas",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy todo el dia",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todo el dia",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy toda la semana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "toda la semana",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por todo el mes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todo el mes",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por todo el año",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todo el año",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por una hora",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "una hora",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me voy por un año",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "un año",
+      "Type": "duration"
+    }
+  ]
+}
+]

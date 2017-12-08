@@ -1,0 +1,696 @@
+[{
+  "Input": "Voy a volver ahora",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ahora",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver tan pronto como sea posible",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tan pronto como sea posible",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Vamos a volver tan pronto como podamos",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tan pronto como podamos",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver lo mas pronto posible",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "lo mas pronto posible",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver ahora mismo",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ahora mismo",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver justo ahora",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "justo ahora",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver en este momento",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "en este momento",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 15 a las 8:00",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15 a las 8:00",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 15 a las 8:00:30",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15 a las 8:00:30",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 15, 8pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15, 8pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 04/21/2016, 8:00pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "04/21/2016, 8:00pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "04/21/2016, 8:00:13pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 23 de Oct a las siete",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "23 de Oct a las siete",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 14 de Octubre 8:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 de Octubre 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 14 de Octubre a las 8:00:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 de Octubre a las 8:00:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 14 de Octubre, 8:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 de Octubre, 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 14 de Octubre, 8:00:01am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 de Octubre, 8:00:01am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver mañana 8:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver mañana cerca de las 8:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana cerca de las 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver mañana para las 8:00am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana para las 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver mañana a las 8:00:05am",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana a las 8:00:05am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el próximo viernes a las tres y media",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "próximo viernes a las tres y media",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8pm del 15",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm del 15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las siete del 15",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete del 15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8pm del próximo domingo",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm del próximo domingo",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 8pm de hoy",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm de hoy",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las siete menos cuarto de mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "siete menos cuarto de mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 19:00, 2016-12-22",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "19:00, 2016-12-22",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 7 en punto mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7 en punto mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver mañana por la mañana a las 7",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana por la mañana a las 7",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 7:00 el domingo a la tarde",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7:00 el domingo a la tarde",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco y veinte mañana por la mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 14 de octubre 8:00, 14 de Octubre",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 de octubre 8:00",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 7, esta mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "7, esta mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver esta noche a las 8",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta noche a las 8",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 8pm de la tarde, Lunes",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm de la tarde, Lunes",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8pm de la tarde, 1ro de Enero",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm de la tarde, 1ro de Enero",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8pm de la tarde, 1 de Enero",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm de la tarde, 1 de Enero",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 10pm de esta noche",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10pm de esta noche",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver a las 10pm esta noche",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "10pm esta noche",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8am de esta mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8am de esta mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 8pm de esta tarde",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm de esta tarde",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volví esta mañana a las 7",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta mañana a las 7",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volví esta mañana 7pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta mañana 7pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volví esta mañana a las siete",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta mañana a las siete",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volví esta mañana a las 7:00",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta mañana a las 7:00",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver esta noche a las 7",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta noche a las 7",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volví esta noche a las 7",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta noche a las 7",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "para dos personas esta noche a las 9:30 pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta noche a las 9:30 pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "para dos personas esta noche a las 9:30:31 pm",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta noche a las 9:30:31 pm",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré al final del día",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al final del día",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré al finalizar el día",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al finalizar el día",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré al finalizar el día de mañana",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al finalizar el día de mañana",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré mañana al finalizar el día",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "mañana al finalizar el día",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Volveré al finalizar el domingo",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "al finalizar el domingo",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver el 5 a las 4 a.m.",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 a las 4 a.m.",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Voy a volver 2016-12-16T12:23:59",
+  "NotSupported": "dotnet,javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2016-12-16T12:23:59",
+      "Type": "datetime"
+    }
+  ]
+}
+]
