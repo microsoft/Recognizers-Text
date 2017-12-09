@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string AmRegex = @"(?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))";
 		public const string AmTimeRegex = @"(?<am>es[st]a|(pela|de|da|na)|\s+(manh[ãa]|madrugada))";
 		public const string PmTimeRegex = @"(?<pm>es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite))";
-		public static readonly string LessThanOneHour = $@"(?<lth>((\s+e\s+)?quinze|(\s*)menos cuarto|(\s+e\s+)meia|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))";
+		public static readonly string LessThanOneHour = $@"(?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)meia|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))";
 		public const string TensTimeRegex = @"(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
 		public static readonly string SpaTimeRegex = $@"(?<engtime>{HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?)))";
 		public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+das?|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)";

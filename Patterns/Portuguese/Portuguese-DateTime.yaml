@@ -190,7 +190,7 @@ PmTimeRegex: !simpleRegex
   def: (?<pm>es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite))
 LessThanOneHour: !nestedRegex
   # "e meia ..." "quinze pras ..."
-  def: (?<lth>((\s+e\s+)?quinze|(\s*)menos cuarto|(\s+e\s+)meia|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))
+  def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)meia|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 TensTimeRegex: !simpleRegex
   def: (?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)
