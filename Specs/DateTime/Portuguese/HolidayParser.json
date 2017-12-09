@@ -1,6 +1,6 @@
 [{
   "TestType": "BasicTest",
-  "Input": "Volveré en pascuas",
+  "Input": "Vou voltar na pascoa",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -22,9 +22,9 @@
         "PastValue": "0001-01-01T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "pascuas",
+      "Start": 14,
+      "Length": 5,
+      "Text": "pascoa",
       "Type": "date"
     }
   ]
@@ -32,7 +32,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en navidad",
+  "Input": "Vou votlar no natal",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -54,9 +54,9 @@
         "PastValue": "2015-12-25T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 11,
-      "Length": 7,
-      "Text": "navidad",
+      "Start": 14,
+      "Length": 5,
+      "Text": "natal",
       "Type": "date"
     }
   ]
@@ -64,7 +64,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en año nuevo",
+  "Input": "Voltarei no ano novo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -86,48 +86,16 @@
         "PastValue": "2016-01-01T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 11,
-      "Length": 9,
-      "Text": "año nuevo",
+      "Start": 12,
+      "Length": 8,
+      "Text": "ano novo",
       "Type": "date"
     }
   ]
 },
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en noche vieja",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-12-31",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-12-31",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-12-31"
-        },
-        "PastResolution": {
-          "date": "2015-12-31"
-        },
-        "FutureValue": "2016-12-31T00:00:00",
-        "PastValue": "2015-12-31T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 11,
-      "Text": "noche vieja",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "volveré el dia de navidad",
+  "Input": "voltarei no dia de natal",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -149,9 +117,9 @@
         "PastValue": "2015-12-25T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 18,
-      "Length": 7,
-      "Text": "navidad",
+      "Start": 12,
+      "Length": 5,
+      "Text": "natal",
       "Type": "date"
     }
   ]
@@ -159,7 +127,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré el dia de accion de gracias",
+  "Input": "Voltarei no dia de ação de graças",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -181,9 +149,9 @@
         "PastValue": "2015-11-26T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 11,
-      "Length": 24,
-      "Text": "dia de accion de gracias",
+      "Start": 12,
+      "Length": 14,
+      "Text": "ação de graças",
       "Type": "date"
     }
   ]
@@ -191,39 +159,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en accion de gracias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "TimexStr": "XXXX-11-WXX-4-4",
-      "Value": {
-        "Success": true,
-        "Timex": "XXXX-11-WXX-4-4",
-        "IsLunar": false,
-        "FutureResolution": {
-          "date": "2016-11-24"
-        },
-        "PastResolution": {
-          "date": "2015-11-26"
-        },
-        "FutureValue": "2016-11-24T00:00:00",
-        "PastValue": "2015-11-26T00:00:00"
-      },
-      "ResolutionStr": "",
-      "Start": 11,
-      "Length": 17,
-      "Text": "accion de gracias",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "TestType": "BasicTest",
-  "Input": "Volveré el dia del padre",
+  "Input": "Voltarei no dia dos pais",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -245,9 +181,9 @@
         "PastValue": "2016-06-19T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 11,
-      "Length": 13,
-      "Text": "dia del padre",
+      "Start": 12,
+      "Length": 12,
+      "Text": "dia dos pais",
       "Type": "date"
     }
   ]
@@ -255,7 +191,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré en Yuandan del próximo año",
+  "Input": "Voltarei no Yuandan do próximo ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -277,9 +213,9 @@
         "PastValue": "2017-01-01T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 16,
-      "Length": 20,
-      "Text": "Yuandan del próximo año",
+      "Start": 12,
+      "Length": 19,
+      "Text": "Yuandan do próximo ano",
       "Type": "date"
     }
   ]
@@ -287,7 +223,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volví el día de accion de gracias del 2010",
+  "Input": "Voltei no día de ação de graças de 2010",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -309,9 +245,9 @@
         "PastValue": "2010-11-25T00:00:00"
       },
       "ResolutionStr": "",
-      "Start": 16,
-      "Length": 22,
-      "Text": "día de accion de gracias del 2010",
+      "Start": 10,
+      "Length": 29,
+      "Text": "día de ação de graças de 2010",
       "Type": "date"
     }
   ]
