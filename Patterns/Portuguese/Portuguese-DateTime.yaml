@@ -422,7 +422,7 @@ UnitValueMap: !dictionary
     ano: 31536000
     meses: 2592000
     mes: 2592000
-	mês: 2592000
+    mês: 2592000
     semanas: 604800
     semana: 604800
     dias: 86400
@@ -445,7 +445,7 @@ SeasonMap: !dictionary
   entries:
     primavera: SP
     verao: SU
-	verão: SU
+    verão: SU
     outono: FA
     inverno: WI
 SeasonValueMap: !dictionary
@@ -471,9 +471,9 @@ CardinalMap: !dictionary
     3o: 3
     3a: 3
     cuarto: 4
-	quarto: 4
+    quarto: 4
     cuarta: 4
-	quarta: 4
+    quarta: 4
     4o: 4
     4a: 4
     quinto: 5
@@ -485,12 +485,12 @@ DayOfWeek: !dictionary
   entries:
     segunda-feira: 1
     terça-feira: 2
-	terca-feira: 2
+    terca-feira: 2
     quarta-feira: 3
     quinta-feira: 4
     sexta-feira: 5
     sabado: 6
-	sábado: 6
+    sábado: 6
     domingo: 0
     seg: 1
     ter: 2
@@ -505,7 +505,7 @@ MonthOfYear: !dictionary
     'janeiro': 1
     'fevereiro': 2
     'março': 3
-	'marco': 3
+    'marco': 3
     'abril': 4
     'maio': 5
     'junho': 6
@@ -558,7 +558,7 @@ Numbers: !dictionary
     uma: 1
     dois: 2
     tres: 3
-	três: 3
+    três: 3
     quatro: 4
     cinco: 5
     seis: 6
@@ -572,15 +572,15 @@ Numbers: !dictionary
     dezenas: 12
     treze: 13
     catorze: 14
-	quatorze: 14
+    quatorze: 14
     quinze: 15
     dezesseis: 16
     dezasseis: 16
     dezessete: 17
-	dezassete: 17
-    dexoito: 18
+    dezassete: 17
+    dezoito: 18
     dezenove: 19
-	dezanove: 19
+    dezanove: 19
     vinte: 20
     'vinte e um': 21
     'vinte e uma': 21
