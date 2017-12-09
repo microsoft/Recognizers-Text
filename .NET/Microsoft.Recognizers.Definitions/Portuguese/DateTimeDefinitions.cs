@@ -362,10 +362,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{
-			{ "pai", new string[] { "diadopai" } },
-			{ "mae", new string[] { "diadamae" } },
+			{ "pai", new string[] { "diadopai", "diadospais" } },
+			{ "mae", new string[] { "diadamae", "diadasmaes" } },
 			{ "acaodegracas", new string[] { "diadegracas", "diadeacaodegracas", "acaodegracas" } },
-			{ "trabalho", new string[] { "diadotrabalho" } },
+			{ "trabalho", new string[] { "diadotrabalho", "diadotrabalhador", "diadostrabalhadores" } },
 			{ "pascoa", new string[] { "diadepascoa", "pascoa" } },
 			{ "natal", new string[] { "natal", "diadenatal" } },
 			{ "vesperadenatal", new string[] { "vesperadenatal" } },

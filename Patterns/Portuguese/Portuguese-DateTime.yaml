@@ -598,10 +598,10 @@ Numbers: !dictionary
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries:
-    pai: [ diadopai ]
-    mae: [ diadamae ]
+    pai: [ diadopai, diadospais ]
+    mae: [ diadamae, diadasmaes ]
     acaodegracas: [ diadegracas, diadeacaodegracas, acaodegracas ]
-    trabalho: [ diadotrabalho ]
+    trabalho: [ diadotrabalho, diadotrabalhador, diadostrabalhadores ]
     pascoa: [ diadepascoa, pascoa ]
     natal: [ natal , diadenatal ]
     vesperadenatal: [ vesperadenatal]

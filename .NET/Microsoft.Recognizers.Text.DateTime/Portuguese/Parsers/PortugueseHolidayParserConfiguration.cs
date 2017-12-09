@@ -77,7 +77,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 .Replace("é", "e")
                 .Replace("í", "i")
                 .Replace("ó", "o")
-                .Replace("ú", "u");
+                .Replace("ú", "u")
+                .Replace("ê", "e")
+                .Replace("ô", "o")
+                .Replace("ü", "u")
+                .Replace("ã", "a")
+                .Replace("õ", "o")
+                .Replace("ç", "c");
         }
     }
 }
