@@ -39,7 +39,7 @@ DayBetweenRegex: !nestedRegex
 OneWordPeriodRegex: !simpleRegex
   def: \b(((pr[oó]xim[oa]?|est[ea]|ess[ea]|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]?|est(e|a))\s+(fim de semana|semana|m[êe]s|ano)|fim de semana|(m[êe]s|anos)? [àa] data)\b
 MonthWithYearRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa](s)?|est[ea]|ess[ea]|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\s+((de|do|da|o|a)\s+)?({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este|esse)\s+ano))\b
+  def: \b(((pr[oó]xim[oa](s)?|est[ea]|ess[ea]|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\s+((de|do|da|o|a)\s+)?({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
   references: [ FullYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: ({FullYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{FullYearRegex})
@@ -48,7 +48,7 @@ WeekOfMonthRegex: !nestedRegex
   def: (?<wom>(a\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima)\s+semana\s+{MonthSuffixRegex})
   references: [ MonthSuffixRegex ]
 WeekOfYearRegex: !nestedRegex
-  def: (?<woy>(la\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima?)\s+semana(\s+d[oe]?)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este|esse)\s+ano))
+  def: (?<woy>(la\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima?)\s+semana(\s+d[oe]?)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano))
   references: [ FullYearRegex ]
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
@@ -57,13 +57,13 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterRegex: !nestedRegex
-  def: (el\s+)?(?<cardinal>primeiro|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre(\s+d[oe]|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este|esse)\s+ano)
+  def: (el\s+)?(?<cardinal>primeiro|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre(\s+d[oe]|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)
   references: [ FullYearRegex ]
 QuarterRegexYearFront: !nestedRegex
-  def: ({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este|esse)\s+ano)\s+(o\s+)?(?<cardinal>(primeiro)|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre
+  def: ({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)\s+(o\s+)?(?<cardinal>(primeiro)|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre
   references: [ FullYearRegex ]
 SeasonRegex: !nestedRegex
-  def: \b(?<season>(([uú]ltim[oa]|es[st][ea]|o|a|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+de?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este|esse)\s+ano))?)\b
+  def: \b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|o|a|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+de?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano))?)\b
   references: [ FullYearRegex ]
 WhichWeekRegex: !simpleRegex
   def: (semana)(\s*)(?<number>\d\d|\d|0\d)
@@ -98,7 +98,7 @@ NextDateRegex: !nestedRegex
   def: \b(((pr[oó]ximo|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?([oa]\s+)?(pr[oó]xima|seguinte)(\s*semana)))\b
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
-  def: \b((el\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?dia\s+(depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amamh[ãa]|hoje)\b
+  def: \b((el\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?dia\s+(depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -260,13 +260,13 @@ TimeRegex11: !nestedRegex
 PrepositionRegex: !simpleRegex
   def: (?<prep>(a(l)?|en|de(l)?)?(\s*(la(s)?|el|los))?$)
 NowRegex: !simpleRegex
-  def: \b(?<now>(justo\s+)?ahora(\s+mismo)?|en\s+este\s+momento|tan\s+pronto\s+como\s+sea\s+posible|tan\s+pronto\s+como\s+(pueda|puedas|podamos|puedan)|lo\s+m[aá]s\s+pronto\s+posible|recientemente|previamente)\b
+  def: \b(?<now>(exatamente\s+)?agora(\s+mesmo)?|en\s+neste\s+momento|assim\s+que\s+poss[ií]vel|t[ãa]o\s+cedo\s+quanto\s+(possivel|possas?|possamos)|o\s+mais\s+(cedo|r[aá]pido)\s+poss[íi]vel|recentemente|previamente)\b
 SuffixRegex: !simpleRegex
-  def: ^\s*(((y|a|en|por)\s+la|al)\s+)?(mañana|madrugada|medio\s*d[ií]a|tarde|noche)\b
+  def: ^\s*(((e|a|em|por|pelo|pela|no|na)\s+la|al)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>mañana|madrugada|(pasado\s+(el\s+)?)?medio\s?d[ií]a|tarde|noche|anoche)\b
+  def: \b(?<timeOfDay>manh[ãa]|madrugada|(ap[óo]s\s+(o\s+)?)?meio\s?dia|tarde|noite)\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(((((a)?\s+la|esta|siguiente|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
+  def: \b(((((a)?\s+la|esta|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
   def: ^\s*(,\s*)?(en|de(l)?\s+)?{SpecificTimeOfDayRegex}
@@ -335,13 +335,13 @@ InExactNumberUnitRegex: !nestedRegex
   references: [ UnitRegex ]
 # PortugueseHolidayExtractorConfiguration
 HolidayRegex1: !nestedRegex
-  def: \b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
+  def: \b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia (de|de los) presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
   references: [ FullYearRegex ]
 HolidayRegex2: !nestedRegex
-  def: \b(?<holiday>(dia( d[eoa]s?)? )?(martin luther king|todos os santos|trabalho|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia|trabalhador|trabalho))(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
+  def: \b(?<holiday>(dia( d[eoa]s?)? )?(martin luther king|todos os santos|trabalho|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia|trabalhador|trabalho))(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
   references: [ FullYearRegex ]
 HolidayRegex3: !nestedRegex
-  def: \b(?<holiday>(dia( d[eoa]s?)? )(trabalhador|trabalhadores|trabalho|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor|professores))(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
+  def: \b(?<holiday>(dia( d[eoa]s?)? )(trabalhador|trabalhadores|trabalho|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor|professores))(\s+(d[eo]?\s+)?({FullYearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b
   references: [ FullYearRegex ]
 # PortugueseMergedExtractorConfiguration
 BeforeRegex: !simpleRegex

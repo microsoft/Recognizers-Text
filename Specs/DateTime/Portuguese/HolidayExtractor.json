@@ -105,14 +105,14 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Voltarei no dia to trabalho",
+  "Input": "Voltarei no dia do trabalho",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
       "Start": 12,
       "Length": 15,
-      "Text": "día do trabalho",
+      "Text": "dia do trabalho",
       "Type": "date"
     }
   ]

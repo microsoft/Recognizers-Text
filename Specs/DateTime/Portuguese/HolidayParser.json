@@ -223,7 +223,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Voltei no día de ação de graças de 2010",
+  "Input": "Voltei no dia de ação de graças de 2010",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -247,7 +247,7 @@
       "ResolutionStr": "",
       "Start": 10,
       "Length": 29,
-      "Text": "día de ação de graças de 2010",
+      "Text": "dia de ação de graças de 2010",
       "Type": "date"
     }
   ]
@@ -255,7 +255,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volví el día del padre del 2015",
+  "Input": "Volví el dia del padre del 2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -279,7 +279,7 @@
       "ResolutionStr": "",
       "Start": 16,
       "Length": 20,
-      "Text": "día del padre del 2015",
+      "Text": "dia del padre del 2015",
       "Type": "date"
     }
   ]
@@ -319,7 +319,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré el día de navidad",
+  "Input": "Volveré el dia de navidad",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -383,7 +383,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré el día de accion de gracias",
+  "Input": "Volveré el dia de accion de gracias",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -407,7 +407,7 @@
       "ResolutionStr": "",
       "Start": 16,
       "Length": 17,
-      "Text": "día de accion de gracias",
+      "Text": "dia de accion de gracias",
       "Type": "date"
     }
   ]
@@ -415,7 +415,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré el día del padre",
+  "Input": "Volveré el dia del padre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -439,7 +439,7 @@
       "ResolutionStr": "",
       "Start": 16,
       "Length": 12,
-      "Text": "día del padre",
+      "Text": "dia del padre",
       "Type": "date"
     }
   ]
@@ -479,7 +479,7 @@
 ,
 {
   "TestType": "BasicTest",
-  "Input": "Volveré el día de accion de gracias del 2010",
+  "Input": "Volveré el dia de accion de gracias del 2010",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -503,7 +503,7 @@
       "ResolutionStr": "",
       "Start": 16,
       "Length": 22,
-      "Text": "día de accion de gracias del 2010",
+      "Text": "dia de accion de gracias del 2010",
       "Type": "date"
     }
   ]
