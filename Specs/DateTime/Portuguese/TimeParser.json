@@ -1,5 +1,5 @@
 [{
-  "Input": "Volvere a las 7",
+  "Input": "Voltarei as 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -19,11 +19,11 @@
 }
 ,
 {
-  "Input": "Volvere a las siete",
+  "Input": "Voltarei às sete",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete",
+      "Text": "sete",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -39,7 +39,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 7pm",
+  "Input": "Voltarei as 7pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -59,7 +59,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 7:56pm",
+  "Input": "Voltarei as 7:56pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -79,7 +79,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 7:56:30pm",
+  "Input": "Voltarei as 7:56:30pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -99,7 +99,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 7:56:30 pm",
+  "Input": "Voltarei as 7:56:30 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -119,7 +119,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 12:34",
+  "Input": "Voltarei às 12:34",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -139,7 +139,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 12:34:25 ",
+  "Input": "Voltarei as 12:34:25 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -159,11 +159,11 @@
 }
 ,
 {
-  "Input": "Son las 7 en punto",
+  "Input": "São 7 em ponto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7 en punto",
+      "Text": "7 em ponto",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -179,11 +179,11 @@
 }
 ,
 {
-  "Input": "Son las siete en punto",
+  "Input": "São sete em ponto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete en punto",
+      "Text": "sete em ponto",
       "Type": "time",
       "Value": {
         "Timex": "T07",
@@ -199,11 +199,11 @@
 }
 ,
 {
-  "Input": "Son las 8 de la mañana",
+  "Input": "São 8 da manhã",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 de la mañana",
+      "Text": "8 da manhã",
       "Type": "time",
       "Value": {
         "Timex": "T08",
@@ -219,11 +219,11 @@
 }
 ,
 {
-  "Input": "Son las 8 de la tarde",
+  "Input": "São 8 da noite",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 de la tarde",
+      "Text": "8 da noite",
       "Type": "time",
       "Value": {
         "Timex": "T20",
@@ -239,19 +239,19 @@
 }
 ,
 {
-  "Input": "Son las 8 de la noche",
+  "Input": "São 4 da tarde",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8 de la noche",
+      "Text": "4 da tarde",
       "Type": "time",
       "Value": {
-        "Timex": "T20",
+        "Timex": "T16",
         "FutureResolution": {
-          "time": "20:00:00"
+          "time": "16:00:00"
         },
         "PastResolution": {
-          "time": "20:00:00"
+          "time": "16:00:00"
         }
       }
     }
@@ -259,11 +259,11 @@
 }
 ,
 {
-  "Input": "Son las ocho y media",
+  "Input": "São oito e meia",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ocho y media",
+      "Text": "oito e meia",
       "Type": "time",
       "Value": {
         "Timex": "T08:30",
@@ -279,11 +279,11 @@
 }
 ,
 {
-  "Input": "Son las 8pm y media",
+  "Input": "São 8pm e meia",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm y media",
+      "Text": "8pm e meia",
       "Type": "time",
       "Value": {
         "Timex": "T20:30",
@@ -299,11 +299,11 @@
 }
 ,
 {
-  "Input": "Son 30 mins pasadas las ocho",
+  "Input": "São 30 mins depois das oito",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "30 mins pasadas las ocho",
+      "Text": "30 mins depois das oito",
       "Type": "time",
       "Value": {
         "Timex": "T08:30",
@@ -319,11 +319,11 @@
 }
 ,
 {
-  "Input": "Son las ocho y cuarto",
+  "Input": "São oito e quinze",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ocho y cuarto",
+      "Text": "oito e quinze",
       "Type": "time",
       "Value": {
         "Timex": "T08:15",
@@ -339,11 +339,11 @@
 }
 ,
 {
-  "Input": "Son cuarto pasadas las ocho",
+  "Input": "São quinze depois das oito",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cuarto pasadas las ocho",
+      "Text": "quinze depois das oito",
       "Type": "time",
       "Value": {
         "Timex": "T08:15",
@@ -359,31 +359,11 @@
 }
 ,
 {
-  "Input": "Son cuarto pasadas de las ocho",
+  "Input": "São quinze para as 9pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cuarto pasadas de las ocho",
-      "Type": "time",
-      "Value": {
-        "Timex": "T08:15",
-        "FutureResolution": {
-          "time": "08:15:00"
-        },
-        "PastResolution": {
-          "time": "08:15:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Son 9pm menos cuarto",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "9pm menos cuarto",
+      "Text": "quinze para as 9pm",
       "Type": "time",
       "Value": {
         "Timex": "T20:45",
@@ -399,11 +379,11 @@
 }
 ,
 {
-  "Input": "Faltan 3 minutos para las ocho",
+  "Input": "Faltam 3 minutos para as oito",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 minutos para las ocho",
+      "Text": "3 minutos para as oito",
       "Type": "time",
       "Value": {
         "Timex": "T07:57",
@@ -419,11 +399,11 @@
 }
 ,
 {
-  "Input": "Son siete y media en punto",
+  "Input": "São sete e meia em ponto",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete y media en punto",
+      "Text": "sete e meia em ponto",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -439,19 +419,19 @@
 }
 ,
 {
-  "Input": "Son siete y media de la tarde",
+  "Input": "São três e meia da tarde",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete y media de la tarde",
+      "Text": "três e meia da tarde",
       "Type": "time",
       "Value": {
-        "Timex": "T19:30",
+        "Timex": "T15:30",
         "FutureResolution": {
-          "time": "19:30:00"
+          "time": "15:30:00"
         },
         "PastResolution": {
-          "time": "19:30:00"
+          "time": "15:30:00"
         }
       }
     }
@@ -459,11 +439,11 @@
 }
 ,
 {
-  "Input": "Son siete y media de la mañana",
+  "Input": "São sete e meia da manhã",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete y media de la mañana",
+      "Text": "sete e meia da manhã",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -479,19 +459,19 @@
 }
 ,
 {
-  "Input": "Son ocho menos cuarto de la mañana",
+  "Input": "São 20 min depois das seis da tarde",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ocho menos cuarto de la mañana",
+      "Text": "20 min depois das seis da tarde",
       "Type": "time",
       "Value": {
-        "Timex": "T07:45",
+        "Timex": "T18:20",
         "FutureResolution": {
-          "time": "07:45:00"
+          "time": "18:20:00"
         },
         "PastResolution": {
-          "time": "07:45:00"
+          "time": "18:20:00"
         }
       }
     }
@@ -499,31 +479,11 @@
 }
 ,
 {
-  "Input": "Son 20 min pasadas las ocho de la tarde",
+  "Input": "Voltarei pela tarde às 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20 min pasadas las ocho de la tarde",
-      "Type": "time",
-      "Value": {
-        "Timex": "T20:20",
-        "FutureResolution": {
-          "time": "20:20:00"
-        },
-        "PastResolution": {
-          "time": "20:20:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere por la tarde a las 7",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "por la tarde a las 7",
+      "Text": "pela tarde às 7",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -539,11 +499,11 @@
 }
 ,
 {
-  "Input": "Volvere a la tarde a las 7",
+  "Input": "Voltarei a tarde as 7",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a la tarde a las 7",
+      "Text": "a tarde as 7",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -559,11 +519,11 @@
 }
 ,
 {
-  "Input": "Volvere a la tarde a las 7:00",
+  "Input": "Voltarei a tarde as 7:00",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a la tarde a las 7:00",
+      "Text": "a tarde as 7:00",
       "Type": "time",
       "Value": {
         "Timex": "T19:00",
@@ -579,11 +539,11 @@
 }
 ,
 {
-  "Input": "Volvere a la tarde a las 7:00:14",
+  "Input": "Voltarei a tarde as 7:00:14",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a la tarde a las 7:00:14",
+      "Text": "a tarde as 7:00:14",
       "Type": "time",
       "Value": {
         "Timex": "T19:00:14",
@@ -599,11 +559,11 @@
 }
 ,
 {
-  "Input": "Volvere a la tarde a las siete pm",
+  "Input": "Voltarei a tarde as sete pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a la tarde a las siete pm",
+      "Text": "a tarde as sete pm",
       "Type": "time",
       "Value": {
         "Timex": "T19",
@@ -619,11 +579,11 @@
 }
 ,
 {
-  "Input": "Volvere a las siete treinta pm",
+  "Input": "Voltarei as sete e trinta pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete treinta pm",
+      "Text": "sete e trinta pm",
       "Type": "time",
       "Value": {
         "Timex": "T19:30",
@@ -639,11 +599,11 @@
 }
 ,
 {
-  "Input": "Volvere a las siete treinta y cinco pm",
+  "Input": "Voltarei as sete e trinta e cinco pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete treinta y cinco pm",
+      "Text": "sete e trinta e cinco pm",
       "Type": "time",
       "Value": {
         "Timex": "T19:35",
@@ -659,11 +619,11 @@
 }
 ,
 {
-  "Input": "Volvere a las once y cinco pm",
+  "Input": "Voltarei as onze e cinco pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "once y cinco pm",
+      "Text": "onze e cinco pm",
       "Type": "time",
       "Value": {
         "Timex": "T23:05",
@@ -679,7 +639,7 @@
 }
 ,
 {
-  "Input": "Volvere 340pm",
+  "Input": "Voltarei 340pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -699,7 +659,7 @@
 }
 ,
 {
-  "Input": "Volvere 1140 a.m.",
+  "Input": "Voltarei 1140 a.m.",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -719,7 +679,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 7:56:13 pm",
+  "Input": "Voltarei as 7:56:13 pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -739,7 +699,7 @@
 }
 ,
 {
-  "Input": "Volvere a las 12:34:45 ",
+  "Input": "Voltarei as 12:34:45 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -759,11 +719,11 @@
 }
 ,
 {
-  "Input": "Volvere a la tarde a las 7:00:25",
+  "Input": "Voltarei a tarde as 7:00:25",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a la tarde a las 7:00:25",
+      "Text": "a tarde as 7:00:25",
       "Type": "time",
       "Value": {
         "Timex": "T19:00:25",
@@ -779,11 +739,11 @@
 }
 ,
 {
-  "Input": "Volvere a las siete treinta am",
+  "Input": "Voltarei as sete e trinta am",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete treinta am",
+      "Text": "sete e trinta am",
       "Type": "time",
       "Value": {
         "Timex": "T07:30",
@@ -799,11 +759,11 @@
 }
 ,
 {
-  "Input": "Volvere a las once y cinco",
+  "Input": "Voltarei as onze e cinco",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "once y cinco",
+      "Text": "onze e cinco",
       "Type": "time",
       "Value": {
         "Timex": "T11:05",
@@ -819,19 +779,19 @@
 }
 ,
 {
-  "Input": "Volvere en 3 min para las cinco treinta",
+  "Input": "Voltarei de 3 min para as cinco",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 min para las cinco treinta",
+      "Text": "3 min para as cinco",
       "Type": "time",
       "Value": {
-        "Timex": "T05:27",
+        "Timex": "T04:57",
         "FutureResolution": {
-          "time": "05:27:00"
+          "time": "04:57:00"
         },
         "PastResolution": {
-          "time": "05:27:00"
+          "time": "04:57:00"
         }
       }
     }
@@ -839,11 +799,11 @@
 }
 ,
 {
-  "Input": "Volvere a las cinco y media de la noche",
+  "Input": "Voltarei as cinco e meia da tarde",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cinco y media de la noche",
+      "Text": "cinco e meia da tarde",
       "Type": "time",
       "Value": {
         "Timex": "T17:30",
@@ -859,11 +819,11 @@
 }
 ,
 {
-  "Input": "Volvere en la tarde a las cinco treinta",
+  "Input": "Voltarei à tarde às cinco e trinta",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en la tarde a las cinco treinta",
+      "Text": "à tarde às cinco e trinta",
       "Type": "time",
       "Value": {
         "Timex": "T17:30",

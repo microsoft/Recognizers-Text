@@ -111,11 +111,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string SuffixRegex = @"^\s*((e|a|em|por|pelo|pela|no|na)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b";
 		public const string TimeOfDayRegex = @"\b(?<timeOfDay>manh[ãa]|madrugada|(ap[óo]s\s+(o\s+)?)?meio\s?dia|tarde|noite)\b";
 		public static readonly string SpecificTimeOfDayRegex = $@"\b(((((a)?\s+|es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b";
-		public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?(em|[àa]|em|por|pelo|pela|no|na)?\s+)?{SpecificTimeOfDayRegex}";
+		public static readonly string TimeOfTodayAfterRegex = $@"^\s*(,\s*)?([àa]|em|por|pelo|pela|no|na?\s+)?{SpecificTimeOfDayRegex}";
 		public static readonly string TimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)";
 		public static readonly string SimpleTimeOfTodayAfterRegex = $@"({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?((en|de(l)?)?\s+)?{SpecificTimeOfDayRegex}";
 		public static readonly string SimpleTimeOfTodayBeforeRegex = $@"({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))";
-		public const string TheEndOfRegex = @"(ao)\s+)?(fim|final)?(\s+(do)?)(\s+dia)?(\s+de)?)?\s*$";
+		public const string TheEndOfRegex = @"((no|ao)\s+)?(fim|final)?(\s+do(\s+dia)?(\s+de)?)?\s*$";
 		public const string UnitRegex = @"(?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b";
 		public const string ConnectorRegex = @"^(,|t|para [ao]|para as|cerca de|cerca das|perto de|perto das|quase)$";
 		public const string TimeHourNumRegex = @"(?<hour>vinte e um|vinte e dois|vinte e tr[êe]s|vinte e quatro|zero|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez[ea]sseis|dez[ea]ssete|dezoito|dez[ea]nove|vinte)";

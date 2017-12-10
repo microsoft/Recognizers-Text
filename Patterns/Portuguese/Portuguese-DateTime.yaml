@@ -269,7 +269,7 @@ SpecificTimeOfDayRegex: !nestedRegex
   def: \b(((((a)?\s+|es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
-  def: ^\s*(,\s*)?(em|[àa]|em|por|pelo|pela|no|na)?\s+)?{SpecificTimeOfDayRegex}
+  def: ^\s*(,\s*)?([àa]|em|por|pelo|pela|no|na?\s+)?{SpecificTimeOfDayRegex}
   references: [ SpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)
@@ -281,7 +281,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la|para))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 TheEndOfRegex: !simpleRegex
-  def: (ao)\s+)?(fim|final)?(\s+(do)?)(\s+dia)?(\s+de)?)?\s*$
+  def: ((no|ao)\s+)?(fim|final)?(\s+do(\s+dia)?(\s+de)?)?\s*$
 UnitRegex: !simpleRegex
   def: (?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b
 ConnectorRegex: !simpleRegex

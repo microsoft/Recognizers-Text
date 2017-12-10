@@ -35,7 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("quarto") || trimedPrefix.StartsWith("e um quarto"))
+            if (trimedPrefix.StartsWith("quarto") || trimedPrefix.StartsWith("e um quarto") ||
+                trimedPrefix.StartsWith("quinze") || trimedPrefix.StartsWith("e quinze"))
             {
                 deltaMin = 15;
             }
@@ -43,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 deltaMin = -15;
             }
-            else if (trimedPrefix.StartsWith("meia") || trimedPrefix.StartsWith("e media"))
+            else if (trimedPrefix.StartsWith("meia") || trimedPrefix.StartsWith("e meia"))
             {
                 deltaMin = 30;
             }
@@ -63,6 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             }
 
             if (trimedPrefix.EndsWith("passadas") || trimedPrefix.EndsWith("pasados") ||
+                trimedPrefix.EndsWith("depois das") || trimedPrefix.EndsWith("depois da") || trimedPrefix.EndsWith("depois do") ||
                 trimedPrefix.EndsWith("passadas as") || trimedPrefix.EndsWith("passadas das"))
             {
                 //deltaMin it's positive

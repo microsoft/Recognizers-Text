@@ -179,10 +179,6 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
-            if (TestSpec.Input.Equals("Voltarei pela tarde as 7")) {
-                Console.WriteLine();
-            }
-
             var actualResults = Extractor.Extract(TestSpec.Input, referenceDateTime);
             var expectedResults = TestSpec.CastResults<ExtractResult>();
 
