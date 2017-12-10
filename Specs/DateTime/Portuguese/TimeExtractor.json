@@ -307,11 +307,11 @@
 }
 ,
 {
-  "Input": "São dez para as 9pm",
+  "Input": "São dez para as nove",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "dez para as 9pm",
+      "Text": "dez para as nove",
       "Type": "time"
     }
   ]
@@ -362,11 +362,11 @@
 }
 ,
 {
-  "Input": "São 20 para as oito da manhã",
+  "Input": "São vinte para as oito da manhã",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "20 para as oito da manhã",
+      "Text": "vinte para as oito da manhã",
       "Type": "time"
     }
   ]
@@ -483,22 +483,11 @@
 }
 ,
 {
-  "Input": "Voltarei tres minutos para as cinco e trinta",
+  "Input": "Voltarei tres minutos para as cinco",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tres minutos para as cinco e trinta",
-      "Type": "time"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei tres minutos antes das cinco e trinta",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tres minutos antes das cinco e trinta",
+      "Text": "tres minutos para as cinco",
       "Type": "time"
     }
   ]

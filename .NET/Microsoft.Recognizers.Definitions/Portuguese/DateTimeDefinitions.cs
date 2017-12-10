@@ -83,19 +83,19 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string MinuteNumRegex = @"(?<minnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
 		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
 		public const string OclockRegex = @"(?<oclock>em\s+ponto)";
-		public const string PmRegex = @"(?<pm>(pela|de|da|`[àa]|na)\s+(tarde|noite))";
+		public const string PmRegex = @"(?<pm>(pela|de|da|[àa]|na)\s+(tarde|noite))";
 		public const string AmRegex = @"(?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))";
 		public const string AmTimeRegex = @"(?<am>es[st]a|(pela|de|da|na)|\s+(manh[ãa]|madrugada))";
 		public const string PmTimeRegex = @"(?<pm>es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite))";
 		public static readonly string LessThanOneHour = $@"(?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))";
 		public const string TensTimeRegex = @"(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
-		public static readonly string SpaTimeRegex = $@"(?<engtime>{HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?)))";
+		public static readonly string LangTimeRegex = $@"(?<engtime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?)))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))";
 		public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+das?|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)";
 		public static readonly string TimeSuffix = $@"(?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))";
-		public static readonly string BasicTime = $@"(?<basictime>{SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
-		public static readonly string AtRegex = $@"\b(?<=\b([aà]s?)\s+)({SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b";
+		public static readonly string BasicTime = $@"(?<basictime>{LangTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
+		public static readonly string AtRegex = $@"\b(?<=\b([aà]s?)\s+)({LangTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b";
 		public static readonly string ConnectNumRegex = $@"({BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex})";
-		public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({SpaTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})";
+		public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({LangTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})";
 		public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(T)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
 		public static readonly string TimeRegex4 = $@"\b(({DescRegex}?)|({BasicTime}?)({DescRegex}?))({TimePrefix}\s*)({HourNumRegex}|{BaseDateTime.HourRegex})?(\s+{TensTimeRegex}(\s+e\s+)?{MinuteNumRegex}?)?({OclockRegex})?\b";
@@ -105,7 +105,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public static readonly string TimeRegex8 = $@"\b{TimeSuffix}\s+{BasicTime}((\s*{DescRegex})|\b)";
 		public static readonly string TimeRegex9 = $@"\b(?<engtime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(e\s+)?{MinuteNumRegex}?)\b";
 		public const string TimeRegex10 = @"([àa]|ao?|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)";
-		public static readonly string TimeRegex11 = $@"\b({SpaTimeRegex})({DescRegex}?)\b";
+		public static readonly string TimeRegex11 = $@"\b({LangTimeRegex})({DescRegex}?)\b";
 		public const string PrepositionRegex = @"(?<prep>([àa]s?|em|por|pelo|pela|no|na)?$)";
 		public const string NowRegex = @"\b(?<now>(exatamente\s+)?agora(\s+mesmo)?|en\s+neste\s+momento|assim\s+que\s+poss[ií]vel|t[ãa]o\s+cedo\s+quanto\s+(possivel|possas?|possamos)|o\s+mais\s+(cedo|r[aá]pido)\s+poss[íi]vel|recentemente|previamente)\b";
 		public const string SuffixRegex = @"^\s*((e|a|em|por|pelo|pela|no|na)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b";
@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 			{ "yuandan", new string[] { "yuandan" } },
 			{ "todosossantos", new string[] { "todosossantos" } },
 			{ "professor", new string[] { "diadoprofessor", "diadosprofessores" } },
-			{ "crianca", new string[] { "diadacrianca", "diadascrancas" } },
+			{ "crianca", new string[] { "diadacrianca", "diadascriancas" } },
 			{ "mulher", new string[] { "diadamulher" } }
 		};
 		public static readonly Dictionary<string, string> VariableHolidaysTimexDictionary = new Dictionary<string, string>

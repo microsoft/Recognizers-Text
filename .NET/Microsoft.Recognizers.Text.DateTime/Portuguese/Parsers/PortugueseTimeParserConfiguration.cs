@@ -35,15 +35,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("cuarto") || trimedPrefix.StartsWith("y cuarto"))
+            if (trimedPrefix.StartsWith("quarto") || trimedPrefix.StartsWith("e um quarto"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("menos cuarto"))
+            else if (trimedPrefix.StartsWith("menos um quarto"))
             {
                 deltaMin = -15;
             }
-            else if (trimedPrefix.StartsWith("media") || trimedPrefix.StartsWith("y media"))
+            else if (trimedPrefix.StartsWith("meia") || trimedPrefix.StartsWith("e media"))
             {
                 deltaMin = 30;
             }
@@ -62,14 +62,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 }
             }
 
-            if (trimedPrefix.EndsWith("pasadas") || trimedPrefix.EndsWith("pasados") ||
-                trimedPrefix.EndsWith("pasadas las") || trimedPrefix.EndsWith("pasados las") ||
-                trimedPrefix.EndsWith("pasadas de las") || trimedPrefix.EndsWith("pasados de las"))
+            if (trimedPrefix.EndsWith("passadas") || trimedPrefix.EndsWith("pasados") ||
+                trimedPrefix.EndsWith("passadas as") || trimedPrefix.EndsWith("passadas das"))
             {
                 //deltaMin it's positive
             }
-            else if (trimedPrefix.EndsWith("para la") || trimedPrefix.EndsWith("para las") ||
-                     trimedPrefix.EndsWith("antes de la") || trimedPrefix.EndsWith("antes de las"))
+            else if (trimedPrefix.EndsWith("para a") || trimedPrefix.EndsWith("para as") ||
+                     trimedPrefix.EndsWith("pra") || trimedPrefix.EndsWith("pras") ||
+                     trimedPrefix.EndsWith("antes da") || trimedPrefix.EndsWith("antes das"))
             {
                 deltaMin = -deltaMin;
             }
