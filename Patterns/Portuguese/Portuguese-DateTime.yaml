@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>ate|até|ateh|--|-|—|——)(\s+(o|aà(s)?))?
+  def: (?<till>ate|a|as|às|até|ateh|--|-|—|——)(\s+(o|[aà](s)?))?
 AndRegex: !simpleRegex
   def: (?<and>e|e\s*o|--|-|—|——)
 DayRegex: !simpleRegex
@@ -290,10 +290,10 @@ ConnectorRegex: !simpleRegex
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>vinte e um|vinte e dois|vinte e tr[êe]s|vinte e quatro|zero|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez[ea]sseis|dez[ea]ssete|dezoito|dez[ea]nove|vinte)
 PureNumFromTo: !nestedRegex
-  def: ((desde|de)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
+  def: ((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
-  def: (entre\s+(la(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
+  def: (entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, PmRegex, AmRegex ]
 TimeUnitRegex: !simpleRegex
   def: (?<unit>horas|hora|h|minutos|minuto|mins|min|segundos|segundo|secs|sec)\b
