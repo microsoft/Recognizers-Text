@@ -156,7 +156,6 @@
 ,
 {
   "Input": "irei a cada 3 semanas",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -221,7 +220,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos as segundas",
+      "Text": "todas as segundas",
       "Type": "set"
     }
   ]

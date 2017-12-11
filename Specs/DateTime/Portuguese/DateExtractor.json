@@ -1,6 +1,5 @@
 [{
   "Input": "Voltarei no 15",
-  "Debug" : true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -90,6 +89,18 @@
   "Results": [
     {
       "Text": "segunda-feira 12 de janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na segunda-feira, 12 de janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "segunda-feira, 12 de janeiro de 2016",
       "Type": "date"
     }
   ]
@@ -481,6 +492,7 @@
 ,
 {
   "Input": "Voltarei depois de amanhã",
+  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -570,18 +582,6 @@
   "Results": [
     {
       "Text": "ultimo dia",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Voltarei no dia",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "dia",
       "Type": "date"
     }
   ]
