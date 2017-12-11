@@ -10,7 +10,7 @@ MonthNumRegex: !simpleRegex
 YearRegex: !simpleRegex
   def: (?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)
 FullYearRegex: !simpleRegex
-  def: \b(?<year>19\d{2}|20\d{2})\b
+  def: \b(?<year>19\d{2}|20\d{2})\bw
 RelativeMonthRegex: !simpleRegex
   def: (?<relmonth>(es[st]e|pr[óo|ximo|passsado|[uú]ltimo)\s+m[eê]s)\b
 MonthRegex: !simpleRegex
@@ -78,11 +78,11 @@ InConnectorRegex: !simpleRegex
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*a(s)?)?)$
 ConnectorAndRegex: !simpleRegex
-  def: (e\s*([àa](s)?)?)$
+  def: (e\s*([àa](s)?)?)$s
 BetweenRegex: !simpleRegex
   def: (entre\s*(a(s)?)?)
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>Domingos?|Segundas?|Segundas?-feiras?|Segundas?\s+feiras?|2a|Ter[cça]s?|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|3a|Quartas?|Quartas?-feiras?|Quartas?\s+feiras?|4a|Quintas?|Quintas?-feiras?|Quintas?\s+feiras?|5a|Sextas?|Sextas?-feiras?|Sextas?\s+feiras?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b
+  def: \b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b
 OnRegex: !nestedRegex
   def: (?<=\bem\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -98,7 +98,7 @@ NextDateRegex: !nestedRegex
   def: \b(((pr[oó]ximo|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?([oa]\s+)?(pr[oó]xima|seguinte)(\s*semana)))\b
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
-  def: \b((o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?dia\s+(depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b
+  def: \b((o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

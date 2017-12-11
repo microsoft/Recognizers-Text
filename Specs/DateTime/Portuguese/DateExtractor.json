@@ -395,12 +395,12 @@
 }
 ,
 {
-  "Input": "Voltarei nas sexta-feira",
+  "Input": "Voltarei nas sextas-feiras",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "sexta-feira",
+      "Text": "sextas-feiras",
       "Type": "date"
     }
   ]
@@ -605,7 +605,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Voltarei no domingo da semana seguinte",
+      "Text": "domingo da semana seguinte",
       "Type": "date"
     }
   ]

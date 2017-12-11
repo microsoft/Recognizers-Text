@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|1|1[oº]|1.º|10|11|12|13|14|15|16|17|18|19|2|2[oº]|2.º|20|21|22|23|24|25|26|27|28|29|3|3[oº]|3.º|30|31|4|5|6|7|8|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
 		public const string YearRegex = @"(?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)";
-		public const string FullYearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
+		public const string FullYearRegex = @"\b(?<year>19\d{2}|20\d{2})\bw";
 		public const string RelativeMonthRegex = @"(?<relmonth>(es[st]e|pr[óo|ximo|passsado|[uú]ltimo)\s+m[eê]s)\b";
 		public const string MonthRegex = @"(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>((em|no)\s+|d[eo]\s+)?({RelativeMonthRegex}|{MonthRegex}))";
@@ -51,13 +51,13 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string FromRegex = @"((desde|de)(\s*a(s)?)?)$";
 		public const string ConnectorAndRegex = @"(e\s*([àa](s)?)?)$";
 		public const string BetweenRegex = @"(entre\s*(a(s)?)?)";
-		public const string WeekDayRegex = @"\b(?<weekday>Domingos?|Segundas?|Segundas?-feiras?|Segundas?\s+feiras?|2a|Ter[cça]s?|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|3a|Quartas?|Quartas?-feiras?|Quartas?\s+feiras?|4a|Quintas?|Quintas?-feiras?|Quintas?\s+feiras?|5a|Sextas?|Sextas?-feiras?|Sextas?\s+feiras?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b";
+		public const string WeekDayRegex = @"\b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b";
 		public static readonly string OnRegex = $@"(?<=\bem\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(em|n[oa]|d[oa])\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b";
 		public static readonly string ThisRegex = $@"\b((es[st]e\s*){WeekDayRegex})|({WeekDayRegex}\s*((de)?es[ts]a\s+semana))\b";
 		public static readonly string LastDateRegex = $@"\b(([uú]ltima)\s*{WeekDayRegex})|({WeekDayRegex}(\s+((de)?(es[st]a|a)\s+([uú]ltima\s+)?semana)))\b";
 		public static readonly string NextDateRegex = $@"\b(((pr[oó]ximo|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?([oa]\s+)?(pr[oó]xima|seguinte)(\s*semana)))\b";
-		public const string SpecialDayRegex = @"\b((o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?dia\s+(depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b";
+		public const string SpecialDayRegex = @"\b((o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b";
 		public const string ForTheRegex = @"^[.]";
 		public const string WeekDayAndDayOfMothRegex = @"^[.]";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>([ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
