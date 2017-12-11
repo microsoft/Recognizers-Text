@@ -1,6 +1,6 @@
 [{
-  "Input": "saldré semanalmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei semanalmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,8 +11,8 @@
 }
 ,
 {
-  "Input": "saltré diariamente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei diariamente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,32 +23,44 @@
 }
 ,
 {
-  "Input": "saltré a diario",
-  "NotSupported": "dotnet,javascript",
+  "Input": "saí todo dia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a diario",
+      "Text": "todo dia",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré todos los dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "minha saída diária",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los dias",
+      "Text": "diária",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré cada mes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei todos os dias",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "todos os dias",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "sairei cada mes",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -59,44 +71,44 @@
 }
 ,
 {
-  "Input": "saldré todos los meses",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei todos os meses",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los meses",
+      "Text": "todos os meses",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré todos las semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei todas as semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos las semanas",
+      "Text": "todas as semanas",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré mensualmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei mensalmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mensualmente",
+      "Text": "mensalmente",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré anualmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei anualmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -107,32 +119,32 @@
 }
 ,
 {
-  "Input": "saldré todos los años",
-  "NotSupported": "dotnet,javascript",
+  "Input": "salirei todos os anos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los años",
+      "Text": "todos os anos",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "me iré cada dos dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "irei a cada dois dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cada dos dias",
+      "Text": "cada dois dias",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "me iré cada tres semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "virão cada tres semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -143,8 +155,9 @@
 }
 ,
 {
-  "Input": "me iré cada 3 semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "irei a cada 3 semanas",
+  "Debug": true,
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -155,32 +168,32 @@
 }
 ,
 {
-  "Input": "me iré a las 3pm todos los dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "eu irei às 3pm todos os dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm todos los dias",
+      "Text": "3pm todos os dias",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "me iré todos los dias a las 3pm",
-  "NotSupported": "dotnet,javascript",
+  "Input": "eu irei todos os dias as 3pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los dias a las 3pm",
+      "Text": "todos os dias as 3pm",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré cada 15/4",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei cada 15/4",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -191,24 +204,36 @@
 }
 ,
 {
-  "Input": "saldré todos los lunes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei todos os domingos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los lunes",
+      "Text": "todos os domingos",
       "Type": "set"
     }
   ]
 }
 ,
 {
-  "Input": "saldré cada lunes a las 4pm",
-  "NotSupported": "dotnet,javascript",
+  "Input": "sairei todas as segundas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cada lunes a las 4pm",
+      "Text": "todos as segundas",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "sairei cada domingo as 4pm",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada domingo as 4pm",
       "Type": "set"
     }
   ]

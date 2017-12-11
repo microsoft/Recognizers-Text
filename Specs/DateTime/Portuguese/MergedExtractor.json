@@ -1,5 +1,5 @@
 [{
-  "Input": "esto es 2 dias en p ",
+  "Input": "isto é 2 dias",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -10,66 +10,99 @@
 }
 ,
 {
-  "Input": "esto es antes de las 4pm",
+  "Input": "isto é antes das 4pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "antes de las 4pm",
+      "Text": "antes das 4pm",
       "Type": "time"
     }
   ]
 }
 ,
 {
-  "Input": "esto es antes de las 4pm mañana",
+  "Input": "isto é antes das 4pm amanhã",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "antes de las 4pm mañana",
+      "Text": "antes das 4pm amanhã",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "esto es antes de mañana a las 4pm ",
+  "Input": "isto é antes de amanhã às 4pm ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "antes de mañana a las 4pm",
+      "Text": "antes de amanhã às 4pm",
       "Type": "datetime"
     }
   ]
 }
 ,
 {
-  "Input": "despues del 7/2 ",
+  "Input": "depois de 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "despues del 7/2",
+      "Text": "depois de 7/2",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "desde el 7/2 ",
+  "Input": "depois do 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde el 7/2",
+      "Text": "depois do 7/2",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "antes del  7/2 ",
+  "Input": "desde o 7/2 ",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "antes del  7/2",
+      "Text": "desde o 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "desde 7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "desde 7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "antes do  7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "antes do  7/2",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "antes de  7/2 ",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "antes de  7/2",
       "Type": "date"
     }
   ]

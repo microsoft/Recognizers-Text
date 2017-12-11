@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
