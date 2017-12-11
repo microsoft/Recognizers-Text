@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>ate|a|as|às|até|ateh|--|-|—|——)(\s+(o|[aà](s)?))?
+  def: (?<till>ate|as|às|até|ateh|a|--|-|—|——)(\s+(o|[aà](s)?))?
 AndRegex: !simpleRegex
   def: (?<and>e|e\s*o|--|-|—|——)
 DayRegex: !simpleRegex
@@ -258,7 +258,7 @@ TimeRegex11: !nestedRegex
   references: [ LangTimeRegex, DescRegex ]
 # PortugueseDateTimeExtractorConfiguration
 PrepositionRegex: !simpleRegex
-  def: (?<prep>([àa]s?|em|por|pelo|pela|no|na)?$)
+  def: (?<prep>([àa]s?|em|por|pelo|pela|no|na|de|d[oa]?)?$)
 NowRegex: !simpleRegex
   def: \b(?<now>(exatamente\s+)?agora(\s+mesmo)?|en\s+neste\s+momento|assim\s+que\s+poss[ií]vel|t[ãa]o\s+cedo\s+quanto\s+(possivel|possas?|possamos)|o\s+mais\s+(cedo|r[aá]pido)\s+poss[íi]vel|recentemente|previamente)\b
 SuffixRegex: !simpleRegex
@@ -285,7 +285,7 @@ TheEndOfRegex: !simpleRegex
 UnitRegex: !simpleRegex
   def: (?<unit>anos|ano|meses|m[êe]s|semanas|semana|dias|dia|horas|hora|h|hr|hrs|hs|minutos|minuto|mins|min|segundos|segundo|segs|seg)\b
 ConnectorRegex: !simpleRegex
-  def: ^(,|t|para [ao]|para as|cerca de|cerca das|perto de|perto das|quase)$
+  def: ^(,|t|para [ao]|para as|pras|cerca de|cerca das|perto de|perto das|quase)$
 # PortugueseTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>vinte e um|vinte e dois|vinte e tr[êe]s|vinte e quatro|zero|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez[ea]sseis|dez[ea]ssete|dezoito|dez[ea]nove|vinte)

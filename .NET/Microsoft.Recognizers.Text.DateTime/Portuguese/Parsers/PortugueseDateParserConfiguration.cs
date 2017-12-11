@@ -105,28 +105,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var swift = 0;
 
             //TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
-            if (trimedText.Equals("hoy") || trimedText.Equals("el dia"))
+            if (trimedText.Equals("hoje") || trimedText.Equals("este dia") || trimedText.Equals("esse dia") || trimedText.Equals("o dia"))
             {
                 swift = 0;
             }
-            else if (trimedText.Equals("mañana") ||
-                     trimedText.EndsWith("dia siguiente") ||
-                     trimedText.EndsWith("el dia de mañana") ||
+            else if (trimedText.Equals("amanha") ||
+                     trimedText.EndsWith("dia seguinte") ||
+                     trimedText.EndsWith("o dia de amanha") ||
                      trimedText.EndsWith("proximo dia"))
             {
                 swift = 1;
             }
-            else if (trimedText.Equals("ayer"))
+            else if (trimedText.Equals("ontem"))
             {
                 swift = -1;
             }
-            else if (trimedText.EndsWith("pasado mañana") ||
-                     trimedText.EndsWith("dia despues de mañana"))
+            else if (trimedText.EndsWith("depois de amanha") ||
+                     trimedText.EndsWith("dia depois de amanha"))
             {
                 swift = 2;
             }
-            else if (trimedText.EndsWith("anteayer") ||
-                     trimedText.EndsWith("dia antes de ayer"))
+            else if (trimedText.EndsWith("anteontem") || 
+                     trimedText.EndsWith("dia antes de ontem"))
             {
                 swift = -2;
             }
@@ -173,7 +173,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 .Replace('é', 'e')
                 .Replace('í', 'i')
                 .Replace('ó', 'o')
-                .Replace('ú', 'u');
+                .Replace('ú', 'u')
+                .Replace("ê", "e")
+                .Replace("ô", "o")
+                .Replace("ü", "u")
+                .Replace("ã", "a")
+                .Replace("õ", "o")
+                .Replace("ç", "c");
         }
     }
 }

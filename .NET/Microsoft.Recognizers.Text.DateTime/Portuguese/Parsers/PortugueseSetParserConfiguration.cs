@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
 
             if (trimedText.EndsWith("diario") || trimedText.EndsWith("diariamente"))
             {
@@ -86,11 +86,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 timex = "P1W";
             }
-            else if (trimedText.Equals("quincenalmente"))
+            else if (trimedText.Equals("quinzenalmente"))
             {
                 timex = "P2W";
             }
-            else if (trimedText.Equals("mensualmente"))
+            else if (trimedText.Equals("mensalmente"))
             {
                 timex = "P1M";
             }
@@ -109,10 +109,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
 
-            if (trimedText.Equals("día") || trimedText.Equals("dia") ||
-                trimedText.Equals("días") || trimedText.Equals("dias"))
+            if (trimedText.Equals("dia") || trimedText.Equals("dias"))
             {
                 timex = "P1D";
             }
@@ -124,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 timex = "P1M";
             }
-            else if (trimedText.Equals("año") || trimedText.Equals("años"))
+            else if (trimedText.Equals("ano") || trimedText.Equals("anos"))
             {
                 timex = "P1Y";
             }
@@ -137,4 +136,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             return true;
         }
     }
+
 }

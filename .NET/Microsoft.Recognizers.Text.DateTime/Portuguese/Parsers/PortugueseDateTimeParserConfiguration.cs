@@ -78,15 +78,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public int GetHour(string text, int hour)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
             int result = hour;
 
             //TODO: Replace with a regex
-            if ((trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour >= 12)
+            if ((trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour >= 12)
             {
                 result -= 12;
             }
-            else if (!(trimedText.EndsWith("mañana") || trimedText.EndsWith("madrugada")) && hour < 12)
+            else if (!(trimedText.EndsWith("manha") || trimedText.EndsWith("madrugada")) && hour < 12)
             {
                 result += 12;
             }
@@ -95,13 +95,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            if (trimedText.EndsWith("ahora") || trimedText.EndsWith("mismo") || trimedText.EndsWith("momento"))
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
+
+            if (trimedText.EndsWith("agora") || trimedText.EndsWith("mesmo") || trimedText.EndsWith("momento"))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimedText.EndsWith("posible") || trimedText.EndsWith("pueda") ||
-                     trimedText.EndsWith("puedas") || trimedText.EndsWith("podamos") || trimedText.EndsWith("puedan"))
+            else if (trimedText.EndsWith("possivel") || trimedText.EndsWith("possa") ||
+                     trimedText.EndsWith("possas") || trimedText.EndsWith("possamos") || trimedText.EndsWith("possam"))
             {
                 timex = "FUTURE_REF";
             }
@@ -137,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool HaveAmbiguousToken(string text, string matchedText)
         {
-            return text.Contains("esta mañana") && matchedText.Contains("mañana");
+            return false;
         }
     }
 }
