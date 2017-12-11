@@ -157,7 +157,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm a sete e meia",
+      "Text": "de 3pm a sete e meia",
       "Type": "timerange"
     }
   ]
@@ -190,7 +190,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4pm a 5pm",
+      "Text": "de 4pm a 5pm",
       "Type": "timerange"
     }
   ]
@@ -201,7 +201,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4pm a cinco e meia",
+      "Text": "de 4pm a cinco e meia",
       "Type": "timerange"
     }
   ]
@@ -212,29 +212,29 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4pm a cinco e trinta",
+      "Text": "de 4pm a cinco e trinta",
       "Type": "timerange"
     }
   ]
 }
 ,
 {
-  "Input": "Estarei fora 3 da manhã até as 5pm",
+  "Input": "Estarei fora de 3 da manhã até as 5pm",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 da manhã até as 5pm",
+      "Text": "de 3 da manhã até as 5pm",
       "Type": "timerange"
     }
   ]
 }
 ,
 {
-  "Input": "Estarei fora das 3 da madrugada até aas cinco da tarde",
+  "Input": "Estarei fora das 3 da madrugada até as cinco da tarde",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "das 3 da madrugada até aas cinco da tarde",
+      "Text": "das 3 da madrugada até as cinco da tarde",
       "Type": "timerange"
     }
   ]
