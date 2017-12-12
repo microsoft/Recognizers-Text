@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>ate|as|às|até|ateh|a|--|-|—|——)(\s+(o|[aà](s)?))?
+  def: (?<till>ate|as|às|até|ateh|a|ao|--|-|—|——)(\s+(o|[aà](s)?))?
 AndRegex: !simpleRegex
   def: (?<and>e|e\s*o|--|-|—|——)
 DayRegex: !simpleRegex
