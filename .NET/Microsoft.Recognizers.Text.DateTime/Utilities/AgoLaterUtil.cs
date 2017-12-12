@@ -16,11 +16,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
+
             if (pos <= text.Length)
             {
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
+
                 if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
@@ -31,7 +33,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
-                    // for range unit like "week, month, year", it should output dateRange or datetimeRange
+
+                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
                     {
                         if (er.Start != null && er.Length != null && (int) er.Start >= index)
@@ -41,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
 
