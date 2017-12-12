@@ -242,6 +242,7 @@
 ,
 {
   "Input": "Estarei fora entre as 4pm e as cinco e meia",
+  "Debug": true,
   "NotSupportedByDesign": "python",
   "Results": [
     {

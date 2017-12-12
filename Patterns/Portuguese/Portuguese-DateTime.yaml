@@ -10,7 +10,7 @@ MonthNumRegex: !simpleRegex
 YearRegex: !simpleRegex
   def: (?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)
 FullYearRegex: !simpleRegex
-  def: \b(?<year>19\d{2}|20\d{2})\bw
+  def: \b(?<year>19\d{2}|20\d{2})\b
 RelativeMonthRegex: !simpleRegex
   def: (?<relmonth>(es[st]e|pr[óo|ximo|passsado|[uú]ltimo)\s+m[eê]s)\b
 MonthRegex: !simpleRegex
@@ -37,9 +37,9 @@ DayBetweenRegex: !nestedRegex
   def: \b((entre|entre\s+[oa])\s+)({DayRegex})\s*{AndRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){FullYearRegex})?\b
   references: [ DayRegex, AndRegex, MonthSuffixRegex, FullYearRegex ]
 OneWordPeriodRegex: !simpleRegex
-  def: \b(((pr[oó]xim[oa]?|est[ea]|ess[ea]|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\b
+  def: \b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\b
 MonthWithYearRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa](s)?|est[ea]|ess[ea]|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\s+((de|do|da|o|a)\s+)?({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
+  def: \b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\s+)?(?<month><month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)\s+((de|do|da|o|a)\s+)?({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
   references: [ FullYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: ({FullYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{FullYearRegex})
@@ -78,9 +78,9 @@ InConnectorRegex: !simpleRegex
 FromRegex: !simpleRegex
   def: ((desde|de)(\s*a(s)?)?)$
 ConnectorAndRegex: !simpleRegex
-  def: (e\s*([àa](s)?)?)$s
+  def: (e\s*([àa](s)?)?)$
 BetweenRegex: !simpleRegex
-  def: (entre\s*(a(s)?)?)
+  def: (entre\s*([oa](s)?)?)
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Domingos?|Segundas?-feiras?|Segundas?\s+feiras?|Segundas?|2a|Ter[çca]s?-feiras?|Ter[çc]as?\s+feiras?|Ter[cça]s?|3a|Quartas?-feiras?|Quartas?\s+feiras?|Quartas?|4a|Quintas?-feiras?|Quintas?\s+feiras?|Quintas?|5a|Sextas?-feiras?|Sextas?\s+feiras?|Sextas?|6a|S[aá]bados?|2ª|3ª|4ª|5ª|6ª|Dom|Seg|Ter|Qua|Qui|Sex|Sab|Seg.|Ter[cç].|Qua.|Qui.|Sex.|S[aá]b.|Dom.)\b
 OnRegex: !nestedRegex
@@ -89,10 +89,10 @@ OnRegex: !nestedRegex
 RelaxedOnRegex: !simpleRegex
   def: (?<=\b(em|n[oa]|d[oa])\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)s?)\b
 ThisRegex: !nestedRegex
-  def: \b((es[st]e\s*){WeekDayRegex})|({WeekDayRegex}\s*((de)?es[ts]a\s+semana))\b
+  def: \b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
-  def: \b(([uú]ltima)\s*{WeekDayRegex})|({WeekDayRegex}(\s+((de)?(es[st]a|a)\s+([uú]ltima\s+)?semana)))\b
+  def: \b(([uú]ltima)\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a)\s+([uú]ltima\s+)?semana)))\b
   references: [ WeekDayRegex ]
 NextDateRegex: !nestedRegex
   def: \b(((pr[oó]ximo|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(de\s+)?([oa]\s+)?(pr[oó]xima|seguinte)(\s*semana)))\b
@@ -185,7 +185,7 @@ AmRegex: !simpleRegex
   # "... da manhã"
   def: (?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))
 AmTimeRegex: !simpleRegex
-  def: (?<am>es[st]a|(pela|de|da|na)|\s+(manh[ãa]|madrugada))
+  def: (?<am>(es[st]a|(pela|de|da|na))\s+(manh[ãa]|madrugada))
 PmTimeRegex: !simpleRegex
   def: (?<pm>es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite))
 LessThanOneHour: !nestedRegex
@@ -314,7 +314,7 @@ RelativeTimeUnitRegex: !nestedRegex
   references: [ PastRegex, FutureRegex, UnitRegex ]
 # PortugueseDurationExtractorConfiguration
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(e)\s+((um|uma)\s+)?(?<suffix_num>meia|quarto))
+  def: (?<suffix>\s*(e)\s+(?<suffix_num>meia|(um\s+)?quarto))
 FollowedUnit: !nestedRegex
   def: ^\s*{UnitRegex}
   references: [ UnitRegex ]
