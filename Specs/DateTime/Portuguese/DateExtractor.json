@@ -492,7 +492,6 @@
 ,
 {
   "Input": "Voltarei depois de amanhã",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -665,7 +664,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primeira sexta-feira de julho",
+      "Text": "na primeira sexta-feira de julho",
       "Type": "date"
     }
   ]
@@ -677,7 +676,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primeira sexta-feira deste mes",
+      "Text": "na primeira sexta-feira deste mes",
       "Type": "date"
     }
   ]

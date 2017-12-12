@@ -12,7 +12,7 @@ YearRegex: !simpleRegex
 FullYearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 RelativeMonthRegex: !simpleRegex
-  def: (?<relmonth>(es[st]e|pr[óo|ximo|passsado|[uú]ltimo)\s+m[eê]s)\b
+  def: (?<relmonth>([nd]?es[st]e|pr[óo|ximo|passsado|[uú]ltimo)\s+m[eê]s)\b
 MonthRegex: !simpleRegex
   def: (?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)
 MonthSuffixRegex: !nestedRegex
@@ -92,10 +92,10 @@ ThisRegex: !nestedRegex
   def: \b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
-  def: \b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a)\s+([uú]ltima\s+)?semana)))\b
+  def: \b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|na|da)\s+([uú]ltima\s+)?semana)))\b
   references: [ WeekDayRegex ]
 NextDateRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(da\s+)?(pr[oó]xima|seguinte)(\s*semana|\s*semana\s+seguinte)?))\b
+  def: \b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(da\s+)?(pr[oó]xima|seguinte)?(\s*semana\s+seguinte|\s*semana)?))\b
   references: [ WeekDayRegex ]
 SpecialDayRegex: !simpleRegex
   def: \b((o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|(d)?o\s+dia|ontem|amanh[ãa]|hoje)\b
@@ -106,7 +106,7 @@ WeekDayAndDayOfMothRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>([ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
+  def: (?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})
   references: [ WeekDayRegex, MonthSuffixRegex ]
 NumberEndingPattern: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
