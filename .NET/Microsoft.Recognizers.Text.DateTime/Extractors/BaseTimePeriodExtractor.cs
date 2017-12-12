@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             tokens.AddRange(MergeTwoTimePoints(text, reference));
-            tokens.AddRange(MatchNight(text));
+            tokens.AddRange(MatchTimeOfDay(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchNight(string text)
+        private List<Token> MatchTimeOfDay(string text)
         {
             var ret = new List<Token>();
             var matches = this.config.TimeOfDayRegex.Matches(text);

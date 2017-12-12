@@ -180,14 +180,14 @@ OclockRegex: !simpleRegex
   def: (?<oclock>em\s+ponto)
 PmRegex: !simpleRegex
   # "... tarde"
-  def: (?<pm>(pela|de|da|[àa]|na)\s+(tarde|noite))
+  def: (?<pm>((pela|de|da|[àa]|na)\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
 AmRegex: !simpleRegex
   # "... da manhã"
   def: (?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))
 AmTimeRegex: !simpleRegex
   def: (?<am>(es[st]a|(pela|de|da|na))\s+(manh[ãa]|madrugada))
 PmTimeRegex: !simpleRegex
-  def: (?<pm>es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite))
+  def: (?<pm>(es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite)))||((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
 LessThanOneHour: !nestedRegex
   # "e meia ..." "e quinze ..."
   def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))
@@ -199,7 +199,7 @@ LangTimeRegex: !nestedRegex
   def: (?<engtime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?)))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
   references: [ HourNumRegex, MinuteNumRegex, TensTimeRegex, BaseDateTime.HourRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+das?|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)
+  def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))
@@ -264,7 +264,7 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: ^\s*((e|a|em|por|pelo|pela|no|na)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>manh[ãa]|madrugada|(ap[óo]s\s+(o\s+)?)?meio\s?dia|tarde|noite)\b
+  def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia)))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(((((a)?\s+|es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
@@ -347,7 +347,7 @@ HolidayRegex3: !nestedRegex
 BeforeRegex: !simpleRegex
   def: (antes(\s+(de|dos?|das?)?)?)
 AfterRegex: !simpleRegex
-  def: (depois(\s*(de|dos?|das?)?)?)
+  def: ((depois|ap[óo]s)(\s*(de|d?os?|d?as?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(as?|o))?)
 # PortugueseSetExtractorConfiguration
@@ -386,7 +386,7 @@ MiddlePauseRegex: !simpleRegex
 AgoRegex: !simpleRegex
   def: \b(antes)\b
 LaterRegex: !simpleRegex
-  def: \b(depois das|depois de|ap[óo]s as|ap[óo]s |desde as|desde o| desde)\b
+  def: \b(depois d[eoa]s?|ap[óo]s (as)?|desde (as|o)|desde)\b
 # DateTimePeriodParser
 Tomorrow: amanh[ãa]
 # PortugueseCommonDateTimeParserConfiguration
