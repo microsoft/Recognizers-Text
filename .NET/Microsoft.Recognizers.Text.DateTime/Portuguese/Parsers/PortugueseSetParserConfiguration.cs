@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimedText = text.Trim().ToLowerInvariant().Normalized();
 
-            if (trimedText.EndsWith("diario") || trimedText.EndsWith("diariamente"))
+            if (trimedText.EndsWith("diario") || trimedText.EndsWith("diaria") || trimedText.EndsWith("diariamente"))
             {
                 timex = "P1D";
             }
