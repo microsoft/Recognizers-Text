@@ -1,39 +1,10 @@
+import { IExtractor, ExtractResult } from "recognizers-text";
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
-import { Match, RegExpUtility } from "../utilities";
+import { Match, RegExpUtility } from "recognizers-text";
 import { LongFormatType } from "./models";
 import escapeRegExp = require("lodash.escaperegexp");
-
-export interface IExtractor {
-    extract(input: string): Array<ExtractResult>
-}
-
-export class ExtractResult {
-    start: number;
-    length: number;
-    text: string;
-    type: string;
-    data?: any;
-
-    static isOverlap(erA: ExtractResult, erB: ExtractResult): boolean {
-        return !( erA.start >= erB.start + erB.length ) && !( erB.start >= erA.start + erA.length );
-    }
-
-    static isCover(er1: ExtractResult, er2: ExtractResult): boolean {
-        return ((er2.start < er1.start) && ((er2.start + er2.length) >= (er1.start + er1.length)))
-        || ((er2.start <= er1.start) && ((er2.start + er2.length) > (er1.start + er1.length)));
-    }
-
-    static getFromText(source: string): ExtractResult {
-        return {
-            start: 0,
-            length: source.length,
-            text: source,
-            type: 'custom'
-        }
-    }
-}
 
 export interface RegExpValue {
     regExp: RegExp;

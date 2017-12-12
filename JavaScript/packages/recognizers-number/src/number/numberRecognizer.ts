@@ -1,5 +1,5 @@
-import { IModel } from "../models";
-import { Recognizer } from "../recognizer";
+import { IModel } from "recognizers-text";
+import { Recognizer } from "recognizers-text";
 import { Culture } from "../culture";
 import { NumberMode, NumberModel, OrdinalModel, PercentModel } from "./models";
 import { AgnosticNumberParserType, AgnosticNumberParserFactory } from "./agnosticNumberParser";
