@@ -311,18 +311,6 @@
 }
 ,
 {
-  "Input": "Vou voltar 8pm do dia 15",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm do dia 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
   "Input": "Vou voltar as sete no 15",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -515,12 +503,12 @@
 }
 ,
 {
-  "Input": "Vou voltar 8am de manha",
+  "Input": "Vou voltar 8am de amanha",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8am de manha",
+      "Text": "8am de amanha",
       "Type": "datetime"
     }
   ]
@@ -623,7 +611,7 @@
 }
 ,
 {
-  "Input": "para duas pessoas esta noite às  9:30:31 pm",
+  "Input": "para duas pessoas esta noite às 9:30:31 pm",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -696,6 +684,7 @@
 ,
 {
   "Input": "Vou voltar dia 5 as 4 a.m.",
+  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -713,6 +702,32 @@
   "Results": [
     {
       "Text": "2016-12-16T12:23:59",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Vou voltar 8pm do dia 15",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm do dia 15",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Vou voltar 8am da manha",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8am da manha",
       "Type": "datetime"
     }
   ]

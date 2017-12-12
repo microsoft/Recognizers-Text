@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse a specific time of today, tonight, this afternoon, like "seven this afternoon"
+        // Parses a specific time of today, tonight, this afternoon, like "seven this afternoon"
         public List<Token> TimeOfTodayAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse a specific time of today, tonight, this afternoon, "this afternoon at 7"
+        // Parse a specific time of today, tonight, this afternoon, "this afternoon at 7"
         public List<Token> TimeOfTodayBefore(string text, DateObject reference)
         {
             var ret = new List<Token>();

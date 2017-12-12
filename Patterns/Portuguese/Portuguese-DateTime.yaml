@@ -160,6 +160,10 @@ DateExtractor10: !nestedRegex
   # 2015-12-23
   def: \b{YearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}
   references: [ YearRegex, MonthNumRegex, DayRegex ]
+DateExtractor11: !nestedRegex
+  # dia 24
+  def: (?<=\b(dia)\s+){DayRegex}
+  references: [ DayRegex ]
 # PortugueseTimeExtractorConfiguration
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>zero|uma|duas|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze)\b
@@ -251,7 +255,7 @@ TimeRegex9: !nestedRegex
   def: \b(?<engtime>{HourNumRegex}\s+({TensTimeRegex}\s*)?(e\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
 TimeRegex10: !simpleRegex
-  def: ([àa]|ao?|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
+  def: (\b([àa]|ao?)|na|de|da|pela)\s+(madrugada|manh[ãa]|meio\s*dia|meia\s*noite|tarde|noite)
 TimeRegex11: !nestedRegex
   # (tres menos vinte) (pm)?
   def: \b({LangTimeRegex})({DescRegex}?)\b
@@ -266,10 +270,10 @@ SuffixRegex: !simpleRegex
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia)))\b
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(((((a)?\s+|es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
+  def: \b(((((a)?\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
-  def: ^\s*(,\s*)?([àa]|em|por|pelo|pela|no|na?\s+)?{SpecificTimeOfDayRegex}
+  def: ^\s*(,\s*)?([àa]|em|por|pelo|pela|de|no|na?\s+)?{SpecificTimeOfDayRegex}
   references: [ SpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+(a\s+la(s)?|para))?\s*)
@@ -662,7 +666,7 @@ NextPrefixRegex: !simpleRegex
 PastPrefixRegex: !simpleRegex
   def: ([uú]ltim[oa])\b
 ThisPrefixRegex: !simpleRegex
-  def: (es[st][ea])\b
+  def: ([nd]?es[st][ea])\b
 RelativeDayRegex: !simpleRegex
   # TODO: implement the relative day regex if needed. If yes, they should be abstracted
   def: ^[\.]

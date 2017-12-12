@@ -96,7 +96,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 2015-12-23
-            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            // dia 15
+            new Regex(DateTimeDefinitions.DateExtractor11, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
         public static readonly Regex[] ImplicitDateList =
