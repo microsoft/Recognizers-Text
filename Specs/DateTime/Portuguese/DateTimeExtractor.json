@@ -676,7 +676,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "terminar o dia",
+      "Text": "amanhã ao terminar o dia",
       "Type": "datetime"
     }
   ]
