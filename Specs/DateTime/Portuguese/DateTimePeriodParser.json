@@ -26,7 +26,6 @@
 ,
 {
   "Input": "Vou retroceder os 3 mins anteriores",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },

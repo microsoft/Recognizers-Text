@@ -1,7 +1,6 @@
 [
 {
   "Input": "Me mudarei em 3 anos",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -14,7 +13,6 @@
 ,
 {
   "Input": "Me mudarei em 3 semanas",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -626,6 +624,7 @@
 ,
 {
   "Input": "Estarei fora na primavera seguinte",
+  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -686,7 +685,6 @@
 ,
 {
   "Input": "Estarei fora 4-23 do proximo mes",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
