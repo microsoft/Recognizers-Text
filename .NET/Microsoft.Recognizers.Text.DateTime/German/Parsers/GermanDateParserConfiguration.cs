@@ -52,9 +52,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex RelativeMonthRegex { get; }
 
-        //The following three regexes only used in this configuration
-        //They are not used in the base parser, therefore they are not extracted
-        //If the spanish date parser need the same regexes, they should be extracted
         public static readonly Regex RelativeDayRegex= new Regex(
                 DateTimeDefinitions.RelativeDayRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);

@@ -2,6 +2,7 @@
   {
     "Input": "erster",
     "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erster",
@@ -15,6 +16,7 @@
   {
     "Input": "zweiter",
     "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zweiter",

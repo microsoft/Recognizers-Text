@@ -427,6 +427,8 @@ MiddlePauseRegex: !simpleRegex
   def: \s*(,)\s*
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|and|,)\s*$
+PrefixArticleRegex: !simpleRegex
+  def: \bthe\s+
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
