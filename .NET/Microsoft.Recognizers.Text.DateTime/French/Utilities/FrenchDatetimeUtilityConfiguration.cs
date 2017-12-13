@@ -28,6 +28,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex CommonDatePrefixRegex = 
+            new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 
         Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
@@ -41,5 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
         Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
+
+        Regex IDateTimeUtilityConfiguration.CommonDatePrefixRegex => CommonDatePrefixRegex;
     }
 }

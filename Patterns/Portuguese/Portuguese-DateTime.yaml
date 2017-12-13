@@ -693,6 +693,8 @@ SetWeekDayRegex: !simpleRegex
   def: ^[\.]
 NightRegex: !simpleRegex
   def: \b(meia noite|noite|de noite)\b
+CommonDatePrefixRegex: !simpleRegex
+  def: \b(dia)\s+$
 DurationUnitRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]

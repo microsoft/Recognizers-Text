@@ -36,13 +36,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        // match now
+        // Match "now"
         public List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
             text = text.Trim().ToLower();
 
-            // handle "now"
+            // Handle "now"
             var matches = this.config.NowRegex.Matches(text);
             foreach (Match match in matches)
             {
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // merge a Date entity and a Time entity, like "at 7 tomorrow"
+        // Merge a Date entity and a Time entity, like "at 7 tomorrow"
         public List<Token> MergeDateAndTime(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -109,7 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 i = j;
             }
 
-            // handle "in the afternoon" at the end of entity
+            // Handle "in the afternoon" at the end of entity
             for (var idx = 0; idx < ret.Count; idx++)
             {
                 var afterStr = text.Substring(ret[idx].End);
@@ -117,6 +117,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     ret[idx] = new Token(ret[idx].Start, ret[idx].End + match.Length);
+                }
+            }
+
+            // Handle "day" prefixes
+            for (var idx = 0; idx < ret.Count; idx++)
+            {
+                var beforeStr = text.Substring(0, ret[idx].Start);
+                var match = this.config.UtilityConfiguration.CommonDatePrefixRegex.Match(beforeStr);
+                if (match.Success)
+                {
+                    ret[idx] = new Token(ret[idx].Start - match.Length, ret[idx].End);
                 }
             }
 

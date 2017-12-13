@@ -433,6 +433,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string RestOfDateTimeRegex = @"^[\.]";
 		public const string SetWeekDayRegex = @"^[\.]";
 		public const string NightRegex = @"\b(meia noite|noite|de noite)\b";
+		public const string CommonDatePrefixRegex = @"\b(dia)\s+$";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
 	}
