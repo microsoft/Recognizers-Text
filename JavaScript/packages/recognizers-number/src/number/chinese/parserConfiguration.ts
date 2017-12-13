@@ -1,7 +1,8 @@
-import { INumberParserConfiguration, ParseResult } from "../parsers";
+import { ParseResult } from "recognizers-text";
+import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text"
 
 export class ChineseNumberParserConfiguration implements INumberParserConfiguration {
 

@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text";
 import { ITimePeriodExtractorConfiguration, ITimePeriodParserConfiguration } from "../baseTimePeriod";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { IDateTimeUtilityConfiguration } from "../utilities";

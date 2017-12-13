@@ -1,6 +1,6 @@
-import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "recognizers-text-number";
-import { IDateTimeExtractor } from "./baseDateTime"
+import { IModel, ModelResult, IExtractor, ParseResult, FormatUtility } from "recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
+import { IDateTimeExtractor } from "./baseDateTime";
 
 export class DateTimeModelResult extends ModelResult {
     timexStr: string

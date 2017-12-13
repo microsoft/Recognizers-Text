@@ -1,0 +1,105 @@
+[{
+  "Input": "Sure!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sure",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 1.0
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I don't thing so. no.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+		"score": 0.5
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I think that would work. so yes I will.",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "yes",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.4666666666666667
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "no. I said the fourth of July",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+		"score": 0.4857142857142857
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "yes... I said no onions",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "yes",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I said NO not yes!",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "NO",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": false,
+		"score": 0.52
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Yes. I said no",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Yes",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.55
+      }
+    }
+  ]
+}
+]

@@ -1,5 +1,6 @@
 import { IDurationExtractorConfiguration, IDurationParserConfiguration } from "../baseDuration"
-import { BaseNumberExtractor, RegExpUtility, BaseNumberParser, EnglishCardinalExtractor } from "recognizers-text-number"
+import { RegExpUtility } from "recognizers-text";
+import { BaseNumberExtractor, BaseNumberParser, EnglishCardinalExtractor } from "recognizers-text-number"
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
 

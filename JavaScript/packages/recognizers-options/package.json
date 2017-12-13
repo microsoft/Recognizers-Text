@@ -1,0 +1,36 @@
+{
+  "name": "recognizers-text-options",
+  "version": "1.0.0-rc.27",
+  "description": "recognizers-text-options abstract",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "keywords": [
+    "nlp",
+    "nlp-entity-extraction",
+    "entity-extraction",
+    "numex",
+    "parser-library"
+  ],
+  "main": "dist/recognizers-text-options.umd.js",
+  "module": "dist/recognizers-text-options.es5.js",
+  "typings": "dist/types/recognizers-text-options.d.ts",
+  "browser": "dist/recognizers-text-options.browser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/Recognizers-Text"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/Recognizers-Text/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "build-resources": "ts-node --project ../resource-generator/ ../resource-generator/ ../recognizers-options/resource-definitions.json",
+    "clean-build": "rimraf dist && rimraf compiled",
+    "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
+  },
+  "dependencies": {
+    "recognizers-text": "^1.0.0-rc.27"
+  }
+}
