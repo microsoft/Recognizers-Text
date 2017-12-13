@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
                 if (string.IsNullOrEmpty(afterStr))
                 {
-                    continue;
+                    continue; //@here
                 }
 
                 var match = this.config.TimeOfTodayAfterRegex.Match(afterStr);

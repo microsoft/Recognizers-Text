@@ -25,6 +25,33 @@
 }
 ,
 {
+  "Input": "Vou retroceder os 3 mins anteriores",
+  "Debug": true,
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 mins anteriores",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+        "FutureResolution": {
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-07 16:09:00",
+          "endDateTime": "2016-11-07 16:12:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Estarei fora de 5 a 6 em 4/22/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -156,7 +183,6 @@
 ,
 {
   "Input": "Estarei fora das 4pm de hoje até as 5pm de amanha",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -469,7 +495,6 @@
 ,
 {
   "Input": "Vou retroceder os últimos 3 minutos",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -478,33 +503,6 @@
   "Results": [
     {
       "Text": "últimos 3 minutos",
-      "Type": "datetimerange",
-      "Value": {
-        "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
-        "FutureResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        },
-        "PastResolution": {
-          "startDateTime": "2016-11-07 16:09:00",
-          "endDateTime": "2016-11-07 16:12:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Vou retroceder os 3 mins anteriores",
-  "Debug": true,
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 mins anteriores",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",

@@ -657,7 +657,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (ers.Count == 1)
             {
                 var pr = Config.DurationParser.Parse(ers[0]);
+
                 var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
+                var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim().ToLowerInvariant();
+
                 if (pr.Value != null)
                 {
                     var swiftSeconds = 0;
@@ -685,10 +688,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
+                    var suffixMatch = Config.PastRegex.Match(afterStr);
+                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    {
+                        mod = TimeTypeConstants.beforeMod;
+                        beginTime = referenceTime.AddSeconds(-swiftSeconds);
+                    }
+
+                    suffixMatch = Config.FutureRegex.Match(afterStr);
+                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    {
+                        mod = TimeTypeConstants.afterMod;
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
                     ret.Timex =
                         $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
                         $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)}," +
                         $"{durationResult.Timex})";
+
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
                     ret.Success = true;
 
@@ -734,6 +752,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 DateObject beginTime;
                 var endTime = beginTime = referenceTime;
                 var ptTimex = string.Empty;
+
                 if (Config.UnitMap.ContainsKey(srcUnit))
                 {
                     switch (unitStr)
@@ -763,7 +782,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret.Timex =
-                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)},{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},{ptTimex})";
+                            $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
+                            $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)},{ptTimex})";
+
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
                     ret.Success = true;
 

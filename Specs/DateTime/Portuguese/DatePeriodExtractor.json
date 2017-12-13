@@ -1,12 +1,25 @@
 [
 {
-  "Input": "Estarei fora por 3 anos",
+  "Input": "Me mudarei em 3 anos",
   "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3 anos",
+      "Text": "em 3 anos",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Me mudarei em 3 semanas",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "em 3 semanas",
       "Type": "daterange"
     }
   ]

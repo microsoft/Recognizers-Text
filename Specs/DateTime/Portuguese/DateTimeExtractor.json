@@ -1,5 +1,5 @@
 [{
-  "Input": "Vou votlar agora",
+  "Input": "Vou voltar agora",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -684,7 +684,6 @@
 ,
 {
   "Input": "Vou voltar dia 5 as 4 a.m.",
-  "Debug": true,
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -708,19 +707,6 @@
 }
 ,
 {
-  "Input": "Vou voltar 8pm do dia 15",
-  "Debug": true,
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "8pm do dia 15",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
   "Input": "Vou voltar 8am da manha",
   "Debug": true,
   "NotSupported": "javascript",
@@ -728,6 +714,19 @@
   "Results": [
     {
       "Text": "8am da manha",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Vou voltar 8pm do dia 15",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "8pm do dia 15",
       "Type": "datetime"
     }
   ]
