@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { EnglishNumeric } from "../../resources/englishNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text"
 
 export class EnglishNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;

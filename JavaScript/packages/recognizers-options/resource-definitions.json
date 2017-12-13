@@ -1,0 +1,13 @@
+{
+    "outputPath": "./src/resources/",
+    "configFiles": [
+        {
+            "input": [ "English", "English-Options" ],
+            "output": "englishOptions",
+            "header": [
+                "export namespace EnglishOptions {"
+            ],
+            "footer": [ "}" ]
+        }
+    ]
+}

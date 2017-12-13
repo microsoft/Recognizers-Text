@@ -6,7 +6,7 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { RegExpUtility } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { ICommonDateTimeParserConfiguration } from "../parsers"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"

@@ -1,4 +1,5 @@
-import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility } from "recognizers-text-number";
+import { IExtractor, ExtractResult } from "recognizers-text";
+import { StringUtility, Match, RegExpUtility } from "recognizers-text-number";
 import { IDateTimeExtractor } from "../baseDateTime"
 import { Constants, TimeTypeConstants } from "../constants"
 import { Token } from "../utilities";
