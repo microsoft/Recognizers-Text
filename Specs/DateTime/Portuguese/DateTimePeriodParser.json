@@ -730,7 +730,7 @@
 }
 ,
 {
-  "Input": "Estarei fora de sete e meia a 4pm manhã",
+  "Input": "Estarei fora de sete e meia a 4pm amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -738,7 +738,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "de sete e meia a 4pm manhã",
+      "Text": "de sete e meia a 4pm amanhã",
       "Type": "datetimerange",
       "Value": {
         "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H)",

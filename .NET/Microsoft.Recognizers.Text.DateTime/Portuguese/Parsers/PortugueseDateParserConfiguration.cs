@@ -110,8 +110,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 swift = 0;
             }
             else if (trimedText.Equals("amanha") ||
+                     trimedText.Equals("de amanha") ||
                      trimedText.EndsWith("dia seguinte") ||
-                     trimedText.EndsWith("de amanha") ||
                      trimedText.EndsWith("o dia de amanha") ||
                      trimedText.EndsWith("proximo dia"))
             {

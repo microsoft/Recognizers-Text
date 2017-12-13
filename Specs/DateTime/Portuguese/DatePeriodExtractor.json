@@ -1,4 +1,18 @@
-[{
+[
+{
+  "Input": "Estarei fora por 3 anos",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 anos",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Estarei fora de 4 até 22 deste mes",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -17,18 +31,6 @@
   "Results": [
     {
       "Text": "4 a 22 deste mes",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora desde 4-23 do proximo mes",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde 4-23 do proximo mes",
       "Type": "daterange"
     }
   ]
@@ -56,8 +58,7 @@
       "Type": "daterange"
     }
   ]
-}
-,
+},
 {
   "Input": "Estarei fora de 4 ao 23 deste mes",
   "NotSupported": "javascript",
@@ -257,18 +258,6 @@
   "Results": [
     {
       "Text": "proximos 3 meses",
-      "Type": "daterange"
-    }
-  ]
-}
-,
-{
-  "Input": "Estarei fora por 3 anos",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 anos",
       "Type": "daterange"
     }
   ]
@@ -677,6 +666,19 @@
   "Results": [
     {
       "Text": "o verao de 2016",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Estarei fora 4-23 do proximo mes",
+  "Debug": true,
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4-23 do proximo mes",
       "Type": "daterange"
     }
   ]
