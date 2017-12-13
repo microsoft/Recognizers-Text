@@ -1,0 +1,6 @@
+[
+    {
+    "NotSupported": "javascript,dotNet",
+    "NotSupportedByDesign": "python"
+}
+]
