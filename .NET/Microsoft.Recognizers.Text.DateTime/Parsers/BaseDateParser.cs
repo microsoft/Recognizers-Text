@@ -360,6 +360,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var monthStr = match.Groups["order"].Value;
                     var swift = this.config.GetSwiftMonth(monthStr);
                     month = referenceDate.AddMonths(swift).Month;
+                    year = referenceDate.AddMonths(swift).Year;
                     day = num;
                     ambiguous = false;
                 }

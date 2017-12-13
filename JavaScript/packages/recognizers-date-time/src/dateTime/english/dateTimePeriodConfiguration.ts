@@ -1,10 +1,12 @@
+import { IExtractor } from "recognizers-text";
 import { IDateTimePeriodExtractorConfiguration, IDateTimePeriodParserConfiguration } from "../baseDateTimePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseTimePeriodExtractor } from "../baseTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { IExtractor, RegExpUtility, EnglishCardinalExtractor } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text";
+import { EnglishCardinalExtractor } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"

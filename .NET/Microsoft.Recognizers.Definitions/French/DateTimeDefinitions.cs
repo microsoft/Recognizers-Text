@@ -193,6 +193,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string GeneralEndingRegex = @"^[.]";
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string DurationConnectorRegex = @"^[.]";
+		public const string PrefixArticleRegex = @"^[\.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },

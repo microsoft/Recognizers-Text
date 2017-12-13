@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { LongFormatType } from "../models";
 import { ChineseNumeric } from "../../resources/chineseNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text"
 
 export enum ChineseNumberMode {
     // for number with white list

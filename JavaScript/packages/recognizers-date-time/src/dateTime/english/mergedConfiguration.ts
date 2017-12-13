@@ -8,7 +8,8 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { IDateTimeExtractor, BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { RegExpUtility, BaseNumberExtractor, EnglishIntegerExtractor } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text";
+import { BaseNumberExtractor, EnglishIntegerExtractor } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"
