@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var resEnd = resStart + result.Length + spaceLen + match.Length;
                         // check if prefix contain 'the', include it if any
                         var prefix = text.Substring(0, resStart ?? 0);
-                        var prefixMatch = this.config.TheRegex.Match(prefix);
+                        var prefixMatch = this.config.PrefixArticleRegex.Match(prefix);
                         if (prefixMatch.Success)
                         {
                             resStart = prefixMatch.Index;

@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayRegex { get; }
 
-        Regex TheRegex { get; }
+        Regex PrefixArticleRegex { get; }
 
         IExtractor IntegerExtractor { get; }
 

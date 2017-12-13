@@ -68,9 +68,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 DateTimeDefinitions.RelativeMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheRegex =
+        public static readonly Regex PrefixArticleRegex =
             new Regex(
-                DateTimeDefinitions.TheRegex,
+                DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] DateRegexList =
@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
-        Regex IDateExtractorConfiguration.TheRegex => TheRegex;
+        Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         public DateTimeOptions Options { get; }
 

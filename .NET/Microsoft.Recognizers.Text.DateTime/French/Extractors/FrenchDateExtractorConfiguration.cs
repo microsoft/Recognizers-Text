@@ -104,9 +104,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.RelativeMonthRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheRegex =
+        public static readonly Regex PrefixArticleRegex =
             new Regex(
-                DateTimeDefinitions.TheRegex,
+                DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
 
@@ -221,6 +221,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
-        Regex IDateExtractorConfiguration.TheRegex => TheRegex;
+        Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
     }
 }

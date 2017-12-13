@@ -66,9 +66,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public static readonly Regex TheRegex =
+        public static readonly Regex PrefixArticleRegex =
             new Regex(
-                DateTimeDefinitions.TheRegex,
+                DateTimeDefinitions.PrefixArticleRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         public static readonly Regex[] DateRegexList =
@@ -155,6 +155,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
-        Regex IDateExtractorConfiguration.TheRegex => TheRegex;
+        Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
     }
 }
