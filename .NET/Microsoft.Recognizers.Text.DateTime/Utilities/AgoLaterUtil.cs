@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
@@ -67,12 +65,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var afterStr =
                             text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                                .Trim()
-                                .ToLowerInvariant();
+                                .Trim().ToLowerInvariant();
+
                     var beforeStr =
                         text.Substring(0, (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
+                            .Trim().ToLowerInvariant();
 
                     var mode = AgoLaterMode.Date;
                     if (pr.TimexStr.Contains("T"))
@@ -82,13 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (pr.Value != null)
                     {
-                        return GetAgoLaterResult(
-                                pr,
-                                afterStr,
-                                beforeStr,
-                                referenceTime,
-                                utilityConfiguration,
-                                mode);
+                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
+                                                 utilityConfiguration, mode);
                     }
                 }
             }
@@ -113,8 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.beforeMod;
             }
-            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)
-                || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
+            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
+                     MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, true);
 

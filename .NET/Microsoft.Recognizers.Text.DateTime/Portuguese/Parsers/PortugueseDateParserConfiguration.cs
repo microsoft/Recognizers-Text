@@ -111,6 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             }
             else if (trimedText.Equals("amanha") ||
                      trimedText.EndsWith("dia seguinte") ||
+                     trimedText.EndsWith("de amanha") ||
                      trimedText.EndsWith("o dia de amanha") ||
                      trimedText.EndsWith("proximo dia"))
             {

@@ -130,6 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 swift = -1;
             }
+
             return swift;
         }
 
