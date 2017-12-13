@@ -432,6 +432,9 @@ MiddlePauseRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixArticleRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
