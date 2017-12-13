@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples, install the `recognizers-text` package, or  clone our GitHub repository using Git.
+Recognizer's are organized into groups and designed to be used in C# and Node.js to help you build great applications! To use the samples, install the `recognizers-text-suite` package, or  clone our GitHub repository using Git.
 
 ## Cloning and building the Repository
 
@@ -29,7 +29,7 @@ Launch `Build.cmd` file.
 Install all the Recognizer's by launching the following command:
 
 * Get **all** the Recognizers in a single module:
-`npm install recognizers-text`
+`npm install recognizers-text-suite`
 
 Or, if you prefer to use a single type of recognizer:
 
@@ -47,7 +47,7 @@ Or, if you prefer to use a single type of recognizer:
 Once the proper package is installed, you'll need to reference the package:
 
 ````JavaScript
-var Recognizers = require('recognizers-text');
+var Recognizers = require('recognizers-text-suite');
 ````
 
 ### Microsoft.Recognizers.Text.Number

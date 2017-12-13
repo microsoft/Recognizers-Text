@@ -1,4 +1,5 @@
-import { IModel, Recognizer, Culture } from "recognizers-text-number";
+import { IModel, ModelResult, Recognizer } from "recognizers-text";
+import { Culture } from "recognizers-text-number";
 import { IDateTimeModel, DateTimeModel } from "./models";
 import { BaseMergedParser, BaseMergedExtractor } from "./baseMerged";
 import { EnglishCommonDateTimeParserConfiguration } from "./english/baseConfiguration";

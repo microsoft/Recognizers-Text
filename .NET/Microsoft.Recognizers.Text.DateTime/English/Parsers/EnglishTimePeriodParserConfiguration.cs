@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimePeriodParserConfiguration : ITimePeriodParserConfiguration
+    public class EnglishTimePeriodParserConfiguration : BaseOptionsConfiguration, ITimePeriodParserConfiguration
     {
         public IDateTimeExtractor TimeExtractor { get; }
 
@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TimeExtractor = config.TimeExtractor;
             IntegerExtractor = config.IntegerExtractor;

@@ -4,6 +4,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public sealed class FrenchMergedParserConfiguration : FrenchCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
@@ -14,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser HolidayParser { get; }
 
-        public FrenchMergedParserConfiguration() : base()
+        public FrenchMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = FrenchMergedExtractorConfiguration.AfterRegex;

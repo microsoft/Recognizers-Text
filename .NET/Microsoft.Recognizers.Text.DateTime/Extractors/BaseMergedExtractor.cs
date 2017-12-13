@@ -10,12 +10,10 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseMergedExtractor : IDateTimeExtractor
     {
         private readonly IMergedExtractorConfiguration config;
-        private readonly DateTimeOptions options;
 
-        public BaseMergedExtractor(IMergedExtractorConfiguration config, DateTimeOptions options)
+        public BaseMergedExtractor(IMergedExtractorConfiguration config)
         {
             this.config = config;
-            this.options = options;
         }
 
         public List<ExtractResult> Extract(string text)
@@ -43,8 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             AddMod(ret, text);
 
-            //filtering
-            if ((this.options & DateTimeOptions.Calendar) != 0)
+            // filtering
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
                 CheckCalendarFilterList(ret, text);
             }
@@ -73,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var result in src)
             {
-                if ((options & DateTimeOptions.SkipFromToMerge) != 0)
+                if ((config.Options & DateTimeOptions.SkipFromToMerge) != 0)
                 {
                     if (ShouldSkipFromToMerge(result))
                     {

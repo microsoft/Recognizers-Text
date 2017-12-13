@@ -5,7 +5,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public interface IDatePeriodParserConfiguration
+    public interface IDatePeriodParserConfiguration : IOptionsConfiguration
     {
         string TokenBeforeDate { get; }
 

@@ -8,7 +8,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateParserConfiguration : IDateParserConfiguration
+    public class EnglishDateParserConfiguration : BaseOptionsConfiguration, IDateParserConfiguration
     {
         public string DateTokenPrefix { get; }
 
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDateParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DateTokenPrefix = DateTimeDefinitions.DateTokenPrefix;
             IntegerExtractor = config.IntegerExtractor;

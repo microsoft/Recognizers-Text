@@ -9,7 +9,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishTimePeriodExtractorConfiguration : ITimePeriodExtractorConfiguration
+    public class EnglishTimePeriodExtractorConfiguration : BaseOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishTimePeriodExtractorConfiguration()
+        public EnglishTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             SingleTimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration());
             UtilityConfiguration = new EnlighDatetimeUtilityConfiguration();

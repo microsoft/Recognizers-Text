@@ -1,4 +1,4 @@
-var Recognizers = require('recognizers-text');
+var Recognizers = require('recognizers-text-suite');
 
 // Use English for the Recognizers culture
 const defaultCulture = Recognizers.Culture.English;

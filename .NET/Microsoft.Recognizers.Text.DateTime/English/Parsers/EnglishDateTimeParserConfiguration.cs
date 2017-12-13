@@ -7,7 +7,7 @@ using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
-    public class EnglishDateTimeParserConfiguration : IDateTimeParserConfiguration
+    public class EnglishDateTimeParserConfiguration : BaseOptionsConfiguration, IDateTimeParserConfiguration
     {
         public string TokenBeforeDate { get; }
 
@@ -51,8 +51,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public EnglishDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
+
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
@@ -138,5 +139,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         public bool HaveAmbiguousToken(string text, string matchedText) => false;
+
     }
 }

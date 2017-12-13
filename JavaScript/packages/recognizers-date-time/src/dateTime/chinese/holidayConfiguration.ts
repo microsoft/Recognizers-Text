@@ -1,5 +1,6 @@
+import { RegExpUtility, Match, StringUtility, IExtractor, IParser, ExtractResult } from "recognizers-text";
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration, BaseHolidayParser } from "../baseHoliday"
-import { RegExpUtility, ExtractResult, Match, IExtractor, IParser, StringUtility, ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "recognizers-text-number";
+import { ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "recognizers-text-number";
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { DateUtils, FormatUtil, DateTimeResolutionResult, StringMap } from "../utilities";
 import { ChineseDateTime } from "../../resources/chineseDateTime";

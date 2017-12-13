@@ -6,7 +6,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
-    public class FrenchDateTimeExtractorConfiguration : IDateTimeExtractorConfiguration
+    public class FrenchDateTimeExtractorConfiguration : BaseOptionsConfiguration, IDateTimeExtractorConfiguration
     {
         public static readonly Regex PrepositionRegex = 
           new Regex(  
@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDateTimeExtractorConfiguration()
+        public FrenchDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
         {
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());

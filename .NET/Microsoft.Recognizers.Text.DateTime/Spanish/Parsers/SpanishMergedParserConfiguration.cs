@@ -4,6 +4,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public sealed class SpanishMergedParserConfiguration : SpanishCommonDateTimeParserConfiguration, IMergedParserConfiguration
     {
+
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
@@ -14,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser HolidayParser { get; }
 
-        public SpanishMergedParserConfiguration() : base()
+        public SpanishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;

@@ -5,35 +5,36 @@ using System.Linq;
 
 namespace Microsoft.Recognizers.Text
 {
-    public class ModelContainer
+    internal class ModelContainer
     {
         public static readonly string DefaultCulture = Culture.English;
 
-        private readonly ConcurrentDictionary<KeyValuePair<string, Type>, IModel> modelInstances = new ConcurrentDictionary<KeyValuePair<string, Type>, IModel>();
+        private readonly ConcurrentDictionary<Tuple<string, Type, string>, IModel> modelInstances = 
+            new ConcurrentDictionary<Tuple<string, Type, string>, IModel>();
 
-        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture, string options)
         {
-            if (!TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture))
+            if (!TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture, options))
             {
-                throw new ArgumentException($"ERROR: No IModel instance for {culture}-{typeof(TModel)}");
+                throw new ArgumentException($"ERROR: No IModel instance for {culture}-{typeof(TModel)}--{options}");
             }
 
             return model;
         }
 
-        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true)
+        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture, string options)
         {
             model = null;
             var ret = true;
 
-            var key = GenerateKey(culture, typeof(TModel));
+            var key = GenerateKey(culture, typeof(TModel), options);
 
             if (!modelInstances.ContainsKey(key))
             {
                 if (fallbackToDefaultCulture)
                 {
                     culture = DefaultCulture;
-                    key = GenerateKey(culture, typeof(TModel));
+                    key = GenerateKey(culture, typeof(TModel), options);
                 }
 
                 if (!modelInstances.ContainsKey(key))
@@ -50,12 +51,12 @@ namespace Microsoft.Recognizers.Text
             return ret;
         }
 
-        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true)
+        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture, string options)
         {
-            return TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture);
+            return TryGetModel<TModel>(culture, out IModel model, fallbackToDefaultCulture, options);
         }
 
-        private static KeyValuePair<string, Type> GenerateKey(string culture, Type type)
+        private static Tuple<string, Type, string> GenerateKey(string culture, Type type, string options)
         {
             if (string.IsNullOrWhiteSpace(culture))
             {
@@ -64,12 +65,12 @@ namespace Microsoft.Recognizers.Text
 
             culture = culture.ToLower(); // Ignore Case
 
-            return new KeyValuePair<string, Type>(culture, type);
+            return new Tuple<string, Type, string>(culture, type, options);
         }
 
-        public void RegisterModel(string culture, Type type, IModel model)
+        public void RegisterModel(string culture, Type type, IModel model, string options)
         {
-            var key = GenerateKey(culture, type);
+            var key = GenerateKey(culture, type, options);
             if (modelInstances.ContainsKey(key))
             {
                 throw new ArgumentException($"ERROR: {culture}-{type} has already been registered.");
@@ -78,11 +79,11 @@ namespace Microsoft.Recognizers.Text
             modelInstances.TryAdd(key, model);
         }
 
-        public void RegisterModel(string culture, Dictionary<Type, IModel> models)
+        public void RegisterModel(string culture, Dictionary<Type, IModel> models, string options)
         {
             foreach (var model in models)
             {
-                RegisterModel(culture, model.Key, model.Value);
+                RegisterModel(culture, model.Key, model.Value, options);
             }
         }
 
@@ -102,5 +103,10 @@ namespace Microsoft.Recognizers.Text
                 throw new InvalidOperationException($"Please request a specific culture for {typeof(TModel)}.");
             }
         }
+
+        public bool ContainsModels() {
+            return modelInstances.Keys.Any();
+        }
+
     }
 }

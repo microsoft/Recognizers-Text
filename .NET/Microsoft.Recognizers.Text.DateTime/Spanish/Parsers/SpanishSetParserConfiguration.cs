@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
-    public class SpanishSetParserConfiguration : ISetParserConfiguration
+    public class SpanishSetParserConfiguration : BaseOptionsConfiguration, ISetParserConfiguration
     {
         public IDateTimeExtractor DurationExtractor { get; }
 
@@ -47,7 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex SetEachRegex { get; }
 
-        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
+        public SpanishSetParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;
