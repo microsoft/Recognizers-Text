@@ -99,12 +99,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         j++;
                     }
+
                     if (j >= ers.Count)
                     {
                         break;
                     }
 
-                    // check connect string
+                    // check connector string
                     var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
                     var match = this.config.TillRegex.Match(midStr);
                     if (match.Success && match.Length == midStr.Trim().Length)
@@ -125,6 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             overlap = true;
                         }
                     }
+
                     if (!overlap)
                     {
                         ers.Add(timeNum);

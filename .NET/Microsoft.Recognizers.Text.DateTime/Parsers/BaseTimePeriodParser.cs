@@ -210,31 +210,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             midStrBegin = ers[0].Start + ers[0].Length ?? 0;
                             midStrEnd = num.Start - midStrBegin ?? 0;
-                            /*var endingNumber = false;
-                            if (num.Start + num.Length == text.Length)
-                            {
-                                endingNumber = true;
-                            }
-                            else
-                            {
-                                var afterStr = text.Substring(num.Start + num.Length?? 0);
-                                var endingMatch = this.config.GeneralEndingRegex.Match(afterStr);
-                                if (endingMatch.Success)
-                                {
-                                    endingNumber = true;
-                                }
-                            }*/
-
-                            /*if (endingNumber)
-                            {
-                                midStrBegin = ers[0].Start + ers[0].Length ?? 0;
-                                midStrEnd = num.Start - midStrBegin ?? 0;
-                            }
-                            else
-                            {
-                                midStrBegin = num.Start + num.Length ?? 0;
-                                midStrEnd = ers[0].Start - midStrBegin ?? 0;
-                            }*/
                         }
                         else if (num.Start + num.Length < ers[0].Start)
                         {
@@ -253,21 +228,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                             validTimeNumber = true;
                             break;
                         }
-
-                        /*// check if the middle string between the time point and the valid number is a connect string.
-                        if (endingNumber)
-                            {
-                                var middleStr = text.Substring(midStrBegin, midStrEnd);
-                                var tillMatch = this.config.TillRegex.Match(middleStr);
-                                if (tillMatch.Success)
-                                {
-                                    num.Data = null;
-                                    num.Type = Constants.SYS_DATETIME_TIME;
-                                    ers.Add(num);
-                                    validTimeNumber = true;
-                                    break;
-                                }
-                            }*/
                     }
 
                     ers.Sort((x, y) => (x.Start - y.Start ?? 0));
