@@ -194,6 +194,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.Comment = "ampm";
             }
+
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;

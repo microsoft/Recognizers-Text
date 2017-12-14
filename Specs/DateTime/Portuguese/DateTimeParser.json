@@ -240,6 +240,7 @@
 ,
 {
   "Input": "Vou voltar em cinco de maio as 4 a.m.",
+  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -586,12 +587,12 @@
       "Text": "quinze para as oito de amanhã",
       "Type": "datetime",
       "Value": {
-        "Timex": "2016-11-08T06:45",
+        "Timex": "2016-11-08T07:45",
         "FutureResolution": {
-          "dateTime": "2016-11-08 06:45:00"
+          "dateTime": "2016-11-08 07:45:00"
         },
         "PastResolution": {
-          "dateTime": "2016-11-08 06:45:00"
+          "dateTime": "2016-11-08 07:45:00"
         }
       }
     }
