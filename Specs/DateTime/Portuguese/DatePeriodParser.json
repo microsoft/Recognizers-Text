@@ -939,7 +939,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -965,7 +965,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1005,32 +1005,6 @@
         },
         "PastResolution": {
           "startDate": "2013-11-07",
-          "endDate": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Estive fora as 3 semanas anteriores",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 semanas anteriores",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-10-17,2016-11-07,P3W)",
-        "FutureResolution": {
-          "startDate": "2016-10-17",
-          "endDate": "2016-11-07"
-        },
-        "PastResolution": {
-          "startDate": "2016-10-17",
           "endDate": "2016-11-07"
         }
       }
@@ -1199,7 +1173,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {

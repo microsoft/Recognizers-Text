@@ -1,5 +1,6 @@
 [{
   "Input": "Estarei fora de cinco a sete hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,6 +12,7 @@
 ,
 {
   "Input": "Estarei fora hoje de cinco a sete",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -22,6 +24,7 @@
 ,
 {
   "Input": "Estarei fora de cinco a sete amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -33,6 +36,7 @@
 ,
 {
   "Input": "Estarei fora das 5 até as 6 no próximo domingo",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -44,6 +48,7 @@
 ,
 {
   "Input": "Estarei fora das 5 as 6pm no próximo domingo",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -55,6 +60,7 @@
 ,
 {
   "Input": "Estarei fora das 5 até as 6pm do próximo domingo",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -66,6 +72,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm a 5pm hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -77,6 +84,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm a 5pm de hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -88,6 +96,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm de hoje a 5pm de amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -99,6 +108,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm a 5pm de amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -110,6 +120,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm a 5pm de 2017-6-6",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -121,6 +132,7 @@
 ,
 {
   "Input": "Estarei fora de 4pm a 5pm no 5 de Maio de 2018",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -132,6 +144,7 @@
 ,
 {
   "Input": "Estarei fora de 4:00 a 5pm 5 de Maio, 2018",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -143,6 +156,7 @@
 ,
 {
   "Input": "Estive fora de 4pm de 1 de Janeiro de 2016 a 5pm de hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -154,6 +168,7 @@
 ,
 {
   "Input": "Estarei fora de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -165,6 +180,7 @@
 ,
 {
   "Input": "Estarei fora desde hoje às 4 até a próxima quarta-feira as 5",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -176,6 +192,7 @@
 ,
 {
   "Input": "Estarei fora entre as 4pm e 5pm de hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -187,6 +204,7 @@
 ,
 {
   "Input": "Estive fora entre as 4pm de 1 de janeiro de 2016 e as 5pm de hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -198,6 +216,7 @@
 ,
 {
   "Input": "Voltarei à noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -209,6 +228,7 @@
 ,
 {
   "Input": "Voltarei de madrugada",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -220,6 +240,7 @@
 ,
 {
   "Input": "Voltarei esta tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -231,6 +252,7 @@
 ,
 {
   "Input": "Voltei esta manhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -242,6 +264,7 @@
 ,
 {
   "Input": "Voltarei pela manhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -253,6 +276,7 @@
 ,
 {
   "Input": "Voltarei de manhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -264,6 +288,7 @@
 ,
 {
   "Input": "voltarei na próxima noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -275,6 +300,7 @@
 ,
 {
   "Input": "Voltei ontem à noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -286,6 +312,7 @@
 ,
 {
   "Input": "Voltei de noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -297,6 +324,7 @@
 ,
 {
   "Input": "Voltarei amanhã à noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -308,6 +336,7 @@
 ,
 {
   "Input": "Voltarei próxima segunda-feira à tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -319,6 +348,7 @@
 ,
 {
   "Input": "Voltarei no 5 de maio de noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -330,6 +360,7 @@
 ,
 {
   "Input": "Vou rebobinar os últimos 3 minutos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -341,6 +372,7 @@
 ,
 {
   "Input": "Vou rebobinar os 3 minutos passados",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -352,6 +384,7 @@
 ,
 {
   "Input": "Vou rebobinar os previos 3 minutos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -363,6 +396,7 @@
 ,
 {
   "Input": "Vou rebobinar os 3 mins anteriores",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -374,6 +408,7 @@
 ,
 {
   "Input": "Vou voltar em 3 horas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -385,6 +420,7 @@
 ,
 {
   "Input": "Vou voltar em 5 h",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -396,6 +432,7 @@
 ,
 {
   "Input": "Vou voltar dentro de 5 horas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -407,6 +444,7 @@
 ,
 {
   "Input": "Vou voltar no último minuto",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -418,6 +456,7 @@
 ,
 {
   "Input": "Vou voltar na próxima hora",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

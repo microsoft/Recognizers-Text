@@ -1,5 +1,7 @@
-[{
+[
+{
   "Input": "Voltarei as 7",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -20,6 +22,7 @@
 ,
 {
   "Input": "Voltarei às sete",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -40,6 +43,7 @@
 ,
 {
   "Input": "Voltarei as 7pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -60,6 +64,7 @@
 ,
 {
   "Input": "Voltarei as 7:56pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -80,6 +85,7 @@
 ,
 {
   "Input": "Voltarei as 7:56:30pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -100,6 +106,7 @@
 ,
 {
   "Input": "Voltarei as 7:56:30 pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -120,6 +127,7 @@
 ,
 {
   "Input": "Voltarei às 12:34",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -140,6 +148,7 @@
 ,
 {
   "Input": "Voltarei as 12:34:25 ",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -160,6 +169,7 @@
 ,
 {
   "Input": "São 7 em ponto",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -180,6 +190,7 @@
 ,
 {
   "Input": "São sete em ponto",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -200,6 +211,7 @@
 ,
 {
   "Input": "São 8 da manhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -220,6 +232,7 @@
 ,
 {
   "Input": "São 8 da noite",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -240,6 +253,7 @@
 ,
 {
   "Input": "São 4 da tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -260,6 +274,7 @@
 ,
 {
   "Input": "São oito e meia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -280,6 +295,7 @@
 ,
 {
   "Input": "São 8pm e meia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -300,6 +316,7 @@
 ,
 {
   "Input": "São 30 mins depois das oito",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -320,6 +337,7 @@
 ,
 {
   "Input": "São oito e quinze",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -340,6 +358,7 @@
 ,
 {
   "Input": "São quinze depois das oito",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -360,6 +379,7 @@
 ,
 {
   "Input": "São quinze para as 9pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -380,6 +400,7 @@
 ,
 {
   "Input": "Faltam 3 minutos para as oito",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -400,6 +421,7 @@
 ,
 {
   "Input": "São sete e meia em ponto",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -420,6 +442,7 @@
 ,
 {
   "Input": "São três e meia da tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -440,6 +463,7 @@
 ,
 {
   "Input": "São sete e meia da manhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -460,6 +484,7 @@
 ,
 {
   "Input": "São 20 min depois das seis da tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -480,6 +505,7 @@
 ,
 {
   "Input": "Voltarei pela tarde às 7",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -500,6 +526,7 @@
 ,
 {
   "Input": "Voltarei a tarde as 7",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -520,6 +547,7 @@
 ,
 {
   "Input": "Voltarei a tarde as 7:00",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -540,6 +568,7 @@
 ,
 {
   "Input": "Voltarei a tarde as 7:00:14",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -560,6 +589,7 @@
 ,
 {
   "Input": "Voltarei a tarde as sete pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -580,6 +610,7 @@
 ,
 {
   "Input": "Voltarei as sete e trinta pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -600,6 +631,7 @@
 ,
 {
   "Input": "Voltarei as sete e trinta e cinco pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -620,6 +652,7 @@
 ,
 {
   "Input": "Voltarei as onze e cinco pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -640,6 +673,7 @@
 ,
 {
   "Input": "Voltarei 340pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -660,6 +694,7 @@
 ,
 {
   "Input": "Voltarei 1140 a.m.",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -680,6 +715,7 @@
 ,
 {
   "Input": "Voltarei as 7:56:13 pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -700,6 +736,7 @@
 ,
 {
   "Input": "Voltarei as 12:34:45 ",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,6 +757,7 @@
 ,
 {
   "Input": "Voltarei a tarde as 7:00:25",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -740,6 +778,7 @@
 ,
 {
   "Input": "Voltarei as sete e trinta am",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -760,6 +799,7 @@
 ,
 {
   "Input": "Voltarei as onze e cinco",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -780,6 +820,7 @@
 ,
 {
   "Input": "Voltarei de 3 min para as cinco",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -800,6 +841,7 @@
 ,
 {
   "Input": "Voltarei as cinco e meia da tarde",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -820,6 +862,7 @@
 ,
 {
   "Input": "Voltarei à tarde às cinco e trinta",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
