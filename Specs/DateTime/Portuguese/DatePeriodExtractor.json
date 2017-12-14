@@ -528,7 +528,8 @@
 ,
 {
   "Input": "Estarei fora em 2016 no terceiro trimestre",
-  "NotSupported": "javascript,dotnet",
+  "Debug": true,
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,7 +625,8 @@
 ,
 {
   "Input": "Estarei fora na primavera seguinte",
-  "NotSupported": "javascript,dotnet",
+  "Debug": true,
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

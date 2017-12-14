@@ -57,10 +57,10 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterRegex: !nestedRegex
-  def: (o\s+)?(?<cardinal>primeiro|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre(\s+d[oe]|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)
+  def: (n?o\s+)?(?<cardinal>primeiro|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre(\s+d[oe]|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)
   references: [ FullYearRegex ]
 QuarterRegexYearFront: !nestedRegex
-  def: ({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)\s+(o\s+)?(?<cardinal>(primeiro)|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre
+  def: ({FullYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano)\s+(n?o\s+)?(?<cardinal>(primeiro)|1[oº]|segundo|2[oº]|terceiro|3[oº]|[qc]uarto|4[oº])\s+trimestre
   references: [ FullYearRegex ]
 SeasonRegex: !nestedRegex
   def: \b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|o|a|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+de?|\s*,\s*)?\s+({FullYearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano))?)\b

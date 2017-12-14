@@ -29,6 +29,7 @@
     <Content Include="French\DateTimeDefinitions.tt" />
     <Content Include="French\NumbersDefinitions.tt" />
     <Content Include="French\NumbersWithUnitDefinitions.tt" />
+    <Content Include="Portuguese\DateTimeDefinitions.tt" />
     <Content Include="Portuguese\NumbersDefinitions.tt" />
     <Content Include="Portuguese\NumbersWithUnitDefinitions.tt" />
     <Content Include="Spanish\DateTimeDefinitions.tt" />
@@ -199,6 +200,10 @@
     <None Update="German\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Portuguese\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

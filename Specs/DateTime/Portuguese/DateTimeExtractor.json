@@ -708,7 +708,7 @@
 ,
 {
   "Input": "Vou voltar 8am da manha",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -720,7 +720,7 @@
 ,
 {
   "Input": "Vou voltar 8pm do dia 15",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
