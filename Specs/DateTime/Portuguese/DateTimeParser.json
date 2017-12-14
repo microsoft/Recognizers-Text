@@ -1,13 +1,13 @@
 [{
-  "Input": "Voy a volver ahora",
+  "Input": "Vou voltar agora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ahora",
+      "Text": "agora",
       "Type": "datetime",
       "Value": {
         "Timex": "PRESENT_REF",
@@ -23,15 +23,15 @@
 }
 ,
 {
-  "Input": "Voy a volver tan pronto como sea posible",
+  "Input": "Vou voltar assim que possivel",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tan pronto como sea posible",
+      "Text": "assim que possivel",
       "Type": "datetime",
       "Value": {
         "Timex": "FUTURE_REF",
@@ -47,15 +47,15 @@
 }
 ,
 {
-  "Input": "Vamos a volver tan pronto como podamos",
+  "Input": "Vamos voltar tao cedo quanto possamos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "tan pronto como podamos",
+      "Text": "tao cedo quanto possamos",
       "Type": "datetime",
       "Value": {
         "Timex": "FUTURE_REF",
@@ -71,15 +71,15 @@
 }
 ,
 {
-  "Input": "Voy a volver lo mas pronto posible",
+  "Input": "Vou voltar o mais rapido possivel",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "lo mas pronto posible",
+      "Text": "o mais rapido possivel",
       "Type": "datetime",
       "Value": {
         "Timex": "FUTURE_REF",
@@ -95,15 +95,15 @@
 }
 ,
 {
-  "Input": "Voy a volver ahora mismo",
+  "Input": "Vou voltar agora mesmo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ahora mismo",
+      "Text": "agora mesmo",
       "Type": "datetime",
       "Value": {
         "Timex": "PRESENT_REF",
@@ -119,15 +119,15 @@
 }
 ,
 {
-  "Input": "Voy a volver justo ahora",
+  "Input": "Vou voltar logo agora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "justo ahora",
+      "Text": "logo agora",
       "Type": "datetime",
       "Value": {
         "Timex": "PRESENT_REF",
@@ -143,15 +143,15 @@
 }
 ,
 {
-  "Input": "Voy a volver en este momento",
+  "Input": "Vou voltar neste momento",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en este momento",
+      "Text": "neste momento",
       "Type": "datetime",
       "Value": {
         "Timex": "PRESENT_REF",
@@ -167,15 +167,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 15 a las 8:00",
+  "Input": "Vou voltar no dia 15 as 8:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 a las 8:00",
+      "Text": "dia 15 as 8:00",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T08:00",
@@ -191,15 +191,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 15 a las 8:00:20",
+  "Input": "Vou voltar no dia 15 as 8:00:20",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 a las 8:00:20",
+      "Text": "dia 15 as 8:00:20",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T08:00:20",
@@ -215,15 +215,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 15, 8pm",
+  "Input": "Vou voltar dia 15, 8pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15, 8pm",
+      "Text": "dia 15, 8pm",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T20",
@@ -239,15 +239,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el cinco de mayo a las 4 a.m.",
+  "Input": "Vou voltar em cinco de maio as 4 a.m.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cinco de mayo a las 4 a.m.",
+      "Text": "cinco de maio as 4 a.m.",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-05-05T04",
@@ -263,11 +263,11 @@
 }
 ,
 {
-  "Input": "Voy a volver el 04/21/2016, 8:00pm",
+  "Input": "Vou voltar em 04/21/2016, 8:00pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -287,11 +287,11 @@
 }
 ,
 {
-  "Input": "Voy a volver el 04/21/2016, 8:00:13pm",
+  "Input": "Vou voltar em 04/21/2016, 8:00:13pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -311,15 +311,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 23 de Oct a las siete",
+  "Input": "Vou voltar em 23 de Out as sete",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "23 de Oct a las siete",
+      "Text": "23 de Out as sete",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-23T07",
@@ -335,15 +335,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre 8:00am",
+  "Input": "Vou voltar em 14 de Outubro 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre 8:00am",
+      "Text": "14 de Outubro 8:00am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00",
@@ -359,15 +359,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre 8:00:31am",
+  "Input": "Vou voltar em 14 de Outubro 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre 8:00:31am",
+      "Text": "14 de Outubro 8:00:31am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00:31",
@@ -383,15 +383,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre, cerca de las 8:00am",
+  "Input": "Vou voltar em 14 de Outubro, cerca das 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre, cerca de las 8:00am",
+      "Text": "14 de Outubro, cerca das 8:00am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00",
@@ -407,15 +407,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre a las 8:00:31am",
+  "Input": "Vou voltar em 14 de Outubro as 8:00:31am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre a las 8:00:31am",
+      "Text": "14 de Outubro as 8:00:31am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00:31",
@@ -431,15 +431,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre, 8:00am",
+  "Input": "Vou voltar em 14 de Outubro, 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre, 8:00am",
+      "Text": "14 de Outubro, 8:00am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00",
@@ -455,15 +455,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre, 8:00:26am",
+  "Input": "Vou voltar em 14 de Outubro, 8:00:26am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre, 8:00:26am",
+      "Text": "14 de Outubro, 8:00:26am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00:26",
@@ -479,15 +479,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+  "Input": "Vou voltar em 5 de Maio, 2016, 20 minutos após as 8 da tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 de Mayo, 2016, 20 minutos pasados de las 8 de la tarde",
+      "Text": "5 de Maio, 2016, 20 minutos após as 8 da tarde",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-05-05T20:20",
@@ -503,15 +503,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm del 15",
+  "Input": "Vou voltar 8pm dia 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm del 15",
+      "Text": "8pm dia 15",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T20",
@@ -527,15 +527,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las siete del 15",
+  "Input": "Vou voltar as sete do dia 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete del 15",
+      "Text": "sete do dia 15",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T07",
@@ -551,15 +551,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las 8pm de hoy",
+  "Input": "Vou voltar as 8pm de hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de hoy",
+      "Text": "8pm de hoje",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T20",
@@ -575,15 +575,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las siete menos cuarto de mañana",
+  "Input": "Vou voltar as quinze para as oito de amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siete menos cuarto de mañana",
+      "Text": "quinze para as oito de amanhã",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-08T06:45",
@@ -599,11 +599,11 @@
 }
 ,
 {
-  "Input": "Voy a volver 19:00, 2016-12-22",
+  "Input": "Vou voltar 19:00, 2016-12-22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -623,15 +623,15 @@
 }
 ,
 {
-  "Input": "Voy a volver mañana 8:00am",
+  "Input": "Vou voltar amanhã 8:00am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana 8:00am",
+      "Text": "amanhã 8:00am",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-08T08:00",
@@ -647,15 +647,15 @@
 }
 ,
 {
-  "Input": "Voy a volver mañana por la mañana a las 7",
+  "Input": "Vou voltar amanhã pela manhã às 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana por la mañana a las 7",
+      "Text": "amanhã pela manhã às 7",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-08T07",
@@ -671,15 +671,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 7:00 el próximo domingo a la tarde",
+  "Input": "Vou voltar 7:00 no próximo domingo a tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7:00 el próximo domingo a la tarde",
+      "Text": "7:00 no próximo domingo a tarde",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-20T19:00",
@@ -695,15 +695,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las cinco y veinte mañana por la mañana",
+  "Input": "Vou voltar as cinco e vinte amanhã pela manhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cinco y veinte mañana por la mañana",
+      "Text": "cinco e vinte amanhã pela manhã",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-08T05:20",
@@ -719,15 +719,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las 7 esta mañana",
+  "Input": "Vou voltar as 7 esta manhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7 esta mañana",
+      "Text": "7 esta manhã",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T07",
@@ -743,15 +743,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las 10 esta noche",
+  "Input": "Vou voltar as 10 esta noite",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "10 esta noche",
+      "Text": "10 esta noite",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T22",
@@ -767,15 +767,15 @@
 }
 ,
 {
-  "Input": "Voy a volver esta noche a las 8",
+  "Input": "Vou voltar esta noite as 8",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "esta noche a las 8",
+      "Text": "esta noite as 8",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T20",
@@ -791,15 +791,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de la tarde, Domingo",
+  "Input": "Vou voltar 8pm da tarde, Domingo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de la tarde, Domingo",
+      "Text": "8pm da tarde, Domingo",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-WXX-7T20",
@@ -815,15 +815,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de la tarde, primero de Ene",
+  "Input": "Vou voltar 8pm da tarde, primeiro de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de la tarde, primero de Ene",
+      "Text": "8pm da tarde, primeiro de Jan",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-01-01T20",
@@ -839,15 +839,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de la tarde, 1 Ene",
+  "Input": "Vou voltar 8pm da tarde, 1 Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de la tarde, 1 Ene",
+      "Text": "8pm da tarde, 1 Jan",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-01-01T20",
@@ -863,15 +863,15 @@
 }
 ,
 {
-  "Input": "Voy a volver a las 10pm de esta noche",
+  "Input": "Vou voltar as 10pm desta noite",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "10pm de esta noche",
+      "Text": "10pm desta noite",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T22",
@@ -887,15 +887,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8am de hoy",
+  "Input": "Vou voltar 8am de hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8am de hoy",
+      "Text": "8am de hoje",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T08",
@@ -911,15 +911,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de esta tarde",
+  "Input": "Vou voltar 8pm desta tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de esta tarde",
+      "Text": "8pm desta tarde",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T20",
@@ -935,15 +935,15 @@
 }
 ,
 {
-  "Input": "Volveré al final del día",
+  "Input": "Voltarei ao final do dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "al final del día",
+      "Text": "ao final do dia",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T23:59",
@@ -959,15 +959,15 @@
 }
 ,
 {
-  "Input": "Volveré al finalizar el día",
+  "Input": "Voltarei ao fim do dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "al finalizar el día",
+      "Text": "ao fim do dia",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T23:59",
@@ -983,15 +983,15 @@
 }
 ,
 {
-  "Input": "Volveré al finalizar el día de mañana",
+  "Input": "Voltarei ao final do dia de amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "al finalizar el día de mañana",
+      "Text": "ao final do dia de amanhã",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-08T23:59",
@@ -1007,15 +1007,15 @@
 }
 ,
 {
-  "Input": "Volveré al finalizar el domingo",
+  "Input": "Voltarei ao fim do domingo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "al finalizar el domingo",
+      "Text": "ao fim do domingo",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-WXX-7T23:59",
@@ -1031,15 +1031,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 15 a las 8:00:24",
+  "Input": "Vou voltar dia 15 as 8:00:24",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 a las 8:00:24",
+      "Text": "dia 15 as 8:00:24",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-XX-15T08:00:24",
@@ -1055,11 +1055,11 @@
 }
 ,
 {
-  "Input": "Voy a volver 04/21/2016, 8:00pm",
+  "Input": "Vou voltar 04/21/2016, 8:00pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1079,11 +1079,11 @@
 }
 ,
 {
-  "Input": "Voy a volver 04/21/2016, 8:00:24pm",
+  "Input": "Vou voltar 04/21/2016, 8:00:24pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1103,15 +1103,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre 8:00:13am",
+  "Input": "Vou voltar em 14 de Outubro 8:00:13am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre 8:00:13am",
+      "Text": "14 de Outubro 8:00:13am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00:13",
@@ -1127,15 +1127,15 @@
 }
 ,
 {
-  "Input": "Voy a volver el 14 de Octubre, 8:00:25am",
+  "Input": "Vou voltar em 14 de Outubro, 8:00:25am",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "14 de Octubre, 8:00:25am",
+      "Text": "14 de Outubro, 8:00:25am",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-10-14T08:00:25",
@@ -1151,15 +1151,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de hoy",
+  "Input": "Vou voltar 8pm de hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de hoy",
+      "Text": "8pm de hoje",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T20",
@@ -1175,15 +1175,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm hoy",
+  "Input": "Vou voltar 8pm hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm hoy",
+      "Text": "8pm hoje",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T20",
@@ -1199,15 +1199,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 7:00 del próximo domingo a la tarde",
+  "Input": "Vou voltar 7:00 do próximo domingo a tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "7:00 del próximo domingo a la tarde",
+      "Text": "7:00 do próximo domingo a tarde",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-20T19:00",
@@ -1223,15 +1223,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 8pm de la tarde, 1ro de Ene",
+  "Input": "Vou voltar 8pm da tarde, 1o de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8pm de la tarde, 1ro de Ene",
+      "Text": "8pm da tarde, 1o de Jan",
       "Type": "datetime",
       "Value": {
         "Timex": "XXXX-01-01T20",
@@ -1247,15 +1247,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 4am de esta madrugada",
+  "Input": "Vou voltar 4am desta madrugada",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4am de esta madrugada",
+      "Text": "4am desta madrugada",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T04",
@@ -1271,15 +1271,15 @@
 }
 ,
 {
-  "Input": "Voy a volver 4pm de esta tarde",
+  "Input": "Vou voltar 4pm desta tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4pm de esta tarde",
+      "Text": "4pm desta tarde",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T16",
@@ -1295,15 +1295,15 @@
 }
 ,
 {
-  "Input": "Volví esta mañana a las 7",
+  "Input": "Volví esta manhã as 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "esta mañana a las 7",
+      "Text": "esta manhã as 7",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T07",
@@ -1319,15 +1319,15 @@
 }
 ,
 {
-  "Input": "Volví esta mañana a las 7am",
+  "Input": "Volví esta manhã as sete",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "esta mañana a las 7am",
+      "Text": "esta manhã as sete",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T07",
@@ -1343,39 +1343,15 @@
 }
 ,
 {
-  "Input": "Volví esta mañana a las siete",
+  "Input": "Volví esta manhã as 7:00",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "esta mañana a las siete",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2016-11-07T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-11-07 07:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Volví esta mañana a las 7:00",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "esta mañana a las 7:00",
+      "Text": "esta manhã as 7:00",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T07:00",
@@ -1391,15 +1367,15 @@
 }
 ,
 {
-  "Input": "Voy a volver esta noche a las 7",
+  "Input": "Vou voltar esta noite as 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "esta noche a las 7",
+      "Text": "esta noite as 7",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T19",
@@ -1415,15 +1391,15 @@
 }
 ,
 {
-  "Input": "Volví anoche a las 7",
+  "Input": "Voltei ontem a noite as 7",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "anoche a las 7",
+      "Text": "ontem a noite as 7",
       "Type": "datetime",
       "Value": {
         "Timex": "2016-11-07T19",
@@ -1439,11 +1415,11 @@
 }
 ,
 {
-  "Input": "Voy a volver 2016-12-16T12:23:59",
+  "Input": "Vou voltar 2016-12-16T12:23:59",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
