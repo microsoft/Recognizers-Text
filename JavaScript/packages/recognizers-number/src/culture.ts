@@ -1,14 +1,9 @@
+import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "recognizers-text";
 import trimEnd = require("lodash.trimend");
 import { BigNumber } from 'bignumber.js';
 import { LongFormatType } from "./number/models";
 
-export class Culture {
-
-  static readonly English: string = "en-us"
-  static readonly Chinese: string = "zh-cn"
-  static readonly Spanish: string = "es-es"
-  static readonly Portuguese: string = "pt-br"
-  static readonly French: string = "fr-fr"
+export class Culture extends BaseCulture {
 
   static readonly supportedCultures: Array<Culture> = [
     new Culture("English", Culture.English, new LongFormatType(',', '.')),
@@ -18,32 +13,15 @@ export class Culture {
     new Culture("French", Culture.French, new LongFormatType('.', ','))
   ]
 
-  readonly cultureName: string
-  readonly cultureCode: string
   readonly longFormat: LongFormatType
 
   private constructor(cultureName: string, cultureCode: string, longFormat: LongFormatType) {
-    this.cultureName = cultureName
-    this.cultureCode = cultureCode
+    super(cultureName, cultureCode);
     this.longFormat = longFormat;
-  }
-
-  static getSupportedCultureCodes(): Array<string> {
-    return Culture.supportedCultures.map(c => c.cultureCode)
   }
 }
 
-export class CultureInfo {
-  readonly code: string;
-
-  static getCultureInfo(cultureCode: string): CultureInfo {
-    return new CultureInfo(cultureCode);
-  }
-
-  constructor(cultureName: string) {
-    this.code = cultureName;
-  }
-
+export class CultureInfo extends BaseCultureInfo {
   format(value: number | BigNumber): string {
 
     let bigNumber = new BigNumber(value);

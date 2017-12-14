@@ -1,42 +1,15 @@
-import { ExtractResult } from "./extractors";
+import { IParser, ParseResult, ExtractResult } from "recognizers-text";
 import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
 import trimEnd = require("lodash.trimend");
 import sortBy = require("lodash.sortby");
-import { RegExpUtility } from "../utilities";
+import { RegExpUtility } from "recognizers-text";
 import { BigNumber } from 'bignumber.js';
 
 // Disable BigNumber errors when passing number with more than 15 significant digits
 BigNumber.config({ ERRORS: false });
 // The exponent value(s) at which toString returns exponential notation.
 BigNumber.config({ EXPONENTIAL_AT: [-5, 15] });
-
-export interface IParser {
-    parse(extResult: ExtractResult): ParseResult | null
-}
-
-export class ParseResult extends ExtractResult {
-    constructor(er?: ExtractResult) {
-        super();
-        if (er) {
-            this.length = er.length;
-            this.start = er.start;
-            this.data = er.data;
-            this.text = er.text;
-            this.type = er.type;
-        }
-    }
-
-    // Value is for resolution.
-    // e.g. 1000 for "one thousand".
-    // The resolutions are different for different parsers.
-    // Therefore, we use object here.
-    value?: any;
-
-    // Output the value in string format.
-    // It is used in some parsers.
-    resolutionStr?: string;
-}
 
 export interface INumberParserConfiguration {
     readonly cardinalNumberMap: ReadonlyMap<string, number>;

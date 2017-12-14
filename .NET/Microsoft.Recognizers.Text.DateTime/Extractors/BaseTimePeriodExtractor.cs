@@ -68,6 +68,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Check if it is an ending number
             if (numErs.Count > 0)
             {
+                var timeNumbers = new List<ExtractResult>();
+
+                // check if it is a ending number
                 var endingNumber = false;
                 var num = numErs[numErs.Count - 1];
                 if (num.Start + num.Length == text.Length)
@@ -86,8 +89,54 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (endingNumber)
                 {
-                    ers.Add(num);
+                    timeNumbers.Add(num);
                 }
+
+                var i = 0;
+                var j = 0;
+                while (i < numErs.Count)
+                {
+                    // find subsequent time point
+                    var numEndPoint = numErs[i].Start + numErs[i].Length;
+                    while (j < ers.Count && ers[j].Start <= numEndPoint)
+                    {
+                        j++;
+            }
+
+                    if (j >= ers.Count)
+                    {
+                        break;
+                    }
+
+                    // check connector string
+                    var midStr = text.Substring(numEndPoint?? 0, ers[j].Start-numEndPoint?? 0);
+                    var match = this.config.TillRegex.Match(midStr);
+                    if (match.Success && match.Length == midStr.Trim().Length)
+                    {
+                        timeNumbers.Add(numErs[i]);
+                    }
+                    i++;
+                }
+
+                // check overlap
+                foreach (var timeNum in timeNumbers)
+                {
+                    var overlap = false;
+                    foreach (var er in ers)
+                    {
+                        if (er.Start <= num.Start && er.Start + er.Length >= num.Start)
+                        {
+                            overlap = true;
+                        }
+                    }
+
+                    if (!overlap)
+                    {
+                        ers.Add(timeNum);
+                    }
+                }
+
+                ers.Sort((x, y) => (x.Start - y.Start ?? 0));
             }
 
             var idx = 0;

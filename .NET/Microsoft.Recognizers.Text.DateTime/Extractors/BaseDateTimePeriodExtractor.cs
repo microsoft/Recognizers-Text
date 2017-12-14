@@ -236,9 +236,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        var pauseMatch = config.MiddlePauseRegex.Match(afterStr.Substring(0, match.Index));
+                        var connectorStr = afterStr.Substring(0, match.Index);
+                        var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
 
-                        if (pauseMatch.Success)
+                        if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
                         {
                             var suffix = afterStr.Substring(match.Index + match.Length).TrimStart(' ');
     
@@ -266,9 +267,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        var pauseMatch = config.MiddlePauseRegex.Match(prefixStr.Substring(match.Index + match.Length));
+                        var connectorStr = prefixStr.Substring(match.Index + match.Length);
+                        var pauseMatch = config.MiddlePauseRegex.Match(connectorStr);
 
-                        if (pauseMatch.Success)
+                        if (pauseMatch.Success && pauseMatch.Length == connectorStr.Length)
                         {
                             var suffix = text.Substring(er.Start + er.Length?? 0).TrimStart(' ');
 

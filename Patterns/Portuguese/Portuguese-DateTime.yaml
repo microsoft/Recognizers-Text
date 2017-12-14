@@ -386,6 +386,9 @@ GeneralEndingRegex: !simpleRegex
 MiddlePauseRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixArticleRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\.]
 # PortugueseDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes|atr[áa]s|passad[oa]s?)\b

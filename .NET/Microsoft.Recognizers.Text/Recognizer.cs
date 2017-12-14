@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer : IRecognizer
-    {
+    public abstract class Recognizer : IRecognizer {
+
+        private const string NoneOptions = "None";
+
         private readonly ModelContainer modelContainer = new ModelContainer();
 
         protected void RegisterModel(string culture, Type type, string options, IModel model)
@@ -17,12 +19,12 @@ namespace Microsoft.Recognizers.Text
             modelContainer.RegisterModel(culture, models, options);
         }
 
-        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = "")
+        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
         {
             return modelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture, options);
         }
 
-        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true, string options = "")
+        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true, string options = NoneOptions)
         {
             return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture, options);
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Recognizers.Text
             return modelContainer.ContainsModels();
         }
 
-        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = "")
+        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
         {
             return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture, options);
         }
