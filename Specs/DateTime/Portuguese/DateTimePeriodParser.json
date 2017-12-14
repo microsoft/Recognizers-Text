@@ -738,7 +738,7 @@
       "Text": "de sete e meia a 4pm amanhã",
       "Type": "datetimerange",
       "Value": {
-        "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H)",
+        "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
         "FutureResolution": {
           "startDateTime": "2016-11-08 07:30:00",
           "endDateTime": "2016-11-08 16:00:00"
