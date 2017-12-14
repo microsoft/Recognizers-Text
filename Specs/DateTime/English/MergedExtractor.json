@@ -683,4 +683,38 @@
     }
   ]
 }
+,
+{
+  "Input": "next meeting will be held on March 16th, 2017, how about we have a discussion at 2pm this afternoon?",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "March 16th, 2017",
+      "Type": "date"
+    }
+    ,
+    {
+      "Text": "2pm this afternoon",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "April 1st, 2018, we can plan it 2pm this afternoon",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "April 1st, 2018",
+      "Type": "date"
+    }
+    ,
+    {
+      "Text": "2pm this afternoon",
+      "Type": "datetime"
+    }
+  ]
+}
 ]
