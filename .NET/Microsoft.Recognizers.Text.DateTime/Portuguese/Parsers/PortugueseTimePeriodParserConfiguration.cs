@@ -56,13 +56,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimedText.EndsWith("mañana"))
+            else if (trimedText.EndsWith("manha") || trimedText.EndsWith("manhã"))
             {
                 timex = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
+            else if (trimedText.Contains("passado o meio dia") || trimedText.Contains("depois do meio dia"))
             {
                 timex = "TAF";
                 beginHour = 12;
@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.EndsWith("noche"))
+            else if (trimedText.EndsWith("noite"))
             {
                 timex = "TNI";
                 beginHour = 20;

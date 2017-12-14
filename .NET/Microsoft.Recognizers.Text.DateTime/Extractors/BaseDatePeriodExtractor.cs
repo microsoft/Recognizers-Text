@@ -163,28 +163,46 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var duration in durations)
             {
                 var beforeStr = text.Substring(0, duration.Start).ToLowerInvariant();
-                if (string.IsNullOrWhiteSpace(beforeStr))
+                var afterStr = text.Substring(duration.Start + duration.Length).ToLowerInvariant();
+
+                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
                 {
                     continue;
                 }
 
+                // Match prefix
                 var match = this.config.PastRegex.Match(beforeStr);
-                if (MatchRegexInPrefix(beforeStr, match))
+                if (MatchRegexInSegment(beforeStr, match))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
 
                 match = this.config.FutureRegex.Match(beforeStr);
-                if (MatchRegexInPrefix(beforeStr, match))
+                if (MatchRegexInSegment(beforeStr, match))
                 {
                     ret.Add(new Token(match.Index, duration.End));
                     continue;
                 }
 
+                // Match suffix
+                match = this.config.PastRegex.Match(afterStr);
+                if (MatchRegexInSegment(afterStr, match))
+                {
+                    ret.Add(new Token(duration.Start, duration.End + afterStr.Length));
+                    continue;
+                }
+
+                match = this.config.FutureRegex.Match(afterStr);
+                if (MatchRegexInSegment(afterStr, match))
+                {
+                    ret.Add(new Token(duration.Start, duration.End + afterStr.Length));
+                    continue;
+                }
+
                 // in Range Weeks should be handled as dateRange here
                 match = config.InConnectorRegex.Match(beforeStr);
-                if (MatchRegexInPrefix(beforeStr, match))
+                if (MatchRegexInSegment(beforeStr, match))
                 {
                     var startToken = match.Index;
                     match = config.RangeUnitRegex.Match(text.Substring(duration.Start, duration.Length));
@@ -198,8 +216,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private bool MatchRegexInPrefix(string beforeStr, Match match) {
-            var result =  match.Success && string.IsNullOrWhiteSpace(beforeStr.Substring(match.Index + match.Length));
+        private bool MatchRegexInSegment(string str, Match match)
+        {
+            var result =  match.Success && string.IsNullOrWhiteSpace(str.Substring(match.Index + match.Length));
             return result;
         }
 

@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLower();
 
-            // handle "now"
+            // Handle "now"
             var match = this.config.NowRegex.Match(trimedText);
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // merge a Date entity and a Time entity
+        // Merge a Date entity and a Time entity
         private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                // this is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish)
+                // This is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish),
                 // the same word could mean different things (e.g a time in the day or an specific day).
                 if (this.config.HaveAmbiguousToken(text, er1[0].Text))
                 {
@@ -130,7 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er2 = this.config.TimeExtractor.Extract(text, referenceTime);
             if (er2.Count == 0)
             {
-                // here we filter out "morning, afternoon, night..." time entities
+                // Here we filter out "morning, afternoon, night..." time entities
                 er2 = this.config.TimeExtractor.Extract(this.config.TokenBeforeTime + text, referenceTime);
                 if (er2.Count == 1)
                 {
@@ -142,8 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            // handle case "Oct. 5 in the afternoon at 7:00"
-            // in this case "5 in the afternoon" will be extract as a Time entity
+            // Handle cases like "Oct. 5 in the afternoon at 7:00";
+            // in this case "5 in the afternoon" will be extracted as a Time entity
             var correctTimeIdx = 0;
             while (correctTimeIdx < er2.Count && er2[correctTimeIdx].IsOverlap(er1[0]))
             {
@@ -170,7 +170,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var min = time.Minute;
             var sec = time.Second;
 
-            // handle morning, afternoon
+            // Handle morning, afternoon
             if (this.config.PMTimeRegex.IsMatch(text) && hour < 12)
             {
                 hour += 12;
@@ -194,18 +194,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 ret.Comment = "ampm";
             }
+
             ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
             ret.Success = true;
 
-            //change the value of time object
+            // Change the value of time object
             pr2.TimexStr = timeStr;
             if (!string.IsNullOrEmpty(ret.Comment))
             {
                 ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals("ampm") ? "ampm" : "";
             }
             
-            //add the date and time object in case we want to split them
+            // Add the date and time object in case we want to split them
             ret.SubDateTimeEntities = new List<object> {pr1, pr2};
 
             return ret;
@@ -275,15 +276,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var matchStr = match.Value.ToLowerInvariant();
 
-                // handle "last", "next"
+                // Handle "last", "next"
                 var swift = this.config.GetSwiftDay(matchStr);
 
                 var date = referenceTime.AddDays(swift).Date;
 
-                // handle "morning", "afternoon"
+                // Handle "morning", "afternoon"
                 hour = this.config.GetHour(matchStr, hour);
 
-                // in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
+                // In this situation, timeStr cannot end up with "ampm", because we always have a "morning" or "night"
                 if (timeStr.EndsWith("ampm"))
                 {
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
@@ -324,7 +325,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // handle like "two hours ago" 
+        // Handle like "two hours ago" 
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
             return AgoLaterUtil.ParseDurationWithAgoAndLater(

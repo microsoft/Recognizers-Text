@@ -1,6 +1,6 @@
 [{
-  "Input": "me voy por 3h",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3h",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,8 +11,8 @@
 }
 ,
 {
-  "Input": "me voy por 3 dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,20 +23,20 @@
 }
 ,
 {
-  "Input": "me voy por 3,5 años",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3,5 anos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3,5 años",
+      "Text": "3,5 anos",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy por 3 h",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 h",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -47,8 +47,8 @@
 }
 ,
 {
-  "Input": "me voy por 3 horas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 horas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -59,8 +59,8 @@
 }
 ,
 {
-  "Input": "me voy 3 dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou 3 dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -71,8 +71,8 @@
 }
 ,
 {
-  "Input": "me voy por 3 meses",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 meses",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -83,8 +83,8 @@
 }
 ,
 {
-  "Input": "me voy por 3 minutos",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 minutos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -95,8 +95,8 @@
 }
 ,
 {
-  "Input": "me voy por 3 min",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3 min",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -107,8 +107,8 @@
 }
 ,
 {
-  "Input": "me voy por 3,5 segundos ",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 3,5 segundos ",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -119,8 +119,8 @@
 }
 ,
 {
-  "Input": "me voy por 123,45 seg",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por 123,45 seg",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -131,20 +131,20 @@
 }
 ,
 {
-  "Input": "me voy por dos semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por duas semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "dos semanas",
+      "Text": "duas semanas",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy 20 minutos",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou 20 minutos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -155,84 +155,96 @@
 }
 ,
 {
-  "Input": "me voy por veinticuatro horas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por vinte e quatro horas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "veinticuatro horas",
+      "Text": "vinte e quatro horas",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy todo el dia",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por todo o dia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el dia",
+      "Text": "todo o dia",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy toda la semana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por toda a semana",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "toda la semana",
+      "Text": "toda a semana",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy por todo el mes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "estarei fora toda a semana",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el mes",
+      "Text": "toda a semana",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy por todo el año",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por todo o mes",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el año",
+      "Text": "todo o mes",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy por una hora",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por todo o ano",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "una hora",
+      "Text": "todo o ano",
       "Type": "duration"
     }
   ]
 }
 ,
 {
-  "Input": "me voy por un año",
-  "NotSupported": "dotnet,javascript",
+  "Input": "me vou por uma hora",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "un año",
+      "Text": "uma hora",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "me vou por um ano",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "um ano",
       "Type": "duration"
     }
   ]

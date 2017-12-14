@@ -20,22 +20,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             return new Dictionary<string, Func<int, DateObject>>(base.InitHolidayFuncs())
             {
-                {"padres", FathersDay},
-                {"madres", MothersDay},
-                {"acciondegracias", ThanksgivingDay},
-                {"trabajador", LabourDay},
-                {"delaraza", ColumbusDay },
-                {"memoria", MemorialDay},
-                {"pascuas", Pascuas},
-                {"navidad", ChristmasDay},
-                {"nochebuena", ChristmasEve},
-                {"añonuevo", NewYear},
-                {"nochevieja", NewYearEve},
+                {"pai", FathersDay},
+                {"mae", MothersDay},
+                {"acaodegracas", ThanksgivingDay},
+                {"trabalho", LabourDay},
+                {"pascoa", Easter},
+                {"natal", ChristmasDay},
+                {"vesperadenatal", ChristmasEve},
+                {"anonovo", NewYear},
+                {"versperadeanonovo", NewYearEve},
                 {"yuandan", NewYear},
-                {"maestro", TeacherDay},
-                {"todoslossantos", HalloweenDay},
-                {"niño", ChildrenDay},
-                {"mujer", FemaleDay}
+                {"professor", TeacherDay},
+                {"todosossantos", HalloweenDay},
+                {"crianca", ChildrenDay},
+                {"mulher", FemaleDay}
             };
         }
 
@@ -47,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
         private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 11);
-        private static DateObject Pascuas(int year) => DateObject.MinValue;
+        private static DateObject Easter(int year) => DateObject.MinValue;
 
         public override int GetSwiftYear(string text)
         {
@@ -79,7 +77,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 .Replace("é", "e")
                 .Replace("í", "i")
                 .Replace("ó", "o")
-                .Replace("ú", "u");
+                .Replace("ú", "u")
+                .Replace("ê", "e")
+                .Replace("ô", "o")
+                .Replace("ü", "u")
+                .Replace("ã", "a")
+                .Replace("õ", "o")
+                .Replace("ç", "c");
         }
     }
 }
