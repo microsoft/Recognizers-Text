@@ -191,7 +191,7 @@ AmRegex: !simpleRegex
 AmTimeRegex: !simpleRegex
   def: (?<am>([dn]?es[st]a|(pela|de|da|na))\s+(manh[ãa]|madrugada))
 PmTimeRegex: !simpleRegex
-  def: (?<pm>([dn]?es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite)))||((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
+  def: (?<pm>([dn]?es[st]a|[àa]|(pela|de|da|na)|\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
 LessThanOneHour: !nestedRegex
   # "e meia ..." "e quinze ..."
   def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))
