@@ -1243,7 +1243,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verao",
+      "Text": "no verao",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",
