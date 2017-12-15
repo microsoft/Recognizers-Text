@@ -407,6 +407,19 @@
 }
 ,
 {
+  "Input": "Vou voltar as cinco e vinte da manha de amanha",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cinco e vinte da manha de amanha",
+      "Type": "datetime"
+    }
+  ]
+}
+
+,
+{
   "Input": "Vou voltar 14 de outubro 8:00",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -707,12 +720,12 @@
 }
 ,
 {
-  "Input": "Vou voltar 8am da manha",
+  "Input": "Vou voltar 8am de amanha",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "8am da manha",
+      "Text": "8am de amanha",
       "Type": "datetime"
     }
   ]
