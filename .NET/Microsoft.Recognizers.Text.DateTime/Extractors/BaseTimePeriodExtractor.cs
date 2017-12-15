@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             tokens.AddRange(MergeTwoTimePoints(text, reference));
-            tokens.AddRange(MatchNight(text));
+            tokens.AddRange(MatchTimeOfDay(text));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -40,11 +40,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    // is there "pm" or "am" ?
+                    // Is there "pm" or "am" ?
                     var pmStr = match.Groups["pm"].Value;
                     var amStr = match.Groups["am"].Value;
                     var descStr = match.Groups["desc"].Value;
-                    // check "pm", "am"
+                    // Check "pm", "am"
                     if (!string.IsNullOrEmpty(pmStr) || !string.IsNullOrEmpty(amStr) || !string.IsNullOrEmpty(descStr))
                     {
                         ret.Add(new Token(match.Index, match.Index + match.Length));
@@ -60,10 +60,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var ers = this.config.SingleTimeExtractor.Extract(text, reference);
 
-            // merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
+            // Merge "{TimePoint} to {TimePoint}", "between {TimePoint} and {TimePoint}"
 
-            // handling number as a time point.
+            // Handling ending number as a time point.
             var numErs = this.config.IntegerExtractor.Extract(text);
+
+            // Check if it is an ending number
             if (numErs.Count > 0)
             {
                 var timeNumbers = new List<ExtractResult>();
@@ -84,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endingNumber = true;
                     }
                 }
+
                 if (endingNumber)
                 {
                     timeNumbers.Add(num);
@@ -98,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     while (j < ers.Count && ers[j].Start <= numEndPoint)
                     {
                         j++;
-                    }
+            }
 
                     if (j >= ers.Count)
                     {
@@ -150,13 +153,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLowerInvariant();
                 var match = this.config.TillRegex.Match(middleStr);
-                // handle "{TimePoint} to {TimePoint}"
+                
+                // Handle "{TimePoint} to {TimePoint}"
                 if (match.Success && match.Index == 0 && match.Length == middleStr.Length)
                 {
                     var periodBegin = ers[idx].Start ?? 0;
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);
 
-                    // handle "from"
+                    // Handle "from"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetFromTokenIndex(beforeStr, out int fromIndex))
                     {
@@ -167,13 +171,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     idx += 2;
                     continue;
                 }
-                // handle "between {TimePoint} and {TimePoint}"
+
+                // Handle "between {TimePoint} and {TimePoint}"
                 if (this.config.HasConnectorToken(middleStr))
                 {
                     var periodBegin = ers[idx].Start ?? 0;
                     var periodEnd = (ers[idx + 1].Start ?? 0) + (ers[idx + 1].Length ?? 0);
 
-                    // handle "between"
+                    // Handle "between"
                     var beforeStr = text.Substring(0, periodBegin).Trim().ToLowerInvariant();
                     if (this.config.GetBetweenTokenIndex(beforeStr, out int betweenIndex))
                     {
@@ -190,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchNight(string text)
+        private List<Token> MatchTimeOfDay(string text)
         {
             var ret = new List<Token>();
             var matches = this.config.TimeOfDayRegex.Matches(text);

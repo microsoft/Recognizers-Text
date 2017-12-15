@@ -1,13 +1,13 @@
 [{
-  "Input": "Estare afuera desde el 4 hasta el 22 de este mes",
+  "Input": "Estarei fora de 4 a 22 deste mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde el 4 hasta el 22 de este mes",
+      "Text": "4 a 22 deste mes",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -25,15 +25,15 @@
 }
 ,
 {
-  "Input": "Estare afuera desde 4-23 del proximo mes",
+  "Input": "Estarei fora 4-23 do proximo mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde 4-23 del proximo mes",
+      "Text": "4-23 do proximo mes",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -51,15 +51,15 @@
 }
 ,
 {
-  "Input": "Estare afuera desde el 3 hasta el 12 de Sept jajaja",
+  "Input": "Estarei fora do dia 3 até o 12 de Set jajaja",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde el 3 hasta el 12 de Sept",
+      "Text": "do dia 3 até o 12 de Set",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -77,15 +77,15 @@
 }
 ,
 {
-  "Input": "Estare afuera 4 hasta 23 del proximo mes",
+  "Input": "Estarei fora 4 até 23 do proximo mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "4 hasta 23 del proximo mes",
+      "Text": "4 até 23 do proximo mes",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -103,15 +103,15 @@
 }
 ,
 {
-  "Input": "Estare afuera desde el 4 hasta el 23 de este mes",
+  "Input": "Estarei fora desde o 4 até o 23 deste mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde el 4 hasta el 23 de este mes",
+      "Text": "desde o 4 até o 23 deste mes",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-23,P19D)",
@@ -129,15 +129,15 @@
 }
 ,
 {
-  "Input": "Estare afuera entre 4 y 22 este mes",
+  "Input": "Estarei fora entre 4 e 22 este mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre 4 y 22 este mes",
+      "Text": "entre 4 e 22 este mes",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-04,2016-11-22,P18D)",
@@ -155,15 +155,15 @@
 }
 ,
 {
-  "Input": "Estare afuera entre el 3 y el 12 de Set jajaja",
+  "Input": "Estarei fora entre o 3 e o 12 de Set jajaja",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre el 3 y el 12 de Set",
+      "Text": "entre o 3 e o 12 de Set",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
@@ -181,15 +181,15 @@
 }
 ,
 {
-  "Input": "Estare afuera del 4 al 22 de enero, 1995",
+  "Input": "Estarei fora de 4 a 22 de janeiro, 1995",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "del 4 al 22 de enero, 1995",
+      "Text": "4 a 22 de janeiro, 1995",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
@@ -207,15 +207,15 @@
 }
 ,
 {
-  "Input": "Estare afuera entre 4-22 enero,  1995",
+  "Input": "Estarei fora entre 4-22 janeiro,  1995",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre 4-22 enero,  1995",
+      "Text": "entre 4-22 janeiro,  1995",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
@@ -233,11 +233,11 @@
 }
 ,
 {
-  "Input": "Estare afuera esta semana",
+  "Input": "Estarei fora esta semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -259,15 +259,15 @@
 }
 ,
 {
-  "Input": "Estare afuera en Febrero",
+  "Input": "Estarei fora em Fevereiro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en Febrero",
+      "Text": "em Fevereiro",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-02",
@@ -285,15 +285,15 @@
 }
 ,
 {
-  "Input": "Estare afuera este Septiembre",
+  "Input": "Estarei fora este Setembro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "este Septiembre",
+      "Text": "este Setembro",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-09",
@@ -311,11 +311,11 @@
 }
 ,
 {
-  "Input": "Estare afuera el ultimo sept",
+  "Input": "Estarei fora no ultimo sept",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -337,15 +337,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el proximo junio",
+  "Input": "Estarei fora o proximo junho",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "proximo junio",
+      "Text": "proximo junho",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-06",
@@ -363,15 +363,15 @@
 }
 ,
 {
-  "Input": "Estare afuera la tercera semana de este mes",
+  "Input": "Estarei fora a terceira semana deste mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "la tercera semana de este mes",
+      "Text": "terceira semana deste mes",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-11-W03",
@@ -389,15 +389,15 @@
 }
 ,
 {
-  "Input": "Estare afuera la ultima semana de julio",
+  "Input": "Estarei fora na ultima semana de julho",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "la ultima semana de julio",
+      "Text": "na ultima semana de julho",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-07-W04",
@@ -415,15 +415,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el 2 de Oct hasta 22 de Octubre",
+  "Input": "Estarei fora de 2 de Out até 22 de Outubro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 de Oct hasta 22 de Octubre",
+      "Text": "de 2 de Out até 22 de Outubro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -441,15 +441,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el 12 de Enero, 2016 - 22/01/2016",
+  "Input": "Estarei fora de 12 de janeiro, 2016 - 22/01/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 de Enero, 2016 - 22/01/2016",
+      "Text": "de 12 de janeiro, 2016 - 22/01/2016",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-01-12,2016-01-22,P10D)",
@@ -467,15 +467,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el 1ro de Ene hasta Mi, 22 de Ene",
+  "Input": "Estarei fora do 1o de Jan até Qua, 22 de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1ro de Ene hasta Mi, 22 de Ene",
+      "Text": "1o de Jan até Qua, 22 de Jan",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
@@ -493,15 +493,15 @@
 }
 ,
 {
-  "Input": "Estare afuera hoy hasta mañana",
+  "Input": "Estarei fora de hoje até amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "hoy hasta mañana",
+      "Text": "de hoje até amanhã",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -519,15 +519,15 @@
 }
 ,
 {
-  "Input": "Estare afuera desde 2 de Oct hasta 22 de Octubre",
+  "Input": "Estarei fora desde 2 de Out até 22 de Outubro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde 2 de Oct hasta 22 de Octubre",
+      "Text": "desde 2 de Out até 22 de Outubro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -545,15 +545,15 @@
 }
 ,
 {
-  "Input": "Estare afuera entre 2 de Oct y 22 de Octubre",
+  "Input": "Estarei fora entre 2 de Out e 22 de Outubro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre 2 de Oct y 22 de Octubre",
+      "Text": "entre 2 de Out e 22 de Outubro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -571,15 +571,15 @@
 }
 ,
 {
-  "Input": "Estare afuera 19-20 de Noviembre",
+  "Input": "Estarei fora 19-20 de Novembro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "19-20 de Noviembre",
+      "Text": "19-20 de Novembro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -597,15 +597,15 @@
 }
 ,
 {
-  "Input": "Estare afuera 19 hasta 20 de Noviembre",
+  "Input": "Estarei fora 19 até 20 de Novembro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "19 hasta 20 de Noviembre",
+      "Text": "19 até 20 de Novembro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -623,15 +623,15 @@
 }
 ,
 {
-  "Input": "Estare afuera entre 19 y 20 de Noviembre",
+  "Input": "Estarei fora entre 19 e 20 de Novembro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre 19 y 20 de Noviembre",
+      "Text": "entre 19 e 20 de Novembro",
       "Type": "daterange",
       "Value": {
         "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -649,11 +649,11 @@
 }
 ,
 {
-  "Input": "Estare afuera 2015.3",
+  "Input": "Estarei fora 2015.3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -675,11 +675,11 @@
 }
 ,
 {
-  "Input": "Estare afuera 2015-3",
+  "Input": "Estarei fora 2015-3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -701,11 +701,11 @@
 }
 ,
 {
-  "Input": "Estare afuera 2015/3",
+  "Input": "Estarei fora 2015/3",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -727,11 +727,11 @@
 }
 ,
 {
-  "Input": "Estare afuera 3/2015",
+  "Input": "Estarei fora 3/2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -753,15 +753,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el fin de semana",
+  "Input": "Estarei fora o fim de semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "fin de semana",
+      "Text": "fim de semana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -779,15 +779,15 @@
 }
 ,
 {
-  "Input": "Estare afuera este fin de semana",
+  "Input": "Estarei fora este fim de semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "este fin de semana",
+      "Text": "este fim de semana",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-W45-WE",
@@ -805,15 +805,15 @@
 }
 ,
 {
-  "Input": "Estare afuera en junio 2016",
+  "Input": "Estarei fora em junho 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en junio 2016",
+      "Text": "em junho 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-06",
@@ -831,15 +831,15 @@
 }
 ,
 {
-  "Input": "Estare afuera en junio del proximo año",
+  "Input": "Estarei fora em junho do proximo ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en junio del proximo año",
+      "Text": "em junho do proximo ano",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-06",
@@ -857,15 +857,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el próximo año",
+  "Input": "Estarei fora no próximo ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "próximo año",
+      "Text": "próximo ano",
       "Type": "daterange",
       "Value": {
         "Timex": "2017",
@@ -883,11 +883,11 @@
 }
 ,
 {
-  "Input": "Estare afuera los próximos 3 dias",
+  "Input": "Estarei fora os próximos 3 dias",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -909,11 +909,11 @@
 }
 ,
 {
-  "Input": "Estare afuera los proximos 3 meses",
+  "Input": "Estarei fora os proximos 3 meses",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -935,15 +935,15 @@
 }
 ,
 {
-  "Input": "Estare afuera en 3 años",
+  "Input": "Estarei fora em 3 anos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "en 3 años",
+      "Text": "em 3 anos",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-08,2019-11-08,P3Y)",
@@ -961,15 +961,15 @@
 }
 ,
 {
-  "Input": "Estuve afuera las pasadas 3 semanas",
+  "Input": "Estive fora as 3 semanas passadas",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "pasadas 3 semanas",
+      "Text": "3 semanas passadas",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -987,15 +987,15 @@
 }
 ,
 {
-  "Input": "Estuve afuera los ultimos 3años",
+  "Input": "Estive fora os ultimos 3 anos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ultimos 3años",
+      "Text": "ultimos 3 anos",
       "Type": "daterange",
       "Value": {
         "Timex": "(2013-11-07,2016-11-07,P3Y)",
@@ -1013,41 +1013,15 @@
 }
 ,
 {
-  "Input": "Estuve afuera las anteriores 3 semanas",
+  "Input": "Estarei fora desde hoje até amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "anteriores 3 semanas",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(2016-10-17,2016-11-07,P3W)",
-        "FutureResolution": {
-          "startDate": "2016-10-17",
-          "endDate": "2016-11-07"
-        },
-        "PastResolution": {
-          "startDate": "2016-10-17",
-          "endDate": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Estare afuera desde hoy hasta mañana",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "desde hoy hasta mañana",
+      "Text": "desde hoje até amanhã",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -1065,15 +1039,15 @@
 }
 ,
 {
-  "Input": "la primer semana de Oct",
+  "Input": "a primeira semana de Out",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "la primer semana de Oct",
+      "Text": "primeira semana de Out",
       "Type": "daterange",
       "Value": {
         "Timex": "XXXX-10-W01",
@@ -1091,15 +1065,15 @@
 }
 ,
 {
-  "Input": "Estare afuera la tercera semana del 2027",
+  "Input": "Estarei fora a terceira semana de 2027",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "la tercera semana del 2027",
+      "Text": "terceira semana de 2027",
       "Type": "daterange",
       "Value": {
         "Timex": "2027-01-W03",
@@ -1117,15 +1091,15 @@
 }
 ,
 {
-  "Input": "Estare afuera la tercer semana del próximo año",
+  "Input": "Estarei fora a terceira semana do próximo ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "la tercer semana del próximo año",
+      "Text": "terceira semana do próximo ano",
       "Type": "daterange",
       "Value": {
         "Timex": "2017-01-W03",
@@ -1143,15 +1117,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el tercer cuatrimestre de 2016",
+  "Input": "Estarei fora o terceiro trimestre de 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el tercer cuatrimestre de 2016",
+      "Text": "o terceiro trimestre de 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1169,15 +1143,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el tercer cuatrimestre de este año",
+  "Input": "Estarei fora o terceiro trimestre deste ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el tercer cuatrimestre de este año",
+      "Text": "o terceiro trimestre deste ano",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1195,15 +1169,15 @@
 }
 ,
 {
-  "Input": "Estare afuera 2016 el tercer cuatrimestre",
+  "Input": "Estarei fora 2016 no terceiro trimestre",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript,dotnet",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2016 el tercer cuatrimestre",
+      "Text": "2016 no terceiro trimestre",
       "Type": "daterange",
       "Value": {
         "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1221,15 +1195,15 @@
 }
 ,
 {
-  "Input": "Estare afuera este verano",
+  "Input": "Estarei fora este verao",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "este verano",
+      "Text": "este verao",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",
@@ -1241,11 +1215,11 @@
 }
 ,
 {
-  "Input": "Estare afuera la próxima primavera",
+  "Input": "Estarei fora na próxima primavera",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1261,15 +1235,15 @@
 }
 ,
 {
-  "Input": "Estare afuera el verano",
+  "Input": "Estarei fora no verao",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el verano",
+      "Text": "verao",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",
@@ -1281,15 +1255,15 @@
 }
 ,
 {
-  "Input": "Estare afuera verano",
+  "Input": "Estarei fora um verao",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verano",
+      "Text": "verao",
       "Type": "daterange",
       "Value": {
         "Timex": "SU",
@@ -1301,15 +1275,15 @@
 }
 ,
 {
-  "Input": "Estare afuera verano 2016",
+  "Input": "Estarei fora o verao 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verano 2016",
+      "Text": "o verao 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",
@@ -1321,15 +1295,15 @@
 }
 ,
 {
-  "Input": "Estare afuera verano del 2016",
+  "Input": "Estarei fora verao de 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verano del 2016",
+      "Text": "verao de 2016",
       "Type": "daterange",
       "Value": {
         "Timex": "2016-SU",

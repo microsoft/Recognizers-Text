@@ -1,9 +1,9 @@
 [{
-  "Input": "Volvere el 15",
+  "Input": "Voltarei no 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,15 +23,15 @@
 }
 ,
 {
-  "Input": "volvere el 2 Oct",
+  "Input": "volvere em 2 de Out",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 Oct",
+      "Text": "2 de Out",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -47,15 +47,15 @@
 }
 ,
 {
-  "Input": "volvere el 2-Oct",
+  "Input": "voltarei em 2-Out",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2-Oct",
+      "Text": "2-Out",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -71,15 +71,15 @@
 }
 ,
 {
-  "Input": "volvere el 2/Oct",
+  "Input": "voltarei em 2/Out",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2/Oct",
+      "Text": "2/Out",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -95,15 +95,15 @@
 }
 ,
 {
-  "Input": "volveré el 2 Octubre",
+  "Input": "voltarei em 2 de Outubro",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 Octubre",
+      "Text": "2 de Outubro",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-10-02",
@@ -119,15 +119,15 @@
 }
 ,
 {
-  "Input": "volveré el 12 de enero, 2016",
+  "Input": "voltarei em 12 de janeiro, 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 de enero, 2016",
+      "Text": "12 de janeiro, 2016",
       "Type": "date",
       "Value": {
         "Timex": "2016-01-12",
@@ -143,15 +143,15 @@
 }
 ,
 {
-  "Input": "volveré el lunes 12 de enero, 2016",
+  "Input": "voltarei na segunda-feira 12 de janeiro, 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "lunes 12 de enero, 2016",
+      "Text": "segunda-feira 12 de janeiro, 2016",
       "Type": "date",
       "Value": {
         "Timex": "2016-01-12",
@@ -167,11 +167,11 @@
 }
 ,
 {
-  "Input": "volveré el 22/02/2016",
+  "Input": "voltarei em 22/02/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -191,11 +191,11 @@
 }
 ,
 {
-  "Input": "volveré el 21/04/2016",
+  "Input": "voltarei em 21/04/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -215,11 +215,11 @@
 }
 ,
 {
-  "Input": "volveré el 21/04/16",
+  "Input": "voltarei em 21/04/16",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -239,11 +239,11 @@
 }
 ,
 {
-  "Input": "volveré el 21-04-2016",
+  "Input": "voltarei em 21-04-2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -263,11 +263,11 @@
 }
 ,
 {
-  "Input": "volveré el 4.22",
+  "Input": "voltarei em 4.22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -287,11 +287,11 @@
 }
 ,
 {
-  "Input": "volveré el 4-22",
+  "Input": "voltarei em 4-22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -311,11 +311,11 @@
 }
 ,
 {
-  "Input": "volveré el     4/22",
+  "Input": "voltarei em     4/22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -335,11 +335,11 @@
 }
 ,
 {
-  "Input": "volveré el 22/04",
+  "Input": "voltarei em 22/04",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -359,11 +359,11 @@
 }
 ,
 {
-  "Input": "volveré     4/22",
+  "Input": "voltarei     4/22",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -383,11 +383,11 @@
 }
 ,
 {
-  "Input": "volveré 22/04",
+  "Input": "voltarei 22/04",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -407,11 +407,11 @@
 }
 ,
 {
-  "Input": "volveré 2015/08/12",
+  "Input": "voltarei 2015/08/12",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -431,11 +431,11 @@
 }
 ,
 {
-  "Input": "volveré 08/12,2015",
+  "Input": "voltarei 08/12,2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -455,11 +455,11 @@
 }
 ,
 {
-  "Input": "volveré 08/12,15",
+  "Input": "voltarei 08/12,15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -479,15 +479,15 @@
 }
 ,
 {
-  "Input": "volveré 1ro de Ene",
+  "Input": "voltarei 1o de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1ro de Ene",
+      "Text": "1o de Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -503,15 +503,15 @@
 }
 ,
 {
-  "Input": "volveré el 1-Ene",
+  "Input": "voltarei em 1-Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1-Ene",
+      "Text": "1-Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -527,15 +527,15 @@
 }
 ,
 {
-  "Input": "volveré el Mi, 22 de Ene",
+  "Input": "voltarei em Qua, 22 de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Mi, 22 de Ene",
+      "Text": "Qua, 22 de Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-22",
@@ -551,15 +551,15 @@
 }
 ,
 {
-  "Input": "volveré el primero de Ene",
+  "Input": "voltarei em primeiro de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primero de Ene",
+      "Text": "primeiro de Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -575,15 +575,15 @@
 }
 ,
 {
-  "Input": "volveré el veintiuno de Mayo",
+  "Input": "voltarei em vinte e um de Maio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "veintiuno de Mayo",
+      "Text": "vinte e um de Maio",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-05-21",
@@ -599,15 +599,15 @@
 }
 ,
 {
-  "Input": "volveré en Mayo veintiuno",
+  "Input": "voltarei em Maio vinte e um",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Mayo veintiuno",
+      "Text": "Maio vinte e um",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-05-21",
@@ -623,15 +623,15 @@
 }
 ,
 {
-  "Input": "volveré el segundo de Ago.",
+  "Input": "voltarei em dois de Ago.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "segundo de Ago",
+      "Text": "dois de Ago",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-08-02",
@@ -647,15 +647,15 @@
 }
 ,
 {
-  "Input": "volveré el vigesimo segundo de Junio",
+  "Input": "voltarei no vigesimo segundo de Junho",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "vigesimo segundo de Junio",
+      "Text": "vigesimo segundo de Junho",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-06-22",
@@ -671,15 +671,15 @@
 }
 ,
 {
-  "Input": "volveré en viernes",
+  "Input": "voltarei na sexta",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "sexta",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-WXX-5",
@@ -695,15 +695,15 @@
 }
 ,
 {
-  "Input": "volveré en |viernes",
+  "Input": "voltarei na 6a",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "6a",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-WXX-5",
@@ -719,63 +719,15 @@
 }
 ,
 {
-  "Input": "volveré los viernes",
+  "Input": "voltarei hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volveré |Viernes",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Viernes",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-WXX-5",
-        "FutureResolution": {
-          "date": "2016-11-11"
-        },
-        "PastResolution": {
-          "date": "2016-11-04"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volveré hoy",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "hoy",
+      "Text": "hoje",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-07",
@@ -791,15 +743,15 @@
 }
 ,
 {
-  "Input": "volveré mañana",
+  "Input": "voltarei amanhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana",
+      "Text": "amanhã",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -815,15 +767,15 @@
 }
 ,
 {
-  "Input": "volví ayer",
+  "Input": "voltei ontem",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ayer",
+      "Text": "ontem",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -839,15 +791,15 @@
 }
 ,
 {
-  "Input": "volví anteayer",
+  "Input": "voltei anteontem",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "anteayer",
+      "Text": "anteontem",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-05",
@@ -863,15 +815,15 @@
 }
 ,
 {
-  "Input": "volveré pasado mañana",
+  "Input": "voltarei depois de amanha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "pasado mañana",
+      "Text": "depois de amanha",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-09",
@@ -887,15 +839,15 @@
 }
 ,
 {
-  "Input": "volveré el día despues de mañana",
+  "Input": "voltarei no dia depois de amanha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el día despues de mañana",
+      "Text": "dia depois de amanha",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-09",
@@ -911,15 +863,15 @@
 }
 ,
 {
-  "Input": "volveré el próximo dia",
+  "Input": "voltarei no próximo dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el próximo dia",
+      "Text": "próximo dia",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -935,15 +887,15 @@
 }
 ,
 {
-  "Input": "volveré el día siguiente",
+  "Input": "voltarei no dia seguinte",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el día siguiente",
+      "Text": "dia seguinte",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -959,15 +911,15 @@
 }
 ,
 {
-  "Input": "volveré el este viernes",
+  "Input": "voltarei nesta sexta",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "este viernes",
+      "Text": "nesta sexta",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-11",
@@ -983,11 +935,11 @@
 }
 ,
 {
-  "Input": "volveré el proximo domingo",
+  "Input": "voltarei no proximo domingo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1007,11 +959,11 @@
 }
 ,
 {
-  "Input": "volveré el ultimo domingo",
+  "Input": "voltarei no ultimo domingo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1031,15 +983,15 @@
 }
 ,
 {
-  "Input": "volveré el viernes de esta semana",
+  "Input": "voltarei na sexta desta semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes de esta semana",
+      "Text": "sexta desta semana",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-11",
@@ -1055,15 +1007,15 @@
 }
 ,
 {
-  "Input": "volveré el domingo de la siguiente semana",
+  "Input": "voltarei no domingo da próxima semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "domingo de la siguiente semana",
+      "Text": "domingo da próxima semana",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-20",
@@ -1079,15 +1031,15 @@
 }
 ,
 {
-  "Input": "volveré el domingo de la última semana",
+  "Input": "voltarei no domingo da última semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "domingo de la última semana",
+      "Text": "domingo da última semana",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -1103,15 +1055,15 @@
 }
 ,
 {
-  "Input": "volveré el último dia",
+  "Input": "voltarei no último dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el último dia",
+      "Text": "último dia",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-06",
@@ -1127,63 +1079,15 @@
 }
 ,
 {
-  "Input": "volveré en el último día",
+  "Input": "voltarei em 15 de Junho de 2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el último día",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-06",
-        "FutureResolution": {
-          "date": "2016-11-06"
-        },
-        "PastResolution": {
-          "date": "2016-11-06"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volveré en el día",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el día",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-07",
-        "FutureResolution": {
-          "date": "2016-11-07"
-        },
-        "PastResolution": {
-          "date": "2016-11-07"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volveré el 15 Junio 2016",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "15 Junio 2016",
+      "Text": "15 de Junho de 2016",
       "Type": "date",
       "Value": {
         "Timex": "2016-06-15",
@@ -1199,15 +1103,15 @@
 }
 ,
 {
-  "Input": "volveré el primer viernes de julio",
+  "Input": "voltarei na primeira sexta de julho",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el primer viernes de julio",
+      "Text": "na primeira sexta de julho",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-07-WXX-5-#1",
@@ -1223,15 +1127,15 @@
 }
 ,
 {
-  "Input": "volveré el primer viernes de este mes",
+  "Input": "voltarei na primeira sexta deste mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el primer viernes de este mes",
+      "Text": "na primeira sexta deste mes",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-11-WXX-5-#1",
@@ -1247,15 +1151,15 @@
 }
 ,
 {
-  "Input": "volveré el 12 de enero, 2018",
+  "Input": "voltarei em 12 de janeiro, 2018",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 de enero, 2018",
+      "Text": "12 de janeiro, 2018",
       "Type": "date",
       "Value": {
         "Timex": "2018-01-12",
@@ -1271,11 +1175,11 @@
 }
 ,
 {
-  "Input": "volveré el 9-18-15",
+  "Input": "voltarei em 9-18-15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1295,11 +1199,11 @@
 }
 ,
 {
-  "Input": "volveré el 2015/08/12",
+  "Input": "voltarei em 2015/08/12",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1319,11 +1223,11 @@
 }
 ,
 {
-  "Input": "volveré el 08/12,2015",
+  "Input": "voltarei em 08/12,2015",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1343,15 +1247,15 @@
 }
 ,
 {
-  "Input": "volveré el 1ro de Ene",
+  "Input": "voltarei em 1o de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1ro de Ene",
+      "Text": "1o de Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -1367,15 +1271,15 @@
 }
 ,
 {
-  "Input": "Volveré el primero de Ene",
+  "Input": "voltarei em primeiro de Jan",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primero de Ene",
+      "Text": "primeiro de Jan",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-01-01",
@@ -1391,15 +1295,15 @@
 }
 ,
 {
-  "Input": "Volveré el veintiuno de Mayo",
+  "Input": "voltarei em vinte e um de Maio",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "veintiuno de Mayo",
+      "Text": "vinte e um de Maio",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-05-21",
@@ -1415,35 +1319,11 @@
 }
 ,
 {
-  "Input": "Volveré el Mayo veintiuno",
+  "Input": "voltarei no segundo de Ago.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "Mayo veintiuno",
-      "Type": "date",
-      "Value": {
-        "Timex": "XXXX-05-21",
-        "FutureResolution": {
-          "date": "2017-05-21"
-        },
-        "PastResolution": {
-          "date": "2016-05-21"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Volveré el segundo de Ago.",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1463,15 +1343,15 @@
 }
 ,
 {
-  "Input": "Volveré el vigesimo segundo de Junio",
+  "Input": "voltarei no vigesimo segundo de Junho",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "vigesimo segundo de Junio",
+      "Text": "vigesimo segundo de Junho",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-06-22",
@@ -1487,15 +1367,15 @@
 }
 ,
 {
-  "Input": "Volveré el viernes",
+  "Input": "voltarei na sexta-feira",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "sexta-feira",
       "Type": "date",
       "Value": {
         "Timex": "XXXX-WXX-5",
@@ -1511,15 +1391,15 @@
 }
 ,
 {
-  "Input": "Volvi el dia antes de ayer",
+  "Input": "Voltei no dia antes de ontem",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el dia antes de ayer",
+      "Text": "dia antes de ontem",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-05",
@@ -1535,15 +1415,15 @@
 }
 ,
 {
-  "Input": "Volveré pasado mañana",
+  "Input": "voltarei depois de amanha",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "pasado mañana",
+      "Text": "depois de amanha",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-09",
@@ -1559,39 +1439,15 @@
 }
 ,
 {
-  "Input": "El día despues de mañana",
+  "Input": "voltarei no proximo dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "El día despues de mañana",
-      "Type": "date",
-      "Value": {
-        "Timex": "2016-11-09",
-        "FutureResolution": {
-          "date": "2016-11-09"
-        },
-        "PastResolution": {
-          "date": "2016-11-09"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "volveré el proximo día",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el proximo día",
+      "Text": "proximo dia",
       "Type": "date",
       "Value": {
         "Timex": "2016-11-08",
@@ -1607,11 +1463,11 @@
 }
 ,
 {
-  "Input": "volveré el próximo domingo",
+  "Input": "voltarei no próximo domingo",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {

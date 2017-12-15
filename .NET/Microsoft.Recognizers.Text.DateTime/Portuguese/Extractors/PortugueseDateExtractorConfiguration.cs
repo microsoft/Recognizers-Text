@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
-
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -66,6 +66,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex RelativeMonthRegex = new Regex($@"^[.]",
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex PrefixArticleRegex =
+            new Regex(
+                DateTimeDefinitions.PrefixArticleRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex[] DateRegexList =
         {
             // (domingo,)? 5 de Abril
@@ -83,20 +88,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // 23-3-2015
             new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // el 1/3
+            // no|em 1/3
             new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 7/23
             new Regex(DateTimeDefinitions.DateExtractor7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // el 24-12
+            // no|em 24-12
             new Regex(DateTimeDefinitions.DateExtractor8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 23/7
             new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 2015-12-23
-            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline)
+            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            // dia 15
+            new Regex(DateTimeDefinitions.DateExtractor11, RegexOptions.IgnoreCase | RegexOptions.Singleline)
         };
 
         public static readonly Regex[] ImplicitDateList =
@@ -149,5 +157,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
+
+        Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
     }
 }

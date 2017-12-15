@@ -6,6 +6,7 @@ using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 using Microsoft.Recognizers.Text.Number.Spanish;
+using Microsoft.Recognizers.Text.Number.German;
 
 namespace Microsoft.Recognizers.Text.Number
 {
@@ -78,6 +79,19 @@ namespace Microsoft.Recognizers.Text.Number
                 [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
                             new French.PercentageExtractor())
+            });
+
+            RegisterModel(Culture.German, options.ToString(), new Dictionary<Type, IModel>
+            {
+                [typeof(NumberModel)] = new NumberModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new GermanNumberParserConfiguration()),
+                            German.NumberExtractor.GetInstance(NumberMode.PureNumber)),
+                [typeof(OrdinalModel)] = new OrdinalModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new GermanNumberParserConfiguration()),
+                            German.OrdinalExtractor.GetInstance()),
+                [typeof(PercentModel)] = new PercentModel(
+                            AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new GermanNumberParserConfiguration()),
+                            new German.PercentageExtractor())
             });
         }
 

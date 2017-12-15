@@ -77,7 +77,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         
         #endregion
 
-
         public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
@@ -131,6 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             {
                 swift = -1;
             }
+
             return swift;
         }
 
@@ -169,38 +169,39 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool IsMonthOnly(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
             return (trimedText.EndsWith("mes") || trimedText.EndsWith("meses"));
         }
 
         public bool IsMonthToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.Equals("mes a la fecha") || trimedText.Equals("meses a la fecha"));
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
+            return (trimedText.Equals("mes ate agora") || trimedText.Equals("mes ate hoje") || trimedText.Equals("mes ate a data"));
         }
 
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("fin de semana");
+            return trimedText.EndsWith("fim de semana");
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("semana") && !trimedText.EndsWith("fin de semana"));
+            return (trimedText.EndsWith("semana") && !trimedText.EndsWith("fim de semana"));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.EndsWith("año") || trimedText.EndsWith("años"));
+            return (trimedText.EndsWith("ano") || trimedText.EndsWith("anos"));
         }
 
         public bool IsYearToDate(string text)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
-            return (trimedText.Equals("año a la fecha") || trimedText.Equals("años a la fecha"));
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
+            return (trimedText.Equals("ano ate agora") || trimedText.Equals("ano ate hoje") || trimedText.Equals("ano ate a data") ||
+                    trimedText.Equals("anos ate agora") || trimedText.Equals("anos ate hoje") || trimedText.Equals("anos ate a data"));
         }
     }
 }

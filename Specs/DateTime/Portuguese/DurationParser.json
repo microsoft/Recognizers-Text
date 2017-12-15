@@ -1,9 +1,9 @@
 [{
-  "Input": "Me voy por 3h",
+  "Input": "Me vou por 3h",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,179 +23,11 @@
 }
 ,
 {
-  "Input": "Me voy por 3días",
+  "Input": "Me vou por 3 dias",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3días",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
-        },
-        "PastResolution": {
-          "duration": "259200"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3,5 años",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3,5 años",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3.5Y",
-        "FutureResolution": {
-          "duration": "110376000"
-        },
-        "PastResolution": {
-          "duration": "110376000"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3 h",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 h",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3 horas",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 horas",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3 hrs",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hrs",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3 hr",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3 hr",
-      "Type": "duration",
-      "Value": {
-        "Timex": "PT3H",
-        "FutureResolution": {
-          "duration": "10800"
-        },
-        "PastResolution": {
-          "duration": "10800"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3dias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "3dias",
-      "Type": "duration",
-      "Value": {
-        "Timex": "P3D",
-        "FutureResolution": {
-          "duration": "259200"
-        },
-        "PastResolution": {
-          "duration": "259200"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Me voy por 3 dias",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -215,11 +47,179 @@
 }
 ,
 {
-  "Input": "Me voy por 3 meses",
+  "Input": "Me vou por 3,5 anos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3,5 anos",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3.5Y",
+        "FutureResolution": {
+          "duration": "110376000"
+        },
+        "PastResolution": {
+          "duration": "110376000"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 h",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 h",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 horas",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 horas",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 hrs",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hrs",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 hr",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 hr",
+      "Type": "duration",
+      "Value": {
+        "Timex": "PT3H",
+        "FutureResolution": {
+          "duration": "10800"
+        },
+        "PastResolution": {
+          "duration": "10800"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 dias",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 dias",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3D",
+        "FutureResolution": {
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "duration": "259200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 dias",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "3 dias",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P3D",
+        "FutureResolution": {
+          "duration": "259200"
+        },
+        "PastResolution": {
+          "duration": "259200"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Me vou por 3 meses",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -239,11 +239,11 @@
 }
 ,
 {
-  "Input": "Me voy por 3 minutos",
+  "Input": "Me vou por 3 minutos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -263,11 +263,11 @@
 }
 ,
 {
-  "Input": "Me voy por 3 min",
+  "Input": "Me vou por 3 min",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -287,11 +287,11 @@
 }
 ,
 {
-  "Input": "Me voy por 3,5 segundos ",
+  "Input": "Me vou por 3,5 segundos ",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -311,11 +311,11 @@
 }
 ,
 {
-  "Input": "Me voy por 123,45 seg",
+  "Input": "Me vou por 123,45 seg",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -335,15 +335,15 @@
 }
 ,
 {
-  "Input": "Me voy por dos semanas",
+  "Input": "Me vou por duas semanas",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "dos semanas",
+      "Text": "duas semanas",
       "Type": "duration",
       "Value": {
         "Timex": "P2W",
@@ -359,11 +359,11 @@
 }
 ,
 {
-  "Input": "Me voy 20 minutos",
+  "Input": "Me vou em 20 minutos",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -383,15 +383,15 @@
 }
 ,
 {
-  "Input": "Me voy por veinticuatro horas",
+  "Input": "Me vou por vinte e quatro horas",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "veinticuatro horas",
+      "Text": "vinte e quatro horas",
       "Type": "duration",
       "Value": {
         "Timex": "PT24H",
@@ -407,15 +407,15 @@
 }
 ,
 {
-  "Input": "Me voy todo el dia",
+  "Input": "Me vou por todo o dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el dia",
+      "Text": "todo o dia",
       "Type": "duration",
       "Value": {
         "Timex": "P1D",
@@ -431,15 +431,15 @@
 }
 ,
 {
-  "Input": "Me voy toda la semana",
+  "Input": "Me vou toda a semana",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "toda la semana",
+      "Text": "toda a semana",
       "Type": "duration",
       "Value": {
         "Timex": "P1W",
@@ -455,15 +455,15 @@
 }
 ,
 {
-  "Input": "Me voy por todo el mes",
+  "Input": "Me vou por todo o mes",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el mes",
+      "Text": "todo o mes",
       "Type": "duration",
       "Value": {
         "Timex": "P1M",
@@ -479,15 +479,15 @@
 }
 ,
 {
-  "Input": "Me voy por todo el año",
+  "Input": "Me vou por todo o ano",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todo el año",
+      "Text": "todo o ano",
       "Type": "duration",
       "Value": {
         "Timex": "P1Y",
@@ -503,15 +503,15 @@
 }
 ,
 {
-  "Input": "Me voy por una hora",
+  "Input": "Me vou por uma hora",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "una hora",
+      "Text": "uma hora",
       "Type": "duration",
       "Value": {
         "Timex": "PT1H",
@@ -527,23 +527,23 @@
 }
 ,
 {
-  "Input": "Me voy por un hora",
+  "Input": "Me vou por um dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "dotnet,javascript",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "un hora",
+      "Text": "um dia",
       "Type": "duration",
       "Value": {
-        "Timex": "PT1H",
+        "Timex": "P1D",
         "FutureResolution": {
-          "duration": "3600"
+          "duration": "86400"
         },
         "PastResolution": {
-          "duration": "3600"
+          "duration": "86400"
         }
       }
     }

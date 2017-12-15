@@ -1,6 +1,6 @@
 [{
-  "Input": "Saldré semanalmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei semanalmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -20,12 +20,12 @@
 }
 ,
 {
-  "Input": "Saldré quincenalmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei quinzenalmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "quincenalmente",
+      "Text": "quinzenalmente",
       "Type": "set",
       "Value": {
         "Timex": "P2W",
@@ -41,8 +41,8 @@
 }
 ,
 {
-  "Input": "Saldré diariamente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei diariamente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -62,12 +62,12 @@
 }
 ,
 {
-  "Input": "Saldré a diario",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Minha saída diária",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "a diario",
+      "Text": "diária",
       "Type": "set",
       "Value": {
         "Timex": "P1D",
@@ -83,12 +83,12 @@
 }
 ,
 {
-  "Input": "Saldré todos los dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei todos os dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los dias",
+      "Text": "todos os dias",
       "Type": "set",
       "Value": {
         "Timex": "P1D",
@@ -104,8 +104,8 @@
 }
 ,
 {
-  "Input": "Saldré cada mes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei a cada mes",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -125,12 +125,12 @@
 }
 ,
 {
-  "Input": "Saldré todos los meses",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei todos os meses",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los meses",
+      "Text": "todos os meses",
       "Type": "set",
       "Value": {
         "Timex": "P1M",
@@ -146,12 +146,12 @@
 }
 ,
 {
-  "Input": "Saldré todas las semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei todas as semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todas las semanas",
+      "Text": "todas as semanas",
       "Type": "set",
       "Value": {
         "Timex": "P1W",
@@ -167,8 +167,8 @@
 }
 ,
 {
-  "Input": "Saldré anualmente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei anualmente",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -188,12 +188,12 @@
 }
 ,
 {
-  "Input": "Saldré todos los años",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei todos os anos",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los años",
+      "Text": "todos os anos",
       "Type": "set",
       "Value": {
         "Timex": "P1Y",
@@ -209,12 +209,12 @@
 }
 ,
 {
-  "Input": "Me iré cada dos dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Me irei a cada dois dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cada dos dias",
+      "Text": "cada dois dias",
       "Type": "set",
       "Value": {
         "Timex": "P2D",
@@ -230,8 +230,8 @@
 }
 ,
 {
-  "Input": "Me iré cada tres semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Me irei a cada tres semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -251,8 +251,8 @@
 }
 ,
 {
-  "Input": "Me iré cada 3 semanas",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Me irei a cada 3 semanas",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -272,12 +272,12 @@
 }
 ,
 {
-  "Input": "Me iré a las 3pm todos los dias",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Vou-me às 3pm todos os dias",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "3pm todos los dias",
+      "Text": "3pm todos os dias",
       "Type": "set",
       "Value": {
         "Timex": "T15",
@@ -293,12 +293,12 @@
 }
 ,
 {
-  "Input": "Me iré todos los dias a las 3pm",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Vou-me todos os dias as 3pm",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los dias a las 3pm",
+      "Text": "todos os dias as 3pm",
       "Type": "set",
       "Value": {
         "Timex": "T15",
@@ -314,8 +314,8 @@
 }
 ,
 {
-  "Input": "Saldré cada 15/4",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei em cada 15/4",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -335,12 +335,12 @@
 }
 ,
 {
-  "Input": "Saldré todos los lunes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei todas as segundas-feiras",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "todos los lunes",
+      "Text": "todas as segundas-feiras",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-1",
@@ -356,12 +356,33 @@
 }
 ,
 {
-  "Input": "Saldré cada lunes a las 4pm",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Sairei toda segunda-feira",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "cada lunes a las 4pm",
+      "Text": "toda segunda-feira",
+      "Type": "set",
+      "Value": {
+        "Timex": "XXXX-WXX-1",
+        "FutureResolution": {
+          "set": "Set: XXXX-WXX-1"
+        },
+        "PastResolution": {
+          "set": "Set: XXXX-WXX-1"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Sairei cada segunda-feira as 4pm",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cada segunda-feira as 4pm",
       "Type": "set",
       "Value": {
         "Timex": "XXXX-WXX-1T16",

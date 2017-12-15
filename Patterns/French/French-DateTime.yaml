@@ -181,6 +181,8 @@ BasicTime: !nestedRegex
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidnightRegex: !simpleRegex
   def: (?<midnight>minuit)
+CommonDatePrefixRegex: !simpleRegex
+  def: ^[\.]
 MorningRegex: !simpleRegex
   def: (?<morning>matin[ée]e|matin)
 AfternoonRegex: !simpleRegex
@@ -432,6 +434,9 @@ MiddlePauseRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixArticleRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
