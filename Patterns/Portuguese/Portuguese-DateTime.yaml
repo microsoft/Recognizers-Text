@@ -391,7 +391,7 @@ PrefixArticleRegex: !simpleRegex
   def: ^[\.]
 # PortugueseDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
-  def: \b(antes|atr[áa]s|passad[oa]s?)\b
+  def: \b(antes|atr[áa]s|no passado)\b
 LaterRegex: !simpleRegex
   def: \b(depois d[eoa]s?|ap[óo]s (as)?|desde (as|o)|desde|no futuro|mais tarde)\b
 # DateTimePeriodParser

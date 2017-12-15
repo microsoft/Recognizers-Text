@@ -35,6 +35,20 @@
 }
 ,
 {
+  "Input": "nas ultimas 3 semanas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
+  "Input": "nas 3 semanas passadas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
   "Input": "Voltarei em 1/Jan",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",

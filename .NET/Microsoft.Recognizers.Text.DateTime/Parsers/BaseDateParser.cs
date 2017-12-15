@@ -460,18 +460,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // handle like "two days ago" 
+        // Handle cases like "two days ago" 
         private DateTimeResolutionResult ParseDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
-            return AgoLaterUtil.ParseDurationWithAgoAndLater(
-                text,
-                referenceDate,
-                config.DurationExtractor,
-                config.DurationParser,
-                config.UnitMap,
-                config.UnitRegex,
-                config.UtilityConfiguration
-                );
+
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceDate,
+                config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex,
+                config.UtilityConfiguration);
         }
 
         // parse a regex match which includes 'day', 'month' and 'year' (optional) group
