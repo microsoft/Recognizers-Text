@@ -325,18 +325,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Handle like "two hours ago" 
+        // Handle cases like "two hours ago" 
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
-            return AgoLaterUtil.ParseDurationWithAgoAndLater(
-                text,
-                referenceTime,
-                config.DurationExtractor,
-                config.DurationParser,
-                config.UnitMap,
-                config.UnitRegex,
-                config.UtilityConfiguration
-                );
+
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
+                config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
+                config.UtilityConfiguration);
         }
 
     }
