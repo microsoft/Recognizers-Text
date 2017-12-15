@@ -465,9 +465,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     AddAltPeriodToResolution(resolutionDic, mod, res);
                 }
-                // for a datetime point
                 else
                 {
+                    // for a datetime point
                     AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
                 }
             }

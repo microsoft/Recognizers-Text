@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.FutureValue = ((DateTimeResolutionResult)dateTimePr.Value).FutureValue;
                 ret.PastValue = ((DateTimeResolutionResult)dateTimePr.Value).PastValue;
                 ret.Timex = dateTimePr.TimexStr;
-                // creat resolution
+                // create resolution
                 GetResolution(er, dateTimePr, ret);
                 ret.Success = true;
             }

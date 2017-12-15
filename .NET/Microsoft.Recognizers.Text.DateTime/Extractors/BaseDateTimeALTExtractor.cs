@@ -92,14 +92,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 data = ExtractDate_Date(former, latter);
             }
+
             if (data.Count == 0)
             {
                 data = ExtractTime_Time(former, latter);
             }
+
             if (data.Count == 0)
             {
                 data = ExtractDateTime_DateTime(former, latter);
             }
+
             if (data.Count == 0)
             {
                 data = ExtractDateTimeRange_TimeRange(former, latter);
