@@ -975,4 +975,56 @@
     }
   ]
 }
+,
+{
+  "Input": "set up meeting from 3 to 3:30",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3 to 3:30",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T03,T03:30,PT30M)",
+        "FutureResolution": {
+          "startTime": "03:00:00",
+          "endTime": "03:30:00"
+        },
+        "PastResolution": {
+          "startTime": "03:00:00",
+          "endTime": "03:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 to 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 to 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T01:30,T03,PT1H30M)",
+        "FutureResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
+        }
+      }
+    }
+  ]
+}
 ]

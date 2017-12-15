@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     while (j < ers.Count && ers[j].Start <= numEndPoint)
                     {
                         j++;
-            }
+                    }
 
                     if (j >= ers.Count)
                     {
@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var overlap = false;
                     foreach (var er in ers)
                     {
-                        if (er.Start <= num.Start && er.Start + er.Length >= num.Start)
+                        if (er.Start <= timeNum.Start && er.Start + er.Length >= timeNum.Start)
                         {
                             overlap = true;
                         }
