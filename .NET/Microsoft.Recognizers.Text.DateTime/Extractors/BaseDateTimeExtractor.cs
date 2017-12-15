@@ -73,18 +73,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             ers.AddRange(timeErs);
 
             // handle cases which use numbers as time points
-            var numErs = new List<ExtractResult>();
-            for (var idx = 0; idx < timeNumMatches.Count; idx++)
+            // only enabled in CalendarMode
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                var match = timeNumMatches[idx];
-                var node = new ExtractResult();
-                node.Start = match.Index;
-                node.Length = match.Length;
-                node.Text = match.Value;
-                node.Type = Number.Constants.SYS_NUM_INTEGER;
-                numErs.Add(node);
+                var numErs = new List<ExtractResult>();
+                for (var idx = 0; idx < timeNumMatches.Count; idx++)
+                {
+                    var match = timeNumMatches[idx];
+                    var node = new ExtractResult();
+                    node.Start = match.Index;
+                    node.Length = match.Length;
+                    node.Text = match.Value;
+                    node.Type = Number.Constants.SYS_NUM_INTEGER;
+                    numErs.Add(node);
+                }
+                ers.AddRange(numErs);
             }
-            ers.AddRange(numErs);
 
             ers = ers.OrderBy(o => o.Start).ToList();
 
