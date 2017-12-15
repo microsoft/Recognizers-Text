@@ -1,6 +1,6 @@
 {
   "name": "recognizers-text-number",
-  "version": "1.0.0-rc.27",
+  "version": "1.0.0-rc.29.0",
   "description": "recognizers-text-number provides robust recognition and resolution of numbers expressed in multiple languages. Support for English, Spanish, Chinese, French and Portuguese.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "lodash.escaperegexp": "^4.1.2",
     "lodash.sortby": "^4.7.0",
     "lodash.trimend": "^4.5.1",
+    "recognizers-text": "^1.0.0-rc.29.0",
     "xregexp": "^3.2.0"
   }
 }

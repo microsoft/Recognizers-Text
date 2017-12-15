@@ -1,6 +1,6 @@
 {
   "name": "recognizers-text-number-with-unit",
-  "version": "1.0.0-rc.27",
+  "version": "1.0.0-rc.29.0",
   "description": "recognizers-text-number-with-unit provides robust recognition and resolution of numbers with units expressed in multiple languages. Support for English, Spanish, Chinese and Portuguese.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -34,6 +34,7 @@
     "lodash.escaperegexp": "^4.1.2",
     "lodash.last": "^3.0.0",
     "lodash.max": "^4.0.1",
-    "recognizers-text-number": "^1.0.0-rc.27"
+    "recognizers-text": "^1.0.0-rc.29.0",
+    "recognizers-text-number": "^1.0.0-rc.29.0"
   }
 }

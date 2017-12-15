@@ -1,6 +1,6 @@
 {
   "name": "recognizers-text-date-time",
-  "version": "1.0.0-rc.27",
+  "version": "1.0.0-rc.29.0",
   "description": "recognizers-text provides robust recognition and resolution of date/time expressed in multiple languages. Support for English, Spanish, Chinese and French.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -35,7 +35,8 @@
   "dependencies": {
     "lodash.isequal": "^4.5.0",
     "lodash.tonumber": "^4.0.3",
-    "recognizers-text-number": "^1.0.0-rc.27",
-    "recognizers-text-number-with-unit": "^1.0.0-rc.27"
+    "recognizers-text": "^1.0.0-rc.29.0",
+    "recognizers-text-number": "^1.0.0-rc.29.0",
+    "recognizers-text-number-with-unit": "^1.0.0-rc.29.0"
   }
 }

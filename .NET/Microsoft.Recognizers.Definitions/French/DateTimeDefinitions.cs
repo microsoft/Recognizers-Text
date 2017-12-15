@@ -88,6 +88,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
 		public static readonly string BasicTime = $@"(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
 		public const string MidnightRegex = @"(?<midnight>minuit)";
+		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string MorningRegex = @"(?<morning>matin[ée]e|matin)";
 		public const string AfternoonRegex = @"(?<afternoon>(d'|l')?apr[eè]s(-|\s*)midi)";
 		public static readonly string MidmorningRegex = $@"(?<midmorning>milieu\s*d[ue]\s*{MorningRegex})";
@@ -193,6 +194,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string GeneralEndingRegex = @"^[.]";
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string DurationConnectorRegex = @"^[.]";
+		public const string PrefixArticleRegex = @"^[\.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },

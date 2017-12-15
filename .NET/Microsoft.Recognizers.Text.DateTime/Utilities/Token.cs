@@ -41,19 +41,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var bAdd = true;
                     for (var index = 0; index < mergedTokens.Count && bAdd; index++)
                     {
-                        //is included in one of the current token
+                        // It is included in one of the current tokens
                         if (token.Start >= mergedTokens[index].Start && token.End <= mergedTokens[index].End)
                         {
                             bAdd = false;
                         }
 
-                        //if it contains overlap
+                        // If it contains overlaps
                         if (token.Start > mergedTokens[index].Start && token.Start < mergedTokens[index].End)
                         {
                             bAdd = false;
                         }
 
-                        // include one of the token, should replace the included one
+                        // It includes one of the tokens and should replace the included one
                         if (token.Start <= mergedTokens[index].Start && token.End >= mergedTokens[index].End)
                         {
                             bAdd = false;

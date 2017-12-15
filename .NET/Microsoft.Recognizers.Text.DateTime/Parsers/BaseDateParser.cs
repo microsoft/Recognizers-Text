@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; //"Date";
 
+        public static readonly DateObject NoDate = DateObject.MinValue.SafeCreateFromValue(0, 0, 0);
+
         private readonly IDateParserConfiguration config;
 
         public BaseDateParser(IDateParserConfiguration config)
@@ -58,7 +60,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     innerResult = ParseSingleNumber(er.Text, referenceDate);
                 }
-
 
                 if (innerResult.Success)
                 {
@@ -156,11 +157,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastDate = DateObject.MinValue.SafeCreateFromValue(year, month - 1, day);
                 }
 
-
                 ret.FutureValue = futureDate;
                 ret.PastValue = pastDate;
                 ret.Success = true;
-
 
                 return ret;
             }
@@ -360,6 +359,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var monthStr = match.Groups["order"].Value;
                     var swift = this.config.GetSwiftMonth(monthStr);
                     month = referenceDate.AddMonths(swift).Month;
+                    year = referenceDate.AddMonths(swift).Year;
                     day = num;
                     ambiguous = false;
                 }

@@ -140,7 +140,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (match.Success && match.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
-                        ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                        var resStart = result.Start;
+                        var resEnd = resStart + result.Length + spaceLen + match.Length;
+                        // check if prefix contain 'the', include it if any
+                        var prefix = text.Substring(0, resStart ?? 0);
+                        var prefixMatch = this.config.PrefixArticleRegex.Match(prefix);
+                        if (prefixMatch.Success)
+                        {
+                            resStart = prefixMatch.Index;
+                        }
+                        ret.Add(new Token(resStart ?? 0, resEnd?? 0));
                     }
 
                     // handling cases like 'second Sunday'
