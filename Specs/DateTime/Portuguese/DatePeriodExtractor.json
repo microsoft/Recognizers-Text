@@ -528,7 +528,7 @@
 ,
 {
   "Input": "Estarei fora em 2016 no terceiro trimestre",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -624,11 +624,11 @@
 ,
 {
   "Input": "Estarei fora na primavera seguinte",
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primavera seguinte",
+      "Text": "na primavera seguinte",
       "Type": "daterange"
     }
   ]
@@ -640,7 +640,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verao",
+      "Text": "no verao",
       "Type": "daterange"
     }
   ]
@@ -664,7 +664,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "verao 2016",
+      "Text": "no verao 2016",
       "Type": "daterange"
     }
   ]
