@@ -18,30 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="BaseDateTime.tt" />
-    <Content Include="BaseNumbers.tt" />
-    <Content Include="Chinese\DateTimeDefinitions.tt" />
-    <Content Include="Chinese\NumbersDefinitions.tt" />
-    <Content Include="Chinese\NumbersWithUnitDefinitions.tt" />
-    <Content Include="English\DateTimeDefinitions.tt" />
-    <Content Include="English\NumbersDefinitions.tt" />
-    <Content Include="English\NumbersWithUnitDefinitions.tt" />
-    <Content Include="French\DateTimeDefinitions.tt" />
-    <Content Include="French\NumbersDefinitions.tt" />
-    <Content Include="French\NumbersWithUnitDefinitions.tt" />
-    <Content Include="Portuguese\DateTimeDefinitions.tt" />
-    <Content Include="Portuguese\NumbersDefinitions.tt" />
-    <Content Include="Portuguese\NumbersWithUnitDefinitions.tt" />
-    <Content Include="Spanish\DateTimeDefinitions.tt" />
-    <Content Include="Spanish\NumbersDefinitions.tt" />
-    <Content Include="Spanish\NumbersWithUnitDefinitions.tt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="BaseDateTime.cs">
       <DependentUpon>BaseDateTime.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -142,6 +118,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
