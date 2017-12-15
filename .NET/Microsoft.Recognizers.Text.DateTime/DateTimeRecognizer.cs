@@ -110,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
 
                 case Culture.Portuguese:
-                    RegisterModel(Culture.French, type, options.ToString(), new DateTimeModel(
+                    RegisterModel(Culture.Portuguese, type, options.ToString(), new DateTimeModel(
                                       new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
                                       new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
                                   ));
