@@ -912,7 +912,6 @@
 ,
 {
   "Input": "Voltarei ao final do dia",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -937,7 +936,6 @@
 ,
 {
   "Input": "Voltarei ao fim do dia",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
@@ -962,7 +960,6 @@
 ,
 {
   "Input": "Voltarei ao final do dia de amanhã",
-  "Debug": true,
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
