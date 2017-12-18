@@ -102,4 +102,34 @@
     }
   ]
 }
+,
+{
+  "Input": "👌 It's ok",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.55
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "👌👌👌",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "👌",
+      "TypeName": "boolean",
+      "Resolution": {
+        "value": true,
+		"score": 0.6
+      }
+    }
+  ]
+}
 ]
