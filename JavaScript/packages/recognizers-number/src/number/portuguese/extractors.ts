@@ -2,7 +2,7 @@ import { BaseNumberExtractor, RegExpValue, BasePercentageExtractor } from "../ex
 import { Constants } from "../constants";
 import { NumberMode, LongFormatType } from "../models";
 import { PortugueseNumeric } from "../../resources/portugueseNumeric";
-import { RegExpUtility } from "../../utilities"
+import { RegExpUtility } from "recognizers-text"
 
 export class PortugueseNumberExtractor extends BaseNumberExtractor {
     protected extractType: string = Constants.SYS_NUM;

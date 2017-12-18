@@ -1,7 +1,8 @@
 import { IDateExtractorConfiguration, IDateParserConfiguration } from "../baseDate"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { IDateTimeUtilityConfiguration } from "../utilities";
-import { RegExpUtility, BaseNumberParser, BaseNumberExtractor, EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "recognizers-text-number";
+import { RegExpUtility } from "recognizers-text";
+import { BaseNumberParser, BaseNumberExtractor, EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration, EnglishDateTimeUtilityConfiguration } from "./baseConfiguration"
 import { EnglishDurationExtractorConfiguration } from "./durationConfiguration"

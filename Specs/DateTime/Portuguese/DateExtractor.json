@@ -1,0 +1,698 @@
+[{
+  "Input": "Voltarei no 15",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 22 de Abril",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22 de Abril",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 1-Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1-Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "nas ultimas 3 semanas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
+  "Input": "nas 3 semanas passadas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
+  "Input": "Voltarei em 1/Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1/Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no 2 de Outubro",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 de Outubro",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 12 de janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 de janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no 12 de Janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "12 de Janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na segunda-feira 12 de janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "segunda-feira 12 de janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na segunda-feira, 12 de janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "segunda-feira, 12 de janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 02/22/2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "02/22/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 21/04/2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 21/04/16",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "21/04/16",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 9-18-15",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "9-18-15",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 4.22",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4.22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 4-22",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4-22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em    4/22",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4/22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 22/04",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei       4/22",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4/22",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei 22/04",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "22/04",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 2015/08/12",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2015/08/12",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 11/12, 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/12, 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 11/12/16",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/12/16",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 11/12 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "11/12 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 1o de Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1o de Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 28-Nov",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "28-Nov",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na Qua, 22 de Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Qua, 22 de Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no primeiro de Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "primeiro de Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no vinte e um de Maio",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vinte e um de Maio",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em Maio vinte e um",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Maio vinte e um",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no segundo de Ago",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "segundo de Ago",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no vigésimo segundo de Junho",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "vigésimo segundo de Junho",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei sexta-feira",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sexta-feira",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na sexta-feira",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sexta-feira",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei nas sextas-feiras",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sextas-feiras",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei aos sábados",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sábados",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei hoje",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "hoje",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei amanhã",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "amanhã",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltei ontem",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ontem",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltei no dia antes de ontem",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dia antes de ontem",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltei anteontem",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "anteontem",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no dia depois de amanhã",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dia depois de amanhã",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei depois de amanhã",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "depois de amanhã",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no dia seguinte",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "dia seguinte",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no proximo dia",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "proximo dia",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei esta sexta-feira",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "esta sexta-feira",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei proximo domingo",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "proximo domingo",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no domingo seguinte",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "domingo seguinte",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no ultimo domingo",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ultimo domingo",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no ultimo dia",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "ultimo dia",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na sexta-feira desta semana",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sexta-feira desta semana",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no domingo da semana seguinte",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "domingo da semana seguinte",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei no domingo da ultima semana",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "domingo da ultima semana",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 15 de Junho 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "15 de Junho 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em onze de maio",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "onze de maio",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em primeiro de maio",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "primeiro de maio",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na primeira sexta-feira de julho",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "na primeira sexta-feira de julho",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei na primeira sexta-feira deste mes",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "na primeira sexta-feira deste mes",
+      "Type": "date"
+    }
+  ]
+}
+]

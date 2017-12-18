@@ -1,0 +1,100 @@
+[
+  {
+    "Input": "2",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zwei",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zwei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eins",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "eins",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4.800",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "4.800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4800"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4,800",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "4,800",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ein hundert",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein hundert",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sechzehn",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "sechzehn",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "16"
+        }
+      }
+    ]
+  }
+]

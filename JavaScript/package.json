@@ -10,6 +10,8 @@
 		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"
 	},
 	"browserify-shim": {
+		"recognizers-text": "global:recognizersTextBase",
+		"recognizers-text-options": "global:recognizersTextOptions",
 		"recognizers-text-number": "global:recognizersTextNumber",
 		"recognizers-text-number-with-unit": "global:recognizersTextNumberWithUnit",
 		"recognizers-text-date-time": "global:recognizersTextDateTime"
@@ -68,8 +70,10 @@
 		"express": "^4.16.1"
 	},
 	"dependencies": {
+		"recognizers-text": "file:./packages/recognizers-text",
+		"recognizers-text-options": "file:./packages/recognizers-options",
+		"recognizers-text-date-time": "file:./packages/recognizers-date-time",
 		"recognizers-text-number": "file:./packages/recognizers-number",
-		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
-		"recognizers-text-date-time": "file:./packages/recognizers-date-time"
+		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit"
 	}
 }

@@ -3,5 +3,5 @@
   "packages": [
     "packages/recognizers-*"
   ],
-  "version": "1.0.0-rc.27"
+  "version": "1.0.0-rc.29.0"
 }

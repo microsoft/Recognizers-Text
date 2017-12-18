@@ -382,6 +382,9 @@ GeneralEndingRegex: !simpleRegex
 MiddlePauseRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+PrefixArticleRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\.]
 NumberAsTimeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -678,6 +681,8 @@ SetWeekDayRegex: !simpleRegex
   def: ^[\.]
 NightRegex: !simpleRegex
   def: \b(medionoche|noche)\b
+CommonDatePrefixRegex: !simpleRegex
+  def: ^[\.]
 DurationUnitRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[\.]

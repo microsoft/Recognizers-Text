@@ -1,4 +1,5 @@
-import { Culture, CultureInfo, IExtractor, NumberMode, IParser, AgnosticNumberParserFactory, AgnosticNumberParserType, PortugueseNumberExtractor, PortugueseNumberParserConfiguration } from "recognizers-text-number";
+import { IExtractor, IParser } from "recognizers-text";
+import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, PortugueseNumberExtractor, PortugueseNumberParserConfiguration } from "recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
 import { BaseNumberWithUnitParserConfiguration } from "../parsers";

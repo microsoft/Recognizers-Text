@@ -546,4 +546,61 @@
     }
   ]
 }
+,
+{
+  "Input": "set up meeting from 1:30 to 3:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 to 3:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 pm to 3:30",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 pm to 3:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 pm to 3:30 pm",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 pm to 3:30 pm",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1 to 3:30",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1 to 3:30",
+      "Type": "timerange"
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 to 3",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 to 3",
+      "Type": "timerange"
+    }
+  ]
+}
 ]

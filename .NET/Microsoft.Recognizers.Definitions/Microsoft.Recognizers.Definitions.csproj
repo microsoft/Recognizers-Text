@@ -18,29 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="BaseDateTime.tt" />
-    <Content Include="BaseNumbers.tt" />
-    <Content Include="Chinese\DateTimeDefinitions.tt" />
-    <Content Include="Chinese\NumbersDefinitions.tt" />
-    <Content Include="Chinese\NumbersWithUnitDefinitions.tt" />
-    <Content Include="English\DateTimeDefinitions.tt" />
-    <Content Include="English\NumbersDefinitions.tt" />
-    <Content Include="English\NumbersWithUnitDefinitions.tt" />
-    <Content Include="French\DateTimeDefinitions.tt" />
-    <Content Include="French\NumbersDefinitions.tt" />
-    <Content Include="French\NumbersWithUnitDefinitions.tt" />
-    <Content Include="Portuguese\NumbersDefinitions.tt" />
-    <Content Include="Portuguese\NumbersWithUnitDefinitions.tt" />
-    <Content Include="Spanish\DateTimeDefinitions.tt" />
-    <Content Include="Spanish\NumbersDefinitions.tt" />
-    <Content Include="Spanish\NumbersWithUnitDefinitions.tt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="BaseDateTime.cs">
       <DependentUpon>BaseDateTime.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -96,6 +73,26 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="German\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="German\NumbersDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="German\NumbersWithUnitDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Portuguese\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Portuguese\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -121,6 +118,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -167,6 +168,22 @@
     <None Update="French\NumbersWithUnitDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="German\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="German\NumbersDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="German\NumbersWithUnitDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NumbersWithUnitDefinitions.cs</LastGenOutput>
+    </None>
+    <None Update="Portuguese\DateTimeDefinitions.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DateTimeDefinitions.cs</LastGenOutput>
     </None>
     <None Update="Portuguese\NumbersDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

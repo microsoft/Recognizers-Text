@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // check every integers and ordinal number for date
+        // Check every integers and ordinal number for date
         private List<Token> NumberWithMonth(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         continue;
                     }
 
-                    // handling cases like 'for the 25th'
+                    // Handling cases like 'for the 25th'
                     match = this.config.ForTheRegex.Match(text);
                     if (match.Success)
                     {
@@ -113,18 +113,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
-                    // handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+                    // Handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
                     match = this.config.WeekDayAndDayOfMothRegex.Match(text);
                     if (match.Success)
                     {
-                        int month = reference.Month, year = reference.Year;
 
-                         // get week of day for the ordinal number which is regarded as a date of reference month
+                         // Get week of day for the ordinal number which is regarded as a date of reference month
                         var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
                         var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
 
-                        // get week day from text directly, compare it with the weekday generated above
-                        // to see whether they refer to a same week day
+                        // Get week day from text directly, compare it with the weekday generated above
+                        // to see whether they refer to the same week day
                         var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
                         if (!date.Equals(DateObject.MinValue) &&
                             config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
@@ -134,21 +133,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
-                    // handling cases like '20th of next month'
+                    // Handling cases like '20th of next month'
                     var suffixStr = text.Substring(result.Start + result.Length ?? 0);
                     match = this.config.RelativeMonthRegex.Match(suffixStr.Trim());
                     if (match.Success && match.Index == 0)
                     {
                         var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
-                        ret.Add(new Token(result.Start ?? 0, result.Start + result.Length + spaceLen + match.Length ?? 0));
+                        var resStart = result.Start;
+                        var resEnd = resStart + result.Length + spaceLen + match.Length;
+
+                        // Check if prefix contains 'the', include it if any
+                        var prefix = text.Substring(0, resStart ?? 0);
+                        var prefixMatch = this.config.PrefixArticleRegex.Match(prefix);
+                        if (prefixMatch.Success)
+                        {
+                            resStart = prefixMatch.Index;
+                        }
+
+                        ret.Add(new Token(resStart ?? 0, resEnd?? 0));
                     }
 
-                    // handling cases like 'second Sunday'
+                    // Handling cases like 'second Sunday'
                     suffixStr = text.Substring(result.Start + result.Length ?? 0);
+
                     match = this.config.WeekDayRegex.Match(suffixStr.Trim());
+
                     if (match.Success && match.Index == 0 && num >= 1 && num <= 5 
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL))
                     {
+
                         var weekDayStr = match.Groups["weekday"].Value.ToLower();
                         if (this.config.DayOfWeek.ContainsKey(weekDayStr))
                         {
