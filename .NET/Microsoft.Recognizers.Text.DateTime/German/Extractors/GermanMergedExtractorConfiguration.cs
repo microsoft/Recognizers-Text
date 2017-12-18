@@ -53,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor IntegerExtractor { get; }
 
+        public IDateTimeListExtractor DateTimeAltExtractor { get; }
+
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
@@ -65,6 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SetExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration());
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;
