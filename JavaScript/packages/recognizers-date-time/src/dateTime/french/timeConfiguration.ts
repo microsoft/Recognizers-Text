@@ -1,4 +1,5 @@
-import { RegExpUtility, IExtractor } from "recognizers-text-number";
+import { IExtractor } from "recognizers-text";
+import { RegExpUtility } from "recognizers-text";
 import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { BaseDurationExtractor } from "../baseDuration";

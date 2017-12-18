@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Microsoft.Recognizers.Text.Utilities;
@@ -26,25 +27,35 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ModelResult> Parse(string query, System.DateTime refTime)
         {
-            // preprocess the query
+            // Preprocess the query
             query = FormatUtility.Preprocess(query);
-            var extractResults = Extractor.Extract(query, refTime);
 
-            var parseDateTimes = new List<DateTimeParseResult>();
-            foreach (var result in extractResults)
-            {
-                var parseResult = Parser.Parse(result, refTime);
-                if (parseResult.Value is List<DateTimeParseResult>)
+            var parsedDateTimes = new List<DateTimeParseResult>();
+
+            try {
+
+                var extractResults = Extractor.Extract(query, refTime);
+
+                foreach (var result in extractResults)
                 {
-                    parseDateTimes.AddRange((List<DateTimeParseResult>)parseResult.Value);
-                }
-                else
-                {
-                    parseDateTimes.Add(parseResult);
+                    var parseResult = Parser.Parse(result, refTime);
+                    if (parseResult.Value is List<DateTimeParseResult>)
+                    {
+                        parsedDateTimes.AddRange((List<DateTimeParseResult>)parseResult.Value);
+                    }
+                    else
+                    {
+                        parsedDateTimes.Add(parseResult);
+                    }
                 }
             }
+            catch (Exception)
+            { 
+                // Nothing to do. Exceptions in parse should not break users of recognizers.
+                // No result.
+            }
 
-            return parseDateTimes.Select(o => new ModelResult
+            return parsedDateTimes.Select(o => new ModelResult
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,

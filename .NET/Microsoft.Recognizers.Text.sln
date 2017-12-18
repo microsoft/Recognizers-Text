@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CreateAllPackages.cmd = CreateAllPackages.cmd
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
 EndProject
@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 	ProjectSection(SolutionItems) = preProject
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
 		..\Patterns\Base-Numbers.yaml = ..\Patterns\Base-Numbers.yaml
+		..\Patterns\Chinese\Chinese-DateTime.yaml = ..\Patterns\Chinese\Chinese-DateTime.yaml
 		..\Patterns\Chinese\Chinese-Numbers.yaml = ..\Patterns\Chinese\Chinese-Numbers.yaml
 		..\Patterns\Chinese\Chinese-NumbersWithUnit.yaml = ..\Patterns\Chinese\Chinese-NumbersWithUnit.yaml
 		..\Patterns\English\English-DateTime.yaml = ..\Patterns\English\English-DateTime.yaml
@@ -26,6 +27,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\French\French-DateTime.yaml = ..\Patterns\French\French-DateTime.yaml
 		..\Patterns\French\French-Numbers.yaml = ..\Patterns\French\French-Numbers.yaml
 		..\Patterns\French\French-NumbersWithUnit.yaml = ..\Patterns\French\French-NumbersWithUnit.yaml
+		..\Patterns\German\German-DateTime.yaml = ..\Patterns\German\German-DateTime.yaml
+		..\Patterns\German\German-Numbers.yaml = ..\Patterns\German\German-Numbers.yaml
+		..\Patterns\German\German-NumbersWithUnit.yaml = ..\Patterns\German\German-NumbersWithUnit.yaml
+		..\Patterns\Portuguese\Portuguese-DateTime.yaml = ..\Patterns\Portuguese\Portuguese-DateTime.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
 		..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml = ..\Patterns\Portuguese\Portuguese-NumbersWithUnit.yaml
 		..\Patterns\Spanish\Spanish-DateTime.yaml = ..\Patterns\Spanish\Spanish-DateTime.yaml
@@ -49,7 +54,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Defin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Definitions", "Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj", "{9A4EED9D-A3CE-4BA2-9021-042768D14A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{E9BE4F64-9CC5-433C-90CC-A379A732E5E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.NumberWithUnit", "Microsoft.Recognizers.Text.NumberWithUnit\Microsoft.Recognizers.Text.NumberWithUnit.csproj", "{E9BE4F64-9CC5-433C-90CC-A379A732E5E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

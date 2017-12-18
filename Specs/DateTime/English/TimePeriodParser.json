@@ -860,7 +860,7 @@
       "Text": "from 1:30p.m. to 4",
       "Type": "timerange",
       "Value": {
-        "Timex": "(T13:30,T16,PT2H)",
+        "Timex": "(T13:30,T16,PT2H30M)",
         "FutureResolution": {
           "startTime": "13:30:00",
           "endTime": "16:00:00"
@@ -893,6 +893,135 @@
         "PastResolution": {
           "startTime": "08:00:00",
           "endTime": "12:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 pm to 3:30",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 pm to 3:30",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T13:30,T15:30,PT2H)",
+        "FutureResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:30:00"
+        },
+        "PastResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 pm to 3:30 pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 pm to 3:30 pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T13:30,T15:30,PT2H)",
+        "FutureResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:30:00"
+        },
+        "PastResolution": {
+          "startTime": "13:30:00",
+          "endTime": "15:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 3 pm to 3:30 pm",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3 pm to 3:30 pm",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T15,T15:30,PT30M)",
+        "FutureResolution": {
+          "startTime": "15:00:00",
+          "endTime": "15:30:00"
+        },
+        "PastResolution": {
+          "startTime": "15:00:00",
+          "endTime": "15:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 3 to 3:30",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 3 to 3:30",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T03,T03:30,PT30M)",
+        "FutureResolution": {
+          "startTime": "03:00:00",
+          "endTime": "03:30:00"
+        },
+        "PastResolution": {
+          "startTime": "03:00:00",
+          "endTime": "03:30:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "set up meeting from 1:30 to 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-01T13:37:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 1:30 to 3",
+      "Type": "timerange",
+      "Value": {
+        "Timex": "(T01:30,T03,PT1H30M)",
+        "FutureResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
+        },
+        "PastResolution": {
+          "startTime": "01:30:00",
+          "endTime": "03:00:00"
         }
       }
     }

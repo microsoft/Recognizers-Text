@@ -1,6 +1,4 @@
-import { IModel, ModelResult } from "../models";
-import { IExtractor } from "./extractors";
-import { IParser, ParseResult } from "./parsers";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text";
 
 export enum NumberMode {
     // Default is for unit and datetime
