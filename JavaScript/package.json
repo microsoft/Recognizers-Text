@@ -74,6 +74,7 @@
 		"recognizers-text-options": "file:./packages/recognizers-options",
 		"recognizers-text-date-time": "file:./packages/recognizers-date-time",
 		"recognizers-text-number": "file:./packages/recognizers-number",
-		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit"
+		"recognizers-text-number-with-unit": "file:./packages/recognizers-number-with-unit",
+		"recognizers-text-suite": "file:./packages/recognizers-text-suite"
 	}
 }
