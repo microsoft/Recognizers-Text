@@ -2,6 +2,7 @@
 var Recognizers = require('recognizers-text-suite');
 var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
 var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
+var booleanModel = Recognizers.OptionsRecognizer.instance.getBooleanModel(Recognizers.Culture.English);
 
 // This loads the environment variables from the .env file
 require('dotenv-extended').load();
@@ -73,12 +74,37 @@ var bot = new builder.UniversalBot(connector, [
         // results.response contains the date (or array of dates) returned from the prompt
         var momentOrRange = results.response;
 
+        // store dateTime
+        session.dialogData.momentOrRange = momentOrRangeToString(momentOrRange);
+
         var amount = session.dialogData.amount;
         var nRoses = session.ngettext(`just one rose`, `${amount} roses`, amount);
-        session.send(`Thank you! I'll deliver ${nRoses} ${momentOrRangeToString(momentOrRange)}.`);
+        session.send(`Just a last confirmation. You need ${nRoses} ${momentOrRangeToString(momentOrRange)}.`);
 
-        // TODO: It should continue to a checkout dialog or page
-        session.send('Have a nice day!');
+        var promptMessage = [
+            `It's that ok?`,
+            `(hint: I can speak emoji 👌)`
+        ];
+
+        session.beginDialog('ask-confirmation', { prompt: promptMessage.join('\n\n') });
+    },
+
+    function (session, results) {
+        // results.response contains the confirmation returned from the prompt
+        var confirmation = results.response;
+
+        if (confirmation) {
+            var amount = session.dialogData.amount;
+            var momentOrRange = session.dialogData.momentOrRange;
+            var nRoses = session.ngettext(`just one rose`, `${amount} roses`, amount);
+            session.send(`Thank you! I'll deliver ${nRoses} ${momentOrRange}.`);
+    
+            // TODO: It should continue to a checkout dialog or page
+            session.send('Have a nice day!');
+        } else {
+            session.send("okay... anyways, I'm going to keep the flowers in case you change your mind");
+        }
+
         session.endDialog();
     }
 ]);
@@ -128,6 +154,33 @@ bot.dialog('ask-date', new builder.Prompt().onRecognize((context, callback) => {
     // Set error message and re-prompt;
     var errorTemplate = DateValidationErros[result.error] || DateValidationErros.default;
     context.dialogData.options.prompt = errorTemplate.replace('$moment$', momentOrRangeToString(result.value, ''));
+    callback(null, 0);
+}));
+
+// Ask for confirmation and validate input
+bot.dialog('ask-confirmation', new builder.Prompt().onRecognize((context, callback) => {
+    var input = context.message.text || '';
+
+    // Parse user input as is
+    var results = booleanModel.parse(input);
+    console.log('booleanModel parse results: ', results);
+
+    // Care for the first result only
+    if (results.length && results[0].typeName === 'boolean') {
+        var first = results[0];
+        var resolution = first.resolution.value;
+        if (typeof(resolution) === 'boolean') {
+            // it's a boolean, good!
+            return callback(null, 1, resolution);
+        } else {
+            // resolution value undefined
+            context.dialogData.options.prompt = 'I need a direct response, please';
+        }
+    } else {
+        context.dialogData.options.prompt = 'I\'m sorry, that doesn\'t seem to be a valid response';
+    }
+
+    // return with score 0 to re-prompt
     callback(null, 0);
 }));
 
