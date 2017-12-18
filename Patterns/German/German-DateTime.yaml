@@ -431,6 +431,15 @@ DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|and|,)\s*$
 PrefixArticleRegex: !simpleRegex
   def: \bthe\s+
+NumberAsTimeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+TimeBeforeAfterRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DateNumberConnectorRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

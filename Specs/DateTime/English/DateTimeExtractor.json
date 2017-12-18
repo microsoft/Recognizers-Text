@@ -782,28 +782,4 @@
     }
   ]
 }
-,
-{
-  "Input": "I will leave tmr 3",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tmr 3",
-      "Type": "datetime"
-    }
-  ]
-}
-,
-{
-  "Input": "I will leave tomorrow three",
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tomorrow three",
-      "Type": "datetime"
-    }
-  ]
-}
 ]

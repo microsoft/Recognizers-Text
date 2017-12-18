@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
@@ -46,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex TheEndOfRegex { get; }
 
         public Regex UnitRegex { get; }
+
+        public Regex DateNumberConnectorRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
@@ -71,9 +75,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SpecificTimeOfDayRegex = GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = GermanDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
 
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;

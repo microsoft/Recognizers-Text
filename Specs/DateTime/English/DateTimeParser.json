@@ -1218,28 +1218,4 @@
     }
   ]
 }
-,
-{
-  "Input": "I will leave tmr 3",
-  "Context": {
-    "ReferenceDateTime": "2017-12-05T19:15:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "tmr 3",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "2017-12-06T03",
-        "FutureResolution": {
-          "dateTime": "2017-12-06 03:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2017-12-06 03:00:00"
-        }
-      }
-    }
-  ]
-}
 ]

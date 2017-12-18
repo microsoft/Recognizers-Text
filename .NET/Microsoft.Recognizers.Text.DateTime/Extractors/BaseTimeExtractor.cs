@@ -77,14 +77,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> BeforeAfterRegexMatch(string text)
         {
             var ret = new List<Token>();
-            // handle "before 3", "after three"
-            var beforeAfterRegex = this.config.TimeBeforeAfterRegex;
-            if (beforeAfterRegex.IsMatch(text))
+            // only enabled in CalendarMode
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
             {
-                var matches = beforeAfterRegex.Matches(text);
-                foreach (Match match in matches)
+                // handle "before 3", "after three"
+                var beforeAfterRegex = this.config.TimeBeforeAfterRegex;
+                if (beforeAfterRegex.IsMatch(text))
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    var matches = beforeAfterRegex.Matches(text);
+                    foreach (Match match in matches)
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
                 }
             }
             return ret;

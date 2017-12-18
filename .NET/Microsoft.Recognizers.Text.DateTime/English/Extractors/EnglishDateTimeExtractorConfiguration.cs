@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public EnglishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());

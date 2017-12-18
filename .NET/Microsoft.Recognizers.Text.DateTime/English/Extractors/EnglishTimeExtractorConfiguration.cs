@@ -154,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public EnglishTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public EnglishTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         }

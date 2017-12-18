@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
             RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());

@@ -188,7 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public FrenchTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public FrenchTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         }

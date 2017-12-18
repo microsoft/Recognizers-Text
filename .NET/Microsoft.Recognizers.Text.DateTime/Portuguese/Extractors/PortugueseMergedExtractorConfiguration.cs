@@ -53,8 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration());
+            TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(options));
+            DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(options));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new PortugueseDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new PortugueseDateTimePeriodExtractorConfiguration());
