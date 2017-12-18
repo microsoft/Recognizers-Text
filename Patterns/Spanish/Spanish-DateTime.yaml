@@ -8,7 +8,7 @@ DayRegex: !simpleRegex
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
 YearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2}|9\d|0\d|1\d|2\d)
+  def: (?<year>((1[5-9]|20)\d{2})|9\d|0\d|1\d|2\d)
 FullYearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 RelativeMonthRegex: !simpleRegex
@@ -385,6 +385,9 @@ MiddlePauseRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\.]
+YearPlusNumberRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes)\b

@@ -16,7 +16,7 @@ DayRegex: !simpleRegex
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
 PeriodYearRegex: !simpleRegex
-  def: \b(?<year>19\d{2}|20\d{2})\b
+  def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 WeekDayRegex: !simpleRegex
   def: (?<weekday>Dimanche|Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\b
 RelativeMonthRegex: !nestedRegex
@@ -82,7 +82,7 @@ MonthOfRegex: !simpleRegex
 MonthRegex: !simpleRegex
   def: (?<month>Avril|Avr|Avr\.|Août|Aout|Decembre|D[eé]c|Dec\.|F[eé]vrier|F[eé]vr|Fev|F[eé]v|F[eé]v\.|Janvier|Janv\.|Janv|Jan|Jan\.|Juillet|Juil|Juil\.|Juin|Mars|Mai|Novembre|Nov|Nov\.|Octobre|Oct|Oct\.|Septembre|Sep|Sept|Sept\.)
 DateYearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!\s*\:)))
+  def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)(?!\s*\:)))
 OnRegex: !nestedRegex
   def: (?<=\b(en|sur\s*l[ea]|sur)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -333,7 +333,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((et(\s+de|pour)?)|avec)\b
 YearRegex: !simpleRegex
-  def: \b(?<year>19\d{2}|20\d{2})\b
+  def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 HolidayRegex1: !nestedRegex
   def: \b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\s+((d[ue]\s+|d'))?({YearRegex}|({ThisPrefixRegex}\s+)ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b
   references: [ YearRegex, ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex ]
@@ -437,6 +437,9 @@ DurationConnectorRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\.]
+YearPlusNumberRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

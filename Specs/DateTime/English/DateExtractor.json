@@ -1243,4 +1243,15 @@
     }
   ]
 }
+,
+{
+  "Input": "I left here 5 December 1391",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 December 1391",
+      "Type": "date"
+    }
+  ]
+}
 ]
