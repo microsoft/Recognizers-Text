@@ -479,23 +479,23 @@
 }
 ,
 {
-  "Input": "Vou voltar em 5 de Maio, 2016, 20 minutos após as 8 da tarde",
+  "Input": "Vou voltar em 5 de Maio, 2016, as cinco e vinte da tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "5 de Maio, 2016, 20 minutos após as 8 da tarde",
+      "Text": "5 de Maio, 2016, as cinco e vinte da tarde",
       "Type": "datetime",
       "Value": {
-        "Timex": "2016-05-05T20:20",
+        "Timex": "2016-05-05T17:20",
         "FutureResolution": {
-          "dateTime": "2016-05-05 20:20:00"
+          "dateTime": "2016-05-05 17:20:00"
         },
         "PastResolution": {
-          "dateTime": "2016-05-05 20:20:00"
+          "dateTime": "2016-05-05 17:20:00"
         }
       }
     }
@@ -520,30 +520,6 @@
         },
         "PastResolution": {
           "dateTime": "2016-10-15 20:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Vou voltar as sete do dia 15",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T00:00:00"
-  },
-  "NotSupported": "javascript,dotnet",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "sete do dia 15",
-      "Type": "datetime",
-      "Value": {
-        "Timex": "XXXX-XX-15T07",
-        "FutureResolution": {
-          "dateTime": "2016-11-15 07:00:00"
-        },
-        "PastResolution": {
-          "dateTime": "2016-10-15 07:00:00"
         }
       }
     }
@@ -987,7 +963,7 @@
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
   },
-  "NotSupported": "javascript,dotnet",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -1432,6 +1408,30 @@
         },
         "PastResolution": {
           "dateTime": "2016-12-16 12:23:59"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Vou voltar as sete do dia 15",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "sete do dia 15",
+      "Type": "datetime",
+      "Value": {
+        "Timex": "XXXX-XX-15T07",
+        "FutureResolution": {
+          "dateTime": "2016-11-15 07:00:00"
+        },
+        "PastResolution": {
+          "dateTime": "2016-10-15 07:00:00"
         }
       }
     }

@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseSpecailTimeOfDate(er.Text, referenceTime);
+                    innerResult = ParseSpecialTimeOfDate(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
@@ -300,10 +300,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseSpecailTimeOfDate(string text, DateObject refeDateTime)
+        private DateTimeResolutionResult ParseSpecialTimeOfDate(string text, DateObject refDateTime)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateExtractor.Extract(text, refeDateTime);
+
+            var ers = this.config.DateExtractor.Extract(text, refDateTime);
             if (ers.Count != 1)
             {
                 return ret;
@@ -312,31 +313,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beforeStr = text.Substring(0, ers[0].Start ?? 0);
             if (this.config.TheEndOfRegex.IsMatch(beforeStr))
             {
-                var pr = this.config.DateParser.Parse(ers[0], refeDateTime);
+                var pr = this.config.DateParser.Parse(ers[0], refDateTime);
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                 ret.Timex = pr.TimexStr + "T23:59";
                 ret.FutureValue = futureDate.AddDays(1).AddMinutes(-1);
                 ret.PastValue = pastDate.AddDays(1).AddMinutes(-1);
                 ret.Success = true;
-                return ret;
             }
 
             return ret;
         }
 
-        // Handle like "two hours ago" 
+        // Handle cases like "two hours ago" 
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceTime)
         {
-            return AgoLaterUtil.ParseDurationWithAgoAndLater(
-                text,
-                referenceTime,
-                config.DurationExtractor,
-                config.DurationParser,
-                config.UnitMap,
-                config.UnitRegex,
-                config.UtilityConfiguration
-                );
+
+            return AgoLaterUtil.ParseDurationWithAgoAndLater(text, referenceTime,
+                config.DurationExtractor, config.DurationParser, config.UnitMap, config.UnitRegex, 
+                config.UtilityConfiguration);
         }
 
     }

@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class AbstractNumberModel : IModel
     {
-        public AbstractNumberModel(IParser parser, IExtractor extractor)
+        protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
             this.Parser = parser;
             this.Extractor = extractor;
@@ -19,14 +20,26 @@ namespace Microsoft.Recognizers.Text.Number
 
         public List<ModelResult> Parse(string query)
         {
-            var extractResults = Extractor.Extract(query);
-            var parseNums = new List<ParseResult>();
-            foreach (var result in extractResults)
+
+            var parsedNumbers = new List<ParseResult>();
+
+            try
             {
-                parseNums.Add(Parser.Parse(result));
+                var extractResults = Extractor.Extract(query);
+
+                foreach (var result in extractResults)
+                {
+                    parsedNumbers.Add(Parser.Parse(result));
+                }
+
+            }
+            catch (Exception)
+            {
+                // Nothing to do. Exceptions in parse should not break users of recognizers.
+                // No result.
             }
 
-            return parseNums.Select(o => new ModelResult
+            return parsedNumbers.Select(o => new ModelResult
             {
                 Start = o.Start.Value,
                 End = o.Start.Value + o.Length.Value - 1,

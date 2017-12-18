@@ -95,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseMonthOfDate(er.Text, referenceDate);
                 }
 
-                // parse duration should be at the end since it will extract "the last week" from "the last week of July"
+                // Parse duration should be at the end since it will extract "the last week" from "the last week of July"
                 if (!innerResult.Success)
                 {
                     innerResult = ParseDuration(er.Text, referenceDate);
@@ -133,6 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         innerResult.FutureResolution = innerResult.PastResolution = new Dictionary<string, string>();
                     }
+
                     value = innerResult;
                 }
             }
@@ -148,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 TimexStr = value == null ? "" : ((DateTimeResolutionResult)value).Timex,
                 ResolutionStr = ""
             };
+
             return ret;
         }
 
@@ -626,7 +628,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = config.DurationParser.Parse(ers[0]);
                 var beforeStr = text.Substring(0, pr.Start ?? 0).Trim().ToLowerInvariant();
+                var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim().ToLowerInvariant();
                 var mod = "";
+
                 if (pr.Value != null)
                 {
                     var durationResult = (DateTimeResolutionResult) pr.Value;
@@ -642,28 +646,38 @@ namespace Microsoft.Recognizers.Text.DateTime
                         mod = TimeTypeConstants.beforeMod;
                         beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
                     }
+                    else
+                    {
+                        var suffixMatch = config.PastRegex.Match(afterStr);
+                        if (suffixMatch.Success)
+                        {
+                            mod = TimeTypeConstants.beforeMod;
+                            beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                        }
+                    }
 
                     prefixMatch = config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
                         mod = TimeTypeConstants.afterMod;
             
-                        //for future the beginDate should add 1 first
+                        // For future the beginDate should add 1 first
                         beginDate = referenceDate.AddDays(1);
                         endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
                     }
 
-                    //handle the "in two weeks" case which means the second week
+                    // Handle the "in two weeks" case which means the second week
                     prefixMatch = config.InConnectorRegex.Match(beforeStr);
-                    if(prefixMatch.Success && prefixMatch.Length == beforeStr.Length 
-                        && !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
+                    if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length && 
+                        !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
+
                         mod = TimeTypeConstants.afterMod;
 
                         beginDate = referenceDate.AddDays(1);
                         endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
 
-                        //change the duration value and the beginDate
+                        // Change the duration value and the beginDate
                         var unit = durationResult.Timex.Substring(durationResult.Timex.Length - 1);
 
                         durationResult.Timex = "P1" + unit;
@@ -681,7 +695,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
             
-            //parse rest of
+            // Parse "rest of"
             var match = this.config.RestOfDateRegex.Match(text);
             if (match.Success)
             {
@@ -698,12 +712,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                             restNowSunday = true;
                         }
                         break;
+
                     case "MON":
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
                         diff = endDate.Day - beginDate.Day + 1;
                         timex = "P" + diff + "D";
                         break;
+
                     case "Y":
                         endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
                         endDate = endDate.AddMonths(1).AddDays(-1);
