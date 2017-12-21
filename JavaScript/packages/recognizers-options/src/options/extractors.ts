@@ -1,5 +1,7 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
 import { Constants } from "./constants";
+import GraphemeSplitter = require("grapheme-splitter");
+const splitter = new GraphemeSplitter();
 
 export interface IChoiceExtractorConfiguration {
     regexesMap: Map<RegExp, string>;
@@ -53,6 +55,10 @@ export class OptionsExtractor implements IExtractor {
             });
         });
 
+        if (partialResults.length === 0) {
+            return results;
+        }
+
         partialResults = partialResults.sort((a, b) => a.start - b.start);
 
         if (this.config.onlyTopMatch) {
@@ -92,7 +98,31 @@ export class OptionsExtractor implements IExtractor {
     }
 
     private tokenize(source: string): string[] {
-        return RegExpUtility.split(this.config.tokenRegex, source).filter(s => !StringUtility.isNullOrWhitespace(s));
+        let tokens: string[] = [];
+        let chars = splitter.splitGraphemes(source);
+        let token: string = '';
+        chars.forEach(c => {
+            let codePoint = c.codePointAt(0) || c.charAt(0);
+            if (codePoint > 0xFFFF) {
+                // Character is in a Supplementary Unicode Plane. This is where emoji live so
+                // we're going to just break each character in this range out as its own token.
+                tokens.push(c);
+                if (!StringUtility.isNullOrWhitespace(token)) {
+                    tokens.push(token);
+                    token = '';
+                }
+            } else if (!(this.config.tokenRegex.test(c) || StringUtility.isWhitespace(c))) {
+                token = token.concat(c);
+            } else if (!StringUtility.isNullOrWhitespace(token)) {
+                tokens.push(token);
+                token = '';
+            }
+        });
+        if (!StringUtility.isNullOrWhitespace(token)) {
+            tokens.push(token);
+            token = '';
+        }
+        return tokens;
     }
 }
 

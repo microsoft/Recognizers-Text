@@ -143,6 +143,7 @@ export namespace SpanishDateTime {
 	export const WeekWithWeekDayRangeRegex = `^[.]`;
 	export const GeneralEndingRegex = `^[.]`;
 	export const MiddlePauseRegex = `^[.]`;
+	export const PrefixArticleRegex = `^[\\.]`;
 	export const AgoRegex = `\\b(antes)\\b`;
 	export const LaterRegex = `\\b(despu[eé]s|desde ahora)\\b`;
 	export const Tomorrow = 'mañana';
@@ -173,4 +174,7 @@ export namespace SpanishDateTime {
 	export const RestOfDateTimeRegex = `^[\\.]`;
 	export const SetWeekDayRegex = `^[\\.]`;
 	export const NightRegex = `\\b(medionoche|noche)\\b`;
+	export const CommonDatePrefixRegex = `^[\\.]`;
+	export const DurationUnitRegex = `^[\\.]`;
+	export const DurationConnectorRegex = `^[.]`;
 }

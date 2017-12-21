@@ -78,6 +78,7 @@ export namespace EnglishDateTime {
 	export const AmRegex = `(?<am>((at|in|around|on|for)\\s+(the\\s+)?)?(morning))`;
 	export const LunchRegex = `\\b(lunchtime)\\b`;
 	export const NightRegex = `\\b(midnight|night)\\b`;
+	export const CommonDatePrefixRegex = `^[\\.]`;
 	export const LessThanOneHour = `(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|${BaseDateTime.DeltaMinuteRegex}(\\s+(minute|minutes|min|mins))|${DeltaMinuteNumRegex}(\\s+(minute|minutes|min|mins)))`;
 	export const EngTimeRegex = `(?<engtime>${HourNumRegex}\\s+(${MinuteNumRegex}|(?<tens>twenty|thirty|forty|fourty|fifty)\\s+${MinuteNumRegex}))`;
 	export const TimePrefix = `(?<prefix>(${LessThanOneHour} past|${LessThanOneHour} to))`;
@@ -180,6 +181,8 @@ export namespace EnglishDateTime {
 	export const WeekWithWeekDayRangeRegex = `\\b((?<week>(${NextPrefixRegex}|${PastPrefixRegex}|this)\\s+week)((\\s+between\\s+${WeekDayRegex}\\s+and\\s+${WeekDayRegex})|(\\s+from\\s+${WeekDayRegex}\\s+to\\s+${WeekDayRegex})))\\b`;
 	export const GeneralEndingRegex = `^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$`;
 	export const MiddlePauseRegex = `\\s*(,)\\s*`;
+	export const DurationConnectorRegex = `^\\s*(?<connector>\\s+|and|,)\\s*$`;
+	export const PrefixArticleRegex = `\\bthe\\s+`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);

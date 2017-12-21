@@ -162,7 +162,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var ret = new DateTimeResolutionResult();
             DateTimeParseResult pr1 = null, pr2 = null;
-            bool bothHasDate = false, beginHasDate = false, endHasDate = false;
+            bool bothHaveDates = false, beginHasDate = false, endHasDate = false;
+
             var er1 = SingleTimeExtractor.Extract(text, referenceTime);
             var er2 = TimeWithDateExtractor.Extract(text, referenceTime);
 
@@ -173,7 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 pr1 = this.config.DateTimeParser.Parse(er2[0], referenceTime);
                 pr2 = this.config.DateTimeParser.Parse(er2[1], referenceTime);
-                bothHasDate = true;
+                bothHaveDates = true;
             }
             else if (er2.Count == 1 && er1.Count == 2)
             {
@@ -236,7 +237,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 pastEnd = futureEnd;
             }
 
-            if (bothHasDate)
+            if (bothHaveDates)
             {
                 rightTime = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day);
                 leftTime = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day);

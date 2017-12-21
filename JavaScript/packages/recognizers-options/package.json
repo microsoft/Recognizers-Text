@@ -1,6 +1,6 @@
 {
   "name": "recognizers-text-options",
-  "version": "1.0.0-rc.27",
+  "version": "1.0.0-rc.29.0",
   "description": "recognizers-text-options abstract",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -31,6 +31,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "recognizers-text": "^1.0.0-rc.27"
+    "recognizers-text": "^1.0.0-rc.29.0",
+    "grapheme-splitter": "^1.0.2"
   }
 }
