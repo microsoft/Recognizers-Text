@@ -12,6 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_DATETIMEPERIOD = "datetimerange";
         public const string SYS_DATETIME_DURATION = "duration";
         public const string SYS_DATETIME_SET = "set";
+        public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
 
         //key
         public const string TimexKey = "timex";
@@ -23,6 +24,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string ResolveToPastKey = "resolveToPast";
         public const string ResolveToFutureKey = "resolveToFuture";
         public const string MultipleDurationType = "multipleDurationType";
+        public const string Context = "context";
+        public const string SubType = "subType";
+        public const string ParentText = "parentText";
 
         //Multiple Duration Types
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";

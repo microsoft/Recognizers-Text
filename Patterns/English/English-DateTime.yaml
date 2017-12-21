@@ -431,6 +431,8 @@ DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|and|,)\s*$
 PrefixArticleRegex: !simpleRegex
   def: \bthe\s+
+OrRegex: !simpleRegex
+  def: \s*(or)\s*
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
