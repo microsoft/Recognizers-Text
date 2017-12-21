@@ -73,6 +73,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekWithWeekDayRangeRegex { get; }
 
+        Regex YearPlusNumberRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

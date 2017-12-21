@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
+        public Regex YearPlusNumberRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -108,6 +109,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             RestOfDateRegex = PortugueseDatePeriodExtractorConfiguration.RestOfDateRegex;
             LaterEarlyPeriodRegex = PortugueseDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = PortugueseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
+            YearPlusNumberRegex = PortugueseDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

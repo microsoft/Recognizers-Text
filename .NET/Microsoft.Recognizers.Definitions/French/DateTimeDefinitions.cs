@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string ThisPrefixRegex = @"(?<order>ce|cette|au\s+cours+(du|de))\b";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|11e|12|12e|13|13e|14|14e|15|15e|16|16e|17|17e|18|18e|19|19e|1er|1|21|21e|20|20e|22|22e|23|23e|24|24e|25|25e|26|26e|27|27e|28|28e|29|29e|2|2e|30|30e|31|31e|3|3e|4|4e|5|5e|6|6e|7|7e|8|8e|9|9e)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
-		public const string PeriodYearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
+		public const string PeriodYearRegex = @"\b(?<year>((1[5-9]|20)\d{2})|2100)\b";
 		public const string WeekDayRegex = @"(?<weekday>Dimanche|Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\b";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>({ThisPrefixRegex}\s+mois)|(mois\s+{PastSuffixRegex})|(mois\s+{NextSuffixRegex}))\b";
 		public const string EngMonthRegex = @"(?<month>Avril|Avr\.|Avr|Août|D[eé]cembre|D[eé]c|D[eé]c\.|F[eé]vrier|F[eé]v|F[eé]vr\.|F[eé]vr|Javier|Jan|Janv\.|Janv|Juillet|Jul|Juil|Juil\.|Juin|Jun|Mars|Mar|Mai|Novembre|Nov|Nov\.|Octobre|Oct|Oct\.|Septembre|Sep|Sept|Sept\.)";
@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string WeekOfRegex = @"(semaine)(\s*)(de)";
 		public const string MonthOfRegex = @"(mois)(\s*)(de)";
 		public const string MonthRegex = @"(?<month>Avril|Avr|Avr\.|Août|Aout|Decembre|D[eé]c|Dec\.|F[eé]vrier|F[eé]vr|Fev|F[eé]v|F[eé]v\.|Janvier|Janv\.|Janv|Jan|Jan\.|Juillet|Juil|Juil\.|Juin|Mars|Mai|Novembre|Nov|Nov\.|Octobre|Oct|Oct\.|Septembre|Sep|Sept|Sept\.)";
-		public const string DateYearRegex = @"(?<year>19\d{2}|20\d{2}|((9\d|0\d|1\d|2\d)(?!\s*\:)))";
+		public const string DateYearRegex = @"(?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)(?!\s*\:)))";
 		public static readonly string OnRegex = $@"(?<=\b(en|sur\s*l[ea]|sur)\s+)({DayRegex}s?)\b";
 		public const string RelaxedOnRegex = @"(?<=\b(en|le|dans|sur\s*l[ea]|du|sur)\s+)((?<day>10e|11e|12e|13e|14e|15e|16e|17e|18e|19e|1er|20e|21e|22e|23e|24e|25e|26e|27e|28e|29e|2e|30e|31e|3e|4e|5e|6e|7e|8e|9e)s?)\b";
 		public static readonly string ThisRegex = $@"\b((cette(\s*semaine)?\s+){WeekDayRegex})|({WeekDayRegex}(\s+cette\s*semaine))\b";
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string AllRegex = @"\b(?<all>toute\s(l['ea])\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\b";
 		public const string HalfRegex = @"(((un|une)\s*)|\b)(?<half>demi?(\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\b";
 		public const string ConjunctionRegex = @"\b((et(\s+de|pour)?)|avec)\b";
-		public const string YearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
+		public const string YearRegex = @"\b(?<year>((1[5-9]|20)\d{2})|2100)\b";
 		public static readonly string HolidayRegex1 = $@"\b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\s+((d[ue]\s+|d'))?({YearRegex}|({ThisPrefixRegex}\s+)ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b";
 		public static readonly string HolidayRegex2 = $@"\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?\b";
 		public static readonly string HolidayRegex3 = $@"(?<holiday>(jour\s*(d[eu]|des)\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\s+(de\s+)?({YearRegex}|{ThisPrefixRegex}\s+ann[eé]e|ann[eé]e\s+({PastSuffixRegex}|{NextSuffixRegex})))?";
@@ -195,6 +195,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string DurationConnectorRegex = @"^[.]";
 		public const string PrefixArticleRegex = @"^[\.]";
+		public const string YearPlusNumberRegex = @"^[.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },

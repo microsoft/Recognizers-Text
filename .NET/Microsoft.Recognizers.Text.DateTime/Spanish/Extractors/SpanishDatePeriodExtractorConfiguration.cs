@@ -121,6 +121,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex WeekWithWeekDayRangeRegex =
             new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearPlusNumberRegex =
+            new Regex(DateTimeDefinitions.YearPlusNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -139,6 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             RestOfDateRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
+            YearPlusNumberRegex,
         };
 
         public SpanishDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)

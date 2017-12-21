@@ -532,9 +532,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var match = this.config.YearRegex.Match(text);
+            string yearStr = null;
             if (match.Success && match.Length == text.Length)
             {
-                var year = int.Parse(match.Value);
+                yearStr = match.Value;
+            }
+            else
+            {
+                match = this.config.YearPlusNumberRegex.Match(text);
+                if (match.Success && match.Length == text.Length)
+                {
+                    yearStr = match.Groups["number"].Value;
+                }
+            }
+            
+            if (!string.IsNullOrEmpty(yearStr))
+            {
+                var year = int.Parse(yearStr);
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
 
