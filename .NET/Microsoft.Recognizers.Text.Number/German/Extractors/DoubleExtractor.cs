@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.German
                     "DoubleNum"
                 }, {
                     new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline),
-                    "DoubleEng"
+                    "DoubleGer"
                 }, {
                     new Regex(NumbersDefinitions.DoubleExponentialNotationRegex,
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Text.Number.German
                               RegexOptions.IgnoreCase | RegexOptions.Singleline),
                     "DoublePow"
                 }, {
-                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumCommaDot, placeholder), "DoubleNum"
+                    GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumDotComma, placeholder), "DoubleNum"
                 }
             };
 

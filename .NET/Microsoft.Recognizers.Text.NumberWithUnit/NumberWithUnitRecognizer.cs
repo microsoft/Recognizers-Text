@@ -227,6 +227,46 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                             ),
             });
+
+            RegisterModel(Culture.German, options.ToString(), new Dictionary<Type, IModel>
+            {
+                [typeof(CurrencyModel)] = new CurrencyModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new German.CurrencyExtractorConfiguration()),
+                                    new NumberWithUnitParser(new German.CurrencyParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(TemperatureModel)] = new TemperatureModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new German.TemperatureExtractorConfiguration()),
+                                    new NumberWithUnitParser(new German.TemperatureParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(DimensionModel)] = new DimensionModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new German.DimensionExtractorConfiguration()),
+                                    new NumberWithUnitParser(new German.DimensionParserConfiguration())
+                                }
+                            }
+                            ),
+                [typeof(AgeModel)] = new AgeModel(
+                            new Dictionary<IExtractor, IParser>
+                            {
+                                {
+                                    new NumberWithUnitExtractor(new German.AgeExtractorConfiguration()),
+                                    new NumberWithUnitParser(new German.AgeParserConfiguration())
+                                }
+                            }
+                            ),
+            });
         }
 
         public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)

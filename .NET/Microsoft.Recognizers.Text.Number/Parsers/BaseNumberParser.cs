@@ -22,6 +22,9 @@ namespace Microsoft.Recognizers.Text.Number
         {
             this.Config = config;
 
+            //As soon as you develop on a machine that does not use en-US as standard-culture, numbertests for the other languages fail
+            System.Threading.Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|"
                                 + GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|"
                                 + GetKeyRegex(this.Config.OrdinalNumberMap.Keys);

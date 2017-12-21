@@ -1,1 +1,209 @@
-[]
+[{
+  "Input": "Als sie 5 Jahre alt war, lernte sie Fahrrad fahren.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Debug":true,
+  "Results": [
+    {
+      "Text": "5 Jahre alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "5",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Diese Sage ist zehn Jahre alt.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "zehn Jahre alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ich bin nur 29 Jahre alt!",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "29 Jahre alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "29",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Jetzt, mit einem Alter von 95 Jahren, hat man eine andere Perspektive.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "95 Jahren",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "95",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Die große Mauer von China ist mehr als 500 Jahre alt und erstreckt sich über 5000 Meilen.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "500 Jahre alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "500",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Sie ist 60 Jahre alt. Sie wurde am 8. May 1945 geboren.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "60 Jahre alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "60",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "25% aller Fälle werden bis zu einem Alter von 3 Jahren nicht diagnostiziert.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "3 Jahren",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Es ist passiert als das Baby nur zehn Monate alt war.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "zehn Monate alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "10",
+        "unit": "Month"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Das Angebot des Komitees ist 8 Monate her.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "8 Monate",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "8",
+        "unit": "Month"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Ungefähr 50% aller Fälle werden um das siebte Lebensjahr herum diagnostiziert.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript,dotnet",
+  "Results": [
+    {
+      "Text": "siebte Lebensjahr",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "7",
+        "unit": "Year"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Es ist möglich, allerdings waren 2006 95% von ihnen jünger als drei Monate alt.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "drei Monate alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Month"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Wenn wir im Dezember weiter machen, wird es drei Wochen alt sein.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "drei Wochen alt",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "3",
+        "unit": "Week"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Im Alter von 6 Wochen kann man schon Weihnachten feiern.",
+  "NotSupportedByDesign": "python",
+  "NotSupported": "javascript",
+  "Results": [
+    {
+      "Text": "6 Wochen",
+      "TypeName": "age",
+      "Resolution": {
+        "value": "6",
+        "unit": "Week"
+      }
+    }
+  ]
+}
+]

@@ -1,10 +1,10 @@
 ﻿---
 LangMarker: Ger
 #Integer Regex
-RoundNumberIntegerRegex: !simpleRegex
-  def: (hundert|tausend|million|millionen|milliarde|milliarden|billion|billionen)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|zwei|sechs)
+  def: (drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|zwei|sechs)
+RoundNumberIntegerRegex: !simpleRegex
+  def: (hundert|einhundert|tausend|million|millionen|milliarde|milliarden|billion|billionen)
 AnIntRegex: !simpleRegex
   def: (eine|ein)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
@@ -12,10 +12,10 @@ TenToNineteenIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)
 SeparaIntRegex: !nestedRegex
-  def: ((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s+{RoundNumberIntegerRegex})+))
+  def: ((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex, AnIntRegex ]
 AllIntRegex: !nestedRegex
-  def: (((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*{SeparaIntRegex})
+  def: (((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})
   references: [ TenToNineteenIntegerRegex, TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, SeparaIntRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
@@ -27,7 +27,7 @@ NumbersWithPlaceHolder: !paramsRegex
 NumbersWithSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)
 RoundNumberIntegerRegexWithLocks: !nestedRegex
-  def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  def: (?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dutzend(e)?(?=\b)
@@ -35,28 +35,28 @@ AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [ AllIntRegex ]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((ein\s+)?halbes\s+dutzend)|({AllIntRegex}\s+dozen(s)?))(?=\b)
+  def: (?<=\b)(((ein\s+)?halbes\s+dutzend)|({AllIntRegex}\s+dutzend(e)?))(?=\b)
   references: [ AllIntRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
-  def: (hundertstel|tausendstel|millionstel|milliardstel|trillionstel)
+  def: (hundertstel|tausendstel|millionstel|milliardstel|billionstel)
 BasicOrdinalRegex: !simpleRegex
-  def: (erster|erste|erstes|zweiter|zweite|zweites|dritter|dritte|drittes|drittel|vierter|vierte|viertes|fünfter|fünfte|fünftes|fuenfter|fuenfte|fuenftes|sechster|sechste|sechstes|siebter|siebte|siebter|achter|achte|achtes|neunter|neunte|neuntes|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+  def: (zuerst|erst(er|e|es|en)?|zweit(er|e|es|en)?|dritt(er|e|es|en|el)?|viert(er|e|es|en|el)?|fünft(er|e|es|en|el)?|fuenft(er|e|es|en|el)?|sechst(er|e|es|en|el)?|siebt(er|e|es|en|el)?|acht(er|e|es|en|el)?|neunt(er|e|es|en|el)?|zehnt(er|e|es|en|el)?|elft(er|e|es|en|el)?|zwölft(er|e|es|en|el)?|zwoelft(er|e|es|en|el)?|dreizehnt(er|e|es|en|el)?|vierzehnt(er|e|es|en|el)?|fünfzehnt(er|e|es|en|el)?|fuenfzehnt(er|e|es|en|el)?|sechzehnt(er|e|es|en|el)?|siebzehnt(er|e|es|en|el)?|achtzehnt(er|e|es|en|el)?|neunzehnt(er|e|es|en|el)?|zwanzigst(er|e|es|en|el)?|dreißigst(er|e|es|en|el)?|vierziegt(er|e|es|en|el)?|fünfzigst(er|e|es|en|el)?|fuenfzigst(er|e|es|en|el)?|sechzigst(er|e|es|en|el)?|siebzigst(er|e|es|en|el)?|achtzigst(er|e|es|en|el)?|neunzigst(er|e|es|en|el)?)
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: ((((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
+  def: ((((({TensNumberIntegerRegex}(\s*(und\s*)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s*{RoundNumberIntegerRegex})+)\s*(und\s*)?)*({TensNumberIntegerRegex}(\s*|\s*-\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
-  def: (({AllIntRegex}\s+){RoundNumberOrdinalRegex})
+  def: (({AllIntRegex}\s*){RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
 AllOrdinalRegex: !nestedRegex
-  def: ({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
-  references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
+  def: (({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+  references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex, AllIntRegex ]
 OrdinalSuffixRegex: !simpleRegex
-  def: (?<=\b)((\d*(1st|2nd|3rd|4th|5th|6th|7th|8th|9th|0th))|(11th|12th))(?=\b)
+  def: (?<=\b)((\d*(1.|2.|3.|4.|5.|6.|7.|8.|9.|0.))|(11.|12.))(?=\b)
 OrdinalNumericRegex: !simpleRegex
-  def: (?<=\b)(\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
+  def: (?<=\b)(\d{1,3}(\s*,\s*\d+)*\s*th)(?=\b)
 OrdinalRoundNumberRegex: !nestedRegex
-  def: (?<!(a|an)\s+){RoundNumberOrdinalRegex}
+  def: (?<!(ein|eine)\s+){RoundNumberOrdinalRegex}
   references: [ RoundNumberOrdinalRegex ]
 OrdinalGermanRegex: !nestedRegex
   def: (?<=\b){AllOrdinalRegex}(?=\b)
@@ -67,10 +67,10 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)
+  def: (?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)
+  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)
@@ -80,7 +80,7 @@ AllPointRegex: !nestedRegex
   def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
   references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
 AllFloatRegex: !nestedRegex
-  def: '{AllIntRegex}(\s+point){AllPointRegex}'
+  def: '{AllIntRegex}(\s+Komma\s+){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)
@@ -89,7 +89,7 @@ DoubleExponentialNotationRegex: !simpleRegex
 DoubleCaretExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+(?!(\.\d+))(?={placeholder})
+  def: ((\d{1,3})(\.\d{3})*(\,\d+)?)(?={placeholder})
   params: [ placeholder ]
 DoubleWithoutIntegralRegex: !paramsRegex
   def: (?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})
@@ -105,25 +105,25 @@ CurrencyRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)
 #Percentage Regex
 NumberWithSuffixPercentage: !nestedRegex
-  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|per cents|per cent|cents|cent|percentage|percents|percent)
+  def: ({BaseNumbers.NumberReplaceToken})(\s*)(%|Prozent)
   references: [ BaseNumbers.NumberReplaceToken ]
 NumberWithPrefixPercentage: !nestedRegex
-  def: (per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})
+  def: (Prozent)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
 #Parser
 DecimalSeparatorChar: !char ','
 FractionMarkerToken: over
 NonDecimalSeparatorChar: !char '.'
-HalfADozenText: six
+HalfADozenText: sechs
 WordSeparatorToken: und
 WrittenDecimalSeparatorTexts: [Komma]
 WrittenGroupSeparatorTexts: [Punkt]
 WrittenIntegerSeparatorTexts: [und]
-WrittenFractionSeparatorTexts: [und]
+WrittenFractionSeparatorTexts: [durch]
 HalfADozenRegex: !simpleRegex
   def: ein\s+halbes\s+dutzend
 DigitalNumberRegex: !simpleRegex
-  def: ((?<=\b)(hundert|tausend|million|millionen|milliarde|trillion|dozen(s)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
+  def: ((?<=\b)(hundert|tausend|million(en)?|milliarde(n)?|billion(en)?|dutzend(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))
 CardinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -173,173 +173,209 @@ CardinalNumberMap: !dictionary
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
-    /erst?(?:er|es|en|e)/: 1
+    zuerst: 1
+    erst: 1
     erster: 1
     erste: 1
     erstes: 1
     ersten: 1
+    zweit: 2
     zweiter: 2
     zweite: 2
     zweites: 2
     zweiten: 2
     halb: 2
+    halbe: 2
+    halbes: 2
     hälfte: 2
     haelfte: 2
+    dritt: 3
     dritter: 3
     dritte: 3
     drittes: 3
     dritten: 3
     drittel: 3
+    viert: 4
     vierter: 4
     vierte: 4
     viertes: 4
     vierten: 4
     viertel: 4
+    fünft: 5
     fünfter: 5
     fünfte: 5
     fünftes: 5
     fünften: 5
+    fuenft: 5
     fuenfter: 5
     fuenfte: 5
     fuenftes: 5
     fuenften: 5
     fünftel: 5
     fuenftel: 5
+    sechst: 6
     sechster: 6
     sechste: 6
     sechstes: 6
     sechsten: 6
     sechstel: 6
+    siebt: 7
     siebter: 7
     siebte: 7
     siebtes: 7
     siebten: 7
     siebtel: 7
+    acht: 8
     achter: 8
     achte: 8
     achtes: 8
     achten: 8
     achtel: 8
+    neunt: 9
     neunter: 9
     neunte: 9
     neuntes: 9
     neunten: 9
     neuntel: 9
+    zehnt: 10
     zehnter: 10
     zehnte: 10
     zehntes: 10
     zehnten: 10
     zehntel: 10
+    elft: 11
     elfter: 11
     elfte: 11
     elftes: 11
     elften: 11
     elftel: 11
+    zwölft: 12
     zwölfter: 12
     zwölfte: 12
     zwölftes: 12
     zwölften: 12
+    zwoelft: 12
     zwoelfter: 12
     zwoelfte: 12
     zwoelftes: 12
     zwoelften: 12
     zwölftel: 12
     zwoelftel: 12
+    dreizehnt: 13
     dreizehnter: 13
     dreizehnte: 13
     dreizehntes: 13
     dreizehnten: 13
     dreizehntel: 13
+    vierzehnt: 14
     vierzehnter: 14
     vierzehnte: 14
     vierzehntes: 14
     vierzehnten: 14
     vierzehntel: 14
+    fünfzehnt: 15
     fünfzehnter: 15
     fünfzehnte: 15
     fünfzehntes: 15
     fünfzehnten: 15
     fünfzehntel: 15
+    fuenfzehnt: 15
     fuenfzehnter: 15
     fuenfzehnte: 15
     fuenfzehntes: 15
     fuenfzehnten: 15
     fuenfzehntel: 15
-    sechtehnter: 16
-    sechtehnte: 16
-    sechtehntes: 16
-    sechtehnten: 16
+    sechzehnt: 16
+    sechzehnter: 16
+    sechzehnte: 16
+    sechzehntes: 16
+    sechzehnten: 16
     sechzehntel: 16
+    siebzehnt: 17
     siebzehnter: 17
     siebzehnte: 17
     siebzehntes: 17
     siebzehnten: 17
     siebzehntel: 17
+    achtzehnt: 18
     achtzehnter: 18
     achtzehnte: 18
     achtzehntes: 18
     achtzehnten: 18
     achtzehntel: 18
+    neunzehnt: 19
     neunzehnter: 19
     neunzehnte: 19
     neunzehntes: 19
     neunzehnten: 19
     neunzehntel: 19
+    zwanzigst: 20
     zwanzigster: 20
     zwanzigste: 20
     zwanzigstes: 20
     zwanzigsten: 20
     zwangtigstel: 20
+    dreißigst: 30
     dreißigster: 30
     dreißigste: 30
     dreißigstes: 30
     dreißigsten: 30
     dreißigstel: 30
+    vierzigst: 40
     vierzigster: 40
     vierzigste: 40
     vierzigstes: 40
     vierzigsten: 40
     vierzigstel: 40
+    fünfzigst: 50
     fünfzigster: 50
     fünfzigste: 50
     fünfzigsten: 50
     fünfzigstes: 50
     fünfzigstel: 50
+    fuenfzigst: 50
     fuenfzigster: 50
     fuenfzigste: 50
     fuenfzigstes: 50
     fuenfzigsten: 50
     fuenfzigstel: 50
+    sechzigst: 60
     sechzigster: 60
     sechzigste: 60
     sechzigstes: 60
     sechzigsten: 60
     sechzigstel: 60
+    siebzigst: 70
     siebzigster: 70
     siebzigste: 70
     siebzigstes: 70
     siebzigsten: 70
     siebzigstel: 70
+    achtzigst: 80
     achtzigster: 80
     achtzigste: 80
     achtzigstes: 80
     achtzigsten: 80
     achtzigstel: 80
+    neunzigst: 90
     neunzigster: 90
     neunzigste: 90
     neunzigstes: 90
     neunzigsten: 90
     neunzigstel: 90
+    hundertst: 100
     hundertster: 100
     hundertste: 100
     hundertstes: 100
     hundertsten: 100
     hundertstel: 100
-    tausendser: 1000
-    tausendse: 1000
-    tausendses: 1000
-    tausendsen: 1000
+    tausendst: 1000
+    tausendster: 1000
+    tausendste: 1000
+    tausendstes: 1000
+    tausendsten: 1000
     tausendstel: 1000
+    millionst: 1000000
     millionster: 1000000
     millionste: 1000000
     millionstes: 1000000
