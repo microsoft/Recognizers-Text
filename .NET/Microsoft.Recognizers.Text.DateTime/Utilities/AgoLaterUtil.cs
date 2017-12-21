@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
@@ -16,11 +14,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             IDateTimeUtilityConfiguration utilityConfiguration)
         {
             var pos = (int)er.Start + (int)er.Length;
+
             if (pos <= text.Length)
             {
                 var afterString = text.Substring(pos);
                 var beforeString = text.Substring(0, (int)er.Start);
                 var index = -1;
+
                 if (MatchingUtil.GetAgoLaterIndex(afterString, utilityConfiguration.AgoRegex, out index))
                 {
                     ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + index));
@@ -31,7 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (MatchingUtil.GetInIndex(beforeString, utilityConfiguration.InConnectorRegex, out index))
                 {
-                    // for range unit like "week, month, year", it should output dateRange or datetimeRange
+
+                    // For range unit like "week, month, year", it should output dateRange or datetimeRange
                     if (!utilityConfiguration.RangeUnitRegex.IsMatch(er.Text))
                     {
                         if (er.Start != null && er.Length != null && (int) er.Start >= index)
@@ -41,6 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
             }
+
             return ret;
         }
 
@@ -63,12 +65,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var afterStr =
                             text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length)
-                                .Trim()
-                                .ToLowerInvariant();
+                                .Trim().ToLowerInvariant();
+
                     var beforeStr =
                         text.Substring(0, (int)durationRes[0].Start)
-                            .Trim()
-                            .ToLowerInvariant();
+                            .Trim().ToLowerInvariant();
 
                     var mode = AgoLaterMode.Date;
                     if (pr.TimexStr.Contains("T"))
@@ -78,13 +79,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (pr.Value != null)
                     {
-                        return GetAgoLaterResult(
-                                pr,
-                                afterStr,
-                                beforeStr,
-                                referenceTime,
-                                utilityConfiguration,
-                                mode);
+                        return GetAgoLaterResult(pr, afterStr, beforeStr, referenceTime,
+                                                 utilityConfiguration, mode);
                     }
                 }
             }
@@ -109,8 +105,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 
                 ((DateTimeResolutionResult)durationParseResult.Value).Mod = TimeTypeConstants.beforeMod;
             }
-            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex)
-                || MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
+            else if (MatchingUtil.ContainsAgoLaterIndex(afterStr, utilityConfiguration.LaterRegex) ||
+                     MatchingUtil.ContainsInIndex(beforeStr, utilityConfiguration.InConnectorRegex))
             {
                 resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, true);
 

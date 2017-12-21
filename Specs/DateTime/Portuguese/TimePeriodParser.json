@@ -1,8 +1,9 @@
 [{
-  "Input": "Estaré afuera de 5 a 6pm",
+  "Input": "Estarei fora de 5 a 6pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -24,10 +25,11 @@
 }
 ,
 {
-  "Input": "Estaré afuera de 5 a 6p.m.",
+  "Input": "Estarei fora de 5 a 6p.m.",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -49,14 +51,15 @@
 }
 ,
 {
-  "Input": "Estaré afuera de 5 a siete de la mañana",
+  "Input": "Estarei fora de 5 a sete da manhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "de 5 a siete de la mañana",
+      "Text": "de 5 a sete da manhã",
       "Type": "timerange",
       "Value": {
         "Timex": "(T05,T07,PT2H)",
@@ -74,14 +77,15 @@
 }
 ,
 {
-  "Input": "Estaré afuera desde las 5 hasta las 6 pm",
+  "Input": "Estarei fora das 5 até as 6 pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde las 5 hasta las 6 pm",
+      "Text": "das 5 até as 6 pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T17,T18,PT1H)",
@@ -99,14 +103,15 @@
 }
 ,
 {
-  "Input": "Estaré afuera entre las 5 y 6pm",
+  "Input": "Estarei fora entre as 5 e 6pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre las 5 y 6pm",
+      "Text": "entre as 5 e 6pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T17,T18,PT1H)",
@@ -124,14 +129,15 @@
 }
 ,
 {
-  "Input": "Estaré afuera entre 5pm y 6pm",
+  "Input": "Estarei fora entre 5pm e 6pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre 5pm y 6pm",
+      "Text": "entre 5pm e 6pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T17,T18,PT1H)",
@@ -149,14 +155,15 @@
 }
 ,
 {
-  "Input": "Estaré afuera entre las 5 y 6 de la tarde",
+  "Input": "Estarei fora entre as 5 e 6 da tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre las 5 y 6 de la tarde",
+      "Text": "entre as 5 e 6 da tarde",
       "Type": "timerange",
       "Value": {
         "Timex": "(T17,T18,PT1H)",
@@ -174,14 +181,15 @@
 }
 ,
 {
-  "Input": "Estaré fuera desde las 4pm hasta 5pm",
+  "Input": "Estarei fora das 4pm até 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde las 4pm hasta 5pm",
+      "Text": "das 4pm até 5pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T16,T17,PT1H)",
@@ -199,14 +207,15 @@
 }
 ,
 {
-  "Input": "Estaré fuera desde las 4:00 hasta las 7 en punto",
+  "Input": "Estarei fora das 4:00 até as 7 em ponto",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde las 4:00 hasta las 7 en punto",
+      "Text": "4:00 até as 7 em ponto",
       "Type": "timerange",
       "Value": {
         "Timex": "(T04:00,T07,PT3H)",
@@ -224,10 +233,11 @@
 }
 ,
 {
-  "Input": "Estaré fuera 4pm-5pm",
+  "Input": "Estarei fora 4pm-5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -249,10 +259,11 @@
 }
 ,
 {
-  "Input": "Estaré fuera 4pm - 5pm",
+  "Input": "Estarei fora 4pm - 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -274,14 +285,15 @@
 }
 ,
 {
-  "Input": "Estaré fuera desde las 3 de la mañana hasta las 5pm",
+  "Input": "Estarei fora das 3 da manhã até as 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "desde las 3 de la mañana hasta las 5pm",
+      "Text": "3 da manhã até as 5pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T03,T17,PT14H)",
@@ -299,14 +311,15 @@
 }
 ,
 {
-  "Input": "Estaré fuera entre las 3 de la madrugada y las 5pm",
+  "Input": "Estarei fora entre as 3 da madrugada e as 5pm",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre las 3 de la madrugada y las 5pm",
+      "Text": "entre as 3 da madrugada e as 5pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T03,T17,PT14H)",
@@ -324,14 +337,15 @@
 }
 ,
 {
-  "Input": "Estaré fuera entre las 4pm y 5pm de hoy",
+  "Input": "Estarei fora entre as 4pm e 5pm de hoje",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "entre las 4pm y 5pm",
+      "Text": "entre as 4pm e 5pm",
       "Type": "timerange",
       "Value": {
         "Timex": "(T16,T17,PT1H)",
@@ -349,10 +363,11 @@
 }
 ,
 {
-  "Input": "Nos veamos a la madrugada",
+  "Input": "Nos vemos de madrugada",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -374,14 +389,15 @@
 }
 ,
 {
-  "Input": "Nos veamos a la mañana",
+  "Input": "Nos vemos pela manhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana",
+      "Text": "manhã",
       "Type": "timerange",
       "Value": {
         "Timex": "TMO",
@@ -399,14 +415,15 @@
 }
 ,
 {
-  "Input": "No vemos pasado el mediodia",
+  "Input": "Nos vemos depois do meio dia",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "pasado el mediodia",
+      "Text": "depois do meio dia",
       "Type": "timerange",
       "Value": {
         "Timex": "TAF",
@@ -424,14 +441,15 @@
 }
 ,
 {
-  "Input": "Nos vemos en la noche",
+  "Input": "Nos vemos à noite",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "noche",
+      "Text": "noite",
       "Type": "timerange",
       "Value": {
         "Timex": "TNI",
@@ -449,10 +467,11 @@
 }
 ,
 {
-  "Input": "Nos vemos a la tarde",
+  "Input": "Nos vemos a tarde",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -474,10 +493,11 @@
 }
 ,
 {
-  "Input": "Nos vemos a la madrugada",
+  "Input": "Nos vemos de madrugada",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -499,14 +519,15 @@
 }
 ,
 {
-  "Input": "Nos vemos a la mañana",
+  "Input": "Nos vemos na manhã",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana",
+      "Text": "manhã",
       "Type": "timerange",
       "Value": {
         "Timex": "TMO",
@@ -517,31 +538,6 @@
         "PastResolution": {
           "startTime": "08:00:00",
           "endTime": "12:00:00"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "Nos vemos pasado el mediodia",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "pasado el mediodia",
-      "Type": "timerange",
-      "Value": {
-        "Timex": "TAF",
-        "FutureResolution": {
-          "startTime": "12:00:00",
-          "endTime": "16:00:00"
-        },
-        "PastResolution": {
-          "startTime": "12:00:00",
-          "endTime": "16:00:00"
         }
       }
     }

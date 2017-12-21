@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimedText = text.Trim().ToLowerInvariant();
+            var trimedText = text.Trim().ToLowerInvariant().Normalized();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -101,13 +101,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimedText.EndsWith("mañana"))
+            else if (trimedText.EndsWith("manha"))
             {
                 timeStr = "TMO";
                 beginHour = 8;
                 endHour = 12;
             }
-            else if (trimedText.Contains("pasado mediodia") || trimedText.Contains("pasado el mediodia"))
+            else if (trimedText.Contains("passado o meio dia") || trimedText.Contains("depois do meio dia"))
             {
                 timeStr = "TAF";
                 beginHour = 12;
@@ -119,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimedText.EndsWith("noche"))
+            else if (trimedText.EndsWith("noite"))
             {
                 timeStr = "TNI";
                 beginHour = 20;

@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new PortugueseSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration());
-            IntegerExtractor = new Number.Spanish.IntegerExtractor();
+            IntegerExtractor = new Number.Portuguese.IntegerExtractor();
         }
 
         Regex IMergedExtractorConfiguration.AfterRegex => AfterRegex;

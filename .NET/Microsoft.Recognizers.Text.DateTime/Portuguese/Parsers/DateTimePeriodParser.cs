@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var ret = new DateTimeResolutionResult();
             var trimedText = text.Trim().ToLowerInvariant();
 
-            // handle morning, afternoon..
+            // Handle morning, afternoon..
             if (!this.Config.GetMatchedTimeRange(trimedText, out string timeStr, out int beginHour, out int endHour, out int endMin))
             {
                 return ret;
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             var startIndex = trimedText.IndexOf(DateTimeDefinitions.Tomorrow, StringComparison.Ordinal) == 0 ? DateTimeDefinitions.Tomorrow.Length : 0;
 
-            // handle Date followed by morning, afternoon
+            // Handle Date followed by morning, afternoon, ...
             // Add handling code to handle morning, afternoon followed by Date
             // Add handling code to handle early/late morning, afternoon
             match = this.Config.TimeOfDayRegex.Match(trimedText.Substring(startIndex));

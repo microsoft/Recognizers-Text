@@ -82,9 +82,13 @@ function getModels() {
         // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
         Recognizers.NumberWithUnitRecognizer.instance.getTemperatureModel(defaultCulture),
 
-        // Add Datetime recognizer - This model will find any Date even if its write in coloquial language -
+        // Add DateTime recognizer - This model will find any Date even if its write in colloquial language -
         // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-        Recognizers.DateTimeRecognizer.instance.getDateTimeModel(defaultCulture)
+        Recognizers.DateTimeRecognizer.instance.getDateTimeModel(defaultCulture),
+
+        // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
+        // E.g "yup, I need that" will return "True"
+        Recognizers.OptionsRecognizer.instance.getBooleanModel(defaultCulture)
     ];
 }
 
@@ -102,5 +106,6 @@ function showIntro() {
     write("\" The temperature this night will be of 40 deg celsius\"");
     write("\" The american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday\"");
     write("\" It happened when the baby was only ten months old\"");
+    write("\" No, I don't think that we can make 100k USD today\"");
     write();
 }

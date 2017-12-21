@@ -1,6 +1,6 @@
 [{
-  "Input": "Volvere el 15",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no 15",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -11,8 +11,8 @@
 }
 ,
 {
-  "Input": "Volvere el 22 de Abril",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 22 de Abril",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -23,80 +23,106 @@
 }
 ,
 {
-  "Input": "Volvere el 1-Ene",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 1-Jan",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1-Ene",
+      "Text": "1-Jan",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 1/Ene",
-  "NotSupported": "dotnet,javascript",
+  "Input": "nas ultimas 3 semanas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
+  "Input": "nas 3 semanas passadas",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [  ]
+}
+,
+{
+  "Input": "Voltarei em 1/Jan",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1/Ene",
+      "Text": "1/Jan",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 2. Octubre",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no 2 de Outubro",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2. Octubre",
+      "Text": "2 de Outubro",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 12 de enero, 2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 12 de janeiro de 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 de enero, 2016",
+      "Text": "12 de janeiro de 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 12 de Enero de 2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no 12 de Janeiro de 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "12 de Enero de 2016",
+      "Text": "12 de Janeiro de 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el Lunes 12 de enero, 2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na segunda-feira 12 de janeiro de 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Lunes 12 de enero, 2016",
+      "Text": "segunda-feira 12 de janeiro de 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 02/22/2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na segunda-feira, 12 de janeiro de 2016",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "segunda-feira, 12 de janeiro de 2016",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 02/22/2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -107,8 +133,8 @@
 }
 ,
 {
-  "Input": "Volvere el 21/04/2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 21/04/2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -119,8 +145,8 @@
 }
 ,
 {
-  "Input": "Volvere el 21/04/16",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 21/04/16",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -131,8 +157,8 @@
 }
 ,
 {
-  "Input": "Volvere el 9-18-15",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 9-18-15",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -143,8 +169,8 @@
 }
 ,
 {
-  "Input": "Volvere el 4.22",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 4.22",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -155,8 +181,8 @@
 }
 ,
 {
-  "Input": "Volvere el 4-22",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 4-22",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -167,8 +193,8 @@
 }
 ,
 {
-  "Input": "Volvere el    4/22",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em    4/22",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -179,8 +205,8 @@
 }
 ,
 {
-  "Input": "Volvere el 22/04",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 22/04",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -191,8 +217,8 @@
 }
 ,
 {
-  "Input": "Volvere       4/22",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei       4/22",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -203,8 +229,8 @@
 }
 ,
 {
-  "Input": "Volvere 22/04",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei 22/04",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -215,8 +241,8 @@
 }
 ,
 {
-  "Input": "Volvere el 2015/08/12",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 2015/08/12",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -227,44 +253,56 @@
 }
 ,
 {
-  "Input": "Volvere el 11/12,2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 11/12, 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "11/12,2016",
+      "Text": "11/12, 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 11/12,16",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 11/12/16",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "11/12,16",
+      "Text": "11/12/16",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 1ro de Ene",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 11/12 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1ro de Ene",
+      "Text": "11/12 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 28-Nov",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 1o de Jan",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1o de Jan",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Voltarei em 28-Nov",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -275,56 +313,56 @@
 }
 ,
 {
-  "Input": "Volvere el Mi, 22 de Ene",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na Qua, 22 de Jan",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Mi, 22 de Ene",
+      "Text": "Qua, 22 de Jan",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el primero de Ene",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no primeiro de Jan",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "primero de Ene",
+      "Text": "primeiro de Jan",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el veintiuno de Mayo",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no vinte e um de Maio",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "veintiuno de Mayo",
+      "Text": "vinte e um de Maio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere en Mayo veintiuno",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em Maio vinte e um",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "Mayo veintiuno",
+      "Text": "Maio vinte e um",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el segundo de Ago",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no segundo de Ago",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -335,188 +373,188 @@
 }
 ,
 {
-  "Input": "Volvere el vigesimo segundo de Junio",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no vigésimo segundo de Junho",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "vigesimo segundo de Junio",
+      "Text": "vigésimo segundo de Junho",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el viernes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei sexta-feira",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "sexta-feira",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere viernes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na sexta-feira",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "sexta-feira",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere los viernes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei nas sextas-feiras",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes",
+      "Text": "sextas-feiras",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere los sabados",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei aos sábados",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "sabados",
+      "Text": "sábados",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere hoy",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei hoje",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "hoy",
+      "Text": "hoje",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere mañana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "mañana",
+      "Text": "amanhã",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvi ayer",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltei ontem",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "ayer",
+      "Text": "ontem",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvi el dia antes de ayer",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltei no dia antes de ontem",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el dia antes de ayer",
+      "Text": "dia antes de ontem",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvi anteayer",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltei anteontem",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "anteayer",
+      "Text": "anteontem",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el dia despues de mañana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no dia depois de amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el dia despues de mañana",
+      "Text": "dia depois de amanhã",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere pasado mañana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei depois de amanhã",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "pasado mañana",
+      "Text": "depois de amanhã",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el dia siguiente",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no dia seguinte",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el dia siguiente",
+      "Text": "dia seguinte",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el proximo dia",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no proximo dia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el proximo dia",
+      "Text": "proximo dia",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere este viernes",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei esta sexta-feira",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "este viernes",
+      "Text": "esta sexta-feira",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el proximo domingo",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei proximo domingo",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -527,20 +565,20 @@
 }
 ,
 {
-  "Input": "Volvere el siguiente domingo",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no domingo seguinte",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "siguiente domingo",
+      "Text": "domingo seguinte",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el ultimo domingo",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no ultimo domingo",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -551,8 +589,8 @@
 }
 ,
 {
-  "Input": "Volvere ultimo dia",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no ultimo dia",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
@@ -563,108 +601,96 @@
 }
 ,
 {
-  "Input": "Volvere el ultimo dia",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na sexta-feira desta semana",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el ultimo dia",
+      "Text": "sexta-feira desta semana",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el dia",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no domingo da semana seguinte",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el dia",
+      "Text": "domingo da semana seguinte",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el viernes de esta semana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei no domingo da ultima semana",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "viernes de esta semana",
+      "Text": "domingo da ultima semana",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el domingo de la siguiente semana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em 15 de Junho 2016",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "domingo de la siguiente semana",
+      "Text": "15 de Junho 2016",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el domingo de la ultima semana",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em onze de maio",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "domingo de la ultima semana",
+      "Text": "onze de maio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el 15 Junio 2016",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei em primeiro de maio",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "15 Junio 2016",
+      "Text": "primeiro de maio",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el undecimo de mayo",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na primeira sexta-feira de julho",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "undecimo de mayo",
+      "Text": "na primeira sexta-feira de julho",
       "Type": "date"
     }
   ]
 }
 ,
 {
-  "Input": "Volvere el primer viernes de julio",
-  "NotSupported": "dotnet,javascript",
+  "Input": "Voltarei na primeira sexta-feira deste mes",
+  "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "el primer viernes de julio",
-      "Type": "date"
-    }
-  ]
-}
-,
-{
-  "Input": "Volvere el primer viernes de este mes",
-  "NotSupported": "dotnet,javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "el primer viernes de este mes",
+      "Text": "na primeira sexta-feira deste mes",
       "Type": "date"
     }
   ]

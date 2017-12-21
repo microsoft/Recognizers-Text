@@ -40,6 +40,7 @@
             <option value="NumberWithUnitDimension">Number with Unit - Dimension</option>
             <option value="NumberWithUnitAge">Number with Unit - Age</option>
             <option value="DateTime">DateTime</option>
+            <option value="Boolean">Boolean</option>
     </select>
 
     <br />
@@ -106,6 +107,9 @@
                             break;
                         case "DateTime":
                             model = RecognizersText.DateTimeRecognizer.instance.getDateTimeModel(culture, false);
+                            break;
+                        case "Boolean":
+                            model = RecognizersText.OptionsRecognizer.instance.getBooleanModel(culture, false);
                             break;
                     }
                 } catch(err) {

@@ -32,17 +32,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(TimeOfTodayAfter(text, reference));
             tokens.AddRange(SpecialTimeOfDate(text, reference));
             tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
+            tokens.AddRange(SpecialTimeOfDay(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        // match now
+        // Match "now"
         public List<Token> BasicRegexMatch(string text)
         {
             var ret = new List<Token>();
             text = text.Trim().ToLower();
 
-            // handle "now"
+            // Handle "now"
             var matches = this.config.NowRegex.Matches(text);
             foreach (Match match in matches)
             {
@@ -52,7 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // merge a Date entity and a Time entity, like "at 7 tomorrow"
+        // Merge a Date entity and a Time entity, like "at 7 tomorrow"
         public List<Token> MergeDateAndTime(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -109,7 +110,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 i = j;
             }
 
-            // handle "in the afternoon" at the end of entity
+            // Handle "in the afternoon" at the end of entity
             for (var idx = 0; idx < ret.Count; idx++)
             {
                 var afterStr = text.Substring(ret[idx].End);
@@ -120,10 +121,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Handle "day" prefixes
+            for (var idx = 0; idx < ret.Count; idx++)
+            {
+                var beforeStr = text.Substring(0, ret[idx].Start);
+                var match = this.config.UtilityConfiguration.CommonDatePrefixRegex.Match(beforeStr);
+                if (match.Success)
+                {
+                    ret[idx] = new Token(ret[idx].Start - match.Length, ret[idx].End);
+                }
+            }
+
             return ret;
         }
 
-        // parse a specific time of today, tonight, this afternoon, like "seven this afternoon"
+        // Parses a specific time of today, tonight, this afternoon, like "seven this afternoon"
         public List<Token> TimeOfTodayAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -135,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
                 if (string.IsNullOrEmpty(afterStr))
                 {
-                    continue;
+                    continue; //@here
                 }
 
                 var match = this.config.TimeOfTodayAfterRegex.Match(afterStr);
@@ -156,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse a specific time of today, tonight, this afternoon, "this afternoon at 7"
+        // Parse a specific time of today, tonight, this afternoon, "this afternoon at 7"
         public List<Token> TimeOfTodayBefore(string text, DateObject reference)
         {
             var ret = new List<Token>();
@@ -225,7 +237,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // process case like "two minutes ago" "three hours later"
+        // Special case for 'the end of today'
+        public List<Token> SpecialTimeOfDay(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var match = this.config.TheEndOfRegex.Match(text);
+            if (match.Success)
+            {
+                ret.Add(new Token(match.Index, text.Length));
+            }
+
+            return ret;
+        }
+
+        // Process case like "two minutes ago" "three hours later"
         private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
         {
             var ret = new List<Token>();

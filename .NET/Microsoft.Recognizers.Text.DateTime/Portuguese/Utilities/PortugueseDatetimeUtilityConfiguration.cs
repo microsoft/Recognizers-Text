@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Spanish;
+using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
 
         public static readonly Regex RangeUnitRegex = new Regex(DateTimeDefinitions.RangeUnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex CommonDatePrefixRegex = new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         Regex IDateTimeUtilityConfiguration.LaterRegex => LaterRegex;
 
         Regex IDateTimeUtilityConfiguration.AgoRegex => AgoRegex;
@@ -34,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities
         Regex IDateTimeUtilityConfiguration.AmPmDescRegex => AmPmDescRegex;
 
         Regex IDateTimeUtilityConfiguration.RangeUnitRegex => RangeUnitRegex;
+
+        Regex IDateTimeUtilityConfiguration.CommonDatePrefixRegex => CommonDatePrefixRegex;
 
     }
 }
