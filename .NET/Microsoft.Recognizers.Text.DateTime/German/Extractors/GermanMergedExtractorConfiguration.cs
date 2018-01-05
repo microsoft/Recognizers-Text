@@ -56,8 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration());
+            TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
+            DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(options));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration());

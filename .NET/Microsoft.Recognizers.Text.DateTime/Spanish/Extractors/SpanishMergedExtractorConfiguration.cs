@@ -53,8 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public SpanishMergedExtractorConfiguration(DateTimeOptions options) : base(options)
         {
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
-            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
-            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration());
+            TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(options));
+            DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(options));
             DatePeriodExtractor = new BaseDatePeriodExtractor(new SpanishDatePeriodExtractorConfiguration());
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration());
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new SpanishDateTimePeriodExtractorConfiguration());

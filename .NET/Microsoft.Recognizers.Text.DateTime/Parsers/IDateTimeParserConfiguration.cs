@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor CardinalExtractor { get; }
 
+        IExtractor IntegerExtractor { get; }
+
         IParser NumberParser { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
@@ -42,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex TheEndOfRegex { get; }
 
         Regex UnitRegex { get; }
+
+        Regex DateNumberConnectorRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
@@ -47,6 +49,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex UnitRegex { get; }
 
+        public Regex DateNumberConnectorRegex { get; }
+
+        public Regex PrepositionRegex { get; }
+
+        public Regex ConnectorRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -67,8 +75,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = SpanishDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = SpanishDateTimeExtractorConfiguration.UnitRegex;
+            DateNumberConnectorRegex = SpanishDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;

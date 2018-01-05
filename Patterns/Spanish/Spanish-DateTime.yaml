@@ -385,6 +385,15 @@ MiddlePauseRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\.]
+NumberAsTimeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+TimeBeforeAfterRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DateNumberConnectorRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes)\b

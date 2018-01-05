@@ -153,6 +153,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string GeneralEndingRegex = @"^[.]";
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string PrefixArticleRegex = @"^[\.]";
+		public const string NumberAsTimeRegex = @"^[.]";
+		public const string TimeBeforeAfterRegex = @"^[.]";
+		public const string DateNumberConnectorRegex = @"^[.]";
 		public const string AgoRegex = @"\b(antes)\b";
 		public const string LaterRegex = @"\b(despu[eé]s|desde ahora)\b";
 		public const string Tomorrow = "mañana";
