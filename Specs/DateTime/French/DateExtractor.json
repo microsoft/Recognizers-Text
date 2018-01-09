@@ -65,6 +65,17 @@
 }
 ,
 {
+  "Input": "Je reviendrai Mercredi",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mercredi",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "Je reviendrai Vendredi",
   "NotSupportedByDesign": "python",
   "Results": [
