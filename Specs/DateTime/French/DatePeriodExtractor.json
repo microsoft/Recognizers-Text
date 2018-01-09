@@ -1330,6 +1330,17 @@
 }
 ,
 {
+  "Input": "Je vais partir cette mercredi jusqu'a Dimanche prochain",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": " cette mercredi jusqu'a Dimanche prochain",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Je vais partir de Oct. 2 au Octobre 22",
   "NotSupportedByDesign": "python",
   "Results": [
