@@ -51,35 +51,11 @@ class ChineseHolidayParserConfiguration extends BaseHolidayParserConfiguration {
     }
 }
 
-const yearNow = (new Date()).getFullYear();
-const yuandan = new Date(yearNow, 1 - 1, 1);
-const chsnationalday = new Date(yearNow, 10 - 1, 1);
-const laborday = new Date(yearNow, 5 - 1, 1);
-const christmasday = new Date(yearNow, 12 - 1, 25);
-const loverday = new Date(yearNow, 2 - 1, 14);
-const chsmilbuildday = new Date(yearNow, 8 - 1, 1);
-const foolday = new Date(yearNow, 4 - 1, 1);
-const girlsday = new Date(yearNow, 3 - 1, 7);
-const treeplantday = new Date(yearNow, 3 - 1, 12);
-const femaleday = new Date(yearNow, 3 - 1, 8);
-const childrenday = new Date(yearNow, 6 - 1, 1);
-const youthday = new Date(yearNow, 5 - 1, 4);
-const teacherday = new Date(yearNow, 9 - 1, 10);
-const singlesday = new Date(yearNow, 11 - 1, 11);
-const halloweenday = new Date(yearNow, 10 - 1, 31);
-const midautumnday = new Date(yearNow, 8 - 1, 15);
-const springday = new Date(yearNow, 1 - 1, 1);
-const chuxiday = DateUtils.addDays(new Date(yearNow, 1 - 1, 1), -1);
-const lanternday = new Date(yearNow, 1 - 1, 15);
-const qingmingday = new Date(yearNow, 4 - 1, 4);
-const dragonboatday = new Date(yearNow, 5 - 1, 5);
-const chongyangday = new Date(yearNow, 9 - 1, 9);
-
 export class ChineseHolidayParser extends BaseHolidayParser {
     private readonly lunarHolidayRegex; RegExp;
     private readonly integerExtractor: IExtractor;
     private readonly numberParser: IParser;
-    private readonly fixedHolidayDictionary: Map<string, Date>;
+    private readonly fixedHolidayDictionary: Map<string, (year: number) => Date>;
 
     constructor() {
         let config = new ChineseHolidayParserConfiguration();
@@ -87,38 +63,61 @@ export class ChineseHolidayParser extends BaseHolidayParser {
         this.lunarHolidayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarHolidayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Integer, new ChineseNumberParserConfiguration());
-        this.fixedHolidayDictionary = new Map<string, Date>([
-            ['元旦', yuandan],
-            ['元旦节', yuandan],
-            ['教师节', teacherday],
-            ['青年节', youthday],
-            ['儿童节', childrenday],
-            ['妇女节', femaleday],
-            ['植树节', treeplantday],
-            ['情人节', loverday],
-            ['圣诞节', christmasday],
-            ['新年', yuandan],
-            ['愚人节', foolday],
-            ['五一', laborday],
-            ['劳动节', laborday],
-            ['万圣节', halloweenday],
-            ['中秋节', midautumnday],
-            ['中秋', midautumnday],
-            ['春节', springday],
-            ['除夕', chuxiday],
-            ['元宵节', lanternday],
-            ['清明节', qingmingday],
-            ['清明', qingmingday],
-            ['端午节', dragonboatday],
-            ['端午', dragonboatday],
-            ['国庆节', chsnationalday],
-            ['建军节', chsmilbuildday],
-            ['女生节', girlsday],
-            ['光棍节', singlesday],
-            ['双十一', singlesday],
-            ['重阳节', chongyangday]
+        this.fixedHolidayDictionary = new Map<string, (year: number) => Date>([
+            ['元旦', ChineseHolidayParser.NewYear],
+            ['元旦节', ChineseHolidayParser.NewYear],
+            ['教师节', ChineseHolidayParser.TeacherDay],
+            ['青年节', ChineseHolidayParser.YouthDay],
+            ['儿童节', ChineseHolidayParser.ChildrenDay],
+            ['妇女节', ChineseHolidayParser.FemaleDay],
+            ['植树节', ChineseHolidayParser.TreePlantDay],
+            ['情人节', ChineseHolidayParser.LoverDay],
+            ['圣诞节', ChineseHolidayParser.ChristmasDay],
+            ['新年', ChineseHolidayParser.NewYear],
+            ['愚人节', ChineseHolidayParser.FoolDay],
+            ['五一', ChineseHolidayParser.LaborDay],
+            ['劳动节', ChineseHolidayParser.LaborDay],
+            ['万圣节', ChineseHolidayParser.HalloweenDay],
+            ['中秋节', ChineseHolidayParser.MidautumnDay],
+            ['中秋', ChineseHolidayParser.MidautumnDay],
+            ['春节', ChineseHolidayParser.SpringDay],
+            ['除夕', ChineseHolidayParser.NewYearEve],
+            ['元宵节', ChineseHolidayParser.LanternDay],
+            ['清明节', ChineseHolidayParser.QingMingDay],
+            ['清明', ChineseHolidayParser.QingMingDay],
+            ['端午节', ChineseHolidayParser.DragonBoatDay],
+            ['端午', ChineseHolidayParser.DragonBoatDay],
+            ['国庆节', ChineseHolidayParser.ChsNationalDay],
+            ['建军节', ChineseHolidayParser.ChsMilBuildDay],
+            ['女生节', ChineseHolidayParser.GirlsDay],
+            ['光棍节', ChineseHolidayParser.SinglesDay],
+            ['双十一', ChineseHolidayParser.SinglesDay],
+            ['重阳节', ChineseHolidayParser.ChongYangDay]
         ]);
     }
+
+    private static NewYear(year: number): Date { return new Date(year, 1 - 1, 1); }
+    private static ChsNationalDay(year: number): Date { return new Date(year, 10 - 1, 1); }
+    private static LaborDay(year: number): Date { return new Date(year, 5 - 1, 1); }
+    private static ChristmasDay(year: number): Date { return new Date(year, 12 - 1, 25); }
+    private static LoverDay(year: number): Date { return new Date(year, 2 - 1, 14); }
+    private static ChsMilBuildDay(year: number): Date { return new Date(year, 8 - 1, 1); }
+    private static FoolDay(year: number): Date { return new Date(year, 4 - 1, 1); }
+    private static GirlsDay(year: number): Date { return new Date(year, 3 - 1, 7); }
+    private static TreePlantDay(year: number): Date { return new Date(year, 3 - 1, 12); }
+    private static FemaleDay(year: number): Date { return new Date(year, 3 - 1, 8); }
+    private static ChildrenDay(year: number): Date { return new Date(year, 6 - 1, 1); }
+    private static YouthDay(year: number): Date { return new Date(year, 5 - 1, 4); }
+    private static TeacherDay(year: number): Date { return new Date(year, 9 - 1, 10); }
+    private static SinglesDay(year: number): Date { return new Date(year, 11 - 1, 11); }
+    private static HalloweenDay(year: number): Date { return new Date(year, 10 - 1, 31); }
+    private static MidautumnDay(year: number): Date { return new Date(year, 8 - 1, 15); }
+    private static SpringDay(year: number): Date { return new Date(year, 1 - 1, 1); }
+    private static NewYearEve(year: number): Date { return DateUtils.addDays(new Date(year, 1 - 1, 1), -1); }
+    private static LanternDay(year: number): Date { return new Date(year, 1 - 1, 15); }
+    private static QingMingDay(year: number): Date { return new Date(year, 4 - 1, 4); }
+    private static DragonBoatDay(year: number): Date { return new Date(year, 5 - 1, 5); }
+    private static ChongYangDay(year: number): Date { return new Date(year, 9 - 1, 9); }
 
     parse(er: ExtractResult, referenceDate?: Date): DateTimeParseResult {
         if (!referenceDate) referenceDate = new Date();
@@ -188,7 +187,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
         let timex = '';
         let date = new Date(referenceDate);
         if (this.fixedHolidayDictionary.has(holidayStr)) {
-            date = this.fixedHolidayDictionary.get(holidayStr);
+            date = this.fixedHolidayDictionary.get(holidayStr)(year);
             timex = `-${FormatUtil.toString(date.getMonth() + 1, 2)}-${FormatUtil.toString(date.getDate(), 2)}`;
         } else if (this.config.holidayFuncDictionary.has(holidayStr)) {
             date = this.config.holidayFuncDictionary.get(holidayStr)(year);

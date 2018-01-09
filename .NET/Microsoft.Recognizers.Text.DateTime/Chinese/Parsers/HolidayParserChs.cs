@@ -19,52 +19,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IParser IntegerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
 
-        //@TODO Move to definitions
-        public static readonly Dictionary<string, DateObject> FixedHolidaysDict = new Dictionary<string, DateObject>
-        {
-            
-            #region Fixed Date Holidays
-
-            {"元旦", TimexConstants.yuandan},
-            {"元旦节", TimexConstants.yuandan},
-            {"教师节", TimexConstants.teacherday},
-            {"青年节", TimexConstants.youthday},
-            {"儿童节", TimexConstants.childrenday},
-            {"妇女节", TimexConstants.femaleday},
-            {"植树节", TimexConstants.treeplantday},
-            {"情人节", TimexConstants.loverday},
-            {"圣诞节", TimexConstants.christmasday},
-            {"新年", TimexConstants.yuandan},
-            {"愚人节", TimexConstants.foolday},
-            {"五一", TimexConstants.laborday},
-            {"劳动节", TimexConstants.laborday},
-            {"万圣节", TimexConstants.halloweenday},
-            {"中秋节", TimexConstants.midautumnday},
-            {"中秋", TimexConstants.midautumnday},
-            {"春节", TimexConstants.springday},
-            {"除夕", TimexConstants.chuxiday},
-            {"元宵节", TimexConstants.lanternday},
-            {"清明节", TimexConstants.qingmingday},
-            {"清明", TimexConstants.qingmingday},
-            {"端午节", TimexConstants.dragonboatday},
-            {"端午", TimexConstants.dragonboatday},
-            {"国庆节", TimexConstants.chsnationalday},
-            {"建军节", TimexConstants.chsmilbuildday},
-            {"女生节", TimexConstants.girlsday},
-            {"光棍节", TimexConstants.singlesday},
-            {"双十一", TimexConstants.singlesday},
-            {"重阳节", TimexConstants.chongyangday}
-
-            #endregion
-
-        };
-
         public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
             <string, Func<int, DateObject>>
         {
             
             #region Holiday Functions
 
+            {"元旦", NewYear},
+            {"元旦节", NewYear},
+            {"教师节", TeacherDay},
+            {"青年节", YouthDay},
+            {"儿童节", ChildrenDay},
+            {"妇女节", FemaleDay},
+            {"植树节", TreePlantDay},
+            {"情人节", LoverDay},
+            {"圣诞节", ChristmasDay},
+            {"新年", NewYear},
+            {"愚人节", FoolDay},
+            {"五一", LaborDay},
+            {"劳动节", LaborDay},
+            {"万圣节", HalloweenDay},
+            {"中秋节", MidautumnDay},
+            {"中秋", MidautumnDay},
+            {"春节", SpringDay},
+            {"除夕", NewYearEve},
+            {"元宵节", LanternDay},
+            {"清明节", QingMingDay},
+            {"清明", QingMingDay},
+            {"端午节", DragonBoatDay},
+            {"端午", DragonBoatDay},
+            {"国庆节", ChsNationalDay},
+            {"建军节", ChsMilBuildDay},
+            {"女生节", GirlsDay},
+            {"光棍节", SinglesDay},
+            {"双十一", SinglesDay},
+            {"重阳节", ChongYangDay},
             {"父亲节", GetFathersDayOfYear},
             {"母亲节", GetMothersDayOfYear},
             {"感恩节", GetThanksgivingDayOfYear}
@@ -208,22 +197,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 DateObject value;
                 string timexStr;
-                if (FixedHolidaysDict.ContainsKey(holidayStr))
+                if (HolidayFuncDict.ContainsKey(holidayStr))
                 {
-                    value = FixedHolidaysDict[holidayStr];
-                    timexStr = $"-{value.Month:D2}-{value.Day:D2}";
+                    value = HolidayFuncDict[holidayStr](year);
+                    NoFixedTimex.TryGetValue(holidayStr, out timexStr);
+                    if (string.IsNullOrEmpty(timexStr))
+                    {
+                        timexStr = $"-{value.Month:D2}-{value.Day:D2}";
+                    }
                 }
                 else
                 {
-                    if (HolidayFuncDict.ContainsKey(holidayStr))
-                    {
-                        value = HolidayFuncDict[holidayStr](year);
-                        timexStr = NoFixedTimex[holidayStr];
-                    }
-                    else
-                    {
-                        return ret;
-                    }
+                    return ret;
                 }
 
                 if (hasYear)
@@ -248,11 +233,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             if (value < referenceDate)
             {
-                if (FixedHolidaysDict.ContainsKey(holiday))
-                {
-                    return value.AddYears(1);
-                }
-
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year + 1);
@@ -266,11 +246,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             if (value >= referenceDate)
             {
-                if (FixedHolidaysDict.ContainsKey(holiday))
-                {
-                    return value.AddYears(-1);
-                }
-
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year - 1);
@@ -279,6 +254,29 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             return value;
         }
+
+        private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
+        private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
+        private static DateObject YouthDay(int year) => new DateObject(year, 5, 4);
+        private static DateObject ChildrenDay(int year) => new DateObject(year, 6, 1);
+        private static DateObject FemaleDay(int year) => new DateObject(year, 3, 8);
+        private static DateObject TreePlantDay(int year) => new DateObject(year, 3, 12);
+        private static DateObject LoverDay(int year) => new DateObject(year, 2, 14);
+        private static DateObject ChristmasDay(int year) => new DateObject(year, 12, 25);
+        private static DateObject FoolDay(int year) => new DateObject(year, 4, 1);
+        private static DateObject LaborDay(int year) => new DateObject(year, 5, 1);
+        private static DateObject HalloweenDay(int year) => new DateObject(year, 10, 31);
+        private static DateObject MidautumnDay(int year) => new DateObject(year, 8, 15);
+        private static DateObject SpringDay(int year) => new DateObject(year, 1, 1);
+        private static DateObject NewYearEve(int year) => new DateObject(year, 1, 1).AddDays(-1);
+        private static DateObject LanternDay(int year) => new DateObject(year, 1, 15);
+        private static DateObject QingMingDay(int year) => new DateObject(year, 4, 4);
+        private static DateObject DragonBoatDay(int year) => new DateObject(year, 5, 5);
+        private static DateObject ChsNationalDay(int year) => new DateObject(year, 10, 1);
+        private static DateObject ChsMilBuildDay(int year) => new DateObject(year, 8, 1);
+        private static DateObject GirlsDay(int year) => new DateObject(year, 3, 7);
+        private static DateObject SinglesDay(int year) => new DateObject(year, 11, 11);
+        private static DateObject ChongYangDay(int year) => new DateObject(year, 9, 9);
 
         private static DateObject GetMothersDayOfYear(int year)
         {
@@ -382,39 +380,5 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return year == 0 ? -1 : year;
         }
     }
-
-    #region Holiday Timex Constants
-
-    internal static class TimexConstants
-    {
-        internal static readonly DateObject now = DateObject.Now;
-        internal static readonly DateObject yuandan = new DateObject(now.Year, 1, 1);
-        internal static readonly DateObject chsnationalday = new DateObject(now.Year, 10, 1);
-        internal static readonly DateObject laborday = new DateObject(now.Year, 5, 1);
-        internal static readonly DateObject christmasday = new DateObject(now.Year, 12, 25);
-        internal static readonly DateObject loverday = new DateObject(now.Year, 2, 14);
-        internal static readonly DateObject chsmilbuildday = new DateObject(now.Year, 8, 1);
-        internal static readonly DateObject foolday = new DateObject(now.Year, 4, 1);
-        internal static readonly DateObject girlsday = new DateObject(now.Year, 3, 7);
-        internal static readonly DateObject treeplantday = new DateObject(now.Year, 3, 12);
-        internal static readonly DateObject femaleday = new DateObject(now.Year, 3, 8);
-        internal static readonly DateObject childrenday = new DateObject(now.Year, 6, 1);
-        internal static readonly DateObject youthday = new DateObject(now.Year, 5, 4);
-        internal static readonly DateObject teacherday = new DateObject(now.Year, 9, 10);
-        internal static readonly DateObject singlesday = new DateObject(now.Year, 11, 11);
-
-        internal static readonly DateObject halloweenday = new DateObject(now.Year, 10, 31);
-
-        internal static readonly DateObject midautumnday = new DateObject(now.Year, 8, 15);
-        internal static readonly DateObject springday = new DateObject(now.Year, 1, 1);
-        internal static readonly DateObject chuxiday = new DateObject(now.Year, 1, 1).AddDays(-1);
-
-        internal static readonly DateObject lanternday = new DateObject(now.Year, 1, 15);
-        internal static readonly DateObject qingmingday = new DateObject(now.Year, 4, 4);
-        internal static readonly DateObject dragonboatday = new DateObject(now.Year, 5, 5);
-        internal static readonly DateObject chongyangday = new DateObject(now.Year, 9, 9);
-    }
-
-    #endregion
 
 }
