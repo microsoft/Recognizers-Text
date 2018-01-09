@@ -1,4 +1,16 @@
-[{
+[
+{
+  "Input": "Je serai dans déc",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "déc",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Je serai dehors de 4 à 22 ce mois",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -730,6 +742,28 @@
   "Results": [
     {
       "Text": "Nov, 2001",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai dans août",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "août",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai dans Février",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Février",
       "Type": "daterange"
     }
   ]

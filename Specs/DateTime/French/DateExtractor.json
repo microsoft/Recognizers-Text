@@ -1,4 +1,16 @@
-[{
+[
+{
+  "Input": "Je reviendrai le 2 décembre",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 décembre",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "Je suis retourne pour le 27e",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -422,6 +434,28 @@
   "Results": [
     {
       "Text": "Jan/1",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai le 2 Février",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 Février",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai le 2 Août",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 Août",
       "Type": "date"
     }
   ]

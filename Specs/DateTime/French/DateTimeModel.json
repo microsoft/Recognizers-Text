@@ -1,4 +1,76 @@
 [{
+  "Input": "Je vais sortir cette décembre",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cette décembre",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-12",
+            "type": "daterange",
+            "start": "2016-12-01",
+            "end": "2017-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je vais sortir cette août",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cette août",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-08",
+            "type": "daterange",
+            "start": "2016-08-01",
+            "end": "2016-09-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Je vais sortir cette février",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "cette février",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2016-02",
+            "type": "daterange",
+            "start": "2016-02-01",
+            "end": "2016-03-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+  {
   "Input": "Je vais partir pour 3heures",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

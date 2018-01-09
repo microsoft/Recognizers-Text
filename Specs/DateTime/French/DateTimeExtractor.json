@@ -76,6 +76,39 @@
 }
 ,
 {
+  "Input": "Je reviendrai 14 décembre 8:00am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 décembre 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 14 février 8:00am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 février 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
+  "Input": "Je reviendrai 14 août 8:00am",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "14 août 8:00am",
+      "Type": "datetime"
+    }
+  ]
+}
+,
+{
   "Input": "Je reviendrai 14 Octobre 8:00:00am",
   "NotSupportedByDesign": "python",
   "Results": [
