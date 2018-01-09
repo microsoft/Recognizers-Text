@@ -18,7 +18,7 @@ MonthNumRegex: !simpleRegex
 PeriodYearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>Dimanche|Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\b
+  def: (?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\b
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({ThisPrefixRegex}\s+mois)|(mois\s+{PastSuffixRegex})|(mois\s+{NextSuffixRegex}))\b
   references: [ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex]
@@ -100,7 +100,7 @@ NextDateRegex: !nestedRegex
 SpecialDayRegex: !simpleRegex
   def: \b(avant[\s|-]hier|apr[eè]s(-demain|\s*demain)|(le\s)?jour suivant|(le\s+)?dernier jour|hier|lendemain|demain|de la journ[ée]e|aujourd'hui)\b
 StrictWeekDay: !simpleRegex
-  def: \b(?<weekday>Dimanche|Lundi|Mardi|Mecredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\b
+  def: \b(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)s?\b
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>le\s+)?(?<weekday>matin|matin[ée]e|apres-midi|soir[ée]e|soir|Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi)s\b
 WeekDayOfMonthRegex: !nestedRegex
@@ -533,7 +533,7 @@ DayOfWeek: !dictionary
   entries: 
     lundi: 1
     mardi: 2
-    mecredi: 3
+    mercredi: 3
     jeudi: 4
     vendredi: 5
     samedi: 6
