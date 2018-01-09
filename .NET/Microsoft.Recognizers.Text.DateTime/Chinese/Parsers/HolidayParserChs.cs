@@ -19,11 +19,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private static readonly IParser IntegerParser = new ChineseNumberParser(new ChineseNumberParserConfiguration());
 
-        public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
-            <string, Func<int, DateObject>>
+        public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
-            
-            #region Holiday Functions
+
+            #region Fixed Date Holidays
 
             {"元旦", NewYear},
             {"元旦节", NewYear},
@@ -53,7 +52,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {"女生节", GirlsDay},
             {"光棍节", SinglesDay},
             {"双十一", SinglesDay},
-            {"重阳节", ChongYangDay},
+            {"重阳节", ChongYangDay}
+
+            #endregion
+
+        };
+
+        public static readonly Dictionary<string, Func<int, DateObject>> HolidayFuncDict = new Dictionary
+            <string, Func<int, DateObject>>
+        {
+            
+            #region Holiday Functions
+
             {"父亲节", GetFathersDayOfYear},
             {"母亲节", GetMothersDayOfYear},
             {"感恩节", GetThanksgivingDayOfYear}
@@ -197,18 +207,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             {
                 DateObject value;
                 string timexStr;
-                if (HolidayFuncDict.ContainsKey(holidayStr))
+                if (FixedHolidaysDict.ContainsKey(holidayStr))
                 {
-                    value = HolidayFuncDict[holidayStr](year);
-                    NoFixedTimex.TryGetValue(holidayStr, out timexStr);
-                    if (string.IsNullOrEmpty(timexStr))
-                    {
-                        timexStr = $"-{value.Month:D2}-{value.Day:D2}";
-                    }
+                    value = FixedHolidaysDict[holidayStr](year);
+                    timexStr = $"-{value.Month:D2}-{value.Day:D2}";
                 }
                 else
                 {
-                    return ret;
+                    if (HolidayFuncDict.ContainsKey(holidayStr))
+                    {
+                        value = HolidayFuncDict[holidayStr](year);
+                        timexStr = NoFixedTimex[holidayStr];
+                    }
+                    else
+                    {
+                        return ret;
+                    }
                 }
 
                 if (hasYear)
@@ -233,6 +247,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             if (value < referenceDate)
             {
+                if (FixedHolidaysDict.ContainsKey(holiday))
+                {
+                    return value.AddYears(1);
+                }
+
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year + 1);
@@ -246,6 +265,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             if (value >= referenceDate)
             {
+                if (FixedHolidaysDict.ContainsKey(holiday))
+                {
+                    return value.AddYears(-1);
+                }
+
                 if (HolidayFuncDict.ContainsKey(holiday))
                 {
                     value = HolidayFuncDict[holiday](referenceDate.Year - 1);
