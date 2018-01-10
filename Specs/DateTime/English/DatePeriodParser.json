@@ -2311,4 +2311,30 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out year 247",
+  "Context": {
+    "ReferenceDateTime": "2017-12-18T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "year 247",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "0247",
+        "FutureResolution": {
+          "startDate": "0247-01-01",
+          "endDate": "0248-01-01"
+        },
+        "PastResolution": {
+          "startDate": "0247-01-01",
+          "endDate": "0248-01-01"
+        }
+      }
+    }
+  ]
+}
 ]

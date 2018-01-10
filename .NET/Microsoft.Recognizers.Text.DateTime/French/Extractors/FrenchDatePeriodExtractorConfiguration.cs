@@ -177,6 +177,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex WeekWithWeekDayRangeRegex =
             new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearPlusNumberRegex =
+           new Regex(DateTimeDefinitions.YearPlusNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -201,6 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ThisPrefexRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
+            YearPlusNumberRegex,
         };
 
         public FrenchDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
