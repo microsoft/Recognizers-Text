@@ -2212,4 +2212,27 @@
     }
   ]
 }
+,
+{
+  "Input": "We had a meeting 5 December 1391",
+  "Context": {
+    "ReferenceDateTime": "2017-12-18T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "5 December 1391",
+      "Type": "date",
+      "Value": {
+        "Timex": "1391-12-05",
+        "FutureResolution": {
+          "date": "1391-12-05"
+        },
+        "PastResolution": {
+          "date": "1391-12-05"
+        }
+      }
+    }
+  ]
+}
 ]

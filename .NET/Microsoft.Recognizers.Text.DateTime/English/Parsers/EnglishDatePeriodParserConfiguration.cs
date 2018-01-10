@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex RestOfDateRegex { get; }
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
+        public Regex YearPlusNumberRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -115,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RestOfDateRegex = EnglishDatePeriodExtractorConfiguration.RestOfDateRegex;
             LaterEarlyPeriodRegex = EnglishDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = EnglishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
+            YearPlusNumberRegex = EnglishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

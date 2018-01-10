@@ -3,6 +3,8 @@
 using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -63,13 +65,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.TimeUnitRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public FrenchDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public static readonly Regex NumberAsTimeRegex = 
+            new Regex(
+                DateTimeDefinitions.NumberAsTimeRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public FrenchDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
+            IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
         }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IDateTimeExtractor DatePointExtractor { get; }
 
@@ -94,6 +107,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
+
+        Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 
         public IDateTimeExtractor DurationExtractor { get; }
 

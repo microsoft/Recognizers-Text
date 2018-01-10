@@ -2637,4 +2637,16 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out year 247",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "year 247",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
