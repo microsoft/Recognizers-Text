@@ -154,6 +154,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string GeneralEndingRegex = @"^[.]";
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string PrefixArticleRegex = @"^[\.]";
+		public const string OrRegex = @"^[.]";
 		public const string YearPlusNumberRegex = @"^[.]";
 		public const string NumberAsTimeRegex = @"^[.]";
 		public const string TimeBeforeAfterRegex = @"^[.]";

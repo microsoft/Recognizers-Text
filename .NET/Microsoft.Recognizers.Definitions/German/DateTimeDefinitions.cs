@@ -192,6 +192,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
 		public const string PrefixArticleRegex = @"\bthe\s+";
+		public const string OrRegex = @"^[.]";
 		public const string YearPlusNumberRegex = @"^[.]";
 		public const string NumberAsTimeRegex = @"^[.]";
 		public const string TimeBeforeAfterRegex = @"^[.]";
