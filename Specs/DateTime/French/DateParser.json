@@ -1,4 +1,28 @@
-[{
+[
+  {
+  "Input": "Je reviendrai Mercredi",
+  "Context": {
+    "ReferenceDateTime": "2016-09-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Mercredi",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-3",
+        "FutureResolution": {
+          "date": "2016-09-07"
+        },
+        "PastResolution": {
+          "date": "2016-08-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Je reviendrai en 15",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
