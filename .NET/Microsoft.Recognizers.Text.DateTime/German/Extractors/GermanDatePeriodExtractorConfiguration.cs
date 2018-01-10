@@ -113,6 +113,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex WeekWithWeekDayRangeRegex =
             new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex YearPlusNumberRegex =
+            new Regex(DateTimeDefinitions.YearPlusNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -132,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             RestOfDateRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
+            YearPlusNumberRegex,
         };
 
         public GermanDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
