@@ -227,6 +227,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                             }
                             ),
             });
+
+           
         }
 
         public IModel GetCurrencyModel(string culture, bool fallbackToDefaultCulture = true)

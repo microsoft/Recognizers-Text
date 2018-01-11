@@ -26,5 +26,152 @@
         }
       }
     ]
+  },
+  {
+    "Input": "fünfundzwanzigster",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "fünfundzwanzigster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sie ist die einhunderteinunddreißigste.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "einhunderteinunddreißigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin erster!",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "erster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sie saßen dort zu dritt",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dritt",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ein kleines Auto kann man zu viert auch schleppen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "viert",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sind wir Samstag zu elft oder zu zwoelft?",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "elft",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11"
+        }
+      },
+      {
+        "Text": "zwoelft",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Karl war zu erst da, Bob war zweiter und Hans vierter. Den Dritten kannte ich nicht.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "erst",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "zweiter",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      },
+      {
+        "Text": "vierter",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "4"
+        }
+      },
+      {
+        "Text": "Dritten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zuerst schleppen wir den Schrank da hinter dem dritten Auto.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Zuerst",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "dritten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
   }
 ]

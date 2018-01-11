@@ -14,6 +14,215 @@
     ]
   },
   {
+    "Input": "192.168.1.2",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "192"
+        }
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "168"
+        }
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ein",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1/2",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "1/2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ein halbes Schwein",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "ein halbes",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "drei halbe Schweine",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "drei halbe",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zwei drittel Brot",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "zwei drittel",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0,666666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fünf halbe Brötchen",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünf halbe",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zwei Komma drei",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "zwei Komma drei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,35",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "2,35",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,35"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2.000,352",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "2.000,352",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2000,352"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,357",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2,357",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,357"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2,3",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "2,3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2,3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2.300",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2.300",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2300"
+        }
+      }
+    ]
+  },
+  {
     "Input": "zwei",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -59,6 +268,7 @@
     "Input": "4,800",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "Debug": true,
     "Results": [
       {
         "Text": "4,800",
@@ -70,12 +280,12 @@
     ]
   },
   {
-    "Input": "ein hundert",
+    "Input": "Das sind einhundert Leute.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
-        "Text": "ein hundert",
+        "Text": "einhundert",
         "TypeName": "number",
         "Resolution": {
           "value": "100"
@@ -93,6 +303,62 @@
         "TypeName": "number",
         "Resolution": {
           "value": "16"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ein dutzend",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Da kommen wohl ein halbes dutzend Leute hin.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein halbes dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das sind mindestens fünf dutzend Bananen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünf dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "60"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dreißig dutzend",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dreißig dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "360"
         }
       }
     ]

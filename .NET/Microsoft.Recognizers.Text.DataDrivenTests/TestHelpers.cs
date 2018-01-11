@@ -148,6 +148,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetChineseExtractor(extractorName);
                 case Culture.French:
                     return GetFrenchExtractor(extractorName);
+                case Culture.German:
+                    return GetGermanExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{language}' not supported");

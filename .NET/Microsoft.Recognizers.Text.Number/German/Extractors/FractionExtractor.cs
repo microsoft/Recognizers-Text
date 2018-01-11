@@ -45,18 +45,18 @@ namespace Microsoft.Recognizers.Text.Number.German
                     new Regex(
                         NumbersDefinitions.FractionNounRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                    , "FracGer"
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionNounWithArticleRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                    , "FracGer"
                 },
                 {
                     new Regex(
                         NumbersDefinitions.FractionPrepositionRegex,
                         RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "FracEng"
+                    , "FracGer"
                 }
             };
 

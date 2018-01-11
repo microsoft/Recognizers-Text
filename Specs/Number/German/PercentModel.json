@@ -1,6 +1,120 @@
-[
-    {
-    "NotSupported": "javascript,dotNet",
-    "NotSupportedByDesign": "python"
-}
-]
+[{
+    "Input": "100%",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": " 100% ",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": " 100 Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "100 Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "240 Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "240 Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "zwanzig Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "twenty percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "dreißig Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "dreißig Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "30%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "einhundert Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "einhundert Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "10 Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript,dotnet",
+    "Results": [
+      {
+        "Text": "10 Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        }
+      }
+    ]
+  }
+  ]
