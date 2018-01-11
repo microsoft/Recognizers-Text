@@ -56,9 +56,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseDateTimeAndTimeAlt(ExtractResult er, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+
             // original type of the extracted entity
             var subType = ((Dictionary<string, object>)(er.Data))[Constants.SubType].ToString();
             var dateTimeEr = new ExtractResult();
+
             // e.g. {next week Mon} or {Tue}, formmer--"next week Mon" doesn't contain "context" key
             var hasContext = false;
             ExtractResult contextEr = null;
@@ -86,17 +88,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                // for cases:
-                //      Monday 9 am or 11 am
-                //      next 9 am or 11 am
                 else if (contextEr.Type == Constants.SYS_DATETIME_DATE || contextEr.Type == TimeTypeConstants.relativePrefixMod)
                 {
+                    // for cases:
+                    //      Monday 9 am or 11 am
+                    //      next 9 am or 11 am
                     dateTimeEr.Type = Constants.SYS_DATETIME_DATETIME;
                     dateTimePr = this.config.DateTimeParser.Parse(dateTimeEr, referenceTime);
                 }
-                // for cases: in the afternoon 3 o'clock or 5 o'clock
                 else if (contextEr.Type == TimeTypeConstants.AmPmMod)
                 {
+                    // for cases: in the afternoon 3 o'clock or 5 o'clock
                     dateTimeEr.Type = Constants.SYS_DATETIME_TIME;
                     dateTimePr = this.config.TimeParser.Parse(dateTimeEr, referenceTime);
                 }
