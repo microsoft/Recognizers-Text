@@ -1131,6 +1131,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
+        private DateTimeResolutionResult ParseDecade(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var match = DatePeriodExtractorChs.DecadeRegex.Match(text);
+            if (match.Success && match.Length == text.Length)
+            {
+
+            }
+        }
+
         private static DateObject ComputeDate(int cadinal, int weekday, int month, int year)
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);

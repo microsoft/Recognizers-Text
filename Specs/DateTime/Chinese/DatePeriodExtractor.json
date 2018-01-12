@@ -1,4 +1,48 @@
 [{
+  "Input": "上世纪90年代",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上世纪90年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "20世纪80年代",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20世纪80年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "在50年代的时候",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "19世纪70年代，他出生了",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "19世纪70年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "时间从一月十日到十二日",
   "NotSupportedByDesign": "python",
   "Results": [
