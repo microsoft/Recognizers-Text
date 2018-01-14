@@ -155,7 +155,7 @@ RelativeCenturyRegex: !nestedRegex
   def: (?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世纪
   references: [DatePeriodLastRegex, DatePeriodThisRegex, DatePeriodNextRegex]
 DecadeRegex: !nestedRegex
-  def: (?<centurysuf>({CenturyRegex}|{RelativeCenturyRegex}))?(?<decades>\d0)年代
+  def: (?<centurysuf>({CenturyRegex}|{RelativeCenturyRegex}))?(?<decade>\d0)年代
   references: [CenturyRegex, RelativeCenturyRegex]
 #DateTimeExtractorChs
 PrepositionRegex: !simpleRegex
