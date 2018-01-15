@@ -74,8 +74,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string SeasonWithYear = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
 		public static readonly string QuarterRegex = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";
 		public const string CenturyRegex = @"(?<century>\d|1\d|2\d)世纪";
+		public const string CenturyRegexInChinese = @"(?<century>一|二|三|四|五|六|七|八|九|十|十一|十二|十三|十四|十五|十六|十七|十八|十九|二十|二十一|二十二)世纪";
 		public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世纪";
-		public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{RelativeCenturyRegex}))?(?<decade>\d0)年代";
+		public const string DecadeRegexInChinese = @"(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
+		public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{CenturyRegexInChinese}|{RelativeCenturyRegex}))?(?<decade>(\d0|{DecadeRegexInChinese}))年代";
 		public const string PrepositionRegex = @"(?<prep>^的|在$)";
 		public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
 		public const string NightRegex = @"(?<night>早|晚)";

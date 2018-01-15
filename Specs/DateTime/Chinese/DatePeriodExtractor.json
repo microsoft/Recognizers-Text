@@ -266,4 +266,28 @@
     }
   ]
 }
+,
+{
+  "Input": "十九世纪七十年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十九世纪七十年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "九十年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九十年代",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

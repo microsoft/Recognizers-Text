@@ -574,7 +574,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // concert Chinese Number to Integer
+        // convert Chinese Number to Integer
         private static int ConvertChineseToNum(string numStr)
         {
             var num = -1;
@@ -1139,7 +1139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         private DateTimeResolutionResult ParseDecade(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
-            int century = referenceDate.Year / 100;
+            int century = referenceDate.Year / 100 + 1;
             int decade;
             int beginYear;
             int beginMonth = 1, endMonth = 12;
@@ -1154,20 +1154,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
                 var decadeStr = match.Groups["decade"].Value;
-                decade = int.Parse(decadeStr);
+                if (!int.TryParse(decadeStr, out decade))
+                {
+                    decade = ConvertChineseToNum(decadeStr);
+                }
 
                 var centuryStr = match.Groups["century"].Value;
                 if (!string.IsNullOrEmpty(centuryStr))
                 {
-                    century = int.Parse(centuryStr) - 1;
+                    if (!int.TryParse(centuryStr, out century))
+                    {
+                        century = ConvertChineseToNum(centuryStr);
+                    }
                     inputCentury = true;
                 }
                 else
                 {
                 	centuryStr = match.Groups["relcentury"].Value;
+
                 	if (!string.IsNullOrEmpty(centuryStr))
                 	{
-                		centuryStr = centuryStr.Trim().ToLower();
+                        centuryStr = centuryStr.Trim().ToLower();
 	                    var thismatch = DatePeriodExtractorChs.ThisRegex.Match(centuryStr);
 	                    var nextmatch = DatePeriodExtractorChs.NextRegex.Match(centuryStr);
 	                    var lastmatch = DatePeriodExtractorChs.LastRegex.Match(centuryStr);
@@ -1194,7 +1201,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return ret;
             }
 
-            beginYear = century * 100 + decade;
+            beginYear = (century - 1) * 100 + decade;
 
             if (inputCentury)
             {

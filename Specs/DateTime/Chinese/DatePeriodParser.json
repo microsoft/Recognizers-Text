@@ -596,4 +596,56 @@
     }
   ]
 }
+,
+{
+  "Input": "十九世纪七十年代",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十九世纪七十年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1870-01-01,1879-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1870-01-01",
+          "endDate": "1879-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1870-01-01",
+          "endDate": "1879-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "九十年代",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九十年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX90-01-01,XX99-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2090-01-01",
+          "endDate": "2099-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "1999-12-31"
+        }
+      }
+    }
+  ]
+}
 ]
