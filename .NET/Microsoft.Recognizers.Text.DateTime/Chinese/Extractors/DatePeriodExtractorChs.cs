@@ -74,6 +74,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly DateExtractorChs DatePointExtractor = new DateExtractorChs();
         private static readonly IntegerExtractor IntegerExtractor = new IntegerExtractor();
 
@@ -88,7 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             YearInChineseRegex,
             WeekOfMonthRegex,
             SeasonWithYear,
-            QuarterRegex
+            QuarterRegex,
+            DecadeRegex
         };
 
         public List<ExtractResult> Extract(string text)
