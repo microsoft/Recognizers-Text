@@ -1,104 +1,4 @@
 [{
-  "Input": "上世纪90年代",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "上世纪90年代",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(1990-01-01,1999-12-31,P10Y)",
-        "FutureResolution": {
-          "startDate": "1990-01-01",
-          "endDate": "1999-12-31"
-        },
-        "PastResolution": {
-          "startDate": "1990-01-01",
-          "endDate": "1999-12-31"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "20世纪80年代",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "20世纪80年代",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(1980-01-01,1989-12-31,P10Y)",
-        "FutureResolution": {
-          "startDate": "1980-01-01",
-          "endDate": "1989-12-31"
-        },
-        "PastResolution": {
-          "startDate": "1980-01-01",
-          "endDate": "1989-12-31"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "在50年代的时候",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "50年代",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(XX50-01-01,XX59-12-31,P10Y)",
-        "FutureResolution": {
-          "startDate": "2050-01-01",
-          "endDate": "2059-12-31"
-        },
-        "PastResolution": {
-          "startDate": "1950-01-01",
-          "endDate": "1959-12-31"
-        }
-      }
-    }
-  ]
-}
-,
-{
-  "Input": "19世纪70年代，他出生了",
-  "Context": {
-    "ReferenceDateTime": "2017-03-22T00:00:00"
-  },
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "19世纪70年代",
-      "Type": "daterange",
-      "Value": {
-        "Timex": "(1870-01-01,1879-12-31,P10Y)",
-        "FutureResolution": {
-          "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
-        },
-        "PastResolution": {
-          "startDate": "1870-01-01",
-          "endDate": "1879-12-31"
-        }
-      }
-    }
-  ]
-}
-,
-{
   "Input": "时间从一月十日到十二日",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -561,6 +461,136 @@
         "PastResolution": {
           "startDate": "2017-01-01",
           "endDate": "2017-04-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "上世纪90年代",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上世纪90年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1990-01-01,1999-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "1999-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "1999-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "本世纪20年代",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "本世纪20年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2020-01-01,2029-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2029-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2029-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "20世纪80年代",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20世纪80年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1980-01-01,1989-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1980-01-01",
+          "endDate": "1989-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1980-01-01",
+          "endDate": "1989-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "在50年代的时候",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX50-01-01,XX59-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2050-01-01",
+          "endDate": "2059-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1950-01-01",
+          "endDate": "1959-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "19世纪70年代，他出生了",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "19世纪70年代",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1870-01-01,1879-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1870-01-01",
+          "endDate": "1879-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1870-01-01",
+          "endDate": "1879-12-31"
         }
       }
     }

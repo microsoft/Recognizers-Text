@@ -75,7 +75,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string QuarterRegex = $@"(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";
 		public const string CenturyRegex = @"(?<century>\d|1\d|2\d)世纪";
 		public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世纪";
-		public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{RelativeCenturyRegex}))?(?<decades>\d0)年代";
+		public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{RelativeCenturyRegex}))?(?<decade>\d0)年代";
 		public const string PrepositionRegex = @"(?<prep>^的|在$)";
 		public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
 		public const string NightRegex = @"(?<night>早|晚)";
