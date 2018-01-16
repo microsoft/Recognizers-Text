@@ -157,17 +157,15 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 {
                     Assert.AreEqual(expected.ParentText, actual.ParentText, GetMessage(TestSpec));
                 }
-                
+
                 var values = actual.Resolution as IDictionary<string, object>;
-                var actualValues = values["values"] as IList<Dictionary<string, string>>;
+                var listValues = values["values"] as IList<Dictionary<string, string>>;
+                var actualValues = listValues.FirstOrDefault();
 
-                var expectedValues = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedObj = JsonConvert.DeserializeObject<IList<Dictionary<string, string>>>(expected.Resolution["values"].ToString());
+                var expectedValues = expectedObj.FirstOrDefault();
 
-                Assert.AreEqual(actualValues.Count, expectedValues.Count);
-                foreach (var results in Enumerable.Zip(expectedValues, actualValues, Tuple.Create))
-                {
-                    CollectionAssert.AreEqual(results.Item1, results.Item2, GetMessage(TestSpec));
-                }
+                CollectionAssert.AreEqual(expectedValues, actualValues, GetMessage(TestSpec));
             }
         }
 
