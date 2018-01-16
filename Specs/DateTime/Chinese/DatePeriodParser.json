@@ -648,4 +648,56 @@
     }
   ]
 }
+,
+{
+  "Input": "在789年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "789年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "0789",
+        "FutureResolution": {
+          "startDate": "0789-01-01",
+          "endDate": "0790-01-01"
+        },
+        "PastResolution": {
+          "startDate": "0789-01-01",
+          "endDate": "0790-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从15年一月十日到十二日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从15年一月十日到十二日",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2015-01-10,2015-01-12,P2D)",
+        "FutureResolution": {
+          "startDate": "2015-01-10",
+          "endDate": "2015-01-12"
+        },
+        "PastResolution": {
+          "startDate": "2015-01-10",
+          "endDate": "2015-01-12"
+        }
+      }
+    }
+  ]
+}
 ]
