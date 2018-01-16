@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -23,11 +24,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
+        Regex NumberAsTimeRegex { get; }
+
+        Regex DateNumberConnectorRegex { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
 
         IDateTimeExtractor DatePointExtractor { get; }
 
         IDateTimeExtractor TimePointExtractor { get; }
+
+        IExtractor IntegerExtractor { get; }
 
         bool IsConnector(string text);
 

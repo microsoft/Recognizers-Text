@@ -1,4 +1,16 @@
-[{
+[
+{
+  "Input": "Je serai dans déc",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "déc",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Je serai dehors de 4 à 22 ce mois",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -736,6 +748,28 @@
 }
 ,
 {
+  "Input": "Je serai dans août",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "août",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je serai dans Février",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Février",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Je serai dans Dec",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -1324,6 +1358,17 @@
   "Results": [
     {
       "Text": " cette vendredi jusqu'a Dimanche prochain",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Je vais partir cette mercredi jusqu'a Dimanche prochain",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": " cette mercredi jusqu'a Dimanche prochain",
       "Type": "daterange"
     }
   ]

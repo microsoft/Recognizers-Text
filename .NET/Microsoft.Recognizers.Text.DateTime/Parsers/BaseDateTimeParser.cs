@@ -136,9 +136,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     er2[0].Start -= this.config.TokenBeforeTime.Length;
                 }
-                else
+                else if (er2.Count == 0)
                 {
-                    return ret;
+                    // check whether there is a number being used as a time point
+                    bool hasTimeNumber = false;
+                    var numErs = this.config.IntegerExtractor.Extract(text);
+                    if (numErs.Count > 0 && er1.Count == 1)
+                    {
+                        foreach (var num in numErs)
+                        {
+                            var middleBegin = er1[0].Start + er1[0].Length ?? 0;
+                            var middleEnd = num.Start ?? 0;
+                            if (middleBegin > middleEnd)
+                            {
+                                continue;
+                            }
+
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
+                            var match = this.config.DateNumberConnectorRegex.Match(middleStr);
+                            if (string.IsNullOrEmpty(middleStr) || match.Success)
+                            {
+                                num.Type = Constants.SYS_DATETIME_TIME;
+                                er2.Add(num);
+                                hasTimeNumber = true;
+                            }
+                        }
+                    }
+
+                    if (!hasTimeNumber)
+                    {
+                        return ret;
+                    }
                 }
             }
 

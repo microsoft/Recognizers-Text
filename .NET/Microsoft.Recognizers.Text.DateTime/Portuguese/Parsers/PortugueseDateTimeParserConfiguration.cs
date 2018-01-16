@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
@@ -47,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex UnitRegex { get; }
 
+        public Regex DateNumberConnectorRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -67,8 +71,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = PortugueseDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = PortugueseDateTimeExtractorConfiguration.UnitRegex;
+            DateNumberConnectorRegex = PortugueseDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;

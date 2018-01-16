@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IExtractor CardinalExtractor { get; }
 
+        public IExtractor IntegerExtractor { get; }
+
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
@@ -47,6 +49,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex UnitRegex { get; }
 
+        public Regex DateNumberConnectorRegex { get; }
+
+        public Regex PrepositionRegex { get; }
+
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
@@ -67,8 +73,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SpecificTimeOfDayRegex = FrenchDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
             TheEndOfRegex = FrenchDateTimeExtractorConfiguration.TheEndOfRegex;
             UnitRegex = FrenchTimeExtractorConfiguration.TimeUnitRegex;
+            DateNumberConnectorRegex = FrenchDateTimeExtractorConfiguration.DateNumberConnectorRegex;
             Numbers = config.Numbers;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;

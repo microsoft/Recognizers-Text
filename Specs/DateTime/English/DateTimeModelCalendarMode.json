@@ -33,7 +33,8 @@
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": []
-},
+}
+,
 {
   "Input": "schedule me a one-one meeting",
   "Context": {
@@ -42,5 +43,127 @@
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": []
+}
+,
+{
+  "Input": "I will leave tmr 3",
+  "Context": {
+    "ReferenceDateTime": "2017-12-18T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tmr 3",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-12-19T03",
+            "type": "datetime",
+            "value": "2017-12-19 03:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I will leave tomorrow three",
+  "Context": {
+    "ReferenceDateTime": "2017-12-18T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tomorrow three",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-12-19T03",
+            "type": "datetime",
+            "value": "2017-12-19 03:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I will leave yesterday at 12",
+  "Context": {
+    "ReferenceDateTime": "2017-12-18T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "yesterday at 12",
+      "TypeName": "datetimeV2.datetime",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2017-12-17T12",
+            "type": "datetime",
+            "value": "2017-12-17 12:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Schedule a meeting before 4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T04",
+            "Mod": "before",
+            "type": "timerange",
+            "end": "04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Schedule a meeting after three",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after three",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T03",
+            "Mod": "after",
+            "type": "timerange",
+            "start": "03:00:00"
+          }
+        ]
+      }
+    }
+  ]
 }
 ]

@@ -227,6 +227,7 @@
     "Input": "4,800",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
+    "Debug": true,
     "Results": [
       {
         "Text": "4,800",
@@ -240,7 +241,7 @@
   {
     "Input": "Das sind einhundert Leute.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,dotnet",
     "Results": [
       {
         "Text": "einhundert",

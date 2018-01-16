@@ -206,4 +206,112 @@
     }
   ]
 }
+,
+{
+  "Input": "上世纪90年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "上世纪90年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "本世纪20年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "本世纪20年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "20世纪80年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20世纪80年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "在50年代的时候",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "50年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "19世纪70年代，他出生了",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "19世纪70年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "十九世纪七十年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "十九世纪七十年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "九十年代",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "九十年代",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "在789年",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "789年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "时间从15年一月十日到十二日",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从15年一月十日到十二日",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

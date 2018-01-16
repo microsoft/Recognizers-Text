@@ -57,16 +57,38 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> MergeDateAndTime(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var ers = this.config.DatePointExtractor.Extract(text, reference);
-            if (ers.Count == 0)
+            var dateErs = this.config.DatePointExtractor.Extract(text, reference);
+            if (dateErs.Count == 0)
             {
                 return ret;
             }
 
-            ers.AddRange(this.config.TimePointExtractor.Extract(text, reference));
-            if (ers.Count < 2)
+            var timeErs = this.config.TimePointExtractor.Extract(text, reference);
+            var timeNumMatches = this.config.NumberAsTimeRegex.Matches(text);
+            if (timeErs.Count == 0 && timeNumMatches.Count == 0)
             {
                 return ret;
+            }
+
+            var ers = dateErs;
+            ers.AddRange(timeErs);
+
+            // handle cases which use numbers as time points
+            // only enabled in CalendarMode
+            if ((this.config.Options & DateTimeOptions.CalendarMode) != 0)
+            {
+                var numErs = new List<ExtractResult>();
+                for (var idx = 0; idx < timeNumMatches.Count; idx++)
+                {
+                    var match = timeNumMatches[idx];
+                    var node = new ExtractResult();
+                    node.Start = match.Index;
+                    node.Length = match.Length;
+                    node.Text = match.Value;
+                    node.Type = Number.Constants.SYS_NUM_INTEGER;
+                    numErs.Add(node);
+                }
+                ers.AddRange(numErs);
             }
 
             ers = ers.OrderBy(o => o.Start).ToList();
@@ -86,7 +108,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Constants.SYS_DATETIME_TIME) ||
-                    ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE))
+                    ers[i].Type.Equals(Constants.SYS_DATETIME_TIME) && ers[j].Type.Equals(Constants.SYS_DATETIME_DATE) ||
+                    ers[i].Type.Equals(Constants.SYS_DATETIME_DATE) && ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
                 {
                     var middleBegin = ers[i].Start + ers[i].Length ?? 0;
                     var middleEnd = ers[j].Start ?? 0;
@@ -97,7 +120,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim().ToLower();
-                    if (this.config.IsConnector(middleStr))
+                    var valid = false;
+                    // for cases like "tomorrow 3",  "tomorrow at 3"
+                    if (ers[j].Type.Equals(Number.Constants.SYS_NUM_INTEGER))
+                    {
+                        var match = this.config.DateNumberConnectorRegex.Match(middleStr);
+                        if (string.IsNullOrEmpty(middleStr) || match.Success)
+                        {
+                            valid = true;
+                        }
+                    }
+                    else
+                    {
+                        if (this.config.IsConnector(middleStr))
+                        {
+                            valid = true;
+                        }
+                    }
+
+                    if (valid)
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);

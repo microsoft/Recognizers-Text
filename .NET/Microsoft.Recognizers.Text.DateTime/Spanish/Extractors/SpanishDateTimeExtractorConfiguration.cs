@@ -3,6 +3,8 @@
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Spanish;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -24,14 +26,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         //TODO: add this for Spanish
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex NumberAsTimeRegex = new Regex(DateTimeDefinitions.NumberAsTimeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex DateNumberConnectorRegex = new Regex(DateTimeDefinitions.DateNumberConnectorRegex,
+            RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        public SpanishDateTimeExtractorConfiguration() : base(DateTimeOptions.None)
+        public SpanishDateTimeExtractorConfiguration(DateTimeOptions options = DateTimeOptions.None) : base(options)
         {
+            IntegerExtractor = new IntegerExtractor();
             DatePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
             TimePointExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration());
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
         }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IDateTimeExtractor DatePointExtractor { get; }
 
@@ -58,6 +66,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateTimeExtractorConfiguration.TheEndOfRegex => TheEndOfRegex;
 
         Regex IDateTimeExtractorConfiguration.UnitRegex => UnitRegex;
+
+        Regex IDateTimeExtractorConfiguration.NumberAsTimeRegex => NumberAsTimeRegex;
+
+        Regex IDateTimeExtractorConfiguration.DateNumberConnectorRegex => DateNumberConnectorRegex;
 
         public bool IsConnector(string text)
         {
