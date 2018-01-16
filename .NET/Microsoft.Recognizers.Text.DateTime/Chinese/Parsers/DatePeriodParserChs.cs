@@ -88,6 +88,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     innerResult = ParseQuarter(er.Text, referenceDate);
                 }
 
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDecade(er.Text, referenceDate);
+                }
+
                 if (innerResult.Success)
                 {
                     if (innerResult.FutureValue != null && innerResult.PastValue != null)
@@ -162,6 +167,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
+                    if (year < 100 && year >= 30)
+                    {
+                        year += 1900;
+                    }
+                    else if (year < 100 && year < 30)
+                    {
+                        year += 2000;
+                    }
+
                     inputYear = true;
                 }
                 else
@@ -569,7 +583,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return ret;
         }
 
-        // concert Chinese Number to Integer
+        // convert Chinese Number to Integer
         private static int ConvertChineseToNum(string numStr)
         {
             var num = -1;
@@ -641,11 +655,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (tmp.Length == 2)
                 {
                     num = int.Parse(tmp);
-                    if (num < 100 && num >= 20)
+                    if (num < 100 && num >= 30)
                     {
                         num += 1900;
                     }
-                    else if (num < 20)
+                    else if (num < 30)
                     {
                         num += 2000;
                     }
@@ -1126,6 +1140,115 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum*3 + 1, 1);
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
             ret.Timex = $"({FormatUtil.LuisDate(beginDate)},{FormatUtil.LuisDate(endDate)},P3M)";
+            ret.Success = true;
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseDecade(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            int century = referenceDate.Year / 100 + 1;
+            int decade;
+            int beginYear;
+            int beginMonth = 1, endMonth = 12;
+            int beginDay = 1, endDay = 31;
+            int decadeLastYear = 9;
+            var inputCentury = false;
+
+            var trimedText = text.Trim();
+            var match = DatePeriodExtractorChs.DecadeRegex.Match(trimedText);
+            string beginLuisStr, endLuisStr;
+
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var decadeStr = match.Groups["decade"].Value;
+                if (!int.TryParse(decadeStr, out decade))
+                {
+                    decade = ConvertChineseToNum(decadeStr);
+                }
+
+                var centuryStr = match.Groups["century"].Value;
+                if (!string.IsNullOrEmpty(centuryStr))
+                {
+                    if (!int.TryParse(centuryStr, out century))
+                    {
+                        century = ConvertChineseToNum(centuryStr);
+                    }
+                    inputCentury = true;
+                }
+                else
+                {
+                	centuryStr = match.Groups["relcentury"].Value;
+
+                	if (!string.IsNullOrEmpty(centuryStr))
+                	{
+                        centuryStr = centuryStr.Trim().ToLower();
+	                    var thismatch = DatePeriodExtractorChs.ThisRegex.Match(centuryStr);
+	                    var nextmatch = DatePeriodExtractorChs.NextRegex.Match(centuryStr);
+	                    var lastmatch = DatePeriodExtractorChs.LastRegex.Match(centuryStr);
+
+	                    if (thismatch.Success)
+	                    {
+	                        // do nothing
+	                    }
+	                    else if (nextmatch.Success)
+	                    {
+	                        century++;
+	                    }
+	                    else
+	                    {
+	                        century--;
+	                    }
+
+	                    inputCentury = true;
+	                }
+                }
+            }
+            else
+            {
+                return ret;
+            }
+
+            beginYear = (century - 1) * 100 + decade;
+
+            if (inputCentury)
+            {
+                beginLuisStr = FormatUtil.LuisDate(beginYear, beginMonth, beginDay);
+                endLuisStr = FormatUtil.LuisDate(beginYear + decadeLastYear, endMonth, endDay);
+            }
+            else
+            {
+                var beginYearStr = "XX" + decade.ToString();
+                beginLuisStr = FormatUtil.LuisDate(-1, beginMonth, beginDay);
+                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
+
+                var endYearStr = "XX" + (decade + decadeLastYear).ToString();
+                endLuisStr = FormatUtil.LuisDate(-1, endMonth, endDay);
+                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
+            }
+            ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
+
+            int futureYear = beginYear, pastYear = beginYear;
+            var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, beginMonth, beginDay);
+            if (!inputCentury && startDate < referenceDate)
+            {
+                futureYear += 100;
+            }
+
+            if (!inputCentury && startDate >= referenceDate)
+            {
+                pastYear -= 100;
+            }
+
+            ret.FutureValue = new Tuple<DateObject, DateObject>(
+                DateObject.MinValue.SafeCreateFromValue(futureYear, beginMonth, beginDay),
+                DateObject.MinValue.SafeCreateFromValue(futureYear + decadeLastYear, endMonth, endDay));
+
+            ret.PastValue = new Tuple<DateObject, DateObject>(
+                DateObject.MinValue.SafeCreateFromValue(pastYear, beginMonth, beginDay),
+                DateObject.MinValue.SafeCreateFromValue(pastYear + decadeLastYear, endMonth, endDay));
+
             ret.Success = true;
 
             return ret;
