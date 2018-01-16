@@ -588,11 +588,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
-                    if (year < 100 && year >= 90)
+                    if (year < 100 && year >= 30)
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 20)
+                    else if (year < 100 && year < 30)
                     {
                         year += 2000;
                     }

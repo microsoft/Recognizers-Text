@@ -595,4 +595,76 @@
     }
   ]
 }
+,
+{
+  "Input": "789-01-29",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "789-01-29",
+      "Type": "date",
+      "Value": {
+        "Timex": "0789-01-29",
+        "FutureResolution": {
+          "date": "0789-01-29"
+        },
+        "PastResolution": {
+          "date": "0789-01-29"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "1357年6月10日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1357年6月10日",
+      "Type": "date",
+      "Value": {
+        "Timex": "1357-06-10",
+        "FutureResolution": {
+          "date": "1357-06-10"
+        },
+        "PastResolution": {
+          "date": "1357-06-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "三六七年一月一日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三六七年一月一日",
+      "Type": "date",
+      "Value": {
+        "Timex": "0367-01-01",
+        "FutureResolution": {
+          "date": "0367-01-01"
+        },
+        "PastResolution": {
+          "date": "0367-01-01"
+        }
+      }
+    }
+  ]
+}
 ]

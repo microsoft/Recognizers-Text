@@ -11,11 +11,11 @@ DayRegexNumInChinese: !simpleRegex
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)
 YearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2}|9\d|0\d|1\d)
+  def: (?<year>(\d{2,4}))
 ZeroToNineIntegerRegexChs: !simpleRegex
   def: '[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
 DateYearInChineseRegex: !nestedRegex
-  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))
+  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))
   references: [ZeroToNineIntegerRegexChs]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期天|星期天)
@@ -97,13 +97,13 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
 DatePeriodYearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2})年?|(?<year>\d\d)年
+  def: (?<year>(\d{2,4}))年?
 StrictYearRegex: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2})年?
+  def: (?<year>(\d{3,4}))年?
 YearRegexInNumber: !simpleRegex
-  def: (?<year>19\d{2}|20\d{2})
+  def: (?<year>(\d{3,4}))
 DatePeriodYearInChineseRegex: !nestedRegex
-  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年
+  def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))年
   references: [ZeroToNineIntegerRegexChs]
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{MonthRegex}))
@@ -204,7 +204,7 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   references: [DateTimePeriodUnitRegex]
 #DurationExtractorChs
 DurationYearRegex: !simpleRegex
-  def: ((19\d{2}|20\d{2})|两千)年
+  def: ((\d{3,4})|两千)年
 DurationHalfSuffixRegex: !simpleRegex
   def: 半
 DurationSuffixList: !dictionary

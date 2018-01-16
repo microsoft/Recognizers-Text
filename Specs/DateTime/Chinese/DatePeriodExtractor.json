@@ -290,4 +290,28 @@
     }
   ]
 }
+,
+{
+  "Input": "在789年",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "789年",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "时间从15年一月十日到十二日",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从15年一月十日到十二日",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
