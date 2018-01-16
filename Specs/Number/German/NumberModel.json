@@ -14,41 +14,6 @@
     ]
   },
   {
-    "Input": "192.168.1.2",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
-    "Results": [
-      {
-        "Text": "192",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "192"
-        }
-      },
-      {
-        "Text": "168",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "168"
-        }
-      },
-      {
-        "Text": "1",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "1"
-        }
-      },
-      {
-        "Text": "2",
-        "TypeName": "number",
-        "Resolution": {
-          "value": "2"
-        }
-      }
-    ]
-  },
-  {
     "Input": "ein",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
@@ -80,7 +45,6 @@
     "Input": "ein halbes Schwein",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "ein halbes",
@@ -95,7 +59,6 @@
     "Input": "drei halbe Schweine",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "drei halbe",
@@ -110,7 +73,6 @@
     "Input": "zwei drittel Brot",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "zwei drittel",
@@ -135,7 +97,7 @@
       }
     ]
   },
-  {
+  {//does not yet recognize 'Komma' as ','
     "Input": "zwei Komma drei",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript,dotnet",
@@ -153,7 +115,6 @@
     "Input": "2,35",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "2,35",
@@ -168,7 +129,6 @@
     "Input": "2.000,352",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "2.000,352",
@@ -197,7 +157,6 @@
     "Input": "2,3",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "2,3",
@@ -268,7 +227,6 @@
     "Input": "4,800",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
-    "Debug": true,
     "Results": [
       {
         "Text": "4,800",
@@ -282,7 +240,7 @@
   {
     "Input": "Das sind einhundert Leute.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert",
@@ -359,6 +317,309 @@
         "TypeName": "number",
         "Resolution": {
           "value": "360"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "einhunderteinunddreißig",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhunderteinunddreißig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "131"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "einhundertdrei",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundertdrei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "103"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eintausendeinhundertfünfzig",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "eintausendeinhundertfünfzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1150"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "zwei Millionen eintausendeinhundertfünfzig",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zwei Millionen eintausendeinhundertfünfzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2001150"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1399509"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1399509"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2399549"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die dreihundert waren wohl eher zehntausend",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dreihundert",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        }
+      },
+      {
+        "Text": "zehntausend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eine 8 Bit Variable kann bis zu zweihundertsechsundfuenfzig verschiedene Zustände annehmen. Das reicht aus um Zahlen von null bis zweihundertfünfundfünfzig darzustellen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Eine",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "8",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8"
+        }
+      },
+      {
+        "Text": "zweihundertsechsundfuenfzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "256"
+        }
+      },
+      {
+        "Text": "null",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        }
+      },
+      {
+        "Text": "zweihundertfünfundfünfzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "255"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "ein dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12"
+        }
+      },
+      {
+        "Text": "Ein",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2377988"
+        }
+      },
+      {
+        "Text": "74",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "74"
+        }
+      },
+      {
+        "Text": "ein halbes dutzend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      },
+      {
+        "Text": "6",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        }
+      },
+      {
+        "Text": "acht",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8"
+        }
+      },
+      {
+        "Text": "vierhundertachtundachtzig",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "488"
+        }
+      },
+      {
+        "Text": "13",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13"
+        }
+      },
+      {
+        "Text": "zwei",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        }
+      },
+      {
+        "Text": "dreizehn",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Milchstraße besteht nach heutiger Schätzung aus ca. 100 bis 300 Milliarden Sternen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      },
+      {//Whitespace at the end currently necessary because of the possible follow-up-numbers. Regex needs refinement here.
+        "Text": "300 Milliarden ",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "100 bis 300 Milliarden",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        }
+      },
+      {
+        "Text": "300 Milliarden",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300000000000"
         }
       }
     ]
