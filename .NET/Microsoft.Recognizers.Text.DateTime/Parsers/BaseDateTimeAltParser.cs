@@ -168,24 +168,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                     case Constants.SYS_DATETIME_DATEPERIOD:
                         startPointType = TimeTypeConstants.START_DATE;
                         endPointType = TimeTypeConstants.END_DATE;
-                        pastStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
-                        pastEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        pastStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.PastValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.PastValue).Item2);
                         futureStartPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
                         futureEndPointResolution = FormatUtil.FormatDate(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
                     case Constants.SYS_DATETIME_DATETIMEPERIOD:
                         startPointType = TimeTypeConstants.START_DATETIME;
                         endPointType = TimeTypeConstants.END_DATETIME;
-                        pastStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
-                        pastEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        pastStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item2);
                         futureStartPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
                         futureEndPointResolution = FormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;
                     case Constants.SYS_DATETIME_TIMEPERIOD:
                         startPointType = TimeTypeConstants.START_TIME;
                         endPointType = TimeTypeConstants.END_TIME;
-                        pastStartPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
-                        pastEndPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
+                        pastStartPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item1);
+                        pastEndPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.PastValue).Item2);
                         futureStartPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item1);
                         futureEndPointResolution = FormatUtil.FormatTime(((Tuple<DateObject, DateObject>)ret.FutureValue).Item2);
                         break;

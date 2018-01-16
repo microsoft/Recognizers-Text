@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Microsoft.Recognizers.Text.Number;
@@ -246,6 +247,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var pastResolutionStr = ((DateTimeResolutionResult) slot.Value).PastResolution;
             var futureResolutionStr = ((DateTimeResolutionResult) slot.Value).FutureResolution;
 
+            if (typeOutput == Constants.SYS_DATETIME_DATETIMEALT && pastResolutionStr.Count > 0)
+            {
+                typeOutput = DetermineResolutionDateTimeType(pastResolutionStr);
+            }
+
             var resolutionPast = GenerateResolution(type, pastResolutionStr, mod);
             var resolutionFuture = GenerateResolution(type, futureResolutionStr, mod);
 
@@ -330,6 +336,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return new SortedDictionary<string, object> { { "values", resolutions } };
+        }
+
+        private string DetermineResolutionDateTimeType(Dictionary<string, string> pastResolutionStr)
+        {
+            switch (pastResolutionStr.Keys.First())
+            {
+                case TimeTypeConstants.START_DATE:
+                    return Constants.SYS_DATETIME_DATEPERIOD;
+                case TimeTypeConstants.START_DATETIME:
+                    return Constants.SYS_DATETIME_DATETIMEPERIOD;
+                case TimeTypeConstants.START_TIME:
+                    return Constants.SYS_DATETIME_TIMEPERIOD;
+                default:
+                    return pastResolutionStr.Keys.First().ToLower();
+            }
         }
 
         internal void AddResolutionFields(Dictionary<string, object> dic, string key, object value)

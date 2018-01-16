@@ -14,7 +14,7 @@
         "values": [
           {
             "timex": "2017-12-11T09",
-            "type": "datetimealt",
+            "type": "datetime",
             "value": "2017-12-11 09:00:00"
           }
         ]
@@ -28,7 +28,7 @@
         "values": [
           {
             "timex": "2017-12-11T13",
-            "type": "datetimealt",
+            "type": "datetime",
             "value": "2017-12-11 13:00:00"
           }
         ]
@@ -52,7 +52,7 @@
         "values": [
           {
             "timex": "2017-12-11",
-            "type": "datetimealt",
+            "type": "date",
             "value": "2017-12-11"
           }
         ]
@@ -66,7 +66,7 @@
         "values": [
           {
             "timex": "2017-12-12",
-            "type": "datetimealt",
+            "type": "date",
             "value": "2017-12-12"
           }
         ]
@@ -75,7 +75,7 @@
   ]
 },
 {
-  "Input": "schedule me a meeting in the morning 9 olock or 10 oclock",
+  "Input": "schedule me a meeting in the morning 9 oclock or 10 oclock",
   "Context": {
     "ReferenceDateTime": "2017-12-04T00:00:00"
   },
@@ -83,14 +83,14 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "in the morning 9",
+      "Text": "in the morning 9 oclock",
       "TypeName": "datetimeV2.datetimealt",
-      "ParentText": "in the morning 9 olock or 10 oclock",
+      "ParentText": "in the morning 9 oclock or 10 oclock",
       "Resolution": {
         "values": [
           {
             "timex": "T09",
-            "type": "datetimealt",
+            "type": "time",
             "value": "09:00:00"
           }
         ]
@@ -99,12 +99,12 @@
     {
       "Text": "10 oclock",
       "TypeName": "datetimeV2.datetimealt",
-      "ParentText": "in the morning 9 olock or 10 oclock",
+      "ParentText": "in the morning 9 oclock or 10 oclock",
       "Resolution": {
         "values": [
           {
             "timex": "T10",
-            "type": "datetimealt",
+            "type": "time",
             "value": "10:00:00"
           }
         ]
@@ -128,7 +128,7 @@
         "values": [
           {
             "timex": "(2017-12-11T13,2017-12-11T15,PT2H)",
-            "type": "datetimealt",
+            "type": "datetimerange",
             "start": "2017-12-11 13:00:00",
             "end": "2017-12-11 15:00:00"
           }
@@ -143,7 +143,7 @@
         "values": [
           {
             "timex": "(2017-12-11T17,2017-12-11T18,PT1H)",
-            "type": "datetimealt",
+            "type": "datetimerange",
             "start": "2017-12-11 17:00:00",
             "end": "2017-12-11 18:00:00"
           }
@@ -168,15 +168,15 @@
         "values": [
           {
             "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
-            "type": "datetimealt",
-            "start": "2017-12-04 08:00:00",
-            "end": "2017-12-04 09:00:00"
+            "type": "datetimerange",
+            "start": "2017-11-27 08:00:00",
+            "end": "2017-11-27 09:00:00"
           },
           {
             "timex": "(XXXX-WXX-1T08,XXXX-WXX-1T09,PT1H)",
-            "type": "datetimealt",
-            "start": "2017-12-11 08:00:00",
-            "end": "2017-12-11 09:00:00"
+            "type": "datetimerange",
+            "start": "2017-12-04 08:00:00",
+            "end": "2017-12-04 09:00:00"
           }
         ]
       }
@@ -189,7 +189,13 @@
         "values": [
           {
             "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
-            "type": "datetimealt",
+            "type": "datetimerange",
+            "start": "2017-11-27 09:00:00",
+            "end": "2017-11-27 10:00:00"
+          },
+          {
+            "timex": "(XXXX-WXX-1T09,XXXX-WXX-1T10,PT1H)",
+            "type": "datetimerange",
             "start": "2017-12-04 09:00:00",
             "end": "2017-12-04 10:00:00"
           }
@@ -214,7 +220,7 @@
         "values": [
           {
             "timex": "2017-12-12",
-            "type": "datetimealt",
+            "type": "date",
             "value": "2017-12-12"
           }
         ]
@@ -228,7 +234,7 @@
         "values": [
           {
             "timex": "2017-12-14",
-            "type": "datetimealt",
+            "type": "date",
             "value": "2017-12-14"
           }
         ]
@@ -252,7 +258,7 @@
         "values": [
           {
             "timex": "2017-12-12T09",
-            "type": "datetimealt",
+            "type": "datetime",
             "value": "2017-12-12 09:00:00"
           }
         ]
@@ -266,7 +272,7 @@
         "values": [
           {
             "timex": "2017-12-14T13",
-            "type": "datetimealt",
+            "type": "datetime",
             "value": "2017-12-14 13:00:00"
           }
         ]
