@@ -167,6 +167,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (!string.IsNullOrEmpty(yearStr))
                 {
                     year = int.Parse(yearStr);
+                    if (year < 100 && year >= 30)
+                    {
+                        year += 1900;
+                    }
+                    else if (year < 100 && year < 30)
+                    {
+                        year += 2000;
+                    }
+
                     inputYear = true;
                 }
                 else
@@ -646,11 +655,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 if (tmp.Length == 2)
                 {
                     num = int.Parse(tmp);
-                    if (num < 100 && num >= 20)
+                    if (num < 100 && num >= 30)
                     {
                         num += 1900;
                     }
-                    else if (num < 20)
+                    else if (num < 30)
                     {
                         num += 2000;
                     }
