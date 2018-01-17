@@ -30,7 +30,7 @@
   {
     "Input": "fünfundzwanzigster",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "fünfundzwanzigster",
@@ -44,13 +44,13 @@
   {
     "Input": "Sie ist die einhunderteinunddreißigste.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderteinunddreißigste",
         "TypeName": "ordinal",
         "Resolution": {
-          "value": "25"
+          "value": "131"
         }
       }
     ]
@@ -119,12 +119,12 @@
     ]
   },
   {
-    "Input": "Karl war zu erst da, Bob war zweiter und Hans vierter. Den Dritten kannte ich nicht.",
+    "Input": "Karl war zuerst da, Bob war zweiter und Hans vierter. Den Dritten kannte ich nicht.",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "erst",
+        "Text": "zuerst",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1"
@@ -170,6 +170,371 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das müsste dann der tausendste sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "tausendste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      //Normal numbers are detected because they can also be used as ordinal with suffix if there is a dot behind it (1. = 1st for example). might need to figure out a better solution
+      {
+        "Text": "erste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "3",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "74",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "74"
+        }
+      },
+      {
+        "Text": "2",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      },
+      {
+        "Text": "6",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "6"
+        }
+      },
+      {//This is falsely detected as ordinal because "acht" can be either an ordinal or a number, depending on context
+        "Text": "acht",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "8"
+        }
+      },
+      {
+        "Text": "13",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "13"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "das ist dann die 3. Banane",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "das ist dann die dritte Banane",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dritte",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Er ist siebenundzwanzigster in der Thronfolge, es wäre schon sehr unwahrscheinlich das die anderen sechsundzwanzig im Bälde das zeitliche segnen",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "siebenundzwanzigster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "27"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das Licht sollte nach dem Milliardsten Signal anspringen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Milliardsten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "erster, zweiter. achter Fisch von Achtern, sinnloses dritten!!! Wortsalat die siebte und Random stuff an der siebenundzwanzigsten Ampel links hinterm neunten Haus.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "erster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "zweiter",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      },
+      {
+        "Text": "achter",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "8"
+        }
+      },
+      {
+        "Text": "dritten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "siebte",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "7"
+        }
+      },
+      {
+        "Text": "siebenundzwanzigsten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "27"
+        }
+      },
+      {
+        "Text": "neunten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "9"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das erste Spiel war langweilig und wenn es keine dastischen Änderungen gibt, wird auch das siebzigste Spiel langweilig sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "erste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      },
+      {
+        "Text": "siebzigste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "70"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Die Tauchglocke war das erste funktionierende U-Boot.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "erste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der Vergleich muss an einer Begrenzung zwischen einem (backslash)w (alphanumerischen) und einem (backslash)W (nicht alphanumerischen) Zeichen erfolgen.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Beim zweiten mal ist für gewöhnlich alles leichter.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zweiten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zum hundertsten mal, das ist eine schlechte Idee!",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "hundertsten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Beim zweiten mal ist für gewöhnlich alles leichter.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zweiten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundert Milliardste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000"
+        }
+      },
+      {
+        "Text": "dreihundert Milliardste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "300000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Millionste und höchstens der dreihundert Millionste Stern. Diese Aussage ist nicht korrekt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundert Millionste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000"
+        }
+      },
+      {
+        "Text": "dreihundert Millionste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "300000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Billionste und höchstens der dreihundert Billionste Stern. Diese Aussage ist nicht korrekt.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundert Billionste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000000000"
+        }
+      },
+      {
+        "Text": "dreihundert Billionste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "300000000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zahnprotesen werden oftmals als 'die Dritten' beziehungsweise als die dritten Zähne bezeichnet.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Dritten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      },
+      {
+        "Text": "dritten",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sie sind der einhunderttausendste Besucher.",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhunderttausendste",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000"
         }
       }
     ]
