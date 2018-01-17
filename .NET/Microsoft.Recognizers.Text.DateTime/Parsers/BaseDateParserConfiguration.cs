@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
+        public virtual IDateTimeParser DateTimeAltParser { get; protected set; }
+
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> Numbers { get; protected set; }
