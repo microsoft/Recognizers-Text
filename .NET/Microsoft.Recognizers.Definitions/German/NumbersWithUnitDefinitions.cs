@@ -111,7 +111,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "Malawian kwacha", "malawi-kwacha|mk|mwk" },
 			{ "Tambala", "tambala" },
 			{ "Malaysian ringgit", "malaysischer ringgit|malaysische ringgit|malaysischen ringgit|rm|myr" },
-			{ "Mauritanian ouguiya", "mauretanischer ouguiya|mauretanische ouguiya|mauretanischen ouguiya|um|mro" },
+			{ "Mauritanian ouguiya", "mauretanischer ouguiya|mauretanische ouguiya|mauretanischen ouguiya|mro" },
 			{ "Khoums", "khoums" },
 			{ "Mongolian tögrög", "mongolischer tögrög|mongolische tögrög|mongolischen tögrög|mongolischer tugrik|mongolische tugrik|mongolischen tugrik|mnt|₮" },
 			{ "Mozambican metical", "mosambik-metical|mosambik metical|mt|mzn" },
@@ -436,7 +436,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "Yard", "yard|yards" },
 			{ "Inch", "zoll|inch|in|\"" },
 			{ "Foot", "fuß|ft" },
-			{ "Light year", "Lichtjahr|Lichtjahre|Lichtjahren" },
+			{ "Light year", "lichtjahr|lichtjahre|lichtjahren" },
 			{ "Pt", "pt|pts" }
 		};
 		public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
@@ -457,7 +457,7 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "Mile per hour", "mph|mi/h|meilen pro stunde|meilen/stunde|meile pro stunde" },
 			{ "Knot", "kt|knoten|kn" },
 			{ "Foot per second", "ft/s|fuß/sekunde|fuß pro sekunde|fps" },
-			{ "Foot per minute", "ft/min|fuß/inute|fuß pro minute" },
+			{ "Foot per minute", "ft/min|fuß/minute|fuß pro minute" },
 			{ "Yard per minute", "yard pro minute|yard/minute|yard/min" },
 			{ "Yard per second", "yard pro sekunde|yard/sekunde|yard/s" }
 		};

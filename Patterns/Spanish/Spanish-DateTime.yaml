@@ -385,6 +385,9 @@ MiddlePauseRegex: !simpleRegex
 PrefixArticleRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\.]
+OrRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 YearPlusNumberRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

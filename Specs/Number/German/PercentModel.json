@@ -1,7 +1,7 @@
 [{
     "Input": "100%",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100%",
@@ -16,7 +16,7 @@
   {
     "Input": " 100% ",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100%",
@@ -31,7 +31,7 @@
   {
     "Input": " 100 Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100 Prozent",
@@ -46,7 +46,7 @@
   {
     "Input": "240 Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "240 Prozent",
@@ -61,10 +61,10 @@
   {
     "Input": "zwanzig Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "twenty percent",
+        "Text": "zwanzig Prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
@@ -76,7 +76,7 @@
   {
     "Input": "dreißig Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dreißig Prozent",
@@ -91,7 +91,7 @@
   {
     "Input": "einhundert Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert Prozent",
@@ -106,13 +106,72 @@
   {
     "Input": "10 Prozent",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "10 Prozent",
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "siebenunddreißig Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "siebenunddreißig Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "37%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "einhundertneunundneunzig Prozent",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundertneunundneunzig Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "199%"
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Wenn er nicht einhundert Prozent gibt, wird er damit nicht mehr rechtzeitig fertig",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "einhundert Prozent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "27%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "27%"
         }
       }
     ]

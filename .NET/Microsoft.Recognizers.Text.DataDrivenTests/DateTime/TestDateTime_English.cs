@@ -229,5 +229,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
             base.ModelInitialize(Models);
             base.TestDateTime();
         }
+
+        [DataSource("Microsoft.VisualStudio.TestTools.DataSource.CSV", "DateTimeModelExtendedTypes-English.csv", "DateTimeModelExtendedTypes-English#csv", DataAccessMethod.Sequential)]
+        [TestMethod]
+        public void DateTimeModelExtendedTypes()
+        {
+            base.ModelInitialize(Models);
+            base.TestDateTime();
+        }
     }
 }

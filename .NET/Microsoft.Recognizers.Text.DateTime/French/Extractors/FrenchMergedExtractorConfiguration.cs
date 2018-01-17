@@ -53,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeListExtractor DateTimeAltExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public FrenchMergedExtractorConfiguration(DateTimeOptions options) : base(options)
@@ -67,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
             SetExtractor = new BaseSetExtractor(new FrenchSetExtractorConfiguration());
             HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
+            DateTimeAltExtractor = new BaseDateTimeAltExtractor(new FrenchDateTimeAltExtractorConfiguration());
             IntegerExtractor = new Number.French.IntegerExtractor();
         }
 

@@ -195,6 +195,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string MiddlePauseRegex = @"^[.]";
 		public const string DurationConnectorRegex = @"^[.]";
 		public const string PrefixArticleRegex = @"^[\.]";
+		public const string OrRegex = @"^[.]";
 		public const string YearPlusNumberRegex = @"^[.]";
 		public const string NumberAsTimeRegex = @"^[.]";
 		public const string TimeBeforeAfterRegex = @"^[.]";

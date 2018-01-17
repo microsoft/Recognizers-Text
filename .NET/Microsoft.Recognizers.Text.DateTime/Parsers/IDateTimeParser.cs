@@ -17,13 +17,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         //It will output the TIMEX representation of a time string.
         public string TimexStr { get; set; } = "";
     }
-    
+
     public static class TimeTypeConstants
     {
         public const string DATE = "date";
         public const string START_DATE = "startDate";
         public const string END_DATE = "endDate";
         public const string DATETIME = "dateTime";
+        public const string DATETIMEALT = "dateTimeAlt";
         public const string START_DATETIME = "startDateTime";
         public const string END_DATETIME = "endDateTime";
         public const string DURATION = "duration";
@@ -39,5 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string beforeMod = "before";
         public const string afterMod = "after";
         public const string sinceMod = "since";
+
+        public const string relativePrefixMod = "relativePrefixMod";
+        public const string AmPmMod = "AmPmMod";
     }
 }
