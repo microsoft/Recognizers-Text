@@ -199,6 +199,9 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string NumberAsTimeRegex = @"^[.]";
 		public const string TimeBeforeAfterRegex = @"^[.]";
 		public const string DateNumberConnectorRegex = @"^[.]";
+		public const string CenturyRegex = @"^[.]";
+		public const string DecadeRegex = @"^[.]";
+		public const string DecadeWithCenturyRegex = @"^[.]";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },
@@ -630,5 +633,9 @@ namespace Microsoft.Recognizers.Definitions.French
 			{ "newyeareve", new string[] { "réveillondenouvelan", "reveillondenouvelan", "lasaint-sylvestre", "lasaintsylvestre" } }
 		};
 		public const string NightRegex = @"\b(minuit|nuit)\b";
+		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "xxx", 20 }
+		};
 	}
 }

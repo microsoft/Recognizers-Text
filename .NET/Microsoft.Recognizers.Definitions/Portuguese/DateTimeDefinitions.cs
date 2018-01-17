@@ -441,5 +441,12 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string CommonDatePrefixRegex = @"\b(dia)\s+$";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
+		public const string CenturyRegex = @"^[.]";
+		public const string DecadeRegex = @"^[.]";
+		public const string DecadeWithCenturyRegex = @"^[.]";
+		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "xxx", 20 }
+		};
 	}
 }

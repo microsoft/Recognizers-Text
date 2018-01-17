@@ -179,6 +179,9 @@ LunchRegex: !simpleRegex
   def: \b(lunchtime)\b
 NightRegex: !simpleRegex
   def: \b(midnight|night)\b
+CommonDatePrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[\.]
 LessThanOneHour: !nestedRegex
   def: (?<lth>(a\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\s+(minute|minutes|min|mins))|{DeltaMinuteNumRegex}(\s+(minute|minutes|min|mins)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
@@ -439,6 +442,15 @@ TimeBeforeAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 DateNumberConnectorRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+CenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeWithCenturyRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 UnitMap: !dictionary
@@ -785,4 +797,9 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
+WrittenDecades: !dictionary
+  types: [ string, int ]
+  # TODO: modify below regex according to the counterpart in English
+  entries:
+    'xxx': 20
 ...

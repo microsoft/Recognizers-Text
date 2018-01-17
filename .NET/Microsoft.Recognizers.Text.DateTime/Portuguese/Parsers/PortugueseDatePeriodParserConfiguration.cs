@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
+        public Regex DecadeWithCenturyRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -75,7 +76,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
-        
+
+        public IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
         #endregion
 
         public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
@@ -110,12 +115,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             LaterEarlyPeriodRegex = PortugueseDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = PortugueseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = PortugueseDatePeriodExtractorConfiguration.YearPlusNumberRegex;
+            DecadeWithCenturyRegex = PortugueseDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            Numbers = config.Numbers;
+            WrittenDecades = config.WrittenDecades;
         }
 
         public int GetSwiftDayOrMonth(string text)

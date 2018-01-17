@@ -67,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary();
 
+        public virtual IImmutableDictionary<string, int> WrittenDecades { get; protected set; }
+
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
 
     }

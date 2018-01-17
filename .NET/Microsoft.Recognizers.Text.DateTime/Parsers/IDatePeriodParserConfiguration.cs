@@ -75,6 +75,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearPlusNumberRegex { get; }
 
+        Regex DecadeWithCenturyRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }
@@ -84,6 +86,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
+
+        IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        IImmutableDictionary<string, int> Numbers { get; }
 
         bool IsFuture(string text);
 

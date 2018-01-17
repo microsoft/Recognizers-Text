@@ -62,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, double> DoubleNumbers { get; }
 
+        IImmutableDictionary<string, int> WrittenDecades { get; }
+
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }
 }

@@ -1,4 +1,160 @@
 [{
+  "Input": "In the 1970s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1970s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 1970's",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1970's",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70's",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70's",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the seventies",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seventies",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the nineteen seventies",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nineteen seventies",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out from 4 to 22 this month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

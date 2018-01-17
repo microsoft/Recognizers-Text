@@ -397,6 +397,15 @@ TimeBeforeAfterRegex: !simpleRegex
 DateNumberConnectorRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+CenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeWithCenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
   def: \b(antes)\b
@@ -692,4 +701,9 @@ DurationUnitRegex: !simpleRegex
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]
+WrittenDecades: !dictionary
+  types: [ string, int ]
+  # TODO: modify below regex according to the counterpart in English
+  entries:
+    'xxx': 20
 ...

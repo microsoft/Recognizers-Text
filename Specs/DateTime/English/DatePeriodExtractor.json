@@ -1,4 +1,76 @@
 [{
+  "Input": "In the 1970s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1970s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 1970's",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1970's",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70's",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70's",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the seventies",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "seventies",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the nineteen seventies",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nineteen seventies",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out in Jan",
   "NotSupportedByDesign": "python",
   "Results": [
