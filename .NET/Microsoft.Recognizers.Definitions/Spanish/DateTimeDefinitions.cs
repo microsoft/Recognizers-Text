@@ -428,5 +428,6 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		{
 			{ "", 0 }
 		};
+		public const string SpecialDecadeCases = "";
 	}
 }

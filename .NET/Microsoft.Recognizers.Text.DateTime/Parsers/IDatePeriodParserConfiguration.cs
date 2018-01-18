@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
+        string SpecialDecadeCases { get; }
+
         IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }

@@ -10,6 +10,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     {
         public string TokenBeforeDate { get; }
 
+        public string SpecialDecadeCases { get; }
+
         #region internalParsers
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -86,6 +88,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;

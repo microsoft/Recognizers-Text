@@ -709,4 +709,6 @@ WrittenDecades: !dictionary
   # TODO: modify below dictionary according to the counterpart in English
   entries:
     "": 0
+# TODO: modify below string if there's special case for written decades
+SpecialDecadeCases: ""
 ...

@@ -1136,7 +1136,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.WrittenDecades.ContainsKey(decadeStr))
                     {
                         decade = this.config.WrittenDecades[decadeStr];
-                        if (decadeStr == "noughties")
+                        if (decadeStr == this.config.SpecialDecadeCases)
                         {
                             // "the noughties" means 2000s
                             firstTwoNumOfYear = 20;

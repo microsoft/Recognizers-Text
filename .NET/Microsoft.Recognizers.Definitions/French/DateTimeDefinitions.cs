@@ -203,6 +203,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string CenturyRegex = @"^[.]";
 		public const string DecadeRegex = @"^[.]";
 		public const string DecadeWithCenturyRegex = @"^[.]";
+		public const string SpecialDecadeCases = "";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "annees", "Y" },
