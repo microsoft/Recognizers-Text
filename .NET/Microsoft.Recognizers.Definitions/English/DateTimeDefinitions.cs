@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
 		public const string CenturyRegex = @"(?<century>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty one|twenty two|two thousand)";
 		public const string DecadeRegex = @"(?<decade>noughties|tens|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties)";
-		public static readonly string DecadeWithCenturyRegex = $@"the\s(((?<century>\d|1\d|2\d)?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s|-)(and\s)?)?{DecadeRegex}))";
+		public static readonly string DecadeWithCenturyRegex = $@"the\s(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s|-)(and\s)?)?{DecadeRegex}))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

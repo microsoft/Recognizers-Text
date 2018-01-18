@@ -2711,6 +2711,18 @@
 }
 ,
 {
+  "Input": "In the '40s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the '40s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "In the seventies",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",

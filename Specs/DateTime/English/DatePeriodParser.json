@@ -2469,6 +2469,32 @@
 }
 ,
 {
+  "Input": "In the '40s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the '40s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX40-01-01,XX49-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2040-01-01",
+          "endDate": "2049-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1940-01-01",
+          "endDate": "1949-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "In the seventies",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
