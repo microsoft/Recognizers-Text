@@ -10,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
     {
         public string TokenBeforeDate { get; }
 
-        public string SpecialDecadeCases { get; }
-
         #region internalParsers
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -88,6 +86,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, int> WrittenDecades { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
         #endregion
 
         public IImmutableList<string> InStringList { get; }
@@ -95,7 +96,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
@@ -134,6 +134,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             SeasonMap = config.SeasonMap;
             WrittenDecades = config.WrittenDecades;
             Numbers = config.Numbers;
+            SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
         public int GetSwiftDayOrMonth(string text)

@@ -456,8 +456,6 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-# TODO: modify below string if there's special case for written decades
-SpecialDecadeCases: ""
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -807,4 +805,9 @@ WrittenDecades: !dictionary
   # TODO: modify below dictionary according to the counterpart in English
   entries:
     "": 0
+SpecialDecadeCases: !dictionary
+  types: [ string, int ]
+  # TODO: modify below dictionary there're special cases for written decades
+  entries:
+    '': 0
 ...

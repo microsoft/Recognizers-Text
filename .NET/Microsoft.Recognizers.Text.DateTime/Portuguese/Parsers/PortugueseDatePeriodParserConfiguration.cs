@@ -10,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     {
         public string TokenBeforeDate { get; }
 
-        public string SpecialDecadeCases { get; }
-
         #region internalParsers
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -83,12 +81,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
         #endregion
 
         public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) : base(config.Options)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
-            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases;
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
@@ -127,6 +126,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             SeasonMap = config.SeasonMap;
             Numbers = config.Numbers;
             WrittenDecades = config.WrittenDecades;
+            SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
         public int GetSwiftDayOrMonth(string text)

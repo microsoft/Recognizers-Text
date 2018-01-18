@@ -428,6 +428,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		{
 			{ "", 0 }
 		};
-		public const string SpecialDecadeCases = "";
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
 	}
 }

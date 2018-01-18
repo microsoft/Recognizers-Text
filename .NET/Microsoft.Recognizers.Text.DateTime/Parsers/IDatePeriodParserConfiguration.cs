@@ -9,8 +9,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         string TokenBeforeDate { get; }
 
-        string SpecialDecadeCases { get; }
-
         IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
@@ -92,6 +90,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> WrittenDecades { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }
+
+        IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         bool IsFuture(string text);
 

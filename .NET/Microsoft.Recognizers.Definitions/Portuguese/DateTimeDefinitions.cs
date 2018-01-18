@@ -449,6 +449,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		{
 			{ "", 0 }
 		};
-		public const string SpecialDecadeCases = "";
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
 	}
 }

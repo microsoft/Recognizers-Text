@@ -450,7 +450,6 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !nestedRegex
   def: the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
   references: [ CenturyRegex, DecadeRegex ]
-SpecialDecadeCases: noughties
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -798,7 +797,6 @@ HolidayNames: !dictionary
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
-    'noughties': 0
     'hundreds': 0
     'tens': 10
     'twenties': 20
@@ -809,4 +807,9 @@ WrittenDecades: !dictionary
     'seventies': 70
     'eighties': 80
     'nineties': 90
+SpecialDecadeCases: !dictionary
+  types: [ string, int ]
+  entries:
+    'noughties': 2000
+    'two thousands': 2000
 ...

@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
             WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();

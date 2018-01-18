@@ -200,7 +200,6 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string CenturyRegex = @"^[.]";
 		public const string DecadeRegex = @"^[.]";
 		public const string DecadeWithCenturyRegex = @"^[.]";
-		public const string SpecialDecadeCases = "";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },
@@ -546,6 +545,10 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "newyeareve", new string[] { "newyearseve", "newyeareve" } }
 		};
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
 		{
 			{ "", 0 }
 		};

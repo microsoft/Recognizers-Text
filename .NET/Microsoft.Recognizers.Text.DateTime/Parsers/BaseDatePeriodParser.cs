@@ -1136,18 +1136,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.WrittenDecades.ContainsKey(decadeStr))
                     {
                         decade = this.config.WrittenDecades[decadeStr];
-                        if (decadeStr == this.config.SpecialDecadeCases)
-                        {
-                            // "the noughties" means 2000s
-                            firstTwoNumOfYear = 20;
-                            inputCentury = true;
-                        }
                     }
-                    else
+                    else if (this.config.SpecialDecadeCases.ContainsKey(decadeStr))
                     {
-                        // handle the case "the two thousands"
-                        decade = 0;
-                        firstTwoNumOfYear = 20;
+                        firstTwoNumOfYear = this.config.SpecialDecadeCases[decadeStr] / 100;
+                        decade = this.config.SpecialDecadeCases[decadeStr] % 100;
                         inputCentury = true;
                     }
                 }
@@ -1167,6 +1160,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             firstTwoNumOfYear = 20;
                         }
                     }
+
                     inputCentury = true;
                 }
             }
@@ -1174,6 +1168,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return ret;
             }
+
 
             beginYear = firstTwoNumOfYear * 100 + decade;
 
