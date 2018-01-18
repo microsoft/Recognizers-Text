@@ -2571,4 +2571,82 @@
     }
   ]
 }
+,
+{
+  "Input": "In the twenty-tens",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the twenty-tens",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousands",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousands",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the noughties",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the noughties",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
 ]

@@ -1130,20 +1130,36 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
             {
-                var decadeStr = match.Groups["decade"].Value;
+                var decadeStr = match.Groups["decade"].Value.ToLower();
                 if (!int.TryParse(decadeStr, out decade))
                 {
-                    decade = this.config.WrittenDecades[decadeStr.ToLower()];
+                    if (this.config.WrittenDecades.ContainsKey(decadeStr))
+                    {
+                        decade = this.config.WrittenDecades[decadeStr];
+                        if (decadeStr == "noughties")
+                        {
+                            // "the noughties" means 2000s
+                            firstTwoNumOfYear = 20;
+                            inputCentury = true;
+                        }
+                    }
+                    else
+                    {
+                        // handle the case "the two thousands"
+                        decade = 0;
+                        firstTwoNumOfYear = 20;
+                        inputCentury = true;
+                    }
                 }
 
-                var centuryStr = match.Groups["century"].Value;
+                var centuryStr = match.Groups["century"].Value.ToLower();
                 if (!string.IsNullOrEmpty(centuryStr))
                 {
                     if (!int.TryParse(centuryStr, out firstTwoNumOfYear))
                     {
-                        if (this.config.Numbers.ContainsKey(centuryStr.ToLower()))
+                        if (this.config.Numbers.ContainsKey(centuryStr))
                         {
-                            firstTwoNumOfYear = this.config.Numbers[centuryStr.ToLower()];
+                            firstTwoNumOfYear = this.config.Numbers[centuryStr];
                         }
                         else
                         {

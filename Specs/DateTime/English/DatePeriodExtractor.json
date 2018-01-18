@@ -2757,4 +2757,40 @@
     }
   ]
 }
+,
+{
+  "Input": "In the twenty-tens",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the twenty-tens",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousands",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousands",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the noughties",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the noughties",
+      "Type": "daterange"
+    }
+  ]
+}
 ]
