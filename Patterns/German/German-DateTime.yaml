@@ -802,7 +802,7 @@ HolidayNames: !dictionary
     newyeareve: [ newyearseve, newyeareve ]
 WrittenDecades: !dictionary
   types: [ string, int ]
-  # TODO: modify below regex according to the counterpart in English
+  # TODO: modify below dictionary according to the counterpart in English
   entries:
-    'xxx': 20
+    "": 0
 ...

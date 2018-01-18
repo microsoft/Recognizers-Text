@@ -447,7 +447,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
-			{ "xxx", 20 }
+			{ "", 0 }
 		};
 	}
 }

@@ -2347,7 +2347,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1970s",
+      "Text": "the 1970s",
       "Type": "daterange",
       "Value": {
         "Timex": "(1970-01-01,1979-12-31,P10Y)",
@@ -2365,6 +2365,32 @@
 }
 ,
 {
+  "Input": "In the 2000s, he was born.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 2000s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "In the 1970's",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2373,7 +2399,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "1970's",
+      "Text": "the 1970's",
       "Type": "daterange",
       "Value": {
         "Timex": "(1970-01-01,1979-12-31,P10Y)",
@@ -2399,7 +2425,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "70s",
+      "Text": "the 70s",
       "Type": "daterange",
       "Value": {
         "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
@@ -2425,7 +2451,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "70's",
+      "Text": "the 70's",
       "Type": "daterange",
       "Value": {
         "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
@@ -2451,7 +2477,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "seventies",
+      "Text": "the seventies",
       "Type": "daterange",
       "Value": {
         "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
@@ -2477,7 +2503,7 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "nineteen seventies",
+      "Text": "the nineteen seventies",
       "Type": "daterange",
       "Value": {
         "Timex": "(1970-01-01,1979-12-31,P10Y)",
@@ -2488,6 +2514,32 @@
         "PastResolution": {
           "startDate": "1970-01-01",
           "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousand and tens",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousand and tens",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
         }
       }
     }

@@ -426,7 +426,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string DurationConnectorRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
-			{ "xxx", 20 }
+			{ "", 0 }
 		};
 	}
 }

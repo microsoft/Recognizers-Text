@@ -636,7 +636,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string NightRegex = @"\b(minuit|nuit)\b";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
-			{ "xxx", 20 }
+			{ "", 0 }
 		};
 	}
 }

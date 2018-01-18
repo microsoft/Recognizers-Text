@@ -1141,7 +1141,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if (!int.TryParse(centuryStr, out firstTwoNumOfYear))
                     {
-                        firstTwoNumOfYear = this.config.Numbers[centuryStr.ToLower()];
+                        if (this.config.Numbers.ContainsKey(centuryStr.ToLower()))
+                        {
+                            firstTwoNumOfYear = this.config.Numbers[centuryStr.ToLower()];
+                        }
+                        else
+                        {
+                            // handle the case "two thousand"
+                            firstTwoNumOfYear = 20;
+                        }
                     }
                     inputCentury = true;
                 }

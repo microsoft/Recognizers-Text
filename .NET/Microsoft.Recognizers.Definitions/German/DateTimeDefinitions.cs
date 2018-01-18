@@ -546,7 +546,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
-			{ "xxx", 20 }
+			{ "", 0 }
 		};
 	}
 }
