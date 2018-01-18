@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+            WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.German.IntegerExtractor.GetInstance();

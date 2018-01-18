@@ -158,6 +158,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string NumberAsTimeRegex = @"^[.]";
 		public const string TimeBeforeAfterRegex = @"^[.]";
 		public const string DateNumberConnectorRegex = @"^[.]";
+		public const string CenturyRegex = @"^[.]";
+		public const string DecadeRegex = @"^[.]";
+		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string AgoRegex = @"\b(antes)\b";
 		public const string LaterRegex = @"\b(despu[eé]s|desde ahora)\b";
 		public const string Tomorrow = "mañana";
@@ -421,5 +424,13 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
+		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
 	}
 }

@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
+        public Regex DecadeWithCenturyRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -82,6 +83,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
+
+        public IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         #endregion
 
@@ -119,12 +126,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             LaterEarlyPeriodRegex = FrenchDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = FrenchDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = FrenchDatePeriodExtractorConfiguration.YearPlusNumberRegex;
+            DecadeWithCenturyRegex = FrenchDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            WrittenDecades = config.WrittenDecades;
+            SpecialDecadeCases = config.SpecialDecadeCases;
         }
         public int GetSwiftDayOrMonth(string text)
         {

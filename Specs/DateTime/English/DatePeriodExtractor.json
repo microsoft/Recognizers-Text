@@ -2649,4 +2649,148 @@
     }
   ]
 }
+,
+{
+  "Input": "In the 1970s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 1970s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 2000s, he was born.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 2000s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 1970's",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 1970's",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 70s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70's",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 70's",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the '40s",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the '40s",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the seventies",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the seventies",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the nineteen seventies",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the nineteen seventies",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousand and tens",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousand and tens",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the twenty-tens",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the twenty-tens",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousands",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousands",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the noughties",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the noughties",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

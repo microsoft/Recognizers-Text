@@ -95,6 +95,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseMonthOfDate(er.Text, referenceDate);
                 }
 
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDecade(er.Text, referenceDate);
+                }
+
                 // Parse duration should be at the end since it will extract "the last week" from "the last week of July"
                 if (!innerResult.Success)
                 {
@@ -1106,6 +1111,107 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return firstWeekday.AddDays(7 * (cardinal - 1));
+        }
+
+        private DateTimeResolutionResult ParseDecade(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            int firstTwoNumOfYear = referenceDate.Year / 100;
+            int decade;
+            int beginYear;
+            int beginMonth = 1, endMonth = 12;
+            int beginDay = 1, endDay = 31;
+            int decadeLastYear = 9;
+            var inputCentury = false;
+
+            var trimedText = text.Trim();
+            var match = this.config.DecadeWithCenturyRegex.Match(trimedText);
+            string beginLuisStr, endLuisStr;
+
+            if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+            {
+                var decadeStr = match.Groups["decade"].Value.ToLower();
+                if (!int.TryParse(decadeStr, out decade))
+                {
+                    if (this.config.WrittenDecades.ContainsKey(decadeStr))
+                    {
+                        decade = this.config.WrittenDecades[decadeStr];
+                    }
+                    else if (this.config.SpecialDecadeCases.ContainsKey(decadeStr))
+                    {
+                        firstTwoNumOfYear = this.config.SpecialDecadeCases[decadeStr] / 100;
+                        decade = this.config.SpecialDecadeCases[decadeStr] % 100;
+                        inputCentury = true;
+                    }
+                }
+
+                var centuryStr = match.Groups["century"].Value.ToLower();
+                if (!string.IsNullOrEmpty(centuryStr))
+                {
+                    if (!int.TryParse(centuryStr, out firstTwoNumOfYear))
+                    {
+                        if (this.config.Numbers.ContainsKey(centuryStr))
+                        {
+                            firstTwoNumOfYear = this.config.Numbers[centuryStr];
+                        }
+                        else
+                        {
+                            // handle the case "two thousand"
+                            firstTwoNumOfYear = 20;
+                        }
+                    }
+
+                    inputCentury = true;
+                }
+            }
+            else
+            {
+                return ret;
+            }
+
+
+            beginYear = firstTwoNumOfYear * 100 + decade;
+
+            if (inputCentury)
+            {
+                beginLuisStr = FormatUtil.LuisDate(beginYear, beginMonth, beginDay);
+                endLuisStr = FormatUtil.LuisDate(beginYear + decadeLastYear, endMonth, endDay);
+            }
+            else
+            {
+                var beginYearStr = "XX" + decade.ToString();
+                beginLuisStr = FormatUtil.LuisDate(-1, beginMonth, beginDay);
+                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
+
+                var endYearStr = "XX" + (decade + decadeLastYear).ToString();
+                endLuisStr = FormatUtil.LuisDate(-1, endMonth, endDay);
+                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
+            }
+            ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
+
+            int futureYear = beginYear, pastYear = beginYear;
+            var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, beginMonth, beginDay);
+            if (!inputCentury && startDate < referenceDate)
+            {
+                futureYear += 100;
+            }
+
+            if (!inputCentury && startDate >= referenceDate)
+            {
+                pastYear -= 100;
+            }
+
+            ret.FutureValue = new Tuple<DateObject, DateObject>(
+                DateObject.MinValue.SafeCreateFromValue(futureYear, beginMonth, beginDay),
+                DateObject.MinValue.SafeCreateFromValue(futureYear + decadeLastYear, endMonth, endDay));
+
+            ret.PastValue = new Tuple<DateObject, DateObject>(
+                DateObject.MinValue.SafeCreateFromValue(pastYear, beginMonth, beginDay),
+                DateObject.MinValue.SafeCreateFromValue(pastYear + decadeLastYear, endMonth, endDay));
+
+            ret.Success = true;
+
+            return ret;
         }
 
         public bool GetInclusiveEndPeriodFlag()
