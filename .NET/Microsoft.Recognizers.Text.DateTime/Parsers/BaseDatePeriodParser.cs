@@ -1156,8 +1156,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else
                         {
-                            // handle the case "two thousand"
-                            firstTwoNumOfYear = 20;
+                            // handle the case like "one/two thousand", "one/two hundred", etc.
+                            var er = this.config.IntegerExtractor.Extract(centuryStr);
+
+                            if (er.Count == 0)
+                            {
+                                return ret;
+                            }
+
+                            var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+                            firstTwoNumOfYear = num / 100;
                         }
                     }
 

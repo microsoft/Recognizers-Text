@@ -13,6 +13,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor CardinalExtractor { get; }
 
+        IExtractor IntegerExtractor { get; }
+
         IParser NumberParser { get; }
 
         IDateTimeExtractor DurationExtractor { get; }

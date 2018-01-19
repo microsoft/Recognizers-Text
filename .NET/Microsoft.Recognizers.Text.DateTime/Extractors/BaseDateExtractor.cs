@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                if (result.Start > 0)
+                if (result.Start >= 0)
                 {
                     var frontStr = text.Substring(0, result.Start ?? 0);
 
