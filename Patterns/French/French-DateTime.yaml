@@ -452,6 +452,15 @@ TimeBeforeAfterRegex: !simpleRegex
 DateNumberConnectorRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+CenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeWithCenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -884,4 +893,14 @@ HolidayNames: !dictionary
     newyeareve: [ réveillondenouvelan, reveillondenouvelan, lasaint-sylvestre, lasaintsylvestre ]
 NightRegex: !simpleRegex
   def: \b(minuit|nuit)\b
+WrittenDecades: !dictionary
+  types: [ string, int ]
+  # TODO: modify below dictionary according to the counterpart in English
+  entries:
+    '': 0
+SpecialDecadeCases: !dictionary
+  types: [ string, int ]
+  # TODO: modify below dictionary there're special cases for written decades
+  entries:
+    '': 0
 ...

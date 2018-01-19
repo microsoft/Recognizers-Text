@@ -123,6 +123,10 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
             swift = 1;
         } else if (trimmedSource === '昨天') {
             swift = -1;
+        } else if (trimmedSource.endsWith('大后天')) {
+            swift = 3;
+        } else if (trimmedSource.endsWith('大前天')) {
+            swift = -3;
         } else if (trimmedSource.endsWith('后天')) {
             swift = 2;
         } else if (trimmedSource.endsWith('前天')) {

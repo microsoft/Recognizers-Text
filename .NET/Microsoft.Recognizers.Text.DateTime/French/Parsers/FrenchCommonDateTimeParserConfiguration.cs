@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+            WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = new CardinalExtractor();
             IntegerExtractor = new IntegerExtractor();

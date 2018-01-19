@@ -448,6 +448,11 @@ DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
 CenturyRegex: !simpleRegex
   def: (?<century>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty one|twenty two|two thousand)
+DecadeRegex: !simpleRegex
+  def: (?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)
+DecadeWithCenturyRegex: !nestedRegex
+  def: the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
+  references: [ CenturyRegex, DecadeRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -792,4 +797,22 @@ HolidayNames: !dictionary
     veteransday: [ veteransday ]
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
+WrittenDecades: !dictionary
+  types: [ string, int ]
+  entries:
+    'hundreds': 0
+    'tens': 10
+    'twenties': 20
+    'thirties': 30
+    'forties': 40
+    'fifties': 50
+    'sixties': 60
+    'seventies': 70
+    'eighties': 80
+    'nineties': 90
+SpecialDecadeCases: !dictionary
+  types: [ string, int ]
+  entries:
+    'noughties': 2000
+    'two thousands': 2000
 ...

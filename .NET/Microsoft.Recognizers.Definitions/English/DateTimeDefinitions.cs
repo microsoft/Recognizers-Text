@@ -197,6 +197,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string NumberAsTimeRegex = $@"\b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
 		public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(before|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
+		public const string CenturyRegex = @"(?<century>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty one|twenty two|two thousand)";
+		public const string DecadeRegex = @"(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)";
+		public static readonly string DecadeWithCenturyRegex = $@"the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },
@@ -540,6 +543,24 @@ namespace Microsoft.Recognizers.Definitions.English
 			{ "veteransday", new string[] { "veteransday" } },
 			{ "christmaseve", new string[] { "christmaseve" } },
 			{ "newyeareve", new string[] { "newyearseve", "newyeareve" } }
+		};
+		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "hundreds", 0 },
+			{ "tens", 10 },
+			{ "twenties", 20 },
+			{ "thirties", 30 },
+			{ "forties", 40 },
+			{ "fifties", 50 },
+			{ "sixties", 60 },
+			{ "seventies", 70 },
+			{ "eighties", 80 },
+			{ "nineties", 90 }
+		};
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
+		{
+			{ "noughties", 2000 },
+			{ "two thousands", 2000 }
 		};
 	}
 }
