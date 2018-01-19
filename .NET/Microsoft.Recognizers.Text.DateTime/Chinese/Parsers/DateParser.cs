@@ -244,6 +244,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 {
                     value = referenceDate.AddDays(-1);
                 }
+                else if (match.Value.ToLower().EndsWith("大后天"))
+                {
+                    value = referenceDate.AddDays(3);
+                }
+                else if (match.Value.ToLower().EndsWith("大前天"))
+                {
+                    value = referenceDate.AddDays(-3);
+                }
                 else if (match.Value.ToLower().EndsWith("后天"))
                 {
                     value = referenceDate.AddDays(2);
