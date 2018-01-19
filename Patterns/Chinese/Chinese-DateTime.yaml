@@ -31,7 +31,7 @@ DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下)(的)?{WeekDayRegex}
   references: [WeekDayRegex]
 SpecialDayRegex: !simpleRegex
-  def: (最近|前天|后天|昨天|明天|今天|今日|明日|昨日)
+  def: (最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天)
 WeekDayOfMonthRegex: !nestedRegex
   def: ((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
