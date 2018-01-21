@@ -52,6 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex YearSuffix { get; }
+
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
         public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
@@ -85,6 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             ForTheRegex = PortugueseDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = PortugueseDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = PortugueseDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = PortugueseDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

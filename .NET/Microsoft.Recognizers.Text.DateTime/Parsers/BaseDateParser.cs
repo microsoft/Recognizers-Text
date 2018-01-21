@@ -348,6 +348,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 month = this.config.MonthOfYear[match.Value.Trim()];
                 day = num;
+
+                var suffix = trimedText.Substring(er[0].Start + er[0].Length ?? 0);
+                var matchYear = this.config.YearSuffix.Match(suffix);
+                if (matchYear.Success)
+                {
+                    year = GetYearFromText(matchYear);
+                    ambiguous = false;
+                } 
             }
 
             // handling relatived month
@@ -415,6 +423,53 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.Success = true;
 
             return ret;
+        }
+
+        private int GetYearFromText(Match match)
+        {
+            int year;
+
+            var yearStr = match.Groups["year"].Value;
+            if (!string.IsNullOrEmpty(yearStr))
+            {
+                year = int.Parse(yearStr);
+                if (year < 100 && year >= 90)
+                {
+                    year += 1900;
+                }
+                else if (year < 100 && year < 30)
+                {
+                    year += 2000;
+                }
+            }
+            else
+            {
+                ExtractResult er = new ExtractResult();
+                er.Text = match.Groups["firsttwoyearnum"].Value;
+                er.Start = match.Groups["firsttwoyearnum"].Index;
+                er.Length = match.Groups["firsttwoyearnum"].Length;
+
+                var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                if (firstTwoYearNum >= 100)
+                {
+                    firstTwoYearNum /= 100;
+                }
+
+                var lastTwoYearNum = 0;
+                var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
+                if (!string.IsNullOrEmpty(lastTwoYearNumStr))
+                {
+                    er.Text = lastTwoYearNumStr;
+                    er.Start = match.Groups["lasttwoyearnum"].Index;
+                    er.Length = match.Groups["lasttwoyearnum"].Length;
+
+                    lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                }
+
+                year = firstTwoYearNum * 100 + lastTwoYearNum;
+            }
+
+            return year;
         }
 
         // handle cases like "the 27th". In the extractor, only the unmatched weekday and date will output this date.
@@ -490,7 +545,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 20)
+                    else if (year < 100 && year < 30)
                     {
                         year += 2000;
                     }

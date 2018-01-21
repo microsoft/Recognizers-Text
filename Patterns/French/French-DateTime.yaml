@@ -148,6 +148,9 @@ OfMonth: !nestedRegex
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(le)?\s*$'
   references: [ MonthRegex ]
+WeekDayEnd: !nestedRegex
+  def: '{WeekDayRegex}\s*,?\s*$'
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>l'année|ann[eé]e(s)?|mois|semaines|semaine)\b
 DescRegex: !simpleRegex
@@ -461,6 +464,12 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+FullTextYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+YearSuffix: !nestedRegex
+  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
+  references: [ DateYearRegex, FullTextYearRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

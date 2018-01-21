@@ -92,9 +92,14 @@ PmDescRegex: !simpleRegex
 DateYearRegex: !nestedRegex
   def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
+WrittenNumRegex: !simpleRegex
+  def: (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)
 FullTextYearRegex: !nestedRegex
-  def: (?<century>{CenturyRegex})\s+(and\s+)?
-  references: [ CenturyRegex ]
+  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(and\s+)?(?<lasttwoyearnum>{WrittenNumRegex}|((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
+  references: [ CenturyRegex, WrittenNumRegex ]
+YearSuffix: !nestedRegex
+  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
+  references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
   def: (?<=\bon\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
@@ -159,6 +164,9 @@ OfMonth: !nestedRegex
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(the)?\s*$'
   references: [ MonthRegex ]
+WeekDayEnd: !nestedRegex
+  def: '{WeekDayRegex}\s*,?\s*$'
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years|year|months|month|weeks|week)\b
 OclockRegex: !simpleRegex
@@ -447,7 +455,7 @@ TimeBeforeAfterRegex: !nestedRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
 CenturyRegex: !simpleRegex
-  def: (?<century>one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|twenty one|twenty two|one thousand|two thousand|((one|two|three|four|five|six|seven|eight|nine) hundred))
+  def: (?<century>twenty one|twenty two|one thousand|two thousand|((one|two|three|four|five|six|seven|eight|nine) hundred)|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)
 DecadeRegex: !simpleRegex
   def: (?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)
 DecadeWithCenturyRegex: !nestedRegex

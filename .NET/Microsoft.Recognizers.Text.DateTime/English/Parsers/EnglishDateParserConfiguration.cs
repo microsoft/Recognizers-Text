@@ -52,6 +52,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex YearSuffix { get; }
+
         //The following three regexes only used in this configuration
         //They are not used in the base parser, therefore they are not extracted
         //If the spanish date parser need the same regexes, they should be extracted
@@ -99,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

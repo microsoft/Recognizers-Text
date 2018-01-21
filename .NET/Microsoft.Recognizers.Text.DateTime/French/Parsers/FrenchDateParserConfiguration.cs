@@ -54,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex YearSuffix { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -87,6 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ForTheRegex = FrenchDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

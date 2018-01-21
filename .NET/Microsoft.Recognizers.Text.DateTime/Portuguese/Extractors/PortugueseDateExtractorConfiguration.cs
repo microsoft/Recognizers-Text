@@ -117,6 +117,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex MonthEnd = new Regex(DateTimeDefinitions.MonthEndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex WeekDayEnd = new Regex(DateTimeDefinitions.WeekDayEnd, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex YearSuffix = new Regex(DateTimeDefinitions.YearSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
         public PortugueseDateExtractorConfiguration() : base(DateTimeOptions.None)
@@ -148,6 +152,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         Regex IDateExtractorConfiguration.MonthEnd => MonthEnd;
 
+        Regex IDateExtractorConfiguration.WeekDayEnd => WeekDayEnd;
+
         Regex IDateExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
@@ -159,5 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateExtractorConfiguration.WeekDayRegex => WeekDayRegex;
 
         Regex IDateExtractorConfiguration.PrefixArticleRegex => PrefixArticleRegex;
+
+        Regex IDateExtractorConfiguration.YearSuffix => YearSuffix;
     }
 }

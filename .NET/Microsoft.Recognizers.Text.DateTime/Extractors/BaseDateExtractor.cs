@@ -87,12 +87,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (result.Start >= 0)
                 {
+                    // Handling cases like '(Monday,) Jan twenty two'
                     var frontStr = text.Substring(0, result.Start ?? 0);
 
                     var match = this.config.MonthEnd.Match(frontStr);
                     if (match.Success)
                     {
-                        ret.Add(new Token(match.Index, match.Index + match.Length + (result.Length ?? 0)));
+                        var startIndex = match.Index;
+                        var endIndex = match.Index + match.Length + (result.Length ?? 0);
+
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+
+                        ret.Add(new Token(startIndex, endIndex));
                         continue;
                     }
 
@@ -178,13 +184,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var match = this.config.OfMonth.Match(afterStr);
                     if (match.Success)
                     {
-                        ret.Add(new Token(result.Start ?? 0, (result.Start + result.Length ?? 0) + match.Length));
+                        var startIndex = result.Start ?? 0;
+                        var endIndex = (result.Start + result.Length ?? 0) + match.Length;
+
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+
+                        ret.Add(new Token(startIndex, endIndex));
                         continue;
                     }
                 }
             }
 
             return ret;
+        }
+
+        private void ExtendWithWeekdayAndYear(ref int startIndex, ref int endIndex, string text)
+        {
+            // Check whether there's weekday
+            var prefix = text.Substring(0, startIndex);
+            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
+            if (matchWeekDay.Success)
+            {
+                startIndex = matchWeekDay.Index;
+            }
+
+            // Check whether there's year
+            var suffix = text.Substring(endIndex);
+            var matchYear = this.config.YearSuffix.Match(suffix);
+            if (matchYear.Success && matchYear.Index == 0)
+            {
+                endIndex += matchYear.Length;
+            }
         }
 
         private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
