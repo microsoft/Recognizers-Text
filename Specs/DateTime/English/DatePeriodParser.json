@@ -1,4 +1,223 @@
 [{
+  "Input": "I'll be out from 2 to 7 Feb, two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2 to 7 Feb, two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2 and 7 Feb two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2 and 7 Feb two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out Feb between 2-7 two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb between 2-7 two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in June of nineteen ninety nine",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June of nineteen ninety nine",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1999-06",
+        "FutureResolution": {
+          "startDate": "1999-06-01",
+          "endDate": "1999-07-01"
+        },
+        "PastResolution": {
+          "startDate": "1999-06-01",
+          "endDate": "1999-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In nineteen twenty eight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nineteen twenty eight",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1928",
+        "FutureResolution": {
+          "startDate": "1928-01-01",
+          "endDate": "1929-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1928-01-01",
+          "endDate": "1929-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third week of two thousand and twenty seven",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third week of two thousand and twenty seven",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2027-01-W03",
+        "FutureResolution": {
+          "startDate": "2027-01-18",
+          "endDate": "2027-01-25"
+        },
+        "PastResolution": {
+          "startDate": "2027-01-18",
+          "endDate": "2027-01-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third quarter of two thousand and twenty",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third quarter of two thousand and twenty",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2020-07-01,2020-10-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2020-07-01",
+          "endDate": "2020-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2020-07-01",
+          "endDate": "2020-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the spring of nineteen seventy eight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the spring of nineteen seventy eight",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1978-SP",
+        "FutureResolution": {},
+        "PastResolution": {}
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Year two hundred and sixty seven",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Year two hundred and sixty seven",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "0267",
+        "FutureResolution": {
+          "startDate": "0267-01-01",
+          "endDate": "0268-01-01"
+        },
+        "PastResolution": {
+          "startDate": "0267-01-01",
+          "endDate": "0268-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out from 4 to 22 this month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -184,7 +403,7 @@
       "Text": "from 4 to 22 January, 1995",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
         "FutureResolution": {
           "startDate": "1995-01-04",
           "endDate": "1995-01-22"
@@ -209,7 +428,7 @@
       "Text": "between 4-22 January, 1995",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
         "FutureResolution": {
           "startDate": "1995-01-04",
           "endDate": "1995-01-22"

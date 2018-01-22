@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
@@ -154,6 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
         }
 
         public IDateTimeExtractor DatePointExtractor { get; }
@@ -162,7 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IParser NumberParser { get; }
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 

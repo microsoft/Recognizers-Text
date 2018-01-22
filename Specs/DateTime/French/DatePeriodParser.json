@@ -159,7 +159,7 @@
       "Text": "4 au 22 Janv, 1995",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
         "FutureResolution": {
           "startDate": "1995-01-04",
           "endDate": "1995-01-22"

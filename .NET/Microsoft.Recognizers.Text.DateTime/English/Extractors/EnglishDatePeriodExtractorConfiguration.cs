@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
@@ -148,6 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 
         public IDateTimeExtractor DatePointExtractor { get; }
@@ -156,7 +158,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IParser NumberParser { get; }
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 

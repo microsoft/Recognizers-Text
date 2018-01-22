@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -147,6 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DatePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration());
             CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+            NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
         }
 
         public IDateTimeExtractor DatePointExtractor { get; }
@@ -155,7 +157,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IParser NumberParser { get; }
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 

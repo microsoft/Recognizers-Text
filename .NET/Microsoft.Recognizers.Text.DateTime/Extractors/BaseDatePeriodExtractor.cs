@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -41,10 +42,58 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
+                    var matchYear = this.config.YearRegex.Match(match.Value);
+                    if (matchYear.Success && matchYear.Length == match.Value.Length)
+                    {
+                        if (GetYearFromText(matchYear, out int year))
+                        {
+                            if (!(year >= 1500 && year <= 2100))
+                            {
+                                continue;
+                            }
+                        }
+                    }
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
             return ret;
+        }
+
+        private bool GetYearFromText(Match match, out int year)
+        {
+            var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
+            if (!string.IsNullOrEmpty(firstTwoYearNumStr))
+            {
+                ExtractResult er = new ExtractResult();
+                er.Text = firstTwoYearNumStr;
+                er.Start = match.Groups["firsttwoyearnum"].Index;
+                er.Length = match.Groups["firsttwoyearnum"].Length;
+
+                var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                if (firstTwoYearNum >= 100)
+                {
+                    firstTwoYearNum /= 100;
+                }
+
+                var lastTwoYearNum = 0;
+                var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
+                if (!string.IsNullOrEmpty(lastTwoYearNumStr))
+                {
+                    er.Text = lastTwoYearNumStr;
+                    er.Start = match.Groups["lasttwoyearnum"].Index;
+                    er.Length = match.Groups["lasttwoyearnum"].Length;
+
+                    lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                }
+
+                year = firstTwoYearNum * 100 + lastTwoYearNum;
+                return true;
+            }
+            else
+            {
+                year = -1;
+                return false;
+            }
         }
 
         private List<Token> MergeTwoTimePoints(string text, DateObject reference)

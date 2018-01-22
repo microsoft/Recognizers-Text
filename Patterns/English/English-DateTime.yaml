@@ -17,8 +17,18 @@ DayRegex: !simpleRegex
   def: (the\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\b|t)
 MonthNumRegex: !simpleRegex
   def: (?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b
-PeriodYearRegex: !simpleRegex
+CenturyRegex: !simpleRegex
+  def: (?<century>twenty one|twenty two|one thousand|two thousand|((one|two|three|four|five|six|seven|eight|nine) hundred)|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)
+WrittenNumRegex: !simpleRegex
+  def: (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety|hundred)
+FullTextYearRegex: !nestedRegex
+  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(and\s+)?(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
+  references: [ CenturyRegex, WrittenNumRegex ]
+PeriodYearNumRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
+PeriodYearRegex: !nestedRegex
+  def: ({PeriodYearNumRegex}|{FullTextYearRegex})
+  references: [ PeriodYearNumRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\b
 SingleWeekDayRegex: !simpleRegex
@@ -52,8 +62,8 @@ OneWordPeriodRegex: !nestedRegex
   def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|({RelativeRegex}\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\b
   references: [ RelativeRegex ]
 MonthNumWithYear: !nestedRegex
-  def: ({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})
-  references: [ PeriodYearRegex, MonthNumRegex ]
+  def: ({PeriodYearNumRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearNumRegex})
+  references: [ PeriodYearNumRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex})
   references: [ MonthSuffixRegex ]
@@ -92,11 +102,6 @@ PmDescRegex: !simpleRegex
 DateYearRegex: !nestedRegex
   def: (?<year>((1\d|20)\d{2})|2100|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))
   references: [ DescRegex, AmDescRegex, PmDescRegex ]
-WrittenNumRegex: !simpleRegex
-  def: (one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)
-FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(and\s+)?(?<lasttwoyearnum>{WrittenNumRegex}|((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
-  references: [ CenturyRegex, WrittenNumRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
@@ -349,8 +354,11 @@ HalfRegex: !simpleRegex
   def: (((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
-YearRegex: !simpleRegex
+YearNumRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
+YearRegex: !nestedRegex
+  def: ({YearNumRegex}|{FullTextYearRegex})
+  references: [ YearNumRegex, FullTextYearRegex ]
 HolidayRegex1: !nestedRegex
   def: \b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|mayday|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
@@ -444,8 +452,9 @@ PrefixArticleRegex: !simpleRegex
   def: \bthe\s+
 OrRegex: !simpleRegex
   def: \s*(or)\s*
-YearPlusNumberRegex: !simpleRegex
-  def: \b(Year\s+(?<number>(\d{3,4})))\b
+YearPlusNumberRegex: !nestedRegex
+  def: \b(Year\s+((?<number>(\d{3,4}))|{FullTextYearRegex}))\b
+  references: [ FullTextYearRegex ]
 NumberAsTimeRegex: !nestedRegex
   def: \b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b
   references: [ EngTimeRegex, PeriodHourNumRegex, BaseDateTime.HourRegex ]
@@ -454,8 +463,6 @@ TimeBeforeAfterRegex: !nestedRegex
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
-CenturyRegex: !simpleRegex
-  def: (?<century>twenty one|twenty two|one thousand|two thousand|((one|two|three|four|five|six|seven|eight|nine) hundred)|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)
 DecadeRegex: !simpleRegex
   def: (?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)
 DecadeWithCenturyRegex: !nestedRegex

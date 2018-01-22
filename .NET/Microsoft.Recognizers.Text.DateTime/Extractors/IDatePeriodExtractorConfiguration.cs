@@ -9,6 +9,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         IEnumerable<Regex> SimpleCasesRegexes { get; }
 
+        Regex YearRegex { get; }
+
         Regex TillRegex { get; }
 
         Regex DateUnitRegex { get; }
@@ -34,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
+
+        IParser NumberParser { get; }
 
         bool GetFromTokenIndex(string text, out int index);
 
