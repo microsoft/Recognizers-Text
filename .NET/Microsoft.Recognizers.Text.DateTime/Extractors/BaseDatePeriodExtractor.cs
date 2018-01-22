@@ -45,8 +45,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var matchYear = this.config.YearRegex.Match(match.Value);
                     if (matchYear.Success && matchYear.Length == match.Value.Length)
                     {
-                        if (GetYearFromText(matchYear, out int year))
+                        var yearStr = matchYear.Groups["year"].Value.ToLower();
+                        if (string.IsNullOrEmpty(yearStr))
                         {
+                            GetYearFromText(matchYear, out int year);
                             if (!(year >= 1500 && year <= 2100))
                             {
                                 continue;
@@ -70,10 +72,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 er.Length = match.Groups["firsttwoyearnum"].Length;
 
                 var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-                if (firstTwoYearNum >= 100)
-                {
-                    firstTwoYearNum /= 100;
-                }
 
                 var lastTwoYearNum = 0;
                 var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
@@ -86,7 +84,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
                 }
 
-                year = firstTwoYearNum * 100 + lastTwoYearNum;
+                // Exclude pure number like "nineteen", "twenty four"
+                if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
+                {
+                    year = -1;
+                    return false;
+                }
+
+                if (firstTwoYearNum >= 100)
+                {
+                    year = firstTwoYearNum + lastTwoYearNum;
+                }
+                else
+                {
+                    year = firstTwoYearNum * 100 + lastTwoYearNum;
+                }
+                
                 return true;
             }
             else

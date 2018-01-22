@@ -1,6 +1,6 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
-import { BaseNumberExtractor } from "recognizers-text-number"
+import { BaseNumberExtractor, BaseNumberParser } from "recognizers-text-number"
 import { Token, FormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, StringMap } from "./utilities";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration"
 import { IDateTimeParser, DateTimeParseResult } from "./parsers"
@@ -9,6 +9,7 @@ import { IDateTimeExtractor } from "./baseDateTime"
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
+    YearRegex: RegExp
     tillRegex: RegExp
     followedUnit: RegExp
     numberCombinedWithUnit: RegExp
@@ -21,6 +22,7 @@ export interface IDatePeriodExtractorConfiguration {
     rangeUnitRegex: RegExp
     datePointExtractor: IDateTimeExtractor
     integerExtractor: BaseNumberExtractor
+    numberParser: BaseNumberParser
     durationExtractor: IDateTimeExtractor
     getFromTokenIndex(source: string): { matched: boolean, index: number };
     getBetweenTokenIndex(source: string): { matched: boolean, index: number };
@@ -52,10 +54,60 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
         let tokens: Array<Token> = new Array<Token>();
         this.config.simpleCasesRegexes.forEach(regexp => {
             RegExpUtility.getMatches(regexp, source).forEach(match => {
-                tokens.push(new Token(match.index, match.index + match.length));
+                let addToken = true;
+                let matchYear = RegExpUtility.getMatches(this.config.YearRegex, match.value).pop();
+                if (matchYear && matchYear.length == match.value.length) {
+                    var yearStr = matchYear.groups('year').value;
+                    if (StringUtility.isNullOrEmpty(yearStr)) {
+                        let year = this.getYearFromText(matchYear);
+                        if (!(year >= 1500 && year <= 2100)) {
+                            addToken = false;
+                        }
+                    }
+                }
+                if (addToken) {
+                    tokens.push(new Token(match.index, match.index + match.length));
+                }
             });
         });
         return tokens;
+    }
+
+    private getYearFromText(match: Match): number {
+        let firstTwoYearNumStr = match.groups('firsttwoyearnum').value;
+        if (!StringUtility.isNullOrEmpty(firstTwoYearNumStr)) {
+            let er = new ExtractResult();
+            er.text = firstTwoYearNumStr;
+            er.start = match.groups('firsttwoyearnum').index;
+            er.length = match.groups('firsttwoyearnum').length;
+
+            let firstTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+
+            let lastTwoYearNum = 0;
+            let lastTwoYearNumStr = match.groups('lasttwoyearnum').value;
+            if (!StringUtility.isNullOrEmpty(lastTwoYearNumStr))
+            {
+                er.text = lastTwoYearNumStr;
+                er.start = match.groups('lasttwoyearnum').index;
+                er.length = match.groups('lasttwoyearnum').length;
+
+                lastTwoYearNum = Number.parseInt(this.config.numberParser.parse(er).value);
+            }
+
+            if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.trim().split(' ').length == 1) {
+                return -1;
+            }
+
+            if (firstTwoYearNum >= 100) {
+                return (firstTwoYearNum + lastTwoYearNum);
+            }
+            else {
+                return (firstTwoYearNum * 100 + lastTwoYearNum);
+            }
+        }
+        else {
+            return -1;
+        }
     }
 
     protected mergeTwoTimePoints(source: string, refDate: Date): Array<Token> {
@@ -346,7 +398,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let result = new DateTimeResolutionResult();
         let year = referenceDate.getFullYear();
         let month = referenceDate.getMonth();
-        let noYear = false;
+        let noYear = true;
 
         let match = this.getMatchSimpleCase(source);
 
@@ -354,10 +406,14 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let days = match.groups('day');
         let beginDay = this.config.dayOfMonth.get(days.captures[0]);
         let endDay = this.config.dayOfMonth.get(days.captures[1]);
+        let yearStr = match.groups('year').value;
+        if (!StringUtility.isNullOrEmpty(yearStr)) {
+            year = Number.parseInt(yearStr, 10);
+            noYear = false;
+        }
         let monthStr = match.groups('month').value;
         if (!StringUtility.isNullOrEmpty(monthStr)) {
             month = this.config.monthOfYear.get(monthStr) - 1;
-            noYear = true;
         } else {
             monthStr = match.groups('relmonth').value;
             month += this.config.getSwiftDayOrMonth(monthStr);
@@ -368,15 +424,14 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 month = 11;
                 year++;
             }
-        }
-        let beginDateLuis = FormatUtil.luisDate(this.config.isFuture(monthStr) ? year : -1, month, beginDay);
-        let endDateLuis = FormatUtil.luisDate(this.config.isFuture(monthStr) ? year : -1, month, endDay);
 
-        let yearStr = match.groups('year').value;
-        if (!StringUtility.isNullOrEmpty(yearStr)) {
-            year = Number.parseInt(yearStr, 10);
-            noYear = false;
+            if (this.config.isFuture(monthStr)) {
+                noYear = false;
+            }
         }
+        let beginDateLuis = FormatUtil.luisDate(noYear ? -1 : year, month, beginDay);
+        let endDateLuis = FormatUtil.luisDate(noYear ? -1 : year, month, endDay);
+
         let futureYear = year;
         let pastYear = year;
         let startDate = DateUtils.safeCreateFromValue(DateUtils.minValue(), year, month, beginDay);
