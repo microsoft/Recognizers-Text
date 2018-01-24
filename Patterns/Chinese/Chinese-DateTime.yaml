@@ -18,7 +18,7 @@ DateYearInChineseRegex: !nestedRegex
   def: (?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))
   references: [ZeroToNineIntegerRegexChs]
 WeekDayRegex: !simpleRegex
-  def: (?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期天|星期天)
+  def: (?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天)
 LunarRegex: !simpleRegex
   def: (农历|初一|正月|大年)
 DateThisRegex: !nestedRegex
@@ -634,6 +634,14 @@ ParserConfigurationDayOfWeek: !dictionary
     星期六: 6
     星期天: 0
     星期日: 0
+    礼拜一: 1
+    礼拜二: 2
+    礼拜三: 3
+    礼拜四: 4
+    礼拜五: 5
+    礼拜六: 6
+    礼拜天: 0
+    礼拜日: 0
     周一: 1
     周二: 2
     周三: 3

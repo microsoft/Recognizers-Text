@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public const string YearRegex = @"(?<year>(\d{2,4}))";
 		public const string ZeroToNineIntegerRegexChs = @"[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
 		public static readonly string DateYearInChineseRegex = $@"(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}))";
-		public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期天|星期天)";
+		public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天)";
 		public const string LunarRegex = @"(农历|初一|正月|大年)";
 		public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
 		public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
@@ -454,6 +454,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 			{ "星期六", 6 },
 			{ "星期天", 0 },
 			{ "星期日", 0 },
+			{ "礼拜一", 1 },
+			{ "礼拜二", 2 },
+			{ "礼拜三", 3 },
+			{ "礼拜四", 4 },
+			{ "礼拜五", 5 },
+			{ "礼拜六", 6 },
+			{ "礼拜天", 0 },
+			{ "礼拜日", 0 },
 			{ "周一", 1 },
 			{ "周二", 2 },
 			{ "周三", 3 },
