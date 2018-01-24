@@ -192,22 +192,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                 endDay = this.config.DayOfMonth[days.Captures[1].Value.ToLower()];
 
                 // parse year
-                var yearStr = match.Groups["year"].Value;
-                if (!string.IsNullOrEmpty(yearStr))
+                year = ((BaseDatePeriodExtractor)this.config.DatePeriodExtractor).GetYearFromText(match);
+                if (year != Constants.InvalidYear)
                 {
-                    year = int.Parse(yearStr);
                     noYear = false;
                 }
                 else
                 {
-                    if (GetYearFromText(match, out year))
-                    {
-                        noYear = false;
-                    }
-                    else
-                    {
-                        year = referenceDate.Year;
-                    }
+                    year = referenceDate.Year;
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -1258,8 +1250,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 return ret;
                             }
 
-                            var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
-                            firstTwoNumOfYear = num / 100;
+                            firstTwoNumOfYear = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+                            if (firstTwoNumOfYear >= 100)
+                            {
+                                firstTwoNumOfYear = firstTwoNumOfYear / 100;
+                            }
                         }
                     }
 

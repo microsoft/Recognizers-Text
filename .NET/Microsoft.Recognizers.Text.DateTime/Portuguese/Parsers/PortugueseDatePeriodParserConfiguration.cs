@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DatePeriodExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IParser NumberParser { get; }
@@ -95,6 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
             MonthFrontBetweenRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;

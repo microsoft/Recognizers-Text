@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DatePeriodExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -97,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;

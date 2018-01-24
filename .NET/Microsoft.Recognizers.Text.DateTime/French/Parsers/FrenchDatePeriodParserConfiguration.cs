@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DatePeriodExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IParser NumberParser { get; }
@@ -104,6 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
             MonthFrontBetweenRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;

@@ -354,6 +354,8 @@ HalfRegex: !simpleRegex
   def: (((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
+MinYearNum: 1500
+MaxYearNum: 2100
 YearNumRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 YearRegex: !nestedRegex

@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DatePeriodExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -74,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             DateRegexes = FrenchDateExtractorConfiguration.DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;

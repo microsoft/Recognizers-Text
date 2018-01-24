@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string AndRegex = @"(?<and>y|y\s*el|--|-|—|——)";
 		public const string DayRegex = @"(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
+		public const string MinYearNum = "1500";
+		public const string MaxYearNum = "2100";
 		public const string YearRegex = @"(?<year>((1[5-9]|20)\d{2})|9\d|0\d|1\d|2\d)";
 		public const string FullYearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
 		public const string RelativeMonthRegex = @"(?<relmonth>(este|pr[oó]ximo|[uú]ltimo)\s+mes)\b";

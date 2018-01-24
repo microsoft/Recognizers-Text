@@ -9,6 +9,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
+        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
+
+        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
+
         // base regexes
         public static readonly Regex TillRegex = new Regex(
             DateTimeDefinitions.TillRegex, // until 
@@ -227,6 +231,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IParser NumberParser { get; }
+
+        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
+
+        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
 
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
