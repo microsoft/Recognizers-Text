@@ -1,1 +1,154 @@
-[]
+[{
+    "Input": "Ich verlasse das Hause täglich",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "täglich",
+        "Type": "set"
+      }
+    ]
+}
+,
+{
+  "Input": "Ich gehe täglich",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "täglich",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jeden Tag",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jeden Tag",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jeden Monat",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jeden Monat",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jährlich",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jährlich",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jedes Jahr",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jedes Jahr",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe alle 2 Tage",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "alle 2 Tage",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe alle 3 Wochen",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "alle 3 Wochen",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jeden Tag um 3 Uhr",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": " jeden Tag um 3 Uhr",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe um 3 Uhr jeden Tag",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "3 Uhr jeden Tag",
+      "Type": "set"
+    }
+  ]
+}
+,
+{
+  "Input": "Ich gehe jeden Montag",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jeden Montag",
+      "Type": "set"
+    }
+  ]
+},
+{
+  "Input": "Ich gehe jeden Montag um 4 Uhr",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jeden Montag um 4 Uhr",
+      "Type": "set"
+    }
+  ]
+},
+{
+  "Input": "Ich gehe jede Nacht um 4 Uhr",
+  "NotSupportedByDesign": "python",
+  "NotSupported":"javascript",
+  "Results": [
+    {
+      "Text": "jede Nacht um 4 Uhr",
+      "Type": "set"
+    }
+  ]
+}
+]

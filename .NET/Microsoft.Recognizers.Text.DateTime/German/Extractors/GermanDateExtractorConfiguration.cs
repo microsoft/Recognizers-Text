@@ -75,13 +75,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex[] DateRegexList =
         {
-            // (Sunday,)? April 5
+            // (Sonntag,)? 5. April 
             new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? April 5, 2016
+            // (Sonntag,)? 5. April, 2016
             new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? 6th of April
+            // (Sonntag,)? der 6. April, 2016
             new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 3-23-2017
@@ -101,6 +101,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             // 23/7
             new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            //10
+            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            //11
+            new Regex(DateTimeDefinitions.DateExtractor11, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 2015-12-23
             new Regex(DateTimeDefinitions.DateExtractorA, RegexOptions.IgnoreCase | RegexOptions.Singleline)

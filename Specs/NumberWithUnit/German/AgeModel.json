@@ -142,23 +142,6 @@
   ]
 }
 ,
-{//ordinals are currently not supported in the AgeModel
-  "Input": "Ungefähr 50% aller Fälle werden um das siebte Lebensjahr herum diagnostiziert.",
-  "NotSupportedByDesign": "python",
-  "NotSupported": "javascript,dotnet",
-  "Debug":true,
-  "Results": [
-    {
-      "Text": "siebte Lebensjahr",
-      "TypeName": "age",
-      "Resolution": {
-        "value": "7",
-        "unit": "Year"
-      }
-    }
-  ]
-}
-,
 {
   "Input": "Es ist möglich, allerdings waren 2006 95% von ihnen jünger als drei Monate alt.",
   "NotSupportedByDesign": "python",

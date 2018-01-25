@@ -1,1 +1,93 @@
-[]
+[{
+    "Input": "Ich bin an Ostern wieder zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Ostern",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "An Weihnachten bin ich bestimmt wieder da",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Weihnachten",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Weihnachten 2010 war wirklich schön",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Weihnachten 2010",
+        "Type": "date",
+        "Value": {
+          "Timex": "2010-12-WXX-4-4",
+          "FutureResolution": {
+            "date": "2010-12-25"
+          },
+          "PastResolution": {
+            "date": "2010-12-25"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mal schauen was wir dieses Jahr am Vatertag so unternehmen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Vatertag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        }
+      }
+    ]
+  }
+]
