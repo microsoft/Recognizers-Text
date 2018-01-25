@@ -184,7 +184,7 @@
       "Text": "from 4 to 22 January, 1995",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
         "FutureResolution": {
           "startDate": "1995-01-04",
           "endDate": "1995-01-22"
@@ -209,7 +209,7 @@
       "Text": "between 4-22 January, 1995",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XXXX-01-04,XXXX-01-22,P18D)",
+        "Timex": "(1995-01-04,1995-01-22,P18D)",
         "FutureResolution": {
           "startDate": "1995-01-04",
           "endDate": "1995-01-22"
@@ -2332,6 +2332,572 @@
         "PastResolution": {
           "startDate": "0247-01-01",
           "endDate": "0248-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 1970s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 1970s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 2000s, he was born.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 2000s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 1970's",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 1970's",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 70s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the 70's",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the 70's",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the '40s",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the '40s",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX40-01-01,XX49-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2040-01-01",
+          "endDate": "2049-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1940-01-01",
+          "endDate": "1949-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the seventies",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the seventies",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2079-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the nineteen seventies",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the nineteen seventies",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1979-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousand and tens",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousand and tens",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the twenty-tens",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the twenty-tens",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2010-01-01",
+          "endDate": "2019-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the two thousands",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the two thousands",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the noughties",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the noughties",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out from 2 to 7 Feb, two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2 to 7 Feb, two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2 and 7 Feb two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2 and 7 Feb two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out Feb between 2-7 two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb between 2-7 two thousand and eighteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2018-02-02,2018-02-07,P5D)",
+        "FutureResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        },
+        "PastResolution": {
+          "startDate": "2018-02-02",
+          "endDate": "2018-02-07"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in June of nineteen ninety nine",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June of nineteen ninety nine",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1999-06",
+        "FutureResolution": {
+          "startDate": "1999-06-01",
+          "endDate": "1999-07-01"
+        },
+        "PastResolution": {
+          "startDate": "1999-06-01",
+          "endDate": "1999-07-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In nineteen twenty eight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nineteen twenty eight",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1928",
+        "FutureResolution": {
+          "startDate": "1928-01-01",
+          "endDate": "1929-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1928-01-01",
+          "endDate": "1929-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In one thousand seven hundred and eighty nine",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "one thousand seven hundred and eighty nine",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1789",
+        "FutureResolution": {
+          "startDate": "1789-01-01",
+          "endDate": "1790-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1789-01-01",
+          "endDate": "1790-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third week of two thousand and twenty seven",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third week of two thousand and twenty seven",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2027-01-W03",
+        "FutureResolution": {
+          "startDate": "2027-01-18",
+          "endDate": "2027-01-25"
+        },
+        "PastResolution": {
+          "startDate": "2027-01-18",
+          "endDate": "2027-01-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the third quarter of two thousand and twenty",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the third quarter of two thousand and twenty",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2020-07-01,2020-10-01,P3M)",
+        "FutureResolution": {
+          "startDate": "2020-07-01",
+          "endDate": "2020-10-01"
+        },
+        "PastResolution": {
+          "startDate": "2020-07-01",
+          "endDate": "2020-10-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "In the spring of nineteen seventy eight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the spring of nineteen seventy eight",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "1978-SP",
+        "FutureResolution": {},
+        "PastResolution": {}
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Year two hundred and sixty seven",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Year two hundred and sixty seven",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "0267",
+        "FutureResolution": {
+          "startDate": "0267-01-01",
+          "endDate": "0268-01-01"
+        },
+        "PastResolution": {
+          "startDate": "0267-01-01",
+          "endDate": "0268-01-01"
         }
       }
     }

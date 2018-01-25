@@ -531,5 +531,13 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "christmaseve", new string[] { "heiligabend" } },
 			{ "newyeareve", new string[] { "silvester" } }
 		};
+		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
+		public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
+		{
+			{ "", 0 }
+		};
 	}
 }

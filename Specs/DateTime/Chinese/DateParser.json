@@ -367,6 +367,52 @@
 }
 ,
 {
+  "Input": "大后天可以吗",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大后天",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-25",
+        "FutureResolution": {
+          "date": "2017-03-25"
+        },
+        "PastResolution": {
+          "date": "2017-03-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "大前天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大前天",
+      "Type": "date",
+      "Value": {
+        "Timex": "2017-03-19",
+        "FutureResolution": {
+          "date": "2017-03-19"
+        },
+        "PastResolution": {
+          "date": "2017-03-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "最近",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -406,6 +452,29 @@
         },
         "PastResolution": {
           "date": "2017-03-20"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "礼拜日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "礼拜日",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-7",
+        "FutureResolution": {
+          "date": "2017-03-26"
+        },
+        "PastResolution": {
+          "date": "2017-03-19"
         }
       }
     }

@@ -17,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MonthEnd { get; }
 
+        Regex WeekDayEnd { get; }
+
         Regex DateUnitRegex { get; }
 
         Regex ForTheRegex { get; }
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex WeekDayRegex { get; }
 
         Regex PrefixArticleRegex { get; }
+
+        Regex YearSuffix { get; }
 
         IExtractor IntegerExtractor { get; }
 

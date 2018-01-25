@@ -97,7 +97,7 @@
       }
     ]
   },
-  {
+  {//does not yet recognize 'Komma' as ','
     "Input": "zwei Komma drei",
     "NotSupportedByDesign": "python",
     "NotSupported": "javascript",

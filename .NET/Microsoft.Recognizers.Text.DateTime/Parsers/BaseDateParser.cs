@@ -348,6 +348,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 month = this.config.MonthOfYear[match.Value.Trim()];
                 day = num;
+
+                var suffix = trimedText.Substring(er[0].Start + er[0].Length ?? 0);
+                var matchYear = this.config.YearSuffix.Match(suffix);
+                if (matchYear.Success)
+                {
+                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                    if (year != Constants.InvalidYear)
+                    {
+                        ambiguous = false;
+                    }
+                } 
             }
 
             // handling relatived month
@@ -490,7 +501,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         year += 1900;
                     }
-                    else if (year < 100 && year < 20)
+                    else if (year < 100 && year < 30)
                     {
                         year += 2000;
                     }

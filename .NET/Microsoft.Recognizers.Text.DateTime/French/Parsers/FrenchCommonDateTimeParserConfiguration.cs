@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+            WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = new CardinalExtractor();
             IntegerExtractor = new IntegerExtractor();
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DatePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new FrenchDateTimePeriodParserConfiguration(this));
+            DateTimeAltParser = new BaseDateTimeAltParser(new FrenchDateTimeAltParserConfiguration(this));
         }
     }
 }

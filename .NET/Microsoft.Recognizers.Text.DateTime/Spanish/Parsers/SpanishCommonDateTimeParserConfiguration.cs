@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+            WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
             IntegerExtractor = new IntegerExtractor();
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new SpanishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new SpanishDateTimePeriodParserConfiguration(this));
+            DateTimeAltParser = new BaseDateTimeAltParser(new SpanishDateTimeAltParserConfiguration(this));
         }
     }
 }

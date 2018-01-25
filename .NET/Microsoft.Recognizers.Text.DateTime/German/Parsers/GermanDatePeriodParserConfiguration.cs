@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDatePeriodParserConfiguration : BaseOptionsConfiguration,IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -52,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
+        public Regex DecadeWithCenturyRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -81,6 +88,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
+
+        public IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
         #endregion
 
         public IImmutableList<string> InStringList { get; }
@@ -89,11 +103,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = GermanDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = GermanDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = GermanDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = GermanDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = GermanDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -117,12 +134,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             LaterEarlyPeriodRegex = GermanDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = GermanDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = GermanDatePeriodExtractorConfiguration.YearPlusNumberRegex;
+            DecadeWithCenturyRegex = GermanDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            WrittenDecades = config.WrittenDecades;
+            Numbers = config.Numbers;
+            SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
         public int GetSwiftDayOrMonth(string text)

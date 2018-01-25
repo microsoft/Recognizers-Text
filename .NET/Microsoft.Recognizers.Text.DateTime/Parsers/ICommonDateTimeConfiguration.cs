@@ -43,7 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeParser TimePeriodParser { get; }
 
         IDateTimeParser DateTimePeriodParser { get; }
-        
+
+        IDateTimeParser DateTimeAltParser { get; }
+
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }
@@ -61,6 +63,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> DayOfWeek { get; }
 
         IImmutableDictionary<string, double> DoubleNumbers { get; }
+
+        IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
     }

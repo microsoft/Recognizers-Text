@@ -1254,4 +1254,64 @@
     }
   ]
 }
+,
+{
+  "Input": "Monday, Jan twenty two, 2018",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday, Jan twenty two, 2018",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "on Sunday Jan twenty one two thousand and eighteen",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sunday Jan twenty one two thousand and eighteen",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "on September the twenty-first nineteen seventy eight",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September the twenty-first nineteen seventy eight",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "on September 10, nineteen zero one",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September 10, nineteen zero one",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "on the tenth of September, two thousand",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tenth of September, two thousand",
+      "Type": "date"
+    }
+  ]
+}
 ]

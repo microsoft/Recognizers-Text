@@ -34,6 +34,67 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
+        public int GetYearFromText(Match match)
+        {
+            int year = Constants.InvalidYear;
+
+            var yearStr = match.Groups["year"].Value;
+            if (!string.IsNullOrEmpty(yearStr))
+            {
+                year = int.Parse(yearStr);
+                if (year < 100 && year >= 90)
+                {
+                    year += 1900;
+                }
+                else if (year < 100 && year < 30)
+                {
+                    year += 2000;
+                }
+            }
+            else
+            {
+                var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
+                if (!string.IsNullOrEmpty(firstTwoYearNumStr))
+                {
+                    ExtractResult er = new ExtractResult();
+                    er.Text = firstTwoYearNumStr;
+                    er.Start = match.Groups["firsttwoyearnum"].Index;
+                    er.Length = match.Groups["firsttwoyearnum"].Length;
+
+                    var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+
+                    var lastTwoYearNum = 0;
+                    var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
+                    if (!string.IsNullOrEmpty(lastTwoYearNumStr))
+                    {
+                        er.Text = lastTwoYearNumStr;
+                        er.Start = match.Groups["lasttwoyearnum"].Index;
+                        er.Length = match.Groups["lasttwoyearnum"].Length;
+
+                        lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
+                    }
+
+                    // Exclude pure number like "nineteen", "twenty four"
+                    if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
+                    {
+                        year = Constants.InvalidYear;
+                        return year;
+                    }
+
+                    if (firstTwoYearNum >= 100)
+                    {
+                        year = firstTwoYearNum + lastTwoYearNum;
+                    }
+                    else
+                    {
+                        year = firstTwoYearNum * 100 + lastTwoYearNum;
+                    }
+                }
+            }
+
+            return year;
+        }
+
         // match basic patterns in DateRegexList
         private List<Token> BasicRegexMatch(string text)
         {
@@ -85,14 +146,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                if (result.Start > 0)
+                if (result.Start >= 0)
                 {
+                    // Handling cases like '(Monday,) Jan twenty two'
                     var frontStr = text.Substring(0, result.Start ?? 0);
 
                     var match = this.config.MonthEnd.Match(frontStr);
                     if (match.Success)
                     {
-                        ret.Add(new Token(match.Index, match.Index + match.Length + (result.Length ?? 0)));
+                        var startIndex = match.Index;
+                        var endIndex = match.Index + match.Length + (result.Length ?? 0);
+
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+
+                        ret.Add(new Token(startIndex, endIndex));
                         continue;
                     }
 
@@ -178,13 +245,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var match = this.config.OfMonth.Match(afterStr);
                     if (match.Success)
                     {
-                        ret.Add(new Token(result.Start ?? 0, (result.Start + result.Length ?? 0) + match.Length));
+                        var startIndex = result.Start ?? 0;
+                        var endIndex = (result.Start + result.Length ?? 0) + match.Length;
+
+                        ExtendWithWeekdayAndYear(ref startIndex, ref endIndex, text);
+
+                        ret.Add(new Token(startIndex, endIndex));
                         continue;
                     }
                 }
             }
 
             return ret;
+        }
+
+        private void ExtendWithWeekdayAndYear(ref int startIndex, ref int endIndex, string text)
+        {
+            // Check whether there's weekday
+            var prefix = text.Substring(0, startIndex);
+            var matchWeekDay = this.config.WeekDayEnd.Match(prefix);
+            if (matchWeekDay.Success)
+            {
+                startIndex = matchWeekDay.Index;
+            }
+
+            // Check whether there's year
+            var suffix = text.Substring(endIndex);
+            var matchYear = this.config.YearSuffix.Match(suffix);
+            if (matchYear.Success && matchYear.Index == 0)
+            {
+                endIndex += matchYear.Length;
+            }
         }
 
         private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)

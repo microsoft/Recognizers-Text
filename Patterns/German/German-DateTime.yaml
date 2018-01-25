@@ -162,6 +162,9 @@ OfMonth: !nestedRegex
 MonthEnd: !nestedRegex
   def: '{MonthRegex}\s*(der|dem|den)?\s*$'
   references: [ MonthRegex ]
+WeekDayEnd: !nestedRegex
+  def: '{WeekDayRegex}\s*,?\s*$'
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>jahre|jahr|monate|monat|wochen|woche)\b
 OclockRegex: !simpleRegex
@@ -439,6 +442,10 @@ DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+|und|,)\s*$
 PrefixArticleRegex: !simpleRegex
   def: \b(der|dem|des)\s+
+  def: \bthe\s+
+OrRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 YearPlusNumberRegex: !simpleRegex
   def: \b(Jahr\s+(?<number>(\d{3,4})))\b
 NumberAsTimeRegex: !nestedRegex
@@ -448,7 +455,23 @@ TimeBeforeAfterRegex: !nestedRegex
   def: \b(((?<=\b(vor|nach)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>\s+am)\s*$
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+CenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+DecadeWithCenturyRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+FullTextYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
+YearSuffix: !nestedRegex
+  def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
+  references: [ DateYearRegex, FullTextYearRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -784,4 +807,26 @@ HolidayNames: !dictionary
     veteransday: [ veterans day ]
     christmaseve: [ heiligabend ]
     newyeareve: [ silvester ]
+    cincodemayoday: [ cincodemayoday ]
+    baptisteday: [ baptisteday ]
+    usindependenceday: [ usindependenceday ]
+    independenceday: [ independenceday ]
+    bastilleday: [ bastilleday ]
+    halloweenday: [ halloweenday ]
+    allhallowday: [ allhallowday ]
+    allsoulsday: [ allsoulsday ]
+    guyfawkesday: [ guyfawkesday ]
+    veteransday: [ veteransday ]
+    christmaseve: [ christmaseve ]
+    newyeareve: [ newyearseve, newyeareve ]
+WrittenDecades: !dictionary
+  types: [ string, int ]
+  # TODO: modify below dictionary according to the counterpart in English
+  entries:
+    "": 0
+SpecialDecadeCases: !dictionary
+  types: [ string, int ]
+  # TODO: modify below dictionary there're special cases for written decades
+  entries:
+    '': 0
 ...

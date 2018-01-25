@@ -1,5 +1,5 @@
 import { IExtractor, IParser, RegExpUtility } from "recognizers-text";
-import { BaseNumberExtractor, FrenchIntegerExtractor } from "recognizers-text-number";
+import { BaseNumberParser, BaseNumberExtractor, FrenchIntegerExtractor, FrenchNumberParserConfiguration } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -11,6 +11,7 @@ import { IDateTimeExtractor } from "../baseDateTime"
 
 export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
+    readonly YearRegex: RegExp;
     readonly tillRegex: RegExp;
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
@@ -23,6 +24,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
     readonly rangeUnitRegex: RegExp;
     readonly datePointExtractor: IDateTimeExtractor;
     readonly integerExtractor: BaseNumberExtractor;
+    readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
@@ -52,6 +54,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
             RegExpUtility.getSafeRegExp(FrenchDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(FrenchDateTime.WeekWithWeekDayRangeRegex)
         ];
+        this.YearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.FollowedDateUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDateUnit);
@@ -70,6 +73,7 @@ export class FrenchDatePeriodExtractorConfiguration implements IDatePeriodExtrac
 
         this.datePointExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
+        this.numberParser = new BaseNumberParser(new FrenchNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
     }
 

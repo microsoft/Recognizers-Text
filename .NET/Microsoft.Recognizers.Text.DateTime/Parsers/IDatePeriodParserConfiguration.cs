@@ -7,11 +7,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodParserConfiguration : IOptionsConfiguration
     {
+        int MinYearNum { get; }
+
+        int MaxYearNum { get; }
+
         string TokenBeforeDate { get; }
 
         IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor IntegerExtractor { get; }
 
         IParser NumberParser { get; }
 
@@ -75,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearPlusNumberRegex { get; }
 
+        Regex DecadeWithCenturyRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }
@@ -84,6 +92,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> MonthOfYear { get; }
 
         IImmutableDictionary<string, string> SeasonMap { get; }
+
+        IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        IImmutableDictionary<string, int> Numbers { get; }
+
+        IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         bool IsFuture(string text);
 

@@ -4,11 +4,16 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.English;
 
 namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodExtractorConfiguration : IDatePeriodExtractorConfiguration
     {
+        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
+
+        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
+        
         // base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -116,6 +121,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex YearPlusNumberRegex =
             new Regex(DateTimeDefinitions.YearPlusNumberRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex DecadeWithCenturyRegex =
+            new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -136,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
+            DecadeWithCenturyRegex
         };
 
         public EnglishDatePeriodExtractorConfiguration()
@@ -144,6 +153,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         }
 
         public IDateTimeExtractor DatePointExtractor { get; }
@@ -152,7 +162,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IParser NumberParser { get; }
+
+        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
+
+        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 
