@@ -459,6 +459,29 @@
 }
 ,
 {
+  "Input": "礼拜日",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "礼拜日",
+      "Type": "date",
+      "Value": {
+        "Timex": "XXXX-WXX-7",
+        "FutureResolution": {
+          "date": "2017-03-26"
+        },
+        "PastResolution": {
+          "date": "2017-03-19"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "上周一",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"
