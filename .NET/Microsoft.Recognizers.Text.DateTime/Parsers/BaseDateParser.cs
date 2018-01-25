@@ -353,7 +353,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matchYear = this.config.YearSuffix.Match(suffix);
                 if (matchYear.Success)
                 {
-                    year = ((BaseDatePeriodExtractor)this.config.DatePeriodExtractor).GetYearFromText(matchYear);
+                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
                     if (year != Constants.InvalidYear)
                     {
                         ambiguous = false;

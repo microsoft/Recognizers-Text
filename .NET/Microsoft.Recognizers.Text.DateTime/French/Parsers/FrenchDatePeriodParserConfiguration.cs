@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 {
     public class FrenchDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -106,9 +108,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = FrenchDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = FrenchDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = FrenchDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = FrenchDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

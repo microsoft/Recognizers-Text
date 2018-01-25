@@ -455,7 +455,7 @@ PrefixArticleRegex: !simpleRegex
 OrRegex: !simpleRegex
   def: \s*(or)\s*
 YearPlusNumberRegex: !nestedRegex
-  def: \b(Year\s+((?<number>(\d{3,4}))|{FullTextYearRegex}))\b
+  def: \b(Year\s+((?<year>(\d{3,4}))|{FullTextYearRegex}))\b
   references: [ FullTextYearRegex ]
 NumberAsTimeRegex: !nestedRegex
   def: \b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b

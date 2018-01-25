@@ -202,7 +202,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|and|,)\s*$";
 		public const string PrefixArticleRegex = @"\bthe\s+";
 		public const string OrRegex = @"\s*(or)\s*";
-		public static readonly string YearPlusNumberRegex = $@"\b(Year\s+((?<number>(\d{{3,4}}))|{FullTextYearRegex}))\b";
+		public static readonly string YearPlusNumberRegex = $@"\b(Year\s+((?<year>(\d{{3,4}}))|{FullTextYearRegex}))\b";
 		public static readonly string NumberAsTimeRegex = $@"\b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
 		public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(before|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";

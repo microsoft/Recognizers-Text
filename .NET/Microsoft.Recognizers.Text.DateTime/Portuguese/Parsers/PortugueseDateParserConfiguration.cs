@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
-        public IDateTimeExtractor DatePeriodExtractor { get; }
+        public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
 
@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
+            DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;

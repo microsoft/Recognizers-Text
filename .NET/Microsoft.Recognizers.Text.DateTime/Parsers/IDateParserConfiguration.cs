@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DurationExtractor { get; }
 
-        IDateTimeExtractor DatePeriodExtractor { get; }
+        IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeParser DurationParser { get; }
 

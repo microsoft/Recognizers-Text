@@ -34,67 +34,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
-        public int GetYearFromText(Match match)
-        {
-            int year = Constants.InvalidYear;
-
-            var yearStr = match.Groups["year"].Value;
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                year = int.Parse(yearStr);
-                if (year < 100 && year >= 90)
-                {
-                    year += 1900;
-                }
-                else if (year < 100 && year < 30)
-                {
-                    year += 2000;
-                }
-            }
-            else
-            {
-                var firstTwoYearNumStr = match.Groups["firsttwoyearnum"].Value;
-                if (!string.IsNullOrEmpty(firstTwoYearNumStr))
-                {
-                    ExtractResult er = new ExtractResult();
-                    er.Text = firstTwoYearNumStr;
-                    er.Start = match.Groups["firsttwoyearnum"].Index;
-                    er.Length = match.Groups["firsttwoyearnum"].Length;
-
-                    var firstTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-
-                    var lastTwoYearNum = 0;
-                    var lastTwoYearNumStr = match.Groups["lasttwoyearnum"].Value;
-                    if (!string.IsNullOrEmpty(lastTwoYearNumStr))
-                    {
-                        er.Text = lastTwoYearNumStr;
-                        er.Start = match.Groups["lasttwoyearnum"].Index;
-                        er.Length = match.Groups["lasttwoyearnum"].Length;
-
-                        lastTwoYearNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er).Value ?? 0));
-                    }
-
-                    // Exclude pure number like "nineteen", "twenty four"
-                    if (firstTwoYearNum < 100 && lastTwoYearNum == 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 == 0 && lastTwoYearNumStr.Trim().Split(' ').Length == 1)
-                    {
-                        year = Constants.InvalidYear;
-                        return year;
-                    }
-
-                    if (firstTwoYearNum >= 100)
-                    {
-                        year = firstTwoYearNum + lastTwoYearNum;
-                    }
-                    else
-                    {
-                        year = firstTwoYearNum * 100 + lastTwoYearNum;
-                    }
-                }
-            }
-
-            return year;
-        }
-
         private List<Token> MatchSimpleCases(string text)
         {
             var ret = new List<Token>();
@@ -106,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var matchYear = this.config.YearRegex.Match(match.Value);
                     if (matchYear.Success && matchYear.Length == match.Value.Length)
                     {
-                        var year = GetYearFromText(matchYear);
+                        var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
                         if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
                         {
                             continue;

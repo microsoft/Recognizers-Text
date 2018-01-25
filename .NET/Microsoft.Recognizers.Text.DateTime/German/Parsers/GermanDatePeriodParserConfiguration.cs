@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanDatePeriodParserConfiguration : BaseOptionsConfiguration,IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -104,10 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = GermanDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = GermanDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = GermanDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = GermanDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = GermanDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

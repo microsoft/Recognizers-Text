@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -97,9 +99,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = PortugueseDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = PortugueseDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = PortugueseDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = PortugueseDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;

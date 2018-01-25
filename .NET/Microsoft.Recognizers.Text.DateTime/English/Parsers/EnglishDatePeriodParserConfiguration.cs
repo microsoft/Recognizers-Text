@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,8 +21,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
-
-        public IDateTimeExtractor DatePeriodExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }
 
@@ -104,10 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
-            DatePeriodExtractor = config.DatePeriodExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = EnglishDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = EnglishDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
             MonthFrontSimpleCasesRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
