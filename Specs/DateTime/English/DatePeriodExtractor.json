@@ -2793,4 +2793,112 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out from 2 to 7 Feb, two thousand and eighteen",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2 to 7 Feb, two thousand and eighteen",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out between 2 and 7 Feb two thousand and eighteen",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2 and 7 Feb two thousand and eighteen",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out Feb between 2-7 two thousand and eighteen",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb between 2-7 two thousand and eighteen",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in June of nineteen ninety nine",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "June of nineteen ninety nine",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In nineteen twenty eight",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "nineteen twenty eight",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the first week of two thousand and twenty seven",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first week of two thousand and twenty seven",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the first quarter of two thousand and twenty",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the first quarter of two thousand and twenty",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "In the spring of nineteen seventy eight",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the spring of nineteen seventy eight",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "Year two hundred and sixty seven",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Year two hundred and sixty seven",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

@@ -2235,4 +2235,124 @@
     }
   ]
 }
+,
+{
+  "Input": "Monday, Jan twenty two, 2018",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Monday, Jan twenty two, 2018",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-01-22",
+        "FutureResolution": {
+          "date": "2018-01-22"
+        },
+        "PastResolution": {
+          "date": "2018-01-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on Sunday Jan twenty one two thousand and eighteen",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Sunday Jan twenty one two thousand and eighteen",
+      "Type": "date",
+      "Value": {
+        "Timex": "2018-01-21",
+        "FutureResolution": {
+          "date": "2018-01-21"
+        },
+        "PastResolution": {
+          "date": "2018-01-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on September the twenty-first nineteen seventy eight",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September the twenty-first nineteen seventy eight",
+      "Type": "date",
+      "Value": {
+        "Timex": "1978-09-21",
+        "FutureResolution": {
+          "date": "1978-09-21"
+        },
+        "PastResolution": {
+          "date": "1978-09-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on September 10, nineteen zero one",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "September 10, nineteen zero one",
+      "Type": "date",
+      "Value": {
+        "Timex": "1901-09-10",
+        "FutureResolution": {
+          "date": "1901-09-10"
+        },
+        "PastResolution": {
+          "date": "1901-09-10"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "on the tenth of September, two thousand",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tenth of September, two thousand",
+      "Type": "date",
+      "Value": {
+        "Timex": "2000-09-10",
+        "FutureResolution": {
+          "date": "2000-09-10"
+        },
+        "PastResolution": {
+          "date": "2000-09-10"
+        }
+      }
+    }
+  ]
+}
 ]

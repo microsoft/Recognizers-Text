@@ -4,6 +4,7 @@ using System.Globalization;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -163,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             int year = referenceDate.Year, month = referenceDate.Month;
             int beginDay, endDay;
-            var noYear = false;
+            var noYear = true;
 
             var trimedText = text.Trim();
             var match = this.config.MonthFrontBetweenRegex.Match(trimedText);
@@ -190,11 +191,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginDay = this.config.DayOfMonth[days.Captures[0].Value.ToLower()];
                 endDay = this.config.DayOfMonth[days.Captures[1].Value.ToLower()];
 
+                // parse year
+                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                if (year != Constants.InvalidYear)
+                {
+                    noYear = false;
+                }
+                else
+                {
+                    year = referenceDate.Year;
+                }
+
                 var monthStr = match.Groups["month"].Value;
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     month = this.config.MonthOfYear[monthStr.ToLower()];
-                    noYear = true;
                 }
                 else
                 {
@@ -227,30 +238,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                         default:
                             break;
                     }
-                }
 
-                if (this.config.IsFuture(monthStr))
-                {
-                    beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
-                    endLuisStr = FormatUtil.LuisDate(year, month, endDay);
-                }
-                else
-                {
-                    beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
-                    endLuisStr = FormatUtil.LuisDate(-1, month, endDay);
+                    if (this.config.IsFuture(monthStr))
+                    {
+                        noYear = false;
+                    }
                 }
             }
             else
             {
                 return ret;
             }
-
-            // parse year
-            var yearStr = match.Groups["year"].Value;
-            if (!string.IsNullOrEmpty(yearStr))
+            
+            if (noYear)
             {
-                year = int.Parse(yearStr);
-                noYear = false;
+                beginLuisStr = FormatUtil.LuisDate(-1, month, beginDay);
+                endLuisStr = FormatUtil.LuisDate(-1, month, endDay);
+            }
+            else
+            {
+                beginLuisStr = FormatUtil.LuisDate(year, month, beginDay);
+                endLuisStr = FormatUtil.LuisDate(year, month, endDay);
             }
 
             int futureYear = year, pastYear = year;
@@ -498,17 +506,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && match.Length == text.Length)
             {
                 var monthStr = match.Groups["month"].Value.ToLower();
-                var yearStr = match.Groups["year"].Value.ToLower();
                 var orderStr = match.Groups["order"].Value.ToLower();
 
                 var month = this.config.MonthOfYear[monthStr.ToLower()];
 
-                int year;
-                if (!string.IsNullOrEmpty(yearStr))
-                {
-                    year = int.Parse(yearStr);
-                }
-                else
+                int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                if (year == Constants.InvalidYear)
                 {
                     var swift = this.config.GetSwiftYear(orderStr);
                     if (swift < -1)
@@ -535,26 +538,28 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult ParseYear(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
+            int year = Constants.InvalidYear;
 
             var match = this.config.YearRegex.Match(text);
-            string yearStr = null;
             if (match.Success && match.Length == text.Length)
             {
-                yearStr = match.Value;
+                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                {
+                    year = Constants.InvalidYear;
+                }
             }
             else
             {
                 match = this.config.YearPlusNumberRegex.Match(text);
                 if (match.Success && match.Length == text.Length)
                 {
-                    yearStr = match.Groups["number"].Value;
+                    year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
                 }
             }
-            
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                var year = int.Parse(yearStr);
 
+            if (year != Constants.InvalidYear)
+            {
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
 
                 var endDay = InclusiveEndPeriod
@@ -820,15 +825,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var cardinalStr = match.Groups["cardinal"].Value;
-            var yearStr = match.Groups["year"].Value.ToLower();
             var orderStr = match.Groups["order"].Value.ToLower();
 
-            int year;
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                year = int.Parse(yearStr);
-            }
-            else
+            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
@@ -901,15 +901,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var cardinalStr = match.Groups["cardinal"].Value.ToLower();
-            var yearStr = match.Groups["year"].Value.ToLower();
             var orderStr = match.Groups["order"].Value.ToLower();
 
-            int year;
-            if (!string.IsNullOrEmpty(yearStr))
-            {
-                year = int.Parse(yearStr);
-            }
-            else
+            int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+            if (year == Constants.InvalidYear)
             {
                 var swift = this.config.GetSwiftYear(orderStr);
                 if (swift < -1)
@@ -935,24 +930,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.SeasonRegex.Match(text);
             if (match.Success && match.Length == text.Length)
             {
-                var swift = this.config.GetSwiftYear(text);
-
-                var yearStr = match.Groups["year"].Value;
-                var year = referenceDate.Year;
                 var seasonStr = this.config.SeasonMap[match.Groups["seas"].Value.ToLowerInvariant()];
-                if (swift >= -1 || !string.IsNullOrEmpty(yearStr))
+                var orderStr = match.Groups["order"].Value.ToLower();
+
+                int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                if (year == Constants.InvalidYear)
                 {
-                    if (string.IsNullOrEmpty(yearStr))
+                    var swift = this.config.GetSwiftYear(text);
+                    if (swift < -1)
                     {
-                        yearStr = (referenceDate.Year + swift).ToString("D4");
+                        ret.Timex = seasonStr;
+                        ret.Success = true;
+                        return ret;
                     }
-                    ret.Timex = yearStr + "-" + seasonStr;
-                    year = int.Parse(yearStr);
+                    year = referenceDate.Year + swift;
                 }
-                else
-                {
-                    ret.Timex = seasonStr;
-                }
+
+                var yearStr = year.ToString("D4");
+                ret.Timex = yearStr + "-" + seasonStr;
 
                 ret.Success = true;
                 return ret;
@@ -1156,8 +1151,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else
                         {
-                            // handle the case "two thousand"
-                            firstTwoNumOfYear = 20;
+                            // handle the case like "one/two thousand", "one/two hundred", etc.
+                            var er = this.config.IntegerExtractor.Extract(centuryStr);
+
+                            if (er.Count == 0)
+                            {
+                                return ret;
+                            }
+
+                            firstTwoNumOfYear = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+                            if (firstTwoNumOfYear >= 100)
+                            {
+                                firstTwoNumOfYear = firstTwoNumOfYear / 100;
+                            }
                         }
                     }
 

@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
@@ -51,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex WeekDayAndDayOfMothRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
+
+        public Regex YearSuffix { get; }
 
         //The following three regexes only used in this configuration
         //They are not used in the base parser, therefore they are not extracted
@@ -85,6 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateRegexes = EnglishDateExtractorConfiguration.DateRegexList;
             OnRegex = EnglishDateExtractorConfiguration.OnRegex;
@@ -99,6 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ForTheRegex = EnglishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = EnglishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = EnglishDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = EnglishDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

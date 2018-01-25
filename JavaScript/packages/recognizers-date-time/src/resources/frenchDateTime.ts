@@ -16,7 +16,7 @@ export namespace FrenchDateTime {
 	export const ThisPrefixRegex = `(?<order>ce|cette|au\\s+cours+(du|de))\\b`;
 	export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|10|11|11e|12|12e|13|13e|14|14e|15|15e|16|16e|17|17e|18|18e|19|19e|1er|1|21|21e|20|20e|22|22e|23|23e|24|24e|25|25e|26|26e|27|27e|28|28e|29|29e|2|2e|30|30e|31|31e|3|3e|4|4e|5|5e|6|6e|7|7e|8|8e|9|9e)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
-	export const PeriodYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
+	export const PeriodYearRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const WeekDayRegex = `(?<weekday>Dimanche|Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Lun|Mar|Mer|Jeu|Ven|Sam|Dim)\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>(${ThisPrefixRegex}\\s+mois)|(mois\\s+${PastSuffixRegex})|(mois\\s+${NextSuffixRegex}))\\b`;
 	export const EngMonthRegex = `(?<month>Avril|Avr\\.|Avr|Août|D[eé]cembre|D[eé]c|D[eé]c\\.|F[eé]vrier|F[eé]v|F[eé]vr\\.|F[eé]vr|Javier|Jan|Janv\\.|Janv|Juillet|Jul|Juil|Juil\\.|Juin|Jun|Mars|Mar|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.)`;
@@ -27,8 +27,8 @@ export namespace FrenchDateTime {
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(entre|d[ue]\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const BetweenRegex = `\\b(entre\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const YearWordRegex = `\\b(?<year>l'ann[ée]e)\\b`;
-	export const MonthWithYear = `\\b((?<month>Avril|Avr\\.|Avr|Août|Aout|Decembre|D[eé]c|Dec\\.|F[eé]v|F[eé]vr|Fev|F[eé]vrier|F[eé]v\\.|Janvier|Jan|Janv|Janv\\.|Jan\\.|Jul|Juillet|Juil\\.|Jun|Juin|Mar|Mars|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.),?(\\s+de)?\\s+(${PeriodYearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
-	export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>Avril|Avr\\.|Avr|Août|Aout|D[eé]cembre|Dec|D[eé]c\\.|F[eé]vrier|Fev|F[eé]v\\.|F[eé]vr|Janvier|Janv\\.|Janv|Jan|Jan\\.|Jul|Juillet|Juil\\.|Jun|Juin|Mar|Mars|Mai|Nov|Novembre|Nov\\.|Oct|Octobre|Oct\\.|Sep|Septembre|Sept\\.)|${RelativeRegex}\\s+(weekend|fin de semaine|week-end|semaine|mois|ans|l'année)|weekend|week-end|(mois|l'année))\\b`;
+	export const MonthWithYear = `\\b((?<month>Avril|Avr\\.|Avr|Août|Aout|D[ée]cembre|D[eé]c|Dec\\.|F[eé]v|F[eé]vr|Fev|F[eé]vrier|F[eé]v\\.|Janvier|Jan|Janv|Janv\\.|Jan\\.|Jul|Juillet|Juil\\.|Jun|Juin|Mar|Mars|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.),?(\\s+de)?\\s+(${PeriodYearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
+	export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?(?<month>Avril|Avr\\.|Avr|Août|Aout|D[eé]cembre|D[ée]c|D[eé]c\\.|F[eé]vrier|Fev|F[eé]v\\.|F[eé]vr|Janvier|Janv\\.|Janv|Jan|Jan\\.|Jul|Juillet|Juil\\.|Jun|Juin|Mar|Mars|Mai|Nov|Novembre|Nov\\.|Oct|Octobre|Oct\\.|Sep|Septembre|Sept\\.)|${RelativeRegex}\\s+(weekend|fin de semaine|week-end|semaine|mois|ans|l'année)|weekend|week-end|(mois|l'année))\\b`;
 	export const MonthNumWithYear = `(${PeriodYearRegex}[/\\-\\.]${MonthNumRegex})|(${MonthNumRegex}[/\\-]${PeriodYearRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine\\s+${MonthSuffixRegex})`;
 	export const WeekOfYearRegex = `(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+(${PeriodYearRegex}|${RelativeRegex}\\s+ann[ée]e))`;
@@ -40,8 +40,8 @@ export namespace FrenchDateTime {
 	export const WhichWeekRegex = `(semaine)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(semaine)(\\s*)(de)`;
 	export const MonthOfRegex = `(mois)(\\s*)(de)`;
-	export const MonthRegex = `(?<month>Avril|Avr|Avr\\.|Août|Aout|Decembre|D[eé]c|Dec\\.|F[eé]vrier|F[eé]vr|Fev|F[eé]v|F[eé]v\\.|Janvier|Janv\\.|Janv|Jan|Jan\\.|Juillet|Juil|Juil\\.|Juin|Mars|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.)`;
-	export const DateYearRegex = `(?<year>19\\d{2}|20\\d{2}|((9\\d|0\\d|1\\d|2\\d)(?!\\s*\\:)))`;
+	export const MonthRegex = `(?<month>Avril|Avr|Avr\\.|Août|Aout|D[ée]cembre|D[eé]c|Dec\\.|F[eé]vrier|F[eé]vr|Fev|F[eé]v|F[eé]v\\.|Janvier|Janv\\.|Janv|Jan|Jan\\.|Juillet|Juil|Juil\\.|Juin|Mars|Mai|Novembre|Nov|Nov\\.|Octobre|Oct|Oct\\.|Septembre|Sep|Sept|Sept\\.)`;
+	export const DateYearRegex = `(?<year>((1\\d|20)\\d{2})|2100|((9\\d|0\\d|1\\d|2\\d)(?!\\s*\\:)))`;
 	export const OnRegex = `(?<=\\b(en|sur\\s*l[ea]|sur)\\s+)(${DayRegex}s?)\\b`;
 	export const RelaxedOnRegex = `(?<=\\b(en|le|dans|sur\\s*l[ea]|du|sur)\\s+)((?<day>10e|11e|12e|13e|14e|15e|16e|17e|18e|19e|1er|20e|21e|22e|23e|24e|25e|26e|27e|28e|29e|2e|30e|31e|3e|4e|5e|6e|7e|8e|9e)s?)\\b`;
 	export const ThisRegex = `\\b((cette(\\s*semaine)?\\s+)${WeekDayRegex})|(${WeekDayRegex}(\\s+cette\\s*semaine))\\b`;
@@ -65,6 +65,7 @@ export namespace FrenchDateTime {
 	export const DateExtractorA = `\\b${DateYearRegex}\\s*[/\\\\\\-]\\s*${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}`;
 	export const OfMonth = `^\\s*de\\s*${MonthRegex}`;
 	export const MonthEnd = `${MonthRegex}\\s*(le)?\\s*$`;
+	export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
 	export const RangeUnitRegex = `\\b(?<unit>l'année|ann[eé]e(s)?|mois|semaines|semaine)\\b`;
 	export const DescRegex = `(?<desc>h|ampm|am\\b|a\\.m\\.|a m\\b|a\\. m\\.|a\\.m\\b|a\\. m\\b|pm\\b|p\\.m\\.|p m\\b|p\\. m\\.|p\\.m\\b|p\\. m\\b|p\\b\\b)`;
 	export const HourNumRegex = `\\b(?<hournum>zero|un|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois)\\b`;
@@ -139,7 +140,7 @@ export namespace FrenchDateTime {
 	export const AllRegex = `\\b(?<all>toute\\s(l['ea])\\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\\b`;
 	export const HalfRegex = `(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\\b`;
 	export const ConjunctionRegex = `\\b((et(\\s+de|pour)?)|avec)\\b`;
-	export const YearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
+	export const YearRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const HolidayRegex1 = `\\b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\\s+((d[ue]\\s+|d'))?(${YearRegex}|(${ThisPrefixRegex}\\s+)ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
 	export const HolidayRegex2 = `\\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
 	export const HolidayRegex3 = `(?<holiday>(jour\\s*(d[eu]|des)\\s*(canberra|p[aâ]ques|colomb|bastille|la prise de la bastille|l'ind[eé]pendance|l'ind[eé]pendance am[eé]ricaine|thanks\\s*giving|bapt[êe]me|nationale|d'armistice|inaugueration|marmotte|assomption|femme|comm[ée]moratif)))(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?`;
@@ -186,9 +187,16 @@ export namespace FrenchDateTime {
 	export const MiddlePauseRegex = `^[.]`;
 	export const DurationConnectorRegex = `^[.]`;
 	export const PrefixArticleRegex = `^[\\.]`;
+	export const OrRegex = `^[.]`;
+	export const YearPlusNumberRegex = `^[.]`;
 	export const NumberAsTimeRegex = `^[.]`;
 	export const TimeBeforeAfterRegex = `^[.]`;
 	export const DateNumberConnectorRegex = `^[.]`;
+	export const CenturyRegex = `^[.]`;
+	export const DecadeRegex = `^[.]`;
+	export const DecadeWithCenturyRegex = `^[.]`;
+	export const FullTextYearRegex = `^[.]`;
+	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["annees", "Y"],["annee", "Y"],["ans", "Y"],["mois", "MON"],["semaines", "W"],["semaine", "W"],["journees", "D"],["journee", "D"],["jour", "D"],["jours", "D"],["heures", "H"],["heure", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["secondes", "S"],["seconde", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["annees", 31536000],["annee", 31536000],["l'annees", 31536000],["l'annee", 31536000],["ans", 31536000],["mois", 2592000],["semaines", 604800],["semaine", 604800],["journees", 86400],["journee", 86400],["jour", 86400],["jours", 86400],["heures", 3600],["heure", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["secondes", 1],["seconde", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["printemps", "SP"],["été", "SU"],["automne", "FA"],["hiver", "WI"]]);
@@ -201,4 +209,6 @@ export namespace FrenchDateTime {
 	export const DoubleNumbers: ReadonlyMap<string, number> = new Map<string, number>([["demi", 0.5],["quart", 0.25]]);
 	export const HolidayNames: ReadonlyMap<string, string[]> = new Map<string, string[]>([["fathers", ["peres","pères","fêtedespères","fetedesperes"]],["mothers", ["fêtedesmères","fetedesmeres"]],["thanksgiving", ["lactiondegrace","lactiondegrâce","jourdethanksgiving","thanksgiving"]],["martinlutherking", ["journeemartinlutherking","martinlutherkingjr"]],["washingtonsbirthday", ["washingtonsbirthday","washingtonbirthday"]],["canberra", ["canberraday"]],["labour", ["fetedetravail","travail","fetedutravail"]],["columbus", ["columbusday"]],["memorial", ["jourcommémoratif","jourcommemoratif"]],["yuandan", ["yuandan","nouvelanchinois"]],["maosbirthday", ["maosbirthday"]],["teachersday", ["teachersday","teacherday"]],["singleday", ["singleday"]],["allsaintsday", ["allsaintsday"]],["youthday", ["youthday"]],["childrenday", ["childrenday","childday"]],["femaleday", ["femaleday"]],["treeplantingday", ["treeplantingday"]],["arborday", ["arborday"]],["girlsday", ["girlsday"]],["whiteloverday", ["whiteloverday"]],["loverday", ["loverday"]],["christmas", ["noel","noël"]],["xmas", ["xmas"]],["newyear", ["nouvellesannees","nouvelan"]],["newyearday", ["jourdunouvelan"]],["newyearsday", ["jourdel'an","jourpremierdelannee","jourpremierdelannée"]],["inaugurationday", ["jourd'inaugueration","inaugueration"]],["groundhougday", ["marmotte"]],["valentinesday", ["lasaint-valentin","lasaintvalentin"]],["stpatrickday", ["stpatrickday"]],["aprilfools", ["poissond'avril"]],["stgeorgeday", ["stgeorgeday"]],["mayday", ["premier-mai","ler-mai","1-mai"]],["cincodemayoday", ["cincodemayo"]],["baptisteday", ["bapteme","baptême"]],["usindependenceday", ["l'independanceamericaine","lindépendanceaméricaine"]],["independenceday", ["l'indépendance","lindependance"]],["bastilleday", ["laprisedelabastille","bastille"]],["halloweenday", ["halloween"]],["allhallowday", ["allhallowday"]],["allsoulsday", ["allsoulsday"]],["guyfawkesday", ["guyfawkesday"]],["veteransday", ["veteransday"]],["christmaseve", ["reveillondenoel","réveillondenoël","veilledenoel","veilledenoël"]],["newyeareve", ["réveillondenouvelan","reveillondenouvelan","lasaint-sylvestre","lasaintsylvestre"]]]);
 	export const NightRegex = `\\b(minuit|nuit)\\b`;
+	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
+	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 }

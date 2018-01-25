@@ -7,11 +7,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodParserConfiguration : IOptionsConfiguration
     {
+        int MinYearNum { get; }
+
+        int MaxYearNum { get; }
+
         string TokenBeforeDate { get; }
 
         IDateTimeExtractor DateExtractor { get; }
 
         IExtractor CardinalExtractor { get; }
+
+        IExtractor IntegerExtractor { get; }
 
         IParser NumberParser { get; }
 

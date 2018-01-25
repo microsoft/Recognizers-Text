@@ -32,5 +32,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";
         public const string MultipleDuration_Date = "multipleDurationDate";
         public const string MultipleDuration_Time = "multipleDurationTime";
+
+        //Invalid year
+        public const int InvalidYear = int.MinValue;
     }
 }

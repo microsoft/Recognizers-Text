@@ -3,11 +3,16 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Portuguese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDatePeriodExtractorConfiguration : BaseOptionsConfiguration, IDatePeriodExtractorConfiguration
     {
+        public static readonly int MinYearNum = int.Parse(DateTimeDefinitions.MinYearNum);
+
+        public static readonly int MaxYearNum = int.Parse(DateTimeDefinitions.MaxYearNum);
+
         // base regexes
         public static readonly Regex TillRegex = 
             new Regex(DateTimeDefinitions.TillRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -154,6 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DatePointExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration());
             CardinalExtractor = Number.Portuguese.CardinalExtractor.GetInstance();
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration());
+            NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration());
         }
 
         public IDateTimeExtractor DatePointExtractor { get; }
@@ -162,7 +168,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IParser NumberParser { get; }
+
+        int IDatePeriodExtractorConfiguration.MinYearNum => MinYearNum;
+
+        int IDatePeriodExtractorConfiguration.MaxYearNum => MaxYearNum;
+
         IEnumerable<Regex> IDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
+
+        Regex IDatePeriodExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 

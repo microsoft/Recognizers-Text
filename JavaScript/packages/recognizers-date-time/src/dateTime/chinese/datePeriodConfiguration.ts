@@ -1,5 +1,5 @@
 import { IExtractor, IParser, ExtractResult, RegExpUtility, StringUtility, Match } from "recognizers-text";
-import { AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration, BaseNumberExtractor, ChineseIntegerExtractor } from "recognizers-text-number"
+import { AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration, BaseNumberExtractor, ChineseIntegerExtractor, BaseNumberParser } from "recognizers-text-number"
 import { Constants as NumberConstants } from "recognizers-text-number"
 import { IDatePeriodExtractorConfiguration, BaseDatePeriodExtractor, IDatePeriodParserConfiguration, BaseDatePeriodParser } from "../baseDatePeriod";
 import { ChineseDateExtractor, ChineseDateParser } from "./dateConfiguration";
@@ -13,6 +13,7 @@ import { Constants, TimeTypeConstants } from "../constants";
 
 class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
@@ -25,6 +26,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
     readonly rangeUnitRegex: RegExp
     readonly datePointExtractor: ChineseDateExtractor
     readonly integerExtractor: BaseNumberExtractor
+    readonly numberParser: BaseNumberParser
     readonly durationExtractor: BaseDurationExtractor
     readonly rangeConnectorRegex: RegExp
 
@@ -43,6 +45,7 @@ class ChineseDatePeriodExtractorConfiguration implements IDatePeriodExtractorCon
         ];
         this.datePointExtractor = new ChineseDateExtractor();
         this.integerExtractor = new ChineseIntegerExtractor();
+        this.numberParser = new BaseNumberParser(new ChineseNumberParserConfiguration());
         this.tillRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DatePeriodTillRegex)
         this.followedUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.FollowedUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(ChineseDateTime.NumberCombinedWithUnit);

@@ -1,7 +1,7 @@
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod"
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { RegExpUtility } from "recognizers-text";
-import { BaseNumberExtractor, EnglishIntegerExtractor } from "recognizers-text-number"
+import { BaseNumberParser, BaseNumberExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration } from "recognizers-text-number"
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
 import { EnglishDateTime } from "../../resources/englishDateTime";
 import { EnglishCommonDateTimeParserConfiguration } from "./baseConfiguration"
@@ -11,6 +11,7 @@ import { IDateTimeExtractor } from "../baseDateTime";
 
 export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[]
+    readonly YearRegex: RegExp
     readonly tillRegex: RegExp
     readonly followedUnit: RegExp
     readonly numberCombinedWithUnit: RegExp
@@ -23,6 +24,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly rangeUnitRegex: RegExp
     readonly datePointExtractor: IDateTimeExtractor
     readonly integerExtractor: BaseNumberExtractor
+    readonly numberParser: BaseNumberParser
     readonly durationExtractor: IDateTimeExtractor
     readonly rangeConnectorRegex: RegExp
 
@@ -46,6 +48,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(EnglishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(EnglishDateTime.WeekWithWeekDayRangeRegex)
         ];
+        this.YearRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.FollowedDateUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(EnglishDateTime.NumberCombinedWithDateUnit);
@@ -58,6 +61,7 @@ export class EnglishDatePeriodExtractorConfiguration implements IDatePeriodExtra
         this.rangeUnitRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeUnitRegex);
         this.datePointExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration());
         this.integerExtractor = new EnglishIntegerExtractor();
+        this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.rangeConnectorRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }

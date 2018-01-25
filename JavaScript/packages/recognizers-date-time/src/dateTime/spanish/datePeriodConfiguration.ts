@@ -1,5 +1,5 @@
 import { IExtractor, IParser, RegExpUtility } from "recognizers-text";
-import { BaseNumberExtractor, SpanishIntegerExtractor } from "recognizers-text-number";
+import { BaseNumberParser, BaseNumberExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
@@ -11,6 +11,7 @@ import { IDateTimeExtractor } from "../baseDateTime";
 
 export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtractorConfiguration {
     readonly simpleCasesRegexes: RegExp[];
+    readonly YearRegex: RegExp;
     readonly tillRegex: RegExp;
     readonly followedUnit: RegExp;
     readonly numberCombinedWithUnit: RegExp;
@@ -23,6 +24,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
     readonly rangeUnitRegex: RegExp;
     readonly datePointExtractor: IDateTimeExtractor;
     readonly integerExtractor: BaseNumberExtractor;
+    readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
 
     readonly fromRegex: RegExp;
@@ -50,6 +52,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
             RegExpUtility.getSafeRegExp(SpanishDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.getSafeRegExp(SpanishDateTime.WeekWithWeekDayRangeRegex)
         ];
+        this.YearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
         this.tillRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.TillRegex);
         this.followedUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.FollowedDateUnit);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.NumberCombinedWithDateUnit);
@@ -67,6 +70,7 @@ export class SpanishDatePeriodExtractorConfiguration implements IDatePeriodExtra
 
         this.datePointExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
+        this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
     }
 

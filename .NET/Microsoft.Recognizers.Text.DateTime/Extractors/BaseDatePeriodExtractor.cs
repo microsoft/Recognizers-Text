@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
 using Microsoft.Recognizers.Text.Number;
+using System;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -41,6 +42,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
+                    var matchYear = this.config.YearRegex.Match(match.Value);
+                    if (matchYear.Success && matchYear.Length == match.Value.Length)
+                    {
+                        var year = ((BaseDateExtractor)this.config.DatePointExtractor).GetYearFromText(matchYear);
+                        if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                        {
+                            continue;
+                        }
+                    }
                     ret.Add(new Token(match.Index, match.Index + match.Length));
                 }
             }
