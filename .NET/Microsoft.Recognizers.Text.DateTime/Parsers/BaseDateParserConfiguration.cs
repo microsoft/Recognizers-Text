@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
+        public virtual IDateTimeParser DateTimeAltParser { get; protected set; }
+
         public virtual IImmutableDictionary<string, int> MonthOfYear { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> Numbers { get; protected set; }
@@ -66,6 +68,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> DayOfWeek { get; protected set; }
 
         public virtual IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary();
+
+        public virtual IImmutableDictionary<string, int> WrittenDecades { get; protected set; }
+
+        public virtual IImmutableDictionary<string, int> SpecialDecadeCases { get; protected set; }
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
 

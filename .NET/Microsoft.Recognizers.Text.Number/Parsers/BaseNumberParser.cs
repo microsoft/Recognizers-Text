@@ -27,6 +27,12 @@ namespace Microsoft.Recognizers.Text.Number
                                 + GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
 
             TextNumberRegex = new Regex(@"(?<=\b)(" + singleIntFrac + @")(?=\b)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+            //necessary for the german language because bigger numbers are not separated by whitespaces or special characters like in other languages
+            if (config.CultureInfo.Name == "de-DE") {
+                TextNumberRegex = new Regex(@"(" + singleIntFrac + @")", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            }
+
             LongFormatRegex = new Regex(@"\d+", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
             RoundNumberSet = new HashSet<string>();

@@ -12,7 +12,7 @@ export namespace PortugueseDateTime {
 	export const AndRegex = `(?<and>e|e\\s*o|--|-|—|——)`;
 	export const DayRegex = `(?<day>01|02|03|04|05|06|07|08|09|1|10|11|12|13|14|15|16|17|18|19|2|20|21|22|23|24|25|26|27|28|29|3|30|31|4|5|6|7|8|9)(?=\\b|t)`;
 	export const MonthNumRegex = `(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\b`;
-	export const YearRegex = `(?<year>19\\d{2}|20\\d{2}|9\\d|0\\d|1\\d|2\\d)`;
+	export const YearRegex = `(?<year>((1[5-9]|20)\\d{2})|9\\d|0\\d|1\\d|2\\d)`;
 	export const FullYearRegex = `\\b(?<year>19\\d{2}|20\\d{2})\\b`;
 	export const RelativeMonthRegex = `(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b`;
 	export const MonthRegex = `(?<month>Abril|Abr|Agosto|Ago|Dezembro|Dez|Fevereiro|Fev|Janeiro|Jan|Julho|Jul|Junho|Jun|Mar[çc]o|Mar|Maio|Mai|Novembro|Nov|Outubro|Out|Septembro|Setembro|Sept|Set)`;
@@ -56,6 +56,7 @@ export namespace PortugueseDateTime {
 	export const SpecialDateRegex = `(?<=\\bno\\s+)${DayRegex}\\b`;
 	export const OfMonthRegex = `^\\s*de\\s*${MonthSuffixRegex}`;
 	export const MonthEndRegex = `(${MonthRegex}\\s*(o)?\\s*$)`;
+	export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
 	export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}?((\\s*(de)|[/\\\\\\.\\-])\\s*)?${MonthRegex}\\b`;
 	export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}\\s*([\\.\\-]|de)?\\s*${MonthRegex}?(\\s*(,|de)\\s*)${YearRegex}\\b`;
 	export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+de\\s+|\\s*-\\s*)${MonthRegex}((\\s+|\\s*(,|de)\\s*)${YearRegex})?\\b`;
@@ -145,6 +146,11 @@ export namespace PortugueseDateTime {
 	export const GeneralEndingRegex = `^[.]`;
 	export const MiddlePauseRegex = `^[.]`;
 	export const PrefixArticleRegex = `^[\\.]`;
+	export const OrRegex = `^[.]`;
+	export const YearPlusNumberRegex = `^[.]`;
+	export const NumberAsTimeRegex = `^[.]`;
+	export const TimeBeforeAfterRegex = `^[.]`;
+	export const DateNumberConnectorRegex = `^[.]`;
 	export const AgoRegex = `\\b(antes|atr[áa]s|no passado)\\b`;
 	export const LaterRegex = `\\b(depois d[eoa]s?|ap[óo]s (as)?|desde (as|o)|desde|no futuro|mais tarde)\\b`;
 	export const Tomorrow = 'amanh[ãa]';
@@ -178,4 +184,11 @@ export namespace PortugueseDateTime {
 	export const CommonDatePrefixRegex = `\\b(dia)\\s+$`;
 	export const DurationUnitRegex = `^[\\.]`;
 	export const DurationConnectorRegex = `^[.]`;
+	export const CenturyRegex = `^[.]`;
+	export const DecadeRegex = `^[.]`;
+	export const DecadeWithCenturyRegex = `^[.]`;
+	export const FullTextYearRegex = `^[\\*]`;
+	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
+	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
+	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 }

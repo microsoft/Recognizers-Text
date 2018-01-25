@@ -8,6 +8,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
+        public int MinYearNum { get; }
+
+        public int MaxYearNum { get; }
+
         public string TokenBeforeDate { get; }
 
         #region internalParsers
@@ -17,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IExtractor IntegerExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -52,6 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex LaterEarlyPeriodRegex { get; }
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
+        public Regex DecadeWithCenturyRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -75,7 +82,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IImmutableDictionary<string, int> MonthOfYear { get; }
 
         public IImmutableDictionary<string, string> SeasonMap { get; }
-        
+
+        public IImmutableDictionary<string, int> WrittenDecades { get; }
+
+        public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IImmutableDictionary<string, int> SpecialDecadeCases { get; }
+
         #endregion
 
 
@@ -83,11 +96,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             CardinalExtractor = config.CardinalExtractor;
+            IntegerExtractor = config.IntegerExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
+            MinYearNum = SpanishDatePeriodExtractorConfiguration.MinYearNum;
+            MaxYearNum = SpanishDatePeriodExtractorConfiguration.MaxYearNum;
             MonthFrontBetweenRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = SpanishDatePeriodExtractorConfiguration.DayBetweenRegex;
             MonthFrontSimpleCasesRegex = SpanishDatePeriodExtractorConfiguration.MonthFrontSimpleCasesRegex;
@@ -111,12 +127,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             LaterEarlyPeriodRegex = SpanishDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
             WeekWithWeekDayRangeRegex = SpanishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = SpanishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
+            DecadeWithCenturyRegex = SpanishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
             DayOfMonth = config.DayOfMonth;
             MonthOfYear = config.MonthOfYear;
             SeasonMap = config.SeasonMap;
+            Numbers = config.Numbers;
+            WrittenDecades = config.WrittenDecades;
+            SpecialDecadeCases = config.SpecialDecadeCases;
         }
 
         public int GetSwiftDayOrMonth(string text)

@@ -18,34 +18,34 @@ namespace Microsoft.Recognizers.Definitions.German
 	public static class NumbersDefinitions
 	{
 		public const string LangMarker = "Ger";
-		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|zwei|sechs)";
-		public const string RoundNumberIntegerRegex = @"(hundert|einhundert|tausend|million|millionen|milliarde|milliarden|billion|billionen)";
+		public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|ein|eine|einer|einen|zwei|sechs)";
+		public const string RoundNumberIntegerRegex = @"(hundert|einhundert|tausend|(\s*million\s*)|(\s*millionen\s*)|(\s*mio\s*)|(\s*milliarde\s*)|(\s*milliarden\s*)|(\s*mrd\s*)|(\s*billion\s*)|(\s*billionen\s*))";
 		public const string AnIntRegex = @"(eine|ein)(?=\s)";
 		public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
 		public const string TensNumberIntegerRegex = @"(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)";
 		public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
-		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
+		public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
 		public const string PlaceHolderPureNumber = @"\b";
 		public const string PlaceHolderDefault = @"\D|\b";
-		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\.\d+[a-zA-Z]))(?={placeholder})";
+		public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!(\,\d+[a-zA-Z]))(?={placeholder})";
 		public const string NumbersWithSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*(K|k|M|T|G)(?=\b)";
 		public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
 		public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dutzend(e)?(?=\b)";
 		public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
 		public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ein\s+)?halbes\s+dutzend)|({AllIntRegex}\s+dutzend(e)?))(?=\b)";
-		public const string RoundNumberOrdinalRegex = @"(hundertstel|tausendstel|millionstel|milliardstel|billionstel)";
-		public const string BasicOrdinalRegex = @"(zuerst|erst(er|e|es|en)?|zweit(er|e|es|en)?|dritt(er|e|es|en|el)?|viert(er|e|es|en|el)?|fünft(er|e|es|en|el)?|fuenft(er|e|es|en|el)?|sechst(er|e|es|en|el)?|siebt(er|e|es|en|el)?|acht(er|e|es|en|el)?|neunt(er|e|es|en|el)?|zehnt(er|e|es|en|el)?|elft(er|e|es|en|el)?|zwölft(er|e|es|en|el)?|zwoelft(er|e|es|en|el)?|dreizehnt(er|e|es|en|el)?|vierzehnt(er|e|es|en|el)?|fünfzehnt(er|e|es|en|el)?|fuenfzehnt(er|e|es|en|el)?|sechzehnt(er|e|es|en|el)?|siebzehnt(er|e|es|en|el)?|achtzehnt(er|e|es|en|el)?|neunzehnt(er|e|es|en|el)?|zwanzigst(er|e|es|en|el)?|dreißigst(er|e|es|en|el)?|vierziegt(er|e|es|en|el)?|fünfzigst(er|e|es|en|el)?|fuenfzigst(er|e|es|en|el)?|sechzigst(er|e|es|en|el)?|siebzigst(er|e|es|en|el)?|achtzigst(er|e|es|en|el)?|neunzigst(er|e|es|en|el)?)";
-		public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s*(und\s*)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s*{RoundNumberIntegerRegex})+)\s*(und\s*)?)*({TensNumberIntegerRegex}(\s*|\s*-\s*))?{BasicOrdinalRegex})";
+		public const string RoundNumberOrdinalRegex = @"(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)";
+		public const string BasicOrdinalRegex = @"(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)";
+		public static readonly string SuffixBasicOrdinalRegex = $@"({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\s){BasicOrdinalRegex}))";
 		public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
 		public static readonly string AllOrdinalRegex = $@"(({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-		public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1.|2.|3.|4.|5.|6.|7.|8.|9.|0.))|(11.|12.))(?=\b)";
+		public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1|2|3|4|5|6|7|8|9|0))|(11|12))(?=\b)";
 		public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d+)*\s*th)(?=\b)";
 		public static readonly string OrdinalRoundNumberRegex = $@"(?<!(ein|eine)\s+){RoundNumberOrdinalRegex}";
 		public static readonly string OrdinalGermanRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
 		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
 		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)";
-		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
+		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+Komma\s+){AllPointRegex}";
@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
 		public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"((\d{{1,3}})(\.\d{{3}})*(\,\d+)?)(?={placeholder})";
 		public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))\.\d+(?!(\.\d+))(?={placeholder})";
-		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+		public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+\,\d+\s+{RoundNumberIntegerRegex}(?=\b)";
 		public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
 		public const string CurrencyRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*(B|b|m|t|g)(?=\b)";
 		public static readonly string NumberWithSuffixPercentage = $@"({BaseNumbers.NumberReplaceToken})(\s*)(%|Prozent)";
@@ -69,13 +69,15 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "und" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { "durch" };
 		public const string HalfADozenRegex = @"ein\s+halbes\s+dutzend";
-		public const string DigitalNumberRegex = @"((?<=\b)(hundert|tausend|million(en)?|milliarde(n)?|billion(en)?|dutzend(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
+		public const string DigitalNumberRegex = @"((?<=\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\b))|((?<=(\d|\b))(k|t|m|g|b)(?=\b))";
 		public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
 		{
 			{ "ein", 1 },
 			{ "null", 0 },
 			{ "eine", 1 },
 			{ "eins", 1 },
+			{ "einer", 1 },
+			{ "einen", 1 },
 			{ "zwei", 2 },
 			{ "drei", 3 },
 			{ "vier", 4 },
@@ -110,8 +112,11 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "hundert", 100 },
 			{ "tausend", 1000 },
 			{ "million", 1000000 },
+			{ "mio", 1000000 },
 			{ "millionen", 1000000 },
+			{ "milliard", 100000000 },
 			{ "milliarde", 1000000000 },
+			{ "mrd", 1000000000 },
 			{ "milliarden", 1000000000 },
 			{ "billion", 1000000000000 },
 			{ "billionen", 1000000000000 }
@@ -343,20 +348,19 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "tausend", 1000 },
 			{ "million", 1000000 },
 			{ "millionen", 1000000 },
+			{ "mio", 1000000 },
+			{ "milliard", 1000000000 },
 			{ "milliarde", 1000000000 },
 			{ "milliarden", 1000000000 },
+			{ "mrd", 1000000000 },
 			{ "billion", 1000000000000 },
 			{ "billionen", 1000000000000 },
 			{ "hundertstel", 100 },
-			{ "thousandth", 1000 },
-			{ "millionth", 1000000 },
-			{ "billionth", 1000000000 },
-			{ "trillionth", 1000000000000 },
+			{ "tausendstel", 1000 },
+			{ "millionstel", 1000000 },
+			{ "milliardstel", 1000000000 },
+			{ "billionstel", 1000000000000 },
 			{ "hundredths", 100 },
-			{ "thousandths", 1000 },
-			{ "millionths", 1000000 },
-			{ "billionths", 1000000000 },
-			{ "trillionths", 1000000000000 },
 			{ "dutzend", 12 },
 			{ "dutzende", 12 },
 			{ "k", 1000 },

@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
             Numbers = DateTimeDefinitions.Numbers.ToImmutableDictionary();
             DoubleNumbers = DateTimeDefinitions.DoubleNumbers.ToImmutableDictionary();
+            WrittenDecades = DateTimeDefinitions.WrittenDecades.ToImmutableDictionary();
+            SpecialDecadeCases = DateTimeDefinitions.SpecialDecadeCases.ToImmutableDictionary();
 
             CardinalExtractor = Number.English.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.English.IntegerExtractor.GetInstance();
@@ -42,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new EnglishTimePeriodParserConfiguration(this));
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
+            DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
         }
 
         public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);

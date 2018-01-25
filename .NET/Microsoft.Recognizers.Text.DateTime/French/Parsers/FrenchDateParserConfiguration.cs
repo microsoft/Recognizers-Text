@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -54,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex RelativeMonthRegex { get; }
 
+        public Regex YearSuffix { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }
@@ -72,6 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateRegexes = FrenchDateExtractorConfiguration.DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
@@ -87,6 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             ForTheRegex = FrenchDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = FrenchDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = FrenchDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = FrenchDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

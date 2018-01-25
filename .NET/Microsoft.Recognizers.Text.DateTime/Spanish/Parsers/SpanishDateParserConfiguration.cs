@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -51,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekDayAndDayOfMothRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
+
+        public Regex YearSuffix { get; }
 
         //TODO: implement the relative day regex if needed. If yes, they should be abstracted
         public static readonly Regex RelativeDayRegex = new Regex("", RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -85,6 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             ForTheRegex = SpanishDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = SpanishDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = SpanishDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = SpanishDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
@@ -94,6 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;

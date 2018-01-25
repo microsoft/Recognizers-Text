@@ -175,6 +175,28 @@
 }
 ,
 {
+  "Input": "大后天可以吗",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大后天",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "大前天可以吗",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大前天",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "最近还好吗",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -191,6 +213,17 @@
   "Results": [
     {
       "Text": "星期一",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "礼拜日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "礼拜日",
       "Type": "date"
     }
   ]
@@ -336,6 +369,18 @@
   "Results": [
     {
       "Text": "1357年6月10日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
+  "Input": "三六七年一月一日",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三六七年一月一日",
       "Type": "date"
     }
   ]

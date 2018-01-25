@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor DateExtractor { get; }
+
         public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
@@ -51,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex WeekDayAndDayOfMothRegex { get; }
 
         public Regex RelativeMonthRegex { get; }
+
+        public Regex YearSuffix { get; }
 
         public static readonly Regex RelativeDayRegex= new Regex(
                 DateTimeDefinitions.RelativeDayRegex,
@@ -82,6 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DurationExtractor = config.DurationExtractor;
+            DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
             DateRegexes = GermanDateExtractorConfiguration.DateRegexList;
             OnRegex = GermanDateExtractorConfiguration.OnRegex;
@@ -96,6 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             ForTheRegex = GermanDateExtractorConfiguration.ForTheRegex;
             WeekDayAndDayOfMothRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMothRegex;
             RelativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
+            YearSuffix = GermanDateExtractorConfiguration.YearSuffix;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;

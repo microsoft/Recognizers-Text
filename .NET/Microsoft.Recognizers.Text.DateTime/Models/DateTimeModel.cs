@@ -61,8 +61,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                 End = o.Start.Value + o.Length.Value - 1,
                 TypeName = o.Type,
                 Resolution = o.Value as SortedDictionary<string, object>,
-                Text = o.Text
+                Text = o.Text,
+                ParentText = GetParentText(o)
             }).ToList();
+        }
+
+        private string GetParentText(DateTimeParseResult parsedDateTime)
+        {
+            var type = parsedDateTime.Type.Split('.').Last();
+            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+            {
+                return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

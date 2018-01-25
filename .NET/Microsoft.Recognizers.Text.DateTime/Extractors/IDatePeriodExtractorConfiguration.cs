@@ -7,7 +7,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IDatePeriodExtractorConfiguration : IOptionsConfiguration
     {
+        int MinYearNum { get; }
+
+        int MaxYearNum { get; }
+
         IEnumerable<Regex> SimpleCasesRegexes { get; }
+
+        Regex YearRegex { get; }
 
         Regex TillRegex { get; }
 
@@ -34,6 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
+
+        IParser NumberParser { get; }
 
         bool GetFromTokenIndex(string text, out int index);
 
