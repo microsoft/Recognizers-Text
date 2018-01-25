@@ -4,7 +4,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported":"javascript,dotnet",
     "Results": [
       {
         "Text": "2. oktober",
@@ -116,7 +116,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript",
+    "NotSupported":"javascript,dotnet",
     "Results": [
       {
         "Text": "2. mai",

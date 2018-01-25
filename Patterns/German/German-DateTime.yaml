@@ -349,6 +349,8 @@ HalfRegex: !simpleRegex
   def: (((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b
 ConjunctionRegex: !simpleRegex
   def: \b((und(\s+für)?)|mit)\b
+MinYearNum: 1500
+MaxYearNum: 2100
 YearRegex: !simpleRegex
   def: \b(?<year>19\d{2}|20\d{2})\b
 HolidayRegex1: !nestedRegex
@@ -455,8 +457,7 @@ TimeBeforeAfterRegex: !nestedRegex
   def: \b(((?<=\b(vor|nach)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: ^\s*(?<connector>\s+am)\s*$
 CenturyRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -807,18 +808,6 @@ HolidayNames: !dictionary
     veteransday: [ veterans day ]
     christmaseve: [ heiligabend ]
     newyeareve: [ silvester ]
-    cincodemayoday: [ cincodemayoday ]
-    baptisteday: [ baptisteday ]
-    usindependenceday: [ usindependenceday ]
-    independenceday: [ independenceday ]
-    bastilleday: [ bastilleday ]
-    halloweenday: [ halloweenday ]
-    allhallowday: [ allhallowday ]
-    allsoulsday: [ allsoulsday ]
-    guyfawkesday: [ guyfawkesday ]
-    veteransday: [ veteransday ]
-    christmaseve: [ christmaseve ]
-    newyeareve: [ newyearseve, newyeareve ]
 WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English

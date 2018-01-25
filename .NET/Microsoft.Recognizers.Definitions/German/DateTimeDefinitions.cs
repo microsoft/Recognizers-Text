@@ -78,6 +78,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}";
 		public static readonly string OfMonth = $@"^(\s*des\s*)?{MonthRegex}";
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(der|dem|den)?\s*$";
+		public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
 		public const string RangeUnitRegex = @"\b(?<unit>jahre|jahr|monate|monat|wochen|woche)\b";
 		public const string OclockRegex = @"(?<oclock>Uhr)";
 		public static readonly string DescRegex = $@"({OclockRegex})";
@@ -152,6 +153,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string AllRegex = @"\b(?<all>ganz(en|es|er|e)\s+(?<unit>jahr|monat|woche|tag))\b";
 		public const string HalfRegex = @"(((ein(en|er|es|e)?)\s*)|\b)(?<half>halb(en|er|es|e)?\s+(?<unit>jahr(er|es|e)?|monat(s|e)?|woch(en|e)?|tag(en|er|es|e)?|stund(en|e)?))\b";
 		public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit)\b";
+		public const string MinYearNum = "1500";
+		public const string MaxYearNum = "2100";
 		public const string YearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
 		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+Jahres))?\b";
 		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+Jahres))?\b";
@@ -194,11 +197,17 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|und|,)\s*$";
-		public const string PrefixArticleRegex = @"\b(der|dem|des)\s+";
+		public const string PrefixArticleRegex = @"\bthe\s+";
+		public const string OrRegex = @"^[.]";
 		public const string YearPlusNumberRegex = @"\b(Jahr\s+(?<number>(\d{3,4})))\b";
 		public static readonly string NumberAsTimeRegex = $@"\b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
 		public static readonly string TimeBeforeAfterRegex = $@"\b(((?<=\b(vor|nach)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+am)\s*$";
+		public const string CenturyRegex = @"^[.]";
+		public const string DecadeRegex = @"^[.]";
+		public const string DecadeWithCenturyRegex = @"^[.]";
+		public const string FullTextYearRegex = @"^[.]";
+		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },
