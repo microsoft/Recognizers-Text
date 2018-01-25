@@ -219,6 +219,17 @@
 }
 ,
 {
+  "Input": "礼拜日",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "礼拜日",
+      "Type": "date"
+    }
+  ]
+}
+,
+{
   "Input": "上周一有考试",
   "NotSupportedByDesign": "python",
   "Results": [
