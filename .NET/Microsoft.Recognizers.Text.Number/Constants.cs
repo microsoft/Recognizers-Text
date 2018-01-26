@@ -11,5 +11,6 @@ namespace Microsoft.Recognizers.Text.Number
         public const string SYS_NUM = "builtin.num";
         public const string SYS_NUM_ORDINAL = "builtin.num.ordinal";
         public const string SYS_NUM_PERCENTAGE = "builtin.num.percentage";
+        public const string SYS_NUMRANGE = "builtin.numrange";
     }
 }

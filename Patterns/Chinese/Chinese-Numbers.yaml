@@ -320,38 +320,44 @@ LessRegex: !simpleRegex
 EqualRegex: !simpleRegex
   def: (等于|等於|=)
 MoreOrEqual: !nestedRegex
-  def: {MoreRegex}\s*((或|或者)?\s*{EqualRegex})?
+  def: ({MoreRegex}\s*(或|或者)?\s*{EqualRegex})
   references: [ MoreRegex, EqualRegex ]
 LessOrEqual: !nestedRegex
-  def: {LessRegex}\s*((或|或者)?\s*{EqualRegex})?
+  def: ({LessRegex}\s*(或|或者)?\s*{EqualRegex})
   references: [ LessRegex, EqualRegex ]
 TwoNumberRangeRegex1: !nestedRegex
   def: (位于|在|位於)\s*(?<number1>.+)\s*(和|与|與|{TillRegex})\s*(?<number2>.+)\s*(之间|之間)
   references: [ TillRegex ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: {MoreOrEqual}\s*(?<number1>.+)\s*(且|并且|而且|並且|(的)?同時|(的)?同时)?\s*{LessOrEqual}(?<number2>.+)
-  references: [ MoreOrEqual, LessOrEqual ]
+  def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>.+)\s*(且|并且|而且|並且|((的)?同時)|((的)?同时))?\s*({LessOrEqual}|{LessRegex})\s*(?<number2>.+)
+  references: [ MoreOrEqual, MoreRegex, LessOrEqual, LessRegex ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: {LessOrEqual}\s*(?<number1>.+)\s*(且|并且|而且|並且|(的)?同時|(的)?同时)?\s*{MoreOrEqual}(?<number2>.+)
-  references: [ MoreOrEqual, LessOrEqual ]
+  def: ({LessOrEqual}|{LessRegex})\s*(?<number1>.+)\s*(且|并且|而且|並且|((的)?同時)|((的)?同时))?\s*({MoreOrEqual}|{MoreRegex})\s*(?<number2>.+)
+  references: [ MoreOrEqual, MoreRegex, LessOrEqual, LessRegex ]
 TwoNumberRangeRegex4: !nestedRegex
   def: (?<number1>.+)\s*{TillRegex}\s*(?<number2>.+)
   references: [ TillRegex ]
-OneNumberRangeMoreRegex1: !nestedRegex
-  def: (({MoreOrEqual})|至少|最少|不{LessRegex})(?<number>.+)
+OneNumberRangeMoreOrEqualRegex: !nestedRegex
+  def: ({MoreOrEqual}|至少|最少|不{LessRegex})(?<number>.+)
   references: [ MoreOrEqual, LessRegex ]
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: '{MoreRegex}(?<number>.+)'
+  references: [ MoreRegex ]
 OneNumberRangeMoreRegex2: !simpleRegex
   def: 比(?<number>.+)[大多高]
 OneNumberRangeMoreRegex3: !simpleRegex
   def: (?<number>.+)([多几余幾餘]|以上|之上)
-OneNumberRangeLessRegex1: !nestedRegex
-  def: (({LessOrEqual})|至多|最多|不{MoreRegex})(?<number>.+)
+OneNumberRangeLessOrEqualRegex: !nestedRegex
+  def: ({LessOrEqual}|至多|最多|不{MoreRegex})(?<number>.+)
   references: [ LessOrEqual, MoreRegex ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: '{LessRegex}(?<number>.+)'
+  references: [ LessRegex ]
 OneNumberRangeLessRegex2: !simpleRegex
   def: 比(?<number>.+)[小少低]
 OneNumberRangeLessRegex3: !simpleRegex
   def: (?<number>.+)(以下|之下)
 OneNumberRangeEqualRegex: !nestedRegex
-  def: {EqualRegex}(?<number>.+)
+  def: '{EqualRegex}(?<number>.+)'
   references: [ EqualRegex ]
 ...
