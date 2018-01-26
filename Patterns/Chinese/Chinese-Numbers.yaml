@@ -310,4 +310,48 @@ SimpleSpecialsPercentageRegex: !nestedRegex
   references: [ZeroToNineIntegerRegexChs]
 SpecialsFoldsPercentageRegex: !simpleRegex
   def: 半\s*成|(?<=打)[对對]\s*折|半\s*折
+#NumberRangeExtractor
+TillRegex: !simpleRegex
+  def: (到|至|--|-|—|——|~)
+MoreRegex: !simpleRegex
+  def: (大于|多于|高于|超过|大於|多於|高於|超過|>)
+LessRegex: !simpleRegex
+  def: (小于|少于|低于|小於|少於|低於|不到|不足|<)
+EqualRegex: !simpleRegex
+  def: (等于|等於|=)
+MoreOrEqual: !nestedRegex
+  def: {MoreRegex}\s*((或|或者)?\s*{EqualRegex})?
+  references: [ MoreRegex, EqualRegex ]
+LessOrEqual: !nestedRegex
+  def: {LessRegex}\s*((或|或者)?\s*{EqualRegex})?
+  references: [ LessRegex, EqualRegex ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: (位于|在|位於)\s*(?<number1>.+)\s*(和|与|與|{TillRegex})\s*(?<number2>.+)\s*(之间|之間)
+  references: [ TillRegex ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: {MoreOrEqual}\s*(?<number1>.+)\s*(且|并且|而且|並且|(的)?同時|(的)?同时)?\s*{LessOrEqual}(?<number2>.+)
+  references: [ MoreOrEqual, LessOrEqual ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: {LessOrEqual}\s*(?<number1>.+)\s*(且|并且|而且|並且|(的)?同時|(的)?同时)?\s*{MoreOrEqual}(?<number2>.+)
+  references: [ MoreOrEqual, LessOrEqual ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (?<number1>.+)\s*{TillRegex}\s*(?<number2>.+)
+  references: [ TillRegex ]
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: (({MoreOrEqual})|至少|最少|不{LessRegex})(?<number>.+)
+  references: [ MoreOrEqual, LessRegex ]
+OneNumberRangeMoreRegex2: !simpleRegex
+  def: 比(?<number>.+)[大多高]
+OneNumberRangeMoreRegex3: !simpleRegex
+  def: (?<number>.+)([多几余幾餘]|以上|之上)
+OneNumberRangeLessRegex1: !nestedRegex
+  def: (({LessOrEqual})|至多|最多|不{MoreRegex})(?<number>.+)
+  references: [ LessOrEqual, MoreRegex ]
+OneNumberRangeLessRegex2: !simpleRegex
+  def: 比(?<number>.+)[小少低]
+OneNumberRangeLessRegex3: !simpleRegex
+  def: (?<number>.+)(以下|之下)
+OneNumberRangeEqualRegex: !nestedRegex
+  def: {EqualRegex}(?<number>.+)
+  references: [ EqualRegex ]
 ...
