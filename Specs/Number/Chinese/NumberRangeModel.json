@@ -1,0 +1,108 @@
+[{
+  "Input": "这个数字是位于20和30之间的",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "位于20和30之间",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 20,
+          "EndValue": 30
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "他的排名在第十和第十五之间",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "在第十和第十五之间",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 10,
+          "EndValue": 15
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这是一个大于100并且小于300的数",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于100并且小于300",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 100,
+          "EndValue": 300
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这是一个大于等于一百小于等于三百一的数",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于等于一百小于等于三百一",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 100,
+          "EndValue": 310
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这些苹果最多100最少20个",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "最多100最少20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 20,
+          "EndValue": 100
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这些苹果大概有20~100个",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20~100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 20,
+          "EndValue": 100
+        }
+      }
+    }
+  ]
+}
+]

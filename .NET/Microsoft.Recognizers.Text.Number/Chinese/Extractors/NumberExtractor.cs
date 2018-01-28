@@ -10,22 +10,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
 
-        private static readonly ConcurrentDictionary<string, NumberExtractor> Instances = new ConcurrentDictionary<string, NumberExtractor>();
-
-        public static NumberExtractor GetInstance(ChineseNumberMode mode = ChineseNumberMode.Default)
-        {
-
-            var placeholder = mode.ToString();
-
-            if (!Instances.ContainsKey(placeholder))
-            {
-                var instance = new NumberExtractor(mode);
-                Instances.TryAdd(placeholder, instance);
-            }
-
-            return Instances[placeholder];
-        }
-
         public NumberExtractor(ChineseNumberMode mode = ChineseNumberMode.Default)
         {
             var builder = ImmutableDictionary.CreateBuilder<Regex, string>();

@@ -91,7 +91,17 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
-                Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+
+                if (TestContext.TestName == "NumberRangeModel")
+                {
+                    var expectedValue = JsonConvert.DeserializeObject<Dictionary<string, double>>(expected.Resolution["value"].ToString());
+                    var actualValue = actual.Resolution["value"] as Dictionary<string, double>;
+                    CollectionAssert.AreEqual(expectedValue, actualValue);
+                }
+                else
+                {
+                    Assert.AreEqual(expected.Resolution["value"], actual.Resolution["value"], GetMessage(TestSpec));
+                }
             }
         }
 

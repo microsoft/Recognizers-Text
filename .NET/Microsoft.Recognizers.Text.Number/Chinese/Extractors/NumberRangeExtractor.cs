@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
+namespace Microsoft.Recognizers.Text.Number.Chinese
 {
     public class NumberRangeExtractor : BaseNumberRangeExtractor
     {
@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
-        public NumberRangeExtractor() : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance())
+        public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor())
         {
             var regexes = new Dictionary<Regex, string>()
             {
@@ -36,11 +36,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     , "TwoNum"
                 },
                 {
-                    // 大于等于/至少...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreOrEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OneNumMoreEqual"
-                },
-                {
                     // 大于/多于/高于...
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OneNumMore"
@@ -54,11 +49,6 @@ namespace Microsoft.Recognizers.Text.Number.Chinese.Extractors
                     // ...多/以上/之上
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , "OneNumMore"
-                },
-                {
-                    // 小于等于/至多...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessOrEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , "OneNumLessEqual"
                 },
                 {
                     // 小于/少于/低于...
