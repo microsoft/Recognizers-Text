@@ -6,6 +6,6 @@
         {
         }
 
-        public override string ModelTypeName => "number";
+        public override string ModelTypeName => Constants.MODEL_NUMBER;
     }
 }

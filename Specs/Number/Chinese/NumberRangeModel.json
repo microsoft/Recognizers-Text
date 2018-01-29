@@ -7,10 +7,7 @@
       "Text": "大于二十的同时小于等于三十五",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 20,
-          "EndValue": 35
-        }
+        "value": "(20,35]"
       }
     }
   ]
@@ -25,10 +22,7 @@
       "Text": "位于20和30之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 20,
-          "EndValue": 30
-        }
+        "value": "(20,30)"
       }
     }
   ]
@@ -43,10 +37,7 @@
       "Text": "在第十和第十五之间",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 10,
-          "EndValue": 15
-        }
+        "value": "(10,15)"
       }
     }
   ]
@@ -61,10 +52,7 @@
       "Text": "大于100 并且小于300",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 100,
-          "EndValue": 300
-        }
+        "value": "(100,300)"
       }
     }
   ]
@@ -79,10 +67,7 @@
       "Text": "大于等于一百小于等于三百一",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 100,
-          "EndValue": 310
-        }
+        "value": "[100,310]"
       }
     }
   ]
@@ -97,10 +82,7 @@
       "Text": "最多100最少20",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 20,
-          "EndValue": 100
-        }
+        "value": "[20,100]"
       }
     }
   ]
@@ -115,10 +97,7 @@
       "Text": "20~100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 20,
-          "EndValue": 100
-        }
+        "value": "[20,100)"
       }
     }
   ]
@@ -133,10 +112,7 @@
       "Text": "一千到一千五百",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 1000,
-          "EndValue": 1500
-        }
+        "value": "[1000,1500)"
       }
     }
   ]
@@ -151,10 +127,7 @@
       "Text": "1000以上， 1500以下",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 1000,
-          "EndValue": 1500
-        }
+        "value": "(1000,1500)"
       }
     }
   ]
@@ -169,10 +142,7 @@
       "Text": "比四分之一大， 比二分之一小",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 0.25,
-          "EndValue": 0.5
-        }
+        "value": "(0.25,0.5)"
       }
     }
   ]
@@ -187,9 +157,22 @@
       "Text": "大于或者等于三千 九百 六十五",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 3965
-        }
+        "value": "[3965,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这个数字大于或者等于４，５６５",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于或者等于４，５６５",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[4565,)"
       }
     }
   ]
@@ -204,9 +187,7 @@
       "Text": "比三十大",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 30
-        }
+        "value": "(30,)"
       }
     }
   ]
@@ -221,9 +202,7 @@
       "Text": "不小于三十",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 30
-        }
+        "value": "[30,)"
       }
     }
   ]
@@ -238,9 +217,7 @@
       "Text": "五百多",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 500
-        }
+        "value": "(500,)"
       }
     }
   ]
@@ -255,9 +232,7 @@
       "Text": "五百以上",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 500
-        }
+        "value": "(500,)"
       }
     }
   ]
@@ -272,9 +247,7 @@
       "Text": "超过1/2",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 0.5
-        }
+        "value": "(0.5,)"
       }
     }
   ]
@@ -289,9 +262,7 @@
       "Text": "小于 或 等于100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "EndValue": 100
-        }
+        "value": "(,100]"
       }
     }
   ]
@@ -306,9 +277,7 @@
       "Text": "< = 100",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "EndValue": 100
-        }
+        "value": "(,100]"
       }
     }
   ]
@@ -323,9 +292,7 @@
       "Text": "比 170 低",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "EndValue": 170
-        }
+        "value": "(,170)"
       }
     }
   ]
@@ -340,9 +307,7 @@
       "Text": "170 之下",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "EndValue": 170
-        }
+        "value": "(,170)"
       }
     }
   ]
@@ -357,10 +322,7 @@
       "Text": "等于一百七",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 170,
-          "EndValue": 170
-        }
+        "value": "[170,170]"
       }
     }
   ]
@@ -375,18 +337,14 @@
       "Text": "大于10",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 10
-        }
+        "value": "(10,)"
       }
     },
     {
       "Text": "小于20",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "EndValue": 20
-        }
+        "value": "(,20)"
       }
     }
   ]
@@ -401,20 +359,14 @@
       "Text": "大于10小于20",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 10,
-          "EndValue": 20
-        }
+        "value": "(10,20)"
       }
     },
     {
       "Text": "不大于50不小于20",
       "TypeName": "numberrange",
       "Resolution": {
-        "value": {
-          "StartValue": 20,
-          "EndValue": 50
-        }
+        "value": "[20,50]"
       }
     }
   ]
