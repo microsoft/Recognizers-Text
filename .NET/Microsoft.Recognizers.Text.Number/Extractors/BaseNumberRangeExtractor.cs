@@ -101,45 +101,61 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (type.Contains("TwoNum"))
             {
-                var extractNum1 = ExtractNumberFromStr(numberStr1);
-                var extractNum2 = ExtractNumberFromStr(numberStr2);
+                var extractNumList1 = ExtractNumberFromStr(numberStr1);
+                var extractNumList2 = ExtractNumberFromStr(numberStr2);
 
-                if (extractNum1 != null && extractNum2 != null)
+                if (extractNumList1 != null && extractNumList2 != null)
                 {
                     bool validNum1 = false, validNum2 = false;
                     start = match.Index;
                     length = match.Length;
 
-                    if (extractNum1.Start == 0 && extractNum1.Length == numberStr1.Trim().Length)
+                    foreach (var extractNum1 in extractNumList1)
                     {
-                        validNum1 = true;
-                    }
-                    else if (numberStr1.Trim().EndsWith(extractNum1.Text) && source.StartsWith(numberStr1))
-                    {
-                        start = extractNum1.Start ?? 0;
-                        length = length - extractNum1.Start ?? 0;
-                        validNum1 = true;
-                    }
-                    else if (extractNum1.Start == 0 && source.EndsWith(numberStr1))
-                    {
-                        length = length - numberStr1.Length + extractNum1.Length ?? 0;
-                        validNum1 = true;
+                        if (numberStr1.Trim().EndsWith(extractNum1.Text) && match.Value.StartsWith(numberStr1))
+                        {
+                            start = source.IndexOf(extractNum1.Text);
+                            length = length - extractNum1.Start ?? 0;
+                            validNum1 = true;
+                        }
+                        else if (extractNum1.Start == 0 && match.Value.EndsWith(numberStr1))
+                        {
+                            length = length - numberStr1.Length + extractNum1.Length ?? 0;
+                            validNum1 = true;
+                        }
+                        else if (extractNum1.Start == 0 && extractNum1.Length == numberStr1.Trim().Length)
+                        {
+                            validNum1 = true;
+                        }
+
+                        if (validNum1)
+                        {
+                            break;
+                        }
                     }
 
-                    if (extractNum2.Start == 0 && extractNum2.Length == numberStr2.Trim().Length)
+                    foreach (var extractNum2 in extractNumList2)
                     {
-                        validNum2 = true;
-                    }
-                    else if (numberStr2.Trim().EndsWith(extractNum2.Text) && source.StartsWith(numberStr2))
-                    {
-                        start = extractNum2.Start ?? 0;
-                        length = length - extractNum2.Start ?? 0;
-                        validNum2 = true;
-                    }
-                    else if (extractNum2.Start == 0 && source.EndsWith(numberStr2))
-                    {
-                        length = length - numberStr2.Length + extractNum2.Length ?? 0;
-                        validNum2 = true;
+                        if (numberStr2.Trim().EndsWith(extractNum2.Text) && match.Value.StartsWith(numberStr2))
+                        {
+                            start = source.IndexOf(extractNum2.Text);
+                            length = length - extractNum2.Start ?? 0;
+                            validNum2 = true;
+                        }
+                        else if (extractNum2.Start == 0 && match.Value.EndsWith(numberStr2))
+                        {
+                            length = length - numberStr2.Length + extractNum2.Length ?? 0;
+                            validNum2 = true;
+                        }
+                        else if (extractNum2.Start == 0 && extractNum2.Length == numberStr2.Trim().Length)
+                        {
+                            validNum2 = true;
+                        }
+
+                        if (validNum2)
+                        {
+                            break;
+                        }
                     }
                     
                     if (!validNum1 || !validNum2)
@@ -153,53 +169,54 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
 
-                var extractNum = ExtractNumberFromStr(numberStr);
+                var extractNumList = ExtractNumberFromStr(numberStr);
 
-                if (extractNum != null)
+                if (extractNumList != null)
                 {
-                    if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
+                    foreach (var extractNum in extractNumList)
                     {
-                        start = match.Index;
-                        length = match.Length;
-                    }
-                    else if (extractNum.Start == 0 && source.EndsWith(numberStr))
-                    {
-                        start = match.Index;
-                        length = match.Length - numberStr.Length + extractNum.Length ?? 0;
-                    }
-                    else if (numberStr.Trim().EndsWith(extractNum.Text) && source.StartsWith(numberStr))
-                    {
-                        start = extractNum.Start ?? 0;
-                        length = match.Length - numberStr.Length + extractNum.Length ?? 0;
+                        if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
+                        {
+                            start = match.Index;
+                            length = match.Length - numberStr.Length + extractNum.Length ?? 0;
+                            break;
+                        }
+                        else if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
+                        {
+                            start = source.IndexOf(extractNum.Text);
+                            length = match.Length - extractNum.Start ?? 0;
+                            break;
+                        }
+                        else if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
+                        {
+                            start = match.Index;
+                            length = match.Length;
+                            break;
+                        }
                     }
                 }
             }
         }
 
-        private ExtractResult ExtractNumberFromStr(string numberStr)
+        private List<ExtractResult> ExtractNumberFromStr(string numberStr)
         {
             var extractNumber = numberExtractor.Extract(numberStr);
             var extractOrdinal = ordinalExtractor.Extract(numberStr);
 
             if (extractNumber.Count == 0)
             {
-                return extractOrdinal.Count == 0 ? null : extractOrdinal[0];
+                return extractOrdinal.Count == 0 ? null : extractOrdinal;
             }
             else
             {
                 if (extractOrdinal.Count == 0)
                 {
-                    return extractNumber[0];
+                    return extractNumber;
                 }
 
-                if (extractNumber[0].Length > extractOrdinal[0].Length)
-                {
-                    return extractNumber[0];
-                }
-                else
-                {
-                    return extractOrdinal[0];
-                }
+                extractNumber.AddRange(extractOrdinal);
+                extractNumber = extractNumber.OrderBy(num => num.Start).ThenByDescending(num => num.Length).ToList();
+                return extractNumber;
             }
         }
     }

@@ -1,4 +1,22 @@
 [{
+  "Input": "这个数字大于二十的同时小于等于三十五",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于二十的同时小于等于三十五",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 20,
+          "EndValue": 35
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "这个数字是位于20和30之间的",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -35,12 +53,12 @@
 }
 ,
 {
-  "Input": "这是一个大于100并且小于300的数",
+  "Input": "这是一个大于100 并且小于300 的数",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "大于100并且小于300",
+      "Text": "大于100 并且小于300",
       "TypeName": "numberrange",
       "Resolution": {
         "value": {
@@ -100,6 +118,302 @@
         "value": {
           "StartValue": 20,
           "EndValue": 100
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "数字的范围是一千到一千五百",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "一千到一千五百",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 1000,
+          "EndValue": 1500
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "数字在1000以上， 1500以下",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1000以上， 1500以下",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 1000,
+          "EndValue": 1500
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "数字比四分之一大， 比二分之一小",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "比四分之一大， 比二分之一小",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 0.25,
+          "EndValue": 0.5
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这个数字大于或者等于三千 九百 六十五 ",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于或者等于三千 九百 六十五",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 3965
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "他的年龄比三十大一些",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "比三十大",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 30
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "他的年龄不小于三十岁",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "不小于三十",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 30
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "这一批产品大概有五百多个",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百多",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 500
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "订购一批数目在 五百以上的产品",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百以上",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 500
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "超过1/2的人都来到了这里",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "超过1/2",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 0.5
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "找出 小于 或 等于100 的质数",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "小于 或 等于100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "EndValue": 100
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "找出 < = 100 的质数",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "< = 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "EndValue": 100
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "小明的身高比 170 低 ",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "比 170 低",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "EndValue": 170
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "小明的身高在 170 之下 ",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "170 之下",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "EndValue": 170
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x等于一百七",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "等于一百七",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 170,
+          "EndValue": 170
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x大于10且y小于20",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于10",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 10
+        }
+      }
+    },
+    {
+      "Text": "小于20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "EndValue": 20
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x大于10小于20，  y不大于50不小于20",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "大于10小于20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 10,
+          "EndValue": 20
+        }
+      }
+    },
+    {
+      "Text": "不大于50不小于20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": {
+          "StartValue": 20,
+          "EndValue": 50
         }
       }
     }

@@ -326,32 +326,32 @@ LessOrEqual: !nestedRegex
   def: (({LessRegex}\s*(或|或者)?\s*{EqualRegex})|至多|最多|不{MoreRegex})
   references: [ LessRegex, EqualRegex, MoreRegex ]
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>[^并且而並的同時时]+)
+  def: ({MoreOrEqual}|{MoreRegex})\s*(?<number1>[^并且而並的同時时，。]+)
   references: [ MoreOrEqual, MoreRegex ]
 OneNumberRangeMoreRegex2: !simpleRegex
-  def: 比\s*(?<number1>.+)\s*[大多高]
+  def: 比\s*(?<number1>[^，。]+)\s*[大多高]
 OneNumberRangeMoreRegex3: !simpleRegex
-  def: (?<number1>.+)\s*([多几余幾餘]|以上|之上)
+  def: (?<number1>[^，。]+)\s*([多几余幾餘]|以上|之上)(?![万亿萬億]{1,2})
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ({LessOrEqual}|{LessRegex})\s*(?<number2>[^并且而並的同時时]+)
+  def: ({LessOrEqual}|{LessRegex})\s*(?<number2>[^并且而並的同時时，。]+)
   references: [ LessOrEqual, LessRegex ]
 OneNumberRangeLessRegex2: !simpleRegex
-  def: 比\s*(?<number2>.+)\s*[小少低]
+  def: 比\s*(?<number2>[^，。]+)\s*[小少低]
 OneNumberRangeLessRegex3: !simpleRegex
-  def: (?<number2>.+)\s*(以下|之下)
+  def: (?<number2>[^，。]+)\s*(以下|之下)
 OneNumberRangeEqualRegex: !nestedRegex
-  def: '{EqualRegex}\s*(?<number1>.+)'
+  def: '{EqualRegex}\s*(?<number1>[^，。]+)'
   references: [ EqualRegex ]
 TwoNumberRangeRegex1: !nestedRegex
-  def: (位于|在|位於)\s*(?<number1>.+)\s*(和|与|與|{TillRegex})\s*(?<number2>.+)\s*(之间|之間)
+  def: (位于|在|位於)\s*(?<number1>[^，。]+)\s*(和|与|與|{TillRegex})\s*(?<number2>[^，。]+)\s*(之间|之間)
   references: [ TillRegex ]
 TwoNumberRangeRegex2: !nestedRegex
-  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时))?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeMoreRegex3, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex3 ]
 TwoNumberRangeRegex3: !nestedRegex
-  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时))?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeMoreRegex3, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2, OneNumberRangeLessRegex3 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (?<number1>.+)\s*{TillRegex}\s*(?<number2>.+)
+  def: (?<number1>[^，。]+)\s*{TillRegex}\s*(?<number2>[^，。]+)
   references: [ TillRegex ]
 ...
