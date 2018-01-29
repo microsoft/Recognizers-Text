@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Microsoft.Recognizers.Text.Number
 {
     public interface INumberRangeParserConfiguration
     {
+        CultureInfo CultureInfo { get; }
 
         #region Internal Parsers
 
@@ -17,6 +14,14 @@ namespace Microsoft.Recognizers.Text.Number
         IExtractor OrdinalExtractor { get; }
 
         IParser NumberParser { get; }
+
+        #endregion
+
+        #region Regexes
+
+        Regex MoreOrEqual { get; }
+
+        Regex LessOrEqual { get; }
 
         #endregion
 

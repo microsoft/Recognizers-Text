@@ -6,6 +6,6 @@
         {
         }
 
-        public override string ModelTypeName => "percentage";
+        public override string ModelTypeName => Constants.MODEL_PERCENTAGE;
     }
 }

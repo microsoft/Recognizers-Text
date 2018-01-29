@@ -31,10 +31,6 @@ namespace Microsoft.Recognizers.Text.Number
             var result = new List<ExtractResult>();
             var matchSource = new Dictionary<Tuple<int, int>, string>();
             var matched = new bool[source.Length];
-            for (var i = 0; i < source.Length; i++)
-            {
-                matched[i] = false;
-            }
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
             foreach (var collection in collections)
@@ -50,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number
                             matched[start + j] = true;
                         }
 
-                        //Keep Source Data for extra information
+                        // Keep Source Data for extra information
                         matchSource.Add(new Tuple<int, int>(start, length), collection.Value);
                     }
                 }
@@ -99,7 +95,7 @@ namespace Microsoft.Recognizers.Text.Number
             var numberStr1 = match.Groups["number1"].Value;
             var numberStr2 = match.Groups["number2"].Value;
 
-            if (type.Contains("TwoNum"))
+            if (type.Contains(Constants.TWONUM))
             {
                 var extractNumList1 = ExtractNumberFromStr(numberStr1);
                 var extractNumList2 = ExtractNumberFromStr(numberStr2);
@@ -110,53 +106,8 @@ namespace Microsoft.Recognizers.Text.Number
                     start = match.Index;
                     length = match.Length;
 
-                    foreach (var extractNum1 in extractNumList1)
-                    {
-                        if (numberStr1.Trim().EndsWith(extractNum1.Text) && match.Value.StartsWith(numberStr1))
-                        {
-                            start = source.IndexOf(extractNum1.Text);
-                            length = length - extractNum1.Start ?? 0;
-                            validNum1 = true;
-                        }
-                        else if (extractNum1.Start == 0 && match.Value.EndsWith(numberStr1))
-                        {
-                            length = length - numberStr1.Length + extractNum1.Length ?? 0;
-                            validNum1 = true;
-                        }
-                        else if (extractNum1.Start == 0 && extractNum1.Length == numberStr1.Trim().Length)
-                        {
-                            validNum1 = true;
-                        }
-
-                        if (validNum1)
-                        {
-                            break;
-                        }
-                    }
-
-                    foreach (var extractNum2 in extractNumList2)
-                    {
-                        if (numberStr2.Trim().EndsWith(extractNum2.Text) && match.Value.StartsWith(numberStr2))
-                        {
-                            start = source.IndexOf(extractNum2.Text);
-                            length = length - extractNum2.Start ?? 0;
-                            validNum2 = true;
-                        }
-                        else if (extractNum2.Start == 0 && match.Value.EndsWith(numberStr2))
-                        {
-                            length = length - numberStr2.Length + extractNum2.Length ?? 0;
-                            validNum2 = true;
-                        }
-                        else if (extractNum2.Start == 0 && extractNum2.Length == numberStr2.Trim().Length)
-                        {
-                            validNum2 = true;
-                        }
-
-                        if (validNum2)
-                        {
-                            break;
-                        }
-                    }
+                    validNum1 = ValidateMatchAndGetStartAndLength(extractNumList1, numberStr1, match, source, ref start, ref length);
+                    validNum2 = ValidateMatchAndGetStartAndLength(extractNumList2, numberStr2, match, source, ref start, ref length);
                     
                     if (!validNum1 || !validNum2)
                     {
@@ -173,29 +124,47 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (extractNumList != null)
                 {
-                    foreach (var extractNum in extractNumList)
+                    start = match.Index;
+                    length = match.Length;
+
+                    if (!ValidateMatchAndGetStartAndLength(extractNumList, numberStr, match, source, ref start, ref length))
                     {
-                        if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
-                        {
-                            start = match.Index;
-                            length = match.Length - numberStr.Length + extractNum.Length ?? 0;
-                            break;
-                        }
-                        else if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
-                        {
-                            start = source.IndexOf(extractNum.Text);
-                            length = match.Length - extractNum.Start ?? 0;
-                            break;
-                        }
-                        else if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
-                        {
-                            start = match.Index;
-                            length = match.Length;
-                            break;
-                        }
+                        start = -1;
+                        length = -1;
                     }
                 }
             }
+        }
+
+        private bool ValidateMatchAndGetStartAndLength(List<ExtractResult> extractNumList, string numberStr, Match match, string source, ref int start, ref int length)
+        {
+            bool validNum = false;
+
+            foreach (var extractNum in extractNumList)
+            {
+                if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
+                {
+                    start = source.IndexOf(extractNum.Text);
+                    length = length - extractNum.Start ?? 0;
+                    validNum = true;
+                }
+                else if (extractNum.Start == 0 && match.Value.EndsWith(numberStr))
+                {
+                    length = length - numberStr.Length + extractNum.Length ?? 0;
+                    validNum = true;
+                }
+                else if (extractNum.Start == 0 && extractNum.Length == numberStr.Trim().Length)
+                {
+                    validNum = true;
+                }
+
+                if (validNum)
+                {
+                    break;
+                }
+            }
+
+            return validNum;
         }
 
         private List<ExtractResult> ExtractNumberFromStr(string numberStr)
