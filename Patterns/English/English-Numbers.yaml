@@ -110,6 +110,24 @@ NumberWithSuffixPercentage: !nestedRegex
 NumberWithPrefixPercentage: !nestedRegex
   def: (per cent of|percent of|percents of)(\s*)({BaseNumbers.NumberReplaceToken})
   references: [ BaseNumbers.NumberReplaceToken ]
+#NumberRange Regex
+TillRegex: !simpleRegex
+  def: (to|through|--|-|—|——|~)
+MoreRegex: !simpleRegex
+  def: (greater|more|higher|larger|>)
+LessRegex: !simpleRegex
+  def: (less|lower|smaller|<)
+EqualRegex: !simpleRegex
+  def: (equal(\s+to)?|=)
+MoreOrEqual: !nestedRegex
+  def: (({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)
+  references: [ MoreRegex, EqualRegex, LessRegex ]
+LessOrEqual: !nestedRegex
+  def: (({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)
+  references: [ LessRegex, EqualRegex, MoreRegex ]
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ({MoreOrEqual}|{MoreRegex})\s+(than\s+)?(?<number1>[^,(?!\d+)\.(?!\d+)]+)
+  references: [ MoreOrEqual, MoreRegex ]
 #Parser
 DecimalSeparatorChar: !char '.'
 FractionMarkerToken: over
