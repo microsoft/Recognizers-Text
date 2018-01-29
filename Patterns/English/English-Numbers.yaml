@@ -114,7 +114,7 @@ NumberWithPrefixPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (to|through|--|-|—|——|~)
 MoreRegex: !simpleRegex
-  def: (greater|more|higher|larger|>)
+  def: (bigger|greater|more|higher|larger|>)
 LessRegex: !simpleRegex
   def: (less|lower|smaller|<)
 EqualRegex: !simpleRegex
@@ -126,8 +126,30 @@ LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)
   references: [ LessRegex, EqualRegex, MoreRegex ]
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ({MoreOrEqual}|{MoreRegex})\s+(than\s+)?(?<number1>[^,(?!\d+)\.(?!\d+)]+)
+  def: ({MoreOrEqual}|{MoreRegex})\s*(than\s*)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|and)).)+)
   references: [ MoreOrEqual, MoreRegex ]
+OneNumberRangeMoreRegex2: !simpleRegex
+  def: (?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s+(more|greater|higher|larger|bigger)
+OneNumberRangeLessRegex1: !nestedRegex
+  def: ({LessOrEqual}|{LessRegex})\s*(than\s*)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+))|and)).)+)
+  references: [ LessOrEqual, LessRegex ]
+OneNumberRangeLessRegex2: !simpleRegex
+  def: (?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s+(less|lower|smaller)
+OneNumberRangeEqualRegex: !nestedRegex
+  def: '{EqualRegex}\s*(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
+  references: [ EqualRegex ]
+TwoNumberRangeRegex1: !nestedRegex
+  def: between\s*(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ TillRegex ]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|,)?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: (from)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{TillRegex}\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  references: [ TillRegex ]
 #Parser
 DecimalSeparatorChar: !char '.'
 FractionMarkerToken: over
