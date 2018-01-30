@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string TwoNumberRangeRegex1 = $@"between\s*(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|,)?\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-		public static readonly string TwoNumberRangeRegex4 = $@"(from)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{TillRegex}\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
+		public static readonly string TwoNumberRangeRegex4 = $@"(from\s*)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|from)).)+)\s*{TillRegex}\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public const char DecimalSeparatorChar = '.';
 		public const string FractionMarkerToken = "over";
 		public const char NonDecimalSeparatorChar = ',';

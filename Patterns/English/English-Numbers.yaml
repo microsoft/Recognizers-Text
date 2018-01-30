@@ -148,7 +148,7 @@ TwoNumberRangeRegex3: !nestedRegex
   def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (from)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*{TillRegex}\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  def: (from\s*)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|from)).)+)\s*{TillRegex}\s*(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
 #Parser
 DecimalSeparatorChar: !char '.'
