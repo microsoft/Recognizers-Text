@@ -19,11 +19,11 @@ namespace Microsoft.Recognizers.Text.Number
             var type = extResult.Data as string;
             if (!string.IsNullOrEmpty(type))
             {
-                if (type.Contains("TwoNum"))
+                if (type.Contains(Constants.TWONUM))
                 {
                     ret = ParseNumberRangeWhichHasTwoNum(extResult);
                 }
-                else if (type.Contains("OneNum"))
+                else
                 {
                     ret = ParseNumberRangeWhichHasOneNum(extResult);
                 }
@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
 
+            // Valid extracted results for this type should have two numbers
             if (er.Count != 2)
             {
                 er = Config.OrdinalExtractor.Extract(extResult.Text);
@@ -68,11 +69,53 @@ namespace Microsoft.Recognizers.Text.Number
                 endValue = nums[0];
             }
 
-            result.Value = new Dictionary<string, double>()
+            var startValueStr = Config.CultureInfo != null ? startValue.ToString(Config.CultureInfo) : startValue.ToString();
+            var endValueStr = Config.CultureInfo != null ? endValue.ToString(Config.CultureInfo) : endValue.ToString();
+
+            char leftBracket, rightBracket;
+            var type = extResult.Data as string;
+            if (type.Contains(Constants.TWONUMBETWEEN))
             {
-                { "StartValue", startValue },
-                { "EndValue", endValue }
-            };
+                // between 20 and 30: (20,30)
+                leftBracket = Constants.LEFT_OPEN;
+                rightBracket = Constants.RIGHT_OPEN;
+            }
+            else if (type.Contains(Constants.TWONUMTILL))
+            {
+                // 20~30: [20,30)
+                leftBracket = Constants.LEFT_CLOSED;
+                rightBracket = Constants.RIGHT_OPEN;
+            }
+            else
+            {
+                // check whether it contains string like "more or equal", "less or equal", "at least", etc.
+                var match = Config.MoreOrEqual.Match(extResult.Text);
+                if (match.Success)
+                {
+                    leftBracket = Constants.LEFT_CLOSED;
+                }
+                else
+                {
+                    leftBracket = Constants.LEFT_OPEN;
+                }
+
+                match = Config.LessOrEqual.Match(extResult.Text);
+                if (match.Success)
+                {
+                    rightBracket = Constants.RIGHT_CLOSED;
+                }
+                else
+                {
+                    rightBracket = Constants.RIGHT_OPEN;
+                }
+            }
+
+            result.Value = new Dictionary<string, double>()
+                {
+                    { "StartValue", startValue },
+                    { "EndValue", endValue }
+                };
+            result.ResolutionStr = string.Concat(leftBracket, startValueStr, Constants.COMMA, endValueStr, rightBracket);
 
             return result;
         }
@@ -89,6 +132,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             var er = Config.NumberExtractor.Extract(extResult.Text);
 
+            // Valid extracted results for this type should have one number
             if (er.Count != 1)
             {
                 er = Config.OrdinalExtractor.Extract(extResult.Text);
@@ -101,29 +145,67 @@ namespace Microsoft.Recognizers.Text.Number
 
             var num = er.Select(r => (double)(Config.NumberParser.Parse(r).Value ?? 0)).ToList();
 
+            char leftBracket, rightBracket;
+            string startValueStr = string.Empty, endValueStr = string.Empty;
             var type = extResult.Data as string;
-            if (type.Contains("More"))
+            if (type.Contains(Constants.MORE))
             {
+                rightBracket = Constants.RIGHT_OPEN;
+
+                var match = Config.MoreOrEqual.Match(extResult.Text);
+                if (match.Success)
+                {
+                    leftBracket = Constants.LEFT_CLOSED;
+                }
+                else
+                {
+                    leftBracket = Constants.LEFT_OPEN;
+                }
+
+                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+
                 result.Value = new Dictionary<string, double>()
                 {
                     { "StartValue", num[0] }
                 };
             }
-            else if (type.Contains("Less"))
+            else if (type.Contains(Constants.LESS))
             {
+                leftBracket = Constants.LEFT_OPEN;
+
+                var match = Config.LessOrEqual.Match(extResult.Text);
+                if (match.Success)
+                {
+                    rightBracket = Constants.RIGHT_CLOSED;
+                }
+                else
+                {
+                    rightBracket = Constants.RIGHT_OPEN;
+                }
+
+                endValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+
                 result.Value = new Dictionary<string, double>()
                 {
                     { "EndValue", num[0] }
                 };
             }
-            else if (type.Contains("Equal"))
+            else
             {
+                leftBracket = Constants.LEFT_CLOSED;
+                rightBracket = Constants.RIGHT_CLOSED;
+
+                startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
+                endValueStr = startValueStr;
+
                 result.Value = new Dictionary<string, double>()
                 {
                     { "StartValue", num[0] },
                     { "EndValue", num[0] }
                 };
             }
+
+            result.ResolutionStr = string.Concat(leftBracket, startValueStr, Constants.COMMA, endValueStr, rightBracket);
 
             return result;
         }
