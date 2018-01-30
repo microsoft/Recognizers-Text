@@ -129,12 +129,12 @@ OneNumberRangeMoreRegex1: !nestedRegex
   def: ({MoreOrEqual}|{MoreRegex})\s*(than\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ MoreOrEqual, MoreRegex ]
 OneNumberRangeMoreRegex2: !simpleRegex
-  def: (the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|the)).)+)\s*and\s+(more|greater|higher|larger|bigger)
+  def: (the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bthe\b)).)+)\s*and\s+(more|greater|higher|larger|bigger)
 OneNumberRangeLessRegex1: !nestedRegex
   def: ({LessOrEqual}|{LessRegex})\s*(than\s+)?(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ LessOrEqual, LessRegex ]
 OneNumberRangeLessRegex2: !simpleRegex
-  def: (the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+))|the)).)+)\s*and\s+(less|lower|smaller)
+  def: (the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+))|\bthe\b)).)+)\s*and\s+(less|lower|smaller)
 OneNumberRangeEqualRegex: !nestedRegex
   def: '{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)'
   references: [ EqualRegex ]
@@ -148,7 +148,7 @@ TwoNumberRangeRegex3: !nestedRegex
   def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1, OneNumberRangeLessRegex2 ]
 TwoNumberRangeRegex4: !nestedRegex
-  def: (from\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|from|the)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
+  def: (from\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bfrom\b|\bthe\b)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)
   references: [ TillRegex ]
 #Parser
 DecimalSeparatorChar: !char '.'

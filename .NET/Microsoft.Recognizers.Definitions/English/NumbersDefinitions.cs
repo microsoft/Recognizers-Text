@@ -66,14 +66,14 @@ namespace Microsoft.Recognizers.Definitions.English
 		public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+or\s+{EqualRegex})|at\s+least|no\s+{LessRegex}|>\s*=)";
 		public static readonly string LessOrEqual = $@"(({LessRegex}\s+or\s+{EqualRegex})|at\s+most|no\s+{MoreRegex}|<\s*=)";
 		public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(than\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
-		public const string OneNumberRangeMoreRegex2 = @"(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|the)).)+)\s*and\s+(more|greater|higher|larger|bigger)";
+		public const string OneNumberRangeMoreRegex2 = @"(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bthe\b)).)+)\s*and\s+(more|greater|higher|larger|bigger)";
 		public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(than\s+)?(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
-		public const string OneNumberRangeLessRegex2 = @"(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+))|the)).)+)\s*and\s+(less|lower|smaller)";
+		public const string OneNumberRangeLessRegex2 = @"(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+))|\bthe\b)).)+)\s*and\s+(less|lower|smaller)";
 		public static readonly string OneNumberRangeEqualRegex = $@"{EqualRegex}\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public static readonly string TwoNumberRangeRegex1 = $@"between\s*(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+)))).)+)\s*and\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public static readonly string TwoNumberRangeRegex2 = $@"({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(and|but|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})";
 		public static readonly string TwoNumberRangeRegex3 = $@"({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(and|but|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})";
-		public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|from|the)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
+		public static readonly string TwoNumberRangeRegex4 = $@"(from\s+)?(the\s+)?(?<number1>((?!((\.(?!\d+))|(,(?!\d+))|\bfrom\b|\bthe\b)).)+)\s*{TillRegex}\s*(the\s+)?(?<number2>((?!((\.(?!\d+))|(,(?!\d+)))).)+)";
 		public const char DecimalSeparatorChar = '.';
 		public const string FractionMarkerToken = "over";
 		public const char NonDecimalSeparatorChar = ',';
