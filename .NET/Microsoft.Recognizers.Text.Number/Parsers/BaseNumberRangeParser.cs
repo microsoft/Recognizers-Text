@@ -68,6 +68,7 @@ namespace Microsoft.Recognizers.Text.Number
                 startValue = nums[1];
                 endValue = nums[0];
             }
+
             var startValueStr = Config.CultureInfo != null ? startValue.ToString(Config.CultureInfo) : startValue.ToString();
             var endValueStr = Config.CultureInfo != null ? endValue.ToString(Config.CultureInfo) : endValue.ToString();
 
