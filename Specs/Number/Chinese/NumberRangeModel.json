@@ -1,6 +1,7 @@
 [{
   "Input": "这个数字大于二十的同时小于等于三十五",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于二十的同时小于等于三十五",
@@ -14,7 +15,8 @@
 ,
 {
   "Input": "这个数字是位于20和30之间的",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "位于20和30之间",
@@ -28,7 +30,8 @@
 ,
 {
   "Input": "他的排名在第十和第十五之间",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "在第十和第十五之间",
@@ -42,7 +45,8 @@
 ,
 {
   "Input": "这是一个大于100 并且小于300 的数",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于100 并且小于300",
@@ -56,7 +60,8 @@
 ,
 {
   "Input": "这是一个大于等于一百小于等于三百一的数",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于等于一百小于等于三百一",
@@ -70,7 +75,8 @@
 ,
 {
   "Input": "这些苹果最多100最少20个",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "最多100最少20",
@@ -84,7 +90,8 @@
 ,
 {
   "Input": "这些苹果大概有20~100个",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20~100",
@@ -98,7 +105,8 @@
 ,
 {
   "Input": "数字的范围是一千到一千五百",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "一千到一千五百",
@@ -112,7 +120,8 @@
 ,
 {
   "Input": "数字在1000以上， 1500以下",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "1000以上， 1500以下",
@@ -126,7 +135,8 @@
 ,
 {
   "Input": "数字比四分之一大， 比二分之一小",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "比四分之一大， 比二分之一小",
@@ -140,7 +150,8 @@
 ,
 {
   "Input": "这个数字大于或者等于三千 九百 六十五 ",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于或者等于三千 九百 六十五",
@@ -154,7 +165,8 @@
 ,
 {
   "Input": "这个数字大于或者等于４，５６５",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于或者等于４，５６５",
@@ -168,7 +180,8 @@
 ,
 {
   "Input": "他的年龄比三十大一些",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "比三十大",
@@ -182,7 +195,8 @@
 ,
 {
   "Input": "他的年龄不小于三十岁",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "不小于三十",
@@ -196,7 +210,8 @@
 ,
 {
   "Input": "这一批产品大概有五百多个",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五百多",
@@ -210,7 +225,8 @@
 ,
 {
   "Input": "订购一批数目在 五百以上的产品",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "五百以上",
@@ -224,7 +240,8 @@
 ,
 {
   "Input": "超过1/2的人都来到了这里",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "超过1/2",
@@ -238,7 +255,8 @@
 ,
 {
   "Input": "找出 小于 或 等于100 的质数",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "小于 或 等于100",
@@ -252,7 +270,8 @@
 ,
 {
   "Input": "找出 < = 100 的质数",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "< = 100",
@@ -266,7 +285,8 @@
 ,
 {
   "Input": "小明的身高比 170 低 ",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "比 170 低",
@@ -280,7 +300,8 @@
 ,
 {
   "Input": "小明的身高在 170 之下 ",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "170 之下",
@@ -294,7 +315,8 @@
 ,
 {
   "Input": "x等于一百七",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "等于一百七",
@@ -308,7 +330,8 @@
 ,
 {
   "Input": "x大于10且y小于20",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于10",
@@ -329,7 +352,8 @@
 ,
 {
   "Input": "x大于10小于20，  y不大于50不小于20",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "大于10小于20",
