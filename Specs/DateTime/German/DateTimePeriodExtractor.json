@@ -37,7 +37,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "7. April 2017 um 4 Uhr bis heute um 4 Uhr",
+        "Text": "vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr",
         "Type": "datetimerange"
       }
     ]
@@ -48,7 +48,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr",
+        "Text": "vom 7. April 2017 um 4 Uhr bis zum 3. Juli 2018 um 4 Uhr",
         "Type": "datetimerange"
       }
     ]
@@ -59,7 +59,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "7/3/2017 15:00 bis zum 8/4/2017 16:30",
+        "Text": "vom 7/3/2017 15:00 bis zum 8/4/2017 16:30",
         "Type": "datetimerange"
       }
     ]

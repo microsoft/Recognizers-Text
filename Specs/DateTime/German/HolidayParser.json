@@ -1,1 +1,118 @@
-[]
+[{
+    "Input": "An Ostern bin ich wieder zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Ostern",
+        "Type": "date",
+        "Value": {
+          "Timex": "",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich freue mich schon auf Weihnachten.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Weihnachten",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-25",
+          "FutureResolution": {
+            "date": "2016-12-25"
+          },
+          "PastResolution": {
+            "date": "2015-12-25"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Silvester wir eine tolle Feier.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Silvester",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-12-31",
+          "FutureResolution": {
+            "date": "2016-12-31"
+          },
+          "PastResolution": {
+            "date": "2015-12-31"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am Vatertag machen wir für gewöhnlich nichts besonderes.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Vatertag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2017-06-18"
+          },
+          "PastResolution": {
+            "date": "2016-06-19"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vatertag 2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Vatertag 2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-06-WXX-7-3",
+          "FutureResolution": {
+            "date": "2015-06-21"
+          },
+          "PastResolution": {
+            "date": "2015-06-21"
+          }
+        }
+      }
+    ]
+  }
+]

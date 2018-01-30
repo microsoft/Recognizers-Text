@@ -95,15 +95,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("nächster") || trimedText.StartsWith("nächstes") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächste"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("letzter") || trimedText.StartsWith("letztes") || trimedText.StartsWith("letzten") || trimedText.StartsWith("letzte"))
             {
                 swift = -1;
             }
-            else if (trimedText.StartsWith("this"))
+            else if (trimedText.StartsWith("dieser") || trimedText.StartsWith("dieses") || trimedText.StartsWith("diesen") || trimedText.StartsWith("diese"))
             {
                 swift = 0;
             }

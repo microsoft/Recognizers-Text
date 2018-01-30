@@ -1,1 +1,78 @@
-[]
+[{
+    "Input": "Ich bin von 5 bis 6 Uhr weg",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "5 bis 6 Uhr",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T05,T06,PT1H)",
+          "FutureResolution": {
+            "startTime": "05:00:00",
+            "endTime": "06:00:00"
+          },
+          "PastResolution": {
+            "startTime": "05:00:00",
+            "endTime": "06:00:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich werde von 17 Uhr bis 18 Uhr ausgehen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "17 Uhr bis 18 Uhr",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin dann mal von 7 Uhr morgens bis 8 Uhr morgens weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "7 Uhr morgens bis 8 Uhr morgens",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T07,T08,PT1H)",
+          "FutureResolution": {
+            "startTime": "07:00:00",
+            "endTime": "08:00:00"
+          },
+          "PastResolution": {
+            "startTime": "07:00:00",
+            "endTime": "08:00:00"
+          }
+        }
+      }
+    ]
+  }
+]

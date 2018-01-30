@@ -43,10 +43,21 @@
       }
     ]
   },
+  {
+    "Input": "Ich gehe am 15.08. um 8 Uhr weg.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15.08. um 8 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
   {//for some reason, creating a with an additional regex without the month or making the month optional in the existing regex makes this test and the above fail 
     "Input": "Ich gehe am 15. um 8 Uhr weg.",
     "NotSupportedByDesign": "python",
-    "NotSupported":"javascript,dotnet",
+    "NotSupported":"javascript",
     "Results": [
       {
         "Text": "15. um 8 Uhr",

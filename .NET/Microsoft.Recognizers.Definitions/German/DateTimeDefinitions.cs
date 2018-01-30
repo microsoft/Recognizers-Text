@@ -24,24 +24,24 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string NextPrefixRegex = @"(nächst(er|en|es|e)|kommend(er|en|es|e))\b";
 		public const string PastPrefixRegex = @"(letzt(er|en|es|e)|vergangen(er|en|es|e)|vorherig(er|en|es|e)|vorig(er|en|es|e)|vor)\b";
 		public const string ThisPrefixRegex = @"(dies(er|en|es|e)|jetzig(er|en|es|e))\b";
-		public const string DayRegex = @"((der|dem|des)\s*)?(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.)?";
-		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
+		public const string DayRegex = @"((der|dem|des)\s*)?(?<day>01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]\s*)?";
+		public const string MonthNumRegex = @"(?<month>01([\.])?|02([\.])?|03([\.])?|04([\.])?|05([\.])?|06([\.])?|07([\.])?|08([\.])?|09([\.])?|10([\.])?|11([\.])?|12([\.])?|1([\.])?|2([\.])?|3([\.])?|4([\.])?|5([\.])?|6([\.])?|7([\.])?|8([\.])?|9([\.])?)\b";
 		public const string PeriodYearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
 		public const string WeekDayRegex = @"\b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))\b";
 		public const string SingleWeekDayRegex = @"\b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.))\b";
 		public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+monat)\b";
 		public const string EngMonthRegex = @"((monat\s*)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))";
 		public static readonly string MonthSuffixRegex = $@"(?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{EngMonthRegex}))";
-		public const string DateUnitRegex = @"(?<unit>jahre|jahr|monate|monat|wochen|woche|tage|tag)\b";
-		public static readonly string SimpleCasesRegex = $@"\b((vom|zwischen)\s+)?({DayRegex})(\s+{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
-		public static readonly string MonthFrontSimpleCasesRegex = $@"\b((vom|zwischen)\s+)?{MonthSuffixRegex}\s+((vom|zwischen)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
+		public const string DateUnitRegex = @"(?<unit>jahre|jahr|monate|monat|wochen|woche|tage|tag|Tag)\b";
+		public static readonly string SimpleCasesRegex = $@"\b((vom|zwischen)\s+)?({DayRegex})(\s*{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex})(\s*{MonthSuffixRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
+		public static readonly string MonthFrontSimpleCasesRegex = $@"\b((vom|zwischen)\s*)?{MonthSuffixRegex}\s*((vom|zwischen)\s*)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
 		public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(zwischen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b";
-		public static readonly string BetweenRegex = $@"\b(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){PeriodYearRegex})?\b";
+		public static readonly string BetweenRegex = $@"(\b(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){PeriodYearRegex})?|(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){PeriodYearRegex})?\b)";
 		public static readonly string MonthWithYear = $@"\b((?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.),?(\s+des)?\s+({PeriodYearRegex}|(?<order>nächsten|letzten|diesen)\s+jahres))";
 		public static readonly string OneWordPeriodRegex = $@"\b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>april|apr\.|august|aug\.|dezember|dez\.|februar|feb\.|januar|jan\.|juli|jul\.|juni|jun\.|märz|mai|november|nov\.|oktober|okt\.|september|sep\.))|({RelativeRegex}\s+)?(wochenende|woche|monat|jahr)|wochenende|(monat|jahr))\b";
 		public static readonly string MonthNumWithYear = $@"({PeriodYearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearRegex})";
 		public static readonly string WeekOfMonthRegex = $@"(?<wom>((die|der)\s+)?(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e))\s+Woche\s+(des|im)\s+{MonthSuffixRegex})";
-		public static readonly string WeekOfYearRegex = $@"(?<woy>((die|der)\s+)?(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e)\s+Woche(\s+im|\s+des)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year)))";
+		public static readonly string WeekOfYearRegex = $@"(?<woy>((die|der)\s+)?(?<cardinal>erst(er|en|es|e)|1\.|zweit(er|en|es|e)|2\.|dritt(er|en|es|e)|3\.|viert(er|en|es|e)|4\.|fünft(er|en|es|e)|5\.|letzt(er|en|es|e)\s+Woche(\s+im|\s+des)?\s+({PeriodYearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))";
 		public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
 		public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
 		public static readonly string QuarterRegex = $@"((das|dem|im|in dem)\s+)?(?<cardinal>erst(en|es|e)|1st|zweit(en|es|e)|2nd|dritt(en|es|e)|3rd|viert(en|es|e)|4th)\s+quartal(\s+(von|des jahres)?|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex})";
@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string PmDescRegex = @"(pm\b|p\.m\.|p\b|p m\b|p\. m\.|p\.m\b|p\. m\b|p m\b)";
 		public static readonly string DateYearRegex = $@"(?<year>19\d{{2}}|20\d{{2}}|((9\d|0\d|1\d|2\d)(?!(\s*((\:)|{AmDescRegex}|{PmDescRegex})))))";
 		public static readonly string OnRegex = $@"(?<=\bam\s+)({DayRegex}s?)\b";
-		public const string RelaxedOnRegex = @"(?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.))\b";
+		public const string RelaxedOnRegex = @"(?<=\b(am|an dem)\s+)((?<day>10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)([\.]))\b";
 		public static readonly string ThisRegex = $@"\b(((diese((n)|(\s*Woche))(\s*am)?\s+){WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week)))\b";
 		public static readonly string LastDateRegex = $@"\b({PastPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+{PastPrefixRegex}\s*woche))\b";
 		public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*(woche|monat|jahr)?(\s*(am|im))?)?\s+({WeekDayRegex}|sommer|winter|frühling|herbst))|((am\s+)?{WeekDayRegex}(\s+{NextPrefixRegex}\s*woche))\b";
@@ -67,24 +67,23 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string DateExtractor1 = $@"(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex})((\s*){MonthRegex})((\s+|\s*,\s*)({DateYearRegex}))?";
 		public static readonly string DateExtractor2 = $@"\b({DayRegex}((\s*){MonthRegex})((\,\s*|\s*){DateYearRegex})?)\b";
 		public static readonly string DateExtractor3 = $@"\b{DayRegex}\s*{MonthRegex}\b";
-		public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}";
+		public static readonly string DateExtractor4 = $@"\b{DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex}";
 		public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DateYearRegex}";
 		public static readonly string DateExtractor6 = $@"(({WeekDayRegex}\s*)?(in)\s*(\d(\d)?)\s*(woche(n)?))";
-		public static readonly string DateExtractor7 = $@"\b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b";
+		public static readonly string DateExtractor7 = $@"\b{DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]\s*\b";
 		public static readonly string DateExtractor8 = $@"(?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}[/\\\.]({{DateYearRegex}})?\b";
-		public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+of\s+){DateYearRegex})?\b";
+		public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?\b";
 		public static readonly string DateExtractor10 = $@"\b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b";
-		public static readonly string DateExtractor11 = $@"\b({RelaxedOnRegex}(\s*um\s*))\b";
 		public static readonly string DateExtractorA = $@"\b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}";
 		public static readonly string OfMonth = $@"^(\s*des\s*)?{MonthRegex}";
 		public static readonly string MonthEnd = $@"{MonthRegex}\s*(der|dem|den)?\s*$";
 		public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
-		public const string RangeUnitRegex = @"\b(?<unit>jahre|jahr|monate|monat|wochen|woche)\b";
+		public const string RangeUnitRegex = @"\b(?<unit>jahren|jahre|jahr|monaten|monate|monat|wochen|woche|tagen|tage|tag)\b";
 		public const string OclockRegex = @"(?<oclock>Uhr)";
 		public static readonly string DescRegex = $@"({OclockRegex})";
 		public const string HourNumRegex = @"\b(?<hournum>'null'|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig)\b";
-		public const string MinuteNumRegex = @"(?<minnum>ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig)";
-		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig)";
+		public const string MinuteNumRegex = @"(?<minnum>zwanzig|dreißig|vierzig|fünfzig|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn)";
+		public const string DeltaMinuteNumRegex = @"(?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|ein|eins|zwei|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf|zwölf|zwoelf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn)";
 		public const string PmRegex = @"(?<pm>(((am|gegen)\s+)?(nachmittag(s)?|abend(s)?|mitternacht(s)?|mittag(s)?))|((in der)?\s*nacht(s)?))";
 		public const string PmRegexFull = @"(?<pm>(((am|gegen)\s+)?(nachmittag(s)?|abend(s)?|mitternacht(s)?|mittag(s)?))|((in der)?\s*nacht(s)?))";
 		public const string AmRegex = @"(?<am>((am|gegen)\s+)?(morgen(s)?|vormittag(s)?))";
@@ -141,12 +140,12 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+am)?))\b";
 		public const string DurationUnitRegex = @"(?<unit>jahr(en|es|e)?|monat(en|e|s)?|woche(n)?|tag(en|es|e)?|stund(en|e)?|std|minute(n)?|min|sekunde(n)?|sek)\b";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(und)\s+((eine)\s+)?(?<suffix_num>halbe|viertel))";
-		public const string PeriodicRegex = @"\b(?<periodic>(all)?täglich(e)?|(all)?monatlich(e)?|(all)?wöchentlich(e)?|(all)?jährlich(e)?)\b";
+		public const string PeriodicRegex = @"\b(?<periodic>(all)?täglich(er|en|es|e)?|(all)?monatlich(er|en|es|e)?|(all)?wöchentlich(er|en|es|e)?|(all)?jährlich(er|en|es|e)?)\b";
 		public static readonly string EachUnitRegex = $@"(?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})";
 		public const string EachPrefixRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*$)";
 		public const string SetEachRegex = @"\b(?<each>(jede(r|n|s)?|alle)\s*)";
 		public const string SetLastRegex = @"(?<last>nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)";
-		public const string EachDayRegex = @"(\s*(jeden)\s*tag\s*)";
+		public const string EachDayRegex = @"(\s*(jeden)\s*(Tag|tag)\s*)";
 		public static readonly string DurationFollowedUnit = $@"\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
 		public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
 		public static readonly string AnUnitRegex = $@"\b(((ein(er|es|en|em|e)?)(?<half>\s+halb(es|er|en|e))?))\s+{DurationUnitRegex}";
@@ -156,9 +155,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string MinYearNum = "1500";
 		public const string MaxYearNum = "2100";
 		public const string YearRegex = @"\b(?<year>19\d{2}|20\d{2})\b";
-		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+Jahres))?\b";
-		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+Jahres))?\b";
-		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+Jahres))?";
+		public static readonly string HolidayRegex1 = $@"\b((dieses Jahr)\s*)?(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|neujahr|neujahrstag|vatertag|mayday|yuan dan|erster april|heiligabend|weihnachten|weihnachtstag|erntedankfest|halloween|yuandan|ostern|osterfest)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex2 = $@"\b((dieses Jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|cinco de mayo|independence|us independence|allerheiligen|allerseelen|guy fawkes|silvester)(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?\b";
+		public static readonly string HolidayRegex3 = $@"((dieses Jahr)\s*)?(?<holiday>(canberra|ostern|columbus|thanks\s*giving|weihnachten|weihnachtstag|tag der arbeit|muttertag|vatertag|female|single|teacher's|youth|children|arbor|girls|chsmilbuild|lover|labor|inauguration|groundhog|valentine's|baptiste|bastille|halloween|veterans|memorial|mid(-| )autumn|moon|spring|lantern|qingming|dragon boat|new years'|new year's|new year 's|new years|new year)\s+(day))(\s+((diesen)\s+)?({YearRegex}|{RelativeRegex}\s+jahres))?";
 		public const string DateTokenPrefix = "am ";
 		public const string TimeTokenPrefix = "um ";
 		public const string TokenBeforeDate = "am ";
@@ -185,9 +184,9 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
 		public const string PrepositionSuffixRegex = @"\b(am|in|um|gegen|von|vom|zum)$";
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
-		public static readonly string ForTheRegex = $@"\b(((für den {FlexibleDayRegex})|(on (the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
+		public static readonly string ForTheRegex = $@"\b(für den {FlexibleDayRegex})";
 		public static readonly string WeekDayAndDayOfMothRegex = $@"\b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b";
-		public const string RestOfDateRegex = @"\bRest\s+((der|des)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b";
+		public const string RestOfDateRegex = @"\bRest\s+((der|des)\s+)((aktuellen|jetzigen)\s+)?(?<duration>Woche|Monats|Jahres)\b";
 		public const string RestOfDateTimeRegex = @"\bRest\s+(des\s+)((aktuellen|heutigen)\s+)?(?<unit>Tages)\b";
 		public const string MealTimeRegex = @"\b((zum|zur)\s+)?(?<mealTime>(essenszeit|mittagessen))\b";
 		public static readonly string NumberEndingPattern = $@"^(\s+(?<meeting>meeting|appointment|conference|call|skype call)\s+to\s+(?<newTime>{PeriodHourNumRegex}|{HourRegex})((\.)?$|(\.,|,|!|\?)))";
@@ -197,7 +196,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string GeneralEndingRegex = @"^\s*((\.,)|\.|,|!|\?)?\s*$";
 		public const string MiddlePauseRegex = @"\s*(,)\s*";
 		public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|und|,)\s*$";
-		public const string PrefixArticleRegex = @"\bthe\s+";
+		public const string PrefixArticleRegex = @"\b(der|dem|des)\s+";
 		public const string OrRegex = @"^[.]";
 		public const string YearPlusNumberRegex = @"\b(Jahr\s+(?<number>(\d{3,4})))\b";
 		public static readonly string NumberAsTimeRegex = $@"\b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b";
@@ -210,38 +209,60 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
-			{ "years", "Y" },
-			{ "year", "Y" },
-			{ "months", "MON" },
-			{ "month", "MON" },
-			{ "weeks", "W" },
-			{ "week", "W" },
-			{ "days", "D" },
-			{ "day", "D" },
-			{ "hours", "H" },
-			{ "hour", "H" },
-			{ "hrs", "H" },
-			{ "hr", "H" },
+			{ "jahren", "Y" },
+			{ "jahre", "Y" },
+			{ "jahr", "Y" },
+			{ "monaten", "MON" },
+			{ "monate", "MON" },
+			{ "monat", "MON" },
+			{ "wochen", "W" },
+			{ "woche", "W" },
+			{ "tagen", "D" },
+			{ "tage", "D" },
+			{ "tag", "D" },
+			{ "stunden", "H" },
+			{ "stunde", "H" },
 			{ "h", "H" },
-			{ "minutes", "M" },
+			{ "minuten", "M" },
 			{ "minute", "M" },
-			{ "mins", "M" },
 			{ "min", "M" },
-			{ "seconds", "S" },
-			{ "second", "S" },
-			{ "secs", "S" },
-			{ "sec", "S" }
+			{ "sekunden", "S" },
+			{ "sekunde", "S" },
+			{ "sek", "S" },
+			{ "Jahren", "Y" },
+			{ "Jahre", "Y" },
+			{ "Jahr", "Y" },
+			{ "Monaten", "MON" },
+			{ "Monate", "MON" },
+			{ "Monat", "MON" },
+			{ "Wochen", "W" },
+			{ "Woche", "W" },
+			{ "Tagen", "D" },
+			{ "Tage", "D" },
+			{ "Tag", "D" },
+			{ "Stunden", "H" },
+			{ "Stunde", "H" },
+			{ "H", "H" },
+			{ "Minuten", "M" },
+			{ "Minute", "M" },
+			{ "Min", "M" },
+			{ "Sekunden", "S" },
+			{ "Sek", "S" }
 		};
 		public static readonly Dictionary<string, long> UnitValueMap = new Dictionary<string, long>
 		{
+			{ "jahren", 31536000 },
 			{ "jahre", 31536000 },
 			{ "jahr", 31536000 },
+			{ "monaten", 2592000 },
 			{ "monate", 2592000 },
 			{ "monat", 2592000 },
 			{ "wochen", 604800 },
 			{ "woche", 604800 },
+			{ "tagen", 86400 },
 			{ "tage", 86400 },
 			{ "tag", 86400 },
+			{ "Tag", 86400 },
 			{ "stunden", 3600 },
 			{ "stunde", 3600 },
 			{ "std", 3600 },
@@ -269,16 +290,31 @@ namespace Microsoft.Recognizers.Definitions.German
 		};
 		public static readonly Dictionary<string, int> CardinalMap = new Dictionary<string, int>
 		{
-			{ "first", 1 },
-			{ "1st", 1 },
-			{ "second", 2 },
-			{ "2nd", 2 },
-			{ "third", 3 },
-			{ "3rd", 3 },
-			{ "fourth", 4 },
-			{ "4th", 4 },
-			{ "fifth", 5 },
-			{ "5th", 5 }
+			{ "erster", 1 },
+			{ "ersten", 1 },
+			{ "erstes", 1 },
+			{ "erste", 1 },
+			{ "1", 1 },
+			{ "zweiter", 2 },
+			{ "zweiten", 2 },
+			{ "zweites", 2 },
+			{ "zweite", 2 },
+			{ "2", 2 },
+			{ "dritter", 3 },
+			{ "dritten", 3 },
+			{ "drittes", 3 },
+			{ "dritte", 3 },
+			{ "3", 3 },
+			{ "vierter", 4 },
+			{ "vierten", 4 },
+			{ "viertes", 4 },
+			{ "vierte", 4 },
+			{ "4", 4 },
+			{ "fünfter", 5 },
+			{ "fünften", 5 },
+			{ "fünftes", 5 },
+			{ "fünfte", 5 },
+			{ "5", 5 }
 		};
 		public static readonly Dictionary<string, int> DayOfWeek = new Dictionary<string, int>
 		{
@@ -295,7 +331,21 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "do.", 4 },
 			{ "fr.", 5 },
 			{ "sa.", 6 },
-			{ "so.", 0 }
+			{ "so.", 0 },
+			{ "Montag", 1 },
+			{ "Dienstag", 2 },
+			{ "Mittwoch", 3 },
+			{ "Donnerstag", 4 },
+			{ "Freitag", 5 },
+			{ "Samstag", 6 },
+			{ "Sonntag", 0 },
+			{ "Mo.", 1 },
+			{ "Di.", 2 },
+			{ "Mi.", 3 },
+			{ "Do.", 4 },
+			{ "Fr.", 5 },
+			{ "Sa.", 6 },
+			{ "So.", 0 }
 		};
 		public static readonly Dictionary<string, int> MonthOfYear = new Dictionary<string, int>
 		{
@@ -322,6 +372,50 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "okt", 10 },
 			{ "nov", 11 },
 			{ "dez", 12 },
+			{ "Januar", 1 },
+			{ "Februar", 2 },
+			{ "März", 3 },
+			{ "April", 4 },
+			{ "Mai", 5 },
+			{ "Juni", 6 },
+			{ "Juli", 7 },
+			{ "August", 8 },
+			{ "September", 9 },
+			{ "Oktober", 10 },
+			{ "November", 11 },
+			{ "Dezember", 12 },
+			{ "Jan", 1 },
+			{ "Feb", 2 },
+			{ "Mar", 3 },
+			{ "Apr", 4 },
+			{ "Jun", 6 },
+			{ "Jul", 7 },
+			{ "Aug", 8 },
+			{ "Sep", 9 },
+			{ "Okt", 10 },
+			{ "Nov", 11 },
+			{ "Dez", 12 },
+			{ "1.", 1 },
+			{ "2.", 2 },
+			{ "3.", 3 },
+			{ "4.", 4 },
+			{ "5.", 5 },
+			{ "6.", 6 },
+			{ "7.", 7 },
+			{ "8.", 8 },
+			{ "9.", 9 },
+			{ "10.", 10 },
+			{ "11.", 11 },
+			{ "12.", 12 },
+			{ "01.", 1 },
+			{ "02.", 2 },
+			{ "03.", 3 },
+			{ "04.", 4 },
+			{ "05.", 5 },
+			{ "06.", 6 },
+			{ "07.", 7 },
+			{ "08.", 8 },
+			{ "09.", 9 },
 			{ "1", 1 },
 			{ "2", 2 },
 			{ "3", 3 },
@@ -483,12 +577,43 @@ namespace Microsoft.Recognizers.Definitions.German
 			{ "28.", 28 },
 			{ "29.", 29 },
 			{ "30.", 30 },
-			{ "31.", 31 }
+			{ "31.", 31 },
+			{ "1", 1 },
+			{ "2", 2 },
+			{ "3", 3 },
+			{ "4", 4 },
+			{ "5", 5 },
+			{ "6", 6 },
+			{ "7", 7 },
+			{ "8", 8 },
+			{ "9", 9 },
+			{ "10", 10 },
+			{ "11", 11 },
+			{ "12", 12 },
+			{ "13", 13 },
+			{ "14", 14 },
+			{ "15", 15 },
+			{ "16", 16 },
+			{ "17", 17 },
+			{ "18", 18 },
+			{ "19", 19 },
+			{ "20", 20 },
+			{ "21", 21 },
+			{ "22", 22 },
+			{ "23", 23 },
+			{ "24", 24 },
+			{ "25", 25 },
+			{ "26", 26 },
+			{ "27", 27 },
+			{ "28", 28 },
+			{ "29", 29 },
+			{ "30", 30 },
+			{ "31", 31 }
 		};
 		public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
 		{
-			{ "half", 0.5 },
-			{ "quarter", 0.25 }
+			{ "halb", 0.5 },
+			{ "viertel", 0.25 }
 		};
 		public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
 		{

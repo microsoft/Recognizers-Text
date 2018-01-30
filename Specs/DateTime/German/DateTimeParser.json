@@ -1,1 +1,165 @@
-[]
+[{
+    "Input": "Ich gehe jetzt zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "jetzt",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich komme so früh wie möglich zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "so früh wie möglich",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe denke ich am 15. um 8 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. um 8 Uhr",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T08",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 08:00:00"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe denke ich  am 15. November um 8 Uhr",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. November um 8 Uhr",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-11-15T08",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2015-11-15 08:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am 21.04.2016, 16:00 werde ich zurück sein.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "21.04.2016, 16:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T16:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Am 21.04.2016 um 16 Uhr werde ich zurück sein.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "21.04.2016 um 16 Uhr",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T16",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das Ganze geht bis zum 21.09. um 16 Uhr.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "21.09. um 16 Uhr",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-21T16",
+          "FutureResolution": {
+            "dateTime": "2016-11-21 16:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-21 16:00:00"
+          }
+        }
+      }
+    ]
+  }
+]

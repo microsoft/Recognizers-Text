@@ -1,1 +1,121 @@
-[]
+[{
+    "Input": "Ich habe den Alarm auf acht Uhr vierzig eingestellt",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "acht Uhr vierzig",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin um 7 zurück.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 19:56.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "19:56",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56",
+          "FutureResolution": {
+            "time": "19:56:00"
+          },
+          "PastResolution": {
+            "time": "19:56:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es ist acht Uhr morgens, ich will schlafen!",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "acht Uhr morgens",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen halb acht Vormittags sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halb acht Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen viertel nach 7 Vormittags sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "viertel nach 7 Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:15",
+          "FutureResolution": {
+            "time": "07:15:00"
+          },
+          "PastResolution": {
+            "time": "07:15:00"
+          }
+        }
+      }
+    ]
+  }
+]

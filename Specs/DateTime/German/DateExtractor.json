@@ -131,7 +131,7 @@
     "NotSupported":"javascript",
     "Results": [
       {
-        "Text": "15",
+        "Text": "15. ",
         "Type": "date"
       }
     ]
@@ -148,12 +148,34 @@
     ]
   },
   {
+    "Input": "Ich bin am 15. November 2011 wieder hier.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. November 2011",
+        "Type": "date"
+      }
+    ]
+  },
+  {
     "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
     "NotSupportedByDesign": "python",
     "NotSupported":"javascript",
     "Results": [
       {
         "Text": "nächstes Jahr im Sommer",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 23.3.2017 wieder.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "23.3.2017",
         "Type": "date"
       }
     ]
