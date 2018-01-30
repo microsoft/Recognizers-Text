@@ -89,8 +89,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         private void GetMatchedStartAndLength(Match match, string type, string source, out int start, out int length)
         {
-            start = -1;
-            length = -1;
+            start = NumberRangeConstants.INVALID_NUM;
+            length = NumberRangeConstants.INVALID_NUM;
 
             var numberStr1 = match.Groups["number1"].Value;
             var numberStr2 = match.Groups["number2"].Value;
@@ -111,8 +111,8 @@ namespace Microsoft.Recognizers.Text.Number
                     
                     if (!validNum1 || !validNum2)
                     {
-                        start = -1;
-                        length = -1;
+                        start = NumberRangeConstants.INVALID_NUM;
+                        length = NumberRangeConstants.INVALID_NUM;
                     }
                 }
             }
@@ -129,8 +129,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                     if (!ValidateMatchAndGetStartAndLength(extractNumList, numberStr, match, source, ref start, ref length))
                     {
-                        start = -1;
-                        length = -1;
+                        start = NumberRangeConstants.INVALID_NUM;
+                        length = NumberRangeConstants.INVALID_NUM;
                     }
                 }
             }
@@ -206,5 +206,8 @@ namespace Microsoft.Recognizers.Text.Number
         public const char LEFT_CLOSED = '[';
         public const char RIGHT_CLOSED = ']';
         public const char INTERVAL_SEPARATOR = ',';
+
+        // Invalid number
+        public const int INVALID_NUM = -1;
     }
 }

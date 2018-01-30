@@ -146,8 +146,8 @@ export namespace EnglishDateTime {
 	export const AllRegex = `\\b(?<all>all\\s+(?<unit>year|month|week|day))\\b`;
 	export const HalfRegex = `(((a|an)\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b`;
 	export const ConjunctionRegex = `\\b((and(\\s+for)?)|with)\\b`;
-	export const MinYearNum = '50';
-	export const MaxYearNum = '10';
+	export const MinYearNum = '1500';
+	export const MaxYearNum = '2100';
 	export const YearNumRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const YearRegex = `(${YearNumRegex}|${FullTextYearRegex})`;
 	export const HolidayRegex1 = `\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|mayday|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\\s+(of\\s+)?(${YearRegex}|${RelativeRegex}\\s+year))?\\b`;

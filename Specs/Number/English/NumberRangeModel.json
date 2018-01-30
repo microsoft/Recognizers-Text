@@ -1,6 +1,7 @@
 [{
   "Input": "This number is larger than twenty and less or equal than thirty five.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "larger than twenty and less or equal than thirty five",
@@ -14,7 +15,8 @@
 ,
 {
   "Input": "The number is between 20 and 30.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between 20 and 30",
@@ -28,7 +30,8 @@
 ,
 {
   "Input": "He ranks between the tenth and the fifteenth.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "between the tenth and the fifteenth",
@@ -42,7 +45,8 @@
 ,
 {
   "Input": "He ranks higher than the tenth but lower than the fifteenth.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "higher than the tenth but lower than the fifteenth",
@@ -56,7 +60,8 @@
 ,
 {
   "Input": "This is a number which is greater than 100 and smaller than 300",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "greater than 100 and smaller than 300",
@@ -70,7 +75,8 @@
 ,
 {
   "Input": "This number is higher or equal than one hundred, lower or equal than three hundred",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "higher or equal than one hundred, lower or equal than three hundred",
@@ -84,7 +90,8 @@
 ,
 {
   "Input": "There're at most 100 and at least 20 apples.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "at most 100 and at least 20",
@@ -98,7 +105,8 @@
 ,
 {
   "Input": "These apples are about 20~100",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20~100",
@@ -111,8 +119,9 @@
 }
 ,
 {
-  "Input": "It is 20 through 100",
-  "NotSupportedByDesign": "python,javascript",
+  "Input": "The number range is 20 through 100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "20 through 100",
@@ -126,7 +135,8 @@
 ,
 {
   "Input": "The number range is from one thousand to one thousand and five hundred.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "from one thousand to one thousand and five hundred",
@@ -140,7 +150,8 @@
 ,
 {
   "Input": "The number is above 1000 and below 1500",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "above 1000 and below 1500",
@@ -154,7 +165,8 @@
 ,
 {
   "Input": "The number is above one quarter and below a half.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "above one quarter and below a half",
@@ -168,7 +180,8 @@
 ,
 {
   "Input": "This number is bigger or equal than three thousand nine hundred and sixty five.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "bigger or equal than three thousand nine hundred and sixty five",
@@ -182,7 +195,8 @@
 ,
 {
   "Input": "This number is greater than 4,565",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "greater than 4,565",
@@ -196,7 +210,8 @@
 ,
 {
   "Input": "He is more than thirty years old.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "more than thirty",
@@ -210,7 +225,8 @@
 ,
 {
   "Input": "His age is no less than thirty.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "no less than thirty",
@@ -224,7 +240,8 @@
 ,
 {
   "Input": "There're about five hundred and more in these products.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "five hundred and more",
@@ -238,7 +255,8 @@
 ,
 {
   "Input": "More than 1/2 of the people came here.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "More than 1/2",
@@ -252,7 +270,8 @@
 ,
 {
   "Input": "Find the prime numbers which are smaller or equal than 100",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "smaller or equal than 100",
@@ -266,7 +285,8 @@
 ,
 {
   "Input": "Find the prime numbers which are < = 100",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "< = 100",
@@ -280,7 +300,8 @@
 ,
 {
   "Input": "His height is below 170.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "below 170",
@@ -294,7 +315,8 @@
 ,
 {
   "Input": "x is equal to one hundred and seventy.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "equal to one hundred and seventy",
@@ -308,7 +330,8 @@
 ,
 {
   "Input": "x>10 and y<20",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": ">10",
@@ -329,7 +352,8 @@
 ,
 {
   "Input": "x is larger than 10 and smaller than 20. y is no more than 50 and no less than 20.",
-  "NotSupportedByDesign": "python,javascript",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
   "Results": [
     {
       "Text": "larger than 10 and smaller than 20",
