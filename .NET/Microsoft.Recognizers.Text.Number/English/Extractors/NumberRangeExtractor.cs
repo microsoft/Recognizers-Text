@@ -18,47 +18,47 @@ namespace Microsoft.Recognizers.Text.Number.English
                 {
                     // between...and...
                     new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.TWONUMBETWEEN
+                    , NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // more than ... less than ...
                     new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.TWONUM
+                    , NumberRangeConstants.TWONUM
                 },
                 {
                     // less than ... more than ...
                     new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.TWONUM
+                    , NumberRangeConstants.TWONUM
                 },
                 {
                     // from ... to/~/- ...
                     new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.TWONUMTILL
+                    , NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // more/greater/higher than ...
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.MORE
+                    , NumberRangeConstants.MORE
                 },
                 {
                     // 30 and greater/higher
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.MORE
+                    , NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.LESS
+                    , NumberRangeConstants.LESS
                 },
                 {
                     // 30 and less/smaller/lower
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.LESS
+                    , NumberRangeConstants.LESS
                 },
                 {
                     // equal to ...
                     new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline)
-                    , Constants.EQUAL
+                    , NumberRangeConstants.EQUAL
                 }
             };
 
