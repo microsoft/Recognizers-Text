@@ -95,10 +95,10 @@ namespace Microsoft.Recognizers.Text.Number
             var numberStr1 = match.Groups["number1"].Value;
             var numberStr2 = match.Groups["number2"].Value;
 
-            if (type.Contains(Constants.TWONUM))
+            if (type.Contains(NumberRangeConstants.TWONUM))
             {
-                var extractNumList1 = ExtractNumberFromStr(numberStr1);
-                var extractNumList2 = ExtractNumberFromStr(numberStr2);
+                var extractNumList1 = ExtractNumberAndOrdinalFromStr(numberStr1);
+                var extractNumList2 = ExtractNumberAndOrdinalFromStr(numberStr2);
 
                 if (extractNumList1 != null && extractNumList2 != null)
                 {
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 var numberStr = string.IsNullOrEmpty(numberStr1) ? numberStr2 : numberStr1;
 
-                var extractNumList = ExtractNumberFromStr(numberStr);
+                var extractNumList = ExtractNumberAndOrdinalFromStr(numberStr);
 
                 if (extractNumList != null)
                 {
@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Text.Number
             return validNum;
         }
 
-        private List<ExtractResult> ExtractNumberFromStr(string numberStr)
+        private List<ExtractResult> ExtractNumberAndOrdinalFromStr(string numberStr)
         {
             var extractNumber = numberExtractor.Extract(numberStr);
             var extractOrdinal = ordinalExtractor.Extract(numberStr);
@@ -188,5 +188,23 @@ namespace Microsoft.Recognizers.Text.Number
                 return extractNumber;
             }
         }
+    }
+
+    public static class NumberRangeConstants
+    {
+        // Number range regex type
+        public const string TWONUM = "TwoNum";
+        public const string TWONUMBETWEEN = "TwoNumBetween";
+        public const string TWONUMTILL = "TwoNumTill";
+        public const string MORE = "More";
+        public const string LESS = "Less";
+        public const string EQUAL = "Equal";
+
+        // Brackets and comma for number range resolution value
+        public const char LEFT_OPEN = '(';
+        public const char RIGHT_OPEN = ')';
+        public const char LEFT_CLOSED = '[';
+        public const char RIGHT_CLOSED = ']';
+        public const char INTERVAL_SEPARATOR = ',';
     }
 }
