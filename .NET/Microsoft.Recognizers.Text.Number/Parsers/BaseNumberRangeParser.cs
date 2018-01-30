@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number
             var type = extResult.Data as string;
             if (!string.IsNullOrEmpty(type))
             {
-                if (type.Contains(Constants.TWONUM))
+                if (type.Contains(NumberRangeConstants.TWONUM))
                 {
                     ret = ParseNumberRangeWhichHasTwoNum(extResult);
                 }
@@ -74,17 +74,17 @@ namespace Microsoft.Recognizers.Text.Number
 
             char leftBracket, rightBracket;
             var type = extResult.Data as string;
-            if (type.Contains(Constants.TWONUMBETWEEN))
+            if (type.Contains(NumberRangeConstants.TWONUMBETWEEN))
             {
                 // between 20 and 30: (20,30)
-                leftBracket = Constants.LEFT_OPEN;
-                rightBracket = Constants.RIGHT_OPEN;
+                leftBracket = NumberRangeConstants.LEFT_OPEN;
+                rightBracket = NumberRangeConstants.RIGHT_OPEN;
             }
-            else if (type.Contains(Constants.TWONUMTILL))
+            else if (type.Contains(NumberRangeConstants.TWONUMTILL))
             {
                 // 20~30: [20,30)
-                leftBracket = Constants.LEFT_CLOSED;
-                rightBracket = Constants.RIGHT_OPEN;
+                leftBracket = NumberRangeConstants.LEFT_CLOSED;
+                rightBracket = NumberRangeConstants.RIGHT_OPEN;
             }
             else
             {
@@ -92,30 +92,31 @@ namespace Microsoft.Recognizers.Text.Number
                 var match = Config.MoreOrEqual.Match(extResult.Text);
                 if (match.Success)
                 {
-                    leftBracket = Constants.LEFT_CLOSED;
+                    leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 }
                 else
                 {
-                    leftBracket = Constants.LEFT_OPEN;
+                    leftBracket = NumberRangeConstants.LEFT_OPEN;
                 }
 
                 match = Config.LessOrEqual.Match(extResult.Text);
                 if (match.Success)
                 {
-                    rightBracket = Constants.RIGHT_CLOSED;
+                    rightBracket = NumberRangeConstants.RIGHT_CLOSED;
                 }
                 else
                 {
-                    rightBracket = Constants.RIGHT_OPEN;
+                    rightBracket = NumberRangeConstants.RIGHT_OPEN;
                 }
             }
 
             result.Value = new Dictionary<string, double>()
-                {
-                    { "StartValue", startValue },
-                    { "EndValue", endValue }
-                };
-            result.ResolutionStr = string.Concat(leftBracket, startValueStr, Constants.COMMA, endValueStr, rightBracket);
+            {
+                { "StartValue", startValue },
+                { "EndValue", endValue }
+            };
+
+            result.ResolutionStr = string.Concat(leftBracket, startValueStr, NumberRangeConstants.INTERVAL_SEPARATOR, endValueStr, rightBracket);
 
             return result;
         }
@@ -148,18 +149,18 @@ namespace Microsoft.Recognizers.Text.Number
             char leftBracket, rightBracket;
             string startValueStr = string.Empty, endValueStr = string.Empty;
             var type = extResult.Data as string;
-            if (type.Contains(Constants.MORE))
+            if (type.Contains(NumberRangeConstants.MORE))
             {
-                rightBracket = Constants.RIGHT_OPEN;
+                rightBracket = NumberRangeConstants.RIGHT_OPEN;
 
                 var match = Config.MoreOrEqual.Match(extResult.Text);
                 if (match.Success)
                 {
-                    leftBracket = Constants.LEFT_CLOSED;
+                    leftBracket = NumberRangeConstants.LEFT_CLOSED;
                 }
                 else
                 {
-                    leftBracket = Constants.LEFT_OPEN;
+                    leftBracket = NumberRangeConstants.LEFT_OPEN;
                 }
 
                 startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
@@ -169,18 +170,18 @@ namespace Microsoft.Recognizers.Text.Number
                     { "StartValue", num[0] }
                 };
             }
-            else if (type.Contains(Constants.LESS))
+            else if (type.Contains(NumberRangeConstants.LESS))
             {
-                leftBracket = Constants.LEFT_OPEN;
+                leftBracket = NumberRangeConstants.LEFT_OPEN;
 
                 var match = Config.LessOrEqual.Match(extResult.Text);
                 if (match.Success)
                 {
-                    rightBracket = Constants.RIGHT_CLOSED;
+                    rightBracket = NumberRangeConstants.RIGHT_CLOSED;
                 }
                 else
                 {
-                    rightBracket = Constants.RIGHT_OPEN;
+                    rightBracket = NumberRangeConstants.RIGHT_OPEN;
                 }
 
                 endValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
@@ -192,8 +193,8 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                leftBracket = Constants.LEFT_CLOSED;
-                rightBracket = Constants.RIGHT_CLOSED;
+                leftBracket = NumberRangeConstants.LEFT_CLOSED;
+                rightBracket = NumberRangeConstants.RIGHT_CLOSED;
 
                 startValueStr = Config.CultureInfo != null ? num[0].ToString(Config.CultureInfo) : num[0].ToString();
                 endValueStr = startValueStr;
@@ -205,7 +206,7 @@ namespace Microsoft.Recognizers.Text.Number
                 };
             }
 
-            result.ResolutionStr = string.Concat(leftBracket, startValueStr, Constants.COMMA, endValueStr, rightBracket);
+            result.ResolutionStr = string.Concat(leftBracket, startValueStr, NumberRangeConstants.INTERVAL_SEPARATOR, endValueStr, rightBracket);
 
             return result;
         }

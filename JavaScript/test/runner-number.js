@@ -7,8 +7,6 @@ var modelGetters = {
     'NumberModel': NumberRecognizer.instance.getNumberModel,
     'OrdinalModel': NumberRecognizer.instance.getOrdinalModel,
     'PercentModel': NumberRecognizer.instance.getPercentageModel,
-    // TODO: Implement number range model in javascript
-    'NumberRangeModel': NumberRecognizer.instance.getNumberModel,
     'CustomNumberModel': getCustomNumberModel
 };
 
