@@ -44,7 +44,8 @@ namespace SimpleConsole
 
                         // Write output
                         Console.WriteLine(results.Count() > 0 ? (string.Format("I found the following entities ({0:d}):", results.Count())) : "I found no entities.");
-                        results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+                        var jSetting = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+                        results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented, jSetting)));
                         Console.WriteLine();
                     }
                 }
