@@ -111,6 +111,20 @@
 }
 ,
 {
+  "Input": "It is 20 through 100",
+  "NotSupportedByDesign": "python,javascript",
+  "Results": [
+    {
+      "Text": "20 through 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "The number range is from one thousand to one thousand and five hundred.",
   "NotSupportedByDesign": "python,javascript",
   "Results": [
