@@ -54,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         Number,
         Ordinal,
         Percent,
+        NumberRange,
         Age,
         Currency,
         Dimension,
@@ -108,6 +109,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return NumberRecognizer.Instance.GetOrdinalModel(language);
                 case Models.Percent:
                     return NumberRecognizer.Instance.GetPercentageModel(language);
+                case Models.NumberRange:
+                    return NumberRecognizer.Instance.GetNumberRangeModel(language);
                 case Models.Age:
                     return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
                 case Models.Currency:

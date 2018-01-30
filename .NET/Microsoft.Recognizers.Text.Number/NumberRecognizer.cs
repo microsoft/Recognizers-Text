@@ -39,7 +39,10 @@ namespace Microsoft.Recognizers.Text.Number
                             new Chinese.OrdinalExtractor()),
                 [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new ChineseNumberParserConfiguration()),
-                            new Chinese.PercentageExtractor())
+                            new Chinese.PercentageExtractor()),
+                [typeof(NumberRangeModel)] = new NumberRangeModel(
+                            new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
+                            new Chinese.NumberRangeExtractor())
             });
 
             RegisterModel(Culture.Spanish, options.ToString(), new Dictionary<Type, IModel>
@@ -108,6 +111,11 @@ namespace Microsoft.Recognizers.Text.Number
         public IModel GetPercentageModel(string culture, bool fallbackToDefaultCulture = true)
         {
             return GetModel<PercentModel>(culture, fallbackToDefaultCulture, NumberOptions.None.ToString());
+        }
+
+        public IModel GetNumberRangeModel(string culture, bool fallbackToDefaultCulture = true)
+        {
+            return GetModel<NumberRangeModel>(culture, fallbackToDefaultCulture, NumberOptions.None.ToString());
         }
     }
 }

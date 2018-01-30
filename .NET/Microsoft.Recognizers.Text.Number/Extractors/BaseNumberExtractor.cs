@@ -23,10 +23,6 @@ namespace Microsoft.Recognizers.Text.Number
             var result = new List<ExtractResult>();
             var matchSource = new Dictionary<Match, string>();
             var matched = new bool[source.Length];
-            for (var i = 0; i < source.Length; i++)
-            {
-                matched[i] = false;
-            }
 
             var collections = Regexes.ToDictionary(o => o.Key.Matches(source), p => p.Value);
             foreach (var collection in collections)
@@ -38,7 +34,7 @@ namespace Microsoft.Recognizers.Text.Number
                         matched[m.Index + j] = true;
                     }
 
-                    //Keep Source Data for extra information
+                    // Keep Source Data for extra information
                     matchSource.Add(m, collection.Value);
                 }
             }

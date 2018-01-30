@@ -140,6 +140,8 @@ export namespace FrenchDateTime {
 	export const AllRegex = `\\b(?<all>toute\\s(l['ea])\\s?(?<unit>ann[eé]e|mois|semaine|semaines|jour|jours|journ[eé]e))\\b`;
 	export const HalfRegex = `(((un|une)\\s*)|\\b)(?<half>demi?(\\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\\b`;
 	export const ConjunctionRegex = `\\b((et(\\s+de|pour)?)|avec)\\b`;
+	export const MinYearNum = '50';
+	export const MaxYearNum = '10';
 	export const YearRegex = `\\b(?<year>((1[5-9]|20)\\d{2})|2100)\\b`;
 	export const HolidayRegex1 = `\\b(?<holiday>vendredi saint|mercredi des cendres|p[aâ]ques|l'action de gr[âa]ce|mardi gras|la saint-sylvestre|la saint sylvestre|la Saint-Valentin|la saint valentin|nouvel an chinois|nouvel an|r[eé]veillon de Nouvel an|jour de l'an|premier-mai|ler-mai|1-mai|poisson d'avril|r[eé]veillon de No[eë]l|veille de no[eë]l|noël|noel|thanksgiving|halloween|yuandan)(\\s+((d[ue]\\s+|d'))?(${YearRegex}|(${ThisPrefixRegex}\\s+)ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;
 	export const HolidayRegex2 = `\\b(?<holiday>martin luther king|martin luther king jr|toussaint|st patrick|st george|cinco de mayo|l'ind[eé]pendance|guy fawkes)(\\s+(de\\s+)?(${YearRegex}|${ThisPrefixRegex}\\s+ann[eé]e|ann[eé]e\\s+(${PastSuffixRegex}|${NextSuffixRegex})))?\\b`;

@@ -84,4 +84,21 @@ export namespace ChineseNumeric {
 	export const NumbersSpecialsPercentageRegex = `(${ZeroToNineChsFullHalfRegexChs}[\\.．]${ZeroToNineChsFullHalfRegexChs}|[1１][0０])\\s*成`;
 	export const SimpleSpecialsPercentageRegex = `${ZeroToNineIntegerRegexChs}\\s*[点點]\\s*${ZeroToNineIntegerRegexChs}\\s*成`;
 	export const SpecialsFoldsPercentageRegex = `半\\s*成|(?<=打)[对對]\\s*折|半\\s*折`;
+	export const TillRegex = `(到|至|--|-|—|——|~)`;
+	export const MoreRegex = `(大于|多于|高于|超过|大於|多於|高於|超過|>)`;
+	export const LessRegex = `(小于|少于|低于|小於|少於|低於|不到|不足|<)`;
+	export const EqualRegex = `(等于|等於|=)`;
+	export const MoreOrEqual = `((${MoreRegex}\\s*(或|或者)?\\s*${EqualRegex})|至少|最少|不${LessRegex})`;
+	export const LessOrEqual = `((${LessRegex}\\s*(或|或者)?\\s*${EqualRegex})|至多|最多|不${MoreRegex})`;
+	export const OneNumberRangeMoreRegex1 = `(${MoreOrEqual}|${MoreRegex})\\s*(?<number1>((?!([并且而並的同時时]|(，(?!\\d+))|(,(?!\\d+))|。)).)+)`;
+	export const OneNumberRangeMoreRegex2 = `比\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*[大多高]`;
+	export const OneNumberRangeMoreRegex3 = `(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*([多几余幾餘]|以上|之上)(?![万亿萬億]{1,2})`;
+	export const OneNumberRangeLessRegex1 = `(${LessOrEqual}|${LessRegex})\\s*(?<number2>((?!([并且而並的同時时]|(，(?!\\d+))|(,(?!\\d+))|。)).)+)`;
+	export const OneNumberRangeLessRegex2 = `比\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*[小少低]`;
+	export const OneNumberRangeLessRegex3 = `(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(以下|之下)`;
+	export const OneNumberRangeEqualRegex = `${EqualRegex}\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)`;
+	export const TwoNumberRangeRegex1 = `(位于|在|位於)\\s*(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(和|与|與|${TillRegex})\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*(之间|之間)`;
+	export const TwoNumberRangeRegex2 = `(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})`;
+	export const TwoNumberRangeRegex3 = `(${OneNumberRangeLessRegex1}|${OneNumberRangeLessRegex2}|${OneNumberRangeLessRegex3})\\s*(且|并且|而且|並且|((的)?同時)|((的)?同时)|，)?\\s*(${OneNumberRangeMoreRegex1}|${OneNumberRangeMoreRegex2}|${OneNumberRangeMoreRegex3})`;
+	export const TwoNumberRangeRegex4 = `(?<number1>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!((，(?!\\d+))|(,(?!\\d+))|。)).)+)`;
 }
