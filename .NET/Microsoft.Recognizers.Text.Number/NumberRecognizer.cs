@@ -26,7 +26,10 @@ namespace Microsoft.Recognizers.Text.Number
                             English.OrdinalExtractor.GetInstance()),
                 [typeof(PercentModel)] = new PercentModel(
                             AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new EnglishNumberParserConfiguration()),
-                            new English.PercentageExtractor())
+                            new English.PercentageExtractor()),
+                [typeof(NumberRangeModel)] = new NumberRangeModel(
+                            new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
+                            new English.NumberRangeExtractor())
             });
 
             RegisterModel(Culture.Chinese, options.ToString(), new Dictionary<Type, IModel>

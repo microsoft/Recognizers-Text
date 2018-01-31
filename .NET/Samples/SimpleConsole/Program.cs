@@ -71,6 +71,10 @@ namespace SimpleConsole
                 // E.g "one hundred percents" will return "100%"
                 NumberRecognizer.Instance.GetPercentageModel(defaultCulture),
 
+                // Add Number Range recognizer - This recognizer will find any cardinal or ordinal number range
+                // E.g. "between 2 and 5" will return "(2,5)"
+                NumberRecognizer.Instance.GetNumberRangeModel(defaultCulture),
+
                 // Add Age recognizer - This recognizer will find any age number presented
                 // E.g "After ninety five years of age, perspectives change" will return "95 Year"
                 NumberWithUnitRecognizer.Instance.GetAgeModel(defaultCulture),

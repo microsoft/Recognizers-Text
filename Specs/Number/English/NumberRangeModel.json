@@ -1,0 +1,374 @@
+[{
+  "Input": "This number is larger than twenty and less or equal than thirty five.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "larger than twenty and less or equal than thirty five",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(20,35]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number is between 20 and 30.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 20 and 30",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(20,30)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "He ranks between the tenth and the fifteenth.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between the tenth and the fifteenth",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(10,15)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "He ranks higher than the tenth but lower than the fifteenth.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "higher than the tenth but lower than the fifteenth",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(10,15)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This is a number which is greater than 100 and smaller than 300",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "greater than 100 and smaller than 300",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(100,300)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This number is higher or equal than one hundred, lower or equal than three hundred",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "higher or equal than one hundred, lower or equal than three hundred",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[100,300]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "There're at most 100 and at least 20 apples.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "at most 100 and at least 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "These apples are about 20~100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20~100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is 20 through 100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "20 through 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,100)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number range is from one thousand to one thousand and five hundred.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from one thousand to one thousand and five hundred",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[1000,1500)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number is above 1000 and below 1500",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "above 1000 and below 1500",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(1000,1500)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The number is above one quarter and below a half.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "above one quarter and below a half",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(0.25,0.5)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This number is bigger or equal than three thousand nine hundred and sixty five.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "bigger or equal than three thousand nine hundred and sixty five",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[3965,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "This number is greater than 4,565",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "greater than 4,565",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(4565,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "He is more than thirty years old.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "more than thirty",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His age is no less than thirty.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no less than thirty",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "There're about five hundred and more in these products.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "five hundred and more",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(500,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "More than 1/2 of the people came here.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "More than 1/2",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(0.5,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Find the prime numbers which are smaller or equal than 100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "smaller or equal than 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,100]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Find the prime numbers which are < = 100",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "< = 100",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,100]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "His height is below 170.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "below 170",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,170)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x is equal to one hundred and seventy.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "equal to one hundred and seventy",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[170,170]"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x>10 and y<20",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": ">10",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(10,)"
+      }
+    },
+    {
+      "Text": "<20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(,20)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "x is larger than 10 and smaller than 20. y is no more than 50 and no less than 20.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "larger than 10 and smaller than 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "(10,20)"
+      }
+    },
+    {
+      "Text": "no more than 50 and no less than 20",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[20,50]"
+      }
+    }
+  ]
+}
+]

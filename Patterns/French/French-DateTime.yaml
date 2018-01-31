@@ -335,8 +335,8 @@ HalfRegex: !simpleRegex
   def: (((un|une)\s*)|\b)(?<half>demi?(\s*|-)+(?<unit>ann[eé]e|ans|mois|semaine|jour|heure))\b
 ConjunctionRegex: !simpleRegex
   def: \b((et(\s+de|pour)?)|avec)\b
-MinYearNum: 1500
-MaxYearNum: 2100
+MinYearNum: '1500'
+MaxYearNum: '2100'
 YearRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
 HolidayRegex1: !nestedRegex

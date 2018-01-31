@@ -144,7 +144,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 if (numberStr.Trim().EndsWith(extractNum.Text) && match.Value.StartsWith(numberStr))
                 {
-                    start = source.IndexOf(extractNum.Text);
+                    start = source.IndexOf(numberStr) + extractNum.Start ?? 0;
                     length = length - extractNum.Start ?? 0;
                     validNum = true;
                 }
