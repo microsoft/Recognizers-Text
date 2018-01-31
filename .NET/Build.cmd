@@ -4,7 +4,7 @@ SETLOCAL EnableDelayedExpansion
 ECHO.
 ECHO # Building .NET platform
 
-SET "Vs2017SubDir=\Microsoft Visual Studio\2017\Professional"
+SET "Vs2017SubDir=\Microsoft Visual Studio\2017\Enterprise"
 SET MsBuildSubDir=\MSBuild\15.0\bin
 SET VsCommonSubDir=\Common7\IDE\CommonExtensions\Microsoft\TestWindow
 
