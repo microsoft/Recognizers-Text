@@ -1,5 +1,5 @@
-import { IExtractor, IParser, RegExpUtility } from "recognizers-text";
-import { BaseNumberParser, BaseNumberExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "recognizers-text-number";
+import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
+import { BaseNumberParser, BaseNumberExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";

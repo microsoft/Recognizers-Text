@@ -1,4 +1,4 @@
-import { RegExpUtility } from "recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime";
 import { DateTimeResolutionResult, DateUtils, FormatUtil } from "../utilities";
 import { FrenchDateTime } from "../../resources/frenchDateTime";

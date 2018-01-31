@@ -1,5 +1,5 @@
-import { RegExpUtility } from "recognizers-text";
-import { SpanishCardinalExtractor, SpanishIntegerExtractor, SpanishOrdinalExtractor, BaseNumberParser, SpanishNumberParserConfiguration } from "recognizers-text-number";
+import { RegExpUtility } from "@microsoft/recognizers-text";
+import { SpanishCardinalExtractor, SpanishIntegerExtractor, SpanishOrdinalExtractor, BaseNumberParser, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { IDateTimeUtilityConfiguration } from "../utilities";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
 import { BaseDateParserConfiguration } from "../parsers";

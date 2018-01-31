@@ -1,5 +1,5 @@
-import { IModel, ModelResult, Recognizer, IExtractor, IParser } from "recognizers-text";
-import { Culture } from "recognizers-text-number";
+import { IModel, ModelResult, Recognizer, IExtractor, IParser } from "@microsoft/recognizers-text";
+import { Culture } from "@microsoft/recognizers-text-number";
 import { CurrencyModel, TemperatureModel, DimensionModel, AgeModel } from "./models";
 import { NumberWithUnitExtractor } from "./extractors";
 import { NumberWithUnitParser } from "./parsers";

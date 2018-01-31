@@ -1,4 +1,4 @@
-import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "recognizers-text";
+import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
 import GraphemeSplitter = require("grapheme-splitter");
 const splitter = new GraphemeSplitter();
