@@ -58,23 +58,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
         }
 
-        private ModelResult GetModelResult(DateTimeParseResult o)
+        private ModelResult GetModelResult(DateTimeParseResult parsedDateTime)
         {
-            var ret = new ModelResult
+            var modelResult = new ModelResult
             {
-                Start = o.Start.Value,
-                End = o.Start.Value + o.Length.Value - 1,
-                TypeName = o.Type,
-                Resolution = o.Value as SortedDictionary<string, object>,
-                Text = o.Text
+                Start = parsedDateTime.Start.Value,
+                End = parsedDateTime.Start.Value + parsedDateTime.Length.Value - 1,
+                TypeName = parsedDateTime.Type,
+                Resolution = parsedDateTime.Value as SortedDictionary<string, object>,
+                Text = parsedDateTime.Text
             };
 
-            if (!string.IsNullOrEmpty(GetParentText(o)))
+            var parentText = GetParentText(parsedDateTime);
+            if (!string.IsNullOrEmpty(parentText))
             {
-                ((ExtendedTypesModelResult)ret).ParentText = GetParentText(o);
+                return new ExtendedTypesModelResult(modelResult)
+                {
+                    ParentText = parentText
+                };
             }
-
-            return ret;
+            else
+            {
+                return modelResult;
+            }
         }
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
