@@ -7,6 +7,7 @@
     using Microsoft.Bot.Builder.Dialogs.Internals;
     using Microsoft.Bot.Connector;
     using Microsoft.Recognizers.Text.DateTime;
+    using Microsoft.Recognizers.Text;
 
     [Serializable]
     public class DeliveryPrompt : Prompt<IEnumerable<DateTime>, DateTime>
@@ -49,13 +50,13 @@
             var results = model.Parse(input);
 
             // Check there are valid results
-            if (results.Count > 0 && results.First().TypeName.StartsWith("datetimeV2"))
+            if (results.Count > 0 && (results.First() as ModelResult).TypeName.StartsWith("datetimeV2"))
             {
                 // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
                 // We only care for those with a date, date and time, or date time period:
                 // date, daterange, datetime, datetimerange
 
-                var first = results.First();
+                var first = (ModelResult)results.First();
                 var resolutionValues = (IList<Dictionary<string, string>>)first.Resolution["values"];
 
                 var subType = first.TypeName.Split('.').Last();

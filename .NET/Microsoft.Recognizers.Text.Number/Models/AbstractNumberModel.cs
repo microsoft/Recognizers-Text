@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         protected IParser Parser { get; private set; }
 
-        public List<ModelResult> Parse(string query)
+        public List<object> Parse(string query)
         {
 
             var parsedNumbers = new List<ParseResult>();
@@ -39,14 +39,21 @@ namespace Microsoft.Recognizers.Text.Number
                 // No result.
             }
 
-            return parsedNumbers.Select(o => new ModelResult
+            return parsedNumbers.Select(o => GetModelResult(o)).ToList();
+        }
+
+        private object GetModelResult(ParseResult parsedNumber)
+        {
+            object ret = new ModelResult
             {
-                Start = o.Start.Value,
-                End = o.Start.Value + o.Length.Value - 1,
-                Resolution = new SortedDictionary<string, object> { { "value", o.ResolutionStr } },
-                Text = o.Text,
+                Start = parsedNumber.Start.Value,
+                End = parsedNumber.Start.Value + parsedNumber.Length.Value - 1,
+                Resolution = new SortedDictionary<string, object> { { "value", parsedNumber.ResolutionStr } },
+                Text = parsedNumber.Text,
                 TypeName = ModelTypeName
-            }).ToList();
+            };
+
+            return ret as ModelResult;
         }
     }
 }

@@ -14,9 +14,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
         {
             var pr = model.Parse(text);
             Assert.AreEqual(1, pr.Count);
-            Assert.AreEqual(expected, pr[0].Text);
+            Assert.AreEqual(expected, (pr[0] as ModelResult).Text);
             
-            var values = pr[0].Resolution["values"] as IEnumerable<Dictionary<string, string>>;
+            var values = (pr[0] as ModelResult).Resolution["values"] as IEnumerable<Dictionary<string, string>>;
             Assert.AreEqual(Constants.SYS_DATETIME_DATETIME, values.First()["type"]);
         }
 
