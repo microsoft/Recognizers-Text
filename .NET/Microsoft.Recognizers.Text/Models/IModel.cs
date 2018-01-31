@@ -6,6 +6,6 @@ namespace Microsoft.Recognizers.Text
     {
         string ModelTypeName { get; }
 
-        List<object> Parse(string query);
+        List<ModelResult> Parse(string query);
     }
 }

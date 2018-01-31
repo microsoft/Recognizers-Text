@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ModelResult;
+                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ModelResult;
+                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ModelResult;
+                var actual = tuple.Item2;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));
@@ -180,14 +180,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
             var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
-            var expectedResults = TestSpec.CastResults<DateTimeAltModelResult>();
+            var expectedResults = TestSpec.CastResults<ExtendedTypesModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as DateTimeAltModelResult;
+                var actual = tuple.Item2 as ExtendedTypesModelResult;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));

@@ -7,7 +7,6 @@ namespace BotBuilderRecognizerSample
     using Microsoft.Bot.Builder.Dialogs;
     using Microsoft.Bot.Builder.Dialogs.Internals;
     using Microsoft.Bot.Connector;
-    using Microsoft.Recognizers.Text;
 
     [Serializable]
     public class QuantityPrompt : Prompt<int, int>
@@ -35,8 +34,8 @@ namespace BotBuilderRecognizerSample
             var results = model.Parse(message.Text);
             if (results.Count > 0)
             {
-                if ((results.First() as ModelResult).TypeName == "number" &&
-                    double.TryParse((results.First() as ModelResult).Resolution["value"].ToString(), out double value))
+                if (results.First().TypeName == "number" &&
+                    double.TryParse(results.First().Resolution["value"].ToString(), out double value))
                 {
                     // Validate number
                     if (value < 1)

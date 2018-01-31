@@ -18,13 +18,13 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         protected Dictionary<IExtractor, IParser> ExtractorParserDic { get; }
 
-        public List<object> Parse(string query)
+        public List<ModelResult> Parse(string query)
         {
 
             // Preprocess the query
             query = FormatUtility.Preprocess(query, false);
 
-            List<object> extractionResults = new List<object>();
+            List<ModelResult> extractionResults = new List<ModelResult>();
 
             try
             {
@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         bool bAdd = true;
 
-                        foreach (ModelResult extractionResult in extractionResults)
+                        foreach (var extractionResult in extractionResults)
                         {
                             if (extractionResult.Start == result.Start && extractionResult.End == result.End)
                             {

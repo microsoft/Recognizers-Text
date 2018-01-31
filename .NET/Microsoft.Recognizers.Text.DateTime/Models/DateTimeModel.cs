@@ -20,12 +20,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.Extractor = extractor;
         }
 
-        public List<object> Parse(string query)
+        public List<ModelResult> Parse(string query)
         {
             return this.Parse(query, System.DateTime.Now);
         }
 
-        public List<object> Parse(string query, System.DateTime refTime)
+        public List<ModelResult> Parse(string query, System.DateTime refTime)
         {
             // Preprocess the query
             query = FormatUtility.Preprocess(query);
@@ -58,38 +58,37 @@ namespace Microsoft.Recognizers.Text.DateTime
             return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
         }
 
-        private object GetModelResult(DateTimeParseResult parsedDateTime)
+        private ModelResult GetModelResult(DateTimeParseResult o)
+        {
+            var ret = new ModelResult
+            {
+                Start = o.Start.Value,
+                End = o.Start.Value + o.Length.Value - 1,
+                TypeName = o.Type,
+                Resolution = o.Value as SortedDictionary<string, object>,
+                Text = o.Text
+            };
+
+            if (!string.IsNullOrEmpty(GetParentText(o)))
+            {
+                ((ExtendedTypesModelResult)ret).ParentText = GetParentText(o);
+            }
+
+            return ret;
+        }
+
+        private string GetParentText(DateTimeParseResult parsedDateTime)
         {
             var type = parsedDateTime.Type.Split('.').Last();
             if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                return new DateTimeAltModelResult
-                {
-                    Start = parsedDateTime.Start.Value,
-                    End = parsedDateTime.Start.Value + parsedDateTime.Length.Value - 1,
-                    TypeName = parsedDateTime.Type,
-                    Resolution = parsedDateTime.Value as SortedDictionary<string, object>,
-                    Text = parsedDateTime.Text,
-                    ParentText = ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString()
-                };
+                return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
             }
             else
             {
-                return new ModelResult
-                {
-                    Start = parsedDateTime.Start.Value,
-                    End = parsedDateTime.Start.Value + parsedDateTime.Length.Value - 1,
-                    TypeName = parsedDateTime.Type,
-                    Resolution = parsedDateTime.Value as SortedDictionary<string, object>,
-                    Text = parsedDateTime.Text
-                };
+                return null;
             }
         }
 
-    }
-
-    public class DateTimeAltModelResult : ModelResult
-    {
-        public string ParentText { get; set; }
     }
 }
