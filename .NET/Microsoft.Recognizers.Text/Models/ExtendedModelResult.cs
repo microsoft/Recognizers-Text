@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Recognizers.Text
 {
-    public class ExtendedTypesModelResult : ModelResult
+    public class ExtendedModelResult : ModelResult
     {
         public string ParentText { get; set; }
 
-        public ExtendedTypesModelResult() { }
+        public ExtendedModelResult()
+        {
+        }
 
-        public ExtendedTypesModelResult(ModelResult modelResult)
+        public ExtendedModelResult(ModelResult modelResult)
         {
             Start = modelResult.Start;
             End = modelResult.End;

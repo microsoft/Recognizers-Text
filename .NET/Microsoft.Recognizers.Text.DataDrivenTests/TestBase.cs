@@ -180,14 +180,14 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             var referenceDateTime = TestSpec.GetReferenceDateTime();
 
             var actualResults = ((DateTimeModel)Model).Parse(TestSpec.Input, referenceDateTime);
-            var expectedResults = TestSpec.CastResults<ExtendedTypesModelResult>();
+            var expectedResults = TestSpec.CastResults<ExtendedModelResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(TestSpec));
 
             foreach (var tuple in Enumerable.Zip(expectedResults, actualResults, Tuple.Create))
             {
                 var expected = tuple.Item1;
-                var actual = tuple.Item2 as ExtendedTypesModelResult;
+                var actual = tuple.Item2 as ExtendedModelResult;
 
                 Assert.AreEqual(expected.TypeName, actual.TypeName, GetMessage(TestSpec));
                 Assert.AreEqual(expected.Text, actual.Text, GetMessage(TestSpec));

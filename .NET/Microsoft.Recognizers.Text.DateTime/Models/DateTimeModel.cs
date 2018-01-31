@@ -69,12 +69,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 Text = parsedDateTime.Text
             };
 
-            var parentText = GetParentText(parsedDateTime);
-            if (!string.IsNullOrEmpty(parentText))
+            var type = parsedDateTime.Type.Split('.').Last();
+            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                return new ExtendedTypesModelResult(modelResult)
+                return new ExtendedModelResult(modelResult)
                 {
-                    ParentText = parentText
+                    ParentText = GetParentText(parsedDateTime)
                 };
             }
             else
@@ -85,15 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
         {
-            var type = parsedDateTime.Type.Split('.').Last();
-            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
-            {
-                return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
         }
 
     }
