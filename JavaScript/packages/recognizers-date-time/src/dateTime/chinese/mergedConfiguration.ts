@@ -8,8 +8,8 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration"
-import { ExtractResult, RegExpUtility } from "recognizers-text";
-import { BaseNumberExtractor } from "recognizers-text-number";
+import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
+import { BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration"
 import { ChineseTimeExtractor, ChineseTimeParser } from "./timeConfiguration"

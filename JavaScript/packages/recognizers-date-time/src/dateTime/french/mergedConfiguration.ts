@@ -1,5 +1,5 @@
-import { RegExpUtility } from "recognizers-text";
-import { BaseNumberExtractor, FrenchIntegerExtractor } from "recognizers-text-number";
+import { RegExpUtility } from "@microsoft/recognizers-text";
+import { BaseNumberExtractor, FrenchIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";

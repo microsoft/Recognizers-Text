@@ -1,4 +1,4 @@
-var Culture = require('recognizers-text-number').Culture;
+var Culture = require('@microsoft/recognizers-text-number').Culture;
 
 // List of supported cultures
 module.exports = {

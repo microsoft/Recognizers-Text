@@ -1,8 +1,8 @@
-import { ParseResult } from "recognizers-text";
+import { ParseResult } from "@microsoft/recognizers-text";
 import { INumberParserConfiguration } from "../parsers";
 import { CultureInfo, Culture } from "../../culture";
 import { PortugueseNumeric } from "../../resources/portugueseNumeric";
-import { RegExpUtility } from "recognizers-text"
+import { RegExpUtility } from "@microsoft/recognizers-text"
 
 export class PortugueseNumberParserConfiguration implements INumberParserConfiguration {
 
