@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
 		public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
 		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\b)";
-		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)";
+		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(a|an|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter)(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)";
 		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
 		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+point){AllPointRegex}";
