@@ -47,8 +47,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)(?=\b)";
 		public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?(ein|eine)(\s+|\s*-\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|halb(er|e|es)?|hälfte)(?=\b)";
 		public static readonly string FractionPrepositionRegex = $@"(?<=\b)(({AllIntRegex})|((?<!\.)\d+))\s+over\s+(({AllIntRegex})|(\d+)(?!\.))(?=\b)";
-		public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
-		public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+Komma\s+){AllPointRegex}";
+		public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
+		public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";
 		public const string DoubleWithMultiplierRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)";
 		public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)e([+-]*[1-9]\d*)(?=\b)";
 		public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))(\d+(\.\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
@@ -64,8 +64,8 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const char NonDecimalSeparatorChar = '.';
 		public const string HalfADozenText = "sechs";
 		public const string WordSeparatorToken = "und";
-		public static readonly string[] WrittenDecimalSeparatorTexts = { "Komma" };
-		public static readonly string[] WrittenGroupSeparatorTexts = { "Punkt" };
+		public static readonly string[] WrittenDecimalSeparatorTexts = { "komma" };
+		public static readonly string[] WrittenGroupSeparatorTexts = { "punkt" };
 		public static readonly string[] WrittenIntegerSeparatorTexts = { "und" };
 		public static readonly string[] WrittenFractionSeparatorTexts = { "durch" };
 		public const string HalfADozenRegex = @"ein\s+halbes\s+dutzend";

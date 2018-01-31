@@ -1,1 +1,111 @@
-[]
+[{
+    "Input": "Um 7 bin ich zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Ich werde um 12:34 zurück sein",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 7 Uhr",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "7 Uhr",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 8 Uhr morgens",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "8 Uhr morgens",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Es ist halb 8",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "halb 8",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Es ist viertel nach 8",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "viertel nach 8",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "3 Minuten nach 8",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "3 Minuten nach 8",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "nachts um 3 Uhr",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nachts um 3 Uhr",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "um drei Uhr in der Nacht",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "drei Uhr in der Nacht",
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "Nachmittags gegen 4",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Nachmittags gegen 4",
+        "Type": "time"
+      }
+    ]
+  }
+]

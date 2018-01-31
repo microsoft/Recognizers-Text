@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex ISetExtractorConfiguration.EachDayRegex => EachDayRegex;
 
-        Regex ISetExtractorConfiguration.BeforeEachDayRegex => null;
+        Regex ISetExtractorConfiguration.BeforeEachDayRegex => EachDayRegex;
 
         Regex ISetExtractorConfiguration.SetWeekDayRegex => SetWeekDayRegex;
 

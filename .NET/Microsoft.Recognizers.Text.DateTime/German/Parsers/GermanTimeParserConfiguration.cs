@@ -50,17 +50,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var deltaMin = 0;
             var trimedPrefix = prefix.Trim().ToLowerInvariant();
 
-            if (trimedPrefix.StartsWith("half"))
+            if (trimedPrefix.StartsWith("halb"))
             {
-                deltaMin = 30;
+                deltaMin = -30;
             }
-            else if (trimedPrefix.StartsWith("a quarter") || trimedPrefix.StartsWith("quarter"))
+            else if ( trimedPrefix.StartsWith("viertel nach"))
             {
                 deltaMin = 15;
             }
-            else if (trimedPrefix.StartsWith("three quarter"))
+            else if (trimedPrefix.StartsWith("viertel vor"))
             {
-                deltaMin = 45;
+                deltaMin = -15;
             }
             else
             {
@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 }
             }
 
-            if (trimedPrefix.EndsWith("to"))
+            if (trimedPrefix.EndsWith("zum"))
             {
                 deltaMin = -deltaMin;
             }
