@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private ModelResult GetModelResult(DateTimeParseResult parsedDateTime)
         {
+            ModelResult ret;
             var modelResult = new ModelResult
             {
                 Start = parsedDateTime.Start.Value,
@@ -72,15 +73,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             var type = parsedDateTime.Type.Split('.').Last();
             if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
             {
-                return new ExtendedModelResult(modelResult)
+                ret = new ExtendedModelResult(modelResult)
                 {
                     ParentText = GetParentText(parsedDateTime)
                 };
             }
             else
             {
-                return modelResult;
+                ret = modelResult;
             }
+
+            return ret;
         }
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
