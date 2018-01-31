@@ -55,28 +55,41 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // No result.
             }
 
-            return parsedDateTimes.Select(o => new ModelResult
+            return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
+        }
+
+        private ModelResult GetModelResult(DateTimeParseResult parsedDateTime)
+        {
+            ModelResult ret;
+            var modelResult = new ModelResult
             {
-                Start = o.Start.Value,
-                End = o.Start.Value + o.Length.Value - 1,
-                TypeName = o.Type,
-                Resolution = o.Value as SortedDictionary<string, object>,
-                Text = o.Text,
-                ParentText = GetParentText(o)
-            }).ToList();
+                Start = parsedDateTime.Start.Value,
+                End = parsedDateTime.Start.Value + parsedDateTime.Length.Value - 1,
+                TypeName = parsedDateTime.Type,
+                Resolution = parsedDateTime.Value as SortedDictionary<string, object>,
+                Text = parsedDateTime.Text
+            };
+
+            var type = parsedDateTime.Type.Split('.').Last();
+            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
+            {
+                ret = new ExtendedModelResult(modelResult)
+                {
+                    ParentText = GetParentText(parsedDateTime)
+                };
+            }
+            else
+            {
+                ret = modelResult;
+            }
+
+            return ret;
         }
 
         private string GetParentText(DateTimeParseResult parsedDateTime)
         {
-            var type = parsedDateTime.Type.Split('.').Last();
-            if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT))
-            {
-                return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return ((Dictionary<string, object>)(parsedDateTime.Data))[Constants.ParentText].ToString();
         }
+
     }
 }

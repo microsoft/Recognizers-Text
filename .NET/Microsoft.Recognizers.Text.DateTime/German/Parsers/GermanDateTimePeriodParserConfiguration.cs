@@ -146,11 +146,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             var trimedText = text.Trim().ToLowerInvariant();
 
             var swift = 0;
-            if (trimedText.StartsWith("next"))
+            if (trimedText.StartsWith("nächster") || trimedText.StartsWith("nächste") || trimedText.StartsWith("nächsten") || trimedText.StartsWith("nächstes"))
             {
                 swift = 1;
             }
-            else if (trimedText.StartsWith("last"))
+            else if (trimedText.StartsWith("letzter") || trimedText.StartsWith("letzte") || trimedText.StartsWith("letzten") || trimedText.StartsWith("letztes"))
             {
                 swift = -1;
             }

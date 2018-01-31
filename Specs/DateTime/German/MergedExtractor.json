@@ -1,1 +1,144 @@
-[]
+[{
+    "Input": "das sind 2 Tage",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2 Tage",
+        "Type": "duration"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "es ist 4 Uhr",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "4 Uhr",
+        "Type": "time"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das ganze findet dann am Montag um 4 Uhr statt",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "am Montag um 4 Uhr ",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Wie sieht denn dieser Tag so aus?",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "dieser Tag",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "letzte Woche",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "letzte Woche",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Das meeting geht morgen von 12 bis 14 Uhr.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "morgen von 12 bis 14 Uhr.",
+        "Type": "datetimerange"
+      }
+    ]
+  },
+  {
+    "Input": "Verschieb mal das meeting vom 22. August auf den 23. August",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "22. August",
+        "Type": "date"
+      },
+      {
+        "Text": "23. August",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "06/06 12:15",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "06/06 12:15",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "06/06/12 15:15",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "06/06/12 15:15",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "29. Mai",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "29. Mai",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich wurde im August geboren",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "August",
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "Das nächste meeting wird am 16. März 2017 sein. Wie wäre es denn mit einer Diskussionsrunde heute um 2 Uhr Nachmittags?",
+    "NotSupported": "javascript,dotnet",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "16. März 2017 ",
+        "Type": "date" 
+      }
+      ,
+      {
+        "Text": "heute um 2 Uhr Nachmittags",
+        "Type": "datetime"
+      }
+    ]
+  }
+]

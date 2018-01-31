@@ -77,10 +77,10 @@ FractionPrepositionRegex: !nestedRegex
   references: [ AllIntRegex ]
 #Double Regex
 AllPointRegex: !nestedRegex
-  def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
+  def: ((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))
   references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
 AllFloatRegex: !nestedRegex
-  def: '{AllIntRegex}(\s+Komma\s+){AllPointRegex}'
+  def: ({AllIntRegex}(\s*komma\s*){AllPointRegex})
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.)))\d+\.\d+\s*(K|k|M|G|T|B|b)(?=\b)
@@ -116,8 +116,8 @@ FractionMarkerToken: over
 NonDecimalSeparatorChar: !char '.'
 HalfADozenText: sechs
 WordSeparatorToken: und
-WrittenDecimalSeparatorTexts: [Komma]
-WrittenGroupSeparatorTexts: [Punkt]
+WrittenDecimalSeparatorTexts: [komma]
+WrittenGroupSeparatorTexts: [punkt]
 WrittenIntegerSeparatorTexts: [und]
 WrittenFractionSeparatorTexts: [durch]
 HalfADozenRegex: !simpleRegex

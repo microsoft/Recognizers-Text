@@ -100,7 +100,7 @@
   {//does not yet recognize 'Komma' as ','
     "Input": "zwei Komma drei",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwei Komma drei",
@@ -241,7 +241,7 @@
   {
     "Input": "Das sind einhundert Leute.",
     "NotSupportedByDesign": "python",
-    "NotSupported": "javascript,dotnet",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert",

@@ -75,32 +75,35 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex[] DateRegexList =
         {
-            // (Sunday,)? April 5
+            // (Sonntag,)? 5. April 
             new Regex(DateTimeDefinitions.DateExtractor1, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? April 5, 2016
+            // (Sonntag,)? 5. April, 2016
             new Regex(DateTimeDefinitions.DateExtractor2, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // (Sunday,)? 6th of April
+            // (Sonntag,)? der 6. April, 2016
             new Regex(DateTimeDefinitions.DateExtractor3, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // 3-23-2017
+            // 23.3.2017
             new Regex(DateTimeDefinitions.DateExtractor4, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 23-3-2015
             new Regex(DateTimeDefinitions.DateExtractor5, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // on 1.3
+            // am 1.3
             new Regex(DateTimeDefinitions.DateExtractor6, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 7/23
             new Regex(DateTimeDefinitions.DateExtractor7, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
-            // on 24-12
+            // am 24-12
             new Regex(DateTimeDefinitions.DateExtractor8, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 23/7
             new Regex(DateTimeDefinitions.DateExtractor9, RegexOptions.IgnoreCase | RegexOptions.Singleline),
+
+            //Nächstes Jahr (im Sommer)?
+            new Regex(DateTimeDefinitions.DateExtractor10, RegexOptions.IgnoreCase | RegexOptions.Singleline),
 
             // 2015-12-23
             new Regex(DateTimeDefinitions.DateExtractorA, RegexOptions.IgnoreCase | RegexOptions.Singleline)

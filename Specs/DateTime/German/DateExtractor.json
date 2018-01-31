@@ -1,1 +1,183 @@
-[]
+[{
+    "Input": "Ich gehe am 22. April zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "22. April",
+        "Type": "date"
+      }
+    ]
+},
+{
+    "Input": "Ich gehe am 12. Januar 2016 zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "12. Januar 2016",
+        "Type": "date"
+      }
+    ]
+}
+,
+{
+    "Input": "Ich gehe am Dienstag dem 12. Januar 2016 zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+        {
+            "Text": "Dienstag dem 12. Januar 2016",
+            "Type": "date"
+        }
+    ]
+},
+{
+    "Input": "Ich gehe am 21/04/2016 zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe am 22/04 zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Das Datum meiner Rückkehr wird 2015/08/12 sein.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich komme wahrscheinlich diesen Dienstag zurück.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "diesen Dienstag",
+        "Type": "date"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich bin in 2 Wochen wieder da.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "in 2 Wochen",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin Sonntag in 2 Wochen wieder da.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Sonntag in 2 Wochen",
+        "Type": "date"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich komme diese Woche Dienstag wieder.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "diese Woche Dienstag",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme nächstes Jahr wieder.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächstes Jahr",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 15. wieder hier.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. ",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 15. November wieder hier.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. November",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 15. November 2011 wieder hier.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. November 2011",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme irgendwann nächstes Jahr im Sommer wieder.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "nächstes Jahr im Sommer",
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 23.3.2017 wieder.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "23.3.2017",
+        "Type": "date"
+      }
+    ]
+  }
+]
