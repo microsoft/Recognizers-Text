@@ -1,5 +1,5 @@
-import { IExtractor } from "recognizers-text";
-import { RegExpUtility } from "recognizers-text";
+import { IExtractor } from "@microsoft/recognizers-text";
+import { RegExpUtility } from "@microsoft/recognizers-text";
 import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
 import { BaseDurationExtractor } from "../baseDuration";

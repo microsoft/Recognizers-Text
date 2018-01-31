@@ -1,4 +1,4 @@
-import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "recognizers-text";
+import { IModel, ModelResult, IExtractor, IParser, ParseResult } from "@microsoft/recognizers-text";
 
 export enum NumberMode {
     // Default is for unit and datetime

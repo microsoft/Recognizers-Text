@@ -1,5 +1,5 @@
-import { RegExpUtility } from "recognizers-text";
-import { EnglishCardinalExtractor, EnglishIntegerExtractor, EnglishOrdinalExtractor, BaseNumberParser, EnglishNumberParserConfiguration } from "recognizers-text-number";
+import { RegExpUtility } from "@microsoft/recognizers-text";
+import { EnglishCardinalExtractor, EnglishIntegerExtractor, EnglishOrdinalExtractor, BaseNumberParser, EnglishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { EnglishDateTime } from "../../resources/englishDateTime"
 import { BaseDateTime } from "../../resources/baseDateTime"
 import { FormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration } from "../utilities"
