@@ -212,5 +212,18 @@
       }
     }
   ]
+},
+{
+  "Input": "Book a first class seat to seattle",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "first",
+      "TypeName": "ordinal",
+      "Resolution": {
+        "value": "1"
+      }
+    }
+  ]
 }
 ]
