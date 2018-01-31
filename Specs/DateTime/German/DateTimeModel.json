@@ -1,1 +1,141 @@
-[]
+[{
+    "Input": "Ich gehe am 2. Oktober zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "2. oktober",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-02",
+              "type": "date",
+              "value": "2016-10-02"
+            },
+            {
+              "timex": "XXXX-10-02",
+              "type": "date",
+              "value": "2017-10-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 22/04 zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "22/04",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2016-04-22"
+            },
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2017-04-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am neunundzwanzig Mai zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "neunundzwanzig mai",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-29",
+              "type": "date",
+              "value": "2016-05-29"
+            },
+            {
+              "timex": "XXXX-05-29",
+              "type": "date",
+              "value": "2017-05-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am zweiten Mai zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "zweiten Mai",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2016-05-02"
+            },
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2017-05-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 2. Mai zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "2. mai",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2016-05-02"
+            },
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2017-05-02"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

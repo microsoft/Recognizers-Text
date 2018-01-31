@@ -1,1 +1,68 @@
-[]
+[{
+    "Input": "Ich gehe jetzt zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "jetzt",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "ich gehe so früh wie möglich zurück",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "so früh wie möglich",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe genau jetzt weg.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "genau jetzt",
+        "Type": "datetime"
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe am 15. November um 8 Uhr weg.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. November um 8 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 15.08. um 8 Uhr weg.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15.08. um 8 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  },
+  {//for some reason, creating a with an additional regex without the month or making the month optional in the existing regex makes this test and the above fail 
+    "Input": "Ich gehe am 15. um 8 Uhr weg.",
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. um 8 Uhr",
+        "Type": "datetime"
+      }
+    ]
+  }
+]

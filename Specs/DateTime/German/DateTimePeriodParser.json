@@ -1,1 +1,76 @@
-[]
+[{
+    "Input": "Ich bin heute von fünf bis sieben weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "heute von fünf bis sieben ",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin von 5 bis 6 am 22/4/2016 weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "von 5 bis 6 am 22/4/2016",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {//Parser returns NULL as value. Should not be different to the one above
+    "Input": "Ich bin am 22/4/2016 von 5 bis 6 weg.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript,dotnet",
+    "Results": [
+      {
+        "Text": "22/4/2016 von 5 bis 6 ",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,1 +1,232 @@
-[]
+[{
+    "Input": "Ich gehe am 15. zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-01-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. ",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-01-15"
+          },
+          "PastResolution": {
+            "date": "2015-12-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 15. Januar zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-01-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. Januar",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-15",
+          "FutureResolution": {
+            "date": "2016-01-15"
+          },
+          "PastResolution": {
+            "date": "2015-01-15"
+          }
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "Ich gehe am 15. Januar 2011 zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15. Januar 2011",
+        "Type": "date",
+        "Value": {
+          "Timex": "2011-01-15",
+          "FutureResolution": {
+            "date": "2011-01-15"
+          },
+          "PastResolution": {
+            "date": "2011-01-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am 15.1.2011 zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "15.1.2011",
+        "Type": "date",
+        "Value": {
+          "Timex": "2011-01-15",
+          "FutureResolution": {
+            "date": "2011-01-15"
+          },
+          "PastResolution": {
+            "date": "2011-01-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag dem 15. Januar 2017 wieder hier.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Montag dem 15. Januar 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-01-15",
+          "FutureResolution": {
+            "date": "2017-01-15"
+          },
+          "PastResolution": {
+            "date": "2017-01-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Aller Wahrscheinlichkeit nach bin ich am Montag dem 15. Januar wieder hier.",
+    "Context": {
+      "ReferenceDateTime": "2017-01-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Montag dem 15. Januar",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-15",
+          "FutureResolution": {
+            "date": "2017-01-15"
+          },
+          "PastResolution": {
+            "date": "2016-01-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 21/04/2016 wieder hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin am 18. April 2016 wieder hier",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "18. April 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-18",
+          "FutureResolution": {
+            "date": "2016-04-18"
+          },
+          "PastResolution": {
+            "date": "2016-04-18"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich gehe am Freitag zurück",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "Freitag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme irgendwann heute wieder.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "NotSupported":"javascript",
+    "Results": [
+      {
+        "Text": "heute",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        }
+      }
+    ]
+  }
+]
