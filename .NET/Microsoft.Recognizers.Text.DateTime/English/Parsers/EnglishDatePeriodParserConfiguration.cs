@@ -8,8 +8,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
-        private const string AfterNextSuffix = "after next";
-
         public int MinYearNum { get; }
 
         public int MaxYearNum { get; }
@@ -209,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("month") || trimedText.EndsWith(string.Join(" ", "month", AfterNextSuffix));
+            return trimedText.EndsWith("month") || Regex.IsMatch(text, @"\bmonth\b") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsMonthToDate(string text)
@@ -221,19 +219,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("weekend");
+            return trimedText.EndsWith("weekend") || Regex.IsMatch(text, @"\bweekend\b") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("week") || trimedText.EndsWith(string.Join(" ", "week", AfterNextSuffix));
+            return trimedText.EndsWith("week") || Regex.IsMatch(text, @"\bweek\b") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("year") || trimedText.EndsWith(string.Join(" ", "year", AfterNextSuffix));
+            return trimedText.EndsWith("year") || Regex.IsMatch(text, @"\byear\b") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearToDate(string text)

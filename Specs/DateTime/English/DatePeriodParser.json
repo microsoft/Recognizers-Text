@@ -2979,4 +2979,82 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll be out the month after the next",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the month after the next",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2017-01",
+        "FutureResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-02-01"
+        },
+        "PastResolution": {
+          "startDate": "2017-01-01",
+          "endDate": "2017-02-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the year after next",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the year after next",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2018",
+        "FutureResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2018-01-01",
+          "endDate": "2019-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the weekend after the next",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the weekend after the next",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-W47-WE",
+        "FutureResolution": {
+          "startDate": "2016-11-26",
+          "endDate": "2016-11-28"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-26",
+          "endDate": "2016-11-28"
+        }
+      }
+    }
+  ]
+}
 ]

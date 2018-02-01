@@ -143,6 +143,31 @@
 }
 ,
 {
+  "Input": "Schedule a meeting after three",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "after three",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T03",
+            "Mod": "after",
+            "type": "timerange",
+            "start": "03:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Schedule a meeting no later than 4",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -168,7 +193,7 @@
 }
 ,
 {
-  "Input": "Schedule a meeting after three",
+  "Input": "I'll leave by tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -176,15 +201,15 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "after three",
-      "TypeName": "datetimeV2.timerange",
+      "Text": "by tomorrow",
+      "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
           {
-            "timex": "T03",
-            "Mod": "after",
-            "type": "timerange",
-            "start": "03:00:00"
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
           }
         ]
       }

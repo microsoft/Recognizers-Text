@@ -10,7 +10,7 @@ StrictRelativeRegex: !simpleRegex
 NextPrefixRegex: !simpleRegex
   def: (next|coming|upcoming)\b
 AfterNextSuffixRegex: !simpleRegex
-  def: \b(after\s+next)\b
+  def: \b(after\s+(the\s+)?next)\b
 PastPrefixRegex: !simpleRegex
   def: (last|past|previous)\b
 ThisPrefixRegex: !simpleRegex
@@ -61,8 +61,8 @@ MonthWithYear: !nestedRegex
   def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
   references: [ PeriodYearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(weekend|week|month|year)(\s+after\s+next)?)\b
-  references: [ RelativeRegex ]
+  def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b
+  references: [ RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({PeriodYearNumRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearNumRegex})
   references: [ PeriodYearNumRegex, MonthNumRegex ]
@@ -381,7 +381,7 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before|in advance of|prior to|(no later (than|by)))\b
+  def: \b(before|in advance of|prior to|no later than|by)\b
 AfterRegex: !simpleRegex
   def: \b(after)\b
 SinceRegex: !simpleRegex
@@ -463,7 +463,7 @@ NumberAsTimeRegex: !nestedRegex
   def: \b({EngTimeRegex}|{PeriodHourNumRegex}|{BaseDateTime.HourRegex})\b
   references: [ EngTimeRegex, PeriodHourNumRegex, BaseDateTime.HourRegex ]
 TimeBeforeAfterRegex: !nestedRegex
-  def: \b(((?<=\b(before|(no later (than|by))|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
+  def: \b(((?<=\b(before|no later than|by|after)\s+)({EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b
   references: [ EngTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+at)\s*$
