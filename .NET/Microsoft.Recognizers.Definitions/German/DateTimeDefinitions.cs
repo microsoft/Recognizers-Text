@@ -185,7 +185,7 @@ namespace Microsoft.Recognizers.Definitions.German
 		public const string PrepositionSuffixRegex = @"\b(am|in|um|gegen|von|vom|zum)$";
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(für den {FlexibleDayRegex})";
-		public static readonly string WeekDayAndDayOfMothRegex = $@"\b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b";
+		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+((der|den)\s+{FlexibleDayRegex})\b";
 		public const string RestOfDateRegex = @"\bRest\s+((der|des)\s+)((aktuellen|jetzigen)\s+)?(?<duration>Woche|Monats|Jahres)\b";
 		public const string RestOfDateTimeRegex = @"\bRest\s+(des\s+)((aktuellen|heutigen)\s+)?(?<unit>Tages)\b";
 		public const string MealTimeRegex = @"\b((zum|zur)\s+)?(?<mealTime>(essenszeit|mittagessen))\b";

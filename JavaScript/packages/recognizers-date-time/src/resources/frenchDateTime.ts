@@ -180,7 +180,7 @@ export namespace FrenchDateTime {
 	export const PrepositionSuffixRegex = `\\b(du|de|[àa]|vers|dans)$`;
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
-	export const WeekDayAndDayOfMothRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
+	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(le\\s+${FlexibleDayRegex})\\b`;
 	export const RestOfDateRegex = `\\b(Reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<duration>semaine|mois|l'ann[ée]e)\\b`;
 	export const RestOfDateTimeRegex = `\\b(Reste|fin)\\s+(d[eu]\\s+)?((le|cette|ce)\\s+)?(?<unit>jour)\\b`;
 	export const LaterEarlyPeriodRegex = `^[.]`;

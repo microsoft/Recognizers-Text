@@ -16,7 +16,7 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly ofMonth: RegExp;
     readonly dateUnitRegex: RegExp;
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly weekDayRegex: RegExp;
     readonly dayOfWeek: ReadonlyMap<string, number>;
@@ -109,7 +109,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     readonly thisRegex: RegExp
     readonly weekDayOfMonthRegex: RegExp
     readonly forTheRegex: RegExp;
-    readonly weekDayAndDayOfMothRegex: RegExp;
+    readonly weekDayAndDayOfMonthRegex: RegExp;
     readonly relativeMonthRegex: RegExp;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration
     readonly dateTokenPrefix: string

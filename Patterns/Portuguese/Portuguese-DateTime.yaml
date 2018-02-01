@@ -104,7 +104,7 @@ SpecialDayRegex: !simpleRegex
 ForTheRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-WeekDayAndDayOfMothRegex: !simpleRegex
+WeekDayAndDayOfMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 WeekDayOfMonthRegex: !nestedRegex

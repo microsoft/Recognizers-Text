@@ -180,7 +180,7 @@ export namespace EnglishDateTime {
 	export const PrepositionSuffixRegex = `\\b(on|in|at|around|from|to)$`;
 	export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
 	export const ForTheRegex = `\\b(((for the ${FlexibleDayRegex})|(on (the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
-	export const WeekDayAndDayOfMothRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
+	export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
 	export const RestOfDateRegex = `\\bRest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|month|year)\\b`;
 	export const RestOfDateTimeRegex = `\\bRest\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<unit>day)\\b`;
 	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;

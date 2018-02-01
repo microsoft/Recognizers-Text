@@ -74,6 +74,31 @@
 }
 ,
 {
+  "Input": "I'll be out from Friday the 11th until Tuesday the 15th",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Friday the 11th until Tuesday the 15th",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-11-11,2016-11-15,P4D)",
+        "FutureResolution": {
+          "startDate": "2016-11-11",
+          "endDate": "2016-11-15"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-11",
+          "endDate": "2016-11-15"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out 4 to 23 next month",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"

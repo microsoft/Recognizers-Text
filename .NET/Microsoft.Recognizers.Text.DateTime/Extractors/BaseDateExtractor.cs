@@ -164,40 +164,60 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Handling cases like 'for the 25th'
-                    match = this.config.ForTheRegex.Match(text);
-                    if (match.Success)
+                    var matches = this.config.ForTheRegex.Matches(text);
+                    bool isFound = false;
+                    foreach (Match matchCase in matches)
                     {
-                        var ordinalNum = match.Groups["DayOfMonth"].Value;
-                        if (ordinalNum == result.Text)
+                        if (matchCase.Success)
                         {
-                            var endLenght = 0;
-                            if (match.Groups["end"].Value != string.Empty)
+                            var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
+                            if (ordinalNum == result.Text)
                             {
-                                endLenght = match.Groups["end"].Value.Length;
+                                var endLenght = 0;
+                                if (matchCase.Groups["end"].Value != string.Empty)
+                                {
+                                    endLenght = matchCase.Groups["end"].Value.Length;
+                                }
+                                ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length - endLenght));
+                                isFound = true;
                             }
-                            ret.Add(new Token(match.Index, match.Index + match.Length - endLenght));
-                            continue;
                         }
                     }
 
-                    // Handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
-                    match = this.config.WeekDayAndDayOfMothRegex.Match(text);
-                    if (match.Success)
+                    if (isFound)
                     {
+                        continue;
+                    }
 
-                         // Get week of day for the ordinal number which is regarded as a date of reference month
-                        var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
-                        var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
-
-                        // Get week day from text directly, compare it with the weekday generated above
-                        // to see whether they refer to the same week day
-                        var extractedWeekDayStr = match.Groups["weekday"].Value.ToString().ToLower();
-                        if (!date.Equals(DateObject.MinValue) &&
-                            config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
+                    // Handling cases like 'Thursday the 21st', which both 'Thursday' and '21st' refer to a same date
+                    matches = this.config.WeekDayAndDayOfMonthRegex.Matches(text);
+                    foreach (Match matchCase in matches)
+                    {
+                        if (matchCase.Success)
                         {
-                            ret.Add(new Token(match.Index, result.Start + result.Length ?? 0));
-                            continue;
+                            var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
+                            if (ordinalNum == result.Text)
+                            {
+                                // Get week of day for the ordinal number which is regarded as a date of reference month
+                                var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
+                                var numWeekDayStr = date.DayOfWeek.ToString().ToLower();
+
+                                // Get week day from text directly, compare it with the weekday generated above
+                                // to see whether they refer to the same week day
+                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value.ToString().ToLower();
+                                if (!date.Equals(DateObject.MinValue) &&
+                                    config.DayOfWeek[numWeekDayStr] == config.DayOfWeek[extractedWeekDayStr])
+                                {
+                                    ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
+                                    isFound = true;
+                                }
+                            }
                         }
+                    }
+
+                    if (isFound)
+                    {
+                        continue;
                     }
 
                     // Handling cases like '20th of next month'
