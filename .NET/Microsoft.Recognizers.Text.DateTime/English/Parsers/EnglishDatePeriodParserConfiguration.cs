@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDatePeriodParserConfiguration : BaseOptionsConfiguration, IDatePeriodParserConfiguration
     {
+        private const string AfterNextSuffix = "after next";
+
         public int MinYearNum { get; }
 
         public int MaxYearNum { get; }
@@ -71,6 +73,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex ThisPrefixRegex =
             new Regex(
                 DateTimeDefinitions.ThisPrefixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterNextSuffixRegex =
+            new Regex(
+                DateTimeDefinitions.AfterNextSuffixRegex,
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
@@ -150,7 +156,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = 0;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (AfterNextSuffixRegex.IsMatch(trimedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
@@ -165,7 +175,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             var trimedText = text.Trim().ToLowerInvariant();
             var swift = -10;
-            if (NextPrefixRegex.IsMatch(trimedText))
+            if (AfterNextSuffixRegex.IsMatch(trimedText))
+            {
+                swift = 2;
+            }
+            else if (NextPrefixRegex.IsMatch(trimedText))
             {
                 swift = 1;
             }
@@ -195,7 +209,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("month");
+            return trimedText.EndsWith("month") || trimedText.EndsWith(string.Join(" ", "month", AfterNextSuffix));
         }
 
         public bool IsMonthToDate(string text)
@@ -213,13 +227,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("week");
+            return trimedText.EndsWith("week") || trimedText.EndsWith(string.Join(" ", "week", AfterNextSuffix));
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("year");
+            return trimedText.EndsWith("year") || trimedText.EndsWith(string.Join(" ", "year", AfterNextSuffix));
         }
 
         public bool IsYearToDate(string text)

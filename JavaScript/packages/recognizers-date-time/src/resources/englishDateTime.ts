@@ -10,9 +10,10 @@ import { BaseDateTime } from "./baseDateTime";
 export namespace EnglishDateTime {
 	export const TillRegex = `(?<till>to|till|til|until|thru|through|--|-|—|——)`;
 	export const RangeConnectorRegex = `(?<and>and|through|to|--|-|—|——)`;
-	export const RelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current|the|my)`;
-	export const StrictRelativeRegex = `(?<order>next|upcoming|this|last|past|previous|current)`;
-	export const NextPrefixRegex = `(next|upcoming)\\b`;
+	export const RelativeRegex = `(?<order>next|coming|upcoming|this|last|past|previous|current|the|my)`;
+	export const StrictRelativeRegex = `(?<order>next|coming|upcoming|this|last|past|previous|current)`;
+	export const NextPrefixRegex = `(next|coming|upcoming)\\b`;
+	export const AfterNextSuffixRegex = `\\b(after\\s+next)\\b`;
 	export const PastPrefixRegex = `(last|past|previous)\\b`;
 	export const ThisPrefixRegex = `(this|current)\\b`;
 	export const DayRegex = `(the\\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\\b|t)`;
@@ -33,7 +34,7 @@ export namespace EnglishDateTime {
 	export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const BetweenRegex = `\\b(between\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${PeriodYearRegex})?\\b`;
 	export const MonthWithYear = `\\b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\\s+of)?\\s+(${PeriodYearRegex}|(?<order>next|last|this)\\s+year))`;
-	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(${RelativeRegex}\\s+)?(weekend|week|month|year)|weekend|(month|year) to date)\\b`;
+	export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${RelativeRegex}\\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|(${RelativeRegex}\\s+)?(weekend|week|month|year)(\\s+after\\s+next)?)\\b`;
 	export const MonthNumWithYear = `(${PeriodYearNumRegex}[/\\-\\.]${MonthNumRegex})|(${MonthNumRegex}[/\\-]${PeriodYearNumRegex})`;
 	export const WeekOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week\\s+${MonthSuffixRegex})`;
 	export const WeekOfYearRegex = `(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+(${PeriodYearRegex}|${RelativeRegex}\\s+year))`;
@@ -159,7 +160,7 @@ export namespace EnglishDateTime {
 	export const TokenBeforeTime = 'at ';
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
-	export const BeforeRegex = `\\b(before|in advance of|prior to)\\b`;
+	export const BeforeRegex = `\\b(before|in advance of|prior to|(no later (than|by)))\\b`;
 	export const AfterRegex = `\\b(after)\\b`;
 	export const SinceRegex = `\\b(since)\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;
@@ -195,7 +196,7 @@ export namespace EnglishDateTime {
 	export const OrRegex = `\\s*(or)\\s*`;
 	export const YearPlusNumberRegex = `\\b(Year\\s+((?<year>(\\d{3,4}))|${FullTextYearRegex}))\\b`;
 	export const NumberAsTimeRegex = `\\b(${EngTimeRegex}|${PeriodHourNumRegex}|${BaseDateTime.HourRegex})\\b`;
-	export const TimeBeforeAfterRegex = `\\b(((?<=\\b(before|after)\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
+	export const TimeBeforeAfterRegex = `\\b(((?<=\\b(before|(no later (than|by))|after)\\s+)(${EngTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
 	export const DateNumberConnectorRegex = `^\\s*(?<connector>\\s+at)\\s*$`;
 	export const DecadeRegex = `(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)`;
 	export const DecadeWithCenturyRegex = `the\\s+(((?<century>\\d|1\\d|2\\d)?(')?(?<decade>\\d0)(')?s)|((${CenturyRegex}(\\s+|-)(and\\s+)?)?${DecadeRegex})|(${CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))`;

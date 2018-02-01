@@ -143,6 +143,31 @@
 }
 ,
 {
+  "Input": "Schedule a meeting no later than 4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no later than 4",
+      "TypeName": "datetimeV2.timerange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "T04",
+            "Mod": "before",
+            "type": "timerange",
+            "end": "04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "Schedule a meeting after three",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"

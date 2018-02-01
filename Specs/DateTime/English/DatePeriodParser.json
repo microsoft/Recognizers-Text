@@ -299,6 +299,31 @@
 }
 ,
 {
+  "Input": "I'll be out on the coming week",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "coming week",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-W46",
+        "FutureResolution": {
+          "startDate": "2016-11-14",
+          "endDate": "2016-11-21"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-14",
+          "endDate": "2016-11-21"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out on current week",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2923,6 +2948,32 @@
         "PastResolution": {
           "startDate": "0267-01-01",
           "endDate": "0268-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the week after next",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week after next",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "2016-W47",
+        "FutureResolution": {
+          "startDate": "2016-11-21",
+          "endDate": "2016-11-28"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-21",
+          "endDate": "2016-11-28"
         }
       }
     }
