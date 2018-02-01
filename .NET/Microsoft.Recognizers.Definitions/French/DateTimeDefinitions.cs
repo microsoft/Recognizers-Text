@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Definitions.French
 		public const string PrepositionSuffixRegex = @"\b(du|de|[àa]|vers|dans)$";
 		public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
 		public static readonly string ForTheRegex = $@"\b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
-		public static readonly string WeekDayAndDayOfMothRegex = $@"\b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b";
+		public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(le\s+{FlexibleDayRegex})\b";
 		public const string RestOfDateRegex = @"\b(Reste|fin)\s+(d[eu]\s+)?((le|cette|ce)\s+)?(?<duration>semaine|mois|l'ann[ée]e)\b";
 		public const string RestOfDateTimeRegex = @"\b(Reste|fin)\s+(d[eu]\s+)?((le|cette|ce)\s+)?(?<unit>jour)\b";
 		public const string LaterEarlyPeriodRegex = @"^[.]";

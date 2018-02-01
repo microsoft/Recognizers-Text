@@ -61,7 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public static readonly string NextDateRegex = $@"\b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}(\s+(da\s+)?(pr[oó]xima|seguinte)?(\s*semana\s+seguinte|\s*semana)?))\b";
 		public const string SpecialDayRegex = @"\b((d?o\s+)?(dia\s+antes\s+de\s+ontem|antes\s+de\s+ontem|anteontem)|((d?o\s+)?(dia\s+|depois\s+|dia\s+depois\s+)?de\s+amanh[aã])|(o\s)?dia\s+seguinte|(o\s)?pr[oó]ximo\s+dia|(o\s+)?[uú]ltimo\s+dia|ontem|amanh[ãa]|hoje)|(do\s+dia$)\b";
 		public const string ForTheRegex = @"^[.]";
-		public const string WeekDayAndDayOfMothRegex = @"^[.]";
+		public const string WeekDayAndDayOfMonthRegex = @"^[.]";
 		public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(n?[ao]\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\s+{WeekDayRegex}\s+{MonthSuffixRegex})";
 		public const string NumberEndingPattern = @"^[.]";
 		public static readonly string SpecialDateRegex = $@"(?<=\bno\s+){DayRegex}\b";

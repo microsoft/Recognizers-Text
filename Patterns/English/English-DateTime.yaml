@@ -424,7 +424,7 @@ FlexibleDayRegex: !simpleRegex
 ForTheRegex: !nestedRegex
   def: \b(((for the {FlexibleDayRegex})|(on (the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))
   references: [FlexibleDayRegex]
-WeekDayAndDayOfMothRegex: !nestedRegex
+WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 RestOfDateRegex: !simpleRegex

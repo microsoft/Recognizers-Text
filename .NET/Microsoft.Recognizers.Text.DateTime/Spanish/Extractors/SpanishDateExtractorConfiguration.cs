@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateExtractorConfiguration.ForTheRegex => ForTheRegex;
 
-        Regex IDateExtractorConfiguration.WeekDayAndDayOfMothRegex => WeekDayAndDayOfMothRegex;
+        Regex IDateExtractorConfiguration.WeekDayAndDayOfMonthRegex => WeekDayAndDayOfMothRegex;
 
         Regex IDateExtractorConfiguration.RelativeMonthRegex => RelativeMonthRegex;
 

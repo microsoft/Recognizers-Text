@@ -2100,6 +2100,17 @@
 }
 ,
 {
+  "Input": "I'll be out from Friday the 2nd until Tuesday the 6th",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from Friday the 2nd until Tuesday the 6th",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out from today till tomorrow",
   "NotSupportedByDesign": "python",
   "Results": [
