@@ -26,6 +26,8 @@ Launch `Build.cmd` file.
 
 ## Installation from NPM
 
+-- **Note:** the initial versions of the packages are available with the **@preview** tag. --
+
 Install all the Recognizer's by launching the following command:
 
 * Get **all** the Recognizers in a single module:
