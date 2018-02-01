@@ -540,37 +540,115 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             int year = Constants.InvalidYear;
 
-            var match = this.config.YearRegex.Match(text);
-            if (match.Success && match.Length == text.Length)
+            var match = this.config.YearPeriodRegex.Match(text);
+            if (match.Success)
             {
-                year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
-                if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                int beginYear = Constants.InvalidYear;
+                int endYear = Constants.InvalidYear;
+
+                var matches = this.config.YearRegex.Matches(text);
+                if (matches.Count == 2)
                 {
-                    year = Constants.InvalidYear;
+                    // (from|during|in|between)? 2012 (till|to|until|through|-) 2015
+                    if (matches[0].Success)
+                    {
+                        beginYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[0]);
+                        if (!(beginYear >= this.config.MinYearNum && beginYear <= this.config.MaxYearNum))
+                        {
+                            beginYear = Constants.InvalidYear;
+                        }
+                    }
+
+                    if (matches[1].Success)
+                    {
+                        endYear = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[1]);
+                        if (!(endYear >= this.config.MinYearNum && endYear <= this.config.MaxYearNum))
+                        {
+                            endYear = Constants.InvalidYear;
+                        }
+                    }
+                }
+                else if (matches.Count == 1)
+                {
+                    int yearFromStr = Constants.InvalidYear;
+
+                    if (matches[0].Success)
+                    {
+                        yearFromStr = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matches[0]);
+                        if (!(yearFromStr >= this.config.MinYearNum && yearFromStr <= this.config.MaxYearNum))
+                        {
+                            yearFromStr = Constants.InvalidYear;
+                        }
+                    }
+
+                    // (until|till) 2012
+                    var matchStr = this.config.TillRegex.Match(text);
+                    if (matchStr.Success)
+                    {
+                        beginYear = this.config.MinYearNum;
+                        endYear = yearFromStr;
+                    }
+                    else
+                    {
+                        //2012 or above|after
+                        matchStr = this.config.YearAfterRegex.Match(text);
+                        if (matchStr.Success)
+                        {
+                            beginYear = yearFromStr;
+                            endYear = this.config.MaxYearNum;
+                        }
+                    }
+                }
+
+                if (beginYear != Constants.InvalidYear && endYear != Constants.InvalidYear)
+                {
+                    var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
+
+                    var endDay = InclusiveEndPeriod
+                            ? DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1).AddDays(-1)
+                            : DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
+
+                    ret.Timex = $"({FormatUtil.LuisDate(beginDay)},{FormatUtil.LuisDate(endDay)},P{endYear - beginYear}Y)";
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                    ret.Success = true;
+
+                    return ret;
                 }
             }
             else
             {
-                match = this.config.YearPlusNumberRegex.Match(text);
+                match = this.config.YearRegex.Match(text);
                 if (match.Success && match.Length == text.Length)
                 {
                     year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                    if (!(year >= this.config.MinYearNum && year <= this.config.MaxYearNum))
+                    {
+                        year = Constants.InvalidYear;
+                    }
                 }
-            }
+                else
+                {
+                    match = this.config.YearPlusNumberRegex.Match(text);
+                    if (match.Success && match.Length == text.Length)
+                    {
+                        year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);
+                    }
+                }
 
-            if (year != Constants.InvalidYear)
-            {
-                var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                if (year != Constants.InvalidYear)
+                {
+                    var beginDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
 
-                var endDay = InclusiveEndPeriod
-                        ? DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1).AddDays(-1)
-                        : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
+                    var endDay = InclusiveEndPeriod
+                            ? DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1).AddDays(-1)
+                            : DateObject.MinValue.SafeCreateFromValue(year + 1, 1, 1);
 
-                ret.Timex = year.ToString("D4");
-                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
-                ret.Success = true;
+                    ret.Timex = year.ToString("D4");
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDay, endDay);
+                    ret.Success = true;
 
-                return ret;
+                    return ret;
+                }
             }
 
             return ret;

@@ -190,6 +190,8 @@ export namespace SpanishDateTime {
 	export const CommonDatePrefixRegex = `^[\\.]`;
 	export const DurationUnitRegex = `^[\\.]`;
 	export const DurationConnectorRegex = `^[.]`;
+	export const YearAfterRegex = `^[.]`;
+	export const YearPeriodRegex = `^[.]`;
 	export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 	export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
 }

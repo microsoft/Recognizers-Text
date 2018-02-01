@@ -59,12 +59,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
 
+        public static readonly Regex YearAfterRegex =
+            new Regex(
+                DateTimeDefinitions.YearAfterRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex TillRegex =
+            new Regex(
+                DateTimeDefinitions.TillRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        Regex IDatePeriodParserConfiguration.TillRegex => TillRegex;
+        Regex IDatePeriodParserConfiguration.YearAfterRegex => YearAfterRegex;
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
@@ -128,6 +139,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekWithWeekDayRangeRegex = SpanishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = SpanishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = SpanishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = SpanishDatePeriodExtractorConfiguration.YearPeriodRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
