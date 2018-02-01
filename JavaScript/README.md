@@ -29,25 +29,25 @@ Launch `Build.cmd` file.
 Install all the Recognizer's by launching the following command:
 
 * Get **all** the Recognizers in a single module:
-`npm install recognizers-text-suite`
+`npm install @microsoft/recognizers-text-suite`
 
 Or, if you prefer to use a single type of recognizer:
 
 * Get **only** the numbers Recognizer's features:
-`npm install recognizers-text-number`
+`npm install @microsoft/recognizers-text-number`
 
 * Get **only** the numbers with units Recognizer's features:
-`npm install recognizers-text-number-with-unit`
+`npm install @microsoft/recognizers-text-number-with-unit`
 
 * Get **only** the date and time Recognizer's features:
-`npm install recognizers-text-date-time`
+`npm install @microsoft/recognizers-text-date-time`
 
 ## API Documentation
 
 Once the proper package is installed, you'll need to reference the package:
 
 ````JavaScript
-var Recognizers = require('recognizers-text-suite');
+var Recognizers = require('@microsoft/recognizers-text-suite');
 ````
 
 ### Microsoft.Recognizers.Text.Number
