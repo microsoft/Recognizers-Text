@@ -20,4 +20,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /E /D &quot;$(TargetDir)\..\*&quot; &quot;$(TargetDir)..\..\..\..\build\package\&quot; /Y" />
+  </Target>
+
 </Project>
