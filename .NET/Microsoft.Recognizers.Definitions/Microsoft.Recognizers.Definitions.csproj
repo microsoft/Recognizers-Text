@@ -28,6 +28,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="BasePhoneNumbers.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BasePhoneNumbers.tt</DependentUpon>
+    </Compile>
     <Compile Update="Chinese\DateTimeDefinitions.cs">
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -147,6 +152,10 @@
     <None Update="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseNumbers.cs</LastGenOutput>
+    </None>
+    <None Update="BasePhoneNumbers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BasePhoneNumbers.cs</LastGenOutput>
     </None>
     <None Update="Chinese\DateTimeDefinitions.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
