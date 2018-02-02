@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }

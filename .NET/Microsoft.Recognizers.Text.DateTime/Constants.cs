@@ -13,6 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string SYS_DATETIME_DURATION = "duration";
         public const string SYS_DATETIME_SET = "set";
         public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
+        public const string SYS_DATETIME_TIMEZONE = "timezone";
 
         //key
         public const string TimexKey = "timex";
@@ -32,5 +33,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MultipleDuration_DateTime = "multipleDurationDateTime";
         public const string MultipleDuration_Date = "multipleDurationDate";
         public const string MultipleDuration_Time = "multipleDurationTime";
+
+        // special value for timezone
+        public const int Illegal = -10000;
+        public const string UTCSHIFT = "UTC MINUTES SHIFT";
     }
 }

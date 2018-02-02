@@ -83,6 +83,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 pr = this.Config.DatePeriodParser.Parse(er, referenceTime);
             }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+                return pr;
+            }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEPERIOD))
             {
                 pr = this.Config.TimePeriodParser.Parse(er, referenceTime);

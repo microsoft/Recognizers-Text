@@ -75,6 +75,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged,
         MergedSkipFromTo
@@ -90,6 +91,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         DateTimePeriod,
         Duration,
         Holiday,
+        TimeZone,
         Set,
         Merged
     }
@@ -198,6 +200,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
                 case DateTimeExtractors.Holiday:
                     return new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration());
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration());
                 case DateTimeExtractors.Set:
                     return new BaseSetExtractor(new EnglishSetExtractorConfiguration());
                 case DateTimeExtractors.Merged:
@@ -230,6 +234,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return new BaseDurationParser(new EnglishDurationParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration());
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:

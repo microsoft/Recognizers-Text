@@ -6,7 +6,6 @@ using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
-using Microsoft.Recognizers.Text.TimeZone;
 
 using Newtonsoft.Json;
 
@@ -42,7 +41,7 @@ namespace SimpleConsole
                         /*var results = GetModels()
                             .Select(parser => parser.Parse(input))
                             .SelectMany(a => a);*/
-                        var results = TimeZoneRecognizer.Instance.GetTimeZoneModel(defaultCulture).Parse(input);
+                        var results = DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture).Parse(input);
 
                         // Write output
                         Console.WriteLine(results.Count() > 0 ? (string.Format("I found the following entities ({0:d}):", results.Count())) : "I found no entities.");

@@ -1,0 +1,82 @@
+[
+  {
+    "Input": "Book me a room at beijing time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "beijing time",
+        "Type": "timezone",
+        "Value": {
+          "UTC MINUTES SHIFT": 480
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc4:30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "utc4:30",
+        "Type": "timezone",
+        "Value": {
+          "UTC MINUTES SHIFT": 270
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at gmt-3",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "gmt-3",
+        "Type": "date",
+        "Value": {
+          "UTC MINUTES SHIFT": -180
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at afghanistan standard time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "afghanistan standard time",
+        "Type": "timezone",
+        "Value": {
+          "UTC MINUTES SHIFT": 270
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at aft",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "aft",
+        "Type": "timezone",
+        "Value": {
+          "UTC MINUTES SHIFT": 270
+        }
+      }
+    ]
+  }
+]

@@ -53,6 +53,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
 
         public IExtractor IntegerExtractor { get; }

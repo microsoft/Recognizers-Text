@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public FrenchMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = FrenchMergedExtractorConfiguration.BeforeRegex;
