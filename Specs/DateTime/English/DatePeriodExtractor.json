@@ -1748,6 +1748,17 @@
 }
 ,
 {
+  "Input": "I'll be out the coming week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "coming week",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "I'll be out September",
   "NotSupportedByDesign": "python",
   "Results": [
@@ -2908,6 +2919,18 @@
   "Results": [
     {
       "Text": "Year two hundred and sixty seven",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll be out the week after next",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the week after next",
       "Type": "daterange"
     }
   ]
