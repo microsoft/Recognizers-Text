@@ -149,10 +149,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseDateTime.cs</LastGenOutput>
     </None>
-    <None Update="BaseNumbers - Copy.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BaseNumbers - Copy.cs</LastGenOutput>
-    </None>
     <None Update="BaseNumbers.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BaseNumbers.cs</LastGenOutput>
