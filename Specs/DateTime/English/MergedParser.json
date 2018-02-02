@@ -1246,4 +1246,79 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll leave by tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "by tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave before tomorrow",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before tomorrow",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2016-11-08",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2016-11-08"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Schedule a meeting no later than 4",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "no later than 4",
+      "Type": "timerange",
+      "Value": {
+        "values": [
+          {
+            "timex": "T04",
+            "Mod": "before",
+            "type": "timerange",
+            "end": "04:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

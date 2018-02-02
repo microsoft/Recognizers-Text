@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsMonthOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("month") || Regex.IsMatch(text, @"\bmonth\b") && AfterNextSuffixRegex.IsMatch(trimedText);
+            return trimedText.EndsWith("month") || trimedText.Contains(" month ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsMonthToDate(string text)
@@ -219,19 +219,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsWeekend(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("weekend") || Regex.IsMatch(text, @"\bweekend\b") && AfterNextSuffixRegex.IsMatch(trimedText);
+            return trimedText.EndsWith("weekend") || trimedText.Contains(" weekend ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("week") || Regex.IsMatch(text, @"\bweek\b") && AfterNextSuffixRegex.IsMatch(trimedText);
+            return trimedText.EndsWith("week") || trimedText.Contains(" week ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearOnly(string text)
         {
             var trimedText = text.Trim().ToLowerInvariant();
-            return trimedText.EndsWith("year") || Regex.IsMatch(text, @"\byear\b") && AfterNextSuffixRegex.IsMatch(trimedText);
+            return trimedText.EndsWith("year") || trimedText.Contains(" year ") && AfterNextSuffixRegex.IsMatch(trimedText);
         }
 
         public bool IsYearToDate(string text)
