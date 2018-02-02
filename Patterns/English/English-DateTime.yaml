@@ -353,7 +353,7 @@ AnUnitRegex: !nestedRegex
   def: \b(((?<half>half\s+)?(an|a))|(an|a))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AllRegex: !simpleRegex
-  def: \b(?<all>all\s+(?<unit>year|month|week|day))\b
+  def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day))\b
 HalfRegex: !simpleRegex
   def: (((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b
 ConjunctionRegex: !simpleRegex
