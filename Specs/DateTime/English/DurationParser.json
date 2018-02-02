@@ -758,6 +758,29 @@
 }
 ,
 {
+  "Input": "I'll leave for whole day",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "whole day",
+      "Type": "duration",
+      "Value": {
+        "Timex": "P1D",
+        "FutureResolution": {
+          "duration": "86400"
+        },
+        "PastResolution": {
+          "duration": "86400"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "half year",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
