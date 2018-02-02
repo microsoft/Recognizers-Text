@@ -54,6 +54,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Microsoft.Recognizer.Text.TimeZone\Microsoft.Recognizers.Text.TimeZone.csproj">
+      <Project>{011c38ca-806a-4e4c-a0d6-58fb757f3f5f}</Project>
+      <Name>Microsoft.Recognizers.Text.TimeZone</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj">
       <Project>{19522b81-c63f-4dd5-ab4c-674cd44d67d6}</Project>
       <Name>Microsoft.Recognizers.Text.DateTime</Name>
