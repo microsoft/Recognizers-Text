@@ -24,6 +24,9 @@ popd
 pushd Microsoft.Recognizers.Text.DateTime
 call CreatePackage.cmd
 popd
+pushd Microsoft.Recognizers.Text.Sequence
+call CreatePackage.cmd
+popd
 rem Exit .NET dir
 popd
 
