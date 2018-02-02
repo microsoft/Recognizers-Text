@@ -753,4 +753,34 @@
     }
   ]
 }
+,
+{
+  "Input": "this is before 4pm beijing time",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4pm",
+      "Type": "time"
+    },
+    {
+      "Text": "beijing time",
+      "Type": "timezone"
+    }
+  ]
+}
+,
+{
+  "Input": "this is before 4pm gmt+7",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 4pm",
+      "Type": "time"
+    },
+    {
+      "Text": "gmt+7",
+      "Type": "timezone"
+    }
+  ]
+}
 ]
