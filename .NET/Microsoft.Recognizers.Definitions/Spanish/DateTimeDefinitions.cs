@@ -429,6 +429,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string CommonDatePrefixRegex = @"^[\.]";
 		public const string DurationUnitRegex = @"^[\.]";
 		public const string DurationConnectorRegex = @"^[.]";
+		public const string YearAfterRegex = @"^[.]";
+		public const string YearPeriodRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
 			{ "", 0 }

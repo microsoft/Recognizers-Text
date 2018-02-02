@@ -717,4 +717,40 @@
     }
   ]
 }
+,
+{
+  "Input": "The range is before 2012",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "before 2012",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "The range is until 2012",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "until 2012",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "The range is 2012 or after",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2012 or after",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

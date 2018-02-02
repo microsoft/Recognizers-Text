@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -136,6 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             WeekWithWeekDayRangeRegex = FrenchDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = FrenchDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = FrenchDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = FrenchDatePeriodExtractorConfiguration.YearPeriodRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

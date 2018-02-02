@@ -11,6 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SinceRegex { get; }
 
+        Regex YearAfterRegex { get; }
+
+        Regex YearRegex { get; }
+
         IDateTimeParser GetParser { get; }
 
         IDateTimeParser HolidayParser { get; }

@@ -1321,4 +1321,54 @@
     }
   ]
 }
+,
+{
+  "Input": "The range is until 2012",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "until 2012",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2012",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2012-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is 2012 or after",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2012 or after",
+      "Type": "daterange",
+      "Value": {
+        "values": [
+          {
+            "timex": "2012",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2012-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

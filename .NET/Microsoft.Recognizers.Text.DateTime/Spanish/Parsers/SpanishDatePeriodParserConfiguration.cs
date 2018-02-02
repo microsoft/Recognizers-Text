@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
 
         //TODO: config this according to English
         public static readonly Regex NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -128,6 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             WeekWithWeekDayRangeRegex = SpanishDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = SpanishDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = SpanishDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = SpanishDatePeriodExtractorConfiguration.YearPeriodRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

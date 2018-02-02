@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex WeekWithWeekDayRangeRegex { get; }
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
+        public Regex YearPeriodRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -135,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             WeekWithWeekDayRangeRegex = GermanDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             YearPlusNumberRegex = GermanDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = GermanDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
+            YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Definitions
 
 	public static class BasePhoneNumbers
 	{
-		public const string NumberReplaceToken = "@builtin.phone";
+		public const string NumberReplaceToken = "@builtin.phonenumber";
 		public static readonly Func<string, string, string> IntegerRegexDefinition = (placeholder, thousandsmark) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{{1,3}}({thousandsmark}\d{{3}})+(?={placeholder})";
 		public const string PlaceHolderDefault = "\\D|\\b";
 	}

@@ -1,6 +1,6 @@
 ---
 TillRegex: !simpleRegex
-  def: (?<till>to|till|til|until|thru|through|--|-|—|——)
+  def: (?<till>to|till|til|until|thru|through|--|-|—|——|~)
 RangeConnectorRegex : !simpleRegex
   def: (?<and>and|through|to|--|-|—|——)
 RelativeRegex: !simpleRegex
@@ -26,11 +26,13 @@ WrittenNumRegex: !simpleRegex
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zero|twenty|thirty|forty|fourty|fifty|sixty|seventy|eighty|ninety)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
-PeriodYearNumRegex: !simpleRegex
+MinYearNum: '1500'
+MaxYearNum: '2100'
+YearNumRegex: !simpleRegex
   def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
-PeriodYearRegex: !nestedRegex
-  def: ({PeriodYearNumRegex}|{FullTextYearRegex})
-  references: [ PeriodYearNumRegex, FullTextYearRegex ]
+YearRegex: !nestedRegex
+  def: ({YearNumRegex}|{FullTextYearRegex})
+  references: [ YearNumRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
   def: \b(?<weekday>Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Mon|Tues|Tue|Wedn|Weds|Wed|Thurs|Thur|Thu|Fri|Sat|Sun)\b
 SingleWeekDayRegex: !simpleRegex
@@ -46,32 +48,32 @@ MonthSuffixRegex: !nestedRegex
 DateUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day)\b
 SimpleCasesRegex: !nestedRegex
-  def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ DayRegex, TillRegex, MonthSuffixRegex, PeriodYearRegex ]
+  def: \b((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
-  def: \b((from|between)\s+)?{MonthSuffixRegex}\s+((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, TillRegex, PeriodYearRegex ]
+  def: \b((from|between)\s+)?{MonthSuffixRegex}\s+((from|between)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex ]
 MonthFrontBetweenRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , PeriodYearRegex ]
+  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , YearRegex ]
 BetweenRegex: !nestedRegex
-  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){PeriodYearRegex})?\b
-  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, PeriodYearRegex ]
+  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({PeriodYearRegex}|(?<order>next|last|this)\s+year))
-  references: [ PeriodYearRegex ]
+  def: \b((?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept),?(\s+of)?\s+({YearRegex}|(?<order>next|last|this)\s+year))
+  references: [ YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b((((the\s+)?month of\s+)?({RelativeRegex}\s+)?(?<month>April|Apr|August|Aug|December|Dec|February|Feb|January|Jan|July|Jul|June|Jun|March|Mar|May|November|Nov|October|Oct|September|Sep|Sept))|(month|year) to date|({RelativeRegex}\s+)?(weekend|week|month|year)(\s+{AfterNextSuffixRegex})?)\b
   references: [ RelativeRegex, AfterNextSuffixRegex ]
 MonthNumWithYear: !nestedRegex
-  def: ({PeriodYearNumRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{PeriodYearNumRegex})
-  references: [ PeriodYearNumRegex, MonthNumRegex ]
+  def: ({YearNumRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearNumRegex})
+  references: [ YearNumRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week\s+{MonthSuffixRegex})
   references: [ MonthSuffixRegex ]
 WeekOfYearRegex: !nestedRegex
-  def: (?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year))
-  references: [ PeriodYearRegex, RelativeRegex ]
+  def: (?<woy>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+week(\s+of)?\s+({YearRegex}|{RelativeRegex}\s+year))
+  references: [ YearRegex, RelativeRegex ]
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
@@ -79,14 +81,14 @@ NumberCombinedWithDateUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateUnitRegex}
   references: [ DateUnitRegex ]
 QuarterRegex: !nestedRegex
-  def: (the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter(\s+of|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year)
-  references: [ PeriodYearRegex, RelativeRegex ]
+  def: (the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter(\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year)
+  references: [ YearRegex, RelativeRegex ]
 QuarterRegexYearFront: !nestedRegex
-  def: ({PeriodYearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
-  references: [ PeriodYearRegex, RelativeRegex ]
+  def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
+  references: [ YearRegex, RelativeRegex ]
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({RelativeRegex}\s+)?(?<seas>spring|summer|fall|autumn|winter)((\s+of|\s*,\s*)?\s+({PeriodYearRegex}|{RelativeRegex}\s+year))?)\b
-  references: [ PeriodYearRegex, RelativeRegex ]
+  def: \b(?<season>({RelativeRegex}\s+)?(?<seas>spring|summer|fall|autumn|winter)((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
+  references: [ YearRegex, RelativeRegex ]
 WhichWeekRegex: !simpleRegex
   def: (week)(\s*)(?<number>\d\d|\d|0\d)
 WeekOfRegex: !simpleRegex
@@ -356,13 +358,6 @@ HalfRegex: !simpleRegex
   def: (((a|an)\s*)|\b)(?<half>half\s+(?<unit>year|month|week|day|hour))\b
 ConjunctionRegex: !simpleRegex
   def: \b((and(\s+for)?)|with)\b
-MinYearNum: '1500'
-MaxYearNum: '2100'
-YearNumRegex: !simpleRegex
-  def: \b(?<year>((1[5-9]|20)\d{2})|2100)\b
-YearRegex: !nestedRegex
-  def: ({YearNumRegex}|{FullTextYearRegex})
-  references: [ YearNumRegex, FullTextYearRegex ]
 HolidayRegex1: !nestedRegex
   def: \b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|mayday|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?\b
   references: [ YearRegex, RelativeRegex ]
@@ -381,7 +376,7 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before|in advance of|prior to|no later than|by)\b
+  def: \b(before|in advance of|prior to|no later than|by|till|til|until)\b
 AfterRegex: !simpleRegex
   def: \b(after)\b
 SinceRegex: !simpleRegex
@@ -472,6 +467,11 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !nestedRegex
   def: the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
   references: [ CenturyRegex, DecadeRegex ]
+YearAfterRegex: !simpleRegex
+  def: \b(or\s+(above|after))\b
+YearPeriodRegex: !nestedRegex
+  def: (((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})
+  references: [ YearRegex, TillRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

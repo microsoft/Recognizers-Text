@@ -3057,4 +3057,134 @@
     }
   ]
 }
+,
+{
+  "Input": "The range is 2014-2018.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2014-2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-01-01,2018-01-01,P4Y)",
+        "FutureResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is between 2014-2018.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "between 2014-2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-01-01,2018-01-01,P4Y)",
+        "FutureResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is from 2014 to 2018.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from 2014 to 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-01-01,2018-01-01,P4Y)",
+        "FutureResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is in 2014 through 2018.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in 2014 through 2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-01-01,2018-01-01,P4Y)",
+        "FutureResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2014-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "The range is from two thousand until two thousand and fourteen.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "from two thousand until two thousand and fourteen",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2000-01-01,2014-01-01,P14Y)",
+        "FutureResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2014-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2000-01-01",
+          "endDate": "2014-01-01"
+        }
+      }
+    }
+  ]
+}
 ]

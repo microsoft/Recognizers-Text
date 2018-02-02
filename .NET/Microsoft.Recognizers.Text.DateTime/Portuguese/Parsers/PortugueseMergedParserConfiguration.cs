@@ -11,6 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex SinceRegex { get; }
 
+        public Regex YearAfterRegex { get; }
+
+        public Regex YearRegex { get; }
+
         public IDateTimeParser GetParser { get; }
 
         public IDateTimeParser HolidayParser { get; }
@@ -20,6 +24,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             BeforeRegex = PortugueseMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = PortugueseMergedExtractorConfiguration.AfterRegex;
             SinceRegex = PortugueseMergedExtractorConfiguration.SinceRegex;
+            YearAfterRegex = PortugueseMergedExtractorConfiguration.YearAfterRegex;
+            YearRegex = PortugueseDatePeriodExtractorConfiguration.YearRegex;
 
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));
             TimePeriodParser = new BaseTimePeriodParser(new PortugueseTimePeriodParserConfiguration(this));

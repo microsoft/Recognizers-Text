@@ -33,12 +33,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateTimeParseResult pr = null;
 
             // push, save the MOD string
-            bool hasBefore = false, hasAfter = false, hasSince = false;
+            bool hasBefore = false, hasAfter = false, hasSince = false, hasYearAfter = false;
             var modStr = string.Empty;
             var beforeMatch = Config.BeforeRegex.Match(er.Text);
             var afterMatch = Config.AfterRegex.Match(er.Text);
-            var sinceMatch = Config.SinceRegex.Match(er.Text); 
-            if (beforeMatch.Success && beforeMatch.Index==0)
+            var sinceMatch = Config.SinceRegex.Match(er.Text);
+            if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD)
+                && Config.YearRegex.Match(er.Text).Success)
+            {
+                // 2012 or after/above
+                var match = Config.YearAfterRegex.Match(er.Text);
+                if (match.Success && er.Text.EndsWith(match.Value))
+                {
+                    hasYearAfter = true;
+                    er.Length -= match.Length;
+                    er.Text = er.Text.Substring(0, er.Length ?? 0);
+                    modStr = match.Value;
+                }
+            }
+            else if (beforeMatch.Success && beforeMatch.Index==0)
             {
                 hasBefore = true;
                 er.Start += beforeMatch.Length;
@@ -137,6 +150,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = TimeTypeConstants.sinceMod;
                 pr.Value = val;
+            }
+
+            if (hasYearAfter && pr.Value != null)
+            {
+                pr.Length += modStr.Length;
+                pr.Text = pr.Text + modStr;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = TimeTypeConstants.sinceMod;
+                pr.Value = val;
+                hasSince = true;
             }
 
             if ((Config.Options & DateTimeOptions.SplitDateAndTime) != 0

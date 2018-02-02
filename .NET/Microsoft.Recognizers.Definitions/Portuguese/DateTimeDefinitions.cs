@@ -450,6 +450,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string DecadeWithCenturyRegex = @"^[.]";
 		public const string FullTextYearRegex = @"^[\*]";
 		public static readonly string YearSuffix = $@"(,?\s*({YearRegex}|{FullTextYearRegex}))";
+		public const string YearAfterRegex = @"^[.]";
+		public const string YearPeriodRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
 			{ "", 0 }
