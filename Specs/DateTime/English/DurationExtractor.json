@@ -219,6 +219,138 @@
 }
 ,
 {
+  "Input": "I'll leave for all-day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-month",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for all-year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "all-year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full month",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-day",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-day",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-week",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-week",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-month",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-month",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll leave for full-year",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "full-year",
+      "Type": "duration"
+    }
+  ]
+}
+,
+{
   "Input": "I'll leave for an hour",
   "NotSupportedByDesign": "python",
   "Results": [
