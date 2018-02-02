@@ -127,7 +127,7 @@ var result = model.parse("I need to leave ASAP");
 // ]
 ````
 
-> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`). This is the default when using `require('recognizers-text')`.
+> Alternativly, if you are using Browserify, Babel or Webpack, the UMD module can be used instead (located at `/dist/recognizers-text.umd.js`). This is the default when using `require('@microsoft/recognizers-text')`.
 
 > NOTE for IE11: In order to support it, the [core-js shim](https://github.com/zloirock/core-js) needs to be added:
 
