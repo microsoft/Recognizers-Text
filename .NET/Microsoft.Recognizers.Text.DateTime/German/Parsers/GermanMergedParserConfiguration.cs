@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public GermanMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = GermanMergedExtractorConfiguration.BeforeRegex;

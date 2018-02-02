@@ -35,5 +35,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         //Invalid year
         public const int InvalidYear = int.MinValue;
+        
+        // special value for timezone
+        public const int Illegal_minutes = -10000;
+        public const string UTCSHIFT = "UTC MINUTES SHIFT";
+        public const string SYS_DATETIME_TIMEZONE = "timezone";
     }
 }

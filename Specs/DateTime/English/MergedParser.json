@@ -1347,28 +1347,58 @@
   ]
 }
 ,
-{
-  "Input": "The range is 2012 or after",
-  "Context": {
-    "ReferenceDateTime": "2016-11-07T16:12:00"
-  },
-  "NotSupported": "javascript",
-  "NotSupportedByDesign": "python",
-  "Results": [
-    {
-      "Text": "2012 or after",
-      "Type": "daterange",
-      "Value": {
-        "values": [
-          {
-            "timex": "2012",
-            "Mod": "since",
-            "type": "daterange",
-            "start": "2012-01-01"
-          }
-        ]
+  {
+    "Input": "The range is 2012 or after",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2012 or after",
+        "Type": "daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01"
+            }
+          ]
+        }
       }
-    }
-  ]
-}
+    ]
+  },
+  {
+      "Input": "day after tomorrow at 8am beijing time",
+      "Context": {
+        "ReferenceDateTime": "2016-11-07T00:00:00"
+      },
+      "NotSupportedByDesign": "python",
+      "Results": [
+        {
+          "Text": "day after tomorrow at 8am",
+          "Type": "datetimeV2.datetime",
+          "Value": {
+            "values": [
+              {
+                "timex": "2016-11-09T08",
+                "type": "datetime",
+                "value": "2016-11-09 08:00:00"
+              }
+            ]
+          }
+        }
+        ,
+        {
+          "Text": "beijing time",
+          "Type": "timezone",
+          "Value": {
+            "UTC MINUTES SHIFT": 270
+          }
+        }
+      ]
+  }
 ]

@@ -84,6 +84,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pr = Config.HolidayParser.Parse(er, referenceTime);
                 }
             }
+            else if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                pr = this.Config.TimeZoneParser.Parse(er, referenceTime);
+            }
             else if (er.Type.Equals(Constants.SYS_DATETIME_TIME))
             {
                 pr = this.Config.TimeParser.Parse(er, referenceTime);
@@ -120,7 +124,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 return null;
             }
-
+            if (er.Type.Equals(Constants.SYS_DATETIME_TIMEZONE))
+            {
+                return pr;
+            }
             // pop, restore the MOD string
             if (hasBefore && pr.Value != null)
             {

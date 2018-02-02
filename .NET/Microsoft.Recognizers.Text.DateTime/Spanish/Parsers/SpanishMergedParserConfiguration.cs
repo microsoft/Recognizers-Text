@@ -19,6 +19,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeParser HolidayParser { get; }
 
+        public IDateTimeParser TimeZoneParser { get; }
+
         public SpanishMergedParserConfiguration(DateTimeOptions options) : base(options)
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;

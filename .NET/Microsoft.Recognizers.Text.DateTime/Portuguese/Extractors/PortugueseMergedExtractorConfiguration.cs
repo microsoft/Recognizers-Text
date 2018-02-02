@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
+        public IDateTimeExtractor TimeZoneExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeListExtractor DateTimeAltExtractor { get; }
