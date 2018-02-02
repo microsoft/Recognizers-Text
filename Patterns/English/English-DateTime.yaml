@@ -376,7 +376,7 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before|in advance of|prior to|no later than|by)\b
+  def: \b(before|in advance of|prior to|no later than|by|till|til|until)\b
 AfterRegex: !simpleRegex
   def: \b(after)\b
 SinceRegex: !simpleRegex
@@ -470,8 +470,8 @@ DecadeWithCenturyRegex: !nestedRegex
 YearAfterRegex: !simpleRegex
   def: \b(or\s+(above|after))\b
 YearPeriodRegex: !nestedRegex
-  def: ((till|til|until)\s+{YearRegex})|(((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})|({YearRegex}\s+{YearAfterRegex})
-  references: [ YearRegex, TillRegex, YearAfterRegex ]
+  def: (((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})
+  references: [ YearRegex, TillRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

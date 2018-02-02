@@ -158,7 +158,7 @@ export namespace EnglishDateTime {
 	export const TokenBeforeTime = 'at ';
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
-	export const BeforeRegex = `\\b(before|in advance of|prior to|no later than|by)\\b`;
+	export const BeforeRegex = `\\b(before|in advance of|prior to|no later than|by|till|til|until)\\b`;
 	export const AfterRegex = `\\b(after)\\b`;
 	export const SinceRegex = `\\b(since)\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;
@@ -199,7 +199,7 @@ export namespace EnglishDateTime {
 	export const DecadeRegex = `(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)`;
 	export const DecadeWithCenturyRegex = `the\\s+(((?<century>\\d|1\\d|2\\d)?(')?(?<decade>\\d0)(')?s)|((${CenturyRegex}(\\s+|-)(and\\s+)?)?${DecadeRegex})|(${CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))`;
 	export const YearAfterRegex = `\\b(or\\s+(above|after))\\b`;
-	export const YearPeriodRegex = `((till|til|until)\\s+${YearRegex})|(((from|during|in|between)\\s+)?${YearRegex}\\s*${TillRegex}\\s*${YearRegex})|(${YearRegex}\\s+${YearAfterRegex})`;
+	export const YearPeriodRegex = `(((from|during|in|between)\\s+)?${YearRegex}\\s*${TillRegex}\\s*${YearRegex})`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
 	export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
 	export const SeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["spring", "SP"],["summer", "SU"],["fall", "FA"],["autumn", "FA"],["winter", "WI"]]);

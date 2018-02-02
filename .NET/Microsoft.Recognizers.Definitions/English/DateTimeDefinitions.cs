@@ -167,7 +167,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TokenBeforeTime = "at ";
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
-		public const string BeforeRegex = @"\b(before|in advance of|prior to|no later than|by)\b";
+		public const string BeforeRegex = @"\b(before|in advance of|prior to|no later than|by|till|til|until)\b";
 		public const string AfterRegex = @"\b(after)\b";
 		public const string SinceRegex = @"\b(since)\b";
 		public const string AgoRegex = @"\b(ago)\b";
@@ -208,7 +208,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DecadeRegex = @"(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)";
 		public static readonly string DecadeWithCenturyRegex = $@"the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
 		public const string YearAfterRegex = @"\b(or\s+(above|after))\b";
-		public static readonly string YearPeriodRegex = $@"((till|til|until)\s+{YearRegex})|(((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})|({YearRegex}\s+{YearAfterRegex})";
+		public static readonly string YearPeriodRegex = $@"(((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
 		{
 			{ "years", "Y" },

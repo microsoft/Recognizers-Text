@@ -61,10 +61,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
 
-        public static readonly Regex YearAfterRegex =
-            new Regex(
-                DateTimeDefinitions.YearAfterRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
         public static readonly Regex NextPrefixRegex =
             new Regex(
                 @"(prochain|prochaine)\b",
@@ -77,13 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(
                 @"(ce|cette)\b",
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        public static readonly Regex TillRegex =
-            new Regex(
-                DateTimeDefinitions.TillRegex,
-                RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
-        Regex IDatePeriodParserConfiguration.TillRegex => TillRegex;
-        Regex IDatePeriodParserConfiguration.YearAfterRegex => YearAfterRegex;
         Regex IDatePeriodParserConfiguration.NextPrefixRegex => NextPrefixRegex;
         Regex IDatePeriodParserConfiguration.PastPrefixRegex => PastPrefixRegex;
         Regex IDatePeriodParserConfiguration.ThisPrefixRegex => ThisPrefixRegex;
