@@ -1298,7 +1298,7 @@
 }
 ,
 {
-  "Input": "Schedule a meeting no later than 4",
+  "Input": "I'll leave no later than tomorrow",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
@@ -1306,15 +1306,15 @@
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "no later than 4",
-      "Type": "timerange",
+      "Text": "no later than tomorrow",
+      "Type": "daterange",
       "Value": {
         "values": [
           {
-            "timex": "T04",
+            "timex": "2016-11-08",
             "Mod": "before",
-            "type": "timerange",
-            "end": "04:00:00"
+            "type": "daterange",
+            "end": "2016-11-08"
           }
         ]
       }
