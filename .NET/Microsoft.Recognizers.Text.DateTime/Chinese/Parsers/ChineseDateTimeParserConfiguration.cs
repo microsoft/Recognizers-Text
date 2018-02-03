@@ -34,11 +34,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             LastRegex = DateExtractorChs.LastRegex;
             StrictWeekDayRegex = DateExtractorChs.WeekDayRegex;
             WeekDayOfMonthRegex = DateExtractorChs.WeekDayOfMonthRegex;
+            BeforeRegex = MergedExtractorChs.BeforeRegex;
+            AfterRegex = MergedExtractorChs.AfterRegex;
+            UntilRegex = MergedExtractorChs.UntilRegex;
+            SincePrefixRegex = MergedExtractorChs.SincePrefixRegex;
+            SinceSuffixRegex = MergedExtractorChs.SinceSuffixRegex;
         }
-
-        public string Before => DateTimeDefinitions.ParserConfigurationBefore;
-
-        public string After => DateTimeDefinitions.ParserConfigurationAfter;
 
         public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
 
@@ -105,6 +106,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex StrictWeekDayRegex { get; }
 
         public Regex WeekDayOfMonthRegex { get; }
+
+        public Regex BeforeRegex { get; }
+
+        public Regex AfterRegex { get; }
+
+        public Regex UntilRegex { get; }
+
+        public Regex SincePrefixRegex { get; }
+
+        public Regex SinceSuffixRegex { get; }
 
         #endregion
 

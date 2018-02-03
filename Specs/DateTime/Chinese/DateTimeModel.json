@@ -1463,4 +1463,154 @@
     }
   ]
 }
+,
+{
+  "Input": "在2018年以前",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2018年以前",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "在2018年之后",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2018年之后",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "after",
+            "type": "daterange",
+            "start": "2019-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "截止到2018年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "截止到2018年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "before",
+            "type": "daterange",
+            "end": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "自从2018年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "自从2018年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "自2018年以来",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "自2018年以来",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "2018年开始",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2018年开始",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2018",
+            "Mod": "since",
+            "type": "daterange",
+            "start": "2018-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
 ]

@@ -772,14 +772,14 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
             beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             endYear = this.convertChineseToNumber(yearMatches[1].groups('year').value);
         } else if (chineseYearMatches.length === 2) {
-            beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('year').value);
-            endYear = this.convertChineseToNumber(chineseYearMatches[1].groups('year').value);
+            beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
+            endYear = this.convertChineseToNumber(chineseYearMatches[1].groups('yearchs').value);
         } else if (yearMatches.length === 1 && chineseYearMatches.length === 1) {
             if (yearMatches[0].index < chineseYearMatches[0].index) {
                 beginYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
-                endYear = this.convertChineseToNumber(chineseYearMatches[0].groups('year').value);
+                endYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
             } else {
-                beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('year').value);
+                beginYear = this.convertChineseToNumber(chineseYearMatches[0].groups('yearchs').value);
                 endYear = this.convertChineseToNumber(yearMatches[0].groups('year').value);
             }
         }
@@ -787,8 +787,8 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
         beginYear = this.sanitizeYear(beginYear);
         endYear = this.sanitizeYear(endYear);
 
-        let beginDate = DateUtils.safeCreateFromMinValue(beginYear, 1, 1);
-        let endDate = DateUtils.safeCreateFromMinValue(endYear, 11, 31);
+        let beginDate = DateUtils.safeCreateFromMinValue(beginYear, 0, 1);
+        let endDate = DateUtils.safeCreateFromMinValue(endYear, 0, 1);
         let beginTimex = FormatUtil.toString(beginYear, 4);
         let endTimex = FormatUtil.toString(endYear, 4);
 

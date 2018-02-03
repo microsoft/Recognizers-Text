@@ -6,10 +6,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IFullDateTimeParserConfiguration : IOptionsConfiguration
     {
-        string Before { get; }
-
-        string After { get; }
-
         string LastWeekDayToken { get; }
 
         string NextMonthToken { get; }
@@ -31,6 +27,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex StrictWeekDayRegex { get; }
 
         Regex WeekDayOfMonthRegex { get; }
+
+        Regex BeforeRegex { get; }
+
+        Regex AfterRegex { get; }
+
+        Regex UntilRegex { get; }
+
+        Regex SincePrefixRegex { get; }
+
+        Regex SinceSuffixRegex { get; }
 
         #endregion
 

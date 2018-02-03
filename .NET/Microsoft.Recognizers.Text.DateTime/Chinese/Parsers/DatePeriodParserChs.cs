@@ -311,26 +311,26 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     }
                 }
 
-                if (beginYear < 100 && beginYear >= 90)
+                if (beginYear < 100 && beginYear >= 50)
                 {
                     beginYear += 1900;
                 }
-                else if (beginYear < 100 && beginYear < 20)
+                else if (beginYear < 100 && beginYear < 50)
                 {
                     beginYear += 2000;
                 }
 
-                if (endYear < 100 && endYear >= 90)
+                if (endYear < 100 && endYear >= 50)
                 {
                     endYear += 1900;
                 }
-                else if (endYear < 100 && endYear < 20)
+                else if (endYear < 100 && endYear < 50)
                 {
                     endYear += 2000;
                 }
 
                 var beginDay = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
-                var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 12, 31);
+                var endDay = DateObject.MinValue.SafeCreateFromValue(endYear, 1, 1);
                 var beginTimex = beginYear.ToString("D4");
                 var endTimex = endYear.ToString("D4");
                 ret.Timex = $"({beginTimex},{endTimex},P{endYear - beginYear}Y)";

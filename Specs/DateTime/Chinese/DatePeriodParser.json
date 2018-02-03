@@ -468,6 +468,82 @@
 }
 ,
 {
+  "Input": "时间从2016到2018",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从2016到2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016,2018,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从2016-2018",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从2016-2018",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016,2018,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "时间从二零一六年至二零一八年",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "从二零一六年至二零一八年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016,2018,P2Y)",
+        "FutureResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        },
+        "PastResolution": {
+          "startDate": "2016-01-01",
+          "endDate": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "上世纪90年代",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"

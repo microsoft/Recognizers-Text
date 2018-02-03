@@ -146,7 +146,7 @@ export namespace EnglishDateTime {
 	export const DurationFollowedUnit = `^\\s*${SuffixAndRegex}?(\\s+|-)?${DurationUnitRegex}`;
 	export const NumberCombinedWithDurationUnit = `\\b(?<num>\\d+(\\.\\d*)?)(-)?${DurationUnitRegex}`;
 	export const AnUnitRegex = `\\b(((?<half>half\\s+)?(an|a))|(an|a))\\s+${DurationUnitRegex}`;
-	export const AllRegex = `\\b(?<all>all\\s+(?<unit>year|month|week|day))\\b`;
+	export const AllRegex = `\\b(?<all>(all|full|whole)(\\s+|-)(?<unit>year|month|week|day))\\b`;
 	export const HalfRegex = `(((a|an)\\s*)|\\b)(?<half>half\\s+(?<unit>year|month|week|day|hour))\\b`;
 	export const ConjunctionRegex = `\\b((and(\\s+for)?)|with)\\b`;
 	export const HolidayRegex1 = `\\b(?<holiday>clean monday|good friday|ash wednesday|mardi gras|washington's birthday|mao's birthday|chinese new Year|new years' eve|new year's eve|new year 's eve|new years eve|new year eve|new years'|new year's|new year 's|new years|new year|mayday|yuan dan|april fools|christmas eve|christmas|xmas|thanksgiving|halloween|yuandan|easter)(\\s+(of\\s+)?(${YearRegex}|${RelativeRegex}\\s+year))?\\b`;
