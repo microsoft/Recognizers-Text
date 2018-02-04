@@ -69,6 +69,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex AmDescRegex =
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        public static readonly Regex PmDescRegex =
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public Regex FollowedUnit => TimeFollowedUnit;
 
         Regex IDateTimePeriodExtractorConfiguration.NumberCombinedWithUnit => TimeNumberCombinedWithUnit;
@@ -90,6 +96,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
 
         public IExtractor CardinalExtractor { get; }
 

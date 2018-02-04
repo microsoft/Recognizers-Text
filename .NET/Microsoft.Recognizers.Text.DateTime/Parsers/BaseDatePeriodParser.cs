@@ -1163,7 +1163,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             int beginYear;
             int beginMonth = 1, endMonth = 12;
             int beginDay = 1, endDay = 31;
-            int decadeLastYear = 9;
+            int decadeLastYear = 10;
+            int swift = 1;
             var inputCentury = false;
 
             var trimedText = text.Trim();
@@ -1219,16 +1220,46 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                return ret;
+                match = this.config.RelativeDecadeRegex.Match(trimedText);
+                if (match.Success && match.Index == 0 && match.Length == trimedText.Length)
+                {
+                    inputCentury = true;
+
+                    swift = this.config.GetSwiftDayOrMonth(trimedText);
+
+                    var numStr = match.Groups["number"].Value.ToLower();
+                    var er = this.config.IntegerExtractor.Extract(numStr);
+                    if (er.Count == 1)
+                    {
+                        var swiftNum = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0));
+                        swift = swift * swiftNum;
+                    }
+
+                    var beginDecade = (referenceDate.Year % 100) / 10;
+                    if (swift < 0)
+                    {
+                        beginDecade += swift;
+                    }
+                    else if (swift > 0)
+                    {
+                        beginDecade += 1;
+                    }
+
+                    decade = beginDecade * 10;
+                }
+                else
+                {
+                    return ret;
+                }
             }
 
-
             beginYear = firstTwoNumOfYear * 100 + decade;
+            var yearPass = decadeLastYear * Math.Abs(swift);
 
             if (inputCentury)
             {
                 beginLuisStr = FormatUtil.LuisDate(beginYear, beginMonth, beginDay);
-                endLuisStr = FormatUtil.LuisDate(beginYear + decadeLastYear, endMonth, endDay);
+                endLuisStr = FormatUtil.LuisDate(beginYear + yearPass - 1, endMonth, endDay);
             }
             else
             {
@@ -1236,11 +1267,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginLuisStr = FormatUtil.LuisDate(-1, beginMonth, beginDay);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + decadeLastYear).ToString();
+                var endYearStr = "XX" + (decade + yearPass - 1).ToString();
                 endLuisStr = FormatUtil.LuisDate(-1, endMonth, endDay);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
-            ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
+            ret.Timex = $"({beginLuisStr},{endLuisStr},P{yearPass}Y)";
 
             int futureYear = beginYear, pastYear = beginYear;
             var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, beginMonth, beginDay);
@@ -1256,11 +1287,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(
                 DateObject.MinValue.SafeCreateFromValue(futureYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(futureYear + decadeLastYear, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(futureYear + yearPass - 1, endMonth, endDay));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 DateObject.MinValue.SafeCreateFromValue(pastYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(pastYear + decadeLastYear, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(pastYear + yearPass - 1, endMonth, endDay));
 
             ret.Success = true;
 

@@ -54,6 +54,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex RestOfDateTimeRegex { get; }
 
+        public Regex AmDescRegex { get; }
+
+        public Regex PmDescRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -85,6 +89,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PeriodTimeOfDayWithDateRegex = EnglishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = EnglishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = EnglishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = EnglishDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = EnglishDateTimePeriodExtractorConfiguration.PmDescRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

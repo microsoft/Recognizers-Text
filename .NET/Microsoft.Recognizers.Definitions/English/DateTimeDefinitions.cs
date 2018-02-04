@@ -25,7 +25,6 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string AfterNextSuffixRegex = @"\b(after\s+(the\s+)?next)\b";
 		public const string PastPrefixRegex = @"(last|past|previous)\b";
 		public const string ThisPrefixRegex = @"(this|current)\b";
-		public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>\w+)\s+)?decades?)\b";
 		public const string DayRegex = @"(the\s*)?(?<day>01|02|03|04|05|06|07|08|09|10th|10|11th|11st|11|12nd|12th|12|13rd|13th|13|14th|14|15th|15|16th|16|17th|17|18th|18|19th|19|1st|1|20th|20|21st|21|22nd|22|23rd|23|24th|24|25th|25|26th|26|27th|27|28th|28|29th|29|2nd|2|30th|30|31st|31|3rd|3|4th|4|5th|5|6th|6|7th|7|8th|8|9th|9)(?=\b|t)";
 		public const string MonthNumRegex = @"(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\b";
 		public const string CenturyRegex = @"\b(?<century>((one|two)\s+thousand(\s+and)?(\s+(one|two|three|four|five|six|seven|eight|nine)\s+hundred(\s+and)?)?)|((twenty one|twenty two|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)(\s+hundred)?(\s+and)?))\b";
@@ -175,8 +174,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public const string AmPmDescRegex = @"(ampm)";
-		public const string MorningStartEndRegex = @"(^(morning))|((morning)$)";
-		public const string AfternoonStartEndRegex = @"(^(afternoon))|((afternoon)$)";
+		public static readonly string MorningStartEndRegex = $@"(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)";
+		public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";
 		public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
 		public const string NightStartEndRegex = @"(^(overnight|tonight|night))|((overnight|tonight|night)$)";
 		public const string InExactNumberRegex = @"\b(a few|few|some|several)\b";
@@ -208,6 +207,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
 		public const string DecadeRegex = @"(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)";
 		public static readonly string DecadeWithCenturyRegex = $@"the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
+		public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
 		public const string YearAfterRegex = @"\b(or\s+(above|after))\b";
 		public static readonly string YearPeriodRegex = $@"(((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>

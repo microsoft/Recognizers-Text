@@ -53,6 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex RestOfDateTimeRegex { get; }
 
+        public Regex AmDescRegex { get; }
+
+        public Regex PmDescRegex { get; }
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
@@ -83,6 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PeriodTimeOfDayWithDateRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = SpanishDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = SpanishDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
+            AmDescRegex = SpanishDateTimePeriodExtractorConfiguration.AmDescRegex;
+            PmDescRegex = SpanishDateTimePeriodExtractorConfiguration.PmDescRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }

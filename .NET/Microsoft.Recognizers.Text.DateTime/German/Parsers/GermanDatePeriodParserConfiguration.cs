@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex YearPlusNumberRegex { get; }
         public Regex DecadeWithCenturyRegex { get; }
         public Regex YearPeriodRegex { get; }
+        public Regex RelativeDecadeRegex { get; }
 
         public static readonly Regex NextPrefixRegex =
             new Regex(
@@ -137,6 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             YearPlusNumberRegex = GermanDatePeriodExtractorConfiguration.YearPlusNumberRegex;
             DecadeWithCenturyRegex = GermanDatePeriodExtractorConfiguration.DecadeWithCenturyRegex;
             YearPeriodRegex = GermanDatePeriodExtractorConfiguration.YearPeriodRegex;
+            RelativeDecadeRegex = GermanDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;

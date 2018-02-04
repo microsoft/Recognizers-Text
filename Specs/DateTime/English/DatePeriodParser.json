@@ -3187,4 +3187,108 @@
     }
   ]
 }
+,
+{
+  "Input": "It happened in the past 2 decades.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the past 2 decades",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1990-01-01,2009-12-31,P20Y)",
+        "FutureResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the last two decades.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the last two decades",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(1990-01-01,2009-12-31,P20Y)",
+        "FutureResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "2009-12-31"
+        },
+        "PastResolution": {
+          "startDate": "1990-01-01",
+          "endDate": "2009-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the next decade.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the next decade",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2020-01-01,2029-12-31,P10Y)",
+        "FutureResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2029-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2029-12-31"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the next 3 decades.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the next 3 decades",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2020-01-01,2049-12-31,P30Y)",
+        "FutureResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2049-12-31"
+        },
+        "PastResolution": {
+          "startDate": "2020-01-01",
+          "endDate": "2049-12-31"
+        }
+      }
+    }
+  ]
+}
 ]
