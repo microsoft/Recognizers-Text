@@ -17,16 +17,16 @@ namespace Microsoft.Recognizers.Text.Sequence.English
             var regexes = new Dictionary<Regex, string>
             {
                 {
-                    new Regex(BasePhoneNumbers.BrazilPhoneNumberRegex), "BrazilPhoneNumber"
+                    new Regex(BasePhoneNumbers.BrazilPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_BRAZIL
                 },
                 {
-                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex), "GeneralPhoneNumber"
+                    new Regex(BasePhoneNumbers.GeneralPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GENERAL
                 },
                 {
-                    new Regex(BasePhoneNumbers.UkPhoneNumberRegex), "UKPhoneNumberRegex"
+                    new Regex(BasePhoneNumbers.UkPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_UK
                 },
                 {
-                    new Regex(BasePhoneNumbers.GermanyPhoneNumberRegex), "GermanyPhoneNumberRegex"
+                    new Regex(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY
                 }
 
             };
