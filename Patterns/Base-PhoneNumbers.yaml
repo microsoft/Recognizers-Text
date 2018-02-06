@@ -1,7 +1,19 @@
 ---
 NumberReplaceToken: '@builtin.phonenumber'
-IntegerRegexDefinition: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
-  params: [ placeholder, thousandsmark  ]
-PlaceHolderDefault: \\D|\\b
+NoLetterPrefixRegex: !simpleRegex
+  def: (?<![a-z|0-9])
+NoLetterSuffixRegex: !simpleRegex
+  def: (?![a-z|0-9]) 
+GeneralPhoneNumberRegex: !nestedRegex
+  def: ({NoLetterPrefixRegex}((\d[\s-/]?){8,}){NoLetterSuffixRegex})
+  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
+BrazilPhoneNumberRegex: !nestedRegex
+  def: ({NoLetterPrefixRegex}(\(?\s?\d{2,3}\s?\)?\s?)\s?\d{4,5}-?\d{3,4}{NoLetterSuffixRegex})
+  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
+UkPhoneNumberRegex: !nestedRegex
+  def: ({NoLetterPrefixRegex}((00)|\+)?\s?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3}){NoLetterSuffixRegex})
+  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
+GermanyPhoneNumberRegex: !nestedRegex
+  def: ({NoLetterPrefixRegex}(\d{4}\s?[-/]?(\s?\d){7,8}){NoLetterSuffixRegex})
+  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
 ...

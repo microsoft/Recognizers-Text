@@ -20,8 +20,32 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public List<ModelResult> Parse(string query)
         {
-            throw new NotImplementedException();
+            var parsedSequences = new List<ParseResult>();
 
+            try
+            {
+                var extractResults = Extractor.Extract(query);
+
+                foreach (var result in extractResults)
+                {
+                    parsedSequences.Add(Parser.Parse(result));
+                }
+
+            }
+            catch (Exception)
+            {
+                // Nothing to do. Exceptions in parse should not break users of recognizers.
+                // No result.
+            }
+
+            return parsedSequences.Select(o => new ModelResult
+            {
+                Start = o.Start.Value,
+                End = o.Start.Value + o.Length.Value - 1,
+                Resolution = new SortedDictionary<string, object> { { "value", o.ResolutionStr } },
+                Text = o.Text,
+                TypeName = ModelTypeName
+            }).ToList();
         }
     }
 }

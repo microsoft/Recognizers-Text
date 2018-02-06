@@ -18,7 +18,11 @@ namespace Microsoft.Recognizers.Definitions
 	public static class BasePhoneNumbers
 	{
 		public const string NumberReplaceToken = "@builtin.phonenumber";
-		public static readonly Func<string, string, string> IntegerRegexDefinition = (placeholder, thousandsmark) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{{1,3}}({thousandsmark}\d{{3}})+(?={placeholder})";
-		public const string PlaceHolderDefault = "\\D|\\b";
+		public const string NoLetterPrefixRegex = @"(?<![a-z|0-9])";
+		public const string NoLetterSuffixRegex = @"(?![a-z|0-9])";
+		public static readonly string GeneralPhoneNumberRegex = $@"({NoLetterPrefixRegex}((\d[\s-/]?){{8,}}){NoLetterSuffixRegex})";
+		public static readonly string BrazilPhoneNumberRegex = $@"({NoLetterPrefixRegex}(\(?\s?\d{{2,3}}\s?\)?\s?)\s?\d{{4,5}}-?\d{{3,4}}{NoLetterSuffixRegex})";
+		public static readonly string UkPhoneNumberRegex = $@"({NoLetterPrefixRegex}((00)|\+)?\s?\d{{2}}\s?(\(0\))?\d{{3,5}}[/-]?\s?(\d{{7,8}}|\d{{3}}\s?\d{{3}}){NoLetterSuffixRegex})";
+		public static readonly string GermanyPhoneNumberRegex = $@"({NoLetterPrefixRegex}(\d{{4}}\s?[-/]?(\s?\d){{7,8}}){NoLetterSuffixRegex})";
 	}
 }
