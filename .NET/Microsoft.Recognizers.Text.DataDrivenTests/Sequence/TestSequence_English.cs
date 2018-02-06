@@ -33,7 +33,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         [TestMethod]
         public void PhoneNumberModel()
         {
-            TestNumber();
+            TestSequence();
         }
     }
 }
