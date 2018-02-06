@@ -11,36 +11,23 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         private SequenceRecognizer(SequenceOptions options)
         {
-            RegisterModel(Culture.English, options.ToString(), new Dictionary<Type, IModel>
+            var models = new Dictionary<Type, IModel>
             {
                 [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            };
 
-            RegisterModel(Culture.Chinese, options.ToString(), new Dictionary<Type, IModel>
-            {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            RegisterModel(Culture.English, options.ToString(), models);
 
-            RegisterModel(Culture.French, options.ToString(), new Dictionary<Type, IModel>
-            {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            RegisterModel(Culture.Chinese, options.ToString(), models);
 
-            RegisterModel(Culture.German, options.ToString(), new Dictionary<Type, IModel>
-            {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            RegisterModel(Culture.French, options.ToString(), models);
 
-            
-            RegisterModel(Culture.Spanish, options.ToString(), new Dictionary<Type, IModel>
-            {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            RegisterModel(Culture.German, options.ToString(), models);
 
-            RegisterModel(Culture.Portuguese, options.ToString(), new Dictionary<Type, IModel>
-            {
-                [typeof(PhoneNumberModel)] = new PhoneNumberModel(new PhoneNumberParser(), new PhoneNumberExtractor())
-            });
+            RegisterModel(Culture.Spanish, options.ToString(), models);
+
+            RegisterModel(Culture.Portuguese, options.ToString(), models);
+
         }
 
         public IModel GetPhoneNumberModel(string culture, bool fallbackToDefaultCulture = true)
