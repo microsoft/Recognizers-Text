@@ -18,11 +18,9 @@ namespace Microsoft.Recognizers.Definitions
 	public static class BasePhoneNumbers
 	{
 		public const string NumberReplaceToken = "@builtin.phonenumber";
-		public const string NoLetterPrefixRegex = @"(?<![a-z|0-9])";
-		public const string NoLetterSuffixRegex = @"(?![a-z|0-9])";
-		public static readonly string GeneralPhoneNumberRegex = $@"({NoLetterPrefixRegex}((\d[\s-/]?){{8,}}){NoLetterSuffixRegex})";
-		public static readonly string BrazilPhoneNumberRegex = $@"({NoLetterPrefixRegex}(\(?\s?\d{{2,3}}\s?\)?\s?)\s?\d{{4,5}}-?\d{{3,4}}{NoLetterSuffixRegex})";
-		public static readonly string UkPhoneNumberRegex = $@"({NoLetterPrefixRegex}((00)|\+)?\s?\d{{2}}\s?(\(0\))?\d{{3,5}}[/-]?\s?(\d{{7,8}}|\d{{3}}\s?\d{{3}}){NoLetterSuffixRegex})";
-		public static readonly string GermanyPhoneNumberRegex = $@"({NoLetterPrefixRegex}(\d{{4}}\s?[-/]?(\s?\d){{7,8}}){NoLetterSuffixRegex})";
+		public const string GeneralPhoneNumberRegex = @"(\b((\d[\s-/]?){8,})\b)";
+		public const string BrazilPhoneNumberRegex = @"(((?'brac'\B\(\s?)|\b)\d{2,3}(?'-brac'\s?\))?\s?)\s?\d{4,5}-?\d{3,5}\b(?(brac)(?!))";
+		public const string UkPhoneNumberRegex = @"(((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)";
+		public const string GermanyPhoneNumberRegex = @"(\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)";
 	}
 }

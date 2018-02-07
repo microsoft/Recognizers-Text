@@ -1,5 +1,35 @@
 [
 {
+  "Input": "My phone number is (55) 3333-33333.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "(55) 3333-33333",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "(55) 3333-33333"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is (081) 3333-33333.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "(081) 3333-33333",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "(081) 3333-33333"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "My phone number is ( 19 ) 38294427.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -922,6 +952,13 @@
 ,
 {
   "Input": "s666666666s is a sequence.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [] 
+}
+,
+{
+  "Input": "666666666S is a sequence, but not a phone number.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
   "Results": [] 

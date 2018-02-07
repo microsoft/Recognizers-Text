@@ -1,19 +1,11 @@
 ---
 NumberReplaceToken: '@builtin.phonenumber'
-NoLetterPrefixRegex: !simpleRegex
-  def: (?<![a-z|0-9])
-NoLetterSuffixRegex: !simpleRegex
-  def: (?![a-z|0-9]) 
-GeneralPhoneNumberRegex: !nestedRegex
-  def: ({NoLetterPrefixRegex}((\d[\s-/]?){8,}){NoLetterSuffixRegex})
-  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
-BrazilPhoneNumberRegex: !nestedRegex
-  def: ({NoLetterPrefixRegex}(\(?\s?\d{2,3}\s?\)?\s?)\s?\d{4,5}-?\d{3,4}{NoLetterSuffixRegex})
-  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
-UkPhoneNumberRegex: !nestedRegex
-  def: ({NoLetterPrefixRegex}((00)|\+)?\s?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3}){NoLetterSuffixRegex})
-  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
-GermanyPhoneNumberRegex: !nestedRegex
-  def: ({NoLetterPrefixRegex}(\d{4}\s?[-/]?(\s?\d){7,8}){NoLetterSuffixRegex})
-  references: [ NoLetterPrefixRegex, NoLetterSuffixRegex ]
+GeneralPhoneNumberRegex: !simpleRegex
+  def: (\b((\d[\s-/]?){8,})\b)
+BrazilPhoneNumberRegex: !simpleRegex
+  def: (((?'brac'\B\(\s?)|\b)\d{2,3}(?'-brac'\s?\))?\s?)\s?\d{4,5}-?\d{3,5}\b(?(brac)(?!))
+UkPhoneNumberRegex: !simpleRegex
+  def: (((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)
+GermanyPhoneNumberRegex: !simpleRegex
+  def: (\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)
 ...
