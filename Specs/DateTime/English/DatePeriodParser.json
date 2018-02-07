@@ -2400,14 +2400,14 @@
       "Text": "the 1970s",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "Timex": "(1970-01-01,1980-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2426,14 +2426,14 @@
       "Text": "the 2000s",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "Timex": "(2000-01-01,2010-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         },
         "PastResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         }
       }
     }
@@ -2452,14 +2452,14 @@
       "Text": "the 1970's",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "Timex": "(1970-01-01,1980-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2478,14 +2478,14 @@
       "Text": "the 70s",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2070-01-01",
-          "endDate": "2079-12-31"
+          "endDate": "2080-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2504,14 +2504,14 @@
       "Text": "the 70's",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2070-01-01",
-          "endDate": "2079-12-31"
+          "endDate": "2080-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2530,14 +2530,14 @@
       "Text": "the '40s",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX40-01-01,XX49-12-31,P10Y)",
+        "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2040-01-01",
-          "endDate": "2049-12-31"
+          "endDate": "2050-01-01"
         },
         "PastResolution": {
           "startDate": "1940-01-01",
-          "endDate": "1949-12-31"
+          "endDate": "1950-01-01"
         }
       }
     }
@@ -2556,14 +2556,14 @@
       "Text": "the seventies",
       "Type": "daterange",
       "Value": {
-        "Timex": "(XX70-01-01,XX79-12-31,P10Y)",
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2070-01-01",
-          "endDate": "2079-12-31"
+          "endDate": "2080-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2582,14 +2582,14 @@
       "Text": "the nineteen seventies",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1970-01-01,1979-12-31,P10Y)",
+        "Timex": "(1970-01-01,1980-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         },
         "PastResolution": {
           "startDate": "1970-01-01",
-          "endDate": "1979-12-31"
+          "endDate": "1980-01-01"
         }
       }
     }
@@ -2608,14 +2608,14 @@
       "Text": "the two thousand and tens",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "Timex": "(2010-01-01,2020-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2010-01-01",
-          "endDate": "2019-12-31"
+          "endDate": "2020-01-01"
         },
         "PastResolution": {
           "startDate": "2010-01-01",
-          "endDate": "2019-12-31"
+          "endDate": "2020-01-01"
         }
       }
     }
@@ -2634,14 +2634,14 @@
       "Text": "the twenty-tens",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2010-01-01,2019-12-31,P10Y)",
+        "Timex": "(2010-01-01,2020-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2010-01-01",
-          "endDate": "2019-12-31"
+          "endDate": "2020-01-01"
         },
         "PastResolution": {
           "startDate": "2010-01-01",
-          "endDate": "2019-12-31"
+          "endDate": "2020-01-01"
         }
       }
     }
@@ -2660,14 +2660,14 @@
       "Text": "the two thousands",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "Timex": "(2000-01-01,2010-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         },
         "PastResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         }
       }
     }
@@ -2686,14 +2686,14 @@
       "Text": "the noughties",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2000-01-01,2009-12-31,P10Y)",
+        "Timex": "(2000-01-01,2010-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         },
         "PastResolution": {
           "startDate": "2000-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         }
       }
     }
@@ -3200,14 +3200,14 @@
       "Text": "the past 2 decades",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1990-01-01,2009-12-31,P20Y)",
+        "Timex": "(1990-01-01,2010-01-01,P20Y)",
         "FutureResolution": {
           "startDate": "1990-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         },
         "PastResolution": {
           "startDate": "1990-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         }
       }
     }
@@ -3226,14 +3226,14 @@
       "Text": "the last two decades",
       "Type": "daterange",
       "Value": {
-        "Timex": "(1990-01-01,2009-12-31,P20Y)",
+        "Timex": "(1990-01-01,2010-01-01,P20Y)",
         "FutureResolution": {
           "startDate": "1990-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         },
         "PastResolution": {
           "startDate": "1990-01-01",
-          "endDate": "2009-12-31"
+          "endDate": "2010-01-01"
         }
       }
     }
@@ -3252,14 +3252,14 @@
       "Text": "the next decade",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2020-01-01,2029-12-31,P10Y)",
+        "Timex": "(2020-01-01,2030-01-01,P10Y)",
         "FutureResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2029-12-31"
+          "endDate": "2030-01-01"
         },
         "PastResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2029-12-31"
+          "endDate": "2030-01-01"
         }
       }
     }
@@ -3278,14 +3278,14 @@
       "Text": "the next 3 decades",
       "Type": "daterange",
       "Value": {
-        "Timex": "(2020-01-01,2049-12-31,P30Y)",
+        "Timex": "(2020-01-01,2050-01-01,P30Y)",
         "FutureResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2049-12-31"
+          "endDate": "2050-01-01"
         },
         "PastResolution": {
           "startDate": "2020-01-01",
-          "endDate": "2049-12-31"
+          "endDate": "2050-01-01"
         }
       }
     }
