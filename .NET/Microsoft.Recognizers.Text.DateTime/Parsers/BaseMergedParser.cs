@@ -65,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD) && Config.YearRegex.Match(er.Text).Success)
             {
+                // This has to be put at the last, or cases like "before 2012" "after 2012" will fall into this
                 // 2012 or after/above
                 var match = Config.YearAfterRegex.Match(er.Text);
                 if (match.Success && er.Text.EndsWith(match.Value))
