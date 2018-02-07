@@ -174,8 +174,8 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";
 		public const string AmPmDescRegex = @"(ampm)";
-		public const string MorningStartEndRegex = @"(^(morning))|((morning)$)";
-		public const string AfternoonStartEndRegex = @"(^(afternoon))|((afternoon)$)";
+		public static readonly string MorningStartEndRegex = $@"(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)";
+		public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";
 		public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
 		public const string NightStartEndRegex = @"(^(overnight|tonight|night))|((overnight|tonight|night)$)";
 		public const string InExactNumberRegex = @"\b(a few|few|some|several)\b";
@@ -207,6 +207,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+at)\s*$";
 		public const string DecadeRegex = @"(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)";
 		public static readonly string DecadeWithCenturyRegex = $@"(the\s+)?(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))";
+		public static readonly string RelativeDecadeRegex = $@"\b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b";
 		public const string YearAfterRegex = @"\b(or\s+(above|after))\b";
 		public static readonly string YearPeriodRegex = $@"(((from|during|in|between)\s+)?{YearRegex}\s*{TillRegex}\s*{YearRegex})";
 		public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>

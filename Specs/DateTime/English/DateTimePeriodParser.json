@@ -1800,4 +1800,82 @@
     }
   ]
 }
+,
+{
+  "Input": "let's meet on Feb 5 AM",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Feb 5 AM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-02-05TMO",
+        "FutureResolution": {
+          "startDateTime": "2017-02-05 08:00:00",
+          "endDateTime": "2017-02-05 12:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-02-05 08:00:00",
+          "endDateTime": "2016-02-05 12:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tuesday AM",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday AM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-WXX-2TMO",
+        "FutureResolution": {
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-01 08:00:00",
+          "endDateTime": "2016-11-01 12:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tuesday PM",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday PM",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-WXX-2TAF",
+        "FutureResolution": {
+          "startDateTime": "2016-11-08 12:00:00",
+          "endDateTime": "2016-11-08 16:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-01 12:00:00",
+          "endDateTime": "2016-11-01 16:00:00"
+        }
+      }
+    }
+  ]
+}
 ]

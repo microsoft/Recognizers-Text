@@ -6,6 +6,7 @@ using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
+using Microsoft.Recognizers.Text.Sequence;
 
 using Newtonsoft.Json;
 
@@ -93,7 +94,11 @@ namespace SimpleConsole
 
                 // Add Datetime recognizer - This model will find any Date even if its write in coloquial language - 
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-                DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture)
+                DateTimeRecognizer.GetInstance().GetDateTimeModel(defaultCulture),
+
+                // Add PhoneNumber recognizer - This recognizer will find any phone number presented
+                // E.g "My phone number is ( 19 ) 38294427."
+                SequenceRecognizer.Instance.GetPhoneNumberModel(defaultCulture) 
             };
         }
 

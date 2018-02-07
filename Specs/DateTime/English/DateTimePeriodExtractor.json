@@ -879,4 +879,28 @@
     }
   ]
 }
+,
+{
+  "Input": "I'll go back tuesday AM",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday AM",
+      "Type": "datetimerange"
+    }
+  ]
+}
+,
+{
+  "Input": "I'll go back tuesday PM",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "tuesday PM",
+      "Type": "datetimerange"
+    }
+  ]
+}
 ]

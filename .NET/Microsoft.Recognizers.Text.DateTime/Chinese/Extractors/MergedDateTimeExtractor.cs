@@ -2,12 +2,19 @@
 using System.Text.RegularExpressions;
 using DateObject = System.DateTime;
 
-using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Definitions.Chinese;
+using System.Linq;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class MergedExtractorChs : IDateTimeExtractor
     {
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly DateExtractorChs DateExtractor = new DateExtractorChs();
         private static readonly TimeExtractorChs TimeExtractor = new TimeExtractorChs();
         private static readonly DateTimeExtractorChs DateTimeExtractor = new DateTimeExtractorChs();
@@ -45,6 +52,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AddTo(ret, HolidayExtractor.Extract(text, referenceTime));
 
             CheckBlackList(ret, text);
+
+            AddMod(ret, text);
+
+            ret = ret.OrderBy(p => p.Start).ToList();
+
             return ret;
         }
 
@@ -72,6 +84,82 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 ret.Add(d);
             }
             dst = ret;
+        }
+
+        private void AddMod(List<ExtractResult> ers, string text)
+        {
+            var lastEnd = 0;
+            foreach (var er in ers)
+            {
+                var beforeStr = text.Substring(lastEnd, er.Start ?? 0).ToLowerInvariant();
+                var afterStr = text.Substring((er.Start ?? 0) + (er.Length ?? 0)).ToLowerInvariant();
+
+                if (HasTokenValueAfterStr(afterStr.TrimStart(), BeforeRegex, out string tokenValue))
+                {
+                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    er.Length += modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                if (HasTokenValueAfterStr(afterStr.TrimStart(), AfterRegex, out tokenValue))
+                {
+                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    er.Length += modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                if (HasTokenIndexBeforeStr(beforeStr.TrimEnd(), UntilRegex, out int tokenIndex))
+                {
+                    var modLengh = beforeStr.Length - tokenIndex;
+                    er.Length += modLengh;
+                    er.Start -= modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                if (HasTokenIndexBeforeStr(beforeStr.TrimEnd(), SincePrefixRegex, out tokenIndex))
+                {
+                    var modLengh = beforeStr.Length - tokenIndex;
+                    er.Length += modLengh;
+                    er.Start -= modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+                if (HasTokenValueAfterStr(afterStr.TrimStart(), SinceSuffixRegex, out tokenValue))
+                {
+                    var modLengh = tokenValue.Length + afterStr.IndexOf(tokenValue);
+                    er.Length += modLengh;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+                }
+
+            }
+        }
+
+        private bool HasTokenIndexBeforeStr(string text, Regex regex, out int index)
+        {
+            index = -1;
+            var match = regex.Match(text);
+
+            if (match.Success && string.IsNullOrWhiteSpace(text.Substring(match.Index + match.Length)))
+            {
+                index = match.Index;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool HasTokenValueAfterStr(string text, Regex regex, out string value)
+        {
+            value = string.Empty;
+            var match = regex.Match(text);
+
+            if (match.Success && match.Index == 0)
+            {
+                value = match.Value;
+                return true;
+            }
+
+            return false;
         }
 
         private void MoveOverlap(List<ExtractResult> dst, ExtractResult result)

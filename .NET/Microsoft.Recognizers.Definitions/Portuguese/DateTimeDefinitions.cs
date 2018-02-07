@@ -448,6 +448,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
 		public const string CenturyRegex = @"^[.]";
 		public const string DecadeRegex = @"^[.]";
 		public const string DecadeWithCenturyRegex = @"^[.]";
+		public const string RelativeDecadeRegex = @"^[.]";
 		public const string FullTextYearRegex = @"^[\*]";
 		public static readonly string YearSuffix = $@"(,?\s*({YearRegex}|{FullTextYearRegex}))";
 		public const string YearAfterRegex = @"^[.]";

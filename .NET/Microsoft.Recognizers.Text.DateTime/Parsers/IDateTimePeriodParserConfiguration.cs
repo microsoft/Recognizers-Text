@@ -53,6 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RestOfDateTimeRegex { get; }
 
+        Regex AmDescRegex { get; }
+
+        Regex PmDescRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> Numbers { get; }

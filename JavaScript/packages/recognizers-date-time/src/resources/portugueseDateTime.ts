@@ -189,6 +189,7 @@ export namespace PortugueseDateTime {
 	export const CenturyRegex = `^[.]`;
 	export const DecadeRegex = `^[.]`;
 	export const DecadeWithCenturyRegex = `^[.]`;
+	export const RelativeDecadeRegex = `^[.]`;
 	export const FullTextYearRegex = `^[\\*]`;
 	export const YearSuffix = `(,?\\s*(${YearRegex}|${FullTextYearRegex}))`;
 	export const YearAfterRegex = `^[.]`;

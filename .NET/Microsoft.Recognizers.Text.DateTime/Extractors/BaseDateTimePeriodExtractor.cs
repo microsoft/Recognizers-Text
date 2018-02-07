@@ -228,6 +228,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
                 var match = this.config.PeriodTimeOfDayWithDateRegex.Match(afterStr);
+
+                if (!match.Success)
+                {
+                    match = this.config.AmDescRegex.Match(afterStr);
+                    if (!match.Success)
+                    {
+                        match = this.config.PmDescRegex.Match(afterStr);
+                    }
+                }
+
                 if (match.Success)
                 {
                     if (string.IsNullOrWhiteSpace(afterStr.Substring(0, match.Index)))
