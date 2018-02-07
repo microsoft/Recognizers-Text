@@ -789,10 +789,10 @@ export class ChineseDatePeriodParser extends BaseDatePeriodParser {
 
         let beginDate = DateUtils.safeCreateFromMinValue(beginYear, 0, 1);
         let endDate = DateUtils.safeCreateFromMinValue(endYear, 0, 1);
-        let beginTimex = FormatUtil.toString(beginYear, 4);
-        let endTimex = FormatUtil.toString(endYear, 4);
+        let beginTimex = FormatUtil.luisDateFromDate(beginDate);
+        let endTimex = FormatUtil.luisDateFromDate(endDate);
 
-        result.timex = `(${beginYear},${endYear},P${endYear - beginYear}Y)`;
+        result.timex = `(${beginTimex},${endTimex},P${endYear - beginYear}Y)`;
         result.futureValue = [beginDate, endDate];
         result.pastValue = [beginDate, endDate];
         result.success = true;

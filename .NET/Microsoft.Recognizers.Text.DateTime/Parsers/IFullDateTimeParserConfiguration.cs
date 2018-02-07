@@ -6,6 +6,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public interface IFullDateTimeParserConfiguration : IOptionsConfiguration
     {
+        int TwoNumYear { get; }
+
         string LastWeekDayToken { get; }
 
         string NextMonthToken { get; }

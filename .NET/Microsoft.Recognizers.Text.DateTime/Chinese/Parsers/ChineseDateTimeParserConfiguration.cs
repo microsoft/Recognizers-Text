@@ -41,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             SinceSuffixRegex = MergedExtractorChs.SinceSuffixRegex;
         }
 
+        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear);
+
         public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
 
         public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
