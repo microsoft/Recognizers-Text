@@ -2935,4 +2935,40 @@
     }
   ]
 }
+,
+{
+  "Input": "It happened in the past 2 decades",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the past 2 decades",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the last two decades",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the last two decades",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It happened in the next decade",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "the next decade",
+      "Type": "daterange"
+    }
+  ]
+}
 ]

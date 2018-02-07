@@ -414,6 +414,9 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
+RelativeDecadeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: ^[.]
 FullTextYearRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\*]

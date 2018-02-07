@@ -39,6 +39,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex MiddlePauseRegex { get; }
 
+        Regex AmDescRegex { get; }
+
+        Regex PmDescRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }
