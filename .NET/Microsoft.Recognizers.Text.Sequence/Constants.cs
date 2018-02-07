@@ -16,5 +16,7 @@ namespace Microsoft.Recognizers.Text.Sequence
         public const string PHONE_NUMBER_REGEX_UK = "UKPhoneNumber";
 
         public const string PHONE_NUMBER_REGEX_GERMANY = "GermanyPhoneNumber";
+
+        public const string PHONE_NUMBER_REGEX_US= "USPhoneNumber";
     }
 }

@@ -1,5 +1,95 @@
 [
 {
+  "Input": "My phone number is 1 (877) 609-2233.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1 (877) 609-2233",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "1 (877) 609-2233"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is +1 541-754-3010.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "+1 541-754-3010",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "+1 541-754-3010"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is (541) 754-3010.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "(541) 754-3010",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "(541) 754-3010"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is 541-754-3010.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "541-754-3010",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "541-754-3010"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is +1-541-754-3010.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "+1-541-754-3010",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "+1-541-754-3010"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "My phone number is 1-541-754-3010.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "1-541-754-3010",
+      "TypeName": "phonenumber",
+      "Resolution": {
+        "value": "1-541-754-3010"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "My phone number is (55) 3333-33333.",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -991,5 +1081,11 @@
   "NotSupportedByDesign": "python",
   "Results": [] 
 }
-
+,
+{
+  "Input": "(081)  342-86221d doesn't look like a phone number.",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [] 
+}
 ]
