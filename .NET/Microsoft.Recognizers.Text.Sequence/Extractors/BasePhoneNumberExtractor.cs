@@ -26,8 +26,10 @@ namespace Microsoft.Recognizers.Text.Sequence
                 },
                 {
                     new Regex(BasePhoneNumbers.GermanyPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_GERMANY
+                },
+                {
+                    new Regex(BasePhoneNumbers.USPhoneNumberRegex), Constants.PHONE_NUMBER_REGEX_US
                 }
-
             };
 
             Regexes = regexes.ToImmutableDictionary();
