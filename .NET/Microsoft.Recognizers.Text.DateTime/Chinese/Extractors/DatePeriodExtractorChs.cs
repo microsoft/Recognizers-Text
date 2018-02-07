@@ -85,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             OneWordPeriodRegex,
             StrictYearRegex,
             YearToYear,
+            MonthToMonth,
             YearAndMonth,
             PureNumYearAndMonth,
             YearInChineseRegex,
