@@ -23,6 +23,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             var matchSource = new Dictionary<Match, string>();
             var matched = new bool[text.Length];
 
+            //Traverse every match results to see each position in the text is matched or not.
             var collections = Regexes.ToDictionary(o => o.Key.Matches(text), p => p.Value);
             foreach (var collection in collections)
             {
@@ -38,6 +39,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 }
             }
 
+            //Form the extracted results from all the matched intervals in the text.
             var lastNotMatched = -1;
             for (var i = 0; i < text.Length; i++)
             {
