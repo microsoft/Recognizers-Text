@@ -18,7 +18,9 @@ namespace Microsoft.Recognizers.Definitions
 	public static class BasePhoneNumbers
 	{
 		public const string NumberReplaceToken = "@builtin.phonenumber";
-		public static readonly Func<string, string, string> IntegerRegexDefinition = (placeholder, thousandsmark) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{{1,3}}({thousandsmark}\d{{3}})+(?={placeholder})";
-		public const string PlaceHolderDefault = "\\D|\\b";
+		public const string GeneralPhoneNumberRegex = @"(\b((\d[\s-/]?){8,})\b)";
+		public const string BrazilPhoneNumberRegex = @"(((?'brac'\B\(\s?)|\b)\d{2,3}(?'-brac'\s?\))?\s?)\s?\d{4,5}-?\d{3,5}\b(?(brac)(?!))";
+		public const string UkPhoneNumberRegex = @"(((\b(00)|\B\+)\s?)?\d{2}\s?(\(0\))?\d{3,5}[/-]?\s?(\d{7,8}|\d{3}\s?\d{3})\b)";
+		public const string GermanyPhoneNumberRegex = @"(\b(\d{4}\s?[-/]?(\s?\d){7,8})\b)";
 	}
 }
