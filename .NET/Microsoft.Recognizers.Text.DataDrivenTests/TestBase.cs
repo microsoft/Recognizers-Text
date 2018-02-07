@@ -320,6 +320,11 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
         }
 
+        public void TestSequence()
+        {
+            TestNumber();
+        }
+
         private static string GetMessage(TestModel spec)
         {
             return $"Input: \"{spec.Input}\"";

@@ -196,6 +196,7 @@ export namespace FrenchDateTime {
 	export const CenturyRegex = `^[.]`;
 	export const DecadeRegex = `^[.]`;
 	export const DecadeWithCenturyRegex = `^[.]`;
+	export const RelativeDecadeRegex = `^[.]`;
 	export const FullTextYearRegex = `^[.]`;
 	export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
 	export const YearAfterRegex = `^[.]`;

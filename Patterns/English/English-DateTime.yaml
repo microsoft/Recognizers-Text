@@ -389,10 +389,12 @@ InConnectorRegex: !simpleRegex
   def: \b(in)\b
 AmPmDescRegex: !simpleRegex
   def: (ampm)
-MorningStartEndRegex: !simpleRegex
-  def: (^(morning))|((morning)$)
-AfternoonStartEndRegex: !simpleRegex
-  def: (^(afternoon))|((afternoon)$)
+MorningStartEndRegex: !nestedRegex
+  def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)
+  references: [ AmDescRegex ]
+AfternoonStartEndRegex: !nestedRegex
+  def: (^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)
+  references: [ PmDescRegex ]
 EveningStartEndRegex: !simpleRegex
   def: (^(evening))|((evening)$)
 NightStartEndRegex: !simpleRegex
@@ -467,6 +469,9 @@ DecadeRegex: !simpleRegex
 DecadeWithCenturyRegex: !nestedRegex
   def: the\s+(((?<century>\d|1\d|2\d)?(')?(?<decade>\d0)(')?s)|(({CenturyRegex}(\s+|-)(and\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(and\s+)?(?<decade>tens|hundreds)))
   references: [ CenturyRegex, DecadeRegex ]
+RelativeDecadeRegex: !nestedRegex
+  def: \b((the\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?decades?)\b
+  references: [ RelativeRegex ]
 YearAfterRegex: !simpleRegex
   def: \b(or\s+(above|after))\b
 YearPeriodRegex: !nestedRegex

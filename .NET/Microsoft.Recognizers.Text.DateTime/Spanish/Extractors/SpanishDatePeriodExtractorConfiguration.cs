@@ -135,6 +135,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex YearPeriodRegex =
             new Regex(DateTimeDefinitions.YearPeriodRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex RelativeDecadeRegex =
+            new Regex(DateTimeDefinitions.RelativeDecadeRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex[] SimpleCasesRegexes =
         {
             SimpleCasesRegex,
@@ -155,7 +158,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,
             YearPlusNumberRegex,
-            DecadeWithCenturyRegex
+            DecadeWithCenturyRegex,
+            RelativeDecadeRegex
         };
 
         public SpanishDatePeriodExtractorConfiguration() : base(DateTimeOptions.None)
@@ -203,6 +207,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.InConnectorRegex => InConnectorRegex;
 
         Regex IDatePeriodExtractorConfiguration.YearPeriodRegex => YearPeriodRegex;
+
+        Regex IDatePeriodExtractorConfiguration.RelativeDecadeRegex => RelativeDecadeRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

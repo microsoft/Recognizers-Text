@@ -165,8 +165,8 @@ export namespace EnglishDateTime {
 	export const LaterRegex = `\\b(later|from now)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
 	export const AmPmDescRegex = `(ampm)`;
-	export const MorningStartEndRegex = `(^(morning))|((morning)$)`;
-	export const AfternoonStartEndRegex = `(^(afternoon))|((afternoon)$)`;
+	export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
+	export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
 	export const EveningStartEndRegex = `(^(evening))|((evening)$)`;
 	export const NightStartEndRegex = `(^(overnight|tonight|night))|((overnight|tonight|night)$)`;
 	export const InExactNumberRegex = `\\b(a few|few|some|several)\\b`;
@@ -198,6 +198,7 @@ export namespace EnglishDateTime {
 	export const DateNumberConnectorRegex = `^\\s*(?<connector>\\s+at)\\s*$`;
 	export const DecadeRegex = `(?<decade>noughties|twenties|thirties|forties|fifties|sixties|seventies|eighties|nineties|two thousands)`;
 	export const DecadeWithCenturyRegex = `the\\s+(((?<century>\\d|1\\d|2\\d)?(')?(?<decade>\\d0)(')?s)|((${CenturyRegex}(\\s+|-)(and\\s+)?)?${DecadeRegex})|(${CenturyRegex}(\\s+|-)(and\\s+)?(?<decade>tens|hundreds)))`;
+	export const RelativeDecadeRegex = `\\b((the\\s+)?${RelativeRegex}\\s+((?<number>[\\w,]+)\\s+)?decades?)\\b`;
 	export const YearAfterRegex = `\\b(or\\s+(above|after))\\b`;
 	export const YearPeriodRegex = `(((from|during|in|between)\\s+)?${YearRegex}\\s*${TillRegex}\\s*${YearRegex})`;
 	export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["years", "Y"],["year", "Y"],["months", "MON"],["month", "MON"],["weeks", "W"],["week", "W"],["days", "D"],["day", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);

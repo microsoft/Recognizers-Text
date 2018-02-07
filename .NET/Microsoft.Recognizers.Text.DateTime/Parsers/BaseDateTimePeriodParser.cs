@@ -468,6 +468,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Comment = "late";
                 }
             }
+            else
+            {
+                match = this.Config.AmDescRegex.Match(trimedText);
+                if (!match.Success)
+                {
+                    match = this.Config.PmDescRegex.Match(trimedText);
+                }
+
+                if (match.Success)
+                {
+                    timeText = match.Value;
+                }
+            }
 
             // Handle time of day
 
@@ -516,6 +529,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Handle Date followed by morning, afternoon and morning, afternoon followed by Date
             match = this.Config.PeriodTimeOfDayWithDateRegex.Match(trimedText);
+
+            if (!match.Success)
+            {
+                match = this.Config.AmDescRegex.Match(trimedText);
+                if (!match.Success)
+                {
+                    match = this.Config.PmDescRegex.Match(trimedText);
+                }
+            }
+
             if (match.Success)
             {
                 var beforeStr = trimedText.Substring(0, match.Index).Trim();
