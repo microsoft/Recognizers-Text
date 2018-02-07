@@ -1254,12 +1254,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             beginYear = firstTwoNumOfYear * 100 + decade;
-            var yearPass = decadeLastYear * Math.Abs(swift);
+            var totalLastYear = decadeLastYear * Math.Abs(swift);
 
             if (inputCentury)
             {
                 beginLuisStr = FormatUtil.LuisDate(beginYear, beginMonth, beginDay);
-                endLuisStr = FormatUtil.LuisDate(beginYear + yearPass - 1, endMonth, endDay);
+                endLuisStr = FormatUtil.LuisDate(beginYear + totalLastYear - 1, endMonth, endDay);
             }
             else
             {
@@ -1267,11 +1267,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginLuisStr = FormatUtil.LuisDate(-1, beginMonth, beginDay);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + yearPass - 1).ToString();
+                var endYearStr = "XX" + (decade + totalLastYear - 1).ToString();
                 endLuisStr = FormatUtil.LuisDate(-1, endMonth, endDay);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
-            ret.Timex = $"({beginLuisStr},{endLuisStr},P{yearPass}Y)";
+            ret.Timex = $"({beginLuisStr},{endLuisStr},P{totalLastYear}Y)";
 
             int futureYear = beginYear, pastYear = beginYear;
             var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, beginMonth, beginDay);
@@ -1287,11 +1287,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = new Tuple<DateObject, DateObject>(
                 DateObject.MinValue.SafeCreateFromValue(futureYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(futureYear + yearPass - 1, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(futureYear + totalLastYear - 1, endMonth, endDay));
 
             ret.PastValue = new Tuple<DateObject, DateObject>(
                 DateObject.MinValue.SafeCreateFromValue(pastYear, beginMonth, beginDay),
-                DateObject.MinValue.SafeCreateFromValue(pastYear + yearPass - 1, endMonth, endDay));
+                DateObject.MinValue.SafeCreateFromValue(pastYear + totalLastYear - 1, endMonth, endDay));
 
             ret.Success = true;
 

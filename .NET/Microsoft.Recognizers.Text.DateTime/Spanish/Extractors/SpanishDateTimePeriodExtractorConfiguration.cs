@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex FromRegex = new Regex(DateTimeDefinitions.FromRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex ConnectorAndRegex = new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
         private static readonly Regex BetweenRegex = new Regex(DateTimeDefinitions.BetweenRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
-        
+
         public SpanishDateTimePeriodExtractorConfiguration() : base(DateTimeOptions.None)
         {
             CardinalExtractor = Number.Spanish.CardinalExtractor.GetInstance();
