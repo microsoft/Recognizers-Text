@@ -1010,7 +1010,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success && ex.Count==1)
             {
                 var pr= (DateTimeResolutionResult)config.DateParser.Parse(ex[0], referenceDate).Value;
-                ret.Timex = pr.Timex;
+                if ((config.Options & DateTimeOptions.CalendarMode) != 0)
+                {
+                    var monday = ((DateObject)pr.FutureValue).This(DayOfWeek.Monday);
+                    ret.Timex = monday.Year.ToString("D4") + "-W" +
+                                Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                                    .ToString("D2");
+                }
+                else
+                {
+                    ret.Timex = pr.Timex;
+                }
                 ret.Comment = WeekOfComment;
                 ret.FutureValue= GetWeekRangeFromDate((DateObject)pr.FutureValue);
                 ret.PastValue= GetWeekRangeFromDate((DateObject)pr.PastValue);

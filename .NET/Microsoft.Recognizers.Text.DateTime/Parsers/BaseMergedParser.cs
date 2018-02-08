@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using Microsoft.Recognizers.Text.Number;
+using System.Globalization;
 
 using DateObject = System.DateTime;
 
@@ -16,6 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static readonly string DateMinString = FormatUtil.FormatDate(DateObject.MinValue);
         public static readonly string DateTimeMinString = FormatUtil.FormatDateTime(DateObject.MinValue);
+        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         public BaseMergedParser(IMergedParserConfiguration configuration)
         {
@@ -316,6 +316,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // if the WeekOf and in ClendarMode, modify the past part of our resolution
+            if ((Config.Options & DateTimeOptions.CalendarMode) != 0 && 
+                    !string.IsNullOrEmpty(comment) && comment.Equals("WeekOf"))
+            {
+                ResolveWeekOf(res, "resolveToPast"); 
+            }
+
             foreach (var p in res)
             {
                 if (p.Value is Dictionary<string, string>)
@@ -466,6 +473,27 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 resolutionDic.Add(keyName + "Pm", resolutionPm);
+            }
+        }
+
+        internal void ResolveWeekOf(Dictionary<string, object> resolutionDic, string keyName)
+        {
+            if (resolutionDic.ContainsKey(keyName))
+            {
+                var resolution = (Dictionary<string, string>)resolutionDic[keyName];
+
+                var date = resolution["start"];
+                var year = int.Parse(date.Substring(0, 4));
+                var month = int.Parse(date.Substring(5, 2));
+                var day = int.Parse(date.Substring(8, 2));
+                var monday = new DateObject(year, month, day);
+                var timex = monday.Year.ToString("D4") + "-W" +
+                            Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                                .ToString("D2");
+                resolution[Constants.TimexKey] = timex;
+
+                resolutionDic.Remove(keyName);
+                resolutionDic.Add(keyName, resolution);
             }
         }
 
