@@ -482,15 +482,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var resolution = (Dictionary<string, string>)resolutionDic[keyName];
 
-                var date = resolution["start"];
-                var year = int.Parse(date.Substring(0, 4));
-                var month = int.Parse(date.Substring(5, 2));
-                var day = int.Parse(date.Substring(8, 2));
-                var monday = new DateObject(year, month, day);
-                var timex = monday.Year.ToString("D4") + "-W" +
-                            Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                .ToString("D2");
-                resolution[Constants.TimexKey] = timex;
+                var monday = DateObject.Parse(resolution["start"]);
+                resolution[Constants.TimexKey] = FormatUtil.ToIsoWeekTimex(monday);
 
                 resolutionDic.Remove(keyName);
                 resolutionDic.Add(keyName, resolution);
