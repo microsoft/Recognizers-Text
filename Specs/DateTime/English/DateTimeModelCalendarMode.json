@@ -9,8 +9,8 @@
   "Results": [
     {
       "Text": "the week of april 10",
-      "Start": 83,
-      "End": 102,
+      "Start": 71,
+      "End": 90,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
@@ -42,8 +42,8 @@
   "Results": [
     {
       "Text": "the week of july 23",
-      "Start": 83,
-      "End": 102,
+      "Start": 71,
+      "End": 89,
       "TypeName": "datetimeV2.daterange",
       "Resolution": {
         "values": [
