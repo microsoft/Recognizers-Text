@@ -2519,6 +2519,32 @@
 }
 ,
 {
+  "Input": "In 70's",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "70's",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+        "FutureResolution": {
+          "startDate": "2070-01-01",
+          "endDate": "2080-01-01"
+        },
+        "PastResolution": {
+          "startDate": "1970-01-01",
+          "endDate": "1980-01-01"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "In the '40s",
   "Context": {
     "ReferenceDateTime": "2016-11-07T00:00:00"
