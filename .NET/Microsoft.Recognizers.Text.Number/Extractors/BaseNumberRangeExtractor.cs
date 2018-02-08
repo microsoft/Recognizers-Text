@@ -11,14 +11,17 @@ namespace Microsoft.Recognizers.Text.Number
 
         private readonly BaseNumberExtractor ordinalExtractor;
 
+        private readonly BaseNumberParser numberParser;
+
         internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
 
         protected virtual string ExtractType { get; } = "";
 
-        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor)
+        public BaseNumberRangeExtractor(BaseNumberExtractor numberExtractor, BaseNumberExtractor ordinalExtractor, BaseNumberParser numberParser)
         {
             this.numberExtractor = numberExtractor;
             this.ordinalExtractor = ordinalExtractor;
+            this.numberParser = numberParser;
         }
 
         public virtual List<ExtractResult> Extract(string source)
@@ -102,6 +105,18 @@ namespace Microsoft.Recognizers.Text.Number
 
                 if (extractNumList1 != null && extractNumList2 != null)
                 {
+                    if (type.Contains(NumberRangeConstants.TWONUMTILL))
+                    {
+                        // num1 must less than num2
+                        var num1 = (double)(numberParser.Parse(extractNumList1[0]).Value ?? 0);
+                        var num2 = (double)(numberParser.Parse(extractNumList2[0]).Value ?? 0);
+
+                        if (num1 > num2)
+                        {
+                            return;
+                        }
+                    }
+
                     bool validNum1 = false, validNum2 = false;
                     start = match.Index;
                     length = match.Length;

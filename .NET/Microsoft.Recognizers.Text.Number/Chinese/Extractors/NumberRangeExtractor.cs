@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
-        public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor())
+        public NumberRangeExtractor() : base(new NumberExtractor(), new OrdinalExtractor(), new ChineseNumberParser(new ChineseNumberParserConfiguration()))
         {
             var regexes = new Dictionary<Regex, string>()
             {

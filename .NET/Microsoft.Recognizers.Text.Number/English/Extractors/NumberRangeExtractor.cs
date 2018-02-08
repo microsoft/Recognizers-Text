@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Number.English
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUMRANGE;
 
-        public NumberRangeExtractor() : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance())
+        public NumberRangeExtractor() : base(NumberExtractor.GetInstance(), OrdinalExtractor.GetInstance(), new BaseNumberParser(new EnglishNumberParserConfiguration()))
         {
             var regexes = new Dictionary<Regex, string>()
             {
