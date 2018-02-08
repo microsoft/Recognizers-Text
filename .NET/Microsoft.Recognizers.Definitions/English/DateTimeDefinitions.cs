@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TheEndOfRegex = @"(the\s+)?end of(\s+the)?\s*$";
 		public const string PeriodTimeOfDayRegex = @"\b((in\s+(the)?\s+)?((?<early>early(\s+|-))|(?<late>late(\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\b";
 		public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b";
-		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+on)?))\b";
+		public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}(\s+(on|of))?))\b";
 		public const string DurationUnitRegex = @"(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b";
 		public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+((an|a)\s+)?(?<suffix_num>half|quarter))";
 		public const string PeriodicRegex = @"\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\b";
@@ -167,9 +167,9 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string TokenBeforeTime = "at ";
 		public const string AMTimeRegex = @"(?<am>morning)";
 		public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
-		public const string BeforeRegex = @"\b(before|in advance of|prior to|no later than|by|till|til|until)\b";
-		public const string AfterRegex = @"\b(after)\b";
-		public const string SinceRegex = @"\b(since)\b";
+		public const string BeforeRegex = @"\b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\b";
+		public const string AfterRegex = @"\b(after(?!\s+or equal to)|(?<!no\s+)later than)\b";
+		public const string SinceRegex = @"\b(since|after or equal to|starting (from|on|with))\b";
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
 		public const string InConnectorRegex = @"\b(in)\b";

@@ -324,7 +324,7 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btonight)\b
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
- def: \b(({TimeOfDayRegex}(\s+on)?))\b
+ def: \b(({TimeOfDayRegex}(\s+(on|of))?))\b
  references: [ TimeOfDayRegex]
 DurationUnitRegex: !simpleRegex
   def: (?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\b
@@ -376,11 +376,11 @@ AMTimeRegex: !simpleRegex
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>afternoon|evening|night)\b
 BeforeRegex: !simpleRegex
-  def: \b(before|in advance of|prior to|no later than|by|till|til|until)\b
+  def: \b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\b
 AfterRegex: !simpleRegex
-  def: \b(after)\b
+  def: \b(after(?!\s+or equal to)|(?<!no\s+)later than)\b
 SinceRegex: !simpleRegex
-  def: \b(since)\b
+  def: \b(since|after or equal to|starting (from|on|with))\b
 AgoRegex: !simpleRegex
   def: \b(ago)\b
 LaterRegex: !simpleRegex

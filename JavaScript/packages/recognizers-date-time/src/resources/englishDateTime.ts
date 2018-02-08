@@ -134,7 +134,7 @@ export namespace EnglishDateTime {
 	export const TheEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
 	export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>early(\\s+|-))|(?<late>late(\\s+|-)))?(?<timeOfDay>morning|afternoon|night|evening))\\b`;
 	export const PeriodSpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btonight)\\b`;
-	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+on)?))\\b`;
+	export const PeriodTimeOfDayWithDateRegex = `\\b((${TimeOfDayRegex}(\\s+(on|of))?))\\b`;
 	export const DurationUnitRegex = `(?<unit>years|year|months|month|weeks|week|days|day|hours|hour|hrs|hr|h|minutes|minute|mins|min|seconds|second|secs|sec)\\b`;
 	export const SuffixAndRegex = `(?<suffix>\\s*(and)\\s+((an|a)\\s+)?(?<suffix_num>half|quarter))`;
 	export const PeriodicRegex = `\\b(?<periodic>daily|monthly|weekly|biweekly|yearly|annually|annual)\\b`;
@@ -158,9 +158,9 @@ export namespace EnglishDateTime {
 	export const TokenBeforeTime = 'at ';
 	export const AMTimeRegex = `(?<am>morning)`;
 	export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
-	export const BeforeRegex = `\\b(before|in advance of|prior to|no later than|by|till|til|until)\\b`;
-	export const AfterRegex = `\\b(after)\\b`;
-	export const SinceRegex = `\\b(since)\\b`;
+	export const BeforeRegex = `\\b(before|in advance of|prior to|(no later|earlier|sooner) than|ending (with|on)|by|till|til|until)\\b`;
+	export const AfterRegex = `\\b(after(?!\\s+or equal to)|(?<!no\\s+)later than)\\b`;
+	export const SinceRegex = `\\b(since|after or equal to|starting (from|on|with))\\b`;
 	export const AgoRegex = `\\b(ago)\\b`;
 	export const LaterRegex = `\\b(later|from now)\\b`;
 	export const InConnectorRegex = `\\b(in)\\b`;
