@@ -1,4 +1,4 @@
-export { default as NumberWithUnitRecognizer } from "./numberWithUnit/numberWithUnitRecognizer";
+export { default as NumberWithUnitRecognizer, NumberWithUnitOptions, recognizeTemperature, recognizeDimension, recognizeCurrency, recognizeAge } from "./numberWithUnit/numberWithUnitRecognizer";
 export { Culture, CultureInfo } from "@microsoft/recognizers-text-number";
 export { Constants } from "./numberWithUnit/constants";
 export { INumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, PrefixUnitResult } from "./numberWithUnit/extractors";

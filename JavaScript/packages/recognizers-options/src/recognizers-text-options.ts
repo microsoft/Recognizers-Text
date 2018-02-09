@@ -1,4 +1,4 @@
-export { default as OptionsRecognizer } from "./options/optionsRecognizer";
+export { default as OptionsRecognizer, OptionsOptions, recognizeBoolean } from "./options/optionsRecognizer";
 export { Culture } from "@microsoft/recognizers-text";
 export { OptionsModel, BooleanModel } from "./options/models";
 export { IChoiceExtractorConfiguration, OptionsExtractor, IBooleanExtractorConfiguration, BooleanExtractor } from "./options/extractors";

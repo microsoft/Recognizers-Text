@@ -1,4 +1,4 @@
-var DateTimeRecognizer = require('@microsoft/recognizers-text-date-time').DateTimeRecognizer;
+var DateTimeRecognizer = require('@microsoft/recognizers-text-date-time');
 var DateTimeOptions = require('@microsoft/recognizers-text-date-time').DateTimeOptions;
 var Culture = require('@microsoft/recognizers-text-date-time').Culture;
 
@@ -8,7 +8,7 @@ module.exports = function (describe) {
             var input = 'I\'ll go back Oct/2';
             var refTime = new Date('2016-11-07T00:00:00')
 
-            var actual = DateTimeRecognizer.recognizeDateTime(input, Culture.English, DateTimeOptions.None , refTime);
+            var actual = DateTimeRecognizer.recognizeDateTime(input, Culture.English, DateTimeOptions.None, refTime);
 
             t.is(actual.length, 1, 'Result.length')
             t.is(actual[0].text, 'oct/2', 'Result.Text');

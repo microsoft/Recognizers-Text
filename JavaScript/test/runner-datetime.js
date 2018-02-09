@@ -197,7 +197,7 @@ function getModel(config) {
     var model = models[key];
     if (model === undefined) {
         try {
-            model = Recognizer.getSingleCultureInstance(culture, options).getDateTimeModel(culture, false),
+            model = (new Recognizer(culture, options)).getDateTimeModel(),
 			models[key] = model;
         } catch (err) {
             // not yet supported - save null model, tests will then be ignored

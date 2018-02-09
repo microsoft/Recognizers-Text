@@ -28,8 +28,30 @@ export enum NumberWithUnitOptions {
     None = 0,
 }
 
+export function recognizeCurrency(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getCurrencyModel(), query, culture, options);
+}
+
+export function  recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getTemperatureModel(), query, culture, options);
+}
+
+export function  recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getDimensionModel(), query, culture, options);
+}
+
+export function  recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getAgeModel(), query, culture, options);
+}
+
+function recognizeByModel(getModelFunc: (n: NumberWithUnitRecognizer) => IModel, query: string, culture: string, options: NumberWithUnitOptions): Array<ModelResult> {
+    let recognizer = new NumberWithUnitRecognizer(culture, options);
+    let model = getModelFunc(recognizer);
+    return model.parse(query);
+}
+
 export default class NumberWithUnitRecognizer extends Recognizer<NumberWithUnitOptions> {
-    private constructor(culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None) {
+    constructor(culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None) {
         super(culture, options);
     }
 

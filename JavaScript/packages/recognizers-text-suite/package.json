@@ -32,6 +32,7 @@
     "prepare": "npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
+    "@microsoft/recognizers-text": "^1.0.0-rc.31.0",
     "@microsoft/recognizers-text-date-time": "^1.0.0-rc.31.0",
     "@microsoft/recognizers-text-number": "^1.0.0-rc.31.0",
     "@microsoft/recognizers-text-number-with-unit": "^1.0.0-rc.31.0",

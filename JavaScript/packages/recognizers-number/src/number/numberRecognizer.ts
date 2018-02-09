@@ -18,9 +18,27 @@ export enum NumberOptions {
     None = 0,
 }
 
+export function recognizeNumber(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getNumberModel(), query, culture, options);
+}
+
+export function  recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getOrdinalModel(), query, culture, options);
+}
+
+export function  recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getPercentageModel(), query, culture, options);
+}
+
+function recognizeByModel(getModelFunc: (n: NumberRecognizer) => IModel, query: string, culture: string, options: NumberOptions): Array<ModelResult> {
+    let recognizer = new NumberRecognizer(culture, options);
+    let model = getModelFunc(recognizer);
+    return model.parse(query);
+}
+
 export default class NumberRecognizer extends Recognizer<NumberOptions> {
 
-    private constructor(culture, options: NumberOptions = NumberOptions.None) {
+    constructor(culture, options: NumberOptions = NumberOptions.None) {
         super(culture, options);
     }
 
@@ -91,23 +109,5 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
 
     getPercentageModel(): IModel {
         return this.getModel("PercentModel");
-    }
-
-    static recognizeNumber(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-        return NumberRecognizer.recognizeByModel(recognizer => recognizer.getNumberModel(), query, culture, options);
-    }
-
-    static recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-        return NumberRecognizer.recognizeByModel(recognizer => recognizer.getOrdinalModel(), query, culture, options);
-    }
-
-    static recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
-        return NumberRecognizer.recognizeByModel(recognizer => recognizer.getPercentageModel(), query, culture, options);
-    }
-
-    private static recognizeByModel(getModelFunc: (n: NumberRecognizer) => IModel, query: string, culture: string, options: NumberOptions): Array<ModelResult> {
-        let recognizer = new NumberRecognizer(culture, options);
-        let model = getModelFunc(recognizer);
-        return model.parse(query);
     }
 }

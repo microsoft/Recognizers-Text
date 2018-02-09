@@ -12,6 +12,16 @@ export enum DateTimeOptions {
     None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
 }
 
+export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
+    return recognizeByModel(recognizer => recognizer.getDateTimeModel(), query, culture, options, referenceDate);
+}
+
+function recognizeByModel(getModelFunc: (n: DateTimeRecognizer) => IDateTimeModel, query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
+    let recognizer = new DateTimeRecognizer(culture, options);
+    let model = getModelFunc(recognizer);
+    return model.parse(query, referenceDate);
+}
+
 export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
     constructor(culture: string, options: DateTimeOptions = DateTimeOptions.None) {
         super(culture, options);
@@ -45,15 +55,5 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
 
     getDateTimeModel(): IDateTimeModel {
         return this.getModel("DateTimeModel");
-    }
-
-    public static getSingleCultureInstance(cultureCode: string, options: DateTimeOptions = DateTimeOptions.None): DateTimeRecognizer {
-        return new DateTimeRecognizer(cultureCode, options);
-    }
-
-    public static recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
-        let recognizer = new DateTimeRecognizer(culture, options);
-        let model = recognizer.getDateTimeModel();
-        return model.parse(query, referenceDate);
     }
 }

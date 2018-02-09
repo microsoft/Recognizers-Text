@@ -1,4 +1,4 @@
-var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
+var NumberRecognizer = require('@microsoft/recognizers-text-number');
 var Culture = require('@microsoft/recognizers-text-number').Culture;
 
 module.exports = function (describe) {
