@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-suite",
-  "version": "1.0.0-rc.30.0",
+  "version": "1.0.0-rc.31.0",
   "description": "recognizers-text-suite provides robust recognition and resolution of numbers, units, and date/time expressed in multiple languages. Support for English, Spanish, and Chinese (full); and French and Portuguese (partial).",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -15,7 +15,7 @@
   ],
   "main": "dist/recognizers-text-suite.umd.js",
   "module": "dist/recognizers-text-suite.es5.js",
-  "typings": "dist/types/recognizers-suite-text.d.ts",
+  "typings": "dist/types/recognizers-text-suite.d.ts",
   "browser": "dist/recognizers-text-suite.browser.js",
   "repository": {
     "type": "git",
@@ -32,9 +32,9 @@
     "prepare": "npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text-date-time": "^1.0.0-rc.30.0",
-    "@microsoft/recognizers-text-number": "^1.0.0-rc.30.0",
-    "@microsoft/recognizers-text-number-with-unit": "^1.0.0-rc.30.0",
-    "@microsoft/recognizers-text-options": "^1.0.0-rc.30.0"
+    "@microsoft/recognizers-text-date-time": "^1.0.0-rc.31.0",
+    "@microsoft/recognizers-text-number": "^1.0.0-rc.31.0",
+    "@microsoft/recognizers-text-number-with-unit": "^1.0.0-rc.31.0",
+    "@microsoft/recognizers-text-options": "^1.0.0-rc.31.0"
   }
 }

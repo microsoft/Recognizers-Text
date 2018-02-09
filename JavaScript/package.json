@@ -10,11 +10,11 @@
 		"browser-test": "npm run browserify && node ./test/browser-specs/server.js"
 	},
 	"browserify-shim": {
-		"recognizers-text": "global:recognizersTextBase",
-		"recognizers-text-options": "global:recognizersTextOptions",
-		"recognizers-text-number": "global:recognizersTextNumber",
-		"recognizers-text-number-with-unit": "global:recognizersTextNumberWithUnit",
-		"recognizers-text-date-time": "global:recognizersTextDateTime"
+		"@microsoft/recognizers-text": "global:microsoftRecognizersTextBase",
+		"@microsoft/recognizers-text-options": "global:microsoftRecognizersTextOptions",
+		"@microsoft/recognizers-text-number": "global:microsoftRecognizersTextNumber",
+		"@microsoft/recognizers-text-number-with-unit": "global:microsoftRecognizersTextNumberWithUnit",
+		"@microsoft/recognizers-text-date-time": "global:microsoftRecognizersTextDateTime"
 	},
 	"browserify": {
 		"transform": [

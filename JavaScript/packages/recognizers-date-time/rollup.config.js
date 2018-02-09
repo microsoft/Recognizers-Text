@@ -17,9 +17,9 @@ export default {
   sourcemap: true,
   plugins: [
     alias({
-      'recognizers-text': path.resolve(__dirname, '../recognizers-text/compiled/recognizers-text.js'),
-      'recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
-      'recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js')
+      '@microsoft/recognizers-text': path.resolve(__dirname, '../recognizers-text/compiled/recognizers-text.js'),
+      '@microsoft/recognizers-text-number': path.resolve(__dirname, '../recognizers-number/compiled/recognizers-text-number.js'),
+      '@microsoft/recognizers-text-number-with-unit': path.resolve(__dirname, '../recognizers-number-with-unit/compiled/recognizers-text-number-with-unit.js')
     }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),

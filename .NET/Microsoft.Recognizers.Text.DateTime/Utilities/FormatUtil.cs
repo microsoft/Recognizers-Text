@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -56,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return FormatDate(datetime) + " " + FormatTime(datetime);
         }
-        
+
         public static string AllStringToPm(string timeStr)
         {
             var matches = HourTimexRegex.Matches(timeStr);
@@ -104,5 +106,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return hasT ? "T" + string.Join(":", splited) : string.Join(":", splited);
         }
 
+        public static string ToIsoWeekTimex(System.DateTime monday)
+        {
+            Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
+            return monday.Year.ToString("D4") + "-W" + 
+                Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
+                .ToString("D2");
+        }
     }
 }
