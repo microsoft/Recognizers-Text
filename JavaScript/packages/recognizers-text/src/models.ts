@@ -17,7 +17,7 @@ export class ModelResult {
 export class ModelFactory<TModelOptions> {
     static readonly defaultCulture: string = Culture.English;
 
-    private modelInstances: Map<string, (options: TModelOptions) => IModel> = new Map<string, (options: TModelOptions) => IModel>();
+    private modelFactories: Map<string, (options: TModelOptions) => IModel> = new Map<string, (options: TModelOptions) => IModel>();
 
     private static cache: Map<string, IModel> = new Map<string, IModel>();
 
@@ -39,12 +39,12 @@ export class ModelFactory<TModelOptions> {
         let model: IModel;
         let ret: boolean = true;
         let key = this.generateKey(modelTypeName, culture);
-        if (!this.modelInstances.has(key)) {
+        if (!this.modelFactories.has(key)) {
             ret = false;
         }
 
         if (ret) {
-            return { containsModel: true, model: this.modelInstances.get(key)(options) };
+            return { containsModel: true, model: this.modelFactories.get(key)(options) };
         }
 
         return { containsModel: false };
@@ -52,11 +52,11 @@ export class ModelFactory<TModelOptions> {
 
     registerModel(modelTypeName: string, culture: string, modelCreator: (options: TModelOptions) => IModel) {
         let key = this.generateKey(modelTypeName, culture);
-        if (this.modelInstances.has(key)) {
+        if (this.modelFactories.has(key)) {
             throw new Error(`${culture}-${modelTypeName} has been registered.`);
         }
 
-        this.modelInstances.set(key, modelCreator);
+        this.modelFactories.set(key, modelCreator);
     }
 
     private generateKey(modelTypeName: string, culture: string): string {

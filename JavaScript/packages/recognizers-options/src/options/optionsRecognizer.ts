@@ -4,22 +4,22 @@ import { BooleanExtractor } from "./extractors";
 import { BooleanParser } from "./parsers";
 import { EnglishBooleanExtractorConfiguration } from "./english/boolean";
 
-export enum OptionsOptions {
+export enum OptionsRecognizersOptions {
     None = 0,
 }
 
-export function recognizeBoolean(query: string, culture: string, options: OptionsOptions = OptionsOptions.None): Array<ModelResult> {
+export function recognizeBoolean(query: string, culture: string, options: OptionsRecognizersOptions = OptionsRecognizersOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getBooleanModel(), query, culture, options);
 }
 
-function recognizeByModel(getModelFunc: (n: OptionsRecognizer) => IModel, query: string, culture: string, options: OptionsOptions): Array<ModelResult> {
+function recognizeByModel(getModelFunc: (n: OptionsRecognizer) => IModel, query: string, culture: string, options: OptionsRecognizersOptions): Array<ModelResult> {
     let recognizer = new OptionsRecognizer(culture, options);
     let model = getModelFunc(recognizer);
     return model.parse(query);
 }
 
-export default class OptionsRecognizer extends Recognizer<OptionsOptions> {
-    constructor(culture: string, options: OptionsOptions = OptionsOptions.None) {
+export default class OptionsRecognizer extends Recognizer<OptionsRecognizersOptions> {
+    constructor(culture: string, options: OptionsRecognizersOptions = OptionsRecognizersOptions.None) {
         super(culture, options);
     }
 
