@@ -1,47 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text
 {
-    public abstract class Recognizer : IRecognizer {
+    public abstract class Recognizer<TModelOptions>
+    {
+        private readonly ModelFactory<TModelOptions> factory;
 
-        private const string NoneOptions = "None";
+        public string RecognizerCulture { get; private set; }
 
-        private readonly ModelContainer modelContainer = new ModelContainer();
+        public TModelOptions RecognizerOptions { get; private set; }
 
-        protected void RegisterModel(string culture, Type type, string options, IModel model)
+        protected Recognizer(string culture, TModelOptions options)
         {
-            modelContainer.RegisterModel(culture, type, model, options);
+            if (string.IsNullOrWhiteSpace(culture))
+            {
+                throw new ArgumentException("culture", "The Culture is required");
+            }
+
+            this.RecognizerCulture = culture;
+            this.RecognizerOptions = options;
+
+            this.factory = new ModelFactory<TModelOptions>();
+            InitializeConfiguration();
         }
 
-        protected void RegisterModel(string culture, string options, Dictionary<Type, IModel> models)
+        protected T GetModel<T>() where T : IModel
         {
-            modelContainer.RegisterModel(culture, models, options);
+            return this.factory.GetModel<T>(RecognizerCulture, RecognizerOptions);
         }
 
-        public IModel GetModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
+        protected void RegisterModel<T>(string culture, Func<TModelOptions, IModel> modelCreator)
         {
-            return modelContainer.GetModel<TModel>(culture, fallbackToDefaultCulture, options);
+            this.factory.Add((culture, typeof(T)), modelCreator);
         }
 
-        public bool TryGetModel<TModel>(string culture, out IModel model, bool fallbackToDefaultCulture = true, string options = NoneOptions)
-        {
-            return modelContainer.TryGetModel<TModel>(culture, out model, fallbackToDefaultCulture, options);
-        }
-
-        protected bool ContainsModels()
-        {
-            return modelContainer.ContainsModels();
-        }
-
-        public bool ContainsModel<TModel>(string culture, bool fallbackToDefaultCulture = true, string options = NoneOptions)
-        {
-            return modelContainer.ContainsModel<TModel>(culture, fallbackToDefaultCulture, options);
-        }
-
-        protected IModel GetSingleModel<TModel>()
-        {
-            return modelContainer.GetSingleModel<TModel>();
-        }
+        protected abstract void InitializeConfiguration();
     }
 }

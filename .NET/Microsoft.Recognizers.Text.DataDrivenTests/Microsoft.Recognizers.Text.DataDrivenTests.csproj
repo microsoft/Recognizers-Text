@@ -57,6 +57,7 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTime\TestDateTimeRecognizer_English.cs" />
     <Compile Include="DateTime\TestDateTime_Chinese.cs" />
     <Compile Include="DateTime\TestDateTime_French.cs" />
     <Compile Include="DateTime\TestDateTime_Portuguese.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Number\TestNumber_Portuguese.cs" />
     <Compile Include="Number\TestNumber_Chinese.cs" />
     <Compile Include="Number\TestNumber_Spanish.cs" />
+    <Compile Include="Number\TestNumberRecognizer_English.cs" />
     <Compile Include="Number\TestParserFactory.cs" />
     <Compile Include="Sequence\TestSequence_English.cs" />
     <Compile Include="TestBase.cs" />

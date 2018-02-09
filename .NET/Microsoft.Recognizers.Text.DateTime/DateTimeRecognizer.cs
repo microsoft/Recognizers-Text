@@ -1,173 +1,69 @@
-﻿using System;
-
-using Microsoft.Recognizers.Text.DateTime.Chinese;
+﻿using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
+using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.German;
-
-using Microsoft.Recognizers.Text.Utilities;
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
-    public class DateTimeRecognizer : Recognizer
+    public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-
-        private DateTimeOptions instanceOptions;
-
-        public static DateTimeOptions Convert(int value)
-        {
-            return EnumUtils.Convert<DateTimeOptions>(value);
-        }
-
-        public static DateTimeRecognizer GetCleanInstance()
-        {
-            return new DateTimeRecognizer();
-        }
-
-        public static DateTimeRecognizer GetInstance(DateTimeOptions options = DateTimeOptions.None)
-        {
-            return new DateTimeRecognizer(options);
-        }
-
-        public static DateTimeRecognizer GetSingleCultureInstance(string cultureCode, DateTimeOptions options = DateTimeOptions.None)
-        {
-            return new DateTimeRecognizer(cultureCode, options);
-        }
-
-        private DateTimeRecognizer(DateTimeOptions options)
-        {
-            Initialize(options);
-        }
-
-        private void Initialize(DateTimeOptions options)
-        {
-
-            instanceOptions = options;
-
-            var type = typeof(DateTimeModel);
-
-            RegisterModel(Culture.English, type, options.ToString(), new DateTimeModel(
-                              new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                              new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
-                          ));
-
-            RegisterModel(Culture.Chinese, type, options.ToString(), new DateTimeModel(
-                              new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
-                              new MergedExtractorChs(options)
-                          ));
-
-            RegisterModel(Culture.Spanish, type, options.ToString(), new DateTimeModel(
-                              new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
-                              new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
-                          ));
-
-            RegisterModel(Culture.French, type, options.ToString(), new DateTimeModel(
-                              new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
-                              new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
-                          ));
-
-            RegisterModel(Culture.Portuguese, type, options.ToString(), new DateTimeModel(
-                              new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
-                              new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
-                          ));
-        }
-
-        private DateTimeRecognizer(string cultureCode, DateTimeOptions options)
-        {
-
-            instanceOptions = options;
-
-            var type = typeof(DateTimeModel);
-
-            switch (cultureCode) {
-                case Culture.English:
-                    RegisterModel(cultureCode, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                case Culture.Chinese:
-                    RegisterModel(cultureCode, type, options.ToString(), new DateTimeModel(
-                                      new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
-                                      new MergedExtractorChs(options)
-                                  ));
-                    break;
-
-                case Culture.Spanish:
-                    RegisterModel(Culture.Spanish, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                case Culture.French:
-                    RegisterModel(Culture.French, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                case Culture.Portuguese:
-                    RegisterModel(Culture.Portuguese, type, options.ToString(), new DateTimeModel(
-                                      new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
-                                      new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))
-                                  ));
-                    break;
-
-                default:
-                    throw new ArgumentException($"Culture {cultureCode} not yet supported in timex.");
-            }
-            
-        }
-
-        // Uninitialized recognizer constructor
-        private DateTimeRecognizer()
+        public DateTimeRecognizer(string culture, DateTimeOptions options = DateTimeOptions.None)
+            : base(culture, options)
         {
         }
 
-        private DateTimeOptions SanityCheck(DateTimeOptions options)
+        public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null)
         {
-            if (!ContainsModels())
-            {
-                Initialize(options);
-            }
-
-            if (options == DateTimeOptions.None)
-            {
-                options = instanceOptions;
-            }
-
-            return options;
+            var recognizer = new DateTimeRecognizer(culture, options);
+            var model = recognizer.GetDateTimeModel();
+            return model.Parse(query, refTime ?? System.DateTime.Now);
         }
 
-        public DateTimeModel GetDateTimeModel(DateTimeOptions options = DateTimeOptions.None)
+        public DateTimeModel GetDateTimeModel()
         {
-
-            options = SanityCheck(options);
-
-            return GetDateTimeModel("", false, options);
+            return GetModel<DateTimeModel>();
         }
-        
-        public DateTimeModel GetDateTimeModel(string culture, bool fallbackToDefaultCulture = true, DateTimeOptions options = DateTimeOptions.None)
+
+        protected override void InitializeConfiguration()
         {
+            RegisterModel<DateTimeModel>(
+                Culture.English,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new EnglishMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(options))));
 
-            options = SanityCheck(options);
+            RegisterModel<DateTimeModel>(
+                Culture.Chinese,
+                (options) => new DateTimeModel(
+                    new FullDateTimeParser(new ChineseDateTimeParserConfiguration(options)),
+                    new MergedExtractorChs(options)));
 
-            DateTimeModel model;
-            if (string.IsNullOrEmpty(culture))
-            {
-                model = (DateTimeModel)GetSingleModel<DateTimeModel>();
-            }
-            else
-            {
-                model = (DateTimeModel)GetModel<DateTimeModel>(culture, fallbackToDefaultCulture, options.ToString());
-            }
+            RegisterModel<DateTimeModel>(
+                Culture.Spanish,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new SpanishMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(options))));
 
-            return model;
+            RegisterModel<DateTimeModel>(
+                Culture.French,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new FrenchMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(options))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.Portuguese,
+                (options) => new DateTimeModel(
+                    new BaseMergedParser(new PortugueseMergedParserConfiguration(options)),
+                    new BaseMergedExtractor(new PortugueseMergedExtractorConfiguration(options))));
+
+            RegisterModel<DateTimeModel>(
+                Culture.German,
+                (options) => new DateTimeModel(
+                            new BaseMergedParser(new GermanMergedParserConfiguration(options)),
+                            new BaseMergedExtractor(new GermanMergedExtractorConfiguration(options))));
         }
-  
     }
 }

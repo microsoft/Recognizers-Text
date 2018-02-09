@@ -103,37 +103,38 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         {
             var language = TestUtils.GetCulture(context.FullyQualifiedTestClassName);
             var modelName = TestUtils.GetModel(context.TestName);
+
             switch (modelName)
             {
                 case Models.Number:
-                    return NumberRecognizer.Instance.GetNumberModel(language);
+                    return new NumberRecognizer(language).GetNumberModel();
                 case Models.Ordinal:
-                    return NumberRecognizer.Instance.GetOrdinalModel(language);
+                    return new NumberRecognizer(language).GetOrdinalModel();
                 case Models.Percent:
-                    return NumberRecognizer.Instance.GetPercentageModel(language);
+                    return new NumberRecognizer(language).GetPercentageModel();
                 case Models.NumberRange:
-                    return NumberRecognizer.Instance.GetNumberRangeModel(language);
+                    return new NumberRecognizer(language).GetNumberRangeModel();
                 case Models.Age:
-                    return NumberWithUnitRecognizer.Instance.GetAgeModel(language);
+                    return new NumberWithUnitRecognizer(language).GetAgeModel();
                 case Models.Currency:
-                    return NumberWithUnitRecognizer.Instance.GetCurrencyModel(language);
+                    return new NumberWithUnitRecognizer(language).GetCurrencyModel();
                 case Models.Dimension:
-                    return NumberWithUnitRecognizer.Instance.GetDimensionModel(language);
+                    return new NumberWithUnitRecognizer(language).GetDimensionModel();
                 case Models.Temperature:
-                    return NumberWithUnitRecognizer.Instance.GetTemperatureModel(language);
+                    return new NumberWithUnitRecognizer(language).GetTemperatureModel();
                 case Models.DateTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.None).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(language).GetDateTimeModel();
                 case Models.DateTimeSplitDateAndTime:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.SplitDateAndTime).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(language, DateTimeOptions.SplitDateAndTime).GetDateTimeModel();
                 case Models.CustomNumber:
                     return GetCustomModelFor(language);
                 case Models.DateTimeCalendarMode:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.CalendarMode).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(language, DateTimeOptions.CalendarMode).GetDateTimeModel();
                 // DateTimeAlt function is only activated when ExtendedTypes is enabled
                 case Models.DateTimeExtendedTypes:
-                    return DateTimeRecognizer.GetInstance(DateTimeOptions.ExtendedTypes).GetDateTimeModel(language);
+                    return new DateTimeRecognizer(language, DateTimeOptions.ExtendedTypes).GetDateTimeModel();
                 case Models.PhoneNumber:
-                    return SequenceRecognizer.Instance.GetPhoneNumberModel(language);
+                    return new SequenceRecognizer(language).GetPhoneNumberModel();
             }
 
             throw new Exception($"Model '{modelName}' for '{language}' not supported");
