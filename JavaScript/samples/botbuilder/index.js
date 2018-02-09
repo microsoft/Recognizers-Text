@@ -115,7 +115,6 @@ bot.dialog('ask-amount', new builder.Prompt().onRecognize((context, callback) =>
 
     // Parse user input as is
     var results = recognizeNumber(input);
-    console.log('numberModel results: ', results);
 
     // Care for the first result only
     if (results.length && results[0].typeName === 'number') {
@@ -144,7 +143,6 @@ var DateValidationErros = {
 // Ask for delivery date and validate input
 bot.dialog('ask-date', new builder.Prompt().onRecognize((context, callback) => {
     var result = validateAndExtract(context.message.text || '');
-    console.log('ask-date-result:', result);
 
     if (result.valid) {
         // return value to calling dialog
@@ -163,7 +161,6 @@ bot.dialog('ask-confirmation', new builder.Prompt().onRecognize((context, callba
 
     // Parse user input as is
     var results = recognizeBoolean(input);
-    console.log('booleanModel results: ', results);
 
     // Care for the first result only
     if (results.length && results[0].typeName === 'boolean') {
@@ -204,9 +201,6 @@ bot.on('error', function (e) {
 function validateAndExtract(input) {
 
     var results = recognizeDate(input);
-
-    // Log the results
-    console.log('dateModel results', results);
 
     // Check there are valid results
     if (results.length && results[0].typeName.startsWith('datetimeV2')) {
