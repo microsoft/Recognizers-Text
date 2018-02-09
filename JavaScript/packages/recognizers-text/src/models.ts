@@ -1,4 +1,5 @@
 import { Culture } from "./culture";
+import { match, cache } from "xregexp";
 
 export interface IModel {
     readonly modelTypeName: string
@@ -13,63 +14,66 @@ export class ModelResult {
     resolution: { [key: string]: any }
 }
 
-export class ModelContainer {
+export class ModelFactory<TModelOptions> {
     static readonly defaultCulture: string = Culture.English;
 
-    private modelInstances: Map<string, IModel> = new Map<string, IModel>();
+    private modelInstances: Map<string, (options: TModelOptions) => IModel> = new Map<string, (options: TModelOptions) => IModel>();
 
-    getModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): IModel {
-        let result = this.tryGetModel(modelTypeName, culture, fallbackToDefaultCulture);
+    private static cache: Map<string, IModel> = new Map<string, IModel>();
+
+    getModel(modelTypeName: string, culture: string, options: TModelOptions): IModel {
+        let cacheResult = this.getModelFromCache(modelTypeName, culture, options);
+        if (cacheResult)  return cacheResult as IModel; 
+        
+        let result = this.tryGetModel(modelTypeName, culture, options);
         if (!result.containsModel) {
             throw new Error(`No IModel instance for ${culture}-${modelTypeName}`);
         }
 
-        return result.model as IModel;
+        let model = result.model as IModel;
+        this.registerModelInCache(modelTypeName, culture, options, model);
+        return model;
     }
 
-    tryGetModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): { containsModel: boolean; model?: IModel } {
+    tryGetModel(modelTypeName: string, culture: string, options: TModelOptions): { containsModel: boolean; model?: IModel } {
         let model: IModel;
         let ret: boolean = true;
         let key = this.generateKey(modelTypeName, culture);
         if (!this.modelInstances.has(key)) {
-            if (fallbackToDefaultCulture) {
-                culture = ModelContainer.defaultCulture;
-                key = this.generateKey(modelTypeName, culture);
-            }
-
-            if (!this.modelInstances.has(key)) {
-                ret = false;
-            }
+            ret = false;
         }
 
         if (ret) {
-            return { containsModel: true, model: this.modelInstances.get(key) };
+            return { containsModel: true, model: this.modelInstances.get(key)(options) };
         }
 
         return { containsModel: false };
     }
 
-    containsModel(modelTypeName: string, culture: string, fallbackToDefaultCulture: boolean = true): boolean {
-        return this.tryGetModel(modelTypeName, culture, fallbackToDefaultCulture).containsModel;
-    }
-
-    registerModel(modelTypeName: string, culture: string, model: IModel) {
+    registerModel(modelTypeName: string, culture: string, modelCreator: (options: TModelOptions) => IModel) {
         let key = this.generateKey(modelTypeName, culture);
         if (this.modelInstances.has(key)) {
             throw new Error(`${culture}-${modelTypeName} has been registered.`);
         }
 
-        this.modelInstances.set(key, model);
-    }
-
-    registerModels(models: Map<string, IModel>, culture: string) {
-        for (let key in models.keys()) {
-            let model: IModel = models.get(key) as IModel;
-            this.registerModel(key, culture, model);
-        }
+        this.modelInstances.set(key, modelCreator);
     }
 
     private generateKey(modelTypeName: string, culture: string): string {
         return `${culture.toLowerCase()}-${modelTypeName}`;
+    }
+
+    private getModelFromCache(modelTypeName: string, culture: string, options: TModelOptions): IModel{
+        let key = this.generateCacheKey(modelTypeName, culture, options);
+        return ModelFactory.cache.get(key);
+    }
+    
+    private registerModelInCache(modelTypeName: string, culture: string, options: TModelOptions, model: IModel) {
+        let key = this.generateCacheKey(modelTypeName, culture, options);
+        ModelFactory.cache.set(key, model);
+    }
+    
+    private generateCacheKey(modelTypeName: string, culture: string, options: TModelOptions): string {
+        return `${culture.toLowerCase()}-${modelTypeName}-${options.toString()}`;
     }
 }

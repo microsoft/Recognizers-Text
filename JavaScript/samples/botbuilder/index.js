@@ -1,8 +1,8 @@
 // Our Number and DateTime Recognizer models
 var Recognizers = require('@microsoft/recognizers-text-suite');
-var numberModel = Recognizers.NumberRecognizer.instance.getNumberModel(Recognizers.Culture.English);
-var dateModel = Recognizers.DateTimeRecognizer.instance.getDateTimeModel(Recognizers.Culture.English);
-var booleanModel = Recognizers.OptionsRecognizer.instance.getBooleanModel(Recognizers.Culture.English);
+var numberModel = new Recognizers.NumberRecognizer().getNumberModel(Recognizers.Culture.English);
+var dateModel = new Recognizers.DateTimeRecognizer().getDateTimeModel(Recognizers.Culture.English);
+var booleanModel = new Recognizers.OptionsRecognizer().getBooleanModel(Recognizers.Culture.English);
 
 // This loads the environment variables from the .env file
 require('dotenv-extended').load();

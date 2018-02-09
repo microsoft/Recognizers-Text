@@ -3,7 +3,7 @@ var OptionsRecognizer = require('@microsoft/recognizers-text-options').OptionsRe
 var SupportedCultures = require('./cultures.js');
 
 var modelGetters = {
-    'BooleanModel': OptionsRecognizer.instance.getBooleanModel
+    'BooleanModel': new OptionsRecognizer().getBooleanModel
 };
 
 module.exports = function getOptionsTestRunner(config) {
@@ -46,5 +46,5 @@ function getOptionsModel(config) {
         throw new Error(`Options model of ${config.subType} with culture ${config.language} not supported.`);
     }
 
-    return getModel.bind(OptionsRecognizer.instance)(culture, false);
+    return getModel.bind(new OptionsRecognizer(culture))();
 }

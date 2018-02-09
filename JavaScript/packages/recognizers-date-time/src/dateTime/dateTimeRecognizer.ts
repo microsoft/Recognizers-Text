@@ -12,42 +12,48 @@ export enum DateTimeOptions {
     None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4 
 }
 
-export default class DateTimeRecognizer extends Recognizer {
-    static readonly instance: DateTimeRecognizer = new DateTimeRecognizer(DateTimeOptions.None);
+export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
+    constructor(culture: string, options: DateTimeOptions = DateTimeOptions.None) {
+        super(culture, options);
+    }
 
-    private constructor(options: DateTimeOptions) {
-        super();
-
+    protected InitializeConfiguration() {
         // English models
-        this.registerModel("DateTimeModel", Culture.English, new DateTimeModel(
-            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), options),
-            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), options)
+        this.registerModel("DateTimeModel", Culture.English, (options) => new DateTimeModel(
+            new BaseMergedParser(new EnglishMergedParserConfiguration(new EnglishCommonDateTimeParserConfiguration()), this.RecognizerOptions),
+            new BaseMergedExtractor(new EnglishMergedExtractorConfiguration(), this.RecognizerOptions)
         ));
 
         // Spanish models
-        this.registerModel("DateTimeModel", Culture.Spanish, new DateTimeModel(
-            new BaseMergedParser(new SpanishMergedParserConfiguration(), options),
-            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), options)
+        this.registerModel("DateTimeModel", Culture.Spanish, (options) => new DateTimeModel(
+            new BaseMergedParser(new SpanishMergedParserConfiguration(), this.RecognizerOptions),
+            new BaseMergedExtractor(new SpanishMergedExtractorConfiguration(), this.RecognizerOptions)
         ));
 
         // Chinese models
-        this.registerModel("DateTimeModel", Culture.Chinese, new DateTimeModel(
+        this.registerModel("DateTimeModel", Culture.Chinese, (options) => new DateTimeModel(
             new ChineseFullMergedParser(),
-            new ChineseMergedExtractor(options)
+            new ChineseMergedExtractor(this.RecognizerOptions)
         ));
 
         // French models
-        this.registerModel("DateTimeModel", Culture.French, new DateTimeModel(
-            new BaseMergedParser(new FrenchMergedParserConfiguration(), options),
-            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), options)
+        this.registerModel("DateTimeModel", Culture.French, (options) => new DateTimeModel(
+            new BaseMergedParser(new FrenchMergedParserConfiguration(), this.RecognizerOptions),
+            new BaseMergedExtractor(new FrenchMergedExtractorConfiguration(), this.RecognizerOptions)
         ));
     }
 
-    getDateTimeModel(culture: string = "", fallbackToDefaultCulture: boolean = true): IDateTimeModel {
-        return this.getModel("DateTimeModel", culture, fallbackToDefaultCulture);
+    getDateTimeModel(): IDateTimeModel {
+        return this.getModel("DateTimeModel");
     }
 
     public static getSingleCultureInstance(cultureCode: string, options: DateTimeOptions = DateTimeOptions.None): DateTimeRecognizer {
-        return new DateTimeRecognizer(options);
+        return new DateTimeRecognizer(cultureCode, options);
+    }
+
+    public static recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None, referenceDate: Date = new Date()): Array<ModelResult> {
+        let recognizer = new DateTimeRecognizer(culture, options);
+        let model = recognizer.getDateTimeModel();
+        return model.parse(query, referenceDate);
     }
 }
