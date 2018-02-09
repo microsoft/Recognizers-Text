@@ -42,19 +42,31 @@ Install Recognizer's by launching the following commands:
 
     This recognizer will find any number from the input. E.g "I have two apples" will return "2".
 
-    `NumberRecognizer.Instance.GetNumberModel(Culture.English)`
+    `new NumberRecognizer(Culture.English).GetNumberModel()`
+
+    Optionally, you can use the `recognizeNumber` method to parse your input with the same result.
+
+    `NumberRecognizer.recognizeNumber("I have two apples", Culture.English)`
 
 * [OrdinalModel](/.NET/Microsoft.Recognizers.Text.Number/Models/OrdinalModel.cs)
 
     This recognizer will find any ordinal number. E.g "eleventh" will return "11".
 
-    `NumberRecognizer.Instance.GetOrdinalModel(Culture.English)`
+    `new NumberRecognizer(Culture.English).GetOrdinalModel()`
+
+    Optionally, you can use the `recognizeOrdinal` method to parse your input with the same result.
+
+    `NumberRecognizer.recognizeOrdinal("eleventh", Culture.English)`
 
 * [PercentageModel](/.NET/Microsoft.Recognizers.Text.Number/Models/PercentModel.cs)
 
     This recognizer will find any number presented as percentage. E.g "one hundred percents" will return "100%".
 
-    `NumberRecognizer.Instance.GetPercentageModel(Culture.English)`
+    `new NumberRecognizer(Culture.English).GetPercentageModel()`
+
+    Optionally, you can use the `recognizePercentage` method to parse your input with the same result.
+
+    `NumberRecognizer.recognizePercentage("one hundred percents", Culture.English)`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
@@ -62,25 +74,41 @@ Install Recognizer's by launching the following commands:
 
     This recognizer will find any age number presented. E.g "After ninety five years of age, perspectives change" will return "95 Year".
 
-    `NumberWithUnitRecognizer.Instance.GetAgeModel(Culture.English)`
+    `new NumberWithUnitRecognizer(Culture.English).GetAgeModel()`
+
+    Optionally, you can use the `recognizeAge` method to parse your input with the same result.
+
+    `NumberWithUnitRecognizer.recognizeAge("After ninety five years of age, perspectives change", Culture.English)`
 
 * [CurrencyModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/CurrencyModel.cs)
 
     This recognizer will find any currency presented. E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
-    `NumberWithUnitRecognizer.Instance.GetCurrencyModel(Culture.English)`
+    `new NumberWithUnitRecognizer(Culture.English).GetCurrencyModel()`
+
+    Optionally, you can use the `recognizeCurrency` method to parse your input with the same result.
+
+    `NumberWithUnitRecognizer.recognizeCurrency("Interest expense in the 1988 third quarter was $ 75.3 million", Culture.English)`
 
 * [DimensionModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/DimensionModel.cs)
 
     This recognizer will find any dimension presented. E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
-    `NumberWithUnitRecognizer.Instance.GetDimensionModel(Culture.English)`
+    `new NumberWithUnitRecognizer(Culture.English).GetDimensionModel()`
+
+    Optionally, you can use the `recognizeDimension` method to parse your input with the same result.
+
+    `NumberWithUnitRecognizer.recognizeDimension("The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.", Culture.English)`
 
 * [TemperatureModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/TemperatureModel.cs)
 
     This recognizer will find any temperature presented. E.g "Set the temperature to 30 degrees celsius" will return "30 C".
 
-    `NumberWithUnitRecognizer.Instance.GetTemperatureModel(Culture.English)`
+    `new NumberWithUnitRecognizer(Culture.English).GetTemperatureModel()`
+
+    Optionally, you can use the `recognizeTemperature` method to parse your input with the same result.
+
+    `NumberWithUnitRecognizer.recognizeTemperature("Set the temperature to 30 degrees celsius", Culture.English)`
 
 ### Microsoft.Recognizers.Text.DateTime
 
@@ -88,7 +116,11 @@ Install Recognizer's by launching the following commands:
 
     This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
 
-    `DateTimeRecognizer.GetInstance().GetDateTimeModel(Culture.English)`
+    `new DateTimeRecognizer(Culture.English).GetDateTimeModel()`
+
+    Optionally, you can use the `recognizeDateTime` method to parse your input with the same result.
+
+    `DateTimeRecognizer.recognizeDateTime("I'll go back 8pm today", Culture.English)`
 
 ## Samples
 
