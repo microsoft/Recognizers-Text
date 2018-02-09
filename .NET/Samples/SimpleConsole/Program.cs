@@ -43,9 +43,7 @@ namespace SimpleConsole
                     if (input.Length > 0)
                     {
                         // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                        var results = GetModels()
-                            .Select(parser => parser.Parse(input))
-                            .SelectMany(a => a);
+                        var results = ParseAll(input, defaultCulture);
 
                         // Write output
                         Console.WriteLine(results.Count() > 0 ? (string.Format("I found the following entities ({0:d}):", results.Count())) : "I found no entities.");
@@ -57,53 +55,58 @@ namespace SimpleConsole
         }
         
         /// <summary>
-        /// Get all recognizers model instances.
+        /// Parse query with all recognizers
         /// </summary>
-        /// <returns>A list of all the existing recognizer's models</returns>
-        private static IEnumerable<IModel> GetModels()
+        private static IEnumerable<ModelResult> ParseAll(string query, string culture)
         {
-            return new IModel[]
-            {
-                // Add Number recognizer - This recognizer will find any number from the input
+            return MergeResults(
+                // Number recognizer will find any number from the input
                 // E.g "I have two apples" will return "2".
-                numberRecognizer.GetNumberModel(),
-                
-                // Add Ordinal number recognizer - This recognizer will find any ordinal number
+                NumberRecognizer.RecognizeNumber(query, culture),
+
+                // Ordinal number recognizer will find any ordinal number
                 // E.g "eleventh" will return "11".
-                numberRecognizer.GetOrdinalModel(),
+                NumberRecognizer.RecognizeOrdinal(query, culture),
 
-                // Add Percentage recognizer - This recognizer will find any number presented as percentage
+                // Percentage recognizer will find any number presented as percentage
                 // E.g "one hundred percents" will return "100%"
-                numberRecognizer.GetPercentageModel(),
+                NumberRecognizer.RecognizePercentage(query, culture),
 
-                // Add Number Range recognizer - This recognizer will find any cardinal or ordinal number range
+                // Number Range recognizer will find any cardinal or ordinal number range
                 // E.g. "between 2 and 5" will return "(2,5)"
-                numberRecognizer.GetNumberRangeModel(),
+                NumberRecognizer.RecognizeNumberRange(query, culture),
 
-                // Add Age recognizer - This recognizer will find any age number presented
+                // Age recognizer will find any age number presented
                 // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-                numberWithUnitRecognizer.GetAgeModel(),
+                NumberWithUnitRecognizer.RecognizeAge(query, culture),
 
-                // Add Currency recognizer - This recognizer will find any currency presented
+                // Currency recognizer will find any currency presented
                 // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-                numberWithUnitRecognizer.GetCurrencyModel(),
+                NumberWithUnitRecognizer.RecognizeCurrency(query, culture),
 
-                // Add Dimension recognizer - This recognizer will find any dimension presented
+                // Dimension recognizer will find any dimension presented
                 // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-                numberWithUnitRecognizer.GetDimensionModel(),
+                NumberWithUnitRecognizer.RecognizeDimension(query, culture),
 
-                // Add Temperature recognizer - This recognizer will find any temperature presented
+                // Temperature recognizer will find any temperature presented
                 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-                numberWithUnitRecognizer.GetTemperatureModel(),
-                
-                // Add Datetime recognizer - This model will find any Date even if its write in coloquial language - 
-                // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-                dateTimeRecognizer.GetDateTimeModel(),
+                NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
 
-                // Add PhoneNumber recognizer - This recognizer will find any phone number presented
+                // Datetime recognizer This model will find any Date even if its write in coloquial language 
+                // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
+                DateTimeRecognizer.RecognizeDateTime(query, culture),
+
+                // PhoneNumber recognizer will find any phone number presented
                 // E.g "My phone number is ( 19 ) 38294427."
-                sequenceRecognizer.GetPhoneNumberModel()
-            };
+                SequenceRecognizer.RecognizePhoneNumber(query, culture));
+        }
+
+        /// <summary>
+        /// Merge all results into a single enumerable
+        /// </summary>
+        private static IEnumerable<ModelResult> MergeResults(params List<ModelResult>[] results)
+        {
+            return results.SelectMany(o => o);
         }
 
         /// <summary>
