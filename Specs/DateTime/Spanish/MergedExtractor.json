@@ -1,11 +1,10 @@
 [{
-  "Input": "esto es 2 dias en p ",
-  "NotSupported": "javascript",
+  "Input": "esto es 2 dias",
   "NotSupportedByDesign": "python",
   "Results": [
     {
-      "Text": "2 dias en",
-      "Type": "daterange"
+      "Text": "2 dias",
+      "Type": "duration"
     }
   ]
 }
