@@ -24,5 +24,12 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
             return GetModel<PhoneNumberModel>();
         }
+
+        public static List<ModelResult> RecognizePhoneNumber(string query, string culture, SequenceOptions options = SequenceOptions.None)
+        {
+            var recognizer = new SequenceRecognizer(culture, options);
+            var model = recognizer.GetPhoneNumberModel();
+            return model.Parse(query);
+        }
     }
 }
