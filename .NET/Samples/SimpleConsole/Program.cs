@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.DateTime;
@@ -8,18 +9,12 @@ using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.Sequence;
 
-using Newtonsoft.Json;
-
 namespace SimpleConsole
 {
     class Program
     {
         // Use English for the Recognizers culture
         private const string defaultCulture = Culture.English;
-        private static NumberRecognizer numberRecognizer = new NumberRecognizer(defaultCulture);
-        private static NumberWithUnitRecognizer numberWithUnitRecognizer = new NumberWithUnitRecognizer(defaultCulture);
-        private static DateTimeRecognizer dateTimeRecognizer = new DateTimeRecognizer(defaultCulture);
-        private static SequenceRecognizer sequenceRecognizer = new SequenceRecognizer(defaultCulture);
 
         static void Main(string[] args)
         {
