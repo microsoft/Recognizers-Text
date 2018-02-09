@@ -6,9 +6,9 @@ namespace Microsoft.Recognizers.Text
     {
         private readonly ModelFactory<TModelOptions> factory;
 
-        public string RecognizerCulture { get; private set; }
+        public string CurrentCulture { get; private set; }
 
-        public TModelOptions RecognizerOptions { get; private set; }
+        public TModelOptions Options { get; private set; }
 
         protected Recognizer(string culture, TModelOptions options)
         {
@@ -17,8 +17,8 @@ namespace Microsoft.Recognizers.Text
                 throw new ArgumentException("culture", "The Culture is required");
             }
 
-            this.RecognizerCulture = culture;
-            this.RecognizerOptions = options;
+            this.CurrentCulture = culture;
+            this.Options = options;
 
             this.factory = new ModelFactory<TModelOptions>();
             InitializeConfiguration();
@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text
 
         protected T GetModel<T>() where T : IModel
         {
-            return this.factory.GetModel<T>(RecognizerCulture, RecognizerOptions);
+            return this.factory.GetModel<T>(CurrentCulture, Options);
         }
 
         protected void RegisterModel<T>(string culture, Func<TModelOptions, IModel> modelCreator)
