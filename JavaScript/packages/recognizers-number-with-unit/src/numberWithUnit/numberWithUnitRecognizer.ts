@@ -32,15 +32,15 @@ export function recognizeCurrency(query: string, culture: string, options: Numbe
     return recognizeByModel(recognizer => recognizer.getCurrencyModel(), query, culture, options);
 }
 
-export function  recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+export function recognizeTemperature(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getTemperatureModel(), query, culture, options);
 }
 
-export function  recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+export function recognizeDimension(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getDimensionModel(), query, culture, options);
 }
 
-export function  recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
+export function recognizeAge(query: string, culture: string, options: NumberWithUnitOptions = NumberWithUnitOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getAgeModel(), query, culture, options);
 }
 

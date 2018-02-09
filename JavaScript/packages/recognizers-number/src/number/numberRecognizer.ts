@@ -22,11 +22,11 @@ export function recognizeNumber(query: string, culture: string, options: NumberO
     return recognizeByModel(recognizer => recognizer.getNumberModel(), query, culture, options);
 }
 
-export function  recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
+export function recognizeOrdinal(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getOrdinalModel(), query, culture, options);
 }
 
-export function  recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
+export function recognizePercentage(query: string, culture: string, options: NumberOptions = NumberOptions.None): Array<ModelResult> {
     return recognizeByModel(recognizer => recognizer.getPercentageModel(), query, culture, options);
 }
 
