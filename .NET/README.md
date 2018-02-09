@@ -36,103 +36,128 @@ Install Recognizer's by launching the following commands:
 
 ## API Documentation
 
+Resolution of values can be achieved in two ways, using the Recognizer's models or using the helper methods:
+
+### Recognizer's Models
+
+This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
+
+```C#
+var recognizer = new NumberRecognizer(Culture.English);
+var model = recognizer.GetNumberModel();
+var result = model.Parse("Twelve");
+```
+
+Or, for less verbosity, you use the helper methods:
+
+`var result = NumberRecognizer.RecognizeNumber("Twelve", Culture.English);`
+
+Internally, both methods will cache the instance models used to avoid extra costs.
+
 ### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](/.NET/Microsoft.Recognizers.Text.Number/Models/NumberModel.cs)
+* **Numbers**
 
     This recognizer will find any number from the input. E.g "I have two apples" will return "2".
 
-    `new NumberRecognizer(Culture.English).GetNumberModel()`
-
-    Optionally, you can use the `recognizeNumber` method to parse your input with the same result.
-
     `NumberRecognizer.RecognizeNumber("I have two apples", Culture.English)`
 
-* [OrdinalModel](/.NET/Microsoft.Recognizers.Text.Number/Models/OrdinalModel.cs)
+    Or you can obtain a model instance using:
+
+    `var model = new NumberRecognizer(Culture.English).GetNumberModel()`
+
+* **Ordinal Numbers**
 
     This recognizer will find any ordinal number. E.g "eleventh" will return "11".
 
-    `new NumberRecognizer(Culture.English).GetOrdinalModel()`
-
-    Optionally, you can use the `recognizeOrdinal` method to parse your input with the same result.
-
     `NumberRecognizer.RecognizeOrdinal("eleventh", Culture.English)`
 
-* [PercentageModel](/.NET/Microsoft.Recognizers.Text.Number/Models/PercentModel.cs)
+    Or you can obtain a model instance using:
+
+    `var model = new NumberRecognizer(Culture.English).GetOrdinalModel()`
+
+
+* **Percentages**
 
     This recognizer will find any number presented as percentage. E.g "one hundred percents" will return "100%".
 
-    `new NumberRecognizer(Culture.English).GetPercentageModel()`
-
-    Optionally, you can use the `recognizePercentage` method to parse your input with the same result.
-
     `NumberRecognizer.RecognizePercentage("one hundred percents", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `var model = new NumberRecognizer(Culture.English).GetPercentageModel()`
+
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
-* [AgeModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/AgeModel.cs)
+* **Ages**
 
     This recognizer will find any age number presented. E.g "After ninety five years of age, perspectives change" will return "95 Year".
 
-    `new NumberWithUnitRecognizer(Culture.English).GetAgeModel()`
-
-    Optionally, you can use the `recognizeAge` method to parse your input with the same result.
-
     `NumberWithUnitRecognizer.RecognizeAge("After ninety five years of age, perspectives change", Culture.English)`
 
-* [CurrencyModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/CurrencyModel.cs)
+    Or you can obtain a model instance using:
+
+    `var model = new NumberWithUnitRecognizer(Culture.English).GetAgeModel()`
+
+
+* **Currencies**
 
     This recognizer will find any currency presented. E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar".
 
-    `new NumberWithUnitRecognizer(Culture.English).GetCurrencyModel()`
-
-    Optionally, you can use the `recognizeCurrency` method to parse your input with the same result.
-
     `NumberWithUnitRecognizer.RecognizeCurrency("Interest expense in the 1988 third quarter was $ 75.3 million", Culture.English)`
 
-* [DimensionModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/DimensionModel.cs)
+    Or you can obtain a model instance using:
+
+    `var model = new NumberWithUnitRecognizer(Culture.English).GetCurrencyModel()`
+
+
+* **Dimensions**
 
     This recognizer will find any dimension presented. E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile".
 
-    `new NumberWithUnitRecognizer(Culture.English).GetDimensionModel()`
-
-    Optionally, you can use the `recognizeDimension` method to parse your input with the same result.
-
     `NumberWithUnitRecognizer.RecognizeDimension("The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.", Culture.English)`
 
-* [TemperatureModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/TemperatureModel.cs)
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).GetDimensionModel()`
+
+
+* **Temperatures**
 
     This recognizer will find any temperature presented. E.g "Set the temperature to 30 degrees celsius" will return "30 C".
 
-    `new NumberWithUnitRecognizer(Culture.English).GetTemperatureModel()`
-
-    Optionally, you can use the `recognizeTemperature` method to parse your input with the same result.
-
     `NumberWithUnitRecognizer.RecognizeTemperature("Set the temperature to 30 degrees celsius", Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizer(Culture.English).GetTemperatureModel()`
 
 ### Microsoft.Recognizers.Text.DateTime
 
-* [DateTimeModel](/.NET/Microsoft.Recognizers.Text.DateTime/Models/DateTimeModel.cs)
+* **Date, time, duration and date/time ranges**
 
     This model will find any date, time, duration and date/time ranges, even if its write in coloquial language. E.g. "I'll go back 8pm today" will return "2017-10-04 20:00:00".
 
+    `DateTimeRecognizer.RecognizeDateTime("I'll go back 8pm today", Culture.English)`
+
+    Or you can obtain a model instance using:
+
     `new DateTimeRecognizer(Culture.English).GetDateTimeModel()`
 
-    Optionally, you can use the `recognizeDateTime` method to parse your input with the same result.
-
-    `DateTimeRecognizer.RecognizeDateTime("I'll go back 8pm today", Culture.English)`
 
 ### Microsoft.Recognizers.Text.Sequence
 
-* [PhoneNumberModel](/.NET/Microsoft.Recognizers.Text.Sequence/Models/PhoneNumberModel.cs)
+* **Phone Numbers**
 
     This model will find any patter of symbols detected as a phone number, even if its write in coloquial language. E.g. "My phone number is 1 (877) 609-2233." will return "1 (877) 609-2233".
 
+    `DateTimeRecognizer.RecognizePhoneNumber("My phone number is 1 (877) 609-2233.", Culture.English)`
+
+    Or you can obtain a model instance using:
+
     `new SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
 
-    Optionally, you can use the `RecognizePhoneNumber` method to parse your input with the same result.
-
-    `DateTimeRecognizer.RecognizePhoneNumber("My phone number is 1 (877) 609-2233.", Culture.English)`
 
 ## Samples
 
