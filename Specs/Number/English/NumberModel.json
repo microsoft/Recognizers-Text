@@ -722,7 +722,6 @@
 {
   "Input": " two hundred point zero three",
   "NotSupportedByDesign": "python",
-  "Debug":true,
   "Results": [
     {
       "Text": "two hundred point zero three",

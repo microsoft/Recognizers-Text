@@ -15,7 +15,7 @@
   ],
   "main": "dist/recognizers-text-suite.umd.js",
   "module": "dist/recognizers-text-suite.es5.js",
-  "typings": "dist/types/recognizers-suite-text.d.ts",
+  "typings": "dist/types/recognizers-text-suite.d.ts",
   "browser": "dist/recognizers-text-suite.browser.js",
   "repository": {
     "type": "git",
