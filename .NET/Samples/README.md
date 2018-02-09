@@ -12,9 +12,9 @@ The important piece is the `Microsoft.Recognizers.Text` NuGet package, which you
 Install-Package Microsoft.Recognizers.Text
 ````
 
-Then, the sample gets a model reference of each available Recognizer. We need to do so by passing the Culture code we'll want to detect. E.g.: `en-us`.
+Then, the sample uses the recognize methods of each available Recognizer. We need to do so by passing the Culture code we'll want to detect. E.g.: `en-us`.
 
-So far, the available models are:
+So far, the available recognition methods are:
 
 ````C#
 using Microsoft.Recognizers.Text;
@@ -28,50 +28,53 @@ var culture = Culture.English;
 
 // Number recognizer will find any number from the input
 // E.g "I have two apples" will return "2".
-NumberRecognizer.RecognizeNumber(query, culture),
+NumberRecognizer.RecognizeNumber(query, culture);
 
 // Ordinal number recognizer will find any ordinal number
 // E.g "eleventh" will return "11".
-NumberRecognizer.RecognizeOrdinal(query, culture),
+NumberRecognizer.RecognizeOrdinal(query, culture);
 
 // Percentage recognizer will find any number presented as percentage
 // E.g "one hundred percents" will return "100%"
-NumberRecognizer.RecognizePercentage(query, culture),
+NumberRecognizer.RecognizePercentage(query, culture);
 
 // Number Range recognizer will find any cardinal or ordinal number range
 // E.g. "between 2 and 5" will return "(2,5)"
-NumberRecognizer.RecognizeNumberRange(query, culture),
+NumberRecognizer.RecognizeNumberRange(query, culture);
 
 // Age recognizer will find any age number presented
 // E.g "After ninety five years of age, perspectives change" will return "95 Year"
-NumberWithUnitRecognizer.RecognizeAge(query, culture),
+NumberWithUnitRecognizer.RecognizeAge(query, culture);
 
 // Currency recognizer will find any currency presented
 // E.g "Interest expense in the 1988 third quarter was $ 75.3 million" will return "75300000 Dollar"
-NumberWithUnitRecognizer.RecognizeCurrency(query, culture),
+NumberWithUnitRecognizer.RecognizeCurrency(query, culture);
 
 // Dimension recognizer will find any dimension presented
 // E.g "The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours." will return "6 Mile"
-NumberWithUnitRecognizer.RecognizeDimension(query, culture),
+NumberWithUnitRecognizer.RecognizeDimension(query, culture);
 
 // Temperature recognizer will find any temperature presented
 // E.g "Set the temperature to 30 degrees celsius" will return "30 C"
-NumberWithUnitRecognizer.RecognizeTemperature(query, culture),
+NumberWithUnitRecognizer.RecognizeTemperature(query, culture);
 
 // Datetime recognizer This model will find any Date even if its write in coloquial language 
 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-DateTimeRecognizer.RecognizeDateTime(query, culture),
+DateTimeRecognizer.RecognizeDateTime(query, culture);
 
 // PhoneNumber recognizer will find any phone number presented
 // E.g "My phone number is ( 19 ) 38294427."
-SequenceRecognizer.RecognizePhoneNumber(query, culture));
+SequenceRecognizer.RecognizePhoneNumber(query, culture);
 ````
 
-All these models accept an input as a string and returns an **IEnumerable** of [ModelResult](../Microsoft.Recognizers.Text/Models/ModelResult.cs):
+All these methods accept an input string and culture, and returns an **IEnumerable** of [ModelResult](../Microsoft.Recognizers.Text/Models/ModelResult.cs):
+
+Alternativly, you can obtain model instances that can be re-used for recognizing multiple inputs:
 
 ````C#
 // Number model
-var model = NumberRecognizer.Instance.GetNumberModel("en-us");
+var recognizer = new NumberRecognizer("en-us");
+var model = recognizer.GetNumberModel();
 
 // Parse input using Number model
 var result = model.Parse("I have twenty apples");
@@ -109,7 +112,6 @@ protected override bool TryParse(IMessageActivity message, out int result)
 
     // Get Number for the specified culture
     var results = NumberRecognizer.RecognizeNumber(message.Text, this.culture);
-    var results = model.Parse(message.Text);
     if (results.Count > 0)
     {
         if (results.First().TypeName == "number" &&
@@ -217,7 +219,7 @@ public static Extraction ValidateAndExtract(string input)
     // Check there are valid results
     if (results.Count > 0 && results.First().TypeName.StartsWith("datetimeV2"))
     {
-        // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L14)
+        // The DateTime model can return several resolution types (https://github.com/Microsoft/Recognizers-Text/blob/master/.NET/Microsoft.Recognizers.Text.DateTime/Constants.cs#L7-L15)
         // We only care for those with a date, date and time, or date time period:
         // date, daterange, datetime, datetimerange
 
