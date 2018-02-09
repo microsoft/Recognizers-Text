@@ -69,7 +69,7 @@ SequenceRecognizer.RecognizePhoneNumber(query, culture);
 
 All these methods accept an input string and culture, and returns an **IEnumerable** of [ModelResult](../Microsoft.Recognizers.Text/Models/ModelResult.cs):
 
-Alternativly, you can obtain model instances that can be re-used for recognizing multiple inputs:
+Alternatively, you can obtain model instances that can be re-used for recognizing multiple inputs:
 
 ````C#
 // Number model
