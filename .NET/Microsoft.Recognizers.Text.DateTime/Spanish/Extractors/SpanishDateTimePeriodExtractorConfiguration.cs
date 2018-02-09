@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex NextPrefixRegex => SpanishDatePeriodExtractorConfiguration.FutureRegex;
 
+        public Regex FutureSuffixRegex => SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         //TODO: add this
         public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

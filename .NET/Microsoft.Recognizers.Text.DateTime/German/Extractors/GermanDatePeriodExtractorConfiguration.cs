@@ -51,6 +51,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex NextPrefixRegex = 
             new Regex(DateTimeDefinitions.NextPrefixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex FutureSuffixRegex =
+            new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex =
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -190,6 +193,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
+
+        Regex IDatePeriodExtractorConfiguration.FutureSuffixRegex => FutureSuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
 

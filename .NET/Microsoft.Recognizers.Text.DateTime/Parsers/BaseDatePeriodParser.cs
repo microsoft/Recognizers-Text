@@ -736,6 +736,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginDate = referenceDate.AddDays(1);
                         endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
                     }
+                    else
+                    {
+                        var suffixMatch = config.FutureRegex.Match(afterStr);
+                        if (suffixMatch.Success)
+                        {
+                            mod = TimeTypeConstants.afterMod;
+
+                            // For future the beginDate should add 1 first
+                            beginDate = referenceDate.AddDays(1);
+                            endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                        }
+                    }
+
+                    var futureSuffixMatch = config.FutureSuffixRegex.Match(afterStr);
+                    if (futureSuffixMatch.Success)
+                    {
+                        mod = TimeTypeConstants.afterMod;
+
+                        // For future the beginDate should add 1 first
+                        beginDate = referenceDate.AddDays(1);
+                        endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                    }
 
                     // Handle the "in two weeks" case which means the second week
                     prefixMatch = config.InConnectorRegex.Match(beforeStr);

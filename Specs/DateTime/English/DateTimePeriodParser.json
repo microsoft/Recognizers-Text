@@ -1928,4 +1928,30 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 2 hours in the future",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours in the future",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+        "FutureResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 18:12:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 18:12:00"
+        }
+      }
+    }
+  ]
+}
 ]

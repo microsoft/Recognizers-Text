@@ -424,6 +424,31 @@
 }
 ,
 {
+  "Input": "在未来两天",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "未来两天",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2017-03-23,2017-03-25,P2D)",
+        "FutureResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2017-03-25"
+        },
+        "PastResolution": {
+          "startDate": "2017-03-23",
+          "endDate": "2017-03-25"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "今年夏天",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"

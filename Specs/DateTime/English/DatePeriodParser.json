@@ -3317,4 +3317,56 @@
     }
   ]
 }
+,
+{
+  "Input": "It will happen 4 weeks in the future.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 weeks in the future",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-11-08,2016-12-06,P4W)",
+        "FutureResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-12-06"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-12-06"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 days hence.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T00:00:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days hence",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2016-11-08,2016-11-10,P2D)",
+        "FutureResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-11-10"
+        },
+        "PastResolution": {
+          "startDate": "2016-11-08",
+          "endDate": "2016-11-10"
+        }
+      }
+    }
+  ]
+}
 ]
