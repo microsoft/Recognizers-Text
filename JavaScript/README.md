@@ -59,17 +59,34 @@ var DateTimeRecognizers = require('@microsoft/recognizers-text-date-time');
 var OptionsRecognizers = require('@microsoft/recognizers-text-options');
 ````
 
+### Recognizer's Models
+
+This is the preferred way if you need to parse multiple inputs based on the same context (e.g.: language and options):
+
+```C#
+var recognizer = new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English);
+var model = recognizer.getNumberModel();
+var result = model.parse('Twelve');
+```
+
+Or, for less verbosity, you use the helper methods:
+
+`var result = Recognizers.recognizeNumber("Twelve", Recognizers.Culture.English);`
+
+Internally, both methods will cache the instance models used to avoid extra costs.
+
 ### Microsoft.Recognizers.Text.Number
 
-* [NumberModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+* **Numbers**
 
     This recognizer will find any number from the input. E.g. _"I have two apples"_ will return _"2"_.
 
+    `Recognizers.recognizeNumber('I have two apples', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
     `new NumberRecognizers(Recognizers.Culture.English).getNumberModel()`
 
-    Optionally, you can use the `recognizeNumber` method to parse your input with the same result.
-
-    `Recognizers.recognizeNumber('I have two apples', Recognizers.Culture.English)`
 
 * [OrdinalModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
 
