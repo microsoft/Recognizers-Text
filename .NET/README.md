@@ -52,7 +52,7 @@ Or, for less verbosity, you use the helper methods:
 
 `var result = NumberRecognizer.RecognizeNumber("Twelve", Culture.English);`
 
-Internally, both methods will cache the instance models used to avoid extra costs.
+Internally, both methods will cache the instance models to avoid extra costs.
 
 ### Microsoft.Recognizers.Text.Number
 
