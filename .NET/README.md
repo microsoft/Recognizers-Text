@@ -46,7 +46,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeNumber` method to parse your input with the same result.
 
-    `NumberRecognizer.recognizeNumber("I have two apples", Culture.English)`
+    `NumberRecognizer.RecognizeNumber("I have two apples", Culture.English)`
 
 * [OrdinalModel](/.NET/Microsoft.Recognizers.Text.Number/Models/OrdinalModel.cs)
 
@@ -56,7 +56,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeOrdinal` method to parse your input with the same result.
 
-    `NumberRecognizer.recognizeOrdinal("eleventh", Culture.English)`
+    `NumberRecognizer.RecognizeOrdinal("eleventh", Culture.English)`
 
 * [PercentageModel](/.NET/Microsoft.Recognizers.Text.Number/Models/PercentModel.cs)
 
@@ -66,7 +66,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizePercentage` method to parse your input with the same result.
 
-    `NumberRecognizer.recognizePercentage("one hundred percents", Culture.English)`
+    `NumberRecognizer.RecognizePercentage("one hundred percents", Culture.English)`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
@@ -78,7 +78,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeAge` method to parse your input with the same result.
 
-    `NumberWithUnitRecognizer.recognizeAge("After ninety five years of age, perspectives change", Culture.English)`
+    `NumberWithUnitRecognizer.RecognizeAge("After ninety five years of age, perspectives change", Culture.English)`
 
 * [CurrencyModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/CurrencyModel.cs)
 
@@ -88,7 +88,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeCurrency` method to parse your input with the same result.
 
-    `NumberWithUnitRecognizer.recognizeCurrency("Interest expense in the 1988 third quarter was $ 75.3 million", Culture.English)`
+    `NumberWithUnitRecognizer.RecognizeCurrency("Interest expense in the 1988 third quarter was $ 75.3 million", Culture.English)`
 
 * [DimensionModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/DimensionModel.cs)
 
@@ -98,7 +98,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeDimension` method to parse your input with the same result.
 
-    `NumberWithUnitRecognizer.recognizeDimension("The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.", Culture.English)`
+    `NumberWithUnitRecognizer.RecognizeDimension("The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.", Culture.English)`
 
 * [TemperatureModel](/.NET/Microsoft.Recognizers.Text.NumberWithUnit/Models/TemperatureModel.cs)
 
@@ -108,7 +108,7 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeTemperature` method to parse your input with the same result.
 
-    `NumberWithUnitRecognizer.recognizeTemperature("Set the temperature to 30 degrees celsius", Culture.English)`
+    `NumberWithUnitRecognizer.RecognizeTemperature("Set the temperature to 30 degrees celsius", Culture.English)`
 
 ### Microsoft.Recognizers.Text.DateTime
 
@@ -120,7 +120,19 @@ Install Recognizer's by launching the following commands:
 
     Optionally, you can use the `recognizeDateTime` method to parse your input with the same result.
 
-    `DateTimeRecognizer.recognizeDateTime("I'll go back 8pm today", Culture.English)`
+    `DateTimeRecognizer.RecognizeDateTime("I'll go back 8pm today", Culture.English)`
+
+### Microsoft.Recognizers.Text.Sequence
+
+* [PhoneNumberModel](/.NET/Microsoft.Recognizers.Text.Sequence/Models/PhoneNumberModel.cs)
+
+    This model will find any patter of symbols detected as a phone number, even if its write in coloquial language. E.g. "My phone number is 1 (877) 609-2233." will return "1 (877) 609-2233".
+
+    `new SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
+
+    Optionally, you can use the `RecognizePhoneNumber` method to parse your input with the same result.
+
+    `DateTimeRecognizer.RecognizePhoneNumber("My phone number is 1 (877) 609-2233.", Culture.English)`
 
 ## Samples
 
