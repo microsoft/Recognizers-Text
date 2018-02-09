@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -28,6 +29,33 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public AgeModel GetAgeModel()
         {
             return GetModel<AgeModel>();
+        }
+
+        public static List<ModelResult> RecognizeCurrency(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetCurrencyModel(), query, culture, options);
+        }
+
+        public static List<ModelResult> RecognizeTemperature(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetTemperatureModel(), query, culture, options);
+        }
+
+        public static List<ModelResult> RecognizeDimension(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetDimensionModel(), query, culture, options);
+        }
+
+        public static List<ModelResult> RecognizeAge(string query, string culture, NumberWithUnitOptions options = NumberWithUnitOptions.None)
+        {
+            return RecognizeByModel(recognizer => recognizer.GetAgeModel(), query, culture, options);
+        }
+
+        private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, string culture, NumberWithUnitOptions options)
+        {
+            var recognizer = new NumberWithUnitRecognizer(culture, options);
+            var model = getModelFunc(recognizer);
+            return model.Parse(query);
         }
 
         protected override void InitializeConfiguration()
