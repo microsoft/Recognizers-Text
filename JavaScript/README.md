@@ -73,7 +73,7 @@ Or, for less verbosity, you use the helper methods:
 
 `var result = Recognizers.recognizeNumber("Twelve", Recognizers.Culture.English);`
 
-Internally, both methods will cache the instance models used to avoid extra costs.
+Internally, both methods will cache the instance models to avoid extra costs.
 
 ### Microsoft.Recognizers.Text.Number
 
@@ -85,70 +85,75 @@ Internally, both methods will cache the instance models used to avoid extra cost
 
     Or you can obtain a model instance using:
 
-    `new NumberRecognizers(Recognizers.Culture.English).getNumberModel()`
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getNumberModel()`
 
 
-* [OrdinalModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+* **Ordinal Numbers**
 
     This recognizer will find any ordinal number. E.g. _"eleventh"_ will return _"11"_.
 
-    `new NumberRecognizers(Recognizers.Culture.English).getOrdinalModel()`
-
-    Optionally, you can use the `recognizeOrdinal` method to parse your input with the same result.
-
     `Recognizers.recognizeOrdinal('eleventh', Recognizers.Culture.English)`
 
-* [PercentageModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number/src/number/numberRecognizer.ts)
+    Or you can obtain a model instance using:
+
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getOrdinalModel()`
+
+
+* **Percentages**
 
     This recognizer will find any number presented as percentage. E.g. _"one hundred percents"_ will return _"100%"_.
 
-    `new NumberRecognizers(Recognizers.Culture.English).getPercentageModel()`
-
-    Optionally, you can use the `recognizePercentage` method to parse your input with the same result.
-
     `Recognizers.recognizePercentage('one hundred percents', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberRecognizers.NumberRecognizer(Recognizers.Culture.English).getPercentageModel()`
 
 ### Microsoft.Recognizers.Text.NumberWithUnit
 
-* [AgeModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+* **Ages**
 
     This recognizer will find any age number presented. E.g. _"After ninety five years of age, perspectives change"_ will return _"95 Year"_.
 
-    `new NumberWithUnitRecognizers(Recognizers.Culture.English).getAgeModel()`
-
-    Optionally, you can use the `recognizeAge` method to parse your input with the same result.
-
     `Recognizers.recognizeAge('After ninety five years of age, perspectives change', Recognizers.Culture.English)`
 
-* [CurrencyModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getAgeModel()`
+
+
+* **Currencies**
 
     This recognizer will find any currency presented. E.g. _"Interest expense in the 1988 third quarter was $ 75.3 million"_ will return _"75300000 Dollar"_.
 
-    `new NumberWithUnitRecognizers(Recognizers.Culture.English).getCurrencyModel()`
-
-    Optionally, you can use the `recognizeCurrency` method to parse your input with the same result.
-
     `Recognizers.recognizeCurrency('Interest expense in the 1988 third quarter was $ 75.3 million', Recognizers.Culture.English)`
 
-* [DimensionModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getCurrencyModel()`
+
+
+* **Dimensions**
 
     This recognizer will find any dimension presented. E.g. _"The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours."_ will return _"6 Mile"_.
 
-    `new NumberWithUnitRecognizers(Recognizers.Culture.English).getDimensionModel()`
-
-    Optionally, you can use the `recognizeDimension` method to parse your input with the same result.
-
     `Recognizers.recognizeDimension('The six-mile trip to my airport hotel that had taken 20 minutes earlier in the day took more than three hours.', Recognizers.Culture.English)`
 
-* [TemperatureModel](https://github.com/Microsoft/Recognizers-Text/tree/master/JavaScript/packages/recognizers-number-with-unit/src/numberWithUnit/numberWithUnitRecognizer.ts)
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getDimensionModel()`
+
+
+* **Temperatures**
 
     This recognizer will find any temperature presented. E.g. _"Set the temperature to 30 degrees celsius"_ will return _"30 C"_.
 
-    `new NumberWithUnitRecognizers(Recognizers.Culture.English).getTemperatureModel()`
-
-    Optionally, you can use the `recognizeTemperature` method to parse your input with the same result.
-
     `Recognizers.recognizeTemperature('Set the temperature to 30 degrees celsius', Recognizers.Culture.English)`
+
+    Or you can obtain a model instance using:
+
+    `new NumberWithUnitRecognizers.NumberWithUnitRecognizer(Recognizers.Culture.English).getTemperatureModel()`
+
 
 ### Microsoft.Recognizers.Text.DateTime
 
