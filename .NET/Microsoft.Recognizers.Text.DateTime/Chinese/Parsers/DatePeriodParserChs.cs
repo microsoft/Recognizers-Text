@@ -498,9 +498,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                     if (trimedText.EndsWith("周") | trimedText.EndsWith("星期"))
                     {
                         var monday = referenceDate.This(DayOfWeek.Monday).AddDays(7*swift);
-                        ret.Timex = monday.Year.ToString("D4") + "-W" +
-                                    Cal.GetWeekOfYear(monday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday)
-                                        .ToString("D2");
+                        ret.Timex = FormatUtil.ToIsoWeekTimex(monday);
                         ret.FutureValue =
                             ret.PastValue =
                                 new Tuple<DateObject, DateObject>(
