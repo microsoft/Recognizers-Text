@@ -194,6 +194,21 @@
 }
 ,
 {
+  "Input": "他的年龄在三十或者以上",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "三十或者以上",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[30,)"
+      }
+    }
+  ]
+}
+,
+{
   "Input": "他的年龄不小于三十岁",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",
@@ -233,6 +248,21 @@
       "TypeName": "numberrange",
       "Resolution": {
         "value": "(500,)"
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "订购一批数目在 五百或者更多的产品",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "五百或者更多",
+      "TypeName": "numberrange",
+      "Resolution": {
+        "value": "[500,)"
       }
     }
   ]
