@@ -41,6 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string afterMod = "after";
         public const string sinceMod = "since";
 
+        public const string earlyMod = "start";
+        public const string midMod = "mid";
+        public const string lateMod = "end";
+
         public const string relativePrefixMod = "relativePrefixMod";
         public const string AmPmMod = "AmPmMod";
     }
