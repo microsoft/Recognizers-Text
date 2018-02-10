@@ -69,8 +69,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
 		public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
 		public static readonly string YearToYear = $@"((从|在|自)\s*)?({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex}){DatePeriodTillRegex}({DatePeriodYearInChineseRegex}|{DatePeriodYearRegex})";
 		public static readonly string MonthToMonth = $@"({MonthRegex}){DatePeriodTillRegex}({MonthRegex})";
-		public const string PastRegex = @"(?<past>(前|上|之前))";
-		public const string FutureRegex = @"(?<past>(后|下|之后|未来(的)?))";
+		public const string PastRegex = @"(?<past>(前|上|之前|近))";
+		public const string FutureRegex = @"(?<future>(后|(?<![一两几])下|之后|未来(的)?))";
 		public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
 		public static readonly string SeasonWithYear = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}";
 		public static readonly string QuarterRegex = $@"(({DatePeriodYearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";

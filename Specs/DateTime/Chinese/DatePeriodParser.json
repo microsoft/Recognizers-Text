@@ -399,6 +399,31 @@
 }
 ,
 {
+  "Input": "近三年销量最高的品牌是什么？",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "近三年",
+      "Type": "daterange",
+      "Value": {
+        "Timex": "(2014-03-22,2017-03-22,P3Y)",
+        "FutureResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        },
+        "PastResolution": {
+          "startDate": "2014-03-22",
+          "endDate": "2017-03-22"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "后1年",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"

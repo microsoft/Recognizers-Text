@@ -1319,7 +1319,7 @@
 }
 ,
 {
-  "Input": "I'll leave after or equal to 1/1/2016",
+  "Input": "give me all open spots with dates after or equal to 1/1/2016",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
   },
