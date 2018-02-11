@@ -45,7 +45,12 @@ export namespace EnglishDateTime {
 	export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
 	export const QuarterRegex = `(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter(\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year)`;
 	export const QuarterRegexYearFront = `(${YearRegex}|${RelativeRegex}\\s+year)\\s+(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\\s+quarter`;
-	export const SeasonRegex = `\\b(?<season>(${RelativeRegex}\\s+)?(?<seas>spring|summer|fall|autumn|winter)((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
+	export const EarlyPrefixRegex = `?<EarlyPrefix>early|beginning of|start of`;
+	export const MidPrefixRegex = `?<MidPrefix>mid|middle of`;
+	export const LaterPrefixRegex = `?<LatePrefix>late|later|end of`;
+	export const PrefixPeriodRegex = `((${EarlyPrefixRegex})|(${MidPrefixRegex})|(${LaterPrefixRegex}))`;
+	export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
+	export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
 	export const WhichWeekRegex = `(week)(\\s*)(?<number>\\d\\d|\\d|0\\d)`;
 	export const WeekOfRegex = `(the\\s+)?(week)(\\s+of)`;
 	export const MonthOfRegex = `(month)(\\s*)(of)`;
@@ -186,7 +191,7 @@ export namespace EnglishDateTime {
 	export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>lunchtime)\\b`;
 	export const NumberEndingPattern = `^(\\s+(?<meeting>meeting|appointment|conference|call|skype call)\\s+to\\s+(?<newTime>${PeriodHourNumRegex}|${HourRegex})((\\.)?$|(\\.,|,|!|\\?)))`;
 	export const OneOnOneRegex = `\\b(1\\s*:\\s*1)|(one (on )?one|one\\s*-\\s*one|one\\s*:\\s*one)\\b`;
-	export const LaterEarlyPeriodRegex = `\\b((?<LatePrefix>late|later)|(?<EarlyPrefix>early))\\s+(?<suffix>${OneWordPeriodRegex})\\b`;
+	export const LaterEarlyPeriodRegex = `\\b(${PrefixPeriodRegex})\\s+(?<suffix>${OneWordPeriodRegex})\\b`;
 	export const WeekWithWeekDayRangeRegex = `\\b((?<week>(${NextPrefixRegex}|${PastPrefixRegex}|this)\\s+week)((\\s+between\\s+${WeekDayRegex}\\s+and\\s+${WeekDayRegex})|(\\s+from\\s+${WeekDayRegex}\\s+to\\s+${WeekDayRegex})))\\b`;
 	export const GeneralEndingRegex = `^\\s*((\\.,)|\\.|,|!|\\?)?\\s*$`;
 	export const MiddlePauseRegex = `\\s*(,)\\s*`;
