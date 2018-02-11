@@ -1,4 +1,28 @@
 [{
+  "Input": "比较一下2009年福特汽车和宝马汽车的销量",
+  "Context": {
+    "ReferenceDateTime": "2017-03-22T00:00:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2009年",
+      "TypeName": "datetimeV2.daterange",
+      "Resolution": {
+        "values": [
+          {
+            "timex": "2009",
+            "type": "daterange",
+            "start": "2009-01-01",
+            "end": "2010-01-01"
+          }
+        ]
+      }
+    }
+  ]
+}
+,
+{
   "Input": "2010/01/29",
   "Context": {
     "ReferenceDateTime": "2017-03-22T00:00:00"

@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -116,6 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             YearRegex = SpanishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
+            FutureSuffixRegex = SpanishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
             WeekOfMonthRegex = SpanishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = SpanishDatePeriodExtractorConfiguration.WeekOfYearRegex;

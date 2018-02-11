@@ -85,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex NextPrefixRegex => GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
 
+        public Regex FutureSuffixRegex => GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         public Regex WeekDayRegex => new Regex(DateTimeDefinitions.WeekDayRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
         Regex IDateTimePeriodExtractorConfiguration.GeneralEndingRegex => GeneralEndingRegex;

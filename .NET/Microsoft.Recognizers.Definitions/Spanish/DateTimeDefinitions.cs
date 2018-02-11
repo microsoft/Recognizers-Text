@@ -432,6 +432,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
 		public const string DurationConnectorRegex = @"^[.]";
 		public const string YearAfterRegex = @"^[.]";
 		public const string YearPeriodRegex = @"^[.]";
+		public const string FutureSuffixRegex = @"^[.]";
 		public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
 		{
 			{ "", 0 }

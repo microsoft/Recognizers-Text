@@ -2973,6 +2973,30 @@
 }
 ,
 {
+  "Input": "It will happen 4 weeks in the future",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "4 weeks in the future",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 days hence",
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 days hence",
+      "Type": "daterange"
+    }
+  ]
+}
+,
+{
   "Input": "Cortana can find us a time beginning of next week",
   "NotSupported": "javascript",
   "NotSupportedByDesign": "python",

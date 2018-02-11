@@ -47,6 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex FutureRegex = 
             new Regex(DateTimeDefinitions.FutureRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex FutureSuffixRegex =
+            new Regex(DateTimeDefinitions.FutureSuffixRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         // composite regexes
         public static readonly Regex SimpleCasesRegex = 
             new Regex(DateTimeDefinitions.SimpleCasesRegex, RegexOptions.IgnoreCase | RegexOptions.Singleline);
@@ -197,6 +200,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex IDatePeriodExtractorConfiguration.FutureSuffixRegex => FutureSuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
 
