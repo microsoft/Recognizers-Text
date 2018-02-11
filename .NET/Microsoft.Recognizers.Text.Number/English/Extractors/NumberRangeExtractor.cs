@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , NumberRangeConstants.MORE
                 },
                 {
-                    // 30 and greater/higher
+                    // 30 and/or greater/higher
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , NumberRangeConstants.MORE
                 },
@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Text.Number.English
                     , NumberRangeConstants.LESS
                 },
                 {
-                    // 30 and less/smaller/lower
+                    // 30 and/or less/smaller/lower
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexOptions.IgnoreCase | RegexOptions.Singleline)
                     , NumberRangeConstants.LESS
                 },
