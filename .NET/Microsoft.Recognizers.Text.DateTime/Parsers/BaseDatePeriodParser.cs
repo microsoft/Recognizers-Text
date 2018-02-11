@@ -309,21 +309,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     earlyPrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.earlyMod;
+                    ret.Mod = TimeTypeConstants.EARLY_MOD;
                 }
-
-                if (match.Groups["LatePrefix"].Success)
+                else if (match.Groups["LatePrefix"].Success)
                 {
                     latePrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.lateMod;
+                    ret.Mod = TimeTypeConstants.LATE_MOD;
                 }
-
-                if (match.Groups["MidPrefix"].Success)
+                else if (match.Groups["MidPrefix"].Success)
                 {
                     midPrefix = true;
                     trimedText = match.Groups["suffix"].ToString();
-                    ret.Mod = TimeTypeConstants.midMod;
+                    ret.Mod = TimeTypeConstants.MID_MOD;
                 }
 
                 var monthStr = match.Groups["month"].Value;
@@ -394,16 +392,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                                         ? referenceDate.This(DayOfWeek.Wednesday).AddDays(7 * swift)
                                         : referenceDate.This(DayOfWeek.Wednesday).AddDays(7 * swift).AddDays(1);
                         }
-
-                        if (midPrefix)
+                        else if (midPrefix)
                         {
                             beginDate = referenceDate.This(DayOfWeek.Tuesday).AddDays(7 * swift);
                             endDate = InclusiveEndPeriod
                                         ? referenceDate.This(DayOfWeek.Friday).AddDays(7 * swift)
                                         : referenceDate.This(DayOfWeek.Friday).AddDays(7 * swift).AddDays(1);
                         }
-
-                        if (latePrefix)
+                        else if (latePrefix)
                         {
                             beginDate = referenceDate.This(DayOfWeek.Thursday).AddDays(7 * swift);
                         }
@@ -455,16 +451,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     ? DateObject.MinValue.SafeCreateFromValue(year, 6, 30)
                                     : DateObject.MinValue.SafeCreateFromValue(year, 6, 30).AddDays(1);
                         }
-
-                        if (midPrefix)
+                        else if (midPrefix)
                         {
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 4, 1);
                             endDate = InclusiveEndPeriod
                                     ? DateObject.MinValue.SafeCreateFromValue(year, 9, 30)
                                     : DateObject.MinValue.SafeCreateFromValue(year, 9, 30).AddDays(1);
                         }
-
-                        if (latePrefix)
+                        else if (latePrefix)
                         {
                             beginDate = DateObject.MinValue.SafeCreateFromValue(year, 7, 1);
                         }
@@ -859,7 +853,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             if (future)
             {
-                mod = TimeTypeConstants.afterMod;
+                mod = TimeTypeConstants.AFTER_MOD;
 
                 // For future the beginDate should add 1 first
                 beginDate = referenceDate.AddDays(1);
@@ -867,7 +861,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else
             {
-                mod = TimeTypeConstants.beforeMod;
+                mod = TimeTypeConstants.BEFORE_MOD;
                 beginDate = DurationParsingUtil.ShiftDateTime(timex, endDate, false);
             }
         }
@@ -1039,15 +1033,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Groups["EarlyPrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.earlyMod;
+                    ret.Mod = TimeTypeConstants.EARLY_MOD;
                 }
                 else if (match.Groups["MidPrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.midMod;
+                    ret.Mod = TimeTypeConstants.MID_MOD;
                 }
                 else if (match.Groups["LatePrefix"].Success)
                 {
-                    ret.Mod = TimeTypeConstants.lateMod;
+                    ret.Mod = TimeTypeConstants.LATE_MOD;
                 }
 
                 int year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(match);

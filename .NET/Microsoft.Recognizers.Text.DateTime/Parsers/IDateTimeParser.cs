@@ -34,18 +34,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string START_TIME = "startTime";
         public const string END_TIME = "endTime";
 
-        public const string START = "start";
-        public const string END = "end";
+        public const string RESOLVE_START = "start";
+        public const string RESOLVE_END = "end";
 
-        public const string beforeMod = "before";
-        public const string afterMod = "after";
-        public const string sinceMod = "since";
+        public const string BEFORE_MOD = "before";
+        public const string AFTER_MOD = "after";
+        public const string SINCE_MOD = "since";
 
-        public const string earlyMod = "start";
-        public const string midMod = "mid";
-        public const string lateMod = "end";
+        public const string EARLY_MOD = "start";
+        public const string MID_MOD = "mid";
+        public const string LATE_MOD = "end";
 
-        public const string relativePrefixMod = "relativePrefixMod";
-        public const string AmPmMod = "AmPmMod";
+        public const string RELATIVE_PREFIX_MOD = "relativePrefixMod";
+        public const string AM_PM_MOD = "AmPmMod";
     }
 }
