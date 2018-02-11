@@ -139,9 +139,9 @@ MonthToMonth: !nestedRegex
   def: ({MonthRegex}){DatePeriodTillRegex}({MonthRegex})
   references: [MonthRegex, DatePeriodTillRegex]
 PastRegex: !simpleRegex
-  def: (?<past>(前|上|之前))
+  def: (?<past>(前|上|之前|近))
 FutureRegex: !simpleRegex
-  def: (?<past>(后|下|之后))
+  def: (?<future>(后|(?<![一两几])下|之后|未来(的)?))
 SeasonRegex: !simpleRegex
   def: (?<season>春|夏|秋|冬)(天|季)?
 SeasonWithYear: !nestedRegex

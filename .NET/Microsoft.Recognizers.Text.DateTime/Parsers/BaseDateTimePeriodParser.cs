@@ -725,6 +725,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         endTime = beginTime.AddSeconds(swiftSeconds);
                     }
 
+                    suffixMatch = Config.FutureSuffixRegex.Match(afterStr);
+                    if (suffixMatch.Success && suffixMatch.Length == afterStr.Length)
+                    {
+                        mod = TimeTypeConstants.afterMod;
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+                    }
+
                     ret.Timex =
                         $"({FormatUtil.LuisDate(beginTime)}T{FormatUtil.LuisTime(beginTime)}," +
                         $"{FormatUtil.LuisDate(endTime)}T{FormatUtil.LuisTime(endTime)}," +

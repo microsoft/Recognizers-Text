@@ -71,6 +71,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
                 DateTimeDefinitions.NextSuffixRegex, // next, in
                 RegexOptions.IgnoreCase | RegexOptions.Singleline);
 
+        public static readonly Regex FutureSuffixRegex =
+            new Regex(DateTimeDefinitions.FutureSuffixRegex,
+                RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         public static readonly Regex ThisPrefexRegex =
             new Regex(
                 DateTimeDefinitions.ThisPrefixRegex,
@@ -259,6 +263,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IDatePeriodExtractorConfiguration.PastRegex => PastPrefixRegex;
 
         Regex IDatePeriodExtractorConfiguration.FutureRegex => NextPrefixRegex;
+
+        Regex IDatePeriodExtractorConfiguration.FutureSuffixRegex => FutureSuffixRegex;
 
         Regex IDatePeriodExtractorConfiguration.WeekOfRegex => WeekOfRegex;
 

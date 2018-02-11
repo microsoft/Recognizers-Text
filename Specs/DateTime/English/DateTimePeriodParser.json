@@ -775,6 +775,56 @@
 }
 ,
 {
+  "Input": "Can you help us find a time in the morning of this Tuesday please?",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "in the morning of this Tuesday",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "2016-11-08TMO",
+        "FutureResolution": {
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "Please organize a meeting for 30 minutes on Tuesday, in the morning.",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "Tuesday, in the morning",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "XXXX-WXX-2TMO",
+        "FutureResolution": {
+          "startDateTime": "2016-11-08 08:00:00",
+          "endDateTime": "2016-11-08 12:00:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-01 08:00:00",
+          "endDateTime": "2016-11-01 12:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
   "Input": "I'll go back tuesday in the afternoon",
   "Context": {
     "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -1873,6 +1923,32 @@
         "PastResolution": {
           "startDateTime": "2016-11-01 12:00:00",
           "endDateTime": "2016-11-01 16:00:00"
+        }
+      }
+    }
+  ]
+}
+,
+{
+  "Input": "It will happen 2 hours in the future",
+  "Context": {
+    "ReferenceDateTime": "2016-11-07T16:12:00"
+  },
+  "NotSupported": "javascript",
+  "NotSupportedByDesign": "python",
+  "Results": [
+    {
+      "Text": "2 hours in the future",
+      "Type": "datetimerange",
+      "Value": {
+        "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+        "FutureResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 18:12:00"
+        },
+        "PastResolution": {
+          "startDateTime": "2016-11-07 16:12:00",
+          "endDateTime": "2016-11-07 18:12:00"
         }
       }
     }
