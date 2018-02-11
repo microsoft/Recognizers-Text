@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex FutureRegex { get; }
 
+        public Regex FutureSuffixRegex { get; }
+
         public Regex NumberCombinedWithUnitRegex { get; }
 
         public Regex UnitRegex { get; }
@@ -83,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimeOfDayRegex = GermanDateTimeExtractorConfiguration.TimeOfDayRegex;
             PastRegex = GermanDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = GermanDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = GermanDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = GermanDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = GermanTimePeriodExtractorConfiguration.TimeUnitRegex;
             PeriodTimeOfDayWithDateRegex = GermanDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;

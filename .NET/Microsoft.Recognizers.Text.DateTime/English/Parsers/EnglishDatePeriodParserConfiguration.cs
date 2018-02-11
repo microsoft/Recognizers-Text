@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex YearRegex { get; }
         public Regex PastRegex { get; }
         public Regex FutureRegex { get; }
+        public Regex FutureSuffixRegex { get; }
         public Regex NumberCombinedWithUnit { get; }
         public Regex WeekOfMonthRegex { get; }
         public Regex WeekOfYearRegex { get; }
@@ -128,6 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             YearRegex = EnglishDatePeriodExtractorConfiguration.YearRegex;
             PastRegex = EnglishDatePeriodExtractorConfiguration.PastPrefixRegex;
             FutureRegex = EnglishDatePeriodExtractorConfiguration.NextPrefixRegex;
+            FutureSuffixRegex = EnglishDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnit = EnglishDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
             WeekOfMonthRegex = EnglishDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = EnglishDatePeriodExtractorConfiguration.WeekOfYearRegex;

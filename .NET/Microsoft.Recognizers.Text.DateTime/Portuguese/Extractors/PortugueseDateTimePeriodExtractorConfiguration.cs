@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public Regex NextPrefixRegex => PortugueseDatePeriodExtractorConfiguration.FutureRegex;
 
+        public Regex FutureSuffixRegex => PortugueseDatePeriodExtractorConfiguration.FutureSuffixRegex;
+
         //TODO: add this
         public static readonly Regex WeekDayRegex = new Regex(@"^[\.]", RegexOptions.IgnoreCase | RegexOptions.Singleline);
 

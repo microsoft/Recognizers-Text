@@ -711,27 +711,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var prefixMatch = config.PastRegex.Match(beforeStr);
                     if (prefixMatch.Success)
                     {
-                        mod = TimeTypeConstants.beforeMod;
-                        beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, false, out mod);
                     }
                     else
                     {
                         var suffixMatch = config.PastRegex.Match(afterStr);
                         if (suffixMatch.Success)
                         {
-                            mod = TimeTypeConstants.beforeMod;
-                            beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                            GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, false, out mod);
                         }
                     }
 
                     prefixMatch = config.FutureRegex.Match(beforeStr);
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length)
                     {
-                        mod = TimeTypeConstants.afterMod;
-            
-                        // For future the beginDate should add 1 first
-                        beginDate = referenceDate.AddDays(1);
-                        endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
+                    }
+                    else
+                    {
+                        var suffixMatch = config.FutureRegex.Match(afterStr);
+                        if (suffixMatch.Success)
+                        {
+                            GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
+                        }
+                    }
+
+                    var futureSuffixMatch = config.FutureSuffixRegex.Match(afterStr);
+                    if (futureSuffixMatch.Success)
+                    {
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
                     }
 
                     // Handle the "in two weeks" case which means the second week
@@ -739,11 +747,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (prefixMatch.Success && prefixMatch.Length == beforeStr.Length && 
                         !DurationParsingUtil.IsMultipleDuration(durationResult.Timex))
                     {
-
-                        mod = TimeTypeConstants.afterMod;
-
-                        beginDate = referenceDate.AddDays(1);
-                        endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                        GetModAndDate(ref beginDate, ref endDate, referenceDate, durationResult.Timex, true, out mod);
 
                         // Change the duration value and the beginDate
                         var unit = durationResult.Timex.Substring(durationResult.Timex.Length - 1);
@@ -810,6 +814,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
+        }
+
+        private void GetModAndDate(ref DateObject beginDate, ref DateObject endDate, DateObject referenceDate, string timex, bool future, out string mod)
+        {
+            if (future)
+            {
+                mod = TimeTypeConstants.afterMod;
+
+                // For future the beginDate should add 1 first
+                beginDate = referenceDate.AddDays(1);
+                endDate = DurationParsingUtil.ShiftDateTime(timex, beginDate, true);
+            }
+            else
+            {
+                mod = TimeTypeConstants.beforeMod;
+                beginDate = DurationParsingUtil.ShiftDateTime(timex, endDate, false);
+            }
         }
 
         private DateTimeResolutionResult ParseWeekOfMonth(string text, DateObject referenceDate)
