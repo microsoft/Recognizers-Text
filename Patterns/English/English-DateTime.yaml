@@ -98,7 +98,7 @@ PrefixPeriodRegex: !nestedRegex
 SeasonDescRegex: !simpleRegex
   def: (?<seas>spring|summer|fall|autumn|winter)
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({RelativeRegex}|{PrefixPeriodRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
+  def: \b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
   references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex ]
 WhichWeekRegex: !simpleRegex
   def: (week)(\s*)(?<number>\d\d|\d|0\d)
