@@ -88,9 +88,20 @@ QuarterRegex: !nestedRegex
 QuarterRegexYearFront: !nestedRegex
   def: ({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter
   references: [ YearRegex, RelativeRegex ]
+EarlyPrefixRegex: !simpleRegex
+  def: ?<EarlyPrefix>early|beginning of|start of
+MidPrefixRegex: !simpleRegex
+  def: ?<MidPrefix>mid|middle of
+LaterPrefixRegex: !simpleRegex
+  def: ?<LatePrefix>late|later|end of
+PrefixPeriodRegex: !nestedRegex
+  def: (({EarlyPrefixRegex})|({MidPrefixRegex})|({LaterPrefixRegex}))
+  references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
+SeasonDescRegex: !simpleRegex
+  def: (?<seas>spring|summer|fall|autumn|winter)
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({RelativeRegex}\s+)?(?<seas>spring|summer|fall|autumn|winter)((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
-  references: [ YearRegex, RelativeRegex ]
+  def: \b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
+  references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex ]
 WhichWeekRegex: !simpleRegex
   def: (week)(\s*)(?<number>\d\d|\d|0\d)
 WeekOfRegex: !simpleRegex
@@ -440,8 +451,8 @@ NumberEndingPattern: !nestedRegex
 OneOnOneRegex: !simpleRegex
   def: \b(1\s*:\s*1)|(one (on )?one|one\s*-\s*one|one\s*:\s*one)\b
 LaterEarlyPeriodRegex: !nestedRegex
-  def: \b((?<LatePrefix>late|later)|(?<EarlyPrefix>early))\s+(?<suffix>{OneWordPeriodRegex})\b
-  references: [OneWordPeriodRegex]
+  def: \b({PrefixPeriodRegex})\s+(?<suffix>{OneWordPeriodRegex})\b
+  references: [PrefixPeriodRegex, OneWordPeriodRegex]
 WeekWithWeekDayRangeRegex: !nestedRegex
   def: \b((?<week>({NextPrefixRegex}|{PastPrefixRegex}|this)\s+week)((\s+between\s+{WeekDayRegex}\s+and\s+{WeekDayRegex})|(\s+from\s+{WeekDayRegex}\s+to\s+{WeekDayRegex})))\b
   references: [NextPrefixRegex, PastPrefixRegex, WeekDayRegex]
