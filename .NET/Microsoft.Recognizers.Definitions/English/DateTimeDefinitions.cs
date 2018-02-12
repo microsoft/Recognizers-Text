@@ -178,7 +178,7 @@ namespace Microsoft.Recognizers.Definitions.English
 		public const string SinceRegex = @"\b(since|after or equal to|starting (from|on|with))\b";
 		public const string AgoRegex = @"\b(ago)\b";
 		public const string LaterRegex = @"\b(later|from now)\b";
-		public const string InConnectorRegex = @"\b(in)\b";
+		public const string InConnectorRegex = @"\b(in|within)\b";
 		public const string AmPmDescRegex = @"(ampm)";
 		public static readonly string MorningStartEndRegex = $@"(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)";
 		public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";
